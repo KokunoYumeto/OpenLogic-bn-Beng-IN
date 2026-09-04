@@ -836,7 +836,7 @@
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "1eabfc36c99ee27cbccad6d3027d688fb0d002ac5daa368cd69ea6dc1e7ced20"
+      "sha256": "92a5172bd75305dcd01bdf3383549edac2ba4ec627d4b154e991ef23cfb38ab9"
     },
     "segments": 635,
     "translated_segments": 575,
@@ -849,7 +849,7 @@
       },
       {
         "path": "evidence/SEMANTIC_REVIEW_SIZE_OF_SETS.md",
-        "sha256": "9e756a579efdf4a282cace4cc0df2b74012b1c53bd5df1d6e339be75f0143623"
+        "sha256": "0778ce617976d964434874e2bdc60814f2fb49fb49f1a9291ed02cac0d38a452"
       },
       {
         "path": "evidence/SEMANTIC_REVIEW_ARITHMETIZATION.md",
@@ -858,14 +858,24 @@
     ],
     "shared_source_audit": {
       "audit_id": "OLSIZ-20260904",
-      "findings": 10,
+      "primary_findings": 10,
+      "valid_findings": 10,
       "reconciled_findings": 10,
+      "supplemental_alerts": 1,
+      "rejected_supplemental_alerts": 1,
       "findings_path": "evidence/SOURCE_AUDIT_OLSIZ_FINDINGS.json",
       "findings_sha256": "9b6e836c8432eb75d331913983603796d6557da6ec3ad71b846b2a248374cd07",
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "dc6286e53684895c56a38b35335756c513473e018dd41341360bbffbbf7b7f26",
+      "reconciliation_sha256": "c8ed845a1e753438ab8e80516c20c02473745d11718a4c8fece31c426904752d",
+      "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
+      "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
+      "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
+      "supplement_011_disposition_sha256": "f9aedbc302972286125cbdaf265f632e61a79f305923e89cd839be7e41bb236e",
+      "supplement_011_retraction_path": "evidence/SOURCE_AUDIT_OLSIZ_RETRACTION_011.json",
+      "supplement_011_retraction_sha256": "b495d66165f3c7f0b32d61b0b106c402badcc6e4e6a130442734c8f883dd5adc",
+      "supplement_011_disposition": "retracted_false_positive_no_change_required",
       "prior_checkpoint_segment_replay": {
         "segments": 537,
         "translated_segments": 479,

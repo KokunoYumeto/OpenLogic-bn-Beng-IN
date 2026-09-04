@@ -1,0 +1,86 @@
+{
+  "schema": "openlogic-bn-source-audit-disposition/1",
+  "created_utc": "2026-09-04T20:55:31.615049+00:00",
+  "supplement_audit_id": "OLSIZ-011",
+  "supplement_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
+  "supplement_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
+  "manager_retraction_path": "evidence/SOURCE_AUDIT_OLSIZ_RETRACTION_011.json",
+  "manager_retraction_sha256": "b495d66165f3c7f0b32d61b0b106c402badcc6e4e6a130442734c8f883dd5adc",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "disposition": "retracted_false_positive_no_change_required",
+  "reason": "The manager retracted the alert after the authoritative source was shown to contain three consecutive backslash bytes at every cited row ending. TeX tokenizes each 5c5c5c686c696e65 byte sequence as the row-break control symbol followed by the hline control word. No cited occurrence contains only two backslashes followed by literal hline.",
+  "source": {
+    "path": "upstream/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex",
+    "bytes": 6574,
+    "sha256": "a075f6c63879101314fb20fa493acfb38d78ff24095bb55914f2af4527e1ad3e",
+    "rowbreak_then_hline_count": 5,
+    "rowbreak_then_literal_hline_count": 0,
+    "byte_offsets": [
+      2809,
+      2879,
+      2946,
+      3013,
+      3080
+    ],
+    "hline_text_byte_offsets": [
+      2812,
+      2882,
+      2949,
+      3016,
+      3083
+    ],
+    "token_hex": [
+      "5c5c5c686c696e65"
+    ]
+  },
+  "target": {
+    "path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex",
+    "bytes": 13374,
+    "sha256": "58bba38d61857f7142f458109474bbb6e91df7259dc4cc91a56d1ce9f5f4b734",
+    "rowbreak_then_hline_count": 5,
+    "rowbreak_then_literal_hline_count": 0,
+    "byte_offsets": [
+      6023,
+      6093,
+      6160,
+      6227,
+      6294
+    ],
+    "hline_text_byte_offsets": [
+      6026,
+      6096,
+      6163,
+      6230,
+      6297
+    ],
+    "token_hex": [
+      "5c5c5c686c696e65"
+    ]
+  },
+  "translation_change_required": false,
+  "adjacent_correction_note_required": false,
+  "validator": "tools/check_source_draft.py",
+  "compiler_smoke_test": {
+    "status": "passed",
+    "scope": "Minimal article containing the exact five-row array token pattern.",
+    "global_mutex": "Global\\InterlanguageTeXSlotV1",
+    "engine": "XeLaTeX",
+    "shell_escape": false,
+    "tex": {
+      "path": "state/olsiz-011-tex-check/hline-token-check.tex",
+      "bytes": 484,
+      "sha256": "205ba74ce8fe7d032d7af819910d006f743e7c6794bb38b7a210d246c2d35c66"
+    },
+    "pdf": {
+      "path": "state/olsiz-011-tex-check/hline-token-check.pdf",
+      "bytes": 9118,
+      "sha256": "e4000231bd3f9d2937f6b7722749dbb20db8bb1b18ec29b0deda06c2bbbe94d8"
+    },
+    "log": {
+      "path": "state/olsiz-011-tex-check/hline-token-check.log",
+      "bytes": 3113,
+      "sha256": "9a730aa95b518b79d2e4c1d617844b823a02a4d0df9b47541b6c8da9c8ebcd15"
+    },
+    "stdout_sha256": "856d74eac5442efe918dc2a2f7172f083fa8173bd16b0135280f0bc384843f55"
+  }
+}

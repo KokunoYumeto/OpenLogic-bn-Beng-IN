@@ -95,6 +95,13 @@ def semantic_tokens(text):
     return collections.Counter(re.findall(r"!!\^?a?\{[^{}]+\}s?", text))
 
 
+def hline_tokenization(text):
+    return {
+        "rowbreak_then_hline": len(re.findall(r"(?<!\\)\\\\\\hline", text)),
+        "rowbreak_then_literal_hline": len(re.findall(r"(?<!\\)\\\\hline", text)),
+    }
+
+
 checked_ids = []
 for row in rows:
     target_path = repo / "bn-Beng-IN" / row["source_path"]
@@ -144,6 +151,18 @@ for row in rows:
         == collections.Counter({"\\equivrep{f}{}\\neq0_\\Real": 1})
         and "BN-SRC-014" in documented
     )
+    tex_command_check = None
+    if row["unit_id"] == "OLP-0039":
+        source_hlines = hline_tokenization(source)
+        target_hlines = hline_tokenization(target)
+        assert source_hlines == {"rowbreak_then_hline": 5, "rowbreak_then_literal_hline": 0}
+        assert target_hlines == source_hlines
+        tex_command_check = {
+            "retracted_alert_disposition": "retracted_false_positive_no_change_required",
+            "source": source_hlines,
+            "target": target_hlines,
+            "token_hex": "5c5c5c686c696e65",
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -193,6 +212,7 @@ for row in rows:
         "token_parity": semantic_tokens(source) == semantic_tokens(checked_target),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),
         "documented_source_corrections": documented,
+        "tex_command_check": tex_command_check,
         "target_sha256": hashlib.sha256(target_path.read_bytes()).hexdigest(),
     }
     assert checks["source_blocks"] == checks["target_blocks"], row["unit_id"]

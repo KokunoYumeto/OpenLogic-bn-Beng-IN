@@ -27,6 +27,19 @@
     "OLSIZ-009",
     "OLSIZ-010"
   ],
+  "supplemental_dispositions": [
+    {
+      "audit_id": "OLSIZ-011",
+      "supplement_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
+      "supplement_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
+      "disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
+      "disposition_sha256": "f9aedbc302972286125cbdaf265f632e61a79f305923e89cd839be7e41bb236e",
+      "manager_retraction_path": "evidence/SOURCE_AUDIT_OLSIZ_RETRACTION_011.json",
+      "manager_retraction_sha256": "b495d66165f3c7f0b32d61b0b106c402badcc6e4e6a130442734c8f883dd5adc",
+      "disposition": "retracted_false_positive_no_change_required",
+      "reason": "The manager retracted the alert. Both authority and target have five three-backslash rowbreak-plus-hline tokens and zero cited two-backslash-plus-literal-hline tokens."
+    }
+  ],
   "finding_records": [
     {
       "finding_id": "OLSIZ-006",
@@ -298,7 +311,7 @@
   "affected_translated_segments": 130,
   "validator": {
     "path": "tools/check_source_draft.py",
-    "sha256": "1eabfc36c99ee27cbccad6d3027d688fb0d002ac5daa368cd69ea6dc1e7ced20"
+    "sha256": "92a5172bd75305dcd01bdf3383549edac2ba4ec627d4b154e991ef23cfb38ab9"
   },
   "prior_checkpoint_audit_replay": {
     "segments": 537,

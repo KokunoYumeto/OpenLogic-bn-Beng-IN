@@ -1,0 +1,179 @@
+% Part: propositional-logic
+% Chapter: syntax-and-semantics
+% Section: formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{fml}
+
+\olsection{বচনমূলক \usetoken{P}{formula}}
+
+বচনমূলক যুক্তিবিদ্যার !!^{formula}s গঠিত হয়
+\emph{!!{propositional
+    variable}s}\iftag{prvFalse}{\iftag{prvTrue}{,}{ ও}
+  মিথ্যার বচনধ্রুবক~$\lfalse$}{}\iftag{prvTrue}{\iftag{prvFalse}{
+    ও}{} সত্যের বচনধ্রুবক~$\ltrue$}{} থেকে, \emph{যৌক্তিক
+  সংযোজক} ব্যবহার করে।
+
+\begin{enumerate}
+\item !!^a{denumerable} সেট~$\PVar$, যার !!{propositional variable}s হলো $\Obj p_0$,
+  $\Obj p_1$, \dots
+\tagitem{prvFalse}{!!{falsity}-র বচনধ্রুবক~$\lfalse$।}{}
+\tagitem{prvTrue}{!!{truth}-এর বচনধ্রুবক~$\ltrue$।}{}
+\item যৌক্তিক সংযোজকগুলি:
+  \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (নঞর্থকরণ)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (সংযোজন)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (বিয়োজন)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+\item যতি-সংকেত: (, ), এবং কমা।
+\end{enumerate}
+
+বচনমূলক যুক্তিবিদ্যার এই ভাষাটিকে আমরা $\Lang L_0$ দিয়ে নির্দেশ করি।
+
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}{%
+উপরে প্রবর্তিত মৌলিক সংযোজকগুলির পাশাপাশি আমরা নিচের
+\emph{সংজ্ঞায়িত} সংকেতগুলিও ব্যবহার করি:
+\startycommalist
+  \iftag{defNot}{\ycomma $\lnot$ (নঞর্থকরণ)}{}%
+  \iftag{defAnd}{\ycomma $\land$ (সংযোজন)}{}%
+  \iftag{defOr}{\ycomma $\lor$ (বিয়োজন)}{}%
+  \iftag{defIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{defIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{defFalse}{\ycomma $\lfalse$ (!!{falsity})}{}%
+  \iftag{defTrue}{\ycomma $\ltrue$ (!!{truth})}}{}।
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{explain}
+সংজ্ঞায়িত সংকেত সরকারি ভাবে ভাষাটির অংশ নয়; বরং অনানুষ্ঠানিক সংক্ষিপ্ত
+রূপ হিসেবে সেটি প্রবর্তিত হয়। কেবল মৌলিক সংকেত ব্যবহার করলে যে সূত্রগুলি
+বেশ দীর্ঘ হতো, এই সংকেত দিয়ে সেগুলিকে সংক্ষেপে লেখা যায়। এটি নিঃসন্দেহে
+সুবিধাজনক। তবে আরও বড় সুবিধা হলো, প্রমাণগুলি ছোট হয়। কোনো সংকেত মৌলিক
+হলে প্রমাণে সেটিকে আলাদাভাবে বিচার করতে হয়। তাই মৌলিক সংকেত যত বেশি,
+আমাদের প্রমাণও তত দীর্ঘ হয়।
+\end{explain}
+\end{tagblock}
+
+% Alternate symbols
+
+\begin{intro}
+উপরে ব্যবহৃত পরিভাষা ও সংকেতগুলির বদলে অন্য পরিভাষা ও সংকেতের সঙ্গে তোমার
+পরিচয় থাকতে পারে। যুক্তিবিদ্যার বইগুলি (এবং শিক্ষকরা) “নঞর্থকরণ”-এর জন্য
+সাধারণত $\sim$, $\neg$ ও~!\; “সংযোজন”-এর জন্য $\wedge$, $\cdot$ ও $\&$
+ব্যবহার করেন। “শর্তবচন” বা “নিহিতকরণ”-এর প্রচলিত সংকেত হলো
+$\rightarrow$, $\Rightarrow$ ও $\supset$।
+\iftag{prvIff,defIff}{“দ্বিশর্তবচন”, “দ্বিমুখী নিহিতকরণ” বা “(বস্তুগত)
+  সমতুল্যতা”-র সংকেত হলো $\leftrightarrow$,
+  $\Leftrightarrow$ ও $\equiv$।}{}
+\iftag{prvFalse,defFalse}{$\lfalse$ সংকেতটিকে নানা ক্ষেত্রে
+  “মিথ্যা”, “মিথ্যাধ্রুবক”, “অসঙ্গতি” বা “নিম্ন” বলা হয়।}{}
+\iftag{prvTrue,defTrue}{$\ltrue$ সংকেতটিকে নানা ক্ষেত্রে
+  “সত্য”, “সত্যধ্রুবক” বা “ঊর্ধ্ব” বলা হয়।}{}
+\end{intro}
+
+\begin{defn}[সূত্র]
+\ollabel{defn:formulas}
+বচনমূলক যুক্তিবিদ্যার \emph{!!{formula}s}-এর সেট~$\Frm[L_0]$
+নিচের মতো আরোহীভাবে সংজ্ঞায়িত:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ একটি পরমাণু !!{formula}।}{}
+
+\tagitem{prvTrue}{$\ltrue$ একটি পরমাণু !!{formula}।}{}
+
+\item প্রতিটি !!{propositional variable}~$\Obj p_i$ একটি পরমাণু
+  !!{formula}।
+
+\tagitem{prvNot}{যদি $!A$ !!a{formula} হয়, তবে $\lnot !A$
+  !!a{formula}।}{}
+
+\tagitem{prvAnd}{যদি $!A$ ও $!B$ !!{formula}s হয়, তবে $(!A \land
+  !B)$ !!a{formula}।}{}
+
+\tagitem{prvOr}{যদি $!A$ ও $!B$ !!{formula}s হয়, তবে $(!A \lor !B)$
+  !!a{formula}।}{}
+
+\tagitem{prvIf}{যদি $!A$ ও $!B$ !!{formula}s হয়, তবে $(!A \lif !B)$
+  !!a{formula}।}{}
+
+\tagitem{prvIff}{যদি $!A$ ও $!B$ !!{formula}s হয়, তবে $(!A \liff !B)$
+  !!a{formula}।}{}
+
+\tagitem{limitClause}{অন্য কিছুই !!a{formula} নয়।}{}
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+!!{formula}s-এর সংজ্ঞাটি একটি
+\emph{আরোহী সংজ্ঞা}। মূলত অসীমসংখ্যক ধাপে আমরা
+!!{formula}s-এর সেটটি নির্মাণ করি। প্রথম ধাপে সব পরমাণু সূত্রকে সূত্র
+ঘোষণা করি; সংজ্ঞার প্রথম কয়েকটি বিধি, অর্থাৎ
+\iftag{prvTrue}{$\ltrue$, }{}%
+\iftag{prvFalse}{$\lfalse$, }{}%
+$\Obj p_i$-এর বিধিগুলি এই ধাপের সঙ্গে মেলে। তাই “পরমাণু !!{formula}”
+বলতে এই রূপের যেকোনো !!{formula} বোঝায়।
+
+সংজ্ঞার অন্য বিধিগুলি আগে নির্মিত !!{formula}s থেকে নতুন
+!!{formula}s নির্মাণের নিয়ম দেয়। দ্বিতীয় ধাপে নিয়মগুলি ব্যবহার করে
+পরমাণু !!{formula}s থেকে !!{formula}s নির্মাণ করা যায়। তৃতীয় ধাপে
+পরমাণু সূত্র এবং দ্বিতীয় ধাপে পাওয়া সূত্রগুলি থেকে নতুন সূত্র নির্মাণ করি;
+তারপর একইভাবে এগিয়ে যাই। কোনো ধাপে শেষ পর্যন্ত যা নির্মিত হয়, এবং শুধু
+তাই, !!{formula}।
+\end{explain}
+
+$!B$, $!C$ থেকে দ্বিস্থানী সংযোজক~$\ast$ ব্যবহার করে নির্মিত
+$(!B \ast !C)$ সূত্রটি লেখার সময় আমরা প্রায়ই বাইরের এক জোড়া বন্ধনী
+বাদ দিয়ে শুধু~$!B \ast !C$ লিখব।
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{defn}
+সংজ্ঞায়িত কারকগুলি ব্যবহার করে নির্মিত সূত্রগুলিকে নিচের মতো বুঝতে হবে:
+
+\begin{tagenumerate}{defTrue,defFalse,defNot,defOr,defAnd,defIf,defIff,defEx,defAll}
+
+\tagitem{defTrue}{$\ltrue$ হলো
+  \iftag{prvFalse}{$\lnot\lfalse$}{কোনো নির্দিষ্ট পরমাণু
+    !!{formula}~$!A$-এর জন্য $(!A \lor \lnot !A)$}-এর সংক্ষিপ্ত রূপ।}{}
+
+\tagitem{defFalse}{$\lfalse$ হলো
+  \iftag{prvTrue}{$\lnot\ltrue$}{কোনো নির্দিষ্ট পরমাণু
+    !!{formula}~$!A$-এর জন্য $(!A \land \lnot !A)$}-এর সংক্ষিপ্ত রূপ।}{}
+
+\tagitem{defNot}{$\lnot !A$ হলো $!A \lif \lfalse$-এর সংক্ষিপ্ত রূপ।}{}
+
+\tagitem{defOr}{$!A \lor !B$ হলো
+  \iftag{prvAnd}{$\lnot(\lnot !A \land \lnot !B)$}{$\lnot !A \lif
+    !B$}-এর সংক্ষিপ্ত রূপ।}{}
+
+\tagitem{defAnd}{$!A \land !B$ হলো
+  \iftag{prvOr}{$\lnot(\lnot !A \lor \lnot !B)$}{$\lnot (!A \lif
+    \lnot !B)$}-এর সংক্ষিপ্ত রূপ।}{}
+
+\tagitem{defIf}{$!A \lif !B$ হলো
+  \iftag{prvOr}{$(\lnot !A \lor !B)$}{$\lnot (!A \land \lnot !B)$}-এর সংক্ষিপ্ত রূপ।}{}
+% BN-SRC-019 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-019):} হিমায়িত ইংরেজি উৎসে প্রথম বিকল্পটির সূত্র $\lnot !A \lor !B)$ লেখা, যেখানে শুধু সমাপনী বন্ধনী আছে। গঠন-বিধি ও সংজ্ঞাটির অন্য বিকল্প অনুসারে বাংলা পাঠে সুষম সূত্র $(\lnot !A \lor !B)$ ব্যবহার করা হয়েছে।} % BN-SRC-019 TARGET-CORRECTION-END
+
+\tagitem{defIff}{$!A \liff !B$ হলো $(!A \lif !B) \land (!B
+  \lif !A)$-এর সংক্ষিপ্ত রূপ।}{}
+\end{tagenumerate}
+\end{defn}
+\end{tagblock}
+
+\begin{defn}[সংকেতবিন্যাসগত অভিন্নতা]
+$\ident$ সংকেতটি প্রতীকক্রমগুলির মধ্যে সংকেতবিন্যাসগত অভিন্নতা প্রকাশ করে;
+অর্থাৎ $!A \ident !B$ তখনই, যখন $!A$ ও $!B$ সমান দৈর্ঘ্যের প্রতীকক্রম এবং
+প্রতিটি স্থানে তাদের একই সংকেত থাকে।
+\end{defn}
+
+সংযুক্তকরণের ফলে পাওয়া প্রতীকক্রমও $\ident$ সংকেতটির দুপাশে থাকতে পারে।
+যেমন, $!A \ident (!B \lor !C)$-এর অর্থ: $!A$ প্রতীকক্রমটি সেই প্রতীকক্রমের
+সঙ্গে অভিন্ন, যা এই ক্রমে একটি প্রারম্ভিক বন্ধনী, $!B$ প্রতীকক্রম,
+$\lor$ সংকেত, $!C$ প্রতীকক্রম এবং একটি সমাপনী বন্ধনী সংযুক্ত করে পাওয়া
+যায়। যদি তা-ই হয়, তবে আমরা জানি যে $!A$-এর প্রথম সংকেত একটি প্রারম্ভিক
+বন্ধনী; $!A$-তে $!B$ একটি উপপ্রতীকক্রম হিসেবে আছে (দ্বিতীয় সংকেত থেকে
+শুরু), তার পরে $\lor$ আছে, ইত্যাদি।
+
+\end{document}

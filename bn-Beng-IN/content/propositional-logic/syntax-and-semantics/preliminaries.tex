@@ -1,0 +1,123 @@
+% Part: propositional-logic
+% Chapter: propositional-logic
+% Section: preliminaries
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{pre}
+
+\olsection{প্রাথমিক ফলাফল}
+
+\begin{thm}[\emph{!!{formula}s-এর উপর আরোহের নীতি}]
+  \ollabel{thm:induction}
+  কোনো ধর্ম~$P$ যদি সব পরমাণু !!{formula}s-এর জন্য সত্য হয় এবং
+  এমন হয় যে
+  \begin{enumerate}
+    \tagitem{prvNot}{$!A$-এর জন্য ধর্মটি সত্য হলেই $\lnot !A$-এর
+      জন্যও সত্য হয়;}{}
+    \tagitem{prvAnd}{$!A$ ও~$!B$-এর জন্য সত্য হলেই
+      $(!A \land !B)$-এর জন্যও সত্য হয়;}{}
+    \tagitem{prvOr}{$!A$ ও~$!B$-এর জন্য সত্য হলেই
+      $(!A \lor !B)$-এর জন্যও সত্য হয়;}{}
+    \tagitem{prvIf}{$!A$ ও~$!B$-এর জন্য সত্য হলেই
+      $(!A \lif !B)$-এর জন্যও সত্য হয়;}{}
+    \tagitem{prvIff}{$!A$ ও~$!B$-এর জন্য সত্য হলেই
+      $(!A \liff !B)$-এর জন্যও সত্য হয়;}{}
+  \end{enumerate}
+  তবে সব !!{formula}s-এর জন্য $P$ সত্য।
+\end{thm}
+
+\begin{proof}
+  ধর্ম~$P$-বিশিষ্ট সব !!{formula}s-এর সংগ্রহকে $S$ ধরি।
+  স্পষ্টত $S \subseteq \Frm[L_0]$। $S$,
+  \olref[fml]{defn:formulas}-এর সব শর্ত পূরণ করে: এতে সব পরমাণু
+  !!{formula}s আছে এবং এটি !!{operator}s-এর অধীনে বদ্ধ।
+  $\Frm[L_0]$ এই রকম ক্ষুদ্রতম শ্রেণি, তাই $\Frm[L_0] \subseteq S$।
+  অতএব $\Frm[L_0] = S$, এবং প্রতিটি সূত্রের ধর্ম~$P$ আছে।
+\end{proof}
+
+\begin{prop}\ollabel{prop:balanced}
+   $\Frm[L_0]$-এর যেকোনো !!{formula} \emph{সুষম}; অর্থাৎ তাতে
+   বাঁদিকের ও ডানদিকের বন্ধনীর সংখ্যা সমান।
+\end{prop}
+
+\begin{prob}
+\olref[pl][syn][pre]{prop:balanced} প্রমাণ করো।
+\end{prob}
+
+\begin{prop} \ollabel{prop:noinit}
+কোনো !!a{formula}-এর প্রকৃত প্রারম্ভিক খণ্ড !!a{formula} নয়।
+\end{prop}
+
+\begin{prob}
+  \olref[pl][syn][pre]{prop:noinit} প্রমাণ করো।
+\end{prob}
+
+\begin{prop}[একক পাঠযোগ্যতা]
+$ \Frm[L_0]$-এর যেকোনো !!{formula}~$!A$-এর নিচের রূপগুলির ঠিক একটিতে
+একটিমাত্র গঠনবিশ্লেষণ আছে:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$।}{}
+
+\tagitem{prvTrue}{$\ltrue$।}{}
+
+\item কোনো $\Obj p_n \in  \PVar$-এর জন্য $\Obj p_n$।
+
+\tagitem{prvNot}{কোনো !!{formula}~$!B$-এর জন্য $\lnot !B$।}{}
+
+\tagitem{prvAnd}{কোনো !!{formula}s $!B$ ও~$!C$-এর জন্য
+$(!B \land !C)$।}{}
+
+\tagitem{prvOr}{কোনো !!{formula}s $!B$ ও~$!C$-এর জন্য
+$(!B \lor !C)$।}{}
+
+\tagitem{prvIf}{কোনো !!{formula}s $!B$ ও~$!C$-এর জন্য
+$(!B \lif !C)$।}{}
+
+\tagitem{prvIff}{কোনো !!{formula}s $!B$ ও~$!C$-এর জন্য
+$(!B \liff !C)$।}{}
+\end{enumerate}
+তদুপরি, এই গঠনবিশ্লেষণটি \emph{একক}।
+\end{prop}
+
+\begin{proof}
+$!A$-এর উপর আরোহ প্রয়োগ করি। যেমন, ধরি $!A$-কে $(!B \lif !C)$ ও
+$(!B' \lif !C')$ হিসেবে পাঠ করার দুটি স্বতন্ত্র উপায় আছে। তাহলে $!B$ ও
+$!B'$ অবশ্যই অভিন্ন (নইলে একটি অন্যটির প্রকৃত প্রারম্ভিক খণ্ড হতো)। তাই
+$!A$-এর পাঠদুটি স্বতন্ত্র হলে তার কারণ অবশ্যই এই যে $!C$ ও $!C'$ একই
+প্রতীকক্রমের স্বতন্ত্র পাঠ; আরোহ-অনুমান অনুসারে যা অসম্ভব।
+\end{proof}
+
+
+\begin{defn}[সমরূপ প্রতিস্থাপন]
+যদি $!A$ ও $!B$ !!{formula}s হয় এবং $\Obj p_i$ একটি !!{propositional
+variable} হয়, তবে $!A$-তে $\Obj p_i$-এর প্রতিটি উপস্থিতির জায়গায়
+$!B$-এর একটি উপস্থিতি বসালে যে ফল পাওয়া যায়, তাকে
+$\Subst{!A}{!B}{\Obj p_i}$ নির্দেশ করে। একইভাবে, $\Obj p_1$, \dots,~$\Obj p_n$-এর
+স্থানে একই সঙ্গে !!{formula}s $!B_1$, \dots,~$!B_n$ বসানোর প্রতিস্থাপনকে
+$\SSubst{!A}{\subst{!B_1}{\Obj p_1},\dots,\subst{!B_n}{\Obj p_n}}$
+দিয়ে নির্দেশ করা হয়।
+\end{defn}
+
+\begin{prob} নিচের পাঁচটি !!{formula}s-এর প্রত্যেকটির জন্য নির্ধারণ করো,
+ !!{formula}-টিকে \( \Subst{!A}{!B}{\Obj p_i} \) প্রতিস্থাপনের রূপে
+ লেখা যায় কি না, যেখানে \( !A \) হলো (i) \( \Obj p_0 \); (ii)
+ \( ( \lnot \Obj p_0 \land \Obj p_1) \); এবং (iii)
+ \( ( ( \lnot \Obj p_0 \lif \Obj p_1 ) \land \Obj p_2 ) \)।
+ প্রতিটি ক্ষেত্রে প্রাসঙ্গিক প্রতিস্থাপনটি নির্দিষ্ট করো।
+  \begin{enumerate}
+    \item \( \Obj p_1 \)
+    \item \( ( \lnot \Obj p_0 \land \Obj p_0 ) \)
+    \item \( ( ( \Obj p_0 \lor \Obj p_1 ) \land \Obj p_2 )  \)
+    \item \( \lnot ( ( \Obj p_0 \lif \Obj p_1 ) \land \Obj p_2 ) \)
+    \item \( (( \lnot ( \Obj p_0 \lif \Obj p_1 ) \lif ( \Obj p_0 \lor \Obj p_1 )) \land \lnot ( \Obj p_0 \land \Obj p_1 )) \)
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+আরোহের সাহায্যে $\Subst{!A}{!B}{p}$-এর গাণিতিকভাবে কঠোর একটি সংজ্ঞা দাও।
+\end{prob}
+
+\end{document}

@@ -1,0 +1,97 @@
+% Part: propositional-logic
+% Chapter: syntax-and-semantics
+% Section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{sem}
+
+\olsection{অর্থগত ধারণা}
+
+নিচের অর্থগত ধারণাগুলি আমরা সংজ্ঞায়িত করি:
+
+\begin{defn}
+\begin{enumerate}
+\item কোনো !!^a{formula}~$!A$ \emph{পরিতৃপ্তিযোগ্য}, যদি কোনো
+  $\pAssign{v}$-এর জন্য $\pSat{v}{!A}$ হয়; কোনো $\pAssign{v}$-এর
+  জন্যই $\pSat{v}{!A}$ না হলে সেটি \emph{অপরিতৃপ্তিযোগ্য};
+\item কোনো !!^a{formula}~$!A$ \emph{সর্বতঃসত্য}, যদি সব
+  !!{valuation}s~$\pAssign{v}$-এর জন্য $\pSat{v}{!A}$ হয়;
+\item কোনো !!^a{formula}~$!A$ \emph{আপতিক}, যদি সেটি পরিতৃপ্তিযোগ্য
+  হয় কিন্তু সর্বতঃসত্য না হয়;
+\item $\Gamma$ যদি !!{formula}s-এর একটি সেট হয়, তবে
+  $\Gamma \Entails !A$ (“$\Gamma$ থেকে $!A$ অর্থগতভাবে অনুসৃত হয়”)
+  তখনই, যখন $\pSat{v}{\Gamma}$ হয় এমন প্রত্যেক
+  !!{valuation}~$\pAssign{v}$-এর জন্য $\pSat{v}{!A}$ হয়।
+\item $\Gamma$ যদি !!{formula}s-এর একটি সেট হয়, তবে এমন
+  !!a{valuation}~$\pAssign{v}$ থাকলে $\Gamma$ \emph{পরিতৃপ্তিযোগ্য},
+  যার জন্য $\pSat{v}{\Gamma}$; অন্যথায় $\Gamma$
+  \emph{অপরিতৃপ্তিযোগ্য}।
+\end{enumerate}
+\end{defn}
+
+\begin{prob}
+ নিচের চারটি !!{formula}s-এর প্রত্যেকটির জন্য নির্ধারণ করো, সেটি
+ (a)~পরিতৃপ্তিযোগ্য, (b)~সর্বতঃসত্য এবং (c)~আপতিক কি না।
+\begin{enumerate}
+  \item \( ( \Obj p_0 \lif ( \lnot \Obj p_1 \lif \lnot \Obj p_0 ) ) \).
+  \item \( ( ( \Obj p_0 \land \lnot \Obj p_1 ) \lif ( \lnot \Obj p_0 \land \Obj p_2 )) \liff ( ( \Obj p_2 \lif \Obj p_0 ) \lif ( \Obj p_0 \lif \Obj p_1 )) \).
+  \item \( ( \Obj p_0 \liff \Obj p_1 ) \lif ( \Obj p_2 \liff \lnot \Obj p_1 ) \).
+  \item \( (( \Obj p_0 \liff ( \lnot \Obj p_1 \land \Obj p_2 )) \lor ( \Obj p_2 \lif ( \Obj p_0 \liff \Obj p_1 ))) \).
+\end{enumerate}
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:semanticalfacts}
+\begin{enumerate}
+\item $!A$ তখনই সর্বতঃসত্য, যখন
+  $\emptyset \Entails !A$;
+\item যদি $\Gamma \Entails !A$ ও $\Gamma \Entails !A \lif !B$ হয়,
+  তবে $\Gamma \Entails !B$;
+\item $\Gamma$ পরিতৃপ্তিযোগ্য হলে $\Gamma$-র প্রতিটি সসীম উপসেটও
+  পরিতৃপ্তিযোগ্য;
+\item \ollabel{def:monotonicity} একঘেয়েতা: যদি $\Gamma \subseteq \Delta$
+  এবং $\Gamma \Entails !A$ হয়, তবে $\Delta \Entails !A$-ও হয়;
+\item \ollabel{def:Cut} পরিযায়িতা: যদি $\Gamma \Entails !A$ এবং
+  $\Delta \cup \{ !A\} \Entails !B$ হয়, তবে $\Gamma \cup \Delta \Entails
+  !B$।
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[pl][syn][sem]{prop:semanticalfacts} প্রমাণ করো।
+\end{prob}
+
+\begin{prop}\ollabel{prop:entails-unsat}
+  $\Gamma \Entails !A$ তখনই, যখন $\Gamma \cup \{\lnot !A\}$
+  অপরিতৃপ্তিযোগ্য।
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[pl][syn][sem]{prop:entails-unsat} প্রমাণ করো।
+\end{prob}
+
+\begin{thm}[অর্থগত নিঃসরণ উপপাদ্য]
+  \ollabel{thm:sem-deduction} $\Gamma \Entails !A \lif !B$ তখনই,
+  যখন $\Gamma \cup \{!A\} \Entails !B$।
+\end{thm}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[pl][syn][sem]{thm:sem-deduction} প্রমাণ করো।
+\end{prob}
+
+\end{document}

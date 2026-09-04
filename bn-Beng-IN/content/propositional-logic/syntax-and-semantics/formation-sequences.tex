@@ -1,0 +1,146 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: formation-sequences
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{fseq}
+
+\olsection{গঠন-অনুক্রম}
+
+আরোহী সংজ্ঞা দিয়ে !!{formula}s সংজ্ঞায়িত করা এবং তার পরিপূরক কৌশল
+হিসেবে আরোহের সাহায্যে !!{formula}s-এর ধর্ম প্রমাণ করা—এটি একটি সুন্দর
+ও কার্যকর পদ্ধতি। তবে !!{formula}s নির্মাণকে আরও নিচ থেকে উপরে,
+ধাপে ধাপে দেখাও উপযোগী হতে পারে। এখানে \emph{গঠন-অনুক্রম}-এর ধারণা
+ব্যবহার করে আমরা সেটিই করব।
+
+\begin{defn}[সূত্রের গঠন-অনুক্রম]
+\ollabel{defn:fseq-frm}
+$\Lang L_0$ ভাষার সংকেত দিয়ে গঠিত প্রতীকক্রমগুলির একটি সসীম অনুক্রম
+$\tuple{!A_0,\dotsc,!A_n}$, $!A$-এর জন্য একটি \emph{গঠন-অনুক্রম},
+যদি $!A \ident !A_n$ হয় এবং প্রতিটি $i \leq n$-এর জন্য হয় $!A_i$
+একটি পরমাণু সূত্র, নয়তো এমন $j,k < i$ আছে যাতে নিচের কোনো একটি সত্য:
+\begin{enumerate}
+    \tagitem{prvNot}{$!A_i \ident \lnot !A_j$।}{}%
+    \tagitem{prvAnd}{$!A_i \ident (!A_j \land !A_k)$।}{}%
+    \tagitem{prvOr}{$!A_i \ident (!A_j \lor !A_k)$।}{}%
+    \tagitem{prvIf}{$!A_i \ident (!A_j \lif !A_k)$।}{}%
+    \tagitem{prvIff}{$!A_i \ident (!A_j \liff !A_k)$।}{}%
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+\[
+\tuple{
+    \Obj p_0,
+    \Obj p_1,
+    (\Obj p_1 \land \Obj p_0),
+    \lnot (\Obj p_1 \land \Obj p_0)
+}
+\]
+অনুক্রমটি
+$\lnot (\Obj p_1 \land \Obj p_0)$-এর একটি গঠন-অনুক্রম; নিচেরটিও তাই:
+\[
+\tuple{
+    \Obj p_0,
+    \Obj p_1,
+    \Obj p_0,
+    (\Obj p_1 \land \Obj p_0),
+    (\Obj p_0 \lif \Obj p_1),
+    \lnot (\Obj p_1 \land \Obj p_0)
+}.
+\]
+%
+দ্বিতীয় উদাহরণ থেকে দেখা যায়, গঠন-অনুক্রমে “আবর্জনা” থাকতে পারে:
+এমন সূত্র, যা অপ্রয়োজনীয় অথবা নির্মাণে কোনো অবদান রাখে না।
+\end{ex}
+
+\begin{prop}
+\ollabel{prop:formed}
+$\Frm[L_0]$-এর প্রতিটি !!{formula}~$!A$-এর একটি গঠন-অনুক্রম আছে।
+\end{prop}
+
+\begin{proof}
+ধরি $!A$ পরমাণু। তাহলে~$\tuple{!A}$ অনুক্রমটি~$!A$-এর একটি
+গঠন-অনুক্রম।
+%
+এবার ধরি $!B$ ও~$!C$-এর গঠন-অনুক্রম যথাক্রমে
+$\tuple{!B_0,\dotsc,!B_n}$ ও $\tuple{!C_0,\dotsc,!C_m}$।
+%
+\begin{enumerate}
+  \tagitem{prvNot}{যদি $!A \ident \lnot !B$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,\lnot !B_n}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+  \tagitem{prvAnd}{যদি $!A \ident (!B \land !C)$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \land !C_m)}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+  \tagitem{prvOr}{যদি $!A \ident (!B \lor !C)$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lor !C_m)}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+  \tagitem{prvIf}{যদি $!A \ident (!B \lif !C)$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lif !C_m)}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+  \tagitem{prvIff}{যদি $!A \ident (!B \liff !C)$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \liff !C_m)}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+\end{enumerate}
+!!{formula}s-এর উপর আরোহের নীতি অনুসারে, প্রতিটি !!{formula}-এর একটি
+গঠন-অনুক্রম আছে।
+\end{proof}
+
+বিপরীতটিও প্রমাণ করা যায়। এটি গুরুত্বপূর্ণ, কারণ এতে দেখা যায় যে
+সূত্র সংজ্ঞায়িত করার আমাদের দুটি উপায় সমতুল্য: দুটিই একই ফল দেয়।
+এর আরও একটি অর্থ হলো, গঠন-অনুক্রমের দৈর্ঘ্যের উপর সাধারণ আরোহ ব্যবহার
+করে আমরা সূত্র সম্বন্ধে উপপাদ্য প্রমাণ করতে পারি।
+
+\begin{lem}
+\ollabel{lem:fseq-init}
+ধরি $\tuple{!A_0,\dotsc,!A_n}$ হলো~$!A_n$-এর একটি গঠন-অনুক্রম এবং
+$k \leq n$। তাহলে $\tuple{!A_0,\dotsc,!A_k}$ হলো~$!A_k$-এর একটি
+গঠন-অনুক্রম।
+\end{lem}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{thm}
+\ollabel{thm:fseq-frm-equiv}
+$\Frm[L_0]$ হলো $\Lang L_0$ ভাষায় এমন সব প্রতীকক্রমের সেট,
+যাদের গঠন-অনুক্রম আছে।
+\end{thm}
+
+\begin{proof}
+$\Lang L_0$ ভাষায় গঠন-অনুক্রম আছে এমন সব প্রতীকক্রমের সেটকে $F$ ধরি।
+\olref[pl][syn][fseq]{prop:formed}-এ আমরা দেখেছি যে
+$\Frm[L_0] \subseteq F$; এবার বিপরীত অন্তর্ভুক্তি প্রমাণ করি।
+
+ধরি $!A$-এর গঠন-অনুক্রম $\tuple{!A_0,\dotsc,!A_n}$।
+~$n$-এর উপর প্রবল আরোহ ব্যবহার করে আমরা প্রমাণ করি যে
+$!A \in \Frm[L_0]$। আমাদের আরোহ-অনুমান হলো: শেষ সূচক $m < n$ এমন
+গঠন-অনুক্রমবিশিষ্ট প্রতিটি প্রতীকক্রম~$\Frm[L_0]$-এর অন্তর্গত।
+গঠন-অনুক্রমের সংজ্ঞা অনুসারে, হয় $!A_n$ পরমাণু, নয়তো এমন $j,k < n$
+অবশ্যই আছে যাতে নিচের কোনো একটি সত্য:
+\begin{enumerate}
+    \tagitem{prvNot}{$!A_n \ident \lnot !A_j$।}{}%
+    \tagitem{prvAnd}{$!A_n \ident (!A_j \land !A_k)$।}{}%
+    \tagitem{prvOr}{$!A_n \ident (!A_j \lor !A_k)$।}{}%
+    \tagitem{prvIf}{$!A_n \ident (!A_j \lif !A_k)$।}{}%
+    \tagitem{prvIff}{$!A_n \ident (!A_j \liff !A_k)$।}{}%
+\end{enumerate}
+এখন ক্ষেত্রভেদে যুক্তি দিই। $!A_n$ পরমাণু হলে
+$!A_n \in \Frm[L_0]$। অন্য দিকে, ধরি $!A_n \ident
+(!A_j \land !A_k)$। \olref[pl][syn][fseq]{lem:fseq-init} অনুসারে
+$\tuple{!A_0,\dotsc,!A_j}$ ও $\tuple{!A_0,\dotsc,!A_k}$ যথাক্রমে
+$!A_j$ ও~$!A_k$-এর গঠন-অনুক্রম। এগুলি~$!A$-এর গঠন-অনুক্রমের প্রকৃত
+প্রারম্ভিক উপ-অনুক্রম বলে উভয়ের শেষ সূচক~$n$-এর চেয়ে ছোট। তাই
+আরোহ-অনুমান থেকে $!A_j$ ও~$!A_k$ উভয়ই~$\Frm[L_0]$-এর অন্তর্গত;
+সুতরাং !!a{formula}-এর সংজ্ঞা অনুসারে
+$(!A_j \land !A_k)$-ও তাই। অন্য ক্ষেত্রগুলিও একই ধরনের যুক্তি থেকে আসে।
+% BN-SRC-020 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-020):} হিমায়িত ইংরেজি উৎসে এই ক্ষেত্রটির শুরুতে $!A \equiv (!A_j \land !A_k)$ আছে। কিন্তু সংজ্ঞা ও ঠিক আগের ক্ষেত্রতালিকা গঠন-অনুক্রমের শেষ পদ~$!A_n$ এবং সংকেতবিন্যাসগত অভিন্নতার সংকেত~$\ident$ ব্যবহার করে। বাংলা পাঠে তাই $!A_n \ident (!A_j \land !A_k)$ করা হয়েছে।} % BN-SRC-020 TARGET-CORRECTION-END
+\end{proof}
+
+\end{document}

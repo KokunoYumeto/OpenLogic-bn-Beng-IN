@@ -151,6 +151,22 @@ for row in rows:
         == collections.Counter({"\\equivrep{f}{}\\neq0_\\Real": 1})
         and "BN-SRC-014" in documented
     )
+    conditional_paren_fix = (
+        row["unit_id"] == "OLP-0058"
+        and source_math - target_math
+        == collections.Counter({"\\lnot!A\\lor!B)": 1})
+        and target_math - source_math
+        == collections.Counter({"(\\lnot!A\\lor!B)": 1})
+        and "BN-SRC-019" in documented
+    )
+    formation_identity_fix = (
+        row["unit_id"] == "OLP-0060"
+        and source_math - target_math
+        == collections.Counter({"!A\\equiv(!A_j\\land!A_k)": 1})
+        and target_math - source_math
+        == collections.Counter({"!A_n\\ident(!A_j\\land!A_k)": 1})
+        and "BN-SRC-020" in documented
+    )
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -199,6 +215,8 @@ for row in rows:
             cantor_scope_fix,
             rational_order_fix,
             real_zero_fix,
+            conditional_paren_fix,
+            formation_identity_fix,
             shared_audit_fix,
         )
     )

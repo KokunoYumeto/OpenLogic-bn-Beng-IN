@@ -1,0 +1,201 @@
+% Part: propositional-logic
+% Chapter: syntax-and-semantics
+% Section: valuations-sat
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{val}
+
+\olsection{\usetoken{P}{valuation} ও পরিতৃপ্তি}
+
+\begin{defn}[!!^{valuation}s]
+“সত্য” ও “মিথ্যা”—এই দুই সত্যমানের সেট হোক $\{\True, \False\}$।
+$\Lang{L_0}$-এর জন্য একটি \emph{!!{valuation}} হলো এমন একটি
+অপেক্ষক~$\pAssign{v}$, যা ভাষাটির !!{propositional variable}s-কে
+$\True$ অথবা $\False$ আরোপ করে; অর্থাৎ $\pAssign{v} \colon
+\PVar \to \{\True, \False \}$।
+\end{defn}
+
+\begin{defn}
+  কোনো !!a{valuation}~$\pAssign{v}$ দেওয়া থাকলে, মূল্যায়ন অপেক্ষক
+  $\pValue{v} \colon \Frm[L_0] \to \{\True, \False \}$-কে নিচের মতো
+  আরোহীভাবে সংজ্ঞায়িত করি:
+  \begin{align*}
+    \iftag{prvFalse}{\pValue{v}(\lfalse) & = \False; \\}{}
+    \iftag{prvTrue}{\pValue{v}(\ltrue) & = \True; \\}{}
+    \pValue{v}(\Obj p_n) & = \pAssign{v}(\Obj p_n); \\
+    \iftag{prvNot}{\pValue{v}(\lnot !A) & = \begin{cases}
+        \True & \text{যদি } \pValue{v}(!A) = \False;\\
+        \False & \text{অন্যথায়।}
+      \end{cases} \\ }{}
+    \iftag{prvAnd}{\pValue{v}(!A \land !B) & = \begin{cases}
+        \True &
+        \text{যদি $\pValue{v}(!A) = \True$ এবং $\pValue{v}(!B) = \True$;}\\
+        \False &
+        \text{যদি $\pValue{v}(!A) = \False$ অথবা $\pValue{v}(!B) = \False$}.
+      \end{cases}\\}{}
+    \iftag{prvOr}{\pValue{v}(!A \lor !B) & = \begin{cases}
+        \True &
+        \text{যদি $\pValue{v}(!A) = \True$ অথবা $\pValue{v}(!B) = \True$;}\\
+        \False &
+        \text{যদি $\pValue{v}(!A) = \False$ এবং $\pValue{v}(!B) = \False$}.
+      \end{cases}\\}{}
+    \iftag{prvIf}{\pValue{v}(!A \lif !B) & = \begin{cases}
+        \True &
+        \text{যদি $\pValue{v}(!A) = \False$ অথবা $\pValue{v}(!B) = \True$;}\\
+        \False &
+        \text{যদি $\pValue{v}(!A) = \True$ এবং $\pValue{v}(!B) = \False$}.
+      \end{cases}\\}{}
+    \iftag{prvIff}{\pValue{v}(!A \liff !B) & = \begin{cases}
+        \True &
+        \text{যদি $\pValue{v}(!A) = \pValue{v}(!B)$;}\\
+        \False &
+        \text{যদি $\pValue{v}(!A) \neq \pValue{v}(!B)$}.
+      \end{cases}}{}
+\end{align*}
+\end{defn}
+
+\begin{explain}
+বিধিগুলি নিচের সত্যসারণিগুলির সঙ্গে মেলে:
+\begin{center}
+\iftag{prvNot}{
+  \begin{tabular}{|c||c|} \hline
+    $!A$ & $ \lnot !A$ \\
+    \hline \hline
+    $\True$ & $\False$ \\
+    $\False$ & $\True$ \\
+    \hline
+  \end{tabular}
+}{}
+\iftag{prvAnd}{
+  \begin{tabular}{|cc||c|} \hline
+    $!A$ & $!B$ & $!A \land !B$ \\
+    \hline \hline
+    $\True$ & $\True$ & $\True$ \\
+    $\True$ & $\False$ & $\False$ \\
+    $\False$ & $\True$ & $\False$ \\
+    $\False$ & $\False$ & $\False$ \\
+    \hline
+  \end{tabular}
+}{}
+\iftag{prvOr}{
+  \begin{tabular}{|cc||c|} \hline
+    $!A$ & $!B$ & $!A \lor !B$ \\
+    \hline \hline
+    $\True$ & $\True$ & $\True$ \\
+    $\True$ & $\False$ & $\True$ \\
+    $\False$ & $\True$ & $\True$ \\
+    $\False$ & $\False$ & $\False$ \\
+    \hline
+  \end{tabular}
+}{}%
+\iftag{notprvNot,notprvAnd,notprvOr,notprvIf}{}{\\[1em]}
+\iftag{prvIf}{
+  \begin{tabular}{|cc||c|} \hline
+    $!A$ & $!B$ & $!A \lif !B$ \\
+    \hline \hline
+    $\True$ & $\True$ & $\True$ \\
+    $\True$ & $\False$ & $\False$ \\
+    $\False$ & $\True$ & $\True$ \\
+    $\False$ & $\False$ & $\True$ \\
+    \hline
+  \end{tabular}
+}{}
+\iftag{prvIff}{
+  \begin{tabular}{|cc||c|} \hline
+    $!A$ & $!B$ & $!A \liff !B$ \\
+    \hline \hline
+    $\True$ & $\True$ & $\True$ \\
+    $\True$ & $\False$ & $\False$ \\
+    $\False$ & $\True$ & $\False$ \\
+    $\False$ & $\False$ & $\True$ \\
+    \hline
+  \end{tabular}
+}{}
+\end{center}
+\end{explain}
+
+\begin{prob}
+$\Lang{L_0}$-এ একটি ত্রিস্থানী সংযোজক $\diamondsuit$ যোগ করার কথা ভাবো,
+যার মূল্যায়ন নিচে দেওয়া:
+\begin{gather*}
+  \pValue{v}(\diamondsuit( !A , !B , !C ) ) = \begin{cases}
+    \pValue{v}( !B ) &
+    \text{যদি $\pValue{v}(!A) = \True$;}\\
+    \pValue{v}( !C ) &
+    \text{যদি $\pValue{v}(!A) = \False $}.
+  \end{cases}
+\end{gather*}
+এই সংযোজকের সত্যসারণি লেখো।
+\end{prob}
+
+\begin{thm}[স্থানীয় নির্ধারণ]
+\ollabel{thm:LocalDetermination} ধরি $\pAssign{v_1}$ ও
+$\pAssign{v_2}$ এমন দুটি !!{valuation}s, যারা $!A$-তে উপস্থিত
+!!{propositional
+variable}s-গুলির উপর একই মান দেয়; অর্থাৎ যখনই
+$\Obj p_n$ !!{formula}~$!A$-টিতে উপস্থিত, তখন
+$\pAssign{v_1}(\Obj p_n) = \pAssign{v_2}(\Obj p_n)$। তাহলে
+$\pValue{v_1}$ ও $\pValue{v_2}$-ও~$!A$-এর উপর একই মান দেয়; অর্থাৎ
+$\pValue{v_1}(!A) = \pValue{v_2}(!A)$।
+\end{thm}
+
+\begin{proof}
+$!A$-এর উপর আরোহ প্রয়োগ করি।
+\end{proof}
+
+\begin{defn}[পরিতৃপ্তি]
+\ollabel{defn:satisfaction} কোনো
+  \emph{!!a{valuation}~$\pAssign{v}$ দ্বারা !!a{formula}~$!A$-এর
+  পরিতৃপ্তি}, $\pSat{v}{!A}$, ধারণাটি নিচের মতো আরোহীভাবে সংজ্ঞায়িত
+  করা যায়। (“$\pSat{v}{!A}$ নয়” বোঝাতে আমরা $\pSat/{v}{!A}$ লিখি।)
+\begin{enumerate}
+\tagitem{prvFalse}{%
+  \indcase{!A}{\lfalse}{$\pSat/{v}{\indfrm}$।}}{}
+
+\tagitem{prvTrue}{%
+  \indcase{!A}{\ltrue}{$\pSat{v}{\indfrm}$।}}{}
+
+\item \indcase{!A}{\Obj p_i}{$\pSat{v}{\indfrm}$ তখনই,
+  যখন $\pAssign{v}(\Obj p_i) = \True$।}
+
+\tagitem{prvNot}{%
+  \indcase{!A}{\lnot !B}{$\pSat{v}{\indfrm}$ তখনই, যখন
+    $\pSat/{v}{!B}$।}}{}
+
+\tagitem{prvAnd}{%
+  \indcase{!A}{(!B \land !C)}{$\pSat{v}{\indfrm}$ তখনই, যখন
+    $\pSat{v}{!B}$ এবং $\pSat{v}{!C}$।}}{}
+
+\tagitem{prvOr}{%
+  \indcase{!A}{(!B \lor !C)}{$\pSat{v}{\indfrm}$ তখনই, যখন
+    $\pSat{v}{!B}$ অথবা $\pSat{v}{!C}$ (অথবা উভয়ই)।}}{}
+
+\tagitem{prvIf}{%
+  \indcase{!A}{(!B \lif !C)}{$\pSat{v}{\indfrm}$ তখনই, যখন
+    $\pSat/{v}{!B}$ অথবা $\pSat{v}{!C}$ (অথবা উভয়ই)।}}{}
+
+\tagitem{prvIff}{%
+  \indcase{!A}{(!B \liff !C)}{$\pSat{v}{\indfrm}$ তখনই, যখন হয়
+    $\pSat{v}{!B}$ ও $\pSat{v}{!C}$ উভয়ই সত্য, নয়তো
+    $\pSat{v}{!B}$ ও $\pSat{v}{!C}$ কোনোটিই সত্য নয়।}}{}
+\end{enumerate}
+$\Gamma$ যদি !!{formula}s-এর একটি সেট হয়, তবে $\pSat{v}{\Gamma}$
+তখনই, যখন প্রতিটি~$!A \in \Gamma$-এর জন্য $\pSat{v}{!A}$।
+\end{defn}
+
+\begin{prop}\ollabel{prop:sat-value}
+  $\pSat{v}{!A}$ তখনই, যখন $\pValue{v}(!A) = \True$।
+\end{prop}
+
+\begin{proof}
+  $!A$-এর উপর আরোহ প্রয়োগ করি।
+\end{proof}
+
+\begin{prob}
+  \olref[pl][syn][val]{prop:sat-value} প্রমাণ করো।
+\end{prob}
+
+\end{document}

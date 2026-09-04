@@ -1,0 +1,173 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: unions-and-intersections
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{set}{uni}
+\olsection{সংযোগ ও ছেদ}
+
+\begin{explain}
+\olref[sfr][set][bas]{sec}-এ ধর্মনির্দেশের সাহায্যে সেটের সংজ্ঞা,
+অর্থাৎ $\Setabs{x}{\phi(x)}$ আকারের সংজ্ঞা প্রবর্তন করেছি। এখানে
+কোনও ধর্ম~$\phi$ ব্যবহার করা হয়; এই ধর্মে আগে সংজ্ঞায়িত সেটের উল্লেখ
+থাকতে পারে। যেমন, $A$ ও~$B$ সেট হলে,
+$\Setabs{x}{x \in A \lor x \in B}$ সেটটি সেই সমস্ত বস্তু নিয়ে গঠিত,
+যেগুলি $A$ অথবা~$B$-এর !!{element}s। অর্থাৎ, এই সেটে $A$ ও~$B$-এর
+!!{element}s একত্র করা হয়। \olref{fig:union}-এর মতো করে এটি
+দৃশ্যায়িত করা যায়: চিহ্নিত অঞ্চলটি $A$ ও~$B$, দুই সেটের
+!!{element}s-কে একত্রে নির্দেশ করে।
+
+\begin{figure}
+  \olasset{assets/diagrams/union.tikz}
+  \caption{দুই সেটের সংযোগ $A \cup B$ হল $A$ ও~$B$-এর
+    !!{element}s একত্র করে গঠিত সেট।}
+  \ollabel{fig:union}
+\end{figure}
+
+সেটগুলিকে একত্র করার এই ক্রিয়াটি খুবই উপযোগী ও প্রচলিত।
+তাই এর একটি নির্দিষ্ট নাম ও প্রতীক দেব।
+\end{explain}
+
+\begin{defn}[সংযোগ]
+দুটি সেট $A$ ও $B$-এর \emph{সংযোগ}, যাকে $A \cup B$ লেখা হয়,
+হল সেই সমস্ত বস্তুর সেট, যেগুলি $A$, $B$, অথবা উভয়ের !!{element}s।
+\[
+A \cup B = \Setabs{x}{x \in A \lor x \in B}
+\]
+\end{defn}
+
+\begin{ex}
+!!{element}s কত বার আছে, তা বিবেচ্য নয়। তাই দুটি সেটে সাধারণ
+!!a{element} থাকলে, তাদের সংযোগে সেই !!{element} এক বারই থাকে।
+যেমন, $\{ a, b, c\} \cup \{ a, 0, 1\} = \{a, b, c, 0, 1\}$।
+
+কোনও সেট এবং তার একটি উপসেটের সংযোগ হল বড় সেটটিই:
+$\{a, b, c \} \cup \{a \} = \{a, b, c\}$।
+
+কোনও সেটের সঙ্গে শূন্য সেটের সংযোগ সেই সেটেরই সমান:
+$\{a, b, c \} \cup \emptyset = \{a, b, c \}$।
+\end{ex}
+
+\begin{prob}
+প্রমাণ করো যে, $A \subseteq B$ হলে $A \cup B = B$।
+\end{prob}
+
+\begin{explain}
+সংযোগের একটি ``দ্বৈত'' ক্রিয়াও বিবেচনা করতে পারি। এতে সেই সমস্ত
+!!{element}sের সেট গঠিত হয়, যেগুলি $A$-এর !!{element}s এবং
+$B$-এরও !!{element}s। এই ক্রিয়ার নাম \emph{ছেদ};
+\olref{fig:intersection}-এর মতো করে এটি দেখানো যায়।
+\begin{figure}
+  \olasset{assets/diagrams/intersection.tikz}
+  \caption{দুই সেটের ছেদ $A \cap B$ হল তাদের সাধারণ
+    !!{element}sের সেট।}
+  \ollabel{fig:intersection}
+\end{figure}
+\end{explain}
+
+\begin{defn}[ছেদ]
+দুটি সেট $A$ ও $B$-এর \emph{ছেদ}, যাকে $A \cap B$ লেখা হয়,
+হল সেই সমস্ত বস্তুর সেট, যেগুলি $A$ ও~$B$, উভয়ের !!{element}s।
+\[
+A \cap B = \Setabs{x}{x \in A \land x \in B}
+\]
+দুটি সেটের ছেদ শূন্য হলে তাদের \emph{বিচ্ছিন্ন} বলে।
+এর অর্থ, তাদের কোনও সাধারণ !!{element}s নেই।
+\end{defn}
+
+\begin{ex}
+দুটি সেটে কোনও সাধারণ !!{element}s না থাকলে তাদের ছেদ শূন্য:
+$\{ a, b, c\} \cap \{ 0, 1\} = \emptyset$।
+
+দুটি সেটে সাধারণ !!{element}s থাকলে, সেই সব উপাদানের সেটই তাদের ছেদ:
+$\{a, b, c \} \cap \{a, b, d \} = \{a, b\}$।
+
+কোনও সেট এবং তার একটি উপসেটের ছেদ হল ছোট সেটটিই:
+$\{a, b, c\} \cap \{a, b\} = \{a, b\}$।
+
+যে-কোনও সেটের সঙ্গে শূন্য সেটের ছেদ শূন্য:
+$\{a, b, c \} \cap \emptyset = \emptyset$।
+\end{ex}
+
+\begin{prob}
+কঠোরভাবে প্রমাণ করো যে, $A \subseteq B$ হলে $A \cap B = A$।
+\end{prob}
+
+\begin{explain}
+দুটির বেশিসংখ্যক সেটেরও সংযোগ বা ছেদ গঠন করা যায়। সাধারণভাবে
+তা করার একটি সুন্দর উপায় হল: যে সেটগুলির সংযোগ বা ছেদ গঠন করতে
+চাই, সেগুলিকে একটি সেটে একত্র করি। তখন মূল সেটগুলির সংযোগকে
+সংজ্ঞায়িত করতে পারি সেই সমস্ত বস্তুর সেট হিসেবে, যেগুলি একত্র করা
+সেটটির অন্তত একটি !!{element}ের সদস্য। আর ছেদ হবে সেই সমস্ত
+বস্তুর সেট, যেগুলি ওই সেটটির প্রতিটি !!{element}ের সদস্য।
+\end{explain}
+
+\begin{defn}
+$A$ সেটের একটি সেট হলে, $\bigcup A$ হল $A$-এর
+!!{element}sের !!{element}sের সেট:
+\begin{align*}
+\bigcup A & = \Setabs{x}{x \text{ যে সেটের সদস্য, সেটি } A\text{-এর !!a{element}}},
+\text{ অর্থাৎ,}\\
+& = \Setabs{x}{\text{এমন একটি } B \in A
+  \text{ আছে যাতে } x \in B}
+\end{align*}
+\end{defn}
+
+\begin{defn}
+$A$ সেটের একটি সেট হলে, $\bigcap A$ হল সেই সমস্ত বস্তুর সেট,
+যেগুলি $A$-এর সমস্ত উপাদানের সাধারণ সদস্য:
+\begin{align*}
+\bigcap A & = \Setabs{x}{x \text{ সদস্য হয় } A\text{-এর প্রতিটি !!{element}ের}},
+\text{ অর্থাৎ,}\\
+ & = \Setabs{x}{\text{সমস্ত } B \in A\text{-এর জন্য}, x \in B}
+\end{align*}
+\end{defn}
+
+\begin{ex}
+ধরি, $A = \{ \{ a, b \}, \{ a, d, e \}, \{ a, d \} \}$।
+তাহলে $\bigcup A = \{ a, b, d, e \}$ এবং $\bigcap A = \{ a \}$।
+\end{ex}
+\begin{prob}
+	দেখাও যে, $A$ সেট হলে এবং $A \in B$ হলে $A \subseteq \bigcup B$।
+\end{prob}
+
+সেটের অনুক্রম $A_1$, $A_2$, \dots-এর ক্ষেত্রেও একই কাজ করতে পারি:
+\begin{align*}
+\bigcup_i A_i & = \Setabs{x}{x \text{ সদস্য হয় কোনও একটি } A_i\text{-এর}}\\
+\bigcap_i A_i & = \Setabs{x}{x \text{ সদস্য হয় প্রতিটি } A_i\text{-এর}}.
+\end{align*}
+
+সেটগুলির একটি \emph{সূচক} থাকলে, অর্থাৎ এমন কোনও সেট $I$ থাকলে,
+যার প্রতিটি $i \in I$-এর জন্য আমরা $A_i$ বিবেচনা করছি,
+নিচের সংক্ষিপ্ত প্রতীকগুলিও ব্যবহার করতে পারি:
+\begin{align*}
+	\bigcup_{i \in I} A_i & = \bigcup \Setabs{A_i }{i \in I}\\
+	\bigcap_{i \in I} A_i & = \bigcap\Setabs{A_i}{i \in I}
+\end{align*}
+
+শেষে, $A$-এর সেই সমস্ত !!{element}sের সেটও বিবেচনা করতে পারি,
+যেগুলি $B$-এ নেই। \olref{difference}-এর মতো করে এটি দেখানো যায়।
+
+\begin{figure}
+  \olasset{assets/diagrams/difference.tikz}
+  \caption{দুই সেটের অন্তর $A \setminus B$ হল $A$-এর সেই
+    !!{element}sের সেট, যেগুলি $B$-এরও !!{element}s নয়।}
+  \ollabel{difference}
+\end{figure}
+
+\begin{defn}[অন্তর]
+\emph{সেটের অন্তর}~$A \setminus B$ হল $A$-এর সেই সমস্ত
+!!{element}sের সেট, যেগুলি $B$-এরও !!{element}s নয়। অর্থাৎ,
+\[
+A\setminus B = \Setabs{x}{x\in A \text{ এবং } x \notin B}.
+\]
+\end{defn}
+
+\begin{prob}
+	প্রমাণ করো যে, $A \subsetneq B$ হলে $B \setminus A \neq \emptyset$।
+\end{prob}
+
+\end{document}

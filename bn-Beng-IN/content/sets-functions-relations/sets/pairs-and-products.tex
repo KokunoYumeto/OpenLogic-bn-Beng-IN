@@ -1,0 +1,127 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: pairs-and-products
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{set}{pai}
+\olsection{যুগল, টিউপল ও কার্তেসীয় গুণফল}
+
+\begin{explain}
+সদস্যভিত্তিক সমতার নীতি থেকে বোঝা যায় যে, সেটের উপাদানগুলির কোনও
+ক্রম নেই। তাই ক্রম প্রকাশ করতে চাইলে \emph{ক্রমযুগল} $\tuple{x, y}$
+ব্যবহার করি। ক্রমহীন যুগল $\{x, y\}$-এ ক্রম বিবেচ্য নয়:
+$\{x, y\} = \{y, x\}$। কিন্তু ক্রমযুগলে তা বিবেচ্য:
+$x \neq y$ হলে $\tuple{x, y} \neq \tuple{y, x}$।
+
+সেটতত্ত্বে ক্রমযুগলকে কীভাবে দেখব? মূল কথা হল, এই ধারণাটি অক্ষুণ্ণ
+রাখতে চাই যে, দুটি ক্রমযুগল অভিন্ন হবে যদি এবং কেবল যদি তাদের প্রথম
+উপাদান একই হয় এবং দ্বিতীয় উপাদানও একই হয়। অর্থাৎ:
+\[
+  \tuple{a, b}= \tuple{c, d}\text{ হবে যদি এবং কেবল যদি }a = c \text{ এবং }b=d.
+\]
+ভিনার--কুরাতোভস্কির সংজ্ঞার সাহায্যে সেটতত্ত্বে ক্রমযুগল সংজ্ঞায়িত করতে পারি।
+\end{explain}
+
+\begin{defn}[ক্রমযুগল]\ollabel{wienerkuratowski}
+	$\tuple{a, b} = \{\{a\}, \{a, b\}\}$।
+\end{defn}
+
+\begin{prob}
+	\olref[sfr][set][pai]{wienerkuratowski} ব্যবহার করে প্রমাণ করো যে,
+	$\tuple{a, b}= \tuple{c, d}$ হবে যদি এবং কেবল যদি $a = c$ এবং $b=d$, উভয়ই হয়।
+\end{prob}
+
+\begin{explain}
+ক্রমযুগলের সংজ্ঞা স্থির করার পরে তার সাহায্যে আরও সেট সংজ্ঞায়িত
+করতে পারি। যেমন, কখনও দুটির বেশি বস্তুর ক্রমিত অনুক্রম দরকার হয়:
+\emph{ত্রয়ী} $\tuple{x, y, z}$, \emph{চতুষ্টয়} $\tuple{x, y, z, u}$,
+ইত্যাদি। ত্রয়ীকে বিশেষ ধরনের ক্রমযুগল হিসেবে ভাবতে পারি, যার প্রথম
+উপাদান নিজেই ক্রমযুগল: $\tuple{x, y, z}$ হল $\tuple{\tuple{x, y},z}$।
+চতুষ্টয়ের ক্ষেত্রেও তাই: $\tuple{x,y,z,u}$ হল
+$\tuple{\tuple{\tuple{x,y},z},u}$; একইভাবে এগোনো যায়। সাধারণভাবে
+আমরা \emph{ক্রমিত $n$-টিউপল} $\tuple{x_1, \dots, x_n}$-এর কথা বলি।
+
+ক্রমযুগল কিংবা অন্য ক্রমিত $n$-টিউপলের কিছু সেট আমাদের কাজে লাগবে।
+\end{explain}
+
+\begin{defn}[কার্তেসীয় গুণফল]
+প্রদত্ত সেট $A$ ও $B$-এর \emph{কার্তেসীয় গুণফল} $A \times B$-এর
+সংজ্ঞা হল:
+\[
+  A \times B = \Setabs{\tuple{x, y}}{x \in A \text{ এবং } y \in B}.
+\]
+\end{defn}
+
+\begin{ex}
+$A = \{0, 1\}$ এবং $B = \{1, a, b\}$ হলে, তাদের গুণফল হল
+\[
+A \times B = \{ \tuple{0, 1}, \tuple{0, a}, \tuple{0, b},
+    \tuple{1, 1}, \tuple{1, a}, \tuple{1, b} \}.
+\]
+\end{ex}
+
+\begin{ex}
+$A$ সেট হলে, $A$-এর নিজের সঙ্গে গুণফল $A \times A$-কে $A^2$-ও
+লেখা হয়। এটি $x, y \in A$ এমন \emph{সমস্ত} যুগল $\tuple{x, y}$-এর
+সেট। সমস্ত ত্রয়ী $\tuple{x, y, z}$-এর সেট হল $A^3$, এবং এভাবেই
+চলতে থাকে। আমরা একটি পুনরাবৃত্তিমূলক সংজ্ঞা দিতে পারি:
+\begin{align*}
+  A^1 & = A\\
+  A^{k+1} & = A^k \times A
+\end{align*}
+\end{ex}
+
+\begin{prob}
+$\{1, 2, 3\}^3$-এর সমস্ত !!{element}sের তালিকা তৈরি করো।
+\end{prob}
+
+\begin{prop}\ollabel{cardnmprod}
+$A$-এর $n$টি !!{element}s এবং $B$-এর $m$টি !!{element}s থাকলে,
+$A \times B$-এর $n\cdot m$টি উপাদান থাকে।
+\end{prop}
+
+\begin{proof}
+$A$-এর প্রতিটি !!{element}~$x$-এর জন্য $\tuple{x, y} \in A \times B$
+আকারের $m$টি !!{element}s আছে। ধরি,
+$B_x = \Setabs{\tuple{x, y}}{y \in B}$। যখনই $x_1 \neq x_2$,
+তখনই $\tuple{x_1, y} \neq \tuple{x_2, y}$;
+তাই $B_{x_1} \cap B_{x_2} = \emptyset$। কিন্তু $A = \{x_1, \dots, x_n\}$
+হলে $A \times B = B_{x_1} \cup \dots \cup B_{x_n}$।
+কাজেই এতে $n\cdot m$টি !!{element}s আছে।
+
+এটি দৃশ্যায়িত করতে $A \times B$-এর !!{element}s-কে ছকের আকারে সাজাও:
+\[
+\begin{array}{rcccc}
+  B_{x_1} = & \{\tuple{x_1, y_1} & \tuple{x_1, y_2} & \dots & \tuple{x_1, y_m}\}\\
+  B_{x_2} = & \{\tuple{x_2, y_1} & \tuple{x_2, y_2} & \dots & \tuple{x_2, y_m}\}\\
+  \vdots & & \vdots\\
+  B_{x_n} = & \{\tuple{x_n, y_1} & \tuple{x_n, y_2} & \dots & \tuple{x_n, y_m}\}
+\end{array}
+\]
+$x_i$-গুলি সব আলাদা এবং $y_j$-গুলিও সব আলাদা। তাই এই ছকের
+কোনও দুটি যুগল এক নয়, আর মোট যুগলের সংখ্যা $n\cdot m$।
+\end{proof}
+
+\begin{prob}
+$k$-এর উপর আরোহ পদ্ধতি ব্যবহার করে দেখাও যে, সমস্ত $k \ge 1$-এর জন্য,
+$A$-এর $n$টি !!{element}s থাকলে $A^k$-এর $n^k$টি !!{element}s থাকে।
+\end{prob}
+
+\begin{ex}
+$A$ সেট হলে, $A$-এর !!{element}sের যে-কোনও অনুক্রমকে $A$-এর উপর
+একটি \emph{শব্দ} বলে। অনুক্রমকে $A$-এর !!{element}sের একটি
+$n$-টিউপল হিসেবে ভাবা যায়। যেমন, $A = \{a, b, c\}$ হলে ``$bac$''
+অনুক্রমটিকে ত্রয়ী~$\tuple{b, a, c}$ হিসেবে ভাবতে পারি। শব্দ, অর্থাৎ
+প্রতীকের অনুক্রম, কম্পিউটার বিজ্ঞানে অত্যন্ত গুরুত্বপূর্ণ। প্রচলিত রীতি
+অনুযায়ী $A$-এর !!{element}s-কে দৈর্ঘ্য~$1$-এর অনুক্রম এবং
+$\emptyset$-কে দৈর্ঘ্য~$0$-এর অনুক্রম হিসেবে গণ্য করি।
+তাহলে $A$-এর উপর \emph{সমস্ত} শব্দের সেট হল
+\[
+A^* = \{\emptyset\} \cup A \cup A^2 \cup A^3 \cup \dots
+\]
+\end{ex}
+
+\end{document}

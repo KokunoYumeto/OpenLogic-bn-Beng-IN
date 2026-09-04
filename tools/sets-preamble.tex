@@ -1,0 +1,77 @@
+\documentclass[11pt,a4paper,openany]{book}
+\usepackage[margin=20mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\newfontfamily\latinfont{Latin Modern Roman}
+\newfontfamily\bengalifont{NotoSerifBengali-Regular.ttf}[Path=../../fonts/,Script=Bengali,BoldFont=NotoSerifBengali-Bold.ttf,ItalicFont=NotoSerifBengali-Regular.ttf,BoldItalicFont=NotoSerifBengali-Bold.ttf,ItalicFeatures={FakeSlant=0.15},BoldItalicFeatures={FakeSlant=0.15}]
+\usepackage[Bengali,DevanagariDanDa,BasicLatin,GeneralPunctuation]{ucharclasses}
+\setTransitionsFor{Bengali}{\bengalifont}{\latinfont}
+\setTransitionsFor{DevanagariDanDa}{\bengalifont}{\latinfont}
+\usepackage{amsmath,amssymb,amsthm,nicefrac,tikz,xparse}
+\usepackage[unicode,colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={ওপেন লজিক: সেট},pdfauthor={Open Logic Project; automated Bengali translation},pdfsubject={bn-Beng-IN; Sets chapter; full edition in progress}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\linespread{1.2}
+\setlength{\emergencystretch}{3em}
+\renewcommand{\chaptername}{অধ্যায়}
+\renewcommand{\contentsname}{সূচিপত্র}
+\renewcommand{\figurename}{চিত্র}
+\renewcommand{\proofname}{প্রমাণ}
+\newtheorem{thm}{উপপাদ্য}[section]
+\newtheorem{prop}[thm]{প্রতিজ্ঞা}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{সংজ্ঞা}
+\newtheorem{ex}[thm]{উদাহরণ}
+\newtheorem{prob}{অনুশীলনী}[chapter]
+\newenvironment{explain}{}{}
+\newenvironment{digress}{}{}
+\newenvironment{editorial}{\begin{quote}\small\textbf{উৎসের সম্পাদকীয় নোট: }}{\end{quote}}
+\newenvironment{tagblock}[1]{}{}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Int}{\mathbb{Z}}
+\newcommand{\Rat}{\mathbb{Q}}
+\newcommand{\Real}{\mathbb{R}}
+\newcommand{\PosInt}{\mathbb{Z}^{+}}
+\newcommand{\Bin}{\mathbb{B}}
+\newcommand{\Setabs}[2]{\{#1:#2\}}
+\newcommand{\Pow}[1]{\wp(#1)}
+\newcommand{\tuple}[1]{\langle#1\rangle}
+\newcommand{\len}[1]{\operatorname{len}(#1)}
+\newcommand{\lif}{\rightarrow}
+\newcommand{\olfileid}[3]{\gdef\olpart{#1}\gdef\olchap{#2}\gdef\olsec{#3}}
+\newcommand{\olsection}[1]{\section{#1}\label{\olpart:\olchap:\olsec:sec}}
+\newcommand{\ollabel}[1]{\label{\olpart:\olchap:\olsec:#1}}
+\NewDocumentCommand\olref{O{\olpart} O{\olchap} O{\olsec} m}{\ref{#1:#2:#3:#4}}
+\makeatletter
+\newcommand{\oliflabeldef}[3]{\ifcsname r@#1\endcsname#2\else#3\fi}
+\makeatother
+\definecolor{oldiagcolorA}{RGB}{100,125,155}
+\definecolor{oldiagcolorB}{RGB}{30,75,105}
+\definecolor{oldiagcolorC}{RGB}{155,75,45}
+\newcommand{\olasset}[1]{\centering\input{../../upstream/#1}}
+\begin{document}
+\begin{titlepage}
+\vspace*{18mm}
+{\Huge\bfseries ওপেন লজিক\par}
+\vspace{7mm}
+{\LARGE সেট\par}
+\vspace{5mm}
+{\large বাংলা · ভারত\par}
+\vfill
+এই অধ্যায়টি ওপেন লজিকের পূর্ণাঙ্গ বাংলা সংস্করণ তৈরির চলমান কাজের অংশ।
+এটি যন্ত্রের সাহায্যে অনূদিত। উৎসের সঙ্গে অর্থ ও প্রতীকের তুলনা করা হয়েছে;
+স্বাধীন মানব-সম্পাদনার দাবি করা হচ্ছে না।
+\par
+মূল রচনা: Open Logic Project। মূল উৎস ও এই অনুবাদ Creative Commons
+Attribution 4.0 International লাইসেন্সে প্রকাশিত।
+\par
+\url{https://openlogicproject.org/}
+\par
+\url{https://github.com/KokunoYumeto/OpenLogic-translations}
+\par
+উৎস সংস্করণ: \texttt{9620cc73f9c8e0ad003c514a5d3748f29611c4c0}।
+এই অংশে উৎসের OLP-0004 থেকে OLP-0010 এবং OLP-0721 অন্তর্ভুক্ত।
+\end{titlepage}
+\tableofcontents
+\chapter{সেট}

@@ -201,6 +201,106 @@ for row in rows:
         is not None
         and "BN-SRC-024" in documented
     )
+    sequent_exchange_side_fix = (
+        row["unit_id"] == "OLP-0075"
+        and source.count("\\RightLabel{\\RightR{\\Exchange}}") == 6
+        and checked_target.count("\\RightLabel{\\RightR{\\Exchange}}") == 2
+        and source.count("\\RightLabel{\\LeftR{\\Exchange}}") == 6
+        and checked_target.count("\\RightLabel{\\LeftR{\\Exchange}}") == 10
+        and "BN-SRC-025" in documented
+    )
+    de_morgan_prose_fix = (
+        row["unit_id"] == "OLP-0075"
+        and source_math - target_math
+        == collections.Counter(
+            {
+                "!A,\\lnot!A\\lor!B\\Sequent\\quad": 1,
+                "!B,\\lnot!A\\lor!B\\Sequent\\quad": 1,
+            }
+        )
+        and target_math - source_math
+        == collections.Counter(
+            {
+                "!A,\\lnot!A\\lor\\lnot!B\\Sequent\\quad": 1,
+                "!B,\\lnot!A\\lor\\lnot!B\\Sequent\\quad": 1,
+            }
+        )
+        and "BN-SRC-026" in documented
+    )
+    sequent_editorial_scope_fix = (
+        row["unit_id"] == "OLP-0077"
+        and source.count(
+            "This section collects the definitions of the provability relation and\n"
+            "  consistency for natural deduction."
+        )
+        == 1
+        and re.search(
+            r"এই অংশে সিকোয়েন্ট কলনের প্রমাণযোগ্যতা-সম্পর্ক ও সঙ্গতির সংজ্ঞাগুলি\s+একত্র করা হয়েছে",
+            checked_target,
+        )
+        is not None
+        and "BN-SRC-027" in documented
+    )
+    conjunction_context_fix = (
+        row["unit_id"] == "OLP-0079"
+        and not (source_math - target_math)
+        and target_math - source_math
+        == collections.Counter(
+            {
+                "!A,!B\\fCenter!A": 1,
+                "!A,!B\\fCenter!B": 1,
+            }
+        )
+        and source.count("\\doubleLine") == 2
+        and checked_target.count("\\doubleLine") == 4
+        and "BN-SRC-028" in documented
+    )
+    soundness_formula_fixes = (
+        row["unit_id"] == "OLP-0081"
+        and source_math - target_math
+        == collections.Counter(
+            {
+                "\\Gamma\\Sequent\\Delta": 1,
+                "\\Pi\\setminus\\Lambda": 1,
+            }
+        )
+        and target_math - source_math
+        == collections.Counter(
+            {
+                "!A\\land!B,\\Gamma\\Sequent\\Delta": 1,
+                "\\Pi\\Sequent\\Lambda": 1,
+            }
+        )
+        and "BN-SRC-029" in documented
+        and "BN-SRC-030" in documented
+    )
+    weakening_branch_scope_fix = (
+        row["unit_id"] == "OLP-0081"
+        and source.count(
+            "then $!C \\in \\Theta$ as well since $\\Theta = !A, \\Gamma$, and so"
+        )
+        == 1
+        and re.search(
+            r"বাঁ দুর্বলীকরণের ক্ষেত্রে\s+\$\\Theta = !A, \\Gamma\$; ডান\s+দুর্বলীকরণের ক্ষেত্রেও \$!C \\in \\Theta\$",
+            checked_target,
+        )
+        is not None
+        and "BN-SRC-031" in documented
+    )
+    identity_reverse_case_fix = (
+        row["unit_id"] == "OLP-0083"
+        and source.count("Suppose the last inference in !!a{derivation} is $=$.") == 1
+        and source.count(
+            "the premise\nis $\\eq[t_1][t_2], \\Gamma \\Sequent \\Delta, !A(t_1)$ and the conclusion"
+        )
+        == 1
+        and re.search(
+            r"অভিন্নতার দ্বিতীয় বিধির ক্ষেত্রটি পদদুটির ভূমিকা অদলবদল করে একইভাবে\s+প্রমাণিত হয়",
+            checked_target,
+        )
+        is not None
+        and "BN-SRC-032" in documented
+    )
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -223,6 +323,46 @@ for row in rows:
             "target_true_conjunction_rule_labels": 2,
             "documented_prose_correction": "BN-SRC-024",
             "all_displayed_assumptions_required_in_gamma": True,
+        }
+    elif row["unit_id"] == "OLP-0075":
+        assert sequent_exchange_side_fix and de_morgan_prose_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-025",
+            "source_right_exchange_labels": 6,
+            "target_right_exchange_labels": 2,
+            "source_left_exchange_labels": 6,
+            "target_left_exchange_labels": 10,
+            "documented_math_correction": "BN-SRC-026",
+            "restored_negated_second_disjuncts": 2,
+        }
+    elif row["unit_id"] == "OLP-0077":
+        assert sequent_editorial_scope_fix
+        tex_command_check = {
+            "documented_prose_correction": "BN-SRC-027",
+            "source_misidentified_system": "natural deduction",
+            "target_contextual_system": "sequent calculus",
+        }
+    elif row["unit_id"] == "OLP-0079":
+        assert conjunction_context_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-028",
+            "added_shared_context_premises": 2,
+            "source_double_inference_lines": 2,
+            "target_double_inference_lines": 4,
+        }
+    elif row["unit_id"] == "OLP-0081":
+        assert soundness_formula_fixes and weakening_branch_scope_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-029", "BN-SRC-030", "BN-SRC-031"],
+            "restored_left_conjunction_conclusion": "!A\\land!B,\\Gamma\\Sequent\\Delta",
+            "restored_cut_right_residual_sequent": "\\Pi\\Sequent\\Lambda",
+            "weakening_antecedent_equality_restricted_to_left_branch": True,
+        }
+    elif row["unit_id"] == "OLP-0083":
+        assert identity_reverse_case_fix
+        tex_command_check = {
+            "documented_prose_correction": "BN-SRC-032",
+            "reverse_identity_rule_case_supplied": True,
         }
     audited_source = source
     shared_description = None
@@ -264,6 +404,9 @@ for row in rows:
             formation_identity_fix,
             sequent_index_fix,
             tableau_false_and_fix,
+            de_morgan_prose_fix,
+            conjunction_context_fix,
+            soundness_formula_fixes,
             shared_audit_fix,
         )
     )

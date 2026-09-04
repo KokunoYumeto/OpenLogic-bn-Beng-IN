@@ -1,0 +1,77 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: equality
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{seq}{ide}
+
+\olsection{\usetoken{S}{identity}-সহ \usetoken{P}{derivation}}
+
+!!{identity}-সহ !!^{derivation}s-এর জন্য অতিরিক্ত প্রারম্ভিক সিকোয়েন্ট
+ও অনুমানবিধি দরকার।
+
+\begin{defn}[$\eq$-এর প্রারম্ভিক সিকোয়েন্ট]
+$t$ একটি বদ্ধ পদ হলে ${} \Sequent \eq[t][t]$ একটি প্রারম্ভিক সিকোয়েন্ট।
+\end{defn}
+
+$\eq$-এর বিধিগুলি নিচে দেওয়া হলো ($t_1$ ও $t_2$ বদ্ধ পদ):
+
+\begin{defish}
+\Axiom$ \eq[t_1][t_2], \Gamma \fCenter \Delta, !A(t_1) $
+\RightLabel{$\eq$}
+\UnaryInf$\eq[t_1][t_2], \Gamma \fCenter \Delta, !A(t_2)$
+\DisplayProof
+\hfill
+\Axiom$\eq[t_1][t_2], \Gamma \fCenter \Delta, !A(t_2) $
+\RightLabel{$\eq$}
+\UnaryInf$\eq[t_1][t_2], \Gamma  \fCenter \Delta, !A(t_1)$
+\DisplayProof
+\end{defish}
+
+\begin{ex}
+$s$ ও $t$ বদ্ধ পদ হলে $\eq[s][t], !A(s)
+\Proves !A(t)$:
+\begin{prooftree}
+\Axiom$ !A(s) \fCenter !A(s)$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$\eq[s][t], !A(s)  \fCenter !A(s)$
+\RightLabel{$\eq$}
+\UnaryInf$\eq[s][t], !A(s)  \fCenter !A(t)$
+\end{prooftree}
+এটি অভিন্ন বস্তুর প্রতিস্থাপনযোগ্যতার নীতি বা লাইবনিজের সূত্র নামে
+পরিচিত হতে পারে।
+
+$\Log{LK}$ প্রমাণ করে যে $\eq$ প্রতিসম ও পরিযায়ী:
+\begin{prooftree}
+\Axiom$ \fCenter \eq[t_1][t_1] $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ \eq[t_1][t_2] \fCenter \eq[t_1][t_1] $
+\RightLabel{$\eq$}
+\UnaryInf$ \eq[t_1][t_2] \fCenter \eq[t_2][t_1]$
+\DisplayProof\qquad\bottomAlignProof
+\Axiom$ \eq[t_1][t_2] \fCenter \eq[t_1][t_2] $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$\eq[t_2][t_3], \eq[t_1][t_2]  \fCenter \eq[t_1][t_2] $
+\RightLabel{$\eq$}
+\UnaryInf$\eq[t_2][t_3], \eq[t_1][t_2]  \fCenter \eq[t_1][t_3]$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$\eq[t_1][t_2], \eq[t_2][t_3]  \fCenter \eq[t_1][t_3]$
+\end{prooftree}
+বাঁ দিকের !!{derivation}-এ !!{formula}~$\eq[x][t_1]$ হলো আমাদের
+$!A(x)$। ডান দিকে আমরা $!A(x)$ হিসেবে~$\eq[t_1][x]$ নিই।
+\end{ex}
+
+\begin{prob}
+নিচের সিকোয়েন্টগুলির !!{derivation}s দাও:
+\begin{enumerate}
+\item $\Sequent \lforall[x][\lforall[y][((x = y \land !A(x)) \lif !A(y))]]$
+\item $\lexists[x][!A(x)] \land \lforall[y][\lforall[z][((!A(y) \land
+    !A(z)) \lif y = z)]] \Sequent
+\lexists[x][(!A(x) \land \lforall[y][(!A(y) \lif y = x)])]$
+\end{enumerate}
+\end{prob}
+
+\end{document}

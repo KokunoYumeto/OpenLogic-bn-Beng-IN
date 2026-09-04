@@ -1,0 +1,58 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: provability-quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{seq}{qpr}
+\olsection{\usetoken{S}{derivability} ও পরিমাণসূচক}
+
+\begin{explain}
+  পূর্ণতা উপপাদ্যের জন্য আরও দরকার যে সিকোয়েন্ট কলনের বিধিগুলি
+  এই অংশে প্রতিষ্ঠিত~$\Proves$-সংক্রান্ত তথ্যগুলি দেয়।
+\end{explain}
+
+\begin{thm}
+\ollabel{thm:strong-generalization} $c$ যদি এমন একটি ধ্রুবক হয় যা
+$\Gamma$ বা $!A(x)$-এ নেই এবং $\Gamma \Proves !A(c)$ হয়, তবে
+$\Gamma \Proves \lforall[x][!A(x)]$।
+\end{thm}
+
+\begin{proof}
+কোনো সসীম $\Gamma_0 \subseteq \Gamma$-র জন্য $\Gamma_0 \Sequent !A(c)$-এর
+একটি $\Log{LK}$-!!{derivation}-কে~$\pi_0$ ধরি। একটি
+$\RightR{\lforall}$ অনুমান যোগ করে $\Gamma_0 \Sequent
+\lforall[x][!A(x)]$-এর কোনো !!a{derivation} পাই, কারণ $c$ ধ্রুবকটি
+$\Gamma$ বা $!A(x)$-এ নেই এবং তাই আইগেনচল-শর্ত পূরণ হয়েছে।
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:provability-quantifiers}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$!A(t) \Proves \lexists[x][!A(x)]$।}{}
+\tagitem{prvAll}{$\lforall[x][!A(x)] \Proves !A(t)$।}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$!A(t) \Sequent \lexists[x][!A(x)]$ সিকোয়েন্টটি
+  !!{derivable}:
+  \begin{prooftree}
+    \Axiom$!A(t) \fCenter !A(t)$
+    \RightLabel{\RightR{\lexists}}
+    \UnaryInf$!A(t) \fCenter \lexists[x][!A(x)]$
+    \end{prooftree}}{}
+\tagitem{prvAll}{$\lforall[x][!A(x)] \Sequent !A(t)$ সিকোয়েন্টটি
+  !!{derivable}:
+  \begin{prooftree}
+    \Axiom$!A(t) \fCenter !A(t)$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[x][!A(x)] \fCenter !A(t)$
+    \end{prooftree}}{}
+\end{tagenumerate}
+\end{proof}
+
+\end{document}

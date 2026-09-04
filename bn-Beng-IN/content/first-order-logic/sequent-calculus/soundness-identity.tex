@@ -1,0 +1,49 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: soundness-identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{seq}{sid}
+
+\olsection{\usetoken{S}{identity}-সহ বিশুদ্ধতা}
+
+\begin{prop}
+অভিন্নতার প্রারম্ভিক সিকোয়েন্ট ও বিধিসহ $\Log{LK}$ বিশুদ্ধ।
+\end{prop}
+
+\begin{proof}
+${} \Sequent \eq[t][t]$ আকারের প্রারম্ভিক সিকোয়েন্টগুলি বৈধ, কারণ
+প্রত্যেক !!{structure}~$\Struct M$-এর জন্য $\Sat{M}{\eq[t][t]}$। (লক্ষ
+করো, পদ~$t$-কে আমরা বদ্ধ ধরে নিচ্ছি, অর্থাৎ এতে কোনো চলরাশি নেই; তাই
+চলরাশি-আরোপ প্রাসঙ্গিক নয়।)
+
+ধরা যাক, কোনো !!a{derivation}-এর শেষ অনুমানটি $=$। তাহলে পূর্বধারণা
+$\eq[t_1][t_2], \Gamma \Sequent \Delta, !A(t_1)$ এবং সিদ্ধান্ত
+$\eq[t_1][t_2], \Gamma \Sequent \Delta, !A(t_2)$। কোনো
+!!a{structure}~$\Struct M$ বিবেচনা করি। দেখাতে হবে যে সিদ্ধান্তটি
+বৈধ, অর্থাৎ $\Sat{M}{\eq[t_1][t_2]}$ ও $\Sat{M}{\Gamma}$ হলে হয়
+কোনো $!C \in \Delta$-এর জন্য $\Sat{M}{!C}$, নয়তো $\Sat{M}{!A(t_2)}$।
+
+আরোহের অনুমান অনুসারে পূর্বধারণাটি বৈধ। এর অর্থ,
+$\Sat{M}{\eq[t_1][t_2]}$ ও $\Sat{M}{\Gamma}$ হলে হয় (a) কোনো $!C
+\in \Delta$-এর জন্য $\Sat{M}{!C}$, অথবা (b) $\Sat{M}{!A(t_1)}$।
+(a) ক্ষেত্রে কাজ শেষ। (b) ক্ষেত্রটি বিবেচনা করি। এমন একটি চলরাশি-আরোপ
+$s$ নিই যেন $s(x) = \Value{t_1}{M}$।
+\olref[syn][ass]{prop:sentence-sat-true} অনুসারে
+$\Sat{M}{!A(t_1)}[s]$। যেহেতু $\varAssign{s}{s}{x}$, তাই
+\olref[syn][ext]{prop:ext-formulas} অনুসারে $\Sat{M}{!A(x)}[s]$। আবার
+$\Sat{M}{\eq[t_1][t_2]}$ বলে $\Value{t_1}{M} = \Value{t_2}{M}$, এবং
+তাই $s(x) = \Value{t_2}{M}$। পুনরায়
+\olref[syn][ext]{prop:ext-formulas} প্রয়োগ করে
+$\Sat{M}{!A(t_2)}[s]$-ও পাই। শেষে
+\olref[syn][ass]{prop:sentence-sat-true} অনুসারে $\Sat{M}{!A(t_2)}$।
+অভিন্নতার দ্বিতীয় বিধির ক্ষেত্রটি পদদুটির ভূমিকা অদলবদল করে একইভাবে
+প্রমাণিত হয়।
+% BN-SRC-032 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-032):} আগের অংশে অভিন্নতার দুটি অনুমানবিধি দেওয়া হলেও হিমায়িত ইংরেজি বিশুদ্ধতা-প্রমাণটি শুধু প্রথম অভিমুখটি যাচাই করে শেষ হয়েছে। বাংলা প্রমাণে দ্বিতীয় অভিমুখটির সমমিত যুক্তি স্পষ্ট করে একটি বাক্য যোগ করা হয়েছে; কোনো বিধি বা সূত্র বদলানো হয়নি।} % BN-SRC-032 TARGET-CORRECTION-END
+\end{proof}
+
+\end{document}

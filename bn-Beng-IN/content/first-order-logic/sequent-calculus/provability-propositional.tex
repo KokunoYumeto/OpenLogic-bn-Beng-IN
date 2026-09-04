@@ -1,0 +1,144 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: provability-propositional
+
+% verification of properties of provability needed for maximally
+% consistent sets in the completeness chapter.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{ppr}}
+      {\olfileid{pl}{seq}{ppr}}
+
+\olsection{\usetoken{S}{derivability} ও বচনসংযোজক}
+
+\begin{explain}
+  আমরা দেখাব, সিকোয়েন্ট কলনের !!{derivability} সম্পর্ক~$\Proves$
+  বচনসংযোজক-সংক্রান্ত কয়েকটি মৌলিক তথ্য প্রতিষ্ঠার পক্ষে যথেষ্ট শক্তিশালী;
+  যেমন $!A \land !B \Proves !A$ এবং $!A, !A \lif !B \Proves !B$
+  (মোডাস পোনেন্স)। পূর্ণতা উপপাদ্যের প্রমাণে এই তথ্যগুলি লাগবে।
+\end{explain}
+
+\begin{prop}\ollabel{prop:provability-land}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-land-left} $!A \land !B \Proves !A$
+    এবং $!A \land !B \Proves !B$—উভয়ই সত্য।
+  \item \ollabel{prop:provability-land-right} $!A, !B \Proves !A \land
+    !B$।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item $!A \land !B \Sequent !A$ এবং $!A \land !B \Sequent !B$—দুটি
+    সিকোয়েন্টই !!{derivable}:
+    \begin{prooftree}
+      \Axiom$!A \fCenter !A$
+      \RightLabel{\LeftR{\land}}
+      \UnaryInf$!A \land !B \fCenter !A$
+      \DisplayProof\qquad\bottomAlignProof
+      \Axiom$!B \fCenter !B$
+      \RightLabel{\LeftR{\land}}
+      \UnaryInf$!A \land !B \fCenter !B$
+    \end{prooftree}
+    \item $!A, !B \Sequent !A \land !B$ সিকোয়েন্টটির একটি
+    !!a{derivation} হলো:
+    \begin{prooftree}
+      \Axiom$!A \fCenter !A$
+      \doubleLine
+      \UnaryInf$!A, !B \fCenter !A$
+      \Axiom$!B \fCenter !B$
+      \doubleLine
+      \UnaryInf$!A, !B \fCenter !B$
+      \RightLabel{\RightR{\land}}
+      \BinaryInf$!A, !B \fCenter !A \land !B$
+    \end{prooftree}
+    % BN-SRC-028 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-028):} হিমায়িত ইংরেজি বৃক্ষে $!A \fCenter !A$ ও $!B \fCenter !B$ প্রারম্ভিক সিকোয়েন্টদুটি থেকে সরাসরি $\RightR{\land}$ প্রয়োগ করে $!A,!B \fCenter !A\land !B$ লেখা হয়েছে; কিন্তু এই বিধির দুই পূর্বধারণায় একই পূর্বাংশ চাই। বাংলা বৃক্ষে দ্বিগুণ রেখায় সংক্ষিপ্ত গঠনগত ধাপ যোগ করে উভয় পূর্বধারণাকে $!A,!B$ করা হয়েছে।} % BN-SRC-028 TARGET-CORRECTION-END
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-lor}
+  \begin{enumerate}
+  \item $!A \lor !B, \lnot !A, \lnot !B$ অসঙ্গত।
+  \item $!A \Proves !A \lor !B$ এবং $!B \Proves !A \lor !B$—উভয়ই সত্য।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item $!A \lor !B, \lnot !A, \lnot !B \Sequent$ সিকোয়েন্টটির
+    একটি !!a{derivation} দিই:
+    \begin{prooftree}
+      \Axiom$!A \fCenter !A$
+      \RightLabel{\LeftR{\lnot}}
+      \UnaryInf$\lnot !A, !A \fCenter$
+      \doubleLine
+      \UnaryInf$!A, \lnot !A, \lnot !B \fCenter$
+      \Axiom$!B \fCenter !B$
+      \RightLabel{\LeftR{\lnot}}
+      \UnaryInf$\lnot !B, !B \fCenter$
+      \doubleLine
+      \UnaryInf$!B, \lnot !A, \lnot !B \fCenter$
+      \RightLabel{\LeftR{\lor}}
+      \BinaryInf$ !A \lor !B, \lnot !A, \lnot !B \fCenter $
+    \end{prooftree}
+    (মনে করো, দ্বিগুণ অনুমান-রেখা দিয়ে কয়েকটি দুর্বলীকরণ, সংকোচন ও
+    অদলবদল অনুমান বোঝানো হয়।)
+  \item $!A \Sequent !A \lor !B$ এবং $!B \Sequent !A \lor !B$—দুটি
+    সিকোয়েন্টেরই !!{derivation}s আছে:
+    \begin{prooftree}
+      \Axiom$!A \fCenter !A$
+      \RightLabel{\RightR{\lor}}
+      \UnaryInf$!A \fCenter !A \lor !B$
+      \DisplayProof\qquad\bottomAlignProof
+      \Axiom$!B \fCenter !B$
+      \RightLabel{\RightR{\lor}}
+      \UnaryInf$!B \fCenter !A \lor !B$
+    \end{prooftree}
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-lif}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-lif-left} $!A, !A \lif !B \Proves !B$।
+  \item \ollabel{prop:provability-lif-right}
+    $\lnot !A \Proves !A \lif !B$ এবং $!B \Proves !A \lif !B$—উভয়ই সত্য।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item $!A \lif !B, !A \Sequent !B$ সিকোয়েন্টটি !!{derivable}:
+      \begin{prooftree}
+        \Axiom$!A \fCenter !A$
+        \Axiom$!B \fCenter !B$
+        \RightLabel{\LeftR{\lif}}
+        \BinaryInf$!A \lif !B, !A  \fCenter !B$
+      \end{prooftree}
+    \item $\lnot !A \Sequent !A \lif !B$ এবং $!B
+      \Sequent !A \lif !B$—দুটি সিকোয়েন্টই !!{derivable}:
+      \begin{prooftree}
+        \Axiom$!A \fCenter !A$
+        \RightLabel{\LeftR{\lnot}}
+        \UnaryInf$\lnot !A, !A \fCenter$
+        \RightLabel{\LeftR{\Exchange}}
+        \UnaryInf$!A, \lnot !A \fCenter$
+        \RightLabel{\RightR{\Weakening}}
+        \UnaryInf$!A, \lnot !A \fCenter !B$
+        \RightLabel{\RightR{\lif}}
+        \UnaryInf$\lnot !A \fCenter !A \lif !B$
+        \DisplayProof\qquad\bottomAlignProof
+        \Axiom$!B \fCenter !B$
+        \RightLabel{\LeftR{\Weakening}}
+        \UnaryInf$!A, !B \fCenter !B$
+        \RightLabel{\RightR{\lif}}
+        \UnaryInf$!B \fCenter !A \lif !B$
+      \end{prooftree}
+  \end{enumerate}
+\end{proof}
+
+\end{document}

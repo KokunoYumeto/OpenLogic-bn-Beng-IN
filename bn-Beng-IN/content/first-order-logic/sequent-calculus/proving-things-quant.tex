@@ -1,0 +1,104 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: proving-things-quant
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{seq}{prq}
+
+\olsection{পরিমাণসূচকসহ \usetoken{P}{derivation}}
+
+\begin{ex}
+$\lexists[x][\lnot !A(x)] \Sequent \lnot \lforall[x][!A(x)]$
+সিকোয়েন্টটির একটি $\Log{LK}$-!!{derivation} দাও।
+
+পরিমাণসূচক নিয়ে কাজ করার সময় আইগেনচল-শর্ত যেন লঙ্ঘিত না হয় তা
+নিশ্চিত করতে হবে; কখনো তার জন্য কয়েকটি অনুমান প্রয়োগের ক্রম নিয়ে
+পরীক্ষা করতে হয়। সাধারণভাবে আইগেনচল-শর্তাধীন বিধিগুলির কাজ আগে সেরে
+ফেলা সুবিধাজনক (সম্পূর্ণ প্রমাণে সেগুলি নিচের দিকে থাকবে)। সম্ভাব্য
+প্রারম্ভিক সিকোয়েন্টটি কেমন হবে তা আগেই আন্দাজ করার চেষ্টাও ভালো।
+আমাদের ক্ষেত্রে সেটি $!A(a) \Sequent !A(a)$-এর মতো হতে হবে। অর্থাৎ,
+পরিমাণসূচকের বিধিগুলি “উল্টো দিকে” প্রয়োগ করার সময় $\lforall$ ও
+$\lexists$—দুই বিধির জন্যই একই পদ বেছে নিতে হবে; পদটিকে আমরা~$a$ বলব।
+দুই বিধির জন্য আলাদা পদ নিলে শেষে $!A(a) \Sequent !A(b)$-এর মতো কিছু
+পাওয়া যেত, যা অবশ্যই নিষ্পাদনযোগ্য নয়।
+
+আগের মতো শুরু করে লিখি
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lexists[x][\lnot !A(x)] \fCenter \lnot \lforall[x][!A(x)]$
+\end{prooftree}
+এখানে \LeftR{\exists} বা \RightR{\lnot} বিধি প্রয়োগ করা যায়।
+\LeftR{\exists} আইগেনচল-শর্তাধীন বলে সেটির কাজ পরে না রেখে আগে সেরে
+ফেলা ভালো; তাই সেটিই প্রথমে করি।
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ \lnot !A(a) \fCenter \lnot \lforall[x][!A(x)]$
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$ \lexists[x][\lnot !A(x)] \fCenter \lnot \lforall[x][!A(x)]$
+\end{prooftree}
+\LeftR{\lnot} ও \RightR{\lnot} বিধি উল্টো দিকে প্রয়োগ করলে পাই
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lforall[x][!A(x)] \fCenter !A(a)$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !A(a), \lforall[x][!A(x)] \fCenter $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$\lforall[x][!A(x)], \lnot !A(a) \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$ \lnot !A(a) \fCenter \lnot \lforall[x] !A(x)$
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$ \lexists[x] \lnot !A(x) \fCenter \lnot \lforall[x] !A(x)$
+\end{prooftree}
+এখন একমাত্র উপায় হলো \LeftR{\forall} বিধি প্রয়োগ করা। এই বিধি
+আইগেনচলের বিধিনিষেধাধীন নয়, তাই কোনো অসুবিধা নেই। মনে রেখো, আমরা
+$!A(a) \Sequent !A(a)$ রূপের একটি প্রারম্ভিক সিকোয়েন্ট পেতে চাই।
+তাই বিধিটি প্রয়োগের সময় $!A$-এর আর্গুমেন্ট হিসেবে~$a$ নিতে হবে।
+\begin{prooftree}
+\Axiom$!A(a) \fCenter !A(a)$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$\lforall[x][!A(x)] \fCenter !A(a)$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !A(a), \lforall[x][!A(x)] \fCenter $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$\lforall[x][!A(x)], \lnot !A(a) \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$ \lnot !A(a) \fCenter \lnot \lforall[x][!A(x)]$
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$ \lexists[x][ \lnot !A(x)] \fCenter \lnot \lforall[x][!A(x)]$
+\end{prooftree}
+বিশেষত পরিমাণসূচকের ক্ষেত্রে, এই পর্যায়ে আইগেনচল-শর্ত লঙ্ঘিত হয়েছে
+কি না আর একবার পরীক্ষা করা জরুরি। এখানে প্রয়োগ করা বিধিগুলির মধ্যে
+শুধু \LeftR{\exists} আইগেনচল-শর্তাধীন, আর আইগেনচল~$a$ তার নিচের
+সিকোয়েন্টে (অর্থাৎ অন্তিম সিকোয়েন্টে) নেই। তাই এটি একটি সঠিক
+!!{derivation}।
+\end{ex}
+
+\begin{prob}
+নিচের সিকোয়েন্টগুলির !!{derivation}s দাও:
+\begin{enumerate}
+\item $\Sequent (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) \lif
+\lforall[z][(!A(z) \land !B(z))]$।
+\item $\Sequent (\lexists[x][!A(x)] \lor \lexists[y][!B(y)]) \lif
+\lexists[z][(!A(z) \lor !B(z))]$।
+\item $\lforall[x][(!A(x) \lif !B)] \Sequent \lexists[y][!A(y)] \lif !B$।
+\item $\lforall[x][\lnot !A(x)] \Sequent \lnot\lexists[x][!A(x)]$।
+\item $\Sequent \lnot\lexists[x][!A(x)] \lif \lforall[x][\lnot !A(x)]$।
+\item $\Sequent \lnot\lexists[x][\lforall[y][((!A(x,y) \lif \lnot
+!A(y,y)) \land (\lnot !A(y,y) \lif !A(x,y)))]]$।
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+নিচের সিকোয়েন্টগুলির !!{derivation}s দাও:
+\begin{enumerate}
+\item $\Sequent \lnot\lforall[x][!A(x)] \lif \lexists[x][\lnot!A(x)]$।
+\item $(\lforall[x][!A(x)] \lif !B) \Sequent \lexists[y][(!A(y) \lif !B)]$।
+\item $\Sequent \lexists[x][(!A(x) \lif \lforall[y][!A(y)])]$।
+\end{enumerate}
+(এগুলির প্রতিটিতে $\RightR{\Contraction}$~বিধি দরকার।)
+\end{prob}
+
+\end{document}

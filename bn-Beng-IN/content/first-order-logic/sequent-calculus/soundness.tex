@@ -1,0 +1,390 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: soundness.tex
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{sou}}
+      {\olfileid{pl}{seq}{sou}}
+
+\olsection{বিশুদ্ধতা}
+
+\begin{explain}
+সিকোয়েন্ট কলনের মতো কোনো !!^a{derivation} পদ্ধতি \emph{বিশুদ্ধ}, যদি
+বাস্তবে সত্য নয় এমন কিছু সেটি !!{derive} করতে না পারে। তাই বিশুদ্ধতা
+!!{derivation} পদ্ধতির এক ধরনের নিশ্চিত নিরাপত্তা-ধর্ম। প্রমাণতাত্ত্বিক
+কোন ধর্মটি আলোচিত হচ্ছে তার উপর নির্ভর করে আমরা যেমন জানতে চাই যে
+\begin{enumerate}
+\item প্রত্যেক !!{derivable}~$!A$ \iftag{FOL}{বৈধ}{সর্বতঃসত্য};
+\item কোনো !!a{sentence} অন্য কয়েকটি থেকে !!{derivable} হলে সেটি
+  তাদের অনুসিদ্ধান্তও;
+\item !!{sentence}s-এর কোনো সেট অসঙ্গত হলে সেটি অপরিতৃপ্তিযোগ্য।
+\end{enumerate}
+এগুলি কোনো !!a{derivation} পদ্ধতির গুরুত্বপূর্ণ ধর্ম। এগুলির একটিও সত্য
+না হলে !!{derivation} পদ্ধতিটি ত্রুটিপূর্ণ—সেটি অতিরিক্ত জিনিস
+!!{derive} করতে পারবে। তাই কোনো !!{derivation} পদ্ধতির বিশুদ্ধতা
+প্রতিষ্ঠা করা অত্যন্ত জরুরি।
+
+সিকোয়েন্ট কলনে এই সব প্রমাণতাত্ত্বিক ধর্ম কয়েকটি বিশেষ সিকোয়েন্টের
+!!{derivability} দিয়ে সংজ্ঞায়িত। তাই উপরের (1)--(3) প্রমাণ করতে
+!!{derivable} সিকোয়েন্টের অর্থতাত্ত্বিক ধর্ম নিয়ে কিছু প্রমাণ করতে হবে।
+প্রথমে সিকোয়েন্টের \emph{বৈধতা} সংজ্ঞায়িত করব, তারপর দেখাব যে প্রত্যেক
+!!{derivable} সিকোয়েন্ট বৈধ। এই ফল থেকে (1)--(3) অনুসিদ্ধান্ত হিসেবে
+পাওয়া যাবে।
+\end{explain}
+
+\begin{defn}
+কোনো \iftag{FOL}{!!^a{structure}~$\Struct
+  M$}{!!^a{valuation}~$\pAssign{v}$} ঠিক তখনই একটি সিকোয়েন্ট
+$\Gamma \Sequent \Delta$ \emph{পরিতৃপ্ত করে}, যখন হয় কোনো
+$!A \in \Gamma$-র জন্য $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$, নয়তো
+কোনো $!A \in \Delta$-র জন্য $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$।
+
+কোনো সিকোয়েন্ট \emph{বৈধ}, যদি এবং কেবল যদি প্রত্যেক
+\iftag{FOL}{!!{structure}~$\Struct
+  M$}{!!{valuation}~$\pAssign{v}$} সেটিকে পরিতৃপ্ত করে।
+\end{defn}
+
+\begin{thm}[বিশুদ্ধতা]
+\ollabel{thm:sequent-soundness} $\Log{LK}$ যদি $\Theta
+\Sequent \Xi$ !!{derive}s করে, তবে $\Theta \Sequent \Xi$ বৈধ।
+\end{thm}
+
+\begin{proof}
+$\Theta \Sequent \Xi$-এর কোনো !!a{derivation}~$\pi$ ধরি। $\pi$-তে
+অনুমানের সংখ্যা~$n$-এর উপর গাণিতিক আরোহ প্রয়োগ করি।
+
+অনুমানের সংখ্যা~$0$ হলে $\pi$ শুধু একটি প্রারম্ভিক সিকোয়েন্ট নিয়ে
+গঠিত। প্রত্যেক প্রারম্ভিক সিকোয়েন্ট $!A \Sequent !A$ স্পষ্টতই বৈধ,
+কারণ প্রত্যেক \iftag{FOL}{$\Struct M$}{$\pAssign{v}$}-এর জন্য হয়
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$, নয়তো
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$।
+
+অনুমানের সংখ্যা~0-র বেশি হলে সবচেয়ে নিচের অনুমানের ধরন অনুসারে ক্ষেত্রবিচার
+করি। আরোহের অনুমান অনুসারে সেই অনুমানের পূর্বধারণাগুলি বৈধ ধরে নিতে
+পারি, কারণ যেকোনো পূর্বধারণার !!{derivation}-এ অনুমানের সংখ্যা~$n$-এর
+চেয়ে কম।
+
+প্রথমে একটিমাত্র পূর্বধারণাযুক্ত সম্ভাব্য অনুমানগুলি বিবেচনা করি।
+\begin{enumerate}
+\item শেষ অনুমানটি দুর্বলীকরণ। তখন $\Theta \Sequent \Xi$ হয়
+  $!A, \Gamma \Sequent \Delta$ (শেষ অনুমান \LeftR{\Weakening} হলে),
+  নয়তো $\Gamma \Sequent \Delta, !A$ (শেষ অনুমান
+  \RightR{\Weakening} হলে); এবং !!{derivation}-টি নিচের কোনো একটিতে শেষ হয়:
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\Weakening}}
+    \UnaryInf$!A, \Gamma \fCenter \Delta$
+    \DisplayProof\qquad\bottomAlignProof
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta$
+    \RightLabel{\RightR{\Weakening}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A$
+  \end{prooftree}
+  আরোহের অনুমান অনুসারে $\Gamma \Sequent \Delta$ বৈধ। অর্থাৎ প্রত্যেক
+  \iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}-এর
+  জন্য হয় এমন কোনো $!C \in \Gamma$ আছে যেন
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$, নয়তো এমন কোনো $!C \in
+  \Delta$ আছে যেন $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$।
+
+  কোনো $!C \in \Gamma$-র জন্য $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$
+  হলে বাঁ দুর্বলীকরণের ক্ষেত্রে $\Theta = !A, \Gamma$; ডান
+  দুর্বলীকরণের ক্ষেত্রেও $!C \in \Theta$। তাই কোনো
+  $!C \in \Theta$-র জন্য $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$।
+  একইভাবে, কোনো $!C \in \Delta$-র জন্য
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ হলে $!C \in \Xi$ বলে কোনো
+  $!C \in \Xi$-র জন্য $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$। অতএব
+  $\Theta \Sequent \Xi$ বৈধ।
+  % BN-SRC-031 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-031):} হিমায়িত ইংরেজি উৎস দুর্বলীকরণের দুই রূপ একসঙ্গে বিবেচনা করেও $\Theta = !A,\Gamma$ বলেছে। এই সমতা শুধু বাঁ দুর্বলীকরণে সত্য; ডান দুর্বলীকরণে $\Theta$ হলো অপরিবর্তিত পূর্বাংশ। বাংলা প্রমাণে সমতাটির প্রয়োগ তাই সঠিক শাখায় সীমিত করা হয়েছে; উভয় শাখায় $\Gamma$-র সূত্রগুলি $\Theta$-তে থাকে বলে যুক্তিটি অক্ষুণ্ণ।} % BN-SRC-031 TARGET-CORRECTION-END
+\item শেষ অনুমানটি \LeftR{\lnot}। তখন শেষ অনুমানের পূর্বধারণা হলো
+  $\Gamma \Sequent \Delta, !A$ এবং সিদ্ধান্ত হলো
+  $\lnot !A, \Gamma \Sequent \Delta$; অর্থাৎ !!{derivation}-টি শেষ হয়
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \RightLabel{\LeftR{\lnot}}
+    \UnaryInf$\lnot !A, \Gamma \fCenter \Delta$
+  \end{prooftree}
+  দিয়ে; আর $\Theta = \lnot !A, \Gamma$ এবং $\Xi = \Delta$।
+
+  আরোহের অনুমান জানায় $\Gamma \Sequent \Delta, !A$ বৈধ। অর্থাৎ প্রত্যেক
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}-এর জন্য হয় (a) কোনো
+  $!C \in \Gamma$-র জন্য $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$,
+  নয়তো (b) কোনো $!C \in \Delta$-র জন্য
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$, নয়তো (c)
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$। আমরা দেখাতে চাই $\Theta
+  \Sequent \Xi$-ও বৈধ। কোনো \iftag{FOL}{$\Struct{M}$ নামের
+    !!a{structure}}{$\pAssign{v}$ নামের !!a{valuation}} নিই। (a) সত্য
+  হলে এমন $!C \in \Gamma$ আছে যেন
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$; আবার $!C \in \Theta$-ও।
+  (b) সত্য হলে এমন $!C \in \Delta$ আছে যেন
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$; আবার $!C \in \Xi$-ও। শেষে,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ হলে
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lnot !A}$। যেহেতু
+  $\lnot !A \in \Theta$, তাই এমন $!C \in \Theta$ আছে যেন
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$। অতএব $\Theta
+  \Sequent \Xi$ বৈধ।
+\item শেষ অনুমানটি \RightR{\lnot}: অনুশীলনী।
+\item শেষ অনুমানটি \LeftR{\land}। এর দুটি রূপ আছে: পূর্বধারণার বাঁদিকে
+  থাকা $!A$ অথবা $!B$ থেকে সিদ্ধান্তের বাঁদিকে $!A \land !B$ অনুমান
+  করা যায়। প্রথম ক্ষেত্রে~$\pi$ শেষ হয়
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$!A, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+  \end{prooftree}
+  দিয়ে; আর $\Theta = !A \land !B, \Gamma$ এবং $\Xi = \Delta$। কোনো
+  \iftag{FOL}{!!a{structure}~$\Struct
+    M$}{!!a{valuation}~$\pAssign{v}$} বিবেচনা করি। আরোহের অনুমানে
+  $!A, \Gamma \Sequent \Delta$ বৈধ বলে হয় (a)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$, নয়তো (b) কোনো
+  $!C \in \Gamma$-র জন্য $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$,
+  নয়তো (c) কোনো $!C \in \Delta$-র জন্য
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$। (a)-তে
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \land !B}$, তাই এমন
+  $!C \in \Theta$ (অর্থাৎ $!A \land !B$) আছে যেন
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$। (b)-তে এমন
+  $!C \in \Gamma$ আছে যেন $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$,
+  আর $!C \in \Theta$-ও। (c)-তে এমন $!C \in \Delta$ আছে যেন
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$, আর $\Xi = \Delta$ বলে
+  $!C \in \Xi$-ও। ফলে প্রত্যেক ক্ষেত্রেই
+  \iftag{FOL}{$\Struct M$}{$\pAssign{v}$} সিকোয়েন্ট
+  $!A \land !B, \Gamma \Sequent \Delta$ পরিতৃপ্ত করে। যেহেতু
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} যথেচ্ছ ছিল,
+  $!A \land !B, \Gamma \Sequent \Delta$ বৈধ।
+  % BN-SRC-029 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-029):} এই ক্ষেত্রের শেষ লাইনে হিমায়িত ইংরেজি উৎস পূর্বধারণার অবশিষ্ট সিকোয়েন্ট $\Gamma \Sequent \Delta$-কে বৈধ বলেছে। প্রমাণটি সদ্য দেখিয়েছে যে যথেচ্ছ গঠন বা সত্যমান-আরোপ $!A \land !B,\Gamma \Sequent \Delta$ পরিতৃপ্ত করে; বাংলা লাইনে তাই এই সিদ্ধান্ত-সিকোয়েন্টটিই পুনরুদ্ধার করা হয়েছে।} % BN-SRC-029 TARGET-CORRECTION-END
+  $!B$ থেকে $!A \land !B$ অনুমান করার ক্ষেত্রটিও একইভাবে হয়; শুধু
+  $!A$-এর বদলে $!B$ বসাতে হবে।
+\item শেষ অনুমানটি \RightR{\lor}। এর দুটি রূপ আছে: পূর্বধারণার ডানদিকে
+  থাকা $!A$ অথবা $!B$ থেকে সিদ্ধান্তের ডানদিকে $!A \lor !B$ অনুমান
+  করা যায়। প্রথম ক্ষেত্রে~$\pi$ শেষ হয়
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B$
+  \end{prooftree}
+  দিয়ে। এখন $\Theta = \Gamma$ এবং $\Xi = \Delta, !A \lor !B$। কোনো
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  বিবেচনা করি। $\Gamma \Sequent \Delta, !A$ বৈধ বলে হয় (a)
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$, নয়তো (b) কোনো
+  $!C \in \Gamma$-র জন্য $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$,
+  নয়তো (c) কোনো $!C \in \Delta$-র জন্য
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$। (a)-তে
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lor !B}$। (b)-তে এমন
+  $!C \in \Gamma$ আছে যেন $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$।
+  (c)-তে এমন $!C \in \Delta$ আছে যেন
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$। ফলে প্রত্যেক ক্ষেত্রেই
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} সিকোয়েন্ট
+  $\Gamma \Sequent \Delta, !A \lor !B$, অর্থাৎ $\Theta \Sequent \Xi$,
+  পরিতৃপ্ত করে। যেহেতু \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} যথেচ্ছ
+  ছিল, $\Theta \Sequent \Xi$ বৈধ। $!B$ থেকে $!A \lor !B$ অনুমান করার
+  ক্ষেত্রটিও একইভাবে হয়; শুধু $!A$-এর বদলে $!B$ বসাতে হবে।
+\item শেষ অনুমানটি \RightR{\lif}। তখন~$\pi$ শেষ হয়
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$!A, \Gamma \fCenter \Delta, !B$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A \lif !B$
+  \end{prooftree}
+  দিয়ে। আবার আরোহের অনুমান বলে পূর্বধারণাটি বৈধ; সিদ্ধান্তটিও বৈধ তা
+  দেখাতে হবে। কোনো যথেচ্ছ
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} নিই। $!A, \Gamma
+  \Sequent \Delta, !B$ বৈধ বলে নিচের অন্তত একটি ক্ষেত্র ঘটে: (a)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$, (b)
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$, (c) কোনো~$~!C \in \Gamma$-র
+  জন্য $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$, অথবা (d) কোনো
+  $!C \in \Delta$-র জন্য $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$।
+  (a) ও (b)-তে $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lif !B}$; তাই
+  এমন $!C \in \Delta, !A \lif !B$ আছে যেন
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$। (c)-তে কোনো $!C \in
+  \Gamma$-র জন্য $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$। (d)-তে
+  কোনো $!C \in \Delta$-র জন্য $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$।
+  প্রত্যেক ক্ষেত্রেই \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}
+  $\Gamma \Sequent \Delta, !A \lif !B$ পরিতৃপ্ত করে। যেহেতু
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} যথেচ্ছ ছিল,
+  $\Gamma \Sequent \Delta, !A \lif !B$ বৈধ। \iftag{FOL}{%
+\item শেষ অনুমানটি \LeftR{\lforall}। তখন এমন কোনো !!a{formula}~$!A(x)$
+  এবং বদ্ধ পদ~$t$ আছে, যেন~$\pi$ শেষ হয়
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$!A(t), \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[x][!A(x)], \Gamma \fCenter \Delta$
+  \end{prooftree}
+  দিয়ে। দেখাতে হবে সিদ্ধান্ত $\lforall[x][!A(x)], \Gamma
+  \Sequent \Delta$ বৈধ। কোনো !!a{structure}~$\Struct M$ বিবেচনা করি।
+  পূর্বধারণা $!A(t), \Gamma \Sequent \Delta$ বৈধ বলে হয় (a)
+  $\Sat/{M}{!A(t)}$, নয়তো (b) কোনো $!C \in \Gamma$-র জন্য
+  $\Sat/{M}{!C}$, নয়তো (c) কোনো $!C \in \Delta$-র জন্য
+  $\Sat{M}{!C}$। (a)-তে \olref[syn][sem]{prop:quant-terms} অনুসারে
+  $\Sat{M}{\lforall[x][!A(x)]}$ হলে $\Sat{M}{!A(t)}$। যেহেতু
+  $\Sat/{M}{!A(t)}$, তাই $\Sat/{M}{\lforall[x][!A(x)]}$। (b) ও
+  (c)-তেও $\Struct{M}$ সিকোয়েন্ট $\lforall[x][!A(x)], \Gamma
+  \Sequent \Delta$ পরিতৃপ্ত করে। যেহেতু $\Struct M$ যথেচ্ছ ছিল,
+  $\lforall[x][!A(x)], \Gamma \Sequent \Delta$ বৈধ।
+\item শেষ অনুমানটি \RightR{\lexists}: অনুশীলনী।
+\item শেষ অনুমানটি \RightR{\lforall}। তখন এমন কোনো
+  !!a{formula}~$!A(x)$ এবং কোনো !!a{constant}~$a$ আছে, যেন~$\pi$ শেষ হয়
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A(a)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+  \end{prooftree}
+  দিয়ে; এখানে আইগেনচল-শর্ত পূর্ণ, অর্থাৎ $a$ ধ্রুবকটি $!A(x)$,
+  $\Gamma$ বা $\Delta$-তে নেই। আরোহের অনুমানে শেষ অনুমানের পূর্বধারণা
+  বৈধ। সিদ্ধান্তটিও বৈধ দেখাতে হবে; অর্থাৎ যেকোনো
+  !!{structure}~$\Struct M$-এর জন্য হয় (a)
+  $\Sat{M}{\lforall[x][!A(x)]}$, নয়তো (b) কোনো $!C \in \Gamma$-র
+  জন্য $\Sat/{M}{!C}$, নয়তো (c) কোনো $!C \in \Delta$-র জন্য
+  $\Sat{M}{!C}$।
+
+  কোনো যথেচ্ছ !!{structure}~$\Struct{M}$ ধরি। (b) বা (c) সত্য হলে
+  প্রমাণ শেষ। তাই ধরা যাক কোনোটিই সত্য নয়: প্রত্যেক $!C \in
+  \Gamma$-র জন্য $\Sat{M}{!C}$ এবং প্রত্যেক $!C \in \Delta$-র জন্য
+  $\Sat/{M}{!C}$। দেখাতে হবে (a) সত্য, অর্থাৎ
+  $\Sat{M}{\lforall[x][!A(x)]}$। \olref[syn][ass]{prop:sat-quant}
+  অনুসারে প্রত্যেক চলরাশি-আরোপ~$s$-এর জন্য $\Sat{M}{!A(x)}[s]$ দেখালেই
+  যথেষ্ট। তাই কোনো যথেচ্ছ চলরাশি-আরোপ~$s$ নিই। এমন একটি
+  গঠন~$\Struct{M'}$ বিবেচনা করি যা~$\Struct{M}$-এর মতোই, শুধু
+  $\Assign{a}{M'} = s(x)$। \olref[syn][ext]{cor:extensionality-sent}
+  অনুসারে যেকোনো $!C \in \Gamma$-র জন্য $\Sat{M'}{!C}$, কারণ~$a$
+  $\Gamma$-তে নেই; আর যেকোনো $!C \in \Delta$-র জন্য
+  $\Sat/{M'}{!C}$। কিন্তু পূর্বধারণাটি বৈধ, তাই $\Sat{M'}{!A(a)}$।
+  \olref[syn][ass]{prop:sentence-sat-true} অনুসারে
+  $\Sat{M'}{!A(a)}[s]$, কারণ $!A(a)$ একটি বাক্য। এখন
+  $s(x) = \Value{a}{M'}[s]$, কারণ $\Struct{M'}$-কে এভাবেই সংজ্ঞায়িত
+  করেছি; সুতরাং $\varAssign{s}{s}{x}$। তাই
+  \olref[syn][ext]{prop:ext-formulas} প্রযোজ্য এবং পাই
+  $\Sat{M'}{!A(x)}[s]$। যেহেতু~$a$ ধ্রুবকটি~$!A(x)$-এ নেই,
+  \olref[syn][ext]{prop:extensionality} থেকে $\Sat{M}{!A(x)}[s]$।
+  $s$ যথেচ্ছ ছিল বলে প্রত্যেক চলরাশি-আরোপের জন্য
+  $\Sat{M}{!A(x)}[s]$ প্রমাণ সম্পূর্ণ হলো।
+\item শেষ অনুমানটি \LeftR{\lexists}: অনুশীলনী।
+}{}
+\end{enumerate}
+এবার দুটি পূর্বধারণাযুক্ত সম্ভাব্য অনুমানগুলি বিবেচনা করি।
+\begin{enumerate}
+\item শেষ অনুমানটি কর্তন। তখন~$\pi$ শেষ হয়
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \AxiomC{}
+    \Deduce$!A, \Pi \fCenter \Lambda$
+    \RightLabel{\Cut}
+    \BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
+  \end{prooftree}
+  দিয়ে। কোনো \iftag{FOL}{$\Struct{M}$ নামের !!a{structure}}{$\pAssign{v}$
+  নামের !!a{valuation}} নিই। আরোহের অনুমানে পূর্বধারণাদুটি বৈধ, তাই
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} উভয় পূর্বধারণা পরিতৃপ্ত করে।
+  দুটি ক্ষেত্র আলাদা করি: (a) $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$
+  এবং (b) $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$। (a)-তে বাঁদিকের
+  পূর্বধারণা পরিতৃপ্ত করতে হলে \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}-কে
+  $\Gamma \Sequent \Delta$ পরিতৃপ্ত করতে হবে। কিন্তু তাহলে সেটি
+  সিদ্ধান্তটিও পরিতৃপ্ত করে। (b)-তে ডানদিকের পূর্বধারণা পরিতৃপ্ত করতে
+  হলে \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}-কে
+  $\Pi \Sequent \Lambda$ পরিতৃপ্ত করতে হবে। আবারও
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} সিদ্ধান্তটি পরিতৃপ্ত করে।
+  % BN-SRC-030 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-030):} কর্তনের (b) ক্ষেত্রে হিমায়িত ইংরেজি উৎসে ডান পূর্বধারণা থেকে অবশিষ্ট সিকোয়েন্টকে ভুল করে $\Pi \setminus \Lambda$ লেখা হয়েছে। এটি সেট-বিয়োগ এবং এখানে কোনো সিকোয়েন্ট নয়; প্রদর্শিত কর্তন-বিধি ও পরিতৃপ্তির যুক্তি অনুসারে বাংলা প্রমাণে $\Pi \Sequent \Lambda$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-030 TARGET-CORRECTION-END
+\item শেষ অনুমানটি \RightR{\land}। তখন~$\pi$ শেষ হয়
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !B$
+    \RightLabel{\RightR{\land}}
+    \BinaryInf$\Gamma \fCenter \Delta, !A \land !B$
+  \end{prooftree}
+  দিয়ে। কোনো \iftag{FOL}{!!a{structure}~$\Struct
+    M$}{!!a{valuation}~$\pAssign{v}$} বিবেচনা করি।
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} যদি $\Gamma \Sequent
+  \Delta$ পরিতৃপ্ত করে, তবে কাজ শেষ। তাই ধরা যাক সেটি এই সিকোয়েন্ট
+  পরিতৃপ্ত করে না। আরোহের অনুমানে $\Gamma \fCenter \Delta, !A$ বৈধ,
+  তাই $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$। একইভাবে, $\Gamma
+  \Sequent \Delta, !B$ বৈধ বলে $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$।
+  অতএব $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$।
+\item শেষ অনুমানটি \LeftR{\lor}: অনুশীলনী।
+\item শেষ অনুমানটি \LeftR{\lif}। তখন~$\pi$ শেষ হয়
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \AxiomC{}
+    \Deduce$!B, \Pi \fCenter \Lambda$
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$!A \lif !B, \Gamma, \Pi \fCenter \Delta, \Lambda$
+  \end{prooftree}
+  দিয়ে। আবার কোনো
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  নিই এবং ধরি \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}
+  $\Gamma, \Pi \Sequent \Delta, \Lambda$ পরিতৃপ্ত করে না। দেখাতে হবে
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$। যেহেতু
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} $\Gamma, \Pi \Sequent
+  \Delta, \Lambda$ পরিতৃপ্ত করে না, তাই সেটি $\Gamma \Sequent
+  \Delta$ বা $\Pi \Sequent \Lambda$—কোনোটিই পরিতৃপ্ত করে না। আবার
+  $\Gamma \Sequent \Delta, !A$ বৈধ, তাই
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$। $!B, \Pi \Sequent \Lambda$
+  বৈধ, তাই $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$। অতএব
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$, যা-ই দেখাতে চেয়েছিলাম।
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][seq][sou]{thm:sequent-soundness}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][seq][sou]{thm:sequent-soundness}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+$\Proves !A$ হলে $!A$ \iftag{FOL}{বৈধ}{সর্বতঃসত্য}।
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+$\Gamma \Proves !A$ হলে $\Gamma \Entails !A$।
+\end{cor}
+
+\begin{proof}
+$\Gamma \Proves !A$ হলে কোনো সসীম উপসেট $\Gamma_0 \subseteq
+\Gamma$-র জন্য $\Gamma_0 \Sequent !A$-এর কোনো !!a{derivation} আছে।
+\olref{thm:sequent-soundness} অনুসারে প্রত্যেক
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}
+হয় কোনো $!B \in \Gamma_0$-কে মিথ্যা করে, নয়তো $!A$-কে সত্য করে।
+অতএব $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ হলে
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$-ও।
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+$\Gamma$ পরিতৃপ্তিযোগ্য হলে সেটি সঙ্গত।
+\end{cor}
+
+\begin{proof}
+প্রতিবিপরীত বক্তব্য প্রমাণ করি। ধরা যাক $\Gamma$ সঙ্গত নয়। তখন একটি
+সসীম $\Gamma_0 \subseteq \Gamma$ এবং $\Gamma_0 \Sequent \quad$-এর
+কোনো !!a{derivation} আছে। \olref{thm:sequent-soundness} অনুসারে
+$\Gamma_0 \Sequent \quad$ বৈধ। অর্থাৎ প্রত্যেক
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}-এর
+জন্য এমন $!C \in \Gamma_0$ আছে যেন
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$; আর $\Gamma_0
+\subseteq \Gamma$ বলে সেই~$!C$-ও~$\Gamma$-তে আছে। তাই কোনো
+\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}~$\Gamma$-কে পরিতৃপ্ত করে না,
+এবং $\Gamma$ পরিতৃপ্তিযোগ্য নয়।
+\end{proof}
+
+\end{document}

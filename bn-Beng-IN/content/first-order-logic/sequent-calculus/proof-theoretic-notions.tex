@@ -1,0 +1,173 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\begin{editorial}
+  এই অংশে সিকোয়েন্ট কলনের প্রমাণযোগ্যতা-সম্পর্ক ও সঙ্গতির সংজ্ঞাগুলি
+  একত্র করা হয়েছে।
+  % BN-SRC-027 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-027):} হিমায়িত ইংরেজি সম্পাদকীয় নির্দেশে এই সংজ্ঞাগুলিকে “natural deduction”-এর বলা হয়েছে। ফাইলটি সিকোয়েন্ট কলন অধ্যায়ের অংশ, পরের সংজ্ঞাগুলি প্রত্যেকেই $\Log{LK}$ সিকোয়েন্ট ও তার বিধি ব্যবহার করে, এবং স্বাভাবিক নিষ্পাদনের পৃথক সংজ্ঞা আগের ভাগে আছে। তাই বাংলা নির্দেশে “সিকোয়েন্ট কলন” পুনরুদ্ধার করা হয়েছে।} % BN-SRC-027 TARGET-CORRECTION-END
+\end{editorial}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{ptn}}
+      {\olfileid{pl}{seq}{ptn}}
+
+\olsection{প্রমাণতাত্ত্বিক ধারণা}
+
+\begin{explain}
+যেভাবে আমরা কয়েকটি গুরুত্বপূর্ণ অর্থতাত্ত্বিক ধারণা (বৈধতা,
+অনুসিদ্ধান্ত, পরিতৃপ্তিযোগ্যতা) সংজ্ঞায়িত করেছি, এবার তেমনি তাদের
+অনুরূপ \emph{প্রমাণতাত্ত্বিক ধারণা} সংজ্ঞায়িত করি। এগুলি কোনো
+!!{structure}s-তে !!{sentence}s-এর পরিতৃপ্তির সাহায্যে সংজ্ঞায়িত নয়;
+বরং কয়েকটি সিকোয়েন্টের !!{derivability} বা !!{nonderivability}-র
+সাহায্যে সংজ্ঞায়িত। এই ধারণাগুলি যে পরস্পরের সঙ্গে মিলে যায়, তা এক
+গুরুত্বপূর্ণ আবিষ্কার। তাদের মিলই \emph{বিশুদ্ধতা} ও \emph{পূর্ণতা
+উপপাদ্য}-র বক্তব্য।
+\end{explain}
+
+\begin{defn}[উপপাদ্য]
+কোনো !!^a{sentence}~$!A$ একটি \emph{উপপাদ্য}, যদি
+$\quad \Sequent !A$ সিকোয়েন্টটির $\Log{LK}$-তে কোনো
+!!a{derivation} থাকে। $!A$ উপপাদ্য হলে $\Proves !A$ এবং উপপাদ্য না
+হলে $\Proves/ !A$ লিখি।
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+কোনো !!^a{sentence}~$!A$ ঠিক তখনই !!{sentence}s-এর সেট~$\Gamma$
+\emph{থেকে !!{derivable}}, অর্থাৎ $\Gamma \Proves !A$, যখন একটি
+সসীম উপসেট~$\Gamma_0 \subseteq \Gamma$ এবং $\Gamma_0$-র
+!!{sentence}s-এর একটি অনুক্রম~$\Gamma_0'$ আছে, যেন $\Log{LK}$
+$\Gamma_0' \Sequent !A$ !!{derive}s করে। $!A$ যদি $\Gamma$ থেকে
+!!{derivable} না হয়, তবে $\Gamma \Proves/ !A$ লিখি।
+\end{defn}
+
+সংকোচন, দুর্বলীকরণ ও অদলবদল-বিধির জন্য~$\Gamma_0'$-এ
+!!{sentence}s-এর ক্রম ও সংখ্যা গুরুত্বপূর্ণ নয়: $\Gamma_0'
+\Sequent !A$ যদি !!{derivable} হয়, তবে~$\Gamma_0'$-এর মতো একই
+!!{sentence}s-যুক্ত যেকোনো~$\Gamma_0''$-এর জন্য $\Gamma_0''
+\Sequent !A$-ও নিষ্পাদনযোগ্য। যেমন, $\Gamma_0 = \{!B, !C\}$ হলে
+$\Gamma_0' = \tuple{!B, !B, !C}$ এবং $\Gamma_0'' =
+\tuple{!C, !C, !B}$—দুটিই শুধু~$\Gamma_0$-র !!{sentence}s-যুক্ত
+অনুক্রম। একটিকে নিয়ে গঠিত সিকোয়েন্টটি !!{derivable} হলে অন্যটিও তাই;
+যেমন:
+\begin{prooftree}
+  \AxiomC{}
+  \Deduce$!B, !B, !C \fCenter !A$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$!B, !C \fCenter !A$
+  \RightLabel{\LeftR{\Exchange}}
+  \UnaryInf$!C, !B \fCenter !A$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!C, !C, !B \fCenter !A$
+\end{prooftree}
+এখন থেকে~$\Gamma_0$ যদি !!{sentence}s-এর একটি সসীম সেট হয়, তবে
+$\Gamma_0 \Sequent !A$ দিয়ে এমন যেকোনো সিকোয়েন্ট বোঝাব যার পূর্বাংশ
+হলো~$\Gamma_0$-র !!{sentence}s-এর একটি অনুক্রম; দরকার হলে সংকোচন,
+অদলবদল ও দুর্বলীকরণ নিঃশব্দে অন্তর্ভুক্ত বলে ধরব।
+
+\begin{defn}[সঙ্গতি]
+বাক্যের কোনো সেট~$\Gamma$ ঠিক তখনই \emph{অসঙ্গত}, যখন এমন একটি সসীম
+উপসেট~$\Gamma_0 \subseteq \Gamma$ আছে যেন $\Log{LK}$
+$\Gamma_0 \Sequent \quad$ !!{derive}s করে। $\Gamma$ অসঙ্গত না হলে,
+অর্থাৎ প্রত্যেক সসীম~$\Gamma_0 \subseteq \Gamma$-র জন্য $\Log{LK}$
+$\Gamma_0 \Sequent \quad$ !!{derive} করে না হলে, সেটিকে \emph{সঙ্গত}
+বলি।
+\end{defn}
+
+\begin{prop}[প্রতিবিম্ব ধর্ম]
+\ollabel{prop:reflexivity}
+$!A \in \Gamma$ হলে $\Gamma \Proves !A$।
+\end{prop}
+
+\begin{proof}
+প্রারম্ভিক সিকোয়েন্ট $!A \Sequent !A$ !!{derivable}, এবং
+$\{!A\} \subseteq \Gamma$।
+\end{proof}
+
+\begin{prop}[একঘেয়েতা]
+\ollabel{prop:monotonicity}
+$\Gamma \subseteq \Delta$ এবং $\Gamma \Proves !A$ হলে
+$\Delta \Proves !A$।
+\end{prop}
+
+\begin{proof}
+ধরা যাক $\Gamma \Proves !A$; অর্থাৎ এমন একটি সসীম $\Gamma_0
+\subseteq \Gamma$ আছে, যেন $\Gamma_0 \Sequent !A$ !!{derivable}।
+$\Gamma \subseteq \Delta$ বলে $\Gamma_0$-ও~$\Delta$-র একটি সসীম
+উপসেট। সুতরাং $\Gamma_0 \Sequent !A$-এর !!{derivation}-টিই
+$\Delta \Proves !A$ দেখায়।
+\end{proof}
+
+\begin{prop}[পরিযায়িতা]
+\ollabel{prop:transitivity}
+$\Gamma \Proves !A$ এবং $\{!A\} \cup \Delta \Proves !B$ হলে
+$\Gamma \cup \Delta \Proves !B$।
+\end{prop}
+
+\begin{proof}
+$\Gamma \Proves !A$ হলে একটি সসীম $\Gamma_0 \subseteq \Gamma$ এবং
+$\Gamma_0 \Sequent !A$-এর কোনো !!a{derivation}~$\pi_0$ আছে।
+$\{!A\} \cup \Delta \Proves !B$ হলে কোনো সসীম উপসেট
+$\Delta_0 \subseteq \Delta$-র জন্য $!A, \Delta_0 \Sequent !B$-এর
+কোনো !!a{derivation}~$\pi_1$ আছে। নিচের !!{derivation}-টি বিবেচনা করো:
+\begin{prooftree}
+  \AxiomC{}
+  \RightLabel{$\pi_0$}
+  \Deduce$\Gamma_0 \fCenter !A$
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!A, \Delta_0 \fCenter !B$
+  \RightLabel{\Cut}
+  \BinaryInf$\Gamma_0, \Delta_0 \fCenter !B$
+\end{prooftree}
+$\Gamma_0 \cup \Delta_0 \subseteq \Gamma \cup \Delta$ বলে এটি
+$\Gamma \cup \Delta \Proves !B$ দেখায়।
+\end{proof}
+
+লক্ষ করো, এর বিশেষ ক্ষেত্র হিসেবে $\Gamma \Proves !A$ এবং
+$!A \Proves !B$ হলে $\Gamma \Proves !B$। আবার, $!A_1,
+\dots, !A_n \Proves !B$ এবং প্রত্যেক~$i$-এর জন্য $\Gamma \Proves !A_i$
+হলে $\Gamma \Proves !B$।
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ ঠিক তখনই অসঙ্গত, যখন প্রত্যেক বাক্য~$!A$-এর জন্য
+$\Gamma \Proves {!A}$।
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[fol][seq][ptn]{prop:incons} প্রমাণ করো।
+\end{prob}
+
+\begin{prop}[সংহতি]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item $\Gamma \Proves !A$ হলে এমন একটি সসীম উপসেট $\Gamma_0
+    \subseteq \Gamma$ আছে যেন $\Gamma_0 \Proves !A$।
+  \item $\Gamma$-র প্রত্যেক সসীম উপসেট সঙ্গত হলে $\Gamma$ সঙ্গত।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item $\Gamma \Proves !A$ হলে এমন একটি সসীম উপসেট
+      $\Gamma_0 \subseteq \Gamma$ আছে, যেন $\Gamma_0
+      \Sequent !A$ সিকোয়েন্টটির কোনো !!a{derivation} আছে। ফলে
+      $\Gamma_0 \Proves !A$।
+    \item $\Gamma$ অসঙ্গত হলে এমন একটি সসীম উপসেট
+      $\Gamma_0 \subseteq \Gamma$ আছে, যেন $\Log{LK}$
+      $\Gamma_0 \Sequent \quad$ !!{derive}s করে। কিন্তু তখন~$\Gamma_0$
+      হলো~$\Gamma$-র একটি অসঙ্গত সসীম উপসেট।
+  \end{enumerate}
+\end{proof}
+
+\end{document}

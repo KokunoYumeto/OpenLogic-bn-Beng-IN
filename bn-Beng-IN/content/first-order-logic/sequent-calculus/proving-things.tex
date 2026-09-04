@@ -1,0 +1,334 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: proving-things
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{pro}}
+      {\olfileid{pl}{seq}{pro}}
+
+\olsection{\usetoken{P}{derivation}-এর উদাহরণ}
+
+\begin{ex}
+$!A \land !B \Sequent !A$ সিকোয়েন্টটির একটি $\Log{LK}$-!!{derivation} দাও।
+
+!!{derivation}-টির নিচে কাঙ্ক্ষিত অন্তিম সিকোয়েন্টটি লিখে শুরু করি।
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$!A\land !B \fCenter !A$
+\end{prooftree}
+এরপর দেখতে হবে, এই রূপের নিচের সিকোয়েন্ট কোন ধরনের অনুমান থেকে আসতে
+পারে। সেটি কোনো গঠনগত বিধি হতে পারে, তবে আগে কোনো যৌক্তিক বিধি খোঁজা
+ভালো। নিচের সিকোয়েন্টে একমাত্র যৌক্তিক সংযোজক হলো~$\land$। তাই আমাদের
+একটি $\land$-বিধি চাই; আর $\land$ চিহ্নটি পূর্বাংশে থাকায় বিধিটি হবে
+\LeftR{\land}।
+\begin{prooftree}
+\AxiomC{}
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A\land !B \fCenter !A$
+\end{prooftree}
+\LeftR{\land} অনুমানের উপরের সিকোয়েন্টের জন্য দুটি সম্ভাবনা আছে:
+$!A \Sequent !A$ অথবা $!B \Sequent !A$। স্পষ্টতই $!A \Sequent !A$
+একটি প্রারম্ভিক সিকোয়েন্ট (এটি সুবিধাজনক), কিন্তু সাধারণভাবে
+$!B \Sequent !A$ নিষ্পাদনযোগ্য নয়। এবার উপরের সিকোয়েন্টটি বসাই:
+\begin{prooftree}
+\Axiom$!A \fCenter !A$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A\land !B \fCenter !A$
+\end{prooftree}
+এখন $!A \land !B \Sequent !A$ সিকোয়েন্টটির একটি সঠিক
+$\Log{LK}$-!!{derivation} পাওয়া গেল।
+\end{ex}
+
+\begin{ex}
+$\lnot !A \lor !B \Sequent !A \lif !B$ সিকোয়েন্টটির একটি
+$\Log{LK}$-!!{derivation} দাও।
+
+!!{derivation}-টির নিচে কাঙ্ক্ষিত অন্তিম সিকোয়েন্টটি লিখে শুরু করো।
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lnot !A \lor !B \fCenter !A \lif !B$
+\end{prooftree}
+এই অন্তিম সিকোয়েন্ট দিতে পারে এমন কোনো যৌক্তিক বিধি খুঁজতে এর যৌক্তিক
+সংযোজকগুলি দেখি: $\lnot$, $\lor$ ও~$\lif$। আপাতত শুধু $\lor$ ও~$\lif$
+প্রাসঙ্গিক, কারণ তারাই অন্তিম সিকোয়েন্টের !!{sentence}s-এর
+!!{main operator}s; $\lnot$ অন্য সংযোজকের পরিধির ভিতরে আছে, তাই সেটির ব্যবস্থা
+পরে করব। সুতরাং শেষ অনুমানের যৌক্তিক বিধি হতে পারে \LeftR{\lor} অথবা
+\RightR{\lif}। যেকোনোটিই নেওয়া যায়; আমরা \RightR{\lif} নিই—অন্তত
+এ কারণে যে এতে আরও কিছুক্ষণ দুই শাখায় ভাগ করা এড়ানো যায়। যে
+\RightR{\lif} অনুমানটি এই নিচের সিকোয়েন্ট দেয়, তার রূপ হবে:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
+\RightLabel{\RightR{\lif}} \UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
+\end{prooftree}
+
+$\lnot !A \lor !B$-কে পূর্বাংশের একেবারে বাঁ প্রান্তে আনলে
+\LeftR{\lor} বিধি প্রয়োগ করা যায়। বিধি-ছক অনুসারে এটি নিচের মতো দুটি
+উপরের সিকোয়েন্টে ভাগ হবে:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lnot !A, !A \fCenter !B$
+\AxiomC{}
+\UnaryInf$!B, !A \fCenter !B$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$ \lnot !A \lor !B, !A \fCenter !B $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
+\RightLabel{\RightR{\lif}}
+\UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
+\end{prooftree}
+মনে রেখো, আমরা উপর দিকে এগিয়ে প্রারম্ভিক সিকোয়েন্টে পৌঁছতে চাই;
+দেখা যাচ্ছে আমরা বেশ কাছাকাছি!{} ডান শাখাটি একটি প্রারম্ভিক সিকোয়েন্ট
+থেকে মাত্র একটি দুর্বলীকরণ ও একটি অদলবদল দূরে; তারপরই সেটি সম্পূর্ণ:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lnot !A, !A \fCenter !B$
+\Axiom$!B \fCenter !B$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!A, !B \fCenter !B$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!B, !A \fCenter !B$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor !B, !A \fCenter !B $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
+\RightLabel{\RightR{\lif}}
+\UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
+\end{prooftree}
+
+এবার বাঁ শাখাটি দেখি। কোনো !!{sentence}-এ একমাত্র যৌক্তিক সংযোজক
+হলো পূর্বাংশের !!{sentence}s-এ থাকা~$\lnot$; তাই এখানে \LeftR{\lnot}
+বিধির একটি প্রয়োগ চাই।
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ !A \fCenter !B, !A$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !A, !A \fCenter !B$
+\Axiom$!B \fCenter !B$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!A, !B \fCenter !B$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!B, !A \fCenter !B$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor !B, !A \fCenter !B $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
+\RightLabel{\RightR{\lif}}
+\UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
+\end{prooftree}
+ডান শাখাটি যেভাবে শেষ করেছি, একইভাবে মাত্র একটি দুর্বলীকরণ ও একটি
+অদলবদল দিয়ে বাঁ শাখাটিও শেষ করা যায়।
+\begin{prooftree}
+\Axiom$!A \fCenter !A$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$ !A \fCenter !A, !B$
+\RightLabel{\RightR{\Exchange}}
+\UnaryInf$ !A \fCenter !B, !A$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !A, !A \fCenter !B$
+\Axiom$!B \fCenter !B$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!A, !B \fCenter !B$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!B, !A \fCenter !B$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor !B, !A \fCenter !B $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
+\RightLabel{\RightR{\lif}}
+\UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
+\end{prooftree}
+% BN-SRC-025 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-025):} হিমায়িত ইংরেজি উৎসে উপরের পুনরাবৃত্ত প্রমাণ-বৃক্ষগুলিতে পূর্বাংশের $\lnot !A \lor !B$ ও~$!A$-এর স্থান অদলবদল করা চারটি ধাপকে $\RightR{\Exchange}$ বলা হয়েছে। বদলটি সিকোয়েন্টের বাঁদিকে ঘটেছে; তাই বাংলা বৃক্ষগুলিতে প্রযোজ্য $\LeftR{\Exchange}$ লেবেল ব্যবহার করা হয়েছে।} % BN-SRC-025 TARGET-CORRECTION-END
+\end{ex}
+
+\begin{ex}
+$\lnot !A \lor \lnot !B \Sequent \lnot (!A \land !B)$ সিকোয়েন্টটির
+একটি $\Log{LK}$-!!{derivation} দাও।
+
+আগের কৌশল অনুসারে নিচে কাঙ্ক্ষিত অন্তিম সিকোয়েন্টটি লিখে শুরু করি।
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ \lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B) $
+\end{prooftree}
+অন্তিম সিকোয়েন্টের !!{sentence}s-এর যে মুখ্য সংযোজকগুলি ব্যবহার করা
+যায়, সেগুলি হলো $\lor$ ও~$\lnot$। এখানে \LeftR{\lor} বা
+\RightR{\lnot}—দুটির যেকোনোটি প্রয়োগ করা যায়। আমরা \RightR{\lnot}
+দিয়ে শুরু করি, কারণ তাতে আরও কিছুক্ষণ দুই শাখায় ভাগ করা এড়ানো যায়:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$!A \land !B, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B)$
+\end{prooftree}
+এবার \LeftR{\land} নাকি \LeftR{\lor} বিধি দেখব, সেই পছন্দ আছে।
+\LeftR{\land} প্রয়োগ করলে কী হয় দেখা যাক: শুরুতে হয়
+$!A, \lnot !A \lor \lnot !B \Sequent \quad$, নয়তো
+$!B, \lnot !A \lor \lnot !B \Sequent \quad$ নেওয়া যায়।
+!!{derivation}-টি $!A$ ও~$!B$-এর বিনিময়ে প্রতিসম, তাই প্রথমটি নিই:
+% BN-SRC-026 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-026):} এই দুটি সম্ভাব্য উপরের সিকোয়েন্ট লিখতে গিয়ে হিমায়িত ইংরেজি গদ্যে দ্বিতীয় বিযোজ্যে $\lnot$ বাদ গেছে। উদাহরণের নিয়ামক অন্তিম সিকোয়েন্ট, প্রতিসাম্যের মন্তব্য এবং পরের সব প্রমাণ-বৃক্ষে $\lnot !A \lor \lnot !B$ আছে; বাংলা গদ্যে সেই রূপই পুনরুদ্ধার করা হয়েছে।} % BN-SRC-026 TARGET-CORRECTION-END
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$!A, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A \land !B, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B)$
+\end{prooftree}
+!!{derivation}-টি পূরণ করতে থাকলে দেখা যায় একটি সমস্যা হচ্ছে:
+\begin{prooftree}
+\Axiom$!A \fCenter !A$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$ \lnot !A, !A \fCenter$
+\AxiomC{}
+\RightLabel{?}
+\UnaryInf$!A \fCenter !B$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$ \lnot !B, !A \fCenter$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor \lnot !B, !A \fCenter $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!A, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A \land !B, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B)$
+\end{prooftree}
+ডান শাখার শীর্ষ সিকোয়েন্টটি আর সরল করা যায় না এবং গঠনগত অনুমান দিয়েও সেটিকে
+কোনো প্রারম্ভিক সিকোয়েন্টে আনা যায় না। তাই এটি সঠিক পথ নয়। স্পষ্টতই
+উপরে \LeftR{\land} প্রয়োগ করা ভুল হয়েছিল। আগের অবস্থায় ফিরে তার
+বদলে \LeftR{\lor} প্রয়োগ করলে পাই
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lnot !A, !A \land !B \fCenter $
+
+\AxiomC{}
+\UnaryInf$\lnot !B, !A \land !B \fCenter $
+
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor \lnot !B, !A \land !B \fCenter $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!A \land !B, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B)$
+\end{prooftree}
+প্রতিটি শাখা আগের মতো পূরণ করলে পাই
+\begin{prooftree}
+\Axiom$ !A \fCenter!A$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A \land !B \fCenter !A$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !A, !A \land !B \fCenter $
+
+\Axiom$ !B \fCenter !B$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A \land !B \fCenter !B$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !B, !A \land !B \fCenter $
+
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor \lnot !B, !A \land !B \fCenter $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!A \land !B, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B)$
+\end{prooftree}
+(এই ধাপগুলিতে $\lnot$ বিধিগুলির নিচে $\land$ বিধিগুলি প্রয়োগ করেও
+সঠিক !!{derivation} পাওয়া যেত।)
+\end{ex}
+
+\begin{ex}
+এ পর্যন্ত সংকোচন-বিধি ব্যবহার করিনি, কিন্তু কখনো এটি দরকার হয়। এমন একটি
+উদাহরণ দেখা যাক। ধরা যাক, $\quad \Sequent !A \lor \lnot !A$ প্রমাণ
+করতে চাই। নিচ থেকে উপর দিকে $\RightR{\lor}$ প্রয়োগ করলে নিচের দুটি
+!!{derivation}s-এর কোনো একটি পাওয়া যাবে:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ \fCenter !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$ \fCenter !A \lor \lnot !A$
+\DisplayProof\qquad\bottomAlignProof
+\AxiomC{}
+\UnaryInf$!A \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$ \fCenter \lnot !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$ \fCenter !A \lor \lnot !A$
+\end{prooftree}
+অবশ্য এর কোনোটিই কোনো প্রারম্ভিক সিকোয়েন্টে শেষ হয় না। কৌশলটি হলো
+বুঝতে পারা যে সংকোচন-বিধি কোনো !!a{sentence}-এর দুটি প্রতিলিপিকে
+একটিতে মেলাতে দেয়—আর যখন নিচ থেকে উপর দিকে প্রমাণ খুঁজি, তখন পূর্বধারণায়
+$!A \lor \lnot !A$-এর একটি প্রতিলিপি রেখে দিতে পারি; যেমন,
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ \fCenter !A \lor \lnot !A, !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$ \fCenter !A \lor \lnot !A, !A \lor \lnot !A$
+\RightLabel{\RightR{\Contraction}}
+\UnaryInf$ \fCenter !A \lor \lnot !A$
+\end{prooftree}
+এবার দ্বিতীয়বার $\RightR{\lor}$ প্রয়োগ করে~$\lnot !A$-ও পাওয়া যায়,
+যা একটি সম্পূর্ণ !!{derivation}-এ নিয়ে যায়।
+\begin{prooftree}
+\Axiom$!A \fCenter !A$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\fCenter !A, \lnot !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$\fCenter !A, !A \lor \lnot !A$
+\RightLabel{\RightR{\Exchange}}
+\UnaryInf$ \fCenter !A \lor \lnot !A, !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$ \fCenter !A \lor \lnot !A, !A \lor \lnot !A$
+\RightLabel{\RightR{\Contraction}}
+\UnaryInf$ \fCenter !A \lor \lnot !A$
+\end{prooftree}
+\end{ex}
+
+\begin{prob}
+নিচের সিকোয়েন্টগুলির !!{derivation}s দাও:
+\begin{enumerate}
+\item $!A \land (!B \land !C) \Sequent (!A \land !B) \land !C$।
+\item $!A \lor (!B \lor !C) \Sequent (!A \lor !B) \lor !C$।
+\item $!A \lif (!B \lif !C) \Sequent !B \lif (!A \lif !C)$।
+\item $!A \Sequent \lnot\lnot !A$।
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+নিচের সিকোয়েন্টগুলির !!{derivation}s দাও:
+\begin{enumerate}
+\item $(!A \lor !B) \lif !C \Sequent !A \lif !C$।
+\item $(!A \lif !C) \land (!B \lif !C) \Sequent (!A \lor !B) \lif !C$।
+\item $\Sequent \lnot(!A \land \lnot !A)$।
+\item $!B \lif !A \Sequent \lnot !A \lif \lnot !B$।
+\item $\Sequent (!A \lif \lnot !A) \lif \lnot !A$।
+\item $\Sequent \lnot(!A \lif !B) \lif \lnot !B$।
+\item $!A \lif !C \Sequent \lnot (!A \land \lnot !C)$।
+\item $!A \land \lnot !C \Sequent \lnot (!A \lif !C)$।
+\item $!A \lor !B, \lnot !B \Sequent !A$।
+\item $\lnot !A \lor \lnot !B \Sequent \lnot(!A \land !B)$।
+\item $\Sequent (\lnot !A \land \lnot !B) \lif\lnot(!A \lor !B)$।
+\item $\Sequent \lnot(!A \lor !B) \lif (\lnot !A \land \lnot !B)$।
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+নিচের সিকোয়েন্টগুলির !!{derivation}s দাও:
+\begin{enumerate}
+\item $\lnot(!A \lif !B) \Sequent !A$।
+\item $\lnot(!A \land !B) \Sequent \lnot !A \lor \lnot !B$।
+\item $!A \lif !B \Sequent \lnot !A \lor !B$।
+\item $\Sequent \lnot \lnot !A \lif !A$।
+\item $!A \lif !B, \lnot !A \lif !B \Sequent !B$।
+\item $(!A \land !B) \lif !C \Sequent (!A \lif !C) \lor (!B \lif !C)$।
+\item $(!A \lif !B) \lif !A \Sequent !A$।
+\item $\Sequent (!A \lif !B) \lor (!B \lif !C)$।
+\end{enumerate}
+(এগুলির প্রতিটিতে $\RightR{\Contraction}$~বিধি দরকার।)
+\end{prob}
+\end{document}

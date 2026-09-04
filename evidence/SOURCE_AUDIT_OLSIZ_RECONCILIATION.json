@@ -1,0 +1,310 @@
+{
+  "schema": "openlogic-bn-source-audit-reconciliation/1",
+  "as_of_date": "2026-09-04",
+  "audit_id": "OLSIZ-20260904",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "audit_files": [
+    {
+      "path": "evidence/SOURCE_AUDIT_OLSIZ_FINDINGS.json",
+      "bytes": 12592,
+      "sha256": "9b6e836c8432eb75d331913983603796d6557da6ec3ad71b846b2a248374cd07"
+    },
+    {
+      "path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
+      "bytes": 4417,
+      "sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9"
+    }
+  ],
+  "finding_ids": [
+    "OLSIZ-001",
+    "OLSIZ-002",
+    "OLSIZ-003",
+    "OLSIZ-004",
+    "OLSIZ-005",
+    "OLSIZ-006",
+    "OLSIZ-007",
+    "OLSIZ-008",
+    "OLSIZ-009",
+    "OLSIZ-010"
+  ],
+  "finding_records": [
+    {
+      "finding_id": "OLSIZ-006",
+      "local_finding_id": "BN-SRC-001",
+      "unit_id": "OLP-0035",
+      "source_path": "upstream/content/sets-functions-relations/size-of-sets/equinumerous-sets.tex",
+      "source_sha256": "025a3fc368d6873825effcb07631913762edbf2d3f9a0711d57dcd9575361251",
+      "target_path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/equinumerous-sets.tex",
+      "target_sha256": "3dd614755c5dac7837cb429fa17f78fabae82e55af73484b16d474c5c043762c",
+      "marker_line_start": 48,
+      "marker_line_end": 49,
+      "action": "corrected_body_plus_adjacent_note"
+    },
+    {
+      "finding_id": "OLSIZ-007",
+      "local_finding_id": "BN-SRC-002",
+      "unit_id": "OLP-0036",
+      "source_path": "upstream/content/sets-functions-relations/size-of-sets/comparing-size.tex",
+      "source_sha256": "075810b1cf1c8b54266518523d4665d3deae4a4937f4e19a66a09cc0e1aaebf7",
+      "target_path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/comparing-size.tex",
+      "target_sha256": "03e208111dee022598a18f3094e0dd8dd173f1e559b6ad26a8cae291c2eeba5d",
+      "marker_line_start": 56,
+      "marker_line_end": 57,
+      "action": "corrected_body_plus_adjacent_note"
+    },
+    {
+      "finding_id": "OLSIZ-008",
+      "local_finding_id": "BN-SRC-003",
+      "unit_id": "OLP-0039",
+      "source_path": "upstream/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex",
+      "source_sha256": "a075f6c63879101314fb20fa493acfb38d78ff24095bb55914f2af4527e1ad3e",
+      "target_path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex",
+      "target_sha256": "58bba38d61857f7142f458109474bbb6e91df7259dc4cc91a56d1ce9f5f4b734",
+      "marker_line_start": 38,
+      "marker_line_end": 39,
+      "action": "corrected_prose_plus_adjacent_note"
+    },
+    {
+      "finding_id": "OLSIZ-009",
+      "local_finding_id": "BN-SRC-004",
+      "unit_id": "OLP-0039",
+      "source_path": "upstream/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex",
+      "source_sha256": "a075f6c63879101314fb20fa493acfb38d78ff24095bb55914f2af4527e1ad3e",
+      "target_path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex",
+      "target_sha256": "58bba38d61857f7142f458109474bbb6e91df7259dc4cc91a56d1ce9f5f4b734",
+      "marker_line_start": 51,
+      "marker_line_end": 52,
+      "action": "corrected_prose_plus_adjacent_note"
+    },
+    {
+      "finding_id": "OLSIZ-010",
+      "local_finding_id": "BN-SRC-005",
+      "unit_id": "OLP-0040",
+      "source_path": "upstream/content/sets-functions-relations/size-of-sets/reduction-alt.tex",
+      "source_sha256": "f7717d8394048096cf7a65bc87a1a1ed15861cdfb8c7edb23429d5256d954d11",
+      "target_path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/reduction-alt.tex",
+      "target_sha256": "315c8bb951383b482e4ba74e32c9d11fe489863111c8e645bff1a6a2ebd6a510",
+      "marker_line_start": 31,
+      "marker_line_end": 32,
+      "action": "corrected_inline_formula_plus_adjacent_note"
+    },
+    {
+      "finding_id": "OLSIZ-001",
+      "local_finding_id": null,
+      "unit_id": "OLP-0029",
+      "source_path": "upstream/content/sets-functions-relations/size-of-sets/enumerability.tex",
+      "source_sha256": "bf6be35c0e393cb6e1d227f8e9024df4216792e663f23beb7277045487acfa67",
+      "target_path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/enumerability.tex",
+      "target_sha256": "2eb6439c3fd1411cdeb8b3c7536e410b23264266f5d4aa31dd1178c8d9cf7797",
+      "marker_line_start": 91,
+      "marker_line_end": 92,
+      "action": "added_missing_display_value_plus_adjacent_note"
+    },
+    {
+      "finding_id": "OLSIZ-002",
+      "local_finding_id": null,
+      "unit_id": "OLP-0031",
+      "source_path": "upstream/content/sets-functions-relations/size-of-sets/pairing.tex",
+      "source_sha256": "fb6cc1176e91e56cea5f5b9708723c59191813f8fe256aac8ed0457a0119a9bf",
+      "target_path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/pairing.tex",
+      "target_sha256": "e8a94bbe28092fb26a7c2741c04b61b9bda2ae721a0f46e9085a0bc5b7738ff7",
+      "marker_line_start": 61,
+      "marker_line_end": 62,
+      "action": "retained_clarified_body_plus_adjacent_note"
+    },
+    {
+      "finding_id": "OLSIZ-003",
+      "local_finding_id": null,
+      "unit_id": "OLP-0032",
+      "source_path": "upstream/content/sets-functions-relations/size-of-sets/pairing-alt.tex",
+      "source_sha256": "c26b4e0da9e2e0b0ec839470ddd1d0d5eb1b3d3922d3b6986c9a795f34328797",
+      "target_path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/pairing-alt.tex",
+      "target_sha256": "a13e03a6bd61c7d9640855a90bd61609f60cc926989eef29fd4007eef338eea8",
+      "marker_line_start": 29,
+      "marker_line_end": 30,
+      "action": "corrected_inline_formula_plus_adjacent_note"
+    },
+    {
+      "finding_id": "OLSIZ-004",
+      "local_finding_id": null,
+      "unit_id": "OLP-0034",
+      "source_path": "upstream/content/sets-functions-relations/size-of-sets/reduction.tex",
+      "source_sha256": "0d6d2e3280698668b837cef6dcf3134b86d2a4b48831ae516e6e33e42898c79a",
+      "target_path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/reduction.tex",
+      "target_sha256": "206db8672ed2b765e5b473078ac5dca5094050a083f47fa9d4a8fc76d00bdd65",
+      "marker_line_start": 28,
+      "marker_line_end": 29,
+      "action": "normalized_unbound_output_name_plus_adjacent_note"
+    },
+    {
+      "finding_id": "OLSIZ-005",
+      "local_finding_id": null,
+      "unit_id": "OLP-0034",
+      "source_path": "upstream/content/sets-functions-relations/size-of-sets/reduction.tex",
+      "source_sha256": "0d6d2e3280698668b837cef6dcf3134b86d2a4b48831ae516e6e33e42898c79a",
+      "target_path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/reduction.tex",
+      "target_sha256": "206db8672ed2b765e5b473078ac5dca5094050a083f47fa9d4a8fc76d00bdd65",
+      "marker_line_start": 54,
+      "marker_line_end": 55,
+      "action": "corrected_codomain_output_plus_adjacent_note"
+    }
+  ],
+  "affected_unit_checks": [
+    {
+      "unit_id": "OLP-0029",
+      "source_blocks": 32,
+      "target_blocks": 32,
+      "math_parity": true,
+      "math_missing": [],
+      "math_added": [],
+      "controls_parity": true,
+      "env_parity": true,
+      "token_parity": true,
+      "unicode_nfc": true,
+      "documented_source_corrections": [
+        "OLSIZ-001"
+      ],
+      "documented_math_correction": "OLSIZ-001 omitted f(7) value -3 restored",
+      "target_sha256": "2eb6439c3fd1411cdeb8b3c7536e410b23264266f5d4aa31dd1178c8d9cf7797"
+    },
+    {
+      "unit_id": "OLP-0031",
+      "source_blocks": 15,
+      "target_blocks": 15,
+      "math_parity": true,
+      "math_missing": [],
+      "math_added": [],
+      "controls_parity": true,
+      "env_parity": true,
+      "token_parity": true,
+      "unicode_nfc": true,
+      "documented_source_corrections": [
+        "OLSIZ-002"
+      ],
+      "documented_math_correction": null,
+      "target_sha256": "e8a94bbe28092fb26a7c2741c04b61b9bda2ae721a0f46e9085a0bc5b7738ff7"
+    },
+    {
+      "unit_id": "OLP-0032",
+      "source_blocks": 7,
+      "target_blocks": 7,
+      "math_parity": true,
+      "math_missing": [],
+      "math_added": [],
+      "controls_parity": true,
+      "env_parity": true,
+      "token_parity": true,
+      "unicode_nfc": true,
+      "documented_source_corrections": [
+        "OLSIZ-003"
+      ],
+      "documented_math_correction": "OLSIZ-003 duplicated pairing family corrected from (2,m) to (3,m)",
+      "target_sha256": "a13e03a6bd61c7d9640855a90bd61609f60cc926989eef29fd4007eef338eea8"
+    },
+    {
+      "unit_id": "OLP-0034",
+      "source_blocks": 18,
+      "target_blocks": 18,
+      "math_parity": true,
+      "math_missing": [],
+      "math_added": [],
+      "controls_parity": true,
+      "env_parity": true,
+      "token_parity": true,
+      "unicode_nfc": true,
+      "documented_source_corrections": [
+        "OLSIZ-004",
+        "OLSIZ-005"
+      ],
+      "documented_math_correction": "OLSIZ-004 bound characteristic-sequence name and OLSIZ-005 infinite codomain output restored",
+      "target_sha256": "206db8672ed2b765e5b473078ac5dca5094050a083f47fa9d4a8fc76d00bdd65"
+    },
+    {
+      "unit_id": "OLP-0035",
+      "source_blocks": 15,
+      "target_blocks": 15,
+      "math_parity": true,
+      "math_missing": [],
+      "math_added": [],
+      "controls_parity": true,
+      "env_parity": true,
+      "token_parity": true,
+      "unicode_nfc": true,
+      "documented_source_corrections": [
+        "BN-SRC-001",
+        "OLSIZ-006"
+      ],
+      "documented_math_correction": "BN-SRC-001 undefined g corrected to governing bijection f",
+      "target_sha256": "3dd614755c5dac7837cb429fa17f78fabae82e55af73484b16d474c5c043762c"
+    },
+    {
+      "unit_id": "OLP-0036",
+      "source_blocks": 15,
+      "target_blocks": 15,
+      "math_parity": true,
+      "math_missing": [],
+      "math_added": [],
+      "controls_parity": true,
+      "env_parity": true,
+      "token_parity": true,
+      "unicode_nfc": true,
+      "documented_source_corrections": [
+        "BN-SRC-002",
+        "OLSIZ-007"
+      ],
+      "documented_math_correction": "BN-SRC-002 diagonal proof quantifier corrected from x in A-bar to x in A",
+      "target_sha256": "03e208111dee022598a18f3094e0dd8dd173f1e559b6ad26a8cae291c2eeba5d"
+    },
+    {
+      "unit_id": "OLP-0039",
+      "source_blocks": 15,
+      "target_blocks": 15,
+      "math_parity": true,
+      "math_missing": [],
+      "math_added": [],
+      "controls_parity": true,
+      "env_parity": true,
+      "token_parity": true,
+      "unicode_nfc": true,
+      "documented_source_corrections": [
+        "BN-SRC-003",
+        "BN-SRC-004",
+        "OLSIZ-008",
+        "OLSIZ-009"
+      ],
+      "documented_math_correction": null,
+      "target_sha256": "58bba38d61857f7142f458109474bbb6e91df7259dc4cc91a56d1ce9f5f4b734"
+    },
+    {
+      "unit_id": "OLP-0040",
+      "source_blocks": 20,
+      "target_blocks": 20,
+      "math_parity": true,
+      "math_missing": [],
+      "math_added": [],
+      "controls_parity": true,
+      "env_parity": true,
+      "token_parity": true,
+      "unicode_nfc": true,
+      "documented_source_corrections": [
+        "BN-SRC-005",
+        "OLSIZ-010"
+      ],
+      "documented_math_correction": "BN-SRC-005 / OLSIZ-010 unbound characteristic-sequence name normalized to s",
+      "target_sha256": "315c8bb951383b482e4ba74e32c9d11fe489863111c8e645bff1a6a2ebd6a510"
+    }
+  ],
+  "affected_segment_rows": 137,
+  "affected_translated_segments": 130,
+  "validator": {
+    "path": "tools/check_source_draft.py",
+    "sha256": "1eabfc36c99ee27cbccad6d3027d688fb0d002ac5daa368cd69ea6dc1e7ced20"
+  },
+  "prior_checkpoint_audit_replay": {
+    "segments": 537,
+    "translated_segments": 479,
+    "used_canon_passages_resolved": 27,
+    "hash_range_or_locator_failures": 0
+  },
+  "result": "All ten shared findings are repaired or explicitly clarified, all affected notes and correction records resolve, and all 47 draft units pass block, audited-formula, control, environment, semantic-token and NFC checks."
+}

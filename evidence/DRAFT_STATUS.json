@@ -73,10 +73,11 @@
     "status_evidence": "evidence/STATUS.json"
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "1ec7fa885f6cf8cd2f01bc07cd051d63f79216ba",
-    "translated_units": 39,
-    "receipt": "PUBLIC_READBACK_SOURCE_39_2026-09-04.json",
-    "status": "Anonymous immutable-archive readback verified all 36 files changed by that source checkpoint."
+    "commit": "833c399148ebda9ae2449bd559e7805b44afdca3",
+    "translated_units": 47,
+    "receipt": "PUBLIC_READBACK_SOURCE_47_2026-09-04.json",
+    "receipt_sha256": "e82d31c3db65f8126f18e5f61cc55171ffb0aed7dc79464efa49487a4bde6cf5",
+    "status": "Anonymous immutable-archive readback verified all 17 files changed by that source checkpoint. The current corrective snapshot addresses the subsequently received OLSIZ audit."
   },
   "current_checks": {
     "unit_checks": [
@@ -474,9 +475,11 @@
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
-        "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "target_sha256": "0eeb40db9ce4ac5fd861cf672d5320628c6314301af219d93f1be71114fa74ab"
+        "documented_source_corrections": [
+          "OLSIZ-001"
+        ],
+        "documented_math_correction": "OLSIZ-001 omitted f(7) value -3 restored",
+        "target_sha256": "2eb6439c3fd1411cdeb8b3c7536e410b23264266f5d4aa31dd1178c8d9cf7797"
       },
       {
         "unit_id": "OLP-0030",
@@ -504,9 +507,11 @@
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
-        "documented_source_corrections": [],
+        "documented_source_corrections": [
+          "OLSIZ-002"
+        ],
         "documented_math_correction": null,
-        "target_sha256": "8a6b4a6f682faf6843b5b705845853ab6ddff2b39c84507814be7d1c2837f962"
+        "target_sha256": "e8a94bbe28092fb26a7c2741c04b61b9bda2ae721a0f46e9085a0bc5b7738ff7"
       },
       {
         "unit_id": "OLP-0032",
@@ -519,9 +524,11 @@
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
-        "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "target_sha256": "52cea995391e99660fc74d0ed62cee086602209d70a32073d46f5008a67ff82d"
+        "documented_source_corrections": [
+          "OLSIZ-003"
+        ],
+        "documented_math_correction": "OLSIZ-003 duplicated pairing family corrected from (2,m) to (3,m)",
+        "target_sha256": "a13e03a6bd61c7d9640855a90bd61609f60cc926989eef29fd4007eef338eea8"
       },
       {
         "unit_id": "OLP-0033",
@@ -549,9 +556,12 @@
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
-        "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "target_sha256": "305291969148e1dc06c2105387b3eeef4aaf9cc42c106031cabf916695fd2d7a"
+        "documented_source_corrections": [
+          "OLSIZ-004",
+          "OLSIZ-005"
+        ],
+        "documented_math_correction": "OLSIZ-004 bound characteristic-sequence name and OLSIZ-005 infinite codomain output restored",
+        "target_sha256": "206db8672ed2b765e5b473078ac5dca5094050a083f47fa9d4a8fc76d00bdd65"
       },
       {
         "unit_id": "OLP-0035",
@@ -565,10 +575,11 @@
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [
-          "BN-SRC-001"
+          "BN-SRC-001",
+          "OLSIZ-006"
         ],
         "documented_math_correction": "BN-SRC-001 undefined g corrected to governing bijection f",
-        "target_sha256": "12b8fcd1c66de0f2b406cd64b2ee4194eafe3f4f6e9f9a1efd03640e718e0366"
+        "target_sha256": "3dd614755c5dac7837cb429fa17f78fabae82e55af73484b16d474c5c043762c"
       },
       {
         "unit_id": "OLP-0036",
@@ -582,10 +593,11 @@
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [
-          "BN-SRC-002"
+          "BN-SRC-002",
+          "OLSIZ-007"
         ],
         "documented_math_correction": "BN-SRC-002 diagonal proof quantifier corrected from x in A-bar to x in A",
-        "target_sha256": "bfec957d2b8f45992a0d4f2c4a06606eed3adf3c407c346dda8d8fd463aecd45"
+        "target_sha256": "03e208111dee022598a18f3094e0dd8dd173f1e559b6ad26a8cae291c2eeba5d"
       },
       {
         "unit_id": "OLP-0037",
@@ -630,10 +642,12 @@
         "unicode_nfc": true,
         "documented_source_corrections": [
           "BN-SRC-003",
-          "BN-SRC-004"
+          "BN-SRC-004",
+          "OLSIZ-008",
+          "OLSIZ-009"
         ],
         "documented_math_correction": null,
-        "target_sha256": "646a4071043f33a6270b88260ad406f4c6e3ad6d323906234995a92bbd441f18"
+        "target_sha256": "58bba38d61857f7142f458109474bbb6e91df7259dc4cc91a56d1ce9f5f4b734"
       },
       {
         "unit_id": "OLP-0040",
@@ -647,10 +661,11 @@
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [
-          "BN-SRC-005"
+          "BN-SRC-005",
+          "OLSIZ-010"
         ],
-        "documented_math_correction": null,
-        "target_sha256": "cec085fa755dfbaaf9b52ea265f28c043bf0bfecdc336f1b054e3dadd131474c"
+        "documented_math_correction": "BN-SRC-005 / OLSIZ-010 unbound characteristic-sequence name normalized to s",
+        "target_sha256": "315c8bb951383b482e4ba74e32c9d11fe489863111c8e645bff1a6a2ebd6a510"
       },
       {
         "unit_id": "OLP-0041",
@@ -819,10 +834,14 @@
         "target_sha256": "daa8386fb8207a8a82df3b4ab3d9d7c8edfcc881f36eac371c7f04a50923dff1"
       }
     ],
+    "validator": {
+      "path": "tools/check_source_draft.py",
+      "sha256": "1eabfc36c99ee27cbccad6d3027d688fb0d002ac5daa368cd69ea6dc1e7ced20"
+    },
     "segments": 635,
     "translated_segments": 575,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "12770f066800e001027441a9e37d628689fcc247df0f4f2fc63cbc16ebcda3a6",
+    "segment_index_sha256": "a5c5168b37baccc6055d27b9abedcb85ee44cdc357e61c90f1caee3c000041e5",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -830,18 +849,36 @@
       },
       {
         "path": "evidence/SEMANTIC_REVIEW_SIZE_OF_SETS.md",
-        "sha256": "d60f2339b7a4d16ce72560eea42becfae94f51b554d6d2e24ce701b50fe2d614"
+        "sha256": "9e756a579efdf4a282cace4cc0df2b74012b1c53bd5df1d6e339be75f0143623"
       },
       {
         "path": "evidence/SEMANTIC_REVIEW_ARITHMETIZATION.md",
         "sha256": "5d397a9481c855a38be764a8fe9589d79a09ee8bdc1bbf699187c7aa7efaea2d"
       }
-    ]
+    ],
+    "shared_source_audit": {
+      "audit_id": "OLSIZ-20260904",
+      "findings": 10,
+      "reconciled_findings": 10,
+      "findings_path": "evidence/SOURCE_AUDIT_OLSIZ_FINDINGS.json",
+      "findings_sha256": "9b6e836c8432eb75d331913983603796d6557da6ec3ad71b846b2a248374cd07",
+      "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
+      "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
+      "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "reconciliation_sha256": "dc6286e53684895c56a38b35335756c513473e018dd41341360bbffbbf7b7f26",
+      "prior_checkpoint_segment_replay": {
+        "segments": 537,
+        "translated_segments": 479,
+        "used_canon_passages_resolved": 27,
+        "hash_range_or_locator_failures": 0
+      },
+      "status": "OLSIZ-001 through OLSIZ-005 are repaired in this corrective snapshot; BN-SRC-001 through BN-SRC-005 are cross-linked to OLSIZ-006 through OLSIZ-010, and OLSIZ-010 is now normalized in the formula body."
+    }
   },
   "source_corrections": {
-    "count": 21,
+    "count": 26,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "af9e97bd5c4cd36af7b1ec85d6fba77890944b955496982912ae2f8d44d29fcc",
+    "sha256": "059f052d2a9743da81f9a4ea68d8cbd6ca9d7816c9b24a40b56feffea9c5e798",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -863,14 +900,19 @@
       "BN-SRC-013",
       "BN-SRC-014",
       "BN-SRC-015",
-      "BN-SRC-016"
+      "BN-SRC-016",
+      "OLSIZ-001",
+      "OLSIZ-002",
+      "OLSIZ-003",
+      "OLSIZ-004",
+      "OLSIZ-005"
     ]
   },
   "translation_decisions": {
     "count": 55,
     "provisional_open": 37,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "b536f377541d2731e5cd5ac29f3b175305e9b7c14714f7e264988d428a240644",
+    "sha256": "f1a7b2158693e3ffc52acec8677d00ba4e2211f726db57bf2f6079e01f7c71dd",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md"
   },
   "functions_build_candidate": {

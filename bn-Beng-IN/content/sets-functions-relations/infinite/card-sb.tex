@@ -1,0 +1,76 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{infinite}{card-sb}
+
+\olsection{পরিশিষ্ট: শ্র্যোডার--বার্নস্টাইনের প্রমাণ}
+
+অনানুষ্ঠানিক সেটতত্ত্ব ছেড়ে যাওয়ার আগে আমাদের শেষ একটি অনানুষ্ঠানিক (তবে সূক্ষ্ম!) প্রমাণ বিবেচনা করতে হবে। এটি শ্র্যোডার--বার্নস্টাইনের (\olref[sfr][siz][sb]{thm:schroder-bernstein}) একটি প্রমাণ: $\cardle{A}{B}$ এবং $\cardle{B}{A}$ হলে $\cardeq{A}{B}$; অর্থাৎ, !!{injection}s $f \colon A \to B$ এবং $g \colon B \to A$ দেওয়া থাকলে একটি !!a{bijection} $h \colon A \to B$ আছে।
+
+এই অধ্যায়ে আমরা ডেডেকিন্ডের \emph{আবরণ}-এর ধারণা অনুসরণ করেছি। বস্তুত, ডেডেকিন্ড এই ধারণা ব্যবহার করে শ্র্যোডার--বার্নস্টাইনের একটি চমৎকার প্রমাণ দিয়েছিলেন; সেটিই এখানে উপস্থাপন করব। প্রমাণটি \citet[pp.~157--8]{Potter2004}-কে ঘনিষ্ঠভাবে অনুসরণ করে; সামান্য ভিন্ন, কিন্তু মূলত একই রকম আলোচনা চাইলে সেখানে দেখতে পারো। ইন্টারনেটে একটু খুঁজলেও তোমার বিশ্বাস হবে যে এটি—অনেকটা $\sqrt{2}$-এর অমূলদতার মতো—এমন একটি উপপাদ্য, যার \emph{বহু} আকর্ষণীয় ও পৃথক প্রমাণ আছে।
+
+\olref[sfr][infinite][dedekind]{Closure}-এর অনুরূপ সংকেত ব্যবহার করে, প্রত্যেক সেট $B$ ও অপেক্ষক~$f$-এর জন্য ধরি
+\[
+\Closureofunder{f}{B} = \bigcap \Setabs{X}{B \subseteq X
+\text{ এবং $X$ হলো $f$-বদ্ধ}}
+\]
+এভাবে সংজ্ঞায়িত $\Closureofunder{f}{B}$ হলো~$B$-কে ধারণকারী ক্ষুদ্রতম $f$-বদ্ধ সেট, এই অর্থে:
+
+\begin{lem}\ollabel{Closureprops}
+	যেকোনো অপেক্ষক $f$ এবং যেকোনো $B$-এর জন্য:
+	\begin{enumerate}
+		\item\ollabel{Closurehaselem} $B \subseteq \Closureofunder{f}{B}$; এবং
+		\item\ollabel{Closureclosed} $\Closureofunder{f}{B}$ হলো $f$-বদ্ধ; এবং
+		\item\ollabel{Closuresmallest} $X$ যদি $f$-বদ্ধ হয় এবং $B
+		\subseteq X$ হয়, তবে $\Closureofunder{f}{B} \subseteq X$।
+	\end{enumerate}
+\end{lem}
+
+\begin{proof}
+\olref[sfr][infinite][dedekind]{closureproperties}-এর প্রমাণের ঠিক মতো।
+\end{proof}
+
+শ্র্যোডার--বার্নস্টাইনে পৌঁছতে আমাদের শেষ আরেকটি তথ্য দরকার:
+
+\begin{prop}\ollabel{sbhelper}
+$A \subseteq B \subseteq C$ এবং $A \approx C$ হলে $\cardeq{\cardeq{A}{B}}{C}$।
+\end{prop}
+
+\begin{proof}
+একটি !!a{bijection} $f \colon C \to A$ দেওয়া থাকলে ধরি $F =
+\Closureofunder{f}{C \setminus B}$ এবং নিচের মতো সংজ্ঞাক্ষেত্র $C$-বিশিষ্ট একটি অপেক্ষক $g$ সংজ্ঞায়িত করি:
+\[
+	g(x) =
+	\begin{cases}
+			f(x) &\text{যদি $x \in F$ হয়}\\
+			x & \text{অন্যথায়}
+	\end{cases}
+\]
+আমরা দেখাব যে $g$ হলো $C \to B$ একটি !!a{bijection}; তা থেকে $\comp{f^{-1}}{g} \colon A \to B$ যে একটি !!a{bijection}, তা অনুসৃত হবে এবং প্রমাণ সম্পূর্ণ হবে।
+
+প্রথমে দাবি করি, $x \in F$ কিন্তু $y\notin F$ হলে $g(x) \neq
+g(y)$। স্ববিরোধে উপনীত হওয়ার জন্য উল্টোটি ধরি; তাহলে $y = g(y) = g(x) =
+f(x)$। যেহেতু $x \in F$ এবং \olref{Closureprops} অনুসারে $F$ হলো $f$-বদ্ধ, তাই $y = f(x) \in F$; এটি স্ববিরোধ।
+
+এবার ধরি $g(x) = g(y)$। তাহলে উপরের কথা থেকে $x \in F$ যদি এবং কেবল যদি $y \in F$। যদি $x, y \in F$ হয়, তবে $f(x) = g (x) = g(y) = f(y)$; তাই $f$ একটি !!a{bijection} বলে $x = y$। আর যদি $x, y \notin F$ হয়, তবে $x = g(x) =
+g(y) = y$। অতএব $g$ হলো !!a{injection}।
+
+এখন শুধু দেখাতে হবে যে $\ran{g} = B$। তাই একটি $x \in B \subseteq C$ নিই। যদি $x \notin F$ হয়, তবে $g(x) = x$। যদি $x \in F$ হয়, তবে কোনো $y \in F$-এর জন্য $x = f(y)$; কারণ এমন উপাদান না থাকলে $F \setminus \{x\}$ হতো $f$-বদ্ধ এবং $C\setminus B$-কে ধারণ করত, যা \olref{Closureprops} অনুসারে অসম্ভব; এখন $g(y) = f(y) = x$।
+\end{proof}
+
+সবশেষে মূল ফলটির প্রমাণ দিই। মনে করো, একটি অপেক্ষক $h$ ও সেট $D$ দেওয়া থাকলে আমরা $\funimage{h}{D} = \Setabs{h(x)}{x
+\in D}$ সংজ্ঞায়িত করি।
+
+\begin{proof}[শ্র্যোডার--বার্নস্টাইনের প্রমাণ] ধরি $f \colon A \to B$
+এবং $g \colon B \to A$ হলো !!{injection}s। যেহেতু $\funimage{f}{A}
+\subseteq B$, তাই $\funimage{g}{\funimage{f}{A}} \subseteq
+g[B] \subseteq A$। আরও, $g$ ও $f$ উভয়েই একৈক বলে $\comp{f}{g} \colon A \to
+\funimage{g}{\funimage{f}{A}}$ একটি !!{injection}; এবং বস্তুত, তার সহসংজ্ঞাক্ষেত্রটি আমরা যে ভাবে সংজ্ঞায়িত করেছি, শুধু সেই কারণেই $\comp{f}{g}$ একটি !!a{bijection}। তাই
+$\cardeq{\funimage{g}{\funimage{f}{A}}}{A}$, এবং ফলে
+\olref{sbhelper} অনুসারে একটি !!a{bijection} $h \colon A \to
+\funimage{g}{B}$ আছে। তাছাড়া, $g^{-1}$ হলো একটি !!a{bijection}
+$\funimage{g}{B} \to B$। তাই $\comp{h}{g^{-1}} \colon A \to B$ একটি !!a{bijection}।
+\end{proof}
+
+\end{document}

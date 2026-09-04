@@ -1,0 +1,94 @@
+% Part: sets-functions-relations
+% Chapter: infinite
+% Section: dedekind
+%
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{infinite}{dedekind}
+\olsection{ডেডেকিন্ড বীজগঠন}
+
+আমরা শুধু স্বাভাবিক সংখ্যাগুলিকে অসীম চাই না; তাদের কয়েকটি (বীজগাণিতিক) ধর্মও চাই: যোগ, গুণ ইত্যাদির অধীনে তাদের যথাযথ আচরণ করতে হবে।
+
+ডেডেকিন্ডের ধারণা ছিল \emph{উত্তরসূরি অপেক্ষক}-এর ধারণাটিকে মৌলিক ধরে নেওয়া এবং তারপর নিচের ধর্মবিশিষ্ট বস্তুগুলিকেই সংখ্যা হিসেবে চিহ্নিত করা:
+\begin{enumerate}
+	\item এমন একটি সংখ্যা $0$ আছে, যা কোনো সংখ্যার উত্তরসূরি নয়
+	\\অর্থাৎ, $0 \notin \ran{s}$
+	\\অর্থাৎ, $\forall x\ s(x) \neq 0$
+	\item ভিন্ন সংখ্যার উত্তরসূরি ভিন্ন
+	\\অর্থাৎ, $s$ হলো !!a{injection}
+	\\অর্থাৎ, $\forall x \forall y (s(x) = s(y) \lif x = y)$
+	\item\ollabel{repeatedapplication} প্রত্যেকটি সংখ্যা $0$-র উপর উত্তরসূরি অপেক্ষকটি বারবার প্রয়োগ করে পাওয়া যায়।
+\end{enumerate}
+প্রথম দুটি শর্তকে প্রথম-ক্রমের যুক্তিবিদ্যা দিয়ে সহজেই প্রকাশ করা যায় (উপরে দেখো)। কিন্তু শুধু প্রথম-ক্রমের যুক্তিবিদ্যা ব্যবহার করে \olref{repeatedapplication} সামলানো যায় না। ডেডেকিন্ডের যুগান্তকারী পদক্ষেপ ছিল শর্ত \olref{repeatedapplication}-কে সেটতাত্ত্বিক ভাষায় নিচের মতো পুনর্বিন্যস্ত করা:
+\begin{enumerate}
+	\item[3$'$.] স্বাভাবিক সংখ্যাগুলি হলো উত্তরসূরি অপেক্ষকের অধীনে \emph{বদ্ধ} ক্ষুদ্রতম সেট: অর্থাৎ, সেটটির যেকোনো !!{element}-এর উপর $s$ প্রয়োগ করলে সেটটিরই আরেকটি !!{element} পাওয়া যায়।
+\end{enumerate}
+তবে কথাটি আমাদের ধীরে ধীরে পূর্ণভাবে লিখতে হবে।
+
+\begin{defn}\ollabel{Closure}
+	যেকোনো অপেক্ষক $f$-এর জন্য সেট $X$-কে $f$-\emph{বদ্ধ} বলা হবে {যদি এবং কেবল যদি} $(\forall x \in X)f(x) \in X$। এবার যেকোনো $o$-এর জন্য সংজ্ঞা দিই:
+	$$\closureofunder{f}{o} = \bigcap\Setabs{X}{o \in X\text{ এবং }X
+\text{ হলো $f$-বদ্ধ}}$$
+\end{defn}
+
+তাহলে $\closureofunder{f}{o}$ হলো সেই সব $f$-বদ্ধ সেটের ছেদ, যেগুলির !!a{element} হলো $o$। তাই স্বজ্ঞাতভাবে $\closureofunder{f}{o}$ হলো $o$-কে !!a{element} হিসেবে ধারণকারী \emph{ক্ষুদ্রতম} $f$-বদ্ধ সেট। পরের ফলটি এই স্বজ্ঞাত ধারণাকে নির্ভুল করে:
+\begin{lem}\ollabel{closureproperties}
+	যেকোনো স্ব-অপেক্ষক $f$ এবং তার বাহক সেট A-এর যেকোনো $o \in A$-এর জন্য: % BN-SRC-018 TARGET-CORRECTION-BEGIN
+	\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-018):} হিমায়িত ইংরেজি উৎসে $o\in A$ বলা হলেও $A$-কে আগে বাঁধা হয়নি এবং $f$-এর সংজ্ঞাক্ষেত্র ও সহসংজ্ঞাক্ষেত্রও বলা হয়নি। পরের প্রমাণে $\ran{f}\cup\{o\}$-কে $f$-বদ্ধ পেতে এখানে $f\colon A\to A$ ও $o\in A$ দরকার। বাংলা মূল বাক্যে তাই $f$-কে স্ব-অপেক্ষক এবং A-কে তার বাহক সেট বলা হয়েছে; তালিকার সূত্রগুলি অপরিবর্তিত।} % BN-SRC-018 TARGET-CORRECTION-END
+	\begin{enumerate}
+		\item\ollabel{closurehaselem} $o \in \closureofunder{f}{o}$; এবং
+		\item\ollabel{closureclosed} $\closureofunder{f}{o}$ হলো $f$-বদ্ধ; এবং
+		\item\ollabel{closuresmallest} $X$ যদি $f$-বদ্ধ হয় এবং $o \in
+		X$ হয়, তবে $\closureofunder{f}{o} \subseteq X$
+	\end{enumerate}
+\end{lem}
+
+\begin{proof}
+লক্ষ করো, $o$-কে !!a{element} হিসেবে ধারণকারী অন্তত একটি $f$-বদ্ধ সেট আছে, যথা $\ran{f}\cup
+\{o\}$। তাই এমন \emph{সব} সেটের ছেদ $\closureofunder{f}{o}$ বিদ্যমান। এবার আমাদের
+\olref{closurehaselem}--\olref{closuresmallest} যাচাই করতে হবে।
+
+\olref{closurehaselem} সম্পর্কে: অভীষ্ট আবরণটি যে সেটগুলির ছেদ, তাদের প্রত্যেকটিরই !!a{element} হলো $o$; তাই $o \in \closureofunder{f}{o}$।
+
+\olref{closureclosed} সম্পর্কে: ধরি $x \in \closureofunder{f}{o}$। তাই $o \in X$ এবং $X$ $f$-বদ্ধ হলে $x \in X$; আর $X$ $f$-বদ্ধ বলে তখন $f(x) \in X$। অতএব $f(x) \in \closureofunder{f}{o}$।
+
+\olref{closuresmallest} সম্পর্কে: একেবারে সাধারণভাবে, $X
+\in C$ হলে $\bigcap C \subseteq X$।
+\end{proof}
+
+এটি ব্যবহার করে আমরা বলতে পারি:
+
+\begin{defn}
+একটি \emph{ডেডেকিন্ড বীজগঠন} হলো একটি সেট $A$, সঙ্গে একটি অপেক্ষক $f
+\colon A \to A$ এবং কোনো $o \in A$, যাতে:
+	\begin{enumerate}
+		\item \ollabel{ded:proper} $o \notin \ran{f}$
+		\item \ollabel{ded:injection} $f$ হলো !!a{injection}
+		\item \ollabel{ded:closure} $A = \closureofunder{f}{o}$
+	\end{enumerate}
+\end{defn}
+
+যেহেতু $A = \closureofunder{f}{o}$, আগের ফল থেকে পাই যে $A$ হলো $o$-কে !!a{element} হিসেবে ধারণকারী ক্ষুদ্রতম $f$-বদ্ধ সেট। একটি ডেডেকিন্ড বীজগঠন যে ডেডেকিন্ড-অসীম, তা পরিষ্কার; সংজ্ঞার \olref{ded:proper} ও \olref{ded:injection} শর্তদুটি দেখলেই হয়। কিন্তু আরও আকর্ষণীয় তথ্য হলো, যেকোনো ডেডেকিন্ড-অসীম সেটকে একটি ডেডেকিন্ড বীজগঠনে পরিণত করা যায়।
+
+\begin{thm}\ollabel{thm:DedekindInfiniteAlgebra}
+কোনো ডেডেকিন্ড-অসীম সেট থাকলে একটি ডেডেকিন্ড বীজগঠন আছে।
+\end{thm}
+
+\begin{proof}
+ধরি $D$ ডেডেকিন্ড-অসীম। তাই একটি একৈক অপেক্ষক $g \colon D \to
+D$ এবং একটি উপাদান $o  \in D \setminus \ran{g}$ আছে। এবার $A =
+\closureofunder{g}{o}$ নিই; \olref{closureproperties} অনুসারে $A$ বিদ্যমান এবং $o \in A$। ধরি $f =
+\funrestrictionto{g}{A}$। আমরা দেখাব যে $A, f, o$ মিলে একটি ডেডেকিন্ড বীজগঠন গঠন করে।
+
+\olref{ded:proper} সম্পর্কে: $o \notin \ran{g}$ এবং $\ran{f}
+\subseteq \ran{g}$, তাই $o\notin \ran{f}$।
+
+\olref{ded:injection} সম্পর্কে: $g$ হলো $D$-এর উপর একটি একৈক অপেক্ষক; তাই $f
+\subseteq g$-ও অবশ্যই একৈক অপেক্ষক।
+
+\olref{ded:closure} সম্পর্কে: \olref{closureproperties} অনুসারে $A$ হলো $g$-বদ্ধ; বিশেষত $A$ হলো $f$-বদ্ধ। তাই \olref{closureproperties} অনুসারে $\closureofunder{f}{o} \subseteq A$। আবার $\closureofunder{f}{o}$ হলো $f$-বদ্ধ এবং $f = \funrestrictionto{g}{A}$ বলে $\closureofunder{f}{o}$ যে $g$-বদ্ধ, তা অনুসৃত হয়। তাই \olref{closureproperties} অনুসারে $A \subseteq \closureofunder{f}{o}$।
+\end{proof}
+
+\end{document}

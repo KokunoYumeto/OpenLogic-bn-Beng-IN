@@ -319,5 +319,5 @@
     "used_canon_passages_resolved": 27,
     "hash_range_or_locator_failures": 0
   },
-  "result": "All ten shared findings are repaired or explicitly clarified, all affected notes and correction records resolve, and all 47 draft units pass block, audited-formula, control, environment, semantic-token and NFC checks."
+  "result": "All ten shared findings are repaired or explicitly clarified, all affected notes and correction records resolve, and every current draft unit passes block, audited-formula, control, environment, semantic-token and NFC checks."
 }

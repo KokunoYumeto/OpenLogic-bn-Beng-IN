@@ -58,13 +58,19 @@
       "OLP-0046",
       "OLP-0047",
       "OLP-0048",
+      "OLP-0049",
+      "OLP-0050",
+      "OLP-0051",
+      "OLP-0052",
+      "OLP-0053",
+      "OLP-0054",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 47,
-    "untranslated_count": 675,
-    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets source chapter and the complete Arithmetization source chapter are translated; both Size of Sets editorial alternatives remain distinct.",
-    "reader_state": "The cumulative reader still has a 25-unit Functions build candidate. Size of Sets and Arithmetization have not yet been integrated into a built reader."
+    "translated_count": 53,
+    "untranslated_count": 669,
+    "chapter_state": "Sets, Relations, Functions, and the complete Size of Sets, Arithmetization and Infinite Sets source chapters are translated; both Size of Sets editorial alternatives remain distinct.",
+    "reader_state": "The cumulative reader still has a 25-unit Functions build candidate. Size of Sets, Arithmetization and Infinite Sets have not yet been integrated into a built reader."
   },
   "last_verified_public_release": {
     "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.2.0-sets-relations",
@@ -73,11 +79,11 @@
     "status_evidence": "evidence/STATUS.json"
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "833c399148ebda9ae2449bd559e7805b44afdca3",
+    "commit": "96b82d84bd2f3f8a310c0df3bf1ae339676e1544",
     "translated_units": 47,
-    "receipt": "PUBLIC_READBACK_SOURCE_47_2026-09-04.json",
-    "receipt_sha256": "e82d31c3db65f8126f18e5f61cc55171ffb0aed7dc79464efa49487a4bde6cf5",
-    "status": "Anonymous immutable-archive readback verified all 17 files changed by that source checkpoint. The current corrective snapshot addresses the subsequently received OLSIZ audit."
+    "receipt": "PUBLIC_READBACK_SOURCE_47_CORRECTED_2026-09-04.json",
+    "receipt_sha256": "72b04758e78b1ccbb65ff394821b8e6453098c70d0e95b6a04f768c4ee933954",
+    "status": "Anonymous immutable-archive readback verified both the 19-file OLSIZ correction commit and the eight-file retraction-provenance commit byte-for-byte. The current 53-unit draft extends that verified 47-unit source checkpoint."
   },
   "current_checks": {
     "unit_checks": [
@@ -804,6 +810,100 @@
         "target_sha256": "acec01e1f2362b01353871bdfbab4be6a00c7863d7f53c5b091ba6c57786a49f"
       },
       {
+        "unit_id": "OLP-0049",
+        "source_blocks": 3,
+        "target_blocks": 3,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "target_sha256": "8bfb4e7deaf158280d12504be3444a2b5982b06bc2b3e490ac247c84b08455d0"
+      },
+      {
+        "unit_id": "OLP-0050",
+        "source_blocks": 4,
+        "target_blocks": 4,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "target_sha256": "d0fe1f6320a3afef8563d8c07e2594db1411e89105bef096a762607cb36afff1"
+      },
+      {
+        "unit_id": "OLP-0051",
+        "source_blocks": 17,
+        "target_blocks": 17,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-018"
+        ],
+        "documented_math_correction": null,
+        "target_sha256": "2471c8b7c0a7a03d5ef2eafd6b4f914ff834c4d33a7dbd137cd2229c646b4b0e"
+      },
+      {
+        "unit_id": "OLP-0052",
+        "source_blocks": 10,
+        "target_blocks": 10,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-017"
+        ],
+        "documented_math_correction": null,
+        "target_sha256": "2ccd70cfd5d106519cd69499b2a72c2da4f8d4d2e6ea8011ebf396e8d5c43458"
+      },
+      {
+        "unit_id": "OLP-0053",
+        "source_blocks": 12,
+        "target_blocks": 12,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "target_sha256": "423ced232eb739ca8b0a8786fb742f9c814099f0e405563189fa8a2e49651c6d"
+      },
+      {
+        "unit_id": "OLP-0054",
+        "source_blocks": 15,
+        "target_blocks": 15,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "target_sha256": "a88b27ceedc7b47aadd044b3cfdd83d78aad741f3f367664e5aa0ec8739381c4"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -838,10 +938,10 @@
       "path": "tools/check_source_draft.py",
       "sha256": "92a5172bd75305dcd01bdf3383549edac2ba4ec627d4b154e991ef23cfb38ab9"
     },
-    "segments": 635,
-    "translated_segments": 575,
+    "segments": 696,
+    "translated_segments": 635,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "a5c5168b37baccc6055d27b9abedcb85ee44cdc357e61c90f1caee3c000041e5",
+    "segment_index_sha256": "e25af5ba571cdfd11c342301a2c4fdf99aa461676841516bba3809de5827ed37",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -854,6 +954,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_ARITHMETIZATION.md",
         "sha256": "5d397a9481c855a38be764a8fe9589d79a09ee8bdc1bbf699187c7aa7efaea2d"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_INFINITE.md",
+        "sha256": "bf8b846daf5d363ea4f8eafac2e8182e49b4f741179ba2fd6a1d41eed8618379"
       }
     ],
     "shared_source_audit": {
@@ -868,7 +972,7 @@
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "c8ed845a1e753438ab8e80516c20c02473745d11718a4c8fece31c426904752d",
+      "reconciliation_sha256": "a25144895b4a6fdb35f522d812c3080762400dfdfdc036f9fa2ee54bec44d067",
       "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
       "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
       "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
@@ -886,9 +990,9 @@
     }
   },
   "source_corrections": {
-    "count": 26,
+    "count": 28,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "059f052d2a9743da81f9a4ea68d8cbd6ca9d7816c9b24a40b56feffea9c5e798",
+    "sha256": "1a101ecd8251a3d6d42e707fefe27d2e15d170b43749a86e447a9bc414e530af",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -911,6 +1015,8 @@
       "BN-SRC-014",
       "BN-SRC-015",
       "BN-SRC-016",
+      "BN-SRC-017",
+      "BN-SRC-018",
       "OLSIZ-001",
       "OLSIZ-002",
       "OLSIZ-003",
@@ -919,10 +1025,10 @@
     ]
   },
   "translation_decisions": {
-    "count": 55,
-    "provisional_open": 37,
+    "count": 59,
+    "provisional_open": 41,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "f1a7b2158693e3ffc52acec8677d00ba4e2211f726db57bf2f6079e01f7c71dd",
+    "sha256": "c22bd01f8353903a611d4b627839a08328ec2fa0434071a7079293fe2104e1c5",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md"
   },
   "functions_build_candidate": {
@@ -936,5 +1042,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "All three bounded global TeX mutex acquisitions concerned the prior input hash and timed out without launching TeX. The freshly prepared current input has not yet been submitted to TeX; no new PDF or HTML is claimed."
   },
-  "remaining": "675 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
+  "remaining": "669 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
 }

@@ -1,6 +1,6 @@
 {
   "schema": "openlogic-bn-source-audit-reconciliation/1",
-  "as_of_date": "2026-09-04",
+  "as_of_date": "2026-09-05",
   "audit_id": "OLSIZ-20260904",
   "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
   "audit_files": [
@@ -178,6 +178,8 @@
         "OLSIZ-001"
       ],
       "documented_math_correction": "OLSIZ-001 omitted f(7) value -3 restored",
+      "documented_tex_correction": null,
+      "documented_prose_correction": null,
       "target_sha256": "2eb6439c3fd1411cdeb8b3c7536e410b23264266f5d4aa31dd1178c8d9cf7797"
     },
     {
@@ -195,6 +197,8 @@
         "OLSIZ-002"
       ],
       "documented_math_correction": null,
+      "documented_tex_correction": null,
+      "documented_prose_correction": null,
       "target_sha256": "e8a94bbe28092fb26a7c2741c04b61b9bda2ae721a0f46e9085a0bc5b7738ff7"
     },
     {
@@ -212,6 +216,8 @@
         "OLSIZ-003"
       ],
       "documented_math_correction": "OLSIZ-003 duplicated pairing family corrected from (2,m) to (3,m)",
+      "documented_tex_correction": null,
+      "documented_prose_correction": null,
       "target_sha256": "a13e03a6bd61c7d9640855a90bd61609f60cc926989eef29fd4007eef338eea8"
     },
     {
@@ -230,6 +236,8 @@
         "OLSIZ-005"
       ],
       "documented_math_correction": "OLSIZ-004 bound characteristic-sequence name and OLSIZ-005 infinite codomain output restored",
+      "documented_tex_correction": null,
+      "documented_prose_correction": null,
       "target_sha256": "206db8672ed2b765e5b473078ac5dca5094050a083f47fa9d4a8fc76d00bdd65"
     },
     {
@@ -248,6 +256,8 @@
         "OLSIZ-006"
       ],
       "documented_math_correction": "BN-SRC-001 undefined g corrected to governing bijection f",
+      "documented_tex_correction": null,
+      "documented_prose_correction": null,
       "target_sha256": "3dd614755c5dac7837cb429fa17f78fabae82e55af73484b16d474c5c043762c"
     },
     {
@@ -266,6 +276,8 @@
         "OLSIZ-007"
       ],
       "documented_math_correction": "BN-SRC-002 diagonal proof quantifier corrected from x in A-bar to x in A",
+      "documented_tex_correction": null,
+      "documented_prose_correction": null,
       "target_sha256": "03e208111dee022598a18f3094e0dd8dd173f1e559b6ad26a8cae291c2eeba5d"
     },
     {
@@ -286,6 +298,8 @@
         "OLSIZ-009"
       ],
       "documented_math_correction": null,
+      "documented_tex_correction": null,
+      "documented_prose_correction": null,
       "target_sha256": "58bba38d61857f7142f458109474bbb6e91df7259dc4cc91a56d1ce9f5f4b734"
     },
     {
@@ -304,6 +318,8 @@
         "OLSIZ-010"
       ],
       "documented_math_correction": "BN-SRC-005 / OLSIZ-010 unbound characteristic-sequence name normalized to s",
+      "documented_tex_correction": null,
+      "documented_prose_correction": null,
       "target_sha256": "315c8bb951383b482e4ba74e32c9d11fe489863111c8e645bff1a6a2ebd6a510"
     }
   ],
@@ -311,7 +327,7 @@
   "affected_translated_segments": 130,
   "validator": {
     "path": "tools/check_source_draft.py",
-    "sha256": "07dcbbff4d78c3096974280a69534ce7bf55224bc35b5c0106a03f24065f0d17"
+    "sha256": "3c43b0f68f80c25d2250e64953b83a1cb4aee998586b9106c983c2abe0b1ef2f"
   },
   "prior_checkpoint_audit_replay": {
     "segments": 537,

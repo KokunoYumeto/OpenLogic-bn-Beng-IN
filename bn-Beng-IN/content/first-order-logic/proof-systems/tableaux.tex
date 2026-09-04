@@ -1,0 +1,94 @@
+% Part: first-order-logic
+% Chapter: proof-systems
+% Section: tableaux
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{prf}{tab}}
+      {\olfileid{pl}{prf}{tab}}
+
+\olsection{\usetoken{P}{tableau}}
+
+অনেক !!{derivation} পদ্ধতি !!{sentence}s-এর বিন্যাস নিয়ে কাজ করলেও,
+!!{tableau}s কাজ করে !!{signed formula}s নিয়ে। কোনো
+!!^a{signed formula} হলো একটি সত্যমান-চিহ্ন ($\True$ অথবা $\False$)
+ও একটি !!a{sentence} নিয়ে গঠিত যুগল:
+\[
+\sFmla{\True}{!A} \text{ অথবা } \sFmla{\False}{!A}.
+\]
+কোনো !!^a{tableau} নিম্নমুখে শাখায়িত একটি বৃক্ষে বিন্যস্ত
+!!{signed formula}s নিয়ে গঠিত। এটি কয়েকটি \emph{অনুমিতি} দিয়ে শুরু
+হয় এবং তাদের উপরের !!{signed formula}s-এর কোনো একটিতে কোনো অনুমান-বিধি প্রয়োগ
+করে পাওয়া !!{signed formula}s দিয়ে এগোয়। প্রতিটি বিধি কোনো শাখার
+শেষে এক বা একাধিক !!{signed formula}s অথবা পাশাপাশি দুটি
+!!{signed formula}s যোগ করতে দেয়—শেষ ক্ষেত্রে শাখাটি দুভাগে বিভক্ত হয়
+এবং যোগ করা দুটি !!{signed
+  formula}s নতুন শাখা দুটির প্রান্ত গঠন করে।
+
+কোনো জটিল !!{signed formula}-এ একটি বিধি প্রয়োগ করলে যেসব
+!!{signed formula}s যোগ হয়, সেগুলি তার অব্যবহিত উপ-!!{formula}s।
+প্রতিটি সত্যমান-চিহ্নের জন্য একটি করে, অর্থাৎ বিধিগুলি জোড়ায় আসে।
+যেমন, $\TRule{\True}{\land}$ বিধি $\sFmla{\True}{!A \land !B}$-তে
+প্রযোজ্য এবং $\sFmla{\True}{!A \land !B}$-যুক্ত যেকোনো শাখার শেষে
+$\sFmla{\True}{!A}$ ও~$\sFmla{\True}{!B}$—এই দুটি
+!!{signed formula}s-ই যোগ করতে দেয়। আর
+$\TRule{\False}{\land}$ বিধি $\sFmla{\False}{!A}$ ও
+$\sFmla{\False}{!B}$ পাশাপাশি যোগ করে কোনো শাখাকে দুভাগে ভাগ করতে দেয়।
+% BN-SRC-022 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-022):} হিমায়িত ইংরেজি উৎসে দ্বিতীয় বিধিটির নাম $\TRule{\False}{!A \land !B}$ লেখা হয়েছে, যদিও একই বাক্যের প্রথম বিধি এবং উৎসের আনুষ্ঠানিক ট্যাবলো-বিধিগুলি দ্বিতীয় আর্গুমেন্টে কেবল সংযোজকটি নেয়। বাংলা পাঠে তাই $\TRule{\False}{\land}$ ব্যবহার করা হয়েছে।} % BN-SRC-022 TARGET-CORRECTION-END
+কোনো !!^a{tableau} বদ্ধ, যদি তার প্রতিটি শাখায়
+$\sFmla{\True}{!A}$ ও $\sFmla{\False}{!A}$ রূপের পরস্পর-মেলা
+!!{signed formula}s-এর একটি যুগল থাকে।
+
+!!{tableau}s-ভিত্তিক $\Proves$ সম্পর্কটি নিচের মতো সংজ্ঞায়িত:
+$\Gamma \Proves !A$ তখনই, যখন এমন কোনো সসীম সেট~$\Gamma_0 = \{!B_1,
+\dots, !B_n\} \subseteq \Gamma$ আছে যাতে নিচের অনুমিতিগুলির জন্য একটি
+বদ্ধ !!{tableau} থাকে:
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+\]
+যেমন, নিচের বদ্ধ !!{tableau}-টি দেখায় যে $\Proves
+(!A \land !B) \lif !A$:
+\begin{oltableau}
+  [\sFmla{\False}{(\formula{A} \land \formula{B}) \lif \formula{A}}, just = \TAss
+    [\sFmla{\True}{\formula{A} \land \formula{B}}, just = {\TRule{\False}{\lif}[1]}
+      [\sFmla{\False}{\formula{A}}, just = {\TRule{\False}{\lif}[1]}
+        [\sFmla{\True}{\formula{A}}, just = {\TRule{\True}{\land}[2]}
+          [\sFmla{\True}{\formula{B}}, just = {\TRule{\True}{\land}[2]}, close]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+% BN-SRC-023 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-023):} হিমায়িত ইংরেজি উৎসে সত্য-চিহ্নিত সংযোজন~$\sFmla{\True}{\formula{A} \land \formula{B}}$ থেকে দুই অঙ্গ নামানোর ধাপদুটিকে $\TRule{\True}{\lif}[2]$ বলা হয়েছে। সূত্রটি সংযোজন এবং আনুষ্ঠানিক বিধি অনুসারে এখানে $\TRule{\True}{\land}[2]$ প্রযোজ্য; বাংলা প্রমাণ-বৃক্ষে সেই বিধি-লেবেল ব্যবহার করা হয়েছে।} % BN-SRC-023 TARGET-CORRECTION-END
+
+!!{tableau} কলনে কোনো সেট $\Gamma$ অসঙ্গত, যদি নিচের অনুমিতিগুলির
+একটি বদ্ধ !!{tableau} থাকে এবং সেখানে প্রত্যেক সূচকের জন্য
+$!B_i \in \Gamma$ হয়:
+\[
+\{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+\]
+% BN-SRC-024 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-024):} হিমায়িত ইংরেজি উৎসে প্রদর্শিত সব অনুমিতিকে~$\Gamma$-র সদস্য না বলে কেবল কোনো একটি~$!B_i \in \Gamma$ হওয়ার কথা লেখা হয়েছে। একই হিমায়িত সংগ্রহের পূর্ণ ট্যাবলো-সংজ্ঞায়~$\{!B_1, \dots, !B_n\} \subseteq \Gamma$ আবশ্যক। বাংলা পাঠে তাই প্রতিটি প্রদর্শিত অনুমিতির সদস্যতা বলা হয়েছে।} % BN-SRC-024 TARGET-CORRECTION-END
+
+ইভার্ট বেথ ও ইয়াক্কো হিন্টিক্কা ১৯৫০-এর দশকে পরস্পরের স্বাধীনভাবে
+!!^{tableau}s উদ্ভাবন করেন; রেমন্ড স্মালিয়ান পরে সেগুলিকে সরল ও
+জনপ্রিয় করেন। এগুলি ব্যবহার করা খুব সহজ, কারণ !!a{tableau} নির্মাণ
+একটি অত্যন্ত নিয়মবদ্ধ প্রক্রিয়া। এই নিয়মবদ্ধতার কারণে
+!!{tableau}s কম্পিউটারেও সহজে রূপায়ণ করা যায়। তবে কোনো !!a{tableau}
+প্রায়ই পড়া কঠিন এবং প্রমাণের সঙ্গে তার সম্পর্কও কখনো কখনো সহজে ধরা
+পড়ে না। পদ্ধতিটি বেশ সাধারণও বটে; বহু ভিন্ন যুক্তিবিদ্যার
+!!{tableau} পদ্ধতি আছে। প্রদত্ত (কোনো সেটের) !!{sentence}s-কে
+পরিতৃপ্ত করে এমন !!{structure}s খুঁজতেও !!^{tableau}s সাহায্য করে:
+সেটটি পরিতৃপ্তিযোগ্য হলে তার কোনো বদ্ধ !!{tableau} থাকবে না; অর্থাৎ
+যেকোনো !!{tableau}-তে একটি খোলা শাখা থাকবে। সেই শাখায় প্রয়োগযোগ্য
+প্রতিটি বিধি প্রয়োগ করা হয়ে থাকলে, খোলা শাখাটি থেকে পরিতৃপ্তিকারী
+!!{structure} “পড়ে নেওয়া” যায়। সিকোয়েন্ট কলনের সঙ্গেও এর অত্যন্ত
+ঘনিষ্ঠ সম্পর্ক আছে: মূলত কোনো বদ্ধ !!{tableau} হলো সিকোয়েন্ট কলনের
+একটি সংক্ষিপ্ত !!{derivation}, যা উল্টো করে লেখা।
+
+\end{document}

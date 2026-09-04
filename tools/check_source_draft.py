@@ -167,6 +167,40 @@ for row in rows:
         == collections.Counter({"!A_n\\ident(!A_j\\land!A_k)": 1})
         and "BN-SRC-020" in documented
     )
+    sequent_index_fix = (
+        row["unit_id"] == "OLP-0065"
+        and source_math - target_math
+        == collections.Counter({"!A_1,\\dots,!A_m\\Sequent!B_1,\\dots,!B_m,": 1})
+        and target_math - source_math
+        == collections.Counter({"!A_1,\\dots,!A_m\\Sequent!B_1,\\dots,!B_n,": 1})
+        and "BN-SRC-021" in documented
+    )
+    tableau_false_and_fix = (
+        row["unit_id"] == "OLP-0067"
+        and source_math - target_math
+        == collections.Counter({"\\TRule{\\False}{!A\\land!B}": 1})
+        and target_math - source_math
+        == collections.Counter({"\\TRule{\\False}{\\land}": 1})
+        and "BN-SRC-022" in documented
+    )
+    tableau_tree_label_fix = (
+        row["unit_id"] == "OLP-0067"
+        and source.count("\\TRule{\\True}{\\lif}[2]") == 2
+        and checked_target.count("\\TRule{\\True}{\\lif}[2]") == 0
+        and source.count("\\TRule{\\True}{\\land}[2]") == 0
+        and checked_target.count("\\TRule{\\True}{\\land}[2]") == 2
+        and "BN-SRC-023" in documented
+    )
+    tableau_consistency_scope_fix = (
+        row["unit_id"] == "OLP-0067"
+        and source.count("for some $!B_i \\in \\Gamma$.") == 1
+        and re.search(
+            r"প্রত্যেক সূচকের জন্য\s+\$!B_i \\in \\Gamma\$ হয়",
+            checked_target,
+        )
+        is not None
+        and "BN-SRC-024" in documented
+    )
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -178,6 +212,17 @@ for row in rows:
             "source": source_hlines,
             "target": target_hlines,
             "token_hex": "5c5c5c686c696e65",
+        }
+    elif row["unit_id"] == "OLP-0067":
+        assert tableau_tree_label_fix and tableau_consistency_scope_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-023",
+            "source_true_conditional_rule_labels": 2,
+            "target_true_conditional_rule_labels": 0,
+            "source_true_conjunction_rule_labels": 0,
+            "target_true_conjunction_rule_labels": 2,
+            "documented_prose_correction": "BN-SRC-024",
+            "all_displayed_assumptions_required_in_gamma": True,
         }
     audited_source = source
     shared_description = None
@@ -217,6 +262,8 @@ for row in rows:
             real_zero_fix,
             conditional_paren_fix,
             formation_identity_fix,
+            sequent_index_fix,
+            tableau_false_and_fix,
             shared_audit_fix,
         )
     )

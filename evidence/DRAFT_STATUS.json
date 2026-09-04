@@ -72,12 +72,18 @@
       "OLP-0060",
       "OLP-0061",
       "OLP-0062",
+      "OLP-0063",
+      "OLP-0064",
+      "OLP-0065",
+      "OLP-0066",
+      "OLP-0067",
+      "OLP-0068",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 61,
-    "untranslated_count": 661,
-    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, and the Propositional Logic part driver plus complete Syntax and Semantics chapter are translated; both Size of Sets editorial alternatives remain distinct.",
+    "translated_count": 67,
+    "untranslated_count": 655,
+    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, and the complete shared Proof Systems chapter are translated; both Size of Sets editorial alternatives remain distinct.",
     "reader_state": "The cumulative reader still has a 25-unit Functions build candidate. Size of Sets, Arithmetization, Infinite Sets and Propositional Logic have not yet been integrated into a built reader."
   },
   "last_verified_public_release": {
@@ -87,11 +93,11 @@
     "status_evidence": "evidence/STATUS.json"
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "1c1a2d85f1e2f029b6dfae2de634c3b0a902b7a3",
-    "translated_units": 53,
-    "receipt": "PUBLIC_READBACK_SOURCE_53_2026-09-04.json",
-    "receipt_sha256": "abc0d8a6ccd695798531f097c9b88960016478a40449bc2c3683fcda5038b8c5",
-    "status": "Anonymous immutable-archive readback verified every changed Git object in the complete Infinite Sets checkpoint and reran the public checker for all 53 sources. The current 61-unit draft extends that verified checkpoint."
+    "commit": "c19fae1f0db0560650f06c4c3b1dad07e14fb503",
+    "translated_units": 61,
+    "receipt": "PUBLIC_READBACK_SOURCE_61_2026-09-04.json",
+    "receipt_sha256": "47c8beb197e8cd77a786cbb0aa56bd5ea9f8a85d32b8f9ed3958955a8bcc3a5f",
+    "status": "Anonymous immutable-archive readback verified every changed Git object in the complete Propositional Syntax and Semantics checkpoint and reran the public checker for all 61 sources. The current 67-unit draft extends that verified checkpoint."
   },
   "current_checks": {
     "unit_checks": [
@@ -108,6 +114,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "2281c8f7e0e251170c68a4f361b6e1c55b94da5aa5df3228555c5ab8c930344f"
       },
       {
@@ -123,6 +131,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "2d17c4c30e2096680a9cd65df16d558fafb1464f372ee0d0210b8d17e21937c9"
       },
       {
@@ -138,6 +148,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "3b2b44311912aa77fdc72b56d9b50806f1ad8b36f3d1e2ab4e422c00a1ea336d"
       },
       {
@@ -153,6 +165,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "e03b7a46e32cb2aaf96ec0c9dca899885ef84e0523b087a2625612322cdb6e15"
       },
       {
@@ -168,6 +182,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "e45eaf12e58c0e9bb135dd4f043f413e2c94295288f07fa1fb27286c4d3ec23e"
       },
       {
@@ -183,6 +199,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "72f0f8a6df6e7361bd4d89e3ddadfbdc272b8963a8fbf34f770a27afef854cb4"
       },
       {
@@ -198,6 +216,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "8e18c047e8481a3a1c8e41fddc0f7d96bdb8127a26bdcec5f473fd97ab147ccc"
       },
       {
@@ -213,6 +233,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "0cc79df4a0d40d4b71570ca14fca28b7881620c66b3eb6dae258fc845788fbc0"
       },
       {
@@ -228,6 +250,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "c5455ea8ec63b0964d63f432f2759fab1dc74b6ab9d272b690bbc52840982086"
       },
       {
@@ -243,6 +267,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "162c28ecc6024b8fc72782888fa6fc0a45fc8747b1d8c5132373b56a53de0a5d"
       },
       {
@@ -258,6 +284,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "11d236ee9666f5304b4906a8ccda377dcd1b2ee65a1d089ac6c4537012708aca"
       },
       {
@@ -273,6 +301,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "8b7b60420602e20ad14477d0f67a11d32ac1485220998f18242ac101aad8d951"
       },
       {
@@ -288,6 +318,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "ec5f30506cd5616349ac741230555dd4ceba141d59abfe16df7b2ad4c2a033f1"
       },
       {
@@ -303,6 +335,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "682e0553d71624d65b6450a5e739e48d76687eff0aa1c3d5c6934c73755925cc"
       },
       {
@@ -318,6 +352,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "5799aa61e770bc4bcf65ed7f57207ccf1b60f77d751c86a664387a52b044f702"
       },
       {
@@ -333,6 +369,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "8202aa90b9025257c4834092267c33dc084f886013e93783cef7ff3cff3f6c79"
       },
       {
@@ -348,6 +386,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "25505e304c4f96ffb7d6bb28d91313b99f01e403a4a1847a5a6bb65970038d7f"
       },
       {
@@ -366,6 +406,8 @@
           "OLFUN-003"
         ],
         "documented_math_correction": "OLFUN-003 n-to-x prose normalization",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "1c87cb6ae90af3e7f8c2e50943002a463225f0c594e7ff791dd97788dd53ebe4"
       },
       {
@@ -381,6 +423,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "b36bc53773888b20840b07d943758a8156f1727d8fb7a5d4a132c74b44149a65"
       },
       {
@@ -399,6 +443,8 @@
           "OLFUN-005"
         ],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "89bf10c8e66fdcfc1fdfa79cf224de1c8aa0ad2536475c982e3dca7f83d5d529"
       },
       {
@@ -416,6 +462,8 @@
           "OLFUN-001"
         ],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "d16c00f47bef365fada486d73d1543a5b839f4593536e3a43a8e715a30353070"
       },
       {
@@ -431,6 +479,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "626b3288b34741a275176c6c4be5582c86e472f855da16f99fa6cbd68decf83d"
       },
       {
@@ -446,6 +496,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "b26475143919867ecf2b2f94ab66902c1b495d3aa65c1fd888e0c8bb8a8c194b"
       },
       {
@@ -461,6 +513,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "3416b50ad93aebef3906d3ebba26320e27ebcdaef13ace0b53339b5c8e47c152"
       },
       {
@@ -476,6 +530,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "6032ad1f7724e6f31468f788d67a6df9833840f2e5e515ac24b1a0ca93ef0f19"
       },
       {
@@ -493,6 +549,8 @@
           "OLSIZ-001"
         ],
         "documented_math_correction": "OLSIZ-001 omitted f(7) value -3 restored",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "2eb6439c3fd1411cdeb8b3c7536e410b23264266f5d4aa31dd1178c8d9cf7797"
       },
       {
@@ -508,6 +566,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "f3e1934b4af3742cc945ec47aedc5cfefc5326eb60628cf14d6f0bb555bdf7e0"
       },
       {
@@ -525,6 +585,8 @@
           "OLSIZ-002"
         ],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "e8a94bbe28092fb26a7c2741c04b61b9bda2ae721a0f46e9085a0bc5b7738ff7"
       },
       {
@@ -542,6 +604,8 @@
           "OLSIZ-003"
         ],
         "documented_math_correction": "OLSIZ-003 duplicated pairing family corrected from (2,m) to (3,m)",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "a13e03a6bd61c7d9640855a90bd61609f60cc926989eef29fd4007eef338eea8"
       },
       {
@@ -557,6 +621,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "eea04f1e76abda2493fb8498fc3d94ca855a1b7f21ae86c457226435625de4ce"
       },
       {
@@ -575,6 +641,8 @@
           "OLSIZ-005"
         ],
         "documented_math_correction": "OLSIZ-004 bound characteristic-sequence name and OLSIZ-005 infinite codomain output restored",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "206db8672ed2b765e5b473078ac5dca5094050a083f47fa9d4a8fc76d00bdd65"
       },
       {
@@ -593,6 +661,8 @@
           "OLSIZ-006"
         ],
         "documented_math_correction": "BN-SRC-001 undefined g corrected to governing bijection f",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "3dd614755c5dac7837cb429fa17f78fabae82e55af73484b16d474c5c043762c"
       },
       {
@@ -611,6 +681,8 @@
           "OLSIZ-007"
         ],
         "documented_math_correction": "BN-SRC-002 diagonal proof quantifier corrected from x in A-bar to x in A",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "03e208111dee022598a18f3094e0dd8dd173f1e559b6ad26a8cae291c2eeba5d"
       },
       {
@@ -626,6 +698,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "f69e05305adf5989883adc72c42c377f70d4424742bffcc0162b9ce36878a4e5"
       },
       {
@@ -641,6 +715,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "87d5bde6fd191b25eb5e426275739f504090b07837cfd84be7d93fe1295a16b1"
       },
       {
@@ -661,6 +737,8 @@
           "OLSIZ-009"
         ],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "58bba38d61857f7142f458109474bbb6e91df7259dc4cc91a56d1ce9f5f4b734"
       },
       {
@@ -679,6 +757,8 @@
           "OLSIZ-010"
         ],
         "documented_math_correction": "BN-SRC-005 / OLSIZ-010 unbound characteristic-sequence name normalized to s",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "315c8bb951383b482e4ba74e32c9d11fe489863111c8e645bff1a6a2ebd6a510"
       },
       {
@@ -694,6 +774,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "7a96de8d45de73d9ed7add69666d1110415e9655bf444aa26918d6e1af8eb0da"
       },
       {
@@ -709,6 +791,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "94b8a70f7bba2dc05cb1b86daac3748d1aee4f5c6ca45c2a19860664a921cc70"
       },
       {
@@ -726,6 +810,8 @@
           "BN-SRC-006"
         ],
         "documented_math_correction": "BN-SRC-006 rational-order difference corrected from r-s to s-r",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "7d61c7b718ef574d9d47e8ef7109b460ad3d8c7ace17a0b645f020f5fd75a1cc"
       },
       {
@@ -744,6 +830,8 @@
           "BN-SRC-008"
         ],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "5b7d6cada389a27c76d1c5d297ce224cd904143d3de222c197138c9ce4d8b8b5"
       },
       {
@@ -762,6 +850,8 @@
           "BN-SRC-010"
         ],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "fabfc70c7f4ddc2780842742b0d07b76cd8d027bc6c8a0816751493180e08d8c"
       },
       {
@@ -777,6 +867,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "ab811ac11adee8e9258a8185dd0e815f4d6263b1cd8e8171efc99c42e06df2d7"
       },
       {
@@ -795,6 +887,8 @@
           "BN-SRC-012"
         ],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "993f50a8cc2a3e5f5e1a81dd3ac2edc17a356fe51815597df44c51249b231028"
       },
       {
@@ -815,6 +909,8 @@
           "BN-SRC-016"
         ],
         "documented_math_correction": "BN-SRC-014 real-class zero corrected from rational to real embedding",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "acec01e1f2362b01353871bdfbab4be6a00c7863d7f53c5b091ba6c57786a49f"
       },
       {
@@ -830,6 +926,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "8bfb4e7deaf158280d12504be3444a2b5982b06bc2b3e490ac247c84b08455d0"
       },
       {
@@ -845,6 +943,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "d0fe1f6320a3afef8563d8c07e2594db1411e89105bef096a762607cb36afff1"
       },
       {
@@ -862,6 +962,8 @@
           "BN-SRC-018"
         ],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "2471c8b7c0a7a03d5ef2eafd6b4f914ff834c4d33a7dbd137cd2229c646b4b0e"
       },
       {
@@ -879,6 +981,8 @@
           "BN-SRC-017"
         ],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "2ccd70cfd5d106519cd69499b2a72c2da4f8d4d2e6ea8011ebf396e8d5c43458"
       },
       {
@@ -894,6 +998,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "423ced232eb739ca8b0a8786fb742f9c814099f0e405563189fa8a2e49651c6d"
       },
       {
@@ -909,6 +1015,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "a88b27ceedc7b47aadd044b3cfdd83d78aad741f3f367664e5aa0ec8739381c4"
       },
       {
@@ -924,6 +1032,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "9f8e6d46e61b9281df76269e7e35236b398628eb6bd1ae09530635af041b09c8"
       },
       {
@@ -939,6 +1049,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "ed24e64cfccdf20b0f71c456495305fd057f4e9b262569f2c8f3db45d761bd38"
       },
       {
@@ -954,6 +1066,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "fe8e515a4d0edd130185ea6a6e0d52c8ecbf634f1c1fb31ae01171bcc34ed6a3"
       },
       {
@@ -971,6 +1085,8 @@
           "BN-SRC-019"
         ],
         "documented_math_correction": "BN-SRC-019 unmatched conditional parenthesis balanced",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "0e383ab27899147f17c6b5d1dd57b3f77a7cceeeef6f8f53fe90752a53df1e29"
       },
       {
@@ -986,6 +1102,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "8bdd490a47272931eb659c33304974024d3c71795a2fd722bf1941ccfedb2e88"
       },
       {
@@ -1003,6 +1121,8 @@
           "BN-SRC-020"
         ],
         "documented_math_correction": "BN-SRC-020 formation-sequence final term and identity relation restored",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "df985ee58c4a4011a2f43254e65ee2230fedd102c1c6d3be7bf2bb49af911a3d"
       },
       {
@@ -1018,6 +1138,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "7cb1c8d99a393f81db3e082362149ab96c4ddfeea729e538c27c3c08dcbb0dfc"
       },
       {
@@ -1033,7 +1155,117 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "3080f0c33199ec42110dea48225755301d64aaa7d48f8794429beb27c33f092b"
+      },
+      {
+        "unit_id": "OLP-0063",
+        "source_blocks": 8,
+        "target_blocks": 8,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "b19c0b0d8a7da88113304ae9b08ea5fb4f1a5511f448dd94c19a83a36d542c78"
+      },
+      {
+        "unit_id": "OLP-0064",
+        "source_blocks": 8,
+        "target_blocks": 8,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "0da76d94cea4ffda0abcf27a6e23e3d1f9b1df286f96cf2bbdada89ac9246302"
+      },
+      {
+        "unit_id": "OLP-0065",
+        "source_blocks": 6,
+        "target_blocks": 6,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-021"
+        ],
+        "documented_math_correction": "BN-SRC-021 independent right-sequent length restored to n",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "ab0343682ff65060ffb41197e33fcc902ead311b61836b2c4ca4b84e30fc5189"
+      },
+      {
+        "unit_id": "OLP-0066",
+        "source_blocks": 7,
+        "target_blocks": 7,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "c573a88104669d1c1cd1502d8c9f193192744963932fdf694ed401afda1ac578"
+      },
+      {
+        "unit_id": "OLP-0067",
+        "source_blocks": 7,
+        "target_blocks": 7,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-022",
+          "BN-SRC-023",
+          "BN-SRC-024"
+        ],
+        "documented_math_correction": "BN-SRC-022 tableau rule argument restored to conjunction connective",
+        "documented_tex_correction": "BN-SRC-023 tableau tree rule labels restored from conditional to conjunction",
+        "documented_prose_correction": "BN-SRC-024 all displayed tableau assumptions required to belong to Gamma",
+        "target_sha256": "51c26de7abf4a853596b6cbb048322c309514b2b0bf8ebd75d411853dd46793d"
+      },
+      {
+        "unit_id": "OLP-0068",
+        "source_blocks": 7,
+        "target_blocks": 7,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "506aa7349f35bab07ed098547ac847a34d9792af0e9d1c998433267fdf2e0191"
       },
       {
         "unit_id": "OLP-0719",
@@ -1048,6 +1280,8 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "f1886f524d68816dd759fc926cc9254f112645ff8446a1073407dff0db84a027"
       },
       {
@@ -1063,17 +1297,19 @@
         "unicode_nfc": true,
         "documented_source_corrections": [],
         "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
         "target_sha256": "daa8386fb8207a8a82df3b4ab3d9d7c8edfcc881f36eac371c7f04a50923dff1"
       }
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "07dcbbff4d78c3096974280a69534ce7bf55224bc35b5c0106a03f24065f0d17"
+      "sha256": "3c43b0f68f80c25d2250e64953b83a1cb4aee998586b9106c983c2abe0b1ef2f"
     },
-    "segments": 822,
-    "translated_segments": 736,
+    "segments": 865,
+    "translated_segments": 767,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "cc8327282ebfed9e1ad35e7ed635009549ac2493e9bb00bbdf7355843fdb6436",
+    "segment_index_sha256": "0f258d12efdb338156ee7b3ea120e1e7d754693b65a6096d5129828c2a49a08d",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -1094,6 +1330,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_PROPOSITIONAL_LOGIC.md",
         "sha256": "a04d15bebe409d3566648af19aa93cfb7987faeed4edee5555899e71497fb0c9"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_PROOF_SYSTEMS.md",
+        "sha256": "ea8714818f629262e05f28a6688def7a4fdbdf7048fea7aa614b49f4ac99cdf0"
       }
     ],
     "shared_source_audit": {
@@ -1108,7 +1348,7 @@
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "415295ddacaf621766608fc463e964804bd09615131c4d817ad58e7d9d68a1dc",
+      "reconciliation_sha256": "539d18bbfae690ca22931426bf09f885b8ddb1c5e6a487359d173d2092b3ae90",
       "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
       "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
       "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
@@ -1126,9 +1366,9 @@
     }
   },
   "source_corrections": {
-    "count": 30,
+    "count": 34,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "e6b959c3c005383f17a28dd14d835f5752079581d180946916e981c764bdaef1",
+    "sha256": "e39e10bb6bedf61053a8c862efea8fe3086085a949ffd837d246bde032773685",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -1155,6 +1395,10 @@
       "BN-SRC-018",
       "BN-SRC-019",
       "BN-SRC-020",
+      "BN-SRC-021",
+      "BN-SRC-022",
+      "BN-SRC-023",
+      "BN-SRC-024",
       "OLSIZ-001",
       "OLSIZ-002",
       "OLSIZ-003",
@@ -1163,10 +1407,10 @@
     ]
   },
   "translation_decisions": {
-    "count": 67,
-    "provisional_open": 48,
+    "count": 75,
+    "provisional_open": 56,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "9a8471abe68f71f17131d334c616263562342e93363218527ed243b3886b0bb1",
+    "sha256": "9ef727750f58c0e619a3344e92b5074ca26772dd08dbc46caef35047dc5ac277",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md"
   },
   "functions_build_candidate": {
@@ -1180,5 +1424,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "All three bounded global TeX mutex acquisitions concerned the prior input hash and timed out without launching TeX. The freshly prepared current input has not yet been submitted to TeX; no new PDF or HTML is claimed."
   },
-  "remaining": "661 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
+  "remaining": "655 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
 }

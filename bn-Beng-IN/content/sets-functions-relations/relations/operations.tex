@@ -1,0 +1,54 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: operations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{rel}{ops}
+\olsection{সম্পর্কের উপর ক্রিয়া}
+
+প্রায়ই সম্পর্ক পরিবর্তন করা বা একাধিক সম্পর্ক একত্র করা কাজে আসে। \olref[sfr][rel][ord]{prop:stricttopartial}-এ আমরা সম্পর্কের \emph{সংযোগ} বিবেচনা করেছি; সম্পর্ক দুটিকে যুগলের সেট হিসেবে ধরলে এটি কেবল তাদের সেটসংযোগ। একইভাবে \olref[sfr][rel][ord]{prop:partialtostrict}-এ আমরা সম্পর্কের আপেক্ষিক অন্তর বিবেচনা করেছি। সম্পর্কের উপর করা যায় এমন আরও কয়েকটি ক্রিয়া এখানে দেওয়া হল।
+
+\begin{defn}\ollabel{relationoperations}
+ধরা যাক $R$, $S$ দুটি সম্পর্ক এবং $A$ যেকোনো সেট।
+
+$R$-এর \emph{বিপরীত} হল $R^{-1} = \Setabs{\tuple{y, x}}{\tuple{x, y} \in R}$।
+
+$R$ ও $S$-এর \emph{আপেক্ষিক গুণফল} হল $(R \mid S) = \{\tuple{x, z} : \exists y(Rxy \land Syz)\}$।
+
+$R$-কে $A$-তে \emph{সীমাবদ্ধ} করলে পাওয়া যায় $\funrestrictionto{R}{A}= R \cap A^2$।
+
+$A$-তে $R$-এর \emph{প্রয়োগ} হল $\funimage{R}{A} = \{y : (\exists x \in A)Rxy\}$
+\end{defn}
+
+\begin{ex}
+ধরা যাক $S \subseteq \Int^2$ হল $\Int$-এর উপর উত্তরসূরি সম্পর্ক, অর্থাৎ $S = \Setabs{\tuple{x, y} \in \Int^2}{x + 1 = y}$; সুতরাং $Sxy$ যদি এবং কেবল যদি $x + 1 = y$।
+
+$S^{-1}$ হল $\Int$-এর উপর পূর্বসূরি সম্পর্ক, অর্থাৎ $\Setabs{\tuple{x,y}\in\Int^2}{x -1 =y}$।
+
+$S\mid S$ হল
+$ \Setabs{\tuple{x,y}\in\Int^2}{x + 2 =y}$
+
+$\funrestrictionto{S}{\Nat}$ হল $\Nat$-এর উপর উত্তরসূরি সম্পর্ক।
+
+$\funimage{S}{\{1,2,3\}}$ হল $\{2, 3, 4\}$।
+\end{ex}
+
+\begin{defn}[পরিযায়ী আবরণ]ধরা যাক $R \subseteq A^2$ একটি দ্বিপদ সম্পর্ক।
+
+$R$-এর \emph{পরিযায়ী আবরণ} হল $R^+ = \bigcup_{0 < n \in \Nat} R^n$, যেখানে আমরা পুনরাবৃত্তভাবে সংজ্ঞা দিই $R^1 = R$ এবং $R^{n+1} = R^n \mid R$।
+
+$R$-এর \emph{প্রতিবিম্ব ও পরিযায়ী আবরণ} হল $R^* = R^+ \cup \Id{A}$।
+\end{defn}
+
+\begin{ex}
+উত্তরসূরি সম্পর্ক $S \subseteq \Int^2$ নাও। $S^2xy$ যদি এবং কেবল যদি $x + 2 = y$, $S^3xy$ যদি এবং কেবল যদি $x + 3 = y$, ইত্যাদি। তাই $S^+xy$ যদি এবং কেবল যদি কোনো $n \geq 1$-এর জন্য $x + n = y$। অন্যভাবে বললে, $S^+xy$ যদি এবং কেবল যদি $x < y$, এবং $S^*xy$ যদি এবং কেবল যদি $x \le y$।
+\end{ex}
+
+\begin{prob}
+দেখাও যে $R$-এর পরিযায়ী আবরণ সত্যিই পরিযায়ী।
+\end{prob}
+
+\end{document}

@@ -1,0 +1,14 @@
+\newenvironment{intro}{}{}
+\newcommand{\Id}[1]{\mathord{\mathrm{Id}_{#1}}}
+\newcommand{\liff}{\leftrightarrow}
+\newcommand{\emptyseq}{\Lambda}
+\newcommand{\equivrep}[2]{[#1]_{#2}}
+\newcommand{\equivclass}[2]{#1/_{\!{#2}}}
+\newcommand{\funimage}[2]{#1[#2]}
+\newcommand{\funrestrictionto}[2]{#1\mathord{\upharpoonright}_{#2}}
+\RenewDocumentCommand\olref{o o o m}{\ref{\IfNoValueTF{#1}{\olpart:\olchap:\olsec}{\IfNoValueTF{#2}{\olpart:\olchap:#1}{\IfNoValueTF{#3}{\olpart:#1:#2}{#1:#2:#3}}}:#4}}
+\expandafter\def\csname bibyear:Benacerraf1965\endcsname{1965}
+\newcommand{\citeyear}[1]{\hyperref[bib:#1]{\csname bibyear:#1\endcsname}}
+\newenvironment{translationnote}{\begin{quote}\small\textbf{অনুবাদকের পাঠ-নোট: }}{\end{quote}}
+\XeTeXcharclass "200C = \XeTeXcharclass "0995\relax
+\XeTeXcharclass "200D = \XeTeXcharclass "0995\relax

@@ -1,0 +1,74 @@
+[
+  {
+    "source_id": "WB-Class7-Learning-Bridge",
+    "url": "https://banglarshiksha.wb.gov.in/Frontend/download_ott_pdf?upload_code_pk=c113bdb407089ca002da5ba8b0e3ccff65b7933d12e3dbd626a9cb3385de23c742e8eb03634f425fb759cf85119d882e088d590be00aa02eddaa1fe8745a04c3KKUngupyuletaIii9ScK8uA0xTaKJd5810VMGu84Ppg%3D",
+    "source_path_from_recovered_project": "downloads/bn-Beng-IN-canon/WB-Class7-Learning-Bridge.pdf",
+    "bytes": 1561182,
+    "sha256": "acc0b3f3308faca853d1515c8b6eaa10dace97501dfd3f41b5c331e5e0baeef2",
+    "selected_pages": [
+      {
+        "pdf_page": 189,
+        "ocr": {
+          "path": "downloads/bn-Beng-IN-canon/WB-Class7-Learning-Bridge/p189.txt",
+          "bytes": 2748,
+          "sha256": "f2855cddf52aae63862e8de962c9f178f084d25319994c37f2182d2dbaac1e6c"
+        },
+        "render": {
+          "path": "downloads/bn-Beng-IN-canon/WB-Class7-Learning-Bridge/p189.png",
+          "bytes": 221954,
+          "sha256": "c55d1f090e29adaf5053e21ad875b0c0e01c5d94f24afba0f9b6fad04da80c00"
+        }
+      },
+      {
+        "pdf_page": 227,
+        "ocr": {
+          "path": "downloads/bn-Beng-IN-canon/WB-Class7-Learning-Bridge/p227.txt",
+          "bytes": 1455,
+          "sha256": "7e1e0d8afa65c6657207f72313e06b41feb5e96d7bf42280108b10441cf5604b"
+        },
+        "render": {
+          "path": "downloads/bn-Beng-IN-canon/WB-Class7-Learning-Bridge/p227.png",
+          "bytes": 112683,
+          "sha256": "ce52122e599ab1e77d530449dd436ea3d07d3a769f3ea7a53df61783e4faf009"
+        }
+      }
+    ],
+    "status": "original and selected page/OCR bytes verified; visual consultation recorded separately after viewing"
+  },
+  {
+    "source_id": "SCERT-Tripura-VI",
+    "url": "https://www.scerttripura.org/pdf/class6/VIMathBengaliversion.pdf",
+    "source_path_from_recovered_project": "downloads/bn-Beng-IN-canon/SCERT-Tripura-VI.pdf",
+    "bytes": 2242448,
+    "sha256": "7f5370c2377bb10837af920ce94370ee2c662d3f230401b0a6a95c7a58c3d9d2",
+    "selected_pages": [
+      {
+        "pdf_page": 51,
+        "ocr": {
+          "path": "downloads/bn-Beng-IN-canon/SCERT-Tripura-VI/p051.txt",
+          "bytes": 3206,
+          "sha256": "f78e116f94f5008e7750c9492acd7cf2eee566064bb611ce35cc613d01b08afd"
+        },
+        "render": {
+          "path": "downloads/bn-Beng-IN-canon/SCERT-Tripura-VI/p051.png",
+          "bytes": 522534,
+          "sha256": "93245026343b15c3593c9a5643f5480a8f47c1e32e23a11f48a4aced2a60025d"
+        }
+      },
+      {
+        "pdf_page": 78,
+        "ocr": {
+          "path": "downloads/bn-Beng-IN-canon/SCERT-Tripura-VI/p078.txt",
+          "bytes": 1939,
+          "sha256": "fc04fa39ee4cb6fefe96844df67c4a847d9b86c210cd0de5cc512bb65ca5299d"
+        },
+        "render": {
+          "path": "downloads/bn-Beng-IN-canon/SCERT-Tripura-VI/p078.png",
+          "bytes": 478559,
+          "sha256": "1da4354782cd73208e4e360c4f5f30e8bc0d1e3376778617b5a9795caa123c48"
+        }
+      }
+    ],
+    "status": "original and selected page/OCR bytes verified; visual consultation recorded separately after viewing"
+  }
+]

@@ -1,0 +1,59 @@
+% Part: sets-functions-relations
+% Chapter: arithmetization
+% Section: rationals
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{arith}{rat}
+\olsection{$\Int$ থেকে $\Rat$}
+
+এইমাত্র আমরা দেখেছি, কিছু অনানুষ্ঠানিক সেটতত্ত্ব ব্যবহার করে স্বাভাবিক সংখ্যা থেকে কীভাবে পূর্ণসংখ্যা নির্মাণ করা যায়। এবার খুব অনুরূপ উপায়ে পূর্ণসংখ্যা থেকে মূলদ সংখ্যা নির্মাণ করা দেখব। আমাদের প্রাথমিক উপলব্ধিগুলি হলো:
+\begin{enumerate}
+	\item প্রত্যেক মূলদ সংখ্যাকে $\nicefrac{i}{j}$ আকারে লেখা যায়, যেখানে $i$ ও $j$ উভয়েই পূর্ণসংখ্যা, কিন্তু $j$ অশূন্য।
+	\item $\nicefrac{i}{j}$ রাশিতে সংকেতায়িত তথ্য একটি ক্রমযুগল $\tuple{ i, j}$ দিয়েও একইভাবে সংকেতায়িত করা যায়।
+\end{enumerate}
+স্পষ্ট পদ্ধতিটি হলো, $\Int \times (\Int \setminus \{0_\Int\})$ থেকে নেওয়া ক্রমযুগলগুলিকেই মূলদ সংখ্যা \emph{হিসেবে} ভাবা। কিন্তু আগের মতোই সেটি একটু অতিসরল হবে, কারণ আমরা চাই $\nicefrac{3}{2} = \nicefrac{6}{4}$, অথচ $\tuple{ 3, 2}\neq \tuple{ 6,
+4}$। আরও সাধারণভাবে, আমরা নিচের আচরণটি চাইব:
+\[
+	\nicefrac{a}{b} = \nicefrac{c}{d} \text{ যদি এবং কেবল যদি } a \times d = b \times c
+\]
+এটি পেতে $\Int \times
+(\Int \setminus \{0_\Int\})$-এর উপর একটি {তুল্যতা সম্পর্ক} এভাবে সংজ্ঞায়িত করি:
+\[
+	\tuple{ a, b }\Ratequiv \tuple{ c, d} \text{ যদি এবং কেবল যদি }a \times d = b \times c
+\]
+আমাদের যাচাই করতে হবে যে এটি একটি তুল্যতা সম্পর্ক। এই যাচাইটি $\Intequiv$-এর ক্ষেত্রের খুবই অনুরূপ, তাই কাজটি অনুশীলন হিসেবে রেখে দিই।
+\begin{prob}
+দেখাও যে $\Ratequiv$ একটি তুল্যতা সম্পর্ক।
+\end{prob}
+এই সম্পর্কের সাহায্যে আমরা বলতে পারি:
+\begin{defn}
+মূলদ সংখ্যাগুলি হলো $\Ratequiv$-এর অধীনে পূর্ণসংখ্যার ক্রমযুগলগুলির (যাদের দ্বিতীয় উপাদান অশূন্য) তুল্যতা শ্রেণি। অর্থাৎ, $\Rat =
+\equivclass{(\Int \times (\Int\setminus \{0_\Int\}))}{\Ratequiv}$।
+\end{defn}
+
+পূর্ণসংখ্যার মতোই এখানেও কয়েকটি মৌলিক ক্রিয়া সংজ্ঞায়িত করতে চাই। $\equivrep{i,j}{\Ratequiv}$ যদি $\Ratequiv$-এর অধীনে সেই তুল্যতা শ্রেণি হয়, যার !!a{element} হলো $\tuple{i, j}$, তবে বলি:
+\begin{align*}
+	\equivrep{a, b}{\Ratequiv} + \equivrep{c, d}{\Ratequiv} &= \equivrep{ad + bc,  bd}{\Ratequiv}\\
+	\equivrep{a, b}{\Ratequiv} \times \equivrep{c, d}{\Ratequiv} &= \equivrep{a  c, b d}{\Ratequiv}.
+\intertext{এই মূলদ সংখ্যাগুলির উপর $r \leq s$ সংজ্ঞায়িত করতে আমরা এই সত্যটি ব্যবহার করি যে
+$r \le s$ যদি এবং কেবল যদি $s - r$ ঋণাত্মক না হয়, অর্থাৎ $s - r$-কে এমন $\nicefrac{i}{j}$ আকারে লেখা যায় যেখানে $i$ অঋণাত্মক এবং $j$~ধনাত্মক:}
+	\equivrep{a, b}{\Ratequiv} \leq \equivrep{c, d}{\Ratequiv} &\text{ যদি এবং কেবল যদি }
+	\equivrep{c, d}{\Ratequiv} - \equivrep{a, b}{\Ratequiv} =
+	\equivrep{i_\Int, j_\Int}{\Ratequiv}
+\end{align*}
+% BN-SRC-006 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-006):} হিমায়িত ইংরেজি উৎসে প্রথমে সঠিকভাবে $s-r$ অঋণাত্মক বলা হলেও পরের ``অর্থাৎ'' অংশে $r-s$ লেখা হয়েছে। নিচের আনুষ্ঠানিক শর্তে আবার $s-r$-ই ব্যবহৃত; বাংলা পাঠে সেই সঙ্গত অভিমুখটি রাখা হয়েছে।} % BN-SRC-006 TARGET-CORRECTION-END
+কোনো $i \in \Nat$ এবং $0 \neq j \in \Nat$-এর জন্য।
+
+এরপর এই সংজ্ঞাগুলি \emph{যেমন হওয়া উচিত} তেমন আচরণ করে কি না যাচাই করতে হবে; কাজটি আমরা \olref[check]{sec}-এ রেখেছি। তবে এগুলি সত্যিই ঠিকভাবে কাজ করে!{} সবশেষে, পূর্ণসংখ্যাগুলিকে মূলদ সংখ্যা \emph{হিসেবে} ধরার কোনো উপায় চাই; তাই প্রত্যেক $i \in \Int$-এর জন্য আমরা নির্ধারণ করি $i_\Rat =
+\equivrep{i, 1_\Int}{\Ratequiv}$। আবারও, এসবের সবকিছু ঠিকভাবে আচরণ করে কি না \olref[check]{sec}-এ যাচাই করি।
+
+\begin{prob}
+যেকোনো $i, j \in \Int$-এর জন্য দেখাও যে $(i + j)_\Rat = i_\Rat+ j_\Rat$, $(i \times j)_\Rat =
+i_\Rat \times j_\Rat$, এবং $i \leq j \liff i_\Rat \leq j_\Rat$।
+\end{prob}
+
+\end{document}

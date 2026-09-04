@@ -1,0 +1,89 @@
+% Part: sets-functions-relations
+% Chapter: arithmetization
+% Section: cuts
+%
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{arith}{cuts}
+\olsection{$\Rat$ থেকে $\Real$}
+
+সারকথায়, পূর্ণতা ধর্ম দেখায় যে বাস্তব সংখ্যারেখার যেকোনো বিন্দু $\alpha$ রেখাটিকে নিখুঁতভাবে দুই ভাগে ভাগ করে: এক ভাগের লঘিষ্ঠ ঊর্ধ্বসীমা $\alpha$, আর অন্য ভাগের গরিষ্ঠ নিম্নসীমা $\alpha$। মূলদ সংখ্যা থেকে বাস্তব সংখ্যা \emph{নির্মাণ} করার জন্য ডেডেকিন্ড প্রস্তাব করেছিলেন, মূলদ সংখ্যাকে যে \emph{কর্তনগুলি} বিভক্ত করে সেগুলিকেই বাস্তব সংখ্যা হিসেবে ভাবা হোক। অর্থাৎ, $\sqrt{2}$-কে আমরা সেই \emph{কর্তন}-এর সঙ্গে অভিন্ন করি, যা $< \sqrt{2}$ মূলদ সংখ্যাগুলিকে $> \sqrt{2}$ মূলদ সংখ্যাগুলি থেকে পৃথক করে।
+
+বিষয়টিকে এবার পরিচ্ছন্ন করি। মূলদ সংখ্যাকে দুই ভাগে কাটলে, শুধু তার \emph{নিচের} অর্ধটি বিবেচনা করেই আমাদের করা বিভাজনটিকে অনন্যভাবে চিহ্নিত করতে পারি। তাই নিখুঁতভাবে নিচের সংজ্ঞাটি দিই:
+
+\begin{defn}[কর্তন]
+একটি \emph{কর্তন} $\alpha$ হলো মূলদ সংখ্যার যেকোনো অশূন্য প্রকৃত প্রারম্ভিক খণ্ড, যার কোনো গরিষ্ঠ উপাদান নেই। অর্থাৎ, $\alpha$ একটি কর্তন যদি এবং কেবল যদি:
+\begin{enumerate}
+	\item \emph{অশূন্য ও প্রকৃত}: $\emptyset \neq \alpha \subsetneq \Rat$
+	\item \emph{প্রারম্ভিক}: সকল $p,q \in \Rat$-এর জন্য: $p < q \in \alpha$ হলে $p \in \alpha$
+	\item \emph{কোনো গরিষ্ঠ উপাদান নেই}: প্রত্যেক $p \in \alpha$-এর জন্য এমন একটি $q \in \alpha$ আছে যাতে $p < q$
+\end{enumerate}
+তারপর $\Real$ হলো সব কর্তনের সেট।
+\end{defn}
+
+তাই এখন আমরা বলতে পারি যে $\sqrt{2} = \Setabs{p \in \Rat}{p^2 < 2\text{
+অথবা }p < 0}$। অবশ্য এটি সত্যিই একটি কর্তন কি না যাচাই করা দরকার, কিন্তু সেই কাজটি আমরা \olref[check]{sec}-এ রেখেছি।
+
+আগের মতোই, কয়েকটি সত্তা সংজ্ঞায়িত করার পরে তাদের উপর মৌলিক অপেক্ষক ও সম্পর্ক সংজ্ঞায়িত করতে হবে। একটি সহজ সংজ্ঞা দিয়ে শুরু করি:
+\begin{align*}
+	\alpha \leq \beta \text{ যদি এবং কেবল যদি }\alpha \subseteq \beta
+\end{align*}
+ক্রমের এই সংজ্ঞাটি দিয়ে কেন্দ্রীয় ফলটি \emph{বিবৃত} করা যায়: কর্তনের সেটের পূর্ণতা ধর্ম আছে। পুরোপুরি খুলে বললে বক্তব্যটির আকার এমন। $S$ যদি ঊর্ধ্বসীমাযুক্ত কর্তনগুলির একটি অশূন্য সেট হয়, তবে $S$-এর একটি লঘিষ্ঠ ঊর্ধ্বসীমা আছে। আরও বিস্তারিতভাবে: একটি কর্তন $\lambda$ আছে, যা $S$-এর একটি ঊর্ধ্বসীমা, অর্থাৎ $(\forall \alpha \in S)\alpha \subseteq
+\lambda$, এবং $\lambda$ এমন কর্তনগুলির মধ্যে লঘিষ্ঠ, অর্থাৎ $(\forall \beta \in \Real)((\forall \alpha \in S)\alpha \subseteq \beta \lif \lambda \subseteq \beta)$। এবার ফলটির প্রমাণ:
+
+\begin{thm}\ollabel{realcompleteness}
+কর্তনের সেটের পূর্ণতা ধর্ম আছে।
+\end{thm}
+
+\begin{proof}
+ধরি, $S$ ঊর্ধ্বসীমাযুক্ত কর্তনগুলির যেকোনো অশূন্য সেট। ধরি $\lambda
+= \bigcup S$।
+%\Setabs{p \in \Rat}{(\exists \alpha \in S)p \in \alpha}$$
+প্রথমে দাবি করি যে $\lambda$ একটি কর্তন:
+\begin{enumerate}
+\item $S$ অশূন্য বলে অন্তত একটি কর্তন $S$-তে আছে, তাই
+$\emptyset \neq \lambda$। % BN-SRC-009 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-009):} হিমায়িত ইংরেজি উৎস এখানে $S$-এর ঊর্ধ্বসীমা থাকার কারণে $S$-তে অন্তত একটি কর্তন আছে বলে। আসলে এই সিদ্ধান্তটি সরাসরি $S$ অশূন্য—এই অনুমান থেকে আসে; বাংলা পাঠে সেই সঠিক কারণ দেওয়া হয়েছে।} % BN-SRC-009 TARGET-CORRECTION-END
+$S$ কর্তনের একটি সেট বলে $\lambda
+\subseteq \Rat$। $S$-এর একটি ঊর্ধ্বসীমা আছে বলে এমন কোনো $p \in \Rat$ আছে যা প্রত্যেক কর্তন $\alpha \in S$ থেকে অনুপস্থিত। তাই $p\notin \lambda$, এবং সুতরাং
+$\lambda \subsetneq \Rat$।
+\item ধরি $p < q \in \lambda$। তাহলে এমন কোনো $\alpha \in S$ আছে যাতে $q \in \alpha$। $\alpha$ একটি কর্তন বলে $p \in \alpha$। অতএব
+$p \in \lambda$।
+\item ধরি $p \in \lambda$। তাহলে এমন কোনো $\alpha \in S$ আছে যাতে $p \in \alpha$। $\alpha$ একটি কর্তন বলে এমন কোনো $q \in
+\alpha$ আছে যাতে $p < q$। তাই $q \in \lambda$।
+\end{enumerate}
+এতে দাবিটি প্রমাণিত হলো। উপরন্তু, স্পষ্টতই $(\forall \alpha \in S)\alpha
+\subseteq \bigcup S = \lambda$, অর্থাৎ $\lambda$ হলো $S$-এর একটি ঊর্ধ্বসীমা। এবার ধরি, $\beta \in \mathbb{R}$-ও একটি ঊর্ধ্বসীমা, অর্থাৎ $(\forall \alpha \in S)\alpha \subseteq \beta$। যেকোনো $p \in \Rat$-এর জন্য, $p \in \lambda$ হলে এমন একটি $\alpha \in S$ আছে যাতে $p \in \alpha$, ফলে $p \in \beta$। সাধারণীকরণ করে, $\lambda \subseteq \beta$। তাই $\lambda$ হলো $S$-এর \emph{লঘিষ্ঠ} ঊর্ধ্বসীমা।
+\end{proof}
+
+অতএব আমাদের কাছে পূর্ণতা ধর্ম পূরণকারী একগুচ্ছ সত্তা আছে। অন্যভাবে বললে, আমাদের কর্তনগুলির মধ্যে কোনো ``ফাঁক'' নেই। (তাই মূলদ সংখ্যার বদলে বাস্তব সংখ্যার আরও ``কর্তন'' নিলে আকর্ষণীয় নতুন কোনো বস্তু পাওয়া যাবে না।)
+
+এরপর বাস্তব সংখ্যার উপর কয়েকটি ক্রিয়া সংজ্ঞায়িত করতে হবে। প্রথমে প্রত্যেক $p \in \Rat$-এর জন্য $p_\Real =
+\Setabs{q \in \Rat}{q < p}$ নির্ধারণ করে মূলদ সংখ্যাগুলিকে বাস্তব সংখ্যার মধ্যে অন্তর্ভুক্ত করি। তারপর সংজ্ঞায়িত করি:
+\begin{align*}
+	\alpha + \beta &= \Setabs{p + q}{p \in \alpha \land q \in \beta}\\
+%	\alpha - \beta &\defis \Setabs{p - q}{p \in \alpha \land q \in \Rat \setminus \beta}\\
+	\alpha \times \beta &=
+	\Setabs{p \times q}{0 \leq p \in \alpha \land 0 \leq q \in \beta} \cup 0^\mathbb{R} & \text{যদি }\alpha, \beta \geq 0_\Real
+%	\alpha \div \beta &\defis
+%	\Setabs{\nicefrac{p}{q}}{p \in \alpha \land q \in \Rat \setminus \beta}  & \text{যদি }\alpha \geq 0_\Real, \beta > 0_\Real
+\end{align*}
+% BN-SRC-010 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-ব্যাখ্যা (BN-SRC-010):} এই গুণের সূত্রে হিমায়িত ইংরেজি উৎস $0^\mathbb{R}$ লিখেছে, অথচ এই অংশেই মূলদ সংখ্যার বাস্তব-রূপের সংকেত সাবস্ক্রিপ্টে $p_\Real$ এবং পরের শর্তগুলিতে $0_\Real$। সূত্রের অক্ষর অক্ষুণ্ণ রাখা হয়েছে; এখানে অভিপ্রেত বস্তু হলো শূন্যের বাস্তব-রূপ, অর্থাৎ ঋণাত্মক মূলদগুলির কর্তন।} % BN-SRC-010 TARGET-CORRECTION-END
+গুণের অন্য ক্ষেত্রগুলি সামলাতে প্রথমে ধরি: %যে $0_\Real \times \alpha = 0_\Real = \alpha \times 0_\Real$, এবং যোগ করি:
+\begin{align*}
+	-\alpha &= \Setabs{p - q}{p < 0 \land q \notin \alpha}
+\end{align*}
+এবং তারপর নির্ধারণ করি:
+\begin{align*}
+	\alpha \times \beta &\defis
+	\begin{cases}
+		\mathord{-}\alpha \times \mathord{-}\beta &\text{যদি }\alpha < 0_\Real\text{ এবং }\beta < 0_\Real\\
+		\mathord{-}(\mathord{-}\alpha \times \beta) &\text{যদি }\alpha < 0_\Real \text{ এবং }\beta > 0_\Real\\
+		\mathord{-}(\alpha \times \mathord{-}\beta) &\text{যদি }\alpha > 0_\Real \text{ এবং }\beta < 0_\Real
+	\end{cases}
+\end{align*}
+এরপর যাচাই করতে হবে যে এই সংজ্ঞাগুলির প্রত্যেকটি সর্বদা একটি কর্তন দেয়। এবং সবশেষে সহজ (কিন্তু দীর্ঘ) একটি প্রদর্শনে দেখাতে হবে যে এইভাবে সংজ্ঞায়িত কর্তনগুলি ঠিক যেমন হওয়া উচিত তেমন আচরণ করে। তবে এসবই আমরা \olref[check]{sec}-এ রেখেছি।
+\end{document}

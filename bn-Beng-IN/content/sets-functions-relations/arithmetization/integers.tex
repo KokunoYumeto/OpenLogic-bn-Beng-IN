@@ -1,0 +1,79 @@
+% Part: sets-functions-relations
+% Chapter: arithmetization
+% Section: From N to Z
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+
+\begin{document}
+
+\olfileid{sfr}{arith}{int}
+\olsection{$\Nat$ থেকে $\Int$}
+
+এখানে দুটি মৌলিক উপলব্ধি আছে:
+	\begin{enumerate}
+		\item প্রত্যেক পূর্ণসংখ্যাকে $n - m$ আকারে লেখা যায়, যেখানে $n, m \in\Nat$।
+		\item $n - m$ রাশিতে সংকেতায়িত তথ্য একটি ক্রমযুগল $\tuple{n, m}$ দিয়েও একইভাবে সংকেতায়িত করা যায়।
+	\end{enumerate}
+আমরা ইতিমধ্যেই জানি যে স্বাভাবিক সংখ্যার ক্রমযুগলগুলি $\Nat^2$-এর !!{element}s। আর আমরা ধরে নিচ্ছি যে $\Nat$ আমাদের বোঝা আছে। তাই এই দুটি উপলব্ধির ভিত্তিতে একটি অতিসরল প্রস্তাব দিই: \emph{পূর্ণসংখ্যাগুলিকে স্বাভাবিক সংখ্যার ক্রমযুগল হিসেবে ধরা যাক}।
+
+আসলে এই প্রস্তাবটি অতিরিক্ত সরল। অবশ্যই আমরা চাই $0- 2 = 4 - 6$ হোক। কিন্তু স্পষ্টতই $\tuple{0, 2 }\neq \tuple{4, 6}$। তাই আমরা স্রেফ বলতে পারি না যে $\Nat^2$-ই পূর্ণসংখ্যার সেট।
+
+আগের সমস্যাটিকে সাধারণীকরণ করলে আমরা নিচের আচরণটি চাই:
+	$$a - b = c - d \text{ যদি এবং কেবল যদি }a + d = c + b$$
+(পূর্ণসংখ্যাগুলির আচরণ যে এমনই \emph{হওয়ার কথা}, তা স্পষ্ট: উভয় পাশে শুধু $b$ ও $d$ যোগ করো।) এই আচরণ নিশ্চিত করার সহজ উপায় হলো ক্রমযুগলগুলির মধ্যে একটি তুল্যতা সম্পর্ক $\Intequiv$ নিচের মতো সংজ্ঞায়িত করা:
+$$\tuple{ a, b } \Intequiv \tuple{c, d}\text{ যদি এবং কেবল যদি }a + d = c + b$$
+এখন আমাদের দেখাতে হবে যে এটি একটি তুল্যতা সম্পর্ক।
+\begin{prop} $\Intequiv$ একটি তুল্যতা সম্পর্ক।
+\end{prop}
+	\begin{proof}
+	আমাদের দেখাতে হবে যে $\Intequiv$ প্রতিবিম্ব ধর্মবিশিষ্ট, প্রতিসম এবং পরিযায়ী।
+
+	\emph{প্রতিবিম্ব ধর্ম:} স্পষ্টতই $\tuple{a, b} \Intequiv \tuple{a, b}$, কারণ $a + b = b + a$।
+
+	\emph{প্রতিসাম্য:} ধরি $\tuple{a, b} \Intequiv \tuple{c, d}$, তাই $a + d = c + b$। তাহলে $c + b = a + d$, ফলে $\tuple{c, d} \Intequiv \tuple{a, b}$।
+
+	\emph{পরিযায়িতা:} ধরি $\tuple{a, b} \Intequiv \tuple{c, d}\Intequiv \tuple{m, n}$। তাই $a + d = c + b$ এবং $c + n = m + d$। অতএব $a + d + c + n = c + b + m + d$, এবং তাই $a + n = m + b$। সুতরাং $\tuple{a, b } \Intequiv \tuple{m, n}$।
+\end{proof}
+
+এখন এই তুল্যতা সম্পর্ক ব্যবহার করে আমরা তুল্যতা শ্রেণি নিতে পারি:
+
+\begin{defn}
+		পূর্ণসংখ্যাগুলি হলো $\Intequiv$-এর অধীনে স্বাভাবিক সংখ্যার ক্রমযুগলগুলির তুল্যতা শ্রেণি; অর্থাৎ, $\Int = \equivclass{\Nat^2}{\Intequiv}$।
+\end{defn}
+
+এই নির্ধারিত সংজ্ঞা সম্পর্কে নানারকম \emph{দার্শনিক} প্রতিক্রিয়া থাকতে পারে। তবে সেসব প্রতিক্রিয়া বিবেচনা করার আগে কয়েকটি কারিগরি খুঁটিনাটি নিয়ে এগিয়ে যাওয়া দরকার।
+
+পূর্ণসংখ্যা কী তা বলার পরে, তাদের উপর মৌলিক অপেক্ষক ও সম্পর্ক সংজ্ঞায়িত করতে হবে। $\equivrep{m, n}{\Intequiv}$ দ্বারা $\Intequiv$-এর অধীনে সেই তুল্যতা শ্রেণিটি বোঝাই, যার !!a{element} হলো $\tuple{m, n}$।\footnote{লক্ষ করো: \olref[sfr][rel][eqv]{def:equivalenceclass}-এ প্রবর্তিত সংকেত ব্যবহার করলে একই জিনিসের জন্য আমরা $\equivrep{\tuple{m,n}}{\Intequiv}$ লিখতাম। কিন্তু সেটি পড়তে একটু কঠিন।} অর্থাৎ:
+	$$\equivrep{m, n}{\Intequiv} = \Setabs{\tuple{a, b} \in \Nat^2}{\tuple{a, b}\Intequiv \tuple{m, n}}$$
+এখন কয়েকটি সংজ্ঞা দিই:
+	\begin{align*}
+		\equivrep{a, b}{\Intequiv} + \equivrep{c, d}{\Intequiv} &= \equivrep{a + c, b + d}{\Intequiv}\\
+		\equivrep{a, b}{\Intequiv} \times \equivrep{c, d}{\Intequiv} &= \equivrep{a c + b  d, a  d + b c}{\Intequiv}\\
+		\equivrep{a, b}{\Intequiv} \leq \equivrep{c, d}{\Intequiv} &\text{ যদি এবং কেবল যদি }a + d \leq b + c
+	\end{align*}
+(প্রচলিত রীতি অনুযায়ী, স্বতঃসিদ্ধগুলি পড়া সহজ করতে আমি `$(a \times b)$'-এর বদলে `$ab$' লিখছি।) এখন নিশ্চিত করতে হবে যে এই সংজ্ঞাগুলি \emph{যেমন হওয়া উচিত} তেমনই আচরণ করে। এর মানে পুরোপুরি খুলে লেখা এবং যাচাই করা বেশ শ্রমসাধ্য; বিস্তারিত আমরা \olref[check]{sec}-এ রেখেছি। কিন্তু সংক্ষিপ্ত কথা হলো: সবই কাজ করে!
+
+শেষ একটি বিষয় বাকি। আমরা স্বাভাবিক সংখ্যা ব্যবহার করে পূর্ণসংখ্যা নির্মাণ করেছি। কিন্তু এর অর্থ হবে যে স্বাভাবিক সংখ্যাগুলি \emph{নিজেরা পূর্ণসংখ্যা নয়}। এর দার্শনিক তাৎপর্যে আমরা \olref[ref]{sec}-এ ফিরে আসব। তবে নিছক কারিগরি কাজে স্বাভাবিক সংখ্যাগুলিকে পূর্ণসংখ্যা \emph{হিসেবে} ধরার কোনো উপায় দরকার হবে। ধারণাটি খুব সহজ: প্রত্যেক $n \in \Nat$-এর জন্য আমরা নির্ধারণ করি $n_\Int = \equivrep{n, 0}{\Intequiv}$। এই সংজ্ঞা যে সঙ্গতভাবে কাজ করে তা নিশ্চিত করতে হবে, অর্থাৎ যেকোনো $m, n
+\in \Nat$-এর জন্য
+\begin{align*}
+	(m + n)_\Int &= m_\Int + n_\Int\\
+	(m \times n)_\Int &= m_\Int \times n_\Int\\
+	m \leq n &\liff m_\Int \leq n_\Int
+\end{align*}
+কিন্তু এসবই বেশ সরল। যেমন, দ্বিতীয়টি সত্য দেখাতে স্বাভাবিক সংখ্যার আচরণ ব্যবহার করে আমরা স্রেফ নিচের মতো যুক্তি দিতে পারি:
+%\begin{proof}
+%	স্বাভাবিক সংখ্যার আচরণ ব্যবহার করলে স্পষ্টতই:
+	\begin{align*}
+%		(m + n)_\Int  = \equivrep{m + n, 0}{\Intequiv} = \equivrep{m + n, 0 + 0}{\Intequiv} = \equivrep{m, 0}{\Intequiv} + \equivrep{n, 0}{\Intequiv} = m_\Int + n_\Int\\
+		(m \times n)_\Int  &= \equivrep{m \times n, 0}{\Intequiv} \\
+		&= \equivrep{m \times n + 0 \times 0, m \times 0 + 0 \times n}{\Intequiv} \\
+		&= \equivrep{m, 0}{\Intequiv} \times \equivrep{n, 0}{\Intequiv} \\
+		&= m_\Int \times n_\Int
+	\end{align*}
+%\end{proof}
+অন্য দুটি শর্তও সত্য—এটি যাচাই করার কাজ অনুশীলন হিসেবে রেখে দিই।
+\begin{prob}
+	যেকোনো $m, n \in \Nat$-এর জন্য দেখাও যে $(m + n)_\Int = m_\Int + n_\Int$ এবং $m \leq n \liff m_\Int \leq n_\Int$।
+\end{prob}
+\end{document}

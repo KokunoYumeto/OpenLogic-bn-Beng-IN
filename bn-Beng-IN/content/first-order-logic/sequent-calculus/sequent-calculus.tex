@@ -1,0 +1,56 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+
+\documentclass[../../../include/open-logic-chapter]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olchapter{fol}{seq}{সিকোয়েন্ট কলন}}
+      {\olchapter{pl}{seq}{সিকোয়েন্ট কলন}}
+
+\begin{editorial}
+  এই অধ্যায়ে ধ্রুপদি প্রথম-ক্রমের যুক্তিবিদ্যার জন্য গেন্‌ৎসেনের প্রমিত
+  সিকোয়েন্ট কলন LK উপস্থাপন করা হয়েছে। আরও উদাহরণ ও অনুশীলনী
+  যোগ করা যেতে পারে। প্রমাণপদ্ধতি হিসেবে সিকোয়েন্ট কলনের প্রাসঙ্গিক
+  উপকরণ অন্তর্ভুক্ত বা বাদ দিতে ``prfLK'' ট্যাগটি ব্যবহার করুন।
+\end{editorial}
+
+\olimport{rules-and-proofs}
+
+\olimport{propositional-rules}
+
+\iftag{FOL}{%
+  \olimport{quantifier-rules}
+}{}
+
+\olimport{structural-rules}
+
+\olimport{derivations}
+
+\olimport{proving-things}
+
+\iftag{FOL}{%
+  \olimport{proving-things-quant}
+}{}
+
+\olimport{proof-theoretic-notions}
+
+\olimport{provability-consistency}
+
+\olimport{provability-propositional}
+
+\iftag{FOL}{%
+  \olimport{provability-quantifiers}
+}{}
+
+\olimport{soundness}
+
+\iftag{FOL}{%
+  \olimport{identity}
+  \olimport{soundness-identity}
+}{}
+
+\OLEndChapterHook
+
+\end{document}

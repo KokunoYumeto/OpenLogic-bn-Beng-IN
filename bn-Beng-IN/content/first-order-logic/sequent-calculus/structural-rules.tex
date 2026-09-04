@@ -1,0 +1,79 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: structural-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{srl}}
+      {\olfileid{pl}{seq}{srl}}
+
+\olsection{গঠনগত বিধি}
+
+সিকোয়েন্টের বাঁ ও ডান পাশে !!{sentence}s পুনর্বিন্যাস করার জন্যও কয়েকটি
+বিধি দরকার। কোনো যৌক্তিক বিধি যে পূর্বধারণার !!{sentence}s-এর উপর কাজ
+করে, সেগুলিকে একেবারে বাঁ বা ডান প্রান্তে থাকতে হয়। তাই !!{sentence}s-কে
+সঠিক স্থানে সরানোর জন্য একটি “অদলবদল” বিধি দরকার। কখনো দুটি অভিন্ন
+!!{sentence}s-কে একটিতে মেলানো এবং যেকোনো পাশে একটি !!a{sentence} যোগ
+করতে পারাও গুরুত্বপূর্ণ।
+
+\subsection{দুর্বলীকরণ}
+
+\begin{defish}
+\Axiom$ \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !A, \Gamma \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A$
+\DisplayProof
+\end{defish}
+
+\subsection{সংকোচন}
+
+\begin{defish}
+\Axiom$ !A, !A, \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\Contraction}}
+\UnaryInf$ !A, \Gamma \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta, !A, !A$
+\RightLabel{\RightR{\Contraction}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A$
+\DisplayProof
+\end{defish}
+
+\subsection{অদলবদল}
+
+\begin{defish}
+\Axiom$ \Gamma, !A, !B, \Pi \fCenter \Delta $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ \Gamma, !B, !A, \Pi \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta, !A, !B, \Lambda$
+\RightLabel{\RightR{\Exchange}}
+\UnaryInf$ \Gamma \fCenter \Delta, !B, !A, \Lambda$
+\DisplayProof
+\end{defish}
+
+দুর্বলীকরণ, সংকোচন ও অদলবদল অনুমানের কোনো ধারাকে প্রায়ই দ্বিগুণ
+অনুমান-রেখা দিয়ে দেখানো হবে।
+
+নিচের বিধিটির নাম “কর্তন”; কঠোর অর্থে এটি আবশ্যক নয়, তবে !!{derivation}s
+পুনর্ব্যবহার ও একত্র করা অনেক সহজ করে।
+\begin{defish}
+\[
+\Axiom$ \Gamma \fCenter \Delta, !A$
+\Axiom$ !A, \Pi \fCenter \Lambda $
+\RightLabel{\Cut}
+\BinaryInf$ \Gamma, \Pi \fCenter \Delta, \Lambda$
+\DisplayProof
+\]
+\end{defish}
+
+\end{document}

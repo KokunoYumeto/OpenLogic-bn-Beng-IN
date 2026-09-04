@@ -1,0 +1,121 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{der}}
+      {\olfileid{pl}{seq}{der}}
+
+\olsection{\usetoken{P}{derivation}}
+
+\begin{explain}
+প্রারম্ভিক সিকোয়েন্ট দেখতে কেমন এবং অনুমান-বিধিগুলি কী, তা আমরা বলেছি।
+সেগুলি থেকেই সিকোয়েন্ট কলনের !!^{derivation}s আরোহীভাবে উৎপন্ন হয়:
+প্রতিটি !!{derivation} হয় একটিমাত্র প্রারম্ভিক সিকোয়েন্ট, নয়তো এক বা
+দুটি !!{derivation}s-এর পরে বসানো একটি অনুমান নিয়ে গঠিত।
+\end{explain}
+
+\begin{defn}[$\Log{LK}$-!!{derivation}]
+কোনো সিকোয়েন্ট~$S$-এর একটি \emph{$\Log{LK}$-!!{derivation}} হলো
+সিকোয়েন্টের এমন একটি সসীম বৃক্ষ, যা নিচের শর্তগুলি পূরণ করে:
+\begin{enumerate}
+\item বৃক্ষটির সর্বোচ্চ সিকোয়েন্টগুলি প্রারম্ভিক সিকোয়েন্ট।
+\item বৃক্ষটির সর্বনিম্ন সিকোয়েন্ট হলো~$S$।
+\item বৃক্ষের $S$ ছাড়া প্রতিটি সিকোয়েন্ট কোনো অনুমান-বিধির সঠিক
+  প্রয়োগের পূর্বধারণা, এবং সেই প্রয়োগের সিদ্ধান্তটি বৃক্ষে ওই
+  সিকোয়েন্টের ঠিক নিচে থাকে।
+\end{enumerate}
+তখন $S$-কে !!{derivation}-টির \emph{অন্তিম সিকোয়েন্ট} বলা হয় এবং বলা
+হয় যে $S$ \emph{$\Log{LK}$-তে !!{derivable}} (বা
+$\Log{LK}$-!!{derivable})।
+\end{defn}
+
+\begin{ex}
+প্রতিটি প্রারম্ভিক সিকোয়েন্ট, যেমন $!C \Sequent !C$, একটি
+!!a{derivation}। এতে, ধরা যাক, $\LeftR{\Weakening}$ বিধি প্রয়োগ করে
+নতুন একটি !!{derivation} পাওয়া যায়:
+\begin{prooftree}
+\Axiom$ \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !A, \Gamma \fCenter \Delta$
+\end{prooftree}
+তবে বিধিটি সাধারণভাবে প্রযোজ্য: বিধির $!A$-কে যেকোনো !!{sentence}
+দিয়ে প্রতিস্থাপন করা যায়, যেমন~$!D$ দিয়েও। পূর্বধারণাটি যদি আমাদের
+প্রারম্ভিক সিকোয়েন্ট $!C \Sequent !C$-এর সঙ্গে মেলে, তবে $\Gamma$ ও
+$\Delta$ উভয়ই শুধু~$!C$, এবং সিদ্ধান্তটি হবে $!D, !C \Sequent !C$।
+অতএব নিচেরটি একটি !!a{derivation}:
+\begin{prooftree}
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\end{prooftree}
+এবার আরেকটি বিধি, ধরা যাক $\LeftR{\Exchange}$, প্রয়োগ করা যায়; এই
+বিধি বাঁদিকে থাকা দুটি !!{sentence}s অদলবদল করতে দেয়। ফলে নিচেরটিও একটি
+সঠিক !!{derivation}:
+\begin{prooftree}
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !C, !D \fCenter !C$
+\end{prooftree}
+এখানে যে বিধিটি প্রয়োগ করা হয়েছে, সেটি দেওয়া হয়েছিল এইভাবে:
+\begin{prooftree}
+\Axiom$ \Gamma, !A, !B, \Pi \fCenter \Delta $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ \Gamma, !B, !A, \Pi \fCenter \Delta,$
+\end{prooftree}
+এই প্রয়োগে $\Gamma$ ও $\Pi$ উভয়ই ফাঁকা, $\Delta$ হলো $!C$, আর
+$!A$ ও $!B$-এর ভূমিকা যথাক্রমে $!D$ ও~$!C$ পালন করেছে। প্রায় একইভাবে
+আমরা আরও দেখি যে
+\begin{prooftree}
+\Axiom$ !D \fCenter !D $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !C, !D \fCenter !D$
+\end{prooftree}
+একটি !!a{derivation}। এবার এই দুটি !!{derivation}s-কে
+$\RightR{\land}$ ব্যবহার করে একত্র করা যায়। বিধিটি ছিল
+\begin{prooftree}
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$ \Gamma \fCenter \Delta, !B$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ \Gamma \fCenter \Delta, !A \land !B $
+\end{prooftree}
+আমাদের ক্ষেত্রে পূর্বধারণাদুটিকে তাদের উপর শেষ হওয়া
+!!{derivation}s-এর শেষ সিকোয়েন্টগুলির সঙ্গে মিলতে হবে। অর্থাৎ $\Gamma$
+হলো $!C, !D$, $\Delta$ ফাঁকা, $!A$ হলো $!C$ এবং $!B$ হলো $!D$। তাই
+অনুমানটি সঠিক হতে হলে সিদ্ধান্ত হবে $!C, !D \Sequent !C
+\land !D$।
+\begin{prooftree}
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !C, !D \fCenter !C$
+\Axiom$ !D \fCenter !D $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !C, !D \fCenter !D$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ !C, !D \fCenter !C \land !D $
+\end{prooftree}
+অবশ্য পূর্বধারণাদুটির ক্রম উল্টেও দেওয়া যায়; তখন $!A$ হবে $!D$ এবং
+$!B$ হবে~$!C$।
+\begin{prooftree}
+\Axiom$ !D \fCenter !D $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !C, !D \fCenter !D$
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !C, !D \fCenter !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ !C, !D \fCenter !D \land !C $
+\end{prooftree}
+\end{ex}
+
+\end{document}

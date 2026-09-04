@@ -1,0 +1,102 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: quantifier-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{seq}{qrl}
+
+\olsection{পরিমাণসূচকের বিধি}
+
+\subsection{$\lforall$-এর বিধি}
+
+\begin{defish}
+\Axiom$ !A(t), \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$ \lforall[x][!A(x)],\Gamma \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta, !A(a) $
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$ \Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+\DisplayProof
+\end{defish}
+
+\LeftR{\lforall}-এ $t$ একটি বদ্ধ পদ (অর্থাৎ চলরাশিবিহীন পদ)।
+\RightR{\lforall}-এ $a$ এমন একটি !!a{constant}, যা
+\RightR{\lforall} বিধির নিচের সিকোয়েন্টের কোথাও থাকতে পারবে না।
+\RightR{\forall} অনুমানে $a$-কে \emph{আইগেনচল} বলা হয়।
+\footnote{উপরের বিধিতে $a$ একটি !!a{constant} হলেও আমরা “আইগেনচল”
+শব্দটি ব্যবহার করি। এর কারণ ঐতিহাসিক।}
+
+\subsection{$\lexists$-এর বিধি}
+
+\begin{defish}
+\Axiom$ !A(a), \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$ \lexists[x][!A(x)], \Gamma \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta, !A(t) $
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$ \Gamma \fCenter \Delta, \lexists[x][!A(x)]$
+\DisplayProof
+\end{defish}
+
+এখানেও $t$ একটি বদ্ধ পদ, আর $a$ এমন একটি !!a{constant}, যা
+\LeftR{\lexists} বিধির নিচের সিকোয়েন্টে নেই। \LeftR{\lexists}
+অনুমানে $a$-কে \emph{আইগেনচল} বলা হয়।
+
+\RightR{\lforall} বা \LeftR{\lexists} অনুমানের নিচের সিকোয়েন্টে
+আইগেনচল না থাকার শর্তটিকে \emph{আইগেনচল-শর্ত} বলা হয়।
+
+\begin{explain}
+মনে করুন, $!A$ কোনো !!a{formula} এবং তাতে !!{variable}~$x$ মুক্ত হলে
+আমরা~$!A(x)$ লিখে তা বোঝাই। একই প্রসঙ্গে $!A(t)$ হলো
+সংক্ষেপে~$\Subst{!A}{t}{x}$। তাই \RightR{\lexists} বিধিটি এভাবেও
+লেখা যায়:
+\begin{prooftree}
+  \Axiom$\Gamma \fCenter \Delta, \Subst{!A}{t}{x}$
+  \RightLabel{\RightR{\lexists}}
+  \UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!A]$
+\end{prooftree}
+লক্ষ করুন,~$!A$-তে $t$ আগে থেকেই থাকতে পারে; যেমন, $!A$ হতে পারে
+~$\Atom{\Obj P}{t,x}$। অতএব~$\Gamma \Sequent \Delta,
+\Atom{\Obj P}{t,t}$ থেকে $\Gamma \Sequent \Delta,
+\lexists[x][\Atom{\Obj P}{t,x}]$ অনুমান করা
+\RightR{\lexists}-এর সঠিক প্রয়োগ—পূর্বধারণায় $t$-এর এক বা একাধিক,
+কিন্তু আবশ্যিকভাবে সব নয়, এমন উপস্থিতিকে বদ্ধ !!{variable}~$x$ দিয়ে
+“প্রতিস্থাপন” করা যায়। কিন্তু \RightR{\lforall} ও~\LeftR{\lexists}-এর
+আইগেনচল-শর্ত অনুযায়ী~$!A$-তে !!{constant}~$a$ থাকতে পারে না। তাই
+$\Gamma \Sequent \Delta, \Atom{\Obj P}{a,a}$ থেকে
+$\Gamma \Sequent \Delta, \lforall[x][\Atom{\Obj P}{a,x}]$
+~$\RightR{\lforall}$ ব্যবহার করে সঠিকভাবে অনুমান করা যায় না।
+\end{explain}
+
+\begin{explain}
+\RightR{\lexists} ও \LeftR{\lforall}-এ, আগে বলা বদ্ধতার শর্ত ছাড়া,
+$t$-এর উপর অন্য কোনো বিধিনিষেধ নেই। অন্যদিকে, \LeftR{\lexists} ও
+\RightR{\lforall} বিধির আইগেনচল-শর্ত অনুযায়ী উপরের সিকোয়েন্টে
+$!A(a)$-এর বাইরে !!{constant}~$a$ কোথাও থাকতে পারে না। পদ্ধতিটি বিশুদ্ধ,
+অর্থাৎ শুধু বৈধ সিকোয়েন্টই !!{derive}s করে—এটি নিশ্চিত করার জন্য শর্তটি
+আবশ্যক। এই শর্ত না থাকলে নিচের অনুমানগুলি অনুমোদিত হতো:
+\begin{prooftree}
+  \Axiom$!A(a) \fCenter !A(a)$
+  \RightLabel{*\LeftR{\lexists}}
+  \UnaryInf$\lexists[x][!A(x)] \fCenter !A(a)$
+  \RightLabel{\RightR{\lforall}}
+  \UnaryInf$\lexists[x][!A(x)] \fCenter \lforall[x][!A(x)]$
+  \DisplayProof\bottomAlignProof
+  \qquad
+  \Axiom$!A(a) \fCenter !A(a)$
+  \RightLabel{*\RightR{\lforall}}
+  \UnaryInf$!A(a) \fCenter \lforall[x][!A(x)]$
+  \RightLabel{\LeftR{\lexists}}
+  \UnaryInf$\lexists[x][!A(x)] \fCenter \lforall[x][!A(x)]$
+\end{prooftree}
+কিন্তু $\lexists[x][!A(x)] \Sequent \lforall[x][!A(x)]$ বৈধ নয়।
+\end{explain}
+
+\end{document}

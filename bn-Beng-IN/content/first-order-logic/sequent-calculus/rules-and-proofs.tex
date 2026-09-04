@@ -1,0 +1,76 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{rul}}
+      {\olfileid{pl}{seq}{rul}}
+
+\olsection{বিধি ও \usetoken{P}{derivation}}
+
+পরের আলোচনায় $\Gamma, \Delta, \Pi, \Lambda$ দিয়ে !!{sentence}s-এর
+সসীম অনুক্রম বোঝানো হবে।
+
+\begin{defn}[সিকোয়েন্ট]
+কোনো \emph{সিকোয়েন্ট} হলো নিচের রূপের একটি অভিব্যক্তি:
+\[
+\Gamma \Sequent \Delta
+\]
+এখানে $\Gamma$ ও $\Delta$ হলো ভাষা~$\Lang L$-এর !!{sentence}s-এর
+সসীম (সম্ভবত ফাঁকা) অনুক্রম। $\Gamma$-কে \emph{পূর্বাংশ} এবং
+$\Delta$-কে \emph{উত্তরাংশ} বলা হয়।
+\end{defn}
+
+\begin{explain}
+সিকোয়েন্টের পিছনের স্বজ্ঞাত ধারণাটি হলো: পূর্বাংশের সব !!{sentence}s
+সত্য হলে উত্তরাংশের !!{sentence}s-এর মধ্যে অন্তত একটি সত্য। অর্থাৎ, যদি
+$\Gamma = \tuple{!A_1, \dots, !A_m}$ এবং
+$\Delta = \tuple{!B_1, \dots, !B_n}$ হয়, তবে $\Gamma \Sequent \Delta$
+ঠিক তখনই সত্য, যখন
+\[
+(!A_1 \land \cdots \land !A_m) \lif (!B_1 \lor \cdots \lor
+!B_n)
+\]
+সত্য। দুটি বিশেষ ক্ষেত্র আছে: $\Gamma$ ফাঁকা এবং $\Delta$ ফাঁকা।
+$\Gamma$ ফাঁকা, অর্থাৎ $m = 0$ হলে, $\quad
+\Sequent \Delta$ ঠিক তখনই সত্য, যখন $!B_1 \lor \dots \lor !B_n$
+সত্য। $\Delta$ ফাঁকা, অর্থাৎ $n = 0$ হলে, $\Gamma \Sequent \quad$
+ঠিক তখনই সত্য, যখন $\lnot(!A_1 \land \dots \land !A_m)$ সত্য।
+সংশ্লিষ্ট !!{sentence}-টি বৈধ হলে এবং কেবল হলেই কোনো সিকোয়েন্টকে
+বৈধ বলা হয়।
+\end{explain}
+
+$\Gamma$ যদি !!{sentence}s-এর একটি অনুক্রম হয়, তবে~$\Gamma$-র ডান
+প্রান্তে $!A$ জুড়ে পাওয়া অনুক্রমকে $\Gamma, !A$ লিখি (আর~$\Gamma$-র বাঁ প্রান্তে
+$!A$ জুড়ে পাওয়া অনুক্রমকে $!A, \Gamma$ লিখি)। $\Delta$-ও যদি
+!!{sentence}s-এর একটি অনুক্রম হয়, তবে $\Gamma, \Delta$ হলো অনুক্রম
+দুটির সংযুক্তি।
+
+\begin{defn}[প্রারম্ভিক সিকোয়েন্ট]
+কোনো \emph{প্রারম্ভিক সিকোয়েন্ট} হলো
+\iftag{prvFalse,prvTrue}{নিচের কোনো একটি রূপের সিকোয়েন্ট:
+  \begin{enumerate}
+    \item $!A \Sequent !A$
+    \tagitem{prvTrue}{$\quad \Sequent \ltrue$}{}
+    \tagitem{prvFalse}{$\lfalse \Sequent \quad$}{}
+  \end{enumerate}}
+{রূপ~$!A \Sequent !A$-এর সিকোয়েন্ট}; এখানে $!A$ ভাষাটির যেকোনো
+!!{sentence}।
+\end{defn}
+
+সিকোয়েন্ট কলনে !!^{derivation}s হলো সিকোয়েন্টের বিশেষ ধরনের বৃক্ষ।
+তাদের সর্বোচ্চ সিকোয়েন্টগুলি প্রারম্ভিক সিকোয়েন্ট; কোনো সিকোয়েন্ট
+অন্য এক বা দুটি সিকোয়েন্টের নিচে থাকলে, সেটিকে কোনো অনুমান-বিধি
+সঠিকভাবে প্রয়োগ করে পাওয়া যেতে হবে। $\Log{LK}$-এর বিধিগুলি প্রধানত দুই প্রকার:
+\emph{যৌক্তিক} বিধি ও \emph{গঠনগত} বিধি। নিচের সিকোয়েন্টে $!A$ এবং/অথবা
+$!B$-যুক্ত !!{sentence}-এর !!{main
+  operator} অনুসারে যৌক্তিক বিধিটির
+নাম হয়। প্রতিটি বিধির দুটি রূপ থাকে—একটি বাঁদিকে !!{operator}-যুক্ত
+!!{sentence} থাকা সিকোয়েন্ট অনুমানের জন্য, অন্যটি ডানদিকে সেই
+!!{sentence} থাকা সিকোয়েন্ট অনুমানের জন্য।
+
+\end{document}

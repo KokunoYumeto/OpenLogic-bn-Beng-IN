@@ -1,0 +1,74 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: equinumerous-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{equ}
+
+\olsection{সমসংখ্যকতা}
+
+সেটের ``আকার'' সম্পর্কে আমাদের একটি স্বাভাবিক বোধ আছে, যা সসীম সেটের ক্ষেত্রে ভালোভাবে কাজ করে। কিন্তু অসীম সেটের ক্ষেত্রে কী হবে? \emph{যেকোনো} আকারের দুটি সেটের আকার তুলনার একটি আনুষ্ঠানিক পদ্ধতি গড়তে চাইলে, সেট দুটি কখন একই আকারের তা সংজ্ঞায়িত করে শুরু করা যুক্তিসঙ্গত। ফ্রেগের বক্তব্যটি দেখি:
+\begin{quote}
+  একজন পরিবেশক যদি নিশ্চিত হতে চান যে টেবিলে যতগুলি থালা রেখেছেন, ঠিক ততগুলিই ছুরি রেখেছেন, তবে কোনোটিই গোনার দরকার নেই: তিনি শুধু প্রতিটি থালার ডান দিকে একটি ছুরি রাখবেন, যাতে টেবিলের প্রত্যেক ছুরি কোনো থালার ডান দিকে থাকে। এভাবে থালা ও ছুরিগুলি একে অপরের সঙ্গে অনন্যভাবে, এবং বস্তুত একই স্থানিক সম্পর্কের সাহায্যে, যুক্ত হয়। \citep[\S70]{Frege1884}
+\end{quote}
+এই অনুচ্ছেদের অন্তর্দৃষ্টি একটি আনুষ্ঠানিক সংজ্ঞার সাহায্যে প্রকাশ করা যায়:
+
+\begin{defn}\ollabel{comparisondef}
+  $A$ ও $B$ \emph{সমসংখ্যক}, যা $\cardeq{A}{B}$ দিয়ে লেখা হয়, যদি এবং কেবল যদি !!a{bijection} $f \colon A \to B$ থাকে।
+\end{defn}
+
+\begin{prop}\ollabel{equinumerosityisequi}
+সমসংখ্যকতা একটি তুল্যতা সম্পর্ক।
+\end{prop}
+
+\begin{proof}
+দেখাতে হবে যে সমসংখ্যকতা প্রতিবিম্বধর্মী, প্রতিসম ও পরিযায়ী। ধরি, $A, B$ ও $C$ সেট।
+
+\emph{প্রতিবিম্বধর্ম।} সকল $x \in A$-এর জন্য $\Id{A} (x) = x$ দ্বারা নির্ধারিত অভেদ চিত্রণ $\Id{A} \colon A \to A$ একটি !!a{bijection}। তাই $\cardeq{A}{A}$।
+
+\emph{প্রতিসাম্য।} ধরি, $\cardeq{A}{B}$, অর্থাৎ !!a{bijection} $f\colon A \to B$ আছে। যেহেতু $f$ !!{bijective}, তাই তার বিপরীত $f^{-1}$ আছে এবং সেটিও !!{bijective}। ফলে $f^{-1}\colon B \to A$ একটি !!a{bijection}; তাই $\cardeq{B}{A}$।
+
+\emph{পরিযায়িতা।} ধরি, $\cardeq{A}{B}$ ও $\cardeq{B}{C}$, অর্থাৎ !!{bijection}s $f\colon A \to B$ ও $g\colon B \to C$ আছে। তাহলে মিশ্রণ $\comp{f}{g}\colon A \to C$ !!{bijective}; ফলে $\cardeq{A}{C}$।
+\end{proof}
+
+\begin{prop}
+$\cardeq{A}{B}$ হলে $A$ !!{enumerable} হয় যদি এবং কেবল যদি $B$-ও তাই হয়।
+\end{prop}
+
+\begin{editorial}
+পরের প্রমাণে \olref[enm]{sec} অন্তর্ভুক্ত থাকলে \olref[enm]{defn:enumerable}, অন্যথায় \olref[enm-alt]{defn:enumerable} ব্যবহার করা হয়।
+\end{editorial}
+
+\begin{proof}
+ধরি, $\cardeq{A}{B}$; তাই কোনো !!{bijection} $f \colon A
+\to B$ আছে। আরও ধরি, $A$ !!{enumerable}।
+% BN-SRC-001 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-001):} নিচের প্রথম শাখায় হিমায়িত ইংরেজি উৎসে শূন্য-সেটের যুক্তিতে $g(x)=y$ লেখা হয়েছে, কিন্তু তখনও $g$ সংজ্ঞায়িত হয়নি; প্রয়োজনীয় একৈক সমাপতিত অপেক্ষকটি $f$। বাংলা পাঠে $f(x)=y$ করা হয়েছে।} % BN-SRC-001 TARGET-CORRECTION-END
+\oliflabeldef{sfr:siz:enm:defn:enumerable}{
+  তাহলে হয় $A = \emptyset$, নয়তো !!a{surjective} অপেক্ষক $g\colon \PosInt \to A$ আছে। যদি $A = \emptyset$ হয়, তবে $B = \emptyset$-ও হয় (নইলে কোনো !!a{element}~$y \in B$ থাকত, কিন্তু $f(x) = y$ হয় এমন $x \in A$ থাকত না)। অন্যদিকে, $g\colon \PosInt \to A$ যদি !!{surjective} হয়, তবে $\comp{g}{f} \colon \PosInt \to B$ !!{surjective}। এটি দেখতে একটি $y \in B$ নিই। যেহেতু $f$ !!{surjective}, তাই এমন একটি $x \in A$ আছে, যাতে $f(x) = y$। যেহেতু $g$ !!{surjective}, তাই এমন একটি $n \in \PosInt$ আছে, যাতে $g(n) =
+  x$। ফলে
+\[
+(\comp{g}{f})(n) = f(g(n)) = f(x) = y
+\]
+এবং তাই $\comp{g}{f}$ !!{surjective}। সুতরাং $\comp{g}{f}$ হলো~$B$-এর একটি তালিকায়ন, এবং $B$ !!{enumerable}।}
+{
+  তাহলে হয় $A  = \emptyset$, নয়তো এমন !!a{bijection}~$g$ আছে, যার বিস্তৃতি $A$ এবং যার সংজ্ঞাক্ষেত্র হয় $\Nat$, নয়তো স্বাভাবিক সংখ্যার কোনো প্রারম্ভিক অনুক্রম। যদি $A = \emptyset$ হয়, তবে $B =
+  \emptyset$-ও হয় (নইলে এমন কোনো~$y \in B$ থাকত, যার জন্য $g(x) = y$ হয় এমন কোনো $x
+  \in A$ থাকত না)। তাই ধরি, আমাদের !!{bijection}~$g$ আছে। তাহলে $\comp{g}{f}$ একটি !!a{bijection}, যার বিস্তৃতি~$B$ এবং সংজ্ঞাক্ষেত্র~$g$-এর সংজ্ঞাক্ষেত্রেরই সমান (অর্থাৎ হয় $\Nat$, নয়তো তার কোনো প্রারম্ভিক খণ্ড); ফলে $B$ !!{enumerable}।}
+
+$B$ !!{enumerable} হলে~$f$-এর পরিবর্তে !!{bijection} $f^{-1}\colon B \to A$ নিয়ে একই যুক্তি পুনরাবৃত্তি করে পাওয়া যায় যে $A$ !!{enumerable}।
+\end{proof}
+
+\begin{prob}
+দেখাও যে $\cardeq{A}{C}$ ও $\cardeq{B}{D}$ এবং $A \cap B =
+C \cap D = \emptyset$ হলে $\cardeq{A \cup B}{C \cup D}$।
+\end{prob}
+
+\begin{prob}
+দেখাও যে $A$ অসীম ও !!{enumerable} হলে $\cardeq{A}{\Nat}$।
+\end{prob}
+
+\end{document}

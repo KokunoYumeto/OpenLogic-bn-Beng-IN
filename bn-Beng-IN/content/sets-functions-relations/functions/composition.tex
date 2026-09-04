@@ -1,0 +1,45 @@
+% Part: sets-functions-relations
+% Chapter: functions
+% Section: composition
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{fun}{cmp}
+\olsection{অপেক্ষকের মিশ্রণ}
+
+\begin{explain}
+\oliflabeldef{sfr:fun:inv:sec}{\olref[inv]{sec}-এ আমরা দেখেছি, !!a{bijection}~$f$-এর বিপরীত~$f^{-1}$ নিজেই একটি অপেক্ষক। অপেক্ষকের উপর আরেকটি ক্রিয়া হলো মিশ্রণ। }{}আমরা দুটি অপেক্ষক $f$ ও~$g$-কে মিশিয়ে, অর্থাৎ প্রথমে $f$ ও তার পরে~$g$ প্রয়োগ করে, একটি নতুন অপেক্ষক সংজ্ঞায়িত করতে পারি। অবশ্য বিস্তৃতি ও সংজ্ঞাক্ষেত্র উপযুক্তভাবে মিললে তবেই এটি সম্ভব, অর্থাৎ~$f$-এর বিস্তৃতিকে~$g$-এর সংজ্ঞাক্ষেত্রের উপসেট হতে হবে। \oliflabeldef{sfr:rel:ops:sec}{অপেক্ষকের উপর এই ক্রিয়া \olref[rel][ops]{sec}-এ আলোচিত সম্পর্কের আপেক্ষিক গুণফলের অনুরূপ।}{}
+
+মিশ্রণের ধারণাটি বোঝাতে একটি ছবি সাহায্য করতে পারে। \olref{fig:composition}-এ দুটি অপেক্ষক $f \colon A \to B$ ও $g \colon B \to C$ এবং তাদের মিশ্রণ~$(\comp{f}{g})$ দেখানো হয়েছে। অপেক্ষক $(\comp{f}{g}) \colon A \to C$, $A$-এর প্রত্যেক !!{element}-এর সঙ্গে~$C$-এর !!a{element}-কে জোড়া মেলায়। $A$-এর !!a{element}-এর সঙ্গে~$C$-এর কোন !!{element} জোড়া মেলানো হবে, তা এভাবে নির্দিষ্ট করি: একটি ইনপুট $x \in
+A$ দেওয়া থাকলে, প্রথমে অপেক্ষক $f$-কে~$x$-এ প্রয়োগ করো; এতে কোনো $f(x)
+= y \in B$ আউটপুট পাওয়া যাবে। তারপর অপেক্ষক $g$-কে~$y$-এ প্রয়োগ করো; এতে কোনো $g(f(x)) = g(y) = z \in C$ আউটপুট পাওয়া যাবে।
+\begin{figure}
+  \olasset[2\olphotowidth]{assets/diagrams/composition.tikz}
+  \caption{দুটি অপেক্ষক $f$ ও~$g$-এর মিশ্রণ $g \circ f$।}
+  \ollabel{fig:composition}
+\end{figure}
+\end{explain}
+
+\begin{defn}[মিশ্রণ]
+ধরি, $f\colon A \to B$ ও $g\colon B \to C$ দুটি অপেক্ষক। $f$-এর সঙ্গে~$g$-এর \emph{মিশ্রণ} হলো $\comp{f}{g} \colon A \to C$, যেখানে $(\comp{f}{g})(x) = g(f(x))$।
+\end{defn}
+
+\begin{ex}
+অপেক্ষক $f(x) = x + 1$ ও $g(x) = 2x$ বিবেচনা করো। যেহেতু $(\comp{f}{g})(x) = g(f(x))$, তাই প্রত্যেক ইনপুট~$x$-এর ক্ষেত্রে প্রথমে তার উত্তরসূরি নিতে হবে, তারপর ফলটিকে দুই দিয়ে গুণ করতে হবে। সুতরাং তাদের মিশ্রণ হলো $(\comp{f}{g})(x) = 2(x+1)$।
+\end{ex}
+
+\begin{prob}
+দেখাও যে $f \colon A \to B$ ও $g \colon B \to C$ উভয়েই !!{injective} হলে $\comp{f}{g}\colon A \to C$ !!{injective} হয়।
+\end{prob}
+
+\begin{prob}
+দেখাও যে $f \colon A \to B$ ও $g \colon B \to C$ উভয়েই !!{surjective} হলে $\comp{f}{g}\colon A \to C$ !!{surjective} হয়।
+\end{prob}
+
+\begin{prob}
+ধরি, $f \colon A \to B$ ও $g \colon B \to C$। দেখাও যে $\comp{f}{g}$-এর গ্রাফ হলো $R_f \mid R_g$।
+\end{prob}
+
+\end{document}

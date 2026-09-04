@@ -1,0 +1,86 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: comparing-sizes
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{car}
+
+\olsection{ভিন্ন আকারের সেট ও কান্টরের উপপাদ্য}
+
+\begin{explain}
+দুটি সেট একই আকারের—এই ধারণাটির একটি নির্দিষ্ট বক্তব্য আমরা দিয়েছি। একটি সেট অন্যটির চেয়ে ছোট—এই ধারণাটিরও নির্দিষ্ট বক্তব্য দিতে পারি। ``আকারে ছোট (বা সমসংখ্যক)''-এর সংজ্ঞায় সেট দুটির মধ্যে !!a{bijection}-এর পরিবর্তে প্রথম সেট থেকে দ্বিতীয় সেটে !!a{injection} লাগবে। এমন অপেক্ষক থাকলে প্রথম সেটের আকার দ্বিতীয় সেটের আকারের চেয়ে ছোট বা সমান। স্বাভাবিক বোধে একটি সেট থেকে অন্য সেটে !!a{injection} নিশ্চিত করে যে অপেক্ষকের বিস্তৃতিতে সংজ্ঞাক্ষেত্রের অন্তত সমানসংখ্যক !!{element}s আছে, কারণ সংজ্ঞাক্ষেত্রের কোনো দুটি !!{element}s বিস্তৃতির একই !!{element}-এ চিত্রিত হয় না।
+\end{explain}
+
+\begin{defn}
+$A$,~$B$-এর \emph{আকারে বড় নয়}, যা $\cardle{A}{B}$ দিয়ে লেখা হয়, যদি এবং কেবল যদি !!a{injection} $f \colon A \to B$ থাকে।
+\end{defn}
+
+স্পষ্টতই এটি প্রতিবিম্বধর্মী ও পরিযায়ী সম্পর্ক, কিন্তু প্রতিসম নয় (এটি অনুশীলনী হিসেবে রাখা হলো)। একটি সেট অন্যটির চেয়ে (কঠোরভাবে) ছোট—এই ধারণাটিও প্রবর্তন করতে পারি।
+
+\begin{defn}
+$A$,~$B$-এর \emph{আকারে ছোট}, যা $\cardless{A}{B}$ দিয়ে লেখা হয়, যদি এবং কেবল যদি !!a{injection}~$f\colon A \to B$ থাকে কিন্তু কোনো !!{bijection}~$g\colon A
+\to B$ না থাকে; অর্থাৎ $\cardle{A}{B}$ ও $\cardneq{A}{B}$।
+\end{defn}
+
+স্পষ্টতই এই সম্পর্কটি আত্মসম্পর্কহীন ও পরিযায়ী। (এটি অনুশীলনী হিসেবে রাখা হলো।) এই সংকেত ব্যবহার করে বলতে পারি, একটি সেট $A$ !!{enumerable} হয় যদি এবং কেবল যদি $\cardle{A}{\Nat}$; এবং $A$ !!{nonenumerable} হয় যদি এবং কেবল যদি $\cardless{\Nat}{A}$। এর সাহায্যে
+\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{%
+\olref[sfr][siz][nen-alt]{thm:nonenum-pownat}-কে এই পর্যবেক্ষণ হিসেবে আবার বলা যায় যে
+$\cardless{\Nat}{\Pow{\Nat}}$}{%
+\olref[sfr][siz][nen]{thm:nonenum-pownat}-কে এই পর্যবেক্ষণ হিসেবে আবার বলা যায় যে $\cardless{\PosInt}{\Pow{\PosInt}}$}। বস্তুত, \citet{Cantor1892} প্রমাণ করেছিলেন যে শেষ কথাটি \emph{সম্পূর্ণ সাধারণ}:
+
+\begin{thm}[কান্টর]\ollabel{thm:cantor}
+যেকোনো সেট $A$-এর জন্য $\cardless{A}{\Pow{A}}$।
+\end{thm}
+
+\begin{proof}
+চিত্রণ $f(x) = \{x\}$ একটি !!a{injection} $f \colon A \to \Pow{A}$, কারণ $x \neq y$ হলে সদস্যভিত্তিক সমতার নীতি অনুসারে $\{x\} \neq \{y\}$-ও হয়, এবং তাই $f(x) \neq f(y)$। সুতরাং $\cardle{A}{\Pow{A}}$।
+
+\begin{editorial}
+\olref[nen]{sec} উপস্থিত থাকলে আমরা ধীরগতির প্রমাণ, অন্যথায় \olref[nen-alt]{sec}-এর সঙ্গে মেলা দ্রুততর প্রমাণ দিই।
+\end{editorial}
+
+\oliflabeldef{sfr:siz:nen:sec}{%
+  এখন দেখাব যে কোনো !!a{surjective} অপেক্ষক~$g\colon A \to
+  \Pow{A}$ থাকতে পারে না, !!a{bijective} অপেক্ষক তো নয়ই; ফলে $\cardneq{A}{\Pow{A}}$। ধরি, $g\colon A \to \Pow{A}$। যেহেতু $g$ সর্বত্র সংজ্ঞায়িত, তাই প্রত্যেক $x \in A$ কোনো উপসেট $g(x)
+  \subseteq A$-তে চিত্রিত হয়। দেখাতে পারি যে $g$ সমাপতিত হতে পারে না। এর জন্য এমন একটি উপসেট~$\overline{A} \subseteq A$ সংজ্ঞায়িত করি, যা সংজ্ঞার কারণেই~$g$-এর বিস্তৃতিতে থাকতে পারে না। ধরি,
+  \[
+  \overline{A} = \Setabs{x \in A}{x \notin g(x)}.
+  \]
+  যেহেতু সকল $x \in A$-এর জন্য $g(x)$ সংজ্ঞায়িত, তাই $\overline{A}$ স্পষ্টতই~$A$-এর একটি সুসংজ্ঞায়িত উপসেট। কিন্তু সেটি~$g$-এর বিস্তৃতিতে থাকতে পারে না। যেকোনো $x \in A$ নিই; দেখাব যে $\overline{A} \neq
+  g(x)$। যদি $x \in g(x)$ হয়, তবে $x \notin g(x)$ ধর্মটি পূরণ করে না; তাই~$\overline{A}$-এর সংজ্ঞা অনুসারে $x \notin
+  \overline{A}$। যদি $x \in \overline{A}$ হয়, তবে তাকে~$\overline{A}$-এর সংজ্ঞায়ক ধর্ম পূরণ করতে হবে, অর্থাৎ $x \in A$ ও $x \notin
+  g(x)$। যেহেতু $x$ যেকোনো ছিল, এতে দেখানো হলো যে প্রত্যেক $x \in
+  A$-এর জন্য $x \in g(x)$ যদি এবং কেবল যদি $x \notin \overline{A}$; তাই $g(x) \neq \overline{A}$। অন্যভাবে বললে, $\overline{A}$~$g$-এর বিস্তৃতিতে থাকতে পারে না, যা~$g$ সমাপতিত—এই অনুমানের বিরোধী। % BN-SRC-002 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-002):} শেষ সর্বজনীন বক্তব্যে হিমায়িত ইংরেজি উৎসে ``প্রত্যেক $x\in\overline{A}$'' আছে। আগের বাক্যে $x$ যেকোনো $A$-এর উপাদান হিসেবে নেওয়া হয়েছে এবং প্রমাণে দরকারও ``প্রত্যেক $x\in A$''; বাংলা পাঠে সেই সঠিক পরিসরটি ব্যবহার করা হয়েছে।} % BN-SRC-002 TARGET-CORRECTION-END
+  }{এখনও দেখাতে হবে যে $\cardneq{A}{\Pow{A}}$। স্ববিরোধে পৌঁছানোর উদ্দেশ্যে ধরি $\cardeq{A}{\Pow{A}}$, অর্থাৎ কোনো !!{bijection} $g \colon A \to \Pow{A}$ আছে। এবার বিবেচনা করো:
+  \[
+    D = \Setabs{x \in A}{x \notin g(x)}
+  \]
+  লক্ষ করো, $D \subseteq A$, তাই $D \in \Pow{A}$। যেহেতু $g$ একটি !!a{bijection}, তাই এমন কোনো $y \in A$ আছে, যাতে $g(y) = D$। কিন্তু এখন পাই:
+  \[
+    y \in g(y) \text{ যদি এবং কেবল যদি } y \in D \text{ যদি এবং কেবল যদি } y \notin g(y).
+  \]
+  এটি স্ববিরোধ; তাই $\cardneq{A}{\Pow{A}}$।}{}
+\end{proof}
+
+\begin{explain}
+\oliflabeldef{sfr:siz:nen:thm:nonenum-pownat}{\olref{thm:cantor}-এর প্রমাণকে \olref[nen]{thm:nonenum-pownat}-এর প্রমাণের সঙ্গে তুলনা করা শিক্ষণীয়। সেখানে দেখিয়েছিলাম,~$\PosInt$-এর উপসেটগুলির যেকোনো তালিকা $Z_1$, $Z_2$, \dots{} থেকে এমন একটি সংখ্যার সেট~$\overline{Z}$ গঠন করা যায়, যা নিশ্চিতভাবে তালিকায় নেই। সেটি তালিকায় নেই, কারণ প্রত্যেক $n \in
+  \PosInt$-এর জন্য $n \in Z_n$ যদি এবং কেবল যদি $n \notin \overline{Z}$। এভাবে সব সময় এমন কোনো সংখ্যা আছে, যা $Z_n$ ও $\overline{Z}$-এর একটির !!a{element}, কিন্তু অন্যটির নয়। এখানে একই ধারণা অনুসরণ করি; শুধু সূচক~$n$ এখন~$\PosInt$-এর পরিবর্তে~$A$-এর !!{element}s। সেট $\overline{A}$-কে এমনভাবে সংজ্ঞায়িত করা হয়েছে যে সেটি প্রত্যেক $x \in A$-এর জন্য~$g(x)$ থেকে ভিন্ন, কারণ $x \in g(x)$ যদি এবং কেবল যদি $x \notin \overline{A}$। আবার সব সময়~$A$-এর এমন !!a{element} আছে, যা $g(x)$ ও $\overline{A}$-এর একটির !!a{element}, কিন্তু অন্যটির নয়। আর $\overline{Z}$ যেমন তালিকা $Z_1$, $Z_2$, \dots{}-এ থাকতে পারে না, তেমনি $\overline{A}$~$g$-এর বিস্তৃতিতে থাকতে পারে না।}{}
+
+\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{\olref{thm:cantor}-এর প্রমাণকে \olref[nen-alt]{thm:nonenum-pownat}-এর প্রমাণের সঙ্গে তুলনা করা শিক্ষণীয়। সেখানে দেখিয়েছিলাম,~$\Nat$-এর উপসেটগুলির যেকোনো তালিকা $N_0$, $N_1$, $N_2$, \dots{} থেকে এমন একটি সংখ্যার সেট~$D$ গঠন করা যায়, যা নিশ্চিতভাবে তালিকায় নেই। সেটি তালিকায় নেই, কারণ প্রত্যেক $n \in \Nat$-এর জন্য $n \in N_n$ যদি এবং কেবল যদি $n \notin
+  D$। এখানে একই ধারণা অনুসরণ করি; শুধু সূচক~$n$ এখন~$\Nat$-এর পরিবর্তে~$A$-এর !!{element}s। সেট $D$-কে এমনভাবে সংজ্ঞায়িত করা হয়েছে যে সেটি প্রত্যেক $x
+  \in A$-এর জন্য~$g(x)$ থেকে ভিন্ন, কারণ $x \in g(x)$ যদি এবং কেবল যদি $x \notin D$।}{}
+
+প্রমাণটিকে রাসেলের কূটাভাসের প্রমাণ \olref[sfr][set][rus]{thm:russells-paradox}-এর সঙ্গে তুলনা করাও উপযোগী। বস্তুত, কান্টরের উপপাদ্যই রাসেলের নিজের কূটাভাসের প্রেরণা ছিল।
+\end{explain}
+
+\begin{prob}
+  দেখাও যে কোনো সেট~$A$-এর জন্য !!a{injection} $g\colon \Pow{A} \to
+  A$ থাকতে পারে না। ইঙ্গিত: ধরি, $g\colon \Pow{A} \to A$ !!{injective}। $D = \Setabs{g(B)}{B \subseteq A \text{ এবং
+  } g(B) \notin B}$ বিবেচনা করো। ধরি, $x = g(D)$। $g$ যে !!{injective}, তা ব্যবহার করে একটি স্ববিরোধ বার করো।
+\end{prob}
+
+\end{document}

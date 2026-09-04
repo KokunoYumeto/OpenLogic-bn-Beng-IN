@@ -1,0 +1,86 @@
+% Part: sets-functions-relations
+% Chapter: functions
+% Section: kinds
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{fun}{kin}
+\olsection{অপেক্ষকের প্রকারভেদ}
+
+\begin{explain}
+যেসব ধরনের অপেক্ষক আমাদের সবচেয়ে বেশি কাজে আসে, সেগুলির একটি শ্রেণিবিন্যাস প্রবর্তন করা উপযোগী হবে।
+
+প্রথমে এমন অপেক্ষক বিবেচনা করা যাক, যার সহসংজ্ঞাক্ষেত্রের প্রত্যেক সদস্যই অপেক্ষকটির একটি মান। এই ধরনের অপেক্ষককে !!{surjective} বলা হয়; \olref{fig:surjective}-এর মতো ছবি দিয়ে তাদের দেখানো যায়।
+
+\begin{figure}
+  \olasset{assets/diagrams/surjective.tikz}
+  \caption{!!^a{surjective} অপেক্ষকের সহসংজ্ঞাক্ষেত্রের প্রত্যেক !!{element} অপেক্ষকটির একটি মান।}
+  \ollabel{fig:surjective}
+\end{figure}
+\end{explain}
+
+\begin{defn}[!!^{surjective} অপেক্ষক]
+একটি অপেক্ষক $f \colon A \rightarrow B$ \emph{!!{surjective}} হয় যদি এবং কেবল যদি $B$ একই সঙ্গে~$f$-এর বিস্তৃতিও হয়, অর্থাৎ প্রত্যেক $y \in B$-এর জন্য অন্তত একটি $x \in A$ থাকে, যাতে~$f(x) = y$; প্রতীকে:
+\[
+  (\forall y \in B)(\exists x \in A)f(x) = y.
+\]
+এই ধরনের অপেক্ষককে $A$ থেকে $B$-তে !!a{surjection} বলা হয়।
+\end{defn}
+
+\begin{explain}
+$f$ !!a{surjection} প্রমাণ করতে হলে দেখাতে হবে যে $f$-এর সহসংজ্ঞাক্ষেত্রের প্রত্যেক বস্তু কোনো ইনপুট $x$-এর জন্য $f(x)$-এর মান।
+
+লক্ষ করো, যেকোনো অপেক্ষক !!a{surjection} \emph{নির্ধারণ করে}। বস্তুত, একটি অপেক্ষক $f \colon A \to B$ দেওয়া থাকলে, $f'(x) = f(x)$ দ্বারা $f' \colon A \to \ran{f}$ সংজ্ঞায়িত করি। যেহেতু $\ran{f}$-কে $\Setabs{f(x) \in B}{x \in A}$ হিসেবে \emph{সংজ্ঞায়িত} করা হয়, তাই এই অপেক্ষক $f'$ অবশ্যই !!a{surjection}।
+\end{explain}
+
+\begin{explain}
+যেকোনো অপেক্ষক প্রতিটি সম্ভাব্য ইনপুটকে একটিমাত্র আউটপুটে পাঠায়। কিন্তু এমন অপেক্ষকও আছে, যারা কখনো ভিন্ন ইনপুটকে একই আউটপুটে পাঠায় না। এই ধরনের অপেক্ষককে !!{injective} বলা হয়; \olref{fig:injective}-এর মতো ছবি দিয়ে তাদের দেখানো যায়।
+\begin{figure}
+  \olasset{assets/diagrams/injective.tikz}
+  \caption{!!^a{injective} অপেক্ষক কখনো দুটি ভিন্ন আর্গুমেন্টকে একই মানে পাঠায় না।}
+  \ollabel{fig:injective}
+\end{figure}
+\end{explain}
+
+\begin{defn}[!!^{injective} অপেক্ষক]
+একটি অপেক্ষক $f \colon A \rightarrow B$ \emph{!!{injective}} হয় যদি এবং কেবল যদি প্রত্যেক $y \in B$-এর জন্য বড়জোর একটি $x \in A$ থাকে, যাতে~$f(x) = y$। এই ধরনের অপেক্ষককে $A$ থেকে~$B$-তে !!a{injection} বলা হয়।
+\end{defn}
+
+\begin{explain}
+$f$ !!a{injection} প্রমাণ করতে হলে দেখাতে হবে যে $f$-এর সংজ্ঞাক্ষেত্রের যেকোনো !!{element}s $x$ ও $y$-এর ক্ষেত্রে, $f(x)=f(y)$ হলে $x=y$।
+\end{explain}
+
+\begin{ex}
+$f(x) = 1$ দ্বারা নির্ধারিত ধ্রুব অপেক্ষক $f\colon \Nat \to \Nat$ না !!{injective}, না !!{surjective}।
+
+$f(x) = x$ দ্বারা নির্ধারিত অভেদ অপেক্ষক $f\colon \Nat \to \Nat$ একই সঙ্গে !!{injective} ও !!{surjective}।
+
+$f(x) = x+1$ দ্বারা নির্ধারিত উত্তরসূরি অপেক্ষক $f \colon \Nat \to \Nat$ !!{injective}, কিন্তু !!{surjective} নয়।
+
+নিচের সংজ্ঞা দ্বারা নির্ধারিত অপেক্ষক $f \colon \Nat \to \Nat$:
+\[
+  f(x) =
+  \begin{cases}
+    \frac{x}{2} & \text{যদি $x$ জোড় হয়} \\
+    \frac{x+1}{2} & \text{যদি $x$ বিজোড় হয়।}
+  \end{cases}
+\]
+!!{surjective}, কিন্তু !!{injective} নয়।
+\end{ex}
+
+\begin{explain}
+প্রায়ই আমরা এমন অপেক্ষক বিবেচনা করতে চাই, যা একই সঙ্গে !!{injective} ও !!{surjective}। এই ধরনের অপেক্ষককে !!{bijective} বলা হয়। তাদের চেহারা \olref{fig:bijective}-এ দেখানো অপেক্ষকটির মতো। !!^{bijection}s-কে কখনো কখনো \emph{এক-এক সঙ্গতি}ও বলা হয়, কারণ তারা সহসংজ্ঞাক্ষেত্রের উপাদানগুলিকে সংজ্ঞাক্ষেত্রের উপাদানগুলির সঙ্গে অনন্যভাবে জোড়া মেলায়।
+\begin{figure}
+  \olasset{assets/diagrams/bijective.tikz}
+  \caption{!!^a{bijective} অপেক্ষক সহসংজ্ঞাক্ষেত্রের উপাদানগুলিকে সংজ্ঞাক্ষেত্রের উপাদানগুলির সঙ্গে অনন্যভাবে জোড়া মেলায়।}
+  \ollabel{fig:bijective}
+\end{figure}
+\end{explain}
+
+\begin{defn}[!!^{bijection}]
+একটি অপেক্ষক $f \colon A \to B$ \emph{!!{bijective}} হয় যদি এবং কেবল যদি সেটি একই সঙ্গে !!{surjective} ও !!{injective} হয়। এই ধরনের অপেক্ষককে $A$ থেকে~$B$-তে (বা $A$ ও~$B$-এর মধ্যে) !!a{bijection} বলা হয়।
+\end{defn}
+
+\end{document}

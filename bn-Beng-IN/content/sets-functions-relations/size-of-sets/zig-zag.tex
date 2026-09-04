@@ -1,0 +1,110 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: zig-zag
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{zigzag}
+
+\olsection{কান্টরের আঁকাবাঁকা পথের পদ্ধতি}
+
+\begin{explain}
+আমরা ইতিমধ্যেই কয়েকটি ``সহজ'' তালিকায়ন বিবেচনা করেছি। এবার কিছুটা কঠিন একটি বিষয় বিবেচনা করব। স্বাভাবিক সংখ্যার ক্রমযুগলগুলির সেট বিবেচনা করো\oliflabeldef{sfr:set:pai:sec}{, যাকে \olref[set][pai]{sec}-এ এইভাবে সংজ্ঞায়িত করেছি:}{, যার সংজ্ঞা:}
+\[
+\Nat \times \Nat = \Setabs{\tuple{n,m}}{n,m \in \Nat}
+\]
+এই ক্রমযুগলগুলিকে নিচের মতো একটি \emph{সারণিতে} সাজাতে পারি:
+\[
+\begin{array}{ c | c | c | c | c | c}
+& \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \dots \\
+\hline
+\mathbf 0 & \tuple{0,0} & \tuple{0,1} & \tuple{0,2} & \tuple{0,3} & \dots \\
+\hline
+\mathbf 1 & \tuple{1,0} & \tuple{1,1} & \tuple{1,2} & \tuple{1,3} & \dots \\
+\hline
+\mathbf 2 & \tuple{2,0} & \tuple{2,1} & \tuple{2,2} & \tuple{2,3} & \dots \\
+\hline
+\mathbf 3 & \tuple{3,0} & \tuple{3,1} & \tuple{3,2} & \tuple{3,3} & \dots \\
+\hline
+\vdots & \vdots & \vdots & \vdots & \vdots & \ddots\\
+\end{array}
+\]
+স্পষ্টতই $\Nat \times \Nat$-এর প্রত্যেক ক্রমযুগল সারণিতে ঠিক একবার আসবে। বিশেষ করে, $\tuple{n,m}$ আসবে $n$-তম সারি ও $m$-তম স্তম্ভে। কিন্তু এমন একটি সারণির উপাদানগুলিকে কীভাবে একটি ``একমাত্রিক'' তালিকায় সাজাব? নিচের সারণির বিন্যাসটি তার একটি উপায় দেখায় (যদিও অবশ্যই আরও অনেক উপায় আছে):
+\[
+\begin{array}{ c | c | c | c | c | c | c}
+& \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 &\dots \\
+\hline
+\mathbf 0 & 0  & 1& 3 & 6& 10 &\ldots \\
+\hline
+\mathbf 1 &2 & 4& 7 & 11 & \dots &\ldots \\
+\hline
+\mathbf 2 & 5 & 8 & 12 & \ldots & \dots&\ldots \\
+\hline
+\mathbf 3 & 9 & 13 & \ldots & \ldots & \dots & \ldots \\
+\hline
+\mathbf 4 & 14 & \ldots & \ldots & \ldots & \dots & \ldots \\
+\hline
+\vdots & \vdots & \vdots & \vdots & \vdots&\ldots & \ddots\\
+\end{array}
+\]\noindent
+এই বিন্যাসকে \emph{কান্টরের আঁকাবাঁকা পথের পদ্ধতি} বলা হয়। এটি নিচের ক্রমে $\Nat \times \Nat$-এর তালিকায়ন করে:
+\[
+\tuple{0,0}, \tuple{0,1}, \tuple{1,0}, \tuple{0,2}, \tuple{1,1},
+\tuple{2,0}, \tuple{0,3}, \tuple{1,2}, \tuple{2,1}, \tuple{3,0}, \dots
+\]
+এতে নিচের ফলটি প্রতিষ্ঠিত হয়:
+\end{explain}
+
+\begin{prop}\ollabel{natsquaredenumerable}
+$\Nat \times \Nat$ !!{enumerable}।
+\end{prop}
+
+\begin{proof}
+ধরি, $f \colon \Nat \to \Nat\times\Nat$ প্রত্যেক $k \in \Nat$-কে সেই টিউপল $\tuple{n,m} \in \Nat \times \Nat$-এ পাঠায়, যার জন্য কান্টরের আঁকাবাঁকা সারণির $n$-তম সারি ও $m$-তম স্তম্ভে $k$ আছে।
+\end{proof}
+
+\begin{explain}
+এই কৌশলটি সুন্দরভাবে সাধারণীকরণও করা যায়। যেমন, স্বাভাবিক সংখ্যার ক্রমবদ্ধ ত্রয়ীগুলির সেটের তালিকায়নে এটি ব্যবহার করতে পারি, অর্থাৎ:
+\[
+\Nat \times \Nat \times \Nat = \Setabs{\tuple{n,m,k}}{n,m,k \in \Nat}
+\]
+আমরা $\Nat \times \Nat \times \Nat$-কে $\Nat \times \Nat$ ও $\Nat$-এর কার্তেসীয় গুণফল হিসেবে ভাবি, অর্থাৎ,
+\[
+\Nat^3 = (\Nat \times \Nat) \times \Nat =
+\Setabs{\tuple{\tuple{n,m},k}}{n, m, k
+  \in \Nat }
+\]
+তাই একটি সারণির এক অক্ষে $\Nat$-এর তালিকায়ন এবং অন্য অক্ষে $\Nat^2$-এর তালিকায়ন বসিয়ে $\Nat^3$-এর তালিকায়ন করতে পারি:
+\[
+\begin{array}{ c | c | c | c | c | c}
+& \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \dots \\
+\hline
+\mathbf{\tuple{0,0}} & \tuple{0,0,0} & \tuple{0,0,1} & \tuple{0,0,2} & \tuple{0,0,3} & \dots \\
+\hline
+\mathbf{\tuple{0,1}} & \tuple{0,1,0} & \tuple{0,1,1} & \tuple{0,1,2} & \tuple{0,1,3} & \dots \\
+\hline
+\mathbf{\tuple{1,0}} & \tuple{1,0,0} & \tuple{1,0,1} & \tuple{1,0,2} & \tuple{1,0,3} & \dots \\
+\hline
+\mathbf{\tuple{0,2}} & \tuple{0,2,0} & \tuple{0,2,1} & \tuple{0,2,2} & \tuple{0,2,3} & \dots\\
+\hline
+\vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+\end{array}
+\]
+সুতরাং কান্টরের আঁকাবাঁকা পথের পদ্ধতির মতো একটি পদ্ধতি ব্যবহার করে একইভাবে~$\Nat^3$-এর তালিকায়ন পেতে পারি। এভাবে এগিয়ে যেকোনো স্বাভাবিক সংখ্যা $n$-এর জন্য $\Nat^n$-এর তালিকায়ন পাওয়া যায়। সুতরাং:
+\end{explain}
+
+\begin{prop}
+প্রত্যেক $n \in \Nat$-এর জন্য $\Nat^n$ !!{enumerable}।
+\end{prop}
+
+\begin{prob}\label{sfr:siz:zigzag:prob:posint-n}
+দেখাও যে প্রত্যেক $n \in \Nat$-এর জন্য $(\PosInt)^n$ !!{enumerable}।
+\end{prob}
+
+\begin{prob}\label{sfr:siz:zigzag:prob:posint-star}
+  দেখাও যে $(\PosInt)^*$ !!{enumerable}। তুমি \cref{sfr:siz:zigzag:prob:posint-n} ধরে নিতে পারো।
+\end{prob}
+
+\end{document}

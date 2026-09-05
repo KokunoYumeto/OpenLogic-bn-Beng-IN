@@ -147,12 +147,23 @@
       "OLP-0135",
       "OLP-0136",
       "OLP-0137",
+      "OLP-0138",
+      "OLP-0139",
+      "OLP-0140",
+      "OLP-0141",
+      "OLP-0142",
+      "OLP-0143",
+      "OLP-0144",
+      "OLP-0145",
+      "OLP-0146",
+      "OLP-0147",
+      "OLP-0148",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 136,
-    "untranslated_count": 586,
-    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, and the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters are translated; both Size of Sets editorial alternatives remain distinct.",
+    "translated_count": 147,
+    "untranslated_count": 575,
+    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, and the First-order Logic part driver plus complete Introduction chapter are translated; both Size of Sets editorial alternatives remain distinct.",
     "reader_state": "The verified reader remains the exact 18-unit v0.2.0 scope. A distinct 25-unit Functions input is prepared but unbuilt. Size of Sets, Arithmetization, Infinite Sets, Propositional Logic, Proof Systems, Sequent Calculus, Natural Deduction, Tableaux, Axiomatic Deduction and Completeness have not yet been integrated into a built reader."
   },
   "last_verified_public_release": {
@@ -162,11 +173,11 @@
     "status_evidence": "evidence/STATUS.json"
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "defa3ec879af0bd28a59430e28051d4038de193c",
-    "translated_units": 124,
-    "receipt": "PUBLIC_READBACK_SOURCE_124_2026-09-05.json",
-    "receipt_sha256": "f5de8603c4778d015a4626acb93aa2ad0e307310625310897340e3a32b789d78",
-    "status": "Anonymous immutable-archive readback verified all 26 changed Git objects in the complete reader-reachable Axiomatic Deduction checkpoint and reran the public checker for all 124 sources and 1,530 blocks. The current 136-unit draft extends that verified checkpoint."
+    "commit": "135af85a0222fdc525aa3418ff1ecad2c71eee6e",
+    "translated_units": 136,
+    "receipt": "PUBLIC_READBACK_SOURCE_136_2026-09-05.json",
+    "receipt_sha256": "9df8c13ecdc12757bad236c96fdf29bf3ae8495efd4f8120e7147507eb49f11c",
+    "status": "Anonymous immutable-archive readback verified all 24 changed Git objects in the complete Completeness checkpoint and reran the public checker for all 136 sources and 1,708 blocks. The current 147-unit draft extends that verified checkpoint."
   },
   "current_checks": {
     "unit_checks": [
@@ -2603,6 +2614,201 @@
         "target_sha256": "f2a4cfd977a06c27c476756ec21ce4263bc7701592c5c7e3913bd6b63473311a"
       },
       {
+        "unit_id": "OLP-0138",
+        "source_blocks": 15,
+        "target_blocks": 15,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "9e83cd636268f23a1c4d05e16458376025531e5363924264b1d7138b70af1b26"
+      },
+      {
+        "unit_id": "OLP-0139",
+        "source_blocks": 11,
+        "target_blocks": 11,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "caad0076eeb26da6227b70bdb3b2105cd026cac30133eeddf8263da65b1134b7"
+      },
+      {
+        "unit_id": "OLP-0140",
+        "source_blocks": 6,
+        "target_blocks": 6,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-083",
+          "BN-SRC-084"
+        ],
+        "documented_math_correction": "BN-SRC-083, BN-SRC-084 exact documented formula repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "b6c00c5795132671f5398d2a446b9a18204b6265947907cf5aa431df672daa7b"
+      },
+      {
+        "unit_id": "OLP-0141",
+        "source_blocks": 4,
+        "target_blocks": 4,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "8e91740d5bdd2b01d3dea67faaaf5c79ecc6ceee26e2ae9b30a31bcef4fb7cc6"
+      },
+      {
+        "unit_id": "OLP-0142",
+        "source_blocks": 11,
+        "target_blocks": 11,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "e3b108a42dd1c13bc3f0f7c40337874208fdf6531732b9d36d6501e1dba18cbb"
+      },
+      {
+        "unit_id": "OLP-0143",
+        "source_blocks": 7,
+        "target_blocks": 7,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-085",
+          "BN-SRC-086"
+        ],
+        "documented_math_correction": "BN-SRC-086 exact documented formula repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": "BN-SRC-085 exact documented semantic repair",
+        "target_sha256": "579856f7de0c5a25f950c171fd71b4784f4f45a96b63605d7dd097f973766488"
+      },
+      {
+        "unit_id": "OLP-0144",
+        "source_blocks": 6,
+        "target_blocks": 6,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "5124f02941aee23670d830c19eee8eb53eb5490c35335edb54720efa5cacf184"
+      },
+      {
+        "unit_id": "OLP-0145",
+        "source_blocks": 5,
+        "target_blocks": 5,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "c490d5f30d90ae29b12fd65e0c22db7ec4a123ea555cbf17953a0d62a7c533c1"
+      },
+      {
+        "unit_id": "OLP-0146",
+        "source_blocks": 4,
+        "target_blocks": 4,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-087"
+        ],
+        "documented_math_correction": "BN-SRC-087 exact documented formula repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "38ead77ec8b2f60f4c9ae5ba4e1ea53d9ba302b3ffe04e36ef4c112f52737bc0"
+      },
+      {
+        "unit_id": "OLP-0147",
+        "source_blocks": 5,
+        "target_blocks": 5,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "d53eb3f76ffe2f568880c71d00f3e3616990ae043aad97502ad8294d2ee2aaf7"
+      },
+      {
+        "unit_id": "OLP-0148",
+        "source_blocks": 7,
+        "target_blocks": 7,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "68e3359723d13255c1a68c867c962dab1ab580debf7ec65c96c54d6b96638df2"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -2639,12 +2845,12 @@
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "572aa474942c302f8df56f9db7b0b5485bf91654e40045cfcbce25f34f7b9846"
+      "sha256": "18d8bbc5a4b67c0d5d53e9e8a2a49ce4c8f91fd1b3d49282a2ef7f9641ffe80c"
     },
-    "segments": 1708,
-    "translated_segments": 1446,
+    "segments": 1789,
+    "translated_segments": 1494,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "c3efced2a78de56316d5d8d6f25a9fb8d012a886e02ae879f2d644f8634f6a3b",
+    "segment_index_sha256": "fbf757be73897bed324f07fe7a5366055795f0a22dfe05aa4ff028c9931c53c6",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -2693,6 +2899,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_COMPLETENESS.md",
         "sha256": "6b0bb54ade30f538a7ed0993cc25f0738687ccc7776d2c1d3e010454ac54f977"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_FIRST_ORDER_LOGIC_INTRODUCTION.md",
+        "sha256": "ab7b452845525e337c3ef0f79d6ef7e698e2ba5265a0a3aa948886f05b0e67d5"
       }
     ],
     "shared_source_audit": {
@@ -2707,7 +2917,7 @@
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "f0be5ac9cfc4aaec04d49018614576923a36b3747129df28b4e03c95228331d9",
+      "reconciliation_sha256": "30ef6e3d2c9687c619a7f2e6e3dbb94db5c71eacdf2f4c5db166aa19796f6547",
       "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
       "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
       "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
@@ -2725,9 +2935,9 @@
     }
   },
   "source_corrections": {
-    "count": 92,
+    "count": 97,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "42e608b6e97955a3e9e569e1217165242989776c6fa748a4bf6d36c9fdf28d1f",
+    "sha256": "8c1ff588c2ee5c0ec48a80c68e9cde506c196c2bc5098a990365598e8736258a",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -2816,6 +3026,11 @@
       "BN-SRC-080",
       "BN-SRC-081",
       "BN-SRC-082",
+      "BN-SRC-083",
+      "BN-SRC-084",
+      "BN-SRC-085",
+      "BN-SRC-086",
+      "BN-SRC-087",
       "OLSIZ-001",
       "OLSIZ-002",
       "OLSIZ-003",
@@ -2824,15 +3039,15 @@
     ]
   },
   "translation_decisions": {
-    "count": 95,
-    "provisional_open": 76,
+    "count": 100,
+    "provisional_open": 81,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "727b273de86e02f3f5d13d435387c10f33387b91234997e0c0ad42c9fa731bde",
+    "sha256": "17d5bf2dcfb50151c43c14d270f0c0d9271d86107cae5d655676c3004e628444",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 6215,
+    "occurrence_count": 7271,
     "pagination_status": "Final printed/PDF page fields are pending reader integration and final pagination."
   },
   "functions_build_candidate": {
@@ -2846,5 +3061,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "All three bounded global TeX mutex acquisitions concerned the prior input hash and timed out without launching TeX. The freshly prepared current input has not yet been submitted to TeX; no new PDF or HTML is claimed."
   },
-  "remaining": "586 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
+  "remaining": "575 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
 }

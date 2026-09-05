@@ -1,0 +1,86 @@
+% Part: first-order-logic
+% Chapter: introduction
+% Section: formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{int}{fml}
+
+\section{\usetoken{P}{formula}}
+
+প্রথম-ক্রমের যুক্তিবিদ্যার !!{sentence}s-কে কঠোরভাবে নির্দিষ্ট করতে এবং
+!!{variable}s ব্যবহারের ফলে উদ্ভূত সমস্যাগুলি সামলাতে আমরা নিচের পদ্ধতি
+নেব। প্রথমে একটি \emph{ভিন্ন} ধরনের অভিব্যক্তির সমষ্টি সংজ্ঞায়িত করব:
+!!{formula}s। তারপর সেগুলিতে !!{variable}s কী ভূমিকা পালন করে তা বিবেচনা
+করতে পারব—আর “মুক্ত” ও “বদ্ধ” !!{variable}s-এর ধারণার ভিত্তিতে
+!!a{sentence} কাকে বলে তা সংজ্ঞায়িত করতে পারব (অর্থাৎ, মুক্ত
+!!{variable}s নেই এমন !!a{formula})। এতে “!!{sentence}”-এর সংজ্ঞা সহজে
+সামলানো যায় বলেই শুধু আমরা এভাবে করি না; পরিতৃপ্তির অর্থগত ধারণাটি
+যেভাবে সংজ্ঞায়িত করব, তার জন্যও এটি অপরিহার্য হবে।
+
+একটি সরল প্রথম-ক্রমের ভাষার জন্য “!!{formula}” সংজ্ঞায়িত করা যাক। ভাষাটিতে
+শুধু একটি !!{predicate}~$\Obj P$, একটি !!{constant}~$\Obj a$ এবং শুধু
+$\lnot$, $\land$ ও~$\lexists$ যৌক্তিক সংকেতগুলি আছে। আমাদের পূর্ণ
+সংজ্ঞাগুলি আরও অনেক সাধারণ হবে: সেখানে অসীমসংখ্যক !!{predicate}s ও
+!!{constant}s অনুমোদিত হবে। বস্তুত, এমন !!{function}s-ও বিবেচনা করব,
+যেগুলিকে !!{constant}s ও !!{variable}s-এর সঙ্গে মিলিয়ে “পদ” গঠন করা
+যায়। আপাতত $\Obj a$ ও চলরাশিগুলিই আমাদের একমাত্র পদ। তবে আমাদের
+অসীমসংখ্যক !!{variable}s দরকার। আনুষ্ঠানিকভাবে $\Obj v_0$, $\Obj v_1$,
+\dots সংকেতগুলিকে চলরাশি হিসেবে ব্যবহার করব।
+
+\begin{defn}
+\emph{!!{formula}s}-এর সমষ্টি~$\Frm$ নিচের মতো সংজ্ঞায়িত:
+\begin{enumerate}
+\item\ollabel{fmls-atom} $\Atom{\Obj P}{\Obj a}$ এবং $\Atom{\Obj
+  P}{\Obj v_i}$ হলো !!{formula}s ($i \in \Nat$)।
+
+\tagitem{prvNot}{\ollabel{fmls-not}$!A$ যদি !!a{formula} হয়, তবে $\lnot !A$
+  !!{formula}।}{}
+
+\tagitem{prvAnd}{$!A$ ও $!B$ যদি !!{formula}s হয়, তবে $(!A \land
+  !B)$ একটি !!a{formula}।}{}
+
+\tagitem{prvEx}{\ollabel{fmls-ex}$!A$ যদি !!a{formula} এবং $x$ যদি !!a{variable}
+  হয়, তবে $\lexists[x][!A]$ একটি !!a{formula}।}{}
+
+\tagitem{limitClause}{\ollabel{fmls-limit}আর কিছুই !!a{formula} নয়।}{}
+\end{enumerate}
+\end{defn}
+
+\olref{fmls-atom} থেকে পাই যে যেকোনো $i \in \Nat$-এর জন্য
+$\Atom{\Obj P}{\Obj a}$ ও $\Atom{\Obj P}{\Obj v_i}$ হলো !!{formula}s।
+এগুলিকে \emph{পরমাণু} !!{formula}s বলা হয়। এগুলি আমাদের একটি শুরুর
+জায়গা দেয়। অন্য অনুচ্ছেদগুলি আগে গঠিত সূত্র থেকে নতুন
+!!{formula}s গঠনের উপায় দেয়। যেমন, \olref{fmls-not} অনুসারে
+$\lnot \Atom{\Obj P}{\Obj v_2}$ একটি !!a{formula}, কারণ
+\olref{fmls-atom} অনুসারে $\Atom{\Obj P}{\Obj v_2}$ ইতিমধ্যেই একটি
+!!a{formula}। তারপর \olref{fmls-ex} অনুসারে
+$\lexists[\Obj v_2][\lnot \Atom{\Obj P}{\Obj v_2}]$ আরেকটি
+!!{formula}; এভাবে প্রক্রিয়াটি চলতে থাকে। \olref{fmls-limit} বলে,
+\emph{শুধু} এইভাবে গঠিত প্রতীকক্রমই !!{formula}s হিসেবে গণ্য হবে। বিশেষত,
+$\lexists[\Obj v_0][\Atom{\Obj P}{\Obj a}]$ এবং $\lexists[\Obj
+  v_0][\lexists[\Obj v_0][\Atom{\Obj P}{\Obj a}]]$ \emph{অবশ্যই}
+!!{formula}s হিসেবে গণ্য হয়; কিন্তু $(\lnot \Atom{\Obj P}{\Obj a})$
+হয় না, কারণ তার বাইরের বন্ধনীদুটি অপ্রয়োজনীয়।
+
+!!{formula}s-কে এইভাবে সংজ্ঞায়িত করাকে \emph{আরোহী সংজ্ঞা} বলা হয়;
+এর ফলে \emph{গঠনগত আরোহ} নামে আরোহ-প্রমাণের একটি রূপ ব্যবহার করে
+!!{formula}s সম্বন্ধে প্রমাণ দেওয়া যায়। সাধারণভাবে এগুলি
+\olref[mth][ind][idf]{sec} ও \olref[mth][ind][sti]{sec}-এ আলোচনা করা
+হয়েছে; পরের প্রমাণগুলি দেখার আগে অংশদুটি ঝালিয়ে নেওয়া উচিত। মূল ধারণাটি
+এই: সব !!{formula}s-এর জন্য কিছু সত্য—এটি প্রমাণ করতে চাইলে প্রথমে
+দেখাও যে কথাটি পরমাণু !!{formula}s-এর জন্য সত্য; তারপর দেখাও,
+\emph{যদি} কথাটি যেকোনো !!{formula}~$!A$-র (এবং~$!B$-র) জন্য সত্য হয়,
+তবে তা $\lnot !A$, $(!A \land !B)$ ও $\lexists[x][!A]$-র জন্যও
+\emph{সত্য}। যেমন, এর দ্বারা প্রমাণ হয় যে কথাটি
+$\lexists[\Obj v_2][\lnot \Atom{\Obj P}{\Obj v_2}]$-এর জন্য সত্য:
+প্রথম অংশ থেকে জানা যায়, পরমাণু !!{formula}~$\Atom{\Obj P}{\Obj v_2}$-এর
+জন্য তা সত্য। দ্বিতীয় অংশ থেকে তখন $\lnot \Atom{\Obj P}{\Obj v_2}$-এর
+জন্য সত্যতা পাওয়া যায়; তারপর আবার সেখান থেকে
+$\lexists[\Obj v_2][\lnot \Atom{\Obj P}{\Obj v_2}]$-এর নিজের জন্য
+সত্যতা পাওয়া যায়। সব !!{formula}s-ই যেহেতু পরমাণু !!{formula}s থেকে
+আরোহীভাবে উৎপন্ন, তাই তাদের প্রত্যেকটির ক্ষেত্রেই পদ্ধতিটি কাজ করে।
+
+\end{document}

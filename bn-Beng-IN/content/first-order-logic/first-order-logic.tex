@@ -1,0 +1,57 @@
+% Part: first-order logic
+
+\documentclass[../../include/open-logic-part]{subfiles}
+
+\begin{document}
+
+\olpart{fol}{প্রথম-ক্রমের যুক্তিবিদ্যা}
+
+\begin{editorial}
+  এই ভাগে পূর্ণতা পর্যন্ত প্রথম-ক্রমের যুক্তিবিদ্যার অধিতত্ত্ব আলোচনা করা
+  হয়েছে। বর্তমানে এটি বচনমূলক যুক্তিবিদ্যার পৃথক আলোচনার উপর নির্ভর করে
+  না; সব কিছুই এখানে প্রমাণ করা হয়। “FOL” ট্যাগটি false হলে উৎস ফাইলগুলি
+  পরিমাণসূচক-সংক্রান্ত উপাদান বাদ দেবে (এবং “!!{structure}”-এর বদলে
+  “!!{valuation}”, $\Struct{M}$-এর বদলে $\pAssign{v}$ ইত্যাদি বসাবে)।
+  বস্তুত, বচনমূলক যুক্তিবিদ্যার ভাগটির অধিকাংশ উপাদানই “FOL” ট্যাগ বন্ধ
+  রাখা প্রথম-ক্রমের উপাদান।
+
+  বচনমূলক যুক্তিবিদ্যার ভাগটি অন্তর্ভুক্ত থাকলে এতে অনেক পুনরাবৃত্তি হয়।
+  তবে ভবিষ্যতে এমন ব্যবস্থা করার পরিকল্পনা আছে, যাতে এই ভাগটি বচনমূলক
+  যুক্তিবিদ্যার উপাদানকে হিসাবের মধ্যে নিতে পারে—আগেই আলোচিত উপাদান বাদ
+  দিতে পারে এবং বচনমূলক ভাগের সংশ্লিষ্ট স্থানগুলির উল্লেখ করে প্রমাণগুলি
+  সংক্ষিপ্ত করতে পারে।
+\end{editorial}
+
+\olimport[introduction]{introduction}
+
+\olimport[syntax-and-semantics]{syntax}
+
+\olimport[syntax-and-semantics]{semantics}
+
+\olimport[models-theories]{models-theories}
+
+\olimport[proof-systems]{proof-systems}
+
+\iftag{prfSC}{%
+  \olimport[sequent-calculus]{sequent-calculus}
+}{}
+
+\iftag{prfND}{%
+  \olimport[natural-deduction]{natural-deduction}
+}{}
+
+\iftag{prfTab}{%
+  \olimport[tableaux]{tableaux}
+}{}
+
+\iftag{prfAX}{%
+  \olimport[axiomatic-deduction]{axiomatic-deduction}
+}{}
+
+\olimport[completeness]{completeness}
+
+\olimport[beyond]{beyond}
+
+\OLEndPartHook
+
+\end{document}

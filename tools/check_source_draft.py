@@ -690,6 +690,75 @@ for row in rows:
     completeness_prose_fix = bool(completeness_prose_ids) and all(
         finding_id in documented for finding_id in completeness_prose_ids
     )
+    introduction_math_ids = []
+    introduction_math_fix = False
+    if row["unit_id"] == "OLP-0140":
+        introduction_math_ids = ["BN-SRC-083", "BN-SRC-084"]
+        introduction_math_fix = (
+            source_math - target_math
+            == collections.Counter(
+                {
+                    "\\lforall[x][(!A(x)\\lif!B(x)),\\lexists[x][!A(x)]"
+                    "\\Entails\\lexists[x][!B(x)]]": 1,
+                    "\\lforall[x][(!A(x)\\lif!B(x))": 2,
+                    "\\lexists[x][!B(x)]]": 2,
+                }
+            )
+            and target_math - source_math
+            == collections.Counter(
+                {
+                    "\\lforall[x][(!A(x)\\lif!B(x))],\\lexists[x][!A(x)]"
+                    "\\Entails\\lexists[x][!B(x)]": 1,
+                    "\\lforall[x][(!A(x)\\lif!B(x))]": 2,
+                    "\\lexists[x][!B(x)]": 2,
+                }
+            )
+            and all(finding_id in documented for finding_id in introduction_math_ids)
+        )
+    elif row["unit_id"] == "OLP-0143":
+        introduction_math_ids = ["BN-SRC-086"]
+        introduction_math_fix = (
+            source_math - target_math == collections.Counter({"3": 1})
+            and target_math - source_math == collections.Counter({"0": 1})
+            and "BN-SRC-086" in documented
+        )
+    elif row["unit_id"] == "OLP-0146":
+        introduction_math_ids = ["BN-SRC-087"]
+        introduction_math_fix = (
+            source_math - target_math
+            == collections.Counter(
+                {"\\lforall[\\Objv_0][\\Atom{\\ObjP}]{\\Objv_0}": 1}
+            )
+            and target_math - source_math
+            == collections.Counter(
+                {"\\lforall[\\Objv_0][\\Atom{\\ObjP}{\\Objv_0}]": 1}
+            )
+            and "BN-SRC-087" in documented
+        )
+    introduction_prose_ids = []
+    if row["unit_id"] == "OLP-0143":
+        assert source.count("the !!{constant}s can have more than one place") == 1
+        assert re.search(
+            r"!!\{predicate\}s-এর স্থানসংখ্যা একের\s+বেশি হতে পারে",
+            checked_target,
+        ) is not None
+        assert source.count("of $1$, $2$, or~$3$)") == 1
+        assert re.search(
+            r"আমাদের উদাহরণে \$0\$, \$1\$ বা~\$2\$-এর\s+কোনো একটিতে",
+            checked_target,
+        ) is not None
+        introduction_prose_ids = ["BN-SRC-085"]
+    introduction_prose_fix = bool(introduction_prose_ids) and all(
+        finding_id in documented for finding_id in introduction_prose_ids
+    )
+    introduction_token_fix = (
+        row["unit_id"] == "OLP-0143"
+        and semantic_tokens(source) - semantic_tokens(checked_target)
+        == collections.Counter({"!!{constant}s": 1})
+        and semantic_tokens(checked_target) - semantic_tokens(source)
+        == collections.Counter({"!!{predicate}s": 1})
+        and "BN-SRC-085" in documented
+    )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -710,6 +779,13 @@ for row in rows:
             "OLP-0135": {"BN-SRC-082"},
         }
         assert set(documented) == expected_completeness.get(row["unit_id"], set())
+    if 138 <= int(row["unit_id"].split("-")[1]) <= 148:
+        expected_introduction = {
+            "OLP-0140": {"BN-SRC-083", "BN-SRC-084"},
+            "OLP-0143": {"BN-SRC-085", "BN-SRC-086"},
+            "OLP-0146": {"BN-SRC-087"},
+        }
+        assert set(documented) == expected_introduction.get(row["unit_id"], set())
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -934,6 +1010,26 @@ for row in rows:
             "documented_correction": "BN-SRC-082",
             "empty_delta_subfamily_index": 1,
         }
+    elif row["unit_id"] == "OLP-0140":
+        assert introduction_math_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-083", "BN-SRC-084"],
+            "balanced_entailment_formula": True,
+            "balanced_derivation_formulas": 4,
+        }
+    elif row["unit_id"] == "OLP-0143":
+        assert introduction_math_fix and introduction_prose_fix and introduction_token_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-085", "BN-SRC-086"],
+            "arity_bearer": "predicate",
+            "assignment_values": [0, 1, 2],
+        }
+    elif row["unit_id"] == "OLP-0146":
+        assert introduction_math_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-087",
+            "restored_predicate_argument": "\\Obj v_0",
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -988,6 +1084,7 @@ for row in rows:
             tableau_identity_truth_sign_fix,
             axd_math_fix,
             completeness_math_fix,
+            introduction_math_fix,
             shared_audit_fix,
         )
     )
@@ -1003,7 +1100,10 @@ for row in rows:
         "math_parity": math_ok,
         "controls_parity": controls_ok,
         "env_parity": environments(source) == environments(checked_target),
-        "token_parity": semantic_tokens(source) == semantic_tokens(checked_target),
+        "token_parity": (
+            semantic_tokens(source) == semantic_tokens(checked_target)
+            or introduction_token_fix
+        ),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),
         "documented_source_corrections": documented,
         "tex_command_check": tex_command_check,

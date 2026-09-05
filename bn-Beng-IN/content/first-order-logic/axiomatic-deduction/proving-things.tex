@@ -1,0 +1,128 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: proving-things
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{pro}}
+      {\olfileid{pl}{axd}{pro}}
+
+\olsection{\usetoken{P}{derivation}-এর উদাহরণ}
+
+
+\begin{ex}
+ধরা যাক, আমরা $(\lnot !D \lor !E) \lif (!D \lif !E)$ প্রমাণ করতে
+চাই। স্পষ্টতই এটি আমাদের কোনো স্বতঃসিদ্ধের রূপ নয়, তাই এটিকে
+!!{derive} করতে \MP{} বিধি ব্যবহার করতে হবে। আমাদের একমাত্র বিধি
+মোডাস পোনেন্স; $!A$ ও~$!A \lif !B$ দেওয়া থাকলে এটি~$!B$-কে
+সমর্থন করার অনুমতি দেয়। একটি কৌশল হলো \olref[prp]{ax:lor3}-এ
+$!A$-এর স্থানে $\lnot !D$, $!B$-র স্থানে $!E$ এবং $!C$-র স্থানে
+$!D \lif !E$ নেওয়া, অর্থাৎ এই রূপটি নেওয়া:
+\[
+(\lnot !D \lif (!D \lif !E)) \lif ((!E \lif (!D \lif !E)) \lif ((\lnot
+!D \lor !E) \lif (!D \lif !E))).
+\]
+কেন? মোডাস পোনেন্স দুবার প্রয়োগ করলে শেষাংশটি পাওয়া যায়, আর সেটিই
+আমাদের লক্ষ্য। আবার সহজেই দেখা যায়, $\lnot !D \lif (!D \lif !E)$
+হলো \olref[prp]{ax:lnot2}-এর একটি রূপ এবং $!E \lif (!D \lif !E)$
+হলো \olref[prp]{ax:lif1}-এর একটি রূপ। তাই আমাদের !!{derivation}:
+\begin{derivation}
+  1. &  $\lnot !D \lif (!D \lif !E)$ & \olref[prp]{ax:lnot2} \\
+  2. & $(\lnot !D \lif (!D \lif !E)) \lif {}$\\
+  &\qquad $((!E \lif (!D \lif !E)) \lif ((\lnot !D \lor !E) \lif (!D \lif !E)))$ & \olref[prp]{ax:lor3}\\
+  3. & $(!E \lif (!D \lif !E)) \lif ((\lnot !D \lor !E) \lif (!D \lif !E))$ & 1, 2, \MP\\
+  4. & $!E \lif (!D \lif !E)$ & \olref[prp]{ax:lif1}\\
+  5. & $(\lnot !D \lor !E) \lif (!D \lif !E)$ & 3, 4, \MP
+\end{derivation}
+\end{ex}
+
+\begin{ex}\ollabel{ex:identity}
+$!D \lif !D$-এর কোনো !!a{derivation} খোঁজার চেষ্টা করি। এটি কোনো
+স্বতঃসিদ্ধের রূপ নয়, তাই এটিকে !!{derive} করতে \MP{} ব্যবহার করতে
+হবে। \olref[prp]{ax:lif1} হলো~$!A \lif !B$ রূপের একটি স্বতঃসিদ্ধ,
+যার ওপর~\MP প্রয়োগ করা যায়। অবশ্যই, এই ক্ষেত্রে \MP{} যে~$!B$-কে
+সঠিক ধাপ হিসেবে সমর্থন করবে, কাজে লাগতে হলে সেটিকে~$!D \lif !D$
+হতে হবে, কারণ এটিই আমরা !!{derive} করতে চাই। তার মানে $!A$-কেও
+$!D$ হতে হবে; অর্থাৎ \olref[prp]{ax:lif1}-এর এই রূপটি বিবেচনা করা যায়:
+\[
+!D \lif (!D \lif !D)
+\]
+\MP প্রয়োগ করতে হলে সংশ্লিষ্ট দ্বিতীয় পূর্বধারণা, অর্থাৎ~$!A$-কেও
+সমর্থন করতে হবে। কিন্তু আমাদের ক্ষেত্রে সেটি~$!D$, আর শুধু~$!D$-কে
+আমরা !!{derive} করতে পারব না। তাই ভিন্ন কৌশল দরকার।
+
+শুধু~$\lif$-সংবলিত অন্য স্বতঃসিদ্ধটি হলো \olref[prp]{ax:lif2}, অর্থাৎ
+\[
+(!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C))
+\]
+\MP{} দুবার প্রয়োগ করে শেষের বাসাবাঁধা শর্তাধীন সূত্রটিতে পৌঁছানো
+যায়। আবার তার মানে, \olref[prp]{ax:lif2}-এর এমন একটি রূপ চাই যেখানে
+$!A \lif !C$ হলো $!D \lif !D$, অর্থাৎ আমাদের লক্ষ্য !!{formula}।
+তাহলে অবশ্যই $!A$ ও~$!C$ উভয়ই~$!D$। কীভাবে~$!B$ বেছে নিলে $!A
+\lif (!B \lif !C)$ ও~$!A \lif !B$, অর্থাৎ আমাদের ক্ষেত্রে $!D
+\lif (!B \lif !D)$ ও~$!D \lif !B$-ও !!{derivable} হবে? প্রথমটি
+আমরা~$!B$ যাই নিই না কেন, ইতিমধ্যেই \olref[prp]{ax:lif1}-এর একটি
+রূপ। আর $!B$ যদি $(!D \lif !D)$ হয়, তবে $!D \lif !B$-ও
+\olref[prp]{ax:lif1}-এর আরেকটি রূপ। তাই আমাদের !!{derivation}:
+\begin{derivation}
+  1. & $!D \lif ((!D \lif !D) \lif !D)$ & \olref[prp]{ax:lif1}\\
+  2. & $(!D \lif ((!D \lif !D) \lif !D)) \lif {}$\\
+  & \qquad $((!D \lif (!D \lif !D)) \lif (!D \lif !D))$ & \olref[prp]{ax:lif2}\\
+  3. & $(!D \lif (!D \lif !D)) \lif (!D \lif !D)$ & 1, 2, \MP\\
+  4. & $!D \lif (!D \lif !D)$ & \olref[prp]{ax:lif1}\\
+  5. & $!D \lif !D$ & 3, 4, \MP
+\end{derivation}
+\end{ex}
+
+\begin{ex}\ollabel{ex:chain}
+কখনো অন্য কয়েকটি !!{formula}s~$\Gamma$ থেকে কোনো !!{formula}-র
+!!a{derivation} আছে দেখাতে চাই। যেমন, দেখাই যে $\Gamma = \{!A \lif
+!B, !B \lif !C\}$ থেকে $!A \lif !C$ !!{derive} করা যায়।
+\begin{derivation}
+  1. & $!A \lif !B$ & \Hyp\\
+  2. & $!B \lif !C$ & \Hyp\\
+  3. & $(!B \lif !C) \lif (!A \lif (!B \lif !C))$ & \olref[prp]{ax:lif1} \\
+  4. & $!A \lif (!B \lif !C)$ & 2, 3, \MP\\
+  5. & $(!A \lif (!B \lif !C)) \lif {}$\\
+  & \qquad $((!A \lif !B) \lif (!A \lif !C))$ & \olref[prp]{ax:lif2}\\
+  6. & $((!A \lif !B) \lif (!A \lif !C))$ & 4, 5, \MP\\
+  7. & $!A \lif !C$ & 1, 6, \MP
+\end{derivation}
+``\Hyp'' (``hypothesis'' অর্থাৎ অনুমান) চিহ্নিত পংক্তিগুলি বোঝায় যে
+সেই পংক্তির !!{formula}-টি~$\Gamma$-র একটি !!a{element}।
+\end{ex}
+
+\begin{prop}
+  \ollabel{prop:chain} $\Gamma \Proves !A \lif !B$ এবং $\Gamma
+  \Proves !B \lif !C$ হলে $\Gamma \Proves !A \lif !C$।
+\end{prop}
+
+\begin{proof}
+  ধরা যাক, $\Gamma \Proves !A \lif !B$ এবং $\Gamma \Proves !B
+  \lif !C$। তাহলে $\Gamma$ থেকে $!A \lif !B$-এর কোনো
+  !!a{derivation} এবং $\Gamma$ থেকে~$!B \lif !C$-এরও কোনো
+  !!a{derivation} আছে। দুটিকে পরপর বসিয়ে একটি !!{derivation} বানাও।
+  এবার আগের উদাহরণের !!{derivation}-এর 3--7 নম্বর পংক্তি যোগ করো।
+  এটি~$\Gamma$ থেকে $!A \lif !C$—নতুন !!{derivation}-টির শেষ
+  পংক্তি—এর কোনো !!a{derivation}। লক্ষ করো, 4 ও~7 নম্বর পংক্তির
+  সমর্থন তখনও বৈধ থাকে, যদি 1 নম্বর পংক্তির উল্লেখের বদলে $!A
+  \lif !B$-এর !!{derivation}-এর শেষ পংক্তি এবং 2 নম্বর পংক্তির
+  উল্লেখের বদলে $!B \lif !C$-এর !!{derivation}-এর শেষ পংক্তির
+  উল্লেখ বসানো হয়।
+\end{proof}
+
+\begin{prob}
+স্বতঃসিদ্ধগুলি থেকে !!{derivation}s প্রদর্শন করে দেখাও যে নিচেরগুলি সত্য:
+\begin{enumerate}
+\item $(!A \land !B) \lif (!B \land !A)$
+\item $((!A \land !B) \lif !C) \lif (!A \lif (!B \lif !C))$
+\item $\lnot(!A \lor !B) \lif \lnot !A$
+\end{enumerate}
+\end{prob}
+
+
+
+\end{document}

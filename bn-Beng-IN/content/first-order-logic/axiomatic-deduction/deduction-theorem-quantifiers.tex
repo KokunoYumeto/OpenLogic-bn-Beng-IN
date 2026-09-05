@@ -1,0 +1,61 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: deduction-theorem-quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{ddq}
+
+\olsection{পরিমাণসূচক-সহ নিঃসরণ উপপাদ্য}
+
+\begin{thm}[নিঃসরণ উপপাদ্য]
+\ollabel{thm:deduction-thm-q} $\Gamma \cup \{!A\} \Proves !B$ হলে
+$\Gamma \Proves !A \lif !B$।
+\end{thm}
+
+\begin{proof}
+$\Gamma \cup \{!A\}$ থেকে~$!B$-এর !!{derivation}-এর দৈর্ঘ্যের ওপর
+আবার আরোহ প্রয়োগ করি।
+
+আরোহের ভিত্তির প্রমাণটি \olref[ded]{thm:deduction-thm}-এর প্রমাণের
+ভিত্তির সঙ্গে অভিন্ন।
+
+আরোহের ধাপে আবার ধরা যাক, $\Gamma \cup \{!A\}$ থেকে~$!B$-এর
+!!{derivation} এমন ধাপ~$!B$ দিয়ে শেষ হয়, যা কোনো অনুমান-বিধি দিয়ে
+সমর্থিত। অনুমান-বিধিটি মোডাস পোনেন্স হলে
+\olref[ded]{thm:deduction-thm}-এর প্রমাণের মতোই এগোই। বিধিটি~\QR হলে
+জানি, $!B \ident !C \lif \lforall[x][!D(x)]$ এবং $!C \lif !D(a)$
+রূপের কোনো !!a{formula} !!{derivation}-এ আগে এসেছে, যেখানে $a$,
+$!C$, $!A$ বা~$\Gamma$-তে আসে না। তাই আমাদের আছে
+\begin{align*}
+  \Gamma \cup \{!A\} & \Proves !C \lif !D(a),\\
+  \intertext{এবং আরোহের অনুমান প্রযোজ্য; অর্থাৎ আমাদের আছে}
+    \Gamma & \Proves !A \lif (!C \lif !D(a)).\\
+  \intertext{আবার}
+  & \Proves (!A \lif (!C \lif !D(a))) \lif ((!A \land !C) \lif !D(a))\\
+  \intertext{এবং মোডাস পোনেন্স থেকে পাই}
+  \Gamma & \Proves (!A \land !C) \lif !D(a).\\
+  \intertext{আইগেনচল-শর্তটি এখনও প্রযোজ্য বলে এই !!{derivation}-এ \QR দিয়ে সমর্থিত একটি ধাপ যোগ করে পাই}
+    \Gamma & \Proves (!A \land !C) \lif \lforall[x][!D(x)].\\
+    \intertext{আবার আমাদের আছে}
+    & \Proves ((!A \land !C) \lif \lforall[x][!D(x)]) \lif (!A \lif (!C \lif \lforall[x][!D(x)])),\\
+    \intertext{তাই মোডাস পোনেন্স অনুসারে}
+    \Gamma & \Proves !A \lif (!C \lif \lforall[x][!D(x)]),
+\end{align*}
+অর্থাৎ $\Gamma \Proves !A \lif !B$।
+% BN-SRC-061 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-061):} হিমায়িত ইংরেজি প্রদর্শনের দ্বিতীয় সর্বতঃপ্রমাণিত শর্তাধীন সূত্রে শেষের বাইরের ডান বন্ধনীটি অনুপস্থিত। বাংলা প্রদর্শনে $!A \lif (!C \lif \lforall[x][!D(x)])$ সম্পূর্ণ বন্ধ করা হয়েছে।} % BN-SRC-061 TARGET-CORRECTION-END
+% BN-SRC-062 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-062):} হিমায়িত ইংরেজি প্রমাণের শেষ বাক্যটি সদ্যপ্রাপ্ত $\Gamma \Proves !A \lif !B$-কে ভুল করে $\Gamma \Proves !B$ বলে। বাংলা পাঠে উপপাদ্যের প্রয়োজনীয় শর্তাধীন সিদ্ধান্তটি পুনরুদ্ধার করা হয়েছে।} % BN-SRC-062 TARGET-CORRECTION-END
+
+$!B$ যদি~\QR দিয়ে সমর্থিত হয়, কিন্তু তার রূপ $\lexists[x][!D(x)]
+\lif !C$ হয়, সেই ক্ষেত্রটি অনুশীলনী হিসেবে থাকল।
+\end{proof}
+
+\begin{prob}
+  \olref[fol][axd][ddq]{thm:deduction-thm-q}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\end{document}

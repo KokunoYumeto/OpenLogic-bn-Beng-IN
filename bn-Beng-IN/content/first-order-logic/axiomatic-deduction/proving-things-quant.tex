@@ -1,0 +1,36 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: proving-things-quant
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{prq}
+
+\olsection{পরিমাণসূচক-সহ \usetoken{P}{derivation}}
+
+\begin{ex}
+$(\lforall[x][!A(x)] \land \lforall[y][!B(y)]) \lif
+\lforall[x][(!A(x) \land !B(x))]$-এর কোনো !!a{derivation} দিই।
+
+প্রথমে লক্ষ করো,
+\begin{align*}
+  (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif \lforall[x][!A(x)]\\
+  \intertext{হলো \olref[prp]{ax:land1}-এর একটি রূপ, এবং}
+  \lforall[x][!A(x)] & \lif !A(a) \\
+  \intertext{হলো \olref[qua]{ax:q1}-এর একটি রূপ। তাই \olref[pro]{prop:chain} থেকে জানি,}
+  (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif !A(a) \\
+  \intertext{!!{derivable}। একইভাবে, যেহেতু}
+  (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif \lforall[y][!B(y)] \qquad\text{এবং}\\
+    \lforall[y][!B(y)] & \lif !B(a)\\
+    \intertext{যথাক্রমে \olref[prp]{ax:land2} ও \olref[qua]{ax:q1}-এর রূপ, তাই \olref[pro]{prop:chain} অনুসারে}
+    (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif !B(a)\\
+    \intertext{নিষ্পাদনযোগ্য। \olref[prp]{ax:land3}-এর উপযুক্ত একটি রূপ ও~\MP-এর দুটি প্রয়োগ থেকে দেখা যায়,}
+    (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif (!A(a) \land !B(a))\\
+    \intertext{নিষ্পাদনযোগ্য। এবার \QR{} প্রয়োগ করে পাই}
+(\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif \lforall[x][(!A(x) \land !B(x))].
+\end{align*}
+\end{ex}
+
+\end{document}

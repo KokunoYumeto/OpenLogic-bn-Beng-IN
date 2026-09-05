@@ -1,0 +1,93 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{rul}}
+      {\olfileid{pl}{axd}{rul}}
+
+\olsection{বিধি ও \usetoken{P}{derivation}}
+
+\begin{explain}
+  স্বতঃসিদ্ধমূলক !!{derivation}s সম্ভবত যুক্তিবিদ্যার সবচেয়ে সরল
+  !!{derivation} পদ্ধতি। কোনো !!^a{derivation} নিছক !!{formula}s-এর
+  একটি অনুক্রম। !!a{derivation} হিসেবে গণ্য হতে হলে অনুক্রমের প্রত্যেক
+  !!{formula}-টি হয় কোনো স্বতঃসিদ্ধের একটি রূপ, নয়তো তার আগে
+  থাকা এক বা একাধিক !!{formula}s থেকে কোনো অনুমান-বিধি অনুসারে অনুসৃত
+  হতে হবে। কোনো !!^a{derivation} তার শেষ !!{formula}-টিকে !!{derive}s।
+\end{explain}
+
+\begin{defn}[!!^{derivability}]
+$\Gamma$, $\Lang L$-এর !!{formula}s-এর কোনো সেট হলে, $\Gamma$
+\emph{থেকে কোনো !!{derivation}} হলো !!{formula}s-এর একটি সসীম অনুক্রম
+$!A_1$, \dots,~$!A_n$, যেখানে প্রত্যেক $i \le n$-এর জন্য নিচের
+কোনো একটি কথা সত্য:
+\begin{enumerate}
+\item $!A_i \in \Gamma$; অথবা
+\item $!A_i$ একটি স্বতঃসিদ্ধ; অথবা
+\item কোনো অনুমান-বিধি অনুসারে $!A_i$, এমন কোনো $!A_j$ (এবং $!A_k$)
+  থেকে অনুসৃত, যেখানে $j < i$ (এবং $k < i$)।
+\end{enumerate}
+\end{defn}
+
+কোনটি সঠিক !!{derivation} হিসেবে গণ্য হবে তা নির্ভর করে আমরা কোন
+অনুমান-বিধিগুলি মেনে নিচ্ছি (এবং অবশ্যই কোনগুলিকে স্বতঃসিদ্ধ ধরছি)
+তার ওপর। আর অনুমান-বিধি হলো একটি যদি-তবে বিবৃতি, যা জানায় কোন
+শর্তে কোনো !!a{derivation}-এর ধাপ~$A_i$ সঠিক অনুমান-ধাপ।
+
+\begin{defn}[অনুমান-বিধি]
+কোনো \emph{অনুমান-বিধি}, $\Gamma$ থেকে কোনো !!a{derivation}-এর
+কোন ধাপকে সঠিক অনুমান-ধাপ হিসেবে গণ্য করা হবে তার যথেষ্ট শর্ত দেয়।
+\end{defn}
+
+যেমন, $!A \in \Gamma$ হলে একমাত্র উপাদান~$!A$-যুক্ত অনুক্রমটি
+তুচ্ছভাবেই !!a{derivation} হিসেবে গণ্য হয়; তাই নিচেরটি একটি অতি সরল
+অনুমান-বিধি হতে পারে:
+\begin{quote}
+  $!A \in \Gamma$ হলে, $\Gamma$ থেকে যেকোনো !!{derivation}-এ $!A$
+  সর্বদা একটি সঠিক অনুমান-ধাপ।
+\end{quote}
+একইভাবে, $!A$ কোনো স্বতঃসিদ্ধ হলে $!A$ নিজেই !!a{derivation}; তাই
+নিচেরটিও একটি অনুমান-বিধি:
+\begin{quote}
+  $!A$ কোনো স্বতঃসিদ্ধ হলে $!A$ একটি সঠিক অনুমান-ধাপ।
+\end{quote}
+বিবেচ্য ধাপটির আগে থাকা !!{formula}s-এর উল্লেখ করলে অনুমান-বিধিটি
+আরও আকর্ষণীয় হয়। নিচের বিধিটির নাম \emph{মোডাস পোনেন্স}:
+\begin{quote}
+  !!{derivation}-এ আগে $!B \lif !A$ ও~$!B$ এলে, $!A$ একটি সঠিক
+  অনুমান-ধাপ।
+\end{quote}
+এটিই একমাত্র অনুমান-বিধি হলে, ওপরের !!{derivation}-এর সংজ্ঞার অর্থ
+দাঁড়ায়: $!A_1$, \dots,~$!A_n$ ঠিক তখনই !!a{derivation}, যখন
+প্রত্যেক $i \le n$-এর জন্য নিচের কোনো একটি কথা সত্য:
+\begin{enumerate}
+\item $!A_i \in \Gamma$; অথবা
+\item $!A_i$ একটি স্বতঃসিদ্ধ; অথবা
+\item কোনো $j < i$-এর জন্য $!A_j$ হলো $!B \lif !A_i$, এবং কোনো
+  $k < i$-এর জন্য $!A_k$ হলো~$!B$।
+\end{enumerate}
+শেষ শর্তটি বলে, মোডাস পোনেন্স অনুসারে $!A_i$, $!A_j$ ($!B \lif
+!A_i$) ও~$!A_k$ ($!B$) থেকে অনুসৃত। যদি আমরা $1$ থেকে~$n$ পর্যন্ত
+এগোতে পারি এবং প্রতিবার এমন কোনো !!a{formula}~$!A_i$ পাই যা হয়
+$\Gamma$-তে আছে, নয়তো স্বতঃসিদ্ধ, নয়তো কোনো অনুমান-বিধি যাকে সঠিক
+অনুমান-ধাপ বলে, তবে গোটা অনুক্রমটি সঠিক !!{derivation} হিসেবে গণ্য হয়।
+
+\begin{defn}[!!^{derivability}]
+কোনো !!{formula}~$!A$ $\Gamma$ \emph{থেকে !!{derivable}}, অর্থাৎ
+$\Gamma \Proves !A$, যদি $\Gamma$ থেকে এমন কোনো !!a{derivation}
+থাকে যার শেষ সূত্র~$!A$।
+\end{defn}
+
+\begin{defn}[উপপাদ্য]
+কোনো !!^a{formula}~$!A$ একটি \emph{উপপাদ্য}, যদি শূন্য সেট থেকে
+$!A$-এর কোনো !!a{derivation} থাকে। $!A$ উপপাদ্য হলে $\Proves !A$
+এবং না হলে $\Proves/ !A$ লিখি।
+\end{defn}
+
+
+\end{document}

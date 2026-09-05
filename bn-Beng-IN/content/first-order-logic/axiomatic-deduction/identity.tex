@@ -1,0 +1,58 @@
+% Part: first-order-logic
+% Chapter: axiomatic-proofs
+% Section: identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{ide}
+
+\olsection{\usetoken{S}{identity}-সহ \usetoken{P}{derivation}}
+
+!!{derivation}s-এ $\eq$ অন্তর্ভুক্ত করার জন্য শুধু নতুন কয়েকটি
+স্বতঃসিদ্ধ-ছক যোগ করি। !!{derivation} ও~$\Proves$-এর সংজ্ঞা একই
+থাকে; কেবল নতুন স্বতঃসিদ্ধগুলিকেও অনুমোদন করি।
+
+\begin{defn}[!!{identity}-র স্বতঃসিদ্ধ]
+\begin{align}
+\ollabel{ax:id1} & \eq[t][t], \\
+\ollabel{ax:id2} & \eq[t_1][t_2] \lif (!B(t_1) \lif
+  !B(t_2)),
+\end{align}
+যেকোনো বদ্ধ পদ $t$, $t_1$, $t_2$-এর জন্য।
+\end{defn}
+
+\begin{prop}\ollabel{prop:sound}
+  \olref{ax:id1} ও~\olref{ax:id2} স্বতঃসিদ্ধ দুটি বৈধ।
+\end{prop}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[fol][axd][ide]{prop:sound} প্রমাণ করো।
+\end{prob}
+
+\begin{prop}\ollabel{prop:iden1}
+ যেকোনো বদ্ধ পদ~$t$ ও সেট~$\Gamma$-র জন্য $\Gamma \Proves \eq[t][t]$।
+\end{prop}
+
+\begin{prop}\ollabel{prop:iden2}
+  বদ্ধ পদদুটির জন্য $\Gamma \Proves !A(t_1)$ এবং $\Gamma
+  \Proves \eq[t_1][t_2]$ হলে $\Gamma \Proves !A(t_2)$।
+  % BN-SRC-066 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-066):} হিমায়িত ইংরেজি স্বতঃসিদ্ধ-সংজ্ঞা $t,t_1,t_2$-কে বদ্ধ পদে সীমিত করে, কিন্তু পরের দুটি প্রতিজ্ঞার প্রথমটি “যেকোনো পদ” বলে এবং দ্বিতীয়টি কোনো সীমা জানায় না। প্রদত্ত স্বতঃসিদ্ধ-ছক থেকে ফলগুলি যাতে সত্যিই অনুসৃত হয়, বাংলা প্রতিজ্ঞা দুটিতে একই বদ্ধ-পদ পরিসর স্পষ্ট করা হয়েছে।} % BN-SRC-066 TARGET-CORRECTION-END
+\end{prop}
+
+\begin{proof}
+নিচের !!{formula}-টি
+\[
+(\eq[t_1][t_2] \lif (!A(t_1) \lif !A(t_2)))
+\]
+হলো~\olref{ax:id2}-এর একটি রূপ। \MP দুবার প্রয়োগ করলে সিদ্ধান্তটি
+পাওয়া যায়।
+\end{proof}
+
+\end{document}

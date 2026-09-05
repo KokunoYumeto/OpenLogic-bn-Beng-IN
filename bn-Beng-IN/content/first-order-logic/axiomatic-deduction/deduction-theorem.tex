@@ -1,0 +1,133 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: deduction-theorem
+
+% verification of properties of provability needed for maximally
+% consistent sets in the completeness chapter.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{ded}}
+      {\olfileid{pl}{axd}{ded}}
+
+\olsection{নিঃসরণ উপপাদ্য}
+
+আমরা দেখেছি, কোনো স্বতঃসিদ্ধমূলক পদ্ধতিতে !!{derivation}s দেওয়া
+কষ্টসাধ্য এবং !!{derivation}s খুঁজে পাওয়াও কঠিন হতে পারে।
+!!{formula}s-এর দীর্ঘ তালিকা সত্যিই লিখে দেওয়ার বদলে কয়েকটি সরল
+ফল ব্যবহার করে এমন !!{derivation}s যে আছে তা যুক্তি দিয়ে দেখানো
+সাধারণত সহজ। এমন তিনটি ফল ইতিমধ্যেই প্রতিষ্ঠা করেছি:
+\olref[ptn]{prop:reflexivity} বলে, $!A \in \Gamma$ জানলে সবসময়
+$\Gamma \Proves !A$ বলা যায়। \olref[ptn]{prop:monotonicity} বলে,
+$\Gamma \Proves !A$ হলে $\Gamma \cup \{!B\} \Proves !A$-ও হয়। আর
+\olref[ptn]{prop:transitivity} থেকে পাই, $\Gamma \Proves !A$ এবং
+$!A \Proves !B$ হলে $\Gamma \Proves !B$। এখানে আরেকটি সরল ফল,
+মোডাস পোনেন্সের একটি ``অধি''-রূপ:
+
+\begin{prop}
+  \ollabel{prop:mp} $\Gamma \Proves !A$ এবং $\Gamma \Proves !A \lif
+  !B$ হলে $\Gamma \Proves !B$।
+\end{prop}
+
+\begin{proof}
+  আমাদের $\{!A, !A \lif !B\} \Proves !B$ আছে:
+  \begin{derivation}
+    1. & $!A$ & Hyp.\\
+    2. & $!A \lif !B$ & Hyp.\\
+    3. & $!B$ & 1, 2, MP
+  \end{derivation}
+  \olref[ptn]{prop:transitivity} অনুসারে $\Gamma \Proves !B$।
+\end{proof}
+
+এই প্রসঙ্গে আমাদের ব্যবহারের সবচেয়ে গুরুত্বপূর্ণ ফলটি হলো নিঃসরণ
+উপপাদ্য:
+
+\begin{thm}[নিঃসরণ উপপাদ্য]
+\ollabel{thm:deduction-thm} $\Gamma \cup \{!A\} \Proves !B$ যদি এবং
+কেবল যদি $\Gamma \Proves !A \lif !B$।
+\end{thm}
+
+\begin{proof}
+``যদি'' অভিমুখটি তাৎক্ষণিক। $\Gamma \Proves !A \lif !B$ হলে
+\olref[ptn]{prop:monotonicity} অনুসারে $\Gamma \cup \{!A\} \Proves
+!A \lif !B$-ও হয়। আবার \olref[ptn]{prop:reflexivity} অনুসারে
+$\Gamma \cup \{!A\} \Proves !A$। তাই \olref{prop:mp} থেকে
+$\Gamma \cup \{!A\} \Proves !B$।
+
+``কেবল যদি'' অভিমুখের জন্য $\Gamma \cup \{!A\}$ থেকে~$!B$-এর
+!!{derivation}-এর দৈর্ঘ্যের ওপর আরোহ প্রয়োগ করি।
+
+আরোহের ভিত্তিতে দৈর্ঘ্য~$1$-এর প্রত্যেক !!{derivation}-এর জন্য
+দাবিটি প্রমাণ করি। $\Gamma \cup \{!A\}$ থেকে~$!B$-এর দৈর্ঘ্য~$1$-এর
+কোনো !!^a{derivation} শুধু~$!B$ নিয়ে গঠিত; সেটি সঠিক হলে হয়
+$!B$~$\in \Gamma \cup \{!A\}$, নয়তো সেটি কোনো স্বতঃসিদ্ধ। $!B \in
+\Gamma$ হলে বা সেটি স্বতঃসিদ্ধ হলে $\Gamma \Proves !B$। আবার
+\olref[prp]{ax:lif1} থেকে $\Gamma \Proves !B \lif (!A \lif !B)$;
+তাই \olref{prop:mp} থেকে $\Gamma \Proves !A \lif !B$। $!B \in
+\{!A\}$ হলে $\Gamma \Proves !A \lif !B$, কারণ শেষ !!{sentence}~$!A
+\lif !B$ তখন $!A \lif !A$-এর একই সূত্র, আর সেটি আমরা
+\olref[pro]{ex:identity}-তে !!{derive} করেছি।
+
+আরোহের ধাপে ধরা যাক, $\Gamma \cup \{!A\}$ থেকে~$!B$-এর কোনো
+!!a{derivation} এমন ধাপ~$!B$ দিয়ে শেষ হয়, যা মোডাস পোনেন্স দিয়ে
+সমর্থিত। (মোডাস পোনেন্স দিয়ে সমর্থিত না হলে $!B \in \Gamma$,
+$!B \ident !A$, অথবা $!B$ কোনো স্বতঃসিদ্ধ; তখন আরোহের ভিত্তির একই
+যুক্তি চলে।) তাহলে কোনো !!{formula}~$!C$-এর জন্য !!{derivation}-এর
+আগের কয়েকটি ধাপ হলো $!C \lif !B$ ও~$!C$; অর্থাৎ $\Gamma \cup
+\{!A\} \Proves !C \lif !B$ এবং $\Gamma \cup \{!A\} \Proves !C$।
+সংশ্লিষ্ট !!{derivation}s অপেক্ষাকৃত ছোট বলে তাদের ওপর আরোহের অনুমান
+প্রযোজ্য। তাই আমরা দুটিই পাই:
+\begin{align*}
+  & \Gamma \Proves !A \lif (!C \lif !B); \\
+  & \Gamma \Proves !A \lif !C.
+\end{align*}
+আবার \olref[prp]{ax:lif2} অনুসারে
+\[
+\Gamma \Proves (!A \lif (!C \lif !B)) \lif
+((!A\lif !C)  \lif (!A \lif !B)),
+\]
+এবং \olref{prop:mp} দুবার প্রয়োগ করে প্রয়োজনমতো $\Gamma \Proves
+!A \lif !B$ পাই।
+\end{proof}
+
+লক্ষ করো, \olref[prp]{ax:lif1} ও~\olref[prp]{ax:lif2} ঠিক এমনভাবে
+বেছে নেওয়া হয়েছে যেন নিঃসরণ উপপাদ্যটি সত্য হয়।
+
+নিচে !!{derivability}-র কয়েকটি উপযোগী তথ্য দেওয়া হলো; সেগুলির
+প্রমাণ অনুশীলনী হিসেবে থাকল।
+
+\begin{prop}
+  \ollabel{prop:derivfacts}
+\begin{enumerate}
+\item $\Proves (!A \lif !B) \lif ((!B \lif !C)
+  \lif (!A \lif !C))$; \ollabel{derivfacts:a}
+  % BN-SRC-060 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-060):} হিমায়িত ইংরেজি সূত্রটির শেষে বাইরের ডান বন্ধনীটি অনুপস্থিত। স্বতঃসিদ্ধ-ছক ও ঠিক নিচের অনুশীলনের উদ্দেশ্য অনুযায়ী বাংলা সূত্রে $((!B \lif !C) \lif (!A \lif !C))$ অংশটি সম্পূর্ণ বন্ধ করা হয়েছে।} % BN-SRC-060 TARGET-CORRECTION-END
+\item $\Gamma \cup \{ \lnot !A\}
+  \Proves \lnot !B$ হলে $\Gamma \cup \{ !B\} \Proves
+  !A$ (বিপরীত-প্রতিজ্ঞাপন); \ollabel{derivfacts:b}
+\item  $\{ !A, \lnot!A\} \Proves
+    !B$ (স্ববিরোধ থেকে যেকোনো কিছু, বিস্ফোরণ); \ollabel{derivfacts:c}
+\item  $\{ \lnot\lnot!A\} \Proves
+  !A$ (দ্বৈত নঞর্থকরণ অপসারণ);\ollabel{derivfacts:d}
+\item $\Gamma \Proves \lnot\lnot!A$ হলে $\Gamma \Proves
+  !A$;\ollabel{derivfacts:e}
+\end{enumerate}
+\end{prop}
+
+\tagprob{FOL}
+\begin{prob}
+  \olref[fol][axd][ded]{prop:derivfacts} প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+  \olref[pl][axd][ded]{prop:derivfacts} প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\end{document}

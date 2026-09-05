@@ -121,13 +121,27 @@
       "OLP-0109",
       "OLP-0110",
       "OLP-0111",
+      "OLP-0112",
+      "OLP-0113",
+      "OLP-0114",
+      "OLP-0115",
+      "OLP-0116",
+      "OLP-0117",
+      "OLP-0118",
+      "OLP-0119",
+      "OLP-0120",
+      "OLP-0121",
+      "OLP-0122",
+      "OLP-0123",
+      "OLP-0124",
+      "OLP-0125",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 110,
-    "untranslated_count": 612,
-    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, and the complete Sequent Calculus, Natural Deduction and Tableaux chapters are translated; both Size of Sets editorial alternatives remain distinct.",
-    "reader_state": "The verified reader remains the exact 18-unit v0.2.0 scope. A distinct 25-unit Functions input is prepared but unbuilt. Size of Sets, Arithmetization, Infinite Sets, Propositional Logic, Proof Systems, Sequent Calculus, Natural Deduction and Tableaux have not yet been integrated into a built reader."
+    "translated_count": 124,
+    "untranslated_count": 598,
+    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, and the complete Sequent Calculus, Natural Deduction, Tableaux and reader-reachable Axiomatic Deduction chapters are translated; both Size of Sets editorial alternatives remain distinct.",
+    "reader_state": "The verified reader remains the exact 18-unit v0.2.0 scope. A distinct 25-unit Functions input is prepared but unbuilt. Size of Sets, Arithmetization, Infinite Sets, Propositional Logic, Proof Systems, Sequent Calculus, Natural Deduction, Tableaux and Axiomatic Deduction have not yet been integrated into a built reader."
   },
   "last_verified_public_release": {
     "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.2.0-sets-relations",
@@ -136,11 +150,11 @@
     "status_evidence": "evidence/STATUS.json"
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "b17bd01e5d06657f5b481eae1340a90da9a45f46",
-    "translated_units": 96,
-    "receipt": "PUBLIC_READBACK_SOURCE_96_2026-09-05.json",
-    "receipt_sha256": "3ba53f627626305d79efdbd956d24cf2cc3f9c14e089ba66d8e07fcd95b6631c",
-    "status": "Anonymous immutable-archive readback verified all 24 changed Git objects in the complete Natural Deduction checkpoint and reran the public checker for all 96 sources and 1,215 blocks. The current 110-unit draft extends that verified checkpoint."
+    "commit": "235d864f2acc8ff113fdff70e875f822355d2032",
+    "translated_units": 110,
+    "receipt": "PUBLIC_READBACK_SOURCE_110_2026-09-05.json",
+    "receipt_sha256": "2131b902dc0f956d6273fa63cc5e06d94178393d83c7b02be83ca3e6c4218fe3",
+    "status": "Anonymous immutable-archive readback verified all 27 changed Git objects in the complete Tableaux checkpoint and reran the public checker for all 110 sources and 1,381 blocks. The current 124-unit draft extends that verified checkpoint."
   },
   "current_checks": {
     "unit_checks": [
@@ -2098,6 +2112,266 @@
         "target_sha256": "35c3887d46a27bb22c7ba238f486aaab0cf7ec71153832c7f3e4097be69984c2"
       },
       {
+        "unit_id": "OLP-0112",
+        "source_blocks": 16,
+        "target_blocks": 16,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "b858285cdc1bb1e3baff8932d6fa02e3a675fe590e20807dcc31e6e81705a865"
+      },
+      {
+        "unit_id": "OLP-0113",
+        "source_blocks": 9,
+        "target_blocks": 9,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "8424f12310111676b066a9ce74f50dc03bd93d7d9b0f5d1dcbe3c006f4051064"
+      },
+      {
+        "unit_id": "OLP-0114",
+        "source_blocks": 5,
+        "target_blocks": 5,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "277ddf75fdd6f41c0d969eb0d0a2e0b2cff41f0bb9cd967876e79afd47646084"
+      },
+      {
+        "unit_id": "OLP-0115",
+        "source_blocks": 5,
+        "target_blocks": 5,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "9f6a4d2c2f6c6f41423f4d9b44361bc961bee3322baa6c2ed1af8beae46fcb64"
+      },
+      {
+        "unit_id": "OLP-0116",
+        "source_blocks": 9,
+        "target_blocks": 9,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "948ea1191c784d013d6535920e547331c7ae691e9e37468b2da411747cfbfd26"
+      },
+      {
+        "unit_id": "OLP-0117",
+        "source_blocks": 4,
+        "target_blocks": 4,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "196d4b856f3e63912e9535a7313fbca06f3f5eacb253bc45e2048e48d7f937b6"
+      },
+      {
+        "unit_id": "OLP-0118",
+        "source_blocks": 19,
+        "target_blocks": 19,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-058",
+          "BN-SRC-059",
+          "BN-SRC-070"
+        ],
+        "documented_math_correction": "BN-SRC-058 exact documented formula repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": "BN-SRC-059, BN-SRC-070 exact documented semantic repair",
+        "target_sha256": "8d77f3088315b318c33424e0e94f09f272b5f07efb83d2dc1cf19b70149e4305"
+      },
+      {
+        "unit_id": "OLP-0119",
+        "source_blocks": 16,
+        "target_blocks": 16,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-060"
+        ],
+        "documented_math_correction": "BN-SRC-060 exact documented formula repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "ef3e7c9f24fca579445b6ec76c4cc6fd8a35eaf0dc0b4d7fc99cc3692b55110b"
+      },
+      {
+        "unit_id": "OLP-0120",
+        "source_blocks": 8,
+        "target_blocks": 8,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-061",
+          "BN-SRC-062"
+        ],
+        "documented_math_correction": "BN-SRC-061, BN-SRC-062 exact documented formula repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": "BN-SRC-062 exact documented semantic repair",
+        "target_sha256": "ac13f4796cbfbcb423e55b52df11d5bec89a10b15b8653c23b5643a23851b52c"
+      },
+      {
+        "unit_id": "OLP-0121",
+        "source_blocks": 15,
+        "target_blocks": 15,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "b041a62fa18f22fa0f24409a3dd18235b0e480dfae32774cc7a0ac893f30e101"
+      },
+      {
+        "unit_id": "OLP-0122",
+        "source_blocks": 10,
+        "target_blocks": 10,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-063",
+          "BN-SRC-064"
+        ],
+        "documented_math_correction": null,
+        "documented_tex_correction": "BN-SRC-063, BN-SRC-064 exact documented reference repair",
+        "documented_prose_correction": null,
+        "target_sha256": "57394dd15506dba72c49023e4b67efa9d9153aea67cfe9d1b4b4de00006fd3a1"
+      },
+      {
+        "unit_id": "OLP-0123",
+        "source_blocks": 8,
+        "target_blocks": 8,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-065",
+          "BN-SRC-071",
+          "BN-SRC-072"
+        ],
+        "documented_math_correction": "BN-SRC-065 exact documented formula repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": "BN-SRC-071, BN-SRC-072 exact documented semantic repair",
+        "target_sha256": "cc6bad781c0344d4d9d390069c32b45036243c7f654528a0cdbeb8c78ac9e9c2"
+      },
+      {
+        "unit_id": "OLP-0124",
+        "source_blocks": 15,
+        "target_blocks": 15,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-067",
+          "BN-SRC-068",
+          "BN-SRC-069"
+        ],
+        "documented_math_correction": "BN-SRC-068, BN-SRC-069 exact documented formula repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": "BN-SRC-067 exact documented semantic repair",
+        "target_sha256": "6d583be27cd2044c8e6bfd76f0ac4b4766fa33568abaa638e2ba786729f48319"
+      },
+      {
+        "unit_id": "OLP-0125",
+        "source_blocks": 10,
+        "target_blocks": 10,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-066"
+        ],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": "BN-SRC-066 exact documented semantic repair",
+        "target_sha256": "f9eb9cd280946fff275fc3c8bcbb88a75cc0973264e638ac5f4d2a62bc31c81c"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -2134,12 +2408,12 @@
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "505f107f17e7437a3ec9e8f04406887d5d1e49ff9d08ea7d3d9f2e3dbf069f8a"
+      "sha256": "6874c7af6e0341becf7fb5835917bb81e2b9640e23630b488f85b86240013247"
     },
-    "segments": 1381,
-    "translated_segments": 1171,
+    "segments": 1530,
+    "translated_segments": 1293,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "e34281784e977aee02b35925f3e3e58922e93bcf2283c59fec3a92cc942ab2cc",
+    "segment_index_sha256": "50b68fffdea1608d2bccf40bdb1f9e49a796f0d786994a71c7b9e836768cc232",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -2180,6 +2454,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_TABLEAUX.md",
         "sha256": "92c077fae5c29b3b60dfc0b05513feea337eecd00b4ac9034d129281d8b72e02"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_AXIOMATIC_DEDUCTION.md",
+        "sha256": "1ca26d23ac81efc09bebcfb04b1f079eaf7ce7294b29e4b175872c6e48355c6b"
       }
     ],
     "shared_source_audit": {
@@ -2194,7 +2472,7 @@
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "7b7e239a960293910de6fd275c0ed5b1bc1450fd38e40341a84dc9867f0e3a3b",
+      "reconciliation_sha256": "635573b12d2cbff59db863146ef16715b4f9a39ca674ab5af9aed880c32d0d5b",
       "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
       "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
       "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
@@ -2212,9 +2490,9 @@
     }
   },
   "source_corrections": {
-    "count": 67,
+    "count": 82,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "502931dc1b1d09d3d48170f583d34386f0531248203cc35011c831cc658e48e9",
+    "sha256": "c77a0b73afa4ec55b7534935e519b27e0075f049c2e2b58149ab366c90d2f748",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -2278,6 +2556,21 @@
       "BN-SRC-055",
       "BN-SRC-056",
       "BN-SRC-057",
+      "BN-SRC-058",
+      "BN-SRC-059",
+      "BN-SRC-060",
+      "BN-SRC-061",
+      "BN-SRC-062",
+      "BN-SRC-063",
+      "BN-SRC-064",
+      "BN-SRC-065",
+      "BN-SRC-066",
+      "BN-SRC-067",
+      "BN-SRC-068",
+      "BN-SRC-069",
+      "BN-SRC-070",
+      "BN-SRC-071",
+      "BN-SRC-072",
       "OLSIZ-001",
       "OLSIZ-002",
       "OLSIZ-003",
@@ -2286,15 +2579,15 @@
     ]
   },
   "translation_decisions": {
-    "count": 89,
-    "provisional_open": 70,
+    "count": 90,
+    "provisional_open": 71,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "3f98819b2167607018dcbb2939240bd41c7d8dba2da477c77a8498564a027934",
+    "sha256": "91d654a47ac2664353cb71fd8bedceb47ed929447e929236491a1c7f3bde73af",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 5075,
+    "occurrence_count": 5393,
     "pagination_status": "Final printed/PDF page fields are pending reader integration and final pagination."
   },
   "functions_build_candidate": {
@@ -2308,5 +2601,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "All three bounded global TeX mutex acquisitions concerned the prior input hash and timed out without launching TeX. The freshly prepared current input has not yet been submitted to TeX; no new PDF or HTML is claimed."
   },
-  "remaining": "612 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
+  "remaining": "598 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
 }

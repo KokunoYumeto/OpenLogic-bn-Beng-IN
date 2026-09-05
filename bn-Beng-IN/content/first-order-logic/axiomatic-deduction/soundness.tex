@@ -1,0 +1,146 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{sou}}
+      {\olfileid{pl}{axd}{sou}}
+
+\olsection{বিশুদ্ধতা}
+
+\begin{explain}
+স্বতঃসিদ্ধমূলক নিষ্পাদনের মতো কোনো !!^a{derivation} পদ্ধতি ঠিক তখনই
+\emph{বিশুদ্ধ}, যখন বাস্তবে সত্য নয় এমন কিছু সেটি !!{derive} করতে
+পারে না। তাই বিশুদ্ধতা !!{derivation} পদ্ধতির এক ধরনের নিশ্চিত
+নিরাপত্তা-ধর্ম। কোন প্রমাণতাত্ত্বিক ধর্মটি বিবেচ্য তার ওপর নির্ভর করে
+আমরা যেমন জানতে চাই যে
+\begin{enumerate}
+\item প্রত্যেক !!{derivable}~$!A$ বৈধ;
+\item $!A$ অন্য কয়েকটি~$\Gamma$ থেকে !!{derivable} হলে সেটি তাদের
+  অনুসিদ্ধান্তও;
+\item !!{formula}s-এর কোনো সেট~$\Gamma$ অসঙ্গত হলে সেটি
+  অপরিতৃপ্তিযোগ্য।
+\end{enumerate}
+এগুলি কোনো !!a{derivation} পদ্ধতির গুরুত্বপূর্ণ ধর্ম। এর কোনোটি সত্য
+না হলে !!{derivation} পদ্ধতিটি ত্রুটিপূর্ণ—সেটি অত্যধিক কিছু
+!!{derive} করত। তাই কোনো !!a{derivation} পদ্ধতির বিশুদ্ধতা প্রতিষ্ঠা
+করা অত্যন্ত গুরুত্বপূর্ণ।
+\end{explain}
+
+\begin{prop}
+  $!A$ কোনো স্বতঃসিদ্ধ হলে
+  \iftag{FOL}
+    {প্রত্যেক !!{structure}~$\Struct{M}$ ও চলরাশি-আরোপ~$s$-এর জন্য $\Sat{M}{!A}[s]$।}
+    {প্রত্যেক !!{valuation}~$\pAssign{v}$-এর জন্য $\pSat{v}{!A}$।}
+\end{prop}
+
+\begin{proof}
+\iftag{FOL}{সব স্বতঃসিদ্ধ বৈধ কি না তা যাচাই করতে হবে। যেমন,
+  \olref[qua]{ax:q1}-এর ক্ষেত্রটি দেখি: ধরা যাক $t$, $!A$-তে
+  $x$-এর জন্য !!{free for}, এবং $\Sat{M}{\lforall[x][!A]}[s]$।
+  তাহলে পরিতৃপ্তির সংজ্ঞা অনুসারে প্রত্যেক $\varAssign{s'}{s}{x}$-এর
+  জন্য $\Sat{M}{!A}[s']$; বিশেষত $s'(x) = \Value{t}{M}[s]$ হলেও এটি
+  সত্য। \olref[syn][ext]{prop:ext-formulas} অনুসারে
+  $\Sat{M}{\Subst{!A}{t}{x}}[s]$। তাই
+  $\Sat{M}{(\lforall[x][!A] \lif \Subst{!A}{t}{x})}[s]$।}{প্রত্যেক
+  স্বতঃসিদ্ধের সত্যসারণি তৈরি করে যাচাই করো যে সেগুলি সর্বতঃসত্য।}
+\end{proof}
+
+\begin{thm}[বিশুদ্ধতা]
+\ollabel{thm:soundness}
+$\Gamma \Proves !A$ হলে $\Gamma \Entails !A$।
+\end{thm}
+
+\begin{proof}
+$\Gamma$ থেকে~$!A$-এর !!{derivation}-এ অনুমান-বিধি দিয়ে সমর্থিত
+ধাপের সংখ্যার ওপর আরোহ প্রয়োগ করি। অনুমান-বিধি দিয়ে কোনো ধাপ সমর্থিত না
+হলে !!{derivation}-এর সব !!{formula}s হয় স্বতঃসিদ্ধের রূপ, নয়তো
+$\Gamma$-তে আছে। আগের প্রতিজ্ঞা অনুযায়ী সব স্বতঃসিদ্ধ
+\iftag{FOL}{বৈধ}{সর্বতঃসত্য}; তাই $!A$ স্বতঃসিদ্ধ হলে $\Gamma
+\Entails !A$। আর $!A \in \Gamma$ হলে তুচ্ছভাবেই $\Gamma \Entails !A$।
+% BN-SRC-067 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-067):} হিমায়িত ইংরেজি প্রমাণটি আরোহের মাপকাঠিকে !!{derivation}-এর “দৈর্ঘ্য” বলে, কিন্তু ভিত্তিতে অনুমান-বিধি দিয়ে সমর্থিত শূন্য ধাপ এবং ধাপে এমন আগের অংশ ব্যবহার করে যাতে অন্তত একটি কম অনুমান-সমর্থিত ধাপ আছে। বাংলা পাঠে প্রমাণটি যে মাপকাঠি বাস্তবে ব্যবহার করে—অনুমান-বিধি দিয়ে সমর্থিত ধাপের সংখ্যা—সেটিই বলা হয়েছে।} % BN-SRC-067 TARGET-CORRECTION-END
+
+~$!A$-এর !!{derivation}-এর শেষ ধাপটি মোডাস পোনেন্স দিয়ে সমর্থিত
+হলে !!{derivation}-এ !!{formula}s $!B$ ও~$!B \lif !A$ আছে এবং ওই
+!!{formula}s-এ শেষ হওয়া !!{derivation}-এর অংশগুলির ওপর আরোহের অনুমান
+প্রযোজ্য (কারণ সেগুলিতে অনুমান দিয়ে সমর্থিত অন্তত একটি কম ধাপ আছে)।
+তাই আরোহের অনুমান অনুসারে $\Gamma \Entails !B$ এবং $\Gamma \Entails
+!B \lif !A$। অতএব
+\iftag{FOL}
+      {\olref[syn][sem]{thm:sem-deduction}}
+      {\olref[pl][syn][sem]{thm:sem-deduction}}
+অনুসারে $\Gamma \Entails !A$।
+
+\iftag{FOL}{এবার ধরা যাক, শেষ ধাপটি~\QR দিয়ে সমর্থিত। তাহলে ধাপটির
+রূপ $!C \lif \lforall[x][!B(x)]$ এবং তার আগে $!C \lif !B(c)$ ধাপটি
+আছে, যেখানে $c$, $\Gamma$, $!C$ বা~$\lforall[x][!B(x)]$-এ নেই।
+আরোহের অনুমান অনুসারে $\Gamma \Entails !C \lif !B(c)$।
+\olref[syn][sem]{thm:sem-deduction} থেকে $\Gamma \cup \{!C\}
+\Entails !B(c)$।
+% BN-SRC-068 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-068):} হিমায়িত ইংরেজি \QR-ক্ষেত্রের প্রথম বাক্যে সর্বজনীন সূত্রের দুটি লেখায় সূত্র-চলকটির উপসর্গচিহ্ন বাদ দিয়ে $\lforall[x][B(x)]$ লেখা হয়েছে, যদিও পূর্ববর্তী ধাপ ও বাকি প্রমাণে সূত্রটি $!B(x)$। বাংলা পাঠে দুই জায়গাতেই $\lforall[x][!B(x)]$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-068 TARGET-CORRECTION-END
+
+এমন কোনো গঠন~$\Struct{M}$ বিবেচনা করো যেন $\Sat{M}{\Gamma \cup
+  \{!C\}}$। দেখাতে হবে, $\Sat{M}{\lforall[x][!B(x)]}$। যেহেতু
+$\lforall[x][!B(x)]$ একটি !!a{sentence}, তার মানে প্রত্যেক
+চলরাশি-আরোপ~$s$-এর জন্য $\Sat{M}{!B(x)}[s]$ দেখাতে হবে
+(\olref[syn][ass]{prop:sat-quant})। $\Gamma \cup \{!C\}$ শুধু বাক্য
+দিয়ে গঠিত বলে \olref[syn][sat]{defn:satisfaction} অনুসারে প্রত্যেক
+$!D \in \Gamma$-র জন্য $\Sat{M}{!D}[s]$। $\Struct{M'}$-কে
+$\Struct{M}$-এর মতোই ধরি, শুধু $\Assign{c}{M'} = s(x)$। যেহেতু
+$c$, $\Gamma$ বা~$!C$-তে আসে না,
+\olref[syn][ext]{cor:extensionality-sent} অনুসারে $\Sat{M'}{\Gamma
+\cup \{!C\}}$। $\Gamma \cup \{!C\} \Entails !B(c)$ বলে
+$\Sat{M'}{!B(c)}$। যেহেতু $!B(c)$ একটি !!a{sentence}, তাই
+\olref[syn][ass]{prop:sentence-sat-true} অনুসারে
+$\Sat{M'}{!B(c)}[s]$। \olref[syn][ext]{prop:ext-formulas} অনুসারে
+$\Sat{M'}{!B(x)}[s]$ যদি এবং কেবল যদি $\Sat{M'}{!B(c)}[s]$ (মনে
+করো, $!B(c)$ কেবল $\Subst{!B(x)}{c}{x}$)। তাই
+$\Sat{M'}{!B(x)}[s]$। $c$, $!B(x)$-এ আসে না বলে
+\olref[syn][ext]{prop:extensionality} অনুসারে
+$\Sat{M}{!B(x)}[s]$। কিন্তু~$s$ ছিল যেকোনো চলরাশি-আরোপ; অতএব
+$\Sat{M}{\lforall[x][!B(x)]}$। তাই $\Gamma \cup \{!C\} \Entails
+\lforall[x][!B(x)]$। \olref[syn][sem]{thm:sem-deduction} অনুসারে
+$\Gamma \Entails !C \lif \lforall[x][!B(x)]$।
+% BN-SRC-069 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-069):} হিমায়িত ইংরেজি প্রমাণে $\Gamma \cup \{!C\} \Entails !B(c)$ থেকে পরের পরিতৃপ্তি-বিবৃতিতে উপসর্গচিহ্ন বাদ দিয়ে $\Sat{M'}{B(c)}$ লেখা হয়েছে। পরের বাক্য ও প্রতিস্থাপন-সমতা উভয়েই $!B(c)$ ব্যবহৃত; বাংলা পাঠে $\Sat{M'}{!B(c)}$ রাখা হয়েছে।} % BN-SRC-069 TARGET-CORRECTION-END
+
+$!A$ যদি~\QR দিয়ে সমর্থিত হয়, কিন্তু তার রূপ $\lexists[x][!B(x)]
+\lif !C$ হয়, সেই ক্ষেত্রটি অনুশীলনী হিসেবে থাকল।}{}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+  \olref[fol][axd][sou]{thm:soundness}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+$\Proves !A$ হলে $!A$ \iftag{FOL}{বৈধ}{একটি সর্বতঃসত্য}।
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+$\Gamma$ পরিতৃপ্তিযোগ্য হলে সেটি সঙ্গত।
+\end{cor}
+
+\begin{proof}
+বিপরীত-প্রতিজ্ঞা প্রমাণ করি। ধরা যাক~$\Gamma$ সঙ্গত নয়। তাহলে
+$\Gamma \Proves \lfalse$; অর্থাৎ~$\Gamma$ থেকে~$\lfalse$-এর কোনো
+!!a{derivation} আছে। \olref{thm:soundness} অনুযায়ী,
+\iftag{FOL}{যেকোনো !!{structure}~$\Struct{M}$}{যেকোনো !!{valuation}~$\pAssign{v}$}
+যা~$\Gamma$-কে পরিতৃপ্ত করে, সেটিকে~$\lfalse$-ও পরিতৃপ্ত করতে হবে।
+প্রত্যেক \iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}-এর
+জন্য \iftag{FOL}{$\Sat/{M}{\lfalse}$}{$\pSat/{v}{\lfalse}$} বলে কোনো
+\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} $\Gamma$-কে পরিতৃপ্ত করতে
+পারে না; অর্থাৎ $\Gamma$ পরিতৃপ্তিযোগ্য নয়।
+\end{proof}
+
+
+\end{document}

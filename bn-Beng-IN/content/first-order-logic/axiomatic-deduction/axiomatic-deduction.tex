@@ -1,0 +1,58 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+
+\documentclass[../../../include/open-logic-chapter]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olchapter{fol}{axd}{স্বতঃসিদ্ধমূলক \usetoken{P}{derivation}}}
+      {\olchapter{pl}{axd}{স্বতঃসিদ্ধমূলক \usetoken{P}{derivation}}}
+
+\begin{editorial}
+  এই অধ্যায়ের উপাদান যে বিভিন্ন ট্যাগের প্রতি সাড়া দেয়—যে ট্যাগগুলি
+  কোন সংযোজক ও পরিমাণসূচক মৌলিক আর কোনগুলি সংজ্ঞায়িত তা নির্দেশ
+  করে—এখনও তা নিশ্চিত করার চেষ্টা করা হয়নি। এখানে $\liff$-কে
+  সংজ্ঞায়িত এবং অন্য সবগুলিকে মৌলিক ধরা হয়েছে। FOL ট্যাগ সত্য হলে
+  পরিমাণসূচক-সহ সংস্করণ, নইলে পরিমাণসূচক-বিহীন সংস্করণ তৈরি হয়।
+\end{editorial}
+
+\olimport{rules-and-proofs}
+
+\olimport{axioms-rules-propositional}
+
+\iftag{FOL}{%
+  \olimport{axioms-rules-quantifiers}
+}{}
+
+\olimport{proving-things}
+
+\iftag{FOL}{%
+  \olimport{proving-things-quant}
+}{}
+
+\olimport{proof-theoretic-notions}
+
+\olimport{deduction-theorem}
+
+\iftag{FOL}{%
+  \olimport{deduction-theorem-quantifiers}
+}{}
+
+\olimport{provability-consistency}
+
+\olimport{provability-propositional}
+
+\iftag{FOL}{%
+  \olimport{provability-quantifiers}
+}{}
+
+\olimport{soundness}
+
+\iftag{FOL}{
+  \olimport{identity}
+}{}
+
+\OLEndChapterHook
+
+\end{document}

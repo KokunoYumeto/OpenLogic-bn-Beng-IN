@@ -1,0 +1,34 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: axioms-rules-quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{qua}
+
+\olsection{পরিমাণসূচকগুলির স্বতঃসিদ্ধ ও বিধি}
+
+\begin{defn}[পরিমাণসূচকের স্বতঃসিদ্ধ]
+পরিমাণসূচকগুলিকে নিয়ন্ত্রণকারী \emph{স্বতঃসিদ্ধ} হলো নিচের রূপগুলির
+সব রূপ:
+\begin{align}
+\ollabel{ax:q1} & \lforall[x][!B] \lif !B(t), \\
+\ollabel{ax:q2} & !B(t) \lif \lexists[x][!B].
+\end{align}
+যেকোনো বদ্ধ পদ~$t$-এর জন্য।
+\end{defn}
+
+\begin{defn}[পরিমাণসূচকের বিধি]
+\item $!B \lif !A(a)$ যদি !!{derivation}-এ আগে থেকেই আসে এবং $a$ যদি
+  $\Gamma$ বা~$!B$-তে না আসে, তবে $!B \lif
+  \lforall[x][!A(x)]$ একটি সঠিক অনুমান-ধাপ।
+\item $!A(a) \lif !B$ যদি !!{derivation}-এ আগে থেকেই আসে এবং $a$ যদি
+  $\Gamma$ বা~$!B$-তে না আসে, তবে $\lexists[x][!A(x)] \lif
+  !B$ একটি সঠিক অনুমান-ধাপ।
+\end{defn}
+
+এই বিধি দুটির যেকোনোটিকে সংক্ষেপে ``\QR'' লিখব।
+
+\end{document}

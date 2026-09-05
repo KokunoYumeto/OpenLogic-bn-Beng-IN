@@ -489,6 +489,117 @@ for row in rows:
         and target_math - source_math == collections.Counter({"\\sFmla{\\True}{!A(t_2)}": 1})
         and "BN-SRC-057" in documented
     )
+    axd_source = source
+    axd_math_ids = []
+    if row["unit_id"] == "OLP-0118":
+        assert axd_source.count("$B_i = !A$") == 1
+        axd_source = axd_source.replace("$B_i = !A$", "$!B_i = !A$", 1)
+        axd_math_ids = ["BN-SRC-058"]
+    elif row["unit_id"] == "OLP-0119":
+        old = "\\lif (!A \\lif !C)$;"
+        assert axd_source.count(old) == 1
+        axd_source = axd_source.replace(old, "\\lif (!A \\lif !C))$;", 1)
+        axd_math_ids = ["BN-SRC-060"]
+    elif row["unit_id"] == "OLP-0120":
+        old = "\\lforall[x][!D(x)]),\\\\"
+        assert axd_source.count(old) == 1
+        axd_source = axd_source.replace(old, "\\lforall[x][!D(x)])),\\\\", 1)
+        old = "i.e., $\\Gamma \\Proves !B$."
+        assert axd_source.count(old) == 1
+        axd_source = axd_source.replace(old, "i.e., $\\Gamma \\Proves !A \\lif !B$.", 1)
+        axd_math_ids = ["BN-SRC-061", "BN-SRC-062"]
+    elif row["unit_id"] == "OLP-0123":
+        assert axd_source.count("$\\top$") == 1
+        axd_source = axd_source.replace("$\\top$", "$\\ltrue$", 1)
+        axd_math_ids = ["BN-SRC-065"]
+    elif row["unit_id"] == "OLP-0124":
+        assert axd_source.count("\\lforall[x][B(x)]") == 2
+        assert axd_source.count("\\Sat{M'}{B(c)}") == 1
+        axd_source = axd_source.replace("\\lforall[x][B(x)]", "\\lforall[x][!B(x)]")
+        axd_source = axd_source.replace("\\Sat{M'}{B(c)}", "\\Sat{M'}{!B(c)}", 1)
+        axd_math_ids = ["BN-SRC-068", "BN-SRC-069"]
+    axd_math_fix = (
+        bool(axd_math_ids)
+        and mathparts(axd_source) == target_math
+        and all(finding_id in documented for finding_id in axd_math_ids)
+    )
+    axd_control_source = source
+    axd_control_ids = []
+    if row["unit_id"] == "OLP-0122":
+        axd_control_source = axd_control_source.replace(
+            "\\olref[prp]{ax:land1}", "\\olref[prp]{ax:land2}", 1
+        )
+        axd_control_source = axd_control_source.replace(
+            "\\olref[prp]{ax:lnot1}", "\\olref[prp]{ax:lnot2}", 1
+        )
+        axd_control_ids = ["BN-SRC-063", "BN-SRC-064"]
+    axd_control_fix = (
+        bool(axd_control_ids)
+        and controls(axd_control_source) == controls(checked_target)
+        and all(finding_id in documented for finding_id in axd_control_ids)
+    )
+    axd_prose_ids = []
+    if row["unit_id"] == "OLP-0118":
+        assert source.count("follows from previous !!{formula}s by modus ponens.") == 1
+        assert re.search(
+            r"আগের !!\{formula\}s থেকে অনুমোদিত কোনো\s+অনুমান-বিধি অনুসারে অনুসৃত",
+            checked_target,
+        ) is not None
+        assert re.search(
+            r"same rule which\s+justifies~\$!A_k = !A\$", source
+        ) is not None
+        assert re.search(
+            r"\$!A_k = !A\$-র মতো একই ভিত্তিতে\s+সমর্থিত", checked_target
+        ) is not None
+        axd_prose_ids = ["BN-SRC-059", "BN-SRC-070"]
+    elif row["unit_id"] == "OLP-0120":
+        assert source.count("i.e., $\\Gamma \\Proves !B$.") == 1
+        assert re.search(
+            r"অর্থাৎ,?\s*\$\\Gamma \\Proves !A \\lif !B\$", checked_target
+        ) is not None
+        axd_prose_ids = ["BN-SRC-062"]
+    elif row["unit_id"] == "OLP-0124":
+        assert source.count(
+            "By induction on the length of the !!{derivation} of $!A$ from"
+        ) == 1
+        assert re.search(
+            r"অনুমান-বিধি দিয়ে সমর্থিত\s+ধাপের সংখ্যার ওপর আরোহ", checked_target
+        ) is not None
+        axd_prose_ids = ["BN-SRC-067"]
+    elif row["unit_id"] == "OLP-0123":
+        assert source.count("By the deduction theorem again, $\\Gamma \\Proves") == 1
+        assert re.search(
+            r"সত্য-ধ্রুবকটি স্বতঃসিদ্ধ হওয়ায় মোডাস পোনেন্স থেকে\s+\$\\Gamma \\Proves",
+            checked_target,
+        ) is not None
+        assert source.count(
+            "\\tagitem{prvEx}{$!A(t) \\Proves \\lexists[x][!A(x)]$.}{}"
+        ) == 1
+        assert checked_target.count("নিচের প্রতিটি বক্তব্যে দেখানো পদটি বদ্ধ:") == 1
+        axd_prose_ids = ["BN-SRC-071", "BN-SRC-072"]
+    elif row["unit_id"] == "OLP-0125":
+        assert source.count("for any term $t$ and set~$\\Gamma$.") == 1
+        assert re.search(
+            r"যেকোনো বদ্ধ পদ~\$t\$ ও সেট~\$\\Gamma\$-র জন্য", checked_target
+        ) is not None
+        assert re.search(
+            r"বদ্ধ পদদুটির জন্য \$\\Gamma \\Proves !A\(t_1\)\$", checked_target
+        ) is not None
+        axd_prose_ids = ["BN-SRC-066"]
+    axd_prose_fix = bool(axd_prose_ids) and all(
+        finding_id in documented for finding_id in axd_prose_ids
+    )
+    if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
+        expected_axd = {
+            "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
+            "OLP-0119": {"BN-SRC-060"},
+            "OLP-0120": {"BN-SRC-061", "BN-SRC-062"},
+            "OLP-0122": {"BN-SRC-063", "BN-SRC-064"},
+            "OLP-0123": {"BN-SRC-065", "BN-SRC-071", "BN-SRC-072"},
+            "OLP-0124": {"BN-SRC-067", "BN-SRC-068", "BN-SRC-069"},
+            "OLP-0125": {"BN-SRC-066"},
+        }
+        assert set(documented) == expected_axd.get(row["unit_id"], set())
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -630,6 +741,55 @@ for row in rows:
     elif row["unit_id"] == "OLP-0111":
         assert tableau_identity_truth_sign_fix
         tex_command_check = {"documented_correction": "BN-SRC-057", "identity_rule_sign": "True"}
+    elif row["unit_id"] == "OLP-0118":
+        assert axd_math_fix and axd_prose_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-058", "BN-SRC-059", "BN-SRC-070"],
+            "formula_prefix_restored": True,
+            "all_permitted_inference_rules_covered": True,
+            "repeated_formula_uses_same_justification_basis": True,
+        }
+    elif row["unit_id"] == "OLP-0119":
+        assert axd_math_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-060",
+            "conditional_parenthesis_balanced": True,
+        }
+    elif row["unit_id"] == "OLP-0120":
+        assert axd_math_fix and axd_prose_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-061", "BN-SRC-062"],
+            "quantified_conditional_parenthesis_balanced": True,
+            "deduction_theorem_conclusion_restored": "\\Gamma \\Proves !A \\lif !B",
+        }
+    elif row["unit_id"] == "OLP-0122":
+        assert axd_control_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-063", "BN-SRC-064"],
+            "conjunction_projection_reference": "ax:land2",
+            "negation_reference": "ax:lnot2",
+        }
+    elif row["unit_id"] == "OLP-0123":
+        assert axd_math_fix and axd_prose_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-065", "BN-SRC-071", "BN-SRC-072"],
+            "configurable_truth_constant": "\\ltrue",
+            "strong_generalization_final_step": "truth axiom plus modus ponens",
+            "quantifier_instantiation_scope": "closed terms",
+        }
+    elif row["unit_id"] == "OLP-0124":
+        assert axd_math_fix and axd_prose_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-067", "BN-SRC-068", "BN-SRC-069"],
+            "induction_measure": "inference-justified steps",
+            "formula_prefixes_restored": 3,
+        }
+    elif row["unit_id"] == "OLP-0125":
+        assert axd_prose_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-066",
+            "identity_axiom_scope": "closed terms",
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -682,15 +842,17 @@ for row in rows:
             tableau_quantifier_soundness_fix,
             tableau_identity_substitution_fix,
             tableau_identity_truth_sign_fix,
+            axd_math_fix,
             shared_audit_fix,
         )
     )
+    controls_ok = controls(source) == controls(checked_target) or axd_control_fix
     checks = {
         "unit_id": row["unit_id"],
         "source_blocks": len(source_blocks),
         "target_blocks": len(target_blocks),
         "math_parity": math_ok,
-        "controls_parity": controls(source) == controls(checked_target),
+        "controls_parity": controls_ok,
         "env_parity": environments(source) == environments(checked_target),
         "token_parity": semantic_tokens(source) == semantic_tokens(checked_target),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),

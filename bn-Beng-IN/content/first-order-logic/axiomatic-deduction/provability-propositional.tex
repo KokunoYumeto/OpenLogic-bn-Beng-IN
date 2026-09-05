@@ -1,0 +1,87 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability-propositional
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{ppr}}
+      {\olfileid{pl}{axd}{ppr}}
+
+\olsection{\usetoken{S}{derivability} ও বচনসংযোজক}
+
+\begin{explain}
+  স্বতঃসিদ্ধমূলক নিষ্পাদনের !!{derivability} সম্পর্ক~$\Proves$ যে
+  বচনসংযোজক-সংক্রান্ত কয়েকটি মৌলিক তথ্য—যেমন $!A \land !B \Proves
+  !A$ এবং $!A, !A \lif !B \Proves !B$ (মোডাস পোনেন্স)—প্রতিষ্ঠা
+  করার মতো যথেষ্ট শক্তিশালী, তা দেখাই। পূর্ণতা উপপাদ্যের প্রমাণে এই
+  তথ্যগুলি লাগবে।
+\end{explain}
+
+\begin{prop}\ollabel{prop:provability-land}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-land-left} $!A \land !B \Proves
+    !A$ এবং $!A \land !B \Proves !B$—দুটিই সত্য।
+  \item \ollabel{prop:provability-land-right} $!A, !B \Proves !A \land !B$।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item \olref[prp]{ax:land1} ও~\olref[prp]{ax:land2} থেকে মোডাস
+      পোনেন্স প্রয়োগ করে।
+      % BN-SRC-063 TARGET-CORRECTION-BEGIN
+      \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-063):} হিমায়িত ইংরেজি প্রমাণটি দুটি পৃথক সিদ্ধান্তের জন্যই \olref[prp]{ax:land1} উল্লেখ করে। প্রথম স্বতঃসিদ্ধটি $!A$ দেয়, আর $!B$-র জন্য প্রয়োজনীয় দ্বিতীয় উল্লেখটি \olref[prp]{ax:land2}; বাংলা পাঠে সেটিই পুনরুদ্ধার করা হয়েছে।} % BN-SRC-063 TARGET-CORRECTION-END
+  \item \olref[prp]{ax:land3} থেকে মোডাস পোনেন্স দুবার প্রয়োগ করে।
+  \end{enumerate}
+\end{proof}
+
+
+\begin{prop}\ollabel{prop:provability-lor}
+  \begin{enumerate}
+  \item $!A \lor !B, \lnot !A, \lnot !B$ অসঙ্গত।
+  \item $!A \Proves !A \lor !B$ এবং $!B \Proves !A \lor !B$—দুটিই সত্য।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item \olref[prp]{ax:lnot2} থেকে $\Proves \lnot !A \lif (!A
+    \lif \lfalse)$ এবং $\Proves \lnot !B \lif (!B \lif \lfalse)$
+    পাই। তাই নিঃসরণ উপপাদ্য অনুসারে $\{\lnot !A\} \Proves !A \lif
+    \lfalse$ এবং $\{\lnot !B\} \Proves !B \lif \lfalse$।
+    \olref[prp]{ax:lor3} থেকে $\{\lnot !A, \lnot !B\} \Proves (!A
+    \lor !B) \lif \lfalse$ পাই। নিঃসরণ উপপাদ্য অনুসারে $\{!A \lor
+    !B, \lnot !A, \lnot !B\} \Proves \lfalse$।
+    % BN-SRC-064 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-064):} হিমায়িত ইংরেজি পাঠ $\lnot !A \lif (!A \lif \lfalse)$-কে ভুল করে \olref[prp]{ax:lnot1}-এর রূপ বলে। প্রদত্ত স্বতঃসিদ্ধতালিকায় এটি \olref[prp]{ax:lnot2}-এর রূপ, যেখানে $!B$-র স্থানে $\lfalse$ বসে; বাংলা প্রমাণে সঠিক উল্লেখটি দেওয়া হয়েছে।} % BN-SRC-064 TARGET-CORRECTION-END
+  \item \olref[prp]{ax:lor1} ও~\olref[prp]{ax:lor2} থেকে মোডাস
+    পোনেন্স প্রয়োগ করে।
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-lif}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-lif-left} $!A, !A \lif !B \Proves !B$।
+  \item \ollabel{prop:provability-lif-right}
+    $\lnot !A \Proves !A \lif !B$ এবং $!B \Proves !A \lif !B$—দুটিই সত্য।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item নিচেরটি !!{derive} করা যায়:
+    \begin{derivation}
+      1. & $!A$ & \Hyp\\
+      2. & $!A \lif !B$ & \Hyp\\
+      3. & $!B$ & 1, 2, \MP
+    \end{derivation}
+
+  \item প্রথমটি \olref[prp]{ax:lnot2} ও নিঃসরণ উপপাদ্য থেকে; দ্বিতীয়টি
+    \olref[prp]{ax:lif1} ও নিঃসরণ উপপাদ্য থেকে।
+  \end{enumerate}
+\end{proof}
+
+\end{document}

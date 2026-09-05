@@ -1,0 +1,57 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability-quantifiers
+
+% verification of properties of provability needed for maximally
+% consistent sets in the completeness chapter.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{qpr}
+
+\olsection{\usetoken{S}{derivability} ও পরিমাণসূচক}
+
+\begin{explain}
+  পূর্ণতা উপপাদ্যের জন্য আরও প্রয়োজন যে স্বতঃসিদ্ধমূলক নিষ্পাদন থেকে
+  এই অংশে প্রতিষ্ঠিত~$\Proves$-সংক্রান্ত তথ্যগুলি পাওয়া যায়।
+\end{explain}
+
+\begin{thm}
+\ollabel{thm:strong-generalization} $c$ যদি এমন কোনো !!a{constant} হয়
+যা $\Gamma$ বা~$!A(x)$-এ আসে না এবং $\Gamma \Proves !A(c)$ হয়,
+তবে $\Gamma \Proves \lforall[x][!A(x)]$।
+\end{thm}
+
+\begin{proof}
+নিঃসরণ উপপাদ্য অনুসারে $\Gamma \Proves \ltrue \lif !A(c)$। যেহেতু
+$c$, $\Gamma$ বা~$\ltrue$-এ আসে না, তাই $\Gamma \Proves \ltrue
+\lif \lforall[x][!A(x)]$ পাই। সত্য-ধ্রুবকটি স্বতঃসিদ্ধ হওয়ায় মোডাস পোনেন্স থেকে
+$\Gamma \Proves \lforall[x][!A(x)]$ পাই।
+% BN-SRC-065 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-065):} হিমায়িত ইংরেজি প্রমাণটি প্রথম ও তৃতীয় সূত্রে কনফিগারযোগ্য সত্য-ধ্রুবক $\ltrue$ ব্যবহার করলেও নতুন-ধ্রুবকের শর্তে কাঁচা $\top$ লেখে। বাংলা পাঠে একই সূত্রকে সর্বত্র $\ltrue$ দিয়ে চিহ্নিত করা হয়েছে।} % BN-SRC-065 TARGET-CORRECTION-END
+% BN-SRC-071 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-071):} হিমায়িত ইংরেজি প্রমাণের শেষ ধাপটি নিঃসরণ উপপাদ্যের আরেক প্রয়োগ বলে, কিন্তু $\Gamma \Proves \ltrue \lif \lforall[x][!A(x)]$ থেকে $\Gamma \Proves \lforall[x][!A(x)]$ পেতে $\ltrue$ স্বতঃসিদ্ধটি ও মোডাস পোনেন্স লাগে। বাংলা পাঠে সেই প্রকৃত সমর্থনটি বলা হয়েছে।} % BN-SRC-071 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:provability-quantifiers}
+নিচের প্রতিটি বক্তব্যে দেখানো পদটি বদ্ধ:
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$!A(t) \Proves \lexists[x][!A(x)]$।}{}
+
+\tagitem{prvAll}{$\lforall[x][!A(x)] \Proves !A(t)$।}{}
+\end{tagenumerate}
+% BN-SRC-072 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-072):} হিমায়িত ইংরেজি প্রতিজ্ঞা দুটি $t$-এর কোনো সীমা জানায় না, যদিও যে \olref[qua]{ax:q1} ও~\olref[qua]{ax:q2} থেকে এগুলি পাওয়া হয় সেগুলি কেবল বদ্ধ পদ~$t$-এর জন্য ঘোষিত। বাংলা পাঠে উভয় বক্তব্যের জন্য সেই বদ্ধ-পদ পরিসর স্পষ্ট করা হয়েছে।} % BN-SRC-072 TARGET-CORRECTION-END
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{\olref[qua]{ax:q2} ও নিঃসরণ উপপাদ্য থেকে।}{}
+\tagitem{prvAll}{\olref[qua]{ax:q1} ও নিঃসরণ উপপাদ্য থেকে।}{}
+\end{tagenumerate}
+\end{proof}
+
+\end{document}

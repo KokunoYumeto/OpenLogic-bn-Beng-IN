@@ -1,0 +1,141 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{ptn}}
+      {\olfileid{pl}{axd}{ptn}}
+
+\olsection{প্রমাণতাত্ত্বিক ধারণা}
+
+\begin{explain}
+যেভাবে আমরা কয়েকটি গুরুত্বপূর্ণ অর্থতাত্ত্বিক ধারণা
+(\iftag{FOL}{বৈধতা}{সর্বতঃসত্যতা}, অনুসিদ্ধান্ত, পরিতৃপ্তিযোগ্যতা)
+সংজ্ঞায়িত করেছি, এবার তেমনি তাদের অনুরূপ \emph{প্রমাণতাত্ত্বিক
+ধারণা} সংজ্ঞায়িত করি। এগুলি কোনো !!{structure}s-তে !!{sentence}s-এর
+পরিতৃপ্তির সাহায্যে নয়, বরং কয়েকটি সূত্রের !!{derivability} বা
+!!{nonderivability}-র সাহায্যে সংজ্ঞায়িত। এই ধারণাগুলি যে পরস্পরের
+সঙ্গে মিলে যায়, তা এক গুরুত্বপূর্ণ আবিষ্কার। তাদের মিলই
+\emph{বিশুদ্ধতা} ও \emph{পূর্ণতা উপপাদ্য}-র বক্তব্য।
+\end{explain}
+
+\begin{defn}[!!^{derivability}]
+কোনো !!^a{formula}~$!A$ $\Gamma$ \emph{থেকে !!{derivable}}, অর্থাৎ
+$\Gamma \Proves !A$, যদি $\Gamma$ থেকে এমন কোনো !!a{derivation}
+থাকে যার শেষ সূত্র~$!A$।
+\end{defn}
+
+\begin{defn}[উপপাদ্য]
+কোনো !!^a{formula}~$!A$ একটি \emph{উপপাদ্য}, যদি শূন্য সেট থেকে
+$!A$-এর কোনো !!a{derivation} থাকে। $!A$ উপপাদ্য হলে $\Proves !A$
+এবং না হলে $\Proves/ !A$ লিখি।
+\end{defn}
+
+\begin{defn}[সঙ্গতি]
+!!{formula}s-এর কোনো সেট~$\Gamma$ ঠিক তখনই \emph{সঙ্গত}, যখন
+$\Gamma\Proves/ \lfalse$; নইলে সেটি \emph{অসঙ্গত}।
+\end{defn}
+
+\begin{prop}[প্রতিবিম্ব ধর্ম]
+\ollabel{prop:reflexivity}
+$!A \in \Gamma$ হলে $\Gamma \Proves !A$।
+\end{prop}
+
+\begin{proof}
+  শুধু !!{formula}~$!A$-ই $\Gamma$ থেকে~$!A$-এর কোনো !!a{derivation}।
+\end{proof}
+
+\begin{prop}[একঘেয়েতা]
+\ollabel{prop:monotonicity}
+$\Gamma \subseteq \Delta$ এবং $\Gamma \Proves !A$ হলে $\Delta
+\Proves !A$।
+\end{prop}
+
+\begin{proof}
+$\Gamma$ থেকে~$!A$-এর যেকোনো !!{derivation}, $\Delta$
+থেকে~$!A$-এরও কোনো !!a{derivation}।
+\end{proof}
+
+\begin{prop}[পরিযায়িতা]
+\ollabel{prop:transitivity}
+$\Gamma \Proves !A$ এবং $\{!A\} \cup \Delta \Proves
+!B$ হলে $\Gamma \cup \Delta \Proves !B$।
+\end{prop}
+
+\begin{proof}
+  ধরা যাক, $\{!A\} \cup \Delta \Proves !B$। তাহলে $\{!A\} \cup
+  \Delta$ থেকে কোনো !!a{derivation} $!B_1$, \dots, $!B_l = !B$ আছে।
+  ওই !!{derivation}-এর কয়েকটি ধাপ সঠিক হবে এমন কোনো বিধির জন্য, যা
+  আগের কোনো পংক্তি~$!B_i = !A$-র উল্লেখ করে। অনুমান অনুযায়ী,
+  $\Gamma$ থেকে~$!A$-এর কোনো !!a{derivation} আছে, অর্থাৎ এমন কোনো
+  !!a{derivation}~$!A_1$, \dots, $!A_k = !A$, যেখানে প্রত্যেক $!A_i$
+  হয় স্বতঃসিদ্ধ, নয়তো~$\Gamma$-র একটি !!a{element}, নয়তো কোনো
+  অনুমান-বিধি অনুসারে সঠিক। এবার অনুক্রমটি বিবেচনা করো:
+  \[
+  !A_1, \dots, !A_k = !A, !B_1, \dots, !B_l = !B.
+  \]
+  এটি $\Gamma \cup \Delta$ থেকে~$!B$-এর একটি সঠিক !!{derivation},
+  কারণ প্রত্যেক $!B_i = !A$ এখন $!A_k = !A$-র মতো একই ভিত্তিতে
+  সমর্থিত।
+  % BN-SRC-058 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-058):} হিমায়িত ইংরেজি প্রমাণের শেষ বাক্যে সূত্র-চলকটির একবারের লেখায় উপসর্গচিহ্ন বাদ পড়ে $B_i = !A$ হয়েছে, যদিও এই প্রমাণের সর্বত্র সূত্রটি $!B_i$। বাংলা পাঠে $!B_i = !A$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-058 TARGET-CORRECTION-END
+  % BN-SRC-070 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-070):} হিমায়িত ইংরেজি প্রমাণটি বলে, প্রতিটি পুনরাবৃত্ত $!B_i = !A$-কে সেই একই “বিধি” সমর্থন করে যা $!A_k = !A$-কে সমর্থন করে। কিন্তু $!A_k$ স্বতঃসিদ্ধ বা~$\Gamma$-র উপাদানও হতে পারে। বাংলা পাঠে তাই “একই ভিত্তিতে সমর্থিত” বলা হয়েছে: স্বতঃসিদ্ধ হলে স্বতঃসিদ্ধ হিসেবে, অনুমিতি হলে $\Gamma \subseteq \Gamma \cup \Delta$ অনুসারে, আর অনুমান-বিধি দিয়ে এলে আগের একই পংক্তিগুলি থেকে।} % BN-SRC-070 TARGET-CORRECTION-END
+\end{proof}
+
+লক্ষ করো, এর অর্থ বিশেষত এই: $\Gamma \Proves !A$ এবং $!A \Proves
+!B$ হলে $\Gamma \Proves !B$। এর থেকে আরও পাওয়া যায়: $!A_1,
+\dots, !A_n \Proves !B$ এবং প্রত্যেক~$i$-এর জন্য $\Gamma \Proves
+!A_i$ হলে $\Gamma \Proves !B$।
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ ঠিক তখনই অসঙ্গত, যখন প্রত্যেক~$!A$-এর জন্য $\Gamma \Proves !A$।
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][axd][ptn]{prop:incons} প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][axd][ptn]{prop:incons} প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\begin{prop}[সংহতি]
+\ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item $\Gamma \Proves !A$ হলে এমন একটি সসীম উপসেট $\Gamma_0
+    \subseteq \Gamma$ আছে যেন $\Gamma_0 \Proves !A$।
+  \item $\Gamma$-র প্রত্যেক সসীম উপসেট সঙ্গত হলে $\Gamma$ সঙ্গত।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item $\Gamma \Proves !A$ হলে !!{formula}s-এর এমন একটি সসীম
+      অনুক্রম $!A_1$, \dots,~$!A_n$ আছে যেন $!A \ident !A_n$ এবং
+      প্রত্যেক $!A_i$ হয় কোনো যৌক্তিক স্বতঃসিদ্ধ, নয়তো~$\Gamma$-র
+      কোনো !!a{element}, নয়তো আগের !!{formula}s থেকে অনুমোদিত কোনো
+      অনুমান-বিধি অনুসারে অনুসৃত। যেসব $!A_i$~$\Gamma$-তে আছে,
+      সেগুলিকে নিয়ে~$\Gamma_0$ গঠন করি। তাহলে একই !!{derivation}
+      $\Gamma_0$ থেকেও কোনো !!a{derivation}; তাই $\Gamma_0 \Proves !A$।
+      % BN-SRC-059 TARGET-CORRECTION-BEGIN
+      \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-059):} হিমায়িত ইংরেজি সংহতি-প্রমাণটি প্রতিটি অনুসৃত ধাপকে কেবল মোডাস পোনেন্স থেকে আসা বলে, যদিও এই অধ্যায়ের FOL শাখায় পরিমাণসূচকের অনুমান-বিধিও বৈধ। বাংলা পাঠে “অনুমোদিত কোনো অনুমান-বিধি” বলা হয়েছে। সসীম অনুক্রমে ব্যবহৃত প্রত্যেক বিধির সসীম পূর্বধারণা থাকে এবং প্রারম্ভিক সেট ছোট করলে নতুন-ধ্রুবকের শর্ত বজায় থাকে, তাই একই সসীম-সমর্থন যুক্তি উভয় বিধির জন্য চলে।} % BN-SRC-059 TARGET-CORRECTION-END
+    \item এটি (1)-এর বিশেষ ক্ষেত্র $!A \ident \lfalse$-এর
+      বিপরীত-প্রতিজ্ঞা।
+\end{enumerate}
+\end{proof}
+
+\end{document}

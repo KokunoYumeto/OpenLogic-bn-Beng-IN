@@ -1,0 +1,95 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{prv}}
+      {\olfileid{pl}{axd}{prv}}
+
+\olsection{\usetoken{S}{derivability} ও সঙ্গতি}
+
+এবার !!{derivability} সম্পর্কের কয়েকটি ধর্ম প্রতিষ্ঠা করব। সেগুলি
+নিজে থেকেই আকর্ষণীয়, আবার প্রত্যেকটি পূর্ণতা উপপাদ্যের প্রমাণে
+ভূমিকা নেবে।
+
+\begin{prop}\ollabel{prop:provability-contr}
+  $\Gamma \Proves !A$ এবং $\Gamma \cup \{!A\}$ অসঙ্গত হলে
+  $\Gamma$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+  $\Gamma \cup \{!A\}$ অসঙ্গত হলে $\Gamma \cup \{!A\} \Proves
+  \lfalse$। \olref[ptn]{prop:reflexivity} অনুসারে প্রত্যেক $!B \in
+  \Gamma$-র জন্য $\Gamma \Proves !B$। অনুমান থেকে $\Gamma \Proves
+  !A$-ও আছে বলে প্রত্যেক $!B \in \Gamma \cup \{!A\}$-র জন্য
+  $\Gamma \Proves !B$। \olref[ptn]{prop:transitivity} অনুসারে
+  $\Gamma \Proves \lfalse$; অর্থাৎ $\Gamma$ অসঙ্গত।
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ যদি এবং কেবল যদি $\Gamma \cup \{\lnot !A\}$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+প্রথমে ধরা যাক $\Gamma \Proves !A$। তখন
+\olref[ptn]{prop:monotonicity} অনুসারে $\Gamma \cup \{\lnot !A\}
+\Proves !A$। \olref[ptn]{prop:reflexivity} অনুসারে $\Gamma \cup
+\{\lnot !A\} \Proves \lnot !A$। আবার \olref[prp]{ax:lnot2} থেকে
+$\Proves \lnot !A \lif (!A \lif \lfalse)$। তাই
+\olref[ded]{prop:mp} দুবার প্রয়োগ করে $\Gamma \cup \{\lnot !A\}
+\Proves \lfalse$ পাই।
+
+এবার ধরা যাক $\Gamma \cup \{\lnot !A\}$ অসঙ্গত, অর্থাৎ $\Gamma
+\cup \{\lnot !A\} \Proves \lfalse$। নিঃসরণ উপপাদ্য অনুসারে
+$\Gamma \Proves \lnot !A \lif \lfalse$। \olref[prp]{ax:lfalse2}
+থেকে $\Gamma \Proves (\lnot !A \lif \lfalse) \lif \lnot\lnot !A$;
+তাই \olref[ded]{prop:mp} অনুসারে $\Gamma \Proves \lnot\lnot !A$।
+আবার $\Gamma \Proves \lnot\lnot !A \lif !A$
+(\olref[prp]{ax:dne}) বলে \olref[ded]{prop:mp} থেকে $\Gamma \Proves
+!A$।
+\end{proof}
+
+\begin{prob}
+$\Gamma \Proves \lnot !A$ যদি এবং কেবল যদি $\Gamma \cup \{!A\}$
+অসঙ্গত—প্রমাণ করো।
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  $\Gamma \Proves !A$ এবং $\lnot !A \in \Gamma$ হলে $\Gamma$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+  \olref[prp]{ax:lnot2} অনুসারে $\Gamma \Proves \lnot !A \lif (!A
+  \lif \lfalse)$। \olref[ded]{prop:mp} দুবার প্রয়োগ করে $\Gamma
+  \Proves \lfalse$ পাই।
+\end{proof}
+
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  $\Gamma \cup \{!A\}$ ও~$\Gamma \cup \{\lnot !A\}$ উভয়ই
+  অসঙ্গত হলে $\Gamma$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+  \olref[fol][axd][prv]{prop:provability-exhaustive} প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+  \olref[pl][axd][prv]{prop:provability-exhaustive} প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+
+\end{document}

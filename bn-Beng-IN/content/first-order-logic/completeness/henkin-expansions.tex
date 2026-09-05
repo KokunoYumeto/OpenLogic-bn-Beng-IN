@@ -1,0 +1,210 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: henkin-expansion
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{com}{hen}
+
+\olsection{হেনকিন সম্প্রসারণ}
+
+\begin{explain}
+পূর্ণতা উপপাদ্য প্রমাণের একটি সমস্যা হলো, কোনো পূর্ণ সঙ্গত
+সেট~$\Gamma$ থেকে আমরা যে মডেল নির্মাণ করি সেটিকে~$\Gamma$-র সব পরিমাণিত
+!!{formula}s-কে সত্য করতে হবে। এটি নিশ্চিত করতে আমরা লিয়ন হেনকিনের একটি
+কৌশল ব্যবহার করি। মূলত, কৌশলটি হলো অসীমসংখ্যক !!{constant}s যোগ করে ভাষা
+প্রসারিত করা এবং একটি মুক্ত !!{variable}-সহ প্রতিটি
+!!{formula}~$!A(x)$-এর জন্য নিচের আকারের একটি সূত্র যোগ করা:
+\iftag{prvEx}
+      {$\lexists[x][!A(x)] \lif !A(c)$}
+      {$\lnot\lforall[x][!A(x)] \lif \lnot !A(c)$},
+যেখানে $c$ নতুন !!{constant}s-এর একটি। যখন~$\Gamma$-কে পরিতৃপ্তকারী
+!!{structure} নির্মাণ করব, তখন এটি নিশ্চিত করবে যে নতুন ধ্রুবকগুলির মধ্যে
+প্রতিটি
+\iftag{prvEx}
+{সত্য অস্তিত্বমূলক বাক্যের একটি সাক্ষী থাকে}
+{মিথ্যা সার্বিক বাক্যের একটি প্রতিদৃষ্টান্ত থাকে}।
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:lang-exp}
+$\Gamma$ যদি $\Lang L$-এ সঙ্গত হয় এবং $\Lang L$-এ নতুন
+!!{constant}s-এর একটি !!a{denumerable} সেট $\Obj d_0$, $\Obj d_1$,
+\dots{} যোগ করে $\Lang L'$ পাওয়া যায়, তবে~$\Lang L'$-এও $\Gamma$
+সঙ্গত।
+\end{prop}
+
+\begin{defn}[সম্পৃক্ত সেট]
+কোনো ভাষা $\Lang {L}$-এর !!{formula}s-এর সেট $\Gamma$ ঠিক তখনই
+\emph{সম্পৃক্ত}, যখন একটি মুক্ত !!{variable}~$x$-সহ প্রতিটি
+!!{formula}~$!A(x) \in \Frm[L]$-এর জন্য এমন একটি !!a{constant}~$c \in
+\Lang{L}$ আছে, যাতে
+\iftag{prvEx}
+      {$\lexists[x][!A(x)] \lif !A(c) \in \Gamma$}
+      {$\lnot\lforall[x][!A(x)] \lif \lnot !A(c) \in \Gamma$}।
+\end{defn}
+
+পরের উপপাদ্যের প্রমাণে নিচের সংজ্ঞাটি ব্যবহার করা হবে।
+
+\begin{defn}
+\ollabel{defn:henkin-exp}
+$\Lang L'$-কে \olref{prop:lang-exp}-এর মতো ধরি। $\Lang L'$-এর যেসব
+!!{formula}s~$!A_i(x_i)$-তে একটি চল ($x_i$) মুক্তভাবে আসে, তাদের একটি
+তালিকায়ন $!A_0(x_0)$, $!A_1(x_1)$, \dots{} স্থির করি। $n$-এর ওপর
+আরোহের সাহায্যে !!{sentence}s~$!D_n$ সংজ্ঞায়িত করি।
+
+$\Lang{L}$-এ যোগ করা~$\Obj d_i$-গুলির মধ্যে যে প্রথম !!{constant}-টি
+$!A_0(x_0)$-তে আসে না, তাকে $c_0$ ধরি। $!D_0$, \dots,~$!D_{n-1}$
+ইতিমধ্যে সংজ্ঞায়িত হয়েছে ধরে, নতুন !!{constant}s~$\Obj d_i$-এর মধ্যে
+যে প্রথমটি $!D_0$, \dots,~$!D_{n-1}$ বা~$!A_n(x_n)$—কোনোটিতেই আসে না,
+তাকে $c_n$ ধরি।
+
+এবার $!D_{n}$-কে নিচের !!{formula}-টি ধরি: \iftag{prvEx}
+{$\lexists[x_{n}][!A_{n}(x_{n})] \lif
+  !A_{n}(c_{n})$}{$\lnot\lforall[x_{n}][!A_{n}(x_{n})] \lif \lnot
+  !A_{n}(c_{n})$}।
+\end{defn}
+
+\begin{lem}
+\ollabel{lem:henkin}
+প্রতিটি সঙ্গত সেট~$\Gamma$-কে একটি সম্পৃক্ত সঙ্গত সেট~$\Gamma'$-তে
+প্রসারিত করা যায়।
+\end{lem}
+
+\begin{proof}
+কোনো ভাষা~$\Lang{L}$-এর বাক্যের সঙ্গত সেট~$\Gamma$ দেওয়া আছে। নতুন
+!!{constant}s-এর একটি !!a{denumerable} সেট যোগ করে ভাষাটিকে~$\Lang{L'}$
+করি। \olref{prop:lang-exp} অনুসারে সমৃদ্ধতর ভাষাতেও $\Gamma$ সঙ্গত। আরও
+ধরি, $!D_i$ হলো \olref{defn:henkin-exp}-এর মতো। রাখি
+\begin{align*}
+\Gamma_0 & = \Gamma \\
+\Gamma_{n+1} & = \Gamma_n \cup \{!D_n \}
+\end{align*}
+অর্থাৎ, $\Gamma_{n+1} = \Gamma \cup \{ !D_0, \dots, !D_n \}$; এবং ধরি
+$\Gamma' = \bigcup_{n} \Gamma_n$। স্পষ্টতই $\Gamma'$ সম্পৃক্ত।
+
+$\Gamma'$ অসঙ্গত হলে কোনো একটি $n$-এর জন্য $\Gamma_n$ অসঙ্গত হতো
+(অনুশীলনী: কেন, ব্যাখ্যা করো)। তাই $\Gamma'$ সঙ্গত দেখাতে $n$-এর ওপর
+আরোহের সাহায্যে প্রতিটি সেট~$\Gamma_n$ সঙ্গত দেখালেই যথেষ্ট।
+
+আরোহের ভিত্তি হলো কেবল $\Gamma_0 = \Gamma$-র সঙ্গতির দাবি, যা উপপাদ্যের
+পূর্বধারণা। আরোহী ধাপের জন্য ধরা যাক $\Gamma_{n}$ সঙ্গত, কিন্তু
+$\Gamma_{n+1} = \Gamma_n \cup \{!D_n\}$ অসঙ্গত। মনে করি,
+$!D_n$~হলো
+\iftag{prvEx}
+{$\lexists[x_{n}][!A_{n}(x_n)] \lif !A_{n}(c_{n})$}
+{$\lnot\lforall[x_{n}][!A_{n}(x_n)] \lif \lnot !A_{n}(c_{n})$},
+যেখানে $!A_n(x_n)$ হলো $\Lang{L'}$-এর এমন একটি !!a{formula}, যার
+একমাত্র মুক্ত চল~$x_n$। $c_n$-কে যেভাবে বেছে নিয়েছি
+(\olref{defn:henkin-exp} দেখো), তাতে $c_n$~$!A_n(x_n)$ বা~$\Gamma_n$—
+কোনোটিতেই আসে না।
+
+$\Gamma_n \cup \{!D_n\}$ অসঙ্গত হলে $\Gamma_n \Proves \lnot !D_n$;
+ফলে নিচের দুটি কথাই সত্য:
+\iftag{prvEx}{
+\[
+\Gamma_n \Proves \lexists[x_n][!A_n(x_n)]
+\qquad
+\Gamma_n \Proves \lnot !A_n(c_n)
+\]}{
+\[
+\Gamma_n \Proves \lnot\lforall[x_n][!A_n(x_n)]
+\qquad
+\Gamma_n \Proves !A_n(c_n)
+\]}
+যেহেতু $c_n$, $\Gamma_n$ বা~$!A_n(x_n)$-এ আসে না, তাই
+\tagrefs{prfAX/{fol:axd:qpr:thm:strong-generalization},prfSC/{fol:seq:qpr:thm:strong-generalization},prfND/{fol:ntd:qpr:thm:strong-generalization},prfTab/{fol:tab:qpr:thm:strong-generalization}}
+প্রয়োগ করা যায়। \iftag{prvEx}
+{$\Gamma_n \Proves \lnot !A_n(c_n)$}
+{$\Gamma_n \Proves !A_n(c_n)$}
+থেকে পাই
+\iftag{prvEx}
+{$\Gamma_n \Proves \lforall[x_n][\lnot !A_n(x_n)]$}
+{$\Gamma_n \Proves \lforall[x_n][!A_n(x_n)]$}।
+অতএব একসঙ্গে
+\iftag{prvEx}
+{$\Gamma_n \Proves \lexists[x_n][!A_n(x_n)]$ এবং
+$\Gamma_n \Proves \lforall[x_n][\lnot !A_n(x_n)]$}
+{$\Gamma_n \Proves \lnot\lforall[x_n][!A_n(x_n)]$ এবং
+$\Gamma_n \Proves \lforall[x_n][!A_n(x_n)]$}
+পাই; তাই $\Gamma_n$ নিজেই অসঙ্গত।
+\iftag{prvEx}
+{(লক্ষ করো,
+\iftag{prvAll}
+{$\lforall[x_n][\lnot !A_n(x_n)] \Proves
+  \lnot\lexists[x_n][!A_n(x_n)]$}
+{$\lforall[x_n][\lnot !A_n(x_n)]$-কে
+  $\lnot\lexists[x_n][\lnot\lnot !A_n(x_n)]$ হিসেবে সংজ্ঞায়িত করা হয়েছে এবং
+  $\lnot\lexists[x_n][\lnot\lnot !A_n(x_n)] \Proves
+  \lnot\lexists[x_n][!A_n(x_n)]$}।)}{}
+স্ববিরোধ: $\Gamma_n$-কে সঙ্গত ধরা হয়েছিল। অতএব $\Gamma_n \cup \{
+!D_n\}$ সঙ্গত।% BN-SRC-073 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-073):} হিমায়িত ইংরেজি পাঠের বন্ধনীযুক্ত ব্যাখ্যায় প্রথম সার্বিক সূত্রে $!A_n$-এর যুক্তি অনুপস্থিত, যদিও পরের সংজ্ঞায়িত সূত্র ও নিষ্পাদন উভয়েই $!A_n(x_n)$ আছে। বাংলা লক্ষ্যে প্রথম সূত্রটিও $\lforall[x_n][\lnot !A_n(x_n)]$ করা হয়েছে।} % BN-SRC-073 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{explain}
+এবার দেখাব, সম্পৃক্ত \emph{পূর্ণ} সঙ্গত সেটের এই ধর্ম আছে:
+\iftag{prvAll}{সেটটিতে কোনো সার্বিকভাবে পরিমাণিত !!{sentence} থাকে যদি
+  এবং কেবল যদি তার সব নিদর্শন থাকে}{}\iftag{defAll,defEx}{}{ এবং
+  }\iftag{prvEx}{সেটটিতে কোনো অস্তিত্বমূলকভাবে পরিমাণিত !!{sentence} থাকে
+  যদি এবং কেবল যদি তার অন্তত একটি নিদর্শন থাকে}{}। এর সাহায্যে দেখাব,
+একটি পূর্ণ, সঙ্গত ও সম্পৃক্ত সেট থেকে আমরা যে !!{structure} তৈরি করব,
+সেটি তার সব পরিমাণিত বাক্যকে সত্য করে।% BN-SRC-074 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-074):} হিমায়িত ইংরেজি ব্যাখ্যায় অস্তিত্বমূলক দাবিটিকেও ভুল করে \texttt{prvAll} ট্যাগ দেওয়া হয়েছে। বাংলা লক্ষ্যে দাবিটির নিজস্ব \texttt{prvEx} ট্যাগ পুনঃস্থাপন করা হয়েছে, যাতে সার্বিক ও অস্তিত্বমূলক কনফিগারেশন প্রত্যেকটি তার প্রাসঙ্গিক দাবিই পায়।} % BN-SRC-074 TARGET-CORRECTION-END
+\end{explain}
+
+\begin{prop}\ollabel{prop:saturated-instances}
+ধরা যাক $\Gamma$ পূর্ণ, সঙ্গত ও সম্পৃক্ত।
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\lexists[x][!A(x)] \in \Gamma$ যদি এবং কেবল যদি অন্তত
+  একটি বদ্ধ পদ~$t$-এর জন্য $!A(t) \in \Gamma$।}{}
+\tagitem{prvAll}{$\lforall[x][!A(x)] \in \Gamma$ যদি এবং কেবল যদি সব
+  বদ্ধ পদ~$t$-এর জন্য $!A(t) \in \Gamma$।}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{tagenumerate}{prvEx,prvAll}
+  \tagitem{prvEx}{%
+    \iftag{probEx}{অনুশীলনী।}{প্রথমে ধরা যাক $\lexists[x][!A(x)]
+      \in \Gamma$। $\Gamma$ সম্পৃক্ত বলে কোনো !!{constant}~$c$-এর জন্য
+      $(\lexists[x][!A(x)] \lif !A(c)) \in \Gamma$।
+      \tagrefs{prfAX/{fol:axd:ppr:prop:provability-lif},prfSC/{fol:seq:ppr:prop:provability-lif},prfND/{fol:ntd:ppr:prop:provability-lif},prfTab/{fol:tab:ppr:prop:provability-lif}}-এর দফা~(1),
+      এবং \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-prov-in} অনুসারে
+      $!A(c) \in \Gamma$।
+
+    অন্য অভিমুখের জন্য সম্পৃক্ততার দরকার নেই: ধরা যাক $!A(t) \in
+    \Gamma$। তাহলে
+      \tagrefs{prfAX/{fol:axd:qpr:prop:provability-quantifiers},prfSC/{fol:seq:qpr:prop:provability-quantifiers},prfND/{fol:ntd:qpr:prop:provability-quantifiers},prfTab/{fol:tab:qpr:prop:provability-quantifiers}}-এর দফা~(1) অনুসারে
+    $\Gamma \Proves \lexists[x][!A(x)]$।
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-prov-in} অনুসারে
+    $\lexists[x][!A(x)] \in \Gamma$।}}{}
+  \tagitem{prvAll}{%
+    \iftag{probAll}{অনুশীলনী।}{ধরা যাক সব বদ্ধ পদ~$t$-এর জন্য
+      $!A(t) \in \Gamma$। স্ববিরোধের উদ্দেশ্যে ধরে নিই $\lforall[x][!A(x)]
+      \notin \Gamma$। $\Gamma$ পূর্ণ বলে $\lnot\lforall[x][!A(x)]
+      \in \Gamma$। সম্পৃক্ততা অনুসারে কোনো !!{constant}~$c$-এর জন্য
+      \iftag{prvEx}{$(\lexists[x][\lnot !A(x)] \lif \lnot !A(c)) \in
+        \Gamma$}{$(\lnot\lforall[x][!A(x)] \lif \lnot !A(c)) \in
+        \Gamma$}। পূর্বধারণা অনুসারে, $c$ একটি বদ্ধ পদ বলে $!A(c) \in
+      \Gamma$। কিন্তু এতে $\Gamma$ অসঙ্গত হতো। (অনুশীলনী: যে
+      !!{derivation} দেখায় নিচের সেটটি অসঙ্গত, সেটি দাও:
+      \[
+      \lnot \lforall[x][!A(x)],
+      \iftag{prvEx}{\lexists[x][\lnot !A(x)] \lif \lnot
+        !A(c)}{\lnot\lforall[x][!A(x)] \lif \lnot
+        !A(c)}, !A(c)
+      \]
+      )
+
+      উল্টো অভিমুখের জন্য সম্পৃক্ততার দরকার নেই: ধরা যাক
+      $\lforall[x][!A(x)] \in \Gamma$। তাহলে
+      \tagrefs{prfAX/{fol:axd:qpr:prop:provability-quantifiers},prfSC/{fol:seq:qpr:prop:provability-quantifiers},prfND/{fol:ntd:qpr:prop:provability-quantifiers},prfTab/{fol:tab:qpr:prop:provability-quantifiers}}-এর
+      দফা~(2) অনুসারে $\Gamma \Proves !A(t)$।
+      \olref[ccs]{prop:ccs} থেকে $!A(t) \in \Gamma$ পাই।}}{}
+  \end{tagenumerate}
+\end{proof}
+
+\end{document}

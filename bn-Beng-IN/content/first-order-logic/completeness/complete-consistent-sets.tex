@@ -1,0 +1,216 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: complete-sets
+
+% Definition of complete consistent sets. Properties of complete sets required
+% for completeness proved are in provability.tex in the
+% chapter on the proof system used.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{ccs}}
+      {\olfileid{pl}{com}{ccs}}
+
+\olsection{পূর্ণ সঙ্গত \usetoken{P}{sentence}-সেট}
+
+\begin{defn}[পূর্ণ সেট]
+\ollabel{def:complete-set} !!{sentence}s-এর কোনো সেট~$\Gamma$ ঠিক তখনই
+\emph{!!{complete}}, যখন যেকোনো !!{sentence}~$!A$-এর জন্য $!A \in
+\Gamma$ অথবা $\lnot !A \in \Gamma$।
+\end{defn}
+
+\begin{explain}
+!!^{complete} বাক্য-সেট কোনো প্রশ্নের উত্তর বাকি রাখে না। যেকোনো
+!!{sentence}~$!A$-এর ক্ষেত্রে $!A$ সত্য না মিথ্যা, তা $\Gamma$ “বলে”।
+!!{complete} সেটের গুরুত্ব পূর্ণতা উপপাদ্যের প্রমাণের বাইরেও বিস্তৃত।
+যেমন, !!{complete} ও স্বতঃসিদ্ধযোগ্য কোনো তত্ত্ব সব সময়ই নির্ণেয়।
+\end{explain}
+
+\begin{explain}
+পূর্ণতা-প্রমাণে !!^{complete} সঙ্গত সেট গুরুত্বপূর্ণ, কারণ আমরা নিশ্চয়তা
+দিতে পারি যে !!{sentence}s-এর প্রতিটি সঙ্গত সেট~$\Gamma$ কোনো
+!!a{complete} সঙ্গত সেট~$\Gamma^*$-এর অন্তর্ভুক্ত। !!^a{complete}
+সঙ্গত সেটে প্রতিটি !!{sentence}~$!A$-এর জন্য $!A$ বা তার নঞর্থকরণ
+$\lnot !A$ থাকে, কিন্তু উভয়ই থাকে না। বিশেষত এটি
+\iftag{FOL}{পরমাণু !!{sentence}s}{বচনমূলক চল}-এর ক্ষেত্রে সত্য। তাই
+\iftag{FOL}{!!{constant}s যোগ করে যথাযথভাবে প্রসারিত ভাষার}{} কোনো
+!!a{complete} সঙ্গত সেট থেকে আমরা এমন একটি
+\iftag{FOL}{!!a{structure}}{!!a{valuation}} নির্মাণ করতে পারি, যেখানে
+\iftag{FOL}{!!{predicate}s-এর ব্যাখ্যা}{বচনমূলক চলগুলিকে দেওয়া সত্যমান}
+নির্ধারিত হয়~$\Gamma^*$-তে কোন
+\iftag{FOL}{পরমাণু !!{sentence}s}{!!{propositional variable}s} আছে তার
+ভিত্তিতে। এরপর দেখানো যায়, এই \iftag{FOL}{!!{structure}}{!!{valuation}}
+$\Gamma^*$-র সব !!{sentence}s-কে (এবং তাই~$\Gamma$-র সবগুলিকেও) সত্য
+করে। শেষের কথাটি প্রমাণ করতে দরকার: $\lnot !A \in \Gamma^*$ যদি এবং
+কেবল যদি $!A \notin \Gamma^*$; $(!A \lor !B) \in \Gamma^*$ যদি এবং
+কেবল যদি $!A \in \Gamma^*$ অথবা $!B \in \Gamma^*$; ইত্যাদি।
+\end{explain}
+
+এরপর আমরা প্রায়ই $\Proves$-এর প্রতিবিম্ব ধর্ম, একঘেয়েতা ও পরিযায়িতার
+ধর্মগুলি অনুক্তভাবে ব্যবহার করব (দেখো
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ptn:sec},prfND/{fol:ntd:ptn:sec},prfAX/{fol:axd:ptn:sec},prfTab/{fol:tab:ptn:sec}}}{%
+  \tagrefs{prfSC/{pl:seq:ptn:sec},prfND/{pl:ntd:ptn:sec},prfAX/{pl:axd:ptn:sec},prfTab/{pl:tab:ptn:sec}}})।
+
+\begin{prop}
+\ollabel{prop:ccs}
+ধরা যাক $\Gamma$ !!{complete} ও সঙ্গত। তাহলে:
+\begin{enumerate}
+\item \ollabel{prop:ccs-prov-in} $\Gamma \Proves !A$ হলে $!A \in
+  \Gamma$।
+
+\tagitem{prvAnd}{\ollabel{prop:ccs-and} $!A \land !B \in \Gamma$
+  যদি এবং কেবল যদি $!A \in \Gamma$ এবং $!B \in \Gamma$ উভয়ই সত্য।}{}
+
+\tagitem{prvOr}{\ollabel{prop:ccs-or} $!A \lor !B \in \Gamma$ যদি এবং
+  কেবল যদি $!A \in \Gamma$ অথবা $!B \in \Gamma$।}{}
+
+\tagitem{prvIf}{\ollabel{prop:ccs-if} $!A \lif !B \in \Gamma$ যদি এবং
+  কেবল যদি $!A \notin \Gamma$ অথবা $!B \in \Gamma$।}{}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+নিচের প্রতিটি ক্ষেত্রে ধরে নিই যে $\Gamma$ !!{complete} ও সঙ্গত।
+\begin{enumerate}
+\item $\Gamma \Proves !A$ হলে $!A \in \Gamma$।
+
+ধরা যাক $\Gamma \Proves !A$। বিপরীতভাবে ধরি $!A \notin \Gamma$।
+$\Gamma$ !!{complete} বলে $\lnot !A \in \Gamma$।
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:prv:prop:explicit-inc},
+    prfND/{fol:ntd:prv:prop:explicit-inc},
+    prfAX/{fol:axd:prv:prop:explicit-inc},
+    prfTab/{fol:tab:prv:prop:explicit-inc}}}{%
+  \tagrefs{prfSC/{pl:seq:prv:prop:explicit-inc},
+    prfND/{pl:ntd:prv:prop:explicit-inc},
+    prfAX/{pl:axd:prv:prop:explicit-inc},
+    prfTab/{pl:tab:prv:prop:explicit-inc}}}
+অনুসারে $\Gamma$ অসঙ্গত। এটি $\Gamma$-র সঙ্গতির পূর্বধারণার বিরোধী।
+অতএব $!A \notin \Gamma$ হতে পারে না; তাই $!A \in \Gamma$।
+
+\tagitem{defAnd}{}{%
+\iftag{probAnd}{অনুশীলনী।}{%
+$!A \land !B \in \Gamma$ যদি এবং কেবল যদি $!A \in \Gamma$ এবং
+$!B \in \Gamma$ উভয়ই সত্য:
+
+সামনের অভিমুখের জন্য ধরা যাক $!A \land !B \in \Gamma$। তাহলে
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-land},
+    prfND/{fol:ntd:ppr:prop:provability-land},
+    prfAX/{fol:axd:ppr:prop:provability-land},
+    prfTab/{fol:tab:ppr:prop:provability-land}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-land},
+    prfND/{pl:ntd:ppr:prop:provability-land},
+    prfAX/{pl:axd:ppr:prop:provability-land},
+    prfTab/{pl:tab:ppr:prop:provability-land}}}-এর দফা~(1) অনুসারে
+$\Gamma \Proves !A$ এবং $\Gamma \Proves !B$।
+\olref{prop:ccs-prov-in} অনুসারে $!A \in \Gamma$ এবং $!B \in \Gamma$,
+যা প্রয়োজন ছিল।
+
+উল্টো অভিমুখের জন্য ধরি $!A \in \Gamma$ এবং $!B \in \Gamma$।
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-land},
+    prfND/{fol:ntd:ppr:prop:provability-land},
+    prfAX/{fol:axd:ppr:prop:provability-land},
+    prfTab/{fol:tab:ppr:prop:provability-land}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-land},
+    prfND/{pl:ntd:ppr:prop:provability-land},
+    prfAX/{pl:axd:ppr:prop:provability-land},
+    prfTab/{pl:tab:ppr:prop:provability-land}}}-এর দফা~(2) অনুসারে
+$\Gamma \Proves !A \land !B$। \olref{prop:ccs-prov-in} অনুসারে
+$!A \land !B \in \Gamma$।}}
+
+\tagitem{defOr}{}{%
+\iftag{probOr}{অনুশীলনী।}{%
+প্রথমে দেখাই, $!A \lor !B \in \Gamma$ হলে $!A \in \Gamma$ অথবা
+$!B \in \Gamma$। ধরা যাক $!A \lor !B \in \Gamma$, কিন্তু $!A
+\notin \Gamma$ এবং $!B \notin \Gamma$। $\Gamma$ !!{complete} বলে
+$\lnot !A \in \Gamma$ এবং $\lnot !B \in \Gamma$।
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lor},
+    prfND/{fol:ntd:ppr:prop:provability-lor},
+    prfAX/{fol:axd:ppr:prop:provability-lor},
+    prfTab/{fol:tab:ppr:prop:provability-lor}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lor},
+    prfND/{pl:ntd:ppr:prop:provability-lor},
+    prfAX/{pl:axd:ppr:prop:provability-lor},
+    prfTab/{pl:tab:ppr:prop:provability-lor}}}-এর দফা~(1) অনুসারে
+$\Gamma$ অসঙ্গত—এটি স্ববিরোধ। অতএব $!A \in \Gamma$ অথবা
+$!B \in \Gamma$।
+
+উল্টো অভিমুখের জন্য ধরা যাক $!A \in \Gamma$ অথবা $!B \in \Gamma$।
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lor},
+    prfND/{fol:ntd:ppr:prop:provability-lor},
+    prfAX/{fol:axd:ppr:prop:provability-lor},
+    prfTab/{fol:tab:ppr:prop:provability-lor}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lor},
+    prfND/{pl:ntd:ppr:prop:provability-lor},
+    prfAX/{pl:axd:ppr:prop:provability-lor},
+    prfTab/{pl:tab:ppr:prop:provability-lor}}}-এর দফা~(2) অনুসারে
+$\Gamma \Proves !A \lor !B$। \olref{prop:ccs-prov-in} অনুসারে
+$!A \lor !B \in \Gamma$, যা প্রয়োজন ছিল।}}
+
+\tagitem{defIf}{}{%
+\iftag{probIf}{অনুশীলনী।}{%
+সামনের অভিমুখের জন্য ধরা যাক $!A \lif !B \in \Gamma$; আর বিপরীতভাবে
+ধরি $!A \in \Gamma$ এবং $!B \notin \Gamma$। এই পূর্বধারণাগুলি থেকে
+$!A \lif !B \in \Gamma$ এবং $!A \in \Gamma$।
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif}}}-এর দফা~(1) অনুসারে
+$\Gamma \Proves !B$। কিন্তু তখন \olref{prop:ccs-prov-in} অনুসারে
+$!B \in \Gamma$, যা $!B \notin \Gamma$ পূর্বধারণার বিরোধী।
+
+উল্টো অভিমুখের জন্য প্রথমে $!A \notin \Gamma$ ক্ষেত্রটি বিবেচনা করি।
+$\Gamma$ !!{complete} বলে $\lnot !A \in \Gamma$।
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif}}}-এর দফা~(2) অনুসারে
+$\Gamma \Proves !A \lif !B$। আবার \olref{prop:ccs-prov-in} থেকে পাই
+$!A \lif !B \in \Gamma$, যা প্রয়োজন ছিল।
+
+এবার $!B \in \Gamma$ ক্ষেত্রটি বিবেচনা করি।
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif}}}-এর দফা~(2) থেকে আবার
+$\Gamma \Proves !A \lif !B$। \olref{prop:ccs-prov-in} অনুসারে
+$!A \lif !B \in \Gamma$।}}
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][ccs]{prop:ccs}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][com][ccs]{prop:ccs}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\end{document}

@@ -1,0 +1,201 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{com}{ide}
+\olsection{অভিন্নতা}
+
+\begin{explain}
+আগের অংশে দেওয়া পদ-মডেলের নির্মাণটি~$\eq$-বিহীন সেট~$\Gamma$-র জন্য
+প্রথম-ক্রমের যুক্তিবিদ্যার পূর্ণতা প্রতিষ্ঠা করতে যথেষ্ট। পদ-মডেলটি
+প্রতিটি $!A \in \Gamma^*$-কে পরিতৃপ্ত করে, যদি বাক্যটিতে~$\eq$ না থাকে
+(এবং তাই সব $!A \in \Gamma$-কেও)। কিন্তু~$\eq$ উপস্থিত থাকলে এটি কাজ
+করে না। কারণ,
+তখন $\Gamma^*$-তে কোনো !!a{sentence}~$\eq[t][t']$ থাকতে পারে, অথচ
+পদ-মডেলে যেকোনো পদের মান সেই পদ নিজেই। তাই $t$ ও $t'$ ভিন্ন পদ হলে
+পদ-মডেলে তাদের মান—যথাক্রমে $t$ ও $t'$—ভিন্ন; ফলে $\eq[t][t']$ মিথ্যা।
+তবে “ভাগকরণ” নামে পরিচিত একটি নির্মাণ ব্যবহার করে এটি ঠিক করা যায়।
+\end{explain}
+
+\begin{defn}
+  ধরা যাক $\Gamma^*$ হলো~$\Lang L$-এর বাক্যের একটি সঙ্গত ও !!{complete}
+  সেট। $\Lang L$-এর বদ্ধ পদগুলির সেটে $\approx$ সম্পর্কটি এভাবে
+  সংজ্ঞায়িত করি:
+  \[
+  t \approx t' \text{\quad যদি এবং কেবল যদি \quad} \eq[t][t'] \in \Gamma^*
+  \]
+\end{defn}
+
+\begin{prop}
+\ollabel{prop:approx-equiv}
+$\approx$ সম্পর্কটির নিচের ধর্মগুলি আছে:
+\begin{enumerate}
+\item $\approx$ প্রতিবিম্ব।
+\item $\approx$ প্রতিসম।
+\item $\approx$ পরিযায়ী।
+\item $t \approx t'$, $f$ একটি !!a{function}, এবং $t_1$, \dots,
+  $t_{i-1}$, $t_{i+1}$, \dots, $t_n$ বদ্ধ পদ হলে
+\[
+\Atom{f}{t_1,\dots, t_{i-1}, t, t_{i+1}, \dots, t_n} \approx
+\Atom{f}{t_1,\dots, t_{i-1}, t', t_{i+1}, \dots, t_n}.
+\]
+\item $t \approx t'$, $R$ একটি !!a{predicate}, এবং $t_1$, \dots,
+  $t_{i-1}$, $t_{i+1}$, \dots, $t_n$ বদ্ধ পদ হলে
+\begin{multline*}
+\Atom{R}{t_1,\dots, t_{i-1}, t, t_{i+1}, \dots, t_n} \in \Gamma^* \text{ যদি এবং কেবল যদি } \\
+\Atom{R}{t_1,\dots, t_{i-1}, t', t_{i+1}, \dots, t_n} \in \Gamma^*.
+\end{multline*}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+$\Gamma^*$ সঙ্গত ও !!{complete} বলে $\eq[t][t'] \in \Gamma^*$ যদি এবং
+কেবল যদি $\Gamma^* \Proves \eq[t][t']$। তাই নিচের কথাগুলি দেখালেই যথেষ্ট:
+\begin{enumerate}
+\item প্রতিটি বদ্ধ পদ~$t$-এর জন্য $\Gamma^* \Proves \eq[t][t]$।
+\item $\Gamma^* \Proves \eq[t][t']$ হলে $\Gamma^* \Proves \eq[t'][t]$।
+\item $\Gamma^* \Proves \eq[t][t']$ এবং $\Gamma^* \Proves
+  \eq[t'][t'']$ হলে $\Gamma^* \Proves \eq[t][t'']$।
+\item $\Gamma^* \Proves \eq[t][t']$ হলে
+\[
+\Gamma^* \Proves
+\eq[\Atom{f}{t_1,\dots,t_{i-1},t,t_{i+1},\dots,t_n}][\Atom{f}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}]
+\]
+প্রতিটি $n$-স্থানীয় !!{function}~$f$ এবং বদ্ধ পদ $t_1$, \dots,
+$t_{i-1}$, $t_{i+1}$, \dots,~$t_n$-এর জন্য।% BN-SRC-079 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-079):} হিমায়িত ইংরেজি প্রদর্শিত অপেক্ষক-পদটির প্রথম পাশে $t_{i+1}$-এর পরে দুটি কমা আছে। বাংলা লক্ষ্যে অনিচ্ছাকৃত অতিরিক্ত কমাটি বাদ দিয়ে দুই পাশের যুক্তি-অনুক্রম সমান্তরাল রাখা হয়েছে।} % BN-SRC-079 TARGET-CORRECTION-END
+\item $\Gamma^* \Proves \eq[t][t']$ এবং
+$\Gamma^* \Proves
+\Atom{R}{t_1,\dots,t_{i-1},t,t_{i+1},\dots,t_n}$ হলে
+$\Gamma^* \Proves \Atom{R}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}$,
+প্রতিটি $n$-স্থানীয় !!{predicate}~$R$ এবং বদ্ধ পদ $t_1$, \dots,
+$t_{i-1}$, $t_{i+1}$, \dots,~$t_n$-এর জন্য।
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+\olref[fol][com][ide]{prop:approx-equiv}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{defn}
+ধরা যাক $\Gamma^*$ কোনো ভাষা~$\Lang L$-এর একটি সঙ্গত ও !!{complete}
+সেট, $t$ একটি বদ্ধ পদ, এবং $\approx$ আগের সংজ্ঞার মতো। তাহলে:
+\[
+\equivrep{t}{\approx} = \Setabs{t'}{t'\in \Trm[L], t \approx t'}
+\]
+এবং $\equivclass{\Trm[L]}{\approx} = \Setabs{\equivrep{t}{\approx}}{t \in \Trm[L]}$।
+\end{defn}
+
+\begin{defn}
+\ollabel{defn:term-model-factor}
+\olref[mod]{defn:termmodel} থেকে~$\Gamma^*$-র পদ-মডেলকে $\Struct M =
+\Struct M(\Gamma^*)$ ধরি। তাহলে $\Struct{\equivclass{M}{\approx}}$ হলো
+নিচের !!{structure}:
+\begin{enumerate}
+\item $\Domain{\equivclass{M}{\approx}} = \equivclass{\Trm[L]}{\approx}$।
+\item $\Assign{c}{\equivclass{M}{\approx}} = \equivrep{c}{\approx}$
+\item $\Assign{f}{\equivclass{M}{\approx}}(\equivrep{t_1}{\approx}, \dots,
+  \equivrep{t_n}{\approx}) = \equivrep{\Atom{f}{t_1,\dots, t_n}}{\approx}$
+\item $\tuple{\equivrep{t_1}{\approx}, \dots, \equivrep{t_n}{\approx}} \in
+  \Assign{R}{\equivclass{M}{\approx}}$ যদি এবং কেবল যদি
+  $\Sat{M}{\Atom{R}{t_1,\dots, t_n}}$; অর্থাৎ, যদি এবং কেবল যদি
+  $\Atom{R}{t_1,\dots, t_n} \in \Gamma^*$।
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+লক্ষ করো, $\equivclass{\Trm[L]}{\approx}$-এর উপাদানগুলিকে
+$\equivrep{t}{\approx}$ হিসেবে উল্লেখ করে—অর্থাৎ
+\emph{প্রতিনিধি}~$t \in \equivrep{t}{\approx}$-এর মাধ্যমে—আমরা
+$\Assign{f}{\equivclass{M}{\approx}}$ ও
+$\Assign{R}{\equivclass{M}{\approx}}$ সংজ্ঞায়িত করেছি। নিশ্চিত করতে হবে
+যে সংজ্ঞাগুলি এই প্রতিনিধিদের নির্বাচনের ওপর নির্ভর করে না; অর্থাৎ একই
+তুল্যতা শ্রেণী নির্ধারণকারী অন্য কোনো নির্বাচন~$t'$-এর ক্ষেত্রে
+($\equivrep{t}{\approx} = \equivrep{t'}{\approx}$) সংজ্ঞাগুলি একই ফল
+দেয়। যেমন, $R$ একটি এক-স্থানীয় !!{predicate} হলে সংজ্ঞার শেষ দফা বলে
+$\equivrep{t}{\approx} \in \Assign{R}{\equivclass{M}{\approx}}$ যদি এবং
+কেবল যদি $\Sat{M}{\Atom{R}{t}}$। $t \approx t'$ এমন অন্য কোনো পদ~$t'$-এর
+জন্য যদি $\Sat/{M}{\Atom{R}{t'}}$ হয়, তবে সংজ্ঞাটি দাবি করত
+$\equivrep{t'}{\approx} \notin \Assign{R}{\equivclass{M}{\approx}}$।
+$t \approx t'$ হলে $\equivrep{t}{\approx} =
+\equivrep{t'}{\approx}$; কিন্তু একই সঙ্গে $\equivrep{t}{\approx} \in
+\Assign{R}{\equivclass{M}{\approx}}$ ও $\equivrep{t}{\approx} \notin
+\Assign{R}{\equivclass{M}{\approx}}$ হতে পারে না। তবে
+\olref{prop:approx-equiv} নিশ্চিত করে যে এমনটি ঘটতে পারে না।% BN-SRC-080 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-080):} হিমায়িত ইংরেজি প্রতিনিধি-স্বাধীনতার উদাহরণে “অন্য পদ~$t'$” প্রবর্তন করেও মিথ্যা হওয়া পরমাণু বাক্যে আবার $R(t)$ লেখে। নির্বাচনের ওপর নির্ভরতার সম্ভাব্য বিরোধটি তুলনা করতে সেখানে $R(t')$ আবশ্যক; বাংলা লক্ষ্যে সেই প্রতিনিধিটি পুনঃস্থাপন করা হয়েছে।} % BN-SRC-080 TARGET-CORRECTION-END
+\end{explain}
+
+\begin{prop}
+$\Struct{\equivclass{M}{\approx}}$ সুসংজ্ঞায়িত। অর্থাৎ $t_1$,
+  \dots, $t_n$, $t_1'$, \dots, $t_n'$ বদ্ধ পদ এবং প্রতিটি সূচকের জন্য
+  $t_i \approx t_i'$ হলে
+\begin{enumerate}
+\item $\equivrep{\Atom{f}{t_1,\dots, t_n}}{\approx} =
+    \equivrep{\Atom{f}{t_1',\dots, t_n'}}{\approx}$; অর্থাৎ,
+  \[
+  \Atom{f}{t_1,\dots, t_n} \approx \Atom{f}{t_1',\dots, t_n'}
+  \]
+  এবং
+\item $\Sat{M}{\Atom{R}{t_1,\dots, t_n}}$ যদি এবং কেবল যদি
+  $\Sat{M}{\Atom{R}{t_1',\dots, t_n'}}$; অর্থাৎ,
+  \[
+    \Atom{R}{t_1,\dots, t_n} \in \Gamma^* \text{ যদি এবং কেবল যদি }
+    \Atom{R}{t_1',\dots, t_n'} \in \Gamma^*.
+  \]
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+$n$-এর ওপর আরোহের সাহায্যে \olref{prop:approx-equiv} থেকে অনুসৃত হয়।
+\end{proof}
+
+পদ-মডেলের ক্ষেত্রের মতোই, সত্যতা-সহায়ক উপপাদ্য প্রমাণের আগে নিচের
+সহায়ক উপপাদ্যটি দরকার।
+
+\begin{lem}
+\ollabel{lem:val-in-termmodel-factored} $\Struct M = \Struct M
+ (\Gamma^*)$ হলে প্রতিটি বদ্ধ পদের জন্য
+$\Value{t}{\equivclass{M}{\approx}} = \equivrep{t}{\approx}$।% BN-SRC-081 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-স্পষ্টীকরণ (BN-SRC-081):} হিমায়িত ইংরেজি ভাগফল-পদ-মডেলের মান-সহায়ক উপপাদ্যে $t$-কে অবাধ রাখা হয়েছে, অথচ চল-মূল্যায়ন ছাড়া প্রদত্ত মানায়ন এবং সংশ্লিষ্ট \olref[mod]{lem:val-in-termmodel} কেবল বদ্ধ পদের জন্য। বাংলা লক্ষ্যে সিদ্ধান্তে সেই পরিসর স্পষ্ট করা হয়েছে।} % BN-SRC-081 TARGET-CORRECTION-END
+\end{lem}
+\begin{proof}
+প্রমাণটি \olref[mod]{lem:val-in-termmodel}-এর প্রমাণের অনুরূপ।
+\end{proof}
+
+\begin{prob}
+\olref[fol][com][ide]{lem:val-in-termmodel-factored}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{lem}
+\ollabel{lem:truth}
+সব বাক্য~$!A$-এর জন্য $\Sat{\equivclass{M}{\approx}}{!A}$ যদি এবং কেবল
+যদি $!A \in \Gamma^*$।
+\end{lem}
+
+\begin{proof}
+\olref[mod]{lem:truth}-এর প্রমাণের মতোই, $!A$-এর ওপর আরোহের সাহায্যে।
+শুধু $!A \ident \eq[t][t']$ ক্ষেত্রটির জন্য অতিরিক্ত মনোযোগ দরকার।
+\begin{align*}
+\Sat{\equivclass{M}{\approx}}{\eq[t][t']} & \text{ যদি এবং কেবল যদি } \equivrep{t}{\approx} = \equivrep{t'}{\approx}
+\text{ ($\Struct{\equivclass{M}{\approx}}$-এর সংজ্ঞা অনুসারে)}\\
+& \text{ যদি এবং কেবল যদি } t \approx t' \text{ ($\equivrep{t}{\approx}$-এর সংজ্ঞা অনুসারে)}\\
+& \text{ যদি এবং কেবল যদি } \eq[t][t'] \in \Gamma^* \text{ ($\approx$-এর সংজ্ঞা অনুসারে)।}
+\end{align*}
+\end{proof}
+
+\begin{digress}
+লক্ষ করো, $\Struct{M(\Gamma^*)}$ সব সময় !!{enumerable} ও অসীম হলেও
+$\Struct{\equivclass{M}{\approx}}$ সসীম হতে পারে; কারণ
+$\equivrep{t}{\approx}$ শ্রেণী কেবল সসীমসংখ্যকও হতে পারে। এমনটিই
+প্রত্যাশিত, কারণ~$\Gamma$-তে এমন !!{sentence}s থাকতে পারে যেগুলি দাবি
+করে যে তাদের সত্যকারী যেকোনো !!{structure} সসীম। যেমন,
+$\lforall[x][\lforall[y][x = y]]$ একটি সঙ্গত !!{sentence}, কিন্তু সেটি
+শুধু ঠিক একটি !!{element}-বিশিষ্ট !!a{domain}-এর !!{structure}s-তেই
+পরিতৃপ্ত হয়।
+\end{digress}
+
+\end{document}

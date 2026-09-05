@@ -1,0 +1,286 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: construction-of-model
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{mod}}
+      {\olfileid{pl}{com}{mod}}
+
+\olsection{একটি মডেলের নির্মাণ}
+
+\begin{explain}
+\iftag{FOL}{এখন আমরা~$\eq$ নিয়ে ভাবছি না; অর্থাৎ শুধু দেখাতে চাই যে
+  $\eq$-বিহীন !!{sentence}s-এর কোনো সঙ্গত সেট~$\Gamma$ পরিতৃপ্তিযোগ্য।
+  প্রথমে~$\Gamma$-কে একটি সঙ্গত, !!{complete} ও সম্পৃক্ত
+  সেট~$\Gamma^*$-তে প্রসারিত করি। এক্ষেত্রে মডেল~$\Struct{M(\Gamma^*)}$-এর
+  সংজ্ঞা সরল: $\Lang{L'}$-এর বদ্ধ পদগুলির সেটকে সংজ্ঞাক্ষেত্র নিই। প্রতিটি
+  !!{constant}-কে নিজেকেই দিই, এবং আরও সাধারণভাবে নিশ্চিত করি যে প্রতিটি
+  বদ্ধ পদ~$t$-এর জন্য $\Value{t}{M(\Gamma^*)} = t$।
+  !!{predicate}s-কে এমনভাবে বিস্তার দিই যাতে কোনো পরমাণু !!{sentence},
+  $\Struct{M(\Gamma^*)}$-তে সত্য হয় যদি এবং কেবল যদি সেটি~$\Gamma^*$-তে
+  থাকে। এতে স্পষ্টতই~$\Gamma^*$-র সব পরমাণু !!{sentence}s,
+  $\Struct{M(\Gamma^*)}$-তে সত্য হবে। যে~$\Gamma^*$ দিয়ে শুরু করি সেটি
+  সঙ্গত, পূর্ণ ও সম্পৃক্ত হলে অবশিষ্ট বাক্যগুলিও সত্য হবে।}{এবার
+  এমন একটি !!a{valuation} সংজ্ঞায়িত করার জন্য আমরা প্রস্তুত, যা প্রতিটি
+  $!A \in \Gamma$-কে সত্য করে। এজন্য প্রথমে লিন্ডেনবাউমের সহায়ক উপপাদ্য
+  প্রয়োগ করি: একটি পূর্ণ সঙ্গত $\Gamma^* \supseteq \Gamma$ পাই।
+  $\Gamma^*$-র !!{propositional variable}s দিয়ে~$\pAssign
+  v(\Gamma^*)$ নির্ধারণ করি।}
+\end{explain}
+
+\iftag{FOL}{%
+\begin{defn}[পদ-মডেল]
+\ollabel{defn:termmodel}
+ধরা যাক কোনো ভাষা~$\Lang L$-এর !!{sentence}s-এর সেট $\Gamma^*$
+!!a{complete}, সঙ্গত ও সম্পৃক্ত। $\Gamma^*$-র \emph{পদ-মডেল}~$\Struct
+M(\Gamma^*)$ নিচের মতো সংজ্ঞায়িত !!{structure}:
+\begin{enumerate}
+\item !!{domain}~$\Domain{M(\Gamma^*)}$ হলো~$\Lang L$-এর সব বদ্ধ পদের
+  সেট।
+\item কোনো !!a{constant}~$c$-এর ব্যাখ্যা নিজেই $c$:
+  $\Assign{c}{M(\Gamma^*)} = c$।
+\item !!{function}~$f$-কে এমন অপেক্ষকটি দেওয়া হয়, যা যুক্তি হিসেবে
+  বদ্ধ পদ $t_1$, \dots, $t_n$ পেলে বদ্ধ পদ $f(t_1, \dots, t_n)$-কে মান
+  হিসেবে দেয়:
+\[
+\Assign{f}{M(\Gamma^*)}(t_1, \dots, t_n) = f(t_1,\dots, t_n)
+\]
+\item $R$ একটি $n$-স্থানীয় !!{predicate} হলে
+  \[
+  \tuple{t_1, \dots,
+  t_n} \in \Assign{R}{M(\Gamma^*)} \text{ যদি এবং কেবল যদি } \Atom{R}{t_1, \dots,
+    t_n} \in \Gamma^*.
+  \]
+\end{enumerate}
+\end{defn}
+}{%
+\begin{defn}
+\ollabel{defn:termmodel}
+ধরা যাক $\Gamma^*$ হলো !!{formula}s-এর একটি পূর্ণ সঙ্গত সেট। তখন রাখি
+\[
+\pAssign v(\Gamma^*)(p) = \begin{cases}
+  \True & \text{$p \in \Gamma^*$ হলে}\\
+  \False & \text{$p \notin \Gamma^*$ হলে}
+  \end{cases}
+\]
+\end{defn}
+}
+
+\iftag{FOL}{%
+এবার যাচাই করব যে সত্যিই $\Value{t}{M(\Gamma^*)} = t$।
+
+\begin{lem}
+\ollabel{lem:val-in-termmodel} $\Struct M(\Gamma^*)$-কে
+\olref{defn:termmodel}-এর পদ-মডেল ধরি। তাহলে প্রতিটি বদ্ধ পদের জন্য
+$\Value{t}{M(\Gamma^*)} = t$।% BN-SRC-076 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-স্পষ্টীকরণ (BN-SRC-076):} হিমায়িত ইংরেজি সহায়ক উপপাদ্যের সিদ্ধান্তে $t$-কে অবাধ রাখা হয়েছে, যদিও পদ-মডেলের এই মানায়নটি চল-মূল্যায়ন ছাড়া কেবল বদ্ধ পদের জন্য সংজ্ঞায়িত এবং প্রমাণের ভিত্তি ও আরোহী ধাপ উভয়েই বদ্ধ পদ বলা হয়েছে। বাংলা লক্ষ্যে সিদ্ধান্তেও বদ্ধ-পদ পরিসরটি স্পষ্ট করা হয়েছে।} % BN-SRC-076 TARGET-CORRECTION-END
+\end{lem}
+\begin{proof}
+ $t$-এর ওপর আরোহের সাহায্যে প্রমাণ করি। $t$ একটি !!a{constant} হলে
+ ভিত্তিটি পদ-মডেলের সংজ্ঞা থেকে সরাসরি অনুসৃত হয়। আরোহী ধাপের জন্য ধরা
+ যাক $t_1, \ldots, t_n$ এমন বদ্ধ পদ যাতে
+ $\Value{t_i}{M(\Gamma^*)} = t_i$, এবং $f$ একটি $n$-স্থানীয়
+ !!{function}। তাহলে
+\begin{align*}
+\Value{f(t_1,\ldots,t_n)}{M(\Gamma^*)} &= \Assign{f}{M(\Gamma^*)}(\Value{t_1}
+ {M(\Gamma^*)},
+\ldots, \Value{t_n}{M(\Gamma^*)}) \\
+&= \Assign{f}{M(\Gamma^*)}(t_1, \dots, t_n) \\
+&= f(t_1,\dots, t_n),
+\end{align*}
+তাই আরোহ অনুসারে প্রতিটি বদ্ধ পদ~$t$-এর জন্য কথাটি সত্য।
+\end{proof}
+}
+
+\iftag{FOL}{%
+\begin{explain}
+  \iftag{prvEx}{কোনো !!^a{structure}~$\Struct{M}$ একটি অস্তিত্বমূলকভাবে
+    পরিমাণিত !!{sentence}~$\lexists[x][!A(x)]$-কে সত্য করতে পারে, যদিও
+    সেটি সত্য করে এমন কোনো নিদর্শন~$!A(t)$ না-ও থাকতে পারে।}{}
+  \iftag{prvAll}{কোনো !!^a{structure}~$\Struct{M}$ সার্বিকভাবে পরিমাণিত
+    !!{sentence}~$\lforall[x][!A(x)]$-এর সব নিদর্শন~$!A(t)$-কে সত্য করতে
+    পারে, কিন্তু~$\lforall[x][!A(x)]$-কে সত্য না-ও করতে পারে।}{} কারণ
+  সাধারণভাবে~$\Domain{M}$-এর প্রতিটি !!{element} কোনো বদ্ধ পদের মান নয়
+  ($\Struct{M}$ আচ্ছাদিত না-ও হতে পারে)। এই কারণেই পরিতৃপ্তি-সম্পর্ককে
+  চল-মূল্যায়নের সাহায্যে সংজ্ঞায়িত করা হয়। কিন্তু আমাদের
+  পদ-মডেল~$\Struct{M(\Gamma^*)}$-এর ক্ষেত্রে তার দরকার হতো না—কারণ সেটি
+  আচ্ছাদিত। পরের ফলটি ঠিক এই কথাই বলে।
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:quant-termmodel}
+$\Struct M(\Gamma^*)$-কে \olref{defn:termmodel}-এর পদ-মডেল ধরি।
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\Sat{M(\Gamma^*)}{\lexists[x][!A(x)]}$ যদি এবং কেবল
+  যদি অন্তত একটি বদ্ধ পদ~$t$-এর জন্য $\Sat{M(\Gamma^*)}{!A(t)}$।}{}
+\tagitem{prvAll}{$\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ যদি এবং কেবল
+  যদি সব বদ্ধ পদ~$t$-এর জন্য $\Sat{M(\Gamma^*)}{!A(t)}$।}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{%
+  \iftag{probEx}{অনুশীলনী।}{\olref[syn][ass]{prop:sat-quant} অনুসারে
+    $\Sat{M(\Gamma^*)}{\lexists[x][!A(x)]}$ যদি এবং কেবল যদি অন্তত একটি
+    চল-মূল্যায়ন~$s$-এর জন্য $\Sat{M(\Gamma^*)}{!A(x)}[s]$। যেহেতু
+    $\Domain{M(\Gamma^*)}$, $\Lang{L}$-এর বদ্ধ পদগুলি নিয়ে গঠিত, তাই
+    এটি সত্য যদি এবং কেবল যদি অন্তত একটি বদ্ধ পদ~$t$ আছে যাতে $s(x) = t$
+    এবং $\Sat{M(\Gamma^*)}{!A(x)}[s]$।
+    \olref[fol][syn][ext]{prop:ext-formulas} অনুসারে, $s(x) = t$ হলে
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$ যদি এবং কেবল যদি
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$। \olref[fol][syn][ass]{prop:sentence-sat-true}
+    অনুসারে $\Sat{M(\Gamma^*)}{!A(t)}[s]$ যদি এবং কেবল যদি
+    $\Sat{M(\Gamma^*)}{!A(t)}$, কারণ $!A(t)$ একটি বাক্য।}}{}
+\tagitem{prvAll}{%
+  \iftag{probAll}{অনুশীলনী।}{\olref[syn][ass]{prop:sat-quant} অনুসারে
+    $\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ যদি এবং কেবল যদি প্রতিটি
+    চল-মূল্যায়ন~$s$-এর জন্য $\Sat{M(\Gamma^*)}{!A(x)}[s]$। মনে রাখি,
+    $\Domain{M(\Gamma^*)}$, $\Lang{L}$-এর বদ্ধ পদগুলি নিয়ে গঠিত। তাই
+    প্রতিটি বদ্ধ পদ~$t$-এর জন্য $s(x) = t$ এমন একটি চল-মূল্যায়ন, এবং
+    যেকোনো চল-মূল্যায়নের ক্ষেত্রে $s(x)$ কোনো বদ্ধ পদ~$t$।
+    \olref[fol][syn][ext]{prop:ext-formulas} অনুসারে, $s(x) = t$ হলে
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$ যদি এবং কেবল যদি
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$। \olref[fol][syn][ass]{prop:sentence-sat-true}
+    অনুসারে $\Sat{M(\Gamma^*)}{!A(t)}[s]$ যদি এবং কেবল যদি
+    $\Sat{M(\Gamma^*)}{!A(t)}$, কারণ $!A(t)$ একটি বাক্য।}}{}
+\end{tagenumerate}
+\end{proof}
+}{}
+
+\tagprob[FOL]{probEx,probAll}
+\begin{prob}
+\olref[fol][com][mod]{prop:quant-termmodel}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\begin{lem}[সত্যতা-সহায়ক উপপাদ্য]
+\ollabel{lem:truth} \iftag{FOL}{ধরা যাক $!A$-তে~$\eq$ নেই। তাহলে}{}
+$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ যদি এবং কেবল
+যদি $!A \in \Gamma^*$।
+\end{lem}
+
+\begin{proof}
+দুই অভিমুখ একই সঙ্গে, $!A$-এর ওপর আরোহের সাহায্যে প্রমাণ করি।
+\begin{enumerate}
+\tagitem{prvFalse}{\indcase{!A}{\lfalse}
+  {পরিতৃপ্তির সংজ্ঞা অনুসারে
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}{\lfalse}}{\pSat/{v(\Gamma^*)}{\lfalse}}$।
+    অন্যদিকে, $\Gamma^*$ সঙ্গত বলে $\lfalse \notin \Gamma^*$।}}{}
+
+\tagitem{prvTrue}{\indcase{!A}{\ltrue}
+  {পরিতৃপ্তির সংজ্ঞা অনুসারে
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\ltrue}$।
+    অন্যদিকে, $\Gamma^*$ সঙ্গত ও !!{complete} এবং $\Gamma^* \Proves
+    \ltrue$ বলে $\ltrue \in \Gamma^*$।}}{}
+
+\tagitem{FOL}{\indcase{!A}{R(t_1, \dots, t_n)}
+  {$\Sat{M(\Gamma^*)}{\Atom{R}{t_1, \dots, t_n}}$ যদি এবং কেবল যদি
+    $\tuple{t_1, \dots, t_n} \in \Assign{R}{M(\Gamma^*)}$ (পরিতৃপ্তির
+    সংজ্ঞা অনুসারে), যদি এবং কেবল যদি $R(t_1, \dots, t_n) \in
+    \Gamma^*$ ($\Struct M(\Gamma^*)$-র নির্মাণ অনুসারে)।}}{\indcase{!A}{p}
+    {$\pSat{v(\Gamma^*)}{p}$ যদি এবং কেবল যদি
+    $\pAssign v(\Gamma^*)(p) = \True$ (পরিতৃপ্তির সংজ্ঞা অনুসারে), যদি
+    এবং কেবল যদি $p \in \Gamma^*$ ($\pAssign v(\Gamma^*)$-র নির্মাণ
+    অনুসারে)।}}
+
+\tagitem{prvNot}{%
+  \indcase{!A}{\lnot !B}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$ যদি
+    এবং কেবল যদি
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}{!B}}{\pSat/{v(\Gamma^*)}{!B}}$
+    (পরিতৃপ্তির সংজ্ঞা অনুসারে)। আরোহী পূর্বধারণা অনুসারে
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}{!B}}{\pSat/{v(\Gamma^*)}{!B}}$ যদি
+    এবং কেবল যদি $!B \notin \Gamma^*$। $\Gamma^*$ সঙ্গত ও !!{complete}
+    বলে $!B \notin \Gamma^*$ যদি এবং কেবল যদি $\lnot !B \in
+    \Gamma^*$।}}{}
+
+\tagitem{prvAnd}{%
+\iftag{probAnd}{%
+  \indcase!{!A}{!B \land !C}{}}{%
+  \indcase{!A}{!B \land
+    !C}{$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$
+    যদি এবং কেবল যদি
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!B}$ এবং
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$ উভয়ই
+    সত্য (পরিতৃপ্তির সংজ্ঞা অনুসারে), যদি এবং কেবল যদি $!B \in
+    \Gamma^*$ এবং $!C \in \Gamma^*$ উভয়ই সত্য (আরোহী পূর্বধারণা
+    অনুসারে)। \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-and} অনুসারে এটি
+    সত্য যদি এবং কেবল যদি $(!B \land !C) \in \Gamma^*$।}}}{}
+
+\tagitem{prvOr}{%
+\iftag{probOr}{%
+  \indcase!{!A}{!B \lor !C}{}}{%
+  \indcase{!A}{!B \lor !C}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$
+    যদি এবং কেবল যদি
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!B}$ অথবা
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$
+    (পরিতৃপ্তির সংজ্ঞা অনুসারে), যদি এবং কেবল যদি $!B \in \Gamma^*$
+    অথবা $!C \in \Gamma^*$ (আরোহী পূর্বধারণা অনুসারে)।
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-or} অনুসারে এটি সত্য যদি এবং
+    কেবল যদি $(!B \lor !C) \in \Gamma^*$।}}}{}
+
+\tagitem{prvIf}{%
+\iftag{probIf}{%
+  \indcase!{!A}{!B \lif !C}{}}{%
+  \indcase{!A}{!B \lif !C}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$
+    যদি এবং কেবল যদি
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}}{\pSat/{v(\Gamma^*)}}{!B}$ অথবা
+    $\iftag{FOL}{\Sat{M (\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$
+    (পরিতৃপ্তির সংজ্ঞা অনুসারে), যদি এবং কেবল যদি $!B \notin
+    \Gamma^*$ অথবা $!C \in \Gamma^*$ (আরোহী পূর্বধারণা অনুসারে)।
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-if} অনুসারে এটি সত্য যদি
+    এবং কেবল যদি $(!B \lif !C) \in \Gamma^*$।}}}{}
+
+\iftag{FOL}{%
+\tagitem{prvAll}{%
+  \iftag{probAll}{%
+    \indcase!{!A}{\lforall[x][!B(x)]}{}}{%
+    \indcase{!A}{\lforall[x][!B(x)]}{$\Sat{M(\Gamma^*)}{\indfrm}$ যদি
+      এবং কেবল যদি সব বদ্ধ পদ~$t$-এর জন্য
+      $\Sat{M(\Gamma^*)}{!B(t)}$ (\olref{prop:quant-termmodel})। আরোহী
+      পূর্বধারণা অনুসারে এটি সত্য যদি এবং কেবল যদি সব বদ্ধ পদ~$t$-এর
+      জন্য $!B(t) \in \Gamma^*$; আর \olref[hen]{prop:saturated-instances}
+      অনুসারে এটি সত্য যদি এবং কেবল যদি $\lforall[x][!B(x)] \in
+      \Gamma^*$।}}}{}
+
+\tagitem{prvEx}{%
+  \iftag{probEx}{%
+    \indcase!{!A}{\lexists[x][!B(x)]}{}}{%
+    \indcase{!A}{\lexists[x][!B(x)]}{$\Sat{M(\Gamma^*)}{\indfrm}$ যদি
+      এবং কেবল যদি অন্তত একটি বদ্ধ পদ~$t$-এর জন্য
+      $\Sat{M(\Gamma^*)}{!B(t)}$ (\olref{prop:quant-termmodel})। আরোহী
+      পূর্বধারণা অনুসারে এটি সত্য যদি এবং কেবল যদি অন্তত একটি বদ্ধ
+      পদ~$t$-এর জন্য $!B(t) \in \Gamma^*$।
+      \olref[hen]{prop:saturated-instances} অনুসারে এটি সত্য যদি এবং কেবল
+      যদি $\lexists[x][!B(x)] \in \Gamma^*$।}}}{}% BN-SRC-077 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-স্পষ্টীকরণ (BN-SRC-077):} হিমায়িত ইংরেজি সত্যতা-সহায়ক উপপাদ্যের পরিমাণসূচক-ক্ষেত্রগুলি “সব পদ” ও “কোনো পদ” বলে, কিন্তু যে \olref{prop:quant-termmodel} এবং \olref[hen]{prop:saturated-instances} ব্যবহার করা হয়েছে উভয়ই বদ্ধ পদের ওপর পরিমাণায়িত। বাংলা পাঠে দুই ক্ষেত্রেই সেই বদ্ধ-পদ পরিসর রাখা হয়েছে।} % BN-SRC-077 TARGET-CORRECTION-END% BN-SRC-078 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-078):} হিমায়িত ইংরেজি সার্বিক-পরিমাণসূচক ক্ষেত্রে আরোহী সূত্রকে $\lforall[x][!B(x)]$ ধরেও শেষ সদস্যতা-দাবিতে ভুল করে $\lforall[x][!A(x)]$ লেখে। বাংলা লক্ষ্যে সর্বত্র সংশ্লিষ্ট উপসূত্র~$!B(x)$ রাখা হয়েছে।} % BN-SRC-078 TARGET-CORRECTION-END
+}{}
+\end{enumerate}
+\end{proof}
+
+
+\tagprob[FOL]{probOr,probAnd,probIf,probEx,probAll}
+
+\begin{prob}
+\olref[fol][com][mod]{lem:truth}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\tagendprob
+
+\tagprob[notFOL]{probOr,probAnd,probIf}
+
+\begin{prob}
+\olref[pl][com][mod]{lem:truth}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\tagendprob
+
+\end{document}

@@ -589,6 +589,107 @@ for row in rows:
     axd_prose_fix = bool(axd_prose_ids) and all(
         finding_id in documented for finding_id in axd_prose_ids
     )
+    completeness_source = source
+    completeness_math_ids = []
+    if row["unit_id"] == "OLP-0130":
+        old = "\\lforall[x_n][\\lnot !A_n]$ is defined as"
+        assert completeness_source.count(old) == 1
+        completeness_source = completeness_source.replace(
+            old, "\\lforall[x_n][\\lnot !A_n(x_n)]$ is defined as", 1
+        )
+        completeness_math_ids = ["BN-SRC-073"]
+    elif row["unit_id"] == "OLP-0132":
+        old = "\\lforall[x][!A(x)] \\in \\Gamma^*"
+        assert completeness_source.count(old) == 1
+        completeness_source = completeness_source.replace(
+            old, "\\lforall[x][!B(x)] \\in \\Gamma^*", 1
+        )
+        completeness_math_ids = ["BN-SRC-078"]
+    elif row["unit_id"] == "OLP-0133":
+        old = (
+            "\\eq[\\Atom{f}{t_1,\\dots,t_{i-1},t,t_{i+1},,\\dots,t_n}]"
+            "[\\Atom{f}{t_1,\\dots,t_{i-1},t',t_{i+1},\\dots,t_n}]"
+        )
+        assert completeness_source.count(old) == 1
+        completeness_source = completeness_source.replace(
+            old, old.replace("t_{i+1},,\\dots", "t_{i+1},\\dots"), 1
+        )
+        old = "\\Sat/{M}{\\Atom{R}{t}}"
+        assert completeness_source.count(old) == 1
+        completeness_source = completeness_source.replace(
+            old, "\\Sat/{M}{\\Atom{R}{t'}}", 1
+        )
+        completeness_math_ids = ["BN-SRC-079", "BN-SRC-080"]
+    completeness_math_fix = (
+        bool(completeness_math_ids)
+        and mathparts(completeness_source) == target_math
+        and all(finding_id in documented for finding_id in completeness_math_ids)
+    )
+    completeness_control_fix = False
+    if row["unit_id"] == "OLP-0130":
+        old = "{}\\iftag{defAll,defEx}{}{ and }\\iftag{prvAll}{it contains an"
+        assert source.count(old) == 1
+        assert checked_target.count(
+            "{}\\iftag{defAll,defEx}{}{ এবং\n"
+            "  }\\iftag{prvEx}{সেটটিতে কোনো অস্তিত্বমূলকভাবে"
+        ) == 1
+        completeness_control_fix = "BN-SRC-074" in documented
+    completeness_prose_ids = []
+    if row["unit_id"] == "OLP-0131":
+        assert source.count("Let $n$ be the largest of these.") == 1
+        assert re.search(
+            r"এই সসীম সেটটি ফাঁকা হলে সেটি মূল সঙ্গত\s+"
+            r"সেটের উপসেট, তাই সঙ্গত.*?নইলে.*?বৃহত্তমটিকে \$n\$ ধরি",
+            checked_target,
+            re.S,
+        ) is not None
+        completeness_prose_ids = ["BN-SRC-075"]
+    elif row["unit_id"] == "OLP-0132":
+        assert source.count("then $\\Value{t}{M(\\Gamma^*)} = t$.") == 1
+        assert re.search(
+            r"তাহলে প্রতিটি বদ্ধ পদের জন্য\s+"
+            r"\$\\Value\{t\}\{M\(\\Gamma\^\*\)\} = t\$",
+            checked_target,
+        ) is not None
+        assert source.count("for all terms~$t$") == 2
+        assert source.count("for at least one term~$t$") == 2
+        assert re.search(
+            r"\\indcase\{!A\}\{\\lforall\[x\]\[!B\(x\)\]\}.*?"
+            r"সব বদ্ধ পদ~\$t\$-এর জন্য.*?সব বদ্ধ পদ~\$t\$-এর\s+জন্য",
+            checked_target,
+            re.S,
+        ) is not None
+        assert re.search(
+            r"\\indcase\{!A\}\{\\lexists\[x\]\[!B\(x\)\]\}.*?"
+            r"অন্তত একটি বদ্ধ পদ~\$t\$-এর জন্য.*?অন্তত একটি বদ্ধ\s+"
+            r"পদ~\$t\$-এর জন্য",
+            checked_target,
+            re.S,
+        ) is not None
+        completeness_prose_ids = ["BN-SRC-076", "BN-SRC-077"]
+    elif row["unit_id"] == "OLP-0133":
+        assert source.count(
+            "then $\\Value{t}{\\equivclass{M}{\\approx}} = \\equivrep{t}"
+        ) == 1
+        assert re.search(
+            r"হলে প্রতিটি বদ্ধ পদের জন্য\s+"
+            r"\$\\Value\{t\}\{\\equivclass\{M\}\{\\approx\}\}",
+            checked_target,
+        ) is not None
+        completeness_prose_ids = ["BN-SRC-081"]
+    elif row["unit_id"] == "OLP-0135":
+        assert source.count(
+            "Let $n$ be the largest number such that $!A_{\\ge n}"
+        ) == 1
+        assert re.search(
+            r"প্রথম উপসেট-অংশটি ফাঁকা হলে~\$n\$-কে ১, আর নইলে\s+"
+            r"\$!A_\{\\ge n\} \\in \\Delta\'\$ হয় এমন বৃহত্তম সংখ্যা ধরি",
+            checked_target,
+        ) is not None
+        completeness_prose_ids = ["BN-SRC-082"]
+    completeness_prose_fix = bool(completeness_prose_ids) and all(
+        finding_id in documented for finding_id in completeness_prose_ids
+    )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -600,6 +701,15 @@ for row in rows:
             "OLP-0125": {"BN-SRC-066"},
         }
         assert set(documented) == expected_axd.get(row["unit_id"], set())
+    if 126 <= int(row["unit_id"].split("-")[1]) <= 137:
+        expected_completeness = {
+            "OLP-0130": {"BN-SRC-073", "BN-SRC-074"},
+            "OLP-0131": {"BN-SRC-075"},
+            "OLP-0132": {"BN-SRC-076", "BN-SRC-077", "BN-SRC-078"},
+            "OLP-0133": {"BN-SRC-079", "BN-SRC-080", "BN-SRC-081"},
+            "OLP-0135": {"BN-SRC-082"},
+        }
+        assert set(documented) == expected_completeness.get(row["unit_id"], set())
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -790,6 +900,40 @@ for row in rows:
             "documented_correction": "BN-SRC-066",
             "identity_axiom_scope": "closed terms",
         }
+    elif row["unit_id"] == "OLP-0130":
+        assert completeness_math_fix and completeness_control_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-073", "BN-SRC-074"],
+            "formula_argument_restored": "x_n",
+            "existential_configuration_tag": "prvEx",
+        }
+    elif row["unit_id"] == "OLP-0131":
+        assert completeness_prose_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-075",
+            "empty_finite_subset_handled_before_maximum": True,
+        }
+    elif row["unit_id"] == "OLP-0132":
+        assert completeness_math_fix and completeness_prose_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-076", "BN-SRC-077", "BN-SRC-078"],
+            "term_scope": "closed terms",
+            "universal_truth_lemma_metavariable": "B",
+        }
+    elif row["unit_id"] == "OLP-0133":
+        assert completeness_math_fix and completeness_prose_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-079", "BN-SRC-080", "BN-SRC-081"],
+            "duplicate_argument_comma_removed": True,
+            "alternative_representative": "t'",
+            "term_scope": "closed terms",
+        }
+    elif row["unit_id"] == "OLP-0135":
+        assert completeness_prose_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-082",
+            "empty_delta_subfamily_index": 1,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -843,10 +987,15 @@ for row in rows:
             tableau_identity_substitution_fix,
             tableau_identity_truth_sign_fix,
             axd_math_fix,
+            completeness_math_fix,
             shared_audit_fix,
         )
     )
-    controls_ok = controls(source) == controls(checked_target) or axd_control_fix
+    controls_ok = (
+        controls(source) == controls(checked_target)
+        or axd_control_fix
+        or completeness_control_fix
+    )
     checks = {
         "unit_id": row["unit_id"],
         "source_blocks": len(source_blocks),

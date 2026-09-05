@@ -1,0 +1,121 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: completeness-theorem
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{cth}}
+      {\olfileid{pl}{com}{cth}}
+
+\olsection{পূর্ণতা উপপাদ্য}
+
+\begin{explain}
+আমাদের ফলগুলি একত্র করি: তাতে পূর্ণতা উপপাদ্যে পৌঁছাই।
+\end{explain}
+
+\begin{thm}[পূর্ণতা উপপাদ্য]
+\ollabel{thm:completeness}
+$\Gamma$-কে !!{sentence}s-এর একটি সেট ধরি। $\Gamma$ সঙ্গত হলে সেটি
+পরিতৃপ্তিযোগ্য।
+\end{thm}
+
+\begin{proof}
+ধরা যাক $\Gamma$ সঙ্গত।\iftag{FOL}{ \olref[hen]{lem:henkin} অনুসারে
+  একটি সম্পৃক্ত সঙ্গত সেট $\Gamma' \supseteq \Gamma$ আছে।}{}
+\olref[lin]{lem:lindenbaum} অনুসারে এমন একটি $\Gamma^* \supseteq
+\iftag{FOL}{\Gamma'}{\Gamma}$ আছে, যা সঙ্গত ও !!{complete}।
+\iftag{FOL}{
+  $\Gamma' \subseteq \Gamma^*$ বলে প্রতিটি !!{formula}~$!A(x)$-এর জন্য
+  $\Gamma^*$-তে নিচের আকারের একটি !!a{sentence} আছে:
+  \iftag{prvEx}
+        {$\lexists[x][!A(x)] \lif !A(c)$}
+        {$\lnot\lforall[x][!A(x)] \lif \lnot !A(c)$}।
+  তাই $\Gamma^*$ সম্পৃক্ত। $\Gamma$-তে~$\eq$ না থাকলে}{তখন}
+\olref[mod]{lem:truth} অনুসারে
+$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ যদি এবং কেবল
+যদি $!A \in \Gamma^*$। বিশেষত, এখান থেকে প্রতিটি $!A \in \Gamma$-র
+জন্য $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ পাওয়া
+যায়; তাই $\Gamma$ পরিতৃপ্তিযোগ্য।\iftag{FOL}{
+  $\Gamma$-তে~$\eq$ থাকলে \olref[ide]{lem:truth} অনুসারে সব
+  !!{sentence}s~$!A$-এর জন্য
+  $\Sat{\equivclass{M}{\approx}}{!A}$ যদি এবং কেবল যদি $!A \in
+  \Gamma^*$। বিশেষত, প্রতিটি $!A \in \Gamma$-র জন্য
+  $\Sat{\equivclass{M}{\approx}}{!A}$; তাই $\Gamma$ পরিতৃপ্তিযোগ্য।}{}
+\end{proof}
+
+\begin{cor}[পূর্ণতা উপপাদ্য, দ্বিতীয় রূপ]
+\ollabel{cor:completeness}
+প্রতিটি $\Gamma$ এবং !!{sentence}s~$!A$-এর জন্য: $\Gamma \Entails !A$
+হলে $\Gamma \Proves !A$।
+\end{cor}
+
+\begin{proof}
+লক্ষ করো, \olref{cor:completeness} ও \olref{thm:completeness}-এর
+$\Gamma$-গুলি সার্বিকভাবে পরিমাণিত। যেন বিভ্রান্ত না হই, তাই অন্য একটি
+চল ব্যবহার করে \olref{thm:completeness}-কে আবার বলি: !!{sentence}s-এর
+যেকোনো সেট~$\Delta$-র জন্য, $\Delta$ সঙ্গত হলে সেটি পরিতৃপ্তিযোগ্য।
+প্রতিবিপরীতকরণ অনুসারে, $\Delta$ পরিতৃপ্তিযোগ্য না হলে $\Delta$ অসঙ্গত।
+উপসিদ্ধান্তটি প্রমাণ করতে এই কথাটি ব্যবহার করব।
+
+ধরা যাক $\Gamma \Entails !A$। তাহলে \olref[syn][sem]{prop:entails-unsat}
+অনুসারে $\Gamma \cup \{\lnot !A\}$ অপরিতৃপ্তিযোগ্য। আমাদের~$\Delta$
+হিসেবে $\Gamma \cup \{\lnot !A\}$ নিলে, \olref{thm:completeness}-এর
+আগের রূপ থেকে পাই যে $\Gamma \cup \{\lnot !A\}$ অসঙ্গত। নিচের ফলগুলি
+অনুসারে $\Gamma \Proves !A$:
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:prv:prop:prov-incons},
+    prfSC/{fol:seq:prv:prop:prov-incons},
+    prfND/{fol:ntd:prv:prop:prov-incons},
+    prfTab/{fol:tab:prv:prop:prov-incons}}}{%
+  \tagrefs{prfAX/{pl:axd:prv:prop:prov-incons},
+    prfSC/{pl:seq:prv:prop:prov-incons},
+    prfND/{pl:ntd:prv:prop:prov-incons},
+    prfTab/{pl:tab:prv:prop:prov-incons}}}।
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][cth]{cor:completeness} ব্যবহার করে
+\olref[fol][com][cth]{thm:completeness} প্রমাণ করো; এভাবে দেখাও যে
+পূর্ণতা উপপাদ্যের দুটি রূপ সমতুল্য।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][com][cth]{cor:completeness} ব্যবহার করে
+\olref[pl][com][cth]{thm:completeness} প্রমাণ করো; এভাবে দেখাও যে
+পূর্ণতা উপপাদ্যের দুটি রূপ সমতুল্য।
+\end{prob}
+\tagendprob
+
+\tagprob{FOL}
+\begin{prob}
+কোনো !!a{derivation} পদ্ধতি পূর্ণ হতে হলে তার বিধিগুলিকে এমন শক্তিশালী
+হতে হবে, যাতে প্রতিটি অপরিতৃপ্তিযোগ্য সেটকে অসঙ্গত প্রমাণ করা যায়। পূর্ণতা
+প্রমাণ করতে !!{derivation}-এর কোন বিধিগুলি প্রয়োজন ছিল? এই বিধিগুলির
+কোনোটি কি প্রমাণের কোথাও ব্যবহৃত হয়নি? প্রশ্নগুলির উত্তর দিতে এমন একটি
+তালিকা বা চিত্র তৈরি করো, যেখানে
+\olref[fol][com][cth]{thm:completeness}-এর প্রমাণের আগের কোন ফলে
+!!{derivation}-এর কোন বিধি ব্যবহৃত হয়েছে তা দেখানো থাকে। এই প্রমাণগুলিতে
+বিধির যেসব অনুক্ত ব্যবহার আছে, সেগুলিও অবশ্যই উল্লেখ করো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+কোনো !!a{derivation} পদ্ধতি পূর্ণ হতে হলে তার বিধিগুলিকে এমন শক্তিশালী
+হতে হবে, যাতে প্রতিটি অপরিতৃপ্তিযোগ্য সেটকে অসঙ্গত প্রমাণ করা যায়। পূর্ণতা
+প্রমাণ করতে !!{derivation}-এর কোন বিধিগুলি প্রয়োজন ছিল? এই বিধিগুলির
+কোনোটি কি প্রমাণের কোথাও ব্যবহৃত হয়নি? প্রশ্নগুলির উত্তর দিতে এমন একটি
+তালিকা বা চিত্র তৈরি করো, যেখানে
+\olref[pl][com][cth]{thm:completeness}-এর প্রমাণের আগের কোন ফলে
+!!{derivation}-এর কোন বিধি ব্যবহৃত হয়েছে তা দেখানো থাকে। এই প্রমাণগুলিতে
+বিধির যেসব অনুক্ত ব্যবহার আছে, সেগুলিও অবশ্যই উল্লেখ করো।
+\end{prob}
+\tagendprob
+
+\end{document}

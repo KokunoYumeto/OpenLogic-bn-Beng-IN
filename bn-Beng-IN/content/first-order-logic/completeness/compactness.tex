@@ -1,0 +1,197 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: compactness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{com}}
+      {\olfileid{pl}{com}{com}}
+
+\olsection{সংহতি উপপাদ্য}
+
+পূর্ণতা উপপাদ্যের একটি গুরুত্বপূর্ণ পরিণাম হলো সংহতি উপপাদ্য। সংহতি
+উপপাদ্য বলে, !!{sentence}s-এর কোনো সেটের প্রতিটি \emph{সসীম} উপসেট
+পরিতৃপ্তিযোগ্য হলে গোটা সেটটিও পরিতৃপ্তিযোগ্য—এমনকি সেটটি নিজে অসীম হলেও।
+এ কথা মোটেই স্পষ্ট নয়। অন্তত প্রথম দর্শনে এমন কোনো কিছুর দেখা মেলে না,
+যা !!{sentence}s-এর এমন অসীম সেটের সম্ভাবনা বাদ দেয় যেখানে স্ববিরোধটি,
+এক অর্থে, কেবল অসীমসংখ্যক বাক্য থেকেই জন্মায়। সংহতি উপপাদ্য বলে, এমন
+পরিস্থিতি অসম্ভব: !!{sentence}s-এর এমন কোনো অপরিতৃপ্তিযোগ্য অসীম সেট নেই
+যার প্রতিটি সসীম উপসেট পরিতৃপ্তিযোগ্য। পূর্ণতা উপপাদ্যের মতোই এরও
+অনুসিদ্ধান্ত-সংক্রান্ত একটি রূপ আছে: !!{sentence}s-এর কোনো অসীম সেট কিছু
+অনুসিদ্ধ করে দিলে তার কোনো সসীম উপসেটই ইতিমধ্যে তা অনুসিদ্ধ করে।
+
+\begin{defn}
+  !!{formula}s-এর কোনো সেট $\Gamma$ ঠিক তখনই \emph{সসীমভাবে
+  পরিতৃপ্তিযোগ্য}, যখন প্রতিটি সসীম $\Gamma_0 \subseteq \Gamma$
+  পরিতৃপ্তিযোগ্য।
+\end{defn}
+
+\begin{thm}[সংহতি উপপাদ্য]
+\ollabel{thm:compactness}
+বাক্যের যেকোনো সেট~$\Gamma$ ও বাক্য~$!A$-এর জন্য নিচের কথাগুলি
+সত্য:
+\begin{enumerate}
+  \item $\Gamma \Entails !A$ যদি এবং কেবল যদি এমন একটি সসীম
+    $\Gamma_0 \subseteq \Gamma$ আছে যাতে $\Gamma_0 \Entails !A$।
+  \item $\Gamma$ পরিতৃপ্তিযোগ্য যদি এবং কেবল যদি সেটি সসীমভাবে
+    পরিতৃপ্তিযোগ্য।
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+আমরা (2) প্রমাণ করি। $\Gamma$ পরিতৃপ্তিযোগ্য হলে এমন একটি
+\iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+আছে যাতে প্রতিটি $!A \in \Gamma$-র জন্য
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$। অবশ্যই এই
+$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$, $\Gamma$-র প্রতিটি সসীম
+উপসেটকেও পরিতৃপ্ত করে; তাই $\Gamma$ সসীমভাবে পরিতৃপ্তিযোগ্য।
+
+এবার ধরা যাক $\Gamma$ সসীমভাবে পরিতৃপ্তিযোগ্য। তাহলে প্রতিটি সসীম উপসেট
+$\Gamma_0 \subseteq \Gamma$ পরিতৃপ্তিযোগ্য। বিশুদ্ধতা অনুসারে
+(\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:sou:cor:consistency-soundness},
+    prfSC/{fol:seq:sou:cor:consistency-soundness},
+    prfND/{fol:ntd:sou:cor:consistency-soundness},
+    prfTab/{fol:tab:sou:cor:consistency-soundness}}}{%
+  \tagrefs{prfAX/{pl:axd:sou:cor:consistency-soundness},
+    prfSC/{pl:seq:sou:cor:consistency-soundness},
+    prfND/{pl:ntd:sou:cor:consistency-soundness},
+    prfTab/{pl:tab:sou:cor:consistency-soundness}}}),
+প্রতিটি সসীম উপসেট সঙ্গত। এরপর নিচের ফল অনুসারে $\Gamma$ নিজেই সঙ্গত:
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:ptn:prop:proves-compact},
+    prfSC/{fol:seq:ptn:prop:proves-compact},
+    prfND/{fol:ntd:ptn:prop:proves-compact},
+    prfTab/{fol:tab:ptn:prop:proves-compact}}}{%
+  \tagrefs{prfAX/{pl:axd:ptn:prop:proves-compact},
+    prfSC/{pl:seq:ptn:prop:proves-compact},
+    prfND/{pl:ntd:ptn:prop:proves-compact},
+    prfTab/{pl:tab:ptn:prop:proves-compact}}}।
+পূর্ণতা (\olref[cth]{thm:completeness}) অনুসারে $\Gamma$ সঙ্গত বলে সেটি
+পরিতৃপ্তিযোগ্য।
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][com]{thm:compactness}-এর (1) প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][com][com]{thm:compactness}-এর (1) প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{%
+\begin{ex}
+কোনো তত্ত্ব~$\Gamma$-র প্রতিটি মডেল~$\Struct{M}$-এ প্রত্যেক পদ~$t$
+অবশ্যই~$\Domain{M}$-এর কোনো !!a{element}-কে নির্দেশ করে। উল্টো কথাটিও
+কি নিশ্চিত করা যায়—$\Domain{M}$-এর প্রতিটি !!{element}-কে কোনো-না-কোনো
+পদ নির্দেশ করে? অন্যভাবে বললে, এমন কোনো তত্ত্ব~$\Gamma$ কি আছে যার সব
+মডেল আচ্ছাদিত? সংহতি উপপাদ্য দেখায়, $\Gamma$-র অসীম মডেল থাকলে এমনটি
+হয় না। এভাবে তা দেখা যায়: $\Struct{M}$-কে~$\Gamma$-র একটি অসীম মডেল
+এবং $c$-কে~$\Gamma$-র ভাষায় নেই এমন একটি !!a{constant} ধরি।
+$\Gamma$-র ভাষা~$\Lang{L}$-এর প্রতিটি পদ~$t$-এর জন্য সব
+বাক্য~$\eq/[c][t]$-এর সেটকে $\Delta$ ধরি; অর্থাৎ,
+  \[
+  \Delta = \Setabs{\eq/[c][t]}{t \in \Trm[L]}.
+  \]
+$\Gamma \cup \Delta$-র কোনো সসীম উপসেটকে $\Gamma' \cup \Delta'$ আকারে
+লেখা যায়, যেখানে $\Gamma' \subseteq \Gamma$ এবং $\Delta' \subseteq
+\Delta$। $\Delta'$ সসীম বলে তাতে কেবল সসীমসংখ্যক পদ থাকতে পারে।
+$\Domain{M}$-এর এমন একটি !!a{element}~$a \in \Domain{M}$ নিই, যাকে ওই
+পদগুলির কোনোটি নির্দেশ করে না; আর $\Struct{M'}$-কে~$\Struct{M}$-এর মতোই
+একটি !!{structure} ধরি, শুধু আরও রাখি $\Assign{c}{M'} = a$।
+$\Delta'$-তে আসা প্রতিটি~$t$-এর জন্য $a \neq \Value{t}{M}$ বলে
+$\Sat{M'}{\Delta'}$। আবার $\Sat{M}{\Gamma}$, $\Gamma' \subseteq
+\Gamma$, এবং~$\Gamma$-তে $c$ আসে না বলে $\Sat{M'}{\Gamma'}$। ফলে
+$\Gamma \cup \Delta$-র প্রতিটি সসীম উপসেট $\Gamma' \cup \Delta'$-এর
+জন্য $\Sat{M'}{\Gamma' \cup \Delta'}$। তাই $\Gamma \cup \Delta$-র
+প্রতিটি সসীম উপসেট পরিতৃপ্তিযোগ্য। সংহতি অনুসারে $\Gamma \cup \Delta$
+নিজেই পরিতৃপ্তিযোগ্য। অতএব এমন মডেল~$\Sat{M}{\Gamma \cup \Delta}$ আছে।
+এমন প্রতিটি $\Struct{M}$, $\Gamma$-র মডেল হলেও আচ্ছাদিত নয়, কারণ
+$\Lang{L}$-এর সব পদ~$t$-এর জন্য $\Value{c}{M} \neq \Value{t}{M}$।
+\end{ex}
+
+\begin{ex}
+এমন একটি !!a{language}~$\Lang{L}$ বিবেচনা করি যাতে !!{predicate}~$<$,
+!!{constant}s~$\Obj{0}$ ও $\Obj{1}$, এবং !!{function}s~$+$, $\times$ ও
+$-$ আছে। সংজ্ঞাক্ষেত্র~$\Rat$ এবং স্বাভাবিক ব্যাখ্যাসহ
+!!{structure}~$\Struct{Q}$-তে সত্য এই !!{language}-এর সব !!{sentence}s-এর সেটকে
+$\Gamma$ ধরি। অর্থাৎ, $\Gamma$ হলো মূলদ সংখ্যা সম্বন্ধে সত্য
+$\Lang{L}$-এর সব !!{sentence}s-এর সেট। অবশ্যই~$\Rat$-এ (এমনকি~$\Real$-এও)
+এমন কোনো সংখ্যা~$r$ নেই যা~$0$-এর চেয়ে বড়, কিন্তু প্রতিটি $k \in
+\PosInt$-এর জন্য $1/k$-এর চেয়ে ছোট। এমন সংখ্যা থাকলে সেটি হতো একটি
+\emph{অতিক্ষুদ্র সংখ্যা}: শূন্য নয়, কিন্তু অসীমভাবে ক্ষুদ্র। সংহতি
+উপপাদ্য ব্যবহার করে দেখানো যায় যে~$\Gamma$-র এমন মডেল আছে যেখানে
+অতিক্ষুদ্র সংখ্যা রয়েছে। আমাদের ভাষায় ভাগের কোনো !!a{function} নেই
+(শূন্য দিয়ে ভাগ অনির্ধারিত, আর !!{function}s-কে পূর্ণ অপেক্ষক দিয়ে
+ব্যাখ্যা করতে হয়)। তবু $r < 1/k$ কথাটি প্রকাশ করা যায়, কারণ এটি সত্য
+যদি এবং কেবল যদি $r \cdot k < 1$। এবার $c$-কে একটি নতুন !!{constant}
+ধরি এবং $\Delta$-কে নিচের সেট ধরি:
+\[
+\{\Obj{0} < c\}
+\cup \Setabs{ c \times \num k < \Obj{1} }{k \in \PosInt}
+\]
+(এখানে $\num{k} = (\Obj{1} + (\Obj{1} + \dots + (\Obj{1} +
+\Obj{1})\dots))$, যাতে $k$-টি~$\Obj{1}$ আছে)। $\Delta$-র যেকোনো সসীম
+উপসেট~$\Delta_0$-এর জন্য এমন একটি~$K$ আছে যে~$\Delta_0$-তে আসা
+!!{sentence}s~$c \times \num{k} < \Obj{1}$-এর প্রত্যেকটির জন্য $k < K$।
+$\Assign{c}{Q'} = 1/K$ রেখে $\Struct{Q}$-কে~$\Struct{Q'}$-তে প্রসারিত
+করলে যেকোনো সসীম $\Gamma_0 \subseteq \Gamma$-র জন্য
+$\Sat{Q'}{\Gamma_0 \cup \Delta_0}$; তাই $\Gamma \cup \Delta$ সসীমভাবে
+পরিতৃপ্তিযোগ্য (অনুশীলনী: বিস্তারিত প্রমাণ করো)। সংহতি অনুসারে $\Gamma
+\cup \Delta$ পরিতৃপ্তিযোগ্য। $\Gamma \cup \Delta$-র যেকোনো
+মডেল~$\Struct{S}$-এ একটি অতিক্ষুদ্র সংখ্যা আছে, যথা~$\Assign{c}{S}$।
+\end{ex}
+}{}
+
+\tagprob{FOL}
+\begin{prob}
+পাটীগণিতের প্রমিত মডেল~$\Struct{N}$-এ এমন কোনো
+!!{element}~$k \in \Domain{N}$ নেই, যা প্রতিটি সূত্র~$\num{n} < x$-কে
+পরিতৃপ্ত করে (যেখানে $\num{n}$ হলো $n$-টি~$\prime$-সহ
+$\Obj{0}^{\prime\dots\prime}$)। সংহতি উপপাদ্য ব্যবহার করে দেখাও যে
+পাটীগণিতের প্রমিত মডেল~$\Struct{N}$-এ সত্য, পাটীগণিতের ভাষার
+সব
+!!{sentence}s এমন একটি !!a{structure}~$\Struct{N'}$-তেও সত্য, যাতে
+প্রতিটি সূত্র $\num{n} < x$-কে পরিতৃপ্ত করে এমন একটি !!a{element}
+\emph{আছে}।
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{
+\begin{ex}
+আমরা জানি, !!{identity}-সহ প্রথম-ক্রমের যুক্তিবিদ্যা !!{domain}-এর আকারের
+একটি ন্যূনতম সীমা প্রকাশ করতে পারে: $!A_{\ge n}$ বাক্যটি (যা বলে “অন্তত
+$n$-টি স্বতন্ত্র বস্তু আছে”) কেবল সেইসব গঠনে সত্য যেখানে~$\Domain{M}$-এ
+অন্তত~$n$-টি বস্তু আছে। তাই যদি রাখি
+  \[
+  \Delta = \Setabs{!A_{\ge n}}{n \ge 1}
+  \]
+তবে $\Delta$-র যেকোনো মডেল অবশ্যই অসীম। সুতরাং তত্ত্বটির সঙ্গে~$\Delta$
+যোগ করে নিশ্চিত করা যায় যে তার কেবল অসীম মডেল আছে:
+$\Gamma \cup \Delta$-র মডেলগুলি ঠিক~$\Gamma$-র অসীম মডেলগুলি।
+
+অতএব প্রথম-ক্রমের যুক্তিবিদ্যা অসীমতা প্রকাশ করতে পারে। কিন্তু সংহতি
+উপপাদ্য দেখায়, সেটি সসীমতা প্রকাশ করতে পারে না। কারণ, ধরা যাক বাক্যের
+কোনো সেট~$\Lambda$ ঠিক সব সসীম !!{structure}s-তেই পরিতৃপ্ত হয়। তাহলে
+$\Delta \cup \Lambda$ সসীমভাবে পরিতৃপ্তিযোগ্য। কেন? ধরা যাক
+$\Delta' \cup \Lambda' \subseteq \Delta \cup \Lambda$ সসীম, যেখানে
+$\Delta' \subseteq \Delta$ এবং $\Lambda' \subseteq \Lambda$।
+প্রথম উপসেট-অংশটি ফাঁকা হলে~$n$-কে ১, আর নইলে
+$!A_{\ge n} \in \Delta'$ হয় এমন বৃহত্তম সংখ্যা ধরি। সব সসীম
+গঠনে~$\Lambda$ পরিতৃপ্ত হয় বলে তার সসীম কিন্তু $\ge n$-টি
+!!{element}s-বিশিষ্ট একটি মডেল~$\Struct{M}$ আছে।
+তখন $\Sat{M}{\Delta' \cup \Lambda'}$। সংহতি অনুসারে $\Delta \cup
+\Lambda$-র একটি অসীম মডেল আছে, যা~$\Lambda$ কেবল সসীম !!{structure}s-তে
+পরিতৃপ্ত হয়—এই পূর্বধারণার বিরোধী।% BN-SRC-082 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-স্পষ্টীকরণ (BN-SRC-082):} হিমায়িত ইংরেজি যুক্তিটি সসীম $\Delta'$-র মধ্যে $!A_{\ge n}$-এর বৃহত্তম সূচক বেছে নেয়, কিন্তু $\Delta'=\varnothing$ হলে এমন সূচক নেই। বাংলা পাঠে ফাঁকা ক্ষেত্রে $n=1$ নেওয়া হয়েছে; অশূন্য ক্ষেত্রেই বৃহত্তম সূচক নেওয়া হয়েছে।} % BN-SRC-082 TARGET-CORRECTION-END
+\end{ex}
+}{}
+
+\end{document}

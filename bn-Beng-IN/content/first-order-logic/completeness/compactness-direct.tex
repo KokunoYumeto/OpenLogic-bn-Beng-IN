@@ -1,0 +1,160 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: compactness-direct
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{cpd}}
+      {\olfileid{pl}{com}{cpd}}
+
+\olsection{সংহতি উপপাদ্যের সরাসরি প্রমাণ}
+
+পূর্ণতা উপপাদ্যের প্রমাণের ধারণাগুলিই ব্যবহার করে, পূর্ণতা উপপাদ্যের
+সাহায্য না নিয়ে আমরা সংহতি উপপাদ্য সরাসরি প্রমাণ করতে পারি। পূর্ণতা
+উপপাদ্যের প্রমাণে আমরা !!{sentence}s-এর একটি সঙ্গত সেট~$\Gamma$ দিয়ে
+শুরু করেছিলাম, সেটিকে !!{sentence}s-এর একটি সঙ্গত\iftag{FOL}{,
+সম্পৃক্ত}{} ও !!{complete} সেট~$\Gamma^*$-তে প্রসারিত করেছিলাম, এবং
+তারপর দেখিয়েছিলাম যে~$\Gamma^*$ থেকে নির্মিত
+\iftag{FOL}{পদ-মডেল~$\Struct{M(\Gamma^*)}$}{!!{valuation}~$\pAssign{v(\Gamma^*)}$}-এ
+$\Gamma$-র সব !!{sentence}s সত্য; তাই $\Gamma$ পরিতৃপ্তিযোগ্য।
+
+একই পদ্ধতিতে দেখানো যায়, বাক্যের একটি সসীমভাবে পরিতৃপ্তিযোগ্য সেট
+পরিতৃপ্তিযোগ্য। শুধু সত্যতা-সহায়ক উপপাদ্যের আগের ফলগুলির অনুরূপ রূপ
+প্রমাণ করতে হবে, যেখানে “সঙ্গত”-এর বদলে “সসীমভাবে পরিতৃপ্তিযোগ্য” বসবে।
+
+\begin{prop}
+\ollabel{prop:fsat-ccs}
+ধরা যাক $\Gamma$ !!{complete} ও সসীমভাবে পরিতৃপ্তিযোগ্য। তাহলে:
+\begin{enumerate}
+\tagitem{prvAnd}{$(!A \land !B) \in \Gamma$
+  যদি এবং কেবল যদি $!A \in \Gamma$ এবং $!B \in \Gamma$ উভয়ই সত্য।}{}
+
+\tagitem{prvOr}{$(!A \lor !B) \in \Gamma$ যদি এবং কেবল যদি
+  $!A \in \Gamma$ অথবা $!B \in \Gamma$।}{}
+
+\tagitem{prvIf}{$(!A \lif !B) \in \Gamma$ যদি এবং কেবল যদি
+  $!A \notin \Gamma$ অথবা $!B \in \Gamma$।}{}
+\end{enumerate}
+\end{prop}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][cpd]{prop:fsat-ccs} প্রমাণ করো। $\Proves$ ব্যবহার কোরো
+না।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][com][cpd]{prop:fsat-ccs} প্রমাণ করো। $\Proves$ ব্যবহার কোরো
+না।
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{%
+\begin{lem}
+\ollabel{lem:fsat-henkin} প্রতিটি সসীমভাবে পরিতৃপ্তিযোগ্য সেট~$\Gamma$-কে
+একটি সম্পৃক্ত সসীমভাবে পরিতৃপ্তিযোগ্য সেট~$\Gamma'$-তে প্রসারিত করা যায়।
+\end{lem}
+}{}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][cpd]{lem:fsat-henkin} প্রমাণ করো। (ইঙ্গিত: সংকটপূর্ণ ধাপটি
+হলো, !!{derivation}s বা সঙ্গতির কোনো সাহায্য না নিয়ে দেখানো যে
+$\Gamma_n$ সসীমভাবে পরিতৃপ্তিযোগ্য হলে $\Gamma_n \cup \{!D_n\}$-ও
+সসীমভাবে পরিতৃপ্তিযোগ্য।)
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{
+\begin{prop}\ollabel{prop:fsat-instances}
+ধরা যাক $\Gamma$ পূর্ণ, সসীমভাবে পরিতৃপ্তিযোগ্য ও সম্পৃক্ত।
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\lexists[x][!A(x)] \in \Gamma$ যদি এবং কেবল যদি অন্তত
+  একটি বদ্ধ পদ~$t$-এর জন্য $!A(t) \in \Gamma$।}{}
+\tagitem{prvAll}{$\lforall[x][!A(x)] \in \Gamma$ যদি এবং কেবল যদি সব
+  বদ্ধ পদ~$t$-এর জন্য $!A(t) \in \Gamma$।}{}
+\end{tagenumerate}
+\end{prop}
+}{}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][cpd]{prop:fsat-instances} প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\begin{lem}
+\ollabel{lem:fsat-lindenbaum} প্রতিটি সসীমভাবে পরিতৃপ্তিযোগ্য সেট~$\Gamma$-কে
+একটি !!a{complete} ও সসীমভাবে পরিতৃপ্তিযোগ্য সেট~$\Gamma^*$-তে প্রসারিত
+করা যায়।
+\end{lem}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][cpd]{lem:fsat-lindenbaum} প্রমাণ করো। (ইঙ্গিত: সংকটপূর্ণ
+ধাপটি হলো, $\Gamma_n$ সসীমভাবে পরিতৃপ্তিযোগ্য হলে $\Gamma_n \cup
+\{!A_n\}$ অথবা $\Gamma_n \cup \{\lnot !A_n\}$-এর অন্তত একটি সসীমভাবে
+পরিতৃপ্তিযোগ্য—এটি দেখানো।)
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][com][cpd]{lem:fsat-lindenbaum} প্রমাণ করো। (ইঙ্গিত: সংকটপূর্ণ
+ধাপটি হলো, $\Gamma_n$ সসীমভাবে পরিতৃপ্তিযোগ্য হলে $\Gamma_n \cup
+\{!A_n\}$ অথবা $\Gamma_n \cup \{\lnot !A_n\}$-এর অন্তত একটি সসীমভাবে
+পরিতৃপ্তিযোগ্য—এটি দেখানো।)
+\end{prob}
+\tagendprob
+
+\begin{thm}[সংহতি]
+\ollabel{thm:compactness-direct} $\Gamma$ পরিতৃপ্তিযোগ্য যদি এবং কেবল
+যদি সেটি সসীমভাবে পরিতৃপ্তিযোগ্য।
+\end{thm}
+
+\begin{proof}
+$\Gamma$ পরিতৃপ্তিযোগ্য হলে এমন একটি
+\iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+আছে যাতে সব $!A \in \Gamma$-র জন্য
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$। অবশ্যই এই
+\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}, $\Gamma$-র প্রতিটি সসীম
+উপসেটকেও পরিতৃপ্ত করে; তাই $\Gamma$ সসীমভাবে পরিতৃপ্তিযোগ্য।
+
+এবার ধরা যাক $\Gamma$ সসীমভাবে পরিতৃপ্তিযোগ্য।\iftag{FOL}{
+  \olref{lem:fsat-henkin} অনুসারে একটি সসীমভাবে পরিতৃপ্তিযোগ্য, সম্পৃক্ত
+  সেট $\Gamma' \supseteq \Gamma$ আছে।}{} \olref{lem:fsat-lindenbaum}
+অনুসারে $\iftag{FOL}{\Gamma'}{\Gamma}$-কে একটি !!a{complete} ও সসীমভাবে
+পরিতৃপ্তিযোগ্য সেট~$\Gamma^*$-তে প্রসারিত করা যায়\iftag{FOL}{, এবং
+  $\Gamma^*$ তখনও সম্পৃক্ত}{}। \olref[mod]{defn:termmodel}-এর মতো
+\iftag{FOL}{পদ-মডেল~$\Struct{M(\Gamma^*)}$}{!!{valuation}~$\pAssign{v(\Gamma^*)}$}
+নির্মাণ করি।\iftag{FOL}{ লক্ষ করো, \olref[mod]{prop:quant-termmodel},
+$\Gamma^*$-র সঙ্গতির (এমনকি !!{complete} বা সম্পৃক্ততারও) ওপর নির্ভর
+করেনি; শুধু $\Struct{M(\Gamma^*)}$ আচ্ছাদিত—এই তথ্যের ওপর নির্ভর করেছে।}{}
+সত্যতা-সহায়ক উপপাদ্যের (\olref[mod]{lem:truth}) প্রমাণটি কার্যকর থাকে,
+যদি \olref[ccs]{prop:ccs}\iftag{FOL}{ ও
+\olref[hen]{prop:saturated-instances}-এর উল্লেখগুলির বদলে যথাক্রমে
+\olref{prop:fsat-ccs} ও \olref{prop:fsat-instances}-এর উল্লেখ} বসাই।
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][cpd]{thm:compactness-direct}-এর প্রমাণে প্রয়োজনীয়
+রূপে সত্যতা-সহায়ক উপপাদ্যের (\olref[fol][com][mod]{lem:truth}) সম্পূর্ণ
+প্রমাণ লেখো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][com][cpd]{thm:compactness-direct}-এর প্রমাণে প্রয়োজনীয়
+রূপে সত্যতা-সহায়ক উপপাদ্যের (\olref[pl][com][mod]{lem:truth}) সম্পূর্ণ
+প্রমাণ লেখো।
+\end{prob}
+\tagendprob
+
+\end{document}

@@ -1,0 +1,99 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: lindenbaums-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{lin}}
+      {\olfileid{pl}{com}{lin}}
+
+\olsection{লিন্ডেনবাউমের সহায়ক উপপাদ্য}
+
+\begin{explain}
+এবার আমরা একটি সহায়ক উপপাদ্য প্রমাণ করব, যা দেখায় যে
+!!{sentence}s-এর যেকোনো সঙ্গত সেট এমন কোনো বাক্য-সেটের অন্তর্ভুক্ত যা
+শুধু সঙ্গতই নয়, !!{complete}-ও। প্রমাণটিতে একবারে একটি করে !!{sentence}
+যোগ করা হয় এবং প্রতিটি ধাপে সেটটির সঙ্গতি অক্ষুণ্ণ থাকার নিশ্চয়তা দেওয়া
+হয়। আমরা এমনভাবে কাজটি করি যাতে প্রতিটি $!A$-এর জন্য কোনো-না-কোনো ধাপে
+$!A$ বা $\lnot !A$ যোগ হয়। তখন এই নির্মাণের সব ধাপের সংযোগে $!A$ বা তার
+নঞর্থকরণ~$\lnot !A$ থাকে; তাই সেটটি পূর্ণ। সেটটি সঙ্গতও, কারণ প্রতিটি
+ধাপে আমরা নিশ্চিত করি যে কোনো অসঙ্গতি ঢুকছে না।
+\end{explain}
+
+\begin{lem}[লিন্ডেনবাউমের সহায়ক উপপাদ্য]
+\ollabel{lem:lindenbaum} কোনো ভাষা~$\Lang{L}$-এর প্রতিটি সঙ্গত
+সেট~$\Gamma$-কে একটি !!a{complete} ও সঙ্গত সেট~$\Gamma^*$-তে প্রসারিত
+করা যায়।
+\end{lem}
+
+\begin{proof}
+ধরা যাক $\Gamma$ সঙ্গত। $\Lang L$-এর সব !!{sentence}s-এর একটি তালিকায়ন
+$!A_0$, $!A_1$, \dots{} ধরি। $\Gamma_0 = \Gamma$ সংজ্ঞায়িত করি এবং
+\[
+\Gamma_{n+1} =
+\begin{cases}
+\Gamma_n \cup \{ !A_n \} & \textrm{$\Gamma_n \cup \{!A_n\}$ সঙ্গত হলে;} \\
+\Gamma_n \cup \{ \lnot !A_n \} & \textrm{অন্যথায়।}
+\end{cases}
+\]
+রাখি $\Gamma^* = \bigcup_{n \geq 0} \Gamma_n$।
+
+প্রতিটি $\Gamma_n$ সঙ্গত: সংজ্ঞা অনুসারে $\Gamma_0$ সঙ্গত।
+$\Gamma_{n+1} = \Gamma_n \cup \{!A_n\}$ হলে তার কারণ শেষের সেটটি সঙ্গত।
+সেটি সঙ্গত না হলে $\Gamma_{n+1} = \Gamma_n \cup \{\lnot !A_n\}$। যাচাই
+করতে হবে যে $\Gamma_n \cup \{\lnot !A_n\}$ সঙ্গত। ধরা যাক সেটি সঙ্গত
+নয়। তখন $\Gamma_n \cup \{!A_n\}$ ও $\Gamma_n \cup \{\lnot !A_n\}$
+\emph{উভয়ই} অসঙ্গত। এর অর্থ, নিচের ফল অনুসারে $\Gamma_n$ অসঙ্গত হতো:
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:prv:prop:provability-exhaustive},
+    prfSC/{fol:seq:prv:prop:provability-exhaustive},
+    prfND/{fol:ntd:prv:prop:provability-exhaustive},
+    prfTab/{fol:tab:prv:prop:provability-exhaustive}}}{%
+  \tagrefs{prfAX/{pl:axd:prv:prop:provability-exhaustive},
+    prfSC/{pl:seq:prv:prop:provability-exhaustive},
+    prfND/{pl:ntd:prv:prop:provability-exhaustive},
+    prfTab/{pl:tab:prv:prop:provability-exhaustive}}}।
+এটি আরোহী পূর্বধারণার বিরোধী।
+
+প্রতিটি~$n$ ও প্রতিটি $i < n$-এর জন্য $\Gamma_i \subseteq \Gamma_n$।
+$n$-এর ওপর সরল আরোহ থেকে এটি পাওয়া যায়। $n=0$ হলে কোনো $i < 0$ নেই;
+তাই দাবিটি স্বতঃসিদ্ধভাবে সত্য। আরোহী ধাপের জন্য ধরা যাক দাবিটি~$n$-এর
+ক্ষেত্রে সত্য। আমরা দেখাব, $i < n+1$ হলে $\Gamma_i \subseteq
+\Gamma_{n+1}$। নির্মাণ অনুসারে $\Gamma_{n+1} = \Gamma_n \cup \{!A_n\}$
+অথবা $= \Gamma_n \cup \{\lnot !A_n\}$। তাই $\Gamma_n \subseteq
+\Gamma_{n+1}$। $i < n+1$ হলে আরোহী পূর্বধারণা থেকে $\Gamma_i \subseteq
+\Gamma_n$ ($i < n$ হলে), অথবা তুচ্ছ তথ্য $\Gamma_n \subseteq \Gamma_n$
+থেকে ($i = n$ হলে)। $\subseteq$-র পরিযায়িতা থেকে $\Gamma_i \subseteq
+\Gamma_{n+1}$ পাই।
+
+এ থেকে $\Gamma^*$-র সঙ্গতি অনুসৃত হয়। কারণটি এই: $\Gamma' \subseteq
+\Gamma^*$ একটি সসীম সেট হোক। এই সসীম সেটটি ফাঁকা হলে সেটি মূল সঙ্গত
+সেটের উপসেট, তাই সঙ্গত।
+নইলে প্রতিটি $!B \in \Gamma'$ কোনো~$\Gamma_i$-তেও আছে, কোনো~$i$-এর
+জন্য। এই সূচকগুলির বৃহত্তমটিকে $n$ ধরি। $i \le n$ হলে
+$\Gamma_i \subseteq \Gamma_n$ বলে প্রতিটি $!B \in \Gamma'$ আবার
+$\in \Gamma_n$; অর্থাৎ $\Gamma' \subseteq \Gamma_n$, এবং
+$\Gamma_n$ সঙ্গত। তাই প্রতিটি সসীম উপসেট $\Gamma' \subseteq \Gamma^*$
+সঙ্গত।
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:ptn:prop:proves-compact},
+    prfSC/{fol:seq:ptn:prop:proves-compact},
+    prfND/{fol:ntd:ptn:prop:proves-compact},
+    prfTab/{fol:tab:ptn:prop:proves-compact}}}{%
+  \tagrefs{prfAX/{pl:axd:ptn:prop:proves-compact},
+    prfSC/{pl:seq:ptn:prop:proves-compact},
+    prfND/{pl:ntd:ptn:prop:proves-compact},
+    prfTab/{pl:tab:ptn:prop:proves-compact}}}
+অনুসারে $\Gamma^*$ সঙ্গত।% BN-SRC-075 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-স্পষ্টীকরণ (BN-SRC-075):} হিমায়িত ইংরেজি প্রমাণটি যেকোনো সসীম $\Gamma'$-র জন্য সদস্যগুলির সূচকের বৃহত্তম মান বেছে নেয়, কিন্তু $\Gamma'=\varnothing$ হলে এমন সূচক নেই। বাংলা পাঠে ফাঁকা ক্ষেত্রটি আগে আলাদা করে নিষ্পন্ন করা হয়েছে; অশূন্য সসীম ক্ষেত্রেই বৃহত্তম সূচক নেওয়া হয়েছে।} % BN-SRC-075 TARGET-CORRECTION-END
+
+$\Frm[L]$-এর প্রতিটি !!{sentence}, $\Gamma^*$ সংজ্ঞায়িত করতে ব্যবহৃত
+তালিকাটিতে আসে। $!A_n \notin \Gamma^*$ হলে তার কারণ $\Gamma_n \cup
+\{!A_n\}$ অসঙ্গত ছিল। কিন্তু তখন $\lnot !A_n \in \Gamma^*$; তাই
+$\Gamma^*$ !!{complete}।
+\end{proof}
+
+\end{document}

@@ -1,0 +1,161 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{ptn}}
+      {\olfileid{pl}{ntd}{ptn}}
+
+\olsection{প্রমাণতাত্ত্বিক ধারণা}
+
+\begin{editorial}
+এই অংশে স্বাভাবিক নিষ্পাদনের প্রমাণযোগ্যতা-সম্পর্ক ও সঙ্গতির সংজ্ঞাগুলি
+একত্র করা হয়েছে।
+\end{editorial}
+
+\begin{explain}
+যেভাবে আমরা কয়েকটি গুরুত্বপূর্ণ অর্থতাত্ত্বিক ধারণা (বৈধতা,
+অনুসিদ্ধান্ত, পরিতৃপ্তিযোগ্যতা) সংজ্ঞায়িত করেছি, এবার তেমনি তাদের
+অনুরূপ \emph{প্রমাণতাত্ত্বিক ধারণা} সংজ্ঞায়িত করি। এগুলি কোনো
+!!{structure}s-তে !!{sentence}s-এর পরিতৃপ্তির সাহায্যে সংজ্ঞায়িত নয়;
+বরং অন্যগুলি থেকে কয়েকটি !!{sentence}s-এর !!{derivability} বা
+!!{nonderivability}-র সাহায্যে সংজ্ঞায়িত। এই ধারণাগুলি যে পরস্পরের
+সঙ্গে মিলে যায়, তা এক গুরুত্বপূর্ণ আবিষ্কার। তাদের মিলই
+\emph{বিশুদ্ধতা} ও \emph{পূর্ণতা উপপাদ্য}-র বক্তব্য।
+\end{explain}
+
+
+\begin{defn}[উপপাদ্য]
+কোনো !!{sentence}~$!A$ একটি \emph{উপপাদ্য}, যদি স্বাভাবিক
+নিষ্পাদনে~$!A$-এর এমন কোনো !!a{derivation} থাকে যেখানে সব অনুমিতি
+!!{discharged}। $!A$ উপপাদ্য হলে $\Proves !A$ এবং উপপাদ্য না হলে
+$\Proves/ !A$ লিখি।
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+কোনো !!^a{sentence}~$!A$ !!{sentence}s-এর সেট~$\Gamma$ \emph{থেকে
+!!{derivable}}, অর্থাৎ $\Gamma \Proves !A$, যদি সিদ্ধান্ত~$!A$-যুক্ত
+এমন একটি !!{derivation} থাকে যার প্রত্যেক অনুমিতি হয় !!{discharged},
+নয়তো~$\Gamma$-তে আছে। $!A$ যদি~$\Gamma$ থেকে !!{derivable} না হয়,
+তবে $\Gamma \Proves/ !A$ লিখি।
+\end{defn}
+
+\begin{defn}[সঙ্গতি]
+!!{sentence}s-এর কোনো সেট~$\Gamma$ ঠিক তখনই \emph{অসঙ্গত}, যখন
+$\Gamma \Proves \lfalse$। $\Gamma$ অসঙ্গত না হলে, অর্থাৎ $\Gamma
+\Proves/ \lfalse$ হলে, সেটিকে \emph{সঙ্গত} বলি।
+\end{defn}
+
+\begin{prop}[প্রতিবিম্ব ধর্ম]
+\ollabel{prop:reflexivity}
+$!A \in \Gamma$ হলে $\Gamma \Proves !A$।
+\end{prop}
+
+\begin{proof}
+অনুমিতি~$!A$ নিজেই~$!A$-এর এমন একটি !!a{derivation}, যার প্রত্যেক
+!!{undischarged} অনুমিতি (অর্থাৎ~$!A$) $\Gamma$-তে আছে।
+\end{proof}
+
+
+\begin{prop}[একঘেয়েতা]
+\ollabel{prop:monotonicity}
+$\Gamma \subseteq \Delta$ এবং $\Gamma \Proves !A$ হলে $\Delta
+\Proves !A$।
+\end{prop}
+
+\begin{proof}
+$\Gamma$ থেকে~$!A$-এর যেকোনো !!{derivation} আবার~$\Delta$
+থেকে~$!A$-এরও !!a{derivation}।
+\end{proof}
+
+\begin{prop}[পরিযায়িতা]
+\ollabel{prop:transitivity}
+$\Gamma \Proves !A$ এবং $\{!A\} \cup \Delta \Proves
+!B$ হলে $\Gamma \cup \Delta \Proves !B$।
+\end{prop}
+
+\begin{proof}
+$\Gamma \Proves !A$ হলে~$\Gamma$-তে সব !!{undischarged} অনুমিতি-যুক্ত
+$!A$-এর কোনো !!a{derivation}~$\delta_0$ আছে। $\{!A\} \cup
+\Delta \Proves !B$ হলে~$\{!A\} \cup \Delta$-তে সব !!{undischarged}
+অনুমিতি-যুক্ত~$!B$-এর কোনো !!a{derivation}~$\delta_1$ আছে। এবার
+বিবেচনা করো:
+\begin{prooftree}
+  \AxiomC{$\Delta, \Discharge{!A}{1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!B$}
+  \DischargeRule{\Intro{\lif}}{1}
+  \UnaryInfC{$!A \lif !B$}
+  \AxiomC{$\Gamma$}
+  \RightLabel{$\delta_0$}
+  \DeduceC{$!A$}
+  \RightLabel{\Elim{\lif}}
+  \BinaryInfC{$!B$}
+\end{prooftree}
+এখন সব !!{undischarged} অনুমিতি $\Gamma \cup \Delta$-তে আছে; তাই
+এটি $\Gamma \cup \Delta \Proves !B$ দেখায়।
+\end{proof}
+
+$\Gamma = \{!A_1, !A_2, \ldots, !A_k\}$ একটি সসীম সেট হলে $\Gamma
+\Proves !B$-এর জন্য সরলীকৃত সংকেত $!A_1,!A_2,\ldots,!A_k \Proves
+!B$ ব্যবহার করতে পারি। বিশেষত $!A \Proves !B$ মানে
+$\{!A\} \Proves !B$।
+
+লক্ষ করো, $\Gamma \Proves !A$ এবং $!A \Proves !B$ হলে $\Gamma
+\Proves !B$। এর থেকে আরও পাওয়া যায়: $!A_1, \dots, !A_n \Proves
+!B$ এবং প্রত্যেক~$i$-এর জন্য $\Gamma \Proves !A_i$ হলে $\Gamma
+\Proves !B$।
+
+\begin{prop}
+\ollabel{prop:incons}
+নিচের কথাগুলি সমতুল্য।
+    \begin{enumerate}
+      \item \( \Gamma \) অসঙ্গত।
+      \item প্রত্যেক !!{sentence}~\( {!A} \)-এর জন্য \( \Gamma \Proves {!A} \)।
+      \item কোনো !!{sentence}~\( {!A} \)-এর জন্য \( \Gamma \Proves {!A} \) এবং \( \Gamma \Proves \lnot {!A} \)।
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][ntd][ptn]{prop:incons} প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][ntd][ptn]{prop:incons} প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\begin{prop}[সংহতি]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item $\Gamma \Proves !A$ হলে এমন একটি সসীম উপসেট $\Gamma_0
+    \subseteq \Gamma$ আছে যেন $\Gamma_0 \Proves !A$।
+  \item $\Gamma$-র প্রত্যেক সসীম উপসেট সঙ্গত হলে $\Gamma$ সঙ্গত।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item $\Gamma \Proves !A$ হলে~$\Gamma$ থেকে~$!A$-এর কোনো
+      !!a{derivation}~$\delta$ আছে। $\delta$-র !!{undischarged}
+      অনুমিতিগুলির সেটকে~$\Gamma_0$ ধরি। প্রত্যেক !!{derivation}
+      সসীম বলে~$\Gamma_0$-তে শুধু সসীমসংখ্যক !!{sentence}s থাকতে পারে।
+      তাই $\delta$ কোনো সসীম~$\Gamma_0 \subseteq \Gamma$ থেকে~$!A$-এর
+      !!a{derivation}।
+    \item এটি (1)-এর বিশেষ ক্ষেত্র $!A \ident \lfalse$-এর
+      বিপরীত-প্রতিজ্ঞা।
+  \end{enumerate}
+\end{proof}
+
+\end{document}

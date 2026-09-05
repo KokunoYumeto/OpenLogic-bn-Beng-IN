@@ -1,0 +1,52 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{rul}}
+      {\olfileid{pl}{ntd}{rul}}
+
+\olsection{বিধি ও \usetoken{P}{derivation}}
+
+\begin{explain}
+স্বাভাবিক নিষ্পাদন-পদ্ধতিগুলি গাণিতিক প্রমাণে ব্যবহৃত অনানুষ্ঠানিক
+যুক্তিবিচারের খুব কাছাকাছি গড়ে তোলা হয় (এই অর্থেই পদ্ধতিটি কিছুটা
+``স্বাভাবিক'')। স্বাভাবিক নিষ্পাদনের প্রমাণ অনুমিতি দিয়ে শুরু হয়।
+তারপর অনুমান-বিধি প্রয়োগ করা হয়। \Intro{\lnot}, \Intro{\lif},
+\iftag{FOL}{\Elim{\lor} ও \Elim{\lexists}}{ এবং \Elim{\lor}}
+অনুমান-বিধি অনুমিতিগুলিকে ``!!{discharged}'' করে; স্পষ্টতার জন্য
+!!{discharged} অনুমিতির চিহ্নটি অনুমানের পাশে বসানো হয়।
+\end{explain}
+
+\begin{defn}[অনুমিতি]
+কোনো শাখার সর্বোচ্চ স্থানে থাকা যেকোনো !!{sentence} হলো একটি
+\emph{অনুমিতি}।
+\end{defn}
+
+স্বাভাবিক নিষ্পাদনের !!^{derivation}s হলো !!{sentence}s-এর বিশেষ ধরনের
+বৃক্ষ। এর সর্বোচ্চ !!{sentence}s অনুমিতি; আর কোনো !!a{sentence}-এর
+ওপরে এক, দুই বা তিনটি অন্য বাক্য থাকলে সেটিকে কোনো অনুমান-বিধি থেকে
+সঠিকভাবে অনুসৃত হতে হবে। অনুমানটির ওপরে থাকা !!{sentence}s-কে তার
+\emph{পূর্বধারণা} এবং নিচের !!{sentence}-টিকে তার \emph{সিদ্ধান্ত}
+বলা হয়। প্রত্যেক !!{operator}-এর জন্য বিধিগুলি জোড়ায় আসে—একটি
+প্রবর্তন-বিধি ও একটি অপসারণ-বিধি। এগুলি সিদ্ধান্তে কোনো
+!!a{operator} প্রবর্তন করে অথবা বিধির কোনো পূর্বধারণা থেকে
+!!a{operator} অপসারণ করে। কয়েকটি বিধি বিশেষ ধরনের অনুমিতিকে
+\emph{!!{discharged}} করার অনুমতি দেয়। কোন অনুমান কোন অনুমিতিকে
+!!{discharged} করে তা বোঝাতে অনুমিতি ও অনুমান—দুটিকেই চিহ্ন দিই।
+অনুমিতিটিকে ``$\Discharge{!A}{n}$'' লিখে এটি দেখানো হয়।
+% BN-SRC-033 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-033):} হিমায়িত ইংরেজি গদ্যে বৃক্ষের কোনো বাক্যের ওপরে থাকা এক, দুই বা তিনটি নোডকে “other sequents” বলা হয়েছে। এই অধ্যায়ের সংজ্ঞা ও প্রদর্শিত বৃক্ষগুলিতে নোডগুলি বাক্য, সিকোয়েন্ট নয়; তাই বাংলা গদ্যে “অন্য বাক্য” ব্যবহার করা হয়েছে।} % BN-SRC-033 TARGET-CORRECTION-END
+
+% Only include this sentence is on of \land, lor, lif or lnot is defined.
+
+\iftag{notprvNot,notprvAnd,notprvOr,notprvIf}{}%
+	{$\land$, $\lor$, $\lif$, $\lnot$ ও $\lfalse$-এর কোনোটি সংজ্ঞায়িত হলেও, প্রচলিতভাবে সব !!{operator}s-এর বিধিই বিবেচনা করা হয়।}
+
+
+
+\end{document}

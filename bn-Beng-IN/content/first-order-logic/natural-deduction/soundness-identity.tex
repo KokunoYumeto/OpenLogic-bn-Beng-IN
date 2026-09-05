@@ -1,0 +1,53 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: soundness-identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{ntd}{sid}
+
+\olsection{\usetoken{S}{identity}-সহ বিশুদ্ধতা}
+
+\begin{prop}
+$\eq$-এর বিধিসহ স্বাভাবিক নিষ্পাদন বিশুদ্ধ।
+\end{prop}
+
+\begin{proof}
+$\eq[t][t]$ রূপের যেকোনো !!{formula} বৈধ, কারণ প্রত্যেক
+!!{structure}~$\Struct M$-এর জন্য $\Sat{M}{\eq[t][t]}$। (মনে করো,
+পদ~$t$-কে বদ্ধ ধরা হয়েছে, অর্থাৎ এতে কোনো চলরাশি নেই; তাই চলরাশি-আরোপ
+এখানে অপ্রাসঙ্গিক।)
+
+ধরা যাক কোনো !!a{derivation}-এর শেষ অনুমান হলো \Elim{\eq}; অর্থাৎ
+!!{derivation}-টির রূপ নিচের মতো:
+\begin{prooftree}
+  \AxiomC{$\Gamma_1$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$\eq[t_1][t_2]$}
+  \AxiomC{$\Gamma_2$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A(t_1)$}
+  \RightLabel{\Elim{\eq}}
+  \BinaryInfC{$!A(t_2)$}
+\end{prooftree}
+পূর্বধারণা $\eq[t_1][t_2]$ ও $!A(t_1)$ যথাক্রমে !!{undischarged}
+অনুমিতি~$\Gamma_1$ ও $\Gamma_2$ থেকে !!{derive}d। আমরা দেখাতে চাই,
+$\Gamma_1 \cup \Gamma_2$ থেকে~$!A(t_2)$ অনুসৃত হয়। এমন কোনো
+!!a{structure}~$\Struct{M}$ বিবেচনা করো যেখানে $\Sat{M}{\Gamma_1 \cup
+  \Gamma_2}$। আরোহের অনুমান থেকে $\Sat{M}{!A(t_1)}$ এবং
+$\Sat{M}{\eq[t_1][t_2]}$। অতএব $\Value{t_1}{M} = \Value{t_2}{M}$।
+$s$ যেকোনো চলরাশি-আরোপ এবং $m = \Value{t_1}{M} = \Value{t_2}{M}$
+ধরি। \olref[fol][syn][ext]{prop:ext-formulas} অনুযায়ী,
+$\Sat{M}{!A(t_1)}[s]$ যদি এবং কেবল যদি
+$\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$ যদি এবং কেবল যদি
+$\Sat{M}{!A(t_2)}[s]$। যেহেতু $\Sat{M}{!A(t_1)}$, তাই
+$\Sat{M}{!A(t_2)}$।
+দ্বিতীয় অভিন্নতা-অপসারণ বিধির ক্ষেত্রটি পদদুটির ভূমিকা অদলবদল করে
+একইভাবে প্রমাণিত হয়।
+% BN-SRC-041 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-041):} আগের অংশে অভিন্নতার দুটি অপসারণ-বিধি দেওয়া হলেও হিমায়িত ইংরেজি বিশুদ্ধতা-প্রমাণটি শুধু $!A(t_1)$ থেকে $!A(t_2)$ অভিমুখটি যাচাই করে শেষ হয়েছে। বাংলা প্রমাণে পদদুটির ভূমিকা অদলবদল করে দ্বিতীয় অভিমুখটির একই যুক্তি স্পষ্ট করা হয়েছে।} % BN-SRC-041 TARGET-CORRECTION-END
+\end{proof}
+
+\end{document}

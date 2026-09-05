@@ -1,0 +1,111 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: quantifier-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{ntd}{qrl}
+
+\olsection{পরিমাণসূচক-বিধি}
+
+\subsection{$\lforall$-এর বিধি}
+
+\begin{defish}
+\AxiomC{$!A(a)$}
+\RightLabel{\Intro{\lforall}}
+\UnaryInfC{$\lforall[x][\Atom{!A}{x}]$}
+\DisplayProof
+\hfill
+\AxiomC{$\lforall[x][\Atom{!A}{x}]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!A(t)$}
+\DisplayProof
+\end{defish}
+
+$\lforall$-এর বিধিগুলিতে $t$ একটি বদ্ধ পদ (অর্থাৎ কোনো চলরাশি নেই
+এমন পদ), আর $a$ এমন !!a{constant} যা সিদ্ধান্ত
+$\lforall[x][!A(x)]$-এ অথবা পূর্বধারণা~$!A(a)$-তে শেষ হওয়া
+!!{derivation}-এর কোনো !!{undischarged} অনুমিতিতে আসে না।
+\Intro{\lforall} অনুমানের~$a$-কে তার \emph{আইগেনচল} বলি।
+\footnote{উপরের বিধিতে $a$ একটি ধ্রুবক হলেও আমরা ``আইগেনচল'' শব্দটি
+ব্যবহার করি। এর কারণ ঐতিহাসিক।}
+
+\subsection{$\lexists$-এর বিধি}
+
+\begin{defish}
+\AxiomC{$\Atom{!A}{t}$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][\Atom{!A}{x}]$}
+\DisplayProof
+\hfill
+\AxiomC{$\lexists[x][\Atom{!A}{x}]$}
+\AxiomC{[$\Atom{!A}{a}$]$^n$}
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lexists}}{n}
+\BinaryInfC{$!C$}
+\DisplayProof
+\end{defish}
+
+এখানেও $t$ একটি বদ্ধ পদ, আর $a$ এমন !!a{constant} যা পূর্বধারণা
+$\lexists[x][!A(x)]$-এ, সিদ্ধান্ত~$!C$-তে অথবা দুই পূর্বধারণায় শেষ
+হওয়া !!{derivation}s-এর কোনো !!{undischarged} অনুমিতিতে আসে না
+($!A(a)$ অনুমিতিগুলি ছাড়া)। \Elim{\lexists} অনুমানের~$a$-কে তার
+\emph{আইগেনচল} বলি।
+
+\Intro{\lforall} অনুমানে আইগেনচলটি সিদ্ধান্তে বা পূর্বধারণার দিকে
+নিয়ে যাওয়া সংশ্লিষ্ট নিষ্পাদনের কোনো !!{undischarged} অনুমিতিতে আসে না।
+\Elim{\lexists} অনুমানে সেটি প্রধান অস্তিত্বসূচক পূর্বধারণা, সিদ্ধান্ত
+বা পূর্বধারণাগুলির দিকে নিয়ে যাওয়া !!{derivation}s-এর কোনো অনবমুক্ত
+অনুমিতিতে আসে না—বিশেষ অবমুক্তযোগ্য অনুমিতিগুলি এর ব্যতিক্রম। এই
+বিধি-নির্দিষ্ট সীমাগুলিকে \emph{আইগেনচল-শর্ত} বলা হয়।
+% BN-SRC-034 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-034):} হিমায়িত ইংরেজি সারাংশে আইগেনচলটি “premises”-এও না-আসার কথা বলা হয়েছে, অথচ প্রদর্শিত $\Intro{\lforall}$ ও $\Elim{\lexists}$—উভয় বিধির অবমুক্তযোগ্য পূর্বধারণায় আইগেনচলটি অবশ্যই আসে। বাংলা সারাংশে আগের দুটি সুনির্দিষ্ট শর্তই পুনর্ব্যক্ত করা হয়েছে: সার্বিক প্রবর্তনে সিদ্ধান্ত ও অনবমুক্ত অনুমিতি, আর অস্তিত্বসূচক অপসারণে প্রধান পূর্বধারণা, সিদ্ধান্ত ও বিশেষ অনুমিতি-ব্যতীত অনবমুক্ত অনুমিতিতে আইগেনচলটি অনুপস্থিত থাকবে।} % BN-SRC-034 TARGET-CORRECTION-END
+
+\begin{explain}
+মনে করো, যখন !!{variable}~$x$ মুক্ত এমন কোনো !!a{formula}~$!A$ থাকে, তখন আমরা
+$!A(x)$ লিখে তা দেখাই। একই প্রসঙ্গে $!A(t)$ হলো~$\Subst{!A}{t}{x}$-এর
+সংক্ষিপ্ত রূপ। তাই $\Intro\lexists$ বিধিটি এভাবেও লেখা যেত:
+\begin{prooftree}
+\AxiomC{$\Subst{!A}{t}{x}$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!A]$}
+\end{prooftree}
+লক্ষ করো, $t$ আগে থেকেই~$!A$-তে থাকতে পারে; যেমন, $!A$ হতে পারে
+$\Atom{\Obj P}{t,x}$। তাই~$\Atom{\Obj P}{t,t}$ থেকে
+$\lexists[x][\Atom{\Obj P}{t,x}]$ অনুমান করা $\Intro\lexists$-এর
+সঠিক প্রয়োগ—পূর্বধারণায়~$t$-র এক বা একাধিক আবির্ভাব, সবগুলি
+অবশ্যই নয়, বদ্ধ !!{variable}~$x$ দিয়ে ``প্রতিস্থাপন'' করা যায়। কিন্তু
+$\Intro\lforall$ ও~$\Elim\lexists$-এর আইগেনচল-শর্তে !!{constant}~$a$
+যেন~$!A$-তে না আসে। তাই $\Atom{\Obj P}{a,a}$ থেকে
+$\lforall[x][\Atom{\Obj P}{a,x}]$ অনুমান করতে $\Intro\lforall$-এর
+সঠিক প্রয়োগ করা যায় না।
+\end{explain}
+
+\begin{explain}
+\Intro{\lexists} ও \Elim{\lforall}-এ বদ্ধ পদ~$t$-র ওপর আর কোনো
+বিধিনিষেধ নেই, তাই কোনো অতিরিক্ত শর্ত নিয়ে ভাবতে হয় না। অন্যদিকে,
+\Elim{\lexists} ও \Intro{\lforall} বিধিতে আইগেনচল-শর্ত অনুযায়ী
+!!{constant}~$a$ সিদ্ধান্তে বা কোনো !!{undischarged} অনুমিতিতে কোথাও
+আসতে পারবে না। পদ্ধতিটি যে বিশুদ্ধ—অর্থাৎ যে !!{undischarged}
+অনুমিতিগুলি থেকে বাক্যগুলি অনুসৃত হয়, শুধু সেগুলি থেকেই !!{sentence}s
+!!{derive}s করে—তা নিশ্চিত করতে এই শর্ত দরকার। এই শর্ত না থাকলে
+নিচেরটি অনুমোদিত হতো:
+\begin{prooftree}
+  \AxiomC{$\lexists[x][!A(x)]$}
+  \AxiomC{$\Discharge{!A(a)}{1}$}
+  \RightLabel{*\Intro{\lforall}}
+  \UnaryInfC{$\lforall[x][!A(x)]$}
+  \RightLabel{\Elim{\lexists}}
+  \BinaryInfC{$\lforall[x][!A(x)]$}
+\end{prooftree}
+কিন্তু $\lexists[x][!A(x)] \Entails/ \lforall[x][!A(x)]$।
+
+পরিমাণসূচকের অপসারণ-বিধিগুলি !!{variable}s-এর জায়গায় শুধু বদ্ধ পদ
+বসাতে দেয়; তাই !!{sentence}s-এর কোনো সেট থেকে নিষ্পন্ন হতে পারে এমন
+প্রত্যেক !!{formula} নিজেও !!a{sentence}।
+\end{explain}
+
+
+\end{document}

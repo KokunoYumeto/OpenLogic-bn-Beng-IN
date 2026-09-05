@@ -1,0 +1,249 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: proving-things-quant
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{ntd}{prq}
+
+\olsection{পরিমাণসূচকসহ \usetoken{P}{derivation}}
+
+\begin{ex}
+পরিমাণসূচক নিয়ে কাজ করার সময় আইগেনচল-শর্ত যেন লঙ্ঘিত না হয় তা
+নিশ্চিত করতে হবে; কখনো তার জন্য কয়েকটি অনুমান প্রয়োগের ক্রম নিয়ে
+পরীক্ষা করতে হয়। সাধারণভাবে আইগেনচল-শর্তাধীন বিধিগুলির কাজ আগে সেরে
+ফেলা সুবিধাজনক (সম্পূর্ণ প্রমাণে সেগুলি নিচের দিকে থাকবে)।
+
+!!{formula}~$\lexists[x][\lnot !A(x)] \lif \lnot
+\lforall[x][!A(x)]$-এর একটি !!a{derivation} কীভাবে দেব দেখা যাক।
+আগের মতো শুরু করে লিখি
+\begin{prooftree}
+\AxiomC{}
+\UnaryInfC{$\lexists[x][\lnot !A(x)]\lif \lnot \lforall[x][!A(x)]$}
+\end{prooftree}
+শেষ ধাপটিকে \Intro{\lif} বিধি দিয়ে সমর্থন করতে কী লাগবে, তা আগে
+লিখে নিই।
+\begin{prooftree}
+\AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
+\DeduceC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$\lexists[x][\lnot !A(x)]\lif \lnot \lforall[x][!A(x)]$}
+\end{prooftree}
+$\lnot \lforall[x][!A(x)]$-এ প্রয়োগ করার মতো কোনো স্পষ্ট বিধি নেই;
+তাই !!{derivation}-টিকে এমনভাবে সাজাব যেন \Elim{\lexists} বিধি ব্যবহার
+করতে পারি। এখানে আইগেনচল-শর্ত খেয়াল রেখে এমন একটি ধ্রুবক বেছে নিতে
+হবে যা $\lexists[x][\lnot !A(x)]$-এ বা সেটি যে অনুমিতিগুলির ওপর নির্ভর করে
+তার কোনোটিতে আসে না। (তবে কোনো !!{constant}s নেই বলে যেকোনো পছন্দই
+চলবে।)
+% BN-SRC-036 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-036):} হিমায়িত ইংরেজি আইগেনচল-পরীক্ষায় মুখ্য অনুমিতিটিকে $\lexists[x][!A(x)]$ লেখা হয়েছে, কিন্তু উদাহরণ ও প্রতিটি প্রমাণ-বৃক্ষে সেটি $\lexists[x][\lnot !A(x)]$। বাংলা গদ্যে অনুপস্থিত নঞর্থক চিহ্নটি পুনরুদ্ধার করা হয়েছে।} % BN-SRC-036 TARGET-CORRECTION-END
+\begin{prooftree}
+\AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
+\AxiomC{$\Discharge{\lnot !A(a)}{2}$}
+\DeduceC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Elim{\lexists}}{2}
+\BinaryInfC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$\lexists[x][\lnot !A(x)] \lif \lnot \lforall[x][!A(x)]$}
+\end{prooftree}
+$\lnot \lforall[x][!A(x)]$ নিষ্পন্ন করতে \Intro{\lnot} বিধি
+ব্যবহারের চেষ্টা করব। তার জন্য একটি স্ববিরোধ নিষ্পন্ন করতে হবে, সম্ভবত
+$\lforall[x][!A(x)]$-কে অতিরিক্ত অনুমিতি হিসেবে নিয়ে। অবশ্য এই
+স্ববিরোধে সেই অনুমিতি~$\lnot !A(a)$ ব্যবহৃত হতে পারে, যেটি
+\Elim{\lexists} অনুমান অবমুক্ত করবে। এভাবে সাজাতে পারি:
+\begin{prooftree}
+\AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
+\AxiomC{$\Discharge{\lnot !A(a)}{2}, \Discharge{\lforall[x][!A(x)]}{3}$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{3}
+\UnaryInfC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Elim{\lexists}}{2}
+\BinaryInfC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$\lexists[x][\lnot !A(x)]\lif \lnot \lforall[x][!A(x)]$}
+\end{prooftree}
+স্ববিরোধ পাওয়ার খুব কাছাকাছি এসেছি বলে মনে হচ্ছে। প্রয়োগের সবচেয়ে
+সহজ বিধি হলো \Elim{\lforall}; এতে কোনো আইগেনচল-শর্ত নেই। সার্বিকভাবে
+পরিমাণিত~$x$-এর জায়গায় যেকোনো পদ ব্যবহার করা যায় বলে~$a$ ব্যবহার
+চালিয়ে যাওয়াই যুক্তিসঙ্গত; তাতে স্ববিরোধে পৌঁছতে পারব।
+\begin{prooftree}
+\AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
+\AxiomC{$\Discharge{\lnot !A(a)}{2}$}
+\AxiomC{$\Discharge{\lforall[x][!A(x)]}{3}$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!A(a)$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{3}
+\UnaryInfC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Elim{\lexists}}{2}
+\BinaryInfC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$\lexists[x][\lnot !A(x)]\lif \lnot \lforall[x][!A(x)]$}
+\end{prooftree}
+
+বিশেষত পরিমাণসূচকের ক্ষেত্রে, এই পর্যায়ে আইগেনচল-শর্ত লঙ্ঘিত হয়েছে
+কি না আর একবার পরীক্ষা করা জরুরি। আমাদের প্রয়োগ করা বিধিগুলির মধ্যে
+শুধু \Elim{\lexists} আইগেনচল-শর্তাধীন, আর আইগেনচল~$a$ তার নির্ভর করা
+কোনো অনুমিতিতে আসে না। তাই এটি একটি সঠিক !!{derivation}।
+% BN-SRC-037 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-037):} হিমায়িত ইংরেজি অনুচ্ছেদের শেষ উল্লেখে অধ্যায়ের কনফিগারযোগ্য অস্তিত্বসূচক $\lexists$-এর বদলে কাঁচা TeX চিহ্ন $\exists$ দেওয়া হয়েছে। বাংলা পাঠে প্রদর্শিত বিধিগুলির মতোই $\Elim{\lexists}$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-037 TARGET-CORRECTION-END
+\end{ex}
+
+\begin{ex}
+কখনো অন্য !!{formula}s থেকে কোনো !!a{formula} নিষ্পন্ন করতে পারি।
+এসব ক্ষেত্রে অনবমুক্ত অনুমিতি থাকতে পারে। অন্তিম লক্ষ্যটির পাশাপাশি
+আমাদের অনুমিতিগুলিরও হিসাব রাখা জরুরি।
+
+অনুমিতি $\lexists[x][(!A(x) \land !B(x))]$ ও
+$\lforall[x][(!B(x) \lif !C(x,b))]$ থেকে !!{formula}
+$\lexists[x][!C(x,b)]$-এর একটি !!a{derivation} কীভাবে দেব দেখা যাক।
+আগের মতো সিদ্ধান্তটি নিচে লিখি।
+\begin{prooftree}
+\AxiomC{}
+\UnaryInfC{$\lexists[x][!C(x,b)]$}
+\end{prooftree}
+
+কাজ করার জন্য আমাদের দুটি পূর্বধারণা আছে। প্রথমটি ব্যবহার করে, অর্থাৎ
+$\lexists[x][(!A(x) \land !B(x))]$ থেকে
+$\lexists[x][!C(x, b)]$-এর কোনো !!a{derivation} খুঁজতে
+\Elim{\lexists} বিধি ব্যবহার করব। বিধিটিতে আইগেনচল-শর্ত আছে বলে সেটিই
+আগে প্রয়োগ করি। পাই:
+\begin{prooftree}
+\AxiomC{$\lexists[x][(!A(x) \land !B(x))]$}
+\AxiomC{$\Discharge{!A(a) \land !B(a)}{1}$}
+\DeduceC{$\lexists[x][!C(x,b)]$}
+\DischargeRule{\Elim{\lexists}}{1}
+\BinaryInfC{$\lexists[x][!C(x,b)]$}
+\end{prooftree}
+আমাদের দুই অনুমিতিতে~$!B$ সাধারণ। এই পর্যায়ে~$!B(a)$-কে আলাদা করতে
+\Elim{\land} প্রয়োগ করা কাজে লাগতে পারে।
+\begin{prooftree}
+\AxiomC{$\lexists[x][(!A(x) \land !B(x)])$}
+\AxiomC{$\Discharge{!A(a)
+\land !B(a)}{1}$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!B(a)$}
+\DeduceC{$\lexists[x][!C(x,b)]$}
+\DischargeRule{\Elim{\lexists}}{1}
+\BinaryInfC{$\lexists[x][!C(x,b)]$}
+\end{prooftree}
+
+কাজের দ্বিতীয় অনুমিতিটি হলো~$\lforall[x][(!B(x) \lif
+  !C(x,b))]$। কোনো আইগেনচল-শর্ত নেই বলে \Elim{\lforall} ব্যবহার করে
+!!{constant}~$a$ দিয়ে~$x$-কে নিদর্শিত করে $!B(a) \lif !C(a, b)$
+পাই। এখন $!B(a) \lif !C(a,b)$ ও $!B(a)$—দুটিই আছে। পরের পদক্ষেপ
+হওয়া উচিত \Elim{\lif} বিধির সরল প্রয়োগ।
+\begin{prooftree}
+\AxiomC{$\lexists[x][(!A(x) \land !B(x))]$}
+\AxiomC{$\lforall[x][(!B(x) \lif !C(x,b))]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(a) \lif !C(a,b)$}
+\AxiomC{$\Discharge{!A(a)
+\land !B(a)}{1}$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!B(a)$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C(a,b)$}
+\DeduceC{$\lexists[x][!C(x,b)]$}
+\DischargeRule{\Elim{\lexists}}{1}
+\insertBetweenHyps{\hspace{-5em}}
+\BinaryInfC{$\lexists[x][!C(x,b)]$}
+\end{prooftree}
+লক্ষ্যের খুব কাছাকাছি!{} \Intro{\lexists}-এর একটি প্রয়োগেই লক্ষ্যে
+পৌঁছে যাই।
+\begin{prooftree}
+\AxiomC{$\lexists[x][(!A(x) \land !B(x))]$}
+\AxiomC{$\lforall[x][(!B(x) \lif !C(x,b))]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(a) \lif !C(a,b)$}
+\AxiomC{$\Discharge{!A(a)
+\land !B(a)}{1}$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!B(a)$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C(a,b)$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!C(x,b)]$}
+\DischargeRule{\Elim{\lexists}}{1}
+\insertBetweenHyps{\hspace{-5em}}
+\BinaryInfC{$\lexists[x][!C(x,b)]$}
+\end{prooftree}
+প্রত্যেক ধাপে আইগেনচল-শর্ত যেন লঙ্ঘিত না হয় তা নিশ্চিত করেছি বলে এটি
+যে একটি সঠিক !!{derivation}, সে বিষয়ে নিশ্চিন্ত হতে পারি।
+\end{ex}
+
+\begin{ex}
+অনুমিতি $\lforall[x][!A(x)] \lif \lexists[y][!B(y)]$ এবং
+$\lnot\lexists[y][!B(y)]$ থেকে !!{formula}
+$\lnot\lforall[x][!A(x)]$-এর একটি !!a{derivation} দাও। আগের মতো
+লক্ষ্য !!{formula}-টি নিচে লিখি।
+\begin{prooftree}
+\AxiomC{}
+\UnaryInfC{$\lnot\lforall[x][!A(x)]$}
+\end{prooftree}
+!!{derivation}-টির শেষ পঙ্‌ক্তি একটি নঞর্থক বাক্য, তাই
+\Intro{\lnot} ব্যবহার করে দেখি। এর জন্য কীভাবে একটি স্ববিরোধ
+!!{derive} করা যায় তা বের করতে হবে।
+\begin{prooftree}
+\AxiomC{$\Discharge{\lforall[x][!A(x)]}{1}$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot\lforall[x][!A(x)]$}
+\end{prooftree}
+এ পর্যন্ত ঠিক আছে। \Elim{\lforall} ব্যবহার করা যায়, কিন্তু তাতে
+লক্ষ্যে পৌঁছনোর সুবিধা হবে কি না স্পষ্ট নয়। তার বদলে আমাদের একটি
+অনুমিতি ব্যবহার করি। $\lforall[x][!A(x)] \lif \lexists[y][!B(y)]$
+ও $\lforall[x][!A(x)]$ একসঙ্গে \Elim{\lif} বিধি ব্যবহারের সুযোগ দেয়।
+\begin{prooftree}
+\AxiomC{$\lforall[x][!A(x)] \lif \lexists[y][!B(y)]$}
+\AxiomC{$\Discharge{\lforall[x][!A(x)]}{1}$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$\lexists[y][!B(y)]$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot\lforall[x][!A(x)]$}
+\end{prooftree}
+এখন কাজের জন্য একটি শেষ অনুমিতি আছে; দেখে মনে হচ্ছে \Elim{\lnot}
+ব্যবহার করে সেটিই স্ববিরোধে পৌঁছতে সাহায্য করবে।
+\begin{prooftree}
+\AxiomC{$\lnot\lexists[y][!B(y)]$}
+\AxiomC{$\lforall[x][!A(x)] \lif \lexists[y][!B(y)]$}
+\AxiomC{$\Discharge{\lforall[x][!A(x)]}{1}$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$\lexists[y][!B(y)]$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot\lforall[x][!A(x)]$}
+\end{prooftree}
+\end{ex}
+
+\begin{prob}
+নিচের কথাগুলি দেখায় এমন !!{derivation}s দাও:
+\begin{enumerate}
+\item $\Proves (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) \lif
+\lforall[z][(!A(z) \land !B(z))]$।
+\item $\Proves (\lexists[x][!A(x)] \lor \lexists[y][!B(y)]) \lif
+\lexists[z][(!A(z) \lor !B(z))]$।
+\item $\lforall[x][(!A(x) \lif !B)] \Proves \lexists[y][!A(y)] \lif !B$।
+\item $\lforall[x][\lnot !A(x)] \Proves \lnot\lexists[x][!A(x)]$।
+\item $\Proves \lnot\lexists[x][!A(x)] \lif \lforall[x][\lnot !A(x)]$।
+\item $\Proves \lnot\lexists[x][\lforall[y][((!A(x,y) \lif \lnot
+!A(y,y)) \land (\lnot !A(y,y) \lif !A(x,y)))]]$।
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+নিচের কথাগুলি দেখায় এমন !!{derivation}s দাও:
+\begin{enumerate}
+\item $\Proves \lnot\lforall[x][!A(x)] \lif \lexists[x][\lnot!A(x)]$।
+\item $(\lforall[x][!A(x)] \lif !B) \Proves \lexists[y][(!A(y) \lif !B)]$।
+\item $\Proves \lexists[x][(!A(x) \lif \lforall[y][!A(y)])]$।
+\end{enumerate}
+(এগুলির প্রত্যেকটিতে $\FalseCl$~বিধি দরকার।)
+\end{prob}
+
+\end{document}

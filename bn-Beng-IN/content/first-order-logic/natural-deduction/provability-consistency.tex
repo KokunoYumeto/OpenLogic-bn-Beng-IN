@@ -1,0 +1,130 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{prv}}
+      {\olfileid{pl}{ntd}{prv}}
+
+\olsection{\usetoken{S}{derivability} ও সঙ্গতি}
+
+এবার !!{derivability} সম্পর্কের কয়েকটি ধর্ম প্রতিষ্ঠা করব। সেগুলি
+নিজে থেকেই আকর্ষণীয়, আবার প্রত্যেকটি পূর্ণতা উপপাদ্যের প্রমাণে ভূমিকা
+নেবে।
+
+\begin{prop}\ollabel{prop:provability-contr}
+  $\Gamma \Proves !A$ এবং $\Gamma \cup \{!A\}$ অসঙ্গত হলে
+  $\Gamma$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+$\Gamma$ থেকে~$!A$-এর !!{derivation}-টিকে~$\delta_1$ এবং
+$\Gamma \cup \{!A\}$ থেকে~$\lfalse$-এর !!{derivation}-টিকে
+$\delta_2$ ধরি। তখন নিচেরটি !!{derive} করা যায়:
+\begin{prooftree}
+\AxiomC{$\Gamma, \Discharge{!A}{1}$}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot !A$}
+\AxiomC{$\Gamma$}
+\RightLabel{$\delta_1$}
+\DeduceC{$!A$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\end{prooftree}
+নতুন !!{derivation}-এ অনুমিতি~$!A$ !!{discharged}; তাই এটি
+$\Gamma$ থেকে একটি !!a{derivation}।
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ যদি এবং কেবল যদি $\Gamma \cup \{\lnot !A\}$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+প্রথমে ধরা যাক $\Gamma \Proves !A$; অর্থাৎ !!{undischarged}
+অনুমিতি~$\Gamma$ থেকে~$!A$-এর কোনো !!a{derivation}~$\delta_0$ আছে।
+নিচের মতো করে $\Gamma \cup \{\lnot !A\}$ থেকে~$\lfalse$-এর কোনো
+!!a{derivation} পাই:
+\begin{prooftree}
+  \AxiomC{$\lnot !A$}
+  \AxiomC{$\Gamma$}
+  \RightLabel{$\delta_0$}
+  \DeduceC{$!A$}
+  \RightLabel{\Elim{\lnot}}
+  \BinaryInfC{$\lfalse$}
+\end{prooftree}
+
+এবার ধরা যাক $\Gamma \cup \{\lnot !A\}$ অসঙ্গত, এবং তার অনুরূপ
+!!{undischarged} অনুমিতি~$\Gamma \cup \{\lnot !A\}$ থেকে~$\lfalse$-এর
+!!{derivation}-টিকে~$\delta_1$ ধরি। শুধু~$\Gamma$ থেকে~$!A$-এর কোনো
+!!a{derivation} পেতে~$\FalseCl$ ব্যবহার করি:
+\begin{prooftree}
+  \AxiomC{$\Gamma, \Discharge{\lnot !A}{1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$\lfalse$}
+  \DischargeRule{\FalseCl}{1}
+  \UnaryInfC{$!A$}
+\end{prooftree}
+% BN-SRC-038 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-038):} হিমায়িত ইংরেজি বৃক্ষে একই $\FalseCl$ অনুমানের আগে $\RightLabel{\FalseCl}$ এবং পরে $\DischargeRule{\FalseCl}{1}$—দুটি লেবেল-নির্দেশ আছে। দ্বিতীয় নির্দেশটিই বিধির নাম ও অবমুক্তির চিহ্ন দুটো বসায়; বাংলা বৃক্ষে অতিরিক্ত প্রথম নির্দেশটি বাদ দেওয়া হয়েছে।} % BN-SRC-038 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prob}
+$\Gamma \Proves \lnot !A$ যদি এবং কেবল যদি $\Gamma \cup \{!A\}$
+অসঙ্গত—প্রমাণ করো।
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  $\Gamma \Proves !A$ এবং $\lnot !A \in \Gamma$ হলে $\Gamma$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+  ধরা যাক $\Gamma \Proves !A$ এবং $\lnot !A \in \Gamma$। তখন
+  $\Gamma$ থেকে~$!A$-এর কোনো !!a{derivation}~$\delta$ আছে।
+  $\Elim{\lnot}$ বিধির এই সরল প্রয়োগটি বিবেচনা করো:
+  \begin{prooftree}
+    \AxiomC{$\lnot !A$}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta$}
+    \DeduceC{$!A$}
+    \RightLabel{\Elim{\lnot}}
+    \BinaryInfC{$\lfalse$}
+  \end{prooftree}
+  $\lnot !A \in \Gamma$ বলে সব !!{undischarged} অনুমিতি~$\Gamma$-তে
+  আছে; এটি দেখায় যে $\Gamma \Proves \lfalse$।
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  $\Gamma \cup \{!A\}$ এবং $\Gamma \cup \{\lnot !A\}$ উভয়ই
+  অসঙ্গত হলে $\Gamma$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+$\Gamma \cup \{ !A \}$ থেকে~$\lfalse$ এবং $\Gamma \cup \{ \lnot !A
+  \}$ থেকে~$\lfalse$-এর যথাক্রমে !!{derivation}s~$\delta_1$ ও
+$\delta_2$ আছে। তখন নিচেরটি !!{derive} করা যায়:
+\begin{prooftree}
+\AxiomC{$\Gamma, \Discharge{\lnot !A}{2}$}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{2}
+\UnaryInfC{$\lnot \lnot !A$}
+\AxiomC{$\Gamma, \Discharge{!A}{1}$}
+\RightLabel{$\delta_1$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot !A$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\end{prooftree}
+অনুমিতি $!A$ ও $\lnot !A$ !!{discharged} বলে এটি শুধু~$\Gamma$
+থেকে~$\lfalse$-এর কোনো !!a{derivation}। অতএব $\Gamma$ অসঙ্গত।
+\end{proof}
+
+\end{document}

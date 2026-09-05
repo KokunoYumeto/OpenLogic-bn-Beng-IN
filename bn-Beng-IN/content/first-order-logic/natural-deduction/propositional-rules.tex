@@ -1,0 +1,120 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: propositional-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{prl}}
+      {\olfileid{pl}{ntd}{prl}}
+
+\olsection{বচনমূলক বিধি}
+
+
+\subsection{$\land$-এর বিধি}
+
+\begin{defish}
+\AxiomC{$!A$}
+\AxiomC{$!B$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!A \land !B$}
+\DisplayProof
+\hfill
+\begin{tabular}{r}
+\AxiomC{$!A \land !B$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!A$}
+\DisplayProof
+\\[3ex]
+\AxiomC{$!A \land !B$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!B$}
+\DisplayProof
+\end{tabular}
+\end{defish}
+
+\subsection{$\lor$-এর বিধি}
+
+\begin{defish}
+\begin{tabular}{r}
+\AxiomC{$!A$}
+\RightLabel{\Intro{\lor}}
+\UnaryInfC{$!A \lor !B$}
+\DisplayProof
+\\[3ex]
+\AxiomC{$!B$}
+\RightLabel{\Intro{\lor}}
+\UnaryInfC{$!A \lor !B$}
+\DisplayProof
+\end{tabular}
+\hfill
+\AxiomC{$!A \lor !B$}
+\AxiomC{$\Discharge{!A}{n}$}
+\DeduceC{$!C$}
+\AxiomC{$\Discharge{!B}{n}$}
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lor}}{n}
+\TrinaryInfC{$!C$}
+\DisplayProof
+\end{defish}
+
+\subsection{$\lif$-এর বিধি}
+
+\begin{defish}
+\AxiomC{$\Discharge{!A}{n}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{n}
+\UnaryInfC{$!A \lif !B$}
+\DisplayProof
+\hfill
+\AxiomC{$!A \lif !B$}
+\AxiomC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\end{defish}
+
+\subsection{$\lnot$-এর বিধি}
+
+\begin{defish}
+\AxiomC{$\Discharge{!A}{n}$}
+\noLine
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{n}
+\UnaryInfC{$\lnot !A$}
+\DisplayProof
+\hfill
+\AxiomC{$\lnot !A$}
+\AxiomC{$!A$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\DisplayProof
+\end{defish}
+
+\subsection{$\lfalse$-এর বিধি}
+
+\begin{defish}
+\AxiomC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!A$}
+\DisplayProof
+\hfill
+\AxiomC{$\Discharge{\lnot !A}{n}$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\FalseCl}{n}
+\UnaryInfC{$!A$}
+\DisplayProof
+\end{defish}
+
+লক্ষ করো, $\Intro{\lnot}$ ও $\FalseCl$ খুবই সদৃশ। পার্থক্য হলো,
+$\Intro{\lnot}$ একটি নেতিবাচক !!{sentence}~$\lnot !A$ নিষ্পাদন
+করে, কিন্তু $\FalseCl$ একটি সদর্থক !!{sentence}~$!A$ নিষ্পাদন করে।
+
+যখনই কোনো বিধিতে কোনো অনুমিতি অবমুক্ত করা যেতে পারে বলে দেখানো হয়,
+তখন সেটিকে অনুমতি হিসেবে ধরি, বাধ্যবাধকতা হিসেবে নয়। যেমন,
+$\Intro{\lif}$ বিধিতে পূর্বধারণা~$!B$-এর !!{derivation}-এ~$!A$
+রূপের শূন্য-সহ যেকোনো সংখ্যক অনুমিতি অবমুক্ত করতে পারি।
+
+\end{document}

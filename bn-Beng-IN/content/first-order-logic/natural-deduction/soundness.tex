@@ -1,0 +1,313 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{sou}}
+      {\olfileid{pl}{ntd}{sou}}
+
+\olsection{বিশুদ্ধতা}
+
+\begin{explain}
+স্বাভাবিক নিষ্পাদনের মতো কোনো !!^a{derivation} পদ্ধতি ঠিক তখনই
+\emph{বিশুদ্ধ}, যখন বাস্তবে অনুসৃত হয় না এমন কিছু সেটি !!{derive}
+করতে পারে না। তাই বিশুদ্ধতা !!{derivation} পদ্ধতির এক ধরনের নিশ্চিত
+নিরাপত্তা-ধর্ম। কোন প্রমাণতাত্ত্বিক ধর্মটি বিবেচ্য তার ওপর নির্ভর করে
+আমরা যেমন জানতে চাই যে
+\begin{enumerate}
+\item প্রত্যেক !!{derivable} !!{sentence} \iftag{FOL}{বৈধ}{একটি সর্বসত্য};
+\item কোনো !!a{sentence} অন্য কয়েকটি থেকে !!{derivable} হলে সেটি
+  তাদের অনুসিদ্ধান্তও;
+\item !!{sentence}s-এর কোনো সেট অসঙ্গত হলে সেটি অপরিতৃপ্তিযোগ্য।
+\end{enumerate}
+এগুলি কোনো !!a{derivation} পদ্ধতির গুরুত্বপূর্ণ ধর্ম। এর কোনোটি সত্য
+না হলে !!{derivation} পদ্ধতিটি ত্রুটিপূর্ণ—সেটি অত্যধিক কিছু
+!!{derive} করত। তাই কোনো !!{derivation} পদ্ধতির বিশুদ্ধতা প্রতিষ্ঠা
+করা অত্যন্ত গুরুত্বপূর্ণ।
+\end{explain}
+
+\begin{thm}[বিশুদ্ধতা]
+\ollabel{thm:soundness}
+$!A$ যদি !!{undischarged} অনুমিতি~$\Gamma$ থেকে !!{derivable} হয়,
+তবে $\Gamma \Entails !A$।
+\end{thm}
+
+\begin{proof}
+$!A$-এর কোনো !!a{derivation}~$\delta$ ধরি। $\delta$-র অনুমানের
+সংখ্যার ওপর আরোহ প্রয়োগ করি।
+
+আরোহের ভিত্তিতে অনুমানের সংখ্যা~$0$ হলে দাবিটি দেখাই। এই ক্ষেত্রে
+$\delta$ শুধু একটি !!{sentence}~$!A$, অর্থাৎ একটি অনুমিতি, নিয়ে
+গঠিত। অনুমিতিটি !!{undischarged}, কারণ শুধু অনুমানের দ্বারাই অনুমিতি
+!!{discharged} হতে পারে, আর এখানে কোনো অনুমান নেই। তাই
+\iftag{FOL}{যেকোনো !!{structure}~$\Struct{M}$}{যেকোনো !!{valuation}~$\pAssign{v}$}
+যা প্রমাণটির সব !!{undischarged} অনুমিতি পরিতৃপ্ত করে, সেটি~$!A$-কেও
+পরিতৃপ্ত করে।
+
+এবার আরোহের ধাপ। ধরা যাক, $\delta$-তে~$n$-টি অনুমান আছে। সর্বনিম্ন
+অনুমানের পূর্বধারণা(গুলি) এমন উপ-!!{derivation}s ব্যবহার করে
+!!{derive}d, যার প্রত্যেকটিতে~$n$-এর চেয়ে কম অনুমান আছে। আরোহের
+অনুমান ধরি: সর্বনিম্ন অনুমানের পূর্বধারণাগুলি ওই পূর্বধারণাগুলিতে শেষ
+হওয়া উপ-!!{derivation}s-এর !!{undischarged} অনুমিতি থেকে অনুসৃত।
+দেখাতে হবে, সিদ্ধান্ত~$!A$ গোটা প্রমাণের !!{undischarged} অনুমিতি
+থেকে অনুসৃত।
+
+সর্বনিম্ন অনুমানের ধরন অনুযায়ী ক্ষেত্রবিভাগ করি। আগে মাত্র একটি
+পূর্বধারণা-যুক্ত সম্ভাব্য অনুমানগুলি বিবেচনা করি।
+
+\begin{enumerate}
+\item ধরা যাক শেষ অনুমানটি \Intro{\lnot}: !!{derivation}-টির রূপ
+  \begin{prooftree}
+    \AxiomC{$\Gamma, \Discharge{!A}{n}$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$\lfalse$}
+    \DischargeRule{\Intro{\lnot}}{n}
+    \UnaryInfC{$\lnot !A$}
+  \end{prooftree}
+  আরোহের অনুমান থেকে~$\lfalse$, $\delta_1$-এর !!{undischarged}
+  অনুমিতি $\Gamma \cup \{!A\}$ থেকে অনুসৃত।
+  \iftag{FOL}{কোনো !!a{structure}~$\Struct{M}$}{কোনো !!a{valuation}~$\pAssign{v}$}
+  বিবেচনা করো। দেখাতে হবে, $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$
+  হলে $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !A}$। বিপরীত ধরে নাও,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ কিন্তু
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lnot !A}$, অর্থাৎ
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$। তাহলে
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma \cup \{!A\}}$ হতো। এটি
+  আমাদের আরোহের অনুমানের বিরোধী। অতএব
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !A}$।
+
+\item শেষ অনুমানটি \Elim{\land}: এর দুটি রূপ আছে—পূর্বধারণা
+  $!A \land !B$ থেকে~$!A$ বা~$!B$ অনুমান করা যায়। প্রথম ক্ষেত্রটি
+  বিবেচনা করি। !!{derivation}~$\delta$-র রূপ:
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A \land !B$}
+    \RightLabel{\Elim{\land}}
+    \UnaryInfC{$!A$}
+  \end{prooftree}
+  আরোহের অনুমান থেকে~$!A \land !B$, $\delta_1$-এর !!{undischarged}
+  অনুমিতি~$\Gamma$ থেকে অনুসৃত।
+  \iftag{FOL}{কোনো !!a{structure}~$\Struct{M}$}{কোনো মূল্যায়ন~$\pAssign{v}$} বিবেচনা
+  করো। দেখাতে হবে, $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ হলে
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$। ধরা যাক
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$। আমাদের আরোহের অনুমান
+  ($\Gamma \Entails !A \land !B$) থেকে জানি,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$। সংজ্ঞা অনুযায়ী,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$ যদি এবং কেবল যদি
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ ও
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$। ($!A \land !B$ থেকে~$!B$
+  অনুমান করার ক্ষেত্রটিও একইভাবে হয়।)
+  % BN-SRC-039 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-039):} হিমায়িত ইংরেজি ট্যাগ-বিভাজনে বচনমূলক শাখাতেও বস্তুটিকে “structure” বলা হয়, যদিও সেই শাখায় প্রতীকটি মূল্যায়ন~$\pAssign{v}$। বাংলা পাঠে FOL শাখায় গঠন এবং PL শাখায় মূল্যায়ন বলা হয়েছে।} % BN-SRC-039 TARGET-CORRECTION-END
+
+\item শেষ অনুমানটি \Intro{\lor}: এর দুটি রূপ আছে—পূর্বধারণা~$!A$ বা
+  পূর্বধারণা~$!B$ থেকে $!A \lor !B$ অনুমান করা যায়। প্রথম ক্ষেত্রটি
+  বিবেচনা করি। !!{derivation}-টির রূপ
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A$}
+    \RightLabel{\Intro{\lor}}
+    \UnaryInfC{$!A \lor !B$}
+  \end{prooftree}
+  আরোহের অনুমান থেকে~$!A$, $\delta_1$-এর !!{undischarged}
+  অনুমিতি~$\Gamma$ থেকে অনুসৃত।
+  \iftag{FOL}{কোনো !!a{structure}~$\Struct{M}$}{কোনো !!a{valuation}~$\pAssign{v}$}
+  বিবেচনা করো। দেখাতে হবে, $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$
+  হলে $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lor !B}$। ধরা যাক
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$; আরোহের অনুমান
+  $\Gamma \Entails !A$ বলে তখন
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$। অতএব
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lor !B}$-ও সত্য। (~$!B$ থেকে
+  $!A \lor !B$ অনুমান করার ক্ষেত্রটিও একইভাবে হয়।)
+
+\item শেষ অনুমানটি \Intro{\lif}: অনুমিতি~$!A$ ও সিদ্ধান্ত~$!B$-যুক্ত
+  কোনো উপপ্রমাণ থেকে $!A \lif !B$ অনুমান করা হয়, অর্থাৎ
+  \begin{prooftree}
+    \AxiomC{$\Gamma, \Discharge{!A}{n}$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!B$}
+    \DischargeRule{\Intro{\lif}}{n}
+    \UnaryInfC{$!A \lif !B$}
+  \end{prooftree}
+  আরোহের অনুমান থেকে~$!B$, $\delta_1$-এর !!{undischarged}
+  অনুমিতিগুলি থেকে অনুসৃত; অর্থাৎ $\Gamma \cup \{!A\} \Entails
+  !B$। কোনো
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  বিবেচনা করো। $!A$ শেষ অনুমানে অবমুক্ত হয় বলে~$\delta$-র
+  !!{undischarged} অনুমিতি শুধু~$\Gamma$। তাই দেখাতে হবে, $\Gamma
+  \Entails !A \lif !B$। বিপরীত ধরে নাও, কোনো
+  \iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}-এর
+  জন্য $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ কিন্তু
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$। তাহলে
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ এবং
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$। কিন্তু অনুমান অনুযায়ী
+  $!B$ হলো $\Gamma \cup \{!A\}$-এর অনুসিদ্ধান্ত; অর্থাৎ
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$—এটি স্ববিরোধ। অতএব $\Gamma
+  \Entails !A \lif !B$।
+
+\item শেষ অনুমানটি \FalseInt। এখানে~$\delta$-র শেষে আছে
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$\lfalse$}
+    \RightLabel{\FalseInt}
+    \UnaryInfC{$!A$}
+  \end{prooftree}
+  আরোহের অনুমান থেকে $\Gamma \Entails \lfalse$। দেখাতে হবে,
+  $\Gamma \Entails !A$। তা না হওয়ার কথা ধরে নাও; তাহলে কোনো
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$-এর জন্য
+    $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ এবং
+    $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$। কিন্তু সবসময়
+    $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lfalse}$; তাই এর অর্থ হতো
+    $\Gamma \Entails/ \lfalse$, যা আরোহের অনুমানের বিরোধী।
+
+\item শেষ অনুমানটি \FalseCl: অনুশীলনী।
+
+\iftag{FOL}{
+\item শেষ অনুমানটি \Intro{\lforall}: তখন~$\delta$-র রূপ
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A(a)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x)]$}
+  \end{prooftree}
+  আরোহের অনুমান থেকে পূর্বধারণা~$!A(a)$, !!{undischarged}
+  অনুমিতি~$\Gamma$-র অনুসিদ্ধান্ত। এমন কোনো গঠন~$\Struct{M}$
+  বিবেচনা করো যেন $\Sat{M}{\Gamma}$। দেখাতে হবে,
+  $\Sat{M}{\lforall[x][!A(x)]}$। $\lforall[x][!A(x)]$ একটি
+  !!a{sentence} বলে এর অর্থ হলো প্রত্যেক চলরাশি-আরোপ~$s$-এর জন্য
+  $\Sat{M}{!A(x)}[s]$ দেখাতে হবে
+  (\olref[syn][ass]{prop:sat-quant})। $\Gamma$ শুধু বাক্য দিয়ে গঠিত
+  বলে \olref[syn][sat]{defn:satisfaction} অনুযায়ী প্রত্যেক
+  $!B \in \Gamma$-র জন্য $\Sat{M}{!B}[s]$। $\Struct{M'}$-কে
+  $\Struct{M}$-এর মতোই ধরি, শুধু $\Assign{a}{M'} = s(x)$। যেহেতু
+  $a$~$\Gamma$-তে আসে না, \olref[syn][ext]{cor:extensionality-sent}
+  অনুযায়ী $\Sat{M'}{\Gamma}$। $\Gamma \Entails !A(a)$ বলে
+  $\Sat{M'}{!A(a)}$। $!A(a)$ একটি !!a{sentence} বলে
+  \olref[syn][ass]{prop:sentence-sat-true} অনুযায়ী
+  $\Sat{M'}{!A(a)}[s]$। \olref[syn][ext]{prop:ext-formulas} অনুযায়ী
+  $\Sat{M'}{!A(x)}[s]$ যদি এবং কেবল যদি $\Sat{M'}{!A(a)}$ (মনে করো,
+  $!A(a)$ কেবল $\Subst{!A(x)}{a}{x}$)। তাই
+  $\Sat{M'}{!A(x)}[s]$। $a$~$!A(x)$-এ আসে না বলে
+  \olref[syn][ext]{prop:extensionality} অনুযায়ী
+  $\Sat{M}{!A(x)}[s]$। কিন্তু~$s$ ছিল যেকোনো চলরাশি-আরোপ; অতএব
+  $\Sat{M}{\lforall[x][!A(x)]}$।
+
+\item শেষ অনুমানটি \Intro{\lexists}: অনুশীলনী।
+
+\item শেষ অনুমানটি \Elim{\lforall}: অনুশীলনী।
+  % BN-SRC-040 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-040):} হিমায়িত ইংরেজি তালিকায় অধ্যায়ের কনফিগারযোগ্য সার্বিক পরিমাণসূচক $\lforall$-এর বদলে কাঁচা TeX চিহ্ন $\forall$ ব্যবহার করা হয়েছে। বাংলা পাঠে সংজ্ঞায়িত বিধির সঙ্গে সঙ্গতিপূর্ণ $\Elim{\lforall}$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-040 TARGET-CORRECTION-END
+}{}
+\end{enumerate}
+
+এবার একাধিক পূর্বধারণা-যুক্ত সম্ভাব্য অনুমানগুলি বিবেচনা করি:
+\Elim{\lor}, \Intro{\land}, \iftag{FOL}{\Elim{\lif} এবং
+  \Elim{\lexists}}{এবং \Elim{\lif}}।
+\begin{enumerate}
+
+\item শেষ অনুমানটি \Intro{\land}। পূর্বধারণা~$!A$ ও~$!B$ থেকে
+  $!A \land !B$ অনুমান করা হয় এবং~$\delta$-র রূপ
+  \begin{prooftree}
+    \AxiomC{$\Gamma_1$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A$}
+    \AxiomC{$\Gamma_2$}
+    \RightLabel{$\delta_2$}
+    \DeduceC{$!B$}
+    \RightLabel{\Intro{\land}}
+    \BinaryInfC{$!A \land !B$}
+  \end{prooftree}
+  আরোহের অনুমান থেকে~$!A$, $\delta_1$-এর !!{undischarged}
+  অনুমিতি~$\Gamma_1$ থেকে এবং~$!B$, $\delta_2$-এর !!{undischarged}
+  অনুমিতি~$\Gamma_2$ থেকে অনুসৃত। $\delta$-র !!{undischarged}
+  অনুমিতিগুলি হলো $\Gamma_1 \cup \Gamma_2$; তাই দেখাতে হবে
+  $\Gamma_1 \cup \Gamma_2 \Entails !A \land !B$। এমন কোনো
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  বিবেচনা করো যেন $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1 \cup
+  \Gamma_2}$। যেহেতু $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1}$,
+  আর $\Gamma_1 \Entails !A$, তাই
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$। আবার
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_2}$ এবং $\Gamma_2 \Entails
+  !B$ বলে $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$। একত্রে,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$।
+
+\item শেষ অনুমানটি \Elim{\lor}: অনুশীলনী।
+
+\item শেষ অনুমানটি \Elim{\lif}। পূর্বধারণা $!A \lif !B$ ও~$!A$
+  থেকে~$!B$ অনুমান করা হয়। !!{derivation}~$\delta$-র রূপ:
+  \begin{prooftree}
+    \AxiomC{$\Gamma_1$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A \lif !B$}
+    \AxiomC{$\Gamma_2$}
+    \RightLabel{$\delta_2$}
+    \DeduceC{$!A$}
+    \RightLabel{\Elim{\lif}}
+    \BinaryInfC{$!B$}
+  \end{prooftree}
+  আরোহের অনুমান থেকে $!A \lif !B$, $\delta_1$-এর
+  !!{undischarged} অনুমিতি~$\Gamma_1$ থেকে এবং~$!A$, $\delta_2$-এর
+  !!{undischarged} অনুমিতি~$\Gamma_2$ থেকে অনুসৃত। কোনো
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  বিবেচনা করো। দেখাতে হবে, $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1 \cup
+    \Gamma_2}$ হলে $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$। ধরা যাক
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1 \cup \Gamma_2}$। যেহেতু
+  $\Gamma_1 \Entails !A \lif !B$, তাই
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lif !B}$। আবার $\Gamma_2
+  \Entails !A$ বলে $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$। এর অর্থ
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$। (কারণ
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$ হলে, সঙ্গে
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ থাকায়
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$ হতো, যা
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lif !B}$-র বিরোধী।)
+
+\item শেষ অনুমানটি \Elim{\lnot}: অনুশীলনী।
+
+\tagitem{FOL}{শেষ অনুমানটি \Elim{\lexists}: অনুশীলনী।}{}
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][ntd][sou]{thm:soundness}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][ntd][sou]{thm:soundness}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+$\Proves !A$ হলে $!A$ \iftag{FOL}{বৈধ}{একটি সর্বসত্য}।
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+$\Gamma$ পরিতৃপ্তিযোগ্য হলে সেটি সঙ্গত।
+\end{cor}
+
+\begin{proof}
+বিপরীত-প্রতিজ্ঞা প্রমাণ করি। ধরা যাক~$\Gamma$ সঙ্গত নয়। তাহলে
+$\Gamma \Proves \lfalse$; অর্থাৎ~$\Gamma$-তে থাকা !!{undischarged}
+অনুমিতি থেকে~$\lfalse$-এর কোনো !!a{derivation} আছে।
+\olref{thm:soundness} অনুযায়ী,
+\iftag{FOL}{যেকোনো !!{structure}~$\Struct{M}$}{যেকোনো !!{valuation}~$\pAssign{v}$}
+যা~$\Gamma$-কে পরিতৃপ্ত করে, সেটিকে~$\lfalse$-ও পরিতৃপ্ত করতে হবে।
+প্রত্যেক \iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}-এর
+জন্য $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lfalse}$ বলে কোনো
+\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} $\Gamma$-কে পরিতৃপ্ত করতে
+পারে না; অর্থাৎ $\Gamma$ পরিতৃপ্তিযোগ্য নয়।
+\end{proof}
+
+\end{document}

@@ -327,7 +327,7 @@
   "affected_translated_segments": 130,
   "validator": {
     "path": "tools/check_source_draft.py",
-    "sha256": "6a89f59a0e1b4e2b08c99d7db7cc79e93a1634f5eb7e9cd5bfde5d1813625018"
+    "sha256": "a396b24f175a70ebb6454c227981bb2f0b2de010fc366d6d4017e8e7ac2ed30e"
   },
   "prior_checkpoint_audit_replay": {
     "segments": 537,

@@ -301,6 +301,97 @@ for row in rows:
         is not None
         and "BN-SRC-032" in documented
     )
+    nd_node_type_fix = (
+        row["unit_id"] == "OLP-0085"
+        and source.count("stands below one, two, or three other sequents") == 1
+        and re.search(r"ওপরে এক, দুই বা তিনটি অন্য বাক্য থাকলে", checked_target)
+        is not None
+        and "BN-SRC-033" in documented
+    )
+    nd_eigencondition_fix = (
+        row["unit_id"] == "OLP-0087"
+        and source.count(
+            "The condition that an eigenvariable neither occur in the premises nor\n"
+            "in any assumption that is !!{undischarged}"
+        )
+        == 1
+        and re.search(
+            r"\\Intro\{\\lforall\} অনুমানে আইগেনচলটি সিদ্ধান্তে.*?"
+            r"\\Elim\{\\lexists\} অনুমানে সেটি প্রধান অস্তিত্বসূচক পূর্বধারণা, সিদ্ধান্ত",
+            checked_target,
+            re.S,
+        )
+        is not None
+        and "BN-SRC-034" in documented
+    )
+    nd_end_sequent_fix = (
+        row["unit_id"] == "OLP-0089"
+        and source.count("!!{sentence} in the end-sequent") == 1
+        and re.search(r"অন্তিম সিদ্ধান্তের\s+!!\{sentence\}", checked_target)
+        is not None
+        and "BN-SRC-035" in documented
+    )
+    nd_negation_elim_label_fix = (
+        row["unit_id"] == "OLP-0089"
+        and source.count("\\RightLabel{\\Intro{\\lfalse}}") == 1
+        and checked_target.count("\\RightLabel{\\Intro{\\lfalse}}") == 0
+        and source.count("\\RightLabel{\\Elim{\\lnot}}") == 9
+        and checked_target.count("\\RightLabel{\\Elim{\\lnot}}") == 10
+        and "BN-SRC-042" in documented
+    )
+    nd_existential_premise_fix = (
+        row["unit_id"] == "OLP-0090"
+        and source_math - target_math == collections.Counter({"\\lexists[x][!A(x)]": 1})
+        and target_math - source_math
+        == collections.Counter({"\\lexists[x][\\lnot!A(x)]": 1})
+        and "BN-SRC-036" in documented
+    )
+    nd_existential_macro_fix = (
+        row["unit_id"] == "OLP-0090"
+        and source.count("\\Elim{\\exists}") == 1
+        and checked_target.count("\\Elim{\\exists}") == 0
+        and source.count("\\Elim{\\lexists}") == 10
+        and checked_target.count("\\Elim{\\lexists}") == 11
+        and "BN-SRC-037" in documented
+    )
+    nd_falsecl_label_fix = (
+        row["unit_id"] == "OLP-0092"
+        and source.count("\\RightLabel{\\FalseCl}") == 1
+        and checked_target.count("\\RightLabel{\\FalseCl}") == 0
+        and source.count("\\DischargeRule{\\FalseCl}{1}") == 1
+        and checked_target.count("\\DischargeRule{\\FalseCl}{1}") == 1
+        and "BN-SRC-038" in documented
+    )
+    nd_pl_semantic_object_fix = (
+        row["unit_id"] == "OLP-0095"
+        and source.count("!!a{structure}~\\iftag{FOL}{$\\Struct{M}$}{$\\pAssign{v}$}") == 1
+        and re.search(
+            r"\\iftag\{FOL\}\{কোনো !!a\{structure\}~\$\\Struct\{M\}\$\}"
+            r"\{কোনো মূল্যায়ন~\$\\pAssign\{v\}\$\}",
+            checked_target,
+        )
+        is not None
+        and "BN-SRC-039" in documented
+    )
+    nd_forall_macro_fix = (
+        row["unit_id"] == "OLP-0095"
+        and source.count("\\Elim{\\forall}") == 1
+        and checked_target.count("\\Elim{\\forall}") == 0
+        and source.count("\\Elim{\\lforall}") == 0
+        and checked_target.count("\\Elim{\\lforall}") == 1
+        and "BN-SRC-040" in documented
+    )
+    nd_identity_reverse_case_fix = (
+        row["unit_id"] == "OLP-0097"
+        and source.count("Suppose the last inference in !!a{derivation} is \\Elim{\\eq}") == 1
+        and re.search(
+            r"দ্বিতীয় অভিন্নতা-অপসারণ বিধির ক্ষেত্রটি পদদুটির ভূমিকা অদলবদল করে\s+"
+            r"একইভাবে প্রমাণিত হয়",
+            checked_target,
+        )
+        is not None
+        and "BN-SRC-041" in documented
+    )
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -364,6 +455,51 @@ for row in rows:
             "documented_prose_correction": "BN-SRC-032",
             "reverse_identity_rule_case_supplied": True,
         }
+    elif row["unit_id"] == "OLP-0085":
+        assert nd_node_type_fix
+        tex_command_check = {
+            "documented_prose_correction": "BN-SRC-033",
+            "natural_deduction_upper_nodes_are_sentences": True,
+        }
+    elif row["unit_id"] == "OLP-0087":
+        assert nd_eigencondition_fix
+        tex_command_check = {
+            "documented_prose_correction": "BN-SRC-034",
+            "rule_specific_eigenvariable_conditions_restated": True,
+        }
+    elif row["unit_id"] == "OLP-0089":
+        assert nd_end_sequent_fix and nd_negation_elim_label_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-035", "BN-SRC-042"],
+            "terminal_conclusion_terminology_restored": True,
+            "negation_elimination_rule_label_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0090":
+        assert nd_existential_premise_fix and nd_existential_macro_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-036", "BN-SRC-037"],
+            "negated_existential_major_premise_restored": True,
+            "configurable_existential_elimination_symbol_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0092":
+        assert nd_falsecl_label_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-038",
+            "duplicate_falsecl_label_removed": True,
+        }
+    elif row["unit_id"] == "OLP-0095":
+        assert nd_pl_semantic_object_fix and nd_forall_macro_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-039", "BN-SRC-040"],
+            "propositional_semantic_object_is_valuation": True,
+            "configurable_universal_elimination_symbol_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0097":
+        assert nd_identity_reverse_case_fix
+        tex_command_check = {
+            "documented_prose_correction": "BN-SRC-041",
+            "reverse_identity_elimination_case_supplied": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -407,6 +543,7 @@ for row in rows:
             de_morgan_prose_fix,
             conjunction_context_fix,
             soundness_formula_fixes,
+            nd_existential_premise_fix,
             shared_audit_fix,
         )
     )

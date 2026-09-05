@@ -1,0 +1,55 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+
+\documentclass[../../../include/open-logic-chapter]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olchapter{fol}{ntd}{স্বাভাবিক নিষ্পাদন}}
+      {\olchapter{pl}{ntd}{স্বাভাবিক নিষ্পাদন}}
+
+\begin{editorial}
+এই অধ্যায়ে গেৎসেন/প্রাউইৎস-রীতির একটি স্বাভাবিক নিষ্পাদন-পদ্ধতি
+উপস্থাপন করা হয়েছে।
+
+প্রমাণ-পদ্ধতি হিসেবে স্বাভাবিক নিষ্পাদনের প্রাসঙ্গিক উপাদান অন্তর্ভুক্ত
+বা বর্জন করতে ``prfND'' ট্যাগ ব্যবহার করো।
+\end{editorial}
+
+\olimport{rules-and-proofs}
+
+\olimport{propositional-rules}
+
+\iftag{FOL}{%
+  \olimport{quantifier-rules}
+}{}
+
+\olimport{derivations}
+
+\olimport{proving-things}
+
+\iftag{FOL}{%
+  \olimport{proving-things-quant}
+}{}
+
+\olimport{proof-theoretic-notions}
+
+\olimport{provability-consistency}
+
+\olimport{provability-propositional}
+
+\iftag{FOL}{%
+  \olimport{provability-quantifiers}
+}{}
+
+\olimport{soundness}
+
+\iftag{FOL}{%
+  \olimport{identity}
+  \olimport{soundness-identity}
+}{}
+
+\OLEndChapterHook
+
+\end{document}

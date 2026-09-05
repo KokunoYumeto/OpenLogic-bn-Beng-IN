@@ -1,0 +1,133 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: provability-propositional
+
+% verification of properties of provability needed for maximally
+% consistent sets in the completeness chapter.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{ppr}}
+      {\olfileid{pl}{ntd}{ppr}}
+
+\olsection{\usetoken{S}{derivability} ও বচনসংযোজক}
+
+\begin{explain}
+  আমরা দেখাব, স্বাভাবিক নিষ্পাদনের !!{derivability} সম্পর্ক~$\Proves$
+  বচনসংযোজক-সংক্রান্ত কয়েকটি মৌলিক তথ্য প্রতিষ্ঠার পক্ষে যথেষ্ট
+  শক্তিশালী; যেমন $!A \land !B \Proves !A$ এবং $!A, !A \lif !B
+  \Proves !B$ (মোডাস পোনেন্স)। পূর্ণতা উপপাদ্যের প্রমাণে এই তথ্যগুলি
+  লাগবে।
+\end{explain}
+
+\begin{prop}\ollabel{prop:provability-land}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-land-left} $!A \land !B \Proves
+    !A$ এবং $!A \land !B \Proves !B$—উভয়ই সত্য।
+  \item \ollabel{prop:provability-land-right} $!A, !B \Proves !A \land !B$।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item দুটি !!{derive} করা যায়:
+    \begin{prooftree}
+      \AxiomC{$!A \land !B$}
+      \RightLabel{\Elim{\land}}
+      \UnaryInfC{$!A$}
+      \DisplayProof\qquad\bottomAlignProof
+      \AxiomC{$!A \land !B$}
+      \RightLabel{\Elim{\land}}
+      \UnaryInfC{$!B$}
+    \end{prooftree}
+  \item নিচেরটি !!{derive} করা যায়:
+    \begin{prooftree}
+      \AxiomC{$!A$}
+      \AxiomC{$!B$}
+      \RightLabel{\Intro{\land}}
+      \BinaryInfC{$!A \land !B$}
+    \end{prooftree}
+  \end{enumerate}
+\end{proof}
+
+
+\begin{prop}\ollabel{prop:provability-lor}
+  \begin{enumerate}
+  \item $!A \lor !B, \lnot !A, \lnot !B$ অসঙ্গত।
+  \item $!A \Proves !A \lor !B$ এবং $!B \Proves !A \lor !B$—উভয়ই সত্য।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item নিচের !!{derivation}-টি বিবেচনা করো:
+    \begin{prooftree}
+      \AxiomC{$!A \lor !B$}
+      \AxiomC{$\lnot !A$}
+      \AxiomC{$\Discharge{!A}{1}$}
+      \RightLabel{\Elim{\lnot}}
+      \BinaryInfC{$\lfalse$}
+      \AxiomC{$\lnot !B$}
+      \AxiomC{$\Discharge{!B}{1}$}
+      \RightLabel{\Elim{\lnot}}
+      \BinaryInfC{$\lfalse$}
+      \DischargeRule{\Elim{\lor}}{1}
+      \TrinaryInfC{$\lfalse$}
+    \end{prooftree}
+    এটি !!{undischarged} অনুমিতি $!A \lor !B$, $\lnot !A$ ও
+    $\lnot !B$ থেকে~$\lfalse$-এর কোনো !!a{derivation}।
+  \item দুটি !!{derive} করা যায়:
+    \begin{prooftree}
+      \AxiomC{$!A$}
+      \RightLabel{\Intro{\lor}}
+      \UnaryInfC{$!A \lor !B$}
+      \DisplayProof\qquad\bottomAlignProof
+      \AxiomC{$!B$}
+      \RightLabel{\Intro{\lor}}
+      \UnaryInfC{$!A \lor !B$}
+    \end{prooftree}
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-lif}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-lif-left} $!A, !A \lif !B \Proves !B$।
+  \item \ollabel{prop:provability-lif-right}
+    $\lnot !A \Proves !A \lif !B$ এবং $!B \Proves !A \lif !B$—উভয়ই সত্য।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item নিচেরটি !!{derive} করা যায়:
+    \begin{prooftree}
+      \AxiomC{$!A \lif !B$}
+      \AxiomC{$!A$}
+      \RightLabel{\Elim{\lif}}
+      \BinaryInfC{$!B$}
+    \end{prooftree}
+
+  \item নিচের দুটি !!{derivation}s এটি দেখায়:
+    \begin{prooftree}
+      \AxiomC{$\lnot !A$}
+      \AxiomC{$\Discharge{!A}{1}$}
+      \RightLabel{\Elim{\lnot}}
+      \BinaryInfC{$\lfalse$}
+      \RightLabel{\FalseInt}
+      \UnaryInfC{$!B$}
+      \DischargeRule{\Intro{\lif}}{1}
+      \UnaryInfC{$!A \lif !B$}
+      \DisplayProof\qquad\bottomAlignProof
+      \AxiomC{$!B$}
+      \RightLabel{\Intro{\lif}}
+      \UnaryInfC{$!A \lif !B$}
+    \end{prooftree}
+    লক্ষ করো, $\Intro{\lif}$ অনুমিতি~$!A$-কে !!{discharge} করতে পারে,
+    তবে করতেই হবে এমন নয়।
+  \end{enumerate}
+\end{proof}
+
+\end{document}

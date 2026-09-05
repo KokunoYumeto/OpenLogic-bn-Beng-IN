@@ -392,6 +392,103 @@ for row in rows:
         is not None
         and "BN-SRC-041" in documented
     )
+    tableau_editorial_scope_fix = (
+        row["unit_id"] == "OLP-0098"
+        and source.count("material relevant to natural deduction as a\nproof system, use the ``prfTab'' tag.") == 1
+        and re.search(r"প্রমাণ-পদ্ধতি হিসেবে ট্যাবলো-সংক্রান্ত উপাদান অন্তর্ভুক্ত বা বাদ দিতে\s+“prfTab” ট্যাগটি ব্যবহার করো", checked_target) is not None
+        and "BN-SRC-043" in documented
+    )
+    tableau_forall_macro_fix = (
+        row["unit_id"] == "OLP-0101"
+        and source.count("\\TRule{\\True}{\\forall}") == 1
+        and checked_target.count("\\TRule{\\True}{\\forall}") == 0
+        and source.count("\\TRule{\\False}{\\forall}") == 1
+        and checked_target.count("\\TRule{\\False}{\\forall}") == 0
+        and checked_target.count("\\TRule{\\True}{\\lforall}") == source.count("\\TRule{\\True}{\\lforall}") + 1
+        and checked_target.count("\\TRule{\\False}{\\lforall}") == source.count("\\TRule{\\False}{\\lforall}") + 1
+        and "BN-SRC-044" in documented
+    )
+    tableau_term_restriction_fix = (
+        row["unit_id"] == "OLP-0101"
+        and source.count("there are no\nrestrictions on the term~$t$.") == 1
+        and re.search(r"\\TRule\{\\True\}\{\\lforall\} ও \\TRule\{\\False\}\{\\lexists\}-এ \$t\$-কে বদ্ধ\s+পদ হতে হয়, তবে তার ওপর আর কোনো নতুনত্ব-শর্ত নেই", checked_target) is not None
+        and "BN-SRC-045" in documented
+    )
+    tableau_exercise_signed_fix = (
+        row["unit_id"] == "OLP-0103"
+        and source_math - target_math == collections.Counter({"\\sFmla{\\True}{!A\\lor!B,\\lnot!B},\\sFmla{\\False}{!A}": 1})
+        and target_math - source_math == collections.Counter({"\\sFmla{\\True}{!A\\lor!B},\\sFmla{\\True}{\\lnot!B},\\sFmla{\\False}{!A}": 1})
+        and "BN-SRC-046" in documented
+    )
+    tableau_closed_term_fix = (
+        row["unit_id"] == "OLP-0104"
+        and source.count("we can pick any term we like.") == 1
+        and re.search(r"পছন্দমতো যেকোনো বদ্ধ পদ নেওয়া যায়", checked_target) is not None
+        and "BN-SRC-047" in documented
+    )
+    tableau_reusable_line_fix = (
+        row["unit_id"] == "OLP-0104"
+        and source_math - target_math == collections.Counter({"3": 1})
+        and target_math - source_math == collections.Counter({"4": 1})
+        and "BN-SRC-048" in documented
+    )
+    tableau_subset_braces_fix = (
+        row["unit_id"] == "OLP-0105"
+        and source_math - target_math == collections.Counter({"!D_1": 1, "!D_m\\subseteq\\Gamma": 1})
+        and target_math - source_math == collections.Counter({"\\{!D_1,\\dots,!D_m\\}\\subseteq\\Gamma": 1})
+        and "BN-SRC-049" in documented
+    )
+    tableau_gamma_index_fix = (
+        row["unit_id"] == "OLP-0106"
+        and source_math - target_math == collections.Counter({"\\Gamma_1=\\{!C_1,\\dots,!C_n\\}\\subseteq\\Gamma": 1})
+        and target_math - source_math == collections.Counter({"\\Gamma_1=\\{!C_1,\\dots,!C_m\\}\\subseteq\\Gamma": 1})
+        and "BN-SRC-050" in documented
+    )
+    tableau_negation_premise_fix = (
+        row["unit_id"] == "OLP-0106"
+        and source.count("\\TRule{\\True}{\\lnot} applied to \\sFmla{\\False}{!A} after the") == 1
+        and re.search(r"\\sFmla\{\\True\}\{\\lnot !A\}-তে \\TRule\{\\True\}\{\\lnot\} প্রয়োগের সিদ্ধান্ত", checked_target) is not None
+        and "BN-SRC-051" in documented
+    )
+    tableau_left_typo_fix = (
+        row["unit_id"] == "OLP-0106"
+        and source.count("On the left left side, add the part of the first") == 1
+        and checked_target.count("বাঁ দিকে প্রথম !!{tableau}-টির অনুমিতির নিচের অংশ যোগ করি") == 1
+        and "BN-SRC-052" in documented
+    )
+    tableau_signed_macro_fix = (
+        row["unit_id"] == "OLP-0107"
+        and source.count("\\sFmla{\\True{\\formula") == 4
+        and source.count("\\sFmla{\\False{\\formula") == 4
+        and checked_target.count("\\sFmla{\\True{\\formula") == 0
+        and checked_target.count("\\sFmla{\\False{\\formula") == 0
+        and all(checked_target.count(value) == source.count(value) + 2 for value in ("\\sFmla{\\True}{\\formula{A}}", "\\sFmla{\\True}{\\formula{B}}", "\\sFmla{\\False}{\\formula{A}}", "\\sFmla{\\False}{\\formula{B}}"))
+        and "BN-SRC-053" in documented
+    )
+    tableau_trailing_comma_fix = (
+        row["unit_id"] == "OLP-0108"
+        and source_math - target_math == collections.Counter({"\\sFmla{\\False}{\\formula{A}(t)},\\sFmla{\\True}{\\lforall[x][!A(x)]},": 1})
+        and target_math - source_math == collections.Counter({"\\sFmla{\\False}{\\formula{A}(t)},\\sFmla{\\True}{\\lforall[x][!A(x)]}": 1})
+        and "BN-SRC-054" in documented
+    )
+    tableau_quantifier_soundness_fix = (
+        row["unit_id"] == "OLP-0109"
+        and source_math - target_math == collections.Counter({"\\sFmla{\\True}{\\lforall[x][!B(x)]}\\in\\Gamma": 1, "\\sFmla{\\False}{\\lforall[x][!B(x)]}\\in\\Gamma": 1, "\\Sat/{M}{\\lforall[x][!B(x)]}": 2, "\\Sat/{M}{!B(x)}[s]": 1})
+        and target_math - source_math == collections.Counter({"\\sFmla{\\True}{\\lforall[x][!A(x)]}\\in\\Gamma": 1, "\\sFmla{\\False}{\\lforall[x][!A(x)]}\\in\\Gamma": 1, "\\Sat/{M}{\\lforall[x][!A(x)]}": 2, "\\Sat/{M}{!A(x)}[s]": 1})
+        and "BN-SRC-055" in documented
+    )
+    tableau_identity_substitution_fix = (
+        row["unit_id"] == "OLP-0110"
+        and source_math - target_math == collections.Counter({"\\eq[t_1][t_2]": 1})
+        and target_math - source_math == collections.Counter({"\\eq[s_1][s_2]": 1})
+        and "BN-SRC-056" in documented
+    )
+    tableau_identity_truth_sign_fix = (
+        row["unit_id"] == "OLP-0111"
+        and source_math - target_math == collections.Counter({"\\sFmla{S}{!A(t_2)}": 1})
+        and target_math - source_math == collections.Counter({"\\sFmla{\\True}{!A(t_2)}": 1})
+        and "BN-SRC-057" in documented
+    )
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -500,6 +597,39 @@ for row in rows:
             "documented_prose_correction": "BN-SRC-041",
             "reverse_identity_elimination_case_supplied": True,
         }
+    elif row["unit_id"] == "OLP-0098":
+        assert tableau_editorial_scope_fix
+        tex_command_check = {"documented_prose_correction": "BN-SRC-043", "prfTab_controls_tableaux": True}
+    elif row["unit_id"] == "OLP-0101":
+        assert tableau_forall_macro_fix and tableau_term_restriction_fix
+        tex_command_check = {"documented_corrections": ["BN-SRC-044", "BN-SRC-045"], "configurable_universal_labels_restored": 2, "closed_term_restriction_retained": True}
+    elif row["unit_id"] == "OLP-0103":
+        assert tableau_exercise_signed_fix
+        tex_command_check = {"documented_correction": "BN-SRC-046", "separated_signed_formulas": 3}
+    elif row["unit_id"] == "OLP-0104":
+        assert tableau_closed_term_fix and tableau_reusable_line_fix
+        tex_command_check = {"documented_corrections": ["BN-SRC-047", "BN-SRC-048"], "closed_term_restriction_restored": True, "reusable_line_restored": 4}
+    elif row["unit_id"] == "OLP-0105":
+        assert tableau_subset_braces_fix
+        tex_command_check = {"documented_correction": "BN-SRC-049", "finite_subset_braces_restored": True}
+    elif row["unit_id"] == "OLP-0106":
+        assert tableau_gamma_index_fix and tableau_negation_premise_fix and tableau_left_typo_fix
+        tex_command_check = {"documented_corrections": ["BN-SRC-050", "BN-SRC-051", "BN-SRC-052"], "gamma_one_final_index": "m", "true_negation_premise_restored": True, "duplicated_left_removed": True}
+    elif row["unit_id"] == "OLP-0107":
+        assert tableau_signed_macro_fix
+        tex_command_check = {"documented_correction": "BN-SRC-053", "repaired_two_argument_signed_formula_calls": 8}
+    elif row["unit_id"] == "OLP-0108":
+        assert tableau_trailing_comma_fix
+        tex_command_check = {"documented_correction": "BN-SRC-054", "trailing_formula_list_comma_removed": True}
+    elif row["unit_id"] == "OLP-0109":
+        assert tableau_quantifier_soundness_fix
+        tex_command_check = {"documented_correction": "BN-SRC-055", "universal_schema_metavariable_normalized": "A"}
+    elif row["unit_id"] == "OLP-0110":
+        assert tableau_identity_substitution_fix
+        tex_command_check = {"documented_correction": "BN-SRC-056", "identity_substitution_instance": "\\eq[s_1][s_2]"}
+    elif row["unit_id"] == "OLP-0111":
+        assert tableau_identity_truth_sign_fix
+        tex_command_check = {"documented_correction": "BN-SRC-057", "identity_rule_sign": "True"}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -544,6 +674,14 @@ for row in rows:
             conjunction_context_fix,
             soundness_formula_fixes,
             nd_existential_premise_fix,
+            tableau_exercise_signed_fix,
+            tableau_reusable_line_fix,
+            tableau_subset_braces_fix,
+            tableau_gamma_index_fix,
+            tableau_trailing_comma_fix,
+            tableau_quantifier_soundness_fix,
+            tableau_identity_substitution_fix,
+            tableau_identity_truth_sign_fix,
             shared_audit_fix,
         )
     )

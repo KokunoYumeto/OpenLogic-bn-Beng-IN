@@ -1,0 +1,111 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: quantifier-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{tab}{qrl}
+
+\olsection{পরিমাণসূচকের বিধি}
+
+\subsection{$\lforall$-এর বিধি}
+
+\begin{defish}
+\AxiomC{\sFmla{\True}{\lforall[x][!A(x)]}}
+\RightLabel{\TRule{\True}{\lforall}}
+\UnaryInfC{\sFmla{\True}{!A(t)}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\False}{\lforall[x][!A(x)]}}
+\RightLabel{\TRule{\False}{\lforall}}
+\UnaryInfC{\sFmla{\False}{!A(a)}}
+\DisplayProof
+\end{defish}
+
+\TRule{\True}{\lforall}-এ $t$ একটি বদ্ধ পদ (অর্থাৎ চলরাশিবিহীন
+পদ)। \TRule{\False}{\lforall}-এ $a$ এমন একটি !!a{constant}, যা
+\TRule{\False}{\lforall} বিধির ওপরের শাখার কোথাও থাকতে পারবে না।
+$a$-কে \TRule{\False}{\lforall} অনুমানের \emph{আইগেনচল} বলি।%
+\footnote{ওপরের বিধিতে $a$ আসলে একটি !!a{constant} হলেও ঐতিহাসিক
+কারণে “আইগেনচল” শব্দটি ব্যবহার করি।}
+% BN-SRC-044 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-044):} হিমায়িত ইংরেজি বিধি ও পরের উল্লেখে সার্বিক পরিমাণসূচকের কনফিগারযোগ্য ম্যাক্রো \texttt{\string\lforall}-এর বদলে দুবার কাঁচা \texttt{\string\forall} দেওয়া হয়েছে। অধ্যায়ের অন্য সব বিধি-লেবেলের সঙ্গে মিলিয়ে বাংলা লক্ষ্যে \texttt{\string\lforall} পুনরুদ্ধার করা হয়েছে।} % BN-SRC-044 TARGET-CORRECTION-END
+
+\subsection{$\lexists$-এর বিধি}
+
+\begin{defish}
+\AxiomC{\sFmla{\True}{\lexists[x][!A(x)]}}
+\RightLabel{\TRule{\True}{\lexists}}
+\UnaryInfC{\sFmla{\True}{!A(a)}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\False}{\lexists[x][!A(x)]}}
+\RightLabel{\TRule{\False}{\lexists}}
+\UnaryInfC{\sFmla{\False}{!A(t)}}
+\DisplayProof
+\end{defish}
+
+এখানেও $t$ একটি বদ্ধ পদ এবং $a$ এমন একটি !!a{constant}, যা
+\TRule{\True}{\lexists} বিধির ওপরের শাখায় থাকে না। $a$-কে
+\TRule{\True}{\lexists} অনুমানের \emph{আইগেনচল} বলি।
+
+\TRule{\False}{\lforall} বা \TRule{\True}{\lexists} অনুমানের ওপরের
+শাখায় আইগেনচল না থাকার শর্তটিকে \emph{আইগেনচল-শর্ত} বলা হয়।
+
+\begin{explain}
+মনে করো, $!A$ যদি এমন একটি !!a{formula} হয় যাতে !!{variable}~$x$
+মুক্ত, তবে প্রচলিত রীতি অনুযায়ী তা~$!A(x)$ লিখি। একই প্রসঙ্গে
+$!A(t)$ হলো~$\Subst{!A}{t}{x}$-এর সংক্ষিপ্ত রূপ। তাই
+\TRule{\False}{\lexists} বিধিটি এভাবেও লেখা যায়:
+\begin{prooftree}
+  \AxiomC{\sFmla{\False}{\lexists[x][!A]}}
+  \RightLabel{\TRule{\False}{\lexists}}
+  \UnaryInfC{\sFmla{\False}{\Subst{!A}{t}{x}}}
+\end{prooftree}
+লক্ষ করো, $t$ আগে থেকেই~$!A$-তে থাকতে পারে; যেমন, $!A$ হতে পারে
+$\Atom{\Obj P}{t,x}$। তাই
+$\sFmla{\False}{\lexists[x][\Atom{\Obj P}{t,x}]}$ থেকে
+$\sFmla{\False}{\Atom{\Obj P}{t,t}}$ অনুমান করা
+\TRule{\False}{\lexists}-এর সঠিক প্রয়োগ। কিন্তু
+\TRule{\False}{\lforall} ও~\TRule{\True}{\lexists}-এর
+আইগেনচল-শর্তে !!{constant}~$a$-কে $!A$-তে না থাকতে হয়। অতএব
+$\sFmla{\False}{\lforall[x][\Atom{\Obj P}{a,x}]}$ থেকে
+$\sFmla{\False}{\Atom{\Obj P}{a,a}}$
+ব্যবহার করে~$\TRule{\False}{\lforall}$ সঠিকভাবে অনুমান করা যায় না।
+\end{explain}
+
+\begin{explain}
+\TRule{\True}{\lforall} ও \TRule{\False}{\lexists}-এ $t$-কে বদ্ধ
+পদ হতে হয়, তবে তার ওপর আর কোনো নতুনত্ব-শর্ত নেই। অন্যদিকে
+\TRule{\True}{\lexists} ও \TRule{\False}{\lforall} বিধিতে
+আইগেনচল-শর্ত অনুসারে !!{constant}~$a$ সংশ্লিষ্ট অনুমানের ওপরের কোনো
+শাখায় থাকতে পারে না। পদ্ধতির বিশুদ্ধতা নিশ্চিত করতে এই শর্ত জরুরি।
+শর্তটি না থাকলে
+$\lexists[x][\formula{A}(x)] \lif \lforall[x][\formula{A}(x)]$-এর
+জন্য নিচের বদ্ধ !!{tableau}-টি পাওয়া যেত:
+\begin{center}
+\begin{tableau}{}
+  [\sFmla{\False}{\lexists[x][\formula{A}(x)] \lif \lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][\formula{A}(x)]},
+      just={\TRule{\False}{\lif}[1]}
+      [\sFmla{\False}{\lforall[x][\formula{A}(x)]},
+        just={\TRule{\False}{\lif}[1]}
+        [\sFmla{\True}{\formula{A}(a)},
+          just={\TRule{\True}{\lexists}[2]}
+          [\sFmla{\False}{\formula{A}(a)},
+            just={\TRule{\False}{\lforall}[3]}, close]
+        ]
+      ]
+    ]
+  ]
+\end{tableau}
+\end{center}
+কিন্তু $\lexists[x][\formula{A}(x)] \lif
+\lforall[x][\formula{A}(x)]$ বৈধ নয়।
+% BN-SRC-045 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-স্পষ্টীকরণ (BN-SRC-045):} হিমায়িত ইংরেজি গদ্যের শেষ ব্যাখ্যায় $t$-র ওপর “কোনো বিধিনিষেধ নেই” বলা হলেও আগেই $t$-কে বদ্ধ পদ বলা হয়েছে। বাংলা গদ্যে তাই সঙ্গত অর্থটি—বদ্ধতার শর্ত ছাড়া কোনো অতিরিক্ত নতুনত্ব-শর্ত নেই—স্পষ্ট করা হয়েছে।} % BN-SRC-045 TARGET-CORRECTION-END
+\end{explain}
+
+\end{document}

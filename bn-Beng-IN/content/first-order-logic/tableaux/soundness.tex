@@ -1,0 +1,253 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: soundness.tex
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{sou}}
+      {\olfileid{pl}{tab}{sou}}
+
+\olsection{বিশুদ্ধতা}
+
+\begin{explain}
+ট্যাবলোর মতো কোনো !!^a{derivation} system তখনই \emph{বিশুদ্ধ}, যখন
+তা এমন কিছু !!{derive} করতে পারে না যা প্রকৃতপক্ষে সত্য নয়। তাই
+বিশুদ্ধতা !!{derivation} systems-এর এক ধরনের নিশ্চিত নিরাপত্তা-ধর্ম।
+কোন প্রমাণতাত্ত্বিক ধর্মটি বিবেচ্য তার ওপর নির্ভর করে, যেমন আমরা চাই:
+\begin{enumerate}
+\item প্রতিটি !!{derivable}~$!A$ \iftag{FOL}{বৈধ}{সর্বতঃসত্য};
+\item কোনো !!a{sentence} অন্য কয়েকটি থেকে !!{derivable} হলে সেটি
+  তাদের যৌক্তিক ফলও;
+\item কোনো !!{sentence}s-এর সমষ্টি অসঙ্গত হলে সেটি অপরিতৃপ্তিযোগ্য।
+\end{enumerate}
+এগুলি কোনো !!a{derivation} system-এর গুরুত্বপূর্ণ ধর্ম। এদের কোনোটি
+না থাকলে !!{derivation} system-টিতে ত্রুটি আছে—তা অতিরিক্ত বিষয়
+!!{derive} করবে। তাই কোনো !!a{derivation} system-এর বিশুদ্ধতা
+প্রতিষ্ঠা করা সর্বাধিক গুরুত্বপূর্ণ।
+
+এই সব প্রমাণতাত্ত্বিক ধারণা কোনো না কোনো ধরনের বদ্ধ !!{tableau}s
+দিয়ে সংজ্ঞায়িত। তাই ওপরের (1)--(3) প্রমাণ করতে বদ্ধ !!{tableau}s-এর
+অর্থতাত্ত্বিক ধর্ম সম্পর্কে কিছু প্রমাণ করা দরকার। প্রথমে কোনো
+!!a{signed
+  formula} একটি গঠনে পরিতৃপ্ত হওয়ার অর্থ সংজ্ঞায়িত করব।
+তারপর দেখাব, কোনো !!{tableau} বদ্ধ হলে কোনো গঠনই তার সব অনুমিতি
+পরিতৃপ্ত করে না। সেই ফল থেকে অনুসিদ্ধান্ত হিসেবে (1)--(3) পাওয়া যাবে।
+\end{explain}
+
+\begin{defn}
+\iftag{FOL}{!!^a{structure}}{!!^a{valuation}}~
+$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+!!a{signed formula}~$\sFmla{\True}{!A}$-কে \emph{পরিতৃপ্ত করে}
+তখনই, যখন $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$; আর
+$\sFmla{\False}{!A}$-কে পরিতৃপ্ত করে তখনই, যখন
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$।
+$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ কোনো
+!!{signed formula}s-এর সমষ্টি~$\Gamma$-কে পরিতৃপ্ত করে তখনই, যখন
+তা প্রতিটি $\sFmla{S}{!A} \in \Gamma$-কে পরিতৃপ্ত করে। সেটিকে
+পরিতৃপ্ত করে এমন কোনো \iftag{FOL}{!!a{structure}}{!!a{valuation}}
+থাকলে $\Gamma$~\emph{পরিতৃপ্তিযোগ্য}; অন্যথায়
+\emph{অপরিতৃপ্তিযোগ্য}।
+\end{defn}
+
+\begin{thm}[বিশুদ্ধতা]
+  \ollabel{thm:tableau-soundness}
+  $\Gamma$-র একটি বদ্ধ !!{tableau} থাকলে $\Gamma$
+  অপরিতৃপ্তিযোগ্য।
+\end{thm}
+
+\begin{proof}
+কোনো !!a{tableau}-এর একটি শাখার !!{signed formula}s-এর সমষ্টি
+পরিতৃপ্তিযোগ্য হলে এবং কেবল তখনই শাখাটিকে পরিতৃপ্তিযোগ্য বলি; আর
+কোনো !!a{tableau}-তে অন্তত একটি পরিতৃপ্তিযোগ্য শাখা থাকলে সেটিকে
+পরিতৃপ্তিযোগ্য বলি।
+
+আমরা দেখাব: কোনো পরিতৃপ্তিযোগ্য !!{tableau}-কে অনুমান-বিধিগুলির
+একটি দিয়ে প্রসারিত করলে সব সময় একটি পরিতৃপ্তিযোগ্য !!{tableau}
+পাওয়া যায়। এতেই উপপাদ্যটি প্রমাণিত হবে। যেকোনো বদ্ধ !!{tableau}
+শুধু~$\Gamma$-র অনুমিতি নিয়ে গঠিত !!{tableau}-তে অনুমান-বিধি
+প্রয়োগ করে পাওয়া যায়। তাই $\Gamma$ পরিতৃপ্তিযোগ্য হলে তার জন্য
+যেকোনো !!{tableau} পরিতৃপ্তিযোগ্য হতো। কিন্তু বদ্ধ !!{tableau}
+স্পষ্টতই পরিতৃপ্তিযোগ্য নয়: প্রতিটি শাখায়
+$\sFmla{\True}{!A}$ ও $\sFmla{\False}{!A}$ উভয়ই থাকে, আর কোনো গঠন
+একই সঙ্গে~$!A$-কে পরিতৃপ্ত এবং অপরিতৃপ্ত করতে পারে না।
+
+ধরা যাক আমাদের একটি পরিতৃপ্তিযোগ্য !!{tableau} আছে, অর্থাৎ এমন
+!!a{tableau} যার অন্তত একটি পরিতৃপ্তিযোগ্য শাখা আছে। অনুমান-বিধি
+প্রয়োগে হয় কোনো শাখায় !!{signed formula}s যোগ হয়, নয়তো কোনো
+শাখা দুই ভাগে বিভক্ত হয়। বিধি-প্রয়োগে প্রসারিত হয়নি এমন কোনো
+পরিতৃপ্তিযোগ্য শাখা যদি !!{tableau}-টিতে থাকে, তবে প্রসারিত
+!!{tableau}-তেও সেটি পরিতৃপ্তিযোগ্য শাখা থেকে যায়; তাই প্রসারিত
+ট্যাবলোটি পরিতৃপ্তিযোগ্য। সুতরাং শুধু সেই ক্ষেত্র বিবেচনা করলেই হবে,
+যেখানে বিধিটি একটি পরিতৃপ্তিযোগ্য শাখায় প্রয়োগ করা হয়।
+
+সেই শাখার !!{signed formula}s-এর সমষ্টি~$\Gamma$ এবং বিধিটি যে
+!!{signed formula}-এ প্রয়োগ করা হয় তা
+$\sFmla{S}{!A} \in \Gamma$ ধরি। বিধিটি শাখা ভাগ না করলে দেখাতে হবে
+যে প্রসারিত শাখা—অর্থাৎ বিধিটির সিদ্ধান্তগুলি-সহ $\Gamma$—এখনও
+পরিতৃপ্তিযোগ্য। বিধিটি শাখা ভাগ করলে দেখাতে হবে যে উৎপন্ন দুটি
+শাখার অন্তত একটি পরিতৃপ্তিযোগ্য।
+
+প্রথমে যেসব সম্ভাব্য অনুমানে শাখা ভাগ হয় না সেগুলি বিবেচনা করি।
+\begin{enumerate}
+\item $\sFmla{\True}{\lnot !B} \in \Gamma$-তে
+  $\TRule{\True}{\lnot}$ প্রয়োগ করে শাখাটি প্রসারিত করা হলো। তখন
+  প্রসারিত শাখায় !!{signed formula}s-এর সমষ্টি
+  $\Gamma \cup \{\sFmla{\False}{!B}\}$ থাকে। ধরি
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$। বিশেষত,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !B}$। অতএব
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$; অর্থাৎ
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  $\sFmla{\False}{!B}$-কে পরিতৃপ্ত করে।
+\item $\sFmla{\False}{\lnot !B} \in \Gamma$-তে
+  $\TRule{\False}{\lnot}$ প্রয়োগ করে শাখা প্রসারিত করা হলো: অনুশীলন।
+\item $\sFmla{\True}{!B \land !C} \in \Gamma$-তে
+  $\TRule{\True}{\land}$ প্রয়োগ করে শাখা প্রসারিত করা হলো। এতে
+  শাখায় দুটি নতুন !!{signed formula}s পাওয়া যায়:
+  $\sFmla{\True}{!B}$ ও $\sFmla{\True}{!C}$। ধরি
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, বিশেষত
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B \land !C}$। তখন
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ এবং
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$। অর্থাৎ
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  $\sFmla{\True}{!B}$ ও $\sFmla{\True}{!C}$ উভয়কেই পরিতৃপ্ত করে।
+\item $\sFmla{\False}{!B \lor !C} \in \Gamma$-তে
+  $\TRule{\False}{\lor}$ প্রয়োগ করে শাখা প্রসারিত করা হলো: অনুশীলন।
+\item $\sFmla{\False}{!B \lif !C} \in \Gamma$-তে
+  $\TRule{\False}{\lif}$ প্রয়োগ করে শাখা প্রসারিত করা হলো। এতে
+  শাখায় দুটি নতুন !!{signed formula}s পাওয়া যায়:
+  $\sFmla{\True}{!B}$ ও $\sFmla{\False}{!C}$। ধরি
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, বিশেষত
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B \lif !C}$। তখন
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ এবং
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$। অর্থাৎ
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  $\sFmla{\True}{!B}$ ও $\sFmla{\False}{!C}$ উভয়কেই পরিতৃপ্ত করে।
+
+\iftag{FOL}{%
+\item $\sFmla{\True}{\lforall[x][!A(x)]} \in \Gamma$-তে
+  $\TRule{\True}{\lforall}$ প্রয়োগ করে শাখা প্রসারিত করা হলো। এতে
+  শাখায় নতুন !!{signed formula}~$\sFmla{\True}{!A(t)}$ পাওয়া যায়।
+  ধরি $\Sat{M}{\Gamma}$, বিশেষত
+  $\Sat{M}{\lforall[x][!A(x)]}$। \olref[syn][sem]{prop:quant-terms}
+  অনুসারে $\Sat{M}{!A(t)}$। অতএব $\Struct{M}$
+  $\sFmla{\True}{!A(t)}$-কে পরিতৃপ্ত করে।
+
+\item $\sFmla{\False}{\lforall[x][!A(x)]} \in \Gamma$-তে
+  $\TRule{\False}{\lforall}$ প্রয়োগ করে শাখা প্রসারিত করা হলো। এতে
+  নতুন !!{signed formula}~$\sFmla{\False}{!A(a)}$ পাওয়া যায়, যেখানে
+  $a$ এমন একটি !!a{constant} যা~$\Gamma$-তে নেই। $\Gamma$
+  পরিতৃপ্তিযোগ্য বলে এমন একটি $\Struct{M}$ আছে যেন
+  $\Sat{M}{\Gamma}$, বিশেষত
+  $\Sat/{M}{\lforall[x][!A(x)]}$। দেখাতে হবে
+  $\Gamma \cup \{\sFmla{\False}{!A(a)}\}$ পরিতৃপ্তিযোগ্য। এ জন্য
+  নিচের মতো একটি উপযুক্ত~$\Struct{M'}$ সংজ্ঞায়িত করি।
+
+  \olref[syn][ass]{prop:sat-quant} অনুসারে
+  $\Sat/{M}{\lforall[x][!A(x)]}$ হবে তখনই, যখন কোনো $s$-এর জন্য
+  $\Sat/{M}{!A(x)}[s]$। এবার $\Struct{M'}$-কে $\Struct{M}$-এর মতোই
+  নিই, শুধু $\Assign{a}{M'} = s(x)$। যেহেতু $a$~$\Gamma$-তে নেই,
+  তাই \olref[syn][ext]{cor:extensionality-sent} অনুসারে প্রতিটি
+  $\sFmla{\True}{!C} \in \Gamma$-র জন্য $\Sat{M'}{!C}$ এবং প্রতিটি
+  $\sFmla{\False}{!C} \in \Gamma$-র জন্য $\Sat/{M'}{!C}$।
+
+  \olref[syn][ext]{prop:extensionality} অনুসারে
+  $\Sat/{M'}{!A(x)}[s]$। \olref[syn][ext]{prop:ext-formulas} অনুসারে
+  $\Sat/{M'}{!A(a)}[s]$। যেহেতু $!A(a)$ একটি !!a{sentence}, তাই
+  \olref[syn][ass]{prop:sentence-sat-true} অনুসারে
+  $\Sat/{M'}{!A(a)}$; অর্থাৎ $\Struct{M'}$
+  $\sFmla{\False}{!A(a)}$-কে পরিতৃপ্ত করে।
+\item $\sFmla{\True}{\lexists[x][!B(x)]} \in \Gamma$-তে
+  $\TRule{\True}{\lexists}$ প্রয়োগ করে শাখা প্রসারিত করা হলো:
+  অনুশীলন।
+\item $\sFmla{\False}{\lexists[x][!B(x)]} \in \Gamma$-তে
+  $\TRule{\False}{\lexists}$ প্রয়োগ করে শাখা প্রসারিত করা হলো:
+  অনুশীলন।}{}
+% BN-SRC-055 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-055):} হিমায়িত ইংরেজি বিশুদ্ধতা-প্রমাণে সার্বিক পরিমাণসূচকের দুই ক্ষেত্রে একই বিধি-দৃষ্টান্তে $!A$ ও $!B$ অসঙ্গতভাবে মেশানো হয়েছে। সিদ্ধান্ত ও প্রতিস্থাপিত সূত্রের সঙ্গে মিলিয়ে বাংলা লক্ষ্যে সংশ্লিষ্ট পূর্বধারণা এবং অর্থতাত্ত্বিক ধাপগুলিতে $!A$ রাখা হয়েছে।} % BN-SRC-055 TARGET-CORRECTION-END
+\end{enumerate}
+এবার যেসব সম্ভাব্য অনুমানে শাখা ভাগ হয় সেগুলি বিবেচনা করি।
+\begin{enumerate}
+\item $\sFmla{\False}{!B \land !C} \in \Gamma$-তে
+  $\TRule{\False}{\land}$ প্রয়োগ করে শাখা প্রসারিত করা হলো। এতে দুটি
+  শাখা হয়: বাঁ শাখা $\sFmla{\False}{!B}$ দিয়ে এবং ডান শাখা
+  $\sFmla{\False}{!C}$ দিয়ে এগোয়। ধরি
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, বিশেষত
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B \land !C}$। তখন
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$ অথবা
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$। প্রথম ক্ষেত্রে
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  $\sFmla{\False}{!B}$-কে পরিতৃপ্ত করে, অর্থাৎ
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ বাঁ শাখার সূত্রগুলি
+  পরিতৃপ্ত করে। দ্বিতীয় ক্ষেত্রে
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  $\sFmla{\False}{!C}$-কে, অর্থাৎ
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ ডান শাখার সূত্রগুলি পরিতৃপ্ত করে।
+\item $\sFmla{\True}{!B \lor !C} \in \Gamma$-তে
+  $\TRule{\True}{\lor}$ প্রয়োগ করে শাখা প্রসারিত করা হলো: অনুশীলন।
+\item $\sFmla{\True}{!B \lif !C} \in \Gamma$-তে
+  $\TRule{\True}{\lif}$ প্রয়োগ করে শাখা প্রসারিত করা হলো: অনুশীলন।
+\item \Cut{} প্রয়োগ করে শাখা প্রসারিত করা হলো। এতে দুটি শাখা হয়:
+  একটিতে $\sFmla{\True}{!B}$, অন্যটিতে $\sFmla{\False}{!B}$।
+  যেহেতু $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ এবং হয়
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$, নয়তো
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$, তাই
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ বাঁ বা ডান শাখার একটিকে
+  পরিতৃপ্ত করে।
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][tab][sou]{thm:tableau-soundness}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][tab][sou]{thm:tableau-soundness}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+$\Proves !A$ হলে $!A$ \iftag{FOL}{বৈধ}{সর্বতঃসত্য}।
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+$\Gamma \Proves !A$ হলে $\Gamma \Entails !A$।
+\end{cor}
+
+\begin{proof}
+  $\Gamma \Proves !A$ হলে কোনো
+  $!B_1$, \dots, $!B_n\in\Gamma$-র জন্য
+  $\{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots,
+  \sFmla{\True}{!B_n}\}$-এর একটি বদ্ধ !!{tableau} থাকে।
+  \olref{thm:tableau-soundness} অনুসারে প্রতিটি
+  \iftag{FOL}{!!{structure}}{!!{valuation}}~
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ হয় কোনো $!B_i$-কে মিথ্যা
+  করে, নয়তো $!A$-কে সত্য করে। তাই
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ হলে
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$-ও হয়।
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+$\Gamma$ পরিতৃপ্তিযোগ্য হলে সেটি সঙ্গত।
+\end{cor}
+
+\begin{proof}
+বিপরীত-প্রতিজ্ঞা প্রমাণ করি। ধরি $\Gamma$ সঙ্গত নয়। তখন
+$!B_1$, \dots, $!B_n\in\Gamma$ এবং
+$\{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}$-এর একটি বদ্ধ
+!!{tableau} আছে। \olref{thm:tableau-soundness} অনুসারে এমন কোনো
+$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ নেই যেন প্রতিটি
+$i=1$, \dots,~$n$-এর জন্য
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B_i}$। কিন্তু তাহলে $\Gamma$
+পরিতৃপ্তিযোগ্য নয়।
+\end{proof}
+
+\end{document}

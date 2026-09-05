@@ -1,0 +1,153 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{prv}}
+      {\olfileid{pl}{tab}{prv}}
+
+\olsection{\usetoken{S}{derivability} ও সঙ্গতি}
+
+এখন !!{derivability}-সম্পর্কের কয়েকটি ধর্ম প্রতিষ্ঠা করব। এগুলি
+স্বতন্ত্রভাবেও গুরুত্বপূর্ণ; আবার প্রত্যেকটি পূর্ণতা উপপাদ্যের
+প্রমাণে কাজে লাগবে।
+
+\begin{prop}\ollabel{prop:provability-contr}
+  $\Gamma \Proves !A$ এবং $\Gamma \cup \{!A\}$ অসঙ্গত হলে
+  $\Gamma$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+$\Gamma_0=\{!B_1,\dots,!B_n\}$ এবং
+$\Gamma_1=\{!C_1,\dots,!C_m\}\subseteq\Gamma$ এমন সসীম সমষ্টি আছে,
+যাদের জন্য
+  \begin{align*}
+    \{\sFmla{\False}{!A}, &
+    \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} \\
+    \{\sFmla{\True}{!A}, &
+    \sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_m}\}
+  \end{align*}
+-এর বদ্ধ !!{tableau}s আছে। $!A$-তে \Cut{} বিধি ব্যবহার করে এগুলিকে
+একটি বদ্ধ !!{tableau}-তে একত্র করা যায়, যা দেখায়
+$\Gamma_0\cup\Gamma_1$ অসঙ্গত। যেহেতু
+$\Gamma_0\subseteq\Gamma$ এবং $\Gamma_1\subseteq\Gamma$, তাই
+$\Gamma_0\cup\Gamma_1\subseteq\Gamma$; অতএব $\Gamma$ অসঙ্গত।
+% BN-SRC-050 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-050):} হিমায়িত ইংরেজি গদ্যে $\Gamma_1$-কে $\{!C_1,\dots,!C_n\}$ বলা হলেও একই প্রদর্শন ও পরের ব্যবহার শেষ সূচক~$m$ দেয়। $\Gamma_0$-র $n$টি এবং $\Gamma_1$-এর $m$টি বাক্য আলাদা রাখতে বাংলা লক্ষ্যে $\{!C_1,\dots,!C_m\}$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-050 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ হবে তখনই এবং কেবল তখনই, যখন
+$\Gamma \cup \{\lnot !A\}$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+প্রথমে ধরি $\Gamma \Proves !A$; অর্থাৎ নিচের সমষ্টিটির জন্য একটি
+বদ্ধ !!{tableau} আছে:
+\[
+\{\sFmla{\False}{!A},
+\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+\]
+$\TRule{\True}{\lnot}$ বিধি ব্যবহার করে একে নিচের সমষ্টিটির জন্য
+একটি বদ্ধ !!{tableau}-তে বদলানো যায়:
+\[
+\{\sFmla{\True}{\lnot !A},
+\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}.
+\]
+
+অন্যদিকে, শেষের সমষ্টিটির জন্য বদ্ধ !!{tableau} থাকলে সেটিকে প্রথম
+সমষ্টিটির বদ্ধ !!{tableau}-তে বদলানো যায়। প্রথম অনুমিতি
+$\sFmla{\True}{\lnot !A}$-তে \TRule{\True}{\lnot} প্রয়োগের ফলে
+পাওয়া প্রতিটি সূত্র ও সেই অনুমিতি সরিয়ে দিই এবং অনুমিতি
+$\sFmla{\False}{!A}$ যোগ করি। কোনো শাখা আগে
+$\sFmla{\True}{\lnot !A}$-তে \TRule{\True}{\lnot}-এর প্রয়োগের সিদ্ধান্ত, অর্থাৎ
+$\sFmla{\False}{!A}$ থাকার কারণে বদ্ধ হলে, নতুন !!{tableau}-এর
+সংশ্লিষ্ট শাখাটিও বদ্ধ। পুরোনো ট্যাবলোর কোনো শাখা যদি অনুমিতি
+$\sFmla{\True}{\lnot !A}$ ও $\sFmla{\False}{\lnot !A}$ উভয়ই থাকার
+কারণে বদ্ধ হয়ে থাকে, তবে $\sFmla{\False}{\lnot !A}$-তে
+$\TRule{\False}{\lnot}$ প্রয়োগ করে $\sFmla{\True}{!A}$ পাওয়া যায়
+এবং শাখাটি বদ্ধ করা যায়। কারণ অনুমিতি হিসেবে
+$\sFmla{\False}{!A}$ আগেই যোগ করেছি।
+\end{proof}
+
+\begin{prob}
+$\Gamma \Proves \lnot !A$ হবে তখনই এবং কেবল তখনই, যখন
+$\Gamma \cup \{!A\}$ অসঙ্গত—প্রমাণ করো।
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  $\Gamma \Proves !A$ এবং $\lnot !A \in \Gamma$ হলে $\Gamma$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+  ধরি $\Gamma \Proves !A$ এবং $\lnot !A \in \Gamma$। তখন
+  $!B_1$, \dots, $!B_n\in\Gamma$ এমন বাক্য আছে যেন
+  \[
+  \{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+  \]
+-এর একটি বদ্ধ ট্যাবলো আছে। অনুমিতি \sFmla{\False}{!A}-এর বদলে
+  \sFmla{\True}{\lnot !A} বসাই এবং অনুমিতিগুলির পরে
+  \sFmla{\True}{\lnot !A}-তে \TRule{\True}{\lnot} প্রয়োগের সিদ্ধান্ত
+  যোগ করি। পুরোনো !!{tableau}-তে পংক্তি~$1$ উল্লেখ করে সমর্থিত
+  প্রত্যেক !!{sentence} এখন পংক্তি~$n+1$ উল্লেখ করে সমর্থিত। অতএব
+  পুরোনো !!{tableau}-টি বদ্ধ হলে নতুনটিও বদ্ধ। নতুন !!{tableau}-টি দেখায়
+  $\Gamma$ অসঙ্গত, কারণ সব অনুমিতিই~$\Gamma$-তে আছে।
+% BN-SRC-051 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-051):} হিমায়িত ইংরেজি গদ্যে $\TRule{\True}{\lnot}$ বিধির সিদ্ধান্তটিকে ভুল করে $\sFmla{\False}{!A}$-তে বিধিটি প্রয়োগের ফল বলা হয়েছে। একই বাক্যে যে প্রতিস্থাপিত অনুমিতি দেওয়া আছে এবং বিধির সংজ্ঞা অনুসারে বাংলা লক্ষ্যে প্রয়োগের পূর্বধারণা $\sFmla{\True}{\lnot !A}$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-051 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  $\Gamma \cup \{!A\}$ এবং $\Gamma \cup \{\lnot !A\}$ উভয়ই
+  অসঙ্গত হলে $\Gamma$ অসঙ্গত।
+\end{prop}
+
+\begin{proof}
+  যদি $!B_1$, \dots, $!B_n\in\Gamma$ এবং
+  $!C_1$, \dots, $!C_m\in\Gamma$ এমন বাক্য থাকে যেন
+  \begin{align*}
+    \{\sFmla{\True}{!A}, &
+    \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} \text{ এবং}\\
+    \{\sFmla{\True}{\lnot !A}, &
+    \sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_m}\}
+  \end{align*}
+উভয়েরই বদ্ধ !!{tableau}s থাকে, তবে একটি সম্মিলিত !!{tableau}
+  তৈরি করে দেখানো যায় যে $\Gamma$ অসঙ্গত। অনুমিতি হিসেবে
+  $\sFmla{\True}{!B_1}$, \dots, $\sFmla{\True}{!B_n}$-এর সঙ্গে
+  $\sFmla{\True}{!C_1}$, \dots, $\sFmla{\True}{!C_m}$ নিই এবং তারপর
+  \Cut{} বিধি প্রয়োগ করি। এতে দুটি শাখা হয়—একটি
+  $\sFmla{\True}{!A}$ দিয়ে, অন্যটি $\sFmla{\False}{!A}$ দিয়ে শুরু।
+
+  বাঁ দিকে প্রথম !!{tableau}-টির অনুমিতির নিচের অংশ যোগ করি। এখানে
+  প্রতিটি বিধি-প্রয়োগ এখনও সঠিক, কারণ
+  $\sFmla{\True}{!A}$-সহ প্রথম !!{tableau}-টির প্রতিটি অনুমিতি পাওয়া
+  যাচ্ছে। ফলে $\sFmla{\True}{!A}$-এর নিচের প্রতিটি শাখা বদ্ধ হয়।
+% BN-SRC-052 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-052):} হিমায়িত ইংরেজি গদ্যে “left left side” মুদ্রণপ্রমাদ আছে। বৃক্ষের দ্বিবিভাজন অনুসারে বাংলা লক্ষ্যে একবারই “বাঁ দিক” লেখা হয়েছে।} % BN-SRC-052 TARGET-CORRECTION-END
+
+  ডান দিকে দ্বিতীয় !!{tableau}-টির অনুমিতির নিচের অংশ যোগ করি এবং
+  $\sFmla{\True}{\lnot !A}$-তে~$\TRule{\True}{\lnot}$ প্রয়োগের
+  ফলগুলি সরিয়ে দিই। $\sFmla{\True}{\lnot !A}$-তে
+  $\TRule{\True}{\lnot}$ প্রয়োগের সিদ্ধান্ত হলো
+  $\sFmla{\False}{!A}$; তবু সেটি পাওয়া যাচ্ছে, কারণ সম্মিলিত
+  !!{tableau}-এর ডান দিকে সেটিই \Cut{} বিধির সিদ্ধান্ত।
+
+  দ্বিতীয় ট্যাবলোর কোনো শাখা যদি অনুমিতি
+  $\sFmla{\True}{\lnot !A}$ (যা সম্মিলিত !!{tableau}-তে আর অনুমিতি
+  নয়) এবং $\sFmla{\False}{\lnot !A}$ উভয়ই থাকার কারণে বদ্ধ হয়ে
+  থাকে, তবে $\sFmla{\False}{\lnot !A}$-তে
+  $\TRule{\False}{\lnot}$ প্রয়োগ করে $\sFmla{\True}{!A}$ পাই। এখন
+  সম্মিলিত !!{tableau}-এর সংশ্লিষ্ট শাখাটিও বদ্ধ, কারণ তাতে
+  \Cut{} বিধির ডানদিকের সিদ্ধান্ত~$\sFmla{\False}{!A}$ আছে। দ্বিতীয়
+  !!{tableau}-এর কোনো শাখা অন্য কোনো কারণে বদ্ধ হলে সম্মিলিত
+  !!{tableau}-এর সংশ্লিষ্ট শাখাটিও বদ্ধ; কারণ পুরোনো দ্বিতীয়
+  !!{tableau}-এর শাখায় $\sFmla{\True}{\lnot !A}$ ছাড়া থাকা অন্য
+  সব !!{signed formula}s সম্মিলিত !!{tableau}-এর সংশ্লিষ্ট শাখাতেও
+  থাকে।
+  \end{proof}
+
+\end{document}

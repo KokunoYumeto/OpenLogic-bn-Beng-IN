@@ -1,0 +1,94 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: propositional-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{prl}}
+      {\olfileid{pl}{tab}{prl}}
+
+\olsection{বচনসংযোজক বিধি}
+
+\subsection{$\lnot$-এর বিধি}
+
+\begin{defish}
+\AxiomC{\sFmla{\True}{\lnot !A}}
+\RightLabel{\TRule{\True}{\lnot}}
+\UnaryInfC{\sFmla{\False}{!A}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\False}{\lnot !A}}
+\RightLabel{\TRule{\False}{\lnot}}
+\UnaryInfC{\sFmla{\True}{!A}}
+\DisplayProof
+\end{defish}
+
+\subsection{$\land$-এর বিধি}
+
+\begin{defish}\noindent
+\AxiomC{\sFmla{\True}{!A \land !B}}
+\RightLabel{\TRule{\True}{\land}}
+\UnaryInfC{\sFmla{\True}{!A}}
+\noLine
+\UnaryInfC{\sFmla{\True}{!B}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\False}{!A \land !B}}
+\RightLabel{\TRule{\False}{\land}}
+\UnaryInfC{$\sFmla{\False}{!A} \quad \mid \quad \sFmla{\False}{!B}$}
+\DisplayProof
+\end{defish}
+
+\subsection{$\lor$-এর বিধি}
+
+\begin{defish}
+\AxiomC{\sFmla{\True}{!A \lor !B}}
+\RightLabel{\TRule{\True}{\lor}}
+\UnaryInfC{$\sFmla{\True}{!A} \quad \mid \quad \sFmla{\True}{!B}$}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\False}{!A \lor !B}}
+\RightLabel{\TRule{\False}{\lor}}
+\UnaryInfC{\sFmla{\False}{!A}}
+\noLine
+\UnaryInfC{\sFmla{\False}{!B}}
+\DisplayProof
+\end{defish}
+
+\subsection{$\lif$-এর বিধি}
+
+\begin{defish}
+\AxiomC{\sFmla{\True}{!A \lif !B}}
+\RightLabel{\TRule{\True}{\lif}}
+\UnaryInfC{$\sFmla{\False}{!A} \quad \mid \quad \sFmla{\True}{!B}$}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\False}{!A \lif !B}}
+\RightLabel{\TRule{\False}{\lif}}
+\UnaryInfC{\sFmla{\True}{!A}}
+\noLine
+\UnaryInfC{\sFmla{\False}{!B}}
+\DisplayProof
+\end{defish}
+
+\subsection{কর্তন-বিধি}
+
+\begin{defish}
+\AxiomC{}
+\RightLabel{\Cut}
+\UnaryInfC{$\sFmla{\True}{!A} \quad \mid \quad \sFmla{\False}{!A}$}
+\DisplayProof
+\end{defish}
+
+\Cut{} বিধিটি আগের কোনো !!{signed formula}-এর “ওপর” প্রয়োগ করা
+হয় না; বরং এটি কোনো !!a{tableau}-এর প্রতিটি শাখাকে দুই ভাগে
+ভাগ করতে দেয়—একটি শাখায় থাকে $\sFmla{\True}{!A}$, অন্যটিতে
+$\sFmla{\False}{!A}$। বিধিটি আবশ্যক নয়—যে কোনো
+!!{signed formula}s-সমষ্টির \Cut{}-বিহীন বদ্ধ !!{tableau} থাকে যদি
+তার কোনো বদ্ধ ট্যাবলো থাকে—তবে এটি সুবিধাজনকভাবে !!{tableau}s
+একত্র করতে দেয়।
+
+\end{document}

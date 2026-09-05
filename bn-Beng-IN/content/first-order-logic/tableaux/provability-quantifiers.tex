@@ -1,0 +1,91 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: provability-quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{tab}{qpr}
+\olsection{\usetoken{S}{derivability} ও পরিমাণসূচক}
+
+\begin{explain}
+  পূর্ণতা উপপাদ্যের জন্য আরও দরকার যে ট্যাবলো-বিধিগুলি
+  এই অংশে প্রতিষ্ঠিত~$\Proves$-সংক্রান্ত তথ্যগুলি দেয়।
+\end{explain}
+
+\begin{thm}
+\ollabel{thm:strong-generalization} $c$ যদি এমন একটি ধ্রুবক হয় যা
+$\Gamma$ বা~$!A(x)$-এ নেই এবং $\Gamma \Proves !A(c)$ হয়, তবে
+$\Gamma \Proves \lforall[x][!A(x)]$।
+\end{thm}
+
+\begin{proof}
+ধরি $\Gamma \Proves !A(c)$; অর্থাৎ $!B_1$, \dots, $!B_n\in\Gamma$
+এমন বাক্য এবং নিচের সমষ্টিটির জন্য একটি বদ্ধ !!{tableau} আছে:
+\begin{align*}
+\{ \sFmla{\False}{!A(c)}, &
+\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n} \}.
+\intertext{দেখাতে হবে যে নিচের সমষ্টিটির জন্যও একটি বদ্ধ
+!!{tableau} আছে:}
+\{ \sFmla{\False}{\lforall[x][!A(x)]}, &
+\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n} \}.
+\end{align*}
+বদ্ধ !!{tableau}-টির প্রথম অনুমিতির বদলে
+$\sFmla{\False}{\lforall[x][!A(x)]}$ বসাই এবং অনুমিতিগুলির পরে
+$\sFmla{\False}{!A(c)}$ যোগ করি।
+\begin{center}
+\begin{tableau}{not line numbering}
+  [\sFmla{\False}{\formula{A}(c)}
+    [\sFmla{\True}{\formula{B}_1}
+      [\vdots
+      [\sFmla{\True}{\formula{B}_n},
+        [][][]]]]]
+\end{tableau}\qquad
+\begin{tableau}{not line numbering}
+  [\sFmla{\False}{\lforall[x][\formula{A}(x)]}
+    [\sFmla{\True}{\formula{B}_1}
+      [\vdots
+        [\sFmla{\True}{\formula{B}_n},
+          [\sFmla{\False}{\formula{A}(c)}
+        [][][]]]]]]
+\end{tableau}
+\end{center}
+ট্যাবলোটি এখনও বদ্ধ, কারণ আগে অনুমিতি হিসেবে পাওয়া সব
+!!{sentence}s এখনও !!{tableau}-এর ওপরেই পাওয়া যায়। যোগ করা
+পংক্তিটি $\TRule{\False}{\lforall}$-এর সঠিক প্রয়োগের ফল; কারণ
+!!{constant}~$c$ $!B_1$, \dots, $!B_n$ বা
+$\lforall[x][!A(x)]$-এ নেই—অর্থাৎ নতুন !!{tableau}-তে যোগ করা
+পংক্তিটির ওপরের কোথাও নেই।
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:provability-quantifiers}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$!A(t) \Proves \lexists[x][!A(x)]$.}{}
+\tagitem{prvAll}{$\lforall[x][!A(x)] \Proves !A(t)$.}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\sFmla{\False}{\lexists[x][!A(x)]},
+  \sFmla{\True}{!A(t)}$-এর একটি বদ্ধ !!{tableau} হলো:
+  \begin{oltableau}
+    [\sFmla{\False}{\lexists[x][\formula{A}(x)]}, just = \TAss
+      [\sFmla{\True}{\formula{A}(t)}, just = \TAss
+        [\sFmla{\False}{\formula{A}(t)}, just = {\TRule{\False}{\lexists}[1]}, close]]]
+    \end{oltableau}}{}
+\tagitem{prvAll}{$\sFmla{\False}{\formula{A}(t)},
+  \sFmla{\True}{\lforall[x][!A(x)]}$-এর একটি বদ্ধ !!{tableau} হলো:
+  \begin{oltableau}
+    [\sFmla{\False}{\formula{A}(t)}, just = \TAss
+      [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just = \TAss
+        [\sFmla{\True}{\formula{A}(t)}, just = {\TRule{\True}{\lforall}[2]}, close]]]
+    \end{oltableau}}{}
+\end{tagenumerate}
+% BN-SRC-054 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-054):} হিমায়িত ইংরেজি \texttt{prvAll} শাখায় দুই অনুমিতির প্রদর্শনের শেষে অপ্রয়োজনীয় একটি কমা গণিতের ভেতরে রয়ে গেছে। বাংলা লক্ষ্যে তালিকাটি দ্বিতীয় চিহ্নিত সূত্রেই শেষ করা হয়েছে।} % BN-SRC-054 TARGET-CORRECTION-END
+\end{proof}
+
+\end{document}

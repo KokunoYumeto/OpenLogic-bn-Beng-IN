@@ -1,0 +1,107 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{tab}{ide}
+
+\olsection{\usetoken{S}{identity}-সহ \usetoken{P}{tableau}}
+
+!!^{tableau}s-এ !!{identity} থাকলে অতিরিক্ত অনুমান-বিধি দরকার।
+$\eq$-এর বিধিগুলি হলো (এখানে $t$, $t_1$ ও $t_2$ বদ্ধ পদ):
+
+\begin{defish}
+\AxiomC{}
+\RightLabel{$\eq$}
+\UnaryInfC{\sFmla{\True}{\eq[t][t]}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\True}{\eq[t_1][t_2]}}
+\noLine
+\UnaryInfC{\sFmla{\True}{!A(t_1)}}
+\RightLabel{$\TRule{\True}{\eq}$}
+\UnaryInfC{\sFmla{\True}{!A(t_2)}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\True}{\eq[t_1][t_2]}}
+\noLine
+\UnaryInfC{\sFmla{\False}{!A(t_1)}}
+\RightLabel{$\TRule{\False}{\eq}$}
+\UnaryInfC{\sFmla{\False}{!A(t_2)}}
+\DisplayProof
+\end{defish}
+লক্ষ করো, অন্য সব বিধির বিপরীতে $\TRule{\True}{\eq}$ ও
+$\TRule{\False}{\eq}$ প্রয়োগের আগে শাখায় \emph{দুটি} চিহ্নিত
+!!{formula}s থাকতে হয়—$\sFmla{\True}{\eq[t_1][t_2]}$ এবং
+$\sFmla{S}{!A(t_1)}$ উভয়ই।
+
+\begin{ex}
+$s$ ও $t$ বদ্ধ পদ হলে
+$\eq[s][t], !A(s) \Proves !A(t)$:
+\begin{oltableau}
+  [\sFmla{\False}{\formula{A}(t)}, just = \TAss
+    [\sFmla{\True}{\eq[s][t]}, just = \TAss
+      [\sFmla{\True}{\formula{A}(s)}, just = \TAss
+        [\sFmla{\True}{\formula{A}(t)}, just={\TRule{\True}{\eq}[2, 3]}, close]
+      ]
+    ]
+  ]
+\end{oltableau}
+এটি অভিন্ন বস্তুর প্রতিস্থাপনযোগ্যতার নীতি বা লাইবনিজের সূত্র নামে
+পরিচিত হতে পারে।
+
+!!^{tableau}s প্রমাণ করে যে $\eq$ প্রতিসম; অর্থাৎ
+$\eq[s_1][s_2] \Proves \eq[s_2][s_1]$:
+\begin{oltableau}
+  [\sFmla{\False}{\eq[s_2][s_1]}, just = \TAss
+    [\sFmla{\True}{\eq[s_1][s_2]}, just = \TAss
+      [\sFmla{\True}{\eq[s_1][s_1]}, just = {$\eq$}
+        [\sFmla{\True}{\eq[s_2][s_1]}, just = {\TRule{\True}{\eq}[2, 3]}, close]
+      ]
+    ]
+  ]
+\end{oltableau}
+এখানে পংক্তি~$2$ হলো $\TRule{\True}{\eq}$-এর প্রথম পূর্বশর্ত
+!!{formula}~$\sFmla{\True}{\eq[s_1][s_2]}$। পংক্তি~$3$ হলো
+$\sFmla{\True}{!A(s_2)}$ রূপের দ্বিতীয় পূর্বশর্ত—$!A(x)$-কে
+$\eq[x][s_1]$ ভাবো; তখন $!A(s_1)$ হলো $\eq[s_1][s_1]$ এবং
+$!A(s_2)$ হলো $\eq[s_2][s_1]$।
+
+বিধিগুলি আরও প্রমাণ করে যে $\eq$ পরিযায়ী; অর্থাৎ
+$\eq[s_1][s_2], \eq[s_2][s_3] \Proves \eq[s_1][s_3]$:
+\begin{oltableau}
+  [\sFmla{\False}{\eq[s_1][s_3]}, just = \TAss
+    [\sFmla{\True}{\eq[s_1][s_2]}, just = \TAss
+      [\sFmla{\True}{\eq[s_2][s_3]}, just = \TAss
+        [\sFmla{\True}{\eq[s_1][s_3]}, just = {\TRule{\True}{\eq}[3, 2]}, close]
+      ]
+    ]
+  ]
+\end{oltableau}
+এই !!{tableau}-তে $\TRule{\True}{\eq}$-এর প্রথম পূর্বশর্ত
+!!{formula} হলো পংক্তি~$3$-এর $\sFmla{\True}{\eq[s_2][s_3]}$
+($s_2$ এখানে~$t_1$-এর এবং $s_3$~$t_2$-এর ভূমিকা পালন করে)।
+$\sFmla{\True}{!A(s_2)}$ রূপের দ্বিতীয় পূর্বশর্ত হলো পংক্তি~$2$।
+এখানে $!A(x)$-কে $\eq[s_1][x]$ ভাবো; তাতে $!A(s_2)$ হয়
+$\eq[s_1][s_2]$ (অর্থাৎ পংক্তি~$2$), আর $!A(s_3)$ হয় সিদ্ধান্তের
+!!{formula}~$\eq[s_1][s_3]$।
+% BN-SRC-056 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-056):} হিমায়িত ইংরেজি পরিযায়িতা-ব্যাখ্যায় $!A(x)=\eq[s_1][x]$ স্থির করার পরেও $!A(s_2)$-কে ভুল করে $\eq[t_1][t_2]$ বলা হয়েছে। একই বাক্যের পংক্তি~$2$ এবং ঘোষিত প্রতিস্থাপন অনুসারে বাংলা লক্ষ্যে $\eq[s_1][s_2]$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-056 TARGET-CORRECTION-END
+\end{ex}
+
+\begin{prob}
+নিচেরগুলির জন্য বদ্ধ !!{tableau}s দাও:
+\begin{enumerate}
+\item $\sFmla{\False}{\lforall[x][\lforall[y][((x = y \land !A(x))
+      \lif !A(y))]]}$
+\item $\sFmla{\False}{\lexists[x][(!A(x) \land
+    \lforall[y][(!A(y) \lif y = x)])]}$,\\
+  $\sFmla{\True}{\lexists[x][!A(x)] \land
+    \lforall[y][\lforall[z][((!A(y) \land !A(z)) \lif y = z)]]}$
+\end{enumerate}
+\end{prob}
+
+\end{document}

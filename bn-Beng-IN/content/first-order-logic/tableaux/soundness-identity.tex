@@ -1,0 +1,48 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: soundness-identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{tab}{sid}
+
+\olsection{\usetoken{S}{identity}-সহ বিশুদ্ধতা}
+
+\begin{prop}
+অভিন্নতার বিধি-সহ !!^{tableau}s বিশুদ্ধ: কোনো বদ্ধ !!{tableau}
+পরিতৃপ্তিযোগ্য নয়।
+\end{prop}
+
+\begin{proof}
+আগের মতো শুধু দেখাতে হবে, কোনো !!a{tableau}-তে একটি পরিতৃপ্তিযোগ্য
+শাখা থাকলে $\eq$-এর কোনো একটি বিধি প্রয়োগের ফলে উৎপন্ন শাখাটিও
+পরিতৃপ্তিযোগ্য। শাখার চিহ্নিত !!{formula}s-এর সমষ্টি~$\Gamma$ এবং
+~$\Gamma$-কে পরিতৃপ্তকারী কোনো !!a{structure}~$\Struct{M}$ ধরি।
+
+ধরা যাক~$\eq$ ব্যবহার করে, অর্থাৎ চিহ্নিত
+!!{formula}~$\sFmla{\True}{\eq[t][t]}$ যোগ করে শাখাটি প্রসারিত
+হয়েছে। স্পষ্টতই $\Sat{M}{\eq[t][t]}$; তাই $\Struct{M}$
+$\Gamma \cup \{\sFmla{\True}{\eq[t][t]}\}$-কেও পরিতৃপ্ত করে।
+
+$\TRule{\True}{\eq}$ ব্যবহার করে শাখাটি প্রসারিত হলে চিহ্নিত
+!!{formula}~$\sFmla{\True}{!A(t_2)}$ যোগ করি; আর $\Gamma$-তে
+$\sFmla{\True}{\eq[t_1][t_2]}$ ও $\sFmla{\True}{!A(t_1)}$ উভয়ই
+আছে। তাই $\Sat{M}{\eq[t_1][t_2]}$ এবং
+$\Sat{M}{!A(t_1)}$। এমন একটি চলরাশি-আরোপ $s$ নিই যেন
+$s(x) = \Value{t_1}{M}$। \olref[syn][ass]{prop:sentence-sat-true}
+অনুসারে $\Sat{M}{!A(t_1)}[s]$। যেহেতু $\varAssign{s}{s}{x}$,
+\olref[syn][ext]{prop:ext-formulas} অনুসারে
+$\Sat{M}{!A(x)}[s]$। আবার $\Sat{M}{\eq[t_1][t_2]}$ বলে
+$\Value{t_1}{M} = \Value{t_2}{M}$; অতএব
+$s(x) = \Value{t_2}{M}$। \olref[syn][ext]{prop:ext-formulas} আবার
+প্রয়োগ করে $\Sat{M}{!A(t_2)}[s]$-ও পাই।
+\olref[syn][ass]{prop:sentence-sat-true} অনুসারে
+$\Sat{M}{!A(t_2)}$। $\TRule{\False}{\eq}$-এর ক্ষেত্রটিও একইভাবে
+প্রমাণিত হয়।
+% BN-SRC-057 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-057):} হিমায়িত ইংরেজি $\TRule{\True}{\eq}$-এর বিশুদ্ধতা-প্রমাণে যোগ করা সূত্রটিকে $\sFmla{S}{!A(t_2)}$ বলা হলেও পূর্বধারণা এবং প্রমাণটি সত্য-চিহ্নিত ক্ষেত্রটিই বিবেচনা করে। বিধির সংজ্ঞা অনুসারে বাংলা লক্ষ্যে $\sFmla{\True}{!A(t_2)}$ পুনরুদ্ধার করা হয়েছে; মিথ্যা-চিহ্নিত বিধিটি পরের বাক্যে আলাদাভাবে উল্লেখিত।} % BN-SRC-057 TARGET-CORRECTION-END
+\end{proof}
+
+\end{document}

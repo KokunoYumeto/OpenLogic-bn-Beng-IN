@@ -1,0 +1,346 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: proving-things-quant
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{tab}{prq}
+
+\olsection{পরিমাণসূচক-সহ \usetoken{P}{tableau}}
+
+\begin{ex}
+পরিমাণসূচক নিয়ে কাজ করার সময় আইগেনচল-শর্ত যেন লঙ্ঘিত না হয় তা
+নিশ্চিত করতে হবে; কখনও এ জন্য কয়েকটি অনুমান কোন ক্রমে করব তা নিয়ে
+পরীক্ষা করতে হয়। সাধারণভাবে, আইগেনচল-শর্তাধীন বিধিগুলি আগে প্রয়োগ
+করার চেষ্টা করলে সুবিধা হয় (সম্পূর্ণ !!{tableau}-তে এগুলি ওপরের দিকে
+থাকবে)।
+
+$\lexists[x][\lnot !A(x)] \lif \lnot \lforall[x][!A(x)]$
+!!{sentence}-টির জন্য কীভাবে !!a{tableau} দেব তা দেখি।
+প্রচলিতভাবে সংশ্লিষ্ট অনুমিতি লিখে শুরু করি:
+\begin{oltableau}
+[\sFmla{\False}{\lexists[x][\lnot \formula{A}(x)]\lif \lnot
+    \lforall[x][\formula{A}(x)]}, just=\TAss]
+\end{oltableau}
+!!{main operator} হলো $\lif$, তাই $\TRule{\False}{\lif}$ প্রয়োগ করি:
+\begin{oltableau}
+[\sFmla{\False}{\lexists[x][\lnot \formula{A}(x)]\lif \lnot
+    \lforall[x][\formula{A}(x)]}, just=\TAss, checked
+  [\sFmla{\True}{\lexists[x][\lnot \formula{A}(x)]},
+    just={\TRule{\False}{\lif}[1]}
+    [\sFmla{\False}{\lnot\lforall[x][\formula{A}(x)]},
+      just={\TRule{\False}{\lif}[1]}]
+  ]
+]
+\end{oltableau}
+এরপর পংক্তি~$2$ সামলাতে হবে। $\TRule{\True}{\lexists}$ ব্যবহার করি।
+এতে একটি নতুন !!{constant} চাই; এখনও কোনো !!{constant}s না থাকায়
+যেকোনোটি বেছে নিতে পারি—ধরা যাক~$a$।
+\begin{oltableau}
+[\sFmla{\False}{\lexists[x][\lnot \formula{A}(x)]\lif \lnot
+    \lforall[x][\formula{A}(x)]}, just=\TAss, checked
+  [\sFmla{\True}{\lexists[x][\lnot \formula{A}(x)]},
+    just={\TRule{\False}{\lif}[1]}, checked
+    [\sFmla{\False}{\lnot\lforall[x][\formula{A}(x)]},
+      just={\TRule{\False}{\lif}[1]}
+      [\sFmla{\True}{\lnot\formula{A}(a)}, just={\TRule{\True}{\lexists}[2]}]
+    ]
+  ]
+]
+\end{oltableau}
+এবার পংক্তি~$3$-এ $\TRule{\False}{\lnot}$ প্রয়োগ করি:
+\begin{oltableau}
+[\sFmla{\False}{\lexists[x][\lnot \formula{A}(x)]\lif \lnot
+    \lforall[x][\formula{A}(x)]}, just=\TAss, checked
+  [\sFmla{\True}{\lexists[x][\lnot \formula{A}(x)]},
+    just={\TRule{\False}{\lif}[1]}, checked
+    [\sFmla{\False}{\lnot\lforall[x][\formula{A}(x)]},
+      just={\TRule{\False}{\lif}[1]}, checked
+      [\sFmla{\True}{\lnot\formula{A}(a)}, just={\TRule{\True}{\lexists}[2]}
+        [\sFmla{\True}{\lforall[x][\formula{A}(x)]},
+          just = {\TRule{\False}{\lnot}[3]}
+        ]
+      ]
+    ]
+  ]
+]
+\end{oltableau}
+পংক্তি~$4$-এ $\TRule{\True}{\lnot}$ এবং তারপর পংক্তি~$5$-এ
+$\TRule{\True}{\lforall}$ প্রয়োগ করে একটি বদ্ধ !!{tableau} পাই।
+\begin{oltableau}
+[\sFmla{\False}{\lexists[x][\lnot \formula{A}(x)]\lif \lnot
+    \lforall[x][\formula{A}(x)]}, just=\TAss, checked
+  [\sFmla{\True}{\lexists[x][\lnot \formula{A}(x)]},
+    just={\TRule{\False}{\lif}[1]}, checked
+    [\sFmla{\False}{\lnot\lforall[x][\formula{A}(x)]},
+      just={\TRule{\False}{\lif}[1]}, checked
+      [\sFmla{\True}{\lnot\formula{A}(a)}, just={\TRule{\True}{\lexists}[2]}
+        [\sFmla{\True}{\lforall[x][\formula{A}(x)]},
+          just = {\TRule{\False}{\lnot}[3]}
+          [\sFmla{\False}{\formula{A}(a)}, just={\TRule{\True}{\lnot}[4]}
+            [\sFmla{\True}{\formula{A}(a)},
+              just={\TRule{\True}{\lforall}[5]}, close
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+\end{oltableau}
+\end{ex}
+
+\begin{ex}
+নিচের সমষ্টিটির জন্য কীভাবে !!a{tableau} দেব তা দেখি:
+\[
+\sFmla{\False}{\lexists[x][!C(x,b)]},
+\sFmla{\True}{\lexists[x][(!A(x) \land !B(x))]},
+\sFmla{\True}{\lforall[x][(!B(x) \lif !C(x,b))]}.
+\]
+প্রচলিতভাবে অনুমিতিগুলি দিয়ে শুরু করি:
+\begin{oltableau}
+  [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
+      just=\TAss
+      [\sFmla{\True}{\lforall[x][(\formula{B}(x) \lif \formula{C}(x,b))]},
+        just=\TAss]
+    ]
+  ]
+\end{oltableau}
+আইগেনচল-শর্তযুক্ত বিধি সব সময় আগে প্রয়োগ করা উচিত; এখানে সেটি
+পংক্তি~$2$-এ $\TRule{\True}{\lexists}$। অনুমিতিগুলিতে
+!!{constant}~$b$ আছে বলে অন্য একটি নিতে হবে; আবার~$a$-ই নিই।
+\begin{oltableau}
+  [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
+      just=\TAss, checked
+      [\sFmla{\True}{\lforall[x][(\formula{B}(x) \lif \formula{C}(x,b))]},
+        just=\TAss
+        [\sFmla{\True}{\formula{A}(a) \land \formula{B}(a)},
+          just={\TRule{\True}{\lexists}[2]}]
+      ]
+    ]
+  ]
+\end{oltableau}
+এখন পংক্তি~$1$-এ $\TRule{\False}{\lexists}$ অথবা পংক্তি~$3$-এ
+$\TRule{\True}{\lforall}$ প্রয়োগ করলে $x$-এর জায়গায় কোন পদ~$t$
+প্রতিস্থাপন করব তা ঠিক করতে হয়। এই বিধিগুলিতে আইগেনচল-শর্ত নেই বলে
+পছন্দমতো যেকোনো বদ্ধ পদ নেওয়া যায়। কোনো কোনো ক্ষেত্রে ভিন্ন
+$t$ দিয়ে বিধিটি কয়েকবারও প্রয়োগ করতে হতে পারে। সাধারণ কৌশল
+হিসেবে !!{tableau}-তে আগে থেকেই থাকা কোনো পদ—এখানে $a$ ও~$b$—নিলে
+লাভ হয়; এখানে অনুমান করা যায়, $a$ নিলে শাখা বদ্ধ হওয়ার সম্ভাবনা
+বেশি।
+% BN-SRC-047 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-স্পষ্টীকরণ (BN-SRC-047):} হিমায়িত ইংরেজি গদ্যে আইগেনচল-শর্তহীন দুই বিধিতে “যেকোনো পদ” নেওয়া যায় বলা হয়েছে। পরিমাণসূচক-বিধির ঘোষিত শর্ত অনুযায়ী পদটি বদ্ধ হতে হবে; বাংলা গদ্যে সেই পূর্বশর্তটি স্পষ্ট রাখা হয়েছে।} % BN-SRC-047 TARGET-CORRECTION-END
+\begin{oltableau}
+  [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
+      just=\TAss, checked
+      [\sFmla{\True}{\lforall[x][(\formula{B}(x) \lif \formula{C}(x,b))]}, just=\TAss
+        [\sFmla{\True}{\formula{A}(a) \land \formula{B}(a)}, just={\TRule{\True}{\lexists}[2]}
+          [\sFmla{\False}{\formula{C}(a,b)}, just={\TRule{\False}{\lexists}[1]}
+            [\sFmla{\True}{\formula{B}(a) \lif \formula{C}(a,b)},
+              just={\TRule{\True}{\lforall}[3]}
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+পংক্তি~$1$ ও~$3$-এর !!{signed formula}s-এ টিকচিহ্ন দিই না, কারণ
+সেগুলি আবারও ব্যবহার করতে হতে পারে। এবার পংক্তি~$4$-এ
+$\TRule{\True}{\land}$ প্রয়োগ করি:
+\begin{oltableau}
+  [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
+      just=\TAss, checked
+      [\sFmla{\True}{\lforall[x][(\formula{B}(x) \lif \formula{C}(x,b))]}, just=\TAss
+        [\sFmla{\True}{\formula{A}(a) \land \formula{B}(a)},
+          just={\TRule{\True}{\lexists}[2]}, checked
+          [\sFmla{\False}{\formula{C}(a,b)}, just={\TRule{\False}{\lexists}[1]}
+            [\sFmla{\True}{\formula{B}(a) \lif \formula{C}(a,b)},
+              just={\TRule{\True}{\lforall}[3]}
+              [\sFmla{\True}{\formula{A}(a)}, just={\TRule{\True}{\land}[4]}
+                [\sFmla{\True}{\formula{B}(a)}, just={\TRule{\True}{\land}[4]}
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+এখন পংক্তি~$6$-এ $\TRule{\True}{\lif}$ প্রয়োগ করলে
+!!{tableau}-টি বদ্ধ হয়:
+\begin{oltableau}
+  [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
+      just=\TAss, checked
+      [\sFmla{\True}{\lforall[x][(\formula{B}(x) \lif \formula{C}(x,b))]},
+        just=\TAss
+        [\sFmla{\True}{\formula{A}(a) \land \formula{B}(a)},
+          just={\TRule{\True}{\lexists}[2]}, checked
+          [\sFmla{\False}{\formula{C}(a,b)},
+            just={\TRule{\False}{\lexists}[1]}
+            [\sFmla{\True}{\formula{B}(a) \lif \formula{C}(a,b)},
+              just={\TRule{\True}{\lforall}[3]}, checked
+              [\sFmla{\True}{\formula{A}(a)},
+                just={\TRule{\True}{\land}[4]}
+                [\sFmla{\True}{\formula{B}(a)},
+                  just={\TRule{\True}{\land}[4]}
+                  [\sFmla{\False}{\formula{B}(a)},
+                    just={\TRule{\True}{\lif}[6]},close
+                  ]
+                  [\sFmla{\True}{\formula{C}(a,b)},
+                    just={\TRule{\True}{\lif}[6]},close
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+
+
+\end{ex}
+
+\begin{ex}
+নিচের সমষ্টিটির জন্য !!a{tableau} তৈরি করি:
+\[
+\sFmla{\True}{\lforall[x][!A(x)]}, \sFmla{\True}{\lforall[x][!A(x)]
+  \lif \lexists[y][!B(y)]}, \sFmla{\True}{\lnot\lexists[y][!B(y)]}.
+\]
+প্রচলিতভাবে অনুমিতিগুলি লিখে শুরু করি:
+\begin{oltableau}
+  [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif
+        \lexists[y][\formula{B}(y)]}, just=\TAss
+      [\sFmla{\True}{\lnot\lexists[y][\formula{B}(y)]}, just=\TAss
+      ]
+    ]
+  ]
+\end{oltableau}
+পংক্তি~$3$-এ $\TRule{\True}{\lnot}$ প্রয়োগ করে শুরু করি।
+“আইগেনচল-শর্তযুক্ত বিধি সব সময় আগে প্রয়োগ করো”—এই নিয়মের একটি
+অনুসিদ্ধান্ত হলো “আইগেনচল-শর্তহীন পরিমাণসূচক-বিধির প্রয়োগ প্রয়োজন
+হওয়া পর্যন্ত স্থগিত রাখো।” শাখা-বিভাজক বিধিও স্থগিত রাখবে।
+\begin{oltableau}
+  [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif
+        \lexists[y][\formula{B}(y)]}, just=\TAss
+      [\sFmla{\True}{\lnot\lexists[y][\formula{B}(y)]}, just=\TAss, checked
+        [\sFmla{\False}{\lexists[y][\formula{B}(y)]}, just={\TRule{\True}{\lnot}[3]}]
+      ]
+    ]
+  ]
+\end{oltableau}
+নতুন পংক্তি~$4$-এ আইগেনচল-শর্তহীন পরিমাণসূচক-বিধি
+$\TRule{\False}{\lexists}$ চাই। তাই সেটি স্থগিত রেখে পংক্তি~$2$-এ
+$\TRule{\True}{\lif}$ ব্যবহার করি।
+\begin{oltableau}
+  [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif
+        \lexists[y][\formula{B}(y)]}, just=\TAss, checked
+      [\sFmla{\True}{\lnot\lexists[y][\formula{B}(y)]}, just=\TAss, checked
+        [\sFmla{\False}{\lexists[y][\formula{B}(y)]},
+          just={\TRule{\True}{\lnot}[3]},
+          [\sFmla{\False}{\lforall[x][\formula{A}(x)]}, just={\TRule{\True}{\lif}[2]}]
+          [\sFmla{\True}{\lexists[y][\formula{B}(y)]}, just={\TRule{\True}{\lif}[2]}]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+নতুন দুটি !!{signed formula}s-এই আইগেনচল-শর্তযুক্ত বিধি চাই, তাই
+পরের ধাপে সেগুলিই প্রয়োগ করা উচিত:
+\begin{oltableau}
+  [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif
+        \lexists[y][\formula{B}(y)]}, just=\TAss, checked
+      [\sFmla{\True}{\lnot\lexists[y][\formula{B}(y)]}, just=\TAss, checked
+        [\sFmla{\False}{\lexists[y][\formula{B}(y)]},
+          just={\TRule{\True}{\lnot}[3]}
+          [\sFmla{\False}{\lforall[x][\formula{A}(x)]}, just={\TRule{\True}{\lif}[2]},checked
+            [\sFmla{\False}{\formula{A}(b)}, just={\TRule{\False}{\lforall}[5]}]
+          ]
+          [\sFmla{\True}{\lexists[y][\formula{B}(y)]}, just={\TRule{\True}{\lif}[2]},checked
+            [\sFmla{\True}{\formula{B}(c)}, just={\TRule{\True}{\lexists}[5]}]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+শাখাগুলি বদ্ধ করতে পংক্তি~$1$ ও~$4$-এর !!{signed formula}s ব্যবহার
+করতে হবে। সংশ্লিষ্ট বিধি (\TRule{\True}{\lforall} ও
+\TRule{\False}{\lexists})-তে আইগেনচল-শর্ত নেই, তাই উপযুক্ত যেকোনো
+বদ্ধ পদ নেওয়া যায়। এখানে যথাক্রমে $b$ ও~$c$ নিতে হবে।
+% BN-SRC-048 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-048):} হিমায়িত ইংরেজি গদ্যে শেষ ট্যাবলোর জন্য পুনর্ব্যবহারযোগ্য চিহ্নিত সূত্রগুলিকে পংক্তি $1$ ও~$3$ বলা হয়েছে; কিন্তু $\sFmla{\False}{\lexists[y][!B(y)]}$ হলো পংক্তি~$4$, এবং নিচের বৃক্ষও \TRule{\False}{\lexists} বিধির সমর্থন হিসেবে~$[4]$ দেয়। বাংলা গদ্যে পংক্তি~$4$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-048 TARGET-CORRECTION-END
+\begin{oltableau}
+  [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif
+        \lexists[y][\formula{B}(y)]}, just=\TAss, checked
+      [\sFmla{\True}{\lnot\lexists[y][\formula{B}(y)]}, just=\TAss, checked
+        [\sFmla{\False}{\lexists[y][\formula{B}(y)]},
+          just={\TRule{\True}{\lnot}[3]}
+          [\sFmla{\False}{\lforall[x][\formula{A}(x)]},
+            just={\TRule{\True}{\lif}[2]},checked
+            [\sFmla{\False}{\formula{A}(b)},
+              just={\TRule{\False}{\lforall}[5]}
+              [\sFmla{\True}{\formula{A}(b)},
+                just={\TRule{\True}{\lforall}[1]},close
+              ]
+            ]
+          ]
+          [\sFmla{\True}{\lexists[y][\formula{B}(y)]},
+            just={\TRule{\True}{\lif}[2]},checked
+            [\sFmla{\True}{\formula{B}(c)},
+              just={\TRule{\True}{\lexists}[5]}
+              [\sFmla{\False}{\formula{B}(c)},
+                just={\TRule{\False}{\lexists}[4]},close
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+\end{ex}
+
+\begin{prob}
+নিচেরগুলির বদ্ধ !!{tableau}s দাও:
+\begin{enumerate}
+\item $\sFmla{\False}{(\lforall[x][!A(x)] \land \lforall[y][!B(y)])
+\lif \lforall[z][(!A(z) \land !B(z))]}$।
+\item $\sFmla{\False}{(\lexists[x][!A(x)] \lor \lexists[y][!B(y)])
+\lif \lexists[z][(!A(z) \lor !B(z))]}$।
+\item $\sFmla{\True}{\lforall[x][(!A(x) \lif !B)]},
+\sFmla{\False}{\lexists[y][!A(y)] \lif !B}$।
+\item $\sFmla{\True}{\lforall[x][\lnot !A(x)]},
+\sFmla{\False}{\lnot\lexists[x][!A(x)]}$।
+\item $\sFmla{\False}{\lnot\lexists[x][!A(x)] \lif \lforall[x][\lnot
+!A(x)]}$।
+\item $\sFmla{\False}{\lnot\lexists[x][\lforall[y][((!A(x,y) \lif
+\lnot !A(y,y)) \land (\lnot !A(y,y) \lif !A(x,y)))]]}$।
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+নিচেরগুলির বদ্ধ !!{tableau}s দাও:
+\begin{enumerate}
+\item $\sFmla{\False}{\lnot\lforall[x][!A(x)] \lif \lexists[x][\lnot!A(x)]}$।
+\item $\sFmla{\True}{(\lforall[x][!A(x)] \lif !B)}, \sFmla{\False}{\lexists[y][(!A(y) \lif !B)]}$।
+\item $\sFmla{\False}{\lexists[x][(!A(x) \lif \lforall[y][!A(y)])]}$।
+\end{enumerate}
+\end{prob}
+
+\end{document}

@@ -1,0 +1,56 @@
+% Part: first-order-logic
+% Chapter: tableaux
+
+\documentclass[../../../include/open-logic-chapter]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olchapter{fol}{tab}{ট্যাবলো}}
+      {\olchapter{pl}{tab}{ট্যাবলো}}
+
+\begin{editorial}
+এই অধ্যায়ে একটি চিহ্নিত বিশ্লেষণাত্মক ট্যাবলো পদ্ধতি উপস্থাপন করা হয়েছে।
+
+প্রমাণ-পদ্ধতি হিসেবে ট্যাবলো-সংক্রান্ত উপাদান অন্তর্ভুক্ত বা বাদ দিতে
+“prfTab” ট্যাগটি ব্যবহার করো।
+% BN-SRC-043 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-043):} হিমায়িত ইংরেজি গদ্যে “prfTab” ট্যাগটিকে ভুল করে স্বাভাবিক নিষ্পাদন-সংক্রান্ত উপাদানের নিয়ন্ত্রক বলা হয়েছে। ট্যাগের নাম, অধ্যায়ের বিষয় এবং ব্যবহারের সঙ্গে মিলিয়ে বাংলা গদ্যে ট্যাবলো বলা হয়েছে।} % BN-SRC-043 TARGET-CORRECTION-END
+\end{editorial}
+
+\olimport{rules-and-proofs}
+
+\olimport{propositional-rules}
+
+\iftag{FOL}{%
+  \olimport{quantifier-rules}
+}{}
+
+\olimport{derivations}
+
+\olimport{proving-things}
+
+\iftag{FOL}{%
+  \olimport{proving-things-quant}
+}{}
+
+\olimport{proof-theoretic-notions}
+
+\olimport{provability-consistency}
+
+\olimport{provability-propositional}
+
+\iftag{FOL}{%
+  \olimport{provability-quantifiers}
+}{}
+
+\olimport{soundness}
+
+\iftag{FOL}{%
+  \olimport{identity}
+  \olimport{soundness-identity}
+}{}
+
+\OLEndChapterHook
+
+\end{document}

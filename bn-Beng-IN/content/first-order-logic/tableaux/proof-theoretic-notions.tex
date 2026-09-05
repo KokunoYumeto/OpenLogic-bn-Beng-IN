@@ -1,0 +1,195 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{ptn}}
+      {\olfileid{pl}{tab}{ptn}}
+
+\olsection{প্রমাণতাত্ত্বিক ধারণা}
+
+\begin{editorial}
+এই অংশে ট্যাবলোর প্রমাণযোগ্যতা-সম্পর্ক ও সঙ্গতির সংজ্ঞাগুলি একত্র
+করা হয়েছে।
+\end{editorial}
+
+\begin{explain}
+বৈধতা, যৌক্তিক ফলশ্রুতি ও পরিতৃপ্তিযোগ্যতার মতো কয়েকটি গুরুত্বপূর্ণ
+অর্থতাত্ত্বিক ধারণা সংজ্ঞায়িত করেছি। এখন তাদের অনুরূপ
+\emph{প্রমাণতাত্ত্বিক ধারণা} সংজ্ঞায়িত করি। এগুলি !!{structure}s-এ
+!!{sentence}s-এর পরিতৃপ্তির ভিত্তিতে নয়, কয়েকটি বিশেষ বদ্ধ
+!!{tableau}x-এর অস্তিত্বের ভিত্তিতে সংজ্ঞায়িত। এই দুই ধরনের ধারণা যে
+মিলে যায়, তা একটি গুরুত্বপূর্ণ আবিষ্কার। \emph{বিশুদ্ধতা} ও
+\emph{পূর্ণতা উপপাদ্য} এই মিলই প্রতিষ্ঠা করে।
+\end{explain}
+
+
+\begin{defn}[উপপাদ্য]
+কোনো !!{sentence}~$!A$-এর জন্য $\sFmla{\False}{!A}$-এর একটি বদ্ধ
+!!{tableau} থাকলে $!A$-কে \emph{উপপাদ্য} বলা হয়। সেটি উপপাদ্য হলে
+$\Proves !A$ এবং উপপাদ্য না হলে $\Proves/ !A$ লিখি।
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{sentence}~$!A$ কোনো !!{sentence}s-এর সমষ্টি~$\Gamma$ থেকে
+\emph{!!{derivable}} হলে, অর্থাৎ $\Gamma \Proves !A$ হবে তখনই, যখন
+কোনো সসীম সমষ্টি $\{!B_1, \dots, !B_n\} \subseteq \Gamma$ এবং
+নিচের সমষ্টিটির জন্য একটি বদ্ধ !!{tableau} থাকে:
+\[
+\{
+  \sFmla{\False}{!A},
+  \sFmla{\True}{!B_1}, \dots,
+  \sFmla{\True}{!B_n}
+  \}.
+\]
+$!A$ যদি $\Gamma$ থেকে !!{derivable} না হয়, তবে
+$\Gamma \Proves/ !A$ লিখি।
+\end{defn}
+
+\begin{defn}[সঙ্গতি]
+!!{sentence}s-এর কোনো সমষ্টি~$\Gamma$ \emph{অসঙ্গত} হবে তখনই, যখন
+কোনো সসীম সমষ্টি $\{!B_1, \dots, !B_n\} \subseteq \Gamma$ এবং
+নিচের সমষ্টিটির জন্য একটি বদ্ধ !!{tableau} থাকে:
+\[
+\{
+  \sFmla{\True}{!B_1}, \dots,
+  \sFmla{\True}{!B_n}
+  \}.
+\]
+$\Gamma$ অসঙ্গত না হলে তাকে \emph{সঙ্গত} বলি।
+\end{defn}
+
+\begin{prop}[প্রতিবিম্ব ধর্ম]
+\ollabel{prop:reflexivity}
+$!A \in \Gamma$ হলে $\Gamma \Proves !A$।
+\end{prop}
+
+\begin{proof}
+$!A \in \Gamma$ হলে $\{!A\}$ হলো~$\Gamma$-র সসীম উপসমষ্টি এবং
+!!{tableau}
+\begin{oltableau}
+  [\sFmla{\False}{\formula{A}}, just = \TAss
+    [\sFmla{\True}{\formula{A}}, just = \TAss,close]
+  ]
+\end{oltableau}
+বদ্ধ।
+\end{proof}
+
+
+\begin{prop}[একঘেয়েতা]
+\ollabel{prop:monotonicity}
+$\Gamma \subseteq \Delta$ এবং $\Gamma \Proves !A$ হলে
+$\Delta \Proves !A$।
+\end{prop}
+
+\begin{proof}
+~$\Gamma$-র যেকোনো সসীম উপসমষ্টি~$\Delta$-রও সসীম উপসমষ্টি।
+\end{proof}
+
+\begin{prop}[পরিযায়িতা]
+\ollabel{prop:transitivity}
+$\Gamma \Proves !A$ এবং $\{!A\} \cup
+\Delta \Proves !B$ হলে $\Gamma \cup \Delta \Proves !B$।
+\end{prop}
+
+\begin{proof}
+$\{!A\} \cup \Delta \Proves !B$ হলে
+$\Delta_0=\{!C_1,\dots,!C_n\}\subseteq\Delta$ এমন একটি সসীম
+উপসমষ্টি আছে, যার জন্য
+\begin{align*}
+\{\sFmla{\False}{!B}, & \sFmla{\True}{!A}, \sFmla{\True}{!C_1},
+\dots, \sFmla{\True}{!C_n}\}
+\intertext{-এর একটি বদ্ধ !!{tableau} থাকে। আর $\Gamma \Proves !A$
+হলে $\{!D_1,\dots,!D_m\}\subseteq\Gamma$ এমন একটি সসীম উপসমষ্টি
+আছে, যার জন্য}
+\{\sFmla{\False}{!A}, & \sFmla{\True}{!D_1},
+\dots, \sFmla{\True}{!D_m}\}
+\end{align*}
+-এর একটি বদ্ধ !!{tableau} থাকে।
+% BN-SRC-049 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-049):} হিমায়িত ইংরেজি গদ্যে পৃথক বাক্যগুলির তালিকা $!D_1,\dots,!D_m$-কেই $\Gamma$-র উপসমষ্টি বলা হয়েছে। আগের $\Delta_0$-সংজ্ঞা ও পরের ট্যাবলো-অনুমিতির সঙ্গে মিলিয়ে বাংলা লক্ষ্যে সমষ্টি-বন্ধনী পুনরুদ্ধার করে $\{!D_1,\dots,!D_m\}\subseteq\Gamma$ লেখা হয়েছে।} % BN-SRC-049 TARGET-CORRECTION-END
+
+এবার নিচের অনুমিতিযুক্ত !!{tableau} বিবেচনা করো:
+\[
+\sFmla{\False}{!B},
+\sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_n},
+\sFmla{\True}{!D_1}, \dots, \sFmla{\True}{!D_m}.
+\]
+$!A$-তে \Cut{} বিধি প্রয়োগ করো। এতে দুটি শাখা তৈরি হয়—একটিতে
+$\sFmla{\True}{!A}$ এবং অন্যটিতে $\sFmla{\False}{!A}$। অতএব প্রথম
+শাখায় নিচের সবগুলি পাওয়া যায়:
+\[
+\{\sFmla{\False}{!B}, \sFmla{\True}{!A},
+\sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_n}\}
+\]
+এই অনুমিতিগুলির জন্য বদ্ধ !!{tableau} আছে বলে সেটি সেই শাখায় জুড়ে
+দেওয়া যায়; $\sFmla{\True}{!A}$ দিয়ে যাওয়া প্রতিটি শাখা বদ্ধ হয়।
+অন্য শাখায় নিচের সবগুলি পাওয়া যায়:
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!D_1}, \dots,
+\sFmla{\True}{!D_m}\}
+\]
+তাই অন্য পাশটিও সম্পূর্ণ করে একটি বদ্ধ !!{tableau} পাওয়া যায়।
+এতে $\Gamma \cup \Delta \Proves !B$ প্রমাণিত হলো।
+\end{proof}
+
+লক্ষ করো, এর বিশেষ ক্ষেত্র হিসেবে $\Gamma \Proves !A$ এবং
+$!A \Proves !B$ হলে $\Gamma \Proves !B$। আবার,
+$!A_1,\dots,!A_n \Proves !B$ এবং প্রতিটি~$i$-এর জন্য
+$\Gamma \Proves !A_i$ হলে $\Gamma \Proves !B$।
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ অসঙ্গত হবে তখনই এবং কেবল তখনই, যখন প্রতিটি
+!!{sentence}~$!A$-এর জন্য $\Gamma \Proves !A$।
+\end{prop}
+
+\begin{proof}
+অনুশীলন।
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][tab][ptn]{prop:incons} প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][tab][ptn]{prop:incons} প্রমাণ করো।
+\end{prob}
+\tagendprob
+
+\begin{prop}[সংহতি]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item $\Gamma \Proves !A$ হলে $\Gamma_0\subseteq\Gamma$ এমন একটি
+    সসীম উপসমষ্টি আছে যেন $\Gamma_0 \Proves !A$।
+  \item ~$\Gamma$-র প্রতিটি সসীম উপসমষ্টি সঙ্গত হলে $\Gamma$ সঙ্গত।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item $\Gamma \Proves !A$ হলে
+      $\Gamma_0=\{!B_1,\dots,!B_n\}$ এমন একটি সসীম উপসমষ্টি এবং
+      নিচের সমষ্টিটির জন্য একটি বদ্ধ !!{tableau} আছে:
+      \[
+      \{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+      \]
+      এই !!{tableau}-টিই $\Gamma_0 \Proves !A$ দেখায়।
+    \item $\Gamma$ অসঙ্গত হলে কোনো সসীম উপসমষ্টি
+      $\Gamma_0=\{!B_1,\dots,!B_n\}$-এর জন্য নিচের সমষ্টিটির একটি
+      বদ্ধ !!{tableau} আছে:
+      \[
+      \{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+      \]
+      এই বদ্ধ !!{tableau}-টি দেখায় যে $\Gamma_0$ অসঙ্গত।
+  \end{enumerate}
+\end{proof}
+
+\end{document}

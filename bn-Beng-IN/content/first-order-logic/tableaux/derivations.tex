@@ -1,0 +1,93 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{der}}
+      {\olfileid{pl}{tab}{der}}
+
+\olsection{\usetoken{P}{tableau}}
+
+\begin{explain}
+অনুমিতি কী এবং অনুমান-বিধিগুলি কী, তা বলা হয়েছে। এগুলি থেকেই
+আরোহীভাবে !!^{tableau}s তৈরি হয়: প্রতিটি !!{tableau} হয় এক বা
+একাধিক অনুমিতি-সম্বলিত একটি শাখা, নয়তো কোনো শাখায় অনুমান-বিধির
+একটি প্রয়োগের ফলে আগের কোনো !!a{tableau} থেকে উৎপন্ন হয়।
+\end{explain}
+
+\begin{defn}[!!^{tableau}]
+$\sFmla{S_1}{!A_1}$, \dots, $\sFmla{S_n}{!A_n}$ অনুমিতিগুলির
+(যেখানে প্রতিটি $S_i$ হয় $\True$, নয়তো~$\False$) জন্য
+!!^a{tableau} হলো !!{signed formula}s-এর এমন একটি সসীম বৃক্ষ যা
+নিচের শর্তগুলি পূরণ করে:
+\begin{enumerate}
+\item বৃক্ষের সর্বোচ্চ $n$টি !!{signed formula}s হলো
+  $\sFmla{S_i}{!A_i}$, একটি আর-একটির নিচে।
+\item বৃক্ষের যে !!{signed formula} অনুমিতি নয়, সেটি তার ওপরের
+  শাখার কোনো !!a{signed formula}-এ অনুমান-বিধির সঠিক প্রয়োগের ফল।
+\end{enumerate}
+কোনো !!a{tableau}-এর একটি শাখায় $\sFmla{\True}{!A}$ ও
+$\sFmla{\False}{!A}$ উভয়ই থাকলে এবং কেবল তখনই শাখাটি \emph{বদ্ধ};
+অন্যথায় সেটি \emph{খোলা}। যে !!^a{tableau}-এর প্রতিটি শাখা বদ্ধ,
+সেটি তার অনুমিতি-সমষ্টির জন্য একটি \emph{বদ্ধ !!{tableau}}। কোনো
+!!a{tableau} বদ্ধ না হলে, অর্থাৎ তাতে অন্তত একটি খোলা শাখা থাকলে,
+সেটি \emph{খোলা}।
+\end{defn}
+
+\begin{ex}
+  যেকোনো অনুমিতি-সমষ্টি নিজেই !!a{tableau}, তবে সাধারণত সেটি বদ্ধ
+  হবে না। (স্পষ্টতই, অনুমিতিগুলির মধ্যেই !!{signed formula}s-এর
+  $\sFmla{\True}{!A}$ ও~$\sFmla{\False}{!A}$ রূপের কোনো জোড়া
+  থাকলেই কেবল সেটি বদ্ধ।)
+
+  কোনো !!a{tableau} (খোলা বা বদ্ধ) থেকে তার কোনো
+  !!a{signed formula}~$!A$-তে একটি অনুমান-বিধি প্রয়োগ করে নতুন ও
+  বড় ট্যাবলো পাওয়া যায়। বিধিটি যে~$!A$-এর আবির্ভাবে প্রয়োগ
+  করা হয়েছে, সেই আবির্ভাব-সম্বলিত প্রতিটি শাখার শেষে এক বা একাধিক
+  !!{signed formula}s যোগ করবে।
+
+  যেমন, অনুমিতি $\sFmla{\True}{!A \land \lnot !A}$ বিবেচনা করো।
+  শুধু সেই অনুমিতি নিয়ে গঠিত (খোলা) !!{tableau}-টি হলো:
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss]
+    \end{tableau}{}
+  \end{center}
+  অনুমিতিটিতে $\TRule{\True}{\land}$ বিধি প্রয়োগ করে এটি থেকে নতুন
+  !!{tableau} পাই। বিধিটি !!{tableau}-তে দুটি নতুন পংক্তি—
+  $\sFmla{\True}{!A}$ ও $\sFmla{\True}{\lnot !A}$—যোগ করতে দেয়:
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss
+        [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\land}[1]},
+          [\sFmla{\True}{\lnot \formula{A}}, just={\TRule{\True}{\land}[1]}
+          ]
+        ]
+      ]
+    \end{tableau}{}
+  \end{center}
+  !!{tableau}s লেখার সময় ডানদিকে প্রয়োগ করা বিধিটি নথিবদ্ধ করি
+  (যেমন, $\TRule{\True}{\land} 1$ বোঝায় যে সেই পংক্তির
+  !!{signed formula}-টি পংক্তি~$1$-এর !!{signed formula}-এ
+  $\TRule{\True}{\land}$ বিধি প্রয়োগের ফল)। নতুন !!{tableau}-টিতে
+  এখন আরও !!{signed formula}s আছে, কিন্তু মাত্র একটিতে
+  ($\sFmla{\True}{\lnot !A}$) বিধি প্রয়োগ করা যায়—এখানে
+  $\TRule{\True}{\lnot}$ বিধি। ফলে নিচের বদ্ধ !!{tableau} পাই:
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss
+        [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\land}[1]}
+          [\sFmla{\True}{\lnot \formula{A}}, just={\TRule{\True}{\land}[1]}
+            [\sFmla{\False}{\formula{A}}, just={\TRule{\True}{\lnot}[3]}, close]
+          ]
+        ]
+      ]
+    \end{tableau}{}
+  \end{center}
+\end{ex}
+
+\end{document}

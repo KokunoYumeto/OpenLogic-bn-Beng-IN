@@ -1,0 +1,64 @@
+% Part: first-order-logic
+% Chapter: models-theories
+% Section: expressing-props-of-structures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{mat}{exs}
+
+\olsection{\printtoken{P}{structure}-এর ধর্ম প্রকাশ}
+
+\begin{explain}
+অপেক্ষক ও সম্পর্কের উপর আরোপিত শর্ত, অথবা আরও সাধারণভাবে কোনো গঠনের
+অপেক্ষক ও সম্পর্কগুলি ওই শর্তগুলি পরিতৃপ্ত করে—এ কথা প্রকাশ করা প্রায়ই
+উপকারী ও গুরুত্বপূর্ণ। যেমন, কোনো ভাষার যেসব !!{structure}s আমাদের
+কাঙ্ক্ষিত অর্থে !!{predicate}s-গুলিকে “ধারণ” করে, সেগুলিকে অন্য
+গঠনগুলি থেকে আলাদা করার উপায় চাই। অবশ্য কোন !!{structure}s-কে
+আমরা “অভিপ্রেত” বলব তা নির্দিষ্ট করার সম্পূর্ণ স্বাধীনতা আমাদের আছে।
+যেমন, আমরা বলতে পারি যে !!{predicate}~$\le$-এর ব্যাখ্যা একটি ক্রম হতেই
+হবে; অথবা আমরা শুধু~$\Lang L$-এর সেই ব্যাখ্যাগুলিতে আগ্রহী যাদের
+সংজ্ঞাক্ষেত্র সেট দিয়ে গঠিত এবং যেখানে $\Obj \in$-কে
+“!!a{element} হওয়া” সম্পর্ক দিয়ে ব্যাখ্যা করা হয়। কিন্তু
+!!a{structure}-এর ভাষার !!{sentence}s দিয়েই কি আমরা এ কথা বলতে পারি?
+অন্যভাবে বললে,~$\Struct M$-এর ভাষার কোনো !!a{sentence} (অথবা সম্ভবত
+!!{sentence}s-এর কোনো সেট) দিয়ে~$\Struct M$-এর উপর আরোপিত কোন
+শর্তগুলি প্রকাশ করতে পারি? কিছু শর্ত আমরা প্রকাশ করতে পারব না। যেমন,
+ভাষা~$\Lang L_A$-এর এমন কোনো বাক্য নেই যা কোনো
+!!{structure}~$\Struct M$-এ কেবল তখনই সত্য, যখন $\Domain M = \Nat$।
+“সংজ্ঞাক্ষেত্রে শুধু স্বাভাবিক সংখ্যাই আছে”—এ কথা প্রকাশ করা যায় না।
+কিন্তু !!{structure}s-এর কিছু “গঠনগত ধর্ম” সম্ভবত প্রকাশ করা যায়।
+!!{sentence}s দিয়ে !!{structure}s-এর কোন ধর্মগুলি প্রকাশ করতে পারি?
+অথবা অন্যভাবে বললে, !!a{sentence} (বা !!{sentence}s-এর সেট)-কে সত্য
+করা !!{structure}s-এর সংগ্রহ হিসেবে কোন সংগ্রহগুলিকে বর্ণনা করতে পারি?
+\end{explain}
+
+\begin{defn}[কোনো সেটের মডেল]
+ধরি, $\Gamma$ ভাষা~$\Lang L$-এর !!{sentence}s-এর একটি সেট।
+প্রত্যেক $!A \in \Gamma$-র জন্য $\Sat{M}{!A}$ হলে বলি,
+!!a{structure}~$\Struct M$ \emph{$\Gamma$-র একটি মডেল}।
+\end{defn}
+
+\begin{ex}
+বাক্য~$\lforall[x][x \le x]$ গঠন~$\Struct M$-এ সত্য যদি এবং কেবল যদি
+$\Assign{\le}{M}$ একটি প্রতিবিম্ব সম্পর্ক। বাক্য
+$\lforall[x][\lforall[y][((x \le y \land y \le x) \lif x = y)]]$
+গঠন~$\Struct M$-এ সত্য যদি এবং কেবল যদি $\Assign{\le}{M}$ একটি
+প্রতিসম-বিরোধী সম্পর্ক। বাক্য
+$\lforall[x][\lforall[y][\lforall[z][((x \le y \land y \le z)
+      \lif x \le z)]]]$ গঠন~$\Struct M$-এ সত্য যদি এবং কেবল যদি
+$\Assign{\le}{M}$ একটি পরিযায়ী সম্পর্ক। তাই
+\begin{align*}
+\{\quad &\lforall[x][x \le x], \\
+   & \lforall[x][\lforall[y][((x \le y \land y \le
+    x) \lif x = y)]], \\
+   &\lforall[x][\lforall[y][\lforall[z][((x \le y
+      \land y \le z) \lif x \le z)]]] \quad \}
+\end{align*}
+-এর মডেলগুলি ঠিক সেইসব গঠন যেখানে~$\Assign{\le}{M}$ প্রতিবিম্ব,
+প্রতিসম-বিরোধী ও পরিযায়ী, অর্থাৎ একটি আংশিক ক্রম। ফলে এগুলিকে
+\emph{আংশিক ক্রমের প্রথম-ক্রমের তত্ত্বের} স্বতঃসিদ্ধ হিসেবে নিতে পারি।
+\end{ex}
+
+\end{document}

@@ -924,6 +924,78 @@ for row in rows:
             )
             is not None
         )
+    models_math_ids = []
+    models_math_fix = False
+    models_audited_source = source
+    if row["unit_id"] == "OLP-0170":
+        models_math_ids = ["BN-SRC-103"]
+        old = r"\lforall[z](z \in x \liff z \in y)"
+        new = r"\lforall[z][(z \in x \liff z \in y)]"
+        assert models_audited_source.count(old) == 1
+        models_audited_source = models_audited_source.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0171":
+        models_math_ids = ["BN-SRC-104"]
+        old = "][v_2]]"
+        new = "][\\Obj v_2]]"
+        assert models_audited_source.count(old) == 1
+        models_audited_source = models_audited_source.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0172":
+        models_math_ids = ["BN-SRC-105", "BN-SRC-106", "BN-SRC-107"]
+        models_repairs = [
+            (
+                r"""\begin{align*}
+ \lforall[u][(u \in f \lif {}] & \lexists[x][\lexists[y][(x \in X \land y \in
+      Y \land \tuple{x, y} = u)]]) \land {}\\
+ \lforall[x][(x \in X \lif {}] &
+      (\lexists[y][(y \in Y \land \mathrm{maps}(f, x, y))] \land {}\\
+& (\lforall[y][\lforall[y'][((\mathrm{maps}(f, x, y) \land
+    \mathrm{maps}(f, x, y')) \lif y = y')]]))
+\end{align*}""",
+                r"""\begin{align*}
+ & \lforall[u][(u \in f \lif
+      \lexists[x][\lexists[y][(x \in X \land y \in
+      Y \land \tuple{x, y} = u)]])] \land {}\\
+ & \lforall[x][(x \in X \lif
+      (\lexists[y][(y \in Y \land \mathrm{maps}(f, x, y))] \land
+      \lforall[y][\lforall[y'][((\mathrm{maps}(f, x, y) \land
+      \mathrm{maps}(f, x, y')) \lif y = y')]]))]
+\end{align*}""",
+            ),
+            (
+                r"""\begin{multline*}
+ f \colon X \to Y \land \lforall[x][\lforall[x'][((x \in X \land x' \in
+     X \land {}]] \\
+ \lexists[y][(\mathrm{maps}(f, x, y) \land \mathrm{maps}(f,
+        x', y))]) \lif x = x')
+\end{multline*}""",
+                r"""\begin{multline*}
+ f \colon X \to Y \land \lforall[x][\lforall[x'][((x \in X \land x' \in
+     X \land {} \\
+ \lexists[y][(\mathrm{maps}(f, x, y) \land \mathrm{maps}(f,
+        x', y))]) \lif x = x')]]
+\end{multline*}""",
+            ),
+            (
+                r"""\lforall[z][\lexists[y][\lforall[x][(x \in y \liff (x \in z \land
+      !A(x))]]].""",
+                r"""\lforall[z][\lexists[y][\lforall[x][(x \in y \liff (x \in z \land
+      !A(x)))]]].""",
+            ),
+        ]
+        for old, new in models_repairs:
+            assert models_audited_source.count(old) == 1
+            models_audited_source = models_audited_source.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0173":
+        models_math_ids = ["BN-SRC-108"]
+        old = r"\lforall[y][(\eq[y][x_1] \lor \dots \lor \eq[y][x_n]]))"
+        new = r"\lforall[y][(\eq[y][x_1] \lor \dots \lor \eq[y][x_n])])"
+        assert models_audited_source.count(old) == 1
+        models_audited_source = models_audited_source.replace(old, new, 1)
+    if models_math_ids:
+        models_math_fix = (
+            mathparts(models_audited_source) == target_math
+            and all(finding_id in documented for finding_id in models_math_ids)
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -973,6 +1045,14 @@ for row in rows:
             "OLP-0165": {"BN-SRC-102"},
         }
         assert set(documented) == expected_semantics.get(row["unit_id"], set())
+    if 167 <= int(row["unit_id"].split("-")[1]) <= 173:
+        expected_models = {
+            "OLP-0170": {"BN-SRC-103"},
+            "OLP-0171": {"BN-SRC-104"},
+            "OLP-0172": {"BN-SRC-105", "BN-SRC-106", "BN-SRC-107"},
+            "OLP-0173": {"BN-SRC-108"},
+        }
+        assert set(documented) == expected_models.get(row["unit_id"], set())
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -1320,6 +1400,7 @@ for row in rows:
             introduction_math_fix,
             syntax_math_fix,
             semantics_math_fix,
+            models_math_fix,
             shared_audit_fix,
         )
     )

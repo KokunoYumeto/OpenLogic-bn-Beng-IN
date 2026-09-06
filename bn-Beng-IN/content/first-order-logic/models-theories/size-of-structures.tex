@@ -1,0 +1,74 @@
+% Part: first-order-logic
+% Chapter: models-theories
+% Section: size-of-structures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{mat}{siz}
+
+\olsection{\printtoken{P}{structure}-এর আকার প্রকাশ}
+
+\begin{explain}
+কোনো ভাষার অ-যৌক্তিক সংকেত ব্যবহার না করেও গঠনগুলির কিছু ধর্ম
+প্রকাশ করা যায়। যেমন, এমন !!{sentence}s আছে যা কোনো
+!!a{structure}-এ ঠিক তখনই সত্য, যখন !!{structure}-টির !!{domain}-এ
+অন্তত, বড়জোর, অথবা ঠিক একটি নির্দিষ্ট সংখ্যক~$n$ !!{element}s আছে।
+\end{explain}
+
+\begin{prop}
+!!{sentence}
+\begin{multline*}
+  !A_{\ge n} \ident \lexists[x_1][\lexists[x_2][\dots\lexists[x_n][{}]]]\\
+  \begin{aligned}
+  (\eq/[x_1][x_2] \land {}
+  \eq/[x_1][x_3] \land \eq/[x_1][x_4] \land \dots \land \eq/[x_1][x_n] \land {}\\
+\eq/[x_2][x_3] \land \eq/[x_2][x_4] \land \dots \land {} \eq/[x_2][x_n] \land {} \\
+\vdots\\
+\eq/[x_{n-1}][x_n])
+\end{aligned}
+\end{multline*}
+কোনো !!a{structure}~$\Struct M$-এ সত্য যদি এবং কেবল যদি
+$\Domain M$-এ অন্তত~$n$ !!{element}s থাকে। ফলে
+$\Sat{M}{\lnot !A_{\ge n+1}}$ যদি এবং কেবল যদি $\Domain M$-এ
+বড়জোর~$n$ !!{element}s থাকে।
+
+\end{prop}
+
+\begin{prop}
+!!{sentence}
+\begin{multline*}
+!A_{= n} \ident \lexists[x_1][\lexists[x_2][\dots\lexists[x_n][{}]]] \\
+\begin{aligned}
+  (\eq/[x_1][x_2] \land {}
+  \eq/[x_1][x_3] \land \eq/[x_1][x_4] \land \dots \land \eq/[x_1][x_n] \land {}\\
+\eq/[x_2][x_3] \land \eq/[x_2][x_4] \land \dots \land {} \eq/[x_2][x_n] \land {} \\
+\vdots\\
+\eq/[x_{n-1}][x_n] \land {} \\
+\lforall[y][(\eq[y][x_1] \lor \dots \lor \eq[y][x_n])])
+\end{aligned}
+\end{multline*}
+% BN-SRC-108 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-108):} হিমায়িত ইংরেজি $!A_{=n}$-এর শেষ সারিতে সার্বিক পরিমাণসূচকের সূত্র-আর্গুমেন্ট পূর্বেই বন্ধ করে তার পরে দুটি গোলবন্ধনী রাখা হয়েছে। বাংলা পাঠে বিচ্ছেদটির সমাপ্তি-গোলবন্ধনী আগে এবং পরিমাণসূচকের সমাপ্তি-বর্গবন্ধনী পরে রেখে অতিরিক্ত গোলবন্ধনীটি বাদ দেওয়া হয়েছে।} % BN-SRC-108 TARGET-CORRECTION-END
+কোনো !!a{structure}~$\Struct M$-এ সত্য যদি এবং কেবল যদি
+$\Domain M$-এ ঠিক~$n$ !!{element}s থাকে।
+\end{prop}
+
+\begin{prop}
+কোনো !!{structure} অসীম যদি এবং কেবল যদি সেটি
+\[
+\{!A_{\ge 1}, !A_{\ge 2}, !A_{\ge 3}, \dots \}.
+\]
+-এর একটি মডেল।
+\end{prop}
+
+এমন কোনো একক বিশুদ্ধ যৌক্তিক বাক্য নেই যা~$\Struct M$-এ ঠিক তখনই সত্য,
+যখন~$\Domain M$ অসীম। তবে অ-যৌক্তিক !!{predicate}s-সহ এমন
+!!{sentence}s দেওয়া যায় যাদের কেবল অসীম মডেল আছে (যদিও প্রত্যেক অসীম
+!!{structure} তাদের মডেল নয়)। কোনো গঠন সসীম হওয়ার ধর্ম এবং কোনো গঠন
+!!{nonenumerable} হওয়ার ধর্ম, এমনকি !!{sentence}s-এর একটি অসীম সেট
+দিয়েও প্রকাশ করা যায় না। সংহতি ও লোয়েনহাইম--স্কোলেম উপপাদ্য থেকে
+এই তথ্যগুলি অনুসৃত হয়।
+
+\end{document}

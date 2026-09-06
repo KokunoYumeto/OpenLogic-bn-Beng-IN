@@ -1,0 +1,129 @@
+% Part: first-order-logic
+% Chapter: models-theories
+% Section: expressing-relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{mat}{exr}
+
+\olsection{\article{structure}
+  \printtoken{S}{structure}-এ সম্পর্ক প্রকাশ}
+
+\begin{explain}
+!!a{structure}~$\Struct M$-এর ধর্ম ও সম্পর্কগুলিকে~$\Struct M$-এর
+ভাষা~$\Lang L$-এর মৌলিক সংকেতগুলির সাহায্যে প্রকাশ করা
+!!{formula}s-এর একটি প্রধান ব্যবহার। কথাটির অর্থ নিচে দেওয়া হলো:
+$\Struct M$-এর !!{domain} একটি বস্তুসমষ্টি। !!{constant}s,
+!!{function}s ও !!{predicate}s-কে~$\Struct M$ যথাক্রমে~$\Domain M$-এর
+কিছু বস্তু, $\Domain M$-এর উপর কিছু অপেক্ষক এবং $\Domain M$-এর উপর
+কিছু সম্পর্ক দিয়ে ব্যাখ্যা করে। যেমন, $\Obj A^2_0$ যদি~$\Lang L$-এ
+থাকে, তবে~$\Struct M$ তাকে একটি সম্পর্ক~$R = \Assign{{\Obj
+  A^2_0}}{M}$ আরোপ করে। তখন
+$\Atom{\Obj A^2_0}{\Obj v_1, \Obj v_2}$ সূত্রটি নিচের অর্থে ওই
+সম্পর্কটিকেই \emph{প্রকাশ করে}: কোনো চলরাশি-আরোপ~$s$ যদি
+$\Obj v_1$-কে $a \in \Domain{M}$ এবং $\Obj v_2$-কে
+$b \in \Domain M$-তে পাঠায়, তবে
+\[
+Rab \text{\quad যদি এবং কেবল যদি\quad}
+\Sat{M}{\Atom{\Obj A^2_0}{\Obj v_1, \Obj v_2}}[s].
+\]
+লক্ষ করো, এখানে চলরাশি-আরোপ আনতেই হয়। শুধু
+“$Rab$ যদি এবং কেবল যদি
+$\Sat{M}{\Atom{\Obj A^2_0}{a, b}}$”—এ কথা বলা যায় না, কারণ $a$ ও
+$b$ আমাদের ভাষার সংকেত নয়; তারা~$\Domain{M}$-এর !!{element}s।
+
+আমাদের কাছে শুধু পরমাণু !!{formula}s নেই; যৌক্তিক সংযোজক ও পরিমাণসূচক
+ব্যবহার করে সেগুলিকে একত্র করতেও পারি। তাই আরও জটিল !!{formula}s এমন
+সম্পর্ক সংজ্ঞায়িত করতে পারে যা~$\Struct M$-এর মধ্যে সরাসরি দেওয়া
+নেই। কীভাবে তা করা যায় এবং বিশেষত কোনো !!a{structure}-এ কোন
+সম্পর্কগুলি সংজ্ঞায়িত করা যায়, তা নিয়েই আমাদের আগ্রহ।
+\end{explain}
+
+\begin{defn}
+ধরি,~$!A(\Obj v_1,\dots, \Obj v_n)$ ভাষা~$\Lang L$-এর এমন
+!!a{formula} যাতে কেবল $\Obj v_1$,~\dots,~$\Obj v_n$ মুক্তভাবে সংঘটিত
+হয়; এবং~$\Struct M$ হলো~$\Lang L$-এর একটি !!a{structure}।
+$!A(\Obj v_1,\dots, \Obj v_n)$ \emph{সম্পর্ক
+$R \subseteq \Domain M^n$-কে প্রকাশ করে}, যদি এবং কেবল যদি
+\[
+Ra_1\dots a_n \text{\quad যদি এবং কেবল যদি\quad}
+\Sat{M}{\Atom{!A}{\Obj v_1,\dots, \Obj v_n}}[s]
+\]
+এমন যেকোনো চলরাশি-আরোপ~$s$-এর জন্য, যাতে
+$s(\Obj v_i) = a_i$ ($i = 1,\dots,n$)।
+\end{defn}
+
+\begin{ex}
+পাটীগণিতের প্রমিত মডেল~$\Struct N$-এ !!{formula}
+$\Obj v_1 < \Obj v_2 \lor \eq[\Obj v_1][\Obj v_2]$,
+~$\Nat$-এর উপর $\le$ সম্পর্কটি প্রকাশ করে। !!{formula}
+$\eq[\Obj v_2][\Obj v_1']$ উত্তরসূরি সম্পর্কটি প্রকাশ করে; অর্থাৎ,
+যে সম্পর্ক~$R \subseteq \Nat^2$-এর জন্য $m$,~$n$-এর উত্তরসূরি হলে
+$Rnm$। সূত্র~$\eq[\Obj v_1][\Obj v_2']$ পূর্বসূরি সম্পর্কটি প্রকাশ
+করে। !!{formula}s
+$\lexists[\Obj v_3][(\eq/[\Obj v_3][\Obj 0] \land
+  \eq[\Obj v_2][(\Obj v_1 + \Obj v_3)])]$ এবং
+$\lexists[\Obj v_3][\eq[(\Obj v_1 + {\Obj v_3}')][\Obj v_2]]$
+উভয়েই $\Obj <$ সম্পর্কটি প্রকাশ করে। এর অর্থ, পাটীগণিতের ভাষায়
+বিধেয় সংকেত~$<$ আসলে অপ্রয়োজনীয়; সেটিকে সংজ্ঞায়িত করা যায়।
+% BN-SRC-104 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-104):} হিমায়িত ইংরেজি উৎসে $<$ প্রকাশকারী দ্বিতীয় অস্তিত্বমূলক সূত্রের সমতার ডান পাশে \texttt{v\_2} লেখা হলেও চলরাশি-সংকেতের আবশ্যিক \texttt{\string\Obj} অনুপস্থিত। একই অনুচ্ছেদের সব চলরাশি ও ভাষা~$\Lang L_A$-এর সংকেতবিন্যাস মেনে বাংলা সূত্রে \texttt{\string\Obj v\_2} পুনরুদ্ধার করা হয়েছে।} % BN-SRC-104 TARGET-CORRECTION-END
+\end{ex}
+
+\begin{explain}
+এই ধারণা শুধু নির্দিষ্ট কোনো !!{structure}s-এই আকর্ষণীয় নয়; কোনো
+ভাষা দিয়ে অভিপ্রেত একটি বা একাধিক মডেল বর্ণনা করার সময়, অর্থাৎ তত্ত্ব
+বিবেচনার ক্ষেত্রেও সাধারণভাবে গুরুত্বপূর্ণ। এসব তত্ত্বে প্রায়ই অল্প
+কয়েকটি !!{predicate}s মৌলিক সংকেত হিসেবে থাকে, কিন্তু যে বিষয়ক্ষেত্র
+তারা বর্ণনা করে সেখানে আরও অনেক সম্পর্ক গুরুত্বপূর্ণ ভূমিকা নেয়।
+ভাষার মৌলিক !!{predicate}s-গুলির ব্যাখ্যাকারী সম্পর্কগুলির সাহায্যে
+যদি এই অন্য সম্পর্কগুলিকে নিয়মমাফিক প্রকাশ করা যায়, তবে বলি ভাষাটিতে
+সেগুলিকে \emph{সংজ্ঞায়িত} করা যায়।
+\end{explain}
+
+\begin{prob}
+ভাষা~$\Lang L_A$-তে নিচের সম্পর্কগুলি সংজ্ঞায়িত করে এমন
+!!{formula}s খুঁজে বার করো:
+\begin{enumerate}
+\item $n$,~$i$ ও~$j$-এর মধ্যে;
+\item $n$,~$m$-কে নিঃশেষে ভাগ করে (অর্থাৎ, $m$ হলো~$n$-এর গুণিতক);
+\item $n$ একটি মৌলিক সংখ্যা (অর্থাৎ, $1$ ও~$n$ ছাড়া অন্য কোনো সংখ্যা
+  $n$-কে নিঃশেষে ভাগ করে না)।
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+ধরি, সূত্র~$!A(\Obj v_1, \Obj v_2)$ কোনো
+!!a{structure}~$\Struct M$-এ সম্পর্ক~$R \subseteq \Domain M^2$ প্রকাশ
+করে। নিচের সম্পর্কগুলি প্রকাশ করে এমন সূত্র খুঁজে বার করো:
+\begin{enumerate}
+\item $R$-এর বিপরীত~$R^{-1}$;
+\item আপেক্ষিক গুণফল~$R \mid R$;
+\end{enumerate}
+$R$-এর পরিযায়ী আবরণ~$R^+$ প্রকাশের কোনো উপায় খুঁজে পাও কি?
+\end{prob}
+
+\begin{prob}
+ধরি,~$\Lang{L}$ ভাষায় শুধু একটি দ্বি-স্থানীয় বিধেয় সংকেত~$<$ আছে
+(অন্য কোনো !!{constant}s, !!{function}s বা !!{predicate}s নেই—অবশ্য
+$\eq$ ছাড়া)। ধরি,~$\Struct{N}$ এমন একটি গঠন যাতে
+$\Domain{N} = \Nat$ এবং
+$\Assign{<}{N} = \Setabs{\tuple{n,m}}{n < m}$। নিচের দাবিগুলি
+প্রমাণ করো:
+\begin{enumerate}
+\item $\{0\}$,~$\Struct{N}$-এ সংজ্ঞেয়;
+\item $\{1\}$,~$\Struct{N}$-এ সংজ্ঞেয়;
+\item $\{2\}$,~$\Struct{N}$-এ সংজ্ঞেয়;
+\item প্রত্যেক $n \in \Nat$-এর জন্য সেট~$\{n\}$,
+  $\Struct{N}$-এ সংজ্ঞেয়;
+\item $\Domain{N}$-এর প্রত্যেক সসীম উপসমষ্টি~$\Struct{N}$-এ সংজ্ঞেয়;
+\item $\Domain{N}$-এর প্রত্যেক সহসসীম উপসমষ্টি~$\Struct{N}$-এ সংজ্ঞেয়
+  (যেখানে $X \subseteq \Nat$ সহসসীম যদি এবং কেবল যদি
+  $\Nat \setminus X$ সসীম)।
+\end{enumerate}
+\end{prob}
+
+
+\end{document}

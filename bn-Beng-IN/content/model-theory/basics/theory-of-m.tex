@@ -1,0 +1,65 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: theory-of-m
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{thm}
+
+\section{কোনো \printtoken{S}{structure}-এর তত্ত্ব}
+
+প্রত্যেক !!{structure}~$\Struct{M}$ কিছু !!{sentence}s-কে সত্য এবং
+কিছু বাক্যকে মিথ্যা করে। সেটি যেসব !!{sentence}s-কে সত্য করে, তাদের
+সকলের সেটকে তার \emph{তত্ত্ব} বলা হয়। সেটটি সত্যিই একটি তত্ত্ব, কারণ
+সেটি থেকে অনুসৃত সব কিছুই তার সব মডেলে সত্য হতে হবে, বিশেষত
+$\Struct{M}$-এও।
+
+\begin{defn}
+  কোনো !!a{structure}~$\Struct M$ দেওয়া থাকলে, $\Struct{M}$-এর
+  \emph{তত্ত্ব} হলো $\Struct{M}$-এ সত্য !!{sentence}s-এর সেট
+  $\Theory{M}$; অর্থাৎ $\Theory{M} = \Setabs{!A}{\Sat{M}{!A}}$।
+\end{defn}
+
+অনানুষ্ঠানিকভাবে আমরা “তত্ত্ব” শব্দটি অভিপ্রেত ব্যাখ্যাসহ
+!!{sentence}s-এর সেট বোঝাতেও ব্যবহার করি, সেটটি নিগমনগতভাবে বদ্ধ হোক
+বা না হোক।
+
+\begin{prop}
+যেকোনো $\Struct{M}$-এর জন্য $\Theory{M}$ সম্পূর্ণ।
+\end{prop}
+
+\begin{proof}
+যেকোনো !!{sentence}~$!A$-এর জন্য হয় $\Sat{M}{!A}$, নয়
+$\Sat{M}{\lnot !A}$; তাই হয় $!A \in \Theory{M}$, নয়
+$\lnot !A \in \Theory{M}$।
+\end{proof}
+
+\begin{prop}\ollabel{prop:equiv}
+  প্রত্যেক $!A \in \Theory{M}$-এর জন্য $\Struct{N} \models !A$ হলে
+  $\Struct{M} \elemequiv \Struct{N}$।
+\end{prop}
+
+\begin{proof}
+সব $!A \in \Theory{M}$-এর জন্য $\Sat{N}{!A}$ বলে $\Theory{M}
+\subseteq \Theory{N}$। যদি $\Sat{N}{!A}$ হয়, তবে
+$\Sat/{N}{\lnot !A}$; তাই $\lnot !A \notin \Theory{M}$। যেহেতু
+$\Theory{M}$ সম্পূর্ণ, তাই $!A \in \Theory{M}$। অতএব $\Theory{N}
+\subseteq \Theory{M}$; ফলে $\Struct{M} \elemequiv \Struct{N}$।
+\end{proof}
+
+\begin{rem}\ollabel{remark:R}
+  $\Struct{R} = \langle\Real, <\rangle$ বিবেচনা করো। এটি এমন একটি
+  !!{structure}, যার সংজ্ঞাক্ষেত্র বাস্তব সংখ্যার সেট~$\Real$ এবং যার
+  !!{language}-এ কেবল একটি দ্বি-স্থানীয় !!{predicate} আছে, সেটি বাস্তব
+  সংখ্যার উপর~$<$ সম্পর্ক হিসেবে ব্যাখ্যাত। স্পষ্টতই $\Struct{R}$
+  !!{nonenumerable}; কিন্তু $\Theory{R}$ স্পষ্টতই সংগত বলে
+  লোয়েনহাইম--স্কোলেম উপপাদ্য অনুসারে তার একটি !!a{enumerable} মডেল
+  আছে, ধরা যাক $\Struct{S}$। \olref{prop:equiv} অনুসারে
+  $\Struct{R} \equiv \Struct{S}$। আরও, $\Struct{R}$ ও~$\Struct{S}$
+  সমরূপ নয় বলে এটি দেখায় যে \olref[iso]{thm:isom}-এর বিপরীতটি
+  সাধারণভাবে সত্য নয়।
+\end{rem}
+
+\end{document}

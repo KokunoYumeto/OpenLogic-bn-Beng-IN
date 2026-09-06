@@ -1,0 +1,227 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: partial-iso
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{pis}
+\section{আংশিক সমরূপতা}
+
+\begin{defn}
+  দুটি !!{structure}s~$\Struct{M}$ ও~$\Struct{N}$ দেওয়া থাকলে,
+  $\Struct{M}$ থেকে $\Struct{N}$-এ একটি \emph{আংশিক সমরূপতা} হলো এমন
+  একটি সসীম আংশিক অপেক্ষক~$p$, যা $\Domain M$-এ আর্গুমেন্ট নেয়,
+  $\Domain N$-এ মান দেয় এবং নিজের সংজ্ঞাক্ষেত্রে
+  \olref[iso]{defn:isomorphism}-এর সমরূপতার শর্তগুলি পরিতৃপ্ত করে:
+  \begin{enumerate}
+  \item $p$ !!{injective};
+  \item প্রত্যেক !!{constant}~$c$-এর জন্য: $p(\Assign{c}{M})$
+    সংজ্ঞায়িত হলে $p(\Assign{c}{M}) = \Assign{c}{N}$;
+  \item প্রত্যেক $n$-স্থানীয় !!{predicate} $P$-এর জন্য: $a_1$, \dots,
+    $a_n$ যদি~$p$-এর সংজ্ঞাক্ষেত্রে থাকে, তবে $\langle a_1, \dots,
+    a_n\rangle \in \Assign P M$ যদি এবং কেবল যদি $\langle p(a_1),
+    \dots, p(a_n) \rangle \in \Assign P N$;
+  \item প্রত্যেক $n$-স্থানীয় !!{function} $f$-এর জন্য: $a_1$, \dots,
+    $a_n$ যদি~$p$-এর সংজ্ঞাক্ষেত্রে থাকে, তবে $p(\Assign f M (a_1,
+    \dots,a_n)) = \Assign f N (p(a_1), \dots, p(a_n))$।
+  \end{enumerate}
+  $p$ সসীম বলার অর্থ $\dom{p}$ সসীম।
+\end{defn}
+
+লক্ষ করো, ফাঁকা অপেক্ষক~$\emptyset$ যেকোনো দুটি !!{structure}s-এর মধ্যে
+সব সময় একটি আংশিক সমরূপতা।
+
+\begin{defn}\ollabel{defn:partialisom}
+  দুটি !!{structure}s~$\Struct{M}$ ও~$\Struct{N}$-কে
+  \emph{আংশিকভাবে সমরূপ} বলি এবং $\Struct{M} \iso[p] \Struct{N}$ লিখি,
+  যদি এবং কেবল যদি $\Struct{M}$ ও~$\Struct{N}$-এর মধ্যকার আংশিক
+  সমরূপতাগুলির এমন একটি অশূন্য সেট~$I$ থাকে, যা \emph{আগ-পিছু} ধর্ম
+  পরিতৃপ্ত করে:
+  \begin{enumerate}
+  \item (\emph{অগ্র}) প্রত্যেক $p \in I$ ও~$a \in \Domain M$-এর জন্য
+    এমন $q \in I$ আছে যেন $p \subseteq q$ এবং $a$~$q$-এর
+    সংজ্ঞাক্ষেত্রে থাকে;
+  \item (\emph{পশ্চাৎ}) প্রত্যেক $p \in I$ ও~$b \in \Domain N$-এর জন্য
+    এমন $q \in I$ আছে যেন $p \subseteq q$ এবং $b$~$q$-এর বিস্তৃতিতে
+    থাকে।
+  \end{enumerate}
+\end{defn}
+
+\begin{thm}\ollabel{thm:p-isom1}
+  $\Struct{M} \iso[p] \Struct{N}$ এবং $\Struct{M}$ ও~$\Struct{N}$
+  !!{enumerable} হলে $\Struct{M} \iso \Struct{N}$।
+\end{thm}
+
+\begin{proof}
+  $\Struct{M}$ ও~$\Struct{N}$ !!{enumerable} বলে ধরা যাক,
+  $\Domain{M} = \{a_0, a_1, \ldots \}$ এবং $\Domain{N} = \{b_0,
+  b_1, \ldots \}$। কোনো ইচ্ছামতো $p_0 \in I$ থেকে শুরু করে আমরা
+  আংশিক সমরূপতার একটি অন্তর্ভুক্তি-ক্রমবর্ধমান অনুক্রম $p_0 \subseteq
+  p_1 \subseteq p_2 \subseteq \cdots$ নিচের মতো সংজ্ঞায়িত করি:
+  \begin{enumerate}
+  \item $n+1$ বিজোড় হলে, অর্থাৎ $n = 2r$ হলে, অগ্র ধর্ম ব্যবহার করে
+    এমন $p_{n+1} \in I$ খুঁজে নাও যেন $p_n \subseteq p_{n+1}$ এবং
+    $a_r$~$p_{n+1}$-এর সংজ্ঞাক্ষেত্রে থাকে;
+  \item $n+1$ জোড় হলে, অর্থাৎ $n = 2r+1$ হলে, পশ্চাৎ ধর্ম ব্যবহার করে
+    এমন $p_{n+1} \in I$ খুঁজে নাও যেন $p_n \subseteq p_{n+1}$ এবং
+    $b_r$~$p_{n+1}$-এর বিস্তৃতিতে থাকে।
+  \end{enumerate}
+  % BN-SRC-115 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-115):} হিমায়িত ইংরেজি উৎসে জোড় ধাপের সূচক $n+1=2r$ ধরে $b_r$ যোগ করা হয়েছে। প্রথম জোড় ধাপ $n+1=2$ হওয়ায় এতে $b_1$ থেকে শুরু হয় এবং $b_0$ কখনো নিশ্চিতভাবে বিস্তৃতিতে আসে না। বাংলা পাঠে জোড় ধাপটিকে $n=2r+1$ লিখে প্রথমে $b_0$ এবং পরে প্রতিটি $b_r$ নেওয়া হয়েছে।} % BN-SRC-115 TARGET-CORRECTION-END
+এখন যদি ধরি
+\[
+p = \bigcup_{n\ge 0} p_n,
+\]
+তবে $p$ হলো $\Struct{M}$ ও~$\Struct{N}$-এর মধ্যে একটি সমরূপতা।
+\end{proof}
+
+\begin{prob}
+  \olref[mod][bas][pis]{thm:p-isom1}-এ সংজ্ঞায়িত~$p$ সত্যিই যে একটি
+  সমরূপতা, তা বিস্তারিতভাবে দেখাও।
+\end{prob}
+
+\begin{thm}\ollabel{thm:p-isom2}
+  ধরা যাক, $\Struct{M}$ ও~$\Struct{N}$ একটি বিশুদ্ধ সম্পর্কমূলক
+  !!{language}-এর !!{structure}s (অর্থাৎ এমন !!a{language}, যাতে শুধু
+  !!{predicate}s আছে, কোনো !!{function}s বা ধ্রুবক নেই)। তখন
+  $\Struct{M} \iso[p] \Struct{N}$ হলে $\Struct{M} \elemequiv
+  \Struct{N}$-ও হয়।
+\end{thm}
+
+\begin{proof}
+  !!{formula}s-এর উপর আরোহের সাহায্যে দেখানো যায়: $a_1$, \dots, $a_n$
+  এবং $b_1$, \dots, $b_n$ এমন যে কোনো আংশিক সমরূপতা~$p$ প্রত্যেক
+  $a_i$-কে $b_i$-তে পাঠায়, আবার $s_1(x_i) =a_i$ ও~$s_2(x_i) =b_i$
+  ($i =1$, \dots,~$n$) হলে, $\Sat{M}{!A}[s_1]$ যদি এবং কেবল যদি
+  $\Sat{N}{!A}[s_2]$। $n=0$ ক্ষেত্র থেকে পাওয়া যায়
+  $\Struct{M} \elemequiv \Struct{N}$।
+\end{proof}
+
+\begin{rem}
+!!{function}s উপস্থিত থাকলেও আগের ফলটি সত্য, তবে তখন $a_1$, \dots,
+$a_n$ দ্বারা উৎপন্ন $\Struct{M}$-এর উপ!!{structure} এবং $b_1$, \dots,
+$b_n$ দ্বারা উৎপন্ন $\Struct{N}$-এর উপ!!{structure}-এর মধ্যে~$p$-প্রসূত
+সমরূপতাটি বিবেচনা করতে হয়।
+\end{rem}
+
+আগের ফলটিকে বিভিন্ন ধাপে “ভেঙে” নেওয়া যায়: কোনো !!a{formula}-এ
+পরিমাণসূচক কতবার পরস্পরের ভিতরে বসেছে, তার সঙ্গে প্রাসঙ্গিক আংশিক
+সমরূপতাগুলিকে কতবার সম্প্রসারিত করা যায় তার যোগসূত্র স্থাপন করতে হবে।
+
+\begin{defn}
+  যেকোনো !!{formula}~$!A$-এর ক্ষেত্রে, $!A$-এর
+  \emph{পরিমাণসূচক-ক্রমাঙ্ক}, যা $\QuantRank{!A} \in \Nat$ দিয়ে নির্দেশ
+  করি, পুনরাবৃত্তভাবে~$!A$-তে
+  পরস্পরের ভিতরে বসা পরিমাণসূচকের সর্বোচ্চ সংখ্যা হিসেবে সংজ্ঞায়িত।
+  দুটি !!{structure}s~$\Struct{M}$ ও~$\Struct{N}$-কে
+  \emph{$n$-সমতুল্য} বলি এবং $\Struct{M} \elemequiv[n] \Struct{N}$
+  লিখি, যদি পরিমাণসূচক-ক্রমাঙ্ক বড়জোর~$n$ এমন সব বাক্যে তারা একমত হয়।
+\end{defn}
+
+\begin{prop}\ollabel{prop:qr-finite}
+  ধরা যাক, $\Lang{L}$ একটি সসীম বিশুদ্ধ সম্পর্কমূলক !!{language}; অর্থাৎ
+  এমন !!{language}, যাতে সসীমসংখ্যক !!{predicate}s ও~!!{constant}s আছে,
+  কিন্তু কোনো !!{function}s নেই। তাহলে প্রত্যেক $n \in \Nat$-এর জন্য
+  যৌক্তিক সমতুল্যতা-অবধি !!{language}~$\Lang{L}$-এ পরিমাণসূচক-ক্রমাঙ্ক
+  বড়জোর~$n$ এমন প্রথম-ক্রমের !!{sentence}s কেবল সসীমসংখ্যক।
+\end{prop}
+
+\begin{proof}
+  $n$-এর উপর আরোহ দিয়ে।
+\end{proof}
+
+\begin{defn}
+  কোনো !!a{structure}~$\Struct{M}$ দেওয়া থাকলে, $\Domain M^{<\omega}$
+  দিয়ে $\Domain{M}$-এর উপাদানের সব সসীম অনুক্রমের সেট বোঝাই।
+  উপাদানের সসীম অনুক্রমগুলির উপর $\mathbf{a}, \mathbf{b}, \mathbf{c},
+  \ldots$ বিচরণ করবে। যদি $\mathbf{a} \in
+  \Domain{M}^{<\omega}$ এবং $a \in \Domain{M}$ হয়, তবে
+  $\mathbf{a}a$ দিয়ে $\mathbf{a}$-এর শেষে~$a$ বসিয়ে পাওয়া
+  \emph{সংযুক্তি} বোঝাই।
+\end{defn}
+
+\begin{defn}
+  !!{structure}s~$\Struct{M}$ ও~$\Struct{N}$ দেওয়া থাকলে, সমান দৈর্ঘ্যের
+  অনুক্রমগুলির মধ্যে সম্পর্ক $I_n \subseteq \Domain M^{<\omega}
+  \times \Domain N^{<\omega}$ নিচের মতো $n$-এর উপর পুনরাবৃত্তভাবে
+  সংজ্ঞায়িত করি:
+   \begin{enumerate}
+   \item $I_0(\mathbf{a},\mathbf{b})$ যদি এবং কেবল যদি
+     $\mathbf{a}$ ও~$\mathbf{b}$ যথাক্রমে $\Struct{M}$ ও~$\Struct{N}$-এ
+     একই পারমাণবিক !!{formula}s পরিতৃপ্ত করে; অর্থাৎ $s_1(x_i) = a_i$,
+     $s_2(x_i) = b_i$, এবং $!A$ এমন একটি পারমাণবিক সূত্র যার সব
+     !!{variable}s $x_1$, \dots,~$x_n$-এর মধ্যে থাকলে
+     $\Sat{M}{!A}[s_1]$ যদি এবং কেবল যদি $\Sat{N}{!A}[s_2]$;
+   \item $I_{n+1} (\mathbf{a},\mathbf{b})$ যদি এবং কেবল যদি প্রত্যেক
+     $a\in \Domain M$-এর জন্য এমন $b\in \Domain N$ থাকে যেন $I_n
+     (\mathbf{a}a,\mathbf{b}b)$, এবং উল্টো দিকেও একই শর্ত পূরণ হয়।
+   \end{enumerate}
+\end{defn}
+
+
+\begin{defn}
+  $\Struct{M}$ ও~$\Struct{N}$-এর জন্য
+  $I_n(\emptyseq,\emptyseq)$ সত্য হলে $\Struct{M} \approx_n
+  \Struct{N}$ লিখি (এখানে $\emptyseq$ হলো ফাঁকা অনুক্রম)।
+\end{defn}
+
+\begin{thm}\ollabel{thm:b-n-f}
+  ধরা যাক, $\Lang{L}$ একটি বিশুদ্ধ সম্পর্কমূলক !!{language}। তাহলে
+  $I_n (\mathbf{a},\mathbf{b})$ থেকে অনুসৃত হয় যে
+  $\QuantRank{!A} \le n$ এমন প্রত্যেক~$!A$-এর জন্য
+  $\Sat{M}{!A}[\mathbf{a}]$ যদি এবং কেবল যদি
+  $\Sat{N}{!A}[\mathbf{b}]$ (এখানেও, $s(x_i) = a_i$ এমন যেকোনো~$s$
+  যদি~$!A$ পরিতৃপ্ত করে, তবে $\mathbf{a}$-ও~$!A$ পরিতৃপ্ত করে)। আরও,
+  $\Lang{L}$ সসীম হলে বিপরীতটিও সত্য।
+\end{thm}
+
+\begin{proof}
+  $I_n(\mathbf{a},\mathbf{b})$ থেকে $\mathbf{a}$ ও~$\mathbf{b}$ যে
+  পরিমাণসূচক-ক্রমাঙ্ক বড়জোর~$n$ এমন একই !!{formula}s পরিতৃপ্ত করে, তার
+  প্রমাণ~$!A$-এর উপর একটি সহজ আরোহ। বিপরীতটির জন্য আমরা $n$-এর উপর
+  আরোহ করি এবং \olref{prop:qr-finite} ব্যবহার করি; সেটি নিশ্চিত করে যে
+  প্রত্যেক~$n$-এর জন্য ওই পরিমাণসূচক-ক্রমাঙ্কের অসমতুল্য !!{formula}s
+  বড়জোর সসীমসংখ্যক।
+
+  $n=0$ হলে, $\mathbf{a}$ ও~$\mathbf{b}$ একই পরিমাণসূচকবিহীন
+  !!{formula}s পরিতৃপ্ত করে---এই পূর্বধারণা থেকে তারা একই পারমাণবিক
+  সূত্রও পরিতৃপ্ত করে; তাই $I_0(\mathbf{a},\mathbf{b})$।
+
+  $n+1$ ক্ষেত্রের জন্য ধরা যাক, $\mathbf{a}$ ও~$\mathbf{b}$
+  পরিমাণসূচক-ক্রমাঙ্ক বড়জোর $n+1$ এমন একই !!{formula}s পরিতৃপ্ত করে।
+  $I_{n+1}(\mathbf{a},\mathbf{b})$ দেখাতে প্রত্যেক $a \in \Domain M$-এর
+  জন্য এমন $b \in \Domain N$ আছে যেন $I_n(\mathbf{a}a,\mathbf{b}b)$,
+  এটুকু দেখালেই যথেষ্ট; আর আরোহ-অনুমান অনুসারে এটুকু দেখানোর জন্য আবার
+  প্রত্যেক $a \in \Domain M$-এর জন্য এমন $b \in \Domain N$ আছে যেন
+  $\mathbf{a}a$ ও~$\mathbf{b}b$ পরিমাণসূচক-ক্রমাঙ্ক বড়জোর~$n$ এমন একই
+  !!{formula}s পরিতৃপ্ত করে, তা দেখালেই যথেষ্ট।
+
+  $a \in \Domain M$ দেওয়া থাকলে, $\Struct{M}$-এ $\mathbf{a}a$ দ্বারা
+  পরিতৃপ্ত ক্রমাঙ্ক বড়জোর~$n$ এমন !!{formula}s~$!B(x,\mathbf{y})$-গুলির
+  সেটকে $!T^a_n$ ধরি। $!T^a_n$ যৌক্তিক সমতুল্যতা-অবধি সসীম; তাই প্রতিটি
+  সমতুল্যতা-শ্রেণি থেকে একটি প্রতিনিধি নিয়ে তাদের সসীম সংযোজনকে আমরা
+  একটিমাত্র প্রথম-ক্রমের !!{formula} হিসেবে ধরতে পারি।
+  % BN-SRC-116 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-116):} হিমায়িত ইংরেজি প্রমাণে $!T^a_n$-কে সরাসরি সসীম বলা হয়েছে, যদিও একই সূত্রের অনাবশ্যক পুনরাবৃত্ত সংযোজনেই অসীমসংখ্যক বাক্যগঠন পাওয়া যায়। আগের প্রতিজ্ঞাটি কেবল যৌক্তিক সমতুল্যতা-অবধি সসীমতা দেয়। বাংলা পাঠে প্রতিটি সমতুল্যতা-শ্রেণির একটি প্রতিনিধি নিয়ে তাদের সসীম সংযোজন গঠনের প্রয়োজনীয় ধাপটি স্পষ্ট করা হয়েছে।} % BN-SRC-116 TARGET-CORRECTION-END
+  অতএব $\mathbf{a}$ সূত্র $\lexists[x][!T^a_n(x,\mathbf{y})]$
+  পরিতৃপ্ত করে; এর পরিমাণসূচক-ক্রমাঙ্ক বড়জোর $n+1$। পূর্বধারণা অনুসারে
+  $\mathbf{b}$~$\Struct{N}$-এ একই !!{formula} পরিতৃপ্ত করে। তাই এমন
+  $b \in \Domain N$ আছে যেন $\mathbf{b}b$~$!T^a_n$ পরিতৃপ্ত করে;
+  বিশেষত $\mathbf{b}b$ পরিমাণসূচক-ক্রমাঙ্ক বড়জোর~$n$ এমন ঠিক সেই
+  !!{formula}s পরিতৃপ্ত করে, যেগুলি $\mathbf{a}a$ পরিতৃপ্ত করে। একইভাবে
+  দেখানো যায়, প্রত্যেক $b \in \Domain N$-এর জন্য এমন $a\in \Domain M$
+  আছে যেন $\mathbf{a}a$ ও~$\mathbf{b}b$ পরিমাণসূচক-ক্রমাঙ্ক বড়জোর~$n$
+  এমন একই !!{formula}s পরিতৃপ্ত করে। এতেই প্রমাণ সম্পূর্ণ।
+\end{proof}
+
+\begin{cor}\ollabel{cor:b-n-f}
+  $\Struct{M}$ ও~$\Struct{N}$ যদি কোনো সসীম !!{language}-এর বিশুদ্ধ
+  সম্পর্কমূলক !!{structure}s হয়, তবে $\Struct{M} \approx_n\Struct{N}$
+  যদি এবং কেবল যদি $\Struct{M} \elemequiv[n] \Struct{N}$। বিশেষত,
+  $\Struct{M} \elemequiv \Struct{N}$ যদি এবং কেবল যদি প্রত্যেক~$n$-এর
+  জন্য $\Struct{M} \approx_n \Struct{N}$।
+\end{cor}
+
+\end{document}

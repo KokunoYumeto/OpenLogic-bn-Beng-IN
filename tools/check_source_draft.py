@@ -1022,6 +1022,69 @@ for row in rows:
             mathparts(beyond_audited_source) == target_math
             and all(finding_id in documented for finding_id in beyond_math_ids)
         )
+    basics_math_ids = []
+    basics_math_fix = False
+    basics_audited_source = source
+    if row["unit_id"] == "OLP-0187":
+        basics_math_ids = ["BN-SRC-113", "BN-SRC-114"]
+        old = r"\Value{t}{M'}[h \circ s] & = \Assign{f}{M}("
+        new = r"\Value{t}{M'}[h \circ s] & = \Assign{f}{M'}("
+        assert basics_audited_source.count(old) == 1
+        basics_audited_source = basics_audited_source.replace(old, new, 1)
+        old = r"& = h(\Assign{f}{M}(\Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s]) \notag\\"
+        new = r"& = h(\Assign{f}{M}(\Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s]))\notag\\"
+        assert basics_audited_source.count(old) == 1
+        basics_audited_source = basics_audited_source.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0189":
+        basics_math_ids = ["BN-SRC-115"]
+        old = "$n+1 =2r$"
+        new = "$n = 2r+1$"
+        assert basics_audited_source.count(old) == 1
+        basics_audited_source = basics_audited_source.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0190":
+        basics_math_ids = ["BN-SRC-117"]
+        old = r'''Given $a \in \Domain{M_1}$, find $b \in \Domain{M_2}$ as
+  follows:'''
+        new = r'''Given $a \in \Domain{M_1}$, if $a$ is already in the domain of
+  $p$, take $q=p$. Otherwise find $b \in \Domain{M_2}$ as follows; if
+  $p$ is empty, take any $b$, and if $p$ is non-empty:'''
+        assert basics_audited_source.count(old) == 1
+        basics_audited_source = basics_audited_source.replace(old, new, 1)
+    if basics_math_ids:
+        basics_math_fix = (
+            mathparts(basics_audited_source) == target_math
+            and all(finding_id in documented for finding_id in basics_math_ids)
+        )
+    basics_prose_ids = []
+    basics_prose_fix = False
+    if row["unit_id"] == "OLP-0185":
+        assert source.count(
+            "then any $N\n\\subseteq \\Domain{M}$ determines a sub!!{structure}"
+        ) == 1
+        basics_prose_fix = (
+            re.search(
+                r"যেকোনো অশূন্য \$N\s+\\subseteq \\Domain\{M\}\$ "
+                r"সেট~?\$\\Struct M\$-এর একটি\s+উপ!!\{structure\}",
+                checked_target,
+            )
+            is not None
+        )
+        basics_prose_ids = ["BN-SRC-112"]
+    elif row["unit_id"] == "OLP-0189":
+        assert source.count(
+            "$!T^a_n$ is finite, so we can\n"
+            "  assume it is a single first-order !!{formula}."
+        ) == 1
+        basics_prose_fix = (
+            re.search(
+                r"\$!T\^a_n\$ যৌক্তিক সমতুল্যতা-অবধি সসীম.*?"
+                r"সসীম সংযোজনকে আমরা\s+একটিমাত্র প্রথম-ক্রমের !!\{formula\}",
+                checked_target,
+                re.S,
+            )
+            is not None
+        )
+        basics_prose_ids = ["BN-SRC-116"]
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -1086,6 +1149,14 @@ for row in rows:
             "OLP-0178": {"BN-SRC-111"},
         }
         assert set(documented) == expected_beyond.get(row["unit_id"], set())
+    if 182 <= int(row["unit_id"].split("-")[1]) <= 190:
+        expected_basics = {
+            "OLP-0185": {"BN-SRC-112"},
+            "OLP-0187": {"BN-SRC-113", "BN-SRC-114"},
+            "OLP-0189": {"BN-SRC-115", "BN-SRC-116"},
+            "OLP-0190": {"BN-SRC-117"},
+        }
+        assert set(documented) == expected_basics.get(row["unit_id"], set())
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -1394,6 +1465,33 @@ for row in rows:
             "documented_correction": "BN-SRC-111",
             "lambda_domain_type_restored": "tau",
         }
+    elif row["unit_id"] == "OLP-0185":
+        assert basics_prose_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-112",
+            "substructure_domain_required_nonempty": True,
+        }
+    elif row["unit_id"] == "OLP-0187":
+        assert basics_math_fix
+        tex_command_check = {
+            "documented_corrections": basics_math_ids,
+            "recursive_term_value_structure": "M'",
+            "homomorphism_function_parenthesis_balanced": True,
+        }
+    elif row["unit_id"] == "OLP-0189":
+        assert basics_math_fix and basics_prose_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-115", "BN-SRC-116"],
+            "back_and_forth_even_step_index": "n=2r+1",
+            "finite_conjunction_basis": "logical-equivalence representatives",
+        }
+    elif row["unit_id"] == "OLP-0190":
+        assert basics_math_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-117",
+            "forth_empty_map_case": True,
+            "forth_already_mapped_case": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -1453,6 +1551,7 @@ for row in rows:
             semantics_math_fix,
             models_math_fix,
             beyond_math_fix,
+            basics_math_fix,
             shared_audit_fix,
         )
     )

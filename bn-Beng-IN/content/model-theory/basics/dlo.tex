@@ -1,0 +1,82 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: partial-iso
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{dlo}
+\section{ঘন রৈখিক ক্রম}
+
+\begin{defn}
+  একটি \emph{অন্তবিন্দুহীন ঘন রৈখিক ক্রম} হলো এমন একটি
+  !!a{structure}~$\Struct{M}$, যার !!{language}-এ একটিমাত্র দ্বি-স্থানীয়
+  !!{predicate}~$<$ আছে এবং যা নিচের বাক্যগুলি পরিতৃপ্ত করে:
+  \begin{enumerate}
+  \item $\lforall[x][\lnot x < x]$;
+  \item $\lforall[x][\lforall[y][\lforall[z][(x < y \lif (y < z \lif x
+    <z ))]]]$;
+  \item $\lforall[x][\lforall[y][(x< y \lor \eq[x][y] \lor y < x)]]$;
+  \item $\lforall[x][\lexists[y][x < y]]$;
+  \item $\lforall[x][\lexists[y][y < x]]$;
+  \item $\lforall[x][\lforall[y][(x < y \lif \lexists[z][(x < z \land
+        z < y))]]]$।
+ \end{enumerate}
+\end{defn}
+
+\begin{thm}\ollabel{thm:cantorQ}
+  যেকোনো দুটি !!{enumerable} অন্তবিন্দুহীন ঘন রৈখিক ক্রম পরস্পর সমরূপ।
+\end{thm}
+
+\begin{proof}
+  ধরা যাক, $\Struct{M_1}$ ও~$\Struct{M_2}$ দুটি !!{enumerable}
+  অন্তবিন্দুহীন ঘন রৈখিক ক্রম, যেখানে ${<_1} = \Assign{<}{M_1}$ এবং
+  ${<_2} = \Assign{<}{M_2}$। তাদের মধ্যকার সব আংশিক সমরূপতার সেটকে
+  $\PIso{I}$ ধরি। $\PIso{I}$ অশূন্য, কারণ অন্তত $\emptyset \in
+  \PIso{I}$। আমরা দেখাব যে $\PIso{I}$ আগ-পিছু ধর্ম পরিতৃপ্ত করে। তখন
+  $\Struct{M_1} \iso[p] \Struct{M_2}$, এবং উপপাদ্যটি
+  \olref[pis]{thm:p-isom1} থেকে অনুসৃত হবে।
+
+  $\PIso{I}$ অগ্র ধর্ম পরিতৃপ্ত করে দেখাতে $p \in \PIso{I}$ ধরি এবং
+  $i = 1$, \dots,~$n$-এর জন্য $p(a_i) = b_i$ ধরি; সাধারণত্বের ক্ষতি না
+  করে ধরে নিই $a_1 <_1 a_2 <_1 \cdots <_1 a_n$। $a \in
+  \Domain{M_1}$ দেওয়া থাকলে, $a$ যদি ইতিমধ্যেই~$p$-এর সংজ্ঞাক্ষেত্রে
+  থাকে তবে $q=p$ নিলেই হয়। তা না হলে $b \in \Domain{M_2}$ নিচের মতো
+  খুঁজে নাও; $p$ ফাঁকা হলে যেকোনো~$b$ নাও, আর $p$ অশূন্য হলে:
+  % BN-SRC-117 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-117):} হিমায়িত ইংরেজি প্রমাণের ক্ষেত্র-বিভাজনটি কেবল $a<_1a_1$, $a_n<_1a$ এবং মধ্যবর্তী ব্যবধানগুলি বিবেচনা করে। এতে $p$ ফাঁকা হলে $a_1,a_n$-ই নেই, আর $a$ আগে থেকেই $p$-এর সংজ্ঞাক্ষেত্রে থাকলে কোনো কঠোর অসমতার ক্ষেত্র প্রযোজ্য নয়। বাংলা পাঠে প্রথম ক্ষেত্রে যেকোনো $b$ বেছে নেওয়া এবং দ্বিতীয় ক্ষেত্রে $q=p$ নেওয়ার দুটি অনুপস্থিত ধাপ যোগ করা হয়েছে।} % BN-SRC-117 TARGET-CORRECTION-END
+  \begin{enumerate}
+  \item $a <_1 a_1$ হলে এমন $b \in \Domain{M_2}$ নাও যেন $b <_2 b_1$;
+  \item $a_n <_1 a$ হলে এমন $b \in \Domain{M_2}$ নাও যেন $b_n <_2 b$;
+ \item কোনো~$i$-এর জন্য $a_i <_1 a <_1 a_{i+1}$ হলে এমন $b \in
+   \Domain{M_2}$ নাও যেন $b_i <_2 b <_2 b_{i+1}$।
+  \end{enumerate}
+  $\Struct{M_2}$ অন্তবিন্দুহীন ঘন রৈখিক ক্রম বলে চাওয়া ধর্মের~$b$ সব
+  সময় পাওয়া যায়। $q = p \cup \{ \langle a, b \rangle \}$
+  সংজ্ঞায়িত করো; তাহলে $q \in \PIso{I}$ হলো $p$-এর চাওয়া সম্প্রসারণ।
+  এতে অগ্র ধর্ম প্রতিষ্ঠিত হলো। পশ্চাৎ ধর্মের প্রমাণ অনুরূপ। তাই
+  $\Struct{M_1} \iso[p] \Struct{M_2}$; \olref[pis]{thm:p-isom1}
+  অনুসারে $\Struct{M_1} \iso \Struct{M_2}$।
+\end{proof}
+
+\begin{prob}
+  $\PIso{I}$ যে পশ্চাৎ ধর্ম পরিতৃপ্ত করে তা যাচাই করে
+  \olref[mod][bas][dlo]{thm:cantorQ}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{rem}
+  $\Struct{S}$ যেকোনো !!{enumerable} অন্তবিন্দুহীন ঘন রৈখিক ক্রম হোক।
+  তাহলে (\olref{thm:cantorQ} অনুসারে) $\Struct{S} \iso \Struct{Q}$,
+  যেখানে $\Struct{Q} = (\Rat, <)$ হলো !!{enumerable} অন্তবিন্দুহীন ঘন
+  রৈখিক ক্রম, যার সংজ্ঞাক্ষেত্র মূলদ সংখ্যার সেট~$\Rat$। এবার
+  \olref[thm]{remark:R}-এর !!{structure}~$\Struct{R} = (\Real, <)$ আবার
+  বিবেচনা করো। আমরা দেখেছি, এমন একটি !!a{enumerable} !!{structure}~$\Struct{S}$
+  আছে যেন $\Struct{R} \elemequiv \Struct{S}$। কিন্তু $\Struct{S}$
+  একটি !!a{enumerable} অন্তবিন্দুহীন ঘন রৈখিক ক্রম; তাই সেটি
+  !!{structure}~$\Struct{Q}$-এর সমরূপ (এবং সেই কারণে মৌলিকভাবে
+  সমতুল্য)। মৌলিক সমতুল্যতার সংক্রমণশীলতা থেকে $\Struct{R} \elemequiv
+  \Struct{Q}$। (একই আগ-পিছু যুক্তি দিয়ে $\Struct{R} \iso[p]
+  \Struct{Q}$ প্রতিষ্ঠা করেও আমরা এটি সরাসরি দেখাতে পারতাম।)
+\end{rem}
+\end{document}

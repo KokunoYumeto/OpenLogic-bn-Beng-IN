@@ -1,0 +1,132 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: isomorphism
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{iso}
+\olsection{সমরূপ গঠন}
+
+প্রথম-ক্রমের !!{structure}s দু-ভাবে সদৃশ হতে পারে। সদৃশ হওয়ার একটি
+উপায় হলো, তারা একই !!{sentence}s-কে সত্য করে। এমন !!{structure}s-কে
+আমরা \emph{মৌলিকভাবে সমতুল্য} বলি। কিন্তু দুটি গঠন খুবই আলাদা হয়েও একই
+!!{sentence}s-কে সত্য করতে পারে---যেমন, একটি !!{enumerable} হতে পারে,
+অন্যটি নয়। এর কারণ, কোনো !!a{structure}-এর এমন অনেক বৈশিষ্ট্য আছে যা
+প্রথম-ক্রমের ভাষায় প্রকাশ করা যায় না; হয় ভাষাটি যথেষ্ট সমৃদ্ধ নয় বলে,
+নয়তো লোয়েনহাইম--স্কোলেম উপপাদ্যের মতো প্রথম-ক্রমের যুক্তিবিদ্যার মৌলিক
+সীমাবদ্ধতার কারণে। তাই !!{structure}s আরেকটি কঠোরতর অর্থেও সদৃশ হতে
+পারে: তাদের গঠনকারী বস্তুগুলি শুধু আলাদা, কিন্তু গঠনগত বৈশিষ্ট্যগুলি
+আলাদা নয়---এই অর্থে তারা মৌলিকভাবে একই। \emph{সমরূপতা}-র ধারণা দিয়ে
+কথাটিকে নির্দিষ্ট করা যায়।
+
+\begin{defn}
+\ollabel{defn:elem-equiv}
+একই !!{language}~$\Lang{L}$-এর দুটি !!{structure}s~$\Struct{M}$ ও
+$\Struct M'$ দেওয়া থাকলে, প্রত্যেক $\Lang{L}$-!!{sentence}~$!A$-এর
+জন্য $\Sat{M}{!A}$ যদি এবং কেবল যদি $\Sat{M'}{!A}$ হয়, তবে
+$\Struct{M}$-কে $\Struct M'$-এর \emph{মৌলিকভাবে সমতুল্য} বলি এবং লিখি
+$\Struct{M} \equiv \Struct M'$।
+\end{defn}
+
+\begin{defn}
+\ollabel{defn:isomorphism} একই !!{language}~$\Lang L$-এর দুটি
+!!{structure}s~$\Struct{M}$ ও~$\Struct M'$ দেওয়া থাকলে, নিচের শর্তগুলি
+পরিতৃপ্তকারী কোনো অপেক্ষক $h \colon \Domain{M} \to \Domain{M'}$ থাকলে
+$\Struct{M}$-কে~$\Struct M'$-এর \emph{সমরূপ} বলি এবং লিখি
+$\Struct{M} \simeq \Struct M'$:
+\begin{enumerate}
+\item $h$ !!{injective}: $h(x) = h(y)$ হলে $x = y$;
+\item $h$ !!{surjective}: প্রত্যেক $y \in \Domain{M'}$-এর জন্য এমন
+  $x \in \Domain{M}$ আছে যেন $h(x) = y$;
+\item \ollabel{defn:iso-const}প্রত্যেক !!{constant} $c$-এর জন্য:
+  $h(\Assign{c}{M}) = \Assign{c}{M'}$;
+\item \ollabel{defn:iso-pred}প্রত্যেক $n$-স্থানীয় !!{predicate}~$P$-এর জন্য:
+  \[
+  \tuple{a_1, \dots, a_n}\in \Assign{P}{M} \quad\text{যদি এবং কেবল যদি}\quad
+  \tuple{h(a_1), \dots, h(a_n)} \in \Assign{P}{M'};
+  \]
+\item \ollabel{defn:iso-func}প্রত্যেক $n$-স্থানীয় !!{function} $f$-এর জন্য:
+  \[
+  h(\Assign{f}{M}(a_1, \dots, a_n)) =
+  \Assign{f}{M'}(h(a_1), \dots, h(a_n)).
+  \]
+\end{enumerate}
+\end{defn}
+
+\begin{thm}
+\ollabel{thm:isom}
+$\Struct{M} \iso \Struct M'$ হলে $\Struct{M} \elemequiv
+\Struct{M'}$।
+\end{thm}
+
+\begin{proof}
+ধরা যাক, $h$ হলো $\Struct{M}$ থেকে $\Struct M'$-এর উপর একটি সমরূপতা।
+যেকোনো আরোপ~$s$-এর জন্য $h \circ s$ হলো $h$ ও~$s$-এর মিশ্রণ; অর্থাৎ
+$\Struct{M'}$-এ সেই আরোপ, যার জন্য $(h \circ s)(x) = h(s(x))$। $t$ ও
+$!A$-এর উপর আরোহের সাহায্যে নিচের শক্তিশালী দাবিগুলি প্রমাণ করা যায়:
+\begin{enumerate}
+  \item[a.] $h(\Value{t}{M}[s]) = \Value{t}{M'}[h\circ s]$।
+  \item[b.] $\Sat{M}{!A}[s]$ যদি এবং কেবল যদি $\Sat{M'}{!A}[h \circ s]$।
+\end{enumerate}
+প্রথম দাবিটি~$t$-এর জটিলতার উপর আরোহ দিয়ে প্রমাণ করি।
+\begin{enumerate}
+\item $t \ident c$ হলে $\Value{c}{M}[s] = \Assign{c}{M}$ এবং
+  $\Value{c}{M'}[h \circ s] = \Assign{c}{M'}$। অতএব
+  $h(\Value{t}{M}[s]) = h(\Assign{c}{M}) = \Assign{c}{M'}$
+  (\olref{defn:isomorphism}-এর \olref{defn:iso-const} অনুসারে) $=
+  \Value{t}{M'}[h \circ s]$।
+\item $t \ident x$ হলে $\Value{x}{M}[s] = s(x)$ এবং
+  $\Value{x}{M'}[h \circ s] = h(s(x))$। অতএব
+  $h(\Value{x}{M}[s]) = h(s(x)) = \Value{x}{M'}[h \circ s]$।
+\item $t \ident f(t_1, \dots, t_n)$ হলে
+  \begin{align*}
+    \Value{t}{M}[s] & = \Assign{f}{M}(\Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s]) \quad\text{এবং}\\
+  \Value{t}{M'}[h \circ s] & = \Assign{f}{M'}(\Value{t_1}{M'}[h \circ
+    s], \dots, \Value{t_n}{M'}[h \circ s]).
+  \end{align*}
+  % BN-SRC-113 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-113):} হিমায়িত ইংরেজি উৎসে $\Struct{M'}$-এ $t$-এর মানের পুনরাবৃত্ত সংজ্ঞার ডান দিকে ভুল করে $\Assign{f}{M}$ লেখা হয়েছে। লক্ষ্য গঠনটির অপেক্ষক-ব্যাখ্যা দরকার বলে বাংলা সূত্রে $\Assign{f}{M'}$ রাখা হয়েছে; বর্তমান উজান পাঠেও এই সংশোধনটি আছে।} % BN-SRC-113 TARGET-CORRECTION-END
+  আরোহ-অনুমান হলো, প্রত্যেক~$i$-এর জন্য $h(\Value{t_i}{M}[s])
+  = \Value{t_i}{M'}[h\circ s]$। তাই
+  \begin{align}
+    h(\Value{t}{M}[s])
+    & = h(\Assign{f}{M}(\Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s]))\notag\\
+    & = \Assign{f}{M'}(h(\Value{t_1}{M}[s]), \dots,
+    h(\Value{t_n}{M}[s])) \ollabel{iso-1}\\
+    & = \Assign{f}{M'}(\Value{t_1}{M'}[h \circ s], \dots,
+    \Value{t_n}{M'}[h \circ s]) \ollabel{iso-2}\\
+    & = \Value{t}{M'}[h\circ s] \notag
+  \end{align}
+  % BN-SRC-114 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-114):} হিমায়িত ইংরেজি উৎসে উপরের গণনার প্রথম সারিতে বাইরের $h($-এর সমাপ্তি-গোলবন্ধনী অনুপস্থিত। বাংলা সূত্রে $\notag$-এর আগে গোলবন্ধনীটি পুনরুদ্ধার করা হয়েছে; বর্তমান উজান পাঠেও একই সংশোধন আছে।} % BN-SRC-114 TARGET-CORRECTION-END
+  এখানে \olref{iso-1} অনুসৃত হয় \olref{defn:isomorphism}-এর
+  \olref{defn:iso-func} থেকে, আর \olref{iso-2} অনুসৃত হয় আরোহ-অনুমান থেকে।
+\end{enumerate}
+(b) অংশটি অনুশীলনী হিসেবে রাখা হলো।
+
+$!A$ কোনো বাক্য হলে আরোপ~$s$ ও~$h \circ s$ অপ্রাসঙ্গিক; তখন আমরা পাই,
+$\Sat{M}{!A}$ যদি এবং কেবল যদি $\Sat{M'}{!A}$।
+\end{proof}
+
+\begin{prob}
+\olref[mod][bas][iso]{thm:isom}-এর (b) অংশের প্রমাণ বিস্তারিতভাবে
+সম্পন্ন করো। \olref[mod][bas][iso]{defn:isomorphism}-এ সমরূপতাকে
+চিহ্নিতকারী পাঁচটি ধর্মের কোনটি কোথায় ব্যবহৃত হয়, তা উল্লেখ করতে ভুলো না।
+\end{prob}
+
+\begin{defn}
+কোনো গঠন~$\Struct{M}$-এর \emph{স্বসমরূপতা} হলো $\Struct{M}$ থেকে তার
+নিজের উপর একটি সমরূপতা।
+\end{defn}
+
+\begin{prob}
+দেখাও যে, যেকোনো গঠন~$\Struct{M}$-এর জন্য $X$ যদি $\Struct{M}$-এর
+একটি সংজ্ঞেয় উপসেট হয় এবং $h$ যদি $\Struct{M}$-এর একটি স্বসমরূপতা
+হয়, তবে $X = \Setabs{h(x)}{x \in X}$ (অর্থাৎ $h$-এর অধীনে~$X$
+অপরিবর্তিত থাকে)।
+\end{prob}
+
+
+\end{document}

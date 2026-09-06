@@ -1,0 +1,67 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: reducts-and-expansions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{red}
+\section{হ্রাসিত রূপ ও সম্প্রসারণ}
+
+যেসব ভাষার কিছু সংকেত অভিন্ন, সেসব ভাষা এবং তাদের !!{structure}s-এর
+তুলনা করা প্রায়ই উপকারী বা প্রয়োজনীয়। সবচেয়ে সাধারণ ক্ষেত্রটি হলো,
+যখন কোনো !!a{language}~$\Lang{L}$-এর সব সংকেত আরেকটি
+!!a{language}~$\Lang{L'}$-এরও অংশ, অর্থাৎ $\Lang{L} \subseteq
+\Lang{L'}$। তখন অভিন্ন সংকেতগুলির ব্যাখ্যা অপরিবর্তিত রেখে অতিরিক্ত
+সংকেতগুলির ব্যাখ্যা যোগ করে যেকোনো $\Lang{L}$-!!{structure}~$\Struct{M}$-কে
+একটি $\Lang{L'}$-!!{structure}-এ সম্প্রসারিত করা যায়। অন্যদিকে,
+কোনো $\Lang{L'}$-গঠন~$\Struct{M'}$ থেকে~$\Lang{L}$-এ নেই এমন
+সংকেতগুলির ব্যাখ্যা শুধু “ভুলে গিয়ে” একটি $\Lang{L}$-গঠন পাওয়া যায়।
+
+\begin{defn}
+\ollabel{defn:reduct}
+ধরা যাক, $\Lang L \subseteq \Lang L'$, $\Struct M$ একটি
+$\Lang L$-!!{structure} এবং $\Struct M'$ একটি
+$\Lang L'$-!!{structure}। $\Struct M$ হবে $\Lang L$-এ
+$\Struct M'$-এর \emph{হ্রাসিত রূপ}, এবং $\Struct M'$ হবে $\Lang L'$-এ
+$\Struct M$-এর \emph{সম্প্রসারণ}, যদি এবং কেবল যদি
+\begin{enumerate}
+\item $\Domain{M} = \Domain{M'}$;
+\item প্রত্যেক !!{constant}~$c \in \Lang L$-এর জন্য $\Assign{c}{M} =
+  \Assign{c}{M'}$;
+\item প্রত্যেক !!{function}~$f \in \Lang L$-এর জন্য $\Assign{f}{M} =
+  \Assign{f}{M'}$;
+\item প্রত্যেক !!{predicate}~$P \in \Lang L$-এর জন্য $\Assign{P}{M} =
+  \Assign{P}{M'}$।
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+\ollabel{prop:reduct}
+কোনো $\Lang{L}$-!!{structure}~$\Struct{M}$ যদি কোনো
+$\Lang{L'}$-!!{structure}~$\Struct{M'}$-এর হ্রাসিত রূপ হয়, তবে সব
+$\Lang{L}$-!!{sentence}s~$!A$-এর জন্য
+\[
+\Sat{M}{!A} \text{ যদি এবং কেবল যদি } \Sat{M'}{!A}.
+\]
+\end{prop}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[mod][bas][red]{prop:reduct} প্রমাণ করো।
+\end{prob}
+
+\begin{defn}
+ধরা যাক, আমাদের একটি $\Lang{L}$-গঠন $\Struct{M}$ আছে এবং
+$\Lang{L'} = \Lang{L} \cup \{P\}$ হলো একটিমাত্র $n$-স্থানীয়
+!!{predicate}~$P$ যোগ করে পাওয়া~$\Lang{L}$-এর সম্প্রসারণ। আবার
+$R \subseteq \Domain{M}^n$ একটি $n$-স্থানীয় সম্পর্ক। তখন
+$\Assign{P}{M'} = R$-সহ~$\Struct{M}$-এর সম্প্রসারণ~$\Struct{M'}$-কে
+আমরা $\Expan{M}{R}$ লিখি।
+\end{defn}
+
+\end{document}

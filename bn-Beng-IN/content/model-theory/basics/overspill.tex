@@ -1,0 +1,42 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: overspill
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{ove}
+\olsection{ওভারস্পিল}
+
+\begin{thm}
+\ollabel{overspill} কোনো বাক্যসমষ্টি~$\Gamma$-র ইচ্ছামতো বড় সসীম মডেল
+থাকলে তার একটি অসীম মডেলও আছে।
+\end{thm}
+
+\begin{proof}
+$\Gamma$-র ভাষায় গণনাযোগ্য অসীমসংখ্যক নতুন ধ্রুবক $c_0$, $c_1$,
+\dots{} যোগ করে ভাষাটি সম্প্রসারিত করো এবং সেট $\Gamma \cup \{c_i
+\neq c_j : i \neq j\}$ বিবেচনা করো। $\Gamma$-র ইচ্ছামতো বড় সসীম
+মডেল আছে বলার অর্থ হলো, প্রত্যেক $m >0$-এর জন্য এমন $n\ge m$ আছে যেন
+$\Gamma$-র $n$ আকারের একটি মডেল থাকে। এর ফলে $\Gamma \cup \{c_i
+\neq c_j : i \neq j\}$ সসীমভাবে পরিতৃপ্তিযোগ্য। সংহতি অনুসারে,
+$\Gamma \cup \{c_i \neq c_j : i \neq j\}$-এর একটি মডেল~$\Struct M$
+আছে; তার সংজ্ঞাক্ষেত্র অবশ্যই অসীম, কারণ সেটি সব অসমতা $c_i \neq c_j$
+পরিতৃপ্ত করে।
+\end{proof}
+
+\begin{prop}
+\ollabel{inf-not-fo}
+কোনো প্রথম-ক্রমের ভাষাতেই এমন কোনো বাক্য~$!A$ নেই, যা কোনো
+!!a{structure}~$\Struct M$-এ ঠিক তখনই সত্য, যখন !!{structure}-টির
+সংজ্ঞাক্ষেত্র~$\Domain{M}$ অসীম।
+\end{prop}
+
+\begin{proof}
+এমন কোনো~$!A$ থাকলে তার নঞর্থকরণ~$\lnot !A$ ঠিক সব সসীম
+!!{structure}s-এ সত্য হতো। ফলে তার ইচ্ছামতো বড় সসীম মডেল থাকত, কিন্তু
+কোনো অসীম মডেল থাকত না; এটি \olref{overspill}-এর বিরোধী।
+\end{proof}
+
+\end{document}

@@ -1,6 +1,6 @@
 {
   "schema": "openlogic-bn-source-audit-reconciliation/1",
-  "as_of_date": "2026-09-06",
+  "as_of_date": "2026-09-07",
   "audit_id": "OLSIZ-20260904",
   "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
   "audit_files": [
@@ -327,7 +327,7 @@
   "affected_translated_segments": 130,
   "validator": {
     "path": "tools/check_source_draft.py",
-    "sha256": "f148c04be547d8ef01009564244f22f60db764b499870641c13e1eececa6b05c"
+    "sha256": "db8bd9997c28d76d4463157165e2510ed8f0d5707008da9090c7d7d7a749db70"
   },
   "prior_checkpoint_audit_replay": {
     "segments": 537,

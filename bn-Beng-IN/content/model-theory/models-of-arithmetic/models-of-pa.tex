@@ -1,0 +1,265 @@
+% Part: first-order-logic
+% Chapter: models-of-arithmetic
+% Section: models-of-pa
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{mpa}
+\section{$\Th{PA}$-র মডেল}
+
+\begin{explain}
+$\Th{TA}$-র যেকোনো অমানক মডেল $\Th{PA}$-রও মডেল। আমরা জানি,
+$\Th{TA}$-র, এবং তাই $\Th{PA}$-রও, অমানক মডেল আছে। আরও জানি, এমন
+অমানক মডেলে অমানক ``সংখ্যা'' থাকে; অর্থাৎ সংজ্ঞাক্ষেত্রের এমন
+!!{element}s থাকে, যেগুলি সব মানক ``সংখ্যা''-র ``পরে''। কিন্তু তারা
+কীভাবে বিন্যস্ত? তাদের সংখ্যা কত? আমরা দেখেছি, দুর্বলতর তত্ত্ব
+$\Th{Q}$-এর মডেলে একটি মাত্র অমানক সংখ্যাও থাকতে পারে। কিন্তু ওই সরল
+!!{structure}s-গুলি $\Th{PA}$ বা $\Th{TA}$-র মডেল নয়।
+
+$\Th{PA}$ বা $\Th{TA}$-র মডেলের গঠন বোঝার চাবিকাঠি হলো, এই
+তত্ত্বগুলিতে কোন তথ্যগুলি !!{derivable} তা দেখা। যেমন, $\Th{PA}$
+ইতিমধ্যেই $\lforall[x][\eq/[x][x']]$ এবং
+$\lforall[x][\lforall[y][\eq[(x+y)][(y+x)]]]$ প্রমাণ করে; ফলে যেসব
+সরল গঠনে এই !!{sentence}s মিথ্যা, সেগুলি $\Th{PA}$-র মডেল হতে পারে না।
+
+ধরা যাক, $\Struct{M}$ হলো $\Th{PA}$-র একটি মডেল। তাহলে
+$\Th{PA} \Proves !A$ হলে $\Sat{M}{!A}$। আবার
+$\Assign{\Obj{0}}{M}$-এর জন্য $\nszero$, $\Assign{\prime}{M}$-এর জন্য
+$\nssucc$, $\Assign{+}{M}$-এর জন্য $\nsplus$,
+$\Assign{\times}{M}$-এর জন্য $\nstimes$, এবং $\Assign{<}{M}$-এর জন্য
+$\nsless$ ব্যবহার করি। তখন যেকোনো !!{sentence}~$!A$, $\nszero$,
+$\nssucc$, $\nsplus$, $\nstimes$ ও~$\nsless$ সম্পর্কে কোনো শর্ত বলে;
+আর $\Sat{M}{!A}$ হলে সেই শর্তটি পরিতৃপ্ত হতে হবে। যেমন,
+$\Sat{M}{!Q_1}$, অর্থাৎ
+$\Sat{M}{\lforall[x][\lforall[y][(\eq[x'][y'] \lif \eq[x][y])]]}$ হলে
+$\nssucc$-কে !!{injective} হতে হবে।
+\end{explain}
+
+\begin{prop}
+$\Struct{M}$-এ $\nsless$ একটি কঠোর রৈখিক ক্রম; অর্থাৎ এটি নিচের
+শর্তগুলি পরিতৃপ্ত করে:
+\begin{enumerate}
+\item কোনো~$x \in \Domain{M}$-এর জন্যই $x \nsless x$ নয়।
+\item $x \nsless y$ এবং $y \nsless z$ হলে $x \nsless z$।
+\item যেকোনো $x \neq y$-এর জন্য $x \nsless y$ অথবা $y \nsless x$।
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+$\Th{PA}$ নিচেরগুলি প্রমাণ করে:
+\begin{enumerate}
+\item $\lforall[x][\lnot x < x]$
+\item $\lforall[x][\lforall[y][\lforall[z][((x < y \land y < z) \lif x < z)]]]$
+\item $\lforall[x][\lforall[y][((x < y \lor y < x) \lor \eq[x][y])]]$
+\end{enumerate}
+% BN-SRC-128 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-128):} হিমায়িত ইংরেজি উৎসে তৃতীয় সর্বব্যাপী সূত্রটির শেষে খোলা গোলবন্ধনীর তুলনায় একটি অতিরিক্ত সমাপ্তি-গোলবন্ধনী আছে। বাংলা সূত্রে ওই অতিরিক্ত চিহ্নটি বাদ দিয়ে ত্রিবিভাগের সূত্রটি ভারসাম্যপূর্ণ করা হয়েছে।} % BN-SRC-128 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:M-discrete} $\nsless$-ক্রমে $\nszero$ হলো
+$\Domain{M}$-এর ক্ষুদ্রতম !!{element}। যেকোনো~$x$-এর জন্য
+$x \nsless x^\nssucc$, এবং এই ধর্মসম্পন্ন $\nsless$-ক্ষুদ্রতম
+!!{element} হলো $x^\nssucc$। শূন্য নয় এমন যেকোনো~$x$-এর জন্য এমন
+একটি অনন্য~$y$ আছে,
+যাতে $y^\nssucc=x$। (আমরা $y$-কে $\Struct{M}$-এ $x$-এর
+``পূর্বসূরি'' বলি এবং $^\nssucc x$ দিয়ে চিহ্নিত করি।)
+\end{prop}
+% BN-SRC-129 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-129):} হিমায়িত প্রতিজ্ঞাটি প্রত্যেক~$x$-এর একটি পূর্বসূরি দাবি করে, অথচ একই প্রতিজ্ঞায় $\nszero$-কে ক্ষুদ্রতম উপাদান বলা হয়েছে এবং $\Th{PA}$-তে শূন্য কোনো উত্তরসূরি নয়। বাংলা বিবৃতি ও পরের খণ্ড-প্রমাণে পূর্বসূরির দাবিটি শূন্য নয় এমন উপাদানে সীমিত করা হয়েছে; অমানক খণ্ডের সব উপাদান এই শর্ত পূরণ করে।} % BN-SRC-129 TARGET-CORRECTION-END
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+$\Th{PA}$-তে !!{derivable} (এবং তাই $\Struct{N}$-এ সত্য) এমন
+$\Lang{L_A}$-!!{sentence}s খুঁজে বার করো, যেগুলি
+\olref[mod][mar][mpa]{prop:M-discrete}-এ $\nszero$, $\nssucc$ ও
+$\nsless$-এর ধর্মগুলি নিশ্চিত করে।
+\end{prob}
+
+\begin{prop}
+$\Struct{M}$-এর সব মানক !!{element}s, সব অমানক !!{element}s-এর চেয়ে
+($\nsless$ অনুসারে) ছোট।
+\end{prop}
+
+\begin{proof}
+$\Struct{M}$-এর মানক !!{element}~$\Value{\num{n}}{M}$-এর সংক্ষেপে
+$n$ লিখব। যেকোনো~$n \in \Nat$-এর জন্য $\Th{Q}$ ইতিমধ্যেই প্রমাণ করে
+$\lforall[x][(x < \num{n}' \lif (\eq[x][\num{0}] \lor
+  \eq[x][\num{1}] \lor \dots \lor \eq[x][\num{n}]))]$। কোনো
+এমন কোনো !!{element}s নেই, যা $\nsless \nszero$। তাই $n$ মানক ও~$x$ অমানক হলে
+$x \nsless n$ হতে পারে না। সংজ্ঞা অনুসারে অমানক উপাদান এমন উপাদান,
+যা কোনো~$n \in \Nat$-এর জন্য $\Value{\num{n}}{M}$ নয়; অতএব
+$x \neq n$-ও। $\nsless$ রৈখিক ক্রম বলে তখন $n \nsless x$ হতেই হবে।
+\end{proof}
+
+\begin{prop}
+$\Domain{M}$-এর প্রত্যেক অমানক !!{element}~$x$ নিচের উপসেটটির উপাদান:
+\[
+\dots ^{\nssucc\nssucc\nssucc}x \nsless ^{\nssucc\nssucc}x \nsless
+^{\nssucc}x \nsless x \nsless x^{\nssucc} \nsless x^{\nssucc\nssucc}
+\nsless x^{\nssucc\nssucc\nssucc} \nsless \dots
+\]
+এই উপসেটকে $x$-এর \emph{খণ্ড} বলি এবং $[x]$ লিখি। এর কোনো ক্ষুদ্রতম
+বা বৃহত্তম !!{element} নেই। একে সেইসব $y \in \Domain{M}$-এর সেট
+হিসেবে চিহ্নিত করা যায়, যাদের জন্য কোনো মানক~$n$-এ
+$x \nsplus n=y$ অথবা $y \nsplus n=x$।
+\end{prop}
+
+\begin{proof}
+এমন সেট~$[x]$ সব সময়ই আছে; কারণ $\Domain{M}$-এর প্রত্যেক
+!!{element}~$y$-এর একটি অনন্য উত্তরসূরি~$y^\nssucc$ আছে এবং শূন্য নয়
+এমন প্রত্যেকটির একটি অনন্য পূর্বসূরি~$^\nssucc y$ আছে। পরপর
+!!{element}s~$y$, $y^\nssucc$-এর জন্য $y \nsless y^\nssucc$, এবং
+$y^\nssucc$ হলো $\nsless$-ক্রমে $\Domain{M}$-এর ক্ষুদ্রতম
+!!{element}, যার চেয়ে $y$ হলো $\nsless$-ছোট। সব সময়
+$^\nssucc y \nsless y$ এবং
+$y \nsless y^\nssucc$ বলে $[x]$-এর কোনো ক্ষুদ্রতম বা বৃহত্তম
+!!{element} নেই। $y \in [x]$ হলে $x \in [y]$; কারণ তখন হয়
+$y^{\nssucc\dots\nssucc}=x$, নয় $x^{\nssucc\dots\nssucc}=y$। যদি
+$y^{\nssucc\dots\nssucc}=x$ হয় ($n$-টি $\nssucc$-সহ), তবে
+$y \nsplus n=x$, এবং বিপরীতটিও সত্য; কারণ ($n$ যদি $\prime$-এর সংখ্যা
+হয়) $\Th{PA} \Proves \lforall[x][\eq[x^{\prime\dots\prime}][(x +
+    \num{n})]]$।
+\end{proof}
+
+\begin{prop}
+$[x] \neq [y]$ এবং $x \nsless y$ হলে, প্রত্যেক $u \in [x]$ ও প্রত্যেক
+$v \in [y]$-এর জন্য $u \nsless v$।
+\end{prop}
+
+\begin{proof}
+লক্ষ করো, $\Th{PA} \Proves \lforall[x][\lforall[y][(x < y \lif (x' < y
+    \lor x' = y))]]$। অতএব $u \nsless v$ হলে এবং $[u]\neq[v]$ হলে,
+যেকোনো~$n$-এর জন্য $u \nsplus n^\nssucc \nsless v$-ও হয়।
+
+যেকোনো $u \in [x]$ হলো $\nsless y$: অনুমান অনুসারে
+$x \nsless y$। $u \nsless x$ হলে সংক্রমণশীলতায় $u \nsless y$। আর
+$x \nsless u$ কিন্তু $u \in [x]$ হলে কোনো~$n$-এর জন্য
+$u=x\nsplus n^\nssucc$; তাই এইমাত্র প্রমাণিত তথ্য থেকে $u \nsless y$।
+
+এবার ধরা যাক, $v \in [y]$ হলো $\nsless y$; অর্থাৎ কোনো মানক~$m$-এর
+জন্য $v \nsplus m^\nssucc=y$। এতে $v \nsless x$ অসম্ভব; তা হলে
+$y=v \nsplus m^\nssucc \nsless x$ হতো। আবার স্পষ্টতই $x\neq v$;
+নইলে $x \nsplus m^\nssucc=v \nsplus m^\nssucc=y$ হয়ে
+$[x]=[y]$ হতো। অতএব $x \nsless v$। কিন্তু তখন যেকোনো~$n$-এর জন্য
+$x \nsplus n^\nssucc \nsless v$-ও। ফলে $x \nsless u$ এবং
+$u \in [x]$ হলে $u \nsless v$। $u \nsless x$ হলে সংক্রমণশীলতায়ও
+$u \nsless v$।
+
+সব শেষে, $y \nsless v$ হলে $u \nsless v$; কারণ আমরা দেখিয়েছি
+$u \nsless y$, আর $y \nsless v$।
+\end{proof}
+
+\begin{cor}
+$[x] \neq [y]$ হলে $[x] \cap [y] = \emptyset$।
+\end{cor}
+
+\begin{proof}
+ধরা যাক, $z \in [x]$ এবং $x \nsless y$। তখন সব $u \in [y]$-এর জন্য
+$z \nsless u$। যদি $z \in [y]$ হতো, তবে $z \nsless z$ পেতাম।
+$y \nsless x$ হলেও একই যুক্তি।
+\end{proof}
+
+\begin{explain}
+এর অর্থ, খণ্ডগুলিকেই এমনভাবে ক্রমিত করা যায় যা $\nsless$-কে মানে:
+$[x] \nsless [y]$ যদি এবং কেবল যদি $x \nsless y$; অথবা সমতুল্যভাবে,
+যেকোনো $u \in [x]$ ও~$v \in [y]$-এর জন্য $u \nsless v$ হলে। স্পষ্টতই
+মানক খণ্ড~$[0]$ ক্ষুদ্রতম খণ্ড। কোনো অমানক খণ্ডের সঙ্গে তার ছেদ নেই,
+এবং দুটি অমানক খণ্ডের মধ্যেও ছেদ নেই। বিশেষত বারবার উত্তরসূরি বা
+পূর্বসূরি নিয়ে অন্য কোনো খণ্ডে ``পৌঁছানো'' যায় না।
+\end{explain}
+
+\begin{prop}
+$x$ ও~$y$ অমানক হলে $x \nsless x \nsplus y$ এবং
+$x \nsplus y \notin [x]$।
+\end{prop}
+
+\begin{proof}
+$y$ অমানক হলে $y \neq \nszero$। $\Th{PA} \Proves
+\lforall[x][(y \neq \Obj{0} \lif x < (x+y))]$। এবার ধরা যাক,
+$x \nsplus y \in [x]$। যেহেতু $x \nsless x \nsplus y$, তাই
+$x \nsplus n^\nssucc=x \nsplus y$ হতো। কিন্তু
+$\Th{PA} \Proves
+\lforall[x][\lforall[y][\lforall[z][(\eq[(x+y)][(x+z)] \lif y = z)]]]$
+(যোগের কর্তন-বিধি)। এর অর্থ হতো, কোনো মানক~$n$-এর জন্য
+$y=n^\nssucc$; কিন্তু $y$-কে অমানক ধরে নেওয়া হয়েছে।
+\end{proof}
+
+\begin{prop}
+কোনো ক্ষুদ্রতম অমানক খণ্ড নেই।
+\end{prop}
+
+\begin{proof}
+$\Th{PA} \Proves \lforall[x][\lexists[y][(\eq[(y+y)][x] \lor
+      \eq[(y+y)'][x])]]$; অর্থাৎ প্রত্যেক $x$-কে $2$ দিয়ে ভাগ করা যায়
+(সম্ভবত ভাগশেষ~$1$ রেখে)। $x$ অমানক হলে $y$-ও অমানক। আগের প্রতিজ্ঞা
+অনুসারে $y \nsless y \nsplus y$ এবং $y \nsplus y \notin [y]$। তখন
+$y \nsless (y \nsplus y)^\nssucc$ এবং
+$(y \nsplus y)^\nssucc \notin [y]$-ও। কিন্তু হয়
+$x=y \nsplus y$, নয় $x=(y \nsplus y)^\nssucc$; তাই $y \nsless x$
+এবং $y \notin [x]$।
+\end{proof}
+
+\begin{prop}
+কোনো বৃহত্তম খণ্ড নেই।
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+দেখাও যে $\Th{PA}$-র কোনো অমানক মডেলে বৃহত্তম খণ্ড নেই।
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:blocks-dense}
+খণ্ডগুলির ক্রম ঘন। অর্থাৎ $x \nsless y$ এবং $[x] \neq [y]$ হলে
+দুটির থেকে ভিন্ন এমন একটি খণ্ড~$[z]$ আছে, যা তাদের মাঝখানে।
+\end{prop}
+
+\begin{proof}
+ধরা যাক, $x \nsless y$। আগের মতো $x \nsplus y$-কে দুই দিয়ে ভাগ করা
+যায় (সম্ভবত ভাগশেষ রেখে): এমন $z \in \Domain{M}$ আছে, যাতে হয়
+$x \nsplus y = z \nsplus z$, নয়
+$x \nsplus y = (z \nsplus z)^\nssucc$। উপাদান~$z$, $x$ ও~$y$-এর
+``গড়'', এবং $x \nsless z$ ও~$z \nsless y$।
+% BN-SRC-130 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-130):} এই অংশে গঠনের যোগের জন্য সর্বত্র $\nsplus$ স্থির করা হলেও হিমায়িত উৎসের গড়-সমীকরণে চারবার অনির্ধারিত $\oplus$ ব্যবহৃত। বাংলা সূত্রে ওই চারটি চিহ্নকে $\nsplus$ করা হয়েছে; সমীকরণের অন্য সব অংশ অপরিবর্তিত।} % BN-SRC-130 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prob}
+\olref[mod][mar][mpa]{prop:blocks-dense}-এর বিস্তারিত প্রমাণ লেখো।
+$z$-এর অস্তিত্ব নিশ্চিত করতে $\Th{PA}$-কে কোন !!{sentence}
+!!{derive} করতে হবে? কেন $x \nsless z$ ও~$z \nsless y$, এবং কেন
+$[x] \neq [z]$ ও~$[z] \neq [y]$?
+\end{prob}
+
+\begin{explain}
+অতএব কোনো গণনীয় অমানক মডেলের অমানক খণ্ডগুলি মূলদ সংখ্যার মতো
+ক্রমিত: তারা অন্তবিন্দুহীন একটি !!a{denumerable} ঘন রৈখিক ক্রম গঠন করে।
+% BN-SRC-131 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-131):} হিমায়িত উৎসটি কোনো গণনীয়তার অনুমান ছাড়াই সব অমানক খণ্ডকে $\Rat$-এর মতো এবং !!{denumerable} বলে, যদিও অগণনীয় মডেলের খণ্ডসমষ্টিও অগণনীয় হতে পারে। বাংলা পাঠে এই সিদ্ধান্তকে গণনীয় অমানক মডেলে সীমিত করা হয়েছে; ঘনতা ও অন্তবিন্দুহীনতার আগের দাবিগুলি অপরিবর্তিত।} % BN-SRC-131 TARGET-CORRECTION-END
+দেখানো যায়, এমন যেকোনো দুটি !!{denumerable} ক্রম পরস্পর সমরূপ। এর
+ফলে সত্য পাটিগণিতের যেকোনো দুটি !!{enumerable} অমানক মডেল
+$\Struct{M}_1$ ও~$\Struct{M_2}$-এর কেবল $<$ ও~$=$-যুক্ত ভাষায়
+রিডাক্টগুলি সমরূপ। বস্তুত সমরূপতা~$h$ নিচের মতো সংজ্ঞায়িত করা যায়:
+$\Struct{M_1}$ ও~$\Struct{M_2}$-এর মানক অংশগুলি মানক মডেল
+$\Struct{N}$-এর সমরূপ, তাই পরস্পরেরও সমরূপ। অমানক অংশ গঠনকারী
+খণ্ডগুলি নিজেরাই মূলদ সংখ্যার মতো ক্রমিত, তাই সেগুলিও সমরূপ। প্রতিটি
+খণ্ডে নির্বিচারে উপাদান মিলিয়ে খণ্ডগুলির সমরূপতাকে খণ্ডের
+\emph{ভিতরে} বিস্তৃত করা যায়; তারপর $\Struct{M_1}$-এ $x$-এর
+উত্তরসূরির প্রতিচ্ছবি নিই $\Struct{M_2}$-এ $x$-এর প্রতিচ্ছবির
+উত্তরসূরি। লক্ষ করো, এর থেকে পূর্ণ পাটিগণিতের ভাষায়
+$\mathfrak{M}_1$ ও~$\mathfrak{M}_2$ সমরূপ---এ কথা \emph{অনুসৃত হয় না}
+(সমরূপতা সব সময়ই কোনো !!a{language}-এর সাপেক্ষে); কারণ
+$\Domain{M_1}$ ও~$\Domain{M_2}$-এর উপর যোগ ও গুণ সংজ্ঞায়িত করার
+অসমরূপ উপায় আছে। (ভটের একটি বিখ্যাত উপপাদ্য থেকেও এটি অনুসৃত হয়:
+কোনো সম্পূর্ণ তত্ত্বের গণনীয় মডেলের সংখ্যা~2 হতে পারে না।)
+\end{explain}
+\end{document}

@@ -1,0 +1,118 @@
+% Part: model-theory
+% Chapter: models-of-arithmetic
+% Section: non-standard-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{nst}
+\section{অমানক মডেল}
+
+\begin{explain}
+$\Lang{L_A}$-এর কোনো !!a{structure}, $\Struct{N}$-এর সমরূপ হলে তাকে
+মানক বলি। কোনো !!a{structure}, $\Struct{N}$-এর সমরূপ না হলে তাকে
+অমানক বলা হয়।
+\end{explain}
+
+\begin{defn}
+$\Lang{L_A}$-এর কোনো !!{structure}~$\Struct{M}$, $\Struct{N}$-এর
+সমরূপ না হলে \emph{অমানক}। যেসব !!{element}s~$x \in \Domain{M}$ কোনো
+$n \in \Nat$-এর জন্য $\Value{\num{n}}{M}$-এর সমান, তাদের
+$\Struct{M}$-এর \emph{মানক সংখ্যা}; আর যেগুলি তা নয়, তাদের
+\emph{অমানক সংখ্যা} বলা হয়।
+\end{defn}
+
+\begin{explain}
+\olref[stm]{prop:standard-domain} অনুসারে $\Lang{L_A}$-এর যেকোনো মানক
+!!{structure}-এ কেবল মানক !!{element}s থাকে। ফলে কোনো অমানক
+!!{structure}-এ অন্তত একটি অমানক উপাদান থাকতেই হবে। বস্তুত একটি অমানক
+!!{element}-এর অস্তিত্বই !!{structure}-টি অমানক হওয়ার নিশ্চয়তা দেয়।
+\end{explain}
+
+\begin{prop}
+$\Lang{L_A}$-এর কোনো !!a{structure}~$\Struct{M}$-এ অমানক সংখ্যা
+থাকলে $\Struct{M}$ অমানক।
+\end{prop}
+
+\begin{proof}
+ধরা যাক তা নয়; অর্থাৎ $\Struct{M}$ মানক, অথচ তাতে একটি অমানক
+সংখ্যা~$x$ আছে। $g\colon \Nat \to \Domain{M}$ একটি সমরূপতা হোক।
+$n$-এর উপর আরোহ দিয়ে সহজেই দেখা যায়,
+$g(\Value{\num{n}}{N})=\Value{\num{n}}{M}$। অন্য কথায়, $g$,
+$\Struct{N}$-এর মানক সংখ্যাগুলিকে $\Struct{M}$-এর মানক সংখ্যায় পাঠায়।
+$\Struct{M}$-এ কোনো অমানক সংখ্যা থাকলে $g$ !!{surjective} হতে পারে না;
+এটি অনুমানের বিরোধী।
+\end{proof}
+
+\begin{prob}
+মনে করো, $\Th{Q}$-তে নিচের স্বতঃসিদ্ধগুলি আছে:
+\begin{align*}
+& \lforall[x][\lforall[y][(\eq[x'][y'] \lif \eq[x][y])]] \tag{$!Q_1$}\\
+& \lforall[x][\eq/[\Obj 0][x']] \tag{$!Q_2$}\\
+& \lforall[x][(\eq[x][\Obj 0] \lor \lexists[y][\eq[x][y']])] \tag{$!Q_3$}
+\end{align*}
+এমন !!{structure}s~$\Struct{M_1}$, $\Struct{M_2}$, $\Struct{M_3}$ দাও,
+যাতে
+\begin{enumerate}
+\item $\Sat{M_1}{!Q_1}$, $\Sat{M_1}{!Q_2}$, $\Sat/{M_1}{!Q_3}$;
+\item $\Sat{M_2}{!Q_1}$, $\Sat/{M_2}{!Q_2}$, $\Sat{M_2}{!Q_3}$; এবং
+\item $\Sat/{M_3}{!Q_1}$, $\Sat{M_3}{!Q_2}$, $\Sat{M_3}{!Q_3}$।
+\end{enumerate}
+স্পষ্টতই প্রত্যেকটির জন্য শুধু~$\Assign{\Obj{0}}{M_i}$ ও
+$\Assign{\prime}{M_i}$ নির্দিষ্ট করতে হবে।
+\end{prob}
+
+\begin{explain}
+$\Lang{L_A}$-এর অমানক !!{structure}s নির্দিষ্ট করা যথেষ্ট সহজ। যেমন,
+!!{domain}~$\Int$-সহ গঠনটি নিয়ে সব অ-যৌক্তিক সংকেতকে প্রচলিত উপায়ে
+ব্যাখ্যা করো। ঋণাত্মক সংখ্যাগুলি কোনো~$n$-এর জন্য $\num{n}$-এর মান নয়
+বলে এই গঠন অমানক। অবশ্য এটি এই অর্থে পাটিগণিতের \emph{মডেল} হবে না যে,
+$\Struct{N}$-এর মতো একই বাক্যগুলি সত্য করে। যেমন,
+$\lforall[x][\eq/[x'][\Obj{0}]]$ মিথ্যা। তবু সংহতি উপপাদ্যের সাহায্যে
+সহজেই প্রমাণ করা যায় যে পাটিগণিতের অমানক মডেল আছে।
+\end{explain}
+
+\begin{prop}
+$\Th{TA}=\Setabs{!A}{\Sat{N}{!A}}$, $\Struct{N}$-এর তত্ত্ব হোক।
+$\Th{TA}$-র একটি !!a{enumerable} অমানক মডেল আছে।
+\end{prop}
+
+\begin{proof}
+একটি নতুন !!{constant}~$c$ যোগ করে $\Lang{L_A}$-কে বিস্তৃত করো এবং
+নিচের !!{sentence}s-এর সেটটি বিবেচনা করো:
+\[
+\Gamma = \Th{TA} \cup \{\eq/[c][\num{0}], \eq/[c][\num{1}],
+\eq/[c][\num{2}], \dots\}
+\]
+$\Gamma$-র যেকোনো মডেল~$\Struct{M^c}$-এ $x=\Assign{c}{M}$ এমন একটি
+!!a{element} হবে, যা অমানক; কারণ সব $n \in \Nat$-এর জন্য
+$x \neq \Value{\num{n}}{M}$। আবার স্পষ্টতই
+$\Sat{M^c}{\Th{TA}}$, কারণ $\Th{TA} \subseteq \Gamma$। কেবল~$c$-কে
+ভুলে গিয়ে $\Struct{M^c}$-কে $\Lang{L_A}$-এর !!a{structure}
+$\Struct{M}$-এ বদলালেও তার সংজ্ঞাক্ষেত্রে অমানক~$x$ থেকে যায় এবং
+$\Sat{M}{\Th{TA}}$-ও হয়। শেষের কথাটি নিশ্চিত, কারণ~$\Th{TA}$-তে
+$c$ ঘটে না। অতএব $\Gamma$-র একটি মডেল আছে দেখালেই যথেষ্ট।
+
+$\Gamma$-র একটি মডেল আছে দেখাতে সংহতি উপপাদ্য ব্যবহার করি।
+$\Gamma$-র প্রত্যেক সসীম উপসেট পরিতৃপ্তিযোগ্য হলে $\Gamma$-ও তাই।
+যেকোনো সসীম উপসেট $\Gamma_0 \subseteq \Gamma$ বিবেচনা করো।
+$\Gamma_0$-তে $\Th{TA}$-র কয়েকটি !!{sentence}s এবং
+$\eq/[c][\num{n}]$ আকারের কয়েকটি বাক্য আছে, তবে শেষেরগুলি সসীমসংখ্যক।
+ওই আকারের একটিও বাক্য না থাকলে ধ্রুবকটির যেকোনো ব্যাখ্যা চলবে। অন্যথায়,
+$\eq/[c][\num{k}] \in \Gamma_0$ হয় এমন বৃহত্তম সংখ্যা~$k$ ধরি।
+% BN-SRC-122 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-122):} হিমায়িত ইংরেজি প্রমাণটি সরাসরি বৃহত্তম~$k$ বেছে নেয়, কিন্তু কোনো নির্বিচার সসীম $\Gamma_0$-তে $\eq/[c][\num{n}]$ আকারের বাক্য একটিও না-ও থাকতে পারে। বাংলা পাঠে সেই শূন্য ক্ষেত্রটি আগে আলাদা করা হয়েছে; তখন $c$-এর যেকোনো ব্যাখ্যাই যথেষ্ট।} % BN-SRC-122 TARGET-CORRECTION-END
+$\Struct{N}$-কে বিস্তৃত করে $\Assign{c}{N_k}=k+1$ ব্যাখ্যাটি যোগ করে
+$\Struct{N_k}$ সংজ্ঞায়িত করো। $\Sat{N_k}{\Gamma_0}$: যদি
+$!A \in \Th{TA}$ হয়, তবে $\Sat{N_k}{!A}$; কারণ~$c$ ছাড়া অন্য সব
+বিষয়ে $\Struct{N_k}$ ঠিক $\Struct{N}$-এর মতো এবং~$!A$-তে $c$ ঘটে না।
+আবার $\Sat{N_k}{\eq/[c][\num{n}]}$, কারণ $n \le k$ এবং
+$\Value{c}{N_k}=k+1$। অতএব $\Gamma$-র প্রত্যেক সসীম উপসেট
+পরিতৃপ্তিযোগ্য। সংহতি উপপাদ্যে তাই পুরো বাক্যসেটটির একটি মডেল আছে;
+নিম্নগামী লোয়েনহাইম--স্কোলেম উপপাদ্যে মডেলটি গণনীয় নেওয়া যায়।
+% BN-SRC-123 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-123):} প্রতিজ্ঞাটি একটি !!a{enumerable} অমানক মডেল দাবি করলেও হিমায়িত প্রমাণটি সংহতি থেকে শুধু কোনো মডেলের অস্তিত্ব প্রতিষ্ঠা করে থেমে যায়। বাংলা পাঠে পৃথক নিম্নগামী লোয়েনহাইম--স্কোলেম উপপাদ্যের প্রয়োজনীয় প্রয়োগটি যোগ করা হয়েছে।} % BN-SRC-123 TARGET-CORRECTION-END
+\end{proof}
+
+\end{document}

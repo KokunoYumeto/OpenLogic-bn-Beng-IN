@@ -1,0 +1,73 @@
+% Part: model-theory
+% Chapter: models-of-arithmetic
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{int}
+\section{ভূমিকা}
+
+পাটিগণিতের \emph{মানক মডেল} হলো এমন !!{structure}~$\Struct{N}$,
+যেখানে $\Domain{N} = \Nat$ এবং $\Obj{0}$, $\prime$, $+$, $\times$ ও
+$<$ প্রত্যাশিত উপায়ে ব্যাখ্যাত। অর্থাৎ $\Obj{0}$ হলো $0$, $\prime$
+হলো উত্তরসূরি অপেক্ষক, আর $+$ ও~$\times$ যথাক্রমে~$\Nat$-এর সংখ্যার
+যোগ ও গুণ হিসেবে ব্যাখ্যাত। নির্দিষ্টভাবে,
+\begin{align*}
+  \Assign{\Obj{0}}{N} & = 0\\
+  \Assign{\prime}{N}(n) & = n + 1\\
+  \Assign{+}{N}(n, m) & = n + m\\
+  \Assign{\times}{N}(n, m) & = nm
+\end{align*}
+অবশ্যই $\Lang{L_A}$-এর এমন গঠনও আছে, যাদের সংজ্ঞাক্ষেত্র~$\Nat$
+নয়। যেমন, $\Domain{M} = \{a\}^*$ (একটিমাত্র সংকেত~$a$-এর সসীম
+অনুক্রমগুলি, অর্থাৎ $\emptyset$, $a$, $aa$, $aaa$, \dots) সংজ্ঞাক্ষেত্র
+এবং নিচের ব্যাখ্যাগুলিসহ $\Struct{M}$ নিতে পারি:
+\begin{align*}
+  \Assign{\Obj{0}}{M} & = \emptyset\\
+  \Assign{\prime}{M}(s) & = s \concat a\\
+  \Assign{+}{M}(a^n, a^m) & = a^{n + m}\\
+  \Assign{\times}{M}(a^n, a^m) & = a^{nm}\\
+  \Assign{<}{M} & = \Setabs{\tuple{a^n,a^m}}{n<m}
+\end{align*}
+% BN-SRC-118 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-118):} হিমায়িত ইংরেজি উৎসে $\Assign{+}{M}(n,m)$ ও $\Assign{\times}{M}(n,m)$ লেখা হয়েছে, অথচ $\Domain{M}=\{a\}^*$-এর উপাদানগুলি সংখ্যা $n,m$ নয়, অনুক্রম $a^n,a^m$। বাংলা সূত্রে অপেক্ষক দুটির যুক্তি সেই সংজ্ঞাক্ষেত্রের উপাদান করে লেখা হয়েছে।} % BN-SRC-118 TARGET-CORRECTION-END
+% BN-SRC-119 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-119):} হিমায়িত উৎসটি $\Lang{L_A}$-এর এই কথিত গঠনে $<$-এর কোনো ব্যাখ্যা দেয় না, যদিও পরের বাক্যে $\Struct{M}$-কে $\Struct{N}$-এর সমরূপ বলা হয়েছে। বাংলা পাঠে অনুক্রমের দৈর্ঘ্য-ক্রমের প্রয়োজনীয় ব্যাখ্যাটি যোগ করা হয়েছে।} % BN-SRC-119 TARGET-CORRECTION-END
+এই দুটি গঠন এই অর্থে ``মূলত একই'' যে, তাদের একমাত্র পার্থক্য হলো
+!!{domain}s-এর !!{element}s; কিন্তু ব্যাখ্যা-অপেক্ষকগুলির দ্বারা ওই
+!!{domain}s-এর !!{element}s পরস্পরের সঙ্গে যেভাবে সম্পর্কিত, তাতে কোনো
+পার্থক্য নেই। আমরা বলি, !!{structure}s দুটি \emph{সমরূপ}।
+
+সংহতি উপপাদ্যের একটি সহজ পরিণাম হলো: $\Struct{N}$-এ সত্য যেকোনো
+তত্ত্বের এমন মডেলও আছে, যা $\Struct{N}$-এর সমরূপ নয়। এমন গঠনকে
+\emph{অমানক} বলা হয়। এদের আকর্ষণীয় বৈশিষ্ট্য হলো, কোনো মানক মডেলের
+(অর্থাৎ $\Struct{N}$ এবং তার সমরূপ সব !!{structure}s-এরও) !!{element}s
+মানক সংখ্যাপদ~$\num{n}$-এর মানেই নিঃশেষিত হয়; অর্থাৎ,
+\[
+\Domain{N} = \Setabs{\Value{\num{n}}{N}}{n \in \Nat}
+\]
+কিন্তু অমানক মডেলে তা হয় না: $\Struct{M}$ অমানক হলে অন্তত একটি
+$x \in \Domain{M}$ আছে, যাতে সব~$n$-এর জন্য
+$x \neq \Value{\num{n}}{M}$।
+
+এই অমানক উপাদানগুলি বেশ চিত্তাকর্ষক: তারা ``অসীম স্বাভাবিক সংখ্যা''।
+আবার তাদের অস্তিত্বই এক অর্থে অসম্পূর্ণতার ঘটনাগুলি ব্যাখ্যা করে। যেমন,
+পেয়ানো পাটিগণিতের সঙ্গতি-বিবৃতি $\OCon[\Th{PA}]$ বিবেচনা করো; অর্থাৎ
+$\lnot \lexists[x][\OPrf[\Th{PA}](x, \gn{\lfalse})]$। $\Th{PA}$
+$\OCon[\Th{PA}]$ বা $\lnot \OCon[\Th{PA}]$---কোনোটিই প্রমাণ করে না
+বলে যেকোনোটিকেই $\Th{PA}$-র সঙ্গে সঙ্গতভাবে যোগ করা যায়। যেহেতু
+$\Th{PA}$ সঙ্গত, তাই $\Sat{N}{\OCon[\Th{PA}]}$, এবং ফলত
+$\Sat/{N}{\lnot \OCon[\Th{PA}]}$। অতএব $\Struct{N}$, $\Th{PA} \cup
+\{\lnot \OCon[\Th{PA}]\}$-এর কোনো মডেল \emph{নয়}, এবং তার সব মডেলই
+অমানক হতে বাধ্য। $\Th{PA} \cup \{\lnot \OCon[\Th{PA}]\}$-এর মডেলে
+এমন কোনো !!{element} থাকতে হবে, যা
+$\lexists[x][\OPrf[\Th{PA}](x, \gn{\lfalse})]$-কে সত্য করার সাক্ষী;
+অর্থাৎ $\Th{PA}$ থেকে স্ববিরোধের কোনো !!a{derivation}-এর গ্যোডেল সংখ্যা।
+% BN-SRC-120 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-120):} হিমায়িত ইংরেজি উৎসের সাক্ষী-বিবৃতিতে $\OPrf[\Th{PA}](\gn{\lfalse})$ লেখা হয়েছে; ফলে বাঁধা চলরাশি~$x$ প্রমাণ-সংখ্যার যুক্তি হিসেবে অনুপস্থিত। বাংলা সূত্রে আগের সঙ্গতি-বিবৃতির মতো $\OPrf[\Th{PA}](x,\gn{\lfalse})$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-120 TARGET-CORRECTION-END
+এমন !!a{element} মানক হতে পারে না---কারণ প্রত্যেক~$n$-এর জন্য
+$\Th{PA} \Proves \lnot \OPrf[\Th{PA}](\num{n}, \gn{\lfalse})$।
+
+\end{document}

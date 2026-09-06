@@ -1,6 +1,6 @@
 {
   "schema": "openlogic-bn-draft-status/1",
-  "as_of_date": "2026-09-06",
+  "as_of_date": "2026-09-07",
   "complete": false,
   "source": {
     "authority": "OpenLogicProject/OpenLogic",
@@ -200,13 +200,20 @@
       "OLP-0188",
       "OLP-0189",
       "OLP-0190",
+      "OLP-0191",
+      "OLP-0192",
+      "OLP-0193",
+      "OLP-0194",
+      "OLP-0195",
+      "OLP-0196",
+      "OLP-0197",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 189,
-    "untranslated_count": 533,
-    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, and the Model Theory part driver plus complete Basics chapter are translated; both Size of Sets editorial alternatives remain distinct.",
-    "reader_state": "The verified reader remains the exact 18-unit v0.2.0 scope. A distinct 25-unit Functions input is prepared but unbuilt. Size of Sets, Arithmetization, Infinite Sets, Propositional Logic, Proof Systems, Sequent Calculus, Natural Deduction, Tableaux, Axiomatic Deduction, Completeness, all translated First-order Logic chapters and Model Theory Basics have not yet been integrated into a built reader."
+    "translated_count": 196,
+    "untranslated_count": 526,
+    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, and the Model Theory part driver plus complete Basics and Models of Arithmetic chapters are translated; both Size of Sets editorial alternatives remain distinct.",
+    "reader_state": "The verified reader remains the exact 18-unit v0.2.0 scope. A distinct 25-unit Functions input is prepared but unbuilt. Size of Sets, Arithmetization, Infinite Sets, Propositional Logic, Proof Systems, Sequent Calculus, Natural Deduction, Tableaux, Axiomatic Deduction, Completeness, all translated First-order Logic chapters and all Model Theory chapters have not yet been integrated into a built reader."
   },
   "last_verified_public_release": {
     "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.2.0-sets-relations",
@@ -215,11 +222,11 @@
     "status_evidence": "evidence/STATUS.json"
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "29379fbac60e661e0c4d522b40423121b8d162a1",
-    "translated_units": 180,
-    "receipt": "PUBLIC_READBACK_SOURCE_180_2026-09-06.json",
-    "receipt_sha256": "fb7801c28b7405a59b2bdd2e07c9af1483f82b472d404934cb02eaaef839e837",
-    "status": "Anonymous immutable-archive readback verified the complete First-order Logic Beyond checkpoint and reran its public checks. The current 189-unit draft extends that verified checkpoint through the Model Theory part driver and complete Basics chapter."
+    "commit": "3415a68d88479a14f888c133bce67302e03d1334",
+    "translated_units": 189,
+    "receipt": "PUBLIC_READBACK_SOURCE_189_2026-09-06.json",
+    "receipt_sha256": "921f2cfd755bd65f67117054d9ef5fe27d211756a46bfc4d4af8bd656ccb8cdc",
+    "status": "Anonymous immutable-archive readback verified the complete Model Theory Basics checkpoint and reran its public checks. The current 196-unit draft extends that verified checkpoint through the complete Models of Arithmetic chapter."
   },
   "current_checks": {
     "unit_checks": [
@@ -3612,6 +3619,147 @@
         "target_sha256": "21651b4f96b457f88f08d199d1d730db0c999c0734e11e53cdee053039f2ef7d"
       },
       {
+        "unit_id": "OLP-0191",
+        "source_blocks": 8,
+        "target_blocks": 8,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "22e619109901dcfc4687ba613842b1988bd8a1e771b3f797f75c29720599dac4"
+      },
+      {
+        "unit_id": "OLP-0192",
+        "source_blocks": 4,
+        "target_blocks": 4,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-118",
+          "BN-SRC-119",
+          "BN-SRC-120"
+        ],
+        "documented_math_correction": "BN-SRC-118, BN-SRC-119, BN-SRC-120 exact documented arithmetic-model repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": null,
+        "target_sha256": "ea74cbe85b7443da1ade00a8fa1b8986935d5cf805d2f0e944fa1884d5e4ff5f"
+      },
+      {
+        "unit_id": "OLP-0193",
+        "source_blocks": 15,
+        "target_blocks": 15,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-121"
+        ],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": "BN-SRC-121 exact documented arithmetic-model repair",
+        "target_sha256": "748e5b71dcebca27acf25e959eacf67edbb1eef6b57c6a079cfb4ea33c7b8f90"
+      },
+      {
+        "unit_id": "OLP-0194",
+        "source_blocks": 11,
+        "target_blocks": 11,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-122",
+          "BN-SRC-123"
+        ],
+        "documented_math_correction": null,
+        "documented_tex_correction": null,
+        "documented_prose_correction": "BN-SRC-122, BN-SRC-123 exact documented arithmetic-model repair",
+        "target_sha256": "20a3b6ea7f1c92f43b305c476e55563653c2b1c4be851a18d00178141cf64902"
+      },
+      {
+        "unit_id": "OLP-0195",
+        "source_blocks": 11,
+        "target_blocks": 11,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-124",
+          "BN-SRC-125",
+          "BN-SRC-126",
+          "BN-SRC-127"
+        ],
+        "documented_math_correction": "BN-SRC-125, BN-SRC-126, BN-SRC-127 exact documented arithmetic-model repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": "BN-SRC-124 exact documented arithmetic-model repair",
+        "target_sha256": "6aa8038a81a2e55b507cef92f377201593b91918a1eb73ab07f1ba4993a6641c"
+      },
+      {
+        "unit_id": "OLP-0196",
+        "source_blocks": 32,
+        "target_blocks": 32,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-128",
+          "BN-SRC-129",
+          "BN-SRC-130",
+          "BN-SRC-131"
+        ],
+        "documented_math_correction": "BN-SRC-128, BN-SRC-130 exact documented arithmetic-model repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": "BN-SRC-129, BN-SRC-131 exact documented arithmetic-model repair",
+        "target_sha256": "b6bce39729c3ebae8049f17a7ca982d52394f0646549d67df49b10ed2ae751e8"
+      },
+      {
+        "unit_id": "OLP-0197",
+        "source_blocks": 10,
+        "target_blocks": 10,
+        "math_parity": true,
+        "math_missing": [],
+        "math_added": [],
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-132",
+          "BN-SRC-133"
+        ],
+        "documented_math_correction": "BN-SRC-132 exact documented arithmetic-model repair",
+        "documented_tex_correction": null,
+        "documented_prose_correction": "BN-SRC-133 exact documented arithmetic-model repair",
+        "target_sha256": "491b1260f7c95e6cce8c18a1b4d47990aa4ce27a2ba7dfc833234f3c2b8130ef"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -3648,12 +3796,12 @@
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "f148c04be547d8ef01009564244f22f60db764b499870641c13e1eececa6b05c"
+      "sha256": "db8bd9997c28d76d4463157165e2510ed8f0d5707008da9090c7d7d7a749db70"
     },
-    "segments": 2381,
-    "translated_segments": 2005,
+    "segments": 2472,
+    "translated_segments": 2089,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "d7bf2d1c85d673f884123604de4d2a6cca8dbe6049d31fa362f598e721ac9387",
+    "segment_index_sha256": "c38a470bcba0f205ab7c267baa1408c1f535fbf253f262159d94d4734145e39d",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -3722,6 +3870,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_MODEL_THEORY_BASICS.md",
         "sha256": "39aee0d3935706545a6d2a6cc20f205191ffac78b0dc62cc167f3292c0fa34ad"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_MODELS_OF_ARITHMETIC.md",
+        "sha256": "87a122b95b07e27a6aeaf4cd68c4fa4a7e3d6ed8e8590071cb27a46f23b2b4f9"
       }
     ],
     "shared_source_audit": {
@@ -3736,7 +3888,7 @@
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "47116152b6608c9dc12671dfc1d5ee2c3840aa936e4abfc3abe457e04aa0ac08",
+      "reconciliation_sha256": "096e50146680358489f74e6d58de414c6d7d8279e44be6d9d15e071b7f4bf885",
       "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
       "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
       "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
@@ -3754,9 +3906,9 @@
     }
   },
   "source_corrections": {
-    "count": 127,
+    "count": 143,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "21defc15d02fa29615839fb600cd3a6d84b2330edf889d392044b9c5ef364766",
+    "sha256": "eaa3f17be91dbbc5092e8e15128c8ca1b75d055fb63b07e84f9a5b8aea1297eb",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -3880,6 +4032,22 @@
       "BN-SRC-115",
       "BN-SRC-116",
       "BN-SRC-117",
+      "BN-SRC-118",
+      "BN-SRC-119",
+      "BN-SRC-120",
+      "BN-SRC-121",
+      "BN-SRC-122",
+      "BN-SRC-123",
+      "BN-SRC-124",
+      "BN-SRC-125",
+      "BN-SRC-126",
+      "BN-SRC-127",
+      "BN-SRC-128",
+      "BN-SRC-129",
+      "BN-SRC-130",
+      "BN-SRC-131",
+      "BN-SRC-132",
+      "BN-SRC-133",
       "OLSIZ-001",
       "OLSIZ-002",
       "OLSIZ-003",
@@ -3888,15 +4056,15 @@
     ]
   },
   "translation_decisions": {
-    "count": 126,
-    "provisional_open": 107,
+    "count": 133,
+    "provisional_open": 114,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "3c1d329dfdf99d5633cac51d7a0b3c440ef75fc07910d0dabe381492e2a1e559",
+    "sha256": "7b92a87c413863f3d1bf243df96f55a925691b1b845726b1723d34cea775cc45",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 10287,
+    "occurrence_count": 10777,
     "pagination_status": "Final printed/PDF page fields are pending reader integration and final pagination."
   },
   "functions_build_candidate": {
@@ -3910,5 +4078,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "All three bounded global TeX mutex acquisitions concerned the prior input hash and timed out without launching TeX. The freshly prepared current input has not yet been submitted to TeX; no new PDF or HTML is claimed."
   },
-  "remaining": "533 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
+  "remaining": "526 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
 }

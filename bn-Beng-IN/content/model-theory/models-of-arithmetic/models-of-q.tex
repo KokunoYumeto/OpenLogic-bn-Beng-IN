@@ -1,0 +1,215 @@
+% Part: model-theory
+% Chapter: models-of-arithmetic
+% Section: non-standard-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{mdq}
+\section{$\Th{Q}$-এর মডেল}
+
+\begin{explain}
+আমরা জানি, এমন অমানক !!{structure}s আছে, যেগুলি $\Struct{N}$-এর মতো
+একই !!{sentence}s সত্য করে; অর্থাৎ সেগুলি $\Th{TA}$-র মডেল। যেহেতু
+$\Sat{N}{\Th{Q}}$, তাই $\Th{TA}$-র যেকোনো মডেল $\Th{Q}$-এরও মডেল।
+$\Th{Q}$, $\Th{TA}$-র চেয়ে অনেক দুর্বল; যেমন,
+$\Th{Q} \Proves/ \lforall[x][\lforall[y][\eq[(x +
+      y)][(y+x)]]]$। দুর্বলতর তত্ত্বকে পরিতৃপ্ত করা সহজতর: তাদের মডেল
+বেশি। যেমন, $\Th{Q}$-এর এমন মডেল আছে, যা
+$\lforall[x][\lforall[y][\eq[(x + y)][(y+x)]]]$-কে মিথ্যা করে; কিন্তু
+সেগুলি $\Th{TA}$ বা এমনকি $\Th{PA}$-রও মডেল হতে পারে না। $\Th{Q}$-এর
+মডেলগুলি তুলনামূলকভাবে সরলও: আমরা সেগুলিকে স্পষ্টভাবে নির্দিষ্ট করতে
+পারি।
+\end{explain}
+
+\begin{ex}
+\ollabel{ex:model-K-of-Q}
+$\Domain{K}=\Nat \cup \{a\}$ সংজ্ঞাক্ষেত্র এবং নিচের ব্যাখ্যাগুলিসহ
+!!{structure}~$\Struct{K}$ বিবেচনা করো:
+\begin{align*}
+  \Assign{\Obj{0}}{K} & = 0\\
+  \Assign{\prime}{K}(x) & =
+  \begin{cases}
+    x+1 & \text{যদি $x\in \Nat$}\\
+    a & \text{যদি $x = a$}
+  \end{cases}\\
+  \Assign{+}{K}(x, y) & =
+  \begin{cases}
+    x+y & \text{যদি $x$, $y \in\Nat$}\\
+    a & \text{অন্যথায়}
+  \end{cases}\\
+  \Assign{\times}{K}(x, y) & =
+  \begin{cases}
+    xy & \text{যদি $x$, $y \in\Nat$}\\
+    0 & \text{যদি $x = 0$ অথবা $y = 0$}\\
+    a & \text{অন্যথায়}\\
+  \end{cases}\\
+  \Assign{<}{K} & =
+  \Setabs{\tuple{x,y}}{x, y \in \Nat \text{ এবং } x<y} \cup
+  \Setabs{\tuple{x,a}}{x \in \Domain{K}}
+\end{align*}
+$\Sat{K}{\Th{Q}}$ দেখাতে $\Th{Q}$-এর সব স্বতঃসিদ্ধ
+$\Struct{K}$-এ সত্য কি না যাচাই করতে হবে। সুবিধার জন্য
+$\Assign{\prime}{K}(x)$-এর (অর্থাৎ $\Struct{K}$-এ $x$-এর
+``উত্তরসূরি'') বদলে $x^\nssucc$, $\Assign{+}{K}(x,y)$-এর (অর্থাৎ
+$\Struct{K}$-এ $x$ ও~$y$-এর ``যোগফল'') বদলে $x \nsplus y$,
+$\Assign{\times}{K}(x,y)$-এর (অর্থাৎ $\Struct{K}$-এ $x$ ও~$y$-এর
+``গুণফল'') বদলে $x \nstimes y$, এবং
+$\tuple{x,y}\in\Assign{<}{K}$-এর বদলে $x \nsless y$ লিখি।
+% BN-SRC-124 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-124):} হিমায়িত ইংরেজি উৎসে $x\nsplus y$-এর ``sum'' ব্যাখ্যার প্রারম্ভিক গোলবন্ধনীটি বন্ধ না করেই $x\nstimes y$-এর ব্যাখ্যা শুরু হয়েছে। বাংলা পাঠে $\Struct{K}$-এর পরে অনুপস্থিত সমাপ্তি-গোলবন্ধনীটি পুনরুদ্ধার করা হয়েছে।} % BN-SRC-124 TARGET-CORRECTION-END
+এই সংক্ষেপগুলির সাহায্যে $\Struct{K}$-এর ক্রিয়াগুলি আরও স্বচ্ছভাবে
+লেখা যায়:
+\[
+\begin{array}{c|c}
+  x & x^\nssucc \\
+  \hline
+  n & n+1 \\
+  a & a
+\end{array}
+\qquad
+\begin{array}{c|ccc}
+  x \nsplus y & 0 & m & a \\
+  \hline
+  0 & 0 & m & a \\
+  n & n & n+m & a \\
+  a & a & a & a \\
+\end{array}
+\qquad
+\begin{array}{c|ccc}
+  x \nstimes y & 0 & m & a \\
+  \hline
+  0 & 0 & 0 & 0 \\
+  n & 0 & nm & a \\
+  a & 0 & a & a \\
+\end{array}
+\]
+$n$, $m \in \Nat$-এর জন্য $n \nsless m$ যদি এবং কেবল যদি $n<m$;
+আর সব~$x \in \Domain{K}$-এর জন্য $x \nsless a$।
+
+$\nssucc$ !!{injective} বলে
+$\Sat{K}{\lforall[x][\lforall[y][(\eq[x'][y'] \lif \eq[x][y])]]}$।
+$\Struct{K}$-এ $0$ কোনো $\nssucc$-উত্তরসূরি নয় বলে
+$\Sat{K}{\lforall[x][\eq/[\Obj 0][x']]}$। প্রত্যেক $n>0$-এর জন্য
+$n=(n-1)^\nssucc$ এবং $a=a^\nssucc$ বলে
+$\Sat{K}{\lforall[x][(\eq[x][\Obj 0] \lor
+\lexists[y][\eq[x][y']])]}$।
+
+$n \nsplus 0=n+0=n$ এবং $\nsplus$-এর সংজ্ঞা অনুসারে
+$a\nsplus 0=a$ বলে $\Sat{K}{\lforall[x][\eq[(x + \Obj 0)][x]]}$।
+$\Sat{K}{\lforall[x][\lforall[y][\eq[(x + y')][(x + y)']]]}$ একটু
+কঠিনতর। $n$, $m$ উভয়ই মানক হলে পাই:
+\begin{align*}
+(n \nsplus m^\nssucc) & = (n+(m+1)) = (n+m)+1 = (n \nsplus m)^\nssucc
+\intertext{কারণ মানক সংখ্যায় $\nsplus$ ও~$^\nssucc$ যথাক্রমে $+$
+  ও~$\prime$-এর সঙ্গে মিলে যায়। এবার $x \in \Domain{K}$ ধরা যাক। তখন}
+(x \nsplus a^\nssucc) & = (x \nsplus a) = a = a^\nssucc = (x \nsplus a)^\nssucc
+\intertext{পূর্ণতার জন্য এবার $y \in \Domain{K}$ কিন্তু $x=a$ ধরি।
+  $y=n$ মানক, না $y=a$---এই দুই ক্ষেত্র আলাদা করতে হবে:}
+% BN-SRC-125 TARGET-CORRECTION-BEGIN
+\intertext{\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-125):} হিমায়িত ইংরেজি উৎসে দ্বিতীয় ক্ষেত্রটি $y=b$ বলা হয়েছে, যদিও $b\notin\Domain{K}$ এবং এই গঠনের একমাত্র অমানক উপাদান~$a$। বাংলা পাঠে ক্ষেত্রটি $y=a$ করা হয়েছে।}} % BN-SRC-125 TARGET-CORRECTION-END
+(a \nsplus n^\nssucc) & = (a \nsplus (n+1)) = a = a^\nssucc = (a \nsplus n)^\nssucc\\
+(a \nsplus a^\nssucc) & = (a \nsplus a) = a = a^\nssucc = (a \nsplus a)^\nssucc
+\end{align*}
+অবশ্য এই বিশ্লেষণ প্রয়োজনের চেয়ে একটু বেশি বিস্তারিত। যেমন, $z$ যাই
+হোক $a \nsplus z=a$ বলে সরাসরি $a \nsplus a^\nssucc=a$ সিদ্ধান্ত করা
+যায়। বাকি স্বতঃসিদ্ধগুলিও একইভাবে যাচাই করা যায়।
+
+অতএব $\Struct{K}$, $\Th{Q}$-এর একটি মডেল। তার ``যোগ''~$\nsplus$
+বিনিমেয়ও। কিন্তু $\Struct{N}$-এ সত্য অথচ $\Struct{K}$-এ মিথ্যা, এবং
+উল্টোটিও, এমন অন্য বাক্য আছে। যেমন, $a \nsless a$; তাই
+$\Sat{K}{\lexists[x][x < x]}$ এবং
+$\Sat/{K}{\lforall[x][\lnot x<x]}$। এটি দেখায়,
+$\Th{Q} \Proves/ \lforall[x][\lnot x < x]$।
+\end{ex}
+
+\begin{prob}
+প্রমাণ করো, \olref[mod][mar][mdq]{ex:model-K-of-Q}-এর $\Struct{K}$,
+$\Th{Q}$-এর অবশিষ্ট স্বতঃসিদ্ধগুলি পরিতৃপ্ত করে:
+\begin{align*}
+  & \lforall[x][\eq[(x \times \Obj 0)][\Obj 0]] \tag{$!Q_6$}\\
+  & \lforall[x][\lforall[y][\eq[(x \times y')][((x \times y) + x)]]] \tag{$!Q_7$}\\
+  & \lforall[x][\lforall[y][(x < y \liff \lexists[z][\eq[(z' + x)][y]])]] \tag{$!Q_8$}
+\end{align*}
+শুধু~$\prime$-সম্পৃক্ত এমন কোনো !!a{sentence} খুঁজে বার করো, যা
+$\Struct{N}$-এ সত্য কিন্তু $\Struct{K}$-এ মিথ্যা।
+\end{prob}
+
+\begin{ex}
+\ollabel{ex:model-L-of-Q} $\Domain{L}=\Nat \cup \{a,b\}$ সংজ্ঞাক্ষেত্র
+এবং নিচের সারণিতে দেওয়া ব্যাখ্যা $\Assign{\prime}{L}=\nssucc$,
+$\Assign{+}{L}=\nsplus$-সহ !!{structure}~$\Struct{L}$ বিবেচনা করো:
+\[
+\begin{array}{c|c}
+  x & x^\nssucc \\
+  \hline
+  n & n+1 \\
+  a & a\\
+  b & b
+\end{array}
+\qquad
+\begin{array}{c|ccc}
+  x \nsplus y & m & a & b\\
+  \hline
+  n & n+m & b & a\\
+  a & a & b & a\\
+  b & b & b & a
+\end{array}
+\]
+$\nssucc$ !!{injective}, $0$ তার বিস্তৃতিতে নেই, এবং $0$ ছাড়া প্রত্যেক
+$x \in \Domain{L}$ তার বিস্তৃতিতে আছে বলে $!Q_1$--$!Q_3$ স্বতঃসিদ্ধ
+$\Struct{L}$-এ সত্য। যেকোনো $x$-এর জন্য $x \nsplus 0=x$, তাই $!Q_4$-ও
+সত্য। $!Q_5$-এর জন্য $x \nsplus y^\nssucc$ ও
+$(x \nsplus y)^\nssucc$ বিবেচনা করো। $x$ ও~$y$ উভয়ই মানক হলে তারা
+সমান, কারণ তখন $\nssucc$ ও~$\nsplus$ যথাক্রমে $\prime$ ও~$+$-এর সঙ্গে
+মিলে যায়। $x$ অমানক এবং $y$ মানক হলে পাই
+$x \nsplus y^\nssucc=x=x^\nssucc=(x \nsplus y)^\nssucc$। $x$ ও~$y$
+উভয়ই অমানক হলে চারটি ক্ষেত্র:
+\begin{align*}
+&  a \nsplus a^\nssucc  = b = b^\nssucc = (a \nsplus a)^\nssucc\\
+&  b \nsplus b^\nssucc  = a = a^\nssucc = (b \nsplus b)^\nssucc\\
+&  b \nsplus a^\nssucc  = b = b^\nssucc = (b \nsplus a)^\nssucc\\
+% BN-SRC-126 TARGET-CORRECTION-BEGIN
+\intertext{\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-126):} হিমায়িত উৎসে তৃতীয় সারির ডান দিকে $(b\nsplus y)^\nssucc$ লেখা হয়েছে, যদিও সারিটি নির্দিষ্টভাবে $y=a$ ক্ষেত্র গণনা করছে। বাংলা সূত্রে একই সারির বাঁ দিক ও ক্রিয়া-সারণির সঙ্গে মিলিয়ে $(b\nsplus a)^\nssucc$ করা হয়েছে।}} % BN-SRC-126 TARGET-CORRECTION-END
+&  a \nsplus b^\nssucc  = a = a^\nssucc = (a \nsplus b)^\nssucc\\
+\intertext{$x$ মানক কিন্তু $y$ অমানক হলে পাই}
+&  n \nsplus a^\nssucc  = n \nsplus a = b = b^\nssucc = (n \nsplus a)^\nssucc\\
+&  n \nsplus b^\nssucc  = n \nsplus b = a = a^\nssucc = (n \nsplus b)^\nssucc
+\end{align*}
+অতএব $\Sat{L}{!Q_5}$। কিন্তু $a \nsplus 0 \neq 0 \nsplus a$, তাই
+$\Sat/{L}{\lforall[x][\lforall[y][\eq[(x+y)][(y+x)]]]}$।
+\end{ex}
+
+\begin{prob}
+\olref[mod][mar][mdq]{ex:model-L-of-Q}-এর $\Struct{L}$-কে বিস্তৃত করে
+$\times$ ও~$<$-এর ব্যাখ্যাকারী $\nstimes$ ও~$\nsless$ যোগ করো। দেখাও,
+তোমার গঠনটি $\Th{Q}$-এর অবশিষ্ট স্বতঃসিদ্ধগুলি পরিতৃপ্ত করে:
+\begin{align*}
+& \lforall[x][\eq[(x \times \Obj 0)][\Obj 0]] \tag{$!Q_6$}\\ &
+  \lforall[x][\lforall[y][\eq[(x \times y')][((x \times y) + x)]]]
+  \tag{$!Q_7$}\\ & \lforall[x][\lforall[y][(x < y \liff \lexists[z][\eq[(z'+x)][y]])]] \tag{$!Q_8$}
+\end{align*}
+\end{prob}
+
+\begin{prob}
+\olref[mod][mar][mdq]{ex:model-L-of-Q}-এর $\Struct{L}$-এ
+$a^\nssucc=a$ এবং $b^\nssucc=b$। $\Th{Q}$-এর এমন কোনো মডেল কি আছে,
+যেখানে $a^\nssucc=b$ এবং $b^\nssucc=a$?
+\end{prob}
+
+\begin{explain}
+আমরা স্পষ্টভাবে $\Th{Q}$-এর এমন মডেল নির্মাণ করেছি, যেখানে অমানক
+!!{element}s-গুলি মানক উপাদানগুলির ``পরে'' থাকে। বস্তুত স্বতঃসিদ্ধগুলি
+অন্তত এটুকু দাবি করে। কোনো অমানক !!{element}~$x$, ${} \nsless 0$ হতে
+পারে না, কারণ $\Th{Q} \Proves \lforall[x][\lnot x<0]$
+(\olref[inc][req][min]{lem:less-zero} দেখো)। আবার প্রত্যেক $n$-এর জন্য
+$\Th{Q} \Proves \lforall[x][(x < \num{n}' \lif
+(\eq[x][\num{0}] \lor \eq[x][\num{1}] \lor \dots \lor
+\eq[x][\num{n}]))]$ (\olref[inc][req][min]{lem:less-nsucc}); তাই
+কোনো~$n>0$-এর জন্য $x \nsless n$ হতে পারে না।
+% BN-SRC-127 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-127):} এই সাধারণ যুক্তিটি অমানক উপাদান~$x$ দিয়ে শুরু হলেও হিমায়িত উৎসের শেষ সিদ্ধান্তে উদাহরণ-নির্দিষ্ট~$a\nsless n$ লেখা হয়েছে। বাংলা সূত্রে একই নির্বিচার উপাদান ধরে $x\nsless n$ করা হয়েছে।} % BN-SRC-127 TARGET-CORRECTION-END
+\end{explain}
+
+\end{document}

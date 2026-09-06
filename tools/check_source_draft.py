@@ -1085,6 +1085,92 @@ for row in rows:
             is not None
         )
         basics_prose_ids = ["BN-SRC-116"]
+    arithmetic_math_ids = []
+    arithmetic_math_fix = False
+    arithmetic_audited_source = source
+    if row["unit_id"] == "OLP-0192":
+        arithmetic_math_ids = ["BN-SRC-118", "BN-SRC-119", "BN-SRC-120"]
+        old = r"\Assign{+}{M}(n, m)"
+        new = r"\Assign{+}{M}(a^n, a^m)"
+        assert arithmetic_audited_source.count(old) == 1
+        arithmetic_audited_source = arithmetic_audited_source.replace(old, new, 1)
+        old = r"\Assign{\times}{M}(n, m) & = a^{nm}"
+        new = (
+            r"\Assign{\times}{M}(a^n, a^m) & = a^{nm}\\" + "\n"
+            r"  \Assign{<}{M} & = \Setabs{\tuple{a^n,a^m}}{n<m}"
+        )
+        assert arithmetic_audited_source.count(old) == 1
+        arithmetic_audited_source = arithmetic_audited_source.replace(old, new, 1)
+        old = r"\lexists[x][\OPrf[\Th{PA}](\gn{\lfalse})]"
+        new = r"\lexists[x][\OPrf[\Th{PA}](x, \gn{\lfalse})]"
+        assert arithmetic_audited_source.count(old) == 1
+        arithmetic_audited_source = arithmetic_audited_source.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0195":
+        arithmetic_math_ids = ["BN-SRC-125", "BN-SRC-126", "BN-SRC-127"]
+        arithmetic_repairs = [
+            ("$y = b$", "$y = a$"),
+            (r"(b \nsplus y)^\nssucc", r"(b \nsplus a)^\nssucc"),
+            (r"$a \nsless n$", r"$x \nsless n$"),
+        ]
+        for old, new in arithmetic_repairs:
+            assert arithmetic_audited_source.count(old) == 1
+            arithmetic_audited_source = arithmetic_audited_source.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0196":
+        arithmetic_math_ids = ["BN-SRC-128", "BN-SRC-130"]
+        old = r"\lforall[x][\lforall[y][((x < y \lor y < x) \lor \eq[x][y]))]]"
+        new = r"\lforall[x][\lforall[y][((x < y \lor y < x) \lor \eq[x][y])]]"
+        assert arithmetic_audited_source.count(old) == 1
+        arithmetic_audited_source = arithmetic_audited_source.replace(old, new, 1)
+        assert arithmetic_audited_source.count(r"\oplus") == 4
+        arithmetic_audited_source = arithmetic_audited_source.replace(
+            r"\oplus", r"\nsplus"
+        )
+    elif row["unit_id"] == "OLP-0197":
+        arithmetic_math_ids = ["BN-SRC-132"]
+        old = r"\Setabs{\tuple{x,a}}{n \in \Domain{K}}"
+        new = r"\Setabs{\tuple{x,a}}{x \in \Domain{K}}"
+        assert arithmetic_audited_source.count(old) == 1
+        arithmetic_audited_source = arithmetic_audited_source.replace(old, new, 1)
+    if arithmetic_math_ids:
+        arithmetic_math_fix = (
+            mathparts(arithmetic_audited_source) == target_math
+            and all(finding_id in documented for finding_id in arithmetic_math_ids)
+        )
+    arithmetic_prose_ids = []
+    arithmetic_prose_fix = False
+    if row["unit_id"] == "OLP-0193":
+        assert source.count('not in the domain\nof~$s$') == 1
+        arithmetic_prose_ids = ["BN-SRC-121"]
+        arithmetic_prose_fix = "বিস্তৃতিতে নেই" in checked_target
+    elif row["unit_id"] == "OLP-0194":
+        assert source.count('Suppose $k$ is\nthe largest number') == 1
+        arithmetic_prose_ids = ["BN-SRC-122", "BN-SRC-123"]
+        arithmetic_prose_fix = (
+            "একটিও বাক্য না থাকলে ধ্রুবকটির যেকোনো ব্যাখ্যা চলবে" in checked_target
+            and "নিম্নগামী লোয়েনহাইম--স্কোলেম উপপাদ্যে মডেলটি গণনীয় নেওয়া যায়"
+            in checked_target
+        )
+    elif row["unit_id"] == "OLP-0195":
+        assert source.count('(the ``sum\'\'\nof $x$ and $y$ in~$\\Struct{K}$,') == 1
+        arithmetic_prose_ids = ["BN-SRC-124"]
+        arithmetic_prose_fix = re.search(r"``যোগফল''\) বদলে", checked_target) is not None
+    elif row["unit_id"] == "OLP-0196":
+        assert source.count("For any $x$, there is a unique $y$") == 1
+        assert source.count(
+            "The non-standard blocks are therefore ordered like the rationals"
+        ) == 1
+        arithmetic_prose_ids = ["BN-SRC-129", "BN-SRC-131"]
+        arithmetic_prose_fix = (
+            len(re.findall(r"শূন্য নয়\s+এমন", checked_target)) >= 2
+            and "কোনো গণনীয় অমানক মডেলের অমানক খণ্ডগুলি" in checked_target
+        )
+    elif row["unit_id"] == "OLP-0197":
+        assert source.count('$\\Struct{N}$ is the only computable model') == 1
+        arithmetic_prose_ids = ["BN-SRC-133"]
+        arithmetic_prose_fix = (
+            "সমরূপতা পর্যন্ত $\\Th{PA}$-র একমাত্র গণনসাধ্য মডেল"
+            in checked_target
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -1157,6 +1243,16 @@ for row in rows:
             "OLP-0190": {"BN-SRC-117"},
         }
         assert set(documented) == expected_basics.get(row["unit_id"], set())
+    if 191 <= int(row["unit_id"].split("-")[1]) <= 197:
+        expected_arithmetic = {
+            "OLP-0192": {"BN-SRC-118", "BN-SRC-119", "BN-SRC-120"},
+            "OLP-0193": {"BN-SRC-121"},
+            "OLP-0194": {"BN-SRC-122", "BN-SRC-123"},
+            "OLP-0195": {"BN-SRC-124", "BN-SRC-125", "BN-SRC-126", "BN-SRC-127"},
+            "OLP-0196": {"BN-SRC-128", "BN-SRC-129", "BN-SRC-130", "BN-SRC-131"},
+            "OLP-0197": {"BN-SRC-132", "BN-SRC-133"},
+        }
+        assert set(documented) == expected_arithmetic.get(row["unit_id"], set())
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -1492,6 +1588,62 @@ for row in rows:
             "forth_empty_map_case": True,
             "forth_already_mapped_case": True,
         }
+    elif row["unit_id"] == "OLP-0192":
+        assert arithmetic_math_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-118", "BN-SRC-119", "BN-SRC-120"],
+            "string_model_operations_use_string_arguments": True,
+            "string_model_less_than_interpretation_supplied": True,
+            "proof_code_argument_restored": "x",
+        }
+    elif row["unit_id"] == "OLP-0193":
+        assert arithmetic_prose_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-121",
+            "surjectivity_failure_refers_to_range": True,
+        }
+    elif row["unit_id"] == "OLP-0194":
+        assert arithmetic_prose_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-122", "BN-SRC-123"],
+            "empty_finite_family_case": True,
+            "downward_lowenheim_skolem_invoked": True,
+        }
+    elif row["unit_id"] == "OLP-0195":
+        assert arithmetic_math_fix and arithmetic_prose_fix
+        tex_command_check = {
+            "documented_corrections": [
+                "BN-SRC-124",
+                "BN-SRC-125",
+                "BN-SRC-126",
+                "BN-SRC-127",
+            ],
+            "sum_parenthesis_closed": True,
+            "only_nonstandard_K_element_is_a": True,
+            "Q5_rhs_uses_a": True,
+            "general_nonstandard_element_uses_x": True,
+        }
+    elif row["unit_id"] == "OLP-0196":
+        assert arithmetic_math_fix and arithmetic_prose_fix
+        tex_command_check = {
+            "documented_corrections": [
+                "BN-SRC-128",
+                "BN-SRC-129",
+                "BN-SRC-130",
+                "BN-SRC-131",
+            ],
+            "trichotomy_formula_balanced": True,
+            "predecessor_claim_excludes_zero": True,
+            "addition_notation_is_nssplus": True,
+            "countability_scope_is_explicit": True,
+        }
+    elif row["unit_id"] == "OLP-0197":
+        assert arithmetic_math_fix and arithmetic_prose_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-132", "BN-SRC-133"],
+            "set_builder_binds_x": True,
+            "tennenbaum_statement_is_up_to_isomorphism": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -1552,6 +1704,7 @@ for row in rows:
             models_math_fix,
             beyond_math_fix,
             basics_math_fix,
+            arithmetic_math_fix,
             shared_audit_fix,
         )
     )

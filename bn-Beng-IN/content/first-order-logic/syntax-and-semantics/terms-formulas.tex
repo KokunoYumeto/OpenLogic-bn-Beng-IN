@@ -1,0 +1,231 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: terms-formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{frm}
+
+\olsection{পদ ও \printtoken{P}{formula}}
+
+একটি প্রথম-ক্রমের ভাষা~$\Lang L$ দেওয়া থাকলে, $\Lang L$-এর মৌলিক
+শব্দভাণ্ডার থেকে গড়ে ওঠা রাশি আমরা সংজ্ঞায়িত করতে পারি। বিশেষত এর
+মধ্যে পড়ে \emph{পদ} ও \emph{!!{formula}s}।
+
+\begin{defn}[পদ]
+\ollabel{defn:terms}
+$\Lang L$-এর \emph{পদসমষ্টি}~$\Trm[L]$ নিচের নিয়মে আরোহীভাবে
+সংজ্ঞায়িত:
+\begin{enumerate}
+\item প্রত্যেক !!{variable} একটি পদ।
+\item $\Lang L$-এর প্রত্যেক !!{constant} একটি পদ।
+\item $f$ যদি একটি $n$-স্থানীয় !!{function} হয় এবং $t_1$, \dots,
+  $t_n$ পদ হয়, তাহলে $\Atom{f}{t_1, \ldots, t_n}$ একটি পদ।
+\tagitem{limitClause}{
+  আর কিছুই পদ নয়।}{}
+\end{enumerate}
+কোনো !!{variable}s নেই এমন পদকে \emph{বদ্ধ পদ} বলে।
+\end{defn}
+
+\begin{explain}
+ভাষার বিবরণে এবং পদের সংজ্ঞায় !!{constant}s-কে আমরা একটি স্বতন্ত্র
+সংকেতশ্রেণি হিসেবে রেখেছি, কিন্তু তার বদলে সেগুলিকে শূন্য-স্থানীয়
+!!{function}s-এর মধ্যেও রাখা যেত। তাহলে পদের সংজ্ঞার দ্বিতীয় দফাটির
+দরকার হতো না। শুধু বুঝতে হবে, $n = 0$ হলে
+$\Atom{f}{t_1, \ldots, t_n}$ বলতে একা $f$-কেই বোঝায়।
+\end{explain}
+
+\begin{defn}[সূত্র]
+\ollabel{defn:formulas}
+$\Lang L$ ভাষার \emph{!!{formula}s-এর সেট}~$\Frm[L]$ নিচের নিয়মে
+আরোহীভাবে সংজ্ঞায়িত:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ একটি পরমাণু !!{formula}।}{}
+
+\tagitem{prvTrue}{$\ltrue$ একটি পরমাণু !!{formula}।}{}
+
+\item $R$ যদি $\Lang L$-এর একটি $n$-স্থানীয় !!{predicate} হয় এবং
+  $t_1$, \dots, $t_n$ যদি $\Lang L$-এর পদ হয়, তাহলে
+  $\Atom{R}{t_1,\ldots, t_n}$ একটি পরমাণু !!{formula}।
+
+\item $t_1$ ও $t_2$ যদি $\Lang L$-এর পদ হয়, তাহলে
+  $\Atom{\eq}{t_1, t_2}$ একটি পরমাণু !!{formula}।
+
+\tagitem{prvNot}{$!A$ যদি !!a{formula} হয়, তাহলে $\lnot !A$-ও
+  !!a{formula}।}{}
+
+\tagitem{prvAnd}{$!A$ ও $!B$ যদি !!{formula}s হয়, তাহলে $(!A \land
+  !B)$-ও !!a{formula}।}{}
+
+\tagitem{prvOr}{$!A$ ও $!B$ যদি !!{formula}s হয়, তাহলে $(!A \lor !B)$
+  !!a{formula}।}{}
+
+\tagitem{prvIf}{$!A$ ও $!B$ যদি !!{formula}s হয়, তাহলে $(!A \lif !B)$
+  !!a{formula}।}{}
+
+\tagitem{prvIff}{$!A$ ও $!B$ যদি !!{formula}s হয়, তাহলে $(!A \liff !B)$
+  !!a{formula}।}{}
+
+\tagitem{prvAll}{$!A$ যদি !!a{formula} এবং $x$ যদি !!a{variable} হয়,
+  তাহলে $\lforall[x][!A]$ !!a{formula}।}{}
+
+\tagitem{prvEx}{$!A$ যদি !!a{formula} এবং $x$ যদি !!a{variable} হয়,
+  তাহলে $\lexists[x][!A]$ !!a{formula}।}{}
+
+\tagitem{limitClause}{আর কিছুই !!a{formula} নয়।}{}
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+পদসমষ্টি ও !!{formula}s-এর সেটের সংজ্ঞা দুটি \emph{আরোহী সংজ্ঞা}।
+মূলত আমরা অসীম সংখ্যক পর্যায়ে !!{formula}s-এর সেট নির্মাণ করি। প্রথম
+পর্যায়ে সব পরমাণু সূত্রকে সূত্র বলে ঘোষণা করি; এটি সংজ্ঞার প্রথম কয়েকটি
+ক্ষেত্রের, অর্থাৎ
+\iftag{prvTrue}{$\ltrue$, }{}%
+\iftag{prvFalse}{$\lfalse$, }{}%
+$\Atom{R}{t_1,\dots,t_n}$ এবং $\Atom{\eq}{t_1,t_2}$-এর ক্ষেত্রের
+অনুরূপ। তাই “পরমাণু !!{formula}” বলতে এই রূপের যেকোনো !!{formula}
+বোঝায়।
+
+সংজ্ঞার অন্য ক্ষেত্রগুলি ইতিমধ্যে নির্মিত !!{formula}s থেকে নতুন
+!!{formula}s নির্মাণের নিয়ম দেয়। দ্বিতীয় পর্যায়ে এগুলি ব্যবহার করে
+পরমাণু !!{formula}s থেকে !!{formula}s নির্মাণ করা যায়। তৃতীয় পর্যায়ে
+পরমাণু সূত্রগুলি এবং দ্বিতীয় পর্যায়ে পাওয়া সূত্রগুলি থেকে নতুন সূত্র
+নির্মাণ করি, এইভাবে ক্রমশ এগোই। কোনো একটি পর্যায়ে শেষ পর্যন্ত নির্মিত
+হয় এমন সবকিছুই !!{formula}, আর কিছুই নয়।
+\end{explain}
+
+প্রথা অনুসারে $\eq$-কে তার যুক্তিগুলির মাঝে লিখি এবং বন্ধনী বাদ দিই:
+$\eq[t_1][t_2]$ হলো $\Atom{\eq}{t_1,t_2}$-এর সংক্ষিপ্ত রূপ। তদুপরি,
+$\lnot \Atom{\eq}{t_1,t_2}$-কে সংক্ষেপে $\eq/[t_1][t_2]$ লিখি।
+$!B$, $!C$ থেকে কোনো দ্বি-স্থানীয় সংযোজক~$\ast$ ব্যবহার করে নির্মিত
+$(!B \ast !C)$ সূত্রটি লেখার সময় আমরা প্রায়ই বাইরের একজোড়া বন্ধনী
+বাদ দিয়ে শুধু~$!B \ast !C$ লিখব।
+
+\begin{intro}
+কিছু যুক্তিবিদ্যার বইয়ে
+\iftag{prvEx}{$\lexists[x][!A]$ }{}%
+\iftag{notprvEx,notprvAll}{}{ও }%
+\iftag{prvAll}{$\lforall[x][!A]$ }{}%
+যেন
+\iftag{notprvEx,notprvAll}{!!a{formula}}{!!{formula}s}
+হিসেবে গণ্য হয়, তার জন্য !!{variable}~$x$-কে $!A$-তে অবশ্যই সংঘটিত
+হতে হয়। এই শর্তটি না রাখলে কোনো অসুবিধা হয় না, বরং কাজ সহজ হয়।
+\end{intro}
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{defn}
+সংজ্ঞায়িত অপারেটর দিয়ে নির্মিত সূত্রগুলি নিচের অর্থে বুঝতে হবে:
+
+\begin{tagenumerate}{defTrue,defFalse,defNot,defOr,defAnd,defIf,defIff,defEx,defAll}
+
+\tagitem{defTrue}{$\ltrue$ সংক্ষেপে বোঝায়
+  \iftag{prvFalse}{$\lnot\lfalse$}{কোনো স্থির পরমাণু
+    !!{formula}~$!A$-এর জন্য $(!A \lor \lnot !A)$}।}{}
+
+\tagitem{defFalse}{$\lfalse$ সংক্ষেপে বোঝায়
+  \iftag{prvTrue}{$\lnot\ltrue$}{কোনো স্থির পরমাণু
+    !!{formula}~$!A$-এর জন্য $(!A \land \lnot !A)$}।}{}
+
+\tagitem{defNot}{$\lnot !A$ সংক্ষেপে বোঝায় $!A \lif \lfalse$।}{}
+
+\tagitem{defOr}{$!A \lor !B$ সংক্ষেপে বোঝায়
+  \iftag{prvAnd}{$\lnot(\lnot !A \land \lnot !B)$}{$\lnot !A \lif
+    !B$}।}{}
+
+\tagitem{defAnd}{$!A \land !B$ সংক্ষেপে বোঝায়
+  \iftag{prvOr}{$\lnot(\lnot !A \lor \lnot !B)$}{$\lnot (!A \lif
+    \lnot !B)$}।}{}
+
+\tagitem{defIf}{$!A \lif !B$ সংক্ষেপে বোঝায়
+  \iftag{prvOr}{$\lnot !A \lor !B$}{$\lnot (!A \land \lnot !B)$}।}{}
+
+\tagitem{defIff}{$!A \liff !B$ সংক্ষেপে বোঝায় $(!A \lif !B) \land (!B
+  \lif !A)$।}{}
+
+\tagitem{defAll}{$\lforall[x][!A]$ সংক্ষেপে বোঝায় $\lnot\lexists[x][\lnot !A]$।}{}
+
+\tagitem{defEx}{$\lexists[x][!A]$ সংক্ষেপে বোঝায় $\lnot\lforall[x][\lnot !A]$।}{}
+\end{tagenumerate}
+% BN-SRC-088 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-088):} হিমায়িত ইংরেজি উৎসে সংজ্ঞায়িত শর্তবচনের প্রথম বিকল্পটি $\lnot !A \lor !B)$; সেখানে কোনো মেলানো খোলা বন্ধনী ছাড়াই শেষে একটি অতিরিক্ত ডান বন্ধনী রয়েছে। বাংলা পাঠে সুগঠিত সংক্ষিপ্ত রূপ $\lnot !A \lor !B$ রাখা হয়েছে।} % BN-SRC-088 TARGET-CORRECTION-END
+\end{defn}
+\end{tagblock}
+
+নির্দিষ্ট কোনো প্রয়োগের ভাষায় কাজ করলে আমরা প্রায়ই দ্বি-স্থানীয়
+!!{predicate}s ও !!{function}s-কে তাদের সংশ্লিষ্ট পদগুলির মাঝে লিখব।
+যেমন, পাটিগণিতের ভাষায় $t_1 < t_2$ ও $(t_1 + t_2)$ এবং সেটতত্ত্বের
+ভাষায় $t_1 \in t_2$। পাটিগণিতের ভাষায় উত্তরসূরি ফলনটি প্রথামতো
+তার যুক্তির \emph{পরেও} লেখা হয়:~$t'$। তবে বিধিবদ্ধভাবে এগুলি যথাক্রমে
+$\Atom{\Obj A^2_0}{t_1, t_2}$, $\Obj f^2_0(t_1, t_2)$,
+$\Atom{\Obj A^2_0}{t_1, t_2}$ ও $f^1_0(t)$-এর প্রচলিত সংক্ষিপ্ত রূপ।
+
+\begin{defn}[সংকেতবিন্যাসগত অভিন্নতা]
+$\ident$ সংকেতটি প্রতীকক্রমের মধ্যে সংকেতবিন্যাসগত অভিন্নতা প্রকাশ করে;
+অর্থাৎ $!A \ident !B$ তখনই, যখন $!A$ ও $!B$ সমান দৈর্ঘ্যের প্রতীকক্রম
+এবং প্রতিটি স্থানে একই সংকেত ধারণ করে।
+\end{defn}
+
+$\ident$ সংকেতের দুপাশে সংযুক্তকরণে পাওয়া প্রতীকক্রম থাকতে পারে। যেমন,
+$!A \ident (!B \lor !C)$-এর অর্থ: $!A$ প্রতীকক্রমটি, এই ক্রমে একটি
+খোলা বন্ধনী, $!B$ প্রতীকক্রম, $\lor$ সংকেত, $!C$ প্রতীকক্রম এবং একটি
+বন্ধ বন্ধনী সংযুক্ত করে পাওয়া প্রতীকক্রমটিরই সমান। এটি সত্য হলে আমরা
+জানি, $!A$-এর প্রথম সংকেত একটি খোলা বন্ধনী, $!A$-তে $!B$ একটি
+উপপ্রতীকক্রম হিসেবে আছে (দ্বিতীয় সংকেত থেকে শুরু করে), তার পরে
+$\lor$ আছে, ইত্যাদি।
+
+পদ ও !!{formula}s আরোহী সংজ্ঞার মাধ্যমে মৌলিক উপাদান থেকে গড়ে ওঠে বলে
+নিচের আরোহ-নীতিগুলি ব্যবহার করে আমরা তাদের সম্বন্ধে বিভিন্ন কথা প্রমাণ
+করতে পারি।
+
+\begin{lem}[\emph{পদের উপর আরোহের নীতি}]
+    \ollabel{lem:trmind}
+    ধরি $\Lang L$ একটি প্রথম-ক্রমের ভাষা।
+    কোনো ধর্ম~$P$ এমন যে
+    %
+    \begin{enumerate}
+        \item প্রত্যেক !!{variable}~$v$-এর ক্ষেত্রে ধর্মটি সত্য,
+        %
+        \item $\Lang L$-এর প্রত্যেক !!{constant}~$a$-এর ক্ষেত্রে ধর্মটি
+        সত্য, এবং
+        %
+        \item $t_1$,~\dots, $t_n$-এর ক্ষেত্রে ধর্মটি সত্য এবং $f$ যদি
+        $\Lang L$-এর একটি $n$-স্থানীয় !!{function} হয়, তাহলে
+        $f(t_1,\dotsc,t_n)$-এর ক্ষেত্রেও ধর্মটি সত্য
+    \end{enumerate}
+    ($t_1$,~\dots, $t_n$-কে $\Lang{L}$-এর পদ ধরে),
+    তাহলে $\Trm[L]$-এর প্রত্যেক পদের ক্ষেত্রেই $P$ সত্য।
+\end{lem}
+
+\begin{prob}
+    \olref[fol][syn][frm]{lem:trmind} প্রমাণ করুন।
+\end{prob}
+
+\begin{lem}[\emph{!!{formula}s-এর উপর আরোহের নীতি}]
+    \ollabel{thm:frmind}
+    ধরি $\Lang L$ একটি প্রথম-ক্রমের ভাষা।
+    কোনো ধর্ম~$P$ সব পরমাণু !!{formula}s-এর ক্ষেত্রে সত্য এবং এমন যে
+    %
+    \begin{enumerate}
+        \tagitem{prvNot}{$!A$-এর ক্ষেত্রে সত্য হলে $\lnot !A$-এর
+            ক্ষেত্রেও সত্য;}{}
+        \tagitem{prvAnd}{$!A$ ও~$!B$-এর ক্ষেত্রে সত্য হলে
+            $(!A \land !B)$-এর ক্ষেত্রেও সত্য;}{}
+        \tagitem{prvOr}{$!A$ ও~$!B$-এর ক্ষেত্রে সত্য হলে
+            $(!A \lor !B)$-এর ক্ষেত্রেও সত্য;}{}
+        \tagitem{prvIf}{$!A$ ও~$!B$-এর ক্ষেত্রে সত্য হলে
+            $(!A \lif !B)$-এর ক্ষেত্রেও সত্য;}{}
+        \tagitem{prvIff}{$!A$ ও~$!B$-এর ক্ষেত্রে সত্য হলে
+            $(!A \liff !B)$-এর ক্ষেত্রেও সত্য;}{}
+        \tagitem{prvEx}{$!A$-এর ক্ষেত্রে সত্য হলে
+            $\lexists[x][!A]$-এর ক্ষেত্রেও সত্য;}{}
+        \tagitem{prvAll}{$!A$-এর ক্ষেত্রে সত্য হলে
+            $\lforall[x][!A]$-এর ক্ষেত্রেও সত্য;}{}
+  \end{enumerate}
+  ($!A$ ও $!B$-কে $\Lang{L}$-এর !!{formula}s ধরে),
+  তাহলে $\Frm[L]$-এর সব সূত্রের ক্ষেত্রে $P$ সত্য।
+\end{lem}
+
+\end{document}

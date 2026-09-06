@@ -759,6 +759,171 @@ for row in rows:
         == collections.Counter({"!!{predicate}s": 1})
         and "BN-SRC-085" in documented
     )
+    syntax_math_ids = []
+    syntax_math_fix = False
+    syntax_audited_source = source
+    if row["unit_id"] == "OLP-0152":
+        syntax_math_ids = ["BN-SRC-088"]
+        old = "$\\lnot !A \\lor !B)$"
+        new = "$\\lnot !A \\lor !B$"
+        assert syntax_audited_source.count(old) == 1
+        syntax_audited_source = syntax_audited_source.replace(old, new, 1)
+        syntax_math_fix = (
+            mathparts(syntax_audited_source) == target_math
+            and all(finding_id in documented for finding_id in syntax_math_ids)
+        )
+    elif row["unit_id"] == "OLP-0154":
+        syntax_math_ids = ["BN-SRC-089"]
+        old = "$(!A \\land !B$)"
+        new = "$(!A \\land !B)$"
+        assert syntax_audited_source.count(old) == 1
+        syntax_audited_source = syntax_audited_source.replace(old, new, 1)
+        syntax_math_fix = (
+            mathparts(syntax_audited_source) == target_math
+            and all(finding_id in documented for finding_id in syntax_math_ids)
+        )
+    elif row["unit_id"] == "OLP-0156":
+        syntax_math_ids = ["BN-SRC-090", "BN-SRC-091", "BN-SRC-092"]
+        term_repairs = [
+            ("m_0,\\dotsc,m_k < i", "m_0,\\dotsc,m_{k-1} < i"),
+            (
+                "f(t_{m_0},\\dotsc,t_{m_k})",
+                "f(t_{m_0},\\dotsc,t_{m_{k-1}})",
+            ),
+        ]
+        for old, new in term_repairs:
+            assert syntax_audited_source.count(old) == 1
+            syntax_audited_source = syntax_audited_source.replace(old, new, 1)
+        theorem_anchor = "\\begin{thm}\n\\ollabel{thm:fseq-frm-equiv}"
+        theorem_start = syntax_audited_source.index(theorem_anchor)
+        syntax_prefix = syntax_audited_source[:theorem_start]
+        syntax_theorem = syntax_audited_source[theorem_start:]
+        assert syntax_theorem.count("\\Frm[L_0]") == 2
+        syntax_theorem = syntax_theorem.replace("\\Frm[L_0]", "\\Frm[L]")
+        final_member_repairs = [
+            ("$!A \\ident !A_n$ is\natomic", "$!A_n$ is\natomic"),
+            ("$!A \\ident \\lnot !A_j$", "$!A_n \\ident \\lnot !A_j$"),
+            ("$!A \\ident (!A_j \\land !A_k)$", "$!A_n \\ident (!A_j \\land !A_k)$"),
+            ("$!A \\ident (!A_j \\lor !A_k)$", "$!A_n \\ident (!A_j \\lor !A_k)$"),
+            ("$!A \\ident (!A_j \\lif !A_k)$", "$!A_n \\ident (!A_j \\lif !A_k)$"),
+            ("$!A \\ident (!A_j \\liff !A_k)$", "$!A_n \\ident (!A_j \\liff !A_k)$"),
+            ("$!A \\ident \\lforall[x][!A_j]$", "$!A_n \\ident \\lforall[x][!A_j]$"),
+            ("$!A \\ident \\lexists[x][!A_j]$", "$!A_n \\ident \\lexists[x][!A_j]$"),
+            ("$!A$ is atomic", "$!A_n$ is atomic"),
+            (
+                "$!A \\equiv (!A_j \\land !A_k)$",
+                "$!A_n \\ident (!A_j \\land !A_k)$",
+            ),
+        ]
+        for old, new in final_member_repairs:
+            assert syntax_theorem.count(old) == 1
+            syntax_theorem = syntax_theorem.replace(old, new, 1)
+        syntax_audited_source = syntax_prefix + syntax_theorem
+        syntax_math_fix = (
+            mathparts(syntax_audited_source) == target_math
+            and all(finding_id in documented for finding_id in syntax_math_ids)
+        )
+    semantics_math_ids = []
+    semantics_math_fix = False
+    semantics_prose_fix = False
+    semantics_audited_source = source
+    if row["unit_id"] == "OLP-0163":
+        semantics_math_ids = [
+            "BN-SRC-093",
+            "BN-SRC-094",
+            "BN-SRC-095",
+            "BN-SRC-096",
+            "BN-SRC-097",
+            "BN-SRC-098",
+            "BN-SRC-099",
+        ]
+        semantics_repairs = [
+            ("\\Assign{R}{M}[s]$.", "\\Assign{R}{M}$.", 1),
+            ("\\lnot((R(b,x)", "\\lnot(R(b,x)", 2),
+            (
+                "\\lexists[x][(R(b,x) \\land R(x,b))],}",
+                "\\lexists[x][(R(b,x) \\land R(x,b))]}",
+                1,
+            ),
+            (
+                "\\Sat/{M}{R(a,x)}[\\Subst{s}{m}{x}]$ for $m = 2$, $3$, or~$4$",
+                "\\Sat/{M}{R(x,a)}[\\Subst{s}{m}{x}]$ for $m = 2$, $3$, or~$4$",
+                1,
+            ),
+            ("and $ = 2$.", "and $m = 2$.", 1),
+            (
+                "So, for all $n \\in \\Domain M$, either",
+                "So, for all $m \\in \\Domain M$, either",
+                1,
+            ),
+            (
+                "namely $n = 4$, so that",
+                "namely $m=1$, $n=4$, $m=2$, $n=1$, so that",
+                1,
+            ),
+        ]
+        for old, new, expected_count in semantics_repairs:
+            assert semantics_audited_source.count(old) == expected_count
+            semantics_audited_source = semantics_audited_source.replace(old, new)
+        semantics_math_fix = (
+            mathparts(semantics_audited_source) == target_math
+            and all(finding_id in documented for finding_id in semantics_math_ids)
+        )
+        semantics_prose_fix = (
+            re.search(
+                r"\$m = 2\$, \$3\$ ও~\$4\$ হলে\s+"
+                r"\$\\Sat/\{M\}\{R\(x,a\)\}\[\\Subst\{s\}\{m\}\{x\}\]\$,\s+"
+                r"তাই পূর্ববর্তীটি মিথ্যা",
+                checked_target,
+            )
+            is not None
+            and re.search(
+                r"\$m=1\$ হলে \$n=4\$ এবং \$m=2\$ হলে \$n=1\$",
+                checked_target,
+            )
+            is not None
+        )
+    elif row["unit_id"] == "OLP-0164":
+        semantics_math_ids = ["BN-SRC-100", "BN-SRC-101"]
+        semantics_repairs = [
+            (
+                "\\langle \\Value{t_i}{M}[s_2], \\ldots",
+                "\\langle \\Value{t_1}{M}[s_2], \\ldots",
+            ),
+            (
+                "$s_1' = \\Subst{s}{m}{x}$",
+                "$s_1' = \\Subst{s_1}{m}{x}$",
+            ),
+            (
+                "$s_2' =\n      \\Subst{s}{m}{x}$",
+                "$s_2' =\n      \\Subst{s_2}{m}{x}$",
+            ),
+        ]
+        for old, new in semantics_repairs:
+            assert semantics_audited_source.count(old) == 1
+            semantics_audited_source = semantics_audited_source.replace(old, new, 1)
+        semantics_math_fix = (
+            mathparts(semantics_audited_source) == target_math
+            and all(finding_id in documented for finding_id in semantics_math_ids)
+        )
+    elif row["unit_id"] == "OLP-0165":
+        semantics_math_ids = ["BN-SRC-102"]
+        old = "$t'$~a term, and $s$~a variable"
+        new = "$t'$~a term free for~$x$ in~$!A$, and $s$~a variable"
+        assert semantics_audited_source.count(old) == 1
+        semantics_audited_source = semantics_audited_source.replace(old, new, 1)
+        semantics_math_fix = (
+            mathparts(semantics_audited_source) == target_math
+            and "BN-SRC-102" in documented
+        )
+        semantics_prose_fix = (
+            re.search(
+                r"\$t'\$ এমন একটি পদ যা~\$!A\$-তে\s+"
+                r"\$x\$-এর জন্য মুক্ত",
+                checked_target,
+            )
+            is not None
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -786,6 +951,28 @@ for row in rows:
             "OLP-0146": {"BN-SRC-087"},
         }
         assert set(documented) == expected_introduction.get(row["unit_id"], set())
+    if 149 <= int(row["unit_id"].split("-")[1]) <= 158:
+        expected_syntax = {
+            "OLP-0152": {"BN-SRC-088"},
+            "OLP-0154": {"BN-SRC-089"},
+            "OLP-0156": {"BN-SRC-090", "BN-SRC-091", "BN-SRC-092"},
+        }
+        assert set(documented) == expected_syntax.get(row["unit_id"], set())
+    if 159 <= int(row["unit_id"].split("-")[1]) <= 166:
+        expected_semantics = {
+            "OLP-0163": {
+                "BN-SRC-093",
+                "BN-SRC-094",
+                "BN-SRC-095",
+                "BN-SRC-096",
+                "BN-SRC-097",
+                "BN-SRC-098",
+                "BN-SRC-099",
+            },
+            "OLP-0164": {"BN-SRC-100", "BN-SRC-101"},
+            "OLP-0165": {"BN-SRC-102"},
+        }
+        assert set(documented) == expected_semantics.get(row["unit_id"], set())
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -1030,6 +1217,52 @@ for row in rows:
             "documented_correction": "BN-SRC-087",
             "restored_predicate_argument": "\\Obj v_0",
         }
+    elif row["unit_id"] == "OLP-0152":
+        assert syntax_math_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-088",
+            "conditional_abbreviation_parenthesis_balanced": True,
+        }
+    elif row["unit_id"] == "OLP-0154":
+        assert syntax_math_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-089",
+            "conjunction_example_math_delimiters_balanced": True,
+        }
+    elif row["unit_id"] == "OLP-0156":
+        assert syntax_math_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-090", "BN-SRC-091", "BN-SRC-092"],
+            "k_ary_function_argument_count": "k",
+            "theorem_language": "L",
+            "formation_sequence_final_member": "!A_n",
+            "syntactic_identity_relation": "\\ident",
+        }
+    elif row["unit_id"] == "OLP-0163":
+        assert semantics_math_fix and semantics_prose_fix
+        tex_command_check = {
+            "documented_corrections": semantics_math_ids,
+            "relation_interpretation_assignment_removed": True,
+            "defined_existential_parentheses_balanced": 2,
+            "defined_existential_formula_comma_removed": True,
+            "universal_conditional_antecedent_restored": True,
+            "missing_quantifier_variable_restored": "m",
+            "universal_summary_variable": "m",
+            "counterexamples": {"m=1": "n=4", "m=2": "n=1"},
+        }
+    elif row["unit_id"] == "OLP-0164":
+        assert semantics_math_fix
+        tex_command_check = {
+            "documented_corrections": semantics_math_ids,
+            "predicate_tuple_first_index": "t_1",
+            "universal_assignment_variants": ["s_1", "s_2"],
+        }
+    elif row["unit_id"] == "OLP-0165":
+        assert semantics_math_fix and semantics_prose_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-102",
+            "formula_substitution_free_for_hypothesis": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -1085,6 +1318,8 @@ for row in rows:
             axd_math_fix,
             completeness_math_fix,
             introduction_math_fix,
+            syntax_math_fix,
+            semantics_math_fix,
             shared_audit_fix,
         )
     )

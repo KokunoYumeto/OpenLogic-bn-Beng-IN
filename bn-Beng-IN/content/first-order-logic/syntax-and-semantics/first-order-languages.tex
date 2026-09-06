@@ -1,0 +1,155 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: first-order-languages
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{fol}
+
+\olsection{প্রথম-ক্রমের ভাষা}
+
+
+প্রথম-ক্রম যুক্তিবিদ্যার রাশিগুলি একটি মৌলিক শব্দভাণ্ডার থেকে গড়ে ওঠে;
+এতে থাকে \emph{!!{variable}s}, \emph{!!{constant}s},
+\emph{!!{predicate}s} এবং কখনও কখনও \emph{!!{function}s}। এগুলির
+সঙ্গে যৌক্তিক সংযোজক, পরিমাণসূচক এবং বন্ধনী ও কমার মতো বিরামচিহ্ন
+ব্যবহার করে \emph{পদ} ও \emph{!!{formula}s} গঠন করা হয়।
+
+\begin{explain}
+অনানুষ্ঠানিকভাবে, !!{predicate}s হলো ধর্ম ও সম্বন্ধের নাম,
+!!{constant}s হলো একক বস্তুর নাম এবং !!{function}s হলো প্রতিচিত্রের
+নাম। !!{identity}~$\eq$ ছাড়া এগুলিই \emph{অ-যৌক্তিক সংকেত}, আর
+সমষ্টিগতভাবে এগুলিই একটি ভাষা গঠন করে। যেকোনো প্রথম-ক্রমের ভাষা~$\Lang
+L$ তার অ-যৌক্তিক সংকেতগুলি দ্বারা নির্ধারিত। সবচেয়ে সাধারণ ক্ষেত্রে
+$\Lang L$-এ প্রত্যেক প্রকারের অসীম সংখ্যক সংকেত থাকে।
+\end{explain}
+
+সাধারণ ক্ষেত্রে প্রথম-ক্রম যুক্তিবিদ্যায় আমরা নিচের সংকেতগুলি ব্যবহার
+করি:
+
+\begin{enumerate}
+\item যৌক্তিক সংকেত
+\begin{enumerate}
+\item যৌক্তিক সংযোজক:
+  \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (নঞর্থকরণ)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (সংযোজন)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (বিয়োজন)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{prvAll}{\ycomma $\lforall$ (সার্বিক পরিমাণসূচক)}{}%
+  \iftag{prvEx}{\ycomma $\lexists$ (অস্তিত্বসূচক পরিমাণসূচক)}{}।
+\tagitem{prvFalse}{!!{falsity}-এর বচনমূলক ধ্রুবক~$\lfalse$।}{}
+\tagitem{prvTrue}{!!{truth}-এর বচনমূলক ধ্রুবক~$\ltrue$।}{}
+\item দ্বি-স্থানীয় !!{identity}~$\eq$।
+\item !!{variable}s-এর একটি !!{denumerable}s সেট: $\Obj v_0$, $\Obj v_1$, $\Obj
+  v_2$, \dots
+\end{enumerate}
+\item প্রথম-ক্রম যুক্তিবিদ্যার \emph{মানক ভাষা} গঠনকারী অ-যৌক্তিক
+  সংকেত
+\begin{enumerate}
+\item প্রতি $n>0$-এর জন্য $n$-স্থানীয় !!{predicate}s-এর একটি
+  !!{denumerable}s সেট: $\Obj A^n_0$, $\Obj A^n_1$, $\Obj A^n_2$, \dots
+\item !!{constant}s-এর একটি !!{denumerable}s সেট: $\Obj c_0$, $\Obj c_1$, $\Obj
+  c_2$, \dots।
+\item প্রতি $n>0$-এর জন্য $n$-স্থানীয় !!{function}s-এর একটি
+  !!{denumerable}s সেট:
+  $\Obj f^n_0$, $\Obj f^n_1$, $\Obj f^n_2$, \dots
+\end{enumerate}
+\item বিরামচিহ্ন: (, ) এবং কমা।
+\end{enumerate}
+
+আমাদের অধিকাংশ সংজ্ঞা ও ফলাফল প্রথম-ক্রম যুক্তিবিদ্যার পূর্ণ মানক ভাষার
+জন্য বিবৃত হবে। তবে প্রয়োগের ধরন অনুযায়ী ভাষাটিকে অল্প কয়েকটি
+!!{predicate}s, !!{constant}s ও !!{function}s-এও সীমিত করতে পারি।
+
+\begin{ex}
+পাটিগণিতের ভাষা~$\Lang L_A$-তে আছে একটিমাত্র দ্বি-স্থানীয়
+!!{predicate}~$<$, একটিমাত্র !!{constant}~$\Obj 0$, একটি এক-স্থানীয়
+!!{function}~$\prime$ এবং দুটি দ্বি-স্থানীয় !!{function}s~$+$ ও~$\times$।
+\end{ex}
+
+\begin{ex}
+সেটতত্ত্বের ভাষা~$\Lang L_Z$-তে কেবল একটিমাত্র দ্বি-স্থানীয়
+!!{predicate}~$\in$ আছে।
+\end{ex}
+
+\begin{ex}
+ক্রমের ভাষা~$\Lang L_\le$-তে কেবল দ্বি-স্থানীয়
+!!{predicate}~$\le$ আছে।
+\end{ex}
+
+আবারও বলি, এগুলি প্রথামাত্র: বিধিবদ্ধভাবে এগুলি কেবল বিকল্প নাম। যেমন,
+$<$, $\in$ ও $\le$ হলো $\Obj A^2_0$-এর বিকল্প নাম, $\Obj 0$ হলো
+$\Obj c_0$-এর, $\prime$ হলো $\Obj f^1_0$-এর, $+$ হলো $\Obj f^2_0$-এর
+এবং $\times$ হলো $\Obj f^2_1$-এর বিকল্প নাম।
+
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}{%
+উপরে প্রবর্তিত মৌলিক সংযোজক ও
+\iftag{notprvEx,notprvAll}{পরিমাণসূচকটির}{পরিমাণসূচকগুলির} পাশাপাশি
+আমরা নিচের \emph{সংজ্ঞায়িত} সংকেতগুলিও ব্যবহার করি:
+\startycommalist
+  \iftag{defNot}{\ycomma $\lnot$ (নঞর্থকরণ)}{}%
+  \iftag{defAnd}{\ycomma $\land$ (সংযোজন)}{}%
+  \iftag{defOr}{\ycomma $\lor$ (বিয়োজন)}{}%
+  \iftag{defIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{defIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{defAll}{\ycomma $\lforall$ (সার্বিক পরিমাণসূচক)}{}%
+  \iftag{defEx}{\ycomma $\lexists$ (অস্তিত্বসূচক পরিমাণসূচক)}{}%
+  \iftag{defFalse}{\ycomma !!{falsity}~$\lfalse$}{}%
+  \iftag{defTrue}{\ycomma !!{truth}~$\ltrue$}}{}।
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{explain}
+সংজ্ঞায়িত সংকেত বিধিবদ্ধভাবে ভাষার অংশ নয়; অনানুষ্ঠানিক সংক্ষিপ্ত রূপ
+হিসেবে তাকে প্রবর্তন করা হয়। কেবল মৌলিক সংকেত ব্যবহার করলে যে সূত্রগুলি
+বেশ দীর্ঘ হয়ে যেত, এর সাহায্যে আমরা সেগুলিকে সংক্ষেপে লিখতে পারি। এটি
+অবশ্যই একটি সুবিধা। তবে আরও বড় সুবিধা হলো, প্রমাণগুলি ছোট হয়। কোনো
+সংকেত মৌলিক হলে প্রমাণে তাকে আলাদাভাবে বিবেচনা করতে হয়। তাই মৌলিক
+সংকেত যত বেশি, প্রমাণও তত দীর্ঘ।
+\end{explain}
+\end{tagblock}
+
+% Alternate symbols
+
+\begin{intro}
+উপরে ব্যবহৃত পরিভাষা ও সংকেতের বদলে অন্য পরিভাষা ও সংকেতের সঙ্গে আপনার
+পরিচয় থাকতে পারে। যুক্তিবিদ্যার বইগুলি (এবং শিক্ষকেরা) “নঞর্থকরণ”-এর
+জন্য সাধারণত $\sim$, $\neg$ বা~!\ এবং “সংযোজন”-এর জন্য $\wedge$,
+$\cdot$ বা $\&$ ব্যবহার করেন। “শর্তবচন” বা “নিহিতকরণ”-এর প্রচলিত
+সংকেত হলো $\rightarrow$, $\Rightarrow$ ও $\supset$।
+\iftag{prvIff,defIff}{“দ্বিশর্তবচন”, “দ্বি-নিহিতকরণ” বা “(বস্তুগত)
+  সমতুল্যতা”-র সংকেত হলো $\leftrightarrow$, $\Leftrightarrow$ ও
+  $\equiv$।}{}
+\iftag{prvFalse,defFalse}{$\lfalse$ সংকেতটিকে “মিথ্যাত্ব”, “ফলসাম”,
+  “অসংগতি” বা “বটম”—নানা নামে ডাকা হয়।}{}
+\iftag{prvTrue,defTrue}{$\ltrue$ সংকেতটিকে “সত্যতা”, “ভেরাম” বা
+  “টপ”—নানা নামে ডাকা হয়।}{}
+
+!!{constant}s-এর (কখনও যাদের নাম বলা হয়) জন্য লাতিন বর্ণমালার গোড়ার
+ছোট হাতের অক্ষর (যেমন $a$, $b$, $c$) এবং !!{variable}s-এর জন্য শেষের
+ছোট হাতের অক্ষর (যেমন $x$, $y$, $z$) ব্যবহার করাই প্রথা। পরিমাণসূচক
+!!{variable}s-এর সঙ্গে যুক্ত হয়, যেমন $x$; সার্বিক পরিমাণসূচকের
+সংকেতরূপের মধ্যে আছে $\forall x$, $(\forall x)$, $(x)$, $\Pi x$,
+$\bigwedge_x$, আর অস্তিত্বসূচক পরিমাণসূচকের মধ্যে আছে $\exists x$,
+$(\exists x)$, $(Ex)$, $\Sigma x$, $\bigvee_x$।
+\end{intro}
+
+\begin{explain}
+আমরা সব বচনমূলক অপারেটর এবং উভয় পরিমাণসূচককে ভাষার মৌলিক সংকেত
+হিসেবে ধরতে পারি। আবার মৌলিক সংকেতের একটি ছোটতর ভাণ্ডার বেছে নিয়ে
+অন্য !!{operator}s-কে সংজ্ঞায়িত সংকেতও ধরতে পারি। বুলীয় অপারেটরের
+“সত্য-ফলনগতভাবে পূর্ণ” সেটের মধ্যে আছে $\{ \lnot, \lor \}$,
+$\{ \lnot, \land \}$ এবং $\{ \lnot, \lif\}$—এগুলির যেকোনোটিকে
+যেকোনো একটি পরিমাণসূচকের সঙ্গে মিলিয়ে অভিব্যক্তিগতভাবে পূর্ণ
+প্রথম-ক্রমের ভাষা পাওয়া যায়।
+
+আরও দুটি !!{operator}s-এর সঙ্গে আপনার পরিচয় থাকতে পারে: হেনরি শেফারের
+নামানুসারে শেফার স্ট্রোক~$|$ এবং পিয়ার্সের তির~$\downarrow$, যা
+কোয়াইনের ড্যাগার নামেও পরিচিত। এগুলিকে যথাক্রমে “ন্যান্ড” ও “নর”-এর
+প্রচলিত অর্থ দিলে প্রত্যেকটি একাই সত্য-ফলনগতভাবে পূর্ণ।
+\end{explain}
+
+\end{document}

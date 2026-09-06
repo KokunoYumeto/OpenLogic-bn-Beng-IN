@@ -1,0 +1,434 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: satisfaction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{sat}
+
+\olsection{\article{structure} \printtoken{S}{structure}-এ
+  \article{formula} \printtoken{S}{formula}-এর পরিতৃপ্তি}
+
+\begin{explain}
+এক দিকে পদ ও !!{formula}s-এর মতো রাশি এবং অন্য দিকে !!{structure}s-এর
+মধ্যে যোগসূত্র স্থাপনকারী মৌলিক ধারণা হলো পদের \emph{!!{value}} এবং
+!!a{formula}-এর \emph{পরিতৃপ্তি}। অনানুষ্ঠানিকভাবে, পদের !!{value}
+হলো কোনো !!a{structure}-এর একটি !!{element}—পদটি শুধু একটি ধ্রুবক হলে
+তার !!{value} হলো !!{structure}-টি ধ্রুবকটিকে যে বস্তু আরোপ করে, আর
+পদটি !!{function}s দিয়ে গঠিত হলে তার !!{value}, পদের ধ্রুবকগুলির
+!!{value}s এবং ফলনসংকেতগুলিকে আরোপিত ফলনগুলি থেকে গণনা করা হয়। কোনো
+!!^a{formula} কোনো !!a{structure}-এ \emph{পরিতৃপ্ত} হয়, যদি
+বিধেয়গুলিকে দেওয়া ব্যাখ্যায় !!{structure}-টির সংজ্ঞাক্ষেত্রে
+!!{formula}-টি সত্য হয়। পরিতৃপ্তির এই ধারণাটি আরোহীভাবে নির্দিষ্ট:
+!!{structure}-এর বিবরণ সরাসরি বলে দেয় কখন পরমাণু !!{formula}s
+পরিতৃপ্ত, আর কোনো জটিল !!{formula} কখন পরিতৃপ্ত তা তার প্রধান সংযোজক
+বা পরিমাণসূচক এবং তার অব্যবহিত !!{subformula}s পরিতৃপ্ত কি না, তার
+ভিত্তিতে সংজ্ঞায়িত করি।
+
+এখানে পরিমাণসূচকের ক্ষেত্রটি একটু কঠিন, কারণ পরিমাণিত কোনো
+!!{formula}-এর অব্যবহিত !!{subformula}-তে মুক্ত !!{variable} থাকে,
+কিন্তু !!{structure}s, !!{variable}s-এর !!{value}s নির্দিষ্ট করে না।
+এই অসুবিধা সামলাতে আমরা \emph{চলরাশি-আরোপ} প্রবর্তন করি এবং পরিতৃপ্তিকে
+শুধু কোনো !!a{structure}-এর সাপেক্ষে নয়, বরং কোনো !!a{structure} এবং
+!!a{variable} আরোপ উভয়ের সাপেক্ষে সংজ্ঞায়িত করি।
+\end{explain}
+
+\begin{defn}[চলরাশি-আরোপ]
+!!a{structure}~$\Struct{M}$-এর জন্য \emph{চলরাশি-আরোপ}~$s$ হলো এমন
+একটি ফলন, যা প্রত্যেক !!{variable}-কে~$\Domain M$-এর কোনো
+!!a{element}-এ চিত্রিত করে; অর্থাৎ $s\colon \Var \to \Domain M$।
+\end{defn}
+
+\begin{explain}
+!!^a{structure} প্রত্যেক !!{constant}-কে !!a{value} আরোপ করে, আর
+চলরাশি-আরোপ প্রত্যেক চলরাশিকে। কিন্তু এগুলি থেকে গঠিত পদগুলিকেও আমরা
+!!{domain}-এর !!{element}s-এর নাম হিসেবে ব্যবহার করতে চাই। সে জন্য
+পদের !!{value} আরোহীভাবে সংজ্ঞায়িত করি। !!{constant}s ও চলরাশির মান
+!!{structure} বা চলরাশি-আরোপের নির্দিষ্ট করা মানই; আরও জটিল পদের মান
+পুনরাবৃত্তিমূলকভাবে গণনা করা হয়, !!{structure} যে ফলনগুলি
+!!{function}s-কে আরোপ করে সেগুলি ব্যবহার করে।
+\end{explain}
+
+\begin{defn}[পদের !!^{value}]
+$t$ যদি $\Lang L$ ভাষার একটি পদ, $\Struct M$ যদি $\Lang L$-এর একটি
+!!{structure} এবং $s$ যদি $\Struct M$-এর জন্য !!a{variable} আরোপ হয়,
+তাহলে \emph{!!{value}}~$\Value{t}{M}[s]$ নিচের নিয়মে সংজ্ঞায়িত:
+\begin{enumerate}
+\item \indcase{t}{c}{$\Value{\indfrm}{M}[s] = \Assign{\indcomplex}{M}$।}
+\item \indcase{t}{x}{$\Value{\indfrm}{M}[s] = s(\indcomplex)$।}
+\item \indcase{t}{\Atom{f}{t_1, \ldots, t_n}}{
+\[
+\Value{\indfrm}{M}[s] = \Assign{f}{M}(\Value{t_1}{M}[s], \ldots,
+\Value{t_n}{M}[s]).
+\]}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[$x$-বিকল্প]
+$s$ যদি !!a{structure}~$\Struct M$-এর জন্য !!a{variable} আরোপ হয়,
+তাহলে $\Struct M$-এর জন্য এমন যেকোনো !!{variable} আরোপ~$s'$-কে
+$s$-এর \emph{$x$-বিকল্প} বলে, যা $x$-কে করা আরোপে সর্বাধিক $s$-এর
+থেকে আলাদা। $s'$ যদি $s$-এর একটি $x$-বিকল্প হয়, লিখি
+$\varAssign{s'}{s}{x}$।
+\end{defn}
+
+\begin{explain}
+লক্ষ করুন, কোনো আরোপ~$s$-এর $x$-বিকল্পকে $x$-এর জন্য \emph{অবশ্যই}
+আলাদা কিছু আরোপ করতে হয় না। বস্তুত প্রত্যেক আরোপই নিজের একটি
+$x$-বিকল্প।
+\end{explain}
+
+\begin{defn}
+  $s$ যদি !!a{structure}~$\Struct M$-এর জন্য !!a{variable} আরোপ হয়
+  এবং $m \in \Domain{M}$, তাহলে আরোপ~$\Subst{s}{m}{x}$ হলো নিচের
+  নিয়মে সংজ্ঞায়িত চলরাশি-আরোপ:
+  \[\Subst{s}{m}{x}(y) = \begin{cases}
+    m & \text{যদি } y \ident x\\
+    s(y) & \text{অন্যথায়}.
+  \end{cases}\]
+\end{defn}
+
+অন্যভাবে বললে, $\Subst{s}{m}{x}$ হলো $s$-এর সেই বিশেষ $x$-বিকল্প,
+যা সংজ্ঞাক্ষেত্রের !!{element}~$m$-কে $x$-এর মান আরোপ করে এবং $x$
+ছাড়া অন্য !!{variable}s-কে $s$-এর আরোপিত বস্তুগুলিই আরোপ করে।
+
+\begin{defn}[পরিতৃপ্তি]
+\ollabel{defn:satisfaction}
+!!a{structure}~$\Struct M$-এ !!a{variable} আরোপ~$s$-এর সাপেক্ষে
+!!a{formula}~$!A$-এর পরিতৃপ্তি, সংকেতে $\Sat{M}{!A}[s]$, নিচের নিয়মে
+পুনরাবৃত্তিমূলকভাবে সংজ্ঞায়িত। (“$\Sat{M}{!A}[s]$ নয়” বোঝাতে আমরা
+$\Sat/{M}{!A}[s]$ লিখি।)
+\begin{enumerate}
+\tagitem{prvFalse}{%
+  \indcase{!A}{\lfalse}{$\Sat/{M}{\indfrm}[s]$।}}{}
+
+\tagitem{prvTrue}{%
+  \indcase{!A}{\ltrue}{$\Sat{M}{\indfrm}[s]$।}}{}
+
+\item \indcase{!A}{\Atom{R}{t_1, \dots, t_n}}{$\Sat{M}{\indfrm}[s]$
+  তখনই, যখন $\langle \Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s]
+  \rangle \in \Assign{R}{M}$।}
+
+\item \indcase{!A}{\eq[t_1][t_2]}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন
+  $\Value{t_1}{M}[s] = \Value{t_2}{M}[s]$।}
+
+\tagitem{prvNot}{%
+  \indcase{!A}{\lnot !B}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন
+    $\Sat/{M}{!B}[s]$।}}{}
+
+\tagitem{prvAnd}{%
+  \indcase{!A}{(!B \land !C)}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন
+    $\Sat{M}{!B}[s]$ এবং $\Sat{M}{!C}[s]$।}}{}
+
+\tagitem{prvOr}{%
+  \indcase{!A}{(!B \lor !C)}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন
+    $\Sat{M}{!B}[s]$ অথবা $\Sat{M}{!C}[s]$ (অথবা উভয়ই)।}}{}
+
+\tagitem{prvIf}{%
+  \indcase{!A}{(!B \lif !C)}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন
+    $\Sat/{M}{!B}[s]$ অথবা $\Sat{M}{!C}[s]$ (অথবা উভয়ই)।}}{}
+
+\tagitem{prvIff}{%
+  \indcase{!A}{(!B \liff !C)}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন হয়
+    $\Sat{M}{!B}[s]$ ও $\Sat{M}{!C}[s]$ উভয়ই, নয়তো
+    $\Sat{M}{!B}[s]$ ও $\Sat{M}{!C}[s]$ কোনোটিই নয়।}}{}
+
+\tagitem{prvAll}{%
+  \indcase{!A}{\lforall[x][!B]}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন
+    প্রত্যেক !!{element}~$m \in \Domain M$-এর জন্য
+    $\Sat{M}{!B}[\Subst{s}{m}{x}]$।}}{}
+
+\tagitem{prvEx}{%
+  \indcase{!A}{\lexists[x][!B]}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন অন্তত
+  একটি !!{element}~$m \in \Domain M$-এর জন্য
+  $\Sat{M}{!B}[\Subst{s}{m}{x}]$।}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+শেষ
+\iftag{notprvEx,notprvAll}{অনুচ্ছেদটিতে}{দুটি অনুচ্ছেদে} চলরাশি-আরোপ
+গুরুত্বপূর্ণ। \iftag{prvAll}{“সব $m \in \Domain{M}$-এর জন্য
+$\Sat{M}{!B(m)}$”—এভাবে $\lforall[x][!B(x)]$-এর পরিতৃপ্তি সংজ্ঞায়িত
+করতে পারি না।}{}\iftag{prvEx}{“অন্তত একটি $m \in \Domain{M}$-এর জন্য
+$\Sat{M}{!B(m)}$”—এভাবে $\lexists[x][!B(x)]$-এর পরিতৃপ্তি সংজ্ঞায়িত
+করতে পারি না।}{} কারণ $m \in \Domain M$ হলে $m$ ভাষার সংকেত নয়,
+তাই $!B(m)$ !!a{formula} নয় (অর্থাৎ $\Subst{!B}{m}{x}$ অসংজ্ঞায়িত)।
+আবার $\Struct{M}$-এর প্রত্যেক !!{element}-এর নাম দেয় এমন যথেষ্ট
+!!{constant}s বা পদ আমাদের আছে ধরে নিতেও পারি না, কারণ
+!!{structure}s-এর সংজ্ঞায় তার কোনো শর্ত নেই। মানক ভাষায়
+!!{constant}s-এর সেট !!{denumerable}; তাই $\Domain{M}$
+!!{enumerable} না হলে প্রত্যেক বস্তুর নাম দেওয়ার মতো যথেষ্ট
+!!{constant}s-ই নেই।
+
+চলরাশিকে সংজ্ঞাক্ষেত্রের !!{element}s-এর সঙ্গে সরাসরি যুক্ত করতে পারে
+এমন !!{variable} আরোপ প্রবর্তন করে সমস্যাটির সমাধান করি। তখন, যেমন,
+\iftag{prvEx}{$\lexists[x][!B(x)]$}{$\lforall[x][!B(x)]$},~$\Struct M$-এ
+পরিতৃপ্ত তখনই যখন \iftag{prvEx}{অন্তত একটি $m \in
+\Domain{M}$-এর জন্য}{সব $m \in \Domain{M}$-এর জন্য
+$\Sat{M}{!B(m)}$}—এ কথা না বলে বলি, এটি~$\Struct M$-এ $s$-এর
+\emph{সাপেক্ষে} পরিতৃপ্ত তখনই, যখন \iftag{prvEx}{অন্তত একটি}{প্রত্যেক}
+$m \in \Domain M$-এর জন্য~$\Subst{s}{m}{x}$-এর সাপেক্ষে $!B(x)$
+পরিতৃপ্ত।
+\end{explain}
+
+\begin{ex}
+ধরি $\Lang{L} = \{a, b, f, R\}$, যেখানে $a$ ও $b$ হলো
+!!{constant}s, $f$ একটি দ্বি-স্থানীয় !!{function} এবং $R$ একটি
+দ্বি-স্থানীয় !!{predicate}। নিচের নিয়মে সংজ্ঞায়িত
+!!{structure}~$\Struct{M}$ বিবেচনা করুন:
+\begin{enumerate}
+\item $\Domain M = \{1, 2, 3, 4\}$
+\item $\Assign{a}{M} = 1$
+\item $\Assign{b}{M} = 2$
+\item $x+y \le 3$ হলে $\Assign{f}{M}(x, y) = x+y$, অন্যথায় $= 3$।
+\item $\Assign{R}{M} = \{\tuple{1, 1}, \tuple{1, 2}, \tuple{2, 3}, \tuple{2, 4}\}$
+\end{enumerate}
+প্রত্যেক !!{variable}-কে $1 \in \Domain{M}$ আরোপকারী ফলন $s(x) = 1$
+হলো~$\Struct{M}$-এর একটি চলরাশি-আরোপ।
+
+তাহলে
+\begin{align*}
+\Value{f(a,b)}{M}[s] & = \Assign{f}{M}(\Value{a}{M}[s], \Value{b}{M}[s]).
+\intertext{$a$ ও $b$ হলো !!{constant}s বলে $\Value{a}{M}[s]
+  = \Assign{a}{M} = 1$ এবং $\Value{b}{M}[s] = \Assign{b}{M} = 2$। তাই}
+\Value{f(a,b)}{M}[s] & = \Assign{f}{M}(1, 2) = 1+2 = 3.
+\intertext{$f(f(a,b),a)$-এর মান গণনা করতে বিবেচনা করতে হবে}
+\Value{f(f(a,b),a)}{M}[s] & = \Assign{f}{M}(\Value{f(a, b)}{M}[s],
+\Value{a}{M}[s]) = \Assign{f}{M}(3, 1) = 3,
+\intertext{কারণ $3+1 > 3$। $s(x) = 1$ এবং $\Value{x}{M}[s] =
+  s(x)$ বলে আরও পাই}
+\Value{f(f(a,b),x)}{M}[s] & = \Assign{f}{M}(\Value{f(a, b)}{M}[s],
+\Value{x}{M}[s]) = \Assign{f}{M}(3, 1) = 3,
+\end{align*}
+
+পরমাণু !!{formula}~$R(t_1, t_2)$ পরিতৃপ্ত হয়, যদি তার যুক্তিগুলির
+মানের টুপল, অর্থাৎ $\tuple{\Value{t_1}{M}[s],
+  \Value{t_2}{M}[s]}$,~$\Assign{R}{M}$-এর !!a{element} হয়। তাই, যেমন,
+$\Sat{M}{R(b,f(a,b))}[s]$, কারণ $\tuple{\Value{b}{M},
+  \Value{f(a,b)}{M}} = \tuple{2, 3} \in \Assign{R}{M}$; কিন্তু
+$\Sat/{M}{R(x, f(a,b))}[s]$, কারণ $\tuple{1, 3} \notin \Assign{R}{M}$।
+% BN-SRC-093 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-093):} হিমায়িত ইংরেজি উৎসে শেষ অ-সদস্যতার বিবৃতিতে সম্বন্ধের ব্যাখ্যা $\Assign{R}{M}$-এর পরে চলরাশি-আরোপ $[s]$ যুক্ত হয়েছে। আরোপটি পরমাণু সূত্রের পরিতৃপ্তি ও পদের মানে প্রযোজ্য, সম্বন্ধের স্থির ব্যাখ্যায় নয়; বাংলা পাঠে তাই $\Assign{R}{M}$ রাখা হয়েছে।} % BN-SRC-093 TARGET-CORRECTION-END
+
+অপরমাণু সূত্র~$!A$ পরিতৃপ্ত কি না নির্ধারণ করতে প্রধান সংযোজকের জন্য
+প্রযোজ্য আরোহী সংজ্ঞার অনুচ্ছেদটি ব্যবহার করতে হয়। যেমন,
+$R(a, a) \lif (R(b,x) \lor R(x,b))$-এর প্রধান সংযোজক~$\lif$, এবং
+\begin{align*}
+  & \Sat{M}{R(a, a) \lif (R(b, x) \lor R(x, b))}[s] \text{ তখনই, যখন }\\
+  & \qquad
+  \Sat/{M}{R(a,a)}[s] \text{ অথবা } \Sat{M}{R(b, x) \lor R(x, b)}[s]
+  \intertext{যেহেতু $\Sat{M}{R(a,a)}[s]$ (কারণ $\tuple{1,1} \in
+    \Assign{R}{M}$), এখনও উত্তর নির্ধারণ করা যায় না; আগে বের করতে হবে
+    $\Sat{M}{R(b, x) \lor R(x, b)}[s]$ কি না:}
+  & \Sat{M}{R(b, x) \lor R(x, b)}[s] \text{ তখনই, যখন }\\
+  & \qquad \Sat{M}{R(b,x)}[s] \text{ অথবা } \Sat{M}{R(x, b)}[s]
+  \intertext{এটি সত্য, কারণ $\Sat{M}{R(x, b)}[s]$
+    (যেহেতু $\tuple{1,2} \in \Assign{R}{M}$)।}
+\end{align*}
+
+মনে করুন, $s$-এর $x$-বিকল্প হলো এমন চলরাশি-আরোপ, যা $s$-এর থেকে
+সর্বাধিক $x$-এর আরোপে আলাদা। $\Domain{M}$-এর প্রত্যেক !!{element}-এর
+জন্য $s$-এর একটি $x$-বিকল্প আছে:
+\begin{align*}
+  s_1 & = \Subst{s}{1}{x}, &
+  s_2 & = \Subst{s}{2}{x},\\
+  s_3 & = \Subst{s}{3}{x}, &
+  s_4 & = \Subst{s}{4}{x}.
+\end{align*}
+তাই যেমন, $s_2(x) = 2$ এবং $x$ ছাড়া সব চলরাশি~$y$-এর জন্য
+$s_2(y) = s(y) = 1$। গঠন~$\Struct{M}$-এর জন্য এগুলিই $s$-এর সব
+$x$-বিকল্প, কারণ $\Domain{M} = \{1, 2, 3, 4\}$। বিশেষভাবে লক্ষ করুন,
+$s_1 = s$ ($s$ সব সময় নিজের একটি $x$-বিকল্প)।
+
+\iftag{prvEx}{অস্তিত্বসূচকভাবে পরিমাণিত
+  !!{formula}~$\lexists[x][!A(x)]$ পরিতৃপ্ত কি না নির্ধারণ করতে দেখতে
+  হবে অন্তত একটি $m \in \Domain M$-এর জন্য
+  $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$ কি না। তাই
+  \[
+  \Sat{M}{\lexists[x][(R(b,x) \lor R(x,b))]}[s],
+  \]
+  কারণ $\Sat{M}{R(b,x) \lor R(x, b)}[\Subst{s}{1}{x}]$
+  ($\Subst{s}{3}{x}$-ও উদ্দেশ্য পূরণ করত)। কিন্তু
+  \[
+  \Sat/{M}{\lexists[x][(R(b,x) \land R(x,b))]}[s]
+  \]
+  কারণ যে $m \in \Domain{M}$-ই বাছি না কেন,
+  $\Sat/{M}{R(b,x) \land R(x,b)}[\Subst{s}{m}{x}]$।}{}
+
+\iftag{prvAll}{সার্বিকভাবে পরিমাণিত
+  !!{formula}~$\lforall[x][!A(x)]$ পরিতৃপ্ত কি না নির্ধারণ করতে দেখতে
+  হবে সব $m \in \Domain M$-এর জন্য
+  $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$ কি না। তাই
+  \[
+  \Sat{M}{\lforall[x][(R(x,a) \lif R(a,x))]}[s],
+  \]
+  কারণ সব $m \in \Domain M$-এর জন্য
+  $\Sat{M}{R(x,a) \lif R(a,x)}[\Subst{s}{m}{x}]$। $m = 1$ হলে
+  $\Sat{M}{R(a,x)}[\Subst{s}{1}{x}]$, তাই অনুবর্তীটি সত্য; আর
+  $m = 2$, $3$ ও~$4$ হলে $\Sat/{M}{R(x,a)}[\Subst{s}{m}{x}]$,
+  তাই পূর্ববর্তীটি মিথ্যা। কিন্তু
+  \[
+  \Sat/{M}{\lforall[x][(R(a,x) \lif R(x,a))]}[s]
+  \]
+  কারণ $\Sat/{M}{R(a,x) \lif R(x,a)}[\Subst{s}{2}{x}]$ (যেহেতু
+  $\Sat{M}{R(a, x)}[\Subst{s}{2}{x}]$ এবং $\Sat/{M}{R(x,
+  a)}[\Subst{s}{2}{x}]$)।}{}
+
+\iftag{defEx}{অস্তিত্বসূচকভাবে পরিমাণিত
+  !!{formula}~$\lexists[x][!A(x)]$ পরিতৃপ্ত কি না নির্ধারণ করতে দেখতে
+  হবে $\Sat{M}{\lnot \lforall[x][\lnot !A(x)]}[s]$ কি না। যেমন, আমাদের
+  \[
+  \Sat{M}{\lexists[x][(R(b,x) \lor R(x,b))]}[s].
+  \]
+  প্রথমে, $\Sat{M}{R(b,x) \lor R(x, b)}[\Subst{s}{1}{x}]$
+  ($\Subst{s}{3}{x}$-ও উদ্দেশ্য পূরণ করত)। তাই
+  $\Sat/{M}{\lnot(R(b,x) \lor R(x,b))}[\Subst{s}{1}{x}]$, ফলে
+  $\Sat/{M}{\lforall[x][\lnot(R(b,x) \lor R(x,b))]}[s]$, এবং অতএব
+  $\Sat{M}{\lnot\lforall[x][\lnot(R(b,x) \lor R(x,b))]}[s]$।
+  অন্য দিকে,
+  \[
+  \Sat/{M}{\lexists[x][(R(b,x) \land R(x,b))]}[s].
+  \]
+  কারণ $\Sat{M}{\lforall[x][\lnot(R(b,x) \land R(x,b))]}[s]$;
+  কোনো $m \in \Domain M$-এর জন্যই
+  $\Sat{M}{R(b,x) \land R(x,b)}[\Subst{s}{m}{x}]$ নয়। এই উদাহরণগুলি
+  থেকে অনুমান করা যায়, $\Sat{M}{\lexists[x][!A(x)]}[s]$ তখনই, যখন
+  অন্তত একটি $m \in \Domain M$-এর জন্য
+  $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$।}{}
+% BN-SRC-094 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-094):} হিমায়িত ইংরেজি উৎসের সংজ্ঞায়িত অস্তিত্বসূচকের উদাহরণে $\lnot$-এর পরে দুটি খোলা বন্ধনী কিন্তু একটি বন্ধ বন্ধনী ছিল—একবার সার্বিক সূত্রে এবং একবার তার নঞর্থকরণে। বাংলা পাঠে উভয় স্থানে সুগঠিত $\lnot(R(b,x) \lor R(x,b))$ রাখা হয়েছে।} % BN-SRC-094 TARGET-CORRECTION-END
+% BN-SRC-095 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-095):} হিমায়িত ইংরেজি উৎসে অপরিতৃপ্ত অস্তিত্বসূচক সূত্রটির $\Sat/$-যুক্তির ভিতরে সূত্রের পরে একটি অতিরিক্ত কমা রয়েছে। বাংলা পাঠে কমাটি বাদ দিয়ে $\lexists[x][(R(b,x) \land R(x,b))]$ রাখা হয়েছে।} % BN-SRC-095 TARGET-CORRECTION-END
+
+\iftag{defAll}{সার্বিকভাবে পরিমাণিত
+  !!{formula}~$\lforall[x][!A(x)]$ পরিতৃপ্ত কি না নির্ধারণ করতে দেখতে
+  হবে $\Sat{M}{\lnot\lexists[x][\lnot !A(x)]}[s]$ কি না। যেমন,
+  \[
+  \Sat{M}{\lforall[x][(R(x,a) \lif R(a,x))]}[s],
+  \]
+  প্রথমে, সব $m \in \Domain M$-এর জন্য
+  $\Sat{M}{R(x,a) \lif R(a,x)}[\Subst{s}{m}{x}]$
+  ($\Sat{M}{R(a,x)}[\Subst{s}{1}{x}]$ এবং $m = 2$, $3$ বা~$4$ হলে
+  $\Sat/{M}{R(x,a)}[\Subst{s}{m}{x}]$)। তাই এমন কোনো
+  $m \in \Domain M$ নেই যার জন্য
+  $\Sat{M}{\lnot(R(x,a) \lif R(a,x))}[\Subst{s}{m}{x}]$; ফলে
+  $\Sat/{M}{\lexists[x][\lnot(R(x,a) \lif R(a,x))]}[s]$। অতএব
+  $\Sat{M}{\lnot\lexists[x][\lnot(R(x,a) \lif R(a,x))]}[s]$। অন্য দিকে,
+  \[
+  \Sat/{M}{\lforall[x][(R(a,x) \lif R(x,a))]}[s],
+  \]
+  কারণ $\Sat/{M}{R(a,x) \lif R(x,a)}[\Subst{s}{2}{x}]$; তাই
+  $\Sat{M}{\lexists[x][\lnot(R(a,x) \lif R(x,a))]}[s]$। এই
+  উদাহরণগুলি থেকে অনুমান করা যায়, $\Sat{M}{\lforall[x][!A(x)]}[s]$
+  তখনই, যখন প্রত্যেক $m \in \Domain M$-এর জন্য
+  $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$।}{}
+% BN-SRC-096 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-096):} হিমায়িত ইংরেজি উৎসের সংজ্ঞায়িত সার্বিক পরিমাণসূচকের ব্যাখ্যায় $m=2,3,4$ ক্ষেত্রে অনুবর্তী $R(a,x)$-কে অপরিতৃপ্ত বলা হয়েছে; কিন্তু $R(a,2)$ সত্য এবং যুক্তিটি আসলে পূর্ববর্তী $R(x,a)$-এর অপরিতৃপ্তি ব্যবহার করে। বাংলা পাঠে তাই $R(x,a)$ রাখা হয়েছে।} % BN-SRC-096 TARGET-CORRECTION-END
+
+আরও জটিল একটি ক্ষেত্র হিসেবে বিবেচনা করুন
+\[
+\lforall[x][(R(a,x) \lif \lexists[y][R(x,y)])].
+\]
+যেহেতু $\Sat/{M}{R(a,x)}[\Subst{s}{3}{x}]$ এবং
+$\Sat/{M}{R(a,x)}[\Subst{s}{4}{x}]$, তাই শর্তবচনের অনুবর্তী নিয়ে
+ভাবতে হয় এমন আকর্ষণীয় ক্ষেত্র কেবল $m = 1$ ও $m = 2$।
+$\Sat{M}{\lexists[y][R(x,y)]}[\Subst{s}{1}{x}]$ কি সত্য? অন্তত একটি
+$n \in \Domain M$-এর জন্য
+$\Sat{M}{R(x,y)}[\Subst{\Subst{s}{1}{x}}{n}{y}]$ হলে তা সত্য। বস্তুত
+$n = 1$ নিলে পাই $\Subst{\Subst{s}{1}{x}}{n}{y} =
+\Subst{s}{1}{y} = s$। যেহেতু $s(x) = 1$, $s(y) = 1$ এবং
+$\tuple{1,1} \in \Assign{R}{M}$, উত্তরটি হ্যাঁ।
+% BN-SRC-097 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-097):} হিমায়িত ইংরেজি উৎসে আকর্ষণীয় দ্বিতীয় ক্ষেত্রটি “$=2$” লেখা, ফলে চলরাশির নাম অনুপস্থিত। আগের ও পরের বাক্যে পরিমাণিত মান~$m$ নিয়ন্ত্রণ করে; বাংলা পাঠে $m=2$ রাখা হয়েছে।} % BN-SRC-097 TARGET-CORRECTION-END
+
+$\Sat{M}{\lexists[y][R(x,y)]}[\Subst{s}{2}{x}]$ কি না নির্ধারণ করতে
+!!{variable} আরোপগুলি $\Subst{\Subst{s}{2}{x}}{n}{y}$ দেখতে হবে।
+এখানে $n = 1$ হলে এই আরোপটি~$s_2 = \Subst{s}{2}{x}$, যা $R(x,y)$-কে
+পরিতৃপ্ত করে না ($s_2(x) = 2$, $s_2(y) = 1$ এবং
+$\tuple{2,1}\notin \Assign{R}{M}$)। কিন্তু
+$\Subst{\Subst{s}{2}{x}}{3}{y} = \Subst{s_2}{3}{y}$ বিবেচনা করুন।
+$\tuple{2,3} \in \Assign{R}{M}$ বলে
+$\Sat{M}{R(x,y)}[\Subst{s_2}{3}{y}]$; তাই
+$\Sat{M}{\lexists[y][R(x,y)]}[s_2]$।
+
+সুতরাং প্রত্যেক $m \in \Domain M$-এর জন্য হয়
+$\Sat/{M}{R(a,x)}[\Subst{s}{m}{x}]$ ($m = 3$, $4$ হলে), নয়তো
+$\Sat{M}{\lexists[y][R(x,y)]}[\Subst{s}{m}{x}]$ ($m = 1$, $2$ হলে);
+অতএব
+\[
+\Sat{M}{\lforall[x][(R(a,x) \lif \lexists[y][R(x,y)])]}[s].
+\]
+অন্য দিকে,
+\[
+\Sat/{M}{\lexists[x][(R(a,x) \land \lforall[y][R(x,y)])]}[s].
+\]
+শুধু $m = 1$ ও $m = 2$-এর জন্যই
+$\Sat{M}{R(a,x)}[\Subst{s}{m}{x}]$। কিন্তু এই দুই মানের ক্ষেত্রেই
+এমন $n \in \Domain M$ আছে—$m=1$ হলে $n=4$ এবং $m=2$ হলে $n=1$—যাতে
+$\Sat/{M}{R(x,y)}[\Subst{\Subst{s}{m}{x}}{n}{y}]$; তাই $m = 1$ ও
+$m = 2$-এর জন্য $\Sat/{M}{\lforall[y][R(x,y)]}[\Subst{s}{m}{x}]$।
+সব মিলিয়ে এমন কোনো $m \in \Domain M$ নেই যাতে
+$\Sat{M}{R(a,x) \land \lforall[y][R(x,y)]}[\Subst{s}{m}{x}]$।% BN-SRC-098 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-098):} হিমায়িত ইংরেজি উৎসে পরিমাণের শেষ সারাংশ “সব $n$”-এর জন্য বলা হলেও ব্যবহৃত চলরাশি ও ক্ষেত্রগুলি $m=1,2,3,4$; বাংলা পাঠে “প্রত্যেক $m$” রাখা হয়েছে।} % BN-SRC-098 TARGET-CORRECTION-END % BN-SRC-099 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-099):} হিমায়িত ইংরেজি উৎসে $m=1$ ও $m=2$ উভয়ের জন্য $n=4$-কে $R(m,n)$-এর বিপরীত-উদাহরণ বলা হয়েছে। কিন্তু ঘোষিত সম্বন্ধে $\tuple{2,4}\in\Assign{R}{M}$। বাংলা পাঠে $m=1$-এর জন্য $n=4$ এবং $m=2$-এর জন্য $n=1$ নেওয়া হয়েছে; উভয় সংশ্লিষ্ট জোড়াই ঘোষিত সম্বন্ধের বাইরে।} % BN-SRC-099 TARGET-CORRECTION-END
+\end{ex}
+
+\iftag{defEx}{%
+\begin{prop}\ollabel{prop:sat-ex}
+$\Sat{M}{\lexists[x][!B(x)]}[s]$ তখনই, যখন $s$-এর এমন একটি
+$x$-বিকল্প $s'$ আছে যাতে $\Sat{M}{!B(x)}[s']$।
+\end{prop}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+}{}
+
+\tagprob{defEx}
+\begin{prob}
+  \olref[fol][syn][sat]{prop:sat-ex} প্রমাণ করুন।
+\end{prob}
+\tagendprob
+
+\iftag{defAll}{%
+\begin{prop}\ollabel{prop:sat-all}
+$\Sat{M}{\lforall[x][!B(x)]}[s]$ তখনই, যখন $s$-এর প্রত্যেক
+$x$-বিকল্প~$s'$-এর জন্য $\Sat{M}{!B(x)}[s']$।
+\end{prop}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+}{}
+
+\tagprob{defAll}
+\begin{prob}
+  \olref[fol][syn][sat]{prop:sat-all} প্রমাণ করুন।
+\end{prob}
+\tagendprob
+
+\begin{prob}
+ধরি $\Lang L = \{c, f, A\}$, যেখানে একটি !!{constant}, একটি
+এক-স্থানীয় !!{function} এবং একটি দ্বি-স্থানীয় !!{predicate} আছে;
+আর !!{structure}~$\Struct{M}$ নিচের নিয়মে দেওয়া:
+\begin{enumerate}
+\item $\Domain M = \{1, 2, 3\}$
+\item $\Assign{c}{M} = 3$
+\item $\Assign{f}{M}(1) = 2, \Assign{f}{M}(2) = 3, \Assign{f}{M}(3) = 2$
+\item $\Assign{A}{M} = \{\tuple{1, 2}, \tuple{2, 3}, \tuple{3, 3}\}$
+\end{enumerate}
+(ক) সব !!{variable}s~$v$-এর জন্য $s(v) = 1$ ধরি। নির্ধারণ করুন,
+\[
+\Sat{M}{\lexists[x][(A(f(z), c) \lif \lforall[y][(A(y, x) \lor A(f(y),
+      x))])]}[s]
+\]
+কি না। কেন বা কেন নয়, ব্যাখ্যা করুন।
+
+(খ) এমন একটি ভিন্ন গঠন ও !!{variable} আরোপ দিন যাতে !!{formula}-টি
+পরিতৃপ্ত নয়।
+\end{prob}
+
+\end{document}

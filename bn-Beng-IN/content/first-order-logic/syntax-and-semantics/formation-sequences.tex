@@ -1,0 +1,269 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: formation-sequences
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{fseq}
+
+\olsection{গঠন-অনুক্রম}
+
+আরোহী সংজ্ঞা দিয়ে !!{formula}s সংজ্ঞায়িত করা এবং তার পরিপূরক কৌশল
+হিসেবে আরোহের সাহায্যে !!{formula}s-এর ধর্ম প্রমাণ করা—এটি একটি সুন্দর
+ও কার্যকর পদ্ধতি। তবে !!{formula}s নির্মাণকে আরও নিচ থেকে উপরে,
+ধাপে ধাপে দেখাও উপযোগী হতে পারে। এখানে \emph{গঠন-অনুক্রম}-এর ধারণা
+ব্যবহার করে আমরা সেটিই করব।
+%
+পদ ও !!{formula}s-কে তাদের আরোহী সংজ্ঞার উল্লেখ ছাড়াই এভাবে কী করে
+প্রবর্তন করা যায় তা দেখাতে প্রথমে কোনো ভাষা~$\Lang L$ থেকে নেওয়া
+সংকেতের নির্বিচার প্রতীকক্রমের ধারণা প্রবর্তন করি।
+
+\begin{defn}[প্রতীকক্রম]
+\ollabel{defn:string}
+ধরি $\Lang L$ একটি প্রথম-ক্রমের ভাষা। $\Lang L$-এর সংকেতগুলির একটি
+সসীম অনুক্রমকে \emph{$\Lang L$-প্রতীকক্রম} বলে। প্রসঙ্গ থেকে ভাষা
+$\Lang L$ স্পষ্টভাবে নির্দিষ্ট থাকলে $\Lang L$-প্রতীকক্রমকে প্রায়ই
+শুধু \emph{প্রতীকক্রম} বলব।
+\end{defn}
+
+\begin{ex}
+যেকোনো প্রথম-ক্রমের ভাষা $\Lang L$-এর ক্ষেত্রে সব $\Lang
+L$-!!{formula}s হলো $\Lang L$-প্রতীকক্রম, কিন্তু বিপরীতটি সত্য নয়।
+যেমন, \[)(\Obj v_0\lif\lexists\] একটি $\Lang L$-প্রতীকক্রম, কিন্তু
+$\Lang L$-!!{formula} নয়।
+\end{ex}
+
+\begin{defn}[পদের গঠন-অনুক্রম]
+\ollabel{defn:fseq-trm}
+$\Lang L$-প্রতীকক্রমের একটি সসীম অনুক্রম
+$\tuple{t_0,\dotsc,t_n}$, পদ~$t$-এর একটি \emph{গঠন-অনুক্রম}, যদি
+$t \ident t_n$ হয় এবং প্রতিটি $i \leq n$-এর জন্য হয় $t_i$ একটি
+!!a{variable} বা !!a{constant}, নয়তো $\Lang L$-এ এমন একটি $k$-স্থানীয়
+!!{function}~$f$ এবং এমন $m_0,\dotsc,m_{k-1} < i$ আছে যাতে
+$t_i \ident f(t_{m_0},\dotsc,t_{m_{k-1}})$। পার্থক্যটি স্পষ্ট করা
+দরকার হলে পদের গঠন-অনুক্রমকে \emph{পদ-গঠন-অনুক্রম} বলব।
+\end{defn}
+% BN-SRC-090 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-090):} হিমায়িত ইংরেজি উৎসে $k$-স্থানীয় ফলনের যুক্তির সূচক $m_0,\dotsc,m_k$ দেওয়া হয়েছে এবং ফলে $f(t_{m_0},\dotsc,t_{m_k})$-তে $k+1$টি যুক্তি হয়েছে। বাংলা পাঠে শূন্য-ভিত্তিক সূচক $m_0,\dotsc,m_{k-1}$ ব্যবহার করে ঠিক $k$টি যুক্তি রাখা হয়েছে।} % BN-SRC-090 TARGET-CORRECTION-END
+
+\begin{ex}
+অনুক্রমটি
+\[
+    \tuple{\Obj c_0, \Obj v_0, \Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}, \Atom{\Obj f^1_0}{\Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}}}
+\]
+$\Atom{\Obj f^1_0}{\Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}}$ পদের একটি
+গঠন-অনুক্রম; নিচেরটিও তাই:
+\[
+    \tuple{\Obj v_0, \Obj c_0, \Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}, \Atom{\Obj f^1_0}{\Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}}}.
+\]
+\end{ex}
+
+\begin{defn}[সূত্রের গঠন-অনুক্রম]
+\ollabel{defn:fseq-frm}
+$\Lang L$-প্রতীকক্রমের একটি সসীম অনুক্রম
+$\tuple{!A_0,\dotsc,!A_n}$, $!A$-এর একটি \emph{গঠন-অনুক্রম}, যদি
+$!A \ident !A_n$ হয় এবং প্রতিটি $i \leq n$-এর জন্য হয় $!A_i$
+একটি পরমাণু !!{formula}, নয়তো এমন $j,k < i$ এবং !!a{variable}~$x$
+আছে যাতে নিচের কোনো একটি সত্য:
+\begin{enumerate}
+    \tagitem{prvNot}{$!A_i \ident \lnot !A_j$।}{}%
+    \tagitem{prvAnd}{$!A_i \ident (!A_j \land !A_k)$।}{}%
+    \tagitem{prvOr}{$!A_i \ident (!A_j \lor !A_k)$।}{}%
+    \tagitem{prvIf}{$!A_i \ident (!A_j \lif !A_k)$।}{}%
+    \tagitem{prvIff}{$!A_i \ident (!A_j \liff !A_k)$।}{}%
+    \tagitem{prvAll}{$!A_i \ident \lforall[x][!A_j]$।}{}%
+    \tagitem{prvEx}{$!A_i \ident \lexists[x][!A_j]$।}{}%
+\end{enumerate}
+পার্থক্যটি স্পষ্ট করা দরকার হলে সূত্রের গঠন-অনুক্রমকে
+\emph{সূত্র-গঠন-অনুক্রম} বলব।
+\end{defn}
+
+\begin{ex}
+\[
+\tuple{
+    \Atom{\Obj A^1_0}{\Obj v_0},
+    \Atom{\Obj A^1_1}{\Obj c_1},
+    (\Atom{\Obj A^1_1}{\Obj c_1} \land \Atom{\Obj A^1_0}{\Obj v_0}),
+    \lexists[\Obj v_0][(\Atom{\Obj A^1_1}{\Obj c_1} \land \Atom{\Obj A^1_0}{\Obj v_0})]
+}
+\]
+অনুক্রমটি $\lexists[\Obj v_0][(\Atom{\Obj A^1_1}{\Obj
+c_1} \land \Atom{\Obj A^1_0}{\Obj v_0})]$-এর একটি গঠন-অনুক্রম;
+নিচেরটিও তাই:
+\begin{multline*}
+\tuple{
+    \Atom{\Obj A^1_0}{\Obj v_0},
+    \Atom{\Obj A^1_1}{\Obj c_1},
+    (\Atom{\Obj A^1_1}{\Obj c_1} \land \Atom{\Obj A^1_0}{\Obj v_0}),
+    \Atom{\Obj A^1_1}{\Obj c_1},\\
+    \lforall[\Obj v_1][\Atom{\Obj A^1_0}{\Obj v_0}],
+    \lexists[\Obj v_0][(\Atom{\Obj A^1_1}{\Obj c_1} \land \Atom{\Obj A^1_0}{\Obj v_0})]
+}.
+\end{multline*}
+%
+দ্বিতীয় উদাহরণ থেকে দেখা যায়, গঠন-অনুক্রমে “আবর্জনা” থাকতে পারে:
+এমন !!{formula}s, যা অপ্রয়োজনীয় অথবা নির্মাণে কোনো অবদান রাখে না।
+\end{ex}
+
+\begin{prop}\ollabel{prop:formed}
+$\Frm[L]$-এর প্রত্যেক !!{formula}~$!A$-এর একটি গঠন-অনুক্রম আছে।
+\end{prop}
+
+\begin{proof}
+ধরি $!A$ পরমাণু। তাহলে~$\tuple{!A}$ অনুক্রমটি~$!A$-এর একটি
+গঠন-অনুক্রম।
+%
+এবার ধরি $!B$ ও~$!C$-এর গঠন-অনুক্রম যথাক্রমে
+$\tuple{!B_0,\dotsc,!B_n}$ ও $\tuple{!C_0,\dotsc,!C_m}$।
+%
+\begin{enumerate}
+  \tagitem{prvNot}{যদি $!A \ident \lnot !B$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,\lnot !B_n}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+  \tagitem{prvAnd}{যদি $!A \ident (!B \land !C)$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \land !C_m)}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+  \tagitem{prvOr}{যদি $!A \ident (!B \lor !C)$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lor !C_m)}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+  \tagitem{prvIf}{যদি $!A \ident (!B \lif !C)$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lif !C_m)}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+  \tagitem{prvIff}{যদি $!A \ident (!B \liff !C)$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \liff !C_m)}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+  \tagitem{prvAll}{যদি $!A \ident \lforall[x][!B]$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,\lforall[x][!B_n]}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+  \tagitem{prvEx}{যদি $!A \ident \lexists[x][!B]$ হয়,
+      তবে $\tuple{!B_0,\dotsc,!B_n,\lexists[x][!B_n]}$
+      হলো~$!A$-এর একটি গঠন-অনুক্রম।}{}
+\end{enumerate}
+!!{formula}s-এর উপর আরোহের নীতি অনুসারে, প্রত্যেকটি !!{formula}-এর
+একটি গঠন-অনুক্রম আছে।
+\end{proof}
+
+বিপরীতটিও প্রমাণ করা যায়। এটি গুরুত্বপূর্ণ, কারণ এতে দেখা যায় যে
+সূত্র সংজ্ঞায়িত করার আমাদের দুটি উপায় সমতুল্য: দুটিই একই ফল দেয়।
+এর আরও একটি অর্থ হলো, গঠন-অনুক্রমের দৈর্ঘ্যের উপর সাধারণ আরোহ ব্যবহার
+করে আমরা সূত্র সম্বন্ধে উপপাদ্য প্রমাণ করতে পারি।
+
+\begin{lem}
+\ollabel{lem:fseq-init}
+ধরি $\tuple{!A_0,\dotsc,!A_n}$ হলো~$!A_n$-এর একটি গঠন-অনুক্রম এবং
+$k \leq n$। তাহলে $\tuple{!A_0,\dotsc,!A_k}$ হলো~$!A_k$-এর একটি
+গঠন-অনুক্রম।
+\end{lem}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][fseq]{lem:fseq-init} প্রমাণ করুন।
+\end{prob}
+
+\begin{thm}
+\ollabel{thm:fseq-frm-equiv}
+$\Frm[L]$ হলো $\Lang L$-এর এমন সব প্রতীকক্রম~$!A$-এর সেট,
+যাদের জন্য~$!A$-এর কোনো সূত্র-গঠন-অনুক্রম আছে।
+\end{thm}
+
+\begin{proof}
+$\Lang L$ ভাষায় গঠন-অনুক্রম আছে এমন সব প্রতীকক্রমের সেটকে $F$ ধরি।
+\olref[fol][syn][fseq]{prop:formed}-এ আমরা দেখেছি যে
+$\Frm[L] \subseteq F$; এবার বিপরীত অন্তর্ভুক্তি প্রমাণ করি।
+
+ধরি $!A$-এর গঠন-অনুক্রম $\tuple{!A_0,\dotsc,!A_n}$।
+~$n$-এর উপর প্রবল আরোহ ব্যবহার করে আমরা প্রমাণ করি যে
+$!A \in \Frm[L]$। আমাদের আরোহ-অনুমান হলো: শেষ সূচক $m < n$ এমন
+গঠন-অনুক্রমবিশিষ্ট প্রত্যেক প্রতীকক্রম~$\Frm[L]$-এর অন্তর্গত।
+গঠন-অনুক্রমের সংজ্ঞা অনুসারে, হয় $!A_n$ পরমাণু, নয়তো এমন $j,k < n$
+অবশ্যই আছে যাতে নিচের কোনো একটি সত্য:
+\begin{enumerate}
+    \tagitem{prvNot}{$!A_n \ident \lnot !A_j$।}{}%
+    \tagitem{prvAnd}{$!A_n \ident (!A_j \land !A_k)$।}{}%
+    \tagitem{prvOr}{$!A_n \ident (!A_j \lor !A_k)$।}{}%
+    \tagitem{prvIf}{$!A_n \ident (!A_j \lif !A_k)$।}{}%
+    \tagitem{prvIff}{$!A_n \ident (!A_j \liff !A_k)$।}{}%
+    \tagitem{prvAll}{$!A_n \ident \lforall[x][!A_j]$।}{}%
+    \tagitem{prvEx}{$!A_n \ident \lexists[x][!A_j]$।}{}%
+\end{enumerate}
+এখন ক্ষেত্রভেদে যুক্তি দিই। $!A_n$ পরমাণু হলে
+$!A_n \in \Frm[L]$। অন্য দিকে, ধরি $!A_n \ident
+(!A_j \land !A_k)$। \olref[fol][syn][fseq]{lem:fseq-init} অনুসারে
+$\tuple{!A_0,\dotsc,!A_j}$ ও $\tuple{!A_0,\dotsc,!A_k}$ যথাক্রমে
+$!A_j$ ও~$!A_k$-এর গঠন-অনুক্রম। এগুলি~$!A$-এর গঠন-অনুক্রমের প্রকৃত
+প্রারম্ভিক উপ-অনুক্রম বলে উভয়ের শেষ সূচক~$n$-এর চেয়ে ছোট। তাই
+আরোহ-অনুমান থেকে $!A_j$ ও~$!A_k$ উভয়ই~$\Frm[L]$-এর অন্তর্গত;
+সুতরাং !!a{formula}-এর সংজ্ঞা অনুসারে
+$(!A_j \land !A_k)$-ও তাই। অন্য ক্ষেত্রগুলিও একই ধরনের যুক্তি থেকে আসে।
+% BN-SRC-091 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-091):} এই উপপাদ্যে ভাষা সর্বত্র নির্বিচার $\Lang L$, কিন্তু হিমায়িত ইংরেজি প্রমাণের পরের অংশে দুবার $\Frm[L_0]$ এসেছে। বাংলা পাঠে প্রতিটি ক্ষেত্রেই উপপাদ্যের নির্দিষ্ট সেট $\Frm[L]$ রাখা হয়েছে।} % BN-SRC-091 TARGET-CORRECTION-END
+% BN-SRC-092 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-092):} হিমায়িত ইংরেজি প্রমাণে গঠন-অনুক্রমের শেষ সদস্যের বদলে কখনও $!A \ident !A_n$-কে “পরমাণু” বলা হয়েছে এবং ক্ষেত্রগুলিতে $!A$ ও একবার $\equiv$ ব্যবহার করা হয়েছে। সংজ্ঞাটি প্রত্যক্ষভাবে $!A_n$-এর গঠন এবং সংকেতবিন্যাসগত অভিন্নতা $\ident$ নিয়ন্ত্রণ করে; তাই বাংলা পাঠে পরমাণু ক্ষেত্র, ক্ষেত্রতালিকা ও সংযোজনের ক্ষেত্র জুড়ে $!A_n$ এবং $\ident$ রাখা হয়েছে। আরোহ-অনুমানেও অনুক্রমের দৈর্ঘ্যের বদলে তার শেষ সূচক~$m<n$ স্পষ্ট করা হয়েছে।} % BN-SRC-092 TARGET-CORRECTION-END
+\end{proof}
+
+পদের গঠন-অনুক্রমেরও !!{formula}s-এর গঠন-অনুক্রমের মতো ধর্ম আছে।
+
+\begin{prop}
+\ollabel{prop:fseq-trm-equiv}
+$\Trm[L]$ হলো $\Lang L$-এর এমন সব প্রতীকক্রম $t$-এর সেট,
+যাদের জন্য~$t$-এর কোনো পদ-গঠন-অনুক্রম আছে।
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][fseq]{prop:fseq-trm-equiv} প্রমাণ করুন।
+ইঙ্গিত: \olref[fol][syn][fseq]{thm:fseq-frm-equiv}-এর প্রমাণে ব্যবহৃত
+কৌশলের অনুরূপ একটি কৌশল ব্যবহার করুন।
+\end{prob}
+
+গঠন-অনুক্রমে দু-ধরনের “আবর্জনা” থাকতে পারে: পুনরুক্ত সদস্য এবং সূত্র
+বা পদ নির্মাণে অপ্রাসঙ্গিক সদস্য। ন্যূনতম গঠন-অনুক্রম দেখলে উভয়কেই
+দূর করা যায়।
+
+\begin{defn}[ন্যূনতম গঠন-অনুক্রম]
+\ollabel{defn:minimal-fseq}
+সূত্র~$!A$-এর একটি গঠন-অনুক্রম $\tuple{!A_0, \ldots, !A_n}$-কে
+$!A$-এর \emph{ন্যূনতম গঠন-অনুক্রম} বলে, যদি $!A$-এর প্রত্যেক অন্য
+গঠন-অনুক্রম~$s$-এর জন্য $s$-এর দৈর্ঘ্য $n+1$-এর চেয়ে বড় বা সমান হয়।
+
+একইভাবে, পদ~$t$-এর একটি গঠন-অনুক্রম $\tuple{t_0, \ldots, t_n}$-কে
+$t$-এর \emph{ন্যূনতম গঠন-অনুক্রম} বলে, যদি $t$-এর প্রত্যেক অন্য
+গঠন-অনুক্রম~$s$-এর জন্য $s$-এর দৈর্ঘ্য $n+1$-এর চেয়ে বড় বা সমান হয়।
+\end{defn}
+
+লক্ষ করুন, কোনো সূত্র বা পদের একাধিক ন্যূনতম গঠন-অনুক্রম থাকতে পারে,
+তবে সেগুলিতে ঠিক একই প্রতীকক্রমগুলি থাকবে।
+
+\begin{prop}
+\ollabel{prop:subformula-equivs}
+নিচের বিবৃতিগুলি সমতুল্য:
+\begin{enumerate}
+    \item $!B$ হলো~$!A$-এর একটি উপ-!!{formula}।
+    \item $!A$-এর প্রত্যেক গঠন-অনুক্রমে $!B$ আছে।
+    \item $!A$-এর কোনো ন্যূনতম গঠন-অনুক্রমে $!B$ আছে।
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][fseq]{prop:subformula-equivs} প্রমাণ করুন।
+\end{prob}
+
+\begin{history}
+রেমন্ড স্মালিয়ান তাঁর \emph{First-Order Logic} পাঠ্যবইয়ে
+\citep{Smullyan1968} গঠন-অনুক্রম প্রবর্তন করেন। গঠন-অনুক্রমের আরও কিছু
+ধর্ম \citet{Zuckerman1973} প্রতিষ্ঠা করেন।
+\end{history}
+
+\end{document}

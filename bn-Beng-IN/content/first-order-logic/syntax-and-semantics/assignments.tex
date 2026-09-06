@@ -1,0 +1,361 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: assignments
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{ass}
+
+\olsection{চলরাশি-আরোপ}
+
+\begin{explain}
+একটি !!{variable} আরোপ~$s$ \emph{প্রত্যেক} চলরাশিকে একটি মান দেয়—আর
+চলরাশির সংখ্যা অসীম। অবশ্যই এর প্রয়োজন নেই। সব !!{variable}s-কে মান
+দেওয়ার শর্ত আমরা !!{variable} আরোপের উপর শুধু এ জন্যই রাখি যে, এতে কাজ অনেক
+সহজ হয়। পদ~$t$-এর মান এবং কোনো !!a{structure}-এ $s$-এর সাপেক্ষে কোনো
+!!a{formula}~$!A$ পরিতৃপ্ত কি না, তা শুধু~$t$-এর !!{variable}s এবং
+$!A$-এর মুক্ত !!{variable}s-কে $s$ যে আরোপ দেয় তার উপর নির্ভর করে।
+পরের দুটি প্রতিজ্ঞা এই কথাই বলে। “নির্ভর করে” ধারণাটিকে নির্ভুল করতে
+আমরা দেখাই:~$t$-এর সব চলরাশিতে একমত এমন যেকোনো দুটি চলরাশি-আরোপ একই
+মান দেয়; এবং $!A$-এর সব মুক্ত চলরাশিতে দুটি আরোপ একমত হলে একটির
+সাপেক্ষে $!A$ পরিতৃপ্ত ঠিক তখনই, যখন অন্যটির সাপেক্ষেও পরিতৃপ্ত।
+\end{explain}
+
+\begin{prop}\ollabel{prop:valindep}
+পদ~$t$-এর !!{variable}s যদি $x_1$, \dots,~$x_n$-এর মধ্যে থাকে এবং
+$i = 1$, \dots,~$n$-এর জন্য $s_1(x_i) = s_2(x_i)$ হয়, তাহলে
+$\Value{t}{M}[s_1] = \Value{t}{M}[s_2]$।
+\end{prop}
+
+\begin{proof}
+$t$-এর জটিলতার উপর আরোহ করি। ভিত্তির ক্ষেত্রে $t$ কোনো
+!!a{constant}, অথবা চলরাশিগুলির কোনো একটি~$x_1$, \dots,~$x_n$ হতে
+পারে। $t = c$ হলে $\Value{t}{M}[s_1] = \Assign{c}{M} =
+\Value{t}{M}[s_2]$। $t = x_i$ হলে প্রতিজ্ঞার অনুমান থেকে
+$s_1(x_i) = s_2(x_i)$; তাই $\Value{t}{M}[s_1] = s_1(x_i) = s_2(x_i) =
+\Value{t}{M}[s_2]$।
+
+আরোহ-ধাপে ধরি $t = \Atom{f}{t_1, \dots, t_k}$ এবং দাবিটি $t_1$,
+\dots, $t_k$-এর জন্য সত্য। তাহলে
+\begin{align*}
+  \Value{t}{M}[s_1] & = \Value{\Atom{f}{t_1, \dots, t_k}}{M}[s_1] \\
+  & = \Assign{f}{M}(\Value{t_1}{M}[s_1], \dots, \Value{t_k}{M}[s_1]).
+\intertext{$j = 1$, \dots,~$k$-এর জন্য $t_j$-এর !!{variable}s,
+    $x_1$, \dots,~$x_n$-এর মধ্যে। আরোহ-অনুমান থেকে
+    $\Value{t_j}{M}[s_1] = \Value{t_j}{M}[s_2]$। তাই}
+\Value{t}{M}[s_1] & = \Value{\Atom{f}{t_1, \dots, t_k}}{M}[s_1] \\
+  & = \Assign{f}{M}(\Value{t_1}{M}[s_1], \dots, \Value{t_k}{M}[s_1]) \\
+  & = \Assign{f}{M}(\Value{t_1}{M}[s_2], \dots, \Value{t_k}{M}[s_2]) \\
+  & = \Value{\Atom{f}{t_1, \dots, t_k}}{M}[s_2] = \Value{t}{M}[s_2].
+\end{align*}
+\end{proof}
+
+\begin{prop}\ollabel{prop:satindep}
+$!A$-এর মুক্ত !!{variable}s যদি $x_1$, \dots,~$x_n$-এর মধ্যে থাকে
+এবং $i = 1$, \dots,~$n$-এর জন্য $s_1(x_i) = s_2(x_i)$ হয়, তাহলে
+$\Sat{M}{!A}[s_1]$ তখনই, যখন $\Sat{M}{!A}[s_2]$।
+\end{prop}
+
+\begin{proof}
+$!A$-এর জটিলতার উপর আরোহ করি। ভিত্তির ক্ষেত্রে, যখন $!A$ পরমাণু,
+$!A$ হতে পারে:
+\iftag{prvTrue}{$\ltrue$,}{}
+\iftag{prvFalse}{$\lfalse$,}{}
+কোনো $k$-স্থানীয় বিধেয় $R$ ও পদ $t_1$, \dots,~$t_k$-এর জন্য
+$\Atom{R}{t_1, \dots, t_k}$, অথবা পদ $t_1$ ও~$t_2$-এর জন্য
+$\eq[t_1][t_2]$। শেষের দুটি ক্ষেত্রে আমরা !!{biconditional}-এর শুধু
+সম্মুখ দিকটি দেখাই; বিপরীত দিকের প্রমাণ প্রতিসম।
+
+\begin{enumerate}
+\tagitem{prvTrue}{%
+  \indcase{!A}{\ltrue}{$\Sat{M}{\indfrm}[s_1]$ ও
+    $\Sat{M}{\indfrm}[s_2]$ উভয়ই।}}{}
+
+\tagitem{prvFalse}{%
+  \indcase{!A}{\lfalse}{$\Sat/{M}{!A}[s_1]$ ও
+    $\Sat/{M}{!A}[s_2]$ উভয়ই।}}{}
+
+\item
+  \indcase{!A}{\Atom{R}{t_1, \ldots, t_k}}{ধরি
+    $\Sat{M}{\indfrm}[s_1]$। তাহলে
+    \[
+    \langle \Value{t_1}{M}[s_1], \ldots, \Value{t_k}{M}[s_1] \rangle
+    \in \Assign{R}{M}.
+    \]
+    $i = 1$, \dots,~$k$-এর জন্য \olref{prop:valindep} থেকে
+    $\Value{t_i}{M}[s_1] = \Value{t_i}{M}[s_2]$। তাই আরও পাই
+    $\langle \Value{t_1}{M}[s_2], \ldots, \Value{t_k}{M}[s_2] \rangle
+    \in \Assign{R}{M}$, এবং ফলে $\Sat{M}{\indfrm}[s_2]$।}
+\item
+  \indcase{!A}{\eq[t_1][t_2]}{ধরি $\Sat{M}{\indfrm}[s_1]$।
+    তাহলে $\Value{t_1}{M}[s_1] = \Value{t_2}{M}[s_1]$। সুতরাং
+    \begin{align*}
+      \Value{t_1}{M}[s_2] & = \Value{t_1}{M}[s_1]
+      & \text{(\olref{prop:valindep} থেকে)} \\
+      & = \Value{t_2}{M}[s_1]
+      & \text{(যেহেতু $\Sat{M}{\eq[t_1][t_2]}[s_1]$)}\\
+      &= \Value{t_2}{M}[s_2]
+      & \text{(\olref{prop:valindep} থেকে),}
+    \end{align*}
+    তাই $\Sat{M}{\eq[t_1][t_2]}[s_2]$।}
+\end{enumerate}
+% BN-SRC-100 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-100):} হিমায়িত ইংরেজি উৎসে বিধেয়ের ক্ষেত্রের সিদ্ধান্তমূলক টুপলটি $\Value{t_i}{M}[s_2]$ দিয়ে শুরু হয়েছে, যদিও টুপলটি প্রথম থেকে $k$-তম যুক্তির মান তালিকাভুক্ত করে। বাংলা পাঠে সংজ্ঞা ও ঠিক আগের টুপল মেনে প্রথম সদস্য $\Value{t_1}{M}[s_2]$ রাখা হয়েছে।} % BN-SRC-100 TARGET-CORRECTION-END
+
+এবার ধরি, $!A$-এর চেয়ে কম জটিল সব !!{formula}s $!B$-এর জন্য
+$\Sat{M}{!B}[s_1]$ তখনই, যখন $\Sat{M}{!B}[s_2]$। $!A$-এর প্রধান
+অপারেটর দ্বারা নির্ধারিত ক্ষেত্র ধরে আরোহ-ধাপ এগোয়। প্রতিটি ক্ষেত্রে
+আমরা !!{biconditional}-এর শুধু সম্মুখ দিকটি দেখাই; বিপরীত দিকের প্রমাণ
+প্রতিসম। পরিমাণসূচকের ক্ষেত্রগুলি ছাড়া সব ক্ষেত্রেই $!A$-এর
+উপ-!!{formula}s~$!B$-এর উপর আরোহ-অনুমান প্রয়োগ করি। $!B$-এর মুক্ত
+চলরাশিগুলি $!A$-এর মুক্ত চলরাশির মধ্যে থাকে। তাই $s_1$ ও $s_2$ যদি
+$!A$-এর মুক্ত চলরাশিগুলিতে একমত হয়, তবে তারা $!B$-এর চলরাশিগুলিতেও
+একমত এবং $!B$-এর উপর আরোহ-অনুমান প্রযোজ্য।
+
+\begin{enumerate}
+\tagitem{defNot}{}{%
+  \iftag{probNot}{%
+    \indcase!{!A}{\lnot !B}{}}{%
+    \indcase{!A}{\lnot !B}{$\Sat{M}{\indfrm}[s_1]$ হলে
+      $\Sat/{M}{!B}[s_1]$; তাই আরোহ-অনুমান থেকে
+      $\Sat/{M}{!B}[s_2]$, এবং ফলে $\Sat{M}{\indfrm}[s_2]$।}}}
+
+\tagitem{defAnd}{}{%
+  \iftag{probAnd}{%
+    \indcase!{!A}{!B \land !C}{}}{%
+    \indcase{!A}{!B \land !C}{$\Sat{M}{\indfrm}[s_1]$ হলে
+      $\Sat{M}{!B}[s_1]$ এবং $\Sat{M}{!C}[s_1]$; তাই আরোহ-অনুমান থেকে
+      $\Sat{M}{!B}[s_2]$ এবং $\Sat{M}{!C}[s_2]$। অতএব
+      $\Sat{M}{\indfrm}[s_2]$।}}}
+
+\tagitem{defOr}{}{%
+  \iftag{probOr}{%
+    \indcase!{!A}{!B \lor !C}{}}{%
+    \indcase{!A}{!B \lor !C}{$\Sat{M}{\indfrm}[s_1]$ হলে
+      $\Sat{M}{!B}[s_1]$ অথবা $\Sat{M}{!C}[s_1]$। আরোহ-অনুমান থেকে
+      $\Sat{M}{!B}[s_2]$ অথবা $\Sat{M}{!C}[s_2]$; তাই
+      $\Sat{M}{\indfrm}[s_2]$।}}}
+
+\tagitem{defIf}{}{%
+  \iftag{probIf}{%
+    \indcase!{!A}{!B \lif !C}{}}{%
+    \indcase{!A}{!B \lif !C}{$\Sat{M}{\indfrm}[s_1]$ হলে
+    $\Sat/{M}{!B}[s_1]$ অথবা $\Sat{M}{!C}[s_1]$। আরোহ-অনুমান থেকে
+    $\Sat/{M}{!B}[s_2]$ অথবা $\Sat{M}{!C}[s_2]$; তাই
+    $\Sat{M}{\indfrm}[s_2]$।}}}
+
+\tagitem{defIff}{}{%
+  \iftag{probIff}{%
+    \indcase!{!A}{!B \liff !C}{}}{%
+    \indcase{!A}{!B \liff !C}{$\Sat{M}{\indfrm}[s_1]$ হলে হয়
+      $\Sat{M}{!B}[s_1]$ এবং $\Sat{M}{!C}[s_1]$, নয়তো
+      $\Sat/{M}{!B}[s_1]$ এবং $\Sat/{M}{!C}[s_1]$। আরোহ-অনুমান থেকে হয়
+      $\Sat{M}{!B}[s_2]$ এবং $\Sat{M}{!C}[s_2]$, নয়তো
+      $\Sat/{M}{!B}[s_2]$ এবং $\Sat/{M}{!C}[s_2]$। উভয় ক্ষেত্রেই
+      $\Sat{M}{\indfrm}[s_2]$।}}}
+
+\tagitem{defEx}{}{%
+  \iftag{probEx}{%
+    \indcase!{!A}{\lexists[x][!B]}{}}{%
+    \indcase{!A}{\lexists[x][!B]}{$\Sat{M}{\indfrm}[s_1]$ হলে এমন
+      একটি $m \in \Domain{M}$ আছে যাতে
+      $\Sat{M}{!B}[\Subst{s_1}{m}{x}]$। ধরি
+      $s_1' = \Subst{s_1}{m}{x}$ ও $s_2' =
+      \Subst{s_2}{m}{x}$। $!B$-এর মুক্ত চলরাশিগুলি $x_1$,
+      \dots, $x_n$ ও $x$-এর মধ্যে। $s_1'$ ও $s_2'$ যথাক্রমে $s_1$ ও
+      $s_2$-এর $x$-বিকল্প এবং অনুমান থেকে $s_1(x_i) = s_2(x_i)$ বলে
+      $s_1'(x_i) = s_2'(x_i)$। $s_1'$ ও $s_2'$-এর সংজ্ঞা থেকে
+      $s_1'(x) = s_2'(x) = m$। তাহলে $!B$ এবং $s_1'$, $s_2'$-এর উপর
+      আরোহ-অনুমান প্রযোজ্য; তাই $\Sat{M}{!B}[s_2']$। যেহেতু
+      $s_2' = \Subst{s_2}{m}{x}$, এমন $m \in \Domain{M}$ আছে যাতে
+      $\Sat{M}{!B}[\Subst{s_2}{m}{x}]$; ফলে
+      $\Sat{M}{\indfrm}[s_2]$।}}}
+
+\tagitem{defAll}{}{%
+  \iftag{probAll}{%
+    \indcase!{!A}{\lforall[x][!B]}{}}{%
+    \indcase{!A}{\lforall[x][!B]}{$\Sat{M}{\indfrm}[s_1]$ হলে প্রত্যেক
+      $m \in \Domain{M}$-এর জন্য $\Sat{M}{!B}[\Subst{s_1}{m}{x}]$।
+      দেখাতে চাই, প্রত্যেক $m \in \Domain{M}$-এর জন্য
+      $\Sat{M}{!B}[\Subst{s_2}{m}{x}]$-ও। তাই নির্বিচার
+      $m \in \Domain{M}$ নিই এবং $s_1' = \Subst{s_1}{m}{x}$ ও
+      $s_2' = \Subst{s_2}{m}{x}$ বিবেচনা করি। আমাদের
+      $\Sat{M}{!B}[s_1']$ আছে। $!B$-এর মুক্ত চলরাশিগুলি $x_1$,
+      \dots, $x_n$ ও $x$-এর মধ্যে। $s_1'$ ও $s_2'$ যথাক্রমে $s_1$ ও
+      $s_2$-এর $x$-বিকল্প এবং অনুমান থেকে $s_1(x_i) = s_2(x_i)$ বলে
+      $s_1'(x_i) = s_2'(x_i)$। $s_1'$ ও $s_2'$-এর সংজ্ঞা থেকে
+      $s_1'(x) = s_2'(x) = m$। তাহলে $!B$ এবং $s_1'$, $s_2'$-এর উপর
+      আরোহ-অনুমান প্রযোজ্য; তাই $\Sat{M}{!B}[s_2']$। প্রত্যেক
+      $m \in \Domain{M}$-এর জন্যই এটি প্রযোজ্য; অর্থাৎ সব~$m \in
+      \Domain{M}$-এর জন্য $\Sat{M}{!B}[\Subst{s_2}{m}{x}]$; ফলে
+      $\Sat{M}{\indfrm}[s_2]$।}}}
+\end{enumerate}
+% BN-SRC-101 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-101):} হিমায়িত ইংরেজি উৎসের সার্বিক ক্ষেত্রে $s_1'$ ও $s_2'$ উভয়কেই $\Subst{s}{m}{x}$ বলা হয়েছে, যদিও এই প্রমাণে কোনো আরোপ~$s$ নেই এবং পরের বাক্যগুলি যথাক্রমে $s_1$ ও $s_2$-এর $x$-বিকল্প ব্যবহার করে। বাংলা পাঠে $s_1'=\Subst{s_1}{m}{x}$ ও $s_2'=\Subst{s_2}{m}{x}$ রাখা হয়েছে।} % BN-SRC-101 TARGET-CORRECTION-END
+আরোহ থেকে পাই: $!A$-এর মুক্ত !!{variable}s যদি $x_1$, \dots, $x_n$-এর
+মধ্যে থাকে এবং $i = 1$, \dots,~$n$-এর জন্য $s_1(x_i)=s_2(x_i)$ হয়,
+তাহলে $\Sat{M}{!A}[s_1]$ তখনই, যখন $\Sat{M}{!A}[s_2]$।
+\end{proof}
+
+\begin{probtag}{probNot,probOr,probAnd,probIf,probIff,probEx,probAll}
+\olref[fol][syn][ass]{prop:satindep}-এর প্রমাণ সম্পূর্ণ করুন।
+\end{probtag}
+
+\begin{explain}
+!!^{sentence}s-এর কোনো মুক্ত চলরাশি নেই; তাই যেকোনো দুটি চলরাশি-আরোপ
+যেকোনো বাক্যের (শূন্যটি) মুক্ত চলরাশিকে একই বস্তু আরোপ করে। ফলে এইমাত্র
+প্রমাণিত প্রতিজ্ঞাটি বলে: কোনো চলরাশি-আরোপের সাপেক্ষে কোনো
+!!a{sentence} কোনো গঠনে পরিতৃপ্ত কি না, তা আরোপটির উপর একেবারেই নির্ভর
+করে না। তথ্যটি আমরা লিখে রাখব। এর পরেই চলরাশি-আরোপের উল্লেখ ছাড়া
+!!a{structure}-এ !!a{sentence}-এর পরিতৃপ্তির যে সংজ্ঞা আসছে, এটি তার
+যথার্থতা দেয়।
+\end{explain}
+
+\begin{cor}
+\ollabel{cor:sat-sentence}
+$!A$ যদি !!a{sentence} এবং $s$ যদি চলরাশি-আরোপ হয়, তাহলে প্রত্যেক
+চলরাশি-আরোপ~$s'$-এর জন্য $\Sat{M}{!A}[s]$ তখনই, যখন
+$\Sat{M}{!A}[s']$।
+\end{cor}
+
+\begin{proof}
+  ধরি $s'$ যেকোনো চলরাশি-আরোপ। $!A$ একটি !!a{sentence} বলে তার কোনো
+  মুক্ত চলরাশি নেই; তাই প্রতিটি চলরাশি-আরোপ~$s'$,~$s$-এর মতোই তুচ্ছভাবে
+  $!A$-এর সব মুক্ত চলরাশিকে একই বস্তু আরোপ করে। ফলে
+  \olref{prop:satindep}-এর শর্ত পূর্ণ, এবং $\Sat{M}{!A}[s]$ তখনই,
+  যখন $\Sat{M}{!A}[s']$।
+\end{proof}
+
+\begin{defn}
+\ollabel{defn:satisfaction}
+$!A$ যদি !!a{sentence} হয়, তাহলে বলি !!a{structure}~$\Struct M$,
+$!A$-কে \emph{পরিতৃপ্ত করে}, $\Sat{M}{!A}$, যদি এবং কেবল যদি সব
+চলরাশি-আরোপ~$s$-এর জন্য $\Sat{M}{!A}[s]$ হয়।
+\end{defn}
+
+$\Sat{M}{!A}$ হলে আমরা সরাসরি \emph{$!A$,~$\Struct{M}$-এ সত্য} কথাটিও
+বলি। পরিতৃপ্তির ধারণাটি স্বাভাবিকভাবেই পৃথক !!{sentence}s থেকে
+!!{sentence}s-এর সেটে প্রসারিত হয়।
+
+\begin{defn}
+\ollabel{defn:sat}
+$\Gamma$ যদি !!{sentence}s-এর একটি সেট~$\Gamma$ হয়, তাহলে বলি
+!!a{structure}~$\Struct M$,~$\Gamma$-কে \emph{পরিতৃপ্ত করে},
+$\Sat{M}{\Gamma}$, যদি এবং কেবল যদি সব $!A \in \Gamma$-র জন্য
+$\Sat{M}{!A}$ হয়।
+\end{defn}
+
+\begin{prop}\ollabel{prop:sentence-sat-true}
+  ধরি $\Struct{M}$ একটি !!a{structure}, $!A$ একটি !!a{sentence} এবং
+  $s$ একটি চলরাশি-আরোপ। তাহলে $\Sat{M}{!A}$ তখনই, যখন
+  $\Sat{M}{!A}[s]$।
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][ass]{prop:sentence-sat-true} প্রমাণ করুন।
+\end{prob}
+
+\begin{prop}\ollabel{prop:sat-quant}
+  ধরি $!A(x)$-তে শুধু $x$ মুক্ত এবং $\Struct M$ একটি
+  !!a{structure}। তাহলে:
+  \begin{tagenumerate}{prvEx,prvAll}
+    \tagitem{prvEx}{$\Sat{M}{\lexists[x][!A(x)]}$ তখনই, যখন অন্তত একটি
+      চলরাশি-আরোপ~$s$-এর জন্য $\Sat{M}{!A(x)}[s]$।}{}
+    \tagitem{prvAll}{$\Sat{M}{\lforall[x][!A(x)]}$ তখনই, যখন সব
+  চলরাশি-আরোপ~$s$-এর জন্য $\Sat{M}{!A(x)}[s]$।}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][ass]{prop:sat-quant} প্রমাণ করুন।
+\end{prob}
+
+\begin{prob}
+\DeclareRobustCommand{\VDash}{\mathrel{||}\joinrel\Relbar}
+ধরি $\Lang L$ এমন ভাষা যাতে কোনো !!{function}s নেই। একটি
+!!{structure}~$\Struct M$, !!a{constant}~$c$ এবং $a \in \Domain M$
+দেওয়া থাকলে, $\Struct M[a/c]$ দিয়ে এমন !!{structure} বোঝাই, যা
+$\Struct M$-এর ঠিক মতো, শুধু $\Assign{c}{M[a/c]} = a$।
+!!{sentence}s~$!A$-এর জন্য $\Struct M \VDash !A$ নিচের নিয়মে
+সংজ্ঞায়িত করুন:
+\begin{enumerate}
+\tagitem{prvFalse}{%
+  \indcase{!A}{\lfalse}{$\Struct{M} \VDash \indfrm$ নয়।}}{}
+
+\tagitem{prvTrue}{%
+  \indcase{!A}{\ltrue}{$\Struct{M} \VDash \indfrm$।}}{}
+
+\item \indcase{!A}{\Atom{R}{d_1, \dots, d_n}}{$\Struct M \VDash \indfrm$
+  তখনই, যখন $\langle \Assign{d_1}{M}, \dots, \Assign{d_n}{M} \rangle
+  \in \Assign{R}{M}$।}
+
+\item \indcase{!A}{\eq[d_1][d_2]}{$\Struct M \VDash \indfrm$ তখনই,
+  যখন $\Assign{d_1}{M} = \Assign{d_2}{M}$।}
+
+\tagitem{prvNot}{%
+  \indcase{!A}{\lnot !B}{$\Struct{M} \VDash \indfrm$ তখনই, যখন
+    $\Struct{M} \VDash {!B}$ নয়।}}{}
+
+\tagitem{prvAnd}{%
+  \indcase{!A}{(!B \land !C)}{$\Struct{M} \VDash
+    \indfrm$ তখনই, যখন $\Struct{M} \VDash!B$ এবং
+    $\Struct{M} \VDash !C$।}}{}
+
+\tagitem{prvOr}{%
+  \indcase{!A}{(!B \lor !C)}{$\Struct{M} \VDash \indfrm$ তখনই, যখন
+    $\Struct{M} \VDash !B$ অথবা $\Struct{M} \VDash !C$ (অথবা উভয়ই)।}}{}
+
+\tagitem{prvIf}{%
+  \indcase{!A}{(!B \lif !C)}{$\Struct{M} \VDash \indfrm$ তখনই, যখন
+    $\Struct {M} \VDash !B$ নয়, অথবা $\Struct M \VDash !C$ (অথবা
+    উভয়ই)।}}{}
+
+\tagitem{prvIff}{%
+  \indcase{!A}{(!B \liff !C)}{$\Struct{M} \VDash {\indfrm}$ তখনই, যখন
+    হয় $\Struct{M} \VDash {!B}$ ও $\Struct{M} \VDash {!C}$ উভয়ই,
+    নয়তো $\Struct{M} \VDash {!B}$ ও $\Struct{M} \VDash {!C}$
+    কোনোটিই নয়।}}{}
+
+\tagitem{prvAll}{%
+  \indcase{!A}{\lforall[x][!B]}{$c$,~$!B$-তে সংঘটিত না হলে
+    $\Struct{M} \VDash {\indfrm}$ তখনই, যখন সব $a \in \Domain{M}$-এর
+    জন্য $\Struct{M[a/c]} \VDash \Subst{!B}{c}{x}$।}}{}
+
+\tagitem{prvEx}{%
+  \indcase{!A}{\lexists[x][!B]}{$c$,~$!B$-তে সংঘটিত না হলে
+  $\Struct{M} \VDash {\indfrm}$ তখনই, যখন এমন $a \in \Domain M$ আছে
+  যাতে $\Struct{M[a/c]} \VDash \Subst{!B}{c}{x}$।}}{}
+\end{enumerate}
+ধরি $x_1$, \dots, $x_n$ হলো~$!A$-এর সব মুক্ত !!{variable}s,
+$c_1$, \dots, $c_n$ হলো~$!A$-তে নেই এমন ধ্রুবকসংকেত,
+$a_1$, \dots, $a_n \in \Domain M$ এবং $s(x_i) = a_i$।
+
+দেখান, $\Sat{M}{!A}[s]$ তখনই, যখন $\Struct M[a_1/c_1,\dots,a_n/c_n]
+\VDash \Subst{\Subst{!A}{c_1}{x_1}\dots}{c_n}{x_n}$।
+
+(এই অনুশীলনীটি দেখায় যে, চলরাশি-আরোপ ছাড়াই প্রথম-ক্রম যুক্তিবিদ্যার
+একটি অর্থতত্ত্ব দেওয়া সম্ভব।)
+\end{prob}
+
+\begin{prob}
+ধরি $f$ এমন একটি ফলনসংকেত, যা~$!A(x,y)$-তে নেই। দেখান, এমন
+!!a{structure}~$\Struct{M}$ আছে যাতে
+$\Sat{M}{\lforall[x][\lexists[y][!A(x,y)]]}$ তখনই, যখন এমন
+$\Struct M'$ আছে যাতে $\Sat{M'}{\lforall[x][!A(x,f(x))]}$।
+
+(এই অনুশীলনীটি স্কোলেমের উপপাদ্য নামে পরিচিত ফলাফলের একটি বিশেষ ক্ষেত্র;
+$\lforall[x][!A(x,f(x))]$-কে $\lforall[x][\lexists[y][!A(x,y)]]$-এর
+\emph{স্কোলেম স্বাভাবিক রূপ} বলে।)
+\end{prob}
+
+\end{document}

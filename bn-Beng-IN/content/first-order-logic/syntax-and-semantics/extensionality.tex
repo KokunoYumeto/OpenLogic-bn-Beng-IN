@@ -1,0 +1,140 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{ext}
+
+\olsection{ব্যাপ্তিগততা}
+
+\begin{explain}
+ব্যাপ্তিগততা, যাকে কখনও প্রাসঙ্গিকতাও বলা হয়, অনানুষ্ঠানিকভাবে এভাবে
+প্রকাশ করা যায়: !!a{structure}~$\Struct M$-এ !!a{variable} আরোপ~$s$-এর
+সাপেক্ষে !!{formula}~$!A$-এর পরিতৃপ্তির উপর প্রভাব ফেলে শুধু
+!!{domain}-এর আকার এবং $!A$-তে বাস্তবে দেখা দেওয়া ভাষার উপাদানগুলিকে
+$\Struct M$ ও~$s$ যে আরোপ দেয়।
+
+ব্যাপ্তিগততার একটি তাৎক্ষণিক ফল হলো: দুটি !!{structure}s~$\Struct M$
+ও~$\Struct M'$ যদি বাক্য~$!A$-তে দেখা দেওয়া ভাষার সব উপাদানে একমত হয়
+এবং তাদের সংজ্ঞাক্ষেত্র একই হয়, তবে $!A$ সত্য কি না সে বিষয়েও
+$\Struct M$ ও~$\Struct M'$-কে একমত হতে হবে।
+\end{explain}
+
+\begin{prop}[ব্যাপ্তিগততা]
+  \ollabel{prop:extensionality}
+  ধরি $!A$ একটি !!a{formula}; $\Struct M_1$ ও $\Struct M_2$ এমন দুটি
+  !!{structure}s যাতে $\Domain{M_1} = \Domain{M_2}$; আর $s$ হলো
+  $\Domain{M_1} = \Domain{M_2}$-এর উপর একটি চলরাশি-আরোপ। $!A$-তে
+  সংঘটিত প্রত্যেক !!{constant}~$c$, সম্বন্ধসংকেত~$R$ এবং
+  !!{function}~$f$-এর জন্য যদি $\Assign{c}{M_1} = \Assign{c}{M_2}$,
+  $\Assign{R}{M_1}=\Assign{R}{M_2}$ এবং
+  $\Assign{f}{M_1} = \Assign{f}{M_2}$ হয়, তাহলে
+  $\Sat{M_1}{!A}[s]$ তখনই, যখন $\Sat{M_2}{!A}[s]$।
+\end{prop}
+
+\begin{proof}
+  প্রথমে $t$-এর উপর আরোহ করে প্রমাণ করুন যে প্রত্যেক পদের জন্য
+  $\Value{t}{M_1}[s] = \Value{t}{M_2}[s]$। তারপর এইমাত্র প্রমাণিত
+  দাবিটি আরোহের ভিত্তিতে (যেখানে $!A$ পরমাণু) ব্যবহার করে $!A$-এর উপর
+  আরোহের সাহায্যে প্রতিজ্ঞাটি প্রমাণ করুন।
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][ext]{prop:extensionality}-এর প্রমাণটি বিস্তারিতভাবে
+সম্পন্ন করুন।
+\end{prob}
+
+\begin{cor}[!!^{sentence}s-এর জন্য ব্যাপ্তিগততা]
+  \ollabel{cor:extensionality-sent}
+  ধরি $!A$ একটি !!a{sentence} এবং $\Struct{M_1}$, $\Struct{M_2}$
+  \olref{prop:extensionality}-এর মতো। তাহলে $\Sat{M_1}{!A}$ তখনই,
+  যখন $\Sat{M_2}{!A}$।
+\end{cor}
+
+\begin{proof}
+\olref[ass]{cor:sat-sentence} ব্যবহার করে
+\olref{prop:extensionality} থেকে ফলটি পাওয়া যায়।
+\end{proof}
+
+তদুপরি, পদের মান এবং কোনো !!a{structure} কোনো !!a{formula}-কে পরিতৃপ্ত
+করে কি না, তা শুধু তার উপপদগুলির মানের উপর নির্ভর করে।
+
+\begin{prop}\ollabel{prop:ext-terms}
+ধরি $\Struct M$ একটি !!a{structure}, $t$ ও $t'$ দুটি পদ এবং $s$ একটি
+চলরাশি-আরোপ। তাহলে $\Value{\Subst{t}{t'}{x}}{M}[s] =
+\Value{t}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$।
+\end{prop}
+
+\begin{proof}
+$t$-এর উপর আরোহ করে।
+\begin{enumerate}
+\item $t$ ধ্রুবক হলে, ধরি $t\ident c$। তখন $\Subst{t}{t'}{x} = c$,
+  এবং $\Value{c}{M}[s] = \Assign{c}{M} =
+  \Value{c}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$।
+
+\item $t$,~$x$ ছাড়া অন্য চলরাশি হলে, ধরি $t \ident y$। তখন
+  $\Subst{t}{t'}{x} = y$, এবং
+  $\varAssign{s}{\Subst{s}{\Value{t'}{M}[s]}{x}}{x}$ বলে
+  $\Value{y}{M}[s] =
+  \Value{y}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$।
+
+\item $t \ident x$ হলে $\Subst{t}{t'}{x} = t'$। কিন্তু
+  $\Subst{s}{\Value{t'}{M}[s]}{x}$-এর সংজ্ঞা থেকে
+  $\Value{x}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}] = \Value{t'}{M}[s]$।
+
+\item $t \ident \Atom{f}{t_1,\dots,t_n}$ হলে পাই:
+\begin{multline*}
+  \Value{\Subst{t}{t'}{x}}{M}[s]  = \\
+  \begin{aligned}[b]
+& = \Value{\Atom{f}{\Subst{t_1}{t'}{x}, \dots, \Subst{t_n}{t'}{x}}}{M}[s]\\
+& \qquad    \text{$\Subst{t}{t'}{x}$-এর সংজ্ঞা থেকে}\\
+& = \Assign{f}{M}(\Value{\Subst{t_1}{t'}{x}}{M}[s], \dots,
+    \Value{\Subst{t_n}{t'}{x}}{M}[s])\\
+    & \qquad  \text{$\Value{\Atom{f}{\dots}}{M}[s]$-এর সংজ্ঞা থেকে}\\
+& = \Assign{f}{M}(\Value{t_1}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}], \dots,
+   \Value{t_n}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}])\\
+& \qquad    \text{আরোহ-অনুমান থেকে}\\
+& = \Value{t}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]
+    \text{$\Value{\Atom{f}{\dots}}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$-এর সংজ্ঞা থেকে}
+  \end{aligned}
+\end{multline*}
+\end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:ext-formulas} ধরি $\Struct M$ একটি
+!!a{structure}, $!A$ একটি !!a{formula}, $t'$ এমন একটি পদ যা~$!A$-তে
+$x$-এর জন্য মুক্ত, এবং $s$ একটি চলরাশি-আরোপ। তাহলে
+$\Sat{M}{\Subst{!A}{t'}{x}}[s]$ তখনই, যখন
+$\Sat{M}{!A}[\Subst{s}{\Value{t'}{M}[s]}{x}]$।
+\end{prop}
+% BN-SRC-102 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-102):} হিমায়িত ইংরেজি উৎসে সূত্র-প্রতিস্থাপন প্রতিজ্ঞায় $t'$-কে শুধু পদ বলা হয়েছে। কিন্তু এই অধ্যায়ের সূত্রে প্রতিস্থাপনের সংজ্ঞা $\Subst{!A}{t'}{x}$ কেবল তখনই দেয়, যখন $t'$,~$!A$-তে $x$-এর জন্য মুক্ত; চলরাশি-আবদ্ধতা এড়াতে এই অনুমান অপরিহার্য। বাংলা প্রতিজ্ঞায় তাই অনুমানটি স্পষ্টভাবে রাখা হয়েছে।} % BN-SRC-102 TARGET-CORRECTION-END
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][ext]{prop:ext-formulas} প্রমাণ করুন।
+\end{prob}
+
+\begin{explain}
+  \cref{fol:syn:ext:prop:ext-terms,fol:syn:ext:prop:ext-formulas}-এর
+  বক্তব্য হলো এই। ধরি আমাদের একটি পদ $t$ অথবা !!a{formula}~$!A$ এবং
+  কোনো পদ~$t'$ আছে; আমরা $\Subst{t}{t'}{x}$-এর মান, অথবা
+  !!a{structure}~$\Struct M$-এ !!a{variable} আরোপ~$s$-এর সাপেক্ষে
+  $\Subst{!A}{t'}{x}$ পরিতৃপ্ত কি না জানতে চাই। তাহলে হয় প্রথমে
+  প্রতিস্থাপন করে পরে $\Struct{M}$ ও~$s$-এর সাপেক্ষে মান বা পরিতৃপ্তি
+  বিবেচনা করতে পারি; অথবা প্রথমে $\Struct{M}$-এ $s$-এর সাপেক্ষে
+  $t'$-এর মান~$m = \Value{t'}{M}[s]$ নির্ণয় করে !!{variable} আরোপকে
+  $\Subst{s}{m}{x}$-এ বদলে তারপর $\Struct{M}$ ও~$\Subst{s}{m}{x}$-এর
+  সাপেক্ষে~$t$-এর মান, অথবা $\Sat{M}{!A}[\Subst{s}{m}{x}]$ কি না
+  বিবেচনা করতে পারি।
+  \Cref{fol:syn:ext:prop:ext-terms,fol:syn:ext:prop:ext-formulas}
+  নিশ্চিত করে, যে পথেই করি না কেন উত্তর একই হবে।
+\end{explain}
+
+\end{document}

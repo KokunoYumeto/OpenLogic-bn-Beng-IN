@@ -1,0 +1,198 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: unique-readability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{unq}
+
+\olsection{একক পাঠযোগ্যতা}
+
+\begin{explain}
+আমরা যেভাবে !!{formula}s সংজ্ঞায়িত করেছি, তাতে প্রত্যেকটি !!{formula}-এর
+\emph{একক পাঠ} নিশ্চিত হয়। অর্থাৎ !!{formula}s-এর গঠনের নিয়ম অনুযায়ী
+তাকে নির্মাণ করার মূলত একটিমাত্র উপায় এবং তাকে “ব্যাখ্যা” করারও একটিমাত্র
+উপায় আছে। তা না হলে দ্ব্যর্থক !!{formula}s থাকত—অর্থাৎ একাধিক পাঠ বা
+ব্যাখ্যাসম্পন্ন !!{formula}s—যা আমরা স্পষ্টতই এড়াতে চাই। আরও বড় কথা,
+এই ধর্মটি না থাকলে পরে দেওয়া আমাদের অধিকাংশ সংজ্ঞা ও প্রমাণই কার্যকর
+হবে না।
+
+একক পাঠযোগ্যতা নিশ্চিত করে না—এমন !!{formula}s গঠনের ত্রুটিপূর্ণ নিয়ম
+দিলে কী হতো, তা দেখলেই বিষয়টি সম্ভবত সবচেয়ে পরিষ্কার হবে। যেমন, সংযোজকের গঠন-নিয়মে
+আমরা বন্ধনী দিতে ভুলে গিয়ে নিচের নিয়মটি অনুমোদন করতে পারতাম:
+\begin{quote}
+$!A$ ও $!B$ যদি !!{formula}s হয়, তাহলে $!A \lif !B$-ও তাই।
+\end{quote}
+একটি পরমাণু সূত্র $!D$ থেকে শুরু করে এতে $!D \lif !D$ গঠন করা যেত।
+এটি এবং $!D$ নিয়ে তারপর $!D \lif !D \lif !D$ পাওয়া যেত। কিন্তু তা
+করার দুটি উপায় আছে:
+\begin{enumerate}
+\item $!D$-কে $!A$ এবং $!D \lif !D$-কে $!B$ ধরি।
+\item $!A$-কে $!D \lif !D$ ধরি এবং $!B$ হলো~$!D$।
+\end{enumerate}
+সেই অনুযায়ী !!{formula}~$!D \lif !D \lif !D$ “পড়ার”ও দুটি উপায়
+থাকে। এটি $!B \lif !C$ রূপের, যেখানে $!B$ হলো $!D$ এবং $!C$ হলো
+$!D \lif !D$; কিন্তু এটি \emph{একই সঙ্গে} $!B \lif !C$ রূপেরও,
+যেখানে $!B$ হলো $!D \lif !D$ এবং $!C$ হলো~$!D$।
+
+এমন হলে আমাদের সংজ্ঞাগুলি সব সময় কাজ করবে না। যেমন, কোনো সূত্রের
+!!{main operator} সংজ্ঞায়িত করার সময় আমরা বলি: $!B \lif !C$ রূপের
+সূত্রে $\lif$-এর নির্দেশিত সংঘটনটিই !!{main operator}। কিন্তু উপরের
+দুটি ভিন্ন উপায়ে $!D \lif !D \lif !D$ সূত্রটিকে $!B \lif !C$-এর
+সঙ্গে মেলানো গেলে এক ক্ষেত্রে $\lif$-এর প্রথম সংঘটনটি, অন্য ক্ষেত্রে
+দ্বিতীয় সংঘটনটি !!{main operator} হয়। অথচ আমরা চাই, !!{main operator}
+যেন !!{formula}-টির একটি \emph{ফলন} হয়; অর্থাৎ প্রত্যেকটি !!{formula}-এ
+!!{main
+  operator}-এর ঠিক একটিমাত্র সংঘটন থাকতে হবে।
+\end{explain}
+
+\begin{lem}
+!!a{formula}~$!A$-তে বাঁ ও ডান বন্ধনীর সংখ্যা সমান।
+\end{lem}
+
+\begin{proof}
+$!A$ যেভাবে নির্মিত হয়েছে তার উপর আরোহ করে আমরা এটি প্রমাণ করি। এর
+জন্য দুটি কাজ দরকার: (ক) প্রথমে প্রমাণ করতে হবে, সব পরমাণু সূত্রেরই
+উল্লিখিত ধর্মটি আছে (আরোহের ভিত্তি)। (খ) তারপর প্রমাণ করতে হবে, প্রদত্ত
+সূত্রগুলি থেকে নতুন সূত্র নির্মাণের সময় পুরোনো সূত্রগুলির ধর্মটি থাকলে
+নতুন সূত্রটিরও তা থাকে।
+
+$l(!A)$ দিয়ে $!A$-তে বাঁ বন্ধনীর সংখ্যা এবং $r(!A)$ দিয়ে ডান বন্ধনীর
+সংখ্যা বোঝাই; একইভাবে $l(t)$ ও $r(t)$ দিয়ে পদ~$t$-তে যথাক্রমে বাঁ ও
+ডান বন্ধনীর সংখ্যা বোঝাই।
+
+\begin{prob}
+    যেকোনো পদ~$t$-এর জন্য $l(t) = r(t)$ প্রমাণ করুন।
+\end{prob}
+
+\begin{enumerate}
+\tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\indfrm$-এ $0$টি বাঁ এবং $0$টি
+    ডান বন্ধনী আছে।}}{}
+
+\tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\indfrm$-এ $0$টি বাঁ এবং $0$টি
+    ডান বন্ধনী আছে।}}{}
+
+\item \indcase{!A}{\Atom{R}{t_1,\dots,t_n}}{$l(\indfrm) = 1 + l(t_1) +
+  \dots + l(t_n) = 1 + r(t_1) + \dots + r(t_n) = r(\indfrm)$। এখানে
+  অনুশীলনী হিসেবে রাখা এই তথ্যটি ব্যবহার করছি যে, যেকোনো পদ~$t$-এর
+  জন্য $l(t) = r(t)$।}
+
+\item \indcase{!A}{\eq[t_1][t_2]}{$l(\indfrm) = l(t_1) + l(t_2) =
+  r(t_1) + r(t_2) = r(\indfrm)$।}
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{আরোহ-অনুমান থেকে
+    $l(!B) = r(!B)$। তাই $l(\indfrm) = l(!B) = r(!B) =
+    r(\indfrm)$।}}{}
+
+\item \indcase{!A}{(!B \ast !C)}{আরোহ-অনুমান থেকে $l(!B) =
+  r(!B)$ এবং $l(!C) = r(!C)$। তাই $l(\indfrm) = 1 + l(!B) + l(!C) =
+  1 + r(!B) + r(!C) = r(\indfrm)$।}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{আরোহ-অনুমান থেকে
+    $l(!B) = r(!B)$। তাই $l(\indfrm) = l(!B) = r(!B) =
+    r(\indfrm)$।}}{}
+
+% Print case for \lexists if prvEx and not prvAll
+\tagitem{prvAll,notprvEx}{}{\indcase{!A}{\lexists[x][!B]}{আরোহ-অনুমান
+    থেকে $l(!B) = r(!B)$। তাই $l(\indfrm) = l(!B) = r(!B) =
+    r(\indfrm)$।}}
+
+% Just say similarly if prvEx and prvAll
+\tagitem{notprvAll,notprvEx}{}{\indcase{!A}{\lexists[x][!B]}{একইভাবে।}}
+\end{enumerate}
+\end{proof}
+
+\begin{defn}[প্রকৃত পূর্বাংশ]
+একটি প্রতীকক্রম~$!B$-এর সঙ্গে একটি অশূন্য প্রতীকক্রম সংযুক্ত করলে যদি
+প্রতীকক্রম~$!A$ পাওয়া যায়, তাহলে $!B$-কে $!A$-এর একটি
+\emph{প্রকৃত পূর্বাংশ} বলে।
+\end{defn}
+
+\begin{lem}\ollabel{lem:no-prefix}
+$!A$ যদি !!a{formula} এবং $!B$ যদি $!A$-এর প্রকৃত পূর্বাংশ হয়,
+তাহলে $!B$ !!a{formula} নয়।
+\end{lem}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][unq]{lem:no-prefix} প্রমাণ করুন।
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:unique-atomic}
+$!A$ একটি পরমাণু !!{formula} হলে নিচের শর্তগুলির ঠিক একটি পূরণ করে।
+\begin{enumerate}
+\tagitem{prvFalse}{$!A \ident \lfalse$।}{}
+\tagitem{prvTrue}{$!A \ident \ltrue$।}{}
+\item $!A \ident \Atom{R}{t_1,\dots,t_n}$, যেখানে $R$ একটি
+  $n$-স্থানীয় !!{predicate}, $t_1$, \dots, $t_n$ পদ এবং $R$,
+  $t_1$, \dots, $t_n$-এর প্রত্যেকটি এককভাবে নির্ধারিত।
+\item $!A \ident \eq[t_1][t_2]$, যেখানে $t_1$ ও $t_2$ এককভাবে
+  নির্ধারিত পদ।
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][unq]{prop:unique-atomic} প্রমাণ করুন। (ইঙ্গিত:
+পদের জন্য \olref[fol][syn][unq]{lem:no-prefix}-এর একটি সংস্করণ বিবৃত
+ও প্রমাণ করুন।)
+\end{prob}
+
+\begin{prop}[একক পাঠযোগ্যতা]
+প্রত্যেকটি !!{formula} নিচের শর্তগুলির ঠিক একটি পূরণ করে।
+\begin{enumerate}
+\item $!A$ পরমাণু।
+
+\tagitem{prvNot}{$!A$ হলো $\lnot !B$ রূপের।}{}
+
+\tagitem{prvAnd}{$!A$ হলো $(!B \land !C)$ রূপের।}{}
+
+\tagitem{prvOr}{$!A$ হলো $(!B \lor !C)$ রূপের।}{}
+
+\tagitem{prvIf}{$!A$ হলো $(!B \lif !C)$ রূপের।}{}
+
+\tagitem{prvIff}{$!A$ হলো $(!B \liff !C)$ রূপের।}{}
+
+\tagitem{prvAll}{$!A$ হলো $\lforall[x][!B]$ রূপের।}{}
+
+\tagitem{prvEx}{$!A$ হলো $\lexists[x][!B]$ রূপের।}{}
+\end{enumerate}
+তদুপরি, প্রত্যেক ক্ষেত্রে $!B$, অথবা $!B$ ও $!C$, এককভাবে নির্ধারিত।
+এর অর্থ, যেমন, এমন আলাদা জোড়া $!B$, $!C$ এবং $!B'$, $!C'$ নেই যাতে
+$!A$ একই সঙ্গে
+\iftag{prvIf}{$(!B \lif !C)$ ও $(!B' \lif !C')$ রূপের।}{
+    \iftag{prvOr}{$(!B \lor !C)$ ও $(!B' \lor !C')$ রূপের।}{
+      \iftag{prvAnd}{$(!B \land !C)$ ও $(!B' \land !C')$ রূপের।}{}}}
+\end{prop}
+
+\begin{proof}
+গঠনের নিয়মগুলি অনুসারে, কোনো !!a{formula} পরমাণু না হলে সেটি অবশ্যই
+একটি খোলা বন্ধনী~(, \iftag{prvNot}{$\lnot$,}{} অথবা কোনো পরিমাণসূচক
+দিয়ে শুরু হবে। অন্য দিকে, নিচের সংকেতগুলির কোনোটি দিয়ে শুরু হওয়া
+প্রত্যেক !!{formula} অবশ্যই পরমাণু: !!a{predicate}, !!a{function},
+!!a{constant}\iftag{prvFalse}{, $\lfalse$}{}\iftag{prvTrue}{, $\ltrue$}{}।
+
+তাই আমাদের আসলে শুধু দেখাতে হবে, $!A$ যদি $(!B \ast !C)$ রূপের এবং
+একই সঙ্গে $(!B' \mathbin{\ast'} !C')$ রূপের হয়, তাহলে $!B \ident
+!B'$, $!C \ident !C'$ এবং $\ast = {\ast'}$।
+
+ধরি $!A \ident (!B \ast !C)$ ও $!A \ident (!B'
+\mathbin{\ast'} !C')$ উভয়ই সত্য। তাহলে হয় $!B \ident !B'$, নয়তো তা
+নয়। সত্য হলে স্পষ্টতই $\ast = {\ast'}$ এবং $!C \ident !C'$; কারণ
+তখন এগুলি $!A$-এর একই স্থান থেকে শুরু হওয়া, সমান দৈর্ঘ্যের
+উপপ্রতীকক্রম। অন্য ক্ষেত্রটি হলো $!B \not\ident !B'$। $!B$ ও $!B'$
+উভয়ই $!A$-এর একই স্থান থেকে শুরু হওয়া উপপ্রতীকক্রম বলে একটিকে অন্যটির
+প্রকৃত পূর্বাংশ হতে হবে। কিন্তু \olref{lem:no-prefix} অনুসারে তা অসম্ভব।
+\end{proof}
+
+
+\end{document}

@@ -1,0 +1,102 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: main-operator
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{mai}
+
+\olsection{সূত্রের \printtoken{S}{main operator}}
+
+\begin{explain}
+!!a{formula}~$!A$ নির্মাণে সব শেষে ব্যবহৃত অপারেটরটি নিয়ে কথা বলা
+প্রায়ই উপযোগী। এই অপারেটরকে $!A$-এর \emph{প্রধান অপারেটর} বলে।
+স্বজ্ঞাতভাবে, এটি $!A$-এর “সবচেয়ে বাইরের” অপারেটর। যেমন,
+$\lnot !A$-এর প্রধান অপারেটর $\lnot$, $(!A \lor !B)$-এর প্রধান
+অপারেটর $\lor$, ইত্যাদি।
+\end{explain}
+
+
+\begin{defn}[!!^{main operator}]
+\ollabel{def:main-op}
+!!a{formula}~$!A$-এর \emph{!!{main operator}} নিচের নিয়মে সংজ্ঞায়িত:
+\begin{enumerate}
+\item \indcase*{!A}{!A}{$\indfrm$-এর কোনো !!{main operator} নেই।}
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\indfrm$-এর !!{main operator}
+  হলো~$\lnot$।}}{}
+
+\tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\indfrm$-এর
+  !!{main operator} হলো~$\land$।}}{}
+
+\tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\indfrm$-এর
+  !!{main operator} হলো~$\lor$।}}{}
+
+\tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\indfrm$-এর
+  !!{main operator} হলো~$\lif$।}}{}
+
+\tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\indfrm$-এর
+  !!{main operator} হলো~$\liff$।}}{}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{$\indfrm$-এর
+  !!{main operator} হলো~$\lforall$।}}{}
+
+\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{$\indfrm$-এর
+  !!{main operator} হলো~$\lexists$।}}{}
+\end{enumerate}
+\end{defn}
+
+প্রত্যেক ক্ষেত্রে আমরা সূত্রে !!{main operator}-টির নির্দিষ্ট নির্দেশিত
+\emph{সংঘটন} বোঝাই। যেমন, $((!D \lif !E) \lif (!E \lif !D))$ সূত্রটি
+$(!B \lif !C)$ রূপের, যেখানে $!B$ হলো $(!D \lif !E)$ এবং $!C$ হলো
+$(!E \lif !D)$; তাই $\lif$-এর দ্বিতীয় সংঘটনটি !!{main operator}।
+
+\begin{explain}
+এটি এমন একটি ফলনের \emph{পুনরাবৃত্তিমূলক} সংজ্ঞা, যা প্রত্যেক
+অপরমাণু !!{formula}s-কে তার !!{main operator}-এর সংঘটনে প্রতিচিত্রিত
+করে। !!{formula}s-কে যেভাবে আরোহীভাবে সংজ্ঞায়িত করা হয়েছে, তার ফলে
+প্রত্যেকটি !!{formula}~$!A$ \olref{def:main-op}-এর কোনো একটি ক্ষেত্র
+পূরণ করে। এতে প্রত্যেক অপরমাণু !!{formula}~$!A$-এর জন্য !!a{main
+  operator}-এর অস্তিত্ব নিশ্চিত হয়। প্রত্যেকটি !!{formula} এই
+শর্তগুলির কেবল একটি পূরণ করে এবং প্রতিটি ক্ষেত্রে যে ছোট
+!!{formula}s থেকে $!A$ নির্মিত সেগুলি এককভাবে নির্ধারিত; তাই $!A$-এ
+!!{main
+  operator}-টির সংঘটনও একক এবং আমরা সত্যিই একটি ফলন সংজ্ঞায়িত
+করেছি।
+\end{explain}
+
+কোন সংকেতটি !!{main operator}, তার ভিত্তিতে আমরা !!{formula}s-কে
+\olref{tab:main-op}-এর নামগুলি দিই।
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+{ তবে মনে রাখবেন, সংজ্ঞায়িত অপারেটর বিধিবদ্ধভাবে !!{formula}s-এ
+দেখা যায় না। সেগুলি কেবল সংক্ষিপ্ত রূপ; তাই বিধিবদ্ধভাবে তারা কোনো
+সূত্রের প্রধান অপারেটর হতে পারে না। ফলে সব !!{formula}s-সংক্রান্ত
+প্রমাণে সেগুলিকে আলাদাভাবে বিবেচনা করার দরকারও হয় না।}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{c | c | c}
+!!^{main operator} & !!{formula}-এর প্রকার & উদাহরণ\\
+\hline
+কোনোটিই নয় & পরমাণু (!!{formula}) &
+\iftag{prvFalse}{$\lfalse$,}{}
+\iftag{prvTrue}{$\ltrue$,}{}
+$\Atom{R}{t_1, \dots, t_n}$,
+$\eq[t_1][t_2]$\\
+$\lnot$ & নঞর্থকরণ & $\lnot !A$ \\
+$\land$ & সংযোজন & $(!A \land !B)$ \\
+$\lor$ & বিয়োজন & $(!A \lor !B$) \\
+$\lif$ & !!{conditional} & $(!A \lif !B$) \\
+$\liff$ & !!{biconditional} & $(!A \liff !B)$ \\
+$\lforall[][]$ & সার্বিক (!!{formula})& $\lforall[x][!A]$ \\
+$\lexists[][]$ & অস্তিত্বসূচক (!!{formula})& $\lexists[x][!A]$
+\end{tabular}
+\caption{!!{formula}s-এর প্রধান অপারেটর ও নাম}
+\ollabel{tab:main-op}
+\end{table}
+% BN-SRC-089 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-089):} হিমায়িত ইংরেজি উৎসের সংযোজন-সারির উদাহরণে গণিত-মোডটি ডান বন্ধনীর আগে শেষ হয়েছে: $(!A \land !B$)। বাংলা পাঠে ডান বন্ধনীটি একই গণিত-রাশির ভিতরে রেখে সুগঠিত সূত্র $(!A \land !B)$ করা হয়েছে।} % BN-SRC-089 TARGET-CORRECTION-END
+
+\end{document}

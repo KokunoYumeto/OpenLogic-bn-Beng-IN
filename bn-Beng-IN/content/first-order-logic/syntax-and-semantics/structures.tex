@@ -1,0 +1,108 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: Structures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{str}
+
+\olsection{প্রথম-ক্রমের ভাষার \printtoken{P}{structure}}
+
+\begin{explain}
+প্রথম-ক্রমের ভাষা নিজে \emph{অব্যাখ্যাত}: !!{constant}s,
+!!{function}s ও !!{predicate}s-এর সঙ্গে কোনো নির্দিষ্ট অর্থ যুক্ত থাকে
+না। কোনো \article{structure} \emph{!!{structure}} নির্দিষ্ট করে তাদের
+অর্থ দেওয়া হয়। এটি \emph{সংজ্ঞাক্ষেত্র} নির্দিষ্ট করে—অর্থাৎ যেসব
+বস্তুকে !!{constant}s নির্দেশ করে, যাদের উপর !!{function}s ক্রিয়া করে
+এবং যাদের উপর পরিমাণসূচকগুলি বিস্তৃত হয়। পাশাপাশি কোন !!{constant}s
+কোন বস্তুকে নির্দেশ করে, কোনো !!a{function} কীভাবে বস্তুকে বস্তুতে
+চিত্রিত করে এবং !!{predicate}s কোন বস্তুগুলির ক্ষেত্রে প্রযোজ্য, তা-ও
+নির্দিষ্ট করে। !!^{structure}s যুক্তিবিদ্যার \emph{অর্থগত} ধারণাগুলির,
+যেমন ফলশ্রুতি, বৈধতা ও পরিতৃপ্তিযোগ্যতার ভিত্তি। সাহিত্যে এগুলিকে কখনও
+“গঠন”, কখনও “ব্যাখ্যা”, কখনও বা “মডেল” বলা হয়।
+\end{explain}
+
+\begin{defn}[!!^{structure}s]
+প্রথম-ক্রম যুক্তিবিদ্যার কোনো ভাষা $\Lang{L}$-এর একটি
+\Article{structure} \emph{!!{structure}}~$\Struct M$ নিচের উপাদানগুলি
+নিয়ে গঠিত:
+\begin{enumerate}
+\item \emph{সংজ্ঞাক্ষেত্র:} একটি অশূন্য সেট, $\Domain M$
+\item \emph{!!{constant}s-এর ব্যাখ্যা:} $\Lang{L}$-এর প্রত্যেক
+  !!{constant}~$c$-এর জন্য !!a{element} $\Assign{c}{M} \in \Domain M$
+\item \emph{!!{predicate}s-এর ব্যাখ্যা:} $\Lang{L}$-এর প্রত্যেক
+  $n$-স্থানীয় !!{predicate}~$R$-এর ($\eq$ ছাড়া) জন্য একটি
+  $n$-স্থানীয় সম্বন্ধ $\Assign{R}{M} \subseteq \Domain{M}^n$
+\item \emph{!!{function}s-এর ব্যাখ্যা:} $\Lang{L}$-এর প্রত্যেক
+  $n$-স্থানীয় !!{function}~$f$-এর জন্য একটি $n$-স্থানীয় ফলন
+  $\Assign{f}{M} \colon \Domain{M}^n \to \Domain{M}$
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+পাটিগণিতের ভাষার একটি !!^a{structure}~$\Struct M$ গঠিত হয় একটি সেট,
+!!{constant}~$\Obj 0$-এর ব্যাখ্যা হিসেবে $\Domain M$-এর একটি সদস্য
+$\Assign{\Obj 0}{M}$, একটি এক-স্থানীয় ফলন
+$\Assign{\Obj \prime}{M} \colon \Domain{M} \to \Domain M$, দুটি
+দ্বি-স্থানীয় ফলন $\Assign{\Obj +}{M}$ ও $\Assign{\Obj
+  \times}{M}$—উভয়ই $\Domain M^2 \to \Domain M$—এবং একটি
+দ্বি-স্থানীয় সম্বন্ধ $\Assign{\Obj <}{M} \subseteq \Domain{M}^2$
+দিয়ে।
+
+এর একটি স্পষ্ট উদাহরণ হলো নিচের গঠনটি:
+\begin{enumerate}
+\item $\Domain N = \Nat$
+\item $\Assign{\Obj 0}{N} = 0$
+\item সব $n \in \Nat$-এর জন্য $\Assign{\Obj \prime}{N}(n) = n + 1$
+\item সব $n, m \in \Nat$-এর জন্য $\Assign{\Obj +}{N}(n, m) = n + m$
+\item সব $n, m \in \Nat$-এর জন্য $\Assign{\Obj \times}{N}(n, m) = n\cdot m$
+\item $\Assign{\Obj <}{N} = \Setabs{\tuple{n, m}}{n \in \Nat, m \in
+  \Nat, n < m}$
+\end{enumerate}
+এভাবে সংজ্ঞায়িত $\Lang L_A$-এর গঠন~$\Struct N$-কে পাটিগণিতের
+\emph{মানক মডেল} বলে, কারণ এটি $\Lang L_A$-এর অ-যৌক্তিক ধ্রুবকগুলিকে
+আমাদের প্রত্যাশিত উপায়েই ব্যাখ্যা করে।
+
+তবে $\Lang L_A$-এর আরও অনেক সম্ভাব্য !!{structure}s আছে। যেমন,
+সংজ্ঞাক্ষেত্র হিসেবে $\Nat$-এর বদলে পূর্ণসংখ্যার সেট~$\Int$ নিয়ে
+$\Obj 0$, $\Obj \prime$, $\Obj +$, $\Obj \times$, $\Obj <$-এর
+ব্যাখ্যাগুলি সেই অনুযায়ী সংজ্ঞায়িত করতে পারি। আবার $\Lang L_A$-এর
+এমন গঠনও সংজ্ঞায়িত করতে পারি, যার সঙ্গে সংখ্যার দূরতম সম্পর্কও নেই।
+\end{ex}
+
+\begin{ex}
+সেটতত্ত্বের ভাষা~$\Lang L_Z$-এর একটি গঠন~$\Struct M$-এর জন্য শুধু
+একটি সেট ও একটিমাত্র দ্বি-স্থানীয় সম্বন্ধ দরকার। তাই প্রযুক্তিগতভাবে,
+যেমন, মানুষের সেট এবং “$x$, $y$-এর চেয়ে বয়সে বড়” সম্বন্ধটি
+$\Lang L_Z$-এর !!a{structure} হিসেবে ব্যবহার করা যায়; একইভাবে $\Nat$
+ও $n, m \in \Nat$-এর জন্য $n \ge m$-ও ব্যবহার করা যায়।
+
+$\Lang L_Z$-এর একটি বিশেষ আকর্ষণীয় !!{structure}-এ সংজ্ঞাক্ষেত্রের
+!!{element}s-গুলি সত্যিই সেট এবং $\Obj \in$-এর ব্যাখ্যা সত্যিই “$x$
+হলো~$y$-এর !!a{element}” সম্বন্ধ। এটি \emph{বংশগতভাবে সসীম সেট}-এর
+!!{structure}~$\Struct{{HF}}$:
+\begin{enumerate}
+\item $\Domain{{{HF}}} = \emptyset \cup \Pow{\emptyset} \cup
+  \Pow{\Pow{\emptyset}} \cup \Pow{\Pow{\Pow{\emptyset}}} \cup \dots$;
+\item $\Assign{\Obj \in}{{{HF}}} = \Setabs{\tuple{x, y}}{x, y \in
+  \Domain{{{HF}}}, x \in y}$।
+\end{enumerate}
+\end{ex}
+
+\begin{digress}
+কোনটিকে !!a{structure} বলে গণ্য করব সে বিষয়ে আমাদের শর্তগুলি
+যুক্তিবিদ্যাকে প্রভাবিত করে। যেমন, শূন্য সংজ্ঞাক্ষেত্র নিষিদ্ধ করায়
+পরিমাণিত বাক্যের পরিতৃপ্তির (বা সত্যতার) প্রচলিত ব্যাখ্যায়
+$\lexists[x][(!A(x) \lor \lnot !A(x))]$ বৈধ—অর্থাৎ একটি যৌক্তিক সত্য।
+আবার সব !!{constant}s-কে সংজ্ঞাক্ষেত্রের কোনো বস্তু নির্দেশ করতে হবে
+বলে অস্তিত্বসূচক সাধারণীকরণ একটি নির্ভরযোগ্য অনুমান-ছক: $!A(a)$,
+অতএব $\lexists[x][!A(x)]$। নামকে সংজ্ঞাক্ষেত্রের বাইরের বস্তু নির্দেশ
+করার বা কিছুই নির্দেশ না করার অনুমতি দিলে আমরা \emph{মুক্ত
+যুক্তিবিদ্যা}-র দিকে এগোতাম; সেখানে অস্তিত্বসূচক সাধারণীকরণের জন্য একটি
+অতিরিক্ত পূর্বধারণা দরকার: $!A(a)$ ও $\lexists[x][\eq[x][a]]$,
+অতএব $\lexists[x][!A(x)]$।
+\end{digress}
+
+\end{document}

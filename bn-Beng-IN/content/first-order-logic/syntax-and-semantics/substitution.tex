@@ -1,0 +1,127 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{sub}
+
+\olsection{প্রতিস্থাপন}
+
+\begin{defn}[পদে প্রতিস্থাপন]
+$s$-এ $x$-এর প্রতিটি সংঘটনের স্থলে $t$ \emph{প্রতিস্থাপন} করে পাওয়া
+ফল $\Subst{s}{t}{x}$-কে আমরা পুনরাবৃত্তিমূলকভাবে সংজ্ঞায়িত করি:
+\begin{enumerate}
+\item \indcase{s}{c}{$\Subst{\indfrm}{t}{x}$ হলো শুধু $s$।}
+
+\item \indcase{s}{y}{$y$ একটি চলরাশি এবং $y \not\ident x$ হলে
+  $\Subst{\indfrm}{t}{x}$-ও শুধু~$s$।}
+
+\item \indcase{s}{x}{$\Subst{\indfrm}{t}{x}$ হলো~$t$।}
+
+\item\indcase{s}{\Atom{f}{t_1, \dots, t_n}}{$\Subst{\indfrmp}{t}{x}$ হলো
+  $\Atom{f}{\Subst{t_1}{t}{x}, \dots, \Subst{t_n}{t}{x}}$।}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+পদ~$t$ হলো $!A$-তে $x$-এর জন্য \emph{!!{free for}}, যদি $!A$-তে
+$x$-এর কোনো মুক্ত সংঘটন এমন কোনো পরিমাণসূচকের পরিসরে না থাকে, যা
+$t$-এর কোনো চলরাশিকে বদ্ধ করে।
+\end{defn}
+
+\begin{ex} ~
+\begin{enumerate}
+\item $\Obj v_8$, $\lexists[\Obj
+  v_3]\Atom{\Obj A^2_4}{\Obj v_3,\Obj v_1}$-এ $\Obj v_1$-এর জন্য মুক্ত।
+
+\item $\Obj f^2_1(\Obj v_1, \Obj v_2)$,
+  $\lforall[\Obj v_2]\Atom{\Obj A^2_4}{\Obj v_0,\Obj v_2}$-এ
+  $\Obj v_0$-এর জন্য \emph{মুক্ত নয়}।
+\end{enumerate}
+\end{ex}
+
+\begin{defn}[!!a{formula}-এ প্রতিস্থাপন]
+$!A$ যদি !!a{formula}, $x$ যদি !!a{variable} এবং $t$ যদি $!A$-তে
+$x$-এর জন্য !!{free for} পদ হয়, তাহলে $\Subst{!A}{t}{x}$ হলো $!A$-তে
+$x$-এর সব মুক্ত সংঘটনের স্থলে $t$ প্রতিস্থাপনের ফল।
+\begin{enumerate}
+\tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\Subst{\indfrm}{t}{x}$ হলো
+    $\lfalse$।}}{}
+
+\tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\Subst{\indfrm}{t}{x}$ হলো
+    $\ltrue$।}}{}
+
+\item \indcase{!A}{\Atom{P}{t_1,\dots,
+    t_n}}{$\Subst{\indfrm}{t}{x}$ হলো $\Atom{P}{\Subst{t_1}{t}{x},
+    \dots, \Subst{t_n}{t}{x}}$।}
+
+\item \indcase{!A}{\eq[t_1][t_2]}{$\Subst{\indfrmp}{t}{x}$ হলো
+  $\Subst{t_1}{t}{x} = \Subst{t_2}{t}{x}$।}
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\Subst{\indfrmp}{t}{x}$ হলো
+    $\lnot \Subst{!B}{t}{x}$।}}{}
+
+\tagitem{prvAnd}{\indcase{!A}{(!B \land
+    !C)}{$\Subst{\indfrmp}{t}{x}$ হলো $(\Subst{!B}{t}{x} \land
+    \Subst{!C}{t}{x})$।}}{}
+
+\tagitem{prvOr}{\indcase{!A}{(!B \lor
+    !C)}{$\Subst{\indfrmp}{t}{x}$ হলো $(\Subst{!B}{t}{x} \lor
+    \Subst{!C}{t}{x})$।}}{}
+
+\tagitem{prvIf}{\indcase{!A}{(!B \lif
+    !C)}{$\Subst{\indfrmp}{t}{x}$ হলো $(\Subst{!B}{t}{x} \lif
+    \Subst{!C}{t}{x})$।}}{}
+
+\tagitem{prvIff}{\indcase{!A}{(!B \liff
+    !C)}{$\Subst{\indfrmp}{t}{x}$ হলো $(\Subst{!B}{t}{x} \liff
+    \Subst{!C}{t}{x})$।}}{}
+
+\tagitem{prvAll}{
+\indcase{!A}{\lforall[y][!B]}{$y$ যদি $x$ ছাড়া অন্য চলরাশি হয়,
+    তাহলে $\Subst{\indfrmp}{t}{x}$ হলো
+    $\lforall[y][\Subst{!B}{t}{x}]$; অন্যথায়
+    $\Subst{\indfrmp}{t}{x}$ শুধু $\indfrm$।}}{}
+
+\tagitem{prvEx}{
+\indcase{!A}{\lexists[y][!B]}{$y$ যদি $x$ ছাড়া অন্য চলরাশি হয়,
+    তাহলে $\Subst{\indfrmp}{t}{x}$ হলো
+    $\lexists[y][\Subst{!B}{t}{x}]$; অন্যথায়
+    $\Subst{\indfrmp}{t}{x}$ শুধু $\indfrm$।}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+লক্ষ করুন, প্রতিস্থাপন নিষ্ফল হতে পারে: $x$ যদি $!A$-তে একেবারেই
+সংঘটিত না হয়, তাহলে $\Subst{!A}{t}{x}$ হলো শুধু~$!A$।
+
+$t$-কে $!A$-তে $x$-এর জন্য !!{free for} হওয়ার যে বিধিনিষেধ দেওয়া
+হয়েছে, নিচের মতো ক্ষেত্র বাদ দেওয়ার জন্য তা প্রয়োজনীয়। যদি
+$!A \ident \lexists[y][x < y]$ এবং $t \ident y$ হয়, তাহলে
+$\Subst{!A}{t}{x}$ হতো $\lexists[y][y < y]$। এই ক্ষেত্রে মুক্ত
+চলরাশি $y$ প্রতিস্থাপনের ফলে পরিমাণসূচক $\lexists[y]$-এর দ্বারা
+“আবদ্ধ” হয়ে যায়, যা কাম্য নয়। যেমন, আমরা চাই যে
+$\lforall[x][!B]$ সত্য হলেই $\Subst{!B}{t}{x}$-ও সত্য হবে। কিন্তু
+$\lforall[x][\lexists[y][x < y]]$ বিবেচনা করুন (এখানে $!B$ হলো
+$\lexists[y][x < y]$)। যেমন স্বাভাবিক সংখ্যার ক্ষেত্রে বাক্যটি সত্য:
+প্রত্যেক সংখ্যা~$x$-এর চেয়ে বড় কোনো সংখ্যা~$y$ আছে। $x$-এর সম্ভাব্য
+প্রতিস্থাপক হিসেবে $y$-কে অনুমোদন করলে আমরা
+$\Subst{!B}{y}{x} \ident \lexists[y][y < y]$ পেতাম, যা মিথ্যা।
+$t$-এর কোনো মুক্ত চলরাশি যেন $!A$-এর কোনো পরিমাণসূচকের দ্বারা শেষে
+বদ্ধ না হয়ে যায়—এই শর্ত দিয়ে আমরা তা প্রতিরোধ করি।
+\end{explain}
+
+দুর্বহ সংকেতরীতি এড়াতে আমরা প্রায়ই নিচের প্রথা ব্যবহার করি। $!A$ যদি
+এমন !!a{formula} হয় যাতে !!{variable}~$x$ মুক্তভাবে থাকতে পারে, তাহলে
+তা বোঝাতে~$!A(x)$-ও লিখি। কোন $!A$ ও~$x$ বোঝানো হচ্ছে তা স্পষ্ট হলে,
+এবং $t$ যদি একটি পদ হয় ($!A(x)$-এ $x$-এর জন্য মুক্ত ধরে), তাহলে
+$\Subst{!A}{t}{x}$-এর সংক্ষিপ্ত রূপ হিসেবে $!A(t)$ লিখি। তাই যেমন আমরা
+বলতে পারি, “$!A(t)$-কে $\lforall[x][!A(x)]$-এর একটি নিদর্শন বলি।”
+এর অর্থ হলো, $!A$ যদি যেকোনো !!{formula}, $x$ যদি !!a{variable} এবং
+$t$ যদি $!A$-তে $x$-এর জন্য মুক্ত পদ হয়, তাহলে $\Subst{!A}{t}{x}$
+হলো $\lforall[x][!A]$-এর একটি নিদর্শন।
+
+\end{document}

@@ -1,0 +1,110 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: subformulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{sbf}
+
+\olsection{\printtoken{P}{subformula}}
+
+\begin{explain}
+কোনো প্রদত্ত !!{formula}-কে যে !!{formula}s “গড়ে তোলে”, সেগুলি নিয়ে
+কথা বলা প্রায়ই উপযোগী। এগুলিকে তার \emph{!!{subformula}s} বলি।
+প্রত্যেকটি !!{formula} নিজেই নিজের !!a{subformula}; $!A$ নিজে ছাড়া
+$!A$-এর অন্য কোনো উপসূত্রকে \emph{প্রকৃত !!{subformula}} বলে।
+\end{explain}
+
+\begin{defn}[অব্যবহিত !!^{subformula}]
+$!A$ যদি !!a{formula} হয়, তাহলে $!A$-এর \emph{অব্যবহিত
+!!{subformula}s} নিচের নিয়মে আরোহীভাবে সংজ্ঞায়িত:
+\begin{enumerate}
+\item পরমাণু !!{formula}s-এর কোনো অব্যবহিত !!{subformula}s নেই।
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\indfrm$-এর একমাত্র অব্যবহিত
+    !!{subformula} হলো~$!B$।}}{}
+
+\item \indcase{!A}{(!B \ast !C)}{$\indfrm$-এর অব্যবহিত
+  !!{subformula}s হলো $!B$ ও $!C$ ($\ast$ হলো দ্বি-স্থানীয়
+  সংযোজকগুলির যেকোনো একটি)।}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{$\indfrm$-এর একমাত্র
+    অব্যবহিত !!{subformula} হলো~$!B$।}}{}
+
+\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{$\indfrm$-এর একমাত্র
+    অব্যবহিত !!{subformula} হলো~$!B$।}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[প্রকৃত !!^{subformula}]
+$!A$ যদি !!a{formula} হয়, তাহলে $!A$-এর \emph{প্রকৃত
+!!{subformula}s} নিচের নিয়মে পুনরাবৃত্তিমূলকভাবে সংজ্ঞায়িত:
+\begin{enumerate}
+\item পরমাণু !!{formula}s-এর কোনো প্রকৃত !!{subformula}s নেই।
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\indfrm$-এর প্রকৃত
+    !!{subformula}s হলো $!B$ এবং $!B$-এর সব প্রকৃত
+    !!{subformula}s।}}{}
+
+\item \indcase{!A}{(!B \ast !C)}{$\indfrm$-এর প্রকৃত
+  !!{subformula}s হলো $!B$, $!C$, $!B$-এর সব প্রকৃত !!{subformula}s
+  এবং $!C$-এর সেই উপসূত্রগুলি।}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{$\indfrm$-এর প্রকৃত
+    !!{subformula}s হলো $!B$ এবং $!B$-এর সব প্রকৃত
+    !!{subformula}s।}}{}
+
+\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{$\indfrm$-এর প্রকৃত
+    !!{subformula}s হলো $!B$ এবং $!B$-এর সব প্রকৃত
+    !!{subformula}s।}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[!!^{subformula}]
+$!A$-এর !!{subformula}s হলো $!A$ নিজে এবং তার সব প্রকৃত
+!!{subformula}s।
+\end{defn}
+
+\begin{explain}
+অব্যবহিত !!{subformula}s ও প্রকৃত !!{subformula}s-কে আমরা যেভাবে
+সংজ্ঞায়িত করেছি, তার সূক্ষ্ম পার্থক্যটি লক্ষ করুন। প্রথম ক্ষেত্রে
+$!A$-এর সম্ভাব্য প্রতিটি রূপের জন্য সরাসরি $!A$-এর অব্যবহিত
+!!{subformula}s সংজ্ঞায়িত করেছি। এটি ক্ষেত্রভিত্তিক একটি স্পষ্ট
+সংজ্ঞা, আর ক্ষেত্রগুলি !!{formula}s-এর সেটের আরোহী সংজ্ঞাকে অনুসরণ
+করে। দ্বিতীয় ক্ষেত্রেও সব !!{formula}s-এর সেট যেভাবে সংজ্ঞায়িত,
+আমরা তা অনুসরণ করেছি; কিন্তু প্রতিটি ক্ষেত্রে ছোট !!{formula}s $!B$,
+$!C$-এর প্রকৃত !!{subformula}s নেওয়ার পাশাপাশি এই !!{formula}s-কেও
+অন্তর্ভুক্ত করেছি। এতে সংজ্ঞাটি \emph{পুনরাবৃত্তিমূলক} হয়। সাধারণভাবে, আরোহীভাবে
+সংজ্ঞায়িত কোনো সেটে (এখানে !!{formula}s) কোনো ফলনের সংজ্ঞাকে
+পুনরাবৃত্তিমূলক বলা হয়, যদি ফলনের সংজ্ঞার ক্ষেত্রগুলি সেই ফলনকেই
+ব্যবহার করে। তবে সংজ্ঞাটি সুসংজ্ঞায়িত হতে হলে নিশ্চিত করতে হবে যে,
+আমরা শুধু যে যুক্তিকে সংজ্ঞায়িত করছি তার “আগে” আসা যুক্তিগুলির জন্যই
+ফলনটির মান ব্যবহার করি। এখানে $(!B \ast !C)$-এর “প্রকৃত
+!!{subformula}” সংজ্ঞায়িত করার সময় কেবল “আগের” !!{formula}s $!B$ ও
+$!C$-এর প্রকৃত !!{subformula}s ব্যবহার করি।
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:subfrm-trans}
+ধরি $!B$ হলো $!A$-এর একটি উপসূত্র এবং $!C$ হলো $!B$-এর একটি উপসূত্র।
+তাহলে $!C$ হলো $!A$-এর একটি উপসূত্র। অন্যভাবে বললে, উপসূত্র-সম্বন্ধটি
+সঞ্চারী।
+\end{prop}
+
+\begin{prob}
+\olref[fol][syn][sbf]{prop:subfrm-trans} প্রমাণ করুন।
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:count-subfrms}
+ধরি $!A$ এমন একটি সূত্র যাতে $n$টি সংযোজক ও পরিমাণসূচক আছে।
+তাহলে $!A$-এর উপসূত্রের সংখ্যা সর্বাধিক $2n+1$।
+\end{prop}
+
+\begin{prob}
+\olref[fol][syn][sbf]{prop:count-subfrms} প্রমাণ করুন।
+\end{prob}
+
+\end{document}

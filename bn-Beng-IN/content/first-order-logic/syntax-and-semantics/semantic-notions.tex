@@ -1,0 +1,160 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: Semantic Notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{sem}
+\olsection{অর্থগত ধারণা}
+
+\begin{explain}
+প্রথম-ক্রমের ভাষার !!{structure}s-এর সংজ্ঞা দেওয়া থাকলে বাক্যের কয়েকটি
+মৌলিক অর্থগত ধর্ম এবং বাক্যগুলির মধ্যেকার সম্বন্ধ সংজ্ঞায়িত করতে পারি।
+এর মধ্যে সবচেয়ে সরল হলো বাক্যের \emph{বৈধতা}। কোনো বাক্য প্রত্যেক
+!!{structure}-এ পরিতৃপ্ত হলে সেটি বৈধ। বৈধ বাক্য তার অ-যৌক্তিক
+সংকেতগুলিকে যেভাবেই ব্যাখ্যা করা হোক না কেন পরিতৃপ্ত হয়। তাই বৈধ
+বাক্যকে \emph{যৌক্তিক সত্য}-ও বলা হয়—সেগুলি যেকোনো !!{structure}-এ
+সত্য, অর্থাৎ পরিতৃপ্ত; ফলে তাদের সত্যতা শুধু তাদের মধ্যে সংঘটিত যৌক্তিক
+সংকেত এবং তাদের সংকেতবিন্যাসগত !!{structure}-এর উপর নির্ভর করে,
+অ-যৌক্তিক সংকেত বা তার ব্যাখ্যার উপর নয়।
+\end{explain}
+
+\begin{defn}[বৈধতা]
+কোনো বাক্য $!A$ \emph{বৈধ}, $\Entails !A$, যদি এবং কেবল যদি প্রত্যেক
+!!{structure}~$\Struct M$-এর জন্য $\Sat{M}{!A}$।
+\end{defn}
+
+\begin{defn}[ফলশ্রুতি]
+বাক্যসমষ্টি~$\Gamma$ থেকে বাক্য~$!A$ \emph{অনুসৃত হয়},
+$\Gamma \Entails !A$, যদি এবং কেবল যদি $\Sat{M}{\Gamma}$ এমন প্রত্যেক
+!!{structure}~$\Struct M$-এর জন্য $\Sat{M}{!A}$।
+\end{defn}
+
+
+\begin{defn}[পরিতৃপ্তিযোগ্যতা]
+বাক্যসমষ্টি~$\Gamma$ \emph{পরিতৃপ্তিযোগ্য}, যদি কোনো
+!!{structure}~$\Struct M$-এর জন্য $\Sat{M}{\Gamma}$। $\Gamma$
+পরিতৃপ্তিযোগ্য না হলে তাকে \emph{অপরিতৃপ্তিযোগ্য} বলে।
+\end{defn}
+
+\begin{prop}
+কোনো বাক্য $!A$ তখনই বৈধ, যখন প্রত্যেক বাক্যসমষ্টি~$\Gamma$-র জন্য
+$\Gamma \Entails !A$।
+\end{prop}
+
+\begin{proof}
+সম্মুখ দিকের জন্য ধরি $!A$ বৈধ এবং $\Gamma$ একটি বাক্যসমষ্টি। এমন
+!!a{structure}~$\Struct M$ নিই যাতে $\Sat{M}{\Gamma}$। $!A$ বৈধ বলে
+$\Sat{M}{!A}$; অতএব $\Gamma \Entails !A$।
+
+বিপরীত দিকের বিপরীত-প্রতিপাদ্যের জন্য ধরি $!A$ অবৈধ; তাই এমন
+!!a{structure}~$\Struct M$ আছে যাতে $\Sat/{M}{!A}$। যখন
+$\Gamma = \{ \ltrue \}$, তখন $\ltrue$ বৈধ বলে $\Sat{M}{\Gamma}$।
+অতএব এমন !!a{structure}~$\Struct M$ আছে যাতে $\Sat{M}{\Gamma}$,
+কিন্তু $\Sat/{M}{!A}$; তাই $\Gamma$ থেকে $!A$ অনুসৃত হয় না।
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:entails-unsat}
+$\Gamma \Entails !A$ তখনই, যখন $\Gamma \cup \{\lnot !A\}$
+অপরিতৃপ্তিযোগ্য।
+\end{prop}
+
+\begin{proof}
+সম্মুখ দিকের জন্য ধরি $\Gamma \Entails !A$ এবং বিপরীত অনুমান করি যে,
+এমন !!a{structure}~$\Struct M$ আছে যাতে $\Sat{M}{\Gamma
+  \cup \{ \lnot !A \}}$। যেহেতু $\Sat{M}{\Gamma}$ এবং
+$\Gamma \Entails !A$, তাই $\Sat{M}{!A}$। আবার
+$\Sat{M}{\Gamma\cup \{ \lnot !A \}}$ বলে $\Sat{M}{\lnot !A}$;
+সুতরাং $\Sat{M}{!A}$ ও $\Sat/{M}{!A}$ উভয়ই পাই—এটি স্ববিরোধ। তাই
+এমন কোনো !!{structure}~$\Struct M$ থাকতে পারে না; অতএব
+$\Gamma \cup \{ \lnot !A \}$ অপরিতৃপ্তিযোগ্য।
+
+বিপরীত দিকের জন্য ধরি $\Gamma \cup \{ \lnot !A \}$
+অপরিতৃপ্তিযোগ্য। তাই প্রত্যেক !!{structure}~$\Struct M$-এর জন্য হয়
+$\Sat/{M}{\Gamma}$, নয়তো $\Sat{M}{!A}$। অতএব $\Sat{M}{\Gamma}$ এমন
+প্রত্যেক !!{structure}~$\Struct M$-এর জন্য $\Sat{M}{!A}$; তাই
+$\Gamma \Entails !A$।
+\end{proof}
+
+\begin{prob}
+\begin{enumerate}
+\item দেখান, $\Gamma \Entails \bot$ তখনই, যখন $\Gamma$ অপরিতৃপ্তিযোগ্য।
+\item দেখান, $\Gamma \cup \{!A\} \Entails \bot$ তখনই, যখন
+  $\Gamma \Entails \lnot !A$।
+\item ধরি $c$,~$!A$ বা $\Gamma$-তে সংঘটিত হয় না। দেখান,
+  $\Gamma \Entails \lforall[x][!A]$ তখনই, যখন $\Gamma \Entails
+  \Subst{!A}{c}{x}$।
+\end{enumerate}
+\end{prob}
+
+\begin{prop}
+$\Gamma \subseteq \Gamma'$ এবং $\Gamma \Entails !A$ হলে
+$\Gamma' \Entails !A$।
+\end{prop}
+
+\begin{proof}
+ধরি $\Gamma \subseteq \Gamma'$ এবং $\Gamma \Entails !A$। এমন একটি
+গঠন $\Struct M$ নিই যাতে $\Sat{M}{\Gamma'}$; তাহলে
+$\Sat{M}{\Gamma}$, এবং $\Gamma \Entails !A$ বলে $\Sat{M}{!A}$। তাই
+যখনই $\Sat{M}{\Gamma'}$, তখন $\Sat{M}{!A}$; অতএব
+$\Gamma' \Entails !A$।
+\end{proof}
+
+
+\begin{thm}[অর্থগত নিঃসরণ উপপাদ্য]
+\ollabel{thm:sem-deduction}
+$\Gamma \cup \{!A\} \Entails !B$ তখনই, যখন
+$\Gamma \Entails !A \lif !B$।
+\end{thm}
+
+\begin{proof}
+সম্মুখ দিকের জন্য ধরি $\Gamma \cup \{ !A \} \Entails !B$ এবং এমন
+!!a{structure}~$\Struct M$ নিই যাতে $\Sat{M}{\Gamma}$।
+$\Sat{M}{!A}$ হলে $\Sat{M}{\Gamma \cup \{ !A \} }$; তাই
+$\Gamma \cup \{ !A \}$ থেকে $!B$ অনুসৃত হয় বলে $\Sat{M}{!B}$।
+অতএব $\Sat{M}{!A \lif !B}$; তাই $\Gamma \Entails !A \lif !B$।
+
+বিপরীত দিকের জন্য ধরি $\Gamma \Entails !A \lif !B$ এবং এমন
+!!a{structure}~$\Struct M$ নিই যাতে $\Sat{M}{\Gamma \cup \{ !A
+  \}}$। তাহলে $\Sat{M}{\Gamma}$, তাই $\Sat{M}{!A \lif !B}$; এবং
+$\Sat{M}{!A}$ বলে $\Sat{M}{!B}$। অতএব যখনই
+$\Sat{M}{\Gamma \cup \{ !A \} }$, তখন $\Sat{M}{!B}$; তাই
+$\Gamma \cup \{ !A \} \Entails !B$।
+\end{proof}
+
+\begin{prop}\ollabel{prop:quant-terms}
+  ধরি $\Struct{M}$ একটি !!a{structure}, $!A(x)$ একটি মুক্ত চলরাশি~$x$-সহ
+  !!a{formula} এবং $t$ একটি বদ্ধ পদ। তাহলে:
+  \begin{tagenumerate}{prvEx,prvAll}
+    \tagitem{prvEx}{$!A(t) \Entails \lexists[x][!A(x)]$}{}
+    \tagitem{prvAll}{$\lforall[x][!A(x)] \Entails !A(t)$}{}
+  \end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{tagenumerate}{prvEx,prvAll}
+    \tagitem{prvEx}{%
+      \iftag{probEx}{অনুশীলনী।}{ধরি $\Sat{M}{!A(t)}$। এমন একটি
+        চলরাশি-আরোপ $s$ নিই যাতে $s(x) = \Value{t}{M}$। $!A(t)$ একটি
+        !!a{sentence} বলে $\Sat{M}{!A(t)}[s]$।
+        \olref[ext]{prop:ext-formulas} থেকে $\Sat{M}{!A(x)}[s]$।
+        \olref[ass]{prop:sat-quant} থেকে
+        $\Sat{M}{\lexists[x][!A(x)]}$।}}{}
+    \tagitem{prvAll}{%
+      \iftag{probAll}{অনুশীলনী।}{ধরি
+        $\Sat{M}{\lforall[x][!A(x)]}$। এমন একটি চলরাশি-আরোপ $s$ নিই
+        যাতে $s(x) = \Value{t}{M}$। \olref[ass]{prop:sat-quant} থেকে
+        $\Sat{M}{!A(x)}[s]$। \olref[ext]{prop:ext-formulas} থেকে
+        $\Sat{M}{!A(t)}[s]$। $!A(t)$ একটি !!a{sentence} বলে
+        \olref[ass]{prop:sentence-sat-true} থেকে $\Sat{M}{!A(t)}$।}}{}
+  \end{tagenumerate}
+\end{proof}
+
+\begin{probtag}{probEx,probAll}
+  \olref[fol][syn][sem]{prop:quant-terms}-এর প্রমাণ সম্পূর্ণ করুন।
+\end{probtag}
+
+\end{document}

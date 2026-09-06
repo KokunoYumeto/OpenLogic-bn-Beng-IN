@@ -1,0 +1,97 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: free-vars-sentences
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{fvs}
+
+\olsection{মুক্ত \printtoken{P}{variable} ও \printtoken{P}{sentence}}
+
+\begin{defn}[!!a{variable}-এর মুক্ত সংঘটন]
+\ollabel{defn:free-occ}
+!!a{formula}-এ !!a{variable}-এর \emph{মুক্ত} সংঘটনগুলি নিচের নিয়মে
+আরোহীভাবে সংজ্ঞায়িত:
+\begin{enumerate}
+\item \indcase*{!A}{$!A$ পরমাণু}{$\indfrm$-এ !!{variable}-এর সব
+  সংঘটন মুক্ত।}
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\indfrm$-এ !!{variable}-এর
+  মুক্ত সংঘটনগুলি ঠিক $!B$-এর মুক্ত সংঘটনগুলিই।}}{}
+
+\item \indcase{!A}{(!B \ast !C)}{$\indfrm$-এ !!{variable}-এর মুক্ত
+  সংঘটনগুলি হলো $!B$-এর মুক্ত সংঘটন এবং $!C$-এর মুক্ত সংঘটন একত্রে।}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{$\indfrm$-এর মুক্ত
+  !!{variable}-সংঘটনগুলি হলো $!B$-এর সব মুক্ত সংঘটন থেকে $x$-এর
+  সংঘটনগুলি বাদ দিলে যা থাকে।}}{}
+
+\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{$\indfrm$-এর মুক্ত
+  !!{variable}-সংঘটনগুলি হলো $!B$-এর সব মুক্ত সংঘটন থেকে $x$-এর
+  সংঘটনগুলি বাদ দিলে যা থাকে।}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[বদ্ধ চলরাশি]
+কোনো সূত্র~$!A$-এ !!a{variable}-এর যে সংঘটন মুক্ত নয়, সেটি
+\emph{বদ্ধ}।
+\end{defn}
+
+\begin{prob}
+\olref[fol][syn][fvs]{defn:free-occ}-এর অনুরূপভাবে বদ্ধ চলরাশির
+সংঘটনগুলির একটি আরোহী সংজ্ঞা দিন।
+\end{prob}
+
+\begin{defn}[পরিসর]
+\iftag{prvAll}{$\lforall[x][!B]$ যদি সূত্র~$!A$-এ কোনো উপসূত্রের
+  সংঘটন হয়, তাহলে $!A$-এ $!B$-এর অনুরূপ সংঘটনটিকে $\lforall[x]$-এর
+  অনুরূপ সংঘটনের \emph{পরিসর} বলা হয়। \iftag{prvEx}{$\lexists[x]$-এর
+  ক্ষেত্রেও একই কথা।}{}}{যদি $\lexists[x][!B]$ সূত্র~$!A$-এ কোনো
+  উপসূত্রের সংঘটন হয়, তাহলে $!A$-এ $!B$-এর অনুরূপ সংঘটনটিকে
+  $\lexists[x]$-এর অনুরূপ সংঘটনের \emph{পরিসর} বলা হয়।}
+
+$!B$ যদি~$!A$-এ কোনো পরিমাণসূচক-সংঘটন
+\iftag{prvAll}{$\lforall[x]$\iftag{prvEx}{ বা
+    $\lexists[x]$}{}}{$\lexists[x]$}-এর পরিসর হয়, তাহলে $!B$-তে
+$x$-এর মুক্ত সংঘটনগুলি \iftag{prvAll}{$\lforall[x][!B]$\iftag{prvEx}{
+ও $\lexists[x][!B]$}{}}{$\lexists[x][!B]$}-তে বদ্ধ। আমরা বলি, এই
+সংঘটনগুলি উল্লিখিত পরিমাণসূচক-সংঘটনটির \emph{দ্বারা বদ্ধ}।
+\end{defn}
+
+\begin{ex}
+নিচের সূত্রটি বিবেচনা করুন:
+\[
+\lexists[\Obj v_0][\underbrace{\Atom{\Obj A^2_0}{\Obj v_0,\Obj v_1}}_{!B}]
+\]
+$!B$ হলো $\lexists[\Obj v_0]$-এর পরিসর। পরিমাণসূচকটি $!B$-তে
+$\Obj v_0$-এর সংঘটনকে বদ্ধ করে, কিন্তু $\Obj v_1$-এর সংঘটনকে বদ্ধ
+করে না। তাই এই ক্ষেত্রে $\Obj v_1$ একটি মুক্ত চলরাশি।
+
+
+এবার দেখি, আরও জটিল কোনো !!{formula}~$!A$-এ এটি কীভাবে কাজ করে:
+\[
+\lforall[\Obj v_0][\underbrace{(\Atom{\Obj A^1_0}{\Obj v_0} \lif
+    \Atom{\Obj A^2_0}{\Obj v_0, \Obj v_1})}_{!B}] \lif \lexists[\Obj
+  v_1][\underbrace{(\Atom{\Obj A^2_1}{\Obj v_0, \Obj v_1} \lor \lforall[\Obj v_0][\overbrace{\lnot \Atom{\Obj A^1_1}{\Obj v_0}}^{!D}])}_{!C}]
+\]
+$!B$ হলো প্রথম $\lforall[\Obj v_0]$-এর পরিসর, $!C$ হলো
+$\lexists[\Obj v_1]$-এর পরিসর এবং $!D$ হলো দ্বিতীয়
+$\lforall[\Obj v_0]$-এর পরিসর। প্রথম $\lforall[\Obj v_0]$,
+$!B$-তে $\Obj v_0$-এর সংঘটনগুলিকে বদ্ধ করে; $\lexists[\Obj v_1]$,
+$!C$-তে $\Obj v_1$-এর সংঘটনটিকে বদ্ধ করে; এবং দ্বিতীয়
+$\lforall[\Obj v_0]$, $!D$-তে $\Obj v_0$-এর সংঘটনটিকে বদ্ধ করে।
+$\Obj v_1$-এর প্রথম সংঘটন এবং $\Obj v_0$-এর চতুর্থ সংঘটন~$!A$-তে
+মুক্ত। $\Obj v_0$-এর শেষ সংঘটনটি $!D$-তে মুক্ত, কিন্তু $!C$ ও~$!A$-তে
+বদ্ধ।
+\end{ex}
+
+\begin{defn}[বাক্য]
+!!^a{formula}~$!A$ তখনই \article{sentence} \emph{!!{sentence}}, যখন
+তাতে !!{variable}s-এর কোনো মুক্ত সংঘটন নেই।
+\end{defn}
+
+% add examples!
+
+\end{document}

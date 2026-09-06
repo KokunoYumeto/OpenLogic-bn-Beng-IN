@@ -996,6 +996,32 @@ for row in rows:
             mathparts(models_audited_source) == target_math
             and all(finding_id in documented for finding_id in models_math_ids)
         )
+    beyond_math_ids = []
+    beyond_math_fix = False
+    beyond_audited_source = source
+    if row["unit_id"] == "OLP-0176":
+        beyond_math_ids = ["BN-SRC-109"]
+        old = r"\lforall[a][\lforall x][(\Atom{\Obj{MarriedTo}}{a,x} \lif"
+        new = r"\lforall[a][\lforall[x][(\Atom{\Obj{MarriedTo}}{a,x} \lif"
+        assert beyond_audited_source.count(old) == 1
+        beyond_audited_source = beyond_audited_source.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0177":
+        beyond_math_ids = ["BN-SRC-110"]
+        old = r"\lforall[x][\lforall[y][(s(x) = s(y) \lif x = y)]]"
+        new = r"\lforall[x][\lforall[y][(x' = y' \lif x = y)]]"
+        assert beyond_audited_source.count(old) == 1
+        beyond_audited_source = beyond_audited_source.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0178":
+        beyond_math_ids = ["BN-SRC-111"]
+        old = r"for any~$x$ of type~$\sigma$; so item (6)"
+        new = r"for any~$x$ of type~$\tau$; so item (6)"
+        assert beyond_audited_source.count(old) == 1
+        beyond_audited_source = beyond_audited_source.replace(old, new, 1)
+    if beyond_math_ids:
+        beyond_math_fix = (
+            mathparts(beyond_audited_source) == target_math
+            and all(finding_id in documented for finding_id in beyond_math_ids)
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -1053,6 +1079,13 @@ for row in rows:
             "OLP-0173": {"BN-SRC-108"},
         }
         assert set(documented) == expected_models.get(row["unit_id"], set())
+    if 174 <= int(row["unit_id"].split("-")[1]) <= 181:
+        expected_beyond = {
+            "OLP-0176": {"BN-SRC-109"},
+            "OLP-0177": {"BN-SRC-110"},
+            "OLP-0178": {"BN-SRC-111"},
+        }
+        assert set(documented) == expected_beyond.get(row["unit_id"], set())
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -1343,6 +1376,24 @@ for row in rows:
             "documented_correction": "BN-SRC-102",
             "formula_substitution_free_for_hypothesis": True,
         }
+    elif row["unit_id"] == "OLP-0176":
+        assert beyond_math_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-109",
+            "inner_universal_variable_delimiter_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0177":
+        assert beyond_math_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-110",
+            "declared_successor_notation_restored": "prime",
+        }
+    elif row["unit_id"] == "OLP-0178":
+        assert beyond_math_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-111",
+            "lambda_domain_type_restored": "tau",
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -1401,6 +1452,7 @@ for row in rows:
             syntax_math_fix,
             semantics_math_fix,
             models_math_fix,
+            beyond_math_fix,
             shared_audit_fix,
         )
     )

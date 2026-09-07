@@ -1,0 +1,283 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: representing-tms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{rep}
+\olsection{টুরিং যন্ত্রের উপস্থাপন}
+
+\begin{explain}
+টুরিং যন্ত্রকে \emph{দশা-চিত্র} দিয়ে দৃশ্যত উপস্থাপন করা যায়। চিত্রগুলি
+তীর দিয়ে যুক্ত দশা-নোড দিয়ে গঠিত। স্বাভাবিকভাবেই, প্রতিটি দশা-নোড
+যন্ত্রের একটি দশা প্রকাশ করে। প্রতিটি তীর সেই দশা থেকে পালনযোগ্য একটি
+নির্দেশ প্রকাশ করে এবং নির্দেশটির বিবরণ সংশ্লিষ্ট তীরের উপরে বা নিচে
+লেখা থাকে। নিচের যন্ত্রটি বিবেচনা করো; এর মাত্র দুটি অভ্যন্তরীণ দশা,
+$q_0$ ও $q_1$, এবং একটি নির্দেশ আছে:
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]   (A)              {$q_0$};
+  \node[state]   (B) [right of=A] {$q_1$};
+
+  \path (A) edge  node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (B);
+\end{tikzpicture}
+\]
+মনে রেখো, টুরিং যন্ত্রের একটি পাঠ-লেখ হেড এবং নিবেশ-লেখা একটি ফিতা
+আছে। নির্দেশটি এভাবে পড়া যায়: \emph{দশা~$q_0$-তে একটি~$\TMblank$
+পড়লে একটি~$\TMstroke$ লেখো, ডান দিকে যাও এবং দশা~$q_1$-এ যাও}। এটি
+অবস্থান্তর অপেক্ষক দ্বারা $\tuple{q_0, \TMblank}$-কে
+$\tuple{q_1, \TMstroke, \TMright}$-এ পাঠানোর সমতুল্য।
+\end{explain}
+
+\begin{ex}
+\emph{জোড়-যন্ত্র}: নিচের টুরিং যন্ত্রটি ঠিক তখনই থামে, যখন ফিতায়
+$\TMstroke$-এর সংখ্যা জোড় (ধরা হচ্ছে, ফিতার প্রথম $\TMblank$-এর আগে
+সব $\TMstroke$ রয়েছে)।
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]         (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+
+  \path (A) edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+        (B) edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (B)
+            edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A);
+\end{tikzpicture}
+\]
+
+দশা-চিত্রটি নিচের অবস্থান্তর অপেক্ষকের সঙ্গে সঙ্গতিপূর্ণ:
+\begin{align*}
+\delta(q_0, \TMstroke) & = \tuple{q_1, \TMstroke, \TMright},\\
+\delta(q_1, \TMstroke) & = \tuple{q_0, \TMstroke, \TMright},\\
+\delta(q_1, \TMblank)  & = \tuple{q_1, \TMblank, \TMright}
+\end{align*}
+\end{ex}
+
+\begin{explain}
+উপরের যন্ত্রটি শুধু তখনই থামে, যখন নিবেশটি জোড়সংখ্যক দাগ। অন্যথায়
+যন্ত্রটি (তত্ত্বগতভাবে) অনির্দিষ্টকাল চলতে থাকে। যেকোনো যন্ত্র ও নিবেশের
+ক্ষেত্রে যন্ত্রটির \emph{কনফিগারেশন}-গুলি ধাপে ধাপে অনুসরণ করে নির্গম
+নির্ণয় করা যায়। পরে আমরা কনফিগারেশনের আনুষ্ঠানিক সংজ্ঞা দেব। আপাতত
+স্বজ্ঞাতভাবে কনফিগারেশনকে এমন কয়েকটি চিত্রের অনুক্রম ভাবতে পারি, যা
+চালনার যেকোনো মুহূর্তে যন্ত্রের দশা দেখায়। কনফিগারেশনে ফিতার বিষয়বস্তু,
+যন্ত্রের দশা এবং পাঠ-লেখ হেডের অবস্থান দেখা যায়।
+
+জোড়-যন্ত্রটিকে চারটি $\TMstroke$-এর নিবেশ দিয়ে চালু করলে তার
+কনফিগারেশনগুলি অনুসরণ করি। এক্ষেত্রে যন্ত্রটি থামবে বলে আমাদের প্রত্যাশা।
+তারপর যন্ত্রটিকে তিনটি $\TMstroke$-এর নিবেশে চালাব; সেখানে যন্ত্রটি
+চিরকাল চলবে।
+
+যন্ত্রটি দশা~$q_0$-তে বাঁদিকের প্রথম~$\TMstroke$ পড়তে পড়তে শুরু করে।
+যন্ত্রটির আরম্ভিক দশা নিচের মতো প্রকাশ করা যায়:
+\[
+\TMendtape \TMstroke_0 \TMstroke \TMstroke \TMstroke \TMblank \ldots
+\]
+উপরের কনফিগারেশনটি সরল। দেখা যাচ্ছে, যন্ত্রটি দশা~$q_0$-তে বাঁদিকের
+প্রথম~$\TMstroke$ পড়তে পড়তে শুরু করে। প্রথম~$\TMstroke$-এ দশার নামের
+নিম্নসূচক দিয়ে তা দেখানো হয়েছে। এই মুহূর্তে প্রযোজ্য নির্দেশটি হলো
+$\delta(q_0, \TMstroke) = \tuple{q_1, \TMstroke, \TMright}$; ফলে
+যন্ত্রটি ফিতায় ডান দিকে যায় এবং দশা~$q_1$-এ বদলে যায়।
+% BN-SRC-163 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-163):} হিমায়িত ইংরেজি বর্ণনায় এই আরম্ভিক কনফিগারেশনকে “state one” বলা হয়েছে, যদিও আগের বাক্য, চিত্রের নিম্নসূচক এবং প্রযোজ্য নির্দেশ—সবই দশা~$q_0$ নির্দিষ্ট করে। বাংলা পাঠে দশা~$q_0$ রাখা হয়েছে।} % BN-SRC-163 TARGET-CORRECTION-END
+\[
+\TMendtape \TMstroke \TMstroke_1 \TMstroke \TMstroke \TMblank \ldots
+\]
+যন্ত্রটি এখন দশা~$q_1$-এ একটি~$\TMstroke$ পড়ছে বলে আমাদের নির্দেশ
+$\delta(q_1, \TMstroke) = \tuple{q_0, \TMstroke, \TMright}$ “অনুসরণ”
+করতে হবে। এর ফলে কনফিগারেশনটি হয়
+\[
+\TMendtape \TMstroke \TMstroke \TMstroke_0 \TMstroke \TMblank \ldots
+\]
+যন্ত্রটি চলতে থাকলে একই ক্রমে নিয়মগুলি আবার প্রয়োগ হয় এবং নিচের দুটি
+কনফিগারেশন পাওয়া যায়:
+\[
+\TMendtape \TMstroke \TMstroke \TMstroke \TMstroke_1 \TMblank \ldots
+\]
+\[
+\TMendtape \TMstroke \TMstroke \TMstroke \TMstroke \TMblank_0 \ldots
+\]
+যন্ত্রটি এখন দশা~$q_0$-তে একটি~$\TMblank$ পড়ছে। অবস্থান্তর-চিত্র থেকে
+সহজেই দেখা যায়, পালন করার কোনো নির্দেশ নেই; তাই যন্ত্রটি থেমে গেছে। এর
+অর্থ, নিবেশটি গৃহীত হয়েছে।
+
+এবার ধরা যাক, যন্ত্রটিকে তিনটি $\TMstroke$-এর নিবেশ দিয়ে চালু করি। একই
+নির্দেশগুলি পালিত হয় বলে প্রথম কয়েকটি কনফিগারেশন একই রকম; কেবল ফিতার
+নিবেশে সামান্য পার্থক্য:
+\[
+\TMendtape \TMstroke_0 \TMstroke \TMstroke \TMblank \ldots
+\]
+\[
+\TMendtape \TMstroke \TMstroke_1 \TMstroke \TMblank \ldots
+\]
+\[
+\TMendtape \TMstroke \TMstroke \TMstroke_0 \TMblank \ldots
+\]
+\[
+\TMendtape \TMstroke \TMstroke \TMstroke \TMblank_1 \ldots
+\]
+যন্ত্রটি এখন সব $\TMstroke$ পেরিয়ে গেছে এবং দশা~$q_1$-এ একটি
+~$\TMblank$ পড়ছে। চিত্রে দেখানো আছে, এক্ষেত্রে
+$\delta(q_1, \TMblank) =\tuple{q_1, \TMblank, \TMright}$ আকারের একটি
+নির্দেশ রয়েছে। ফিতাটি ডান দিকে অনির্দিষ্টকাল $\TMblank$ দিয়ে ভরা বলে
+যন্ত্রটি দশা~$q_1$-এ থেকে এবং ক্রমশ আরও ডান দিকে যেতে যেতে এই নির্দেশটি
+\emph{চিরকাল} পালন করবে। যন্ত্রটি কখনোই থামবে না এবং নিবেশটি গ্রহণ করবে
+না।
+\end{explain}
+
+\begin{explain}
+মনে রাখা জরুরি যে সব যন্ত্র থামে না। থামা যদি যন্ত্রটির পালনযোগ্য নির্দেশ
+ফুরিয়ে যাওয়া বোঝায়, তবে প্রতিটি দশায় প্রতিটি প্রতীকের জন্য একটি করে
+বহির্মুখী তীর নিশ্চিত করলেই কখনও না-থামা যন্ত্র বানানো যায়। দশা~$q_0$-তে
+একটি $\TMblank$ পড়ার নির্দেশ যোগ করে জোড়-যন্ত্রটিকে অনির্দিষ্টকাল চলার
+মতো বদলে নেওয়া যায়।
+\end{explain}
+
+\begin{ex}
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+
+  \path
+  (A) edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+      edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (A)
+  (B) edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (B)
+      edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A);
+\end{tikzpicture}
+\]
+\end{ex}
+
+\begin{explain}
+টুরিং যন্ত্র উপস্থাপনের আরেকটি উপায় হলো যন্ত্র-সারণি। যন্ত্র-সারণির
+$x$-অক্ষে ফিতার বর্ণমালা এবং $y$-অক্ষে যন্ত্রের দশাগুলির সেট দেখানো হয়।
+সারণিতে প্রতিটি দশা ও প্রতীকের ছেদস্থলে নির্দেশটির বাকি অংশ—নতুন দশা,
+নতুন প্রতীক এবং চলনের দিক—লেখা হয়। কোন দশায় এবং কোন প্রতীকের জন্য
+যন্ত্রটি থামে, তা যন্ত্র-সারণি থেকে সহজে নির্ণয় করা যায়। সারণির প্রতিটি
+ফাঁকই যন্ত্রটির থামার একটি সম্ভাব্য স্থান। দশা-চিত্র ও নির্দেশ-সেটে
+যন্ত্রটির থামার স্থানগুলি সবসময় সঙ্গে সঙ্গে চোখে না পড়লেও, যন্ত্র-সারণির
+ফাঁকগুলি খুঁজে যেকোনো থামার স্থান দ্রুত শনাক্ত করা যায়।
+\end{explain}
+
+\begin{ex}
+জোড়-যন্ত্রটির যন্ত্র-সারণি হলো:
+\[
+\centering
+\begin{tabular}{lllll}
+\cline{2-4}
+\multicolumn{1}{l|}{}      & \multicolumn{1}{c|}{$\TMblank$}
+& \multicolumn{1}{c|}{$\TMstroke$}     & \multicolumn{1}{c|}{$\TMendtape$}   &  \\ \cline{1-4}
+\multicolumn{1}{|l|}{$q_0$} & \multicolumn{1}{l|}{}
+& \multicolumn{1}{l|}{\TMtrans{q_1}{\TMstroke}{\TMright}} &
+\multicolumn{1}{l|}{\phantom{\TMtrans{\TMstroke}{q_1}{\TMright}}} &  \\ \cline{1-4}
+\multicolumn{1}{|l|}{$q_1$} & \multicolumn{1}{l|}{\TMtrans{q_1}{\TMblank}{\TMright}}
+& \multicolumn{1}{l|}{\TMtrans{q_0}{\TMstroke}{\TMright}} &
+\multicolumn{1}{l|}{\phantom{\TMtrans{\TMstroke}{q_1}{\TMright}}} &  \\ \cline{1-4}
+\end{tabular}
+\]
+দেখা যাচ্ছে, দশা~$q_0$-তে একটি~$\TMblank$ পড়ার সময় যন্ত্রটি থামে।
+% BN-SRC-164 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-164):} হিমায়িত ইংরেজি সারণির বর্ণনা অনুযায়ী প্রতিটি ঘরে নতুন দশা, নতুন প্রতীক ও চলনের দিক—এই ক্রমে লেখা হওয়ার কথা; কিন্তু সক্রিয় তিনটি ঘরেই নতুন প্রতীক ও নতুন দশা উল্টো ক্রমে আছে। বাংলা সারণিতে যথাক্রমে $\tuple{q_1,\TMstroke,\TMright}$, $\tuple{q_1,\TMblank,\TMright}$ ও $\tuple{q_0,\TMstroke,\TMright}$ রাখা হয়েছে, যা আগের অবস্থান্তর অপেক্ষকের সঙ্গে মেলে।} % BN-SRC-164 TARGET-CORRECTION-END
+\end{ex}
+
+\begin{explain}
+এ পর্যন্ত আমরা কেবল নিবেশ পড়ে গ্রহণ করে এমন যন্ত্র বিবেচনা করেছি। কিন্তু
+টুরিং যন্ত্র পড়া ও লেখা দুটিই করতে পারে। এমন যন্ত্রের একটি উদাহরণ (যদিও
+উদাহরণের অভাব নেই) হলো \emph{দ্বিগুণকারী}। ফিতায় $n$টি
+$\TMstroke$-এর একটি খণ্ড দিয়ে দ্বিগুণকারীকে চালু করলে সেটি $2n$টি
+$\TMstroke$-এর একটি খণ্ড নির্গত করে।
+\end{explain}
+
+\begin{ex}
+  \ollabel{ex:doubler} দ্বিগুণকারী যন্ত্র নির্মাণের আগে সমস্যাটি সমাধানের
+  একটি \emph{কৌশল} ঠিক করা জরুরি। যন্ত্রটি (আমরা যেভাবে সূত্রবদ্ধ করেছি)
+  কতগুলি $\TMstroke$ পড়েছে তা মনে রাখতে পারে না; তাই ফিতার সব
+  $\TMstroke$-এর হিসাব রাখার একটি উপায় দরকার। তার একটি উপায় হলো একটি
+  ~$\TMblank$ দিয়ে নির্গমকে নিবেশ থেকে আলাদা করা। যন্ত্রটি তখন নিবেশের
+  প্রথম $\TMstroke$ মুছতে পারে, নিবেশের বাকি অংশ পেরিয়ে যেতে পারে,
+  একটি $\TMblank$ রেখে দুটি নতুন $\TMstroke$ লিখতে পারে। তারপর যন্ত্রটি
+  ফিরে গিয়ে নিবেশের দ্বিতীয় $\TMstroke$ খুঁজে সেটিকেও দ্বিগুণ করবে।
+  নিবেশের প্রতিটি $\TMstroke$-এর জন্য সেটি নির্গমে দুটি $\TMstroke$
+  লিখবে। এগোনোর সঙ্গে সঙ্গে নিবেশ মুছে দিলে নিশ্চিত করা যায় যে কোনো
+  $\TMstroke$ বাদ পড়বে না বা দুবার দ্বিগুণ হবে না। গোটা নিবেশ মুছে গেলে
+  ফিতায় $2n$টি $\TMstroke$ অবশিষ্ট থাকবে। নির্মিত টুরিং যন্ত্রটির
+  দশা-চিত্র \olref{fig:doubler}-এ দেখানো হয়েছে।
+  \begin{figure}
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (1)              {$q_0$};
+  \node[state]         (2) [right of=1] {$q_1$};
+  \node[state]         (3) [right of=2] {$q_2$};
+  \node[state]         (4) [below of=3] {$q_3$};
+  \node[state]         (5) [left of=4]  {$q_4$};
+  \node[state]         (6) [left of=5]  {$q_5$};
+
+  \path (1) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMright}} (2)
+    (2) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (2)
+      edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (3)
+    (3) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (3)
+        edge node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (4)
+    (4) edge [loop below] node {\TMtrans{\TMblank}{\TMstroke}{\TMleft}} (4)
+        edge node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+    (5) edge [loop below]  node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+        edge              node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (6)
+    (6) edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (6)
+        edge              node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (1);
+\end{tikzpicture}
+\]
+\caption{একটি দ্বিগুণকারী যন্ত্র}
+\ollabel{fig:doubler}
+\end{figure}
+\end{ex}
+
+\begin{prob}
+ইচ্ছামতো একটি নিবেশ বেছে নিয়ে \olref[tur][mac][rep]{ex:doubler}-এর
+দ্বিগুণকারী যন্ত্রটির কনফিগারেশনগুলি ধাপে ধাপে অনুসরণ করো।
+\end{prob}
+
+\begin{prob}
+$\{\TMendtape,\TMblank, A, B\}$ বর্ণমালার এমন একটি টুরিং যন্ত্র নকশা
+করো, যা $A$ ও $B$-এর এমন যেকোনো প্রতীকক্রম গ্রহণ করে, অর্থাৎ তাতে থামে,
+যেখানে $A$-এর সংখ্যা $B$-এর সংখ্যার সমান \emph{এবং} সব $A$, সব $B$-এর
+আগে আসে; আর $A$ ও~$B$-এর সংখ্যা সমান না হলে বা সব~$A$, সব~$B$-এর আগে
+না এলে প্রতীকক্রমটি বর্জন করে, অর্থাৎ তাতে থামে না। (যেমন, যন্ত্রটি
+$AABB$ ও $AAABBB$ গ্রহণ করবে, কিন্তু $AAB$ ও $AABBAABB$—দুটিই বর্জন
+করবে।)
+\end{prob}
+
+\begin{prob}
+$\{\TMendtape,\TMblank, A, B\}$ বর্ণমালার এমন একটি টুরিং যন্ত্র নকশা
+করো, যা নিবেশ হিসেবে $A$ ও $B$-এর যেকোনো প্রতীকক্রম~$\alpha$ নেয় এবং
+সেটির অনুলিপি করে $\alpha\alpha$ আকারের নির্গম উৎপন্ন করে। (যেমন,
+$ABBA$ নিবেশের ফলে $ABBAABBA$ নির্গম হওয়া উচিত।)
+\end{prob}
+
+\begin{prob}
+\emph{বর্ণানুক্রমিক?}: $\{\TMendtape,\TMblank, A, B\}$ বর্ণমালার এমন
+একটি টুরিং যন্ত্র নকশা করো, যা নিবেশ হিসেবে $A$ ও $B$-এর একটি সসীম
+অনুক্রম পেলে সব $A$, সব $B$-এর বাঁ দিকে আছে কি না পরীক্ষা করে। যন্ত্রটি
+নিবেশ-প্রতীকক্রমটি ফিতায় রেখে দেবে এবং প্রতীকক্রমটি “বর্ণানুক্রমিক” হলে
+থামবে, আর তা না হলে চিরকাল চক্রাকারে চলবে।
+\end{prob}
+
+\begin{prob}
+\emph{বর্ণানুক্রমে সাজানোর যন্ত্র}: $\{\TMendtape,\TMblank, A, B\}$
+বর্ণমালার এমন একটি টুরিং যন্ত্র নকশা করো, যা নিবেশ হিসেবে $A$ ও $B$-এর
+একটি সসীম অনুক্রম নিয়ে সেগুলিকে এমনভাবে পুনর্বিন্যস্ত করে, যাতে সব $A$,
+সব~$B$-এর বাঁ দিকে থাকে। (যেমন, $BABAA$ অনুক্রমটি $AAABB$ অনুক্রমে এবং
+$ABBABB$ অনুক্রমটি $AABBBB$ অনুক্রমে বদলে যাওয়া উচিত।)
+\end{prob}
+
+\end{document}

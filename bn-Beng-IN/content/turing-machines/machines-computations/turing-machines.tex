@@ -1,0 +1,59 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: turing-machines
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{tur}
+\olsection{টুরিং যন্ত্র}
+
+\begin{explain}
+কোনটি টুরিং যন্ত্র হিসেবে গণ্য হবে তার আনুষ্ঠানিক সংজ্ঞাটি দেখতে বিমূর্ত,
+কিন্তু আসলে সরল: টুরিং যন্ত্রের কাজকর্ম নির্দিষ্ট করতে যত তথ্য দরকার,
+সেগুলি শুধু একটি গাণিতিক গঠনে একত্র করা হয়। এর মধ্যে আছে (১) যন্ত্রটি
+কোন কোন দশায় থাকতে পারে, (২) ফিতায় কোন প্রতীকগুলি থাকতে পারে, (৩)
+যন্ত্রটি কোন দশায় শুরু করবে এবং (৪) যন্ত্রটির নির্দেশ-সেট কী।
+\end{explain}
+
+\begin{defn}[টুরিং যন্ত্র]
+একটি \emph{টুরিং যন্ত্র} $M$ হলো একটি চতুষ্টয় $\langle Q, \Sigma, q_0,
+\delta\rangle$, যার উপাদানগুলি হলো
+\begin{enumerate}
+\item \emph{দশা}-গুলির একটি সসীম সেট~$Q$,
+\item একটি সসীম \emph{বর্ণমালা}~$\Sigma$, যার মধ্যে $\TMendtape$ ও
+  $\TMblank$ আছে,
+\item একটি \emph{আরম্ভিক দশা}~$q_0 \in Q$,
+\item একটি সসীম \emph{নির্দেশ-সেট}~$\delta\colon Q \times \Sigma
+  \pto Q \times \Sigma \times \{\TMleft, \TMright, \TMstay\}$।
+\end{enumerate}
+আংশিক অপেক্ষক~$\delta$-কে $M$-এর \emph{অবস্থান্তর অপেক্ষক}-ও বলা হয়।
+\end{defn}
+
+\begin{explain}
+আমরা ধরে নিই, ফিতাটি শুধু এক দিকেই অসীম। তাই ফিতার বাঁ প্রান্তের চিহ্ন
+হিসেবে একটি বিশেষ প্রতীক~$\TMendtape$ নির্দিষ্ট করা সুবিধাজনক। এতে
+টুরিং-যন্ত্রের প্রোগ্রাম বুঝতে পারে, কখন ফিতার বাইরে চলে যাওয়ার “বিপদে”
+পড়েছে। আমরা ধরে নিতে পারতাম যে এই প্রতীকটির উপর কখনও অন্য কিছু লেখা
+হয় না; অর্থাৎ $\delta(q,\TMendtape)$ সংজ্ঞায়িত হলে
+$\delta(q,\TMendtape) = \tuple{q', \TMendtape, x}$। কোনো কোনো পাঠ্যবইয়ে
+এই অনুমান করা হয়; আমরা করি না। টুরিং যন্ত্র নির্মাণের সময় সতর্ক থেকে
+শুধু নিশ্চিত করতে পারো যে সেটি কখনও~$\TMendtape$-এর উপর অন্য কিছু লেখে
+না। তাছাড়া এমন ক্ষেত্র আছে, যেখানে তার উপর লেখার অনুমতি কিছু সুবিধাজনক
+নমনীয়তা দেয়।
+\end{explain}
+
+\begin{ex}
+\emph{জোড়-যন্ত্র:} জোড়-যন্ত্রটি আনুষ্ঠানিকভাবে
+$\tuple{Q, \Sigma, q_0, \delta}$ চতুষ্টয়, যেখানে
+\begin{align*}
+Q & = \{ q_0, q_1 \} \\
+\Sigma & = \{ \TMendtape, \TMblank, \TMstroke \}, \\
+\delta(q_0, \TMstroke) & = \tuple{q_1, \TMstroke, \TMright},\\
+\delta(q_1, \TMstroke) & = \tuple{q_0, \TMstroke, \TMright},\\
+\delta(q_1, \TMblank)  & = \tuple{q_1, \TMblank, \TMright}.
+\end{align*}
+\end{ex}
+
+\end{document}

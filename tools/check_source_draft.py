@@ -1761,6 +1761,8 @@ for row in rows:
     fixed_point_partial_equalities_fix = False
     fixed_point_application_scope_fixes = False
     self_reference_partial_equality_fix = False
+    representing_tm_table_fix = False
+    configuration_empty_input_fix = False
     if row["unit_id"] == "OLP-0217":
         assert source.count("The less-than relation, $x \\leq y$") == 1
         assert "অনধিক সম্বন্ধ $x \\leq y$" in checked_target
@@ -2018,6 +2020,76 @@ for row in rows:
             "documented_correction": "BN-SRC-161",
             "self_reference_partial_equality": "simeq",
         }
+    elif row["unit_id"] == "OLP-0254":
+        initial_head_position_fix = (
+            "At the outset, the head scans the leftmost square\nand in a specified" in source
+            and "শুরুতে হেডটি নিবেশের জন্য নির্ধারিত বাঁদিকের প্রথম ঘরটি পড়ে" in checked_target
+            and "BN-SRC-162" in documented
+        )
+        assert initial_head_position_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-162",
+            "initial_head_position": "first input square right of end marker",
+        }
+    elif row["unit_id"] == "OLP-0255":
+        state_one_fix = (
+            "machine starts in state one, scanning the leftmost" in source
+            and "যন্ত্রটি দশা~$q_0$-তে বাঁদিকের" in checked_target
+            and "BN-SRC-163" in documented
+        )
+        audited_table = source
+        old_q0_stroke = r"\TMtrans{\TMstroke}{q_1}{\TMright}"
+        old_q1_blank = r"\TMtrans{\TMblank}{q_1}{\TMright}"
+        old_q1_stroke = r"\TMtrans{\TMstroke}{q_0}{\TMright}"
+        assert audited_table.count(old_q0_stroke) == 3
+        assert audited_table.count(old_q1_blank) == 1
+        assert audited_table.count(old_q1_stroke) == 1
+        audited_table = audited_table.replace(
+            old_q0_stroke, r"\TMtrans{q_1}{\TMstroke}{\TMright}", 1
+        )
+        audited_table = audited_table.replace(
+            old_q1_blank, r"\TMtrans{q_1}{\TMblank}{\TMright}", 1
+        )
+        audited_table = audited_table.replace(
+            old_q1_stroke, r"\TMtrans{q_0}{\TMstroke}{\TMright}", 1
+        )
+        representing_tm_table_fix = (
+            mathparts(audited_table) - target_math == collections.Counter()
+            and target_math - mathparts(audited_table) == collections.Counter({"q_0": 1})
+            and "BN-SRC-164" in documented
+        )
+        assert state_one_fix and representing_tm_table_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-163", "BN-SRC-164"],
+            "initial_configuration_state": "q_0",
+            "machine_table_field_order": ["new state", "new symbol", "movement direction"],
+            "corrected_machine_table_cells": 3,
+        }
+    elif row["unit_id"] == "OLP-0257":
+        configuration_empty_input_fix = (
+            source_math - target_math == collections.Counter()
+            and target_math - source_math
+            == collections.Counter({r"\tuple{\TMendtape\frown\TMblank,1,q_0}.": 1})
+            and all(f"BN-SRC-{number}" in documented for number in range(165, 169))
+        )
+        flattened_source = re.sub(r"\s+", " ", source)
+        assert "input string begins immediately to the left end marker" in flattened_source
+        assert "নিবেশ-প্রতীকক্রমটি বাঁ প্রান্তের\nচিহ্নটির ঠিক ডান পাশে শুরু হয়" in checked_target
+        assert "সসীম\nবা অসীম অনুক্রম~$C_i$" in checked_target
+        assert "এমন প্রতীকক্রম না থাকলে" in checked_target
+        assert configuration_empty_input_fix
+        tex_command_check = {
+            "documented_corrections": [
+                "BN-SRC-165",
+                "BN-SRC-166",
+                "BN-SRC-167",
+                "BN-SRC-168",
+            ],
+            "input_begins_right_of_end_marker": True,
+            "empty_input_configuration_has_scanned_blank": True,
+            "runs_allow_finite_or_infinite_sequences": True,
+            "output_requires_preserved_end_marker_form": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -2095,6 +2167,8 @@ for row in rows:
             fixed_point_partial_equalities_fix,
             fixed_point_application_scope_fixes,
             self_reference_partial_equality_fix,
+            representing_tm_table_fix,
+            configuration_empty_input_fix,
             shared_audit_fix,
         )
     )

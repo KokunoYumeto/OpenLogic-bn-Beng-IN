@@ -1727,6 +1727,10 @@ for row in rows:
     halting_parenthetical_name_fix = False
     russell_self_membership_fix = False
     ce_equivalence_math_fixes = False
+    complement_ce_index_fixes = False
+    reducibility_pair_fix = False
+    reduction_type_fix = False
+    complete_ce_direction_fix = False
     if row["unit_id"] == "OLP-0217":
         assert source.count("The less-than relation, $x \\leq y$") == 1
         assert "অনধিক সম্বন্ধ $x \\leq y$" in checked_target
@@ -1853,6 +1857,59 @@ for row in rows:
             "reverse_range_witness_input": "(z)_0",
             "empty_ce_set_domain_case_supplied": True,
         }
+    elif row["unit_id"] == "OLP-0242":
+        complement_ce_index_fixes = (
+            source_math - target_math
+            == collections.Counter({"\\cfind{e}": 2, "T(e,x,h(x))": 2, "\\cfind{f}": 1})
+            and target_math - source_math
+            == collections.Counter({"\\cfind{d}": 3, "T(d,x,h(x))": 2})
+            and all(f"BN-SRC-{number}" in documented for number in range(150, 152))
+        )
+        assert "if and only if $T(e, x, h(x))$" in source
+        assert "যদি এবং কেবল যদি $T(d, x, h(x))$" in checked_target
+        assert "halting computations of\n$\\cfind{e}$ and $\\cfind{f}$" in source
+        assert "$\\cfind{d}$ ও $\\cfind{e}$-এর থামা গণনা" in checked_target
+        assert complement_ce_index_fixes
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-150", "BN-SRC-151"],
+            "membership_test_index": "d",
+            "informal_parallel_indices": ["d", "e"],
+        }
+    elif row["unit_id"] == "OLP-0243":
+        reducibility_pair_fix = (
+            source_math - target_math
+            == collections.Counter({"K_0=\\Setabs{\\tuple{x,e}}{x\\inW_e}": 1})
+            and target_math - source_math
+            == collections.Counter({"K_0=\\Setabs{\\tuple{e,x}}{x\\inW_e}": 1})
+            and "BN-SRC-152" in documented
+        )
+        assert reducibility_pair_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-152",
+            "halting_pair_order": ["e", "x"],
+        }
+    elif row["unit_id"] == "OLP-0244":
+        reduction_type_fix = (
+            source_math - target_math == collections.Counter({"f\\colonA\\toB": 1})
+            and target_math - source_math == collections.Counter({"f\\colon\\Nat\\to\\Nat": 1})
+            and "BN-SRC-153" in documented
+        )
+        assert reduction_type_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-153",
+            "many_one_reduction_type": "Nat to Nat",
+        }
+    elif row["unit_id"] == "OLP-0245":
+        complete_ce_direction_fix = (
+            "$K$ can be reduced to $K_0$ in much the same way." in source
+            and "$K_0$-কে অনেকটা একইভাবে~$K$-তে হ্রাস করা যায়।" in checked_target
+            and "BN-SRC-154" in documented
+        )
+        assert complete_ce_direction_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-154",
+            "completeness_reduction_direction": "K_0 <=_m K",
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -1920,6 +1977,10 @@ for row in rows:
             halting_parenthetical_name_fix,
             russell_self_membership_fix,
             ce_equivalence_math_fixes,
+            complement_ce_index_fixes,
+            reducibility_pair_fix,
+            reduction_type_fix,
+            complete_ce_direction_fix,
             shared_audit_fix,
         )
     )

@@ -1746,6 +1746,14 @@ for row in rows:
             "documented_correction": "BN-SRC-140",
             "third_case_preserves_argument_vector_x": True,
         }
+    elif row["unit_id"] == "OLP-0219":
+        assert "remainder\nwhen dividing $x$ by $y$ is $> 0$" in source
+        assert "$y$-কে $x$ দিয়ে\nভাগ করার ভাগশেষ $> 0$" in checked_target
+        assert "BN-SRC-141" in documented
+        tex_command_check = {
+            "documented_correction": "BN-SRC-141",
+            "nondivisibility_uses_y_divided_by_x": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -1837,7 +1845,7 @@ for row in rows:
     assert all(
         checks[key]
         for key in ("math_parity", "controls_parity", "env_parity", "token_parity", "unicode_nfc")
-    ), row["unit_id"]
+    ), (row["unit_id"], checks)
     print(json.dumps(checks, ensure_ascii=False))
     checked_ids.append(row["unit_id"])
 

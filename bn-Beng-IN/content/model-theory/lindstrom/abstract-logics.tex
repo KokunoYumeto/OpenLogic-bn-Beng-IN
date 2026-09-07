@@ -1,0 +1,141 @@
+% Part: first-order-logic
+% Chapter: lindstrom
+% Section: abstract-logics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{lin}{alg}
+\olsection{বিমূর্ত যুক্তিবিদ্যা}
+
+\begin{defn}
+একটি \emph{বিমূর্ত যুক্তিবিদ্যা} হলো একটি জোড়া
+$\tuple{L, \models_L}$, যেখানে $L$ এমন একটি ফাংশন যা প্রতিটি
+!!{language}~$\Lang{L}$-কে $L(\Lang{L})$-এর !!{sentence}s-এর একটি
+সেটের সঙ্গে যুক্ত করে, এবং $\models_L$ হলো $\Lang{L}$-এর
+!!{structure}s ও !!{language}~$\Lang{L}$ এবং $L(\Lang{L})$-এর
+!!{element}s-উপাদানগুলির মধ্যে একটি সম্পর্ক।
+বিশেষত, $\tuple{F, \models}$ হলো প্রচলিত প্রথম-ক্রমের যুক্তিবিদ্যা;
+অর্থাৎ $F$ এমন ফাংশন যা !!{language}~$\Lang{L}$-এর ধ্রুবকগুলি দিয়ে
+গঠিত প্রথম-ক্রমের !!{sentence}s-এর সেট দেয়, আর $\models$ হলো
+প্রথম-ক্রমের যুক্তিবিদ্যার সন্তুষ্টি-সম্পর্ক।
+\end{defn}
+
+লক্ষ করো, কোনো নির্দিষ্ট !!{language}-এর জন্য আমরা প্রথম-ক্রমের
+যুক্তিবিদ্যার মতো একই !!{structure} ধারণা ব্যবহার করছি, কিন্তু
+ধরে নিচ্ছি না যে !!{sentence}s স্বাভাবিক নিয়মে $\Lang{L}$-এর
+মৌলিক প্রতীকগুলি থেকে গঠিত, কিংবা $\models_L$-সম্পর্ক প্রথম-ক্রমের
+যুক্তিবিদ্যার মতো একইভাবে আবেশে সংজ্ঞায়িত। উদাহরণস্বরূপ, এই সম্পূর্ণ
+সাধারণ সংজ্ঞার মধ্যে এমন ঘটনাও পড়ে যেখানে $\tuple{L,\models_L}$-এর
+!!{sentence}s-এ অসীম দৈর্ঘ্যের সংযোজন বা বিয়োজন থাকে, অথবা
+$\lexists$ ও $\lforall$ ছাড়া অন্য পরিমাণসূচক থাকে (যেমন, “এমন
+অসীমসংখ্যক~$x$ আছে যে \dots”), কিংবা অসীম দৈর্ঘ্যের পরিমাণসূচক
+উপসর্গ থাকে। $L(\Lang{L})$-এর “!!{sentence}s” যে সাধারণ প্রথম-ক্রমের
+!!{sentence}s নাও হতে পারে তা স্পষ্ট করতে, এই অধ্যায়ে তাদের বোঝাতে
+!!{variable}s $!E$, $!F$,~\dots ব্যবহার করব, আর সাধারণ প্রথম-ক্রমের
+!!{formula}s-এর জন্য $!A$, $!B$,~\dots সংরক্ষণ করব।
+
+\begin{defn}
+$\Mod(L){!E}$ বলতে $\Setabs{\Struct{M}}{\Struct{M}
+  \models_L !E}$ শ্রেণিটিকে বোঝাই। !!{language}-টি স্পষ্ট করে লিখতে
+হলে $\Mod[L](L){!E}$ লিখব। $\Lang{L}$-এর দুটি !!{structure}s
+$\Struct{M}$ ও $\Struct{N}$-কে $\tuple{L, \models_L}$-এ
+\emph{মৌলিকভাবে সমতুল্য} বলা হয়, এবং
+$\Struct{M} \elemequiv[L] \Struct{N}$ লিখি, যদি $L(\Lang{L})$-এর
+একই !!{sentence}s উভয় কাঠামোতেই সত্য হয়।
+\end{defn}
+
+\begin{defn}
+!!{language} $\Lang{L}$-এর জন্য একটি বিমূর্ত যুক্তিবিদ্যা
+$\tuple{L,\models_L}$-কে \emph{স্বাভাবিক} বলা হয় যদি সেটি নিচের
+ধর্মগুলি পূরণ করে:
+\begin{enumerate}
+\item (\emph{$L$-Monotonicity}) !!{language}s $\Lang{L}$ ও
+  $\Lang{L'}$-এর জন্য, $\Lang{L} \subseteq \Lang{L'}$ হলে
+  $L(\Lang{L}) \subseteq L(\Lang{L'})$।
+\item (\emph{Expansion Property}) প্রতিটি $!E \in L(\Lang{L})$-এর
+  জন্য $\Lang{L}$-এর একটি \emph{সসীম} উপসেট $\Lang{L'}$ আছে, যাতে
+  $\Struct{M} \models_L !E$ সম্পর্কটি শুধু $\Lang{L'}$-এ
+  $\Struct{M}$-এর রিডাক্টের ওপর নির্ভর করে; অর্থাৎ $\Struct{M}$ ও
+  $\Struct{N}$-এর $\Lang{L'}$-এ একই রিডাক্ট থাকলে
+  $\Struct{M} \models_L !E$ ঠিক তখনই যখন
+  $\Struct{N} \models_L !E$।
+\item (\emph{Isomorphism Property}) $\Struct{M} \models_L !E$
+  এবং $\Struct{M} \simeq \Struct{N}$ হলে $\Struct{N} \models_L
+  !E$-ও সত্য।
+\item (\emph{Renaming Property}) $\models_L$-সম্পর্ক নাম বদলের
+  অধীনে অপরিবর্তিত থাকে: যদি !!{language} $\Lang{L}'$, $\Lang{L}$-এর
+  প্রতিটি $P$ প্রতীকের বদলে একই arity-র $P'$ এবং প্রতিটি ধ্রুবক $c$-র
+  বদলে একটি স্বতন্ত্র $c'$ বসিয়ে পাওয়া যায়, তবে প্রতিটি !!{structure}
+  $\Struct{M}$ ও !!{sentence}~$!E$-এর জন্য
+  $\Struct{M} \models_L !E$ ঠিক তখনই যখন সংশ্লিষ্ট
+  $\Lang{L}'$-!!{structure}~$\Struct{M}'$-এ
+  $\Struct{M}' \models_L !E'$; এখানে $!E' \in L(\Lang{L}')$।
+\item (\emph{Boolean Property}) বিমূর্ত যুক্তিবিদ্যা
+  $\tuple{L,\models_L}$ বুলীয় সংযোজকগুলির অধীনে বদ্ধ: প্রতিটি
+  $!E \in L(\Lang{L})$-এর জন্য এমন একটি $!F \in L(\Lang{L})$ আছে
+  যাতে $\Struct{M} \models_L !F$ ঠিক তখনই যখন
+  $\Struct{M} \not\models_L !E$, এবং প্রতিটি $!E$ ও $!F$-এর জন্য
+  এমন $!G$ আছে যাতে $\Mod(L){!G} = \Mod(L){!E} \cap
+  \Mod(L){!F}$। একই কথা পরমাণু !!{formula}s ও অন্যান্য সংযোজকের
+  ক্ষেত্রেও প্রযোজ্য।
+\item (\emph{Quantifier Property}) $\Lang{L}$-এর প্রতিটি ধ্রুবক $c$
+  এবং $!E \in L(\Lang{L})$-এর জন্য এমন $!F \in L(\Lang{L})$ আছে যাতে
+  \[
+  \Mod[L'](L){!F} = \Setabs{\Struct{M}}{\Expan{M}{a} \in
+  \Mod[L](L){!E} \text{ for some } a \in \Domain{M}},
+  \]
+  যেখানে $\Lang{L'} = \Lang{L} \setminus \{c\}$ এবং
+  $\Expan{M}{a}$ হলো $\Struct{M}$-কে $\Lang{L}$-এ প্রসারিত করে $c$-কে
+  $a$-তে পাঠানো কাঠামো।
+\item (\emph{Relativization Property}) $\Lang{L}$-এর একটি !!a{sentence}
+  $!E \in L(\Lang{L})$ এবং $\Lang{L}$-এ নেই এমন প্রতীক $R$, $c_1$,
+  \dots, $c_n$ দেওয়া থাকলে, $\Atom{R}{x, c_1, \dots c_n}$-এ $!E$-এর
+  একটি \emph{relativization} নামে !!a{sentence} $!F \in
+  L(\Lang{L} \cup \{R,c_1,\ldots,c_n\})$ আছে, যাতে প্রতিটি
+  !!{structure}~$\Struct{M}$-এর জন্য:
+  \[
+  \Expan{M}{X, b_1, \ldots, b_n} \models_L !F \text{ ঠিক তখনই যখন }
+    \Struct{N} \models_L !E,
+  \]
+  যেখানে $\Struct{N}$ হলো $\Struct{M}$-এর উপকাঠামো, যার
+  !!{domain}
+  $\Domain{N} = \Setabs{a\in \Domain{M}}{\Assign{R}{M}(a, b_1, \dots, b_n)}$
+  (\olref[bas][sub]{rem:substructure} দেখো), এবং
+  $\Expan{M}{X, b_1, \ldots, b_n}$ হলো $\Struct{M}$-কে $R$, $c_1$,
+  \dots, $c_n$-এর যথাক্রমে $X$, $b_1,$ \dots, $b_n$ ব্যাখ্যা দিয়ে
+  প্রসারিত করা কাঠামো (যেখানে $X \subseteq M^{n+1}$)।
+\end{enumerate}
+\end{defn}
+ 
+\begin{defn}
+দুটি বিমূর্ত যুক্তিবিদ্যা $\tuple{L_1, \models_{L_1}}$ ও
+$\tuple{L_2, \models_{L_2}}$-এর ক্ষেত্রে বলি, পরেরটি আগেরটির তুলনায়
+\emph{অন্তত ততটাই প্রকাশক্ষম}, এবং
+$\tuple{L_1, \models_{L_1}} \leq \tuple{L_2, \models_{L_2}}$ লিখি,
+যদি প্রতিটি !!{language} $\Lang{L}$ এবং প্রতিটি !!{sentence}
+$!E \in L_1(\Lang{L})$-এর জন্য এমন একটি !!a{sentence} $!F \in
+L_2(\Lang{L})$ থাকে যাতে $\Mod[L](L_1){!E} =
+\Mod[L](L_2){!F}$। $\tuple{L_1, \models_{L_1}}$ ও
+$\tuple{L_2, \models_{L_2}}$ \emph{সমতুল্য} যদি
+$\tuple{L_1, \models_{L_1}} \leq \tuple{L_2, \models_{L_2}}$ এবং
+$\tuple{L_2, \models_{L_2}} \leq \tuple{L_1, \models_{L_1}}$ হয়।
+\end{defn}
+
+\begin{rem}
+  প্রথম-ক্রমের যুক্তিবিদ্যা, অর্থাৎ বিমূর্ত যুক্তিবিদ্যা
+  $\tuple{F, \models}$, স্বাভাবিক। বস্তুত, উপরের ধর্মগুলি প্রথম-ক্রমের
+  যুক্তিবিদ্যার জন্য বেশিরভাগই সরাসরি দেখা যায়। শুধু লক্ষ করি,
+  প্রসারণ ধর্মটি extensionality-তে নেমে আসে, আর !!a{sentence} $!E$-কে
+  $\Atom{R}{x, c_1, \dots, c_n}$-এ আপেক্ষিকীকরণ পাওয়া যায় প্রতিটি
+  !!{subformula} $\lforall[x][!F]$-কে
+  $\lforall[x][(\Atom{R}{x, c_1, \dots, c_n} \lif \ !F)]$ দিয়ে
+  প্রতিস্থাপন করে। আরও, $\tuple{L, \models_L}$ স্বাভাবিক হলে
+  $\tuple{F, \models} \leq \tuple{L, \models_{L}}$; প্রথম-ক্রমের
+  !!{formula}s-এর ওপর আবেশে এটি দেখানো যায়। অতএব, সাধারণতা না হারিয়ে
+  ধরে নিতে পারি যে প্রতিটি প্রথম-ক্রমের !!{sentence} প্রতিটি স্বাভাবিক
+  যুক্তিবিদ্যার অন্তর্ভুক্ত।
+\end{rem}
+
+\end{document}

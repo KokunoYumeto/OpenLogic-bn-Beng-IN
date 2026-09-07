@@ -1,0 +1,123 @@
+% Part: first-order-logic
+% Chapter: lindstrom
+% Section: lindstrom-proof
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{lin}{prf}
+
+\olsection{লিন্ডস্ট্রমের উপপাদ্য}
+
+\begin{lem}
+\ollabel{lem:lindstrom}
+ধরা যাক $!E \in L(\Lang{L})$, যেখানে $\Lang{L}$ সসীম, এবং আরও
+ধরা যাক এমন একটি $n \in \Nat$ আছে যাতে যেকোনো দুটি !!{structure}s
+$\Struct{M}$ ও~$\Struct{N}$-এর জন্য, $\Struct{M} \equiv_n
+\Struct{N}$ এবং $\Struct{M} \models_L !E$ হলে
+$\Struct{N} \models_L !E$-ও হয়। তাহলে $!E$ একটি প্রথম-ক্রমের
+!!{sentence}-এর সমতুল্য; অর্থাৎ এমন একটি প্রথম-ক্রমের $!D$ আছে যাতে
+$\Mod(L){!E} = \Mod(L){!D}$।
+\end{lem}
+
+\begin{proof} 
+যে $n$-এর জন্য যেকোনো দুটি $n$-সমতুল্য !!{structure}s
+$\Struct{M}$ ও $\Struct{N}$-এ $!E$-র সত্য-মিথ্যার মান এক হয়, এমন
+$n$ নিই। \olref[bas][pis]{prop:qr-finite} মনে করো: সসীম
+!!{language}-এ পরিমাণসূচক-ক্রমাঙ্কের বেশি নয় এমন প্রথম-ক্রমের
+!!{sentence}s, যৌক্তিক সমতুল্যতা পর্যন্ত, সসীম সংখ্যক। অতএব প্রতিটি
+স্থির !!{structure}~$\Struct{M}$-এর জন্য $!D_{\Struct{M}}$-কে
+\Struct{M}-এ সত্য এমন প্রথম-ক্রমের !!{sentence}s~$!E$-এর মধ্যে
+যাদের $\QuantRank{!E} \le n$, তাদের সংযোজন ধরি (এই সংযোজন সসীম), যাতে
+$\Struct{N} \models !D_{\Struct{M}}$ ঠিক তখনই যখন
+$\Struct{N} \equiv_n \Struct{M}$। এরপর
+$!D = \textstyle\bigvee
+\Setabs{!D_{\Struct{M}}}{\Struct{M} \models_L !E}$ ধরি; এই
+বিয়োজনটিও (যৌক্তিক সমতুল্যতা পর্যন্ত) সসীম।
+
+এতেই $\Mod(L){!E} = \Mod(L){!D}$ সিদ্ধান্তটি অনুসরণ করে। বস্তুত,
+$\Struct{N} \models_L !D$ হলে কোনো $\Struct{M} \models_L !E$-এর জন্য
+$\Struct{N} \models !D_{\Struct{M}}$ হবে, ফলে লেমার অনুমান অনুযায়ী
+$\Struct{N} \models_L !E$। বিপরীতে, $\Struct{N} \models_L !E$ হলে
+$!D_\Struct{N}$, $!D$-এর একটি বিয়োজন-সদস্য; এবং
+$\Struct{N} \models !D_\Struct{N}$ হওয়ায়
+$\Struct{N} \models_L !D$।
+\end{proof}
+
+\begin{thm}[লিন্ডস্ট্রমের উপপাদ্য]
+  \ollabel{thm:lindstrom} ধরা যাক $\tuple{L, \models_L}$-এর
+  কম্প্যাক্টনেস ও লোয়েনহাইম--স্কোলেম ধর্ম আছে। তাহলে
+  $\tuple{L, \models_L} \le \tuple{F, \models}$ (অতএব
+  $\tuple{L, \models_L}$ প্রথম-ক্রমের যুক্তিবিদ্যার সমতুল্য)।
+\end{thm}
+
+\begin{proof}
+\olref{lem:lindstrom}-এর কারণে যথেষ্ট হলো দেখানো যে প্রতিটি
+$!E \in L(\Lang{L})$-এর জন্য, যেখানে $\Lang{L}$ সসীম, এমন একটি
+$n \in \Nat$ আছে যাতে যেকোনো দুটি !!{structure}s $\Struct{M}$ ও
+$\Struct{N}$: $\Struct{M} \equiv_n \Struct{N}$ হলে $!E$-র ব্যাপারে
+একই মত দেয়। তাহলেই $!E$ একটি প্রথম-ক্রমের !!{sentence}-এর সমতুল্য,
+যেখান থেকে $\tuple{L, \models_L} \le \tuple{F, \models}$ অনুসরণ করে।
+আমরা যেহেতু একটি সসীম, সম্পূর্ণ রিলেশনাল !!{language}-এ কাজ করছি,
+তাই \olref[bas][pis]{thm:b-n-f} অনুসারে
+$\Struct{M} \equiv_n \Struct{N}$ বলার বদলে সংশ্লিষ্ট বীজগাণিতিক
+বক্তব্য $I_n(\emptyset,\emptyset)$ ব্যবহার করতে পারি।
+
+$!E$ দেওয়া থাক, বিরোধাভাসের জন্য ধরি প্রতিটি $n$-এর জন্য এমন
+!!{structure}s $\Struct{M}_n$ ও $\Struct{N}_n$ আছে যাতে
+$I_n(\emptyset, \emptyset)$ সত্য, কিন্তু (ধরা যাক)
+$\Struct{M}_n \models_L !E$, আর $\Struct{N}_n \not\models_L !E$।
+সমরূপতা ধর্ম অনুসারে ধরে নিতে পারি যে সব $\Struct{M}_n$-এ ভাষার
+ধ্রুবকগুলির ব্যাখ্যা একই বস্তু; আরও, ভাষায় পরমাণু !!{sentence}s-এর
+সংখ্যা সসীম বলে ধরে নিতে পারি যে তারা একই পরমাণু !!{sentence}s সত্য
+করে (অন্যথায় $\Struct{M}$-গুলির একটি উপক্রম নিতে পারি)। সব
+$\Struct{M}_n$-এর সংযুক্তি $\Struct{M}$ ধরি, অর্থাৎ প্রতিটি
+$\Struct{M}_n$-কে উপকাঠামো হিসেবে ধারণ করে এমন একমাত্র ক্ষুদ্রতম
+!!{structure}~$\Struct{M}$। \olref[lsp]{thm:abstract-p-isom}-এর প্রমাণের মতোই,
+!!{domain}~$\Struct{M}$-কে $\Domain{M} \cup \Domain{M}^{<\omega}$-এ প্রসারিত
+করে $\Struct{M}^*$ নিই, যেখানে প্রসারিত !!{language}-এ সংযোজনের
+predicate $P$ ও~$Q$ আছে।
+
+একইভাবে $\Struct{N}_n$, $\Struct{N}$ ও $\Struct{N}^*$ সংজ্ঞায়িত করি।
+এখন $\Struct{M}$-কে এমন !!{structure} ধরি যার !!{domain}-এ
+$\Struct{M}^*$ ও $\Struct{N}^*$-এর !!{domain}s, এবং প্রাকৃতিক
+সংখ্যা~$\Nat$ ও তাদের স্বাভাবিক ক্রম~$\le$ আছে; !!{language}-এ অতিরিক্ত
+predicate হিসেবে $\Struct{M}$, $\Struct{N}$, $\Domain{M}$ ও $\Domain{N}$,
+$\Domain{M}^{<\omega}$ ও $\Domain{N}^{<\omega}$-এর !!{domain}s নির্দেশকারী প্রতীক, এবং
+যে অর্থে নিচে দেওয়া হলো সেই অর্থে $\Struct{M}_n$ ও
+$\Struct{N}_n$-এর কোড করা প্রতীকও আছে:
+\begin{align*}
+  \Domain{M_n} & = \Setabs{a \in \Domain{M}}{R(a, n)}; & 
+  \Domain{N_n} & = \Setabs{a \in \Domain{N}}{S(a,n)}; \\
+  \Domain{M}^{<\omega}_n & = \Setabs{a \in \Domain{M}^{<\omega}}{R(a,n)}; &
+  \Domain{N}^{<\omega}_n & = \Setabs{a \in \Domain{N}^{<\omega}}{S(a,n)}. 
+\end{align*}
+!!{structure}~$\Struct{M}$-এ আরও একটি ত্রিস্থানিক সম্পর্ক $J$ আছে,
+যাতে $J(n, \mathbf{a}, \mathbf{b})$ সত্য ঠিক তখনই যখন
+$I_n(\mathbf{a}, \mathbf{b})$ সত্য।
+
+এখন !!{language}~$\Lang{L}$-কে $R$, $S$, $J$ ইত্যাদি দিয়ে প্রসারিত
+করে এমন একটি !!a{sentence}~$!D$ আছে যাতে $\le$ একটি প্রথম উপাদানযুক্ত
+কিন্তু শেষ উপাদানহীন বিচ্ছিন্ন রৈখিক ক্রম, এবং সেই ক্রমে প্রতিটি $n$-এর
+জন্য $\Struct{M}_n \models !E$, $\Struct{N}_n \not\models !E$, ও
+$J(n, \mathbf{a}, \mathbf{b})$ ঠিক তখনই যখন
+$I_n(\mathbf{a}, \mathbf{b})$।
+
+কম্প্যাক্টনেস ধর্ম ব্যবহার করে $!D$-এর এমন একটি মডেল
+$\Struct{M}^*$ পাই যাতে ক্রমে একটি অমানক উপাদান~$n^*$ আছে। বিশেষত,
+$\Struct{M^*}$-এ এমন উপ!!{structure}s $\Struct{M_{n^*}}$ ও
+$\Struct{N_{n^*}}$ থাকবে যাতে $\Struct{M_{n^*}}
+\models_L !E$ এবং $\Struct{N_{n^*}} \not\models_L !E$। এখন
+$\Domain{M_{n^*}}$ ও $\Domain{N_{n^*}}$ থেকে $k$-টুপলের জোড়ার একটি
+সেট $\mathcal{I}$ সংজ্ঞায়িত করি: $\tuple{\mathbf{a}, \mathbf{b}}
+\in \mathcal{I}$ ঠিক তখনই যখন $J(n^*-k, \mathbf{a}, \mathbf{b})$,
+যেখানে $k$ হলো $\mathbf{a}$ ও $\mathbf{b}$-এর দৈর্ঘ্য। $n^*$ অমানক
+হওয়ায় প্রতিটি মানক $k$-এর জন্য $n^* - k >0$, এবং
+$\mathcal{I}$ সাক্ষ্য দেয় যে $\Struct{M_{n^*}} \simeq_p
+\Struct{N_{n^*}}$। কিন্তু \olref[lsp]{thm:abstract-p-isom}-এর কারণে
+$\Struct{M_{n^*}}$, $\Struct{N_{n^*}}$-এর সঙ্গে $L$-সমতুল্য; এটি
+বিরোধাভাস।
+\end{proof}
+
+\end{document}

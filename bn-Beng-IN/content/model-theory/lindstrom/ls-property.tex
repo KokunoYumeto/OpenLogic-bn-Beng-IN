@@ -1,0 +1,122 @@
+% Part: first-order-logic
+% Chapter: lindstrom
+% Section: ls-property
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{lin}{lsp}
+
+\olsection{কম্প্যাক্টনেস ও লোয়েনহাইম--স্কোলেম ধর্ম}
+
+এখন বিমূর্ত যুক্তিবিদ্যার ক্ষেত্রে কম্প্যাক্টনেস ও
+লোয়েনহাইম--স্কোলেম ধর্মের স্বাভাবিক সম্প্রসারণগুলি দিচ্ছি।
+
+\begin{defn}
+একটি বিমূর্ত যুক্তিবিদ্যা $\tuple{L, \models_L}$-এর
+\emph{কম্প্যাক্টনেস ধর্ম} আছে যদি $L(\Lang{L})$-এর !!{sentence}s-এর
+প্রতিটি সেট $\Gamma$ সন্তোষণীয় হয় যখনই প্রতিটি সসীম
+ $\Gamma_0 \subseteq \Gamma$ সন্তোষণীয় হয়।
+\end{defn}
+
+\begin{defn}
+$\tuple{L, \models_L}$-এর \emph{নিম্নমুখী লোয়েনহাইম--স্কোলেম
+ধর্ম} আছে যদি যেকোনো সন্তোষণীয় $\Gamma$-র একটি !!a{enumerable}
+মডেল থাকে।
+\end{defn}
+
+\olref[bas][pis]{defn:partialisom}-এ সংজ্ঞায়িত আংশিক সমরূপতার ধারণাটি
+সম্পূর্ণ “বীজগাণিতিক” (অর্থাৎ ভাষার !!{sentence}s-এর কোনো উল্লেখ ছাড়াই,
+শুধু !!{language}~$\Lang{L}$-এর !!{structure}s-এ দেওয়া ধ্রুবকগুলির
+সাপেক্ষে সংজ্ঞায়িত), তাই এটি বিমূর্ত যুক্তিবিদ্যার ক্ষেত্রেও প্রযোজ্য।
+প্রথম-ক্রমের যুক্তিবিদ্যার ক্ষেত্রে আমরা
+\olref[bas][pis]{thm:p-isom2} থেকে জানি যে দুটি !!{structure} (দুটি !!{structure}s) আংশিকভাবে
+সমরূপ হলে তারা মৌলিকভাবে সমতুল্য। এই প্রমাণটি বিমূর্ত যুক্তিবিদ্যায়
+চলে না, কারণ যেকোনো $!E \in L(\Lang{L})$-এর জন্য !!{formula}s-এর ওপর
+আবেশ প্রযোজ্য নাও হতে পারে; তবু লোয়েনহাইম--স্কোলেম ধর্ম সত্য হলে
+উপপাদ্যটি সত্য।
+
+\begin{thm}
+\ollabel{thm:abstract-p-isom}
+ধরা যাক $\tuple{L, \models_L}$ একটি স্বাভাবিক যুক্তিবিদ্যা যার
+লোয়েনহাইম--স্কোলেম ধর্ম আছে। তাহলে যেকোনো দুটি !!{structure} যারা
+আংশিকভাবে সমরূপ, তারা $\tuple{L,\models_L}$-এ মৌলিকভাবে সমতুল্য।
+\end{thm}
+
+\begin{proof}
+ধরি $\Struct{M} \simeq_p \Struct{N}$, কিন্তু কোনো একটি $!E$-এর জন্য
+$\Struct{M} \models_L !E$ এবং $\Struct{N} \not\models_L !E$।
+সমরূপতা ধর্ম অনুসারে ধরে নিতে পারি যে $\Domain{M}$ ও $\Domain{N}$
+পরস্পর বিচ্ছিন্ন, এবং প্রসারণ ধর্ম অনুসারে ধরে নিতে পারি যে সসীম
+!!{language}~$\Lang{L}$-এর জন্য $!E \in L(\Lang{L})$।
+$\Struct{M}$ ও $\Struct{N}$-এর মধ্যকার আংশিক সমরূপগুলির একটি সেট
+$\mathcal{I}$ নিই; সাধারণতা না হারিয়ে আরও ধরে নিই, $p \in \mathcal{I}$
+এবং $q \subseteq p$ হলে $q \in \mathcal{I}$।
+
+$\Domain{M}^{<\omega}$ হলো $\Domain{M}$-এর !!{element}s-উপাদানগুলির সসীম
+ক্রমগুলির সেট। $\Domain{M}^{<\omega}$-এর ওপর $S$-কে ত্রিস্থানিক
+সম্পর্ক ধরি, যা সংযোজন নির্দেশ করে: $\mathbf{a}, \mathbf{b},
+\mathbf{c} \in \Domain{M}^{<\omega}$ হলে $S(\mathbf{a}, \mathbf{b},
+\mathbf{c})$ সত্য ঠিক তখনই যখন $\mathbf{c}$ হলো $\mathbf{a}$ ও
+$\mathbf{b}$-এর সংযোজন; এবং $T$-কে এমন ত্রিস্থানিক সম্পর্ক ধরি যে
+$b \in M$ এবং $\mathbf{a}, \mathbf{c} \in \Domain{M}^{<\omega}$-এর
+জন্য $T(\mathbf{a}, b, \mathbf{c})$ সত্য ঠিক তখনই যখন
+$\mathbf{a} = a_1, \dots a_n$ এবং $\mathbf{c} = a_1, \dots a_n, b$।
+নতুন 3-place !!{predicate}s $P$ ও $Q$ নিই এবং
+$\Struct{M}^*$ কাঠামো গঠন করি, যার universe
+$\Domain{M} \cup \Domain{M}^{<\omega}$, যাতে $\Struct{M}$ একটি
+উপকাঠামো এবং $P$, $Q$-এর ব্যাখ্যা যথাক্রমে $S$, $T$ সংযোজন-সম্পর্ক
+(তাই $\Struct{M}^*$ হলো !!{language}
+$\Lang{L} \cup \{ P, Q\}$-এর একটি কাঠামো)।
+
+$\Domain{N}^{<\omega}$, $S'$, $T'$, $P'$, $Q'$ এবং
+$\Struct{N}^*$ একইভাবে সংজ্ঞায়িত করি। যেহেতু অনুমান অনুযায়ী
+$\Struct{M} \simeq_p \Struct{N}$, তাই $\Domain{M}^{<\omega}$ ও
+$\Domain{N}^{<\omega}$-এর মধ্যে এমন একটি সম্পর্ক $I$ আছে যাতে
+$I(\mathbf{a}, \mathbf{b})$ সত্য ঠিক তখনই যখন $\mathbf{a}$ ও
+$\mathbf{b}$ সমরূপ এবং \olref[bas][pis]{defn:partialisom}-এর
+আগ-পিছু শর্ত পূরণ করে। এই $\Struct{M}$-কে এখন এমন কাঠামো ধরি যার
+!!{domain} হলো $\Struct{M}^*$ ও $\Struct{N}^*$-এর !!{domain}s-এর
+সংযুক্তি, যাতে $\Struct{M}^*$ ও $\Struct{N}^*$ উপ!!{structure}s, এবং
+!!{language}-এ অতিরিক্ত একটি দ্বিস্থানিক !!{predicate}~$R$ আছে যার
+ব্যাখ্যা $I$; পাশাপাশি $\Domain{M}^*$ ও $\Domain{N}*$ নির্দেশকারী
+!!{domain}s নির্দেশকারী !!{predicate}s-ও আছে।
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[node distance=2cm, auto, thick, >=stealth']
+    \draw [rounded corners] (0,0) -- (8,0) -- (8,4) -- (0,4) --  cycle;
+    \draw (2,2) circle (0.5cm);
+    \draw (2,2) circle (1.25cm);
+    \draw (6,2) circle (0.5cm);
+    \draw (6,2) circle (1.25cm);
+    \path node at (0.75,3.5) {\large $\Struct{M}$};
+    \path node at (2,2) {\large $\Struct{M}$};
+    \path node at (6,2) {\large $\Struct{N}$};
+    \path node at (3.5,1) {\large $\Struct{M}^*$};
+    \path node at (7.5,1) {\large $\Struct{N}^*$};
+    \node (Idom) at (2.8,2) {};
+    \node (Irng) at (5.2,2) {};
+    \draw[<->, bend left] (Idom) to node {\large $I$} (Irng) ;
+  \end{tikzpicture}
+  \caption{অভ্যন্তরীণ আংশিক সমরূপতা-সহ !!{structure}~$\Struct{M}$।}
+\end{figure}
+
+গুরুত্বপূর্ণ পর্যবেক্ষণটি হলো, !!{structure}~$\Struct{M}$-এর
+!!{language}-এ একটি \emph{প্রথম-ক্রমের} !!{sentence} $!D_1$ আছে, যা
+$\Struct{M}$-এ সত্য এবং বলে যে $\Struct{M} \models_L !E$ ও
+$\Struct{N} \not\models_L !E$ (এর জন্য Relativization Property দরকার),
+এবং এমন আরেকটি \emph{প্রথম-ক্রমের} !!{sentence} $!D_2$ আছে, যা
+$\Struct{M}$-এ সত্য এবং বলে যে আংশিক সমরূপতা~$I$-এর মাধ্যমে
+$\Struct{M} \simeq_p \Struct{N}$। লোয়েনহাইম--স্কোলেম ধর্ম অনুসারে,
+$!D_1$ ও $!D_2$ যৌথভাবে সত্য এমন একটি !!a{enumerable} মডেল
+$\Struct{M}_0$ পাওয়া যায়, যাতে আংশিকভাবে সমরূপ উপ!!{structure}s
+$\Struct{M}_0$ ও $\Struct{N}_0$ আছে এবং
+$\Struct{M}_0 \models_L !E$, কিন্তু $\Struct{N}_0
+\not\models_L !E$। অথচ !!{enumerable} আংশিকভাবে সমরূপ !!{structure}s
+আসলে সমরূপ, \olref[bas][pis]{thm:p-isom1} অনুসারে; এটি স্বাভাবিক
+বিমূর্ত যুক্তিবিদ্যার সমরূপতা ধর্মের বিরোধী।
+\end{proof}
+
+\end{document}

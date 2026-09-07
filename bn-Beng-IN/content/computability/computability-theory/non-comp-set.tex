@@ -1,0 +1,64 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: non-comp-set
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{ncp}
+\olsection{অগণনসাধ্য সেট আছে}
+
+
+উপরে আমরা দেখেছি, প্রত্যেক গণনসাধ্য সেট গণনসাধ্যভাবে তালিকায়নযোগ্য।
+বিপরীত বক্তব্যটি কি সত্য? নিচের ফল দেখায়, সাধারণভাবে তা সত্য নয়।
+
+\begin{thm}\ollabel{thm:K-0}
+ধরা যাক, $K_0$ হলো সেট $\Setabs{\tuple{e, x}}{\cfind{e}(x) \fdefined}$।
+তাহলে $K_0$ গণনসাধ্যভাবে তালিকায়নযোগ্য, কিন্তু গণনসাধ্য নয়।
+\end{thm}
+
+\begin{proof}
+$K_0$ যে গণনসাধ্যভাবে তালিকায়নযোগ্য তা দেখতে লক্ষ করুন, এটি নিচের
+সংজ্ঞায় নির্ধারিত অপেক্ষক~$f$-এর সংজ্ঞাক্ষেত্র:
+\[
+f(z) = \umin{y}{(\len{z} = 2 \land T((z)_0, (z)_1, y))}.
+\]
+কারণ $\cfind{e}(x)$ সংজ্ঞায়িত হলে $f(\tuple{e, x})$ একটি থামা
+গণনা-অনুক্রম খুঁজে পায়; $\cfind{e}(x)$ অসংজ্ঞায়িত হলে
+$f(\tuple{e, x})$-ও অসংজ্ঞায়িত; আর $z$ যদি কোনো জোড়াকেই সংকেতায়িত না
+করে, তবে $f(z)$-ও অসংজ্ঞায়িত।
+
+$K_0$ গণনসাধ্য নয়—এই তথ্যটি শুধু থামার সমস্যার অনির্ণেয়তা,
+\olref[hlt]{thm:halting-problem}।
+\end{proof}
+
+সেট $K_0$ হলো এমন জোড়া $\tuple{e,x}$-এর সেট, যাদের জন্য
+$\cfind{e}(x) \fdefined$; অর্থাৎ $\tuple{e,x} \in K_0$ যদি এবং কেবল যদি
+$\cfind{e}$ নিবেশ~$x$-এ সংজ্ঞায়িত (থামে)। তাই একে “থামা-সেট”-ও বলা হয়।
+সেট $K = \Setabs{e}{\cfind{e}(e) \fdefined}$ হলো “স্ব-থামা সেট”। একে
+প্রায়ই একটি আদর্শ অনির্ণেয় সেট হিসেবে ব্যবহার করা হয়।
+
+\begin{thm}\ollabel{thm:K}
+স্ব-থামা সেট $K = \Setabs{e}{\cfind{e}(e) \fdefined}$ !!{c.e.}, কিন্তু
+নির্ণেয় নয়।
+\end{thm}
+
+\begin{proof}
+  ধরা যাক, $K$ নির্ণেয়, অর্থাৎ তার চরিত্রসূচক অপেক্ষক $\Char{K}$
+  গণনসাধ্য। ধরি,
+  \[d(e) = \begin{cases}
+  1 & \text{যদি\/ $\Char{K}(e) = 0$}\\
+  \fundefined & \text{অন্যথায়।}
+  \end{cases}
+  \]
+  ধরা যাক, $k$ হলো~$d$-এর সূচক, অর্থাৎ $d \simeq \cfind{k}$। তাহলে
+  $d(k) \simeq \cfind{k}(k)$। কিন্তু~$d$-এর সংজ্ঞা থেকে
+  $d(k) \fdefined$ যদি এবং কেবল যদি $\cfind{k}(k) \fundefined$; তাই
+  বিরোধ পাওয়া যায়।
+
+  $K$ হলো $f(x) = \umin{y}{T(x,x,y)}$-এর সংজ্ঞাক্ষেত্র; অতএব সেটি
+  !!{c.e.}
+\end{proof}
+
+\end{document}

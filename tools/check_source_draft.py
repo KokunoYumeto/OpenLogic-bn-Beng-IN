@@ -1724,6 +1724,9 @@ for row in rows:
         }
     bounded_minimization_math_fix = False
     s_m_n_index_fix = False
+    halting_parenthetical_name_fix = False
+    russell_self_membership_fix = False
+    ce_equivalence_math_fixes = False
     if row["unit_id"] == "OLP-0217":
         assert source.count("The less-than relation, $x \\leq y$") == 1
         assert "অনধিক সম্বন্ধ $x \\leq y$" in checked_target
@@ -1789,6 +1792,67 @@ for row in rows:
             "documented_correction": "BN-SRC-143",
             "derived_unary_function_class": "partial recursive",
         }
+    elif row["unit_id"] == "OLP-0234":
+        assert "partial computable function that is total for the\npartial computable functions" in source
+        assert "আংশিক গণনসাধ্য অপেক্ষকদের জন্য সার্বজনীন" in checked_target
+        assert "BN-SRC-144" in documented
+        tex_command_check = {
+            "documented_correction": "BN-SRC-144",
+            "partial_universal_function_property": "universal",
+        }
+    elif row["unit_id"] == "OLP-0235":
+        halting_parenthetical_name_fix = (
+            source_math - target_math == collections.Counter({"h": 1})
+            and target_math - source_math == collections.Counter({"g": 1})
+            and "BN-SRC-145" in documented
+        )
+        assert "$h$~can only take the value~$0$ if it\nis defined" in source
+        assert "$g$ সংজ্ঞায়িত হলে তার একমাত্র সম্ভব মান~$0$" in checked_target
+        assert halting_parenthetical_name_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-145",
+            "only_defined_value_zero_applies_to": "g",
+        }
+    elif row["unit_id"] == "OLP-0236":
+        russell_self_membership_fix = (
+            source_math - target_math == collections.Counter({"X\\notinS": 1})
+            and target_math - source_math == collections.Counter({"S\\notinS": 1})
+            and "BN-SRC-146" in documented
+        )
+        assert "$S\n  \\in S$ if and only if $X \\notin S$" in source
+        assert "$S \\in S$ যদি এবং কেবল যদি $S \\notin S$" in checked_target
+        assert russell_self_membership_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-146",
+            "russell_self_nonmembership_subject": "S",
+        }
+    elif row["unit_id"] == "OLP-0239":
+        ce_equivalence_math_fixes = (
+            source_math - target_math
+            == collections.Counter(
+                {
+                    "\\cfind{e}(x)=U(\\umin{s}{T(e,x,s)}).": 1,
+                    "\\cfind{e}(x)\\fdefined=y": 1,
+                }
+            )
+            and target_math - source_math
+            == collections.Counter(
+                {
+                    "\\cfind{e}(x)\\simeqU(\\umin{s}{T(e,x,s)}).": 1,
+                    "\\cfind{e}((z)_0)\\fdefined=y": 1,
+                }
+            )
+            and all(f"BN-SRC-{number}" in documented for number in range(147, 150))
+        )
+        assert "$S$ is the range of a computable function" in source
+        assert "সর্বত্র অসংজ্ঞায়িত আংশিক গণনসাধ্য অপেক্ষকের সংজ্ঞাক্ষেত্রই সেটটি" in checked_target
+        assert ce_equivalence_math_fixes
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-147", "BN-SRC-148", "BN-SRC-149"],
+            "normal_form_equality": "simeq",
+            "reverse_range_witness_input": "(z)_0",
+            "empty_ce_set_domain_case_supplied": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -1853,6 +1917,9 @@ for row in rows:
             interpolation_math_fix,
             bounded_minimization_math_fix,
             s_m_n_index_fix,
+            halting_parenthetical_name_fix,
+            russell_self_membership_fix,
+            ce_equivalence_math_fixes,
             shared_audit_fix,
         )
     )

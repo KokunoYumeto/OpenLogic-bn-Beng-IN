@@ -16,26 +16,26 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 
 | ID | Source concept | Chosen Bengali | Status | Confidence | Priority | Occurrences | Authorities | Expert review |
 |---|---|---|---|---|---|---:|---|---|
-| `BN-IN-T001` | set | সেট | attested | high_for_attested_scope | low | 955 | BN-IN-P001, BN-IN-P006 | welcome/open to correction |
-| `BN-IN-T002` | element | উপাদান | attested | high_for_attested_scope | low | 99 | BN-IN-P001 | welcome/open to correction |
+| `BN-IN-T001` | set | সেট | attested | high_for_attested_scope | low | 1000 | BN-IN-P001, BN-IN-P006 | welcome/open to correction |
+| `BN-IN-T002` | element | উপাদান | attested | high_for_attested_scope | low | 107 | BN-IN-P001 | welcome/open to correction |
 | `BN-IN-T003` | member | সদস্য | attested | high_for_attested_scope | low | 56 | BN-IN-P001 | welcome/open to correction |
 | `BN-IN-T004` | empty set | শূন্য সেট | attested | high_for_attested_scope | low | 18 | BN-IN-P006 | welcome/open to correction |
 | `BN-IN-T005` | subset | উপসেট | attested | high_for_attested_scope | low | 92 | BN-IN-P003, BN-IN-P007 | welcome/open to correction |
 | `BN-IN-T006` | proper subset | প্রকৃত উপসেট | attested | high_for_attested_scope | low | 3 | BN-IN-P004, BN-IN-P007 | welcome/open to correction |
 | `BN-IN-T007` | power set | ঘাত সেট | attested-regional | high_for_attested_scope | low | 6 | BN-IN-P007 | welcome/open to correction |
 | `BN-IN-T008` | extensionality | সদস্যভিত্তিক সমতার নীতি | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 20 | BN-IN-P004, BN-IN-P006 | welcome/open to correction |
-| `BN-IN-T009` | natural number | স্বাভাবিক সংখ্যা | attested | high_for_attested_scope | low | 90 | BN-IN-P005 | welcome/open to correction |
+| `BN-IN-T009` | natural number | স্বাভাবিক সংখ্যা | attested | high_for_attested_scope | low | 93 | BN-IN-P005 | welcome/open to correction |
 | `BN-IN-T010` | proposition (logic) | বচন | attested | high_for_attested_scope | low | 53 | BN-IN-P009, BN-IN-P008 | welcome/open to correction |
 | `BN-IN-T011` | quantifier | পরিমাণসূচক | attested | high_for_attested_scope | low | 101 | BN-IN-P009, BN-IN-P010 | welcome/open to correction |
 | `BN-IN-T012` | universal quantifier | সার্বিক পরিমাণসূচক | attested | high_for_attested_scope | low | 4 | BN-IN-P009 | welcome/open to correction |
 | `BN-IN-T013` | existential quantifier | অস্তিত্বমূলক পরিমাণসূচক | attested | high_for_attested_scope | low | 0 | BN-IN-P010 | welcome/open to correction |
-| `BN-IN-T014` | if and only if | যদি এবং কেবল যদি | provisional-phrase | medium_definition_and_adjacent-canon_support | medium | 216 | BN-IN-P004 | welcome/open to correction |
+| `BN-IN-T014` | if and only if | যদি এবং কেবল যদি | provisional-phrase | medium_definition_and_adjacent-canon_support | medium | 227 | BN-IN-P004 | welcome/open to correction |
 | `BN-IN-T015` | perfect number | নিখুঁত সংখ্যা | provisional-descriptive | low_pending_occurrence | high | 0 | BN-IN-P005 | welcome/open to correction |
-| `BN-IN-T016` | union; intersection; disjoint; difference | সংযোগ; ছেদ; বিচ্ছিন্ন; অন্তর | attested | high_for_attested_scope | low | 106 | BN-IN-P012 | welcome/open to correction |
+| `BN-IN-T016` | union; intersection; disjoint; difference | সংযোগ; ছেদ; বিচ্ছিন্ন; অন্তর | attested | high_for_attested_scope | low | 108 | BN-IN-P012 | welcome/open to correction |
 | `BN-IN-T017` | ordered pair | ক্রমযুগল | attested | high_for_attested_scope | low | 40 | BN-IN-P012 | welcome/open to correction |
 | `BN-IN-T018` | Cartesian product | কার্তেসীয় গুণফল | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 5 | BN-IN-P012 | welcome/open to correction |
-| `BN-IN-T019` | string; sequence; tuple; word | প্রতীকক্রম; অনুক্রম; টিউপল; শব্দ | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 286 | BN-IN-P002, BN-IN-P012 | welcome/open to correction |
-| `BN-IN-T020` | paradox; contradiction; comprehension; naive set theory | কূটাভাস; স্ববিরোধ; ধর্মনির্দেশে সেট গঠন; অনানুষ্ঠানিক সেটতত্ত্ব | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 50 | BN-IN-P001, BN-IN-P004, BN-IN-P009 | welcome/open to correction |
+| `BN-IN-T019` | string; sequence; tuple; word | প্রতীকক্রম; অনুক্রম; টিউপল; শব্দ | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 287 | BN-IN-P002, BN-IN-P012 | welcome/open to correction |
+| `BN-IN-T020` | paradox; contradiction; comprehension; naive set theory | কূটাভাস; স্ববিরোধ; ধর্মনির্দেশে সেট গঠন; অনানুষ্ঠানিক সেটতত্ত্ব | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 55 | BN-IN-P001, BN-IN-P004, BN-IN-P009 | welcome/open to correction |
 | `BN-IN-T021` | conjunction; conjunction elimination; absorption | সংযোজন; সংযোজন অপসারণ; শোষণ | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 22 | BN-IN-P008, BN-IN-P012 | welcome/open to correction |
 | `BN-IN-T022` | relation; binary relation; order relation; identity relation | সম্পর্ক; দ্বিপদ সম্পর্ক; ক্রমসম্পর্ক; অভিন্নতার সম্পর্ক | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 294 | BN-IN-P013, BN-IN-P014, BN-IN-P004 | welcome/open to correction |
 | `BN-IN-T023` | irreflexive; strict order; empty relation; universal relation | আত্মসম্পর্কহীন; কঠোর ক্রম; শূন্য সম্পর্ক; সার্বিক সম্পর্ক | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 19 | BN-IN-P013, BN-IN-P006, BN-IN-P009 | welcome/open to correction |
@@ -49,17 +49,17 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T031` | tree; root; successor; predecessor; branch; chain; least element; well-order | বৃক্ষ; মূল; উত্তরসূরি; পূর্বসূরি; শাখা; শৃঙ্খল; ক্ষুদ্রতম উপাদান; সুক্রম | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 443 | BN-IN-P001, BN-IN-P013, BN-IN-P014, BN-IN-P016 | welcome/open to correction |
 | `BN-IN-T032` | inverse relation; relative product; restriction; application; transitive closure | বিপরীত সম্পর্ক; আপেক্ষিক গুণফল; সীমাবদ্ধন; প্রয়োগ; পরিযায়ী আবরণ | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 200 | BN-IN-P012, BN-IN-P013, BN-IN-P014 | welcome/open to correction |
 | `BN-IN-T033` | formula; derivation; propositional logic; first-order logic; completeness; computability; König's lemma | সূত্র; নিষ্পাদন; বচনমূলক যুক্তিবিদ্যা; প্রথম-ক্রমের যুক্তিবিদ্যা; পূর্ণতা; গণনাযোগ্যতা; ক্যোনিগের সহায়ক উপপাদ্য | provisional-contextual | medium_definition_and_adjacent-canon_support | medium | 294 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P014 | welcome/open to correction |
-| `BN-IN-T034` | variable; constant; sum; arithmetic product; equation | চল; ধ্রুবক; যোগফল; গুণফল; সমীকরণ | attested-in-school-algebra | high_for_attested_scope | low | 288 | BN-IN-P019, BN-IN-P020, BN-IN-P022 | welcome/open to correction |
-| `BN-IN-T035` | function; mapping; domain; codomain; range; image/value | অপেক্ষক; চিত্রণ; সংজ্ঞাক্ষেত্র; সহসংজ্ঞাক্ষেত্র; বিস্তৃতি; প্রতিবিম্ব/মান | attested-university | high_for_attested_scope | low | 1222 | BN-IN-P018 | welcome/open to correction |
+| `BN-IN-T034` | variable; constant; sum; arithmetic product; equation | চল; ধ্রুবক; যোগফল; গুণফল; সমীকরণ | attested-in-school-algebra | high_for_attested_scope | low | 292 | BN-IN-P019, BN-IN-P020, BN-IN-P022 | welcome/open to correction |
+| `BN-IN-T035` | function; mapping; domain; codomain; range; image/value | অপেক্ষক; চিত্রণ; সংজ্ঞাক্ষেত্র; সহসংজ্ঞাক্ষেত্র; বিস্তৃতি; প্রতিবিম্ব/মান | attested-university | high_for_attested_scope | low | 1303 | BN-IN-P018 | welcome/open to correction |
 | `BN-IN-T036` | function argument; input; output; black box; extensionality for functions | আর্গুমেন্ট; ইনপুট; আউটপুট; ব্ল্যাক বক্স; মানভিত্তিক সমতার নীতি | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 47 | BN-IN-P018, BN-IN-P019, BN-IN-P020, BN-IN-P022 | welcome/open to correction |
-| `BN-IN-T037` | injective/injection; surjective/surjection; bijective/bijection; identity function | একৈক/একৈক অপেক্ষক; সমাপতিত/সমাপতিত অপেক্ষক; একৈক সমাপতিত/একৈক সমাপতিত অপেক্ষক; অভেদ অপেক্ষক | attested-university-with-normalization | high_for_attested_scope | low | 24 | BN-IN-P023, BN-IN-P024 | welcome/open to correction |
+| `BN-IN-T037` | injective/injection; surjective/surjection; bijective/bijection; identity function | একৈক/একৈক অপেক্ষক; সমাপতিত/সমাপতিত অপেক্ষক; একৈক সমাপতিত/একৈক সমাপতিত অপেক্ষক; অভেদ অপেক্ষক | attested-university-with-normalization | high_for_attested_scope | low | 25 | BN-IN-P023, BN-IN-P024 | welcome/open to correction |
 | `BN-IN-T038` | inverse function; left inverse; right inverse; composition | বিপরীত অপেক্ষক; বাম বিপরীত; ডান বিপরীত; মিশ্রণ | attested-root-with-provisional-normalization | medium_definition_and_adjacent-canon_support | medium | 51 | BN-IN-P024, BN-IN-P025, BN-IN-P026 | welcome/open to correction |
-| `BN-IN-T039` | partial function; total function; functional relation; serial relation; Axiom of Choice | আংশিক অপেক্ষক; সর্বত্র সংজ্ঞায়িত অপেক্ষক; অপেক্ষকধর্মী সম্পর্ক; সিরিয়াল সম্পর্ক; নির্বাচন স্বতঃসিদ্ধ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 23 | BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T040` | size of sets; finite/infinite; cardinality; enumeration; enumerable/countable; uncountable | সেটের আকার; সসীম/অসীম; সেটের মাত্রা (অঙ্কবাচক সংখ্যা); তালিকায়ন; তালিকায়নযোগ্য/গণনীয়; অগণনীয় | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 364 | BN-IN-P027, BN-IN-P028, BN-IN-P023, BN-IN-P024 | welcome/open to correction |
+| `BN-IN-T039` | partial function; total function; functional relation; serial relation; Axiom of Choice | আংশিক অপেক্ষক; সর্বত্র সংজ্ঞায়িত অপেক্ষক; অপেক্ষকধর্মী সম্পর্ক; সিরিয়াল সম্পর্ক; নির্বাচন স্বতঃসিদ্ধ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 31 | BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T040` | size of sets; finite/infinite; cardinality; enumeration; enumerable/countable; uncountable | সেটের আকার; সসীম/অসীম; সেটের মাত্রা (অঙ্কবাচক সংখ্যা); তালিকায়ন; তালিকায়নযোগ্য/গণনীয়; অগণনীয় | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 387 | BN-IN-P027, BN-IN-P028, BN-IN-P023, BN-IN-P024 | welcome/open to correction |
 | `BN-IN-T041` | actual infinity | বাস্তবায়িত অসীম | provisional-philosophical | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P009, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T042` | ceiling function; induction; recursive definition; corollary | ঊর্ধ্ব পূর্ণাংশ অপেক্ষক; গাণিতিক আরোহ; পূর্ববর্তী মানের সাহায্যে ধাপে ধাপে সংজ্ঞা; অনুসিদ্ধান্ত | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 31 | BN-IN-P018, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
-| `BN-IN-T043` | zig-zag method; pairing function; encode/code/decode; triangular number; cofinite; truth table/truth function | আঁকাবাঁকা পথের পদ্ধতি; যুগলায়ন অপেক্ষক; সংকেতায়ন/সংকেত/সংকেতোদ্ধার; ত্রিভুজসংখ্যা; সহসসীম; সত্যসারণি/সত্যমান-অপেক্ষক | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 227 | BN-IN-P009, BN-IN-P012, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P024, BN-IN-P027 | welcome/open to correction |
-| `BN-IN-T044` | non-enumerable/uncountable; diagonal method; diagonalization; one-way infinite list; mirror sequence | অতালিকায়নযোগ্য/অগণনীয়; কর্ণ পদ্ধতি; কর্ণীকরণ; একদিকে অসীম তালিকা; বিপরীত-বিট অনুক্রম | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 13 | BN-IN-P001, BN-IN-P002, BN-IN-P009, BN-IN-P010, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
+| `BN-IN-T043` | zig-zag method; pairing function; encode/code/decode; triangular number; cofinite; truth table/truth function | আঁকাবাঁকা পথের পদ্ধতি; যুগলায়ন অপেক্ষক; সংকেতায়ন/সংকেত/সংকেতোদ্ধার; ত্রিভুজসংখ্যা; সহসসীম; সত্যসারণি/সত্যমান-অপেক্ষক | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 231 | BN-IN-P009, BN-IN-P012, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P024, BN-IN-P027 | welcome/open to correction |
+| `BN-IN-T044` | non-enumerable/uncountable; diagonal method; diagonalization; one-way infinite list; mirror sequence | অতালিকায়নযোগ্য/অগণনীয়; কর্ণ পদ্ধতি; কর্ণীকরণ; একদিকে অসীম তালিকা; বিপরীত-বিট অনুক্রম | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 18 | BN-IN-P001, BN-IN-P002, BN-IN-P009, BN-IN-P010, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T045` | reduction (of one enumeration problem to another); characteristic sequence; exhaust a set; reduction direction | হ্রাসকরণ; নির্দেশক অনুক্রম; সেটের সব উপাদান অন্তর্ভুক্ত করা; হ্রাসের অভিমুখ | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 13 | BN-IN-P009, BN-IN-P010, BN-IN-P018, BN-IN-P023, BN-IN-P024, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T046` | equinumerous/equinumerosity; same cardinality; cardinal equality | সমসংখ্যক/সমসংখ্যকতা; একই অঙ্কবাচকতা; মাত্রাসমতা | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 8 | BN-IN-P014, BN-IN-P015, BN-IN-P016, BN-IN-P018, BN-IN-P023, BN-IN-P024, BN-IN-P025, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T047` | no larger than; strictly smaller cardinality; cardinal comparison; Cantor's theorem; Schröder–Bernstein theorem | আকারে বড় নয়; আকারে ছোট; অঙ্কবাচকতার তুলনা; কান্টরের উপপাদ্য; শ্র্যোডার–বার্নস্টাইন উপপাদ্য | mixed-normalized-and-proper-name | medium_definition_and_adjacent-canon_support | medium | 5 | BN-IN-P014, BN-IN-P015, BN-IN-P016, BN-IN-P018, BN-IN-P023, BN-IN-P024, BN-IN-P025, BN-IN-P028 | welcome/open to correction |
@@ -68,7 +68,7 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T050` | rational number; nonzero denominator; rational representative/embedding; cross multiplication | মূলদ সংখ্যা; অশূন্য হর; মূলদ-প্রতিনিধি/পূর্ণসংখ্যার মূলদ-রূপ; আড়গুণ | mixed-direct-and-provisional | medium_definition_and_adjacent-canon_support | medium | 43 | BN-IN-P005, BN-IN-P012, BN-IN-P015, BN-IN-P016, BN-IN-P018, BN-IN-P019, BN-IN-P029 | welcome/open to correction |
 | `BN-IN-T051` | real line; irrational number; ordered field; Completeness Property; upper bound; least upper bound | বাস্তব সংখ্যারেখা; অমূলদ সংখ্যা; ক্রমিত ক্ষেত্র; পূর্ণতা ধর্ম; ঊর্ধ্বসীমা; লঘিষ্ঠ ঊর্ধ্বসীমা | mixed-direct-and-provisional | medium_definition_and_adjacent-canon_support | medium | 32 | BN-IN-P005, BN-IN-P009, BN-IN-P015, BN-IN-P016, BN-IN-P019, BN-IN-P024, BN-IN-P029 | welcome/open to correction |
 | `BN-IN-T052` | Dedekind cut; lower half; proper initial segment; greatest lower bound; maximum element; rational-to-real embedding | ডেডেকিন্ড কর্তন; নিম্নাংশ; প্রকৃত প্রারম্ভিক খণ্ড; গরিষ্ঠ নিম্নসীমা; গরিষ্ঠ উপাদান; মূলদ সংখ্যার বাস্তব-রূপ | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 10 | BN-IN-P005, BN-IN-P015, BN-IN-P016, BN-IN-P017, BN-IN-P019, BN-IN-P029 | welcome/open to correction |
-| `BN-IN-T053` | commutative ring; ordered ring; ordered field; associative/commutative/identity/additive inverse/distributive laws; trichotomy | বিনিমেয় বলয়; ক্রমিত বলয়; ক্রমিত ক্ষেত্র; সংযোগী/বিনিময়/অভেদী/যোগাত্মক বিপরীত/বণ্টন ধর্ম; ত্রিবিভাজন | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 25 | BN-IN-P009, BN-IN-P013, BN-IN-P014, BN-IN-P017, BN-IN-P019, BN-IN-P024, BN-IN-P029 | welcome/open to correction |
+| `BN-IN-T053` | commutative ring; ordered ring; ordered field; associative/commutative/identity/additive inverse/distributive laws; trichotomy | বিনিমেয় বলয়; ক্রমিত বলয়; ক্রমিত ক্ষেত্র; সংযোগী/বিনিময়/অভেদী/যোগাত্মক বিপরীত/বণ্টন ধর্ম; ত্রিবিভাজন | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 26 | BN-IN-P009, BN-IN-P013, BN-IN-P014, BN-IN-P017, BN-IN-P019, BN-IN-P024, BN-IN-P029 | welcome/open to correction |
 | `BN-IN-T054` | Cauchy sequence; rational approximation; tends to zero; equivalence modulo null sequences; constant-sequence embedding; monotone increasing/decreasing | কোশি অনুক্রম; মূলদ আসন্নমান; সীমায় শূন্যের দিকে যায়; শূন্যমুখী অনুক্রমের মডুলো তুল্যতা; ধ্রুব অনুক্রমে অন্তর্ভুক্তি; একঘেয়ে বর্ধমান/হ্রাসমান | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 16 | BN-IN-P005, BN-IN-P009, BN-IN-P016, BN-IN-P018, BN-IN-P019, BN-IN-P024, BN-IN-P029 | welcome/open to correction |
 | `BN-IN-T055` | rigour of a construction; metaphysical identification; set-theoretic embedding; rival constructions; Benacerraf-style underdetermination | নির্মাণের কঠোরতা; অধিবিদ্যাগত অভিন্নকরণ; সেটতাত্ত্বিক অন্তর্ভুক্তি; প্রতিদ্বন্দ্বী নির্মাণ; বেনাসেরাফ-ধর্মী অনির্ধার্যতা | provisional-philosophical | low_pending_occurrence | high | 0 | BN-IN-P009, BN-IN-P013, BN-IN-P015, BN-IN-P016, BN-IN-P018, BN-IN-P029 | welcome/open to correction |
 | `BN-IN-T056` | infinite set; Dedekind-infinite set; Hilbert's Hotel | অসীম সেট; ডেডেকিন্ড-অসীম সেট; হিলবার্টের হোটেল | mixed-direct-and-provisional | medium_definition_and_adjacent-canon_support | medium | 22 | BN-IN-P023, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
@@ -92,11 +92,11 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T074` | tableau/truth tree; signed formula; truth-value sign; closed/open branch; tableau calculus | ট্যাবলো/সত্য-বৃক্ষ; চিহ্নিত সূত্র; সত্যমান-চিহ্ন; বদ্ধ/খোলা শাখা; ট্যাবলো কলন | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 296 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T075` | resolution method; resolution refutation; mechanization/implementation; read a satisfying structure off an open branch | রেজোলিউশন পদ্ধতি; রেজোলিউশন খণ্ডন; যান্ত্রিক প্রয়োগ/রূপায়ণ; খোলা শাখা থেকে পরিতৃপ্তিকারী গঠন পড়ে নেওয়া | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 4 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T076` | antecedent; succedent; associated sentence of a sequent; sequence concatenation | পূর্বাংশ; উত্তরাংশ; সিকোয়েন্টের সংশ্লিষ্ট বাক্য; অনুক্রমের সংযুক্তি | provisional-definition-governed | medium_definition_and_adjacent-canon_support | medium | 13 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T077` | logical rule; structural rule; upper/lower sequent; left/right rule | যৌক্তিক বিধি; গঠনগত বিধি; উপরের/নিচের সিকোয়েন্ট; বাঁ/ডান-বিধি | provisional-rule-register | medium_definition_and_adjacent-canon_support | medium | 98 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T077` | logical rule; structural rule; upper/lower sequent; left/right rule | যৌক্তিক বিধি; গঠনগত বিধি; উপরের/নিচের সিকোয়েন্ট; বাঁ/ডান-বিধি | provisional-rule-register | medium_definition_and_adjacent-canon_support | medium | 101 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T078` | quantifier rule; eigenvariable/eigenvariable condition; closed term | পরিমাণসূচকের বিধি; আইগেনচল/আইগেনচল-শর্ত; বদ্ধ পদ | provisional-quantifier-rule-register | medium_definition_and_adjacent-canon_support | medium | 113 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T079` | contraction; exchange; cut; inference line; LK derivation/end-sequent | সংকোচন; অদলবদল; কর্তন; অনুমান-রেখা; LK-নিষ্পাদন/অন্তিম সিকোয়েন্ট | provisional-structural-rule-register | medium_definition_and_adjacent-canon_support | medium | 55 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T080` | proof search; apply a rule backwards; split into branches; finish at an initial sequent | প্রমাণ-অন্বেষণ; বিধি উল্টো দিকে প্রয়োগ; শাখায় ভাগ; প্রারম্ভিক সিকোয়েন্টে শেষ করা | provisional-pedagogical-register | medium_definition_and_adjacent-canon_support | medium | 5 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T081` | provability/derivability relation; theorem; reflexivity; monotonicity; transitivity; compactness | প্রমাণযোগ্যতা/নিষ্পাদনযোগ্যতা-সম্পর্ক; উপপাদ্য; প্রতিবিম্ব ধর্ম; একঘেয়েতা; পরিযায়িতা; সংহতি | provisional-definition-governed | medium_definition_and_adjacent-canon_support | medium | 250 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T081` | provability/derivability relation; theorem; reflexivity; monotonicity; transitivity; compactness | প্রমাণযোগ্যতা/নিষ্পাদনযোগ্যতা-সম্পর্ক; উপপাদ্য; প্রতিবিম্ব ধর্ম; একঘেয়েতা; পরিযায়িতা; সংহতি | provisional-definition-governed | medium_definition_and_adjacent-canon_support | medium | 252 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T082` | propositional facts about provability; modus ponens; shared sequent context | বচনসংযোজক-সংক্রান্ত প্রমাণযোগ্যতার তথ্য; মোডাস পোনেন্স; অভিন্ন সিকোয়েন্ট-প্রসঙ্গ | provisional-rule-governed | medium_definition_and_adjacent-canon_support | medium | 20 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T083` | strong generalization; fresh constant; quantifier provability facts | প্রবল সাধারণীকরণ; নতুন ধ্রুবক; পরিমাণসূচক-সংক্রান্ত প্রমাণযোগ্যতার তথ্য | provisional-quantifier-metatheory | medium_definition_and_adjacent-canon_support | medium | 2 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T084` | valid sequent; satisfy a sequent; soundness induction; induction hypothesis; variable assignment | বৈধ সিকোয়েন্ট; সিকোয়েন্ট পরিতৃপ্ত করা; বিশুদ্ধতার আরোহ-প্রমাণ; আরোহের অনুমান; চলরাশি-আরোপ | provisional-semantics-proof-register | medium_definition_and_adjacent-canon_support | medium | 73 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
@@ -106,14 +106,14 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T088` | rule-applicable signed formula; check off with a check mark; branch-splitting rule; repeat a quantified rule with a closed term | বিধি প্রয়োগের উপযোগী চিহ্নিত সূত্র; টিকচিহ্ন দেওয়া; শাখা-বিভাজক বিধি; বদ্ধ পদ দিয়ে বিধিটি কয়েকবার প্রয়োগ | provisional-tableau-construction-register | medium_definition_and_adjacent-canon_support | medium | 2 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T089` | satisfy a signed formula; satisfiable set/branch/tableau; rule extension preserves satisfiability; unsatisfiable; contrapositive | চিহ্নিত সূত্রকে পরিতৃপ্ত করা; পরিতৃপ্তিযোগ্য সমষ্টি/শাখা/ট্যাবলো; বিধি-প্রসারণে পরিতৃপ্তিযোগ্যতা বজায় রাখা; অপরিতৃপ্তিযোগ্য; বিপরীত-প্রতিজ্ঞা | provisional-tableau-soundness-register | medium_definition_and_adjacent-canon_support | medium | 174 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T090` | syntactic deduction theorem; discharge an assumption; axiom instance; concatenate derivations | নিঃসরণ উপপাদ্য; অনুমিতি নিঃসরণ; স্বতঃসিদ্ধের রূপ; নিষ্পাদনগুলি পরপর বসানো | provisional-axiomatic-metatheory-register | medium_definition_and_adjacent-canon_support | medium | 21 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T091` | complete consistent theory; axiomatizable; decidable | পূর্ণ সঙ্গত তত্ত্ব; স্বতঃসিদ্ধযোগ্য; নির্ণেয় | provisional-completeness-metatheory-register | medium_definition_and_adjacent-canon_support | medium | 5 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T091` | complete consistent theory; axiomatizable; decidable | পূর্ণ সঙ্গত তত্ত্ব; স্বতঃসিদ্ধযোগ্য; নির্ণেয় | provisional-completeness-metatheory-register | medium_definition_and_adjacent-canon_support | medium | 12 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T092` | Henkin expansion; saturated set; witness; counterexample | হেনকিন সম্প্রসারণ; সম্পৃক্ত সেট; সাক্ষী; প্রতিদৃষ্টান্ত | provisional-henkin-construction-register | medium_definition_and_adjacent-canon_support | medium | 8 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T093` | term model; Truth Lemma; covered model; factor a model by an equivalence relation | পদ-মডেল; সত্যতা-সহায়ক উপপাদ্য; আচ্ছাদিত মডেল; তুল্যতা সম্পর্ক দিয়ে মডেলের ভাগকরণ | mixed-attested-roots-and-provisional-model-theory | medium_definition_and_adjacent-canon_support | medium | 22 | BN-IN-P013, BN-IN-P015, BN-IN-P016, BN-IN-P020, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T094` | finitely satisfiable; infinitesimal; standard model of arithmetic | সসীমভাবে পরিতৃপ্তিযোগ্য; অতিক্ষুদ্র সংখ্যা; পাটীগণিতের প্রমিত মডেল | provisional-compactness-application-register | medium_definition_and_adjacent-canon_support | medium | 27 | BN-IN-P008, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T095` | downward Löwenheim–Skolem theorem; countable model; Skolem's paradox | লোয়েনহাইম--স্কোলেম উপপাদ্য; গণনীয় মডেল; স্কোলেমের কূটাভাস | provisional-model-size-register | medium_definition_and_adjacent-canon_support | medium | 13 | BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T096` | formal language; first-order language; quantificational logic; predicate logic; vocabulary; expression/string | বিধিবদ্ধ ভাষা; প্রথম-ক্রমের ভাষা; পরিমাণসূচকীয় যুক্তিবিদ্যা; বিধেয় যুক্তিবিদ্যা; শব্দভাণ্ডার; অভিব্যক্তি/প্রতীকক্রম | mixed-contextual-and-provisional-first-order-register | medium_definition_and_adjacent-canon_support | medium | 96 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019 | welcome/open to correction |
 | `BN-IN-T097` | term; atomic formula; sentence; free/bound variable occurrence; matching quantifier; corresponding occurrence; quantifier scope | পদ; পরমাণু সূত্র; বাক্য; মুক্ত/বদ্ধ চলরাশির সংঘটন; সংশ্লিষ্ট পরিমাণসূচক; অনুরূপ সংঘটন; পরিমাণসূচকের পরিসর | mixed-attested-roots-and-definition-governed | medium_definition_and_adjacent-canon_support | medium | 613 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T098` | structure; domain; interpretation/denotation; satisfaction relative to an assignment; modified assignment | গঠন; সংজ্ঞাক্ষেত্র; ব্যাখ্যা/নির্দেশিত মান; আরোপ-সাপেক্ষ পরিতৃপ্তি; পরিবর্তিত আরোপ | mixed-attested-roots-and-provisional-semantics | medium_definition_and_adjacent-canon_support | medium | 366 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T098` | structure; domain; interpretation/denotation; satisfaction relative to an assignment; modified assignment | গঠন; সংজ্ঞাক্ষেত্র; ব্যাখ্যা/নির্দেশিত মান; আরোপ-সাপেক্ষ পরিতৃপ্তি; পরিবর্তিত আরোপ | mixed-attested-roots-and-provisional-semantics | medium_definition_and_adjacent-canon_support | medium | 376 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T099` | substitution; capture-sensitive replacement; term value; universal instantiation; substitution lemma | প্রতিস্থাপন; চলরাশি-বদ্ধতা-সংবেদনশীল প্রতিস্থাপন; পদের মান; সার্বিক নিদর্শনায়ন; প্রতিস্থাপন-সহায়ক উপপাদ্য | provisional-definition-and-lemma-governed | medium_definition_and_adjacent-canon_support | medium | 32 | BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P020, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T100` | model theory; model of a sentence set; axiomatic method; characterize a class; expressibility; finite/nonenumerable domain | মডেল তত্ত্ব; বাক্যসমষ্টির মডেল; স্বতঃসিদ্ধমূলক পদ্ধতি; কোনো শ্রেণিকে চরিত্রায়িত করা; প্রকাশযোগ্যতা; সসীম/অতালিকায়নযোগ্য সংজ্ঞাক্ষেত্র | mixed-attested-roots-and-provisional-model-theory | medium_definition_and_adjacent-canon_support | medium | 201 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T101` | main operator; immediate subformula; proper subformula; proper prefix | প্রধান অপারেটর; অব্যবহিত উপসূত্র; প্রকৃত উপসূত্র; প্রকৃত পূর্বাংশ | provisional-definition-governed-syntax-register | medium_definition_and_adjacent-canon_support | medium | 8 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
@@ -125,11 +125,11 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T107` | strict linear-order theory; group theory; Peano arithmetic; induction schema; pure set; urelement; set extensionality; naive comprehension scheme | কঠোর রৈখিক ক্রমের তত্ত্ব; গোষ্ঠীর তত্ত্ব; পেয়ানো পাটীগণিত; আরোহ-ছক; বিশুদ্ধ সেট; উর-উপাদান; সেটের সদস্যভিত্তিক সমতা; অনানুষ্ঠানিক ধর্মনির্দেশে সেট-গঠন ছক | mixed-attested-roots-and-provisional-theory-examples | medium_definition_and_adjacent-canon_support | medium | 12 | BN-IN-P001, BN-IN-P002, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P011, BN-IN-P013, BN-IN-P025, BN-IN-P027 | welcome/open to correction |
 | `BN-IN-T108` | mereology; parthood; parthood structure; proper/improper part; mereological sum; fusion | অংশতত্ত্ব; অংশ-সম্পর্ক; অংশ-গঠন; যথার্থ/অযথার্থ অংশ; অংশতাত্ত্বিক যোগ; সংযোজন | provisional-definition-governed-mereology-register | medium_definition_and_adjacent-canon_support | medium | 37 | BN-IN-P001, BN-IN-P013, BN-IN-P018, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T109` | express a relation in a structure; definable relation; superfluous predicate; successor/predecessor relation; standard arithmetic model | কোনো গঠনে সম্পর্ক প্রকাশ করা; সংজ্ঞেয় সম্পর্ক; অপ্রয়োজনীয় বিধেয়; উত্তরসূরি/পূর্বসূরি সম্পর্ক; পাটীগণিতের প্রমিত মডেল | mixed-attested-roots-and-provisional-definability-register | medium_definition_and_adjacent-canon_support | medium | 52 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T110` | ZFC; axiom of extensionality; empty-set axiom; power-set axiom; function represented as a relation; comprehension principle; separation principle; Russell's paradox | জার্মেলো--ফ্রেঙ্কেল সেটতত্ত্বসহ নির্বাচন স্বতঃসিদ্ধ; সদস্যভিত্তিক সমতার স্বতঃসিদ্ধ; শূন্য সেটের স্বতঃসিদ্ধ; ঘাত সেটের স্বতঃসিদ্ধ; সম্পর্করূপে অপেক্ষক; ধর্মনির্দেশে সেট-গঠন নীতি; পৃথকীকরণ নীতি; রাসেলের কূটাভাস | mixed-attested-set-roots-and-provisional-foundational-register | medium_definition_and_adjacent-canon_support | medium | 14 | BN-IN-P001, BN-IN-P002, BN-IN-P006, BN-IN-P007, BN-IN-P011, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T111` | size of a structure; at least/at most/exactly n elements; finite/infinite structure; purely logical sentence; nonenumerable structure | গঠনের আকার; অন্তত/বড়জোর/ঠিক n-টি উপাদান; সসীম/অসীম গঠন; বিশুদ্ধ যৌক্তিক বাক্য; অতালিকায়নযোগ্য গঠন | mixed-attested-finiteness-and-provisional-model-size-register | medium_definition_and_adjacent-canon_support | medium | 260 | BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
+| `BN-IN-T110` | ZFC; axiom of extensionality; empty-set axiom; power-set axiom; function represented as a relation; comprehension principle; separation principle; Russell's paradox | জার্মেলো--ফ্রেঙ্কেল সেটতত্ত্বসহ নির্বাচন স্বতঃসিদ্ধ; সদস্যভিত্তিক সমতার স্বতঃসিদ্ধ; শূন্য সেটের স্বতঃসিদ্ধ; ঘাত সেটের স্বতঃসিদ্ধ; সম্পর্করূপে অপেক্ষক; ধর্মনির্দেশে সেট-গঠন নীতি; পৃথকীকরণ নীতি; রাসেলের কূটাভাস | mixed-attested-set-roots-and-provisional-foundational-register | medium_definition_and_adjacent-canon_support | medium | 18 | BN-IN-P001, BN-IN-P002, BN-IN-P006, BN-IN-P007, BN-IN-P011, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T111` | size of a structure; at least/at most/exactly n elements; finite/infinite structure; purely logical sentence; nonenumerable structure | গঠনের আকার; অন্তত/বড়জোর/ঠিক n-টি উপাদান; সসীম/অসীম গঠন; বিশুদ্ধ যৌক্তিক বাক্য; অতালিকায়নযোগ্য গঠন | mixed-attested-finiteness-and-provisional-model-size-register | medium_definition_and_adjacent-canon_support | medium | 261 | BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T112` | logic beyond first order; extension and variation; formal language; deductive system; intended semantics; logicism; higher-order reasoning | প্রথম-ক্রমের পরিসরের বাইরের যুক্তিবিদ্যা; সম্প্রসারণ ও রূপভেদ; আনুষ্ঠানিক ভাষা; অবরোহী ব্যবস্থা; অভিপ্রেত অর্থতত্ত্ব; যুক্তিবাদ; উচ্চতর-ক্রমের যুক্তিবিচার | mixed-attested-roots-and-provisional-philosophical-register | medium_definition_and_adjacent-canon_support | medium | 8 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T113` | many-sorted logic; sort; sort-specific domain; typed function or relation; relativized quantifier; first-order embedding | বহুজাতীয় যুক্তিবিদ্যা; জাতি; জাতি-নির্দিষ্ট সংজ্ঞাক্ষেত্র; টাইপযুক্ত অপেক্ষক বা সম্পর্ক; আপেক্ষিক পরিমাণসূচক; প্রথম-ক্রমীয় নিবেশন | mixed-attested-roots-and-provisional-many-sorted-register | medium_definition_and_adjacent-canon_support | medium | 26 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T114` | second-order logic; relation variable; comprehension schema; impredicative/predicative comprehension; full/weak second-order semantics; categorical description; effective proof system | দ্বিতীয়-ক্রমের যুক্তিবিদ্যা; সম্পর্ক-চলরাশি; ধর্মনির্দেশ-ছক; অপ্রেডিকেটিভ/প্রেডিকেটিভ ধর্মনির্দেশ; পূর্ণ/দুর্বল দ্বিতীয়-ক্রমীয় অর্থতত্ত্ব; সমরূপতা-অবধি একক বর্ণনা; কার্যকর প্রমাণ-ব্যবস্থা | mixed-attested-roots-and-provisional-second-order-register | medium_definition_and_adjacent-canon_support | medium | 349 | BN-IN-P001, BN-IN-P002, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
+| `BN-IN-T114` | second-order logic; relation variable; comprehension schema; impredicative/predicative comprehension; full/weak second-order semantics; categorical description; effective proof system | দ্বিতীয়-ক্রমের যুক্তিবিদ্যা; সম্পর্ক-চলরাশি; ধর্মনির্দেশ-ছক; অপ্রেডিকেটিভ/প্রেডিকেটিভ ধর্মনির্দেশ; পূর্ণ/দুর্বল দ্বিতীয়-ক্রমীয় অর্থতত্ত্ব; সমরূপতা-অবধি একক বর্ণনা; কার্যকর প্রমাণ-ব্যবস্থা | mixed-attested-roots-and-provisional-second-order-register | medium_definition_and_adjacent-canon_support | medium | 350 | BN-IN-P001, BN-IN-P002, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T115` | higher-order logic; type; function type; product type; functional; lambda abstraction; projection; simple theory of types | উচ্চতর-ক্রমের যুক্তিবিদ্যা; টাইপ; অপেক্ষক-টাইপ; গুণন-টাইপ; ফাংশনাল; ল্যাম্বডা বিমূর্তন; অভিক্ষেপ; সরল টাইপতত্ত্ব | mixed-attested-roots-and-provisional-type-theory-register | medium_definition_and_adjacent-canon_support | medium | 72 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T116` | intuitionistic logic; constructive proof; BHK interpretation; formulas-as-types; Curry--Howard isomorphism; double-negation translation; Kripke structure; forcing relation | স্বজ্ঞাবাদী যুক্তিবিদ্যা; নির্মাণমূলক প্রমাণ; BHK ব্যাখ্যা; সূত্র-হিসেবে-টাইপ; কারি--হাওয়ার্ড সমরূপতা; দ্বিনঞর্থকতা অনুবাদ; ক্রিপকে গঠন; বাধ্যকরণ সম্পর্ক | mixed-attested-roots-and-provisional-intuitionistic-register | medium_definition_and_adjacent-canon_support | medium | 10 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T117` | modal logic; necessity/possibility; possible world; accessibility relation; intensional/extensional logic; provability/epistemic/temporal logic; S4/S5 | মোডাল যুক্তিবিদ্যা; আবশ্যিকতা/সম্ভাব্যতা; সম্ভাব্য জগৎ; অভিগম্যতা সম্পর্ক; অভিপ্রায়গত/ব্যাপ্তিগত যুক্তিবিদ্যা; প্রমাণযোগ্যতা/জ্ঞানতাত্ত্বিক/কালগত যুক্তিবিদ্যা; S4/S5 | mixed-attested-roots-and-provisional-modal-register | medium_definition_and_adjacent-canon_support | medium | 23 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
@@ -145,7 +145,7 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T127` | standard model; nonstandard model; standard number; nonstandard number | মানক মডেল; অমানক মডেল; মানক সংখ্যা; অমানক সংখ্যা | provisional-arithmetic-model-register | medium_definition_and_adjacent-canon_support | medium | 36 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T128` | arithmetic model; Robinson Q; Peano arithmetic; true arithmetic; consistency witness | পাটিগাণিতিক মডেল; রবিনসন Q; পেয়ানো পাটিগণিত; সত্য পাটিগণিত; সঙ্গতি-সাক্ষী | provisional-arithmetic-theory-register | medium_definition_and_adjacent-canon_support | medium | 2 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T129` | standard part; nonstandard part; arithmetic block; successor; predecessor | মানক খণ্ড; অমানক খণ্ড; পাটিগাণিতিক খণ্ড; উত্তরসূরি; পূর্বসূরি | provisional-arithmetic-block-register | medium_definition_and_adjacent-canon_support | medium | 58 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
-| `BN-IN-T130` | computable structure; computable function; decidable relation; computable presentation; Tennenbaum theorem | গণনসাধ্য গঠন; গণনসাধ্য অপেক্ষক; নির্ণেয় সম্বন্ধ; গণনসাধ্য উপস্থাপন; টেনেনবাউমের উপপাদ্য | provisional-computability-register | medium_definition_and_adjacent-canon_support | medium | 37 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
+| `BN-IN-T130` | computable structure; computable function; decidable relation; computable presentation; Tennenbaum theorem | গণনসাধ্য গঠন; গণনসাধ্য অপেক্ষক; নির্ণেয় সম্বন্ধ; গণনসাধ্য উপস্থাপন; টেনেনবাউমের উপপাদ্য | provisional-computability-register | medium_definition_and_adjacent-canon_support | medium | 63 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T131` | discrete linear order; dense order; countable nonstandard model; no endpoints | কঠোর রৈখিক ক্রম; ঘন রৈখিক ক্রম; গণনীয় অমানক মডেল; অন্তবিন্দুহীন | provisional-arithmetic-order-register | medium_definition_and_adjacent-canon_support | medium | 21 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T132` | cancellation law; commutative operations; midpoint; arithmetic operation | যোগের কর্তন-বিধি; বিনিময়যোগ্য ক্রিয়া; গড়; পাটিগাণিতিক ক্রিয়া | provisional-arithmetic-operation-register | medium_definition_and_adjacent-canon_support | medium | 29 | BN-IN-P005, BN-IN-P019, BN-IN-P020, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T133` | transport of structure; computable presentation; up to isomorphism; bijection | গঠন পরিবাহন; গণনসাধ্য উপস্থাপন; সমরূপতা পর্যন্ত; বিজেকশন | provisional-arithmetic-presentation-register | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P005, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P024, BN-IN-P025 | welcome/open to correction |
@@ -165,10 +165,10 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T147` | quantifier rank; n-equivalent structures; finite rank types | পরিমাণসূচক-ক্রমাঙ্ক; n-সমতুল্য গঠন; সসীম ক্রমাঙ্ক-প্রকার | provisional-quantifier-rank-register | medium_definition_and_adjacent-canon_support | medium | 11 | BN-IN-P006, BN-IN-P007, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T148` | Lindström theorem; Lindström lemma; nonstandard element | লিন্ডস্ট্রমের উপপাদ্য; লিন্ডস্ট্রমের লেমা; অমানক উপাদান | provisional-lindstrom-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T149` | abstract-logic elementary equivalence; elementary equivalent | মৌলিকভাবে সমতুল্য কাঠামো | provisional-terminology-normalization-register | low_pending_occurrence | high | 0 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T150` | primitive recursion; primitive recursive definition; primitive recursive function | আদিম পুনরাবৃত্তি; আদিম পুনরাবৃত্তির মাধ্যমে সংজ্ঞা; আদিম পুনরাবৃত্ত অপেক্ষক | provisional-computability-recursion-register | medium_definition_and_adjacent-canon_support | medium | 77 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T151` | recursive function; recursive definition | পুনরাবৃত্ত অপেক্ষক; পুনরাবৃত্ত সংজ্ঞা | provisional-recursive-function-register | medium_definition_and_adjacent-canon_support | medium | 101 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T150` | primitive recursion; primitive recursive definition; primitive recursive function | আদিম পুনরাবৃত্তি; আদিম পুনরাবৃত্তির মাধ্যমে সংজ্ঞা; আদিম পুনরাবৃত্ত অপেক্ষক | provisional-computability-recursion-register | medium_definition_and_adjacent-canon_support | medium | 81 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T151` | recursive function; recursive definition | পুনরাবৃত্ত অপেক্ষক; পুনরাবৃত্ত সংজ্ঞা | provisional-recursive-function-register | medium_definition_and_adjacent-canon_support | medium | 104 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T152` | computability theory | গণনসাধ্যতা তত্ত্ব | provisional-computability-theory-register | medium_definition_and_adjacent-canon_support | medium | 3 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T153` | characteristic function; computable relation | চরিত্রসূচক অপেক্ষক; গণনসাধ্য সম্বন্ধ | provisional-characteristic-function-register | medium_definition_and_adjacent-canon_support | medium | 3 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T153` | characteristic function; computable relation | চরিত্রসূচক অপেক্ষক; গণনসাধ্য সম্বন্ধ | provisional-characteristic-function-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T154` | unbounded search | সীমাহীন অনুসন্ধান | provisional-unbounded-search-register | medium_definition_and_adjacent-canon_support | medium | 8 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T155` | partial recursive function; general recursive function | আংশিক পুনরাবৃত্ত অপেক্ষক; সাধারণ পুনরাবৃত্ত অপেক্ষক | provisional-recursive-function-class-register | medium_definition_and_adjacent-canon_support | medium | 29 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T156` | arity; n-place function | স্থানসংখ্যা; n-স্থানীয় অপেক্ষক | provisional-arity-register | medium_definition_and_adjacent-canon_support | medium | 10 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
@@ -183,19 +183,26 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T165` | sequence code; empty sequence; sequence concatenation; subsequence | অনুক্রমের সংকেত; শূন্য অনুক্রম; অনুক্রমের সংযুক্তি; উপ-অনুক্রম | provisional-computable-sequence-register | medium_definition_and_adjacent-canon_support | medium | 11 | BN-IN-P005, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T166` | tree; node; root; immediate subtree; leaf node | বৃক্ষ; নোড; মূল; অব্যবহিত উপবৃক্ষ; পত্র-নোড | provisional-coded-tree-register | medium_definition_and_adjacent-canon_support | medium | 270 | BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T167` | simultaneous recursion; course-of-values recursion; side value/parameter | যুগপৎ পুনরাবৃত্তি; পূর্বমান-ভিত্তিক পুনরাবৃত্তি; পার্শ্ব-মান/পরামিতি | provisional-extended-recursion-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P005, BN-IN-P008, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T168` | non-primitive-recursive function; effective enumeration; diagonalization | আদিম পুনরাবৃত্ত নয় এমন অপেক্ষক; কার্যকর তালিকায়ন; কর্ণীকরণ | provisional-diagonal-computability-register | medium_definition_and_adjacent-canon_support | medium | 6 | BN-IN-P005, BN-IN-P008, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T168` | non-primitive-recursive function; effective enumeration; diagonalization | আদিম পুনরাবৃত্ত নয় এমন অপেক্ষক; কার্যকর তালিকায়ন; কর্ণীকরণ | provisional-diagonal-computability-register | medium_definition_and_adjacent-canon_support | medium | 11 | BN-IN-P005, BN-IN-P008, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T169` | Ackermann--Péter function; fast-growing function | আকারমান--পেতের অপেক্ষক; দ্রুত-বর্ধনশীল অপেক্ষক | provisional-fast-growth-register | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P005, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T170` | Church--Turing thesis; Turing machine; computational model; simulation | চার্চ--টুরিং থিসিস; টুরিং যন্ত্র; গণনামূলক মডেল; অনুকরণ | provisional-computation-model-register | medium_definition_and_adjacent-canon_support | medium | 20 | BN-IN-P005, BN-IN-P008, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T171` | partial function defined/undefined; equality up to simultaneous definedness | আংশিক অপেক্ষক সংজ্ঞায়িত/অসংজ্ঞায়িত; যুগপৎ সংজ্ঞায়িততার সাপেক্ষে সমতা | provisional-partial-definedness-register | medium_definition_and_adjacent-canon_support | medium | 12 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T172` | unbounded search operator; partial recursive function; recursive/total recursive function | সীমাহীন অনুসন্ধান অপারেটর; আংশিক পুনরাবৃত্ত অপেক্ষক; পুনরাবৃত্ত/সর্বত্র-সংজ্ঞায়িত পুনরাবৃত্ত অপেক্ষক | provisional-partial-recursion-register | medium_definition_and_adjacent-canon_support | medium | 269 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T173` | Kleene's normal form theorem; index; computation code | ক্লিনির স্বাভাবিক রূপের উপপাদ্য; সূচক; গণনার সংকেত | provisional-normal-form-register | medium_definition_and_adjacent-canon_support | medium | 158 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T174` | halting problem; halting function; nontermination | থামার সমস্যা; থামা-অপেক্ষক; গণনা না-থামা | provisional-halting-register | medium_definition_and_adjacent-canon_support | medium | 4 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T170` | Church--Turing thesis; Turing machine; computational model; simulation | চার্চ--টুরিং থিসিস; টুরিং যন্ত্র; গণনামূলক মডেল; অনুকরণ | provisional-computation-model-register | medium_definition_and_adjacent-canon_support | medium | 32 | BN-IN-P005, BN-IN-P008, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T171` | partial function defined/undefined; equality up to simultaneous definedness | আংশিক অপেক্ষক সংজ্ঞায়িত/অসংজ্ঞায়িত; যুগপৎ সংজ্ঞায়িততার সাপেক্ষে সমতা | provisional-partial-definedness-register | medium_definition_and_adjacent-canon_support | medium | 20 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T172` | unbounded search operator; partial recursive function; recursive/total recursive function | সীমাহীন অনুসন্ধান অপারেটর; আংশিক পুনরাবৃত্ত অপেক্ষক; পুনরাবৃত্ত/সর্বত্র-সংজ্ঞায়িত পুনরাবৃত্ত অপেক্ষক | provisional-partial-recursion-register | medium_definition_and_adjacent-canon_support | medium | 276 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T173` | Kleene's normal form theorem; index; computation code | ক্লিনির স্বাভাবিক রূপের উপপাদ্য; সূচক; গণনার সংকেত | provisional-normal-form-register | medium_definition_and_adjacent-canon_support | medium | 166 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T174` | halting problem; halting function; nontermination | থামার সমস্যা; থামা-অপেক্ষক; গণনা না-থামা | provisional-halting-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T175` | regular function; general recursive function; conservative restriction | নিয়মিত অপেক্ষক; সাধারণ পুনরাবৃত্ত অপেক্ষক; রক্ষণশীল সীমাবদ্ধকরণ | provisional-general-recursion-register | medium_definition_and_adjacent-canon_support | medium | 8 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T176` | computability theory; relative computability; recursion theory | গণনসাধ্যতা তত্ত্ব; আপেক্ষিক গণনসাধ্যতা; পুনরাবৃত্তি তত্ত্ব | provisional-computability-theory-register | medium_definition_and_adjacent-canon_support | medium | 5 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T177` | partial computable function; computable total function; computable relation | আংশিক গণনসাধ্য অপেক্ষক; গণনসাধ্য সর্বত্র-সংজ্ঞায়িত অপেক্ষক; গণনসাধ্য সম্বন্ধ | provisional-computability-class-register | medium_definition_and_adjacent-canon_support | medium | 10 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T178` | computation record; computation sequence; output | গণনার নথি; গণনা-অনুক্রম; নির্গম | provisional-computation-coding-register | medium_definition_and_adjacent-canon_support | medium | 12 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T177` | partial computable function; computable total function; computable relation | আংশিক গণনসাধ্য অপেক্ষক; গণনসাধ্য সর্বত্র-সংজ্ঞায়িত অপেক্ষক; গণনসাধ্য সম্বন্ধ | provisional-computability-class-register | medium_definition_and_adjacent-canon_support | medium | 23 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T178` | computation record; computation sequence; output | গণনার নথি; গণনা-অনুক্রম; নির্গম | provisional-computation-coding-register | medium_definition_and_adjacent-canon_support | medium | 16 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T179` | program specialization; fixed inputs; remaining arguments | প্রোগ্রামের বিশেষায়ন; আগে থেকে স্থির নিবেশ; অবশিষ্ট আর্গুমেন্ট | provisional-s-m-n-register | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T180` | universal partial computable function; effective enumeration; uniform computation | সার্বজনীন আংশিক গণনসাধ্য অপেক্ষক; কার্যকর তালিকায়ন; একই নিয়মে গণনা | provisional-universal-function-register | medium_definition_and_adjacent-canon_support | medium | 2 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T180` | universal partial computable function; effective enumeration; uniform computation | সার্বজনীন আংশিক গণনসাধ্য অপেক্ষক; কার্যকর তালিকায়ন; একই নিয়মে গণনা | provisional-universal-function-register | medium_definition_and_adjacent-canon_support | medium | 3 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T181` | no universal computable function; diagonal function; partial escape | সার্বজনীন গণনসাধ্য অপেক্ষকের অনস্তিত্ব; কর্ণ অপেক্ষক; আংশিকতার অবকাশ | provisional-no-total-universal-register | low_pending_occurrence | high | 0 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T182` | undecidability of the halting problem; infinite loop; self-input | থামার সমস্যার অনির্ণেয়তা; অসীম চক্র; স্ব-নিবেশ | provisional-halting-undecidability-register | medium_definition_and_adjacent-canon_support | medium | 3 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T183` | Russell's paradox; set of all sets; diagonalization argument | রাসেলের কূটাভাস; সব সেটের সেট; কর্ণীকরণ যুক্তি | provisional-russell-comparison-register | medium_definition_and_adjacent-canon_support | medium | 22 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T184` | computable set; computable relation; decidable | গণনসাধ্য সেট; গণনসাধ্য সম্বন্ধ; নির্ণেয় | provisional-decidable-set-register | medium_definition_and_adjacent-canon_support | medium | 20 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T185` | computably enumerable; recursively enumerable; c.e.; r.e. | গণনসাধ্যভাবে তালিকায়নযোগ্য; পুনরাবৃত্তভাবে তালিকায়নযোগ্য; c.e.; r.e. | provisional-ce-set-register | medium_definition_and_adjacent-canon_support | medium | 20 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T186` | semi-decidable; range characterization; domain characterization; existential characterization | অর্ধ-নির্ণেয়; মানপরিসর-চরিত্রায়ন; সংজ্ঞাক্ষেত্র-চরিত্রায়ন; অস্তিত্বমূলক চরিত্রায়ন | provisional-ce-characterization-register | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T187` | halting set; self-halting set; canonical undecidable set | থামা-সেট; স্ব-থামা সেট; আদর্শ অনির্ণেয় সেট | provisional-halting-set-register | medium_definition_and_adjacent-canon_support | medium | 4 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 
 ## Detailed review entries
 
@@ -207,20 +214,17 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 - Plausible alternatives: সমষ্টি is a plausible alternative for set; সেট follows the directly checked university and school sources and avoids conflating an arbitrary set with a sum or collection in ordinary prose.
 - Status: attested; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সেট’ express the OpenLogic sense(s) ‘set’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 955 occurrence(s). Representative locations:
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:12-16` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:13`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:18-27` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:18`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:50-66` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:50`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:50-66` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:51`; final reader page pending
-  - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:12-25` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:22`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 1000 occurrence(s). Representative locations:
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:10`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:12-15` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:13`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:17-22` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:18`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:17-22` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:19`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:33`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-The branch of logic known as \emph{computability theory} deals with
-issues having to do with the computability, or relative computability,
-of functions and sets. It is evidence of Kleene's influence
-that the subject used to be known as \emph{recursion theory}, and
-today, both names are commonly used.
+\olfileid{cmp}{thy}{ces}
+\olsection{Computably Enumerable Sets}
 ```
 
 ### BN-IN-T002
@@ -231,19 +235,30 @@ today, both names are commonly used.
 - Plausible alternatives: সেটের মৌল and সদস্য are plausible alternatives for element; উপাদান preserves the source distinction between an element as an object and membership as a relation.
 - Status: attested; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘উপাদান’ express the OpenLogic sense(s) ‘element’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 99 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 107 occurrence(s). Representative locations:
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:29`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:40-51` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:39`; final reader page pending
   - `OLP-0228` `upstream/content/computability/computability-theory/computability-theory.tex:10-13` → `bn-Beng-IN/content/computability/computability-theory/computability-theory.tex:11`; final reader page pending
-  - `OLP-0220` `upstream/content/computability/recursive-functions/sequences.tex:38-41` → `bn-Beng-IN/content/computability/recursive-functions/sequences.tex:37`; final reader page pending
-  - `OLP-0220` `upstream/content/computability/recursive-functions/sequences.tex:38-41` → `bn-Beng-IN/content/computability/recursive-functions/sequences.tex:38`; final reader page pending
-  - `OLP-0220` `upstream/content/computability/recursive-functions/sequences.tex:90-94` → `bn-Beng-IN/content/computability/recursive-functions/sequences.tex:89`; final reader page pending
-  - `OLP-0220` `upstream/content/computability/recursive-functions/sequences.tex:96-107` → `bn-Beng-IN/content/computability/recursive-functions/sequences.tex:95`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:54-72` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:53`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:88-105` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:108`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{editorial}
-  Material in this chapter should be reviewed and expanded. In
-  particular, there are no exercises yet.
-\end{editorial}
+\begin{explain}
+You should think about what the definition means, and why the
+terminology is appropriate. The idea is that if $S$ is the range of
+the computable function~$f$, then
+\[
+S = \{ f(0), f(1), f(2), \dots \},
+\]
+and so $f$ can be seen as ``enumerating'' the elements of~$S$. Note
+that according to the definition, $f$~need not be an increasing
+function, i.e., the enumeration need not be in increasing order. In
+fact, $f$ need not even be injective, i.e., repetitions in the
+enumeration $f(0)$, $f(1)$, $f(2)$, \dots{} of~$S$ are allowed. For
+instance, the constant function $f(x) = 0$ enumerates the set $\{ 0
+\}$.
+\end{explain}
 ```
 
 ### BN-IN-T003
@@ -446,32 +461,28 @@ extensionality.''
 - Plausible alternatives: প্রাকৃতিক সংখ্যা is a widespread alternative; স্বাভাবিক সংখ্যা is directly attested in the checked India-standard source, while OpenLogic controls whether zero is included.
 - Status: attested; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘স্বাভাবিক সংখ্যা’ express the OpenLogic sense(s) ‘natural number’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 90 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 93 occurrence(s). Representative locations:
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:15-27` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:15`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:18-28` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:20`; final reader page pending
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:16-22` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:22`; final reader page pending
   - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:38-54` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:38`; final reader page pending
   - `OLP-0232` `upstream/content/computability/computability-theory/s-m-n.tex:19-28` → `bn-Beng-IN/content/computability/computability-theory/s-m-n.tex:20`; final reader page pending
-  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:12-15` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:12`; final reader page pending
-  - `OLP-0227` `upstream/content/computability/recursive-functions/general-recursive-functions.tex:12-18` → `bn-Beng-IN/content/computability/recursive-functions/general-recursive-functions.tex:14`; final reader page pending
-  - `OLP-0227` `upstream/content/computability/recursive-functions/general-recursive-functions.tex:20-27` → `bn-Beng-IN/content/computability/recursive-functions/general-recursive-functions.tex:22`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{proof}[Proof Sketch]
-For any model of computation one can rigorously define a description
-of the computable function~$f$ and code such description using a
-natural number~$e$.  One can also rigorously define a notion of
-``computation sequence'' which records the process of computing the
-function with index~$e$ for input~$x$.  Such a computation sequence can
-likewise be coded as a number~$s$.  This can be done in such a way
-that
-\begin{enumerate}
-  \item the relation $T(e, x, s)$, which holds iff a number~$s$ codes the computation
-  sequence of the function with index~$e$ on input~$x$, and
-  \item the function $U(s)$ which maps a computation sequence coded
-  by~$s$ to the end result of that computation
-\end{enumerate}
-are both computable. In fact, the relation~$T$ and the function~$U$
-are primitive recursive.
-\end{proof}
+\begin{defn}
+  Let $S$ be a set of natural numbers. Then $S$ is \emph{computable}
+  iff its characteristic function~$\Char{S}$ is. In other words,
+  $S$~is computable iff the function
+\[
+\Char{S}(x) =
+\begin{cases}
+1 & \text{if $x \in S$} \\
+0 & \text{otherwise}
+\end{cases}
+\]
+is computable. Similarly, a relation $R(x_0, \dots, x_{k-1})$ is
+computable if and only if its characteristic function is.
 ```
 
 ### BN-IN-T010
@@ -598,51 +609,28 @@ are primitive recursive.
 - Plausible alternatives: ঠিক তখনই যখন is a concise alternative for iff; যদি এবং কেবল যদি preserves both conditional directions explicitly and matches the edition’s proof register.
 - Status: provisional-phrase; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘যদি এবং কেবল যদি’ express the OpenLogic sense(s) ‘if and only if’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 216 occurrence(s). Representative locations:
-  - `OLP-0226` `upstream/content/computability/recursive-functions/halting-problem.tex:55-90` → `bn-Beng-IN/content/computability/recursive-functions/halting-problem.tex:64`; final reader page pending
-  - `OLP-0226` `upstream/content/computability/recursive-functions/halting-problem.tex:55-90` → `bn-Beng-IN/content/computability/recursive-functions/halting-problem.tex:67`; final reader page pending
-  - `OLP-0226` `upstream/content/computability/recursive-functions/halting-problem.tex:55-90` → `bn-Beng-IN/content/computability/recursive-functions/halting-problem.tex:69`; final reader page pending
-  - `OLP-0226` `upstream/content/computability/recursive-functions/halting-problem.tex:55-90` → `bn-Beng-IN/content/computability/recursive-functions/halting-problem.tex:76`; final reader page pending
-  - `OLP-0226` `upstream/content/computability/recursive-functions/halting-problem.tex:55-90` → `bn-Beng-IN/content/computability/recursive-functions/halting-problem.tex:80`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 227 occurrence(s). Representative locations:
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:15-27` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:16`; final reader page pending
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:15-27` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:17`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:54-72` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:60`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:74-81` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:75`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:107-127` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:127`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{proof}
-If $h$
-were partial recursive, we could define
+\begin{defn}
+  Let $S$ be a set of natural numbers. Then $S$ is \emph{computable}
+  iff its characteristic function~$\Char{S}$ is. In other words,
+  $S$~is computable iff the function
 \[
-d(y) =
+\Char{S}(x) =
 \begin{cases}
-1 & \text{if $h(y, y) = 0$}\\
-\umin{x}{x \neq x} & \text{otherwise.}
+1 & \text{if $x \in S$} \\
+0 & \text{otherwise}
 \end{cases}
 \]
-Since no number $x$ satisfies $x \neq x$, there is no $\umin{x}{x \neq
-x}$, and so $d(y) \fundefined$ iff $h(y,y) \neq 0$. From this
-definition it follows that
-\begin{enumerate}
-\item $d(y) \fdefined$ iff $\cfind{y}(y) \fundefined$ or $y$ is
-  not the index of a partial recursive function.
-\item $d(y) \fundefined$ iff $\cfind{y}(y) \fdefined$.
-\end{enumerate}
-If $h$ were partial recursive, then $d$ would be partial recursive as
-well.  Thus, by the Kleene normal form theorem, it has an index~$e_d$.
-Consider the value of $h(e_d, e_d)$. There are two possible cases, $0$
-and~$1$.
-\begin{enumerate}
-\item If $h(e_d, e_d) = 1$ then $\cfind{e_d}(e_d) \fdefined$.  But
-  $\cfind{e_d} \simeq d$, and $d(e_d)$ is defined iff $h(e_d, e_d) = 0$.
-  So $h(e_d, e_d) \neq 1$.
-\item If $h(e_d, e_d) = 0$ then either $e_d$ is not the index of a
-  partial recursive function, or it is and $\cfind{e_d}(e_d)
-  \fundefined$. But again, $\cfind{e_d} \simeq d$, and $d(e_d)$ is undefined
-  iff $\cfind{e_d}(e_d) \fdefined$.
-\end{enumerate}
-The upshot is that $e_d$ cannot, after all, be the index of a partial
-recursive function.  But if $h$ were partial recursive, $d$ would be
-too, and so our definition of $e_d$ as an index of it would be
-admissible.  We must conclude that $h$ cannot be partial recursive.
-\end{proof}
+is computable. Similarly, a relation $R(x_0, \dots, x_{k-1})$ is
+computable if and only if its characteristic function is.
 ```
 
 ### BN-IN-T015
@@ -663,25 +651,23 @@ admissible.  We must conclude that $h$ cannot be partial recursive.
 - Plausible alternatives: মিলন or সম্মিলন, সাধারণ অংশ, নিঃছেদ and বিয়োগ are plausible alternatives; সংযোগ, ছেদ, বিচ্ছিন্ন and অন্তর follow the checked mathematical usage and keep the four operations or properties distinct.
 - Status: attested; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সংযোগ; ছেদ; বিচ্ছিন্ন; অন্তর’ express the OpenLogic sense(s) ‘union; intersection; disjoint; difference’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 106 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 108 occurrence(s). Representative locations:
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:74-81` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:79`; final reader page pending
   - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:18-27` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:22`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:55-73` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:70`; final reader page pending
   - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:30-39` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:33`; final reader page pending
   - `OLP-0224` `upstream/content/computability/recursive-functions/partial-functions.tex:24-30` → `bn-Beng-IN/content/computability/recursive-functions/partial-functions.tex:27`; final reader page pending
-  - `OLP-0224` `upstream/content/computability/recursive-functions/partial-functions.tex:32-40` → `bn-Beng-IN/content/computability/recursive-functions/partial-functions.tex:36`; final reader page pending
-  - `OLP-0224` `upstream/content/computability/recursive-functions/partial-functions.tex:42-62` → `bn-Beng-IN/content/computability/recursive-functions/partial-functions.tex:44`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-Let us call a function~$f\colon \Nat \pto \Nat$ \emph{partial
-  computable} if it can be computed in some model of computation. If
-$f$ is total we will simply say that $f$~is \emph{computable}. A
-relation~$R$ with computable characteristic function~$\Char{R}$ is
-also called computable. If $f$ and~$g$ are partial functions, we will
-write $f(x) \fdefined$ to mean that $f$ is defined at~$x$, i.e., $x$~is
-in the domain of~$f$; and $f(x) \fundefined$ to mean the opposite,
-i.e., that $f$ is not defined at~$x$. We will use $f(x) \simeq g(x)$
-to mean that either $f(x)$ and $g(x)$ are both undefined, or they are
-both defined and equal.
+We need to show that $S$ is the range of~$f$, i.e., for any natural
+number~$y$, $y \in S$ if and only if it is in the range of~$f$. In the
+forwards direction, suppose $y \in S$. Then $y$ is in the range of
+$\cfind{e}$, so for some $x$ and~$s$, $T(e,x,s)$ holds and $U(s) = y$.
+But then $y = f(\tuple{x,s})$. Conversely, suppose $y$ is in the range
+of~$f$. Then either $y = a$, or for some~$z$, $T(e,(z)_0,(z)_1)$ and
+$U((z)_1) = y$. Since, in the latter case, $\cfind{e}(x) \fdefined =
+y$, either way, $y$ is in~$S$.
 ```
 
 ### BN-IN-T017
@@ -759,12 +745,12 @@ from~$A$.
 - Plausible alternatives: স্ট্রিং, ধারা, ক্রমিত টিউপল and অক্ষরসমষ্টি are plausible alternatives; প্রতীকক্রম, অনুক্রম, টিউপল and শব্দ preserve the four distinct source categories.
 - Status: provisional-descriptive; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘প্রতীকক্রম; অনুক্রম; টিউপল; শব্দ’ express the OpenLogic sense(s) ‘string; sequence; tuple; word’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 286 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 287 occurrence(s). Representative locations:
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:18`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:33-40` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:34`; final reader page pending
   - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:50-66` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:56`; final reader page pending
+  - `OLP-0240` `upstream/content/computability/computability-theory/non-comp-set.tex:21-30` → `bn-Beng-IN/content/computability/computability-theory/non-comp-set.tex:28`; final reader page pending
   - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:38-54` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:40`; final reader page pending
-  - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:38-54` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:41`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
@@ -798,31 +784,17 @@ In every model of computation, it is possible to do the following:
 - Plausible alternatives: প্যারাডক্স, বিরোধ, অবাধ ধর্মগ্রহণ and সরল সেটতত্ত্ব are plausible alternatives; the selected forms distinguish a paradox from a formal contradiction and describe unrestricted comprehension without claiming direct canon attestation.
 - Status: provisional-descriptive; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘কূটাভাস; স্ববিরোধ; ধর্মনির্দেশে সেট গঠন; অনানুষ্ঠানিক সেটতত্ত্ব’ express the OpenLogic sense(s) ‘paradox; contradiction; comprehension; naive set theory’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 50 occurrence(s). Representative locations:
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:103-118` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:113`; final reader page pending
-  - `OLP-0177` `upstream/content/first-order-logic/beyond/second-order-logic.tex:67-81` → `bn-Beng-IN/content/first-order-logic/beyond/second-order-logic.tex:75`; final reader page pending
-  - `OLP-0135` `upstream/content/first-order-logic/completeness/compactness.tex:15-27` → `bn-Beng-IN/content/first-order-logic/completeness/compactness.tex:19`; final reader page pending
-  - `OLP-0129` `upstream/content/first-order-logic/completeness/complete-consistent-sets.tex:133-149` → `bn-Beng-IN/content/first-order-logic/completeness/complete-consistent-sets.tex:142`; final reader page pending
-  - `OLP-0137` `upstream/content/first-order-logic/completeness/downward-ls.tex:48-61` → `bn-Beng-IN/content/first-order-logic/completeness/downward-ls.tex:45`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 55 occurrence(s). Representative locations:
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:10`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:12-16` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:12`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:12-16` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:15`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:22-32` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:23`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:50-53` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:52`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{prop}
-  \ollabel{prop:derivfacts}
-\begin{enumerate}
-\item $\Proves (!A \lif !B) \lif ((!B \lif !C)
-  \lif (!A \lif !C)$; \ollabel{derivfacts:a}
-\item If $\Gamma \cup \{ \lnot !A\}
-  \Proves \lnot !B$ then $\Gamma \cup \{ !B\} \Proves
-  !A$ (Contraposition); \ollabel{derivfacts:b}
-\item  $\{ !A, \lnot!A\} \Proves
-    !B$ (Ex Falso Quodlibet, Explosion); \ollabel{derivfacts:c}
-\item  $\{ \lnot\lnot!A\} \Proves
-  !A$ (Double Negation Elimination);\ollabel{derivfacts:d}
-\item If $\Gamma \Proves \lnot\lnot!A$ then $\Gamma \Proves
-  !A$;\ollabel{derivfacts:e}
-\end{enumerate}
-\end{prop}
+\olfileid{cmp}{thy}{rus}
+\olsection{Comparison with Russell's Paradox}
 ```
 
 ### BN-IN-T021
@@ -1314,20 +1286,21 @@ then $\Gamma \Proves !A \lif !B$ because the last !!{sentence}~$!A
 - Plausible alternatives: চলরাশি and অচল are plausible alternatives for variable and constant; চল and ধ্রুবক follow the checked school algebra page, while যোগফল, গুণফল and সমীকরণ are directly supported there.
 - Status: attested-in-school-algebra; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘চল; ধ্রুবক; যোগফল; গুণফল; সমীকরণ’ express the OpenLogic sense(s) ‘variable; constant; sum; arithmetic product; equation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 288 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 292 occurrence(s). Representative locations:
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:17-22` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:20`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:33`; final reader page pending
   - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:12-16` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:15`; final reader page pending
   - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:76-82` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:73`; final reader page pending
-  - `OLP-0233` `upstream/content/computability/computability-theory/universal-part-function.tex:28-40` → `bn-Beng-IN/content/computability/computability-theory/universal-part-function.tex:32`; final reader page pending
-  - `OLP-0216` `upstream/content/computability/recursive-functions/examples.tex:13-23` → `bn-Beng-IN/content/computability/recursive-functions/examples.tex:15`; final reader page pending
-  - `OLP-0216` `upstream/content/computability/recursive-functions/examples.tex:13-23` → `bn-Beng-IN/content/computability/recursive-functions/examples.tex:18`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:55-73` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:70`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-The branch of logic known as \emph{computability theory} deals with
-issues having to do with the computability, or relative computability,
-of functions and sets. It is evidence of Kleene's influence
-that the subject used to be known as \emph{recursion theory}, and
-today, both names are commonly used.
+\begin{history}
+Computably enumerable sets are also called \emph{recursively
+  enumerable} instead. This is the original terminology, and today
+both are commonly used, as well as the abbreviations ``c.e.'' and
+``r.e.''
+\end{history}
 ```
 
 ### BN-IN-T035
@@ -1338,35 +1311,19 @@ today, both names are commonly used.
 - Plausible alternatives: ফলন, মানচিত্রণ, ক্ষেত্র, সহক্ষেত্র, মানসমষ্টি and চিত্র are plausible alternatives; অপেক্ষক and চিত্রণ follow the checked university source, and the selected domain/range family keeps each set role explicit.
 - Status: attested-university; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘অপেক্ষক; চিত্রণ; সংজ্ঞাক্ষেত্র; সহসংজ্ঞাক্ষেত্র; বিস্তৃতি; প্রতিবিম্ব/মান’ express the OpenLogic sense(s) ‘function; mapping; domain; codomain; range; image/value’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 1222 occurrence(s). Representative locations:
-  - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:14`; final reader page pending
-  - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:17`; final reader page pending
-  - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:22`; final reader page pending
-  - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:23`; final reader page pending
-  - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:24`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 1303 occurrence(s). Representative locations:
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:12-15` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:13`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:25`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:30`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:31`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:33`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-In every model of computation, it is possible to do the following:
-\begin{enumerate}
-\item Describe the \emph{definitions} of computable functions in a
-  systematic way. For instance, you can think of Turing machine
-  specifications, recursive definitions, or programs in a programming
-  language as providing these definitions.
-\item Describe the complete record of the computation of a function
-  given by some definition for a given input. For instance, a Turing
-  machine computation can be described by the sequence of
-  configurations (state of the machine, contents of the tape) for each
-  step of computation.
-\item Test whether a putative record of a computation is in fact the
-  record of how a computable function with a given definition would be
-  computed for a given input (on which the function is
-  defined, i.e., the computation halts).
-\item Extract from such a description of the complete record of a
-  computation the value of the function for a given input. For
-  instance, the contents of the tape in the very last step of a
-  halting Turing machine computation is the value.
-\end{enumerate}
+\begin{defn}
+A set is \emph{computably enumerable} if it is empty or the range of a
+computable function.
+\end{defn}
 ```
 
 ### BN-IN-T036
@@ -1408,26 +1365,30 @@ appropriate Turing machine.}{}
 - Plausible alternatives: সমরূপ চিত্রণ is directly printed for bijective; একৈক সমাপতিত selected to avoid collision with later isomorphism.
 - Status: attested-university-with-normalization; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘একৈক/একৈক অপেক্ষক; সমাপতিত/সমাপতিত অপেক্ষক; একৈক সমাপতিত/একৈক সমাপতিত অপেক্ষক; অভেদ অপেক্ষক’ express the OpenLogic sense(s) ‘injective/injection; surjective/surjection; bijective/bijection; identity function’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 24 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 25 occurrence(s). Representative locations:
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:31`; final reader page pending
   - `OLP-0216` `upstream/content/computability/recursive-functions/examples.tex:13-23` → `bn-Beng-IN/content/computability/recursive-functions/examples.tex:14`; final reader page pending
   - `OLP-0220` `upstream/content/computability/recursive-functions/sequences.tex:27-36` → `bn-Beng-IN/content/computability/recursive-functions/sequences.tex:33`; final reader page pending
   - `OLP-0193` `upstream/content/model-theory/models-of-arithmetic/standard-models.tex:115-125` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/standard-models.tex:122`; final reader page pending
   - `OLP-0022` `upstream/content/sets-functions-relations/functions/function-kinds.tex:80-81` → `bn-Beng-IN/content/sets-functions-relations/functions/function-kinds.tex:58`; final reader page pending
-  - `OLP-0026` `upstream/content/sets-functions-relations/functions/partial-functions.tex:42-48` → `bn-Beng-IN/content/sets-functions-relations/functions/partial-functions.tex:32`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-We already have some examples of primitive recursive functions: the
-addition and multiplication functions~$\Add$ and $\Mult$.  The
-identity function $\fn{id}(x) = x$ is primitive recursive, since it is
-just~$\Proj{1}{0}$. The constant functions $\fn{const}_n(x) = n$ are
-primitive recursive since they can be defined from $\Zero$ and $\Succ$
-by successive composition. This is useful when we want to use
-constants in primitive recursive definitions, e.g., if we want to
-define the function $f(x) = 2 \cdot x$ can obtain it by composition
-from $\fn{const}_n(x)$ and multiplication as $f(x) =
-\Mult(\fn{const}_2(x), \Proj{1}{0}(x))$. We'll make use of this trick
-from now on.
+\begin{explain}
+You should think about what the definition means, and why the
+terminology is appropriate. The idea is that if $S$ is the range of
+the computable function~$f$, then
+\[
+S = \{ f(0), f(1), f(2), \dots \},
+\]
+and so $f$ can be seen as ``enumerating'' the elements of~$S$. Note
+that according to the definition, $f$~need not be an increasing
+function, i.e., the enumeration need not be in increasing order. In
+fact, $f$ need not even be injective, i.e., repetitions in the
+enumeration $f(0)$, $f(1)$, $f(2)$, \dots{} of~$S$ are allowed. For
+instance, the constant function $f(x) = 0$ enumerates the set $\{ 0
+\}$.
+\end{explain}
 ```
 
 ### BN-IN-T038
@@ -1459,23 +1420,24 @@ from now on.
 - Plausible alternatives: পূর্ণ অপেক্ষক versus সর্বত্র সংজ্ঞায়িত অপেক্ষক; the descriptive form exposes totality and avoids collision with completeness/full order.
 - Status: provisional-explicitly-defined; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘আংশিক অপেক্ষক; সর্বত্র সংজ্ঞায়িত অপেক্ষক; অপেক্ষকধর্মী সম্পর্ক; সিরিয়াল সম্পর্ক; নির্বাচন স্বতঃসিদ্ধ’ express the OpenLogic sense(s) ‘partial function; total function; functional relation; serial relation; Axiom of Choice’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 23 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 31 occurrence(s). Representative locations:
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:32-40` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:32`; final reader page pending
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:32-40` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:34`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:83-86` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:87`; final reader page pending
   - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:41-48` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:38`; final reader page pending
-  - `OLP-0224` `upstream/content/computability/recursive-functions/partial-functions.tex:24-30` → `bn-Beng-IN/content/computability/recursive-functions/partial-functions.tex:27`; final reader page pending
-  - `OLP-0224` `upstream/content/computability/recursive-functions/partial-functions.tex:32-40` → `bn-Beng-IN/content/computability/recursive-functions/partial-functions.tex:33`; final reader page pending
-  - `OLP-0224` `upstream/content/computability/recursive-functions/partial-functions.tex:42-62` → `bn-Beng-IN/content/computability/recursive-functions/partial-functions.tex:42`; final reader page pending
-  - `OLP-0224` `upstream/content/computability/recursive-functions/partial-functions.tex:42-62` → `bn-Beng-IN/content/computability/recursive-functions/partial-functions.tex:48`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:55-73` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:56`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-If $f(\vec x, y)$ is a total or partial function, then $\umin{y}{f
-(\vec x, y)}$ is the function of~$\vec x$ that returns the least~$y$
-such that $f(\vec x, y) = 0$, assuming that all of $f(\vec x, 0)$,
-\dots, $f(\vec x, y-1)$ are defined; if there is no such $y$,
-$\umin{y}{f (\vec x, y)}$ is undefined. If $R(\vec x, y)$ is a
-relation, $\umin{y}{R(\vec x, y)}$ is defined to be the least~$y$ such
-that $R(\vec x, y)$ is true; in other words, the least~$y$ such that
-$1 \tsub \Char{R}(\vec x, y) = 0$.
+\begin{explain}
+Notice that we now have a number of notions of computability: for
+partial functions, for functions, and for sets. Do not get them
+confused!{} \iftag{TMs}{The Turing machine computing a partial function
+  returns the output of the function, for input values at which the
+  function is defined; the Turing machine computing a set returns
+  either $1$ or~$0$, after deciding whether or not the input value is in
+  the set or not.}{}
+\end{explain}
 ```
 
 ### BN-IN-T040
@@ -1486,18 +1448,17 @@ $1 \tsub \Char{R}(\vec x, y) = 0$.
 - Plausible alternatives: গণনীয় versus তালিকায়নযোগ্য; elementary enumeration sections use তালিকায়নযোগ্য, while গণনীয় is reserved as a possible later countability/computability-sensitive term.
 - Status: mixed-attested-and-provisional; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সেটের আকার; সসীম/অসীম; সেটের মাত্রা (অঙ্কবাচক সংখ্যা); তালিকায়ন; তালিকায়নযোগ্য/গণনীয়; অগণনীয়’ express the OpenLogic sense(s) ‘size of sets; finite/infinite; cardinality; enumeration; enumerable/countable; uncountable’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 364 occurrence(s). Representative locations:
-  - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:86-88` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:82`; final reader page pending
-  - `OLP-0233` `upstream/content/computability/computability-theory/universal-part-function.tex:28-40` → `bn-Beng-IN/content/computability/computability-theory/universal-part-function.tex:32`; final reader page pending
-  - `OLP-0216` `upstream/content/computability/recursive-functions/examples.tex:170-185` → `bn-Beng-IN/content/computability/recursive-functions/examples.tex:172`; final reader page pending
-  - `OLP-0216` `upstream/content/computability/recursive-functions/examples.tex:170-185` → `bn-Beng-IN/content/computability/recursive-functions/examples.tex:177`; final reader page pending
-  - `OLP-0216` `upstream/content/computability/recursive-functions/examples.tex:187-193` → `bn-Beng-IN/content/computability/recursive-functions/examples.tex:186`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 387 occurrence(s). Representative locations:
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:10`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:12-15` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:14`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:17-22` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:18`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:30`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:32`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{thm}
-Every partial computable function has infinitely many indices.
-\end{thm}
+\olfileid{cmp}{thy}{ces}
+\olsection{Computably Enumerable Sets}
 ```
 
 ### BN-IN-T041
@@ -1559,7 +1520,7 @@ coincide.  That they do is the content of the \emph{soundness} and
 - Plausible alternatives: জোড়া-লাগানো অপেক্ষক / pairing-function loan; যুগলায়ন selected as a concise provisional compound.
 - Status: provisional-descriptive; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘আঁকাবাঁকা পথের পদ্ধতি; যুগলায়ন অপেক্ষক; সংকেতায়ন/সংকেত/সংকেতোদ্ধার; ত্রিভুজসংখ্যা; সহসসীম; সত্যসারণি/সত্যমান-অপেক্ষক’ express the OpenLogic sense(s) ‘zig-zag method; pairing function; encode/code/decode; triangular number; cofinite; truth table/truth function’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 227 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 231 occurrence(s). Representative locations:
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:10`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:33-40` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:29`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:33-40` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:32`; final reader page pending
@@ -1580,32 +1541,25 @@ coincide.  That they do is the content of the \emph{soundness} and
 - Plausible alternatives: অগণনযোগ্য, কর্ণীয় পদ্ধতি, কর্ণায়ন, একমুখী অসীম তালিকা and পরিপূরক-বিট অনুক্রম are plausible alternatives; the selected terms remain tied to absence of enumeration and the explicit diagonal bit flip.
 - Status: provisional-descriptive; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘অতালিকায়নযোগ্য/অগণনীয়; কর্ণ পদ্ধতি; কর্ণীকরণ; একদিকে অসীম তালিকা; বিপরীত-বিট অনুক্রম’ express the OpenLogic sense(s) ‘non-enumerable/uncountable; diagonal method; diagonalization; one-way infinite list; mirror sequence’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 13 occurrence(s). Representative locations:
-  - `OLP-0223` `upstream/content/computability/recursive-functions/non-pr-functions.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/non-pr-functions.tex:27`; final reader page pending
-  - `OLP-0039` `upstream/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex:13-18` → `bn-Beng-IN/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex:14`; final reader page pending
-  - `OLP-0039` `upstream/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex:33-41` → `bn-Beng-IN/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex:25`; final reader page pending
-  - `OLP-0039` `upstream/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex:105-111` → `bn-Beng-IN/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex:68`; final reader page pending
-  - `OLP-0033` `upstream/content/sets-functions-relations/size-of-sets/non-enumerability.tex:13-18` → `bn-Beng-IN/content/sets-functions-relations/size-of-sets/non-enumerability.tex:14`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 18 occurrence(s). Representative locations:
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:24-33` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:27`; final reader page pending
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:35-41` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:38`; final reader page pending
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:35-41` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:41`; final reader page pending
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:43-49` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:45`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:37-48` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:38`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-The primitive recursive functions do not exhaust the intuitively
-computable functions. It should be intuitively clear that we can make
-a list of all the unary primitive recursive functions,
-$f_0$, $f_1$, $f_2$,~\dots such that we can effectively compute the value of
-$f_x$ on input $y$; in other words, the function $g(x,y)$, defined by
+\begin{proof}
+The proof is a simple diagonalization: if $\fn{Un}'(k,x)$ were total
+and computable, then
 \[
-g(x,y) = f_x(y)
+d(x) = \fn{Un}'(x, x) + 1
 \]
-is computable. But then so is the function
-\begin{eqnarray*}
-h(x) & = & g(x,x) + 1 \\
-& = & f_x(x) +1.
-\end{eqnarray*}
-For each primitive recursive function $f_i$, the value of $h$ and
-$f_i$ differ at $i$. So $h$ is computable, but not primitive
-recursive; and one can say the same about $g$. This is an
-``effective'' version of Cantor's diagonalization argument.
+would also be total and computable. However, by definition, $d(k)$ is
+not equal to $\fn{Un}'(k,k)$. Hence, for every $k$, the values of
+$d(x)$ and~$\fn{Un}'(k, x)$ differ for at least one~$x$, namely $x = k$.
+\end{proof}
 ```
 
 ### BN-IN-T045
@@ -1827,35 +1781,22 @@ No proper initial segment of !!a{formula} is !!a{formula}.
 - Plausible alternatives: আদানপ্রদানীয় বলয়, সম্বন্ধী ধর্ম, একক ধর্ম and ত্রৈধনীতি are plausible alternatives; the selected algebraic terms remain tied to the displayed axiom clauses and avoid ordinary-language ambiguity.
 - Status: provisional-normalized; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘বিনিমেয় বলয়; ক্রমিত বলয়; ক্রমিত ক্ষেত্র; সংযোগী/বিনিময়/অভেদী/যোগাত্মক বিপরীত/বণ্টন ধর্ম; ত্রিবিভাজন’ express the OpenLogic sense(s) ‘commutative ring; ordered ring; ordered field; associative/commutative/identity/additive inverse/distributive laws; trichotomy’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 25 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 26 occurrence(s). Representative locations:
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:35-41` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:39`; final reader page pending
   - `OLP-0177` `upstream/content/first-order-logic/beyond/second-order-logic.tex:183-202` → `bn-Beng-IN/content/first-order-logic/beyond/second-order-logic.tex:197`; final reader page pending
   - `OLP-0075` `upstream/content/first-order-logic/sequent-calculus/proving-things.tex:158-215` → `bn-Beng-IN/content/first-order-logic/sequent-calculus/proving-things.tex:172`; final reader page pending
   - `OLP-0048` `upstream/content/sets-functions-relations/arithmetization/cauchy.tex:169-171` → `bn-Beng-IN/content/sets-functions-relations/arithmetization/cauchy.tex:100`; final reader page pending
   - `OLP-0047` `upstream/content/sets-functions-relations/arithmetization/checking-details.tex:10-11` → `bn-Beng-IN/content/sets-functions-relations/arithmetization/checking-details.tex:11`; final reader page pending
-  - `OLP-0047` `upstream/content/sets-functions-relations/arithmetization/checking-details.tex:18-21` → `bn-Beng-IN/content/sets-functions-relations/arithmetization/checking-details.tex:15`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-In addition, one can define the class of well-orderings, by adding the
-following to the definition of a linear ordering:
-\[
-\lforall[P][(\lexists[x][\Atom{P}{x}] \lif \lexists[x][(\Atom{P}{x}
-    \land \lforall[y][(y < x \lif \lnot \Atom{P}{y})])])].
-\]
-This asserts that every non-empty set has a least element, modulo the
-identification of ``set'' with ``one-place relation''. For another
-example, one can express the notion of connectedness for graphs, by
-saying that there is no nontrivial separation of the vertices into
-disconnected parts:
-\[
-\lnot \lexists[A][(\lexists[x][A(x)] \land \lexists[y][\lnot A(y)]
-  \land \lforall[w][\lforall[z][((\Atom{A}{w} \land \lnot \Atom{A}{z})
-      \lif \lnot \Atom{R}{w,z})]])].
-\]
-For yet another example, you might try as an exercise to define the
-class of finite !!{structure}s whose !!{domain} has even size. More
-strikingly, one can provide a categorical description of the real
-numbers as a complete ordered field containing the rationals.
+\begin{explain}
+\olref[uni]{thm:univ-comp} above shows that we can get around this
+diagonalization argument, but only at the expense of allowing the
+universal function to be partial. That is, $\fn{Un}$ is universal for
+the total computable functions, it just isn't total. The
+diagonalization argument doesn't work in the partial case.
+\end{explain}
 ```
 
 ### BN-IN-T054
@@ -2534,31 +2475,36 @@ recursive.
 - Plausible alternatives: রূপগত বিধি was considered for structural rule; গঠনগত বিধি better marks changes to sequent arrangement without implying ordinary linguistic morphology. বাম/ডান বিধি were possible forms; বাঁ/ডান continues the edition’s established side vocabulary.
 - Status: provisional-rule-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘যৌক্তিক বিধি; গঠনগত বিধি; উপরের/নিচের সিকোয়েন্ট; বাঁ/ডান-বিধি’ express the OpenLogic sense(s) ‘logical rule; structural rule; upper/lower sequent; left/right rule’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 98 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 101 occurrence(s). Representative locations:
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:107-127` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:126`; final reader page pending
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:84-99` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:95`; final reader page pending
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:35-41` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:38`; final reader page pending
   - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:26-41` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:32`; final reader page pending
   - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:53-69` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:56`; final reader page pending
-  - `OLP-0116` `upstream/content/first-order-logic/axiomatic-deduction/proving-things.tex:58-80` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proving-things.tex:61`; final reader page pending
-  - `OLP-0179` `upstream/content/first-order-logic/beyond/intuitionistic-logic.tex:32-35` → `bn-Beng-IN/content/first-order-logic/beyond/intuitionistic-logic.tex:28`; final reader page pending
-  - `OLP-0179` `upstream/content/first-order-logic/beyond/intuitionistic-logic.tex:166-170` → `bn-Beng-IN/content/first-order-logic/beyond/intuitionistic-logic.tex:154`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-For instance, suppose we specify $h\colon \Nat \to \Nat$ by the following
-two equations:
-\begin{align*}
-h(0) & =  1\\
-h(x+1) & =  2 \cdot h(x)
-\end{align*}
-If we already know how to multiply, then these equations give us the
-information required for (a) and~(b) above. By successively applying
-the second equation, we get that
-\begin{align*}
-  h(1) & = 2\cdot h(0) = 2,\\
-  h(2) & = 2\cdot h(1) = 2\cdot 2,\\
-  h(3) & = 2 \cdot h(2) = 2\cdot 2 \cdot 2,\\
-  & \vdots
-\end{align*}
-We see that the function~$h$ we have specified is $h(x) = 2^x$.
+Finally, to show \olref{case:ce-domain} implies~\olref{case:ce},
+suppose that $S$~is the domain of the partial computable
+function~$\cfind{e}$, i.e.,
+\[
+S = \Setabs{x}{\cfind{e}(x) \fdefined}.
+\]
+If $S$ is empty, we are done; otherwise, let $a$ be any element
+of~$S$. Define $f$ by
+\[
+f(z) = \begin{cases}
+(z)_0 & \text{if $T(e,(z)_0,(z)_1)$} \\
+a & \text{otherwise.}
+\end{cases}
+\]
+Then, as above, a number $x$ is in the range of~$f$ if and only if
+$\cfind{e}(x) \fdefined$, i.e., if and only if $x \in S$. \iftag{TMs}{Expressed
+in terms of Turing machines: given a machine $M_e$ that semi-decides
+$S$, enumerate the elements of $S$ by running through all possible
+Turing machine computations, and returning the inputs that correspond
+to halting computations.}{}
+\end{proof}
 ```
 
 ### BN-IN-T078
@@ -2711,17 +2657,34 @@ correct !!{derivation}.
 - Plausible alternatives: সিদ্ধতা was considered for provability, but প্রমাণযোগ্যতা avoids collision with semantic truth and remains paired with the existing নিষ্পাদনযোগ্য token rendering. সংহততা was considered for compactness; সংহতি is retained provisionally and is fixed by the finite-witness clauses rather than by topological usage.
 - Status: provisional-definition-governed; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘প্রমাণযোগ্যতা/নিষ্পাদনযোগ্যতা-সম্পর্ক; উপপাদ্য; প্রতিবিম্ব ধর্ম; একঘেয়েতা; পরিযায়িতা; সংহতি’ express the OpenLogic sense(s) ‘provability/derivability relation; theorem; reflexivity; monotonicity; transitivity; compactness’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 250 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 252 occurrence(s). Representative locations:
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:54-72` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:54`; final reader page pending
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:12-21` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:17`; final reader page pending
   - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:10`; final reader page pending
   - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:12-25` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:22`; final reader page pending
   - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:27-36` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:25`; final reader page pending
-  - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:56-62` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:53`; final reader page pending
-  - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:64-68` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:59`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\olfileid{cmp}{thy}{nfm}
-\olsection{The Normal Form Theorem}
+So, suppose $S$ is the range of the partial computable function
+$\cfind{e}$. If $S$ is empty, we are done. Otherwise, let $a$ be any
+element of~$S$. By Kleene's normal form theorem, we can write
+\[
+\cfind{e}(x) = U(\umin{s}{T(e, x, s)}).
+\]
+In particular, $\cfind{e}(x) \fdefined$ and $= y$ if and only if there
+is an $s$ such that $T(e, x, s)$ and $U(s) = y$. Define $f(z)$ by
+\[
+f(z) = \begin{cases}
+  U((z)_1) & \text{if $T(e, (z)_0, (z)_1)$} \\
+  a        & \text{otherwise.}
+\end{cases}
+\]
+Then $f$ is primitive recursive, because $T$ and $U$
+are. \iftag{TMs}{Expressed in terms of Turing machines, if $z$ codes a
+  pair $\tuple{(z)_0, (z)_1}$ such that $(z)_1$ is a halting
+  computation of machine~$M_e$ on input $(z)_0$, then $f$ returns the
+  output of the computation; otherwise, it returns~$a$.}
 ```
 
 ### BN-IN-T082
@@ -3065,29 +3028,17 @@ today, both names are commonly used.
 - Plausible alternatives: সিদ্ধান্তযোগ্য was considered for decidable; নির্ণেয় is shorter and the adjacent effective membership test fixes its technical sense. স্বতঃসিদ্ধায়নযোগ্য was considered; স্বতঃসিদ্ধযোগ্য states that a decidable axiom set can present the same theory.
 - Status: provisional-completeness-metatheory-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘পূর্ণ সঙ্গত তত্ত্ব; স্বতঃসিদ্ধযোগ্য; নির্ণেয়’ express the OpenLogic sense(s) ‘complete consistent theory; axiomatizable; decidable’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 5 occurrence(s). Representative locations:
-  - `OLP-0218` `upstream/content/computability/recursive-functions/bounded-minimization.tex:12-25` → `bn-Beng-IN/content/computability/recursive-functions/bounded-minimization.tex:14`; final reader page pending
-  - `OLP-0129` `upstream/content/first-order-logic/completeness/complete-consistent-sets.tex:25-31` → `bn-Beng-IN/content/first-order-logic/completeness/complete-consistent-sets.tex:29`; final reader page pending
-  - `OLP-0197` `upstream/content/model-theory/models-of-arithmetic/computable-models.tex:12-23` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/computable-models.tex:22`; final reader page pending
-  - `OLP-0197` `upstream/content/model-theory/models-of-arithmetic/computable-models.tex:35-40` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/computable-models.tex:38`; final reader page pending
-  - `OLP-0197` `upstream/content/model-theory/models-of-arithmetic/computable-models.tex:100-105` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/computable-models.tex:99`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 12 occurrence(s). Representative locations:
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:29-30` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:28`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:30-43` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:40`; final reader page pending
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:12-21` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:17`; final reader page pending
+  - `OLP-0240` `upstream/content/computability/computability-theory/non-comp-set.tex:32-34` → `bn-Beng-IN/content/computability/computability-theory/non-comp-set.tex:32`; final reader page pending
+  - `OLP-0240` `upstream/content/computability/computability-theory/non-comp-set.tex:36-40` → `bn-Beng-IN/content/computability/computability-theory/non-comp-set.tex:40`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{explain}
-It is often useful to define a function as the least number satisfying
-some property or relation~$P$. If $P$ is decidable, we can compute
-this function simply by trying out all the possible numbers, $0$, $1$,
-$2$, \dots, until we find the least one satisfying~$P$.  This kind of
-unbounded search takes us out of the realm of primitive recursive
-functions. However, if we're only interested in the least number
-\emph{less than some independently given bound}, we stay primitive
-recursive. In other words, and a bit more generally, suppose we have a
-primitive recursive relation~$R(x,z)$. Consider the function that maps
-$x$ and~$y$ to the least $z < y$ such that $R(x, z)$. It, too, can be
-computed, by testing whether $R(x, 0)$, $R(x, 1)$, \dots, $R(x, y-1)$.
-But why is it primitive recursive?
-\end{explain}
+Computable sets and relations are also called \emph{decidable}.
+\end{defn}
 ```
 
 ### BN-IN-T092
@@ -3261,25 +3212,26 @@ be obtained.
 - Plausible alternatives: কাঠামো was considered for structure; গঠন is shorter and the formal Struct notation fixes the technical sense. পরিসর was considered for domain, but সংজ্ঞাক্ষেত্র avoids collision with quantifier scope and function codomain. সন্তুষ্টি was considered for satisfaction; পরিতৃপ্তি continues T066 and is fixed by the recursive truth clauses. মূল্যায়ন was considered for assignment; আরোপ distinguishes variable assignment from propositional valuation and from the structure’s interpretation function.
 - Status: mixed-attested-roots-and-provisional-semantics; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘গঠন; সংজ্ঞাক্ষেত্র; ব্যাখ্যা/নির্দেশিত মান; আরোপ-সাপেক্ষ পরিতৃপ্তি; পরিবর্তিত আরোপ’ express the OpenLogic sense(s) ‘structure; domain; interpretation/denotation; satisfaction relative to an assignment; modified assignment’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 366 occurrence(s). Representative locations:
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:18-27` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:22`; final reader page pending
-  - `OLP-0208` `upstream/content/computability/computability.tex:9-14` → `bn-Beng-IN/content/computability/computability.tex:12`; final reader page pending
-  - `OLP-0224` `upstream/content/computability/recursive-functions/partial-functions.tex:42-62` → `bn-Beng-IN/content/computability/recursive-functions/partial-functions.tex:44`; final reader page pending
-  - `OLP-0209` `upstream/content/computability/recursive-functions/recursive-functions.tex:10-15` → `bn-Beng-IN/content/computability/recursive-functions/recursive-functions.tex:13`; final reader page pending
-  - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:122-134` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:132`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 376 occurrence(s). Representative locations:
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:18-28` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:26`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:88-105` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:93`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:88-105` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:107`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:107-127` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:114`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:129-135` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:135`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-Let us call a function~$f\colon \Nat \pto \Nat$ \emph{partial
-  computable} if it can be computed in some model of computation. If
-$f$ is total we will simply say that $f$~is \emph{computable}. A
-relation~$R$ with computable characteristic function~$\Char{R}$ is
-also called computable. If $f$ and~$g$ are partial functions, we will
-write $f(x) \fdefined$ to mean that $f$ is defined at~$x$, i.e., $x$~is
-in the domain of~$f$; and $f(x) \fundefined$ to mean the opposite,
-i.e., that $f$ is not defined at~$x$. We will use $f(x) \simeq g(x)$
-to mean that either $f(x)$ and $g(x)$ are both undefined, or they are
-both defined and equal.
+\begin{thm}
+\ollabel{thm:ce-equiv}
+Let $S$ be a set of natural numbers. Then the following are
+equivalent:
+\begin{enumerate}
+\item\ollabel{case:ce} $S$ is computably enumerable.
+\item\ollabel{case:ran-pc} $S$ is the range of a \emph{partial} computable function.
+\item\ollabel{case:ran-prim} $S$ is empty or the range of a primitive recursive function.
+\item\ollabel{case:ce-domain} $S$ is the \emph{domain} of a partial computable function.
+\end{enumerate}
+\end{thm}
 ```
 
 ### BN-IN-T099
@@ -3642,30 +3594,17 @@ successor of the third argument.
 - Plausible alternatives: ব্যাপ্তিগততার স্বতঃসিদ্ধ was considered for extensionality; সদস্যভিত্তিক সমতার স্বতঃসিদ্ধ exposes the set-membership criterion and avoids collision with T105. সর্বগ্রাহী নীতি and comprehension loan forms were considered; ধর্মনির্দেশে সেট-গঠন states the exact unrestricted existence claim. বিভাজন নীতি was considered for separation; পৃথকীকরণ makes restriction to a prior set distinct from partitions.
 - Status: mixed-attested-set-roots-and-provisional-foundational-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘জার্মেলো--ফ্রেঙ্কেল সেটতত্ত্বসহ নির্বাচন স্বতঃসিদ্ধ; সদস্যভিত্তিক সমতার স্বতঃসিদ্ধ; শূন্য সেটের স্বতঃসিদ্ধ; ঘাত সেটের স্বতঃসিদ্ধ; সম্পর্করূপে অপেক্ষক; ধর্মনির্দেশে সেট-গঠন নীতি; পৃথকীকরণ নীতি; রাসেলের কূটাভাস’ express the OpenLogic sense(s) ‘ZFC; axiom of extensionality; empty-set axiom; power-set axiom; function represented as a relation; comprehension principle; separation principle; Russell's paradox’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 14 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 18 occurrence(s). Representative locations:
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:10`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:12-16` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:12`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:12-16` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:15`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:22-32` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:23`; final reader page pending
   - `OLP-0177` `upstream/content/first-order-logic/beyond/second-order-logic.tex:67-81` → `bn-Beng-IN/content/first-order-logic/beyond/second-order-logic.tex:75`; final reader page pending
-  - `OLP-0172` `upstream/content/first-order-logic/models-theories/set-theory.tex:73-90` → `bn-Beng-IN/content/first-order-logic/models-theories/set-theory.tex:87`; final reader page pending
-  - `OLP-0172` `upstream/content/first-order-logic/models-theories/set-theory.tex:149-171` → `bn-Beng-IN/content/first-order-logic/models-theories/set-theory.tex:162`; final reader page pending
-  - `OLP-0172` `upstream/content/first-order-logic/models-theories/set-theory.tex:149-171` → `bn-Beng-IN/content/first-order-logic/models-theories/set-theory.tex:168`; final reader page pending
-  - `OLP-0172` `upstream/content/first-order-logic/models-theories/set-theory.tex:149-171` → `bn-Beng-IN/content/first-order-logic/models-theories/set-theory.tex:169`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-When logicians refer to the ``axioms of second-order logic'' they
-usually mean the minimal extension of first-order logic by
-second-order quantifier rules together with the comprehension
-schema. But it is often interesting to study weaker subsystems of
-these axioms and rules. For example, note that in its full generality
-the axiom schema of comprehension is \emph{impredicative}: it allows
-one to assert the existence of a relation $\Atom{R}{x_1, \dots, x_k}$
-that is ``defined'' by !!a{formula} with second-order quantifiers; and
-these quantifiers range over the set of all such relations---a set
-which includes $R$ itself!{} Around the turn of the twentieth century, a
-common reaction to Russell's paradox was to lay the blame on such
-definitions, and to avoid them in developing the foundations of
-mathematics. If one prohibits the use of second-order quantifiers in
-the !!{formula}~$!A$, one has a {\em predicative} form of
-comprehension, which is somewhat weaker.
+\olfileid{cmp}{thy}{rus}
+\olsection{Comparison with Russell's Paradox}
 ```
 
 ### BN-IN-T111
@@ -3676,33 +3615,24 @@ comprehension, which is somewhat weaker.
 - Plausible alternatives: গঠনের মাত্রা was considered for structure size; আকার avoids suggesting vector-space dimension while T040 reserves finite set মাত্রা as an attested cardinality phrase. সর্বাধিক n was considered for at most n; বড়জোর n is the transparent Bengali bound used in the target. অগণনীয় was considered for nonenumerable; অতালিকায়নযোগ্য preserves the edition’s distinction from countability and follows T100.
 - Status: mixed-attested-finiteness-and-provisional-model-size-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘গঠনের আকার; অন্তত/বড়জোর/ঠিক n-টি উপাদান; সসীম/অসীম গঠন; বিশুদ্ধ যৌক্তিক বাক্য; অতালিকায়নযোগ্য গঠন’ express the OpenLogic sense(s) ‘size of a structure; at least/at most/exactly n elements; finite/infinite structure; purely logical sentence; nonenumerable structure’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 260 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 261 occurrence(s). Representative locations:
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:24-33` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:34`; final reader page pending
   - `OLP-0216` `upstream/content/computability/recursive-functions/examples.tex:58-76` → `bn-Beng-IN/content/computability/recursive-functions/examples.tex:63`; final reader page pending
   - `OLP-0216` `upstream/content/computability/recursive-functions/examples.tex:170-185` → `bn-Beng-IN/content/computability/recursive-functions/examples.tex:172`; final reader page pending
   - `OLP-0216` `upstream/content/computability/recursive-functions/examples.tex:170-185` → `bn-Beng-IN/content/computability/recursive-functions/examples.tex:177`; final reader page pending
   - `OLP-0216` `upstream/content/computability/recursive-functions/examples.tex:187-193` → `bn-Beng-IN/content/computability/recursive-functions/examples.tex:186`; final reader page pending
-  - `OLP-0217` `upstream/content/computability/recursive-functions/pr-relations.tex:101-119` → `bn-Beng-IN/content/computability/recursive-functions/pr-relations.tex:107`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
 \begin{proof}
- Note that
- \begin{align*}
-   \fn{pred}(0) & = 0 \text{ and}\\
-   \fn{pred}(y+1) & = y.
- \end{align*}
- This is almost a primitive recursive definition.  It does not,
- strictly speaking, fit into the pattern of definition by primitive
- recursion, since that pattern requires at least one extra
- argument~$x$. It is also odd in that it does not actually use
- $\fn{pred}(y)$ in the definition of $\fn{pred}(y+1)$. But we can
- first define $\fn{pred}'(x, y)$ by
- \begin{align*}
-   \fn{pred}'(x, 0) & = \Zero(x) = 0,\\
-   \fn{pred}'(x, y+1) & = \Proj{3}{1}(x, y, \fn{pred'}(x, y)) = y.
- \end{align*}
-and then define $\fn{pred}$ from it by composition, e.g., as
-$\fn{pred}(x) = \fn{pred}'(\Zero(x), \Proj{1}{0}(x))$.
+The proof is a simple diagonalization: if $\fn{Un}'(k,x)$ were total
+and computable, then
+\[
+d(x) = \fn{Un}'(x, x) + 1
+\]
+would also be total and computable. However, by definition, $d(k)$ is
+not equal to $\fn{Un}'(k,k)$. Hence, for every $k$, the values of
+$d(x)$ and~$\fn{Un}'(k, x)$ differ for at least one~$x$, namely $x = k$.
 \end{proof}
 ```
 
@@ -3777,12 +3707,12 @@ that is, higher-type functions that take functions to numbers.
 - Plausible alternatives: সম্পর্ক-পরিমাণায়ন ছক was considered for comprehension; ধর্মনির্দেশ-ছক continues T107 and T110 while the displayed biconditional fixes relation formation. অবিধেয়মূলক/বিধেয়মূলক were considered; অপ্রেডিকেটিভ/প্রেডিকেটিভ retain the internationally recognizable foundational distinction pending expert review. ক্যাটেগরিক্যাল বর্ণনা was considered; সমরূপতা-অবধি একক বর্ণনা states the exact model-theoretic sense rather than suggesting an ordinary category.
 - Status: mixed-attested-roots-and-provisional-second-order-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘দ্বিতীয়-ক্রমের যুক্তিবিদ্যা; সম্পর্ক-চলরাশি; ধর্মনির্দেশ-ছক; অপ্রেডিকেটিভ/প্রেডিকেটিভ ধর্মনির্দেশ; পূর্ণ/দুর্বল দ্বিতীয়-ক্রমীয় অর্থতত্ত্ব; সমরূপতা-অবধি একক বর্ণনা; কার্যকর প্রমাণ-ব্যবস্থা’ express the OpenLogic sense(s) ‘second-order logic; relation variable; comprehension schema; impredicative/predicative comprehension; full/weak second-order semantics; categorical description; effective proof system’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 349 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 350 occurrence(s). Representative locations:
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:17`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:24`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:33-40` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:31`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:42-44` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:38`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:50-66` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:57`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:15-16` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:15`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
@@ -4308,35 +4238,19 @@ successor of the third argument.
 - Plausible alternatives: হিসাবযোগ্য was considered for computable; গণনসাধ্য keeps the operation-as-effective-procedure sense distinct from mere counting. সিদ্ধান্তযোগ্য was considered for decidable; নির্ণেয় follows the established relation vocabulary and the explicit decision procedure sense.
 - Status: provisional-computability-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘গণনসাধ্য গঠন; গণনসাধ্য অপেক্ষক; নির্ণেয় সম্বন্ধ; গণনসাধ্য উপস্থাপন; টেনেনবাউমের উপপাদ্য’ express the OpenLogic sense(s) ‘computable structure; computable function; decidable relation; computable presentation; Tennenbaum theorem’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 37 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 63 occurrence(s). Representative locations:
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:12-15` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:13`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:25`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:40-51` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:48`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:14`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:22`; final reader page pending
-  - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:33-40` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:29`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:29-39` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:29`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:29-39` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:30`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-In every model of computation, it is possible to do the following:
-\begin{enumerate}
-\item Describe the \emph{definitions} of computable functions in a
-  systematic way. For instance, you can think of Turing machine
-  specifications, recursive definitions, or programs in a programming
-  language as providing these definitions.
-\item Describe the complete record of the computation of a function
-  given by some definition for a given input. For instance, a Turing
-  machine computation can be described by the sequence of
-  configurations (state of the machine, contents of the tape) for each
-  step of computation.
-\item Test whether a putative record of a computation is in fact the
-  record of how a computable function with a given definition would be
-  computed for a given input (on which the function is
-  defined, i.e., the computation halts).
-\item Extract from such a description of the complete record of a
-  computation the value of the function for a given input. For
-  instance, the contents of the tape in the very last step of a
-  halting Turing machine computation is the value.
-\end{enumerate}
+\begin{defn}
+A set is \emph{computably enumerable} if it is empty or the range of a
+computable function.
+\end{defn}
 ```
 
 ### BN-IN-T131
@@ -4964,27 +4878,26 @@ is \emph{normal} if it satisfies the following properties:
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-computability-recursion-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘আদিম পুনরাবৃত্তি; আদিম পুনরাবৃত্তির মাধ্যমে সংজ্ঞা; আদিম পুনরাবৃত্ত অপেক্ষক’ express the OpenLogic sense(s) ‘primitive recursion; primitive recursive definition; primitive recursive function’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 77 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 81 occurrence(s). Representative locations:
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:18-28` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:24`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:30-43` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:32`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:45-52` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:45`; final reader page pending
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:36-60` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:45`; final reader page pending
   - `OLP-0232` `upstream/content/computability/computability-theory/s-m-n.tex:30-41` → `bn-Beng-IN/content/computability/computability-theory/s-m-n.tex:38`; final reader page pending
-  - `OLP-0218` `upstream/content/computability/recursive-functions/bounded-minimization.tex:12-25` → `bn-Beng-IN/content/computability/recursive-functions/bounded-minimization.tex:17`; final reader page pending
-  - `OLP-0218` `upstream/content/computability/recursive-functions/bounded-minimization.tex:12-25` → `bn-Beng-IN/content/computability/recursive-functions/bounded-minimization.tex:19`; final reader page pending
-  - `OLP-0218` `upstream/content/computability/recursive-functions/bounded-minimization.tex:41-62` → `bn-Beng-IN/content/computability/recursive-functions/bounded-minimization.tex:52`; final reader page pending
-  - `OLP-0218` `upstream/content/computability/recursive-functions/bounded-minimization.tex:64-69` → `bn-Beng-IN/content/computability/recursive-functions/bounded-minimization.tex:69`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{explain}
-It is helpful to think of $s^m_n$ as acting on \emph{programs}. That
-is, $s^m_n$ takes a program~$e$ for an $(m+n)$-ary function, as well
-as fixed inputs $a_0$, \dots, $a_{m-1}$; and it returns a program
-$s^m_n(x, a_0, \dots, a_{m-1})$ for the $n$-ary function of the
-remaining arguments. \iftag{TMs}{It you think of $x$ as the description of a
-Turing machine, then $s^m_n(e, a_0, \dots, a_{m-1})$ is the Turing
-machine that, on input $y_0$, \dots,~$y_{n-1}$, prepends
-$a_0$, \dots,~$a_{m-1}$ to the input string, and runs~$e$. Each $s^m_n$
-is then just a primitive recursive function that finds a code for the
-appropriate Turing machine.}{}
-\end{explain}
+\begin{thm}
+\ollabel{thm:ce-equiv}
+Let $S$ be a set of natural numbers. Then the following are
+equivalent:
+\begin{enumerate}
+\item\ollabel{case:ce} $S$ is computably enumerable.
+\item\ollabel{case:ran-pc} $S$ is the range of a \emph{partial} computable function.
+\item\ollabel{case:ran-prim} $S$ is empty or the range of a primitive recursive function.
+\item\ollabel{case:ce-domain} $S$ is the \emph{domain} of a partial computable function.
+\end{enumerate}
+\end{thm}
 ```
 
 ### BN-IN-T151
@@ -4995,12 +4908,12 @@ appropriate Turing machine.}{}
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-recursive-function-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘পুনরাবৃত্ত অপেক্ষক; পুনরাবৃত্ত সংজ্ঞা’ express the OpenLogic sense(s) ‘recursive function; recursive definition’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 101 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 104 occurrence(s). Representative locations:
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:15`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:18-28` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:24`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:30-43` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:32`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:45-52` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:45`; final reader page pending
   - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:29-39` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:35`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:50-66` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:49`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:50-66` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:56`; final reader page pending
-  - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:70-74` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:65`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
@@ -5052,26 +4965,28 @@ In every model of computation, it is possible to do the following:
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-characteristic-function-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘চরিত্রসূচক অপেক্ষক; গণনসাধ্য সম্বন্ধ’ express the OpenLogic sense(s) ‘characteristic function; computable relation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 3 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 7 occurrence(s). Representative locations:
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:15-27` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:16`; final reader page pending
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:15-27` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:26`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:140-147` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:147`; final reader page pending
+  - `OLP-0240` `upstream/content/computability/computability-theory/non-comp-set.tex:47-58` → `bn-Beng-IN/content/computability/computability-theory/non-comp-set.tex:48`; final reader page pending
   - `OLP-0217` `upstream/content/computability/recursive-functions/pr-relations.tex:13-25` → `bn-Beng-IN/content/computability/recursive-functions/pr-relations.tex:14`; final reader page pending
-  - `OLP-0217` `upstream/content/computability/recursive-functions/pr-relations.tex:60-86` → `bn-Beng-IN/content/computability/recursive-functions/pr-relations.tex:62`; final reader page pending
-  - `OLP-0217` `upstream/content/computability/recursive-functions/pr-relations.tex:60-86` → `bn-Beng-IN/content/computability/recursive-functions/pr-relations.tex:63`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
 \begin{defn}
-A relation $R(\vec x)$ is said to be primitive recursive if its characteristic
-function,
+  Let $S$ be a set of natural numbers. Then $S$ is \emph{computable}
+  iff its characteristic function~$\Char{S}$ is. In other words,
+  $S$~is computable iff the function
 \[
-\Char{R}(\vec x) = \left\{
-  \begin{array}{ll}
-  1 & \mbox{if $R(\vec x)$} \\
-  0 & \mbox{otherwise}
-  \end{array}
-\right.
+\Char{S}(x) =
+\begin{cases}
+1 & \text{if $x \in S$} \\
+0 & \text{otherwise}
+\end{cases}
 \]
-is primitive recursive.
-\end{defn}
+is computable. Similarly, a relation $R(x_0, \dots, x_{k-1})$ is
+computable if and only if its characteristic function is.
 ```
 
 ### BN-IN-T154
@@ -5470,17 +5385,25 @@ the value of $h$ at \emph{any} previous value, given by~$k$.
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-diagonal-computability-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘আদিম পুনরাবৃত্ত নয় এমন অপেক্ষক; কার্যকর তালিকায়ন; কর্ণীকরণ’ express the OpenLogic sense(s) ‘non-primitive-recursive function; effective enumeration; diagonalization’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 6 occurrence(s). Representative locations:
-  - `OLP-0223` `upstream/content/computability/recursive-functions/non-pr-functions.tex:9-10` → `bn-Beng-IN/content/computability/recursive-functions/non-pr-functions.tex:10`; final reader page pending
-  - `OLP-0223` `upstream/content/computability/recursive-functions/non-pr-functions.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/non-pr-functions.tex:27`; final reader page pending
-  - `OLP-0039` `upstream/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex:105-111` → `bn-Beng-IN/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex:68`; final reader page pending
-  - `OLP-0033` `upstream/content/sets-functions-relations/size-of-sets/non-enumerability.tex:139-145` → `bn-Beng-IN/content/sets-functions-relations/size-of-sets/non-enumerability.tex:71`; final reader page pending
-  - `OLP-0040` `upstream/content/sets-functions-relations/size-of-sets/reduction-alt.tex:20-26` → `bn-Beng-IN/content/sets-functions-relations/size-of-sets/reduction-alt.tex:17`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 11 occurrence(s). Representative locations:
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:24-33` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:27`; final reader page pending
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:35-41` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:38`; final reader page pending
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:35-41` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:41`; final reader page pending
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:43-49` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:45`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:37-48` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:38`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\olfileid{cmp}{rec}{npr}
-\olsection{Non-Primitive Recursive Functions}
+\begin{proof}
+The proof is a simple diagonalization: if $\fn{Un}'(k,x)$ were total
+and computable, then
+\[
+d(x) = \fn{Un}'(x, x) + 1
+\]
+would also be total and computable. However, by definition, $d(k)$ is
+not equal to $\fn{Un}'(k,k)$. Hence, for every $k$, the values of
+$d(x)$ and~$\fn{Un}'(k, x)$ differ for at least one~$x$, namely $x = k$.
+\end{proof}
 ```
 
 ### BN-IN-T169
@@ -5520,12 +5443,12 @@ that this grows faster than any primitive recursive function.
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-computation-model-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘চার্চ--টুরিং থিসিস; টুরিং যন্ত্র; গণনামূলক মডেল; অনুকরণ’ express the OpenLogic sense(s) ‘Church--Turing thesis; Turing machine; computational model; simulation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 20 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 32 occurrence(s). Representative locations:
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:15`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:19`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:50-66` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:49`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:50-66` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:55`; final reader page pending
-  - `OLP-0232` `upstream/content/computability/computability-theory/s-m-n.tex:30-41` → `bn-Beng-IN/content/computability/computability-theory/s-m-n.tex:34`; final reader page pending
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:32-40` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:34`; final reader page pending
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:32-40` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:36`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:54-72` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:69`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
@@ -5559,25 +5482,23 @@ In every model of computation, it is possible to do the following:
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-partial-definedness-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘আংশিক অপেক্ষক সংজ্ঞায়িত/অসংজ্ঞায়িত; যুগপৎ সংজ্ঞায়িততার সাপেক্ষে সমতা’ express the OpenLogic sense(s) ‘partial function defined/undefined; equality up to simultaneous definedness’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 12 occurrence(s). Representative locations:
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:18-27` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:23`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:18-27` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:25`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:41-48` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:42`; final reader page pending
-  - `OLP-0226` `upstream/content/computability/recursive-functions/halting-problem.tex:55-90` → `bn-Beng-IN/content/computability/recursive-functions/halting-problem.tex:80`; final reader page pending
-  - `OLP-0224` `upstream/content/computability/recursive-functions/partial-functions.tex:42-62` → `bn-Beng-IN/content/computability/recursive-functions/partial-functions.tex:41`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 20 occurrence(s). Representative locations:
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:45-52` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:48`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:88-105` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:93`; final reader page pending
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:62-82` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:75`; final reader page pending
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:62-82` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:76`; final reader page pending
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:62-82` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:80`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-Let us call a function~$f\colon \Nat \pto \Nat$ \emph{partial
-  computable} if it can be computed in some model of computation. If
-$f$ is total we will simply say that $f$~is \emph{computable}. A
-relation~$R$ with computable characteristic function~$\Char{R}$ is
-also called computable. If $f$ and~$g$ are partial functions, we will
-write $f(x) \fdefined$ to mean that $f$ is defined at~$x$, i.e., $x$~is
-in the domain of~$f$; and $f(x) \fundefined$ to mean the opposite,
-i.e., that $f$ is not defined at~$x$. We will use $f(x) \simeq g(x)$
-to mean that either $f(x)$ and $g(x)$ are both undefined, or they are
-both defined and equal.
+\begin{proof}
+Since every primitive recursive function is computable and every
+computable function is partial computable, \olref{case:ran-prim}
+implies \olref{case:ce} and \olref{case:ce}
+implies~\olref{case:ran-pc}. (Note that if $S$ is empty, $S$~is the
+range of the partial computable function that is nowhere defined.) If
+we show that \olref{case:ran-pc} implies \olref{case:ran-prim}, we
+will have shown the first three clauses equivalent.
 ```
 
 ### BN-IN-T172
@@ -5588,35 +5509,21 @@ both defined and equal.
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-partial-recursion-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সীমাহীন অনুসন্ধান অপারেটর; আংশিক পুনরাবৃত্ত অপেক্ষক; পুনরাবৃত্ত/সর্বত্র-সংজ্ঞায়িত পুনরাবৃত্ত অপেক্ষক’ express the OpenLogic sense(s) ‘unbounded search operator; partial recursive function; recursive/total recursive function’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 269 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 276 occurrence(s). Representative locations:
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:17-22` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:18`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:24-38` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:32`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:15`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:33-40` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:35`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:12-16` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:15`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:29-39` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:35`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:50-66` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:49`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:18-28` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:24`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-In every model of computation, it is possible to do the following:
-\begin{enumerate}
-\item Describe the \emph{definitions} of computable functions in a
-  systematic way. For instance, you can think of Turing machine
-  specifications, recursive definitions, or programs in a programming
-  language as providing these definitions.
-\item Describe the complete record of the computation of a function
-  given by some definition for a given input. For instance, a Turing
-  machine computation can be described by the sequence of
-  configurations (state of the machine, contents of the tape) for each
-  step of computation.
-\item Test whether a putative record of a computation is in fact the
-  record of how a computable function with a given definition would be
-  computed for a given input (on which the function is
-  defined, i.e., the computation halts).
-\item Extract from such a description of the complete record of a
-  computation the value of the function for a given input. For
-  instance, the contents of the tape in the very last step of a
-  halting Turing machine computation is the value.
-\end{enumerate}
+\begin{history}
+Computably enumerable sets are also called \emph{recursively
+  enumerable} instead. This is the original terminology, and today
+both are commonly used, as well as the abbreviations ``c.e.'' and
+``r.e.''
+\end{history}
 ```
 
 ### BN-IN-T173
@@ -5627,12 +5534,12 @@ In every model of computation, it is possible to do the following:
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-normal-form-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘ক্লিনির স্বাভাবিক রূপের উপপাদ্য; সূচক; গণনার সংকেত’ express the OpenLogic sense(s) ‘Kleene's normal form theorem; index; computation code’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 158 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 166 occurrence(s). Representative locations:
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:10`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:33-40` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:30`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:33-40` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:33`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:18-27` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:19`; final reader page pending
-  - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:12-25` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:22`; final reader page pending
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:15-27` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:16`; final reader page pending
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:15-27` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:26`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
@@ -5648,15 +5555,16 @@ In every model of computation, it is possible to do the following:
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-halting-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘থামার সমস্যা; থামা-অপেক্ষক; গণনা না-থামা’ express the OpenLogic sense(s) ‘halting problem; halting function; nontermination’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 4 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 7 occurrence(s). Representative locations:
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:10`; final reader page pending
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:12-21` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:17`; final reader page pending
+  - `OLP-0240` `upstream/content/computability/computability-theory/non-comp-set.tex:32-34` → `bn-Beng-IN/content/computability/computability-theory/non-comp-set.tex:32`; final reader page pending
   - `OLP-0226` `upstream/content/computability/recursive-functions/halting-problem.tex:9-10` → `bn-Beng-IN/content/computability/recursive-functions/halting-problem.tex:10`; final reader page pending
   - `OLP-0226` `upstream/content/computability/recursive-functions/halting-problem.tex:12-25` → `bn-Beng-IN/content/computability/recursive-functions/halting-problem.tex:12`; final reader page pending
-  - `OLP-0226` `upstream/content/computability/recursive-functions/halting-problem.tex:27-48` → `bn-Beng-IN/content/computability/recursive-functions/halting-problem.tex:37`; final reader page pending
-  - `OLP-0226` `upstream/content/computability/recursive-functions/halting-problem.tex:50-53` → `bn-Beng-IN/content/computability/recursive-functions/halting-problem.tex:51`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\olfileid{cmp}{rec}{hlt}
+\olfileid{cmp}{thy}{hlt}
 \olsection{The Halting Problem}
 ```
 
@@ -5709,26 +5617,26 @@ In every model of computation, it is possible to do the following:
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-computability-class-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘আংশিক গণনসাধ্য অপেক্ষক; গণনসাধ্য সর্বত্র-সংজ্ঞায়িত অপেক্ষক; গণনসাধ্য সম্বন্ধ’ express the OpenLogic sense(s) ‘partial computable function; computable total function; computable relation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 10 occurrence(s). Representative locations:
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:29-39` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:29`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:29-39` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:30`; final reader page pending
-  - `OLP-0229` `upstream/content/computability/computability-theory/introduction.tex:29-39` → `bn-Beng-IN/content/computability/computability-theory/introduction.tex:34`; final reader page pending
-  - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:86-88` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:82`; final reader page pending
-  - `OLP-0233` `upstream/content/computability/computability-theory/universal-part-function.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/universal-part-function.tex:10`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 23 occurrence(s). Representative locations:
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:18-28` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:25`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:30-43` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:32`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:45-52` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:48`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:54-72` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:52`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:88-105` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:93`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-One can explore the theory of computability without having to refer to
-a specific model of computation. To do this, one shows that there is a
-universal partial computable function~$\fn{Un}(k, x)$. This allows us
-to enumerate the partial computable functions. We will adopt the
-notation~$\cfind{k}$ to denote the $k$-th unary partial computable
-function, defined by $\cfind{k}(x) \simeq \fn{Un}(k, x)$. (Kleene used
-$\{ k \}$ for this purpose, but this notation has not been used as
-much recently.)  Slightly more generally, we can uniformly enumerate
-the partial computable functions of arbitrary arities, and we will use
-$\cfind{k}[n]$ to denote the $k$-th $n$-ary partial recursive
-function.
+\begin{thm}
+\ollabel{thm:ce-equiv}
+Let $S$ be a set of natural numbers. Then the following are
+equivalent:
+\begin{enumerate}
+\item\ollabel{case:ce} $S$ is computably enumerable.
+\item\ollabel{case:ran-pc} $S$ is the range of a \emph{partial} computable function.
+\item\ollabel{case:ran-prim} $S$ is empty or the range of a primitive recursive function.
+\item\ollabel{case:ce-domain} $S$ is the \emph{domain} of a partial computable function.
+\end{enumerate}
+\end{thm}
 ```
 
 ### BN-IN-T178
@@ -5739,12 +5647,12 @@ function.
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-computation-coding-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘গণনার নথি; গণনা-অনুক্রম; নির্গম’ express the OpenLogic sense(s) ‘computation record; computation sequence; output’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 12 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 16 occurrence(s). Representative locations:
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:22`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:33-40` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:33`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:33-40` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:34`; final reader page pending
-  - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:12-25` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:18`; final reader page pending
-  - `OLP-0231` `upstream/content/computability/computability-theory/normal-form.tex:12-25` → `bn-Beng-IN/content/computability/computability-theory/normal-form.tex:19`; final reader page pending
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:32-40` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:35`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:54-72` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:71`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
@@ -5805,12 +5713,188 @@ appropriate Turing machine.}{}
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-universal-function-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সার্বজনীন আংশিক গণনসাধ্য অপেক্ষক; কার্যকর তালিকায়ন; একই নিয়মে গণনা’ express the OpenLogic sense(s) ‘universal partial computable function; effective enumeration; uniform computation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 2 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 3 occurrence(s). Representative locations:
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:12-21` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:12`; final reader page pending
   - `OLP-0233` `upstream/content/computability/computability-theory/universal-part-function.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/universal-part-function.tex:10`; final reader page pending
   - `OLP-0233` `upstream/content/computability/computability-theory/universal-part-function.tex:12-21` → `bn-Beng-IN/content/computability/computability-theory/universal-part-function.tex:14`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\olfileid{cmp}{thy}{uni}
-\olsection{The Universal Partial Computable Function}
+By construction, the universal partial computable
+function~$\fn{Un}(e,x)$ is defined if and only if the computation of
+the function coded by~$e$ produces a value for input~$x$. It is
+natural to ask if we can decide whether this is the case. In fact, it
+is not. For the Turing machine model of computation, this means that
+whether a given Turing machine halts on a given input is
+computationally undecidable. The following theorem is therefore known
+as the ``undecidability of the halting problem.'' We will provide two
+proofs below. The first continues the thread of our previous
+discussion, while the second is more direct.
+```
+
+### BN-IN-T181
+
+- Source term or concept: no universal computable function; diagonal function; partial escape
+- Chosen Bengali: সার্বজনীন গণনসাধ্য অপেক্ষকের অনস্তিত্ব; কর্ণ অপেক্ষক; আংশিকতার অবকাশ
+- Rationale: The diagonal equation is controlling evidence: adding one makes the total diagonal differ from every row of a putative total computable evaluator. সার্বজনীন গণনসাধ্য অপেক্ষকের অনস্তিত্ব names that conclusion, while আংশিকতার অবকাশ records why the existing universal partial evaluator avoids it. The compounds remain provisional.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-no-total-universal-register; confidence: low_pending_occurrence; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘সার্বজনীন গণনসাধ্য অপেক্ষকের অনস্তিত্ব; কর্ণ অপেক্ষক; আংশিকতার অবকাশ’ express the OpenLogic sense(s) ‘no universal computable function; diagonal function; partial escape’ without collision with adjacent logical or mathematical concepts?
+- Exact target occurrence: none yet; this decision governs a token, compound variant or future translated source block.
+
+### BN-IN-T182
+
+- Source term or concept: undecidability of the halting problem; infinite loop; self-input
+- Chosen Bengali: থামার সমস্যার অনির্ণেয়তা; অসীম চক্র; স্ব-নিবেশ
+- Rationale: T174 supplies the halting terminology and the two diagonal proofs govern the stronger decision claim. থামার সমস্যার অনির্ণেয়তা states that no computable characteristic function decides definedness; অসীম চক্র and স্ব-নিবেশ express the Turing-machine reversal without weakening the biconditional contradiction.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-halting-undecidability-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘থামার সমস্যার অনির্ণেয়তা; অসীম চক্র; স্ব-নিবেশ’ express the OpenLogic sense(s) ‘undecidability of the halting problem; infinite loop; self-input’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 3 occurrence(s). Representative locations:
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:12-21` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:17`; final reader page pending
+  - `OLP-0235` `upstream/content/computability/computability-theory/halting-problem.tex:84-99` → `bn-Beng-IN/content/computability/computability-theory/halting-problem.tex:93`; final reader page pending
+  - `OLP-0240` `upstream/content/computability/computability-theory/non-comp-set.tex:32-34` → `bn-Beng-IN/content/computability/computability-theory/non-comp-set.tex:32`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+By construction, the universal partial computable
+function~$\fn{Un}(e,x)$ is defined if and only if the computation of
+the function coded by~$e$ produces a value for input~$x$. It is
+natural to ask if we can decide whether this is the case. In fact, it
+is not. For the Turing machine model of computation, this means that
+whether a given Turing machine halts on a given input is
+computationally undecidable. The following theorem is therefore known
+as the ``undecidability of the halting problem.'' We will provide two
+proofs below. The first continues the thread of our previous
+discussion, while the second is more direct.
+```
+
+### BN-IN-T183
+
+- Source term or concept: Russell's paradox; set of all sets; diagonalization argument
+- Chosen Bengali: রাসেলের কূটাভাস; সব সেটের সেট; কর্ণীকরণ যুক্তি
+- Rationale: The checked set and logic pages support membership and contradiction language, while the three displayed self-application cases determine the comparison. রাসেলের কূটাভাস is reserved for the inconsistent unrestricted set construction; কর্ণীকরণ যুক্তি names the analogous computability proof, whose conclusion is noncomputability rather than paradox.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-russell-comparison-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘রাসেলের কূটাভাস; সব সেটের সেট; কর্ণীকরণ যুক্তি’ express the OpenLogic sense(s) ‘Russell's paradox; set of all sets; diagonalization argument’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 22 occurrence(s). Representative locations:
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:35-41` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:38`; final reader page pending
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:35-41` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:41`; final reader page pending
+  - `OLP-0234` `upstream/content/computability/computability-theory/no-universal-function.tex:43-49` → `bn-Beng-IN/content/computability/computability-theory/no-universal-function.tex:45`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:10`; final reader page pending
+  - `OLP-0236` `upstream/content/computability/computability-theory/russells-paradox.tex:12-16` → `bn-Beng-IN/content/computability/computability-theory/russells-paradox.tex:12`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+\begin{explain}
+\olref[uni]{thm:univ-comp} above shows that we can get around this
+diagonalization argument, but only at the expense of allowing the
+universal function to be partial. That is, $\fn{Un}$ is universal for
+the total computable functions, it just isn't total. The
+diagonalization argument doesn't work in the partial case.
+\end{explain}
+```
+
+### BN-IN-T184
+
+- Source term or concept: computable set; computable relation; decidable
+- Chosen Bengali: গণনসাধ্য সেট; গণনসাধ্য সম্বন্ধ; নির্ণেয়
+- Rationale: The characteristic-function display fixes the terminology exactly. A গণনসাধ্য সেট or গণনসাধ্য সম্বন্ধ has a total computable zero-one characteristic function, and নির্ণেয় is its equivalent decision-theoretic name. This remains distinct from semidecidability in T186.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-decidable-set-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘গণনসাধ্য সেট; গণনসাধ্য সম্বন্ধ; নির্ণেয়’ express the OpenLogic sense(s) ‘computable set; computable relation; decidable’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 20 occurrence(s). Representative locations:
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:40-51` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:37`; final reader page pending
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:10`; final reader page pending
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:12-13` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:12`; final reader page pending
+  - `OLP-0237` `upstream/content/computability/computability-theory/computable-sets.tex:29-30` → `bn-Beng-IN/content/computability/computability-theory/computable-sets.tex:28`; final reader page pending
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:30-43` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:40`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+Any computable set is computably enumerable. To see this, suppose
+$S$~is computable. If $S$ is empty, then by definition it is
+computably enumerable. Otherwise, let $a$ be any element of
+$S$. Define $f$ by
+\[
+f(x) =
+\begin{cases}
+x & \text{if $\Char{S}(x) = 1$} \\
+a & \text{otherwise.}
+\end{cases}
+\]
+Then $f$ is a computable function, and $S$ is the range of~$f$.
+```
+
+### BN-IN-T185
+
+- Source term or concept: computably enumerable; recursively enumerable; c.e.; r.e.
+- Chosen Bengali: গণনসাধ্যভাবে তালিকায়নযোগ্য; পুনরাবৃত্তভাবে তালিকায়নযোগ্য; c.e.; r.e.
+- Rationale: T040 supplies তালিকায়ন and the source definition fixes the effective sense: the set is empty or the range of a total computable function. গণনসাধ্যভাবে তালিকায়নযোগ্য is the primary modern term; পুনরাবৃত্তভাবে তালিকায়নযোগ্য and the literal abbreviations c.e./r.e. retain the stated historical alternatives.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-ce-set-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘গণনসাধ্যভাবে তালিকায়নযোগ্য; পুনরাবৃত্তভাবে তালিকায়নযোগ্য; c.e.; r.e.’ express the OpenLogic sense(s) ‘computably enumerable; recursively enumerable; c.e.; r.e.’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 20 occurrence(s). Representative locations:
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:10`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:12-15` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:14`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:17-22` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:18`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:17-22` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:19`; final reader page pending
+  - `OLP-0238` `upstream/content/computability/computability-theory/ce-sets.tex:40-51` → `bn-Beng-IN/content/computability/computability-theory/ce-sets.tex:37`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+\olfileid{cmp}{thy}{ces}
+\olsection{Computably Enumerable Sets}
+```
+
+### BN-IN-T186
+
+- Source term or concept: semi-decidable; range characterization; domain characterization; existential characterization
+- Chosen Bengali: অর্ধ-নির্ণেয়; মানপরিসর-চরিত্রায়ন; সংজ্ঞাক্ষেত্র-চরিত্রায়ন; অস্তিত্বমূলক চরিত্রায়ন
+- Rationale: The equivalence theorem and its constructions govern these compounds. অর্ধ-নির্ণেয় promises eventual positive recognition only; the range, partial-domain and existential-projection clauses are extensionally equivalent presentations of c.e. sets. The terms retain মানপরিসর and সংজ্ঞাক্ষেত্র from the established function register.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-ce-characterization-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘অর্ধ-নির্ণেয়; মানপরিসর-চরিত্রায়ন; সংজ্ঞাক্ষেত্র-চরিত্রায়ন; অস্তিত্বমূলক চরিত্রায়ন’ express the OpenLogic sense(s) ‘semi-decidable; range characterization; domain characterization; existential characterization’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 1 occurrence(s). Representative locations:
+  - `OLP-0239` `upstream/content/computability/computability-theory/equiv-ce-defs.tex:30-43` → `bn-Beng-IN/content/computability/computability-theory/equiv-ce-defs.tex:40`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+\begin{explain}
+The first three clauses say that we can equivalently take any non-empty
+computably enumerable set to be enumerated by either a computable
+function, a partial computable function, or a primitive recursive
+function. The fourth clause tells us that if $S$ is computably
+enumerable, then for some index~$e$,
+\[
+S = \Setabs{x}{\cfind{e}(x) \fdefined}.
+\]
+In other words, $S$ is the set of inputs on for which the computation
+of $\cfind{e}$ halts. For that reason, computably enumerable sets are
+sometimes called \emph{semi-decidable}: if a number is in the set, you
+eventually get a ``yes,'' but if it isn't, you never get a ``no''!{}
+\end{explain}
+```
+
+### BN-IN-T187
+
+- Source term or concept: halting set; self-halting set; canonical undecidable set
+- Chosen Bengali: থামা-সেট; স্ব-থামা সেট; আদর্শ অনির্ণেয় সেট
+- Rationale: The displayed definitions of K_0 and K fix the two sets. থামা-সেট contains coded index-input pairs whose computations halt, স্ব-থামা সেট restricts to equal index and input, and আদর্শ অনির্ণেয় সেট records its later role as a standard comparison object. The compounds remain open to expert review.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-halting-set-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘থামা-সেট; স্ব-থামা সেট; আদর্শ অনির্ণেয় সেট’ express the OpenLogic sense(s) ‘halting set; self-halting set; canonical undecidable set’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 4 occurrence(s). Representative locations:
+  - `OLP-0240` `upstream/content/computability/computability-theory/non-comp-set.tex:36-40` → `bn-Beng-IN/content/computability/computability-theory/non-comp-set.tex:38`; final reader page pending
+  - `OLP-0240` `upstream/content/computability/computability-theory/non-comp-set.tex:36-40` → `bn-Beng-IN/content/computability/computability-theory/non-comp-set.tex:39`; final reader page pending
+  - `OLP-0240` `upstream/content/computability/computability-theory/non-comp-set.tex:36-40` → `bn-Beng-IN/content/computability/computability-theory/non-comp-set.tex:40`; final reader page pending
+  - `OLP-0240` `upstream/content/computability/computability-theory/non-comp-set.tex:42-45` → `bn-Beng-IN/content/computability/computability-theory/non-comp-set.tex:43`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+The set $K_0$ is the set of pairs $\tuple{e,x}$ such that
+$\cfind{e}(x) \fdefined$, i.e., $\tuple{e,x} \in K_0$ iff $\cfind{e}$
+is defined (halts) on input~$x$, so it is also called the ``halting
+set.'' The set $K = \Setabs{e}{\cfind{e}(e) \fdefined}$ is the
+``self-halting set.'' It is often used as a canonical undecidable set.
 ```

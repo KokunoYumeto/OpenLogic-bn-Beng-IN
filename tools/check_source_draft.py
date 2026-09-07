@@ -76,6 +76,26 @@ def mathparts(text):
     return collections.Counter(output)
 
 
+def mathparts_with_setbuilder_text_math(text):
+    """Handle set-builder captions that contain legacy nested dollar math."""
+    nested = collections.Counter()
+    needle = "$\\Setabs{x}{\\text{"
+    while needle in text:
+        start = text.index(needle)
+        content_start = start + len(needle)
+        depth = 1
+        end = content_start
+        while depth and end < len(text):
+            if text[end] in "{}" and (end == 0 or text[end - 1] != "\\"):
+                depth += 1 if text[end] == "{" else -1
+            end += 1
+        assert depth == 0, "Unclosed set-builder text caption"
+        assert text[end : end + 2] == "}$", "Unexpected set-builder caption ending"
+        nested.update(mathparts(text[content_start : end - 1]))
+        text = text[:start] + "$\\Setabs{x}{}$" + text[end + 2 :]
+    return mathparts(text) + nested
+
+
 def controls(text):
     commands = re.findall(
         r"\\(?:ollabel|olref|oliflabeldef|olasset|olimport|cite|citep|citet|citeyear|"
@@ -115,8 +135,12 @@ for row in rows:
     source_blocks = re.split(r"\n\s*\n", body(source).strip())
     target_blocks = re.split(r"\n\s*\n", body(target).strip())
     checked_target = without_documented_corrections(target)
-    source_math = mathparts(source)
-    target_math = mathparts(checked_target)
+    if row["unit_id"] == "OLP-0248":
+        source_math = mathparts_with_setbuilder_text_math(source)
+        target_math = mathparts_with_setbuilder_text_math(checked_target)
+    else:
+        source_math = mathparts(source)
+        target_math = mathparts(checked_target)
     documented = sorted(
         set(re.findall(r"(?:OLFUN-\d+|BN-SRC-\d+|OLSIZ-\d+)", target))
     )
@@ -1731,6 +1755,12 @@ for row in rows:
     reducibility_pair_fix = False
     reduction_type_fix = False
     complete_ce_direction_fix = False
+    total_partial_equality_fix = False
+    rice_partial_equality_fix = False
+    rice_monotonicity_prose_fix = False
+    fixed_point_partial_equalities_fix = False
+    fixed_point_application_scope_fixes = False
+    self_reference_partial_equality_fix = False
     if row["unit_id"] == "OLP-0217":
         assert source.count("The less-than relation, $x \\leq y$") == 1
         assert "অনধিক সম্বন্ধ $x \\leq y$" in checked_target
@@ -1910,6 +1940,84 @@ for row in rows:
             "documented_correction": "BN-SRC-154",
             "completeness_reduction_direction": "K_0 <=_m K",
         }
+    elif row["unit_id"] == "OLP-0247":
+        total_partial_equality_fix = (
+            source_math - target_math
+            == collections.Counter({"\\cfind{k(x)}(y)=\\begin{cases}0&\\\\\\fundefined&\\end{cases}": 1})
+            and target_math - source_math
+            == collections.Counter({"\\cfind{k(x)}(y)\\simeq\\begin{cases}0&\\\\\\fundefined&\\end{cases}": 1})
+            and "BN-SRC-155" in documented
+        )
+        assert total_partial_equality_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-155",
+            "specialized_partial_function_equality": "simeq",
+        }
+    elif row["unit_id"] == "OLP-0248":
+        rice_partial_equality_fix = (
+            source_math - target_math == collections.Counter({"\\cfind{s(e,x)}(y)=h_x(y)": 1})
+            and target_math - source_math == collections.Counter({"\\cfind{s(e,x)}(y)\\simeqh_x(y)": 1})
+            and "BN-SRC-156" in documented
+        )
+        rice_monotonicity_prose_fix = (
+            "whenever $y < y'$, $\\cfind{x}(y) \\fdefined$, and\n    if $\\cfind{x}(y') \\fdefined$" in source
+            and "যখনই $y < y'$, এবং $\\cfind{x}(y) \\fdefined$ ও\n    $\\cfind{x}(y') \\fdefined$, তখন" in checked_target
+            and "BN-SRC-157" in documented
+        )
+        assert rice_partial_equality_fix and rice_monotonicity_prose_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-156", "BN-SRC-157"],
+            "specialized_partial_function_equality": "simeq",
+            "strict_increase_requires_both_values_defined": True,
+            "nested_setbuilder_text_math_checked": True,
+        }
+    elif row["unit_id"] == "OLP-0249":
+        fixed_point_partial_equalities_fix = (
+            source_math - target_math
+            == collections.Counter(
+                {
+                    "\\cfind{e}(y)&=\\fn{Un}(f(e),y)\\\\&=\\cfind{f(e)}(y).": 1,
+                    "\\cfind{e}(y)&=\\cfind{f(e)}(y)\\\\&=g(e,y).": 1,
+                }
+            )
+            and target_math - source_math
+            == collections.Counter(
+                {
+                    "\\cfind{e}(y)&\\simeq\\fn{Un}(f(e),y)\\\\&\\simeq\\cfind{f(e)}(y).": 1,
+                    "\\cfind{e}(y)&\\simeq\\cfind{f(e)}(y)\\\\&\\simeqg(e,y).": 1,
+                }
+            )
+            and "BN-SRC-158" in documented
+        )
+        assert fixed_point_partial_equalities_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-158",
+            "equivalence_proof_partial_equalities": 4,
+        }
+    elif row["unit_id"] == "OLP-0250":
+        fixed_point_application_scope_fixes = (
+            "Let $f$ be any computable function" in source
+            and "$f$-কে যেকোনো আংশিক গণনসাধ্য অপেক্ষক ধরি" in checked_target
+            and "প্রার্থী অপেক্ষকটি এই স্থির সূচকে অসংজ্ঞায়িত হলে" in checked_target
+            and all(f"BN-SRC-{number}" in documented for number in range(159, 161))
+        )
+        assert fixed_point_application_scope_fixes
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-159", "BN-SRC-160"],
+            "candidate_scope": "partial computable",
+            "undefined_candidate_index_case_supplied": True,
+        }
+    elif row["unit_id"] == "OLP-0251":
+        self_reference_partial_equality_fix = (
+            source_math - target_math == collections.Counter({"\\cfind{e}(y)=g(e,y)": 1})
+            and target_math - source_math == collections.Counter({"\\cfind{e}(y)\\simeqg(e,y)": 1})
+            and "BN-SRC-161" in documented
+        )
+        assert self_reference_partial_equality_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-161",
+            "self_reference_partial_equality": "simeq",
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -1981,6 +2089,12 @@ for row in rows:
             reducibility_pair_fix,
             reduction_type_fix,
             complete_ce_direction_fix,
+            total_partial_equality_fix,
+            rice_partial_equality_fix,
+            rice_monotonicity_prose_fix,
+            fixed_point_partial_equalities_fix,
+            fixed_point_application_scope_fixes,
+            self_reference_partial_equality_fix,
             shared_audit_fix,
         )
     )

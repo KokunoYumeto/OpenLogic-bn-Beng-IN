@@ -1723,6 +1723,7 @@ for row in rows:
             "theorem_statement_is_biconditional": True,
         }
     bounded_minimization_math_fix = False
+    s_m_n_index_fix = False
     if row["unit_id"] == "OLP-0217":
         assert source.count("The less-than relation, $x \\leq y$") == 1
         assert "অনধিক সম্বন্ধ $x \\leq y$" in checked_target
@@ -1753,6 +1754,40 @@ for row in rows:
         tex_command_check = {
             "documented_correction": "BN-SRC-141",
             "nondivisibility_uses_y_divided_by_x": True,
+        }
+    elif row["unit_id"] == "OLP-0232":
+        s_m_n_index_fix = (
+            source_math - target_math
+            == collections.Counter(
+                {
+                    "s^m_n(x,a_0,\\dots,a_{m-1})": 1,
+                    "x": 1,
+                }
+            )
+            and target_math - source_math
+            == collections.Counter(
+                {
+                    "s^m_n(e,a_0,\\dots,a_{m-1})": 1,
+                    "e": 1,
+                }
+            )
+            and "BN-SRC-142" in documented
+        )
+        assert source.count("It you think of $x$ as the description") == 1
+        assert checked_target.count("$e$-কে কোনো টুরিং যন্ত্রের বর্ণনা") == 1
+        assert s_m_n_index_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-142",
+            "specialized_program_index": "e",
+            "turing_machine_description_index": "e",
+        }
+    elif row["unit_id"] == "OLP-0233":
+        assert "is a\nunary recursive function" in source
+        assert re.search(r"একটি একস্থানী আংশিক পুনরাবৃত্ত\s+অপেক্ষক", checked_target)
+        assert "BN-SRC-143" in documented
+        tex_command_check = {
+            "documented_correction": "BN-SRC-143",
+            "derived_unary_function_class": "partial recursive",
         }
     audited_source = source
     shared_description = None
@@ -1817,6 +1852,7 @@ for row in rows:
             arithmetic_math_fix,
             interpolation_math_fix,
             bounded_minimization_math_fix,
+            s_m_n_index_fix,
             shared_audit_fix,
         )
     )

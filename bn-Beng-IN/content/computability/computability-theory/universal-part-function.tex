@@ -1,0 +1,45 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: universal-part-function
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{uni}
+\olsection{সার্বজনীন আংশিক গণনসাধ্য অপেক্ষক}
+
+\begin{thm}
+\ollabel{thm:univ-comp}
+একটি সার্বজনীন আংশিক গণনসাধ্য অপেক্ষক~$\fn{Un}(e,x)$ আছে। অন্যভাবে
+বললে, এমন একটি অপেক্ষক $\fn{Un}(e,x)$ আছে যাতে:
+\begin{enumerate}
+\item $\fn{Un}(e,x)$ আংশিক গণনসাধ্য।
+\item $f(x)$ যেকোনো আংশিক গণনসাধ্য অপেক্ষক হলে এমন একটি স্বাভাবিক
+সংখ্যা $e$ আছে, যাতে প্রত্যেক~$x$-এর জন্য
+$f(x) \simeq \fn{Un}(e,x)$।
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+$\fn{Un}(e,x) \simeq U(\umin{s}{T(e,x,s)})$ ধরা যাক, যেখানে $U$ ও $T$
+ক্লিনির স্বাভাবিক রূপের উপপাদ্যে
+(\olref[nfm]{thm:normal-form}) দেওয়া অপেক্ষক ও সম্বন্ধ।
+\end{proof}
+
+\begin{explain}
+এটি শুধু এই কথার নির্ভুল রূপ যে আংশিক গণনসাধ্য অপেক্ষকগুলির একটি কার্যকর
+তালিকায়ন আমাদের আছে। ধারণাটি হলো, $f_e(x) = \fn{Un}(e,x)$ সমীকরণে
+সংজ্ঞায়িত অপেক্ষককে $f_e$ লিখলে $f_0$, $f_1$, $f_2$, \dots অনুক্রমে
+সব আংশিক গণনসাধ্য অপেক্ষক থাকে এবং~$e$ ও~$x$ থেকে “একই নিয়মে”
+$f_e(x)$ গণনা করা যায়। সরলতার জন্য আমরা এখানে একস্থানী অপেক্ষকের জন্য
+সার্বজনীন একটি দ্বিস্থানী অপেক্ষক ব্যবহার করছি; কিন্তু সংখ্যার অনুক্রম
+সংকেতায়িত করে একে আরও বেশি আর্গুমেন্টের ক্ষেত্রে সহজেই সাধারণীকরণ করা
+যায়। যেমন, $f(x,y,z)$ কোনো $3$-স্থানী আংশিক পুনরাবৃত্ত অপেক্ষক হলে
+$g(x) \simeq f((x)_0, (x)_1, (x)_2)$ একটি একস্থানী আংশিক পুনরাবৃত্ত
+অপেক্ষক।
+% BN-SRC-143 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-143):} হিমায়িত ইংরেজি পাঠের শেষ বাক্যে $g$-কে “unary recursive function” বলা হয়েছে, যদিও অনুমিত~$f$ আংশিক এবং সংজ্ঞাটি~$g$-এর সর্বত্র-সংজ্ঞায়িততা নিশ্চিত করে না। বাংলা পাঠে সঠিকভাবে “একস্থানী আংশিক পুনরাবৃত্ত অপেক্ষক” লেখা হয়েছে।} % BN-SRC-143 TARGET-CORRECTION-END
+\end{explain}
+
+\end{document}

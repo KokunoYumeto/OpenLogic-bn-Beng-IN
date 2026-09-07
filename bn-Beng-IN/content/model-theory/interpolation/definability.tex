@@ -1,0 +1,135 @@
+% Part: model-theory
+% Chapter: interpolation
+% Section: definability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{int}{def}
+
+\olsection{সংজ্ঞায়ন উপপাদ্য}
+
+ইন্টারপোলেশন উপপাদ্যের একটি গুরুত্বপূর্ণ প্রয়োগ হলো বেথের সংজ্ঞায়ন
+উপপাদ্য। $n$-স্থানীয় একটি সম্পর্ক~$R$ সংজ্ঞায়িত করতে আমরা $R$-কে
+ধারণ না-করা $n$-টি মুক্ত !!{variable}s-সহ একটি !!a{formula}~$!C$
+দিতে পারি। এটি $!C$-এর সাহায্যে $R$-এর একটি \emph{প্রকাশ্য}
+সংজ্ঞা হবে। কোনো তত্ত্ব~$\Sigma(P)$-তে $n$-স্থানীয় !!{predicate}~$P$
+থাকা কোনো !!{language}-এ $P$-কে প্রকাশ্যভাবে সংজ্ঞায়িত বলা যায় যদি
+তাতে (অথবা অন্তত তার অনুসরণে) আনুষ্ঠানিক প্রকাশ্য সংজ্ঞাটি থাকে, অর্থাৎ
+\[
+\Sigma(P) \Entails \lforall[x_1][\dots
+  \lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff !C(x_1, \dots,
+    x_n))]].
+\]
+কিন্তু সম্পূর্ণ নির্ধারণের অর্থে সংজ্ঞায়নের এটি কেবল একটি পদ্ধতি।
+কোনো তত্ত্ব এমনও হতে পারে যে যেকোনো মডেলে $P$-এর ব্যাখ্যা
+!!{language}-এর বাকি অংশের ব্যাখ্যা দ্বারা স্থির হয়। সংজ্ঞায়ন উপপাদ্য
+বলে, তত্ত্ব যদি এই অর্থে $P$-কে \emph{অন্তর্নিহিতভাবে সংজ্ঞায়িত}
+করে, তবে সেটি $P$-কে প্রকাশ্যভাবেও সংজ্ঞায়িত করে।
+
+\begin{defn}
+ধরা যাক $\Lang{L}$ এমন একটি !!a{language} যাতে !!{predicate}~$P$
+নেই। $\Lang{L} \cup \{P\}$-এর !!{sentence}s-এর সমষ্টি
+$\Sigma(P)$ $P$-কে \emph{প্রকাশ্যভাবে সংজ্ঞায়িত} করে যদি এবং কেবল
+যদি $\Lang{L}$-এর এমন একটি !!a{formula}~$!C(x_1, \dots, x_n)$ থাকে
+যাতে
+\[
+\Sigma(P) \Entails \lforall[x_1][\dots
+  \lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff !C(x_1, \dots,
+    x_n))]].
+\]
+\end{defn}
+
+\begin{defn}
+ধরা যাক $\Lang{L}$ এমন একটি !!a{language} যাতে !!{predicate}s~$P$
+ও~$P'$ নেই। $\Lang{L} \cup \{P\}$-এর !!{sentence}s-এর সমষ্টি
+$\Sigma(P)$ $P$-কে \emph{অন্তর্নিহিতভাবে সংজ্ঞায়িত} করে যদি এবং
+কেবল যদি
+\[
+\Sigma(P) \cup \Sigma(P') \Entails \lforall[x_1][\dots
+  \lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff \Atom{P'}{x_1,\dots,
+      x_n})]],
+\]
+যেখানে $\Sigma(P')$ হলো $\Sigma(P)$-তে $P$-কে সর্বত্র $P'$ দিয়ে
+প্রতিস্থাপন করে পাওয়া সমষ্টি।
+\end{defn}
+
+অন্য কথায়, যেকোনো মডেল $\Struct{M}$ এবং
+$R, R' \subseteq \Domain{M}^n$-এর জন্য, যদি
+$\Expan{M}{R} \Entails \Sigma(P)$ এবং
+$\Expan{M}{R'} \Entails \Sigma(P')$ হয়, তবে $R=R'$; এখানে
+$\Expan{M}{R}$ হলো $\Lang{L}$-কে $\Lang{L} \cup \{P\}$-এ
+প্রসারিত করে পাওয়া !!{structure}~$\Struct{M'}$, যাতে
+$\Assign{P}{M'} = R$, এবং $\Expan{M}{R'}$ একইভাবে সংজ্ঞায়িত।
+
+\begin{thm}[বেথের সংজ্ঞায়ন উপপাদ্য] $\Lang{L}
+  \cup\{P\}$-!!{formula}s-এর কোনো সমষ্টি $\Sigma(P)$ $P$-কে
+  অন্তর্নিহিতভাবে সংজ্ঞায়িত করে যদি এবং কেবল যদি $\Sigma(P)$
+  $P$-কে প্রকাশ্যভাবে সংজ্ঞায়িত করে।
+% BN-SRC-138 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-138):} হিমায়িত উপপাদ্য-বিবৃতিতে if and only-এর পরে দ্বিতীয় if অনুপস্থিত। বাংলা পাঠে দ্বিপাক্ষিক শর্তটি সম্পূর্ণভাবে লেখা হয়েছে।} % BN-SRC-138 TARGET-CORRECTION-END
+\end{thm}
+
+\begin{proof}
+যদি $\Sigma(P)$ $P$-কে প্রকাশ্যভাবে সংজ্ঞায়িত করে, তবে
+\begin{align*}
+  \Sigma(P) & \Entails & \lforall[x_1][\dots \lforall[x_n]
+    [(\Atom{P}{x_1,\dots, x_n} \liff !C(x_1,\dots,x_n))]]\\
+  \Sigma(P') & \Entails & \lforall[x_1][\dots \lforall[x_n]
+    [(\Atom{P'}{x_1,\dots, x_n} \liff !C(x_1,\dots,x_n))]]
+\end{align*}
+এবং সিদ্ধান্তটি অনুসরণ করে। বিপরীতটির জন্য ধরি $\Sigma(P)$
+$P$-কে অন্তর্নিহিতভাবে সংজ্ঞায়িত করে। প্রথমে $\Lang{L}$-এ
+!!{constant}s $c_1$, \,\dots,~$c_n$ যোগ করি। তখন
+\[
+\Sigma(P) \cup \Sigma(P') \Entails
+\Atom{P}{c_1, \dots, c_n} \to  \Atom{P'}{c_1, \dots, c_n}.
+\]
+সংহতির কারণে প্রথম তত্ত্বের একটি সসীম সমষ্টি
+$\Delta_0 \subseteq \Sigma(P)$ এবং দ্বিতীয় তত্ত্বের একটি সসীম
+সমষ্টি $\Delta_1 \subseteq \Sigma(P')$ আছে যাতে
+\[
+\Delta_0 \cup \Delta_1 \Entails
+\Atom{P}{c_1, \dots, c_n} \to \Atom{P'}{c_1, \dots, c_n}.
+\]
+$!D(P)$-কে সেই সব !!{sentence}s $!A(P)$-এর সংযোজন ধরি যাদের
+জন্য $!A(P) \in \Delta_0$ অথবা $!A(P') \in \Delta_1$, এবং
+$!D(P')$-কে সেই সব !!{sentence}s $!A(P')$-এর সংযোজন ধরি যাদের
+জন্য $!A(P) \in \Delta_0$ অথবা $!A(P') \in \Delta_1$। তখন
+$!D(P) \land !D(P') \Entails \Atom{P}{c_1, \dots, c_n} \to
+\Atom{P'}{c_1, \dots, c_n}$। এটিকে এমনভাবে সাজাই যাতে প্রতিটি
+!!{predicate} $\Entails$-এর এক পাশে থাকে:
+\[
+!D(P) \land \Atom{P}{c_1, \dots, c_n} \Entails
+!D(P') \to \Atom{P'}{c_1, \dots, c_n}.
+\]
+% BN-SRC-137 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-137):} হিমায়িত সূত্রে এই আগের প্রদর্শনে ডানদিকে $P'c_1\dots c_n$ লেখা হয়েছে, যা কোনো সংজ্ঞায়িত পরমাণু-সূত্র নয়। পরের সমীকরণের সঙ্গে সামঞ্জস্য রেখে বাংলা সূত্রে $\Atom{P'}{c_1,\dots,c_n}$ লেখা হয়েছে।} % BN-SRC-137 TARGET-CORRECTION-END
+ক্রেগের ইন্টারপোলেশন উপপাদ্য অনুসারে $P$ বা $P'$ ধারণ না-করা
+একটি !!a{sentence} $!C(c_1,\dots, c_n)$ আছে যাতে:
+\begin{align*}
+  !D(P) \land \Atom{P}{c_1, \dots, c_n} & \Entails !C(c_1,\dots, c_n); \\
+  !C(c_1,\dots, c_n) & \Entails !D(P') \to \Atom{P'}{c_1, \dots, c_n}.
+\end{align*}
+প্রথম অনুসরণ থেকে পাই:
+$!D(P) \Entails \Atom{P}{c_1,\dots, c_n} \lif !C(c_1,\dots, c_n)$।
+দ্বিতীয়টি থেকে, কারণ $\Lang{L} \cup \{P\}$-মডেল
+$\Expan{M}{R} \Entails !A(P)$ ঠিক তখনই যখন সংশ্লিষ্ট
+$\Lang{L} \cup \{P'\}$-মডেল $\Expan{M}{R} \models !A(P')$,
+পাই $!C(c_1,\dots, c_n) \Entails !D(P) \lif
+\Atom{P}{c_1,\dots, c_n}$; সুতরাং:
+\[
+!D(P) \Entails !C(c_1,\dots,c_n) \to \Atom{P}{c_1,\dots, c_n}.
+\]
+দুটি একত্রে দিলে
+$!D(P) \Entails \Atom{P}{c_1,\dots,c_n} \liff !C(c_1, \dots, c_n)$,
+এবং একঘেয়েমি ও সাধারণীকরণে
+\[
+\Sigma(P) \Entails
+\lforall[x_1][\dots\lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff
+    !C(x_1,\dots, x_n))]].
+\]
+\end{proof}
+
+\end{document}

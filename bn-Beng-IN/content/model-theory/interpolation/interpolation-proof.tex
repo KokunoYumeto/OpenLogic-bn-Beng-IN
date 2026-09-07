@@ -1,0 +1,199 @@
+% Part: model-theory
+% Chapter: interpolation
+% Section: interpolation-proof
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{int}{prf}
+
+\olsection{ক্রেগের ইন্টারপোলেশন উপপাদ্য}
+
+\begin{thm}[ক্রেগের ইন্টারপোলেশন উপপাদ্য]
+\ollabel{thm:interpol}
+যদি $\Entails !A \lif !B$ হয়, তবে এমন একটি !!a{sentence} $!C$ আছে যাতে
+$\Entails !A \lif !C$ এবং $\Entails !C \lif !B$, এবং $!C$-তে থাকা
+প্রতিটি !!{constant}, !!{function} ও !!{predicate} ($\eq$ ছাড়া)
+$!A$ এবং~$!B$ উভয়েই ঘটে। এই !!{sentence} $!C$-কে $!A$ ও~$!B$-এর
+\emph{ইন্টারপোল্যান্ট} বলা হয়।
+\end{thm}
+
+\begin{proof}
+ধরা যাক $\Lang{L}_1$ হলো $!A$-এর ভাষা এবং $\Lang{L}_2$ হলো
+$!B$-এর ভাষা। $\Lang{L}_0 = \Lang{L}_1 \cap \Lang{L}_2$ ধরি।
+প্রতিটি $i \in \{0, 1, 2 \}$-এর জন্য $\Lang{L}'_i$ পাওয়া যায়
+$\Lang{L}_i$-তে অসীমসংখ্যক নতুন !!{constant}s
+$\Obj c_0, \Obj c_1, \Obj c_2, \dots$ যোগ করে।
+
+$!A$ যদি অসন্তোষণীয় হয়, তবে
+$\lexists[x][\eq/[x][x]]$ একটি ইন্টারপোল্যান্ট। $\lnot !B$
+অসন্তোষণীয় (অতএব $!B$ সর্বত্র সত্য) হলেও
+$\lexists[x][\eq[x][x]]$ একটি ইন্টারপোল্যান্ট। তাই এখন ধরে নিতে পারি
+$!A$ এবং $\lnot !B$ উভয়ই সন্তোষণীয়।
+
+ইন্টারপোলেশন উপপাদ্যের বিপরীত রূপ প্রমাণ করতে ধরি, $!A$ ও $!B$-এর
+কোনো ইন্টারপোল্যান্ট নেই। অন্যভাবে বললে,
+$\Lang{L}_0$-তে $\{!A\}$ ও $\{\lnot !B\}$ অপৃথকযোগ্য।
+
+আমাদের লক্ষ্য হলো জোড়া $(\{ !A \}, \{\lnot!B\})$-কে একটি
+সর্বাধিক অপৃথকযোগ্য জোড়া $(\Gamma^*, \Delta^*)$-তে প্রসারিত করা।
+$\Lang{L}_1$-এর !!{sentence}s-গুলিকে $!A_0$, $!A_1$, $!A_2$, \,\dots
+এবং $\Lang{L}_2$-এর !!{sentence}s-গুলিকে $!B_0$, $!B_1$, $!B_2$,
+\,\dots হিসেবে গণনা করি। $n \ge 0$-এর জন্য !!{sentence}s-এর
+সমষ্টির দুটি বর্ধনশীল ধারা $(\Gamma_n, \Delta_n)$ এভাবে সংজ্ঞায়িত
+করি। $\Gamma_0 = \{ !A\}$ এবং $\Delta_0 = \{\lnot !B \}$ রাখি।
+$(\Gamma_n, \Delta_n)$ ইতিমধ্যে সংজ্ঞায়িত হলে নিম্নরূপে
+$\Gamma_{n+1}$ ও $\Delta_{n+1}$ সংজ্ঞায়িত করি:
+\begin{enumerate}
+\item যদি $\Gamma_n \cup \{!A_n \}$ ও $\Delta_n$
+  $\Lang{L}'_0$-তে অপৃথকযোগ্য হয়, তবে $!A_n$-কে
+  $\Gamma_{n+1}$-এ রাখি। উপরন্তু, $!A_n$ যদি অস্তিত্বসূচক
+  !!{formula} $\lexists[x][!S]$ হয়, তবে $\Gamma_n$, $\Delta_n$,
+  $!A_n$ বা $!B_n$-এ নেই এমন একটি নতুন !!{constant} $c$ নিয়ে
+  $\Subst{!S}{c}{x}$-কে $\Gamma_{n+1}$-এ রাখি।
+\item যদি $\Gamma_{n+1}$ এবং $\Delta_n \cup \{!B_n \}$
+  $\Lang{L}'_0$-তে অপৃথকযোগ্য হয়, তবে $!B_n$-কে
+  $\Delta_{n+1}$-এ রাখি। উপরন্তু, $!B_n$ যদি অস্তিত্বসূচক
+  !!{formula} $\lexists[x][!S]$ হয়, তবে $\Gamma_{n+1}$,
+  $\Delta_n$, $!A_n$ বা $!B_n$-এ নেই এমন একটি নতুন !!{constant} $c$
+  নিয়ে $\Subst{!S}{c}{x}$-কে $\Delta_{n+1}$-এ রাখি।
+\end{enumerate}
+শেষে সংজ্ঞা দিই:
+\begin{align*}
+  \Gamma^* & = \bigcup_{n\ge 0} \Gamma_n, &
+  \Delta^* & = \bigcup_{n\ge 0} \Delta_n.
+\end{align*}
+এখন $n$-এর উপর যুগপৎ আবেশে প্রমাণ করতে পারি:
+\begin{enumerate}
+\item\ollabel{part-a} $\Gamma_n$ ও $\Delta_n$
+  $\Lang{L}'_0$-তে অপৃথকযোগ্য;
+\item\ollabel{part-b} $\Gamma_{n+1}$ ও $\Delta_n$
+    $\Lang{L}'_0$-তে অপৃথকযোগ্য।
+\end{enumerate}
+\olref{part-a}-এর ভিত্তি \olref[sep]{lem:sep1} দেয়।
+\olref{part-b}-এর জন্য তিনটি ঘটনা আলাদা করতে হবে:
+\begin{enumerate}
+\item যদি $\Gamma_0 \cup \{!A_0 \}$ ও $\Delta_0$
+  পৃথকযোগ্য হয়, তবে $\Gamma_1 = \Gamma_0$ এবং
+  \olref{part-b} কেবল \olref{part-a};
+\item যদি $\Gamma_1 = \Gamma_0 \cup\{ !A_0\}$ হয়, তবে
+  নির্মাণ অনুসারে $\Gamma_1$ ও $\Delta_0$ অপৃথকযোগ্য।
+\item বাকি থাকে $!A_0$ অস্তিত্বসূচক হওয়ার ঘটনা, অর্থাৎ
+  $\Gamma_1 = \Gamma_0 \cup \{ \lexists[x][!S], \Subst{!S}{c}{x}
+  \}$। নির্মাণ অনুসারে $\Gamma_0 \cup \{ \lexists[x][!S]\}$
+  ও $\Delta_0$ অপৃথকযোগ্য, তাই \olref[sep]{lem:sep2} অনুসারে
+  $\Gamma_0 \cup \{ \lexists[x][!S], \Subst{!S}{c}{x} \}$ ও
+  $\Delta_0$-ও অপৃথকযোগ্য।
+\end{enumerate}
+এতে \olref{part-a} ও \olref{part-b}-এর আবেশের ভিত্তি সম্পূর্ণ।
+এখন আবেশী ধাপ। \olref{part-a}-এর জন্য, যদি
+$\Delta_{n+1} = \Delta_n \cup \{ !B_n \}$ হয়, তবে নির্মাণ অনুসারে
+$\Gamma_{n+1}$ ও $\Delta_{n+1}$ অপৃথকযোগ্য (এমনকি $!B_n$
+অস্তিত্বসূচক হলেও, \olref[sep]{lem:sep2}-এর কারণে); আর যদি
+$\Delta_{n+1} = \Delta_n$ হয় (কারণ $\Gamma_{n+1}$ এবং
+$\Delta_n \cup \{!B_n\}$ পৃথকযোগ্য), তবে \olref{part-b}-এর
+আবেশী অনুমান ব্যবহার করি। \olref{part-b}-এর আবেশী ধাপে, যদি
+$\Gamma_{n+2} = \Gamma_{n+1} \cup \{!A_{n+1} \}$ হয়, তবে
+$\Gamma_{n+2}$ ও $\Delta_{n+1}$ নির্মাণ অনুসারে অপৃথকযোগ্য (এমনকি
+অস্তিত্বসূচক $!A_{n+1}$-এর ক্ষেত্রেও, \olref[sep]{lem:sep2}-এর
+কারণে); আর যদি $\Gamma_{n+2} = \Gamma_{n+1}$ হয়, তবে সদ্য
+প্রমাণিত \olref{part-a}-এর আবেশী ক্ষেত্র ব্যবহার করি। এভাবেই
+\olref{part-a} ও \olref{part-b}-এর আবেশ সম্পূর্ণ হয়।
+
+ফলে $\Gamma^*$ ও $\Delta^*$ অপৃথকযোগ্য; নইলে সংহতি অনুসারে এমন
+$n \ge 0$ থাকত যা $\Gamma_n$ ও $\Delta_n$-কে পৃথক করে, যা
+\olref{part-a}-এর বিরোধী। বিশেষত, $\Gamma^*$ ও $\Delta^*$ সঙ্গত:
+প্রথমটি বা দ্বিতীয়টি অসঙ্গত হলে যথাক্রমে
+$\lexists[x][\eq/[x][x]]$ বা $\lforall[x][\eq[x][x]]$ তাদের পৃথক
+করত।
+
+এখন দেখাই যে $\Gamma^*$ হলো $\Lang{L}'_1$-তে এবং একইভাবে
+$\Delta^*$ হলো $\Lang{L}'_2$-তে সর্বাধিক সঙ্গত। প্রথমটির জন্য ধরি,
+কোনো $n \ge 0$-এর ক্ষেত্রে $!A_n \notin \Gamma^*$ এবং
+$\lnot !A_n \notin \Gamma^*$। $!A_n \notin \Gamma^*$ হলে
+$\Gamma_n \cup \{!A_n \}$, $\Delta_n$ থেকে পৃথকযোগ্য, তাই
+এমন $!C \in \Lang{L}'_0$ আছে যাতে:
+\begin{align*}
+  \Gamma^* & \Entails !A_n \lif !C, &
+  \Delta^* & \Entails \lnot !C.
+\end{align*}
+একইভাবে, $\lnot !A_n \notin \Gamma^*$ হলে এমন $!C' \in
+\Lang{L}'_0$ আছে যাতে:
+\begin{align*}
+  \Gamma^* & \Entails \lnot !A_n \lif !C', &
+  \Delta^* & \Entails \lnot !C'.
+\end{align*}
+বচনমূলক যুক্তিবিদ্যায় $\Gamma^* \Entails !C \lor !C'$ এবং
+$\Delta^* \Entails \lnot (!C \lor !C')$, তাই $!C \lor
+!C'$ $\Gamma^*$ ও $\Delta^*$-কে পৃথক করে। একই যুক্তিতে
+$\Delta^*$ সর্বাধিক।
+
+শেষে দেখাই যে $\Gamma^* \cap \Delta^*$ হলো $\Lang{L}'_0$-তে
+সর্বাধিক সঙ্গত। এটি স্পষ্টতই সঙ্গত, কারণ এটি সঙ্গত সমষ্টিগুলির
+ছেদ। সর্বাধিকতা দেখাতে $!S \in \Lang{L}'_0$ ধরি। এখন
+$\Lang{L'_1} \supseteq \Lang{L'_0}$-তে $\Gamma^*$ এবং
+$\Lang{L'_2} \supseteq \Lang{L'_0}$-তে $\Delta^*$ সর্বাধিক।
+ফলে $!S \in \Gamma^*$ অথবা $\lnot !S \in \Gamma^*$, এবং
+$!S \in \Delta^*$ অথবা $\lnot !S \in \Delta^*$। যদি $!S \in
+\Gamma^*$ এবং $\lnot !S \in \Delta^*$ হয়, তবে $!S$
+$\Gamma^*$ ও $\Delta^*$-কে পৃথক করত; আর যদি $\lnot !S \in
+\Gamma^*$ এবং $!S \in \Delta^*$ হয়, তবে $\lnot !S$
+$\Gamma^*$ ও $\Delta^*$-কে পৃথক করত। অতএব $!S \in \Gamma^* \cap \Delta^*$ অথবা
+$\lnot !S \in \Gamma^* \cap \Delta^*$, এবং $\Gamma^* \cap \Delta^*$ সর্বাধিক।
+
+$\Gamma^*$ সর্বাধিক সঙ্গত হওয়ায় এর একটি মডেল
+$\Struct{M}'_1$ আছে, যার !!{domain} $\Domain{M'_1}$-এ কেবল
+!!{constant}s-এর ব্যাখ্যা $\Assign{c}{M'_1}$-গুলি রয়েছে—যেমন
+সংপূর্ণতা উপপাদ্যের প্রমাণে (\olref[fol][com][cth]{thm:completeness})।
+একইভাবে $\Delta^*$-এর একটি মডেল $\Struct{M}'_2$ আছে, যার
+!!{domain} $\Domain{M'_2}$ !!{constant}s-এর
+$\Assign{c}{M'_2}$ ব্যাখ্যা দিয়ে নির্ধারিত।
+
+$\Struct{M_1}$ পাওয়ার জন্য $\Struct{M'_1}$ থেকে
+$\Lang{L'_1} \setminus \Lang{L'_0}$-এর
+!!{constant}s, !!{function}s ও !!{predicate}s-এর ব্যাখ্যা বাদ দিয়ে
+$\Struct{M_2}$-ও একইভাবে সংজ্ঞায়িত করি। তখন
+$h \colon M_1 \to M_2$, যেখানে
+$h(\Assign{c}{M'_1}) = \Assign{c}{M'_2}$, $\Lang{L}'_0$-তে
+একটি সমরূপতা; কারণ উপরে দেখানো হয়েছে যে
+$\Gamma^* \cap \Delta^*$ $\Lang{L}'_0$-তে সর্বাধিক সঙ্গত। এটি
+এই কারণে যে $\Lang{L}'_0$-এর যেকোনো !!{sentence} উভয়
+$\Gamma^*$ ও $\Delta^*$-তে থাকে, অথবা কোনোটিতেই থাকে না: তাই
+$\Assign{c}{M'_1} \in \Assign{P}{M'_1}$ তখনই যখন
+$\Atom{P}{c} \in \Gamma^*$, তখনই যখন
+$\Atom{P}{c} \in \Delta^*$, তখনই যখন
+$\Assign{c}{M'_2} \in \Assign{P}{M'_2}$। সমরূপতার অন্যান্য
+শর্তও একইভাবে প্রতিষ্ঠিত হয়।
+
+এখন $\Lang{L_1} \cup \Lang{L_2}$ !!{language}-এর একটি মডেল
+$\Struct{M}$ এভাবে সংজ্ঞায়িত করি:
+\begin{enumerate}
+\item !!{domain} $\Domain{M}$ হলো $\Domain{M_2}$, অর্থাৎ সব
+  $\Assign{c}{M'_2}$-এর সমষ্টি;
+\item !!a{predicate}~$P$ যদি $\Lang{L_2} \setminus
+  \Lang{L_1}$-এ থাকে, তবে $\Assign{P}{M} = \Assign{P}{M'_2}$;
+\item প্রেডিকেট $P$ যদি $\Lang{L}_1\setminus \Lang{L}_2$-এ থাকে, তবে
+  $\Assign{P}{M} = h(\Assign{P}{M'_1})$, অর্থাৎ
+  $\tuple{\Assign{c_1}{M'_2}, \dots, \Assign{c_n}{M'_2}} \in
+  \Assign{P}{M}$ তখনই যখন $\tuple{\Assign{c_1}{M'_1}, \dots,
+  \Assign{c_n}{M'_1}} \in \Assign{P}{M'_1}$।
+% BN-SRC-136 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-136):} হিমায়িত সংজ্ঞায় $P$-এর $\Lang{L}_1\setminus\Lang{L}_2$ ব্যাখ্যা স্থানান্তরের সময় ভুল করে $h(\Assign{P}{M'_2})$ লেখা হয়েছে; পরের সমতুল্যতায় $M'_1$-এর সম্পর্ক স্থানান্তর করাই যুক্তিসঙ্গত। বাংলা পাঠে $h(\Assign{P}{M'_1})$ করা হয়েছে।} % BN-SRC-136 TARGET-CORRECTION-END
+\item !!a{predicate} $P$ যদি $\Lang{L}_0$-তে থাকে, তবে
+  $\Assign{P}{M} = \Assign{P}{M'_2} = h(\Assign{P}{M'_1})$।
+\item $\Lang{L}_1 \cup \Lang{L}_2$-এর !!^{function}s, !!{constant}s
+  সহ, একইভাবে সামলানো হয়।
+\end{enumerate}
+
+শেষে !!{formula}s-এর উপর আবেশে দেখানো যায় যে
+$\Struct{M}$, $\Lang{L'_1}$-এর সব !!{formula}s-তে
+$\Struct{M'_1}$-এর সঙ্গে এবং $\Lang{L'_2}$-এর সব !!{formula}s-তে
+$\Struct{M'_2}$-এর সঙ্গে একমত। বিশেষত,
+$\Struct{M} \Entails \Gamma^* \cup \Delta^*$; অতএব
+$\Struct{M} \Entails !A$ এবং $\Struct{M} \Entails \lnot!B$, এবং
+$\not\Entails !A \lif !B$। ক্রেগের ইন্টারপোলেশন উপপাদ্যের প্রমাণ
+সমাপ্ত।
+\end{proof}
+
+\end{document}

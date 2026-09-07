@@ -1136,6 +1136,56 @@ for row in rows:
             mathparts(arithmetic_audited_source) == target_math
             and all(finding_id in documented for finding_id in arithmetic_math_ids)
         )
+    interpolation_math_ids = []
+    interpolation_math_fix = False
+    interpolation_audited_source = source
+    if row["unit_id"] == "OLP-0200":
+        interpolation_math_ids = ["BN-SRC-134", "BN-SRC-135"]
+        interpolation_repairs = [
+            (
+                r"$\lforall[x][!C]" + "\n" + r"\Entails \lnot \delta$",
+                r"$\lforall[x][!C]" + "\n" + r"\Entails \lnot !H$",
+            ),
+            (
+                r"$\Gamma \cup \{\lexists[x]{!S} \}$",
+                r"$\Gamma \cup \{\lexists[x][!S] \}$",
+            ),
+        ]
+        for old, new in interpolation_repairs:
+            assert interpolation_audited_source.count(old) == 1
+            interpolation_audited_source = interpolation_audited_source.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0201":
+        interpolation_math_ids = ["BN-SRC-136"]
+        old = r"$\Assign{P}{M} = h(\Assign{P}{M'_2})$"
+        new = r"$\Assign{P}{M} = h(\Assign{P}{M'_1})$"
+        assert interpolation_audited_source.count(old) == 1
+        interpolation_audited_source = interpolation_audited_source.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0202":
+        interpolation_math_ids = ["BN-SRC-137"]
+        old = (
+            r"$!D(P) \land" + "\n" +
+            r"!D(P') \Entails \Atom{P}{c_1, \dots, c_n} \to P'c_1\dots c_n$"
+        )
+        new = (
+            r"$!D(P) \land" + "\n" +
+            r"!D(P') \Entails \Atom{P}{c_1, \dots, c_n} \to \Atom{P'}{c_1, \dots, c_n}$"
+        )
+        assert interpolation_audited_source.count(old) == 1
+        interpolation_audited_source = interpolation_audited_source.replace(old, new, 1)
+    if interpolation_math_ids:
+        interpolation_math_fix = (
+            mathparts(interpolation_audited_source) == target_math
+            and all(finding_id in documented for finding_id in interpolation_math_ids)
+        )
+    interpolation_prose_ids = []
+    interpolation_prose_fix = False
+    if row["unit_id"] == "OLP-0202":
+        assert source.count("if and only $\\Sigma(P)$") == 1
+        interpolation_prose_ids = ["BN-SRC-138"]
+        interpolation_prose_fix = (
+            "যদি এবং কেবল যদি $\\Sigma(P)$" in checked_target
+            and "$P$-কে প্রকাশ্যভাবে সংজ্ঞায়িত করে" in checked_target
+        )
     arithmetic_prose_ids = []
     arithmetic_prose_fix = False
     if row["unit_id"] == "OLP-0193":
@@ -1253,6 +1303,13 @@ for row in rows:
             "OLP-0197": {"BN-SRC-132", "BN-SRC-133"},
         }
         assert set(documented) == expected_arithmetic.get(row["unit_id"], set())
+    if 198 <= int(row["unit_id"].split("-")[1]) <= 202:
+        expected_interpolation = {
+            "OLP-0200": {"BN-SRC-134", "BN-SRC-135"},
+            "OLP-0201": {"BN-SRC-136"},
+            "OLP-0202": {"BN-SRC-137", "BN-SRC-138"},
+        }
+        assert set(documented) == expected_interpolation.get(row["unit_id"], set())
     tex_command_check = None
     if row["unit_id"] == "OLP-0039":
         source_hlines = hline_tokenization(source)
@@ -1644,6 +1701,26 @@ for row in rows:
             "set_builder_binds_x": True,
             "tennenbaum_statement_is_up_to_isomorphism": True,
         }
+    elif row["unit_id"] == "OLP-0200":
+        assert interpolation_math_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-134", "BN-SRC-135"],
+            "universal_consequence_uses_H": True,
+            "existential_formula_brackets_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0201":
+        assert interpolation_math_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-136",
+            "predicate_transport_starts_from_M1": True,
+        }
+    elif row["unit_id"] == "OLP-0202":
+        assert interpolation_math_fix and interpolation_prose_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-137", "BN-SRC-138"],
+            "corrected_P_prime_atom": True,
+            "theorem_statement_is_biconditional": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -1705,6 +1782,7 @@ for row in rows:
             beyond_math_fix,
             basics_math_fix,
             arithmetic_math_fix,
+            interpolation_math_fix,
             shared_audit_fix,
         )
     )

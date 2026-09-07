@@ -207,12 +207,17 @@
       "OLP-0195",
       "OLP-0196",
       "OLP-0197",
+      "OLP-0198",
+      "OLP-0199",
+      "OLP-0200",
+      "OLP-0201",
+      "OLP-0202",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 196,
-    "untranslated_count": 526,
-    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, and the Model Theory part driver plus complete Basics and Models of Arithmetic chapters are translated; both Size of Sets editorial alternatives remain distinct.",
+    "translated_count": 201,
+    "untranslated_count": 521,
+    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, and the Model Theory part driver plus complete Basics, Models of Arithmetic and Interpolation chapters are translated; both Size of Sets editorial alternatives remain distinct.",
     "reader_state": "The verified reader remains the exact 18-unit v0.2.0 scope. A distinct 25-unit Functions input is prepared but unbuilt. Size of Sets, Arithmetization, Infinite Sets, Propositional Logic, Proof Systems, Sequent Calculus, Natural Deduction, Tableaux, Axiomatic Deduction, Completeness, all translated First-order Logic chapters and all Model Theory chapters have not yet been integrated into a built reader."
   },
   "last_verified_public_release": {
@@ -222,11 +227,11 @@
     "status_evidence": "evidence/STATUS.json"
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "3415a68d88479a14f888c133bce67302e03d1334",
-    "translated_units": 189,
-    "receipt": "PUBLIC_READBACK_SOURCE_189_2026-09-06.json",
-    "receipt_sha256": "921f2cfd755bd65f67117054d9ef5fe27d211756a46bfc4d4af8bd656ccb8cdc",
-    "status": "Anonymous immutable-archive readback verified the complete Model Theory Basics checkpoint and reran its public checks. The current 196-unit draft extends that verified checkpoint through the complete Models of Arithmetic chapter."
+    "commit": "2c3a90ed2cf1c322cbb1948c292bf1c77f0d1477",
+    "translated_units": 196,
+    "receipt": "PUBLIC_READBACK_SOURCE_196_2026-09-07.json",
+    "receipt_sha256": "f01c0ecb0cc72e60858957d9a6b35b6ecb4f0b6bdc3e19887ceb6096641d29c2",
+    "status": "Anonymous immutable-archive readback verified the complete Models of Arithmetic checkpoint and reran its public checks. The current 201-unit draft extends that verified checkpoint through the complete Interpolation chapter."
   },
   "current_checks": {
     "unit_checks": [
@@ -235,16 +240,12 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "2281c8f7e0e251170c68a4f361b6e1c55b94da5aa5df3228555c5ab8c930344f"
       },
       {
@@ -252,16 +253,12 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "2d17c4c30e2096680a9cd65df16d558fafb1464f372ee0d0210b8d17e21937c9"
       },
       {
@@ -269,16 +266,12 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "3b2b44311912aa77fdc72b56d9b50806f1ad8b36f3d1e2ab4e422c00a1ea336d"
       },
       {
@@ -286,16 +279,12 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "e03b7a46e32cb2aaf96ec0c9dca899885ef84e0523b087a2625612322cdb6e15"
       },
       {
@@ -303,16 +292,12 @@
         "source_blocks": 26,
         "target_blocks": 26,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "e45eaf12e58c0e9bb135dd4f043f413e2c94295288f07fa1fb27286c4d3ec23e"
       },
       {
@@ -320,16 +305,12 @@
         "source_blocks": 16,
         "target_blocks": 16,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "72f0f8a6df6e7361bd4d89e3ddadfbdc272b8963a8fbf34f770a27afef854cb4"
       },
       {
@@ -337,16 +318,12 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "8e18c047e8481a3a1c8e41fddc0f7d96bdb8127a26bdcec5f473fd97ab147ccc"
       },
       {
@@ -354,16 +331,12 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "0cc79df4a0d40d4b71570ca14fca28b7881620c66b3eb6dae258fc845788fbc0"
       },
       {
@@ -371,16 +344,12 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "c5455ea8ec63b0964d63f432f2759fab1dc74b6ab9d272b690bbc52840982086"
       },
       {
@@ -388,16 +357,12 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "162c28ecc6024b8fc72782888fa6fc0a45fc8747b1d8c5132373b56a53de0a5d"
       },
       {
@@ -405,16 +370,12 @@
         "source_blocks": 12,
         "target_blocks": 12,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "11d236ee9666f5304b4906a8ccda377dcd1b2ee65a1d089ac6c4537012708aca"
       },
       {
@@ -422,16 +383,12 @@
         "source_blocks": 12,
         "target_blocks": 12,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "8b7b60420602e20ad14477d0f67a11d32ac1485220998f18242ac101aad8d951"
       },
       {
@@ -439,16 +396,12 @@
         "source_blocks": 26,
         "target_blocks": 26,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "ec5f30506cd5616349ac741230555dd4ceba141d59abfe16df7b2ad4c2a033f1"
       },
       {
@@ -456,16 +409,12 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "682e0553d71624d65b6450a5e739e48d76687eff0aa1c3d5c6934c73755925cc"
       },
       {
@@ -473,16 +422,12 @@
         "source_blocks": 17,
         "target_blocks": 17,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "5799aa61e770bc4bcf65ed7f57207ccf1b60f77d751c86a664387a52b044f702"
       },
       {
@@ -490,16 +435,12 @@
         "source_blocks": 17,
         "target_blocks": 17,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "8202aa90b9025257c4834092267c33dc084f886013e93783cef7ff3cff3f6c79"
       },
       {
@@ -507,16 +448,12 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "25505e304c4f96ffb7d6bb28d91313b99f01e403a4a1847a5a6bb65970038d7f"
       },
       {
@@ -524,8 +461,6 @@
         "source_blocks": 17,
         "target_blocks": 17,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -534,9 +469,7 @@
           "OLFUN-002",
           "OLFUN-003"
         ],
-        "documented_math_correction": "OLFUN-003 n-to-x prose normalization",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "1c87cb6ae90af3e7f8c2e50943002a463225f0c594e7ff791dd97788dd53ebe4"
       },
       {
@@ -544,16 +477,12 @@
         "source_blocks": 16,
         "target_blocks": 16,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "b36bc53773888b20840b07d943758a8156f1727d8fb7a5d4a132c74b44149a65"
       },
       {
@@ -561,8 +490,6 @@
         "source_blocks": 13,
         "target_blocks": 13,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -571,9 +498,7 @@
           "OLFUN-004",
           "OLFUN-005"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "89bf10c8e66fdcfc1fdfa79cf224de1c8aa0ad2536475c982e3dca7f83d5d529"
       },
       {
@@ -581,8 +506,6 @@
         "source_blocks": 24,
         "target_blocks": 24,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -590,9 +513,7 @@
         "documented_source_corrections": [
           "OLFUN-001"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "d16c00f47bef365fada486d73d1543a5b839f4593536e3a43a8e715a30353070"
       },
       {
@@ -600,16 +521,12 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "626b3288b34741a275176c6c4be5582c86e472f855da16f99fa6cbd68decf83d"
       },
       {
@@ -617,16 +534,12 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "b26475143919867ecf2b2f94ab66902c1b495d3aa65c1fd888e0c8bb8a8c194b"
       },
       {
@@ -634,16 +547,12 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "3416b50ad93aebef3906d3ebba26320e27ebcdaef13ace0b53339b5c8e47c152"
       },
       {
@@ -651,16 +560,12 @@
         "source_blocks": 4,
         "target_blocks": 4,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "6032ad1f7724e6f31468f788d67a6df9833840f2e5e515ac24b1a0ca93ef0f19"
       },
       {
@@ -668,8 +573,6 @@
         "source_blocks": 32,
         "target_blocks": 32,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -677,9 +580,7 @@
         "documented_source_corrections": [
           "OLSIZ-001"
         ],
-        "documented_math_correction": "OLSIZ-001 omitted f(7) value -3 restored",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "2eb6439c3fd1411cdeb8b3c7536e410b23264266f5d4aa31dd1178c8d9cf7797"
       },
       {
@@ -687,16 +588,12 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "f3e1934b4af3742cc945ec47aedc5cfefc5326eb60628cf14d6f0bb555bdf7e0"
       },
       {
@@ -704,8 +601,6 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -713,9 +608,7 @@
         "documented_source_corrections": [
           "OLSIZ-002"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "e8a94bbe28092fb26a7c2741c04b61b9bda2ae721a0f46e9085a0bc5b7738ff7"
       },
       {
@@ -723,8 +616,6 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -732,9 +623,7 @@
         "documented_source_corrections": [
           "OLSIZ-003"
         ],
-        "documented_math_correction": "OLSIZ-003 duplicated pairing family corrected from (2,m) to (3,m)",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "a13e03a6bd61c7d9640855a90bd61609f60cc926989eef29fd4007eef338eea8"
       },
       {
@@ -742,16 +631,12 @@
         "source_blocks": 23,
         "target_blocks": 23,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "eea04f1e76abda2493fb8498fc3d94ca855a1b7f21ae86c457226435625de4ce"
       },
       {
@@ -759,8 +644,6 @@
         "source_blocks": 18,
         "target_blocks": 18,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -769,9 +652,7 @@
           "OLSIZ-004",
           "OLSIZ-005"
         ],
-        "documented_math_correction": "OLSIZ-004 bound characteristic-sequence name and OLSIZ-005 infinite codomain output restored",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "206db8672ed2b765e5b473078ac5dca5094050a083f47fa9d4a8fc76d00bdd65"
       },
       {
@@ -779,8 +660,6 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -789,9 +668,7 @@
           "BN-SRC-001",
           "OLSIZ-006"
         ],
-        "documented_math_correction": "BN-SRC-001 undefined g corrected to governing bijection f",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "3dd614755c5dac7837cb429fa17f78fabae82e55af73484b16d474c5c043762c"
       },
       {
@@ -799,8 +676,6 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -809,9 +684,7 @@
           "BN-SRC-002",
           "OLSIZ-007"
         ],
-        "documented_math_correction": "BN-SRC-002 diagonal proof quantifier corrected from x in A-bar to x in A",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "03e208111dee022598a18f3094e0dd8dd173f1e559b6ad26a8cae291c2eeba5d"
       },
       {
@@ -819,16 +692,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "f69e05305adf5989883adc72c42c377f70d4424742bffcc0162b9ce36878a4e5"
       },
       {
@@ -836,16 +705,12 @@
         "source_blocks": 16,
         "target_blocks": 16,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "87d5bde6fd191b25eb5e426275739f504090b07837cfd84be7d93fe1295a16b1"
       },
       {
@@ -853,8 +718,6 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -865,9 +728,18 @@
           "OLSIZ-008",
           "OLSIZ-009"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "retracted_alert_disposition": "retracted_false_positive_no_change_required",
+          "source": {
+            "rowbreak_then_hline": 5,
+            "rowbreak_then_literal_hline": 0
+          },
+          "target": {
+            "rowbreak_then_hline": 5,
+            "rowbreak_then_literal_hline": 0
+          },
+          "token_hex": "5c5c5c686c696e65"
+        },
         "target_sha256": "58bba38d61857f7142f458109474bbb6e91df7259dc4cc91a56d1ce9f5f4b734"
       },
       {
@@ -875,8 +747,6 @@
         "source_blocks": 20,
         "target_blocks": 20,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -885,9 +755,7 @@
           "BN-SRC-005",
           "OLSIZ-010"
         ],
-        "documented_math_correction": "BN-SRC-005 / OLSIZ-010 unbound characteristic-sequence name normalized to s",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "315c8bb951383b482e4ba74e32c9d11fe489863111c8e645bff1a6a2ebd6a510"
       },
       {
@@ -895,16 +763,12 @@
         "source_blocks": 4,
         "target_blocks": 4,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "7a96de8d45de73d9ed7add69666d1110415e9655bf444aa26918d6e1af8eb0da"
       },
       {
@@ -912,16 +776,12 @@
         "source_blocks": 12,
         "target_blocks": 12,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "94b8a70f7bba2dc05cb1b86daac3748d1aee4f5c6ca45c2a19860664a921cc70"
       },
       {
@@ -929,8 +789,6 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -938,9 +796,7 @@
         "documented_source_corrections": [
           "BN-SRC-006"
         ],
-        "documented_math_correction": "BN-SRC-006 rational-order difference corrected from r-s to s-r",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "7d61c7b718ef574d9d47e8ef7109b460ad3d8c7ace17a0b645f020f5fd75a1cc"
       },
       {
@@ -948,8 +804,6 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -958,9 +812,7 @@
           "BN-SRC-007",
           "BN-SRC-008"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "5b7d6cada389a27c76d1c5d297ce224cd904143d3de222c197138c9ce4d8b8b5"
       },
       {
@@ -968,8 +820,6 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -978,9 +828,7 @@
           "BN-SRC-009",
           "BN-SRC-010"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "fabfc70c7f4ddc2780842742b0d07b76cd8d027bc6c8a0816751493180e08d8c"
       },
       {
@@ -988,16 +836,12 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "ab811ac11adee8e9258a8185dd0e815f4d6263b1cd8e8171efc99c42e06df2d7"
       },
       {
@@ -1005,8 +849,6 @@
         "source_blocks": 26,
         "target_blocks": 26,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1015,9 +857,7 @@
           "BN-SRC-011",
           "BN-SRC-012"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "993f50a8cc2a3e5f5e1a81dd3ac2edc17a356fe51815597df44c51249b231028"
       },
       {
@@ -1025,8 +865,6 @@
         "source_blocks": 20,
         "target_blocks": 20,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1037,9 +875,7 @@
           "BN-SRC-015",
           "BN-SRC-016"
         ],
-        "documented_math_correction": "BN-SRC-014 real-class zero corrected from rational to real embedding",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "acec01e1f2362b01353871bdfbab4be6a00c7863d7f53c5b091ba6c57786a49f"
       },
       {
@@ -1047,16 +883,12 @@
         "source_blocks": 3,
         "target_blocks": 3,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "8bfb4e7deaf158280d12504be3444a2b5982b06bc2b3e490ac247c84b08455d0"
       },
       {
@@ -1064,16 +896,12 @@
         "source_blocks": 4,
         "target_blocks": 4,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "d0fe1f6320a3afef8563d8c07e2594db1411e89105bef096a762607cb36afff1"
       },
       {
@@ -1081,8 +909,6 @@
         "source_blocks": 17,
         "target_blocks": 17,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1090,9 +916,7 @@
         "documented_source_corrections": [
           "BN-SRC-018"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "2471c8b7c0a7a03d5ef2eafd6b4f914ff834c4d33a7dbd137cd2229c646b4b0e"
       },
       {
@@ -1100,8 +924,6 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1109,9 +931,7 @@
         "documented_source_corrections": [
           "BN-SRC-017"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "2ccd70cfd5d106519cd69499b2a72c2da4f8d4d2e6ea8011ebf396e8d5c43458"
       },
       {
@@ -1119,16 +939,12 @@
         "source_blocks": 12,
         "target_blocks": 12,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "423ced232eb739ca8b0a8786fb742f9c814099f0e405563189fa8a2e49651c6d"
       },
       {
@@ -1136,16 +952,12 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "a88b27ceedc7b47aadd044b3cfdd83d78aad741f3f367664e5aa0ec8739381c4"
       },
       {
@@ -1153,16 +965,12 @@
         "source_blocks": 13,
         "target_blocks": 13,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "9f8e6d46e61b9281df76269e7e35236b398628eb6bd1ae09530635af041b09c8"
       },
       {
@@ -1170,16 +978,12 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "ed24e64cfccdf20b0f71c456495305fd057f4e9b262569f2c8f3db45d761bd38"
       },
       {
@@ -1187,16 +991,12 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "fe8e515a4d0edd130185ea6a6e0d52c8ecbf634f1c1fb31ae01171bcc34ed6a3"
       },
       {
@@ -1204,8 +1004,6 @@
         "source_blocks": 32,
         "target_blocks": 32,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1213,9 +1011,7 @@
         "documented_source_corrections": [
           "BN-SRC-019"
         ],
-        "documented_math_correction": "BN-SRC-019 unmatched conditional parenthesis balanced",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "0e383ab27899147f17c6b5d1dd57b3f77a7cceeeef6f8f53fe90752a53df1e29"
       },
       {
@@ -1223,16 +1019,12 @@
         "source_blocks": 20,
         "target_blocks": 20,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "8bdd490a47272931eb659c33304974024d3c71795a2fd722bf1941ccfedb2e88"
       },
       {
@@ -1240,8 +1032,6 @@
         "source_blocks": 13,
         "target_blocks": 13,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1249,9 +1039,7 @@
         "documented_source_corrections": [
           "BN-SRC-020"
         ],
-        "documented_math_correction": "BN-SRC-020 formation-sequence final term and identity relation restored",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "df985ee58c4a4011a2f43254e65ee2230fedd102c1c6d3be7bf2bb49af911a3d"
       },
       {
@@ -1259,16 +1047,12 @@
         "source_blocks": 19,
         "target_blocks": 19,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "7cb1c8d99a393f81db3e082362149ab96c4ddfeea729e538c27c3c08dcbb0dfc"
       },
       {
@@ -1276,16 +1060,12 @@
         "source_blocks": 14,
         "target_blocks": 14,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "3080f0c33199ec42110dea48225755301d64aaa7d48f8794429beb27c33f092b"
       },
       {
@@ -1293,16 +1073,12 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "b19c0b0d8a7da88113304ae9b08ea5fb4f1a5511f448dd94c19a83a36d542c78"
       },
       {
@@ -1310,16 +1086,12 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "0da76d94cea4ffda0abcf27a6e23e3d1f9b1df286f96cf2bbdada89ac9246302"
       },
       {
@@ -1327,8 +1099,6 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1336,9 +1106,7 @@
         "documented_source_corrections": [
           "BN-SRC-021"
         ],
-        "documented_math_correction": "BN-SRC-021 independent right-sequent length restored to n",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "ab0343682ff65060ffb41197e33fcc902ead311b61836b2c4ca4b84e30fc5189"
       },
       {
@@ -1346,16 +1114,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "c573a88104669d1c1cd1502d8c9f193192744963932fdf694ed401afda1ac578"
       },
       {
@@ -1363,8 +1127,6 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1374,9 +1136,15 @@
           "BN-SRC-023",
           "BN-SRC-024"
         ],
-        "documented_math_correction": "BN-SRC-022 tableau rule argument restored to conjunction connective",
-        "documented_tex_correction": "BN-SRC-023 tableau tree rule labels restored from conditional to conjunction",
-        "documented_prose_correction": "BN-SRC-024 all displayed tableau assumptions required to belong to Gamma",
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-023",
+          "source_true_conditional_rule_labels": 2,
+          "target_true_conditional_rule_labels": 0,
+          "source_true_conjunction_rule_labels": 0,
+          "target_true_conjunction_rule_labels": 2,
+          "documented_prose_correction": "BN-SRC-024",
+          "all_displayed_assumptions_required_in_gamma": true
+        },
         "target_sha256": "51c26de7abf4a853596b6cbb048322c309514b2b0bf8ebd75d411853dd46793d"
       },
       {
@@ -1384,16 +1152,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "506aa7349f35bab07ed098547ac847a34d9792af0e9d1c998433267fdf2e0191"
       },
       {
@@ -1401,16 +1165,12 @@
         "source_blocks": 16,
         "target_blocks": 16,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "3ceb786550962a10a01b42cb2f32b90ff3b374e83d55008c0b6bef0a1eaa595e"
       },
       {
@@ -1418,16 +1178,12 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "4ffbfc47add2380dabbd4a4643c28d6726e2d6a271e93ef5b51ac39e4bb5dc2e"
       },
       {
@@ -1435,16 +1191,12 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "734afed7336b2657095449fe9a50088dc0b8bfd3f4198c4e9352bb8109020bea"
       },
       {
@@ -1452,16 +1204,12 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "288fc61a1925bc2c496fb823a402b0f0614b590fdc8467ee82914dac741c5691"
       },
       {
@@ -1469,16 +1217,12 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "7d2f569a19e5d5c1e823fd6595058c5f0fe737c918c660d5e9ca11209c5f0a97"
       },
       {
@@ -1486,16 +1230,12 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "e21e156ff6fdf66701b5ca6f4e487385d50c9e1c2cf255988980f33c1799ea78"
       },
       {
@@ -1503,8 +1243,6 @@
         "source_blocks": 18,
         "target_blocks": 18,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1513,9 +1251,15 @@
           "BN-SRC-025",
           "BN-SRC-026"
         ],
-        "documented_math_correction": "BN-SRC-026 missing negations in De Morgan premise options restored",
-        "documented_tex_correction": "BN-SRC-025 four antecedent exchange labels restored from right to left",
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-025",
+          "source_right_exchange_labels": 6,
+          "target_right_exchange_labels": 2,
+          "source_left_exchange_labels": 6,
+          "target_left_exchange_labels": 10,
+          "documented_math_correction": "BN-SRC-026",
+          "restored_negated_second_disjuncts": 2
+        },
         "target_sha256": "005b5926b075dec69818ffab27b0bc0e19c71bb7c93057e9cbfc9e3ef3a02784"
       },
       {
@@ -1523,16 +1267,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "a443fb815ef15efa9f198cb2bf7ff442edf390af26221c23009f82814cb382cf"
       },
       {
@@ -1540,8 +1280,6 @@
         "source_blocks": 20,
         "target_blocks": 20,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1549,9 +1287,11 @@
         "documented_source_corrections": [
           "BN-SRC-027"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-027 editorial system restored from natural deduction to sequent calculus",
+        "tex_command_check": {
+          "documented_prose_correction": "BN-SRC-027",
+          "source_misidentified_system": "natural deduction",
+          "target_contextual_system": "sequent calculus"
+        },
         "target_sha256": "2cdbe32d046b0b395ffe216a21d8884704b5315b0b5345569a096f5f8f34b6c8"
       },
       {
@@ -1559,16 +1299,12 @@
         "source_blocks": 14,
         "target_blocks": 14,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "5dee073fb4f30fe7ef80a7807caf4fdd537dd5366ce9069e1e63be4a6b9f4ec3"
       },
       {
@@ -1576,8 +1312,6 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1585,9 +1319,12 @@
         "documented_source_corrections": [
           "BN-SRC-028"
         ],
-        "documented_math_correction": "BN-SRC-028 shared conjunction context supplied by structural inferences",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-028",
+          "added_shared_context_premises": 2,
+          "source_double_inference_lines": 2,
+          "target_double_inference_lines": 4
+        },
         "target_sha256": "a6a32d886b3265e9914976909c4b64ac1cbbf642a5c0a3507410e22cc5d74588"
       },
       {
@@ -1595,16 +1332,12 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "e509e4735e4bb9693e5dc426bca8c641c463de8146e969c19ab77e17bffbd080"
       },
       {
@@ -1612,8 +1345,6 @@
         "source_blocks": 21,
         "target_blocks": 21,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1623,9 +1354,16 @@
           "BN-SRC-030",
           "BN-SRC-031"
         ],
-        "documented_math_correction": "BN-SRC-029 conjunction conclusion and BN-SRC-030 cut residual sequent restored",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-031 weakening equality restricted to its applicable branch",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-029",
+            "BN-SRC-030",
+            "BN-SRC-031"
+          ],
+          "restored_left_conjunction_conclusion": "!A\\land!B,\\Gamma\\Sequent\\Delta",
+          "restored_cut_right_residual_sequent": "\\Pi\\Sequent\\Lambda",
+          "weakening_antecedent_equality_restricted_to_left_branch": true
+        },
         "target_sha256": "2c3166b371fe8ddf7fc104b385c4020a095a0f91c613868be0febe986c4dd19b"
       },
       {
@@ -1633,16 +1371,12 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "d29ec4e0de6b90d7c9f4e83ec601ac83c4dbde64063e846263fb45e8d74465fe"
       },
       {
@@ -1650,8 +1384,6 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1659,9 +1391,10 @@
         "documented_source_corrections": [
           "BN-SRC-032"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-032 omitted reverse identity-rule case supplied",
+        "tex_command_check": {
+          "documented_prose_correction": "BN-SRC-032",
+          "reverse_identity_rule_case_supplied": true
+        },
         "target_sha256": "ee02587244ff6df1706a63425eea3d818a14e8856dd6bf5cb7b7d4f9aee87026"
       },
       {
@@ -1669,16 +1402,12 @@
         "source_blocks": 16,
         "target_blocks": 16,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "215722555bcec357d3da9a27b57c458cfa475a2c439596b3144e2ab5863cb37e"
       },
       {
@@ -1686,8 +1415,6 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1695,9 +1422,10 @@
         "documented_source_corrections": [
           "BN-SRC-033"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-033 natural-deduction tree nodes restored from sequents to sentences",
+        "tex_command_check": {
+          "documented_prose_correction": "BN-SRC-033",
+          "natural_deduction_upper_nodes_are_sentences": true
+        },
         "target_sha256": "1efa9311ce0b55315b0049cc849573c2b136e2a29ef68e33e590d4c9a2009875"
       },
       {
@@ -1705,16 +1433,12 @@
         "source_blocks": 14,
         "target_blocks": 14,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "bf356f05a1385b8ae6706a658b42f69a85e03c0f158e01cc0ddb142ca7575e11"
       },
       {
@@ -1722,8 +1446,6 @@
         "source_blocks": 12,
         "target_blocks": 12,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1731,9 +1453,10 @@
         "documented_source_corrections": [
           "BN-SRC-034"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-034 eigenvariable condition restated rule by rule",
+        "tex_command_check": {
+          "documented_prose_correction": "BN-SRC-034",
+          "rule_specific_eigenvariable_conditions_restated": true
+        },
         "target_sha256": "d1b966be048e06677f8cdb67f832e826ddd4bdc6ad79e1b48850d7baa80ec862"
       },
       {
@@ -1741,16 +1464,12 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "37bfd87a30599e831293a9f82e6228a8eb7edc89195dc3369591e1c48ab02c45"
       },
       {
@@ -1758,8 +1477,6 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1768,9 +1485,14 @@
           "BN-SRC-035",
           "BN-SRC-042"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": "BN-SRC-042 negation-elimination rule label restored",
-        "documented_prose_correction": "BN-SRC-035 stale end-sequent term restored to terminal conclusion",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-035",
+            "BN-SRC-042"
+          ],
+          "terminal_conclusion_terminology_restored": true,
+          "negation_elimination_rule_label_restored": true
+        },
         "target_sha256": "c17834cdb705077bc7b0e111db797ad9801d12ab90da8e35de2e59de57cf387a"
       },
       {
@@ -1778,8 +1500,6 @@
         "source_blocks": 12,
         "target_blocks": 12,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1788,9 +1508,14 @@
           "BN-SRC-036",
           "BN-SRC-037"
         ],
-        "documented_math_correction": "BN-SRC-036 omitted negation restored in existential premise reference",
-        "documented_tex_correction": "BN-SRC-037 existential-elimination symbol restored to configurable lexists",
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-036",
+            "BN-SRC-037"
+          ],
+          "negated_existential_major_premise_restored": true,
+          "configurable_existential_elimination_symbol_restored": true
+        },
         "target_sha256": "f778d7620090e90cf91b5207c10cf4febf712c07cd384a7cc5ad3317e039b406"
       },
       {
@@ -1798,16 +1523,12 @@
         "source_blocks": 21,
         "target_blocks": 21,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "176e5a46b37940e10d2d955ea76ccfc232decc082324dafe8ad8becd8dc9a538"
       },
       {
@@ -1815,8 +1536,6 @@
         "source_blocks": 13,
         "target_blocks": 13,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1824,9 +1543,10 @@
         "documented_source_corrections": [
           "BN-SRC-038"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": "BN-SRC-038 duplicate FalseCl label removed",
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-038",
+          "duplicate_falsecl_label_removed": true
+        },
         "target_sha256": "31cda4cc9266e5332f16f72e3b3c65967efbe7f76dc6c551d70606478ea4e88d"
       },
       {
@@ -1834,16 +1554,12 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "53934b16740e6994b3a4e6c62eab528553a5ded297dcbf64b0c48ffecf5ced23"
       },
       {
@@ -1851,16 +1567,12 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "55e8fc4d3ab4816d5aa31a20203cfe150b111973c174d63e53dfbbecc30a98ff"
       },
       {
@@ -1868,8 +1580,6 @@
         "source_blocks": 28,
         "target_blocks": 28,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1878,9 +1588,14 @@
           "BN-SRC-039",
           "BN-SRC-040"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": "BN-SRC-040 universal-elimination symbol restored to configurable lforall",
-        "documented_prose_correction": "BN-SRC-039 PL semantic object restored from structure to valuation",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-039",
+            "BN-SRC-040"
+          ],
+          "propositional_semantic_object_is_valuation": true,
+          "configurable_universal_elimination_symbol_restored": true
+        },
         "target_sha256": "6daa8537d2af13d0fd77ebc1d8063d03e1cd0cb0a39d335af0066021a1ccfaad"
       },
       {
@@ -1888,16 +1603,12 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "b17bbab1be9837639974fe36ac4aa53e43714d433c49451ba8cd5626e96922ee"
       },
       {
@@ -1905,8 +1616,6 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1914,9 +1623,10 @@
         "documented_source_corrections": [
           "BN-SRC-041"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-041 omitted reverse identity-elimination case supplied",
+        "tex_command_check": {
+          "documented_prose_correction": "BN-SRC-041",
+          "reverse_identity_elimination_case_supplied": true
+        },
         "target_sha256": "aa33d4a8f52d8b64025d3cb90459c1a7e8bf5eea75ff369a68845a44ed60310a"
       },
       {
@@ -1924,8 +1634,6 @@
         "source_blocks": 16,
         "target_blocks": 16,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1933,9 +1641,10 @@
         "documented_source_corrections": [
           "BN-SRC-043"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-043 prfTab editorial scope restored to tableaux",
+        "tex_command_check": {
+          "documented_prose_correction": "BN-SRC-043",
+          "prfTab_controls_tableaux": true
+        },
         "target_sha256": "6917e7b0603097c6cea13a42ab5770a81ac8090a391e48d3c33d88ffa81551e1"
       },
       {
@@ -1943,16 +1652,12 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "36c5f8c7a3a1588e89f0fa49a8e30c385c6cda9b0e74f40ad3b37b4adf5a6468"
       },
       {
@@ -1960,16 +1665,12 @@
         "source_blocks": 13,
         "target_blocks": 13,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "ac4fe6ace862496d655aceba33b84fed3ecf1ceec4b9affb102aa2b64b920f7a"
       },
       {
@@ -1977,8 +1678,6 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -1987,9 +1686,14 @@
           "BN-SRC-044",
           "BN-SRC-045"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": "BN-SRC-044 two raw universal-rule labels restored to configurable lforall",
-        "documented_prose_correction": "BN-SRC-045 closed-term restriction retained while excluding added freshness",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-044",
+            "BN-SRC-045"
+          ],
+          "configurable_universal_labels_restored": 2,
+          "closed_term_restriction_retained": true
+        },
         "target_sha256": "39b62a44c91c0015d1ccf37461eb37c579d41084a5a592f57385ab8078263626"
       },
       {
@@ -1997,16 +1701,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "43d3743cef894195da3d23f9e1b9fdc5861da8832fa1aace77ef33ddd317c14a"
       },
       {
@@ -2014,8 +1714,6 @@
         "source_blocks": 14,
         "target_blocks": 14,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2023,9 +1721,10 @@
         "documented_source_corrections": [
           "BN-SRC-046"
         ],
-        "documented_math_correction": "BN-SRC-046 malformed signed-formula list separated",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-046",
+          "separated_signed_formulas": 3
+        },
         "target_sha256": "a7ead816a1a127e0ac94c0104cdc88e88b0da234e255115d0b3a3c8fb7d9f0e5"
       },
       {
@@ -2033,8 +1732,6 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2043,9 +1740,14 @@
           "BN-SRC-047",
           "BN-SRC-048"
         ],
-        "documented_math_correction": "BN-SRC-048 reusable line reference restored to 4",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-047 closed-term restriction made explicit",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-047",
+            "BN-SRC-048"
+          ],
+          "closed_term_restriction_restored": true,
+          "reusable_line_restored": 4
+        },
         "target_sha256": "4c5fb0c03766f6218ed0cd55d41e6ab220cea094a9d33a55f153cc429d55ebd6"
       },
       {
@@ -2053,8 +1755,6 @@
         "source_blocks": 21,
         "target_blocks": 21,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2062,9 +1762,10 @@
         "documented_source_corrections": [
           "BN-SRC-049"
         ],
-        "documented_math_correction": "BN-SRC-049 subset braces restored",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-049",
+          "finite_subset_braces_restored": true
+        },
         "target_sha256": "0bd08004fc28333189827be34d749a722814ceac4790a601c3495f537c6eeff4"
       },
       {
@@ -2072,8 +1773,6 @@
         "source_blocks": 16,
         "target_blocks": 16,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2083,9 +1782,16 @@
           "BN-SRC-051",
           "BN-SRC-052"
         ],
-        "documented_math_correction": "BN-SRC-050 independent Gamma_1 length restored to m",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-051 negation-rule premise and BN-SRC-052 duplicated left-side wording restored",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-050",
+            "BN-SRC-051",
+            "BN-SRC-052"
+          ],
+          "gamma_one_final_index": "m",
+          "true_negation_premise_restored": true,
+          "duplicated_left_removed": true
+        },
         "target_sha256": "6b5f09627936ca35979f34ce7367230dc56752cbbb36eb5a65150b5b4b4900d0"
       },
       {
@@ -2093,8 +1799,6 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2102,9 +1806,10 @@
         "documented_source_corrections": [
           "BN-SRC-053"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": "BN-SRC-053 eight malformed signed-formula calls repaired",
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-053",
+          "repaired_two_argument_signed_formula_calls": 8
+        },
         "target_sha256": "96b4b0e944dcf18207599c7c762b9416cd9bfb6fc8cf8681fd7a8c97079212dd"
       },
       {
@@ -2112,8 +1817,6 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2121,9 +1824,10 @@
         "documented_source_corrections": [
           "BN-SRC-054"
         ],
-        "documented_math_correction": "BN-SRC-054 spurious formula-list comma removed",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-054",
+          "trailing_formula_list_comma_removed": true
+        },
         "target_sha256": "1c974391b7fcfeff979cfc7b3fa2fcd19578c14e9dfd9cbbf4aac85d44407eef"
       },
       {
@@ -2131,8 +1835,6 @@
         "source_blocks": 22,
         "target_blocks": 22,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2140,9 +1842,10 @@
         "documented_source_corrections": [
           "BN-SRC-055"
         ],
-        "documented_math_correction": "BN-SRC-055 universal soundness metavariable normalized",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-055",
+          "universal_schema_metavariable_normalized": "A"
+        },
         "target_sha256": "1886beab9b774701610e38d7c3ad9e7a58132008f17aacc68f96323e78a064f8"
       },
       {
@@ -2150,8 +1853,6 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2159,9 +1860,10 @@
         "documented_source_corrections": [
           "BN-SRC-056"
         ],
-        "documented_math_correction": "BN-SRC-056 identity-substitution instance restored",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-056",
+          "identity_substitution_instance": "\\eq[s_1][s_2]"
+        },
         "target_sha256": "7475da87327c485b6416ce4cfad0754ad48ae84e3e46dd59d1c7bdcce1d24271"
       },
       {
@@ -2169,8 +1871,6 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2178,9 +1878,10 @@
         "documented_source_corrections": [
           "BN-SRC-057"
         ],
-        "documented_math_correction": "BN-SRC-057 identity-rule truth sign restored",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-057",
+          "identity_rule_sign": "True"
+        },
         "target_sha256": "35c3887d46a27bb22c7ba238f486aaab0cf7ec71153832c7f3e4097be69984c2"
       },
       {
@@ -2188,16 +1889,12 @@
         "source_blocks": 16,
         "target_blocks": 16,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "b858285cdc1bb1e3baff8932d6fa02e3a675fe590e20807dcc31e6e81705a865"
       },
       {
@@ -2205,16 +1902,12 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "8424f12310111676b066a9ce74f50dc03bd93d7d9b0f5d1dcbe3c006f4051064"
       },
       {
@@ -2222,16 +1915,12 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "277ddf75fdd6f41c0d969eb0d0a2e0b2cff41f0bb9cd967876e79afd47646084"
       },
       {
@@ -2239,16 +1928,12 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "9f6a4d2c2f6c6f41423f4d9b44361bc961bee3322baa6c2ed1af8beae46fcb64"
       },
       {
@@ -2256,16 +1941,12 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "948ea1191c784d013d6535920e547331c7ae691e9e37468b2da411747cfbfd26"
       },
       {
@@ -2273,16 +1954,12 @@
         "source_blocks": 4,
         "target_blocks": 4,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "196d4b856f3e63912e9535a7313fbca06f3f5eacb253bc45e2048e48d7f937b6"
       },
       {
@@ -2290,8 +1967,6 @@
         "source_blocks": 19,
         "target_blocks": 19,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2301,9 +1976,16 @@
           "BN-SRC-059",
           "BN-SRC-070"
         ],
-        "documented_math_correction": "BN-SRC-058 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-059, BN-SRC-070 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-058",
+            "BN-SRC-059",
+            "BN-SRC-070"
+          ],
+          "formula_prefix_restored": true,
+          "all_permitted_inference_rules_covered": true,
+          "repeated_formula_uses_same_justification_basis": true
+        },
         "target_sha256": "8d77f3088315b318c33424e0e94f09f272b5f07efb83d2dc1cf19b70149e4305"
       },
       {
@@ -2311,8 +1993,6 @@
         "source_blocks": 16,
         "target_blocks": 16,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2320,9 +2000,10 @@
         "documented_source_corrections": [
           "BN-SRC-060"
         ],
-        "documented_math_correction": "BN-SRC-060 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-060",
+          "conditional_parenthesis_balanced": true
+        },
         "target_sha256": "ef3e7c9f24fca579445b6ec76c4cc6fd8a35eaf0dc0b4d7fc99cc3692b55110b"
       },
       {
@@ -2330,8 +2011,6 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2340,9 +2019,14 @@
           "BN-SRC-061",
           "BN-SRC-062"
         ],
-        "documented_math_correction": "BN-SRC-061, BN-SRC-062 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-062 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-061",
+            "BN-SRC-062"
+          ],
+          "quantified_conditional_parenthesis_balanced": true,
+          "deduction_theorem_conclusion_restored": "\\Gamma \\Proves !A \\lif !B"
+        },
         "target_sha256": "ac13f4796cbfbcb423e55b52df11d5bec89a10b15b8653c23b5643a23851b52c"
       },
       {
@@ -2350,16 +2034,12 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "b041a62fa18f22fa0f24409a3dd18235b0e480dfae32774cc7a0ac893f30e101"
       },
       {
@@ -2367,8 +2047,6 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2377,9 +2055,14 @@
           "BN-SRC-063",
           "BN-SRC-064"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": "BN-SRC-063, BN-SRC-064 exact documented reference repair",
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-063",
+            "BN-SRC-064"
+          ],
+          "conjunction_projection_reference": "ax:land2",
+          "negation_reference": "ax:lnot2"
+        },
         "target_sha256": "57394dd15506dba72c49023e4b67efa9d9153aea67cfe9d1b4b4de00006fd3a1"
       },
       {
@@ -2387,8 +2070,6 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2398,9 +2079,16 @@
           "BN-SRC-071",
           "BN-SRC-072"
         ],
-        "documented_math_correction": "BN-SRC-065 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-071, BN-SRC-072 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-065",
+            "BN-SRC-071",
+            "BN-SRC-072"
+          ],
+          "configurable_truth_constant": "\\ltrue",
+          "strong_generalization_final_step": "truth axiom plus modus ponens",
+          "quantifier_instantiation_scope": "closed terms"
+        },
         "target_sha256": "cc6bad781c0344d4d9d390069c32b45036243c7f654528a0cdbeb8c78ac9e9c2"
       },
       {
@@ -2408,8 +2096,6 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2419,9 +2105,15 @@
           "BN-SRC-068",
           "BN-SRC-069"
         ],
-        "documented_math_correction": "BN-SRC-068, BN-SRC-069 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-067 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-067",
+            "BN-SRC-068",
+            "BN-SRC-069"
+          ],
+          "induction_measure": "inference-justified steps",
+          "formula_prefixes_restored": 3
+        },
         "target_sha256": "6d583be27cd2044c8e6bfd76f0ac4b4766fa33568abaa638e2ba786729f48319"
       },
       {
@@ -2429,8 +2121,6 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2438,9 +2128,10 @@
         "documented_source_corrections": [
           "BN-SRC-066"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-066 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-066",
+          "identity_axiom_scope": "closed terms"
+        },
         "target_sha256": "f9eb9cd280946fff275fc3c8bcbb88a75cc0973264e638ac5f4d2a62bc31c81c"
       },
       {
@@ -2448,16 +2139,12 @@
         "source_blocks": 13,
         "target_blocks": 13,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "e84a554ede086bf560eda8ede7ecc178f8080a0ebafa6c72e6bdfe07a88d480d"
       },
       {
@@ -2465,16 +2152,12 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "d6d900219aafa439c74090d78b34428adf944b155ae469a16625947cc462f2f7"
       },
       {
@@ -2482,16 +2165,12 @@
         "source_blocks": 12,
         "target_blocks": 12,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "64416e8a38b8b01b0b3cfa7bd5042317a1df1316d6786196c3c1edaca4842c85"
       },
       {
@@ -2499,16 +2178,12 @@
         "source_blocks": 22,
         "target_blocks": 22,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "3fb877dadfd3a3e7edc201ff8ff5fa28541defd0dcc71a1ccceae7085fae190b"
       },
       {
@@ -2516,8 +2191,6 @@
         "source_blocks": 19,
         "target_blocks": 19,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2526,9 +2199,14 @@
           "BN-SRC-073",
           "BN-SRC-074"
         ],
-        "documented_math_correction": "BN-SRC-073 exact documented formula repair",
-        "documented_tex_correction": "BN-SRC-074 existential configuration tag restored",
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-073",
+            "BN-SRC-074"
+          ],
+          "formula_argument_restored": "x_n",
+          "existential_configuration_tag": "prvEx"
+        },
         "target_sha256": "518c75f8671dd668951cd434cfbd1643377aed3e3ce533d694b7bbebe58f7faf"
       },
       {
@@ -2536,8 +2214,6 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2545,9 +2221,10 @@
         "documented_source_corrections": [
           "BN-SRC-075"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-075 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-075",
+          "empty_finite_subset_handled_before_maximum": true
+        },
         "target_sha256": "b9b1582590010f904822ac20383eb44b80d62694cf196ca4af72c2d927902c59"
       },
       {
@@ -2555,8 +2232,6 @@
         "source_blocks": 26,
         "target_blocks": 26,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2566,9 +2241,15 @@
           "BN-SRC-077",
           "BN-SRC-078"
         ],
-        "documented_math_correction": "BN-SRC-078 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-076, BN-SRC-077 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-076",
+            "BN-SRC-077",
+            "BN-SRC-078"
+          ],
+          "term_scope": "closed terms",
+          "universal_truth_lemma_metavariable": "B"
+        },
         "target_sha256": "cc0932ee4171dae2945788cc1cc19f9d26cc465bea7ddd7b38ae5b9ecf0abaeb"
       },
       {
@@ -2576,8 +2257,6 @@
         "source_blocks": 17,
         "target_blocks": 17,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2587,9 +2266,16 @@
           "BN-SRC-080",
           "BN-SRC-081"
         ],
-        "documented_math_correction": "BN-SRC-079, BN-SRC-080 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-081 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-079",
+            "BN-SRC-080",
+            "BN-SRC-081"
+          ],
+          "duplicate_argument_comma_removed": true,
+          "alternative_representative": "t'",
+          "term_scope": "closed terms"
+        },
         "target_sha256": "07ca2129825280896ca151cf5090804edba14130746c61c50f598c88a04d6d5c"
       },
       {
@@ -2597,16 +2283,12 @@
         "source_blocks": 12,
         "target_blocks": 12,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "81b2b223cd7f4d52ba7f4b6a638b5bc1c4cb1d2a09e9a84a20ebe0dbdb2764b3"
       },
       {
@@ -2614,8 +2296,6 @@
         "source_blocks": 14,
         "target_blocks": 14,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2623,9 +2303,10 @@
         "documented_source_corrections": [
           "BN-SRC-082"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-082 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-082",
+          "empty_delta_subfamily_index": 1
+        },
         "target_sha256": "7509cff6ca88c618ff37490afee66e9c1a65b10b054d3adafa899676075b1419"
       },
       {
@@ -2633,16 +2314,12 @@
         "source_blocks": 21,
         "target_blocks": 21,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "d63a82402c4c8994c3cf93fd6e979c9f93bf8849bc282bd017cead0aaae39cf4"
       },
       {
@@ -2650,16 +2327,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "f2a4cfd977a06c27c476756ec21ce4263bc7701592c5c7e3913bd6b63473311a"
       },
       {
@@ -2667,16 +2340,12 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "9e83cd636268f23a1c4d05e16458376025531e5363924264b1d7138b70af1b26"
       },
       {
@@ -2684,16 +2353,12 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "caad0076eeb26da6227b70bdb3b2105cd026cac30133eeddf8263da65b1134b7"
       },
       {
@@ -2701,8 +2366,6 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2711,9 +2374,14 @@
           "BN-SRC-083",
           "BN-SRC-084"
         ],
-        "documented_math_correction": "BN-SRC-083, BN-SRC-084 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-083",
+            "BN-SRC-084"
+          ],
+          "balanced_entailment_formula": true,
+          "balanced_derivation_formulas": 4
+        },
         "target_sha256": "b6c00c5795132671f5398d2a446b9a18204b6265947907cf5aa431df672daa7b"
       },
       {
@@ -2721,16 +2389,12 @@
         "source_blocks": 4,
         "target_blocks": 4,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "8e91740d5bdd2b01d3dea67faaaf5c79ecc6ceee26e2ae9b30a31bcef4fb7cc6"
       },
       {
@@ -2738,16 +2402,12 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "e3b108a42dd1c13bc3f0f7c40337874208fdf6531732b9d36d6501e1dba18cbb"
       },
       {
@@ -2755,8 +2415,6 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2765,9 +2423,18 @@
           "BN-SRC-085",
           "BN-SRC-086"
         ],
-        "documented_math_correction": "BN-SRC-086 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-085 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-085",
+            "BN-SRC-086"
+          ],
+          "arity_bearer": "predicate",
+          "assignment_values": [
+            0,
+            1,
+            2
+          ]
+        },
         "target_sha256": "579856f7de0c5a25f950c171fd71b4784f4f45a96b63605d7dd097f973766488"
       },
       {
@@ -2775,16 +2442,12 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "5124f02941aee23670d830c19eee8eb53eb5490c35335edb54720efa5cacf184"
       },
       {
@@ -2792,16 +2455,12 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "c490d5f30d90ae29b12fd65e0c22db7ec4a123ea555cbf17953a0d62a7c533c1"
       },
       {
@@ -2809,8 +2468,6 @@
         "source_blocks": 4,
         "target_blocks": 4,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2818,9 +2475,10 @@
         "documented_source_corrections": [
           "BN-SRC-087"
         ],
-        "documented_math_correction": "BN-SRC-087 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-087",
+          "restored_predicate_argument": "\\Obj v_0"
+        },
         "target_sha256": "38ead77ec8b2f60f4c9ae5ba4e1ea53d9ba302b3ffe04e36ef4c112f52737bc0"
       },
       {
@@ -2828,16 +2486,12 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "d53eb3f76ffe2f568880c71d00f3e3616990ae043aad97502ad8294d2ee2aaf7"
       },
       {
@@ -2845,16 +2499,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "68e3359723d13255c1a68c867c962dab1ab580debf7ec65c96c54d6b96638df2"
       },
       {
@@ -2862,16 +2512,12 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "04023c87f25235c812b15c8c82f2f595ff3eeaf2f024ff0f9efa94e570a51888"
       },
       {
@@ -2879,16 +2525,12 @@
         "source_blocks": 3,
         "target_blocks": 3,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "9134adec67c15e1402b87594712c1ffac4014296d75c65b38091383251193560"
       },
       {
@@ -2896,16 +2538,12 @@
         "source_blocks": 18,
         "target_blocks": 18,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "94077a8c40ec56e875e5597cd615e25d009b6b97553c7c9fe6cbdc1310dad258"
       },
       {
@@ -2913,8 +2551,6 @@
         "source_blocks": 39,
         "target_blocks": 39,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2922,9 +2558,10 @@
         "documented_source_corrections": [
           "BN-SRC-088"
         ],
-        "documented_math_correction": "BN-SRC-088 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-088",
+          "conditional_abbreviation_parenthesis_balanced": true
+        },
         "target_sha256": "ea76d62747b4fca4b72a47a19d19cde489212b03f15a3f6a4db2e0bec56175d3"
       },
       {
@@ -2932,16 +2569,12 @@
         "source_blocks": 36,
         "target_blocks": 36,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "ffd7d55f27deeb461348ebd5b8ce1523b772a88381f8aa8f1b6cffee9b54e124"
       },
       {
@@ -2949,8 +2582,6 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2958,9 +2589,10 @@
         "documented_source_corrections": [
           "BN-SRC-089"
         ],
-        "documented_math_correction": "BN-SRC-089 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-089",
+          "conjunction_example_math_delimiters_balanced": true
+        },
         "target_sha256": "0460c8e516f6daebde384c7fa8f60bfbb62ecdb5f7897fa1db4c9818e79f6c04"
       },
       {
@@ -2968,16 +2600,12 @@
         "source_blocks": 19,
         "target_blocks": 19,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "b03c02c24d6892e4ad2a29692eefa2039684f5f8d346143708d718a5380a3baa"
       },
       {
@@ -2985,8 +2613,6 @@
         "source_blocks": 30,
         "target_blocks": 30,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -2996,9 +2622,17 @@
           "BN-SRC-091",
           "BN-SRC-092"
         ],
-        "documented_math_correction": "BN-SRC-090, BN-SRC-091, BN-SRC-092 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-090",
+            "BN-SRC-091",
+            "BN-SRC-092"
+          ],
+          "k_ary_function_argument_count": "k",
+          "theorem_language": "L",
+          "formation_sequence_final_member": "!A_n",
+          "syntactic_identity_relation": "\\ident"
+        },
         "target_sha256": "176151834b749b6e1edb636f1624f69725ed8629a4316a72dabbe212f5402b56"
       },
       {
@@ -3006,16 +2640,12 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "5ce8c2ef443f17021b2950dc22dcacb0b8e463d2c9e15de7013cf31120d04944"
       },
       {
@@ -3023,16 +2653,12 @@
         "source_blocks": 23,
         "target_blocks": 23,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "e0fb00fcb4de0702581b83360109dc5506617721c10ca5f72d135bf69b9c8f2a"
       },
       {
@@ -3040,16 +2666,12 @@
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "f306466bdc1d6306d0784a69b0d66e49e61d7c6aa8438b1a9702431aa938f343"
       },
       {
@@ -3057,16 +2679,12 @@
         "source_blocks": 4,
         "target_blocks": 4,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "ce541247ecc75b9e40ded6a8a2811093212ba69e3165bf3d713ec3349c704ca8"
       },
       {
@@ -3074,16 +2692,12 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "fef248d37b6c52b75f7e161e8265e23dc9715c5db4fc950d1237d53bc41aa32a"
       },
       {
@@ -3091,16 +2705,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "707ee76eee6bfa8cfd2b35a8c3271aa6de294d5f85b012780ffd1114aff6f3fd"
       },
       {
@@ -3108,8 +2718,6 @@
         "source_blocks": 44,
         "target_blocks": 44,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3123,9 +2731,27 @@
           "BN-SRC-098",
           "BN-SRC-099"
         ],
-        "documented_math_correction": "BN-SRC-093, BN-SRC-094, BN-SRC-095, BN-SRC-096, BN-SRC-097, BN-SRC-098, BN-SRC-099 exact documented semantic repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-093",
+            "BN-SRC-094",
+            "BN-SRC-095",
+            "BN-SRC-096",
+            "BN-SRC-097",
+            "BN-SRC-098",
+            "BN-SRC-099"
+          ],
+          "relation_interpretation_assignment_removed": true,
+          "defined_existential_parentheses_balanced": 2,
+          "defined_existential_formula_comma_removed": true,
+          "universal_conditional_antecedent_restored": true,
+          "missing_quantifier_variable_restored": "m",
+          "universal_summary_variable": "m",
+          "counterexamples": {
+            "m=1": "n=4",
+            "m=2": "n=1"
+          }
+        },
         "target_sha256": "294c899c04ac3733f2e38c4f6a25059a3a4e9fde59dd813e4c6ef3d45dec94b2"
       },
       {
@@ -3133,8 +2759,6 @@
         "source_blocks": 47,
         "target_blocks": 47,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3143,9 +2767,17 @@
           "BN-SRC-100",
           "BN-SRC-101"
         ],
-        "documented_math_correction": "BN-SRC-100, BN-SRC-101 exact documented semantic repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-100",
+            "BN-SRC-101"
+          ],
+          "predicate_tuple_first_index": "t_1",
+          "universal_assignment_variants": [
+            "s_1",
+            "s_2"
+          ]
+        },
         "target_sha256": "00e30880fba06dc45cfc1566ff4d4baed9eca8f8e61f2646a9b43c4a77a60d2a"
       },
       {
@@ -3153,8 +2785,6 @@
         "source_blocks": 19,
         "target_blocks": 19,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3162,9 +2792,10 @@
         "documented_source_corrections": [
           "BN-SRC-102"
         ],
-        "documented_math_correction": "BN-SRC-102 exact documented semantic repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-102",
+          "formula_substitution_free_for_hypothesis": true
+        },
         "target_sha256": "b1c7b40597000b2484586909e307de454f8d3af085b8832cea288800009f4fef"
       },
       {
@@ -3172,16 +2803,12 @@
         "source_blocks": 20,
         "target_blocks": 20,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "c069e8736b5396a0886164794df20c54c33a5b02e28213981eebc40d9836ad3f"
       },
       {
@@ -3189,16 +2816,12 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "206a836cce2e3e5ca5e2aea68750f36706b008d414917d2228ae544731ba0a1a"
       },
       {
@@ -3206,16 +2829,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "7d7ed72c4c1953abdd57d7a51cc3bc4d1c0dfddf26bb39eb71152069e6ba1046"
       },
       {
@@ -3223,16 +2842,12 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "a586e335bd5a10912830ccc172f7d6ecf123863098e0d6fc9089394cf061e932"
       },
       {
@@ -3240,8 +2855,6 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3249,9 +2862,7 @@
         "documented_source_corrections": [
           "BN-SRC-103"
         ],
-        "documented_math_correction": "BN-SRC-103 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "e7b2de159b9a515687318f9c89c8bdcc4b55810e4ecf0283eaf5657e03650061"
       },
       {
@@ -3259,8 +2870,6 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3268,9 +2877,7 @@
         "documented_source_corrections": [
           "BN-SRC-104"
         ],
-        "documented_math_correction": "BN-SRC-104 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "319c4b4026365294515f9e09ad697ac7726422c30d0f9a85300d1ceb87d1cf67"
       },
       {
@@ -3278,8 +2885,6 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3289,9 +2894,7 @@
           "BN-SRC-106",
           "BN-SRC-107"
         ],
-        "documented_math_correction": "BN-SRC-105, BN-SRC-106, BN-SRC-107 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "5b0bb9e700e57730e8ceeab95d3f59dede4c095ac9bb369a55c147c48628eaa6"
       },
       {
@@ -3299,8 +2902,6 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3308,9 +2909,7 @@
         "documented_source_corrections": [
           "BN-SRC-108"
         ],
-        "documented_math_correction": "BN-SRC-108 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "612c39b5915f7fcf16370912862c1846e8b6beb31cbb33ec6bc987fe7404012b"
       },
       {
@@ -3318,16 +2917,12 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "eb7551568f8934ac853146739b4e5f11ab3a67c205b8fa8882ac08e34b704b26"
       },
       {
@@ -3335,16 +2930,12 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "338ccfe5525e544afa37814fc8fde3800d4451379d7e0b4457a3019389dac324"
       },
       {
@@ -3352,8 +2943,6 @@
         "source_blocks": 6,
         "target_blocks": 6,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3361,9 +2950,10 @@
         "documented_source_corrections": [
           "BN-SRC-109"
         ],
-        "documented_math_correction": "BN-SRC-109 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-109",
+          "inner_universal_variable_delimiter_restored": true
+        },
         "target_sha256": "d86d30a73da55b70ec68ec28df40503f18979b61608778010c518c8ef8385154"
       },
       {
@@ -3371,8 +2961,6 @@
         "source_blocks": 14,
         "target_blocks": 14,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3380,9 +2968,10 @@
         "documented_source_corrections": [
           "BN-SRC-110"
         ],
-        "documented_math_correction": "BN-SRC-110 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-110",
+          "declared_successor_notation_restored": "prime"
+        },
         "target_sha256": "97d11e0d7bfff3bbb94f73263155ce148c17f327673f74e9932f5cee8a634847"
       },
       {
@@ -3390,8 +2979,6 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3399,9 +2986,10 @@
         "documented_source_corrections": [
           "BN-SRC-111"
         ],
-        "documented_math_correction": "BN-SRC-111 exact documented formula repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-111",
+          "lambda_domain_type_restored": "tau"
+        },
         "target_sha256": "e33fef1cc965c54a655500cceb067047fd81af6018ec15d1d73c18699b89baa0"
       },
       {
@@ -3409,16 +2997,12 @@
         "source_blocks": 24,
         "target_blocks": 24,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "477a8925add06c1d8b147573ee7db85a3a324b15b24e98c4adae6acec48a9691"
       },
       {
@@ -3426,16 +3010,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "ec77ef3b75067c3eb1b3eb84d0cc2b9431c5558d46c1d1b2966dad991785bdbd"
       },
       {
@@ -3443,16 +3023,12 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "08a5b4016a5af81cfa672f6d98097b816647d53ea45a11a83be342ebbec58551"
       },
       {
@@ -3460,16 +3036,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "617e2979219adebac41a35b00eb71f7f0277df8721200d3a3ff94998e3621c8c"
       },
       {
@@ -3477,16 +3049,12 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "d37dce9cd0e34881b2f18e31322e16aad2bbde7b96b30c47ef35dae478284a06"
       },
       {
@@ -3494,16 +3062,12 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "b3d766abce41dd249d238eb81e27ecce120bb10ede7b60995e33ad43aeeeabc1"
       },
       {
@@ -3511,8 +3075,6 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3520,9 +3082,10 @@
         "documented_source_corrections": [
           "BN-SRC-112"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-112 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-112",
+          "substructure_domain_required_nonempty": true
+        },
         "target_sha256": "4d7e5e1773dc65de92c2be88c5f15da8c891141362e7f772bf6ecce8636eed57"
       },
       {
@@ -3530,16 +3093,12 @@
         "source_blocks": 5,
         "target_blocks": 5,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "692b21a06b983329e45b201fd5ab6f7b43b3dbdc1a3c2bde9b39ab35374ef6a3"
       },
       {
@@ -3547,8 +3106,6 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3557,9 +3114,14 @@
           "BN-SRC-113",
           "BN-SRC-114"
         ],
-        "documented_math_correction": "BN-SRC-113, BN-SRC-114 exact documented semantic repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-113",
+            "BN-SRC-114"
+          ],
+          "recursive_term_value_structure": "M'",
+          "homomorphism_function_parenthesis_balanced": true
+        },
         "target_sha256": "7519222dd5fcd621d95efc9fd2be373edd7d9a244c9d53f1291e3178e9c44d01"
       },
       {
@@ -3567,16 +3129,12 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "7f0f1b87491f194a9310989ef40ba45fb2a4fba3d9f9ef2f99a60f6849583aaf"
       },
       {
@@ -3584,8 +3142,6 @@
         "source_blocks": 23,
         "target_blocks": 23,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3594,9 +3150,14 @@
           "BN-SRC-115",
           "BN-SRC-116"
         ],
-        "documented_math_correction": "BN-SRC-115 exact documented semantic repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-116 exact documented semantic repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-115",
+            "BN-SRC-116"
+          ],
+          "back_and_forth_even_step_index": "n=2r+1",
+          "finite_conjunction_basis": "logical-equivalence representatives"
+        },
         "target_sha256": "eca42cfcfa2de505ddf3528f0efd2594b25644d9dfbecb0f5ca9317b615b6b65"
       },
       {
@@ -3604,8 +3165,6 @@
         "source_blocks": 7,
         "target_blocks": 7,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3613,9 +3172,11 @@
         "documented_source_corrections": [
           "BN-SRC-117"
         ],
-        "documented_math_correction": "BN-SRC-117 exact documented semantic repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-117",
+          "forth_empty_map_case": true,
+          "forth_already_mapped_case": true
+        },
         "target_sha256": "21651b4f96b457f88f08d199d1d730db0c999c0734e11e53cdee053039f2ef7d"
       },
       {
@@ -3623,16 +3184,12 @@
         "source_blocks": 8,
         "target_blocks": 8,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "22e619109901dcfc4687ba613842b1988bd8a1e771b3f797f75c29720599dac4"
       },
       {
@@ -3640,8 +3197,6 @@
         "source_blocks": 4,
         "target_blocks": 4,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3651,9 +3206,16 @@
           "BN-SRC-119",
           "BN-SRC-120"
         ],
-        "documented_math_correction": "BN-SRC-118, BN-SRC-119, BN-SRC-120 exact documented arithmetic-model repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-118",
+            "BN-SRC-119",
+            "BN-SRC-120"
+          ],
+          "string_model_operations_use_string_arguments": true,
+          "string_model_less_than_interpretation_supplied": true,
+          "proof_code_argument_restored": "x"
+        },
         "target_sha256": "ea74cbe85b7443da1ade00a8fa1b8986935d5cf805d2f0e944fa1884d5e4ff5f"
       },
       {
@@ -3661,8 +3223,6 @@
         "source_blocks": 15,
         "target_blocks": 15,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3670,9 +3230,10 @@
         "documented_source_corrections": [
           "BN-SRC-121"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-121 exact documented arithmetic-model repair",
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-121",
+          "surjectivity_failure_refers_to_range": true
+        },
         "target_sha256": "748e5b71dcebca27acf25e959eacf67edbb1eef6b57c6a079cfb4ea33c7b8f90"
       },
       {
@@ -3680,8 +3241,6 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3690,9 +3249,14 @@
           "BN-SRC-122",
           "BN-SRC-123"
         ],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-122, BN-SRC-123 exact documented arithmetic-model repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-122",
+            "BN-SRC-123"
+          ],
+          "empty_finite_family_case": true,
+          "downward_lowenheim_skolem_invoked": true
+        },
         "target_sha256": "20a3b6ea7f1c92f43b305c476e55563653c2b1c4be851a18d00178141cf64902"
       },
       {
@@ -3700,8 +3264,6 @@
         "source_blocks": 11,
         "target_blocks": 11,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3712,9 +3274,18 @@
           "BN-SRC-126",
           "BN-SRC-127"
         ],
-        "documented_math_correction": "BN-SRC-125, BN-SRC-126, BN-SRC-127 exact documented arithmetic-model repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-124 exact documented arithmetic-model repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-124",
+            "BN-SRC-125",
+            "BN-SRC-126",
+            "BN-SRC-127"
+          ],
+          "sum_parenthesis_closed": true,
+          "only_nonstandard_K_element_is_a": true,
+          "Q5_rhs_uses_a": true,
+          "general_nonstandard_element_uses_x": true
+        },
         "target_sha256": "6aa8038a81a2e55b507cef92f377201593b91918a1eb73ab07f1ba4993a6641c"
       },
       {
@@ -3722,8 +3293,6 @@
         "source_blocks": 32,
         "target_blocks": 32,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3734,9 +3303,18 @@
           "BN-SRC-130",
           "BN-SRC-131"
         ],
-        "documented_math_correction": "BN-SRC-128, BN-SRC-130 exact documented arithmetic-model repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-129, BN-SRC-131 exact documented arithmetic-model repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-128",
+            "BN-SRC-129",
+            "BN-SRC-130",
+            "BN-SRC-131"
+          ],
+          "trichotomy_formula_balanced": true,
+          "predecessor_claim_excludes_zero": true,
+          "addition_notation_is_nssplus": true,
+          "countability_scope_is_explicit": true
+        },
         "target_sha256": "b6bce39729c3ebae8049f17a7ca982d52394f0646549d67df49b10ed2ae751e8"
       },
       {
@@ -3744,8 +3322,6 @@
         "source_blocks": 10,
         "target_blocks": 10,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
@@ -3754,26 +3330,117 @@
           "BN-SRC-132",
           "BN-SRC-133"
         ],
-        "documented_math_correction": "BN-SRC-132 exact documented arithmetic-model repair",
-        "documented_tex_correction": null,
-        "documented_prose_correction": "BN-SRC-133 exact documented arithmetic-model repair",
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-132",
+            "BN-SRC-133"
+          ],
+          "set_builder_binds_x": true,
+          "tennenbaum_statement_is_up_to_isomorphism": true
+        },
         "target_sha256": "491b1260f7c95e6cce8c18a1b4d47990aa4ce27a2ba7dfc833234f3c2b8130ef"
+      },
+      {
+        "unit_id": "OLP-0198",
+        "source_blocks": 6,
+        "target_blocks": 6,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "6318094a364a97337b46ceb3006d6f159ffe4f099e070f2e83f22da5a74a45b7"
+      },
+      {
+        "unit_id": "OLP-0199",
+        "source_blocks": 4,
+        "target_blocks": 4,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "d59c45d64c2301494e3ce3914e0f043d47c5b30cee18f996554f82b0be2bc01c"
+      },
+      {
+        "unit_id": "OLP-0200",
+        "source_blocks": 9,
+        "target_blocks": 9,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-134",
+          "BN-SRC-135"
+        ],
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-134",
+            "BN-SRC-135"
+          ],
+          "universal_consequence_uses_H": true,
+          "existential_formula_brackets_restored": true
+        },
+        "target_sha256": "b45706f1a12a70f9b7782dc8fb81771d4e978a6c533995dc0acd9852a99887fe"
+      },
+      {
+        "unit_id": "OLP-0201",
+        "source_blocks": 14,
+        "target_blocks": 14,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-136"
+        ],
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-136",
+          "predicate_transport_starts_from_M1": true
+        },
+        "target_sha256": "717fe0dcc93a0aa2af83a7381077a7be7cf61ac2fad08e38178c8a568e24c65a"
+      },
+      {
+        "unit_id": "OLP-0202",
+        "source_blocks": 8,
+        "target_blocks": 8,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-137",
+          "BN-SRC-138"
+        ],
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-137",
+            "BN-SRC-138"
+          ],
+          "corrected_P_prime_atom": true,
+          "theorem_statement_is_biconditional": true
+        },
+        "target_sha256": "86e5de024232284863f33e9f1c235514ddbe16f2a9871a49d1f6890bfe18094e"
       },
       {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "f1886f524d68816dd759fc926cc9254f112645ff8446a1073407dff0db84a027"
       },
       {
@@ -3781,27 +3448,23 @@
         "source_blocks": 12,
         "target_blocks": 12,
         "math_parity": true,
-        "math_missing": [],
-        "math_added": [],
         "controls_parity": true,
         "env_parity": true,
         "token_parity": true,
         "unicode_nfc": true,
         "documented_source_corrections": [],
-        "documented_math_correction": null,
-        "documented_tex_correction": null,
-        "documented_prose_correction": null,
+        "tex_command_check": null,
         "target_sha256": "daa8386fb8207a8a82df3b4ab3d9d7c8edfcc881f36eac371c7f04a50923dff1"
       }
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "db8bd9997c28d76d4463157165e2510ed8f0d5707008da9090c7d7d7a749db70"
+      "sha256": "770a78c55e806f0fc20d6241f1ef7930ce030c2599f02fb2a9a93fc852a50cf4"
     },
-    "segments": 2472,
-    "translated_segments": 2089,
+    "segments": 2513,
+    "translated_segments": 2121,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "c38a470bcba0f205ab7c267baa1408c1f535fbf253f262159d94d4734145e39d",
+    "segment_index_sha256": "90293f7c728fd4a6ed4ee597251718436495c9fc893a66e17cf5b908e212db56",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -3874,6 +3537,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_MODELS_OF_ARITHMETIC.md",
         "sha256": "87a122b95b07e27a6aeaf4cd68c4fa4a7e3d6ed8e8590071cb27a46f23b2b4f9"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_INTERPOLATION.md",
+        "sha256": "7bcac306c5878d09fd1d3c4e668c53daccad38a6ed413e49716dc956eb8dd2a0"
       }
     ],
     "shared_source_audit": {
@@ -3888,7 +3555,7 @@
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "096e50146680358489f74e6d58de414c6d7d8279e44be6d9d15e071b7f4bf885",
+      "reconciliation_sha256": "e493a8ac006f5dea38e9c3a61565276e2e4b125e02da5ebb64963d759b0edeaa",
       "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
       "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
       "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
@@ -3906,9 +3573,9 @@
     }
   },
   "source_corrections": {
-    "count": 143,
+    "count": 148,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "eaa3f17be91dbbc5092e8e15128c8ca1b75d055fb63b07e84f9a5b8aea1297eb",
+    "sha256": "f83edb62d8b6249b3e70b0e848b42151e4f578355d1e4f139af9f7bda4915448",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -4048,6 +3715,11 @@
       "BN-SRC-131",
       "BN-SRC-132",
       "BN-SRC-133",
+      "BN-SRC-134",
+      "BN-SRC-135",
+      "BN-SRC-136",
+      "BN-SRC-137",
+      "BN-SRC-138",
       "OLSIZ-001",
       "OLSIZ-002",
       "OLSIZ-003",
@@ -4056,15 +3728,15 @@
     ]
   },
   "translation_decisions": {
-    "count": 133,
-    "provisional_open": 114,
+    "count": 138,
+    "provisional_open": 119,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "7b92a87c413863f3d1bf243df96f55a925691b1b845726b1723d34cea775cc45",
+    "sha256": "f0c123bd2110cce000221941db0c7467f61ecd8aedd541dadd829894cab5a492",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 10777,
+    "occurrence_count": 10931,
     "pagination_status": "Final printed/PDF page fields are pending reader integration and final pagination."
   },
   "functions_build_candidate": {
@@ -4078,5 +3750,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "All three bounded global TeX mutex acquisitions concerned the prior input hash and timed out without launching TeX. The freshly prepared current input has not yet been submitted to TeX; no new PDF or HTML is claimed."
   },
-  "remaining": "526 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
+  "remaining": "521 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
 }

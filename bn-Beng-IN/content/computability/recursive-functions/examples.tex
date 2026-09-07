@@ -1,0 +1,194 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: examples
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{exa}
+\olsection{আদিম পুনরাবৃত্ত অপেক্ষকের উদাহরণ}
+
+
+আদিম পুনরাবৃত্ত অপেক্ষকের কয়েকটি উদাহরণ আমাদের ইতিমধ্যেই আছে: যোগ ও
+গুণের অপেক্ষক~$\Add$ এবং $\Mult$। অভেদ অপেক্ষক $\fn{id}(x) = x$ আদিম
+পুনরাবৃত্ত, কারণ এটি কেবল~$\Proj{1}{0}$। ধ্রুবক অপেক্ষক
+$\fn{const}_n(x) = n$ আদিম পুনরাবৃত্ত, কারণ ধারাবাহিক মিশ্রণের সাহায্যে
+$\Zero$ ও $\Succ$ থেকে এগুলিকে সংজ্ঞায়িত করা যায়। আদিম পুনরাবৃত্ত
+সংজ্ঞায় ধ্রুবক ব্যবহার করতে চাইলে এটি কাজে লাগে। যেমন, $f(x) = 2
+\cdot x$ অপেক্ষকটি সংজ্ঞায়িত করতে চাইলে $\fn{const}_n(x)$ ও গুণের
+অপেক্ষক থেকে মিশ্রণের সাহায্যে $f(x) =
+\Mult(\fn{const}_2(x), \Proj{1}{0}(x))$ হিসেবে সেটি পাওয়া যায়। এখন
+থেকে আমরা এই কৌশল ব্যবহার করব।
+
+\begin{prop}
+  ঘাতের অপেক্ষক $\fn{exp}(x, y) = x^y$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  $\fn{exp}$-কে আমরা আদিম পুনরাবৃত্তির সাহায্যে এভাবে সংজ্ঞায়িত করতে পারি:
+  \begin{align*}
+    \fn{exp}(x, 0) & = 1\\
+    \fn{exp}(x, y+1) & = \Mult(x, \fn{exp}(x,y)).
+    \intertext{কঠোরভাবে বলতে গেলে, এটি আদিম পুনরাবৃত্ত অপেক্ষক থেকে
+      পাওয়া কোনো পুনরাবৃত্ত সংজ্ঞা নয়। তবে বিধিসম্মতভাবে আমাদের আছে:}
+    \fn{exp}(x, 0) & = f(x)\\
+    \fn{exp}(x, y+1) & = g(x, y, \fn{exp}(x,y)).
+    \intertext{যেখানে}
+    f(x) & = \Succ(\Zero(x)) = 1\\
+    g(x, y, z) & = \Mult(\Proj{3}{0}(x, y, z), \Proj{3}{2}(x, y, z)) = x \cdot z
+  \end{align*}
+  অতএব $f$ ও $g$ আদিম পুনরাবৃত্ত অপেক্ষক থেকে মিশ্রণের সাহায্যে
+  সংজ্ঞায়িত।
+\end{proof}
+
+\begin{prop}
+  নিচের সমীকরণে সংজ্ঞায়িত পূর্বসূরি অপেক্ষক $\fn{pred}(y)$
+  \[
+  \fn{pred}(y) = \begin{cases}
+    0 & \text{যদি $y=0$}\\
+    y-1 & \text{অন্যথায়}
+  \end{cases}
+  \]
+  আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+ লক্ষ করুন,
+ \begin{align*}
+   \fn{pred}(0) & = 0 \text{ এবং}\\
+   \fn{pred}(y+1) & = y.
+ \end{align*}
+ এটি প্রায় একটি আদিম পুনরাবৃত্ত সংজ্ঞা। কঠোরভাবে বলতে গেলে এটি আদিম
+ পুনরাবৃত্তির মাধ্যমে সংজ্ঞার বিন্যাসে বসে না, কারণ সেই বিন্যাসে অন্তত
+ একটি অতিরিক্ত আর্গুমেন্ট~$x$ প্রয়োজন। সংজ্ঞাটিতে
+ $\fn{pred}(y+1)$ নির্ধারণ করার সময় আসলে $\fn{pred}(y)$ ব্যবহারই হয়
+ না—এটিও একটু অস্বাভাবিক। কিন্তু প্রথমে আমরা $\fn{pred}'(x, y)$-কে
+ এভাবে সংজ্ঞায়িত করতে পারি:
+ \begin{align*}
+   \fn{pred}'(x, 0) & = \Zero(x) = 0,\\
+   \fn{pred}'(x, y+1) & = \Proj{3}{1}(x, y, \fn{pred'}(x, y)) = y.
+ \end{align*}
+তারপর মিশ্রণের সাহায্যে তা থেকে $\fn{pred}$-কে সংজ্ঞায়িত করা যায়; যেমন,
+$\fn{pred}(x) = \fn{pred}'(\Zero(x), \Proj{1}{0}(x))$।
+\end{proof}
+
+\begin{prop}
+  ক্রমগুণিতক অপেক্ষক $\fn{fac}(x) = \fact{x} = 1 \cdot 2 \cdot 3
+  \cdot \dots \cdot x$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  স্বাভাবিক আদিম পুনরাবৃত্ত সংজ্ঞাটি হলো
+  \begin{align*}
+    \fn{fac}(0) &= 1\\
+    \fn{fac}(y+1) & = \fn{fac}(y) \cdot (y+1).
+    \intertext{বিধিসম্মতভাবে প্রথমে আমাদের একটি দুই-স্থানীয় অপেক্ষক $h$ সংজ্ঞায়িত করতে হবে:}
+    h(x, 0) & = \fn{const}_1(x)\\
+    h(x, y+1) & = g(x, y, h(x, y))
+    \intertext{যেখানে $g(x, y, z) = \Mult(\Proj{3}{2}(x, y, z),
+      \Succ(\Proj{3}{1}(x, y, z)))$; তারপর নিই}
+    \fn{fac}(y) & = h(\Proj{1}{0}(y), \Proj{1}{0}(y)) = h(y,y).
+  \end{align*}
+  এখন থেকে আমরা আর একটু অনানুষ্ঠানিক হব এবং মিশ্রণ ও আদিম পুনরাবৃত্তি
+  দিয়ে বিধিসম্মত সংজ্ঞাগুলি সবসময় লিখব না।
+\end{proof}
+
+\begin{prop}
+  নিচের সমীকরণে সংজ্ঞায়িত ছাঁটা বিয়োগ $x \tsub y$
+  \[
+  x \tsub y = \begin{cases}
+    0 & \text{যদি $x < y$}\\
+    x-y & \text{অন্যথায়}
+  \end{cases}
+  \]
+  আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  আমাদের আছে:
+  \begin{align*}
+    x \tsub 0 & = x\\
+    x \tsub (y+1) & = \fn{pred}(x \tsub y)
+  \end{align*}
+\end{proof}
+
+\begin{prop}
+ $x$ ও $y$-এর মধ্যবর্তী দূরত্ব $\left|x-y\right|$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  আমাদের আছে $\left| x-y \right| = (x \tsub y) + (y \tsub x)$; তাই
+  আদিম পুনরাবৃত্ত $+$ ও $\tsub$ থেকে মিশ্রণের সাহায্যে দূরত্বটিকে
+  সংজ্ঞায়িত করা যায়।
+\end{proof}
+
+\begin{prop}
+  $x$ ও $y$-এর সর্বোচ্চ মান $\fn{max}(x,y)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  $+$ ও $\tsub$ থেকে মিশ্রণের সাহায্যে $\fn{max}(x,y)$-কে এভাবে
+  সংজ্ঞায়িত করা যায়:
+  \[
+  \fn{max}(x,y) \defis x + (y \tsub x).
+  \]
+  যদি $x$ সর্বোচ্চ হয়, অর্থাৎ $x \ge y$, তবে $y \tsub x = 0$, তাই $x
+  + (y \tsub x) = x + 0 = x$। যদি $y$ সর্বোচ্চ হয়, তবে $y \tsub x =
+  y - x$, এবং তাই $x + (y \tsub x) = x + (y - x) = y$।
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:min-pr}
+  $x$ ও $y$-এর সর্বনিম্ন মান $\fn{min}(x,y)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+  \olref[cmp][rec][exa]{prop:min-pr} প্রমাণ করুন।
+\end{prob}
+
+\begin{prob}
+দেখান যে \[
+f(x, y) =
+2^{(2^{\iddots^{2^{x}}})}\raisebox{1ex}{\bigg\rbrace}
+\raisebox{1ex}{\text {$y$টি $2$}}
+\] আদিম পুনরাবৃত্ত।
+\end{prob}
+
+\begin{prob}
+দেখান যে পূর্ণসংখ্যা ভাগ $d(x, y) = \lfloor x/y \rfloor$ (অর্থাৎ এমন
+ভাগ, যেখানে দশমিক বিন্দুর পরের সবকিছু উপেক্ষা করা হয়) আদিম পুনরাবৃত্ত।
+$y = 0$ হলে আমরা $d(x, y) = 0$ স্থির করি। আদিম পুনরাবৃত্তি ও মিশ্রণ
+ব্যবহার করে~$d$-এর একটি স্পষ্ট সংজ্ঞা দিন।
+\end{prob}
+
+\begin{prop}
+আদিম পুনরাবৃত্ত অপেক্ষকসমূহের সেট নিচের দুটি ক্রিয়ার অধীনে বদ্ধ:
+\begin{enumerate}
+\item সসীম যোগফল: $f(\vec x, z)$ আদিম পুনরাবৃত্ত হলে নিচের অপেক্ষকটিও
+আদিম পুনরাবৃত্ত:
+\[
+g(\vec x, y) \defis \sum_{z = 0}^y f(\vec x, z).
+\]
+\item সসীম গুণফল: $f(\vec x, z)$ আদিম পুনরাবৃত্ত হলে নিচের অপেক্ষকটিও
+আদিম পুনরাবৃত্ত:
+\[
+h(\vec x, y) \defis \prod_{z = 0}^y f(\vec x, z).
+\]
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+যেমন, সসীম যোগফলগুলি নিচের সমীকরণ দিয়ে পুনরাবৃত্তভাবে সংজ্ঞায়িত:
+\begin{align*}
+  g(\vec x, 0) & = f(\vec x, 0)\\
+  g(\vec x, y+1) & = g(\vec x, y) + f(\vec x, y+1).
+\end{align*}
+\end{proof}
+
+
+\end{document}

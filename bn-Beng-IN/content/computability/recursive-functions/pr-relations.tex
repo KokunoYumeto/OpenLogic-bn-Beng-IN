@@ -1,0 +1,170 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: pr-relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{prr}
+\olsection{আদিম পুনরাবৃত্ত সম্বন্ধ}
+
+
+\begin{defn}
+কোনো সম্বন্ধ $R(\vec x)$-এর চরিত্রসূচক অপেক্ষক
+\[
+\Char{R}(\vec x) = \left\{
+  \begin{array}{ll}
+  1 & \mbox{যদি $R(\vec x)$} \\
+  0 & \mbox{অন্যথায়}
+  \end{array}
+\right.
+\]
+আদিম পুনরাবৃত্ত হলে সম্বন্ধটিকে আদিম পুনরাবৃত্ত বলা হয়।
+\end{defn}
+
+অন্যভাবে বললে, কোনো আদিম পুনরাবৃত্ত সম্বন্ধ $R(\vec x)$-এর কথা বলার
+সময় আমরা $\Char{R}(\vec x) = 1$ রূপের একটি সম্বন্ধ বোঝাই, যেখানে
+$\Char{R}$ এমন একটি আদিম পুনরাবৃত্ত অপেক্ষক যা যেকোনো নিবেশে 1 অথবা 0
+ফেরত দেয়। যেমন, $x = 0$ হলে এবং কেবল তখনই সত্য সম্বন্ধ
+$\fn{IsZero}(x)$-এর সঙ্গে অপেক্ষক $\Char{\fn{IsZero}}$ সংশ্লিষ্ট; এটি
+আদিম পুনরাবৃত্তির সাহায্যে এভাবে সংজ্ঞায়িত:
+\begin{align*}
+\Char{\fn{IsZero}}(0) & = 1,\\
+\Char{\fn{IsZero}}(x+1) & = 0.
+\end{align*}
+
+স্পষ্টতই সম্বন্ধগুলিকে অন্য আদিম পুনরাবৃত্ত অপেক্ষকের সঙ্গে মিশ্রিত করা
+যায়। তাই নিচের সম্বন্ধগুলিও আদিম পুনরাবৃত্ত:
+\begin{enumerate}
+\item সমতা সম্বন্ধ $x = y$, যা $\fn{IsZero}(\left|x -
+  y\right|)$ দিয়ে সংজ্ঞায়িত।
+\item অনধিক সম্বন্ধ $x \leq y$, যা $\fn{IsZero}(x
+  \tsub y)$ দিয়ে সংজ্ঞায়িত।
+\end{enumerate}
+% BN-SRC-139 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-139):} হিমায়িত ইংরেজি পাঠে দ্বিতীয় সম্বন্ধটিকে less-than বলা হয়েছে, কিন্তু প্রদর্শিত চিহ্ন ও সংজ্ঞা উভয়ই less-than-or-equal বোঝায়। বাংলা পাঠে তাই “অনধিক সম্বন্ধ” লেখা হয়েছে।} % BN-SRC-139 TARGET-CORRECTION-END
+
+
+\begin{prop}
+  আদিম পুনরাবৃত্ত সম্বন্ধসমূহের সেট বুলীয় ক্রিয়াগুলির অধীনে বদ্ধ;
+  অর্থাৎ $P(\vec x)$ ও $Q(\vec x)$ আদিম পুনরাবৃত্ত হলে নিচেরগুলিও তাই:
+  \begin{enumerate}
+  \item $\lnot P(\vec x)$
+  \item $P(\vec x) \land Q(\vec x)$
+  \item $P(\vec x) \lor Q(\vec x)$
+  \item $P(\vec x) \lif Q(\vec x)$
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  ধরা যাক, $P(\vec x)$ ও $Q(\vec x)$ আদিম পুনরাবৃত্ত; অর্থাৎ তাদের
+  চরিত্রসূচক অপেক্ষক $\Char{P}$ ও $\Char{Q}$ আদিম পুনরাবৃত্ত। আমাদের
+  দেখাতে হবে যে $\lnot P(\vec x)$ ইত্যাদির চরিত্রসূচক অপেক্ষকও আদিম
+  পুনরাবৃত্ত।
+  \[
+  \Char{\lnot P}(\vec x) = \begin{cases}
+    0 & \text{যদি $\Char{P}(\vec x) = 1$}\\
+    1 & \text{অন্যথায়}
+  \end{cases}
+  \]
+  $\Char{\lnot P}(\vec x)$-কে $1 \tsub \Char{P}(\vec x)$ হিসেবে
+  সংজ্ঞায়িত করা যায়।
+  \[
+  \Char{P \land Q}(\vec x) = \begin{cases}
+    1 & \text{যদি $\Char{P}(\vec x) = \Char{Q}(\vec x) = 1$}\\
+    0 & \text{অন্যথায়}
+  \end{cases}
+  \]
+  $\Char{P \land Q}(\vec x)$-কে $\Char{P}(\vec x) \cdot
+  \Char{Q}(\vec x)$ অথবা $\fn{min}(\Char{P}(\vec x), \Char{Q}(\vec
+  x))$ হিসেবে সংজ্ঞায়িত করা যায়। একইভাবে,
+  \begin{align*}
+    \Char{P \lor Q}(\vec x) & = \fn{max}(\Char{P}(\vec x), \Char{Q}(\vec x)) \text{ এবং}\\
+    \Char{P \lif Q}(\vec x) & = \fn{max}(1 \tsub
+  \Char{P}(\vec x), \Char{Q}(\vec x)).
+  \end{align*}
+\end{proof}
+
+\begin{prop}
+  আদিম পুনরাবৃত্ত সম্বন্ধসমূহের সেট সীমাবদ্ধ পরিমাণায়নের অধীনে বদ্ধ;
+  অর্থাৎ $R(\vec x, z)$ একটি আদিম পুনরাবৃত্ত সম্বন্ধ হলে নিচের
+  সম্বন্ধগুলিও আদিম পুনরাবৃত্ত:
+  \begin{align*}
+    & \bforall{z < y}{R(\vec x, z)} \text{ এবং}\\
+    & \bexists{z < y}{R(\vec x, z)}.
+  \end{align*}
+  $\vec x$ ও $y$-এর ক্ষেত্রে $\bforall{z < y}{R(\vec x, z)}$ সত্য হয়
+  যদি এবং কেবল যদি $y$-এর চেয়ে ছোট প্রত্যেক~$z$-এর ক্ষেত্রে
+  $R(\vec x, z)$ সত্য হয়; $\bexists{z < y}{R(\vec x, z)}$-এর ক্ষেত্রেও
+  অনুরূপ কথা প্রযোজ্য।
+\end{prop}
+
+\begin{proof}
+  প্রথা অনুসারে $\bforall{z < 0}{R(\vec x, z)}$-কে আমরা সত্য ধরি
+  (কারণ~$0$-এর চেয়ে ছোট কোনো $z$ নেই), আর
+  $\bexists{z < 0}{R(\vec x, z)}$-কে মিথ্যা ধরি। সীমাবদ্ধ সর্বজনীন
+  পরিমাণসূচক ঠিক সসীম গুণফল বা পুনরাবৃত্ত সর্বনিম্নের মতো কাজ করে। অর্থাৎ
+  $P(\vec x, y) \defiff \bforall{z <
+  y}{R(\vec x, z)}$ হলে $\Char{P}(\vec x, y)$-কে এভাবে সংজ্ঞায়িত করা যায়:
+  \begin{align*}
+    \Char{P}(\vec x, 0) & = 1\\
+    \Char{P}(\vec x, y+1) & =
+    \fn{min}(\Char{P}(\vec x, y), \Char{R}(\vec x, y)).
+  \end{align*}
+  সীমাবদ্ধ অস্তিত্বমূলক পরিমাণায়নকেও একইভাবে $\fn{max}$ ব্যবহার করে
+  সংজ্ঞায়িত করা যায়। বিকল্পভাবে, $\bexists{z < y}{R(\vec x, z)}
+  \liff \lnot \bforall{z < y}{\lnot R(\vec x, z)}$ সমতুল্যতা ব্যবহার
+  করে সীমাবদ্ধ সর্বজনীন পরিমাণায়ন থেকে একে সংজ্ঞায়িত করা যায়। লক্ষ করুন,
+  যেমন $\bexists{x \leq y}{\dots
+  x\dots}$ রূপের সীমাবদ্ধ পরিমাণসূচক $\bexists{x < y+1}{\dots x \dots}$-এর
+  সমতুল্য।
+\end{proof}
+
+\begin{prob}
+  দেখান যে তিন-স্থানীয় সম্বন্ধ $x \equiv y \mod n$ (মডুলো~$n$
+  অনুসারে সর্বসমতা) আদিম পুনরাবৃত্ত।
+\end{prob}
+
+আরেকটি উপযোগী আদিম পুনরাবৃত্ত অপেক্ষক হলো নিচের সমীকরণে সংজ্ঞায়িত
+শর্তাধীন অপেক্ষক $\fn{cond}(x,y,z)$:
+\begin{align*}
+  \fn{cond}(x,y,z) & = \begin{cases}
+  y & \text{যদি $x = 0$} \\
+  z & \text{অন্যথায়}.
+\end{cases}
+\intertext{এটি পুনরাবৃত্তভাবে এভাবে সংজ্ঞায়িত:}
+\fn{cond}(0,y,z) & = y,\\
+\fn{cond}(x+1,y,z) & = z.
+\end{align*}
+আদিম পুনরাবৃত্ত সম্বন্ধের সাহায্যে বিভিন্ন ক্ষেত্রে আদিম পুনরাবৃত্ত
+অপেক্ষকের সংজ্ঞা ন্যায্য প্রতিপন্ন করতে এটি ব্যবহার করা যায়:
+
+\begin{prop}
+যদি $g_0(\vec x)$, \dots,~$g_m(\vec x)$ আদিম পুনরাবৃত্ত অপেক্ষক এবং
+$R_0(\vec x)$, \dots, $R_{m-1}(\vec x)$ আদিম পুনরাবৃত্ত সম্বন্ধ হয়,
+তবে নিচের সমীকরণে সংজ্ঞায়িত অপেক্ষক $f$
+\[
+f(\vec x) = \begin{cases}
+    g_0(\vec x) & \text{যদি $R_0(\vec{x})$} \\
+    g_1(\vec x) & \text{যদি $R_1(\vec{x})$ সত্য এবং $R_0(\vec{x})$ সত্য নয়} \\
+    \vdots & \\
+    g_{m-1}(\vec x) & \text{যদি $R_{m-1}(\vec{x})$ সত্য এবং আগের
+      কোনোটিই সত্য নয়}
+    \\
+    g_m(\vec x) & \mbox{অন্যথায়}
+\end{cases}
+\]
+আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  $m = 1$ হলে এটি কেবল নিচের সমীকরণে সংজ্ঞায়িত অপেক্ষক:
+  \[
+  f(\vec x) = \fn{cond}(\Char{\lnot R_0}(\vec x),g_0(\vec x),g_1(\vec
+  x)).
+  \]
+  $m$ যখন $1$-এর চেয়ে বড়, তখন এই রূপের সংজ্ঞাগুলিকে শুধু মিশ্রিত
+  করলেই হয়।
+\end{proof}
+\end{document}

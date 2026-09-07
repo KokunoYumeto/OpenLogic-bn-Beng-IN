@@ -3,6 +3,7 @@
 import collections
 import hashlib
 import json
+import os
 import pathlib
 import re
 import unicodedata
@@ -59,7 +60,7 @@ def mathparts(text):
             assert depth == 0, "Unclosed intertext"
             output.extend(mathparts(fragment[content_start : end - 1]).elements())
             fragment = fragment[:start] + fragment[end:]
-        while caption := re.search(r"\\(?:text|textrm|emph)\{", fragment):
+        while caption := re.search(r"\\(?:text|textrm|emph|mbox)\s*\{", fragment):
             start = caption.start()
             content_start = caption.end()
             depth = 1
@@ -1721,6 +1722,30 @@ for row in rows:
             "corrected_P_prime_atom": True,
             "theorem_statement_is_biconditional": True,
         }
+    bounded_minimization_math_fix = False
+    if row["unit_id"] == "OLP-0217":
+        assert source.count("The less-than relation, $x \\leq y$") == 1
+        assert "অনধিক সম্বন্ধ $x \\leq y$" in checked_target
+        assert "BN-SRC-139" in documented
+        tex_command_check = {
+            "documented_correction": "BN-SRC-139",
+            "less_than_or_equal_relation_named_accurately": True,
+        }
+    elif row["unit_id"] == "OLP-0218":
+        source_fragment = "m_R(\\vec{z},y+1)=y+1"
+        target_fragment = "m_R(\\vec{x},y+1)=y+1"
+        bounded_minimization_math_fix = (
+            source_math - target_math == collections.Counter({source_fragment: 1})
+            and target_math - source_math == collections.Counter({target_fragment: 1})
+            and "BN-SRC-140" in documented
+        )
+        assert source.count("$m_R(\\vec{z}, y+1) = y+1$") == 1
+        assert checked_target.count("$m_R(\\vec{x}, y+1) = y+1$") == 1
+        assert bounded_minimization_math_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-140",
+            "third_case_preserves_argument_vector_x": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -1783,6 +1808,7 @@ for row in rows:
             basics_math_fix,
             arithmetic_math_fix,
             interpolation_math_fix,
+            bounded_minimization_math_fix,
             shared_audit_fix,
         )
     )
@@ -1815,5 +1841,6 @@ for row in rows:
     print(json.dumps(checks, ensure_ascii=False))
     checked_ids.append(row["unit_id"])
 
-draft = json.loads((repo / "evidence/DRAFT_STATUS.json").read_text(encoding="utf-8"))
-assert sorted(checked_ids) == sorted(draft["draft_scope"]["translated_units"]), checked_ids
+if os.environ.get("OPENLOGIC_REGENERATING_DRAFT_STATUS") != "1":
+    draft = json.loads((repo / "evidence/DRAFT_STATUS.json").read_text(encoding="utf-8"))
+    assert sorted(checked_ids) == sorted(draft["draft_scope"]["translated_units"]), checked_ids

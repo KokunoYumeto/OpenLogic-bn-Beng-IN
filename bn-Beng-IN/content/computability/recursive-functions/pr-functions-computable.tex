@@ -1,0 +1,41 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: pr-functions-computable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{cmp}
+\olsection{আদিম পুনরাবৃত্ত অপেক্ষকগুলি গণনসাধ্য}
+
+ধরা যাক, একটি অপেক্ষক $h$ আদিম পুনরাবৃত্তির সাহায্যে সংজ্ঞায়িত:
+\begin{eqnarray*}
+h(\vec x, 0)     & = & f(\vec x) \\
+h(\vec x, y + 1) & = & g(\vec x, y, h(\vec x, y))
+\end{eqnarray*}
+এবং ধরা যাক, অপেক্ষক $f$ ও $g$ গণনসাধ্য। ($x_0$, \dots,
+$x_{k-1}$-কে সংক্ষেপে বোঝাতে আমরা $\vec x$ ব্যবহার করি।) তাহলে
+$h(\vec x, 0)$ অবশ্যই গণনা করা যায়, কারণ সেটি কেবল $f(\vec x)$, যাকে
+আমরা গণনসাধ্য বলে ধরে নিয়েছি। তারপর $h(\vec x, 1)$-ও গণনা করা যায়,
+কারণ $1 = 0 + 1$ এবং তাই $h(\vec x, 1)$ কেবল
+\begin{align*}
+ h(\vec x, 1) & = g(\vec x, 0, h(\vec x, 0)) =  g(\vec x, 0, f(\vec x)).
+\intertext{এইভাবে এগিয়ে আমরা গণনা করতে পারি}
+h(\vec x, 2) & = g(\vec x, 1, h(\vec x, 1)) = g(\vec x, 1, g(\vec x, 0, f(\vec x)))\\
+h(\vec x, 3) & = g(\vec x, 2, h(\vec x, 2)) = g(\vec x, 2, g(\vec x, 1, g(\vec x, 0, f(\vec x))))\\
+h(\vec x, 4) & = g(\vec x, 3, h(\vec x, 3)) = g(\vec x, 3, g(\vec x, 2, g(\vec x, 1, g(\vec x, 0, f(\vec x)))))\\
+& \vdots
+\end{align*}
+অতএব সাধারণভাবে $h(\vec x, y)$ গণনা করতে আমরা পরপর $h(\vec x, 0)$,
+$h(\vec x, 1)$, \dots, গণনা করি, যতক্ষণ না $h(\vec x, y)$-তে পৌঁছাই।
+
+সুতরাং, অপেক্ষক $f$ ও $g$ গণনসাধ্য হলে একটি আদিম পুনরাবৃত্ত সংজ্ঞা
+একটি নতুন গণনসাধ্য অপেক্ষক দেয়। একইভাবে, অপেক্ষক $f$ ও $g_i$-গুলি
+গণনসাধ্য হলে তাদের মিশ্রণের ফলও একটি গণনসাধ্য অপেক্ষক।
+
+যেহেতু মৌলিক অপেক্ষক $\Zero$, $\Succ$ ও $\Proj{n}{i}$ গণনসাধ্য, এবং
+মিশ্রণ ও আদিম পুনরাবৃত্তি গণনসাধ্য অপেক্ষক থেকে গণনসাধ্য অপেক্ষকই দেয়,
+তাই প্রত্যেক আদিম পুনরাবৃত্ত অপেক্ষক গণনসাধ্য।
+
+\end{document}

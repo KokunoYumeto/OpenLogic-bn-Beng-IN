@@ -217,12 +217,17 @@
       "OLP-0205",
       "OLP-0206",
       "OLP-0207",
+      "OLP-0208",
+      "OLP-0209",
+      "OLP-0210",
+      "OLP-0211",
+      "OLP-0212",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 206,
-    "untranslated_count": 516,
-    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, and the Model Theory part driver plus complete Basics, Models of Arithmetic, Interpolation and Lindström chapters are translated; both Size of Sets editorial alternatives remain distinct.",
+    "translated_count": 211,
+    "untranslated_count": 511,
+    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, the Model Theory part driver plus complete Basics, Models of Arithmetic, Interpolation and Lindström chapters, and the Computability part driver plus the opening Recursive Functions units are translated; both Size of Sets editorial alternatives remain distinct.",
     "reader_state": "The verified reader remains the exact 18-unit v0.2.0 scope. A distinct 25-unit Functions input is prepared but unbuilt. Size of Sets, Arithmetization, Infinite Sets, Propositional Logic, Proof Systems, Sequent Calculus, Natural Deduction, Tableaux, Axiomatic Deduction, Completeness, all translated First-order Logic chapters and all Model Theory chapters have not yet been integrated into a built reader."
   },
   "last_verified_public_release": {
@@ -232,11 +237,11 @@
     "status_evidence": "evidence/STATUS.json"
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "2c3a90ed2cf1c322cbb1948c292bf1c77f0d1477",
-    "translated_units": 201,
-    "receipt": "PUBLIC_READBACK_SOURCE_201_2026-09-07.json",
-    "receipt_sha256": "28b4954cea869fffa537e43c28a8b932200d468597056230b10c45e4a6ceba5f",
-    "status": "Anonymous immutable-archive readback verified the complete Interpolation checkpoint and reran its public checks. The current 206-unit draft extends that verified checkpoint through the complete Lindström chapter."
+    "commit": "f05a3c08b91c1a66e3016493f1191b2e1e8d35f0",
+    "translated_units": 206,
+    "receipt": "PUBLIC_READBACK_SOURCE_206_2026-09-07.json",
+    "receipt_sha256": "7c990a92f8abf28d909d633672edd8bcab60080b71b1353a61983bb1b78693df",
+    "status": "Anonymous immutable-archive readback verified the complete Lindström checkpoint and reran its public checks. The current 211-unit draft extends that verified checkpoint through the Computability part driver and opening Recursive Functions units."
   },
   "current_checks": {
     "unit_checks": [
@@ -3501,6 +3506,71 @@
         "target_sha256": "b270ca203c6f7d93732ce25f5dec3f92087daa7fced9e40cedeaf3d863dc0ce7"
       },
       {
+        "unit_id": "OLP-0208",
+        "source_blocks": 5,
+        "target_blocks": 5,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "013fd8126ae618c554fd30c2083c61109c2dc3500ad5276cc3ed02372b4bd82a"
+      },
+      {
+        "unit_id": "OLP-0209",
+        "source_blocks": 21,
+        "target_blocks": 21,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "1556fcf804b3e32a0c7eb007d050612afac00c94148414dd9ba3acd5ca5597eb"
+      },
+      {
+        "unit_id": "OLP-0210",
+        "source_blocks": 4,
+        "target_blocks": 4,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "e4486731412a1839030f0f5321741a426d266333ee128fdc9d6210113a9c509b"
+      },
+      {
+        "unit_id": "OLP-0211",
+        "source_blocks": 7,
+        "target_blocks": 7,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "6416b42ea4f0b024abbdc4fbb7c583e3f26e01addc20583364cffadb850fa52f"
+      },
+      {
+        "unit_id": "OLP-0212",
+        "source_blocks": 7,
+        "target_blocks": 7,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "c8219215a439893c38478cc7541438f2f0587f7e875c2ea3eb84a41212b38661"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -3531,10 +3601,10 @@
       "path": "tools/check_source_draft.py",
       "sha256": "770a78c55e806f0fc20d6241f1ef7930ce030c2599f02fb2a9a93fc852a50cf4"
     },
-    "segments": 2551,
-    "translated_segments": 2152,
+    "segments": 2595,
+    "translated_segments": 2174,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "b6dcbab5a26d00b5536207caa7d05c44e5081066bc734dc4f286349525bf8d2f",
+    "segment_index_sha256": "4f1ff09e3573eeb956b0fa1dbe71f63c7f3509fcc3e0412d1c83515adf8c360c",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -3615,6 +3685,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_LINDSTROM.md",
         "sha256": "71898c72dffcabb5d0dd1bbfb5cab63736021e96dfee8da324fe995b6eb6d426"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_COMPUTABILITY_RECURSIVE_FUNCTIONS.md",
+        "sha256": "f205e38f02ea78d523f02c1364670e816a4a52650ab0a9add32e77bac66d7d0c"
       }
     ],
     "shared_source_audit": {
@@ -3802,15 +3876,15 @@
     ]
   },
   "translation_decisions": {
-    "count": 149,
-    "provisional_open": 130,
+    "count": 156,
+    "provisional_open": 137,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "0f7229f071859ee0434e46f976ec3619a2fc585a21e05b378b26de7f3cbed884",
+    "sha256": "4ddc506fd201cd682d7484e1f8953411f642edc351df89ed6875b014a6b16e69",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 11149,
+    "occurrence_count": 11362,
     "pagination_status": "Final printed/PDF page fields are pending reader integration and final pagination."
   },
   "functions_build_candidate": {
@@ -3824,5 +3898,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "All three bounded global TeX mutex acquisitions concerned the prior input hash and timed out without launching TeX. The freshly prepared current input has not yet been submitted to TeX; no new PDF or HTML is claimed."
   },
-  "remaining": "516 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
+  "remaining": "511 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
 }

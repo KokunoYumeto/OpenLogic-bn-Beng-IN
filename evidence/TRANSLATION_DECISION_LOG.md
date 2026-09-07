@@ -16,7 +16,7 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 
 | ID | Source concept | Chosen Bengali | Status | Confidence | Priority | Occurrences | Authorities | Expert review |
 |---|---|---|---|---|---|---:|---|---|
-| `BN-IN-T001` | set | সেট | attested | high_for_attested_scope | low | 915 | BN-IN-P001, BN-IN-P006 | welcome/open to correction |
+| `BN-IN-T001` | set | সেট | attested | high_for_attested_scope | low | 919 | BN-IN-P001, BN-IN-P006 | welcome/open to correction |
 | `BN-IN-T002` | element | উপাদান | attested | high_for_attested_scope | low | 88 | BN-IN-P001 | welcome/open to correction |
 | `BN-IN-T003` | member | সদস্য | attested | high_for_attested_scope | low | 56 | BN-IN-P001 | welcome/open to correction |
 | `BN-IN-T004` | empty set | শূন্য সেট | attested | high_for_attested_scope | low | 18 | BN-IN-P006 | welcome/open to correction |
@@ -24,20 +24,20 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T006` | proper subset | প্রকৃত উপসেট | attested | high_for_attested_scope | low | 3 | BN-IN-P004, BN-IN-P007 | welcome/open to correction |
 | `BN-IN-T007` | power set | ঘাত সেট | attested-regional | high_for_attested_scope | low | 6 | BN-IN-P007 | welcome/open to correction |
 | `BN-IN-T008` | extensionality | সদস্যভিত্তিক সমতার নীতি | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 20 | BN-IN-P004, BN-IN-P006 | welcome/open to correction |
-| `BN-IN-T009` | natural number | স্বাভাবিক সংখ্যা | attested | high_for_attested_scope | low | 69 | BN-IN-P005 | welcome/open to correction |
+| `BN-IN-T009` | natural number | স্বাভাবিক সংখ্যা | attested | high_for_attested_scope | low | 76 | BN-IN-P005 | welcome/open to correction |
 | `BN-IN-T010` | proposition (logic) | বচন | attested | high_for_attested_scope | low | 53 | BN-IN-P009, BN-IN-P008 | welcome/open to correction |
 | `BN-IN-T011` | quantifier | পরিমাণসূচক | attested | high_for_attested_scope | low | 99 | BN-IN-P009, BN-IN-P010 | welcome/open to correction |
 | `BN-IN-T012` | universal quantifier | সার্বিক পরিমাণসূচক | attested | high_for_attested_scope | low | 4 | BN-IN-P009 | welcome/open to correction |
 | `BN-IN-T013` | existential quantifier | অস্তিত্বমূলক পরিমাণসূচক | attested | high_for_attested_scope | low | 0 | BN-IN-P010 | welcome/open to correction |
 | `BN-IN-T014` | if and only if | যদি এবং কেবল যদি | provisional-phrase | medium_definition_and_adjacent-canon_support | medium | 205 | BN-IN-P004 | welcome/open to correction |
 | `BN-IN-T015` | perfect number | নিখুঁত সংখ্যা | provisional-descriptive | low_pending_occurrence | high | 0 | BN-IN-P005 | welcome/open to correction |
-| `BN-IN-T016` | union; intersection; disjoint; difference | সংযোগ; ছেদ; বিচ্ছিন্ন; অন্তর | attested | high_for_attested_scope | low | 99 | BN-IN-P012 | welcome/open to correction |
+| `BN-IN-T016` | union; intersection; disjoint; difference | সংযোগ; ছেদ; বিচ্ছিন্ন; অন্তর | attested | high_for_attested_scope | low | 101 | BN-IN-P012 | welcome/open to correction |
 | `BN-IN-T017` | ordered pair | ক্রমযুগল | attested | high_for_attested_scope | low | 40 | BN-IN-P012 | welcome/open to correction |
 | `BN-IN-T018` | Cartesian product | কার্তেসীয় গুণফল | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 5 | BN-IN-P012 | welcome/open to correction |
 | `BN-IN-T019` | string; sequence; tuple; word | প্রতীকক্রম; অনুক্রম; টিউপল; শব্দ | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 230 | BN-IN-P002, BN-IN-P012 | welcome/open to correction |
 | `BN-IN-T020` | paradox; contradiction; comprehension; naive set theory | কূটাভাস; স্ববিরোধ; ধর্মনির্দেশে সেট গঠন; অনানুষ্ঠানিক সেটতত্ত্ব | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 50 | BN-IN-P001, BN-IN-P004, BN-IN-P009 | welcome/open to correction |
 | `BN-IN-T021` | conjunction; conjunction elimination; absorption | সংযোজন; সংযোজন অপসারণ; শোষণ | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 22 | BN-IN-P008, BN-IN-P012 | welcome/open to correction |
-| `BN-IN-T022` | relation; binary relation; order relation; identity relation | সম্পর্ক; দ্বিপদ সম্পর্ক; ক্রমসম্পর্ক; অভিন্নতার সম্পর্ক | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 293 | BN-IN-P013, BN-IN-P014, BN-IN-P004 | welcome/open to correction |
+| `BN-IN-T022` | relation; binary relation; order relation; identity relation | সম্পর্ক; দ্বিপদ সম্পর্ক; ক্রমসম্পর্ক; অভিন্নতার সম্পর্ক | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 294 | BN-IN-P013, BN-IN-P014, BN-IN-P004 | welcome/open to correction |
 | `BN-IN-T023` | irreflexive; strict order; empty relation; universal relation | আত্মসম্পর্কহীন; কঠোর ক্রম; শূন্য সম্পর্ক; সার্বিক সম্পর্ক | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 19 | BN-IN-P013, BN-IN-P006, BN-IN-P009 | welcome/open to correction |
 | `BN-IN-T024` | continuum; mathematical proposition heading; general conditional proof | সতত সমষ্টি; প্রতিজ্ঞা; সাধারণ শর্তাধীন প্রমাণ | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 16 | BN-IN-P005, BN-IN-P009, BN-IN-P012 | welcome/open to correction |
 | `BN-IN-T025` | predicate; singular term; metaphysical identity; set-theoretic reductionism | বিধেয়; একবস্তুনির্দেশক পদ; অধিবিদ্যাগত অভিন্নতা; সেটতত্ত্বে পর্যবসনবাদ | mixed-contextual-and-provisional | medium_definition_and_adjacent-canon_support | medium | 17 | BN-IN-P009, BN-IN-P013 | welcome/open to correction |
@@ -46,19 +46,19 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T028` | equivalence class; partition; quotient set; congruence modulo n | তুল্যতা শ্রেণি; বিভাজন; ভাগসেট; মডুলো n সমতুল্যতা | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 18 | BN-IN-P015, BN-IN-P016, BN-IN-P017 | welcome/open to correction |
 | `BN-IN-T029` | preorder; partial order; linear order; total order; closure; initial segment | প্রাক্‌ক্রম; আংশিক ক্রম; রৈখিক ক্রম; পূর্ণ ক্রম; আবরণ; প্রারম্ভিক খণ্ড | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 74 | BN-IN-P013, BN-IN-P014, BN-IN-P016 | welcome/open to correction |
 | `BN-IN-T030` | graph; directed graph; vertex; edge; isolated vertex | গ্রাফ; নির্দেশিত গ্রাফ; শীর্ষ; প্রান্ত; বিচ্ছিন্ন শীর্ষ | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 27 | BN-IN-P012, BN-IN-P013 | welcome/open to correction |
-| `BN-IN-T031` | tree; root; successor; predecessor; branch; chain; least element; well-order | বৃক্ষ; মূল; উত্তরসূরি; পূর্বসূরি; শাখা; শৃঙ্খল; ক্ষুদ্রতম উপাদান; সুক্রম | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 394 | BN-IN-P001, BN-IN-P013, BN-IN-P014, BN-IN-P016 | welcome/open to correction |
-| `BN-IN-T032` | inverse relation; relative product; restriction; application; transitive closure | বিপরীত সম্পর্ক; আপেক্ষিক গুণফল; সীমাবদ্ধন; প্রয়োগ; পরিযায়ী আবরণ | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 189 | BN-IN-P012, BN-IN-P013, BN-IN-P014 | welcome/open to correction |
+| `BN-IN-T031` | tree; root; successor; predecessor; branch; chain; least element; well-order | বৃক্ষ; মূল; উত্তরসূরি; পূর্বসূরি; শাখা; শৃঙ্খল; ক্ষুদ্রতম উপাদান; সুক্রম | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 399 | BN-IN-P001, BN-IN-P013, BN-IN-P014, BN-IN-P016 | welcome/open to correction |
+| `BN-IN-T032` | inverse relation; relative product; restriction; application; transitive closure | বিপরীত সম্পর্ক; আপেক্ষিক গুণফল; সীমাবদ্ধন; প্রয়োগ; পরিযায়ী আবরণ | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 195 | BN-IN-P012, BN-IN-P013, BN-IN-P014 | welcome/open to correction |
 | `BN-IN-T033` | formula; derivation; propositional logic; first-order logic; completeness; computability; König's lemma | সূত্র; নিষ্পাদন; বচনমূলক যুক্তিবিদ্যা; প্রথম-ক্রমের যুক্তিবিদ্যা; পূর্ণতা; গণনাযোগ্যতা; ক্যোনিগের সহায়ক উপপাদ্য | provisional-contextual | medium_definition_and_adjacent-canon_support | medium | 294 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P014 | welcome/open to correction |
-| `BN-IN-T034` | variable; constant; sum; arithmetic product; equation | চল; ধ্রুবক; যোগফল; গুণফল; সমীকরণ | attested-in-school-algebra | high_for_attested_scope | low | 247 | BN-IN-P019, BN-IN-P020, BN-IN-P022 | welcome/open to correction |
-| `BN-IN-T035` | function; mapping; domain; codomain; range; image/value | অপেক্ষক; চিত্রণ; সংজ্ঞাক্ষেত্র; সহসংজ্ঞাক্ষেত্র; বিস্তৃতি; প্রতিবিম্ব/মান | attested-university | high_for_attested_scope | low | 850 | BN-IN-P018 | welcome/open to correction |
-| `BN-IN-T036` | function argument; input; output; black box; extensionality for functions | আর্গুমেন্ট; ইনপুট; আউটপুট; ব্ল্যাক বক্স; মানভিত্তিক সমতার নীতি | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 27 | BN-IN-P018, BN-IN-P019, BN-IN-P020, BN-IN-P022 | welcome/open to correction |
+| `BN-IN-T034` | variable; constant; sum; arithmetic product; equation | চল; ধ্রুবক; যোগফল; গুণফল; সমীকরণ | attested-in-school-algebra | high_for_attested_scope | low | 262 | BN-IN-P019, BN-IN-P020, BN-IN-P022 | welcome/open to correction |
+| `BN-IN-T035` | function; mapping; domain; codomain; range; image/value | অপেক্ষক; চিত্রণ; সংজ্ঞাক্ষেত্র; সহসংজ্ঞাক্ষেত্র; বিস্তৃতি; প্রতিবিম্ব/মান | attested-university | high_for_attested_scope | low | 922 | BN-IN-P018 | welcome/open to correction |
+| `BN-IN-T036` | function argument; input; output; black box; extensionality for functions | আর্গুমেন্ট; ইনপুট; আউটপুট; ব্ল্যাক বক্স; মানভিত্তিক সমতার নীতি | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 39 | BN-IN-P018, BN-IN-P019, BN-IN-P020, BN-IN-P022 | welcome/open to correction |
 | `BN-IN-T037` | injective/injection; surjective/surjection; bijective/bijection; identity function | একৈক/একৈক অপেক্ষক; সমাপতিত/সমাপতিত অপেক্ষক; একৈক সমাপতিত/একৈক সমাপতিত অপেক্ষক; অভেদ অপেক্ষক | attested-university-with-normalization | high_for_attested_scope | low | 22 | BN-IN-P023, BN-IN-P024 | welcome/open to correction |
-| `BN-IN-T038` | inverse function; left inverse; right inverse; composition | বিপরীত অপেক্ষক; বাম বিপরীত; ডান বিপরীত; মিশ্রণ | attested-root-with-provisional-normalization | medium_definition_and_adjacent-canon_support | medium | 17 | BN-IN-P024, BN-IN-P025, BN-IN-P026 | welcome/open to correction |
+| `BN-IN-T038` | inverse function; left inverse; right inverse; composition | বিপরীত অপেক্ষক; বাম বিপরীত; ডান বিপরীত; মিশ্রণ | attested-root-with-provisional-normalization | medium_definition_and_adjacent-canon_support | medium | 21 | BN-IN-P024, BN-IN-P025, BN-IN-P026 | welcome/open to correction |
 | `BN-IN-T039` | partial function; total function; functional relation; serial relation; Axiom of Choice | আংশিক অপেক্ষক; সর্বত্র সংজ্ঞায়িত অপেক্ষক; অপেক্ষকধর্মী সম্পর্ক; সিরিয়াল সম্পর্ক; নির্বাচন স্বতঃসিদ্ধ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 14 | BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T040` | size of sets; finite/infinite; cardinality; enumeration; enumerable/countable; uncountable | সেটের আকার; সসীম/অসীম; সেটের মাত্রা (অঙ্কবাচক সংখ্যা); তালিকায়ন; তালিকায়নযোগ্য/গণনীয়; অগণনীয় | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 352 | BN-IN-P027, BN-IN-P028, BN-IN-P023, BN-IN-P024 | welcome/open to correction |
+| `BN-IN-T040` | size of sets; finite/infinite; cardinality; enumeration; enumerable/countable; uncountable | সেটের আকার; সসীম/অসীম; সেটের মাত্রা (অঙ্কবাচক সংখ্যা); তালিকায়ন; তালিকায়নযোগ্য/গণনীয়; অগণনীয় | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 353 | BN-IN-P027, BN-IN-P028, BN-IN-P023, BN-IN-P024 | welcome/open to correction |
 | `BN-IN-T041` | actual infinity | বাস্তবায়িত অসীম | provisional-philosophical | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P009, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T042` | ceiling function; induction; recursive definition; corollary | ঊর্ধ্ব পূর্ণাংশ অপেক্ষক; গাণিতিক আরোহ; পূর্ববর্তী মানের সাহায্যে ধাপে ধাপে সংজ্ঞা; অনুসিদ্ধান্ত | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 31 | BN-IN-P018, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
-| `BN-IN-T043` | zig-zag method; pairing function; encode/code/decode; triangular number; cofinite; truth table/truth function | আঁকাবাঁকা পথের পদ্ধতি; যুগলায়ন অপেক্ষক; সংকেতায়ন/সংকেত/সংকেতোদ্ধার; ত্রিভুজসংখ্যা; সহসসীম; সত্যসারণি/সত্যমান-অপেক্ষক | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 162 | BN-IN-P009, BN-IN-P012, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P024, BN-IN-P027 | welcome/open to correction |
+| `BN-IN-T043` | zig-zag method; pairing function; encode/code/decode; triangular number; cofinite; truth table/truth function | আঁকাবাঁকা পথের পদ্ধতি; যুগলায়ন অপেক্ষক; সংকেতায়ন/সংকেত/সংকেতোদ্ধার; ত্রিভুজসংখ্যা; সহসসীম; সত্যসারণি/সত্যমান-অপেক্ষক | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 163 | BN-IN-P009, BN-IN-P012, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P024, BN-IN-P027 | welcome/open to correction |
 | `BN-IN-T044` | non-enumerable/uncountable; diagonal method; diagonalization; one-way infinite list; mirror sequence | অতালিকায়নযোগ্য/অগণনীয়; কর্ণ পদ্ধতি; কর্ণীকরণ; একদিকে অসীম তালিকা; বিপরীত-বিট অনুক্রম | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 12 | BN-IN-P001, BN-IN-P002, BN-IN-P009, BN-IN-P010, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T045` | reduction (of one enumeration problem to another); characteristic sequence; exhaust a set; reduction direction | হ্রাসকরণ; নির্দেশক অনুক্রম; সেটের সব উপাদান অন্তর্ভুক্ত করা; হ্রাসের অভিমুখ | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 13 | BN-IN-P009, BN-IN-P010, BN-IN-P018, BN-IN-P023, BN-IN-P024, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T046` | equinumerous/equinumerosity; same cardinality; cardinal equality | সমসংখ্যক/সমসংখ্যকতা; একই অঙ্কবাচকতা; মাত্রাসমতা | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 8 | BN-IN-P014, BN-IN-P015, BN-IN-P016, BN-IN-P018, BN-IN-P023, BN-IN-P024, BN-IN-P025, BN-IN-P028 | welcome/open to correction |
@@ -72,27 +72,27 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T054` | Cauchy sequence; rational approximation; tends to zero; equivalence modulo null sequences; constant-sequence embedding; monotone increasing/decreasing | কোশি অনুক্রম; মূলদ আসন্নমান; সীমায় শূন্যের দিকে যায়; শূন্যমুখী অনুক্রমের মডুলো তুল্যতা; ধ্রুব অনুক্রমে অন্তর্ভুক্তি; একঘেয়ে বর্ধমান/হ্রাসমান | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 16 | BN-IN-P005, BN-IN-P009, BN-IN-P016, BN-IN-P018, BN-IN-P019, BN-IN-P024, BN-IN-P029 | welcome/open to correction |
 | `BN-IN-T055` | rigour of a construction; metaphysical identification; set-theoretic embedding; rival constructions; Benacerraf-style underdetermination | নির্মাণের কঠোরতা; অধিবিদ্যাগত অভিন্নকরণ; সেটতাত্ত্বিক অন্তর্ভুক্তি; প্রতিদ্বন্দ্বী নির্মাণ; বেনাসেরাফ-ধর্মী অনির্ধার্যতা | provisional-philosophical | low_pending_occurrence | high | 0 | BN-IN-P009, BN-IN-P013, BN-IN-P015, BN-IN-P016, BN-IN-P018, BN-IN-P029 | welcome/open to correction |
 | `BN-IN-T056` | infinite set; Dedekind-infinite set; Hilbert's Hotel | অসীম সেট; ডেডেকিন্ড-অসীম সেট; হিলবার্টের হোটেল | mixed-direct-and-provisional | medium_definition_and_adjacent-canon_support | medium | 22 | BN-IN-P023, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
-| `BN-IN-T057` | Dedekind algebra; successor function; self-map; f-closed set; closure under f | ডেডেকিন্ড বীজগঠন; উত্তরসূরি অপেক্ষক; স্ব-অপেক্ষক; f-বদ্ধ সেট; f-এর অধীনে আবরণ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 27 | BN-IN-P013, BN-IN-P014, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027 | welcome/open to correction |
-| `BN-IN-T058` | parameter of a formula; free variable; recursive definition | সূত্রের পরামিতি; মুক্ত চলরাশি; পুনরাবৃত্ত সংজ্ঞা | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 18 | BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P020, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T057` | Dedekind algebra; successor function; self-map; f-closed set; closure under f | ডেডেকিন্ড বীজগঠন; উত্তরসূরি অপেক্ষক; স্ব-অপেক্ষক; f-বদ্ধ সেট; f-এর অধীনে আবরণ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 28 | BN-IN-P013, BN-IN-P014, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027 | welcome/open to correction |
+| `BN-IN-T058` | parameter of a formula; free variable; recursive definition | সূত্রের পরামিতি; মুক্ত চলরাশি; পুনরাবৃত্ত সংজ্ঞা | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 22 | BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P020, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T059` | isomorphic structures; structuralist; surrogate for the natural numbers; pure laws of thought | সমরূপ গঠন; গঠনবাদী; স্বাভাবিক সংখ্যার প্রতিস্থাপক; চিন্তার বিশুদ্ধ বিধি | mixed-contextual-and-provisional | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P009, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T060` | syntax; semantics; metatheory; inductive definition; unique readability | সংকেতবিন্যাস; অর্থতত্ত্ব; অধিতত্ত্ব; আরোহী সংজ্ঞা; একক পাঠযোগ্যতা | provisional-formally-governed | medium_definition_and_adjacent-canon_support | medium | 102 | BN-IN-P008, BN-IN-P009, BN-IN-P010 | welcome/open to correction |
 | `BN-IN-T061` | propositional variable; propositional/logical connective; truth value; truth-functional; material conditional | বচনচল; বচনসংযোজক/যৌক্তিক সংযোজক; সত্যমান; সত্যমান-অপেক্ষকধর্মী; বস্তুগত শর্তবচন | mixed-attested-roots-and-provisional | medium_definition_and_adjacent-canon_support | medium | 43 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P020 | welcome/open to correction |
 | `BN-IN-T062` | negation; conjunction; disjunction; conditional/implication; biconditional/material equivalence | নঞর্থকরণ; সংযোজন; বিয়োজন; শর্তবচন/নিহিতকরণ; দ্বিশর্তবচন/বস্তুগত সমতুল্যতা | attested-variants-normalized | high_for_attested_scope | low | 50 | BN-IN-P008, BN-IN-P009, BN-IN-P010 | welcome/open to correction |
-| `BN-IN-T063` | denumerable; atomic formula; primitive/defined symbol; syntactic identity; string/substring/concatenation | অসীম গণনীয়; পরমাণু সূত্র; মৌলিক/সংজ্ঞায়িত সংকেত; সংকেতবিন্যাসগত অভিন্নতা; প্রতীকক্রম/উপপ্রতীকক্রম/সংযুক্তকরণ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 134 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019 | welcome/open to correction |
+| `BN-IN-T063` | denumerable; atomic formula; primitive/defined symbol; syntactic identity; string/substring/concatenation | অসীম গণনীয়; পরমাণু সূত্র; মৌলিক/সংজ্ঞায়িত সংকেত; সংকেতবিন্যাসগত অভিন্নতা; প্রতীকক্রম/উপপ্রতীকক্রম/সংযুক্তকরণ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 135 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019 | welcome/open to correction |
 | `BN-IN-T064` | formula induction; balanced formula; proper initial segment; parsing; uniform substitution | সূত্রের উপর আরোহ; সুষম সূত্র; প্রকৃত প্রারম্ভিক খণ্ড; গঠনবিশ্লেষণ; সমরূপ প্রতিস্থাপন | provisional-mathematically-governed | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T065` | formation sequence; junk/redundant formula; strong induction | গঠন-অনুক্রম; অপ্রয়োজনীয় সূত্র; প্রবল আরোহ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 73 | BN-IN-P008, BN-IN-P009, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T066` | valuation; evaluation function; satisfaction; local determination; truth table | সত্যমান-আরোপ; মূল্যায়ন অপেক্ষক; পরিতৃপ্তি; স্থানীয় নির্ধারণ; সত্যসারণি | mixed-contextual-and-provisional | medium_definition_and_adjacent-canon_support | medium | 188 | BN-IN-P008, BN-IN-P009, BN-IN-P010 | welcome/open to correction |
 | `BN-IN-T067` | satisfiable/unsatisfiable; tautology; contingent; semantic entailment; monotonicity; semantic deduction theorem | পরিতৃপ্তিযোগ্য/অপরিতৃপ্তিযোগ্য; সর্বতঃসত্য; আপতিক; অর্থগত অনুসিদ্ধান্ত; একঘেয়েতা; অর্থগত নিঃসরণ উপপাদ্য | provisional-definition-governed | medium_definition_and_adjacent-canon_support | medium | 156 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T068` | derivation system; purely syntactic object/method; mechanical verification; metatheoretical treatment | নিষ্পাদন পদ্ধতি; সম্পূর্ণ সংকেতবিন্যাসগত বস্তু/পদ্ধতি; যান্ত্রিক যাচাই; অধিতাত্ত্বিক বিচার | provisional-contextual | medium_definition_and_adjacent-canon_support | medium | 145 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T068` | derivation system; purely syntactic object/method; mechanical verification; metatheoretical treatment | নিষ্পাদন পদ্ধতি; সম্পূর্ণ সংকেতবিন্যাসগত বস্তু/পদ্ধতি; যান্ত্রিক যাচাই; অধিতাত্ত্বিক বিচার | provisional-contextual | medium_definition_and_adjacent-canon_support | medium | 149 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T069` | soundness; completeness; consistency/inconsistency; syntactic counterpart | বিশুদ্ধতা; পূর্ণতা; সঙ্গতি/অসঙ্গতি; সংকেতবিন্যাসগত প্রতিরূপ | provisional-definition-governed | medium_definition_and_adjacent-canon_support | medium | 145 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T070` | axiomatic derivation; axiom schema/system; rule of inference; justified line; modus ponens | স্বতঃসিদ্ধমূলক নিষ্পাদন; স্বতঃসিদ্ধ-ছক/পদ্ধতি; অনুমান-বিধি; সমর্থিত পংক্তি; মোডাস পোনেন্স | provisional-formally-governed | medium_definition_and_adjacent-canon_support | medium | 215 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T070` | axiomatic derivation; axiom schema/system; rule of inference; justified line; modus ponens | স্বতঃসিদ্ধমূলক নিষ্পাদন; স্বতঃসিদ্ধ-ছক/পদ্ধতি; অনুমান-বিধি; সমর্থিত পংক্তি; মোডাস পোনেন্স | provisional-formally-governed | medium_definition_and_adjacent-canon_support | medium | 219 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T071` | natural deduction; proof by cases; indirect proof; conditional proof | স্বাভাবিক নিষ্পাদন; ক্ষেত্রবিচারে প্রমাণ; পরোক্ষ প্রমাণ; শর্তাধীন প্রমাণ | provisional-proof-patterns | medium_definition_and_adjacent-canon_support | medium | 32 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T072` | introduction/elimination rule; assumption/hypothesis; discharge/undischarged assumption; proof-theoretic semantics | প্রবর্তন/অপসারণ-বিধি; অনুমিতি/পূর্বধারণা; অনুমিতি অবমুক্ত করা/অনবমুক্ত অনুমিতি; প্রমাণতাত্ত্বিক অর্থতত্ত্ব | provisional-natural-deduction-register | medium_definition_and_adjacent-canon_support | medium | 249 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T073` | sequent calculus; sequent; initial sequent; left/right side; weakening rule | সিকোয়েন্ট কলন; সিকোয়েন্ট; প্রারম্ভিক সিকোয়েন্ট; বাঁ/ডানপাশ; দুর্বলীকরণ-বিধি | provisional-transliterated-system | medium_definition_and_adjacent-canon_support | medium | 166 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T074` | tableau/truth tree; signed formula; truth-value sign; closed/open branch; tableau calculus | ট্যাবলো/সত্য-বৃক্ষ; চিহ্নিত সূত্র; সত্যমান-চিহ্ন; বদ্ধ/খোলা শাখা; ট্যাবলো কলন | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 266 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T073` | sequent calculus; sequent; initial sequent; left/right side; weakening rule | সিকোয়েন্ট কলন; সিকোয়েন্ট; প্রারম্ভিক সিকোয়েন্ট; বাঁ/ডানপাশ; দুর্বলীকরণ-বিধি | provisional-transliterated-system | medium_definition_and_adjacent-canon_support | medium | 167 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T074` | tableau/truth tree; signed formula; truth-value sign; closed/open branch; tableau calculus | ট্যাবলো/সত্য-বৃক্ষ; চিহ্নিত সূত্র; সত্যমান-চিহ্ন; বদ্ধ/খোলা শাখা; ট্যাবলো কলন | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 267 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T075` | resolution method; resolution refutation; mechanization/implementation; read a satisfying structure off an open branch | রেজোলিউশন পদ্ধতি; রেজোলিউশন খণ্ডন; যান্ত্রিক প্রয়োগ/রূপায়ণ; খোলা শাখা থেকে পরিতৃপ্তিকারী গঠন পড়ে নেওয়া | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 4 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T076` | antecedent; succedent; associated sentence of a sequent; sequence concatenation | পূর্বাংশ; উত্তরাংশ; সিকোয়েন্টের সংশ্লিষ্ট বাক্য; অনুক্রমের সংযুক্তি | provisional-definition-governed | medium_definition_and_adjacent-canon_support | medium | 12 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T077` | logical rule; structural rule; upper/lower sequent; left/right rule | যৌক্তিক বিধি; গঠনগত বিধি; উপরের/নিচের সিকোয়েন্ট; বাঁ/ডান-বিধি | provisional-rule-register | medium_definition_and_adjacent-canon_support | medium | 96 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T077` | logical rule; structural rule; upper/lower sequent; left/right rule | যৌক্তিক বিধি; গঠনগত বিধি; উপরের/নিচের সিকোয়েন্ট; বাঁ/ডান-বিধি | provisional-rule-register | medium_definition_and_adjacent-canon_support | medium | 98 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T078` | quantifier rule; eigenvariable/eigenvariable condition; closed term | পরিমাণসূচকের বিধি; আইগেনচল/আইগেনচল-শর্ত; বদ্ধ পদ | provisional-quantifier-rule-register | medium_definition_and_adjacent-canon_support | medium | 113 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T079` | contraction; exchange; cut; inference line; LK derivation/end-sequent | সংকোচন; অদলবদল; কর্তন; অনুমান-রেখা; LK-নিষ্পাদন/অন্তিম সিকোয়েন্ট | provisional-structural-rule-register | medium_definition_and_adjacent-canon_support | medium | 55 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T080` | proof search; apply a rule backwards; split into branches; finish at an initial sequent | প্রমাণ-অন্বেষণ; বিধি উল্টো দিকে প্রয়োগ; শাখায় ভাগ; প্রারম্ভিক সিকোয়েন্টে শেষ করা | provisional-pedagogical-register | medium_definition_and_adjacent-canon_support | medium | 5 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
@@ -112,10 +112,10 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T094` | finitely satisfiable; infinitesimal; standard model of arithmetic | সসীমভাবে পরিতৃপ্তিযোগ্য; অতিক্ষুদ্র সংখ্যা; পাটীগণিতের প্রমিত মডেল | provisional-compactness-application-register | medium_definition_and_adjacent-canon_support | medium | 27 | BN-IN-P008, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T095` | downward Löwenheim–Skolem theorem; countable model; Skolem's paradox | লোয়েনহাইম--স্কোলেম উপপাদ্য; গণনীয় মডেল; স্কোলেমের কূটাভাস | provisional-model-size-register | medium_definition_and_adjacent-canon_support | medium | 13 | BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T096` | formal language; first-order language; quantificational logic; predicate logic; vocabulary; expression/string | বিধিবদ্ধ ভাষা; প্রথম-ক্রমের ভাষা; পরিমাণসূচকীয় যুক্তিবিদ্যা; বিধেয় যুক্তিবিদ্যা; শব্দভাণ্ডার; অভিব্যক্তি/প্রতীকক্রম | mixed-contextual-and-provisional-first-order-register | medium_definition_and_adjacent-canon_support | medium | 96 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019 | welcome/open to correction |
-| `BN-IN-T097` | term; atomic formula; sentence; free/bound variable occurrence; matching quantifier; corresponding occurrence; quantifier scope | পদ; পরমাণু সূত্র; বাক্য; মুক্ত/বদ্ধ চলরাশির সংঘটন; সংশ্লিষ্ট পরিমাণসূচক; অনুরূপ সংঘটন; পরিমাণসূচকের পরিসর | mixed-attested-roots-and-definition-governed | medium_definition_and_adjacent-canon_support | medium | 603 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T098` | structure; domain; interpretation/denotation; satisfaction relative to an assignment; modified assignment | গঠন; সংজ্ঞাক্ষেত্র; ব্যাখ্যা/নির্দেশিত মান; আরোপ-সাপেক্ষ পরিতৃপ্তি; পরিবর্তিত আরোপ | mixed-attested-roots-and-provisional-semantics | medium_definition_and_adjacent-canon_support | medium | 362 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T097` | term; atomic formula; sentence; free/bound variable occurrence; matching quantifier; corresponding occurrence; quantifier scope | পদ; পরমাণু সূত্র; বাক্য; মুক্ত/বদ্ধ চলরাশির সংঘটন; সংশ্লিষ্ট পরিমাণসূচক; অনুরূপ সংঘটন; পরিমাণসূচকের পরিসর | mixed-attested-roots-and-definition-governed | medium_definition_and_adjacent-canon_support | medium | 607 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T098` | structure; domain; interpretation/denotation; satisfaction relative to an assignment; modified assignment | গঠন; সংজ্ঞাক্ষেত্র; ব্যাখ্যা/নির্দেশিত মান; আরোপ-সাপেক্ষ পরিতৃপ্তি; পরিবর্তিত আরোপ | mixed-attested-roots-and-provisional-semantics | medium_definition_and_adjacent-canon_support | medium | 364 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T099` | substitution; capture-sensitive replacement; term value; universal instantiation; substitution lemma | প্রতিস্থাপন; চলরাশি-বদ্ধতা-সংবেদনশীল প্রতিস্থাপন; পদের মান; সার্বিক নিদর্শনায়ন; প্রতিস্থাপন-সহায়ক উপপাদ্য | provisional-definition-and-lemma-governed | medium_definition_and_adjacent-canon_support | medium | 32 | BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P020, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T100` | model theory; model of a sentence set; axiomatic method; characterize a class; expressibility; finite/nonenumerable domain | মডেল তত্ত্ব; বাক্যসমষ্টির মডেল; স্বতঃসিদ্ধমূলক পদ্ধতি; কোনো শ্রেণিকে চরিত্রায়িত করা; প্রকাশযোগ্যতা; সসীম/অতালিকায়নযোগ্য সংজ্ঞাক্ষেত্র | mixed-attested-roots-and-provisional-model-theory | medium_definition_and_adjacent-canon_support | medium | 195 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
+| `BN-IN-T100` | model theory; model of a sentence set; axiomatic method; characterize a class; expressibility; finite/nonenumerable domain | মডেল তত্ত্ব; বাক্যসমষ্টির মডেল; স্বতঃসিদ্ধমূলক পদ্ধতি; কোনো শ্রেণিকে চরিত্রায়িত করা; প্রকাশযোগ্যতা; সসীম/অতালিকায়নযোগ্য সংজ্ঞাক্ষেত্র | mixed-attested-roots-and-provisional-model-theory | medium_definition_and_adjacent-canon_support | medium | 196 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T101` | main operator; immediate subformula; proper subformula; proper prefix | প্রধান অপারেটর; অব্যবহিত উপসূত্র; প্রকৃত উপসূত্র; প্রকৃত পূর্বাংশ | provisional-definition-governed-syntax-register | medium_definition_and_adjacent-canon_support | medium | 8 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T102` | term induction principle; formula induction principle; unique formation sequence | পদের উপর আরোহের নীতি; সূত্রের উপর আরোহের নীতি; একক গঠন-অনুক্রম | provisional-induction-register | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P008, BN-IN-P009, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T103` | variable assignment; x-variant; term valuation under an assignment; satisfaction under an assignment | চলরাশি-আরোপ; x-বিকল্প; আরোপের অধীনে পদের মান; আরোপের অধীনে পরিতৃপ্তি | mixed-attested-roots-and-provisional-tarskian-register | medium_definition_and_adjacent-canon_support | medium | 45 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
@@ -124,18 +124,18 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T106` | axiomatic theory; closure of a sentence set; axiomatized by; intended structure; capture a class; redundant axiom; definability | স্বতঃসিদ্ধমূলক তত্ত্ব; বাক্যসমষ্টির আবরণ; স্বতঃসিদ্ধায়িত; অভিপ্রেত গঠন; কোনো শ্রেণিকে ধারণ করা; অপ্রয়োজনীয় স্বতঃসিদ্ধ; সংজ্ঞেয়তা | mixed-attested-roots-and-provisional-axiomatic-register | medium_definition_and_adjacent-canon_support | medium | 9 | BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T107` | strict linear-order theory; group theory; Peano arithmetic; induction schema; pure set; urelement; set extensionality; naive comprehension scheme | কঠোর রৈখিক ক্রমের তত্ত্ব; গোষ্ঠীর তত্ত্ব; পেয়ানো পাটীগণিত; আরোহ-ছক; বিশুদ্ধ সেট; উর-উপাদান; সেটের সদস্যভিত্তিক সমতা; অনানুষ্ঠানিক ধর্মনির্দেশে সেট-গঠন ছক | mixed-attested-roots-and-provisional-theory-examples | medium_definition_and_adjacent-canon_support | medium | 12 | BN-IN-P001, BN-IN-P002, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P011, BN-IN-P013, BN-IN-P025, BN-IN-P027 | welcome/open to correction |
 | `BN-IN-T108` | mereology; parthood; parthood structure; proper/improper part; mereological sum; fusion | অংশতত্ত্ব; অংশ-সম্পর্ক; অংশ-গঠন; যথার্থ/অযথার্থ অংশ; অংশতাত্ত্বিক যোগ; সংযোজন | provisional-definition-governed-mereology-register | medium_definition_and_adjacent-canon_support | medium | 36 | BN-IN-P001, BN-IN-P013, BN-IN-P018, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T109` | express a relation in a structure; definable relation; superfluous predicate; successor/predecessor relation; standard arithmetic model | কোনো গঠনে সম্পর্ক প্রকাশ করা; সংজ্ঞেয় সম্পর্ক; অপ্রয়োজনীয় বিধেয়; উত্তরসূরি/পূর্বসূরি সম্পর্ক; পাটীগণিতের প্রমিত মডেল | mixed-attested-roots-and-provisional-definability-register | medium_definition_and_adjacent-canon_support | medium | 42 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T109` | express a relation in a structure; definable relation; superfluous predicate; successor/predecessor relation; standard arithmetic model | কোনো গঠনে সম্পর্ক প্রকাশ করা; সংজ্ঞেয় সম্পর্ক; অপ্রয়োজনীয় বিধেয়; উত্তরসূরি/পূর্বসূরি সম্পর্ক; পাটীগণিতের প্রমিত মডেল | mixed-attested-roots-and-provisional-definability-register | medium_definition_and_adjacent-canon_support | medium | 47 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T110` | ZFC; axiom of extensionality; empty-set axiom; power-set axiom; function represented as a relation; comprehension principle; separation principle; Russell's paradox | জার্মেলো--ফ্রেঙ্কেল সেটতত্ত্বসহ নির্বাচন স্বতঃসিদ্ধ; সদস্যভিত্তিক সমতার স্বতঃসিদ্ধ; শূন্য সেটের স্বতঃসিদ্ধ; ঘাত সেটের স্বতঃসিদ্ধ; সম্পর্করূপে অপেক্ষক; ধর্মনির্দেশে সেট-গঠন নীতি; পৃথকীকরণ নীতি; রাসেলের কূটাভাস | mixed-attested-set-roots-and-provisional-foundational-register | medium_definition_and_adjacent-canon_support | medium | 14 | BN-IN-P001, BN-IN-P002, BN-IN-P006, BN-IN-P007, BN-IN-P011, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T111` | size of a structure; at least/at most/exactly n elements; finite/infinite structure; purely logical sentence; nonenumerable structure | গঠনের আকার; অন্তত/বড়জোর/ঠিক n-টি উপাদান; সসীম/অসীম গঠন; বিশুদ্ধ যৌক্তিক বাক্য; অতালিকায়নযোগ্য গঠন | mixed-attested-finiteness-and-provisional-model-size-register | medium_definition_and_adjacent-canon_support | medium | 253 | BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
+| `BN-IN-T111` | size of a structure; at least/at most/exactly n elements; finite/infinite structure; purely logical sentence; nonenumerable structure | গঠনের আকার; অন্তত/বড়জোর/ঠিক n-টি উপাদান; সসীম/অসীম গঠন; বিশুদ্ধ যৌক্তিক বাক্য; অতালিকায়নযোগ্য গঠন | mixed-attested-finiteness-and-provisional-model-size-register | medium_definition_and_adjacent-canon_support | medium | 254 | BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T112` | logic beyond first order; extension and variation; formal language; deductive system; intended semantics; logicism; higher-order reasoning | প্রথম-ক্রমের পরিসরের বাইরের যুক্তিবিদ্যা; সম্প্রসারণ ও রূপভেদ; আনুষ্ঠানিক ভাষা; অবরোহী ব্যবস্থা; অভিপ্রেত অর্থতত্ত্ব; যুক্তিবাদ; উচ্চতর-ক্রমের যুক্তিবিচার | mixed-attested-roots-and-provisional-philosophical-register | medium_definition_and_adjacent-canon_support | medium | 8 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T113` | many-sorted logic; sort; sort-specific domain; typed function or relation; relativized quantifier; first-order embedding | বহুজাতীয় যুক্তিবিদ্যা; জাতি; জাতি-নির্দিষ্ট সংজ্ঞাক্ষেত্র; টাইপযুক্ত অপেক্ষক বা সম্পর্ক; আপেক্ষিক পরিমাণসূচক; প্রথম-ক্রমীয় নিবেশন | mixed-attested-roots-and-provisional-many-sorted-register | medium_definition_and_adjacent-canon_support | medium | 26 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T114` | second-order logic; relation variable; comprehension schema; impredicative/predicative comprehension; full/weak second-order semantics; categorical description; effective proof system | দ্বিতীয়-ক্রমের যুক্তিবিদ্যা; সম্পর্ক-চলরাশি; ধর্মনির্দেশ-ছক; অপ্রেডিকেটিভ/প্রেডিকেটিভ ধর্মনির্দেশ; পূর্ণ/দুর্বল দ্বিতীয়-ক্রমীয় অর্থতত্ত্ব; সমরূপতা-অবধি একক বর্ণনা; কার্যকর প্রমাণ-ব্যবস্থা | mixed-attested-roots-and-provisional-second-order-register | medium_definition_and_adjacent-canon_support | medium | 336 | BN-IN-P001, BN-IN-P002, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
-| `BN-IN-T115` | higher-order logic; type; function type; product type; functional; lambda abstraction; projection; simple theory of types | উচ্চতর-ক্রমের যুক্তিবিদ্যা; টাইপ; অপেক্ষক-টাইপ; গুণন-টাইপ; ফাংশনাল; ল্যাম্বডা বিমূর্তন; অভিক্ষেপ; সরল টাইপতত্ত্ব | mixed-attested-roots-and-provisional-type-theory-register | medium_definition_and_adjacent-canon_support | medium | 57 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T115` | higher-order logic; type; function type; product type; functional; lambda abstraction; projection; simple theory of types | উচ্চতর-ক্রমের যুক্তিবিদ্যা; টাইপ; অপেক্ষক-টাইপ; গুণন-টাইপ; ফাংশনাল; ল্যাম্বডা বিমূর্তন; অভিক্ষেপ; সরল টাইপতত্ত্ব | mixed-attested-roots-and-provisional-type-theory-register | medium_definition_and_adjacent-canon_support | medium | 62 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T116` | intuitionistic logic; constructive proof; BHK interpretation; formulas-as-types; Curry--Howard isomorphism; double-negation translation; Kripke structure; forcing relation | স্বজ্ঞাবাদী যুক্তিবিদ্যা; নির্মাণমূলক প্রমাণ; BHK ব্যাখ্যা; সূত্র-হিসেবে-টাইপ; কারি--হাওয়ার্ড সমরূপতা; দ্বিনঞর্থকতা অনুবাদ; ক্রিপকে গঠন; বাধ্যকরণ সম্পর্ক | mixed-attested-roots-and-provisional-intuitionistic-register | medium_definition_and_adjacent-canon_support | medium | 10 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T117` | modal logic; necessity/possibility; possible world; accessibility relation; intensional/extensional logic; provability/epistemic/temporal logic; S4/S5 | মোডাল যুক্তিবিদ্যা; আবশ্যিকতা/সম্ভাব্যতা; সম্ভাব্য জগৎ; অভিগম্যতা সম্পর্ক; অভিপ্রায়গত/ব্যাপ্তিগত যুক্তিবিদ্যা; প্রমাণযোগ্যতা/জ্ঞানতাত্ত্বিক/কালগত যুক্তিবিদ্যা; S4/S5 | mixed-attested-roots-and-provisional-modal-register | medium_definition_and_adjacent-canon_support | medium | 23 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T118` | fuzzy logic; probabilistic logic; default logic; nonmonotonic logic; defeasible reasoning; epistemic logic; causal logic; deontic logic | ফাজি যুক্তিবিদ্যা; সম্ভাবনামূলক যুক্তিবিদ্যা; ডিফল্ট যুক্তিবিদ্যা; অ-একঘেয়ে যুক্তিবিদ্যা; প্রত্যাহারযোগ্য যুক্তিবিচার; জ্ঞানতাত্ত্বিক যুক্তিবিদ্যা; কারণমূলক যুক্তিবিদ্যা; কর্তব্যগত যুক্তিবিদ্যা | provisional-survey-register | medium_definition_and_adjacent-canon_support | medium | 6 | BN-IN-P008, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T119` | model theory; basics; incomplete and experimental material; adaptation | মডেল তত্ত্ব; মূল বিষয়; অসম্পূর্ণ ও পরীক্ষামূলক উপকরণ; অভিযোজন | mixed-attested-roots-and-provisional-model-theory-editorial-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P001, BN-IN-P006, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
-| `BN-IN-T120` | reduct; expansion; substructure; extension; common language; induced relational substructure | হ্রাসিত রূপ; সম্প্রসারণ; উপগঠন; বর্ধিত গঠন; অভিন্ন ভাষা; সম্পর্ক-প্রসূত উপগঠন | mixed-attested-roots-and-provisional-structure-comparison-register | medium_definition_and_adjacent-canon_support | medium | 13 | BN-IN-P001, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T120` | reduct; expansion; substructure; extension; common language; induced relational substructure | হ্রাসিত রূপ; সম্প্রসারণ; উপগঠন; বর্ধিত গঠন; অভিন্ন ভাষা; সম্পর্ক-প্রসূত উপগঠন | mixed-attested-roots-and-provisional-structure-comparison-register | medium_definition_and_adjacent-canon_support | medium | 14 | BN-IN-P001, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T121` | overspill; arbitrarily large finite models; finite satisfiability; infinite model | ওভারস্পিল; ইচ্ছামতো বড় সসীম মডেল; সসীমভাবে পরিতৃপ্তিযোগ্য; অসীম মডেল | mixed-attested-finiteness-and-provisional-compactness-register | medium_definition_and_adjacent-canon_support | medium | 33 | BN-IN-P001, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T122` | elementary equivalence; isomorphic structures; isomorphism; automorphism; definable subset; invariance | মৌলিকভাবে সমতুল্য; সমরূপ গঠন; সমরূপতা; স্বসমরূপতা; সংজ্ঞেয় উপসেট; অপরিবর্তিতা | mixed-attested-roots-and-provisional-isomorphism-register | medium_definition_and_adjacent-canon_support | medium | 50 | BN-IN-P006, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T123` | theory of a structure; complete theory; elementary equivalence; complete set of sentences | কোনো গঠনের তত্ত্ব; পূর্ণ তত্ত্ব; মৌলিক সমতুল্যতা; বাক্যের পূর্ণ সেট | mixed-attested-roots-and-provisional-complete-theory-register | medium_definition_and_adjacent-canon_support | medium | 2 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
@@ -144,10 +144,10 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T126` | dense linear order without endpoints; density; endpoint; Cantor back-and-forth theorem; rational order | অন্তবিন্দুহীন ঘন রৈখিক ক্রম; ঘনত্ব; অন্তবিন্দু; কান্টরের আগ-পিছু উপপাদ্য; মূলদ ক্রম | mixed-attested-order-roots-and-provisional-dense-order-register | medium_definition_and_adjacent-canon_support | medium | 8 | BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T127` | standard model; nonstandard model; standard number; nonstandard number | মানক মডেল; অমানক মডেল; মানক সংখ্যা; অমানক সংখ্যা | provisional-arithmetic-model-register | medium_definition_and_adjacent-canon_support | medium | 36 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T128` | arithmetic model; Robinson Q; Peano arithmetic; true arithmetic; consistency witness | পাটিগাণিতিক মডেল; রবিনসন Q; পেয়ানো পাটিগণিত; সত্য পাটিগণিত; সঙ্গতি-সাক্ষী | provisional-arithmetic-theory-register | medium_definition_and_adjacent-canon_support | medium | 2 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T129` | standard part; nonstandard part; arithmetic block; successor; predecessor | মানক খণ্ড; অমানক খণ্ড; পাটিগাণিতিক খণ্ড; উত্তরসূরি; পূর্বসূরি | provisional-arithmetic-block-register | medium_definition_and_adjacent-canon_support | medium | 47 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
-| `BN-IN-T130` | computable structure; computable function; decidable relation; computable presentation; Tennenbaum theorem | গণনসাধ্য গঠন; গণনসাধ্য অপেক্ষক; নির্ণেয় সম্বন্ধ; গণনসাধ্য উপস্থাপন; টেনেনবাউমের উপপাদ্য | provisional-computability-register | medium_definition_and_adjacent-canon_support | medium | 6 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
+| `BN-IN-T129` | standard part; nonstandard part; arithmetic block; successor; predecessor | মানক খণ্ড; অমানক খণ্ড; পাটিগাণিতিক খণ্ড; উত্তরসূরি; পূর্বসূরি | provisional-arithmetic-block-register | medium_definition_and_adjacent-canon_support | medium | 52 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
+| `BN-IN-T130` | computable structure; computable function; decidable relation; computable presentation; Tennenbaum theorem | গণনসাধ্য গঠন; গণনসাধ্য অপেক্ষক; নির্ণেয় সম্বন্ধ; গণনসাধ্য উপস্থাপন; টেনেনবাউমের উপপাদ্য | provisional-computability-register | medium_definition_and_adjacent-canon_support | medium | 9 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T131` | discrete linear order; dense order; countable nonstandard model; no endpoints | কঠোর রৈখিক ক্রম; ঘন রৈখিক ক্রম; গণনীয় অমানক মডেল; অন্তবিন্দুহীন | provisional-arithmetic-order-register | medium_definition_and_adjacent-canon_support | medium | 21 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
-| `BN-IN-T132` | cancellation law; commutative operations; midpoint; arithmetic operation | যোগের কর্তন-বিধি; বিনিময়যোগ্য ক্রিয়া; গড়; পাটিগাণিতিক ক্রিয়া | provisional-arithmetic-operation-register | medium_definition_and_adjacent-canon_support | medium | 27 | BN-IN-P005, BN-IN-P019, BN-IN-P020, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T132` | cancellation law; commutative operations; midpoint; arithmetic operation | যোগের কর্তন-বিধি; বিনিময়যোগ্য ক্রিয়া; গড়; পাটিগাণিতিক ক্রিয়া | provisional-arithmetic-operation-register | medium_definition_and_adjacent-canon_support | medium | 29 | BN-IN-P005, BN-IN-P019, BN-IN-P020, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T133` | transport of structure; computable presentation; up to isomorphism; bijection | গঠন পরিবাহন; গণনসাধ্য উপস্থাপন; সমরূপতা পর্যন্ত; বিজেকশন | provisional-arithmetic-presentation-register | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P005, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P024, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T134` | Craig interpolation; interpolant; shared-language vocabulary | ক্রেগের ইন্টারপোলেশন; ইন্টারপোল্যান্ট; অভিন্ন ভাষার সংকেত | provisional-interpolation-register | medium_definition_and_adjacent-canon_support | medium | 11 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T135` | separation; separator; inseparable sets | পৃথকীকরণ; পৃথককারী; অপৃথকযোগ্য সমষ্টি | provisional-separation-register | medium_definition_and_adjacent-canon_support | medium | 3 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
@@ -165,6 +165,13 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T147` | quantifier rank; n-equivalent structures; finite rank types | পরিমাণসূচক-ক্রমাঙ্ক; n-সমতুল্য গঠন; সসীম ক্রমাঙ্ক-প্রকার | provisional-quantifier-rank-register | medium_definition_and_adjacent-canon_support | medium | 11 | BN-IN-P006, BN-IN-P007, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T148` | Lindström theorem; Lindström lemma; nonstandard element | লিন্ডস্ট্রমের উপপাদ্য; লিন্ডস্ট্রমের লেমা; অমানক উপাদান | provisional-lindstrom-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T149` | abstract-logic elementary equivalence; elementary equivalent | মৌলিকভাবে সমতুল্য কাঠামো | provisional-terminology-normalization-register | low_pending_occurrence | high | 0 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T150` | primitive recursion; primitive recursive definition; primitive recursive function | আদিম পুনরাবৃত্তি; আদিম পুনরাবৃত্তির মাধ্যমে সংজ্ঞা; আদিম পুনরাবৃত্ত অপেক্ষক | provisional-computability-recursion-register | medium_definition_and_adjacent-canon_support | medium | 9 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T151` | recursive function; recursive definition | পুনরাবৃত্ত অপেক্ষক; পুনরাবৃত্ত সংজ্ঞা | provisional-recursive-function-register | medium_definition_and_adjacent-canon_support | medium | 15 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T152` | computability theory | গণনসাধ্যতা তত্ত্ব | provisional-computability-theory-register | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T153` | characteristic function; computable relation | চরিত্রসূচক অপেক্ষক; গণনসাধ্য সম্বন্ধ | provisional-characteristic-function-register | low_pending_occurrence | high | 0 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T154` | unbounded search | সীমাহীন অনুসন্ধান | provisional-unbounded-search-register | low_pending_occurrence | high | 0 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T155` | partial recursive function; general recursive function | আংশিক পুনরাবৃত্ত অপেক্ষক; সাধারণ পুনরাবৃত্ত অপেক্ষক | provisional-recursive-function-class-register | medium_definition_and_adjacent-canon_support | medium | 4 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T156` | arity; n-place function | স্থানসংখ্যা; n-স্থানীয় অপেক্ষক | provisional-arity-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 
 ## Detailed review entries
 
@@ -176,25 +183,25 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 - Plausible alternatives: সমষ্টি is a plausible alternative for set; সেট follows the directly checked university and school sources and avoids conflating an arbitrary set with a sum or collection in ordinary prose.
 - Status: attested; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সেট’ express the OpenLogic sense(s) ‘set’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 915 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 919 occurrence(s). Representative locations:
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:30-39` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:27`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:30-39` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:28`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:30-39` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:31`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:30-39` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:32`; final reader page pending
   - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:64-73` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:65`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:64-73` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:66`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:64-73` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:67`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:64-73` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:71`; final reader page pending
-  - `OLP-0125` `upstream/content/first-order-logic/axiomatic-deduction/identity.tex:38-40` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/identity.tex:39`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-For the induction basis, we prove the claim for every !!{derivation}
-of length~$1$. !!^a{derivation} of~$!B$ from $\Gamma \cup \{!A\}$ of
-length~$1$ consists of $!B$ by itself; and if it is correct $!B$ is
-either $\in \Gamma \cup \{!A\}$ or is an axiom.  If $!B \in \Gamma$ or
-is an axiom, then $\Gamma \Proves !B$. We also have that $\Gamma
-\Proves !B \lif (!A \lif !B)$ by \olref[prp]{ax:lif1}, and
-\olref{prop:mp} gives $\Gamma \Proves !A \lif !B$. If $!B \in \{ !A\}$
-then $\Gamma \Proves !A \lif !B$ because the last !!{sentence}~$!A
-\lif !B$ is the same as $!A \lif !A$, and we have !!{derive}d that in
-\olref[pro]{ex:identity}.
+In addition to computable functions, we might be interested in
+computable sets and relations. A set is computable if we can compute
+the answer to whether or not a given number is !!a{element} of the
+set, and a relation is computable iff we can compute whether or not a
+tuple $\tuple{n_1, \dots, n_k}$ is !!a{element} of the relation.  By
+considering the \emph{characteristic function} of a set or relation,
+discussion of computable sets and relations can be subsumed under that
+of computable functions.  Thus we can define primitive recursive
+relations as well, e.g., the relation ``$n$ evenly divides $m$'' is a
+primitive recursive relation.
 ```
 
 ### BN-IN-T002
@@ -424,33 +431,19 @@ extensionality.''
 - Plausible alternatives: প্রাকৃতিক সংখ্যা is a widespread alternative; স্বাভাবিক সংখ্যা is directly attested in the checked India-standard source, while OpenLogic controls whether zero is included.
 - Status: attested; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘স্বাভাবিক সংখ্যা’ express the OpenLogic sense(s) ‘natural number’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 69 occurrence(s). Representative locations:
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:21-38` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:33`; final reader page pending
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:21-38` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:36`; final reader page pending
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:40-93` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:52`; final reader page pending
-  - `OLP-0169` `upstream/content/first-order-logic/models-theories/expressing-props-of-structures.tex:13-37` → `bn-Beng-IN/content/first-order-logic/models-theories/expressing-props-of-structures.tex:30`; final reader page pending
-  - `OLP-0158` `upstream/content/first-order-logic/syntax-and-semantics/substitution.tex:100-114` → `bn-Beng-IN/content/first-order-logic/syntax-and-semantics/substitution.tex:109`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 76 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:12-15` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:12`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:20`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:12`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:13`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:14`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-In practice, higher-order logic is often !!{formula}ted in terms of
-functions instead of relations. (Modulo the natural identifications,
-this difference is inessential.) Given some basic ``sorts'' $A$, $B$,
-$C$,~\dots (which we will now call ``types''), we can create new ones
-by stipulating
-\begin{quote}
-If $\sigma$ and $\tau$ are finite types then so is $\sigma \to \tau$.
-\end{quote}
-Think of types as syntactic ``labels,'' which classify the objects we
-want in our !!{domain}; $\sigma \to \tau$ describes those objects that
-are functions which take objects of type~$\sigma$ to objects of
-type~$\tau$. For example, we might want to have a type $\Omega$ of
-truth values, ``true'' and ``false,'' and a type $\Nat$ of natural
-numbers. In that case, you can think of objects of type $\Nat \to
-\Omega$ as unary relations, or subsets of $\Nat$; objects of type
-$\Nat \to \Nat$ are functions from natural numbers to natural numbers;
-and objects of type $(\Nat \to \Nat) \to \Nat$ are ``functionals,''
-that is, higher-type functions that take functions to numbers.
+If $f$ and $g$ are two one-place functions of natural numbers, we can
+compose them: $h(x) = f(g(x))$. The new function~$h(x)$ is then
+defined by \emph{composition} from the functions $f$ and~$g$. We'd
+like to generalize this to functions of more than one argument.
 ```
 
 ### BN-IN-T010
@@ -599,18 +592,25 @@ $\Gamma \Proves !A$ iff $\Gamma \cup \{\lnot !A\}$ is inconsistent.
 - Plausible alternatives: মিলন or সম্মিলন, সাধারণ অংশ, নিঃছেদ and বিয়োগ are plausible alternatives; সংযোগ, ছেদ, বিচ্ছিন্ন and অন্তর follow the checked mathematical usage and keep the four operations or properties distinct.
 - Status: attested; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সংযোগ; ছেদ; বিচ্ছিন্ন; অন্তর’ express the OpenLogic sense(s) ‘union; intersection; disjoint; difference’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 99 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 101 occurrence(s). Representative locations:
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:30-39` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:33`; final reader page pending
+  - `OLP-0209` `upstream/content/computability/recursive-functions/recursive-functions.tex:10-15` → `bn-Beng-IN/content/computability/recursive-functions/recursive-functions.tex:13`; final reader page pending
   - `OLP-0125` `upstream/content/first-order-logic/axiomatic-deduction/identity.tex:13-15` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/identity.tex:13`; final reader page pending
   - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:114-123` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:116`; final reader page pending
   - `OLP-0179` `upstream/content/first-order-logic/beyond/intuitionistic-logic.tex:13-17` → `bn-Beng-IN/content/first-order-logic/beyond/intuitionistic-logic.tex:16`; final reader page pending
-  - `OLP-0176` `upstream/content/first-order-logic/beyond/many-sorted-logic.tex:13-17` → `bn-Beng-IN/content/first-order-logic/beyond/many-sorted-logic.tex:15`; final reader page pending
-  - `OLP-0177` `upstream/content/first-order-logic/beyond/second-order-logic.tex:83-98` → `bn-Beng-IN/content/first-order-logic/beyond/second-order-logic.tex:86`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-In order to accommodate $\eq$ in !!{derivation}s, we simply add new
-axiom schemas. The definition of !!{derivation} and $\Proves$ remains
-the same, we just also allow the new axioms.
+In addition to computable functions, we might be interested in
+computable sets and relations. A set is computable if we can compute
+the answer to whether or not a given number is !!a{element} of the
+set, and a relation is computable iff we can compute whether or not a
+tuple $\tuple{n_1, \dots, n_k}$ is !!a{element} of the relation.  By
+considering the \emph{characteristic function} of a set or relation,
+discussion of computable sets and relations can be subsumed under that
+of computable functions.  Thus we can define primitive recursive
+relations as well, e.g., the relation ``$n$ evenly divides $m$'' is a
+primitive recursive relation.
 ```
 
 ### BN-IN-T017
@@ -811,18 +811,27 @@ $x$.
 - Plausible alternatives: চিত্রণ is reserved for mapping/function use; সম্পর্ক is directly attested for relation.
 - Status: mixed-attested-and-provisional; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সম্পর্ক; দ্বিপদ সম্পর্ক; ক্রমসম্পর্ক; অভিন্নতার সম্পর্ক’ express the OpenLogic sense(s) ‘relation; binary relation; order relation; identity relation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 293 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 294 occurrence(s). Representative locations:
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:42`; final reader page pending
   - `OLP-0121` `upstream/content/first-order-logic/axiomatic-deduction/provability-consistency.tex:15-17` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability-consistency.tex:15`; final reader page pending
   - `OLP-0122` `upstream/content/first-order-logic/axiomatic-deduction/provability-propositional.tex:15-21` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability-propositional.tex:16`; final reader page pending
   - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:21-38` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:21`; final reader page pending
   - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:21-38` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:34`; final reader page pending
-  - `OLP-0175` `upstream/content/first-order-logic/beyond/introduction.tex:13-21` → `bn-Beng-IN/content/first-order-logic/beyond/introduction.tex:19`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-We will now establish a number of properties of the !!{derivability}
-relation.  They are independently interesting, but each will play a
-role in the proof of the completeness theorem.
+Primitive recursive functions---those that can be defined using just
+primitive recursion---are not, however, the only computable
+number-theoretic functions. Many generalizations of primitive
+recursion have been considered, but the most powerful and
+widely-accepted additional way of computing functions is by unbounded
+search.  This leads to the definition of \emph{partial recursive
+  functions}, and a related definition to \emph{general recursive
+  functions}.  General recursive functions are computable and total,
+and the definition characterizes exactly the partial recursive
+functions that happen to be total.  Recursive functions can simulate
+every other model of computation (Turing machines, lambda calculus,
+etc.) and so represent one of the many accepted models of computation.
 ```
 
 ### BN-IN-T023
@@ -1157,18 +1166,33 @@ numbers as a complete ordered field containing the rationals.
 - Plausible alternatives: ট্রি, রুট, সাকসেসর, প্রিডেসেসর and well-order loans are plausible alternatives; বৃক্ষ, মূল, উত্তরসূরি, পূর্বসূরি, শাখা, শৃঙ্খল and সুক্রম provide a consistent Bengali family governed by the order definitions.
 - Status: provisional-descriptive; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘বৃক্ষ; মূল; উত্তরসূরি; পূর্বসূরি; শাখা; শৃঙ্খল; ক্ষুদ্রতম উপাদান; সুক্রম’ express the OpenLogic sense(s) ‘tree; root; successor; predecessor; branch; chain; least element; well-order’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 394 occurrence(s). Representative locations:
-  - `OLP-0112` `upstream/content/first-order-logic/axiomatic-deduction/axiomatic-deduction.tex:8-10` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axiomatic-deduction.tex:9`; final reader page pending
-  - `OLP-0112` `upstream/content/first-order-logic/axiomatic-deduction/axiomatic-deduction.tex:8-10` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axiomatic-deduction.tex:10`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:18-29` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:18`; final reader page pending
-  - `OLP-0122` `upstream/content/first-order-logic/axiomatic-deduction/provability-propositional.tex:15-21` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability-propositional.tex:16`; final reader page pending
-  - `OLP-0123` `upstream/content/first-order-logic/axiomatic-deduction/provability-quantifiers.tex:16-19` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability-quantifiers.tex:17`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 399 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:29-46` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:47`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:12`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:14`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:71-97` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:68`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:99-130` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:108`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\iftag{FOL}
-      {\olchapter{fol}{axd}{Axiomatic \usetoken{P}{derivation}}}
-      {\olchapter{pl}{axd}{Axiomatic \usetoken{P}{derivation}}}
+This may seem like an overly restrictive characterization of what
+happens when we compute a new function using some existing ones. For
+one thing, sometimes we do not use all the arguments of a function, as
+when we defined $g(x, y, z) = \Succ(z)$ for use in the primitive
+recursive definition of~$\Add$. Suppose we are allowed use of the
+following functions:
+\[
+\Proj{n}{i}(x_0, \dots, x_{n-1}) = x_i
+\]
+The functions~$\Proj{k}{i}$ are called \emph{projection} functions:
+$\Proj{n}{i}$ is an $n$-place function. Then $g$ can be defined by
+\[
+g(x, y, z) = \Succ(\Proj{3}{2}(x, y, z)).
+\]
+Here the role of $f$ is played by the $1$-place function $\Succ$, so
+$k=1$. And we have one $3$-place function $\Proj{3}{2}$ which plays
+the role of $g_0$. The result is a $3$-place function that returns the
+successor of the third argument.
 ```
 
 ### BN-IN-T032
@@ -1179,18 +1203,28 @@ numbers as a complete ordered field containing the rationals.
 - Plausible alternatives: উল্টো সম্পর্ক, সম্পর্ক-সংযোজন, সংকোচন, প্রতিবিম্ব and পরিযায়ী সংবরণ are plausible alternatives; the selected terms distinguish inversion, relative product, restriction, application and closure as separate operations.
 - Status: provisional-normalized; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘বিপরীত সম্পর্ক; আপেক্ষিক গুণফল; সীমাবদ্ধন; প্রয়োগ; পরিযায়ী আবরণ’ express the OpenLogic sense(s) ‘inverse relation; relative product; restriction; application; transitive closure’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 189 occurrence(s). Representative locations:
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:18-20` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:20`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:61-62` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:61`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:75-95` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:92`; final reader page pending
-  - `OLP-0125` `upstream/content/first-order-logic/axiomatic-deduction/identity.tex:47-54` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/identity.tex:54`; final reader page pending
-  - `OLP-0121` `upstream/content/first-order-logic/axiomatic-deduction/provability-consistency.tex:38-44` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability-consistency.tex:44`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 195 occurrence(s). Representative locations:
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:13`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:26-41` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:33`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:53-69` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:62`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:71-97` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:69`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:71-97` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:71`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{proof}
-We again proceed by induction on the length
-of the !!{derivation} of $!B$ from $\Gamma \cup \{!A\}$.
+A characteristic of the natural numbers is that every natural number
+can be reached from~$0$ by applying the successor operation~$+1$
+finitely many times---any natural number is either~$0$ or the
+successor of \dots{} the successor of~$0$. One way to specify a
+function~$h\colon\Nat \to \Nat$ that makes use of this fact is this:
+(a)~specify what the value of $h$ is for argument~$0$, and (b)~also
+specify how to, given the value of $h(x)$, compute the value of
+$h(x+1)$. For (a) tells us directly what $h(0)$ is, so $h$~is defined
+for~$0$. Now, using the instruction given by (b) for $x=0$, we can
+compute $h(1) = h(0+1)$ from~$h(0)$. Using the same instructions for
+$x=1$, we compute $h(2) = h(1+1)$ from~$h(1)$, and so on. For every
+natural number~$x$, we'll eventually reach the step where we define
+$h(x)$ from $h(x+1)$, and so $h(x)$ is defined for all $x \in \Nat$.
 ```
 
 ### BN-IN-T033
@@ -1230,39 +1264,28 @@ then $\Gamma \Proves !A \lif !B$ because the last !!{sentence}~$!A
 - Plausible alternatives: চলরাশি and অচল are plausible alternatives for variable and constant; চল and ধ্রুবক follow the checked school algebra page, while যোগফল, গুণফল and সমীকরণ are directly supported there.
 - Status: attested-in-school-algebra; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘চল; ধ্রুবক; যোগফল; গুণফল; সমীকরণ’ express the OpenLogic sense(s) ‘variable; constant; sum; arithmetic product; equation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 247 occurrence(s). Representative locations:
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:40`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:75-95` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:78`; final reader page pending
-  - `OLP-0123` `upstream/content/first-order-logic/axiomatic-deduction/provability-quantifiers.tex:27-32` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability-quantifiers.tex:30`; final reader page pending
-  - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:34-39` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:37`; final reader page pending
-  - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:87-107` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:91`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 262 occurrence(s). Representative locations:
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:21`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:26-41` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:26`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:26-41` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:32`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:26-41` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:33`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:43-51` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:43`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-For the inductive step, suppose again that the !!{derivation} of $!B$
-from $\Gamma \cup \{!A\}$ ends with a step~$!B$ which is justified by
-an inference rule. If the inference rule is modus ponens, we proceed
-as in the proof of \olref[ded]{thm:deduction-thm}. If the inference
-rule is \QR, we know that $!B \ident !C \lif \lforall[x][!D(x)]$ and
-!!a{formula} of the form $!C \lif !D(a)$ appears earlier in the
-!!{derivation}, where $a$ does not occur in~$!C$, $!A$, or $\Gamma$. We
-thus have that
-\begin{align*}
-  \Gamma \cup \{!A\} & \Proves !C \lif !D(a),\\
-  \intertext{and the induction hypothesis applies, i.e., we have that}
-    \Gamma & \Proves !A \lif (!C \lif !D(a)).\\
-  \intertext{By}
-  & \Proves (!A \lif (!C \lif !D(a))) \lif ((!A \land !C) \lif !D(a))\\
-  \intertext{and modus ponens we get}
-  \Gamma & \Proves (!A \land !C) \lif !D(a).\\
-  \intertext{Since the eigenvariable condition still applies, we can add a step to this !!{derivation} justified by \QR, and get}
-    \Gamma & \Proves (!A \land !C) \lif \lforall[x][!D(x)].\\
-    \intertext{We also have}
-    & \Proves ((!A \land !C) \lif \lforall[x][!D(x)]) \lif (!A \lif (!C \lif \lforall[x][!D(x)]),\\
-    \intertext{so by modus ponens,}
-    \Gamma & \Proves !A \lif (!C \lif \lforall[x][!D(x)]),
-\end{align*}
-i.e., $\Gamma \Proves !B$.
+A characteristic of the natural numbers is that every natural number
+can be reached from~$0$ by applying the successor operation~$+1$
+finitely many times---any natural number is either~$0$ or the
+successor of \dots{} the successor of~$0$. One way to specify a
+function~$h\colon\Nat \to \Nat$ that makes use of this fact is this:
+(a)~specify what the value of $h$ is for argument~$0$, and (b)~also
+specify how to, given the value of $h(x)$, compute the value of
+$h(x+1)$. For (a) tells us directly what $h(0)$ is, so $h$~is defined
+for~$0$. Now, using the instruction given by (b) for $x=0$, we can
+compute $h(1) = h(0+1)$ from~$h(0)$. Using the same instructions for
+$x=1$, we compute $h(2) = h(1+1)$ from~$h(1)$, and so on. For every
+natural number~$x$, we'll eventually reach the step where we define
+$h(x)$ from $h(x+1)$, and so $h(x)$ is defined for all $x \in \Nat$.
 ```
 
 ### BN-IN-T035
@@ -1273,19 +1296,21 @@ i.e., $\Gamma \Proves !B$.
 - Plausible alternatives: ফলন, মানচিত্রণ, ক্ষেত্র, সহক্ষেত্র, মানসমষ্টি and চিত্র are plausible alternatives; অপেক্ষক and চিত্রণ follow the checked university source, and the selected domain/range family keeps each set role explicit.
 - Status: attested-university; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘অপেক্ষক; চিত্রণ; সংজ্ঞাক্ষেত্র; সহসংজ্ঞাক্ষেত্র; বিস্তৃতি; প্রতিবিম্ব/মান’ express the OpenLogic sense(s) ‘function; mapping; domain; codomain; range; image/value’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 850 occurrence(s). Representative locations:
-  - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:36-39` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:38`; final reader page pending
-  - `OLP-0115` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-quantifiers.tex:23-30` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-quantifiers.tex:26`; final reader page pending
-  - `OLP-0115` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-quantifiers.tex:23-30` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-quantifiers.tex:29`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:26`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:27`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 922 occurrence(s). Representative locations:
+  - `OLP-0208` `upstream/content/computability/computability.tex:9-14` → `bn-Beng-IN/content/computability/computability.tex:11`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:9-10` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:10`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:12-15` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:12`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:12-15` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:13`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:12-15` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:15`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{defn}[Modus ponens]
-  If $!B$ and $!B \lif !A$ already occur in !!a{derivation}, then $!A$ is
-  a correct inference step.
-\end{defn}
+\begin{editorial}
+  This part is based on Jeremy Avigad's notes on computability
+  theory. Only the chapter on recursive functions contains exercises
+  yet, and everything could stand to be expanded with motivation,
+  examples, details, and exercises.
+\end{editorial}
 ```
 
 ### BN-IN-T036
@@ -1296,23 +1321,19 @@ i.e., $\Gamma \Proves !B$.
 - Plausible alternatives: পরামিতি, নিবেশ, নির্গম, অস্বচ্ছ বাক্স and বহির্বিস্তার নীতি are plausible Bengali alternatives; the selected loans are familiar in technical prose, while মানভিত্তিক সমতার নীতি states the governing extensional condition.
 - Status: provisional-descriptive; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘আর্গুমেন্ট; ইনপুট; আউটপুট; ব্ল্যাক বক্স; মানভিত্তিক সমতার নীতি’ express the OpenLogic sense(s) ‘function argument; input; output; black box; extensionality for functions’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 27 occurrence(s). Representative locations:
-  - `OLP-0176` `upstream/content/first-order-logic/beyond/many-sorted-logic.tex:19-26` → `bn-Beng-IN/content/first-order-logic/beyond/many-sorted-logic.tex:23`; final reader page pending
-  - `OLP-0176` `upstream/content/first-order-logic/beyond/many-sorted-logic.tex:28-42` → `bn-Beng-IN/content/first-order-logic/beyond/many-sorted-logic.tex:33`; final reader page pending
-  - `OLP-0176` `upstream/content/first-order-logic/beyond/many-sorted-logic.tex:28-42` → `bn-Beng-IN/content/first-order-logic/beyond/many-sorted-logic.tex:34`; final reader page pending
-  - `OLP-0076` `upstream/content/first-order-logic/sequent-calculus/proving-things-quant.tex:31-83` → `bn-Beng-IN/content/first-order-logic/sequent-calculus/proving-things-quant.tex:58`; final reader page pending
-  - `OLP-0189` `upstream/content/model-theory/basics/partial-iso.tex:12-31` → `bn-Beng-IN/content/model-theory/basics/partial-iso.tex:15`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 39 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:12-15` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:14`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:29-46` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:32`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:29-46` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:47`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:48-57` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:49`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:67-88` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:69`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-Many-sorted logic provides this kind of framework. One starts with a
-list of ``sorts''---the ``sort'' of an object indicates the
-``!!{domain}'' it is supposed to inhabit. One then has !!{variable}s
-and quantifiers for each sort, and (usually) an !!{identity} for each
-sort. Functions and relations are also ``typed'' by the sorts of
-objects they can take as arguments. Otherwise, one keeps the usual
-rules of first-order logic, with versions of the quantifier-rules
-repeated for each sort.
+If $f$ and $g$ are two one-place functions of natural numbers, we can
+compose them: $h(x) = f(g(x))$. The new function~$h(x)$ is then
+defined by \emph{composition} from the functions $f$ and~$g$. We'd
+like to generalize this to functions of more than one argument.
 ```
 
 ### BN-IN-T037
@@ -1353,55 +1374,17 @@ name, it's the only one.
 - Plausible alternatives: ব্যস্ত অপেক্ষক, বাঁ/ডান ব্যস্ত and যৌগ are plausible alternatives; বিপরীত অপেক্ষক, বাম/ডান বিপরীত and মিশ্রণ follow the checked inverse/composition roots and retain the order fixed by the formulas.
 - Status: attested-root-with-provisional-normalization; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘বিপরীত অপেক্ষক; বাম বিপরীত; ডান বিপরীত; মিশ্রণ’ express the OpenLogic sense(s) ‘inverse function; left inverse; right inverse; composition’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 17 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 21 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:9-10` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:10`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:12-15` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:14`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:67-88` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:82`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:67-88` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:87`; final reader page pending
   - `OLP-0187` `upstream/content/model-theory/basics/isomorphism.tex:67-106` → `bn-Beng-IN/content/model-theory/basics/isomorphism.tex:66`; final reader page pending
-  - `OLP-0025` `upstream/content/sets-functions-relations/functions/composition.tex:9-10` → `bn-Beng-IN/content/sets-functions-relations/functions/composition.tex:10`; final reader page pending
-  - `OLP-0025` `upstream/content/sets-functions-relations/functions/composition.tex:12-21` → `bn-Beng-IN/content/sets-functions-relations/functions/composition.tex:13`; final reader page pending
-  - `OLP-0025` `upstream/content/sets-functions-relations/functions/composition.tex:23-37` → `bn-Beng-IN/content/sets-functions-relations/functions/composition.tex:15`; final reader page pending
-  - `OLP-0025` `upstream/content/sets-functions-relations/functions/composition.tex:23-37` → `bn-Beng-IN/content/sets-functions-relations/functions/composition.tex:20`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{proof}
-Let $h$ be an isomorphism of $\Struct{M}$ onto $\Struct M'$. For any
-assignment~$s$, $h \circ s$ is the composition of $h$ and $s$, i.e.,
-the assignment in $\Struct{M'}$ such that $(h \circ s)(x) = h(s(x))$.
-By induction on $t$ and $!A$ one can prove the stronger claims:
-\begin{enumerate}
-  \item[a.] $h(\Value{t}{M}[s]) = \Value{t}{M'}[h\circ s]$.
-  \item[b.] $\Sat{M}{!A}[s]$ iff $\Sat{M'}{!A}[h \circ s]$.
-\end{enumerate}
-The first is proved by induction on the complexity of~$t$.
-\begin{enumerate}
-\item If $t \ident c$, then $\Value{c}{M}[s] = \Assign{c}{M}$ and
-  $\Value{c}{M'}[h \circ s] = \Assign{c}{M'}$. Thus,
-  $h(\Value{t}{M}[s]) = h(\Assign{c}{M}) = \Assign{c}{M'}$ (by
-  \olref{defn:iso-const} of \olref{defn:isomorphism}) $=
-  \Value{t}{M'}[h \circ s]$.
-\item If $t \ident x$, then $\Value{x}{M}[s] = s(x)$ and
-  $\Value{x}{M'}[h \circ s] = h(s(x))$. Thus, $h(\Value{x}{M}[s]) =
-  h(s(x)) = \Value{x}{M'}[h \circ s]$.
-\item If $t \ident f(t_1, \dots, t_n)$, then
-  \begin{align*}
-    \Value{t}{M}[s] & = \Assign{f}{M}(\Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s]) \quad\text{and}\\
-  \Value{t}{M'}[h \circ s] & = \Assign{f}{M}(\Value{t_1}{M'}[h \circ
-    s], \dots, \Value{t_n}{M'}[h \circ s]).
-  \end{align*}
-  The induction hypothesis is that for each $i$, $h(\Value{t_i}{M}[s])
-  = \Value{t_i}{M'}[h\circ s]$. So,
-  \begin{align}
-    h(\Value{t}{M}[s])
-    & = h(\Assign{f}{M}(\Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s]) \notag\\
-    & = \Assign{f}{M'}(h(\Value{t_1}{M}[s]), \dots,
-    h(\Value{t_n}{M}[s])) \ollabel{iso-1}\\
-    & = \Assign{f}{M'}(\Value{t_1}{M'}[h \circ s], \dots,
-    \Value{t_n}{M'}[h \circ s]) \ollabel{iso-2}\\
-    & = \Value{t}{M'}[h\circ s] \notag
-  \end{align}
-  Here, \olref{iso-1} follows by \olref{defn:iso-func} of
-  \olref{defn:isomorphism} and \olref{iso-2} by induction hypothesis.
-\end{enumerate}
-Part (b) is left as an exercise.
+\olfileid{cmp}{rec}{com}
+\olsection{Composition}
 ```
 
 ### BN-IN-T039
@@ -1448,24 +1431,28 @@ and functions.
 - Plausible alternatives: গণনীয় versus তালিকায়নযোগ্য; elementary enumeration sections use তালিকায়নযোগ্য, while গণনীয় is reserved as a possible later countability/computability-sensitive term.
 - Status: mixed-attested-and-provisional; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সেটের আকার; সসীম/অসীম; সেটের মাত্রা (অঙ্কবাচক সংখ্যা); তালিকায়ন; তালিকায়নযোগ্য/গণনীয়; অগণনীয়’ express the OpenLogic sense(s) ‘size of sets; finite/infinite; cardinality; enumeration; enumerable/countable; uncountable’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 352 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 353 occurrence(s). Representative locations:
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:12`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:112-120` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:119`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:112-120` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:121`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:122-134` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:127`; final reader page pending
   - `OLP-0113` `upstream/content/first-order-logic/axiomatic-deduction/rules-and-proofs.tex:24-35` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/rules-and-proofs.tex:26`; final reader page pending
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:21-38` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:27`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{prop}[Compactness]
-\ollabel{prop:proves-compact}
-  \begin{enumerate}
-  \item If $\Gamma \Proves !A$ then there is a finite subset $\Gamma_0
-    \subseteq \Gamma$ such that $\Gamma_0 \Proves !A$.
-  \item If every finite subset of~$\Gamma$ is
-    consistent, then $\Gamma$ is consistent.
-  \end{enumerate}
-\end{prop}
+A characteristic of the natural numbers is that every natural number
+can be reached from~$0$ by applying the successor operation~$+1$
+finitely many times---any natural number is either~$0$ or the
+successor of \dots{} the successor of~$0$. One way to specify a
+function~$h\colon\Nat \to \Nat$ that makes use of this fact is this:
+(a)~specify what the value of $h$ is for argument~$0$, and (b)~also
+specify how to, given the value of $h(x)$, compute the value of
+$h(x+1)$. For (a) tells us directly what $h(0)$ is, so $h$~is defined
+for~$0$. Now, using the instruction given by (b) for $x=0$, we can
+compute $h(1) = h(0+1)$ from~$h(0)$. Using the same instructions for
+$x=1$, we compute $h(2) = h(1+1)$ from~$h(1)$, and so on. For every
+natural number~$x$, we'll eventually reach the step where we define
+$h(x)$ from $h(x+1)$, and so $h(x)$ is defined for all $x \in \Nat$.
 ```
 
 ### BN-IN-T041
@@ -1527,27 +1514,32 @@ coincide.  That they do is the content of the \emph{soundness} and
 - Plausible alternatives: জোড়া-লাগানো অপেক্ষক / pairing-function loan; যুগলায়ন selected as a concise provisional compound.
 - Status: provisional-descriptive; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘আঁকাবাঁকা পথের পদ্ধতি; যুগলায়ন অপেক্ষক; সংকেতায়ন/সংকেত/সংকেতোদ্ধার; ত্রিভুজসংখ্যা; সহসসীম; সত্যসারণি/সত্যমান-অপেক্ষক’ express the OpenLogic sense(s) ‘zig-zag method; pairing function; encode/code/decode; triangular number; cofinite; truth table/truth function’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 162 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 163 occurrence(s). Representative locations:
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:14`; final reader page pending
   - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:41-52` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:50`; final reader page pending
   - `OLP-0177` `upstream/content/first-order-logic/beyond/second-order-logic.tex:30-65` → `bn-Beng-IN/content/first-order-logic/beyond/second-order-logic.tex:40`; final reader page pending
   - `OLP-0177` `upstream/content/first-order-logic/beyond/second-order-logic.tex:129-167` → `bn-Beng-IN/content/first-order-logic/beyond/second-order-logic.tex:135`; final reader page pending
   - `OLP-0177` `upstream/content/first-order-logic/beyond/second-order-logic.tex:226-234` → `bn-Beng-IN/content/first-order-logic/beyond/second-order-logic.tex:226`; final reader page pending
-  - `OLP-0128` `upstream/content/first-order-logic/completeness/outline.tex:34-47` → `bn-Beng-IN/content/first-order-logic/completeness/outline.tex:41`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{proof}
-\iftag{FOL}{We have to verify that all the axioms are valid. For
-  instance, here is the case for \olref[qua]{ax:q1}: suppose $t$ is
-  !!{free for} $x$ in $!A$, and assume
-  $\Sat{M}{\lforall[x][!A]}[s]$. Then by definition of satisfaction,
-  for each $\varAssign{s'}{s}{x}$, also $\Sat{M}{!A}[s']$, and in particular
-  this holds when $s'(x) = \Value{t}{M}[s]$. By
-  \olref[syn][ext]{prop:ext-formulas},
-  $\Sat{M}{\Subst{!A}{t}{x}}[s]$. This shows that
-  $\Sat{M}{(\lforall[x][!A] \lif \Subst{!A}{t}{x})}[s]$.}{Do truth
-  tables for each axiom to verify that they are tautologies.}
-\end{proof}
+In order to develop a mathematical theory of computability, one has to,
+first of all, develop a \emph{model} of computability.  We now think of
+computability as the kind of thing that computers do, and computers
+work with symbols.  But at the beginning of the development of
+theories of computability, the paradigmatic example of computation was
+\emph{numerical} computation.  Mathematicians were always interested
+in number-theoretic functions, i.e., functions $f\colon \Nat^n \to
+\Nat$ that can be computed. So it is not surprising that at the
+beginning of the theory of computability, it was such functions that
+were studied.  The most familiar examples of computable numerical
+functions, such as addition, multiplication, exponentiation (of
+natural numbers) share an interesting feature: they can be defined
+\emph{recursively}.  It is thus quite natural to attempt a general
+definition of \emph{computable function} on the basis of recursive
+definitions.  Among the many possible ways to define number-theoretic
+functions recursively, one particularly simple pattern of definition
+here becomes central: so-called \emph{primitive recursion}.
 ```
 
 ### BN-IN-T044
@@ -1895,37 +1887,42 @@ something, already a finite subset does.
 - Plausible alternatives: ডেডেকিন্ড বীজগণিত, পরবর্তী অপেক্ষক, স্বচিত্রণ, f-সংবৃত সেট and f-সংবরণ are plausible alternatives; the selected terms distinguish the carrier structure, endomap and least closed set.
 - Status: provisional-explicitly-defined; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘ডেডেকিন্ড বীজগঠন; উত্তরসূরি অপেক্ষক; স্ব-অপেক্ষক; f-বদ্ধ সেট; f-এর অধীনে আবরণ’ express the OpenLogic sense(s) ‘Dedekind algebra; successor function; self-map; f-closed set; closure under f’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 27 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 28 occurrence(s). Representative locations:
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:71-97` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:68`; final reader page pending
   - `OLP-0197` `upstream/content/model-theory/models-of-arithmetic/computable-models.tex:77-98` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/computable-models.tex:78`; final reader page pending
   - `OLP-0192` `upstream/content/model-theory/models-of-arithmetic/introduction.tex:12-39` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/introduction.tex:15`; final reader page pending
   - `OLP-0193` `upstream/content/model-theory/models-of-arithmetic/standard-models.tex:75-113` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/standard-models.tex:84`; final reader page pending
   - `OLP-0193` `upstream/content/model-theory/models-of-arithmetic/standard-models.tex:152-171` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/standard-models.tex:168`; final reader page pending
-  - `OLP-0022` `upstream/content/sets-functions-relations/functions/function-kinds.tex:83-84` → `bn-Beng-IN/content/sets-functions-relations/functions/function-kinds.tex:60`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-Specifically, $0$ now plays the role of~$a$, not of the smallest
-standard number. The smallest standard number is now~$1$. So we assign
-$\Assign{\Obj{0}}{K'} = 1$. The successor function is also different
-now: given a standard number, i.e., an $n > 0$, it still returns
-$n+1$. But $0$ now plays the role of~$a$, which is its own
-successor. So $\Assign{\prime}{K'}(0) = 0$.  For addition and
-multiplication we likewise have
+In the definition of $\Add$ we used $+$ on the right-hand-side of
+the second equation, but only to add~$1$. In other words, we used the
+successor function $\Succ(z) = z+1$ and applied it to the previous value
+$\Add(x,y)$ to define $\Add(x,y+1)$. So we can think of the
+recursive definition as given in terms of a single function which we
+apply to the previous value. However, it doesn't hurt---and sometimes
+is necessary---to allow the function to depend not just on the previous
+value but also on $x$ and~$y$. Consider:
 \begin{align*}
-\Assign{+}{K'}(x, y) & =
-  \begin{cases}
-    x+y-1 & \text{if $x$, $y >0$}\\
-    0 & \text{otherwise}
-  \end{cases}\\
-  \Assign{\times}{K'}(x, y) & =
-  \begin{cases}
-    1 & \text{if $x = 1$ or $y = 1$}\\
-    xy - x - y + 2 & \text{if $x$, $y > 1$}\\
-    0 & \text{otherwise}\\
-  \end{cases}
+  \Mult(x,0) & =  0 \\
+  \Mult(x,y+1) & =  \Add(\Mult(x,y),x)
 \end{align*}
-And we have $\tuple{x, y} \in \Assign{<}{K'}$ iff $x < y$ and $x > 0$
-and $y > 0$, or if $y = 0$.
+This is a primitive recursive definition of a function $\Mult$ by
+applying the function $\Add$ to both the preceding value
+$\Mult(x,y)$ and the first argument~$x$. It also defines the
+function~$\Mult(x,y)$ for all arguments $x$ and~$y$. For instance,
+$\Mult(2,3)$ is determined by successively computing $\Mult(2,0)$,
+$\Mult(2,1)$, $\Mult(2,2)$, and~$\Mult(2,3)$:
+\begin{align*}
+  \Mult(2,0) & = 0\\
+  \Mult(2,1) & = \Mult(2,0+1) =
+  \Add(\Mult(2,0), 2) = \Add(0, 2) = 2\\
+  \Mult(2,2) & = \Mult(2,1+1) =
+  \Add(\Mult(2,1), 2) = \Add(2, 2) = 4\\
+  \Mult(2,3) & = \Mult(2,2+1) =
+  \Add(\Mult(2,2), 2) = \Add(4, 2) = 6
+\end{align*}
 ```
 
 ### BN-IN-T058
@@ -1936,69 +1933,32 @@ and $y > 0$, or if $y = 0$.
 - Plausible alternatives: সূত্রের সহগ, অবদ্ধ চল and আবর্ত সংজ্ঞা are plausible alternatives; পরামিতি, মুক্ত চলরাশি and পুনরাবৃত্ত সংজ্ঞা preserve the syntactic and recursive senses fixed by the formulas.
 - Status: provisional-normalized; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সূত্রের পরামিতি; মুক্ত চলরাশি; পুনরাবৃত্ত সংজ্ঞা’ express the OpenLogic sense(s) ‘parameter of a formula; free variable; recursive definition’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 18 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 22 occurrence(s). Representative locations:
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:22`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:71-97` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:70`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:71-97` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:78`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:99-130` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:94`; final reader page pending
   - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:40-93` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:73`; final reader page pending
-  - `OLP-0177` `upstream/content/first-order-logic/beyond/second-order-logic.tex:30-65` → `bn-Beng-IN/content/first-order-logic/beyond/second-order-logic.tex:64`; final reader page pending
-  - `OLP-0145` `upstream/content/first-order-logic/introduction/semantic-notions.tex:13-25` → `bn-Beng-IN/content/first-order-logic/introduction/semantic-notions.tex:17`; final reader page pending
-  - `OLP-0164` `upstream/content/first-order-logic/syntax-and-semantics/assignments.tex:13-27` → `bn-Beng-IN/content/first-order-logic/syntax-and-semantics/assignments.tex:22`; final reader page pending
-  - `OLP-0164` `upstream/content/first-order-logic/syntax-and-semantics/assignments.tex:107-116` → `bn-Beng-IN/content/first-order-logic/syntax-and-semantics/assignments.tex:113`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-As in the case of second-order logic, one can think of higher-order
-logic as a kind of many-sorted logic, where there is a sort for each
-type of object we want to consider. But it is usually clearer just to
-define the syntax of higher-type logic from the ground up. For
-example, we can define a set of finite types inductively, as follows:
-\begin{enumerate}
-\item $\Nat$ is a finite type.
-\item If $\sigma$ and $\tau$ are finite types, then so is $\sigma
-  \to \tau$.
-\item If $\sigma$ and $\tau$ are finite types, so is $\sigma \times
-  \tau$.
-\end{enumerate}
-Intuitively, $\Nat$ denotes the type of the natural numbers,
-$\sigma \to \tau$ denotes the type of functions from $\sigma$ to
-$\tau$, and $\sigma \times \tau$ denotes the type of pairs of objects,
-one from $\sigma$ and one from $\tau$. We can then define a set of
-terms inductively, as follows:
-\begin{enumerate}
-\item For each type $\sigma$, there is a stock of variables $x$, $y$,
-  $z$, \dots of type $\sigma$
-\item $\Obj 0$ is a term of type $\Nat$
-\item $\Obj S$ (successor) is a term of type $\Nat \to \Nat$
-\item If $s$ is a term of type $\sigma$, and $t$ is a term of type
-  $\Nat \to (\sigma \to \sigma)$, then $\Obj{R}_{st}$ is a term of type
-  $\Nat \to \sigma$
-\item If $s$ is a term of type $\tau \to \sigma$ and $t$ is a
-  term of type~$\tau$, then $s(t)$ is a term of type $\sigma$
-\item If $s$ is a term of type~$\sigma$ and $x$ is a variable of
-  type~$\tau$, then $\lambd[x][s]$ is a term of type $\tau \to \sigma$.
-\item If $s$ is a term of type~$\sigma$ and $t$ is a term of
-  type~$\tau$, then $\tuple{s, t}$ is a term of type $\sigma \times
-  \tau$.
-\item If $s$ is a term of type~$\sigma \times \tau$ then $p_1(s)$ is a
-  term of type~$\sigma$ and $p_2(s)$ is a term of type~$\tau$.
-\end{enumerate}
-Intuitively, $\Obj{R}_{st}$ denotes the function defined recursively by
-\begin{align*}
-\Obj{R}_{st}(0) & = s \\
-\Obj{R}_{st}(x+1) & = t(x, R_{st}(x)),
-\end{align*}
-$\tuple{s, t}$ denotes the pair whose first component is~$s$ and whose
-second component is~$t$, and $p_1(s)$ and~$p_2(s)$ denote the first
-and second elements (``projections'') of~$s$. Finally, $\lambd[x][s]$
-denotes the function~$f$ defined by
-\[
-f(x) = s
-\]
-for any~$x$ of type~$\sigma$; so item (6) gives us a form of
-comprehension, enabling us to define functions using
-terms. !!^{formula}s are built up from !!{identity} statements $\eq[s][t]$
-between terms of the same type, the usual propositional connectives,
-and higher-type quantification. One can then take the axioms of the
-system to be the basic equations governing the terms defined above,
-together with the usual rules of logic with quantifiers and !!{identity}.
+In order to develop a mathematical theory of computability, one has to,
+first of all, develop a \emph{model} of computability.  We now think of
+computability as the kind of thing that computers do, and computers
+work with symbols.  But at the beginning of the development of
+theories of computability, the paradigmatic example of computation was
+\emph{numerical} computation.  Mathematicians were always interested
+in number-theoretic functions, i.e., functions $f\colon \Nat^n \to
+\Nat$ that can be computed. So it is not surprising that at the
+beginning of the theory of computability, it was such functions that
+were studied.  The most familiar examples of computable numerical
+functions, such as addition, multiplication, exponentiation (of
+natural numbers) share an interesting feature: they can be defined
+\emph{recursively}.  It is thus quite natural to attempt a general
+definition of \emph{computable function} on the basis of recursive
+definitions.  Among the many possible ways to define number-theoretic
+functions recursively, one particularly simple pattern of definition
+here becomes central: so-called \emph{primitive recursion}.
 ```
 
 ### BN-IN-T059
@@ -2115,23 +2075,32 @@ above.
 - Plausible alternatives: ক্রমগণনীয় was considered for denumerable; অসীম গণনীয় makes the exclusion of finite sets explicit. সমানতা was not used for syntactic identity because the relation concerns literal symbol-by-symbol identity rather than equality of denotation or truth value.
 - Status: provisional-explicitly-defined; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘অসীম গণনীয়; পরমাণু সূত্র; মৌলিক/সংজ্ঞায়িত সংকেত; সংকেতবিন্যাসগত অভিন্নতা; প্রতীকক্রম/উপপ্রতীকক্রম/সংযুক্তকরণ’ express the OpenLogic sense(s) ‘denumerable; atomic formula; primitive/defined symbol; syntactic identity; string/substring/concatenation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 134 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 135 occurrence(s). Representative locations:
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:53-69` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:51`; final reader page pending
   - `OLP-0112` `upstream/content/first-order-logic/axiomatic-deduction/axiomatic-deduction.tex:12-19` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axiomatic-deduction.tex:14`; final reader page pending
   - `OLP-0112` `upstream/content/first-order-logic/axiomatic-deduction/axiomatic-deduction.tex:12-19` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axiomatic-deduction.tex:16`; final reader page pending
   - `OLP-0122` `upstream/content/first-order-logic/axiomatic-deduction/provability-propositional.tex:15-21` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability-propositional.tex:17`; final reader page pending
   - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:21-38` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:23`; final reader page pending
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:40-93` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:92`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{editorial}
-  No effort has been made yet to ensure that the material in this
-  chapter respects various tags indicating which connectives and
-  quantifiers are primitive or defined: all are assumed to be
-  primitive, except $\liff$ which is assumed to be defined. If the FOL
-  tag is true, we produce a version with quantifiers, otherwise
-  without.
-\end{editorial}
+We can define even more fundamental functions like addition and
+multiplication by primitive recursion. In these cases, however, the
+functions in question are $2$-place. We fix one of the argument
+places, and use the other for the recursion. E.g, to define
+$\Add(x, y)$ we can fix~$x$ and define the value first for $y=0$
+and then for $y+1$ in terms of~$y$. Since $x$ is fixed, it will appear
+on the left and on the right side of the defining equations.
+\begin{align*}
+\Add(x,0) & =  x\\
+\Add(x,y+1) & =  \Add(x,y)+1
+\end{align*}
+These equations specify the value of $\Add$ for all $x$
+\emph{and}~$y$. To find $\Add(2,3)$, for instance, we apply the
+defining equations for $x = 2$, using the first to find
+$\Add(2,0) = 2$, then using the second to successively find
+$\Add(2,1) = 2 + 1 = 3$, $\Add(2, 2) = 3 + 1 = 4$, $\Add(2,
+3) = 4 + 1 = 5$.
 ```
 
 ### BN-IN-T064
@@ -2242,27 +2211,26 @@ coincide.  That they do is the content of the \emph{soundness} and
 - Plausible alternatives: প্রমাণপদ্ধতি was considered, but the source consistently exposes the narrower token derivation and T033 already fixes নিষ্পাদন for it. রূপতাত্ত্বিক was considered for syntactic but could be confused with linguistic morphology; সংকেতবিন্যাসগত states the formal-symbol sense.
 - Status: provisional-contextual; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘নিষ্পাদন পদ্ধতি; সম্পূর্ণ সংকেতবিন্যাসগত বস্তু/পদ্ধতি; যান্ত্রিক যাচাই; অধিতাত্ত্বিক বিচার’ express the OpenLogic sense(s) ‘derivation system; purely syntactic object/method; mechanical verification; metatheoretical treatment’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 145 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 149 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:17-27` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:17`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:24`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:40`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:43-51` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:49`; final reader page pending
   - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:18-29` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:18`; final reader page pending
-  - `OLP-0113` `upstream/content/first-order-logic/axiomatic-deduction/rules-and-proofs.tex:15-22` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/rules-and-proofs.tex:17`; final reader page pending
-  - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:15-32` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:16`; final reader page pending
-  - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:15-32` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:18`; final reader page pending
-  - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:15-32` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:28`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-As we've seen, giving !!{derivation}s in an axiomatic system is
-cumbersome, and !!{derivation}s may be hard to find. Rather than
-actually write out long lists of !!{formula}s, it is generally easier
-to argue that such !!{derivation}s exist, by making use of a few
-simple results. We've already established three such results:
-\olref[ptn]{prop:reflexivity} says we can always assert that $\Gamma
-\Proves !A$ when we know that $!A \in
-\Gamma$. \olref[ptn]{prop:monotonicity} says that if $\Gamma \Proves !A$
-then also $\Gamma \cup \{!B\} \Proves !A$. And
-\olref[ptn]{prop:transitivity} implies that if $\Gamma \Proves !A$ and
-$!A \Proves !B$, then $\Gamma \Proves !B$. Here's another simple
-result, a ``meta''-version of modus ponens:
+Here's one way of doing this: suppose $f$ is a $k$-place function,
+and $g_0$, \dots, $g_{k-1}$ are $k$ functions which are all
+$n$-place. Then we can define a new $n$-place function $h$ as follows:
+\[
+h(x_0, \dots, x_{n-1}) =
+f(g_0(x_0, \dots, x_{n-1}), \dots, g_{k-1}(x_0, \dots, x_{n-1}))
+\]
+If $f$ and all $g_i$ are computable, so is $h$: To compute $h(x_0,
+\dots, x_{n-1})$, first compute the values $y_i = g_i(x_0, \dots,
+x_{n-1})$ for each $i = 0$, \dots,~$k-1$. Then feed these values into
+$f$ to compute $h(x_0, \dots, x_{k-1}) = f(y_0, \dots, y_{k-1})$.
 ```
 
 ### BN-IN-T069
@@ -2302,19 +2270,26 @@ coincide.  That they do is the content of the \emph{soundness} and
 - Plausible alternatives: স্বতঃসিদ্ধমূলক অবরোহ was considered, but নিষ্পাদন keeps the system aligned with the project derivation token. ন্যায়সংগত পংক্তি was considered for justified line; সমর্থিত পংক্তি more directly marks that a listed axiom, premise or rule warrants the step.
 - Status: provisional-formally-governed; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘স্বতঃসিদ্ধমূলক নিষ্পাদন; স্বতঃসিদ্ধ-ছক/পদ্ধতি; অনুমান-বিধি; সমর্থিত পংক্তি; মোডাস পোনেন্স’ express the OpenLogic sense(s) ‘axiomatic derivation; axiom schema/system; rule of inference; justified line; modus ponens’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 215 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 219 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:17-27` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:17`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:24`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:40`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:43-51` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:49`; final reader page pending
   - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:36-39` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:36`; final reader page pending
-  - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:41-41` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:41`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:26`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:27`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:38`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{defn}[Modus ponens]
-  If $!B$ and $!B \lif !A$ already occur in !!a{derivation}, then $!A$ is
-  a correct inference step.
-\end{defn}
+Here's one way of doing this: suppose $f$ is a $k$-place function,
+and $g_0$, \dots, $g_{k-1}$ are $k$ functions which are all
+$n$-place. Then we can define a new $n$-place function $h$ as follows:
+\[
+h(x_0, \dots, x_{n-1}) =
+f(g_0(x_0, \dots, x_{n-1}), \dots, g_{k-1}(x_0, \dots, x_{n-1}))
+\]
+If $f$ and all $g_i$ are computable, so is $h$: To compute $h(x_0,
+\dots, x_{n-1})$, first compute the values $y_i = g_i(x_0, \dots,
+x_{n-1})$ for each $i = 0$, \dots,~$k-1$. Then feed these values into
+$f$ to compute $h(x_0, \dots, x_{k-1}) = f(y_0, \dots, y_{k-1})$.
 ```
 
 ### BN-IN-T071
@@ -2393,38 +2368,32 @@ strategy.
 - Plausible alternatives: সিকুয়েন্ট ক্যালকুলাস and অনুসিদ্ধান্ত কলন were considered; সিকোয়েন্ট কলন keeps the international object name while avoiding collision with semantic entailment. প্রাথমিক সিকোয়েন্ট was considered for initial sequent; প্রারম্ভিক better marks the special leaf position rather than elementary difficulty.
 - Status: provisional-transliterated-system; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সিকোয়েন্ট কলন; সিকোয়েন্ট; প্রারম্ভিক সিকোয়েন্ট; বাঁ/ডানপাশ; দুর্বলীকরণ-বিধি’ express the OpenLogic sense(s) ‘sequent calculus; sequent; initial sequent; left/right side; weakening rule’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 166 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 167 occurrence(s). Representative locations:
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:53-69` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:56`; final reader page pending
   - `OLP-0116` `upstream/content/first-order-logic/axiomatic-deduction/proving-things.tex:58-80` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proving-things.tex:61`; final reader page pending
   - `OLP-0144` `upstream/content/first-order-logic/introduction/sentences.tex:29-52` → `bn-Beng-IN/content/first-order-logic/introduction/sentences.tex:29`; final reader page pending
   - `OLP-0089` `upstream/content/first-order-logic/natural-deduction/proving-things.tex:57-96` → `bn-Beng-IN/content/first-order-logic/natural-deduction/proving-things.tex:77`; final reader page pending
   - `OLP-0089` `upstream/content/first-order-logic/natural-deduction/proving-things.tex:116-147` → `bn-Beng-IN/content/first-order-logic/natural-deduction/proving-things.tex:114`; final reader page pending
-  - `OLP-0064` `upstream/content/first-order-logic/proof-systems/introduction.tex:38-48` → `bn-Beng-IN/content/first-order-logic/proof-systems/introduction.tex:39`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-The other axiom involving just~$\lif$ is \olref[prp]{ax:lif2}, i.e.,
-\[
-(!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C))
-\]
-We could get to the last nested conditional by applying \MP{}
-twice. Again, that would mean that we want an instance of
-\olref[prp]{ax:lif2} where $!A \lif !C$ is $!D \lif !D$, the !!{formula} we
-are aiming for. Then of course, $!A$ and $!C$ are both~$!D$. How
-should we pick~$!B$ so that both $!A \lif (!B \lif !C)$ and $!A \lif
-!B$, i.e., in our case $!D \lif (!B \lif !D)$ and $!D \lif !B$, are
-also !!{derivable}? Well, the first of these is already an instance of
-\olref[prp]{ax:lif1}, whatever we decide $!B$ to be. And $!D \lif !B$ would
-be another instance of \olref[prp]{ax:lif1} if $!B$ were $(!D \lif !D)$.
-So, our !!{derivation} is:
-\begin{derivation}
-  1. & $!D \lif ((!D \lif !D) \lif !D)$ & \olref[prp]{ax:lif1}\\
-  2. & $(!D \lif ((!D \lif !D) \lif !D)) \lif {}$\\
-  & \qquad $((!D \lif (!D \lif !D)) \lif (!D \lif !D))$ & \olref[prp]{ax:lif2}\\
-  3. & $(!D \lif (!D \lif !D)) \lif (!D \lif !D)$ & 1, 2, \MP\\
-  4. & $!D \lif (!D \lif !D)$ & \olref[prp]{ax:lif1}\\
-  5. & $!D \lif !D$ & 3, 4, \MP
-\end{derivation}
-\end{ex}
+We can define even more fundamental functions like addition and
+multiplication by primitive recursion. In these cases, however, the
+functions in question are $2$-place. We fix one of the argument
+places, and use the other for the recursion. E.g, to define
+$\Add(x, y)$ we can fix~$x$ and define the value first for $y=0$
+and then for $y+1$ in terms of~$y$. Since $x$ is fixed, it will appear
+on the left and on the right side of the defining equations.
+\begin{align*}
+\Add(x,0) & =  x\\
+\Add(x,y+1) & =  \Add(x,y)+1
+\end{align*}
+These equations specify the value of $\Add$ for all $x$
+\emph{and}~$y$. To find $\Add(2,3)$, for instance, we apply the
+defining equations for $x = 2$, using the first to find
+$\Add(2,0) = 2$, then using the second to successively find
+$\Add(2,1) = 2 + 1 = 3$, $\Add(2, 2) = 3 + 1 = 4$, $\Add(2,
+3) = 4 + 1 = 5$.
 ```
 
 ### BN-IN-T074
@@ -2435,24 +2404,33 @@ So, our !!{derivation} is:
 - Plausible alternatives: সত্যচিহ্নিত সূত্র was considered for signed formula; চিহ্নিত সূত্র is shorter because the immediately adjacent definition supplies the True/False sign. সত্য-বৃক্ষ is retained as an explanatory synonym, while ট্যাবলো remains the primary token-compatible system name.
 - Status: provisional-explicitly-defined; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘ট্যাবলো/সত্য-বৃক্ষ; চিহ্নিত সূত্র; সত্যমান-চিহ্ন; বদ্ধ/খোলা শাখা; ট্যাবলো কলন’ express the OpenLogic sense(s) ‘tableau/truth tree; signed formula; truth-value sign; closed/open branch; tableau calculus’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 266 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 267 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:29-46` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:31`; final reader page pending
   - `OLP-0115` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-quantifiers.tex:13-21` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-quantifiers.tex:20`; final reader page pending
   - `OLP-0125` `upstream/content/first-order-logic/axiomatic-deduction/identity.tex:17-24` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/identity.tex:23`; final reader page pending
   - `OLP-0125` `upstream/content/first-order-logic/axiomatic-deduction/identity.tex:38-40` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/identity.tex:39`; final reader page pending
   - `OLP-0125` `upstream/content/first-order-logic/axiomatic-deduction/identity.tex:42-45` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/identity.tex:43`; final reader page pending
-  - `OLP-0123` `upstream/content/first-order-logic/axiomatic-deduction/provability-quantifiers.tex:34-37` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability-quantifiers.tex:40`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{defn}[Axioms for quantifiers]
-The \emph{axioms} governing quantifiers are
-all instances of the following:
-\begin{align}
-\ollabel{ax:q1} & \lforall[x][!B] \lif !B(t), \\
-\ollabel{ax:q2} & !B(t) \lif \lexists[x][!B].
-\end{align}
-for any closed term~$t$.
-\end{defn}
+This may seem like an overly restrictive characterization of what
+happens when we compute a new function using some existing ones. For
+one thing, sometimes we do not use all the arguments of a function, as
+when we defined $g(x, y, z) = \Succ(z)$ for use in the primitive
+recursive definition of~$\Add$. Suppose we are allowed use of the
+following functions:
+\[
+\Proj{n}{i}(x_0, \dots, x_{n-1}) = x_i
+\]
+The functions~$\Proj{k}{i}$ are called \emph{projection} functions:
+$\Proj{n}{i}$ is an $n$-place function. Then $g$ can be defined by
+\[
+g(x, y, z) = \Succ(\Proj{3}{2}(x, y, z)).
+\]
+Here the role of $f$ is played by the $1$-place function $\Succ$, so
+$k=1$. And we have one $3$-place function $\Proj{3}{2}$ which plays
+the role of $g_0$. The result is a $3$-place function that returns the
+successor of the third argument.
 ```
 
 ### BN-IN-T075
@@ -2534,38 +2512,31 @@ contractions, exchanges, and weakenings if necessary.
 - Plausible alternatives: রূপগত বিধি was considered for structural rule; গঠনগত বিধি better marks changes to sequent arrangement without implying ordinary linguistic morphology. বাম/ডান বিধি were possible forms; বাঁ/ডান continues the edition’s established side vocabulary.
 - Status: provisional-rule-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘যৌক্তিক বিধি; গঠনগত বিধি; উপরের/নিচের সিকোয়েন্ট; বাঁ/ডান-বিধি’ express the OpenLogic sense(s) ‘logical rule; structural rule; upper/lower sequent; left/right rule’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 96 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 98 occurrence(s). Representative locations:
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:26-41` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:32`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:53-69` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:56`; final reader page pending
   - `OLP-0116` `upstream/content/first-order-logic/axiomatic-deduction/proving-things.tex:58-80` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proving-things.tex:61`; final reader page pending
   - `OLP-0179` `upstream/content/first-order-logic/beyond/intuitionistic-logic.tex:32-35` → `bn-Beng-IN/content/first-order-logic/beyond/intuitionistic-logic.tex:28`; final reader page pending
   - `OLP-0179` `upstream/content/first-order-logic/beyond/intuitionistic-logic.tex:166-170` → `bn-Beng-IN/content/first-order-logic/beyond/intuitionistic-logic.tex:154`; final reader page pending
-  - `OLP-0179` `upstream/content/first-order-logic/beyond/intuitionistic-logic.tex:166-170` → `bn-Beng-IN/content/first-order-logic/beyond/intuitionistic-logic.tex:156`; final reader page pending
-  - `OLP-0176` `upstream/content/first-order-logic/beyond/many-sorted-logic.tex:44-64` → `bn-Beng-IN/content/first-order-logic/beyond/many-sorted-logic.tex:50`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-The other axiom involving just~$\lif$ is \olref[prp]{ax:lif2}, i.e.,
-\[
-(!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C))
-\]
-We could get to the last nested conditional by applying \MP{}
-twice. Again, that would mean that we want an instance of
-\olref[prp]{ax:lif2} where $!A \lif !C$ is $!D \lif !D$, the !!{formula} we
-are aiming for. Then of course, $!A$ and $!C$ are both~$!D$. How
-should we pick~$!B$ so that both $!A \lif (!B \lif !C)$ and $!A \lif
-!B$, i.e., in our case $!D \lif (!B \lif !D)$ and $!D \lif !B$, are
-also !!{derivable}? Well, the first of these is already an instance of
-\olref[prp]{ax:lif1}, whatever we decide $!B$ to be. And $!D \lif !B$ would
-be another instance of \olref[prp]{ax:lif1} if $!B$ were $(!D \lif !D)$.
-So, our !!{derivation} is:
-\begin{derivation}
-  1. & $!D \lif ((!D \lif !D) \lif !D)$ & \olref[prp]{ax:lif1}\\
-  2. & $(!D \lif ((!D \lif !D) \lif !D)) \lif {}$\\
-  & \qquad $((!D \lif (!D \lif !D)) \lif (!D \lif !D))$ & \olref[prp]{ax:lif2}\\
-  3. & $(!D \lif (!D \lif !D)) \lif (!D \lif !D)$ & 1, 2, \MP\\
-  4. & $!D \lif (!D \lif !D)$ & \olref[prp]{ax:lif1}\\
-  5. & $!D \lif !D$ & 3, 4, \MP
-\end{derivation}
-\end{ex}
+For instance, suppose we specify $h\colon \Nat \to \Nat$ by the following
+two equations:
+\begin{align*}
+h(0) & =  1\\
+h(x+1) & =  2 \cdot h(x)
+\end{align*}
+If we already know how to multiply, then these equations give us the
+information required for (a) and~(b) above. By successively applying
+the second equation, we get that
+\begin{align*}
+  h(1) & = 2\cdot h(0) = 2,\\
+  h(2) & = 2\cdot h(1) = 2\cdot 2,\\
+  h(3) & = 2 \cdot h(2) = 2\cdot 2 \cdot 2,\\
+  & \vdots
+\end{align*}
+We see that the function~$h$ we have specified is $h(x) = 2^x$.
 ```
 
 ### BN-IN-T078
@@ -3246,24 +3217,26 @@ Gentzen, independently. We have
 - Plausible alternatives: আণবিক সূত্র was considered for atomic formula; পরমাণু সূত্র continues the established logical atom vocabulary and remains definition-governed. বদ্ধ সূত্র was considered for sentence, but বাক্য follows the source category while the no-free-occurrence definition prevents ordinary-language ambiguity. উপস্থিতি and আবির্ভাব were considered for occurrence; সংঘটন marks a token at a particular syntactic position. সঙ্গত was considered for both matching and corresponding, but the edition reserves that root for consistency; সংশ্লিষ্ট পরিমাণসূচক and অনুরূপ সংঘটন keep the two syntactic relations distinct. ব্যাপ্তি was considered for scope; পরিসর stays distinct from the domain term সংজ্ঞাক্ষেত্র.
 - Status: mixed-attested-roots-and-definition-governed; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘পদ; পরমাণু সূত্র; বাক্য; মুক্ত/বদ্ধ চলরাশির সংঘটন; সংশ্লিষ্ট পরিমাণসূচক; অনুরূপ সংঘটন; পরিমাণসূচকের পরিসর’ express the OpenLogic sense(s) ‘term; atomic formula; sentence; free/bound variable occurrence; matching quantifier; corresponding occurrence; quantifier scope’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 603 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 607 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:17-27` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:17`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:24`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:40`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:43-51` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:49`; final reader page pending
   - `OLP-0115` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-quantifiers.tex:13-21` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-quantifiers.tex:20`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:18-29` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:18`; final reader page pending
-  - `OLP-0125` `upstream/content/first-order-logic/axiomatic-deduction/identity.tex:17-24` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/identity.tex:23`; final reader page pending
-  - `OLP-0125` `upstream/content/first-order-logic/axiomatic-deduction/identity.tex:38-40` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/identity.tex:39`; final reader page pending
-  - `OLP-0125` `upstream/content/first-order-logic/axiomatic-deduction/identity.tex:42-45` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/identity.tex:43`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{defn}[Axioms for quantifiers]
-The \emph{axioms} governing quantifiers are
-all instances of the following:
-\begin{align}
-\ollabel{ax:q1} & \lforall[x][!B] \lif !B(t), \\
-\ollabel{ax:q2} & !B(t) \lif \lexists[x][!B].
-\end{align}
-for any closed term~$t$.
-\end{defn}
+Here's one way of doing this: suppose $f$ is a $k$-place function,
+and $g_0$, \dots, $g_{k-1}$ are $k$ functions which are all
+$n$-place. Then we can define a new $n$-place function $h$ as follows:
+\[
+h(x_0, \dots, x_{n-1}) =
+f(g_0(x_0, \dots, x_{n-1}), \dots, g_{k-1}(x_0, \dots, x_{n-1}))
+\]
+If $f$ and all $g_i$ are computable, so is $h$: To compute $h(x_0,
+\dots, x_{n-1})$, first compute the values $y_i = g_i(x_0, \dots,
+x_{n-1})$ for each $i = 0$, \dots,~$k-1$. Then feed these values into
+$f$ to compute $h(x_0, \dots, x_{k-1}) = f(y_0, \dots, y_{k-1})$.
 ```
 
 ### BN-IN-T098
@@ -3274,28 +3247,21 @@ for any closed term~$t$.
 - Plausible alternatives: কাঠামো was considered for structure; গঠন is shorter and the formal Struct notation fixes the technical sense. পরিসর was considered for domain, but সংজ্ঞাক্ষেত্র avoids collision with quantifier scope and function codomain. সন্তুষ্টি was considered for satisfaction; পরিতৃপ্তি continues T066 and is fixed by the recursive truth clauses. মূল্যায়ন was considered for assignment; আরোপ distinguishes variable assignment from propositional valuation and from the structure’s interpretation function.
 - Status: mixed-attested-roots-and-provisional-semantics; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘গঠন; সংজ্ঞাক্ষেত্র; ব্যাখ্যা/নির্দেশিত মান; আরোপ-সাপেক্ষ পরিতৃপ্তি; পরিবর্তিত আরোপ’ express the OpenLogic sense(s) ‘structure; domain; interpretation/denotation; satisfaction relative to an assignment; modified assignment’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 362 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 364 occurrence(s). Representative locations:
+  - `OLP-0208` `upstream/content/computability/computability.tex:9-14` → `bn-Beng-IN/content/computability/computability.tex:12`; final reader page pending
+  - `OLP-0209` `upstream/content/computability/recursive-functions/recursive-functions.tex:10-15` → `bn-Beng-IN/content/computability/recursive-functions/recursive-functions.tex:13`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:122-134` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:132`; final reader page pending
   - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:87-107` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:88`; final reader page pending
   - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:114-123` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:118`; final reader page pending
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:114-123` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:121`; final reader page pending
-  - `OLP-0175` `upstream/content/first-order-logic/beyond/introduction.tex:23-44` → `bn-Beng-IN/content/first-order-logic/beyond/introduction.tex:27`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{proof}
-  \begin{enumerate}
-    \item If $\Gamma \Proves !A$, then there is a finite sequence of
-      !!{formula}s $!A_1$, \dots,~$!A_n$ so that $!A \ident !A_n$ and
-      each $!A_i$ is either a logical axiom, !!a{element} of~$\Gamma$
-      or follows from previous !!{formula}s by modus ponens.  Take
-      $\Gamma_0$ to be those $!A_i$ which are in~$\Gamma$.  Then the
-      !!{derivation} is likewise !!a{derivation} from~$\Gamma_0$, and
-      so $\Gamma_0 \Proves !A$.
-    \item This is the contrapositive of~(1) for the special case $!A
-      \ident \lfalse$.
-\end{enumerate}
-\end{proof}
+\begin{editorial}
+  This part is based on Jeremy Avigad's notes on computability
+  theory. Only the chapter on recursive functions contains exercises
+  yet, and everything could stand to be expanded with motivation,
+  examples, details, and exercises.
+\end{editorial}
 ```
 
 ### BN-IN-T099
@@ -3361,27 +3327,28 @@ occur in~$!A$, this schema is inconsistent!)
 - Plausible alternatives: নমুনা তত্ত্ব was considered for model theory; মডেল তত্ত্ব retains the established technical loan and avoids suggesting an illustrative example. স্বতঃসিদ্ধ পদ্ধতি was considered; স্বতঃসিদ্ধমূলক পদ্ধতি states that a class is described through a set of sentences used as axioms. সুনির্দিষ্ট করা was considered for characterize; চরিত্রায়িত করা retains the exact-class sense supplied by the biconditional explanation. অভিব্যক্তিযোগ্যতা was considered for expressibility; প্রকাশযোগ্যতা states whether the specified first-order language can express the property.
 - Status: mixed-attested-roots-and-provisional-model-theory; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘মডেল তত্ত্ব; বাক্যসমষ্টির মডেল; স্বতঃসিদ্ধমূলক পদ্ধতি; কোনো শ্রেণিকে চরিত্রায়িত করা; প্রকাশযোগ্যতা; সসীম/অতালিকায়নযোগ্য সংজ্ঞাক্ষেত্র’ express the OpenLogic sense(s) ‘model theory; model of a sentence set; axiomatic method; characterize a class; expressibility; finite/nonenumerable domain’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 195 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 196 occurrence(s). Representative locations:
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:12`; final reader page pending
   - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:18-29` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:18`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:112-120` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:119`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:112-120` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:121`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:122-134` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:127`; final reader page pending
-  - `OLP-0113` `upstream/content/first-order-logic/axiomatic-deduction/rules-and-proofs.tex:24-35` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/rules-and-proofs.tex:26`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-As we've seen, giving !!{derivation}s in an axiomatic system is
-cumbersome, and !!{derivation}s may be hard to find. Rather than
-actually write out long lists of !!{formula}s, it is generally easier
-to argue that such !!{derivation}s exist, by making use of a few
-simple results. We've already established three such results:
-\olref[ptn]{prop:reflexivity} says we can always assert that $\Gamma
-\Proves !A$ when we know that $!A \in
-\Gamma$. \olref[ptn]{prop:monotonicity} says that if $\Gamma \Proves !A$
-then also $\Gamma \cup \{!B\} \Proves !A$. And
-\olref[ptn]{prop:transitivity} implies that if $\Gamma \Proves !A$ and
-$!A \Proves !B$, then $\Gamma \Proves !B$. Here's another simple
-result, a ``meta''-version of modus ponens:
+A characteristic of the natural numbers is that every natural number
+can be reached from~$0$ by applying the successor operation~$+1$
+finitely many times---any natural number is either~$0$ or the
+successor of \dots{} the successor of~$0$. One way to specify a
+function~$h\colon\Nat \to \Nat$ that makes use of this fact is this:
+(a)~specify what the value of $h$ is for argument~$0$, and (b)~also
+specify how to, given the value of $h(x)$, compute the value of
+$h(x+1)$. For (a) tells us directly what $h(0)$ is, so $h$~is defined
+for~$0$. Now, using the instruction given by (b) for $x=0$, we can
+compute $h(1) = h(0+1)$ from~$h(0)$. Using the same instructions for
+$x=1$, we compute $h(2) = h(1+1)$ from~$h(1)$, and so on. For every
+natural number~$x$, we'll eventually reach the step where we define
+$h(x)$ from $h(x+1)$, and so $h(x)$ is defined for all $x \in \Nat$.
 ```
 
 ### BN-IN-T101
@@ -3619,69 +3586,33 @@ The negation of this sentence then defines the class of finite
 - Plausible alternatives: সংজ্ঞায়ক সম্পর্ক was considered for definable relation; সংজ্ঞেয় সম্পর্ক states that some formula can define it in the fixed structure. পরবর্তী/পূর্ববর্তী সম্পর্ক were considered; উত্তরসূরি/পূর্বসূরি aligns with the arithmetic direction displayed in the formulas. মানক মডেল remains a recorded alternative under T104; প্রমিত মডেল continues T094 in this chapter.
 - Status: mixed-attested-roots-and-provisional-definability-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘কোনো গঠনে সম্পর্ক প্রকাশ করা; সংজ্ঞেয় সম্পর্ক; অপ্রয়োজনীয় বিধেয়; উত্তরসূরি/পূর্বসূরি সম্পর্ক; পাটীগণিতের প্রমিত মডেল’ express the OpenLogic sense(s) ‘express a relation in a structure; definable relation; superfluous predicate; successor/predecessor relation; standard arithmetic model’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 42 occurrence(s). Representative locations:
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:40-93` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:60`; final reader page pending
-  - `OLP-0135` `upstream/content/first-order-logic/completeness/compactness.tex:156-167` → `bn-Beng-IN/content/first-order-logic/completeness/compactness.tex:155`; final reader page pending
-  - `OLP-0135` `upstream/content/first-order-logic/completeness/compactness.tex:156-167` → `bn-Beng-IN/content/first-order-logic/completeness/compactness.tex:159`; final reader page pending
-  - `OLP-0171` `upstream/content/first-order-logic/models-theories/expressing-relations.tex:55-67` → `bn-Beng-IN/content/first-order-logic/models-theories/expressing-relations.tex:59`; final reader page pending
-  - `OLP-0171` `upstream/content/first-order-logic/models-theories/expressing-relations.tex:55-67` → `bn-Beng-IN/content/first-order-logic/models-theories/expressing-relations.tex:62`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 47 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:29-46` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:47`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:12`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:14`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:71-97` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:68`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:99-130` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:108`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-As in the case of second-order logic, one can think of higher-order
-logic as a kind of many-sorted logic, where there is a sort for each
-type of object we want to consider. But it is usually clearer just to
-define the syntax of higher-type logic from the ground up. For
-example, we can define a set of finite types inductively, as follows:
-\begin{enumerate}
-\item $\Nat$ is a finite type.
-\item If $\sigma$ and $\tau$ are finite types, then so is $\sigma
-  \to \tau$.
-\item If $\sigma$ and $\tau$ are finite types, so is $\sigma \times
-  \tau$.
-\end{enumerate}
-Intuitively, $\Nat$ denotes the type of the natural numbers,
-$\sigma \to \tau$ denotes the type of functions from $\sigma$ to
-$\tau$, and $\sigma \times \tau$ denotes the type of pairs of objects,
-one from $\sigma$ and one from $\tau$. We can then define a set of
-terms inductively, as follows:
-\begin{enumerate}
-\item For each type $\sigma$, there is a stock of variables $x$, $y$,
-  $z$, \dots of type $\sigma$
-\item $\Obj 0$ is a term of type $\Nat$
-\item $\Obj S$ (successor) is a term of type $\Nat \to \Nat$
-\item If $s$ is a term of type $\sigma$, and $t$ is a term of type
-  $\Nat \to (\sigma \to \sigma)$, then $\Obj{R}_{st}$ is a term of type
-  $\Nat \to \sigma$
-\item If $s$ is a term of type $\tau \to \sigma$ and $t$ is a
-  term of type~$\tau$, then $s(t)$ is a term of type $\sigma$
-\item If $s$ is a term of type~$\sigma$ and $x$ is a variable of
-  type~$\tau$, then $\lambd[x][s]$ is a term of type $\tau \to \sigma$.
-\item If $s$ is a term of type~$\sigma$ and $t$ is a term of
-  type~$\tau$, then $\tuple{s, t}$ is a term of type $\sigma \times
-  \tau$.
-\item If $s$ is a term of type~$\sigma \times \tau$ then $p_1(s)$ is a
-  term of type~$\sigma$ and $p_2(s)$ is a term of type~$\tau$.
-\end{enumerate}
-Intuitively, $\Obj{R}_{st}$ denotes the function defined recursively by
-\begin{align*}
-\Obj{R}_{st}(0) & = s \\
-\Obj{R}_{st}(x+1) & = t(x, R_{st}(x)),
-\end{align*}
-$\tuple{s, t}$ denotes the pair whose first component is~$s$ and whose
-second component is~$t$, and $p_1(s)$ and~$p_2(s)$ denote the first
-and second elements (``projections'') of~$s$. Finally, $\lambd[x][s]$
-denotes the function~$f$ defined by
+This may seem like an overly restrictive characterization of what
+happens when we compute a new function using some existing ones. For
+one thing, sometimes we do not use all the arguments of a function, as
+when we defined $g(x, y, z) = \Succ(z)$ for use in the primitive
+recursive definition of~$\Add$. Suppose we are allowed use of the
+following functions:
 \[
-f(x) = s
+\Proj{n}{i}(x_0, \dots, x_{n-1}) = x_i
 \]
-for any~$x$ of type~$\sigma$; so item (6) gives us a form of
-comprehension, enabling us to define functions using
-terms. !!^{formula}s are built up from !!{identity} statements $\eq[s][t]$
-between terms of the same type, the usual propositional connectives,
-and higher-type quantification. One can then take the axioms of the
-system to be the basic equations governing the terms defined above,
-together with the usual rules of logic with quantifiers and !!{identity}.
+The functions~$\Proj{k}{i}$ are called \emph{projection} functions:
+$\Proj{n}{i}$ is an $n$-place function. Then $g$ can be defined by
+\[
+g(x, y, z) = \Succ(\Proj{3}{2}(x, y, z)).
+\]
+Here the role of $f$ is played by the $1$-place function $\Succ$, so
+$k=1$. And we have one $3$-place function $\Proj{3}{2}$ which plays
+the role of $g_0$. The result is a $3$-place function that returns the
+successor of the third argument.
 ```
 
 ### BN-IN-T110
@@ -3726,24 +3657,28 @@ comprehension, which is somewhat weaker.
 - Plausible alternatives: গঠনের মাত্রা was considered for structure size; আকার avoids suggesting vector-space dimension while T040 reserves finite set মাত্রা as an attested cardinality phrase. সর্বাধিক n was considered for at most n; বড়জোর n is the transparent Bengali bound used in the target. অগণনীয় was considered for nonenumerable; অতালিকায়নযোগ্য preserves the edition’s distinction from countability and follows T100.
 - Status: mixed-attested-finiteness-and-provisional-model-size-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘গঠনের আকার; অন্তত/বড়জোর/ঠিক n-টি উপাদান; সসীম/অসীম গঠন; বিশুদ্ধ যৌক্তিক বাক্য; অতালিকায়নযোগ্য গঠন’ express the OpenLogic sense(s) ‘size of a structure; at least/at most/exactly n elements; finite/infinite structure; purely logical sentence; nonenumerable structure’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 253 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 254 occurrence(s). Representative locations:
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:12`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:112-120` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:119`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:112-120` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:121`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:122-134` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:127`; final reader page pending
   - `OLP-0113` `upstream/content/first-order-logic/axiomatic-deduction/rules-and-proofs.tex:24-35` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/rules-and-proofs.tex:26`; final reader page pending
-  - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:68-77` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:71`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{prop}[Compactness]
-\ollabel{prop:proves-compact}
-  \begin{enumerate}
-  \item If $\Gamma \Proves !A$ then there is a finite subset $\Gamma_0
-    \subseteq \Gamma$ such that $\Gamma_0 \Proves !A$.
-  \item If every finite subset of~$\Gamma$ is
-    consistent, then $\Gamma$ is consistent.
-  \end{enumerate}
-\end{prop}
+A characteristic of the natural numbers is that every natural number
+can be reached from~$0$ by applying the successor operation~$+1$
+finitely many times---any natural number is either~$0$ or the
+successor of \dots{} the successor of~$0$. One way to specify a
+function~$h\colon\Nat \to \Nat$ that makes use of this fact is this:
+(a)~specify what the value of $h$ is for argument~$0$, and (b)~also
+specify how to, given the value of $h(x)$, compute the value of
+$h(x+1)$. For (a) tells us directly what $h(0)$ is, so $h$~is defined
+for~$0$. Now, using the instruction given by (b) for $x=0$, we can
+compute $h(1) = h(0+1)$ from~$h(0)$. Using the same instructions for
+$x=1$, we compute $h(2) = h(1+1)$ from~$h(1)$, and so on. For every
+natural number~$x$, we'll eventually reach the step where we define
+$h(x)$ from $h(x+1)$, and so $h(x)$ is defined for all $x \in \Nat$.
 ```
 
 ### BN-IN-T112
@@ -3839,16 +3774,33 @@ that is, higher-type functions that take functions to numbers.
 - Plausible alternatives: প্রকার was considered for type but is already ordinary Bengali and risks collapsing the sort/type distinction; টাইপ retains the formal hierarchy explicitly. অপেক্ষকাত্মক was considered for functional; ফাংশনাল is the recognizable higher-type noun and is immediately defined as a function taking functions to numbers. লাম্বডা নিষ্কর্ষ was considered; ল্যাম্বডা বিমূর্তন remains provisional and its term-forming clause supplies the exact sense.
 - Status: mixed-attested-roots-and-provisional-type-theory-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘উচ্চতর-ক্রমের যুক্তিবিদ্যা; টাইপ; অপেক্ষক-টাইপ; গুণন-টাইপ; ফাংশনাল; ল্যাম্বডা বিমূর্তন; অভিক্ষেপ; সরল টাইপতত্ত্ব’ express the OpenLogic sense(s) ‘higher-order logic; type; function type; product type; functional; lambda abstraction; projection; simple theory of types’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 57 occurrence(s). Representative locations:
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:11-11` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:11`; final reader page pending
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:21-38` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:21`; final reader page pending
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:21-38` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:24`; final reader page pending
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:21-38` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:27`; final reader page pending
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:21-38` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:29`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 62 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:29-46` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:38`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:48-57` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:49`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:48-57` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:57`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:67-88` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:70`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:67-88` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:76`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\olsection{Higher-Order logic}
+This may seem like an overly restrictive characterization of what
+happens when we compute a new function using some existing ones. For
+one thing, sometimes we do not use all the arguments of a function, as
+when we defined $g(x, y, z) = \Succ(z)$ for use in the primitive
+recursive definition of~$\Add$. Suppose we are allowed use of the
+following functions:
+\[
+\Proj{n}{i}(x_0, \dots, x_{n-1}) = x_i
+\]
+The functions~$\Proj{k}{i}$ are called \emph{projection} functions:
+$\Proj{n}{i}$ is an $n$-place function. Then $g$ can be defined by
+\[
+g(x, y, z) = \Succ(\Proj{3}{2}(x, y, z)).
+\]
+Here the role of $f$ is played by the $1$-place function $\Succ$, so
+$k=1$. And we have one $3$-place function $\Proj{3}{2}$ which plays
+the role of $g_0$. The result is a $3$-place function that returns the
+successor of the third argument.
 ```
 
 ### BN-IN-T116
@@ -3980,24 +3932,21 @@ logic by the axioms are true in all models of the axioms.
 - Plausible alternatives: রিডাক্ট and হ্রাস were considered for reduct; হ্রাসিত রূপ states the resulting structure and avoids suggesting a numerical reduction. বিস্তার was considered for expansion; সম্প্রসারণ is already used consistently for adding language symbols or extending a structure. অধোগঠন was considered for substructure; উপগঠন follows the established subset and subformula compound pattern.
 - Status: mixed-attested-roots-and-provisional-structure-comparison-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘হ্রাসিত রূপ; সম্প্রসারণ; উপগঠন; বর্ধিত গঠন; অভিন্ন ভাষা; সম্পর্ক-প্রসূত উপগঠন’ express the OpenLogic sense(s) ‘reduct; expansion; substructure; extension; common language; induced relational substructure’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 13 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 14 occurrence(s). Representative locations:
+  - `OLP-0209` `upstream/content/computability/recursive-functions/recursive-functions.tex:10-15` → `bn-Beng-IN/content/computability/recursive-functions/recursive-functions.tex:12`; final reader page pending
   - `OLP-0175` `upstream/content/first-order-logic/beyond/introduction.tex:13-21` → `bn-Beng-IN/content/first-order-logic/beyond/introduction.tex:14`; final reader page pending
   - `OLP-0179` `upstream/content/first-order-logic/beyond/intuitionistic-logic.tex:166-170` → `bn-Beng-IN/content/first-order-logic/beyond/intuitionistic-logic.tex:157`; final reader page pending
   - `OLP-0177` `upstream/content/first-order-logic/beyond/second-order-logic.tex:67-81` → `bn-Beng-IN/content/first-order-logic/beyond/second-order-logic.tex:69`; final reader page pending
   - `OLP-0130` `upstream/content/first-order-logic/completeness/henkin-expansions.tex:11-11` → `bn-Beng-IN/content/first-order-logic/completeness/henkin-expansions.tex:11`; final reader page pending
-  - `OLP-0190` `upstream/content/model-theory/basics/dlo.tex:42-61` → `bn-Beng-IN/content/model-theory/basics/dlo.tex:57`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-First-order logic is not the only system of logic of interest: there
-are many extensions and variations of first-order logic. A logic
-typically consists of the formal specification of a language, usually,
-but not always, a deductive system, and usually, but not always, an
-intended semantics. But the technical use of the term raises an
-obvious question: what do logics that are not first-order logic have
-to do with the word ``logic,'' used in the intuitive or philosophical
-sense? All of the systems described below are designed to model
-reasoning of some form or another; can we say what makes them logical?
+\begin{editorial}
+  These are Jeremy Avigad's notes on recursive functions, revised and
+  expanded by Richard Zach. This chapter does contain some exercises,
+  and can be included independently to provide the basis for a
+  discussion of arithmetization of syntax.
+\end{editorial}
 ```
 
 ### BN-IN-T121
@@ -4280,69 +4229,33 @@ number of !!a{derivation} of a contradiction from~$\Th{PA}$.  Such
 - Plausible alternatives: অমানক অংশ was considered for nonstandard part; অমানক খণ্ড continues the chapter’s block vocabulary. পূর্বগামী was considered for predecessor; পূর্বসূরি matches the successor/predecessor pair already used in the edition.
 - Status: provisional-arithmetic-block-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘মানক খণ্ড; অমানক খণ্ড; পাটিগাণিতিক খণ্ড; উত্তরসূরি; পূর্বসূরি’ express the OpenLogic sense(s) ‘standard part; nonstandard part; arithmetic block; successor; predecessor’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 47 occurrence(s). Representative locations:
-  - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:40-93` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:60`; final reader page pending
-  - `OLP-0171` `upstream/content/first-order-logic/models-theories/expressing-relations.tex:55-67` → `bn-Beng-IN/content/first-order-logic/models-theories/expressing-relations.tex:62`; final reader page pending
-  - `OLP-0171` `upstream/content/first-order-logic/models-theories/expressing-relations.tex:55-67` → `bn-Beng-IN/content/first-order-logic/models-theories/expressing-relations.tex:63`; final reader page pending
-  - `OLP-0171` `upstream/content/first-order-logic/models-theories/expressing-relations.tex:55-67` → `bn-Beng-IN/content/first-order-logic/models-theories/expressing-relations.tex:64`; final reader page pending
-  - `OLP-0152` `upstream/content/first-order-logic/syntax-and-semantics/terms-formulas.tex:160-168` → `bn-Beng-IN/content/first-order-logic/syntax-and-semantics/terms-formulas.tex:160`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 52 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:29-46` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:47`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:12`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:12-24` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:14`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:71-97` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:68`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:99-130` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:108`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-As in the case of second-order logic, one can think of higher-order
-logic as a kind of many-sorted logic, where there is a sort for each
-type of object we want to consider. But it is usually clearer just to
-define the syntax of higher-type logic from the ground up. For
-example, we can define a set of finite types inductively, as follows:
-\begin{enumerate}
-\item $\Nat$ is a finite type.
-\item If $\sigma$ and $\tau$ are finite types, then so is $\sigma
-  \to \tau$.
-\item If $\sigma$ and $\tau$ are finite types, so is $\sigma \times
-  \tau$.
-\end{enumerate}
-Intuitively, $\Nat$ denotes the type of the natural numbers,
-$\sigma \to \tau$ denotes the type of functions from $\sigma$ to
-$\tau$, and $\sigma \times \tau$ denotes the type of pairs of objects,
-one from $\sigma$ and one from $\tau$. We can then define a set of
-terms inductively, as follows:
-\begin{enumerate}
-\item For each type $\sigma$, there is a stock of variables $x$, $y$,
-  $z$, \dots of type $\sigma$
-\item $\Obj 0$ is a term of type $\Nat$
-\item $\Obj S$ (successor) is a term of type $\Nat \to \Nat$
-\item If $s$ is a term of type $\sigma$, and $t$ is a term of type
-  $\Nat \to (\sigma \to \sigma)$, then $\Obj{R}_{st}$ is a term of type
-  $\Nat \to \sigma$
-\item If $s$ is a term of type $\tau \to \sigma$ and $t$ is a
-  term of type~$\tau$, then $s(t)$ is a term of type $\sigma$
-\item If $s$ is a term of type~$\sigma$ and $x$ is a variable of
-  type~$\tau$, then $\lambd[x][s]$ is a term of type $\tau \to \sigma$.
-\item If $s$ is a term of type~$\sigma$ and $t$ is a term of
-  type~$\tau$, then $\tuple{s, t}$ is a term of type $\sigma \times
-  \tau$.
-\item If $s$ is a term of type~$\sigma \times \tau$ then $p_1(s)$ is a
-  term of type~$\sigma$ and $p_2(s)$ is a term of type~$\tau$.
-\end{enumerate}
-Intuitively, $\Obj{R}_{st}$ denotes the function defined recursively by
-\begin{align*}
-\Obj{R}_{st}(0) & = s \\
-\Obj{R}_{st}(x+1) & = t(x, R_{st}(x)),
-\end{align*}
-$\tuple{s, t}$ denotes the pair whose first component is~$s$ and whose
-second component is~$t$, and $p_1(s)$ and~$p_2(s)$ denote the first
-and second elements (``projections'') of~$s$. Finally, $\lambd[x][s]$
-denotes the function~$f$ defined by
+This may seem like an overly restrictive characterization of what
+happens when we compute a new function using some existing ones. For
+one thing, sometimes we do not use all the arguments of a function, as
+when we defined $g(x, y, z) = \Succ(z)$ for use in the primitive
+recursive definition of~$\Add$. Suppose we are allowed use of the
+following functions:
 \[
-f(x) = s
+\Proj{n}{i}(x_0, \dots, x_{n-1}) = x_i
 \]
-for any~$x$ of type~$\sigma$; so item (6) gives us a form of
-comprehension, enabling us to define functions using
-terms. !!^{formula}s are built up from !!{identity} statements $\eq[s][t]$
-between terms of the same type, the usual propositional connectives,
-and higher-type quantification. One can then take the axioms of the
-system to be the basic equations governing the terms defined above,
-together with the usual rules of logic with quantifiers and !!{identity}.
+The functions~$\Proj{k}{i}$ are called \emph{projection} functions:
+$\Proj{n}{i}$ is an $n$-place function. Then $g$ can be defined by
+\[
+g(x, y, z) = \Succ(\Proj{3}{2}(x, y, z)).
+\]
+Here the role of $f$ is played by the $1$-place function $\Succ$, so
+$k=1$. And we have one $3$-place function $\Proj{3}{2}$ which plays
+the role of $g_0$. The result is a $3$-place function that returns the
+successor of the third argument.
 ```
 
 ### BN-IN-T130
@@ -4353,27 +4266,32 @@ together with the usual rules of logic with quantifiers and !!{identity}.
 - Plausible alternatives: হিসাবযোগ্য was considered for computable; গণনসাধ্য keeps the operation-as-effective-procedure sense distinct from mere counting. সিদ্ধান্তযোগ্য was considered for decidable; নির্ণেয় follows the established relation vocabulary and the explicit decision procedure sense.
 - Status: provisional-computability-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘গণনসাধ্য গঠন; গণনসাধ্য অপেক্ষক; নির্ণেয় সম্বন্ধ; গণনসাধ্য উপস্থাপন; টেনেনবাউমের উপপাদ্য’ express the OpenLogic sense(s) ‘computable structure; computable function; decidable relation; computable presentation; Tennenbaum theorem’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 6 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 9 occurrence(s). Representative locations:
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:22`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:30-39` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:27`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:30-39` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:32`; final reader page pending
   - `OLP-0197` `upstream/content/model-theory/models-of-arithmetic/computable-models.tex:12-23` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/computable-models.tex:20`; final reader page pending
   - `OLP-0197` `upstream/content/model-theory/models-of-arithmetic/computable-models.tex:35-40` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/computable-models.tex:37`; final reader page pending
-  - `OLP-0197` `upstream/content/model-theory/models-of-arithmetic/computable-models.tex:35-40` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/computable-models.tex:38`; final reader page pending
-  - `OLP-0197` `upstream/content/model-theory/models-of-arithmetic/computable-models.tex:100-105` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/computable-models.tex:98`; final reader page pending
-  - `OLP-0197` `upstream/content/model-theory/models-of-arithmetic/computable-models.tex:100-105` → `bn-Beng-IN/content/model-theory/models-of-arithmetic/computable-models.tex:99`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{explain}
-The standard model~$\Struct{N}$ has two nice features. Its domain is
-the natural numbers~$\Nat$, i.e., its elements are just the kinds of
-things we want to talk about using the language of arithmetic, and the
-standard numeral~$\num{n}$ actually picks out~$n$. The other nice
-feature is that the interpretations of the non-logical symbols
-of~$\Lang{L_A}$ are all \emph{computable}. The successor, addition,
-and multiplication functions which serve as $\Assign{\prime}{N}$,
-$\Assign{+}{N}$, and $\Assign{\times}{N}$ are computable functions of
-numbers. (Computable by Turing machines, or definable by primitive
-recursion, say.) And the less-than relation on~$\Struct{N}$, i.e.,
-$\Assign{<}{N}$, is decidable.
+In order to develop a mathematical theory of computability, one has to,
+first of all, develop a \emph{model} of computability.  We now think of
+computability as the kind of thing that computers do, and computers
+work with symbols.  But at the beginning of the development of
+theories of computability, the paradigmatic example of computation was
+\emph{numerical} computation.  Mathematicians were always interested
+in number-theoretic functions, i.e., functions $f\colon \Nat^n \to
+\Nat$ that can be computed. So it is not surprising that at the
+beginning of the theory of computability, it was such functions that
+were studied.  The most familiar examples of computable numerical
+functions, such as addition, multiplication, exponentiation (of
+natural numbers) share an interesting feature: they can be defined
+\emph{recursively}.  It is thus quite natural to attempt a general
+definition of \emph{computable function} on the basis of recursive
+definitions.  Among the many possible ways to define number-theoretic
+functions recursively, one particularly simple pattern of definition
+here becomes central: so-called \emph{primitive recursion}.
 ```
 
 ### BN-IN-T131
@@ -4418,69 +4336,32 @@ $\Domain M = X$ and $\Assign{<}{M} = R$ is a model of this theory.
 - Plausible alternatives: বাতিলন বিধি was considered for cancellation law; যোগের কর্তন-বিধি states both the operation and the proof role explicitly. মধ্যবিন্দু was considered for midpoint; গড় follows the arithmetic halving construction used in the proof.
 - Status: provisional-arithmetic-operation-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘যোগের কর্তন-বিধি; বিনিময়যোগ্য ক্রিয়া; গড়; পাটিগাণিতিক ক্রিয়া’ express the OpenLogic sense(s) ‘cancellation law; commutative operations; midpoint; arithmetic operation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 27 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 29 occurrence(s). Representative locations:
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:12`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:13`; final reader page pending
   - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:40-93` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:92`; final reader page pending
   - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:114-123` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:120`; final reader page pending
   - `OLP-0175` `upstream/content/first-order-logic/beyond/introduction.tex:23-44` → `bn-Beng-IN/content/first-order-logic/beyond/introduction.tex:32`; final reader page pending
-  - `OLP-0181` `upstream/content/first-order-logic/beyond/other-logics.tex:13-20` → `bn-Beng-IN/content/first-order-logic/beyond/other-logics.tex:15`; final reader page pending
-  - `OLP-0127` `upstream/content/first-order-logic/completeness/introduction.tex:24-47` → `bn-Beng-IN/content/first-order-logic/completeness/introduction.tex:32`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-As in the case of second-order logic, one can think of higher-order
-logic as a kind of many-sorted logic, where there is a sort for each
-type of object we want to consider. But it is usually clearer just to
-define the syntax of higher-type logic from the ground up. For
-example, we can define a set of finite types inductively, as follows:
-\begin{enumerate}
-\item $\Nat$ is a finite type.
-\item If $\sigma$ and $\tau$ are finite types, then so is $\sigma
-  \to \tau$.
-\item If $\sigma$ and $\tau$ are finite types, so is $\sigma \times
-  \tau$.
-\end{enumerate}
-Intuitively, $\Nat$ denotes the type of the natural numbers,
-$\sigma \to \tau$ denotes the type of functions from $\sigma$ to
-$\tau$, and $\sigma \times \tau$ denotes the type of pairs of objects,
-one from $\sigma$ and one from $\tau$. We can then define a set of
-terms inductively, as follows:
-\begin{enumerate}
-\item For each type $\sigma$, there is a stock of variables $x$, $y$,
-  $z$, \dots of type $\sigma$
-\item $\Obj 0$ is a term of type $\Nat$
-\item $\Obj S$ (successor) is a term of type $\Nat \to \Nat$
-\item If $s$ is a term of type $\sigma$, and $t$ is a term of type
-  $\Nat \to (\sigma \to \sigma)$, then $\Obj{R}_{st}$ is a term of type
-  $\Nat \to \sigma$
-\item If $s$ is a term of type $\tau \to \sigma$ and $t$ is a
-  term of type~$\tau$, then $s(t)$ is a term of type $\sigma$
-\item If $s$ is a term of type~$\sigma$ and $x$ is a variable of
-  type~$\tau$, then $\lambd[x][s]$ is a term of type $\tau \to \sigma$.
-\item If $s$ is a term of type~$\sigma$ and $t$ is a term of
-  type~$\tau$, then $\tuple{s, t}$ is a term of type $\sigma \times
-  \tau$.
-\item If $s$ is a term of type~$\sigma \times \tau$ then $p_1(s)$ is a
-  term of type~$\sigma$ and $p_2(s)$ is a term of type~$\tau$.
-\end{enumerate}
-Intuitively, $\Obj{R}_{st}$ denotes the function defined recursively by
-\begin{align*}
-\Obj{R}_{st}(0) & = s \\
-\Obj{R}_{st}(x+1) & = t(x, R_{st}(x)),
-\end{align*}
-$\tuple{s, t}$ denotes the pair whose first component is~$s$ and whose
-second component is~$t$, and $p_1(s)$ and~$p_2(s)$ denote the first
-and second elements (``projections'') of~$s$. Finally, $\lambd[x][s]$
-denotes the function~$f$ defined by
-\[
-f(x) = s
-\]
-for any~$x$ of type~$\sigma$; so item (6) gives us a form of
-comprehension, enabling us to define functions using
-terms. !!^{formula}s are built up from !!{identity} statements $\eq[s][t]$
-between terms of the same type, the usual propositional connectives,
-and higher-type quantification. One can then take the axioms of the
-system to be the basic equations governing the terms defined above,
-together with the usual rules of logic with quantifiers and !!{identity}.
+In order to develop a mathematical theory of computability, one has to,
+first of all, develop a \emph{model} of computability.  We now think of
+computability as the kind of thing that computers do, and computers
+work with symbols.  But at the beginning of the development of
+theories of computability, the paradigmatic example of computation was
+\emph{numerical} computation.  Mathematicians were always interested
+in number-theoretic functions, i.e., functions $f\colon \Nat^n \to
+\Nat$ that can be computed. So it is not surprising that at the
+beginning of the theory of computability, it was such functions that
+were studied.  The most familiar examples of computable numerical
+functions, such as addition, multiplication, exponentiation (of
+natural numbers) share an interesting feature: they can be defined
+\emph{recursively}.  It is thus quite natural to attempt a general
+definition of \emph{computable function} on the basis of recursive
+definitions.  Among the many possible ways to define number-theoretic
+functions recursively, one particularly simple pattern of definition
+here becomes central: so-called \emph{primitive recursion}.
 ```
 
 ### BN-IN-T133
@@ -5029,3 +4910,177 @@ is \emph{normal} if it satisfies the following properties:
 - Status: provisional-terminology-normalization-register; confidence: low_pending_occurrence; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘মৌলিকভাবে সমতুল্য কাঠামো’ express the OpenLogic sense(s) ‘abstract-logic elementary equivalence; elementary equivalent’ without collision with adjacent logical or mathematical concepts?
 - Exact target occurrence: none yet; this decision governs a token, compound variant or future translated source block.
+
+### BN-IN-T150
+
+- Source term or concept: primitive recursion; primitive recursive definition; primitive recursive function
+- Chosen Bengali: আদিম পুনরাবৃত্তি; আদিম পুনরাবৃত্তির মাধ্যমে সংজ্ঞা; আদিম পুনরাবৃত্ত অপেক্ষক
+- Rationale: Number, relation, mapping and proof pages support the component roots, while the recursive-function construction is governed by the displayed zero and successor clauses. আদিম পুনরাবৃত্তি names the scheme that uses an initial value and the immediately preceding value; আদিম পুনরাবৃত্ত অপেক্ষক names a function obtained by that scheme. The chapter-specific compound remains open to expert review.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-computability-recursion-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘আদিম পুনরাবৃত্তি; আদিম পুনরাবৃত্তির মাধ্যমে সংজ্ঞা; আদিম পুনরাবৃত্ত অপেক্ষক’ express the OpenLogic sense(s) ‘primitive recursion; primitive recursive definition; primitive recursive function’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 9 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:29-46` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:32`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:25`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:37`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:39`; final reader page pending
+  - `OLP-0211` `upstream/content/computability/recursive-functions/primitive-recursion.tex:9-10` → `bn-Beng-IN/content/computability/recursive-functions/primitive-recursion.tex:10`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+This may seem like an overly restrictive characterization of what
+happens when we compute a new function using some existing ones. For
+one thing, sometimes we do not use all the arguments of a function, as
+when we defined $g(x, y, z) = \Succ(z)$ for use in the primitive
+recursive definition of~$\Add$. Suppose we are allowed use of the
+following functions:
+\[
+\Proj{n}{i}(x_0, \dots, x_{n-1}) = x_i
+\]
+The functions~$\Proj{k}{i}$ are called \emph{projection} functions:
+$\Proj{n}{i}$ is an $n$-place function. Then $g$ can be defined by
+\[
+g(x, y, z) = \Succ(\Proj{3}{2}(x, y, z)).
+\]
+Here the role of $f$ is played by the $1$-place function $\Succ$, so
+$k=1$. And we have one $3$-place function $\Proj{3}{2}$ which plays
+the role of $g_0$. The result is a $3$-place function that returns the
+successor of the third argument.
+```
+
+### BN-IN-T151
+
+- Source term or concept: recursive function; recursive definition
+- Chosen Bengali: পুনরাবৃত্ত অপেক্ষক; পুনরাবৃত্ত সংজ্ঞা
+- Rationale: The checked formula, proof and function pages support পুনরাবৃত্ত সংজ্ঞা as a definition referring to an earlier value of the same function. পুনরাবৃত্ত অপেক্ষক is reserved for the computational function class in this chapter; it does not by itself assert totality or effective computation beyond the stated construction.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-recursive-function-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘পুনরাবৃত্ত অপেক্ষক; পুনরাবৃত্ত সংজ্ঞা’ express the OpenLogic sense(s) ‘recursive function; recursive definition’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 15 occurrence(s). Representative locations:
+  - `OLP-0208` `upstream/content/computability/computability.tex:9-14` → `bn-Beng-IN/content/computability/computability.tex:11`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:12-28` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:22`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:37`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:41`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:42`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+\begin{editorial}
+  This part is based on Jeremy Avigad's notes on computability
+  theory. Only the chapter on recursive functions contains exercises
+  yet, and everything could stand to be expanded with motivation,
+  examples, details, and exercises.
+\end{editorial}
+```
+
+### BN-IN-T152
+
+- Source term or concept: computability theory
+- Chosen Bengali: গণনসাধ্যতা তত্ত্ব
+- Rationale: Number, function, relation and proof pages support the Bengali গণনসাধ্য root already used for computable structures and functions. গণনসাধ্যতা তত্ত্ব names the mathematical theory of effective numerical computation and remains distinct from mere enumeration/countability.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-computability-theory-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘গণনসাধ্যতা তত্ত্ব’ express the OpenLogic sense(s) ‘computability theory’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 1 occurrence(s). Representative locations:
+  - `OLP-0208` `upstream/content/computability/computability.tex:9-14` → `bn-Beng-IN/content/computability/computability.tex:10`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+\begin{editorial}
+  This part is based on Jeremy Avigad's notes on computability
+  theory. Only the chapter on recursive functions contains exercises
+  yet, and everything could stand to be expanded with motivation,
+  examples, details, and exercises.
+\end{editorial}
+```
+
+### BN-IN-T153
+
+- Source term or concept: characteristic function; computable relation
+- Chosen Bengali: চরিত্রসূচক অপেক্ষক; গণনসাধ্য সম্বন্ধ
+- Rationale: Relation, mapping and proof pages support the function-versus-relation distinction. চরিত্রসূচক অপেক্ষক maps membership to a numerical answer, so computable sets and relations can be treated as computable functions; গণনসাধ্য সম্বন্ধ retains the established relation term. Expert review remains welcome for the compound.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-characteristic-function-register; confidence: low_pending_occurrence; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘চরিত্রসূচক অপেক্ষক; গণনসাধ্য সম্বন্ধ’ express the OpenLogic sense(s) ‘characteristic function; computable relation’ without collision with adjacent logical or mathematical concepts?
+- Exact target occurrence: none yet; this decision governs a token, compound variant or future translated source block.
+
+### BN-IN-T154
+
+- Source term or concept: unbounded search
+- Chosen Bengali: সীমাহীন অনুসন্ধান
+- Rationale: The checked number, function and proof pages support অনুসন্ধান as a search operation, while সীমাহীন marks the absence of a fixed upper bound in the source definition. The term is kept distinct from bounded minimization, which is a later section.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-unbounded-search-register; confidence: low_pending_occurrence; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘সীমাহীন অনুসন্ধান’ express the OpenLogic sense(s) ‘unbounded search’ without collision with adjacent logical or mathematical concepts?
+- Exact target occurrence: none yet; this decision governs a token, compound variant or future translated source block.
+
+### BN-IN-T155
+
+- Source term or concept: partial recursive function; general recursive function
+- Chosen Bengali: আংশিক পুনরাবৃত্ত অপেক্ষক; সাধারণ পুনরাবৃত্ত অপেক্ষক
+- Rationale: The established partial/total distinction under T039 and the new recursive-function register govern these class names. আংশিক পুনরাবৃত্ত অপেক্ষক permits nontermination or undefined values; সাধারণ পুনরাবৃত্ত অপেক্ষক is the total computable subclass identified in the introduction. Both compounds remain open to expert review.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-recursive-function-class-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘আংশিক পুনরাবৃত্ত অপেক্ষক; সাধারণ পুনরাবৃত্ত অপেক্ষক’ express the OpenLogic sense(s) ‘partial recursive function; general recursive function’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 4 occurrence(s). Representative locations:
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:41`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:42`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:43`; final reader page pending
+  - `OLP-0210` `upstream/content/computability/recursive-functions/introduction.tex:41-52` → `bn-Beng-IN/content/computability/recursive-functions/introduction.tex:44`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+Primitive recursive functions---those that can be defined using just
+primitive recursion---are not, however, the only computable
+number-theoretic functions. Many generalizations of primitive
+recursion have been considered, but the most powerful and
+widely-accepted additional way of computing functions is by unbounded
+search.  This leads to the definition of \emph{partial recursive
+  functions}, and a related definition to \emph{general recursive
+  functions}.  General recursive functions are computable and total,
+and the definition characterizes exactly the partial recursive
+functions that happen to be total.  Recursive functions can simulate
+every other model of computation (Turing machines, lambda calculus,
+etc.) and so represent one of the many accepted models of computation.
+```
+
+### BN-IN-T156
+
+- Source term or concept: arity; n-place function
+- Chosen Bengali: স্থানসংখ্যা; n-স্থানীয় অপেক্ষক
+- Rationale: The relation, function and proof pages support the number-of-arguments sense. স্থানসংখ্যা names arity without suggesting spatial location; n-স্থানীয় অপেক্ষক marks the corresponding n-argument function. The notation remains governed by each displayed composition or recursion schema.
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-arity-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘স্থানসংখ্যা; n-স্থানীয় অপেক্ষক’ express the OpenLogic sense(s) ‘arity; n-place function’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 7 occurrence(s). Representative locations:
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:67-88` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:68`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:67-88` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:69`; final reader page pending
+  - `OLP-0212` `upstream/content/computability/recursive-functions/composition.tex:67-88` → `bn-Beng-IN/content/computability/recursive-functions/composition.tex:70`; final reader page pending
+  - `OLP-0177` `upstream/content/first-order-logic/beyond/second-order-logic.tex:13-28` → `bn-Beng-IN/content/first-order-logic/beyond/second-order-logic.tex:24`; final reader page pending
+  - `OLP-0177` `upstream/content/first-order-logic/beyond/second-order-logic.tex:83-98` → `bn-Beng-IN/content/first-order-logic/beyond/second-order-logic.tex:84`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+You may also worry that $g_0$, \dots,~$g_{k-1}$ are all required
+to have the same arity~$n$. (Remember that the \emph{arity} of a
+function is the number of arguments; an $n$-place function has
+arity~$n$.) But adding the projection functions provides the desired
+flexibility. For example, suppose $f$ and~$g$ are $3$-place functions
+and $h$~is the $2$-place function defined by
+\[
+h(x,y) = f(x,g(x,x,y),y).
+\]
+The definition of~$h$ can be rewritten with the projection
+functions, as
+\[
+h(x,y) = f(\Proj{2}{0}(x,y), g(\Proj{2}{0}(x,y), \Proj{2}{0}(x,y),
+\Proj{2}{1}(x,y)), \Proj{2}{1}(x,y)).
+\]
+Then $h$ is the composition of $f$ with $\Proj{2}{0}$, $l$, and
+$\Proj{2}{1}$, where
+\[
+l(x,y) = g(\Proj{2}{0}(x,y),\Proj{2}{0}(x,y),\Proj{2}{1}(x,y)),
+\]
+i.e., $l$ is the composition of $g$ with $\Proj{2}{0}$, $\Proj{2}{0}$,
+and~$\Proj{2}{1}$.
+```

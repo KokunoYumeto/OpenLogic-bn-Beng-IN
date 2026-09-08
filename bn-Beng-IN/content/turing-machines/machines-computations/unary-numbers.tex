@@ -1,0 +1,237 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: unary-numbers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{una}
+\olsection{সংখ্যার এককীয় উপস্থাপনা}
+
+\begin{explain}
+টুরিং যন্ত্র তার ফিতায় লেখা প্রতীকের অনুক্রম নিয়ে কাজ করে। টুরিং
+যন্ত্র যে বর্ণমালা ব্যবহার করে তার উপর নির্ভর করে, প্রতীকের এই অনুক্রমগুলি
+বিভিন্ন নিবেশ ও নির্গম প্রকাশ করতে পারে। বিশেষভাবে আকর্ষণীয় হলো সেইসব
+টুরিং যন্ত্র, যা \emph{পাটিগাণিতিক} অপেক্ষক, অর্থাৎ স্বাভাবিক সংখ্যার
+অপেক্ষক, গণনা করে। ধনাত্মক পূর্ণসংখ্যাকে প্রকাশের একটি সহজ উপায় হলো
+একটিমাত্র প্রতীক~$\TMstroke$-এর অনুক্রম দিয়ে তার সংকেতায়ন। যদি
+$n \in \Nat$ হয়, তবে $n = 0$ হলে $\TMstroke^n$ হলো শূন্য প্রতীকক্রম;
+অন্যথায় সেটি ঠিক $n$টি $\TMstroke$ দিয়ে গঠিত অনুক্রম।
+\end{explain}
+
+\begin{defn}[গণনা]
+একটি টুরিং যন্ত্র~$M$ অপেক্ষক $f\colon \Nat^k \to \Nat$ \emph{গণনা
+করে}, যদি এবং কেবল যদি $M$ নিবেশ
+\[
+\TMstroke^{n_1} \TMblank \TMstroke^{n_2} \TMblank \dots \TMblank \TMstroke^{n_k}
+\]
+-এ থেমে নির্গম $\TMstroke^{f(n_1, \dots, n_k)}$ দেয়।
+\end{defn}
+
+\begin{prob}
+  একটি টুরিং যন্ত্র~$M$ কখন অপেক্ষক $f\colon \Nat^k \to \Nat^m$
+  গণনা করে, তার একটি সংজ্ঞা দাও।
+\end{prob}
+
+\begin{ex}\ollabel{ex:adder}
+\emph{যোগ:}
+$f(n,m) = n + m$ অপেক্ষকটি গণনা করে এমন একটি যন্ত্র তৈরি করা যাক। এমন
+যন্ত্রের ফিতায় শুরুতে দৈর্ঘ্য $n$ ও~$m$-এর দুটি $\TMstroke$-খণ্ড থাকবে,
+আর থামার সময় থাকবে $n+m$টি~$\TMstroke$-র একটি খণ্ড। নিবেশের দুটি
+$\TMstroke$-খণ্ডের মাঝে একটি~$\TMblank$ থাকে; তাই একটি উপায় হলো
+$\TMblank$-যুক্ত ঘরটিতে একটি দাগ লেখা এবং শেষ~$\TMstroke$-টি মোছা।
+\begin{figure}\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]         (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [right of=B] {$q_2$};
+
+  \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
+           edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
+        (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
+        (C) edge [loop above] node {\TMtrans{\TMstroke}{\TMblank}{\TMstay}} (C);
+\end{tikzpicture}
+\]\caption{$f(x,y) = x+y$ গণনাকারী একটি যন্ত্র}
+\ollabel{fig:adder}
+\end{figure}
+% BN-SRC-169 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-169):} হিমায়িত ইংরেজি চিত্রে $q_0$-তে $\TMstroke$ পড়ার তীরটি ভুল করে $q_1$-এ যায়। তাতে যন্ত্রটি প্রথম নিবেশ-খণ্ডের প্রথম দাগেই $q_1$-এ চলে গিয়ে দুই খণ্ডের মাঝের ফাঁকা ঘরটি না ভরে প্রথম খণ্ডের শেষ দাগটি মোছে। বর্ণিত যোগ-পদ্ধতি অনুযায়ী বাংলা চিত্রে তীরটি $q_0$-র স্ব-আবর্তন; ফলে প্রথম খণ্ড পার হয়ে তবেই ফাঁকা ঘরে $q_1$-এ যায়।} % BN-SRC-169 TARGET-CORRECTION-END
+\end{ex}
+
+\begin{prob}
+\olref[tur][mac][una]{ex:adder}-এর যন্ত্রটিকে নিবেশ~$\tuple{3,2}$ দিয়ে
+চালিয়ে তার কনফিগারেশনগুলি ধাপে ধাপে অনুসরণ করো। যন্ত্রটি $0+0$ গণনা
+করলে কী ঘটে?
+\end{prob}
+
+\begin{explain}
+\olref[rep]{ex:doubler}-এ এমন একটি টুরিং যন্ত্রের উদাহরণ দিয়েছিলাম, যা
+নিবেশ হিসেবে $\TMstroke$-এর একটি অনুক্রম নেয় এবং ফিতায় তার দ্বিগুণ
+সংখ্যক $\TMstroke$-এর অনুক্রম রেখে থামে—দ্বিগুণকারী যন্ত্র। কিন্তু দ্বিগুণ
+করা $\TMstroke$-খণ্ডটির বাঁ দিকে নির্গমে $\TMblank$ থাকে বলে, অনুমান করা
+স্বাভাবিক হলেও যন্ত্রটি আসলে $f(x) = 2x$ অপেক্ষকটি গণনা করে না। এটি
+সংশোধনের দুটি উপায় আমরা বর্ণনা করব।
+\end{explain}
+
+\begin{ex}
+\olref{fig:doubler-disc}-এর যন্ত্রটি $f(x) = 2x$ অপেক্ষকটি গণনা করে।
+\olref[rep]{ex:doubler}-এর যন্ত্রের মতো নিবেশের প্রতিটি $\TMstroke$ মুছে
+দূর ডান দিকে দুটি করে $\TMstroke$ লেখার বদলে এই যন্ত্রটি নিবেশের প্রতিটি
+$\TMstroke$-এর জন্য ডান দিকে একটি করে নতুন~$\TMstroke$ যোগ করে। নিবেশ
+কোথায় শেষ হয়েছে তার হিসাব রাখতে হয় বলে যন্ত্রটি নিবেশ ও যোগ-করা
+দাগগুলির মধ্যে একটি~$\TMblank$ রেখে দেয়; একেবারে শেষে সেই ঘরটি
+$\TMstroke$ দিয়ে ভরে। নিবেশের কোথায় কাজ চলছে তা ``মনে রাখার'' জন্য
+নিবেশ-খণ্ডের একটি~$\TMstroke$ সাময়িকভাবে~$\TMblank$ দিয়ে বদলাতে হয়।
+  \begin{figure}
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0)              {$q_0$};
+  \node[state]         (1) [above of=0] {$q_1$};
+  \node[state]         (2) [above of=1] {$q_2$};
+  \node[state]         (3) [right of=2] {$q_3$};
+  \node[state]         (4) [below of=3] {$q_4$};
+  \node[state]         (5) [below of=4] {$q_5$};
+  \node[state]         (6) [above right of=4] {$q_6$};
+  \node[state]         (7) [below of=6] {$q_7$};
+  \node[state]         (8) [below of=7] {$q_8$};
+
+  \path (0) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMright}} (1)
+%    (0) edge node {\TMtrans{\TMblank}{\TMblank}{\TMstay}} (h)
+    (1) edge [loop left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (1)
+      edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (2)
+    (2) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (2)
+        edge node {\TMtrans{\TMblank}{\TMstroke}{\TMleft}} (3)
+    (3) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (3)
+        edge node[left] {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (4)
+    (4) edge        node[left] {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+    (5) edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+        edge              node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (0)
+    (4) edge      node[sloped] {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (6)
+    (6) edge              node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (7)
+    (7) edge [loop right] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (7)
+        edge              node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (8)
+    (8) edge [loop right] node {\TMtrans{\TMstroke}{\TMblank}{\TMstay}} (8);
+    \end{tikzpicture}
+\]
+\caption{$f(x) = 2x$ গণনাকারী একটি যন্ত্র}
+\ollabel{fig:doubler-disc}
+\end{figure}
+\end{ex}
+
+\begin{ex}\ollabel{ex:mover}
+$f(x) = 2x$ গণনার দ্বিতীয় উপায় হলো আদি দ্বিগুণকারী যন্ত্রটি রেখে শেষে
+এমন দশা ও নির্দেশ যোগ করা, যা দ্বিগুণ-করা দাগের খণ্ডটিকে ফিতার একেবারে
+বাঁ দিকে সরিয়ে দেয়। \olref{fig:mover}-এর যন্ত্রটি শুধু এই শেষ কাজটিই
+করে: ফিতায় প্রথমে $\TMblank$-এর একটি খণ্ড, তারপর $\TMstroke$-এর একটি
+খণ্ড রেখে (এবং $\TMblank$-খণ্ডের যেকোনো জায়গায় হেড রেখে) শুরু করলে
+সেটি একবারে একটি করে $\TMstroke$ মোছে এবং ফিতার শুরুতে লেখে। কাজ কখন
+শেষ হয়েছে তা বোঝার জন্য প্রথমে $\TMstroke$-খণ্ডটির শেষ প্রান্তে একটি
+$\TMendtape$ প্রতীক দিয়ে চিহ্ন রাখে; শেষে সেই প্রতীকটি মুছে যায়। আমরা
+দশাগুলির সংখ্যা~$q_6$ থেকে শুরু করেছি, যাতে সেগুলিকে দ্বিগুণকারী যন্ত্রে
+যোগ করা যায়। আরও শুধু একটি নির্দেশ $\delta(q_0,
+\TMblank) = \tuple{q_6,\TMblank,\TMstay}$ লাগবে, অর্থাৎ~$q_0$ থেকে~$q_6$-
+এ $\TMtrans{\TMblank}{\TMblank}{\TMstay}$ চিহ্নিত একটি তীর। (একটি সূক্ষ্ম
+সমস্যা আছে: ফলে পাওয়া যন্ত্রটি নিবেশ~$x=0$-এ কাজ করে না। এটি অনুশীলন
+হিসেবে থাকল।)
+\begin{figure}
+  \[
+  \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                      semithick]
+    \tikzstyle{every state}=[fill=none,draw=black,text=black]
+    \node[initial,state] (6)              {$q_6$};
+    \node[state]         (7) [right of=6] {$q_7$};
+    \node[state]         (8) [right of=7] {$q_8$};
+    \node[state]         (9) [below of=8] {$q_9$};
+    \node[state]         (10) [left of=9] {$q_{10}$};
+    \node[state]         (11) [left of=10]  {$q_{11}$};
+    \node[state]         (12) [below of=11]  {$q_{12}$};
+    \node[state]         (13) [right of=12] {$q_{13}$};
+    \node[state]         (14) [right of=13] {$q_{14}$};
+    \path
+    (6)  edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (7)
+    (7)  edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (7)
+         edge node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (8)
+    (8)  edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (8)
+         edge node {\TMtrans{\TMblank}{\TMendtape}{\TMleft}} (9)
+    (9)  edge [loop right] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (9)
+         edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (10)
+    (10) edge node[above] {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (11)
+    (11) edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (11)
+         edge node[left] {\begin{tabular}{@{}l@{}}
+          \TMtrans{\TMendtape}{\TMendtape}{\TMright}\\
+          \TMtrans{\TMstroke}{\TMstroke}{\TMright}
+         \end{tabular}} (12)
+    (12) edge node[] {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (13)
+    (13) edge [loop below] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (13)
+         edge node[sloped] {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (11)
+    (13) edge node {\TMtrans{\TMendtape}{\TMblank}{\TMstay}} (14);
+  \end{tikzpicture}
+  \]
+  \caption{$\TMstroke$-এর একটি খণ্ডকে বাঁ দিকে সরানো}
+  \ollabel{fig:mover}
+\end{figure}
+\end{ex}
+
+\begin{prob}
+\olref[tur][mac][una]{ex:mover}-এ আমরা
+\olref[tur][mac][una]{fig:doubler-disc}-এর দ্বিগুণকারী যন্ত্র ও
+\olref[tur][mac][una]{fig:mover}-এর স্থানান্তরক যন্ত্র মিলিয়ে গঠিত একটি
+যন্ত্র বর্ণনা করেছি। এই মিলিত যন্ত্রটিকে নিবেশ~$x=0$, অর্থাৎ ফাঁকা ফিতা,
+দিয়ে শুরু করলে কী ঘটে? এই ক্ষেত্রে যন্ত্রটি যাতে নির্গম~$2x=0$ নিয়ে
+থামে, তার জন্য কীভাবে যন্ত্রটি সংশোধন করবে? (একটি দশা ও একটি অবস্থান্তর
+যোগ করেই এটি করতে পারার কথা।)
+\end{prob}
+
+\begin{prob}
+\emph{বিয়োগ:} দৈর্ঘ্য $n$ ও~$m$-এর দুটি অশূন্য দাগ-প্রতীকক্রম নিবেশ
+হিসেবে দেওয়া হলে, যেখানে $n > m$, অপেক্ষক $f(n,m) = n - m$ গণনা করে
+এমন একটি টুরিং যন্ত্রের নকশা করো।
+\end{prob}
+
+\begin{prob}
+\emph{সমতা:} নিচের অপেক্ষকটি গণনা করে এমন একটি টুরিং যন্ত্রের নকশা করো:
+\[
+\fn{equality}(n,m) =
+\begin{cases}
+  \text{1} & \text{যদি~$n = m$} \\
+  \text{0} & \text{যদি~$n \neq m$}
+\end{cases}
+\]
+যেখানে~$n$ ও~$m \in \PosInt$।
+\end{prob}
+
+\begin{prob}
+ফিতায় $\TMstroke$-এর দুটি প্রতীকক্রমের মাঝে একটি $\TMblank$ রেখে
+ধনাত্মক পূর্ণসংখ্যা $x$ ও~$y$ প্রকাশ করা হয়েছে। নিবেশ হিসেবে সেগুলি নিয়ে
+$\min(x,y)$ অপেক্ষকটি গণনা করে এমন একটি টুরিং যন্ত্রের নকশা করো। যন্ত্রের
+বর্ণমালায় অতিরিক্ত প্রতীক ব্যবহার করতে পারো।
+
+$\min$ অপেক্ষকটি তার আর্গুমেন্টগুলির মধ্যে সবচেয়ে ছোট মানটি বেছে নেয়;
+তাই $\min(3,5)=3$, $\min(20,16)=16$, $\min(4,4)=4$, ইত্যাদি।
+\end{prob}
+
+\begin{defn}
+  একটি টুরিং যন্ত্র~$M$ আংশিক অপেক্ষক $f\colon \Nat^k
+  \pto \Nat$ গণনা করে, যদি এবং কেবল যদি
+  \begin{enumerate}
+    \item $f(n_1, \dots, n_k) = m$ হলে $M$ নিবেশ
+    $\TMstroke^{n_1}\concat\TMblank\concat
+    \dots \concat\TMblank\concat\TMstroke^{n_k}$-এ থেমে নির্গম
+    $\TMstroke^{m}$ দেয়।
+    \item $f(n_1, \dots, n_k)$ অসংজ্ঞায়িত হলে $M$ আদৌ থামে না, অথবা
+    থামলেও তার কোনো নির্গম নির্ধারিত হয় না, অথবা এমন নির্গম নিয়ে থামে
+    যা $\TMstroke$-এর একটিমাত্র খণ্ড নয়।
+  \end{enumerate}
+% BN-SRC-173 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-173):} হিমায়িত ইংরেজি দ্বিতীয় শর্তটি শুধু না-থামা অথবা একটিমাত্র দাগ-খণ্ড নয় এমন নির্গম নিয়ে থামার কথা বলে। কিন্তু আগের সংশোধিত নির্গম-সংজ্ঞা অনুসারে কোনো থামা যন্ত্র শেষ-চিহ্নটি নষ্ট করলে তার নির্গম আদৌ সংজ্ঞায়িত নাও হতে পারে। আংশিক অপেক্ষকের অসংজ্ঞায়িত মানের জন্য বাংলা পাঠে সেই তৃতীয় সম্ভাবনাটি স্পষ্টভাবে যোগ করা হয়েছে।} % BN-SRC-173 TARGET-CORRECTION-END
+\end{defn}
+
+\end{document}

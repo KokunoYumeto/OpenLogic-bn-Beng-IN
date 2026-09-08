@@ -1,0 +1,166 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: combining-machines
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{cmb}
+\olsection{টুরিং যন্ত্রের সংযোজন}
+
+\begin{explain}
+এ পর্যন্ত দেখা টুরিং যন্ত্রের উদাহরণগুলি বেশ সরল। কিন্তু বাস্তবে আধুনিক
+যেকোনো প্রোগ্রামিং ভাষায় সমাধানযোগ্য প্রত্যেক সমস্যা টুরিং যন্ত্রেও
+সমাধান করা যায়। আরও জটিল টুরিং যন্ত্র তৈরি করতে যন্ত্রগুলি যে সংযোজন করা
+যায়, সে বিষয়ে নিশ্চিত হওয়া জরুরি; তাহলে প্রক্রিয়াটিকে সহজতর অংশে ভেঙে
+জটিলতর সমস্যার সমাধানকারী যন্ত্র তৈরি করা যাবে। কোনো জটিল সমস্যাকে তার
+স্বাভাবিক উপাংশে ভাঙার উপায় পেলে সমস্যাটি কয়েকটি পর্যায়ে সামলানো যায়:
+কয়েকটি সরল টুরিং যন্ত্র তৈরি করে সেগুলিকে একটি সমস্যাসমাধানকারী যন্ত্রে
+সংযোজন করা যায়। পরের অংশে থামা সমস্যা মোকাবিলা করার সময় এই কথাটি
+বিশেষভাবে গুরুত্বপূর্ণ।
+
+টুরিং যন্ত্র $M = \tuple{Q, \Sigma, q_0, \delta}$ এবং
+~$M' = \tuple{Q', \Sigma', q_0', \delta'}$-কে কীভাবে সংযোজন করব? এখন
+$M$ থামার পর ফিতার কনফিগারেশনটিকে যন্ত্র~$M'$-এর একটি চালনের নিবেশ-
+কনফিগারেশন হিসেবে ব্যবহার করি। এই কাজ করে এমন একটিমাত্র টুরিং যন্ত্র
+$M \frown M'$ পেতে নিচের পদক্ষেপগুলি নাও:
+\begin{enumerate}
+    \item $M'$-এর সব দশা~$Q'$-কে নতুন সংখ্যা (বা নতুন নাম) দাও, যাতে
+    $M$ ও~$M'$-এর কোনো দশা অভিন্ন না হয় ($Q \cap Q' = \emptyset$)।
+    \item $M \frown M'$-এর দশা-সেট হলো $Q \cup Q'$।
+    \item ফিতার বর্ণমালা হলো $\Sigma \cup \Sigma'$।
+    \item আরম্ভিক দশা হলো~$q_0$।
+    \item অবস্থান্তর অপেক্ষক হলো নিচে দেওয়া অপেক্ষক~$\delta''$:
+    \[\delta''(q,\sigma) =
+    \begin{cases}
+      \delta(q,\sigma) & \text{যদি $q \in Q$ এবং $\delta(q,\sigma)$ সংজ্ঞায়িত হয়}\\
+      \delta'(q,\sigma) & \text{যদি $q \in Q'$}\\
+      \tuple{q_0', \sigma, \TMstay} & \text{যদি $q \in Q$ এবং
+      $\delta(q,\sigma)$ অসংজ্ঞায়িত হয়}
+    \end{cases}\]
+\end{enumerate}
+% BN-SRC-171 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-171):} হিমায়িত ইংরেজি খণ্ডিত সংজ্ঞার প্রথম শর্তটি শুধু $q\in Q$ বলে, অথচ তৃতীয় শর্তটি $q\in Q$ এবং $\delta(q,\sigma)$ অসংজ্ঞায়িত বলে; ফলে তৃতীয় ক্ষেত্রে দুটি শর্ত একসঙ্গে প্রযোজ্য হয় এবং $\delta''$ অপেক্ষক হিসেবে সুসংজ্ঞায়িত থাকে না। বর্ণিত যন্ত্র-সংযোজন অনুযায়ী বাংলা পাঠে প্রথম শর্তে $\delta(q,\sigma)$ সংজ্ঞায়িত হওয়ার শর্ত যোগ করা হয়েছে।} % BN-SRC-171 TARGET-CORRECTION-END
+ফলে পাওয়া যন্ত্রটি দশা $q \in Q$-তে থাকলে~$M$-এর নির্দেশ এবং দশা
+$q \in Q'$-তে থাকলে~$M'$-এর নির্দেশ ব্যবহার করে। যন্ত্রটি যদি দশা
+$q \in Q$-তে থেকে এমন প্রতীক~$\sigma$ পড়ে যার জন্য~$M$-এর কোনো
+অবস্থান্তর নেই (অর্থাৎ $M$ থেমে যেত), তবে সেটি~$M'$-এর আরম্ভিক দশায়
+প্রবেশ করে (আর ফিতার বিষয়বস্তু ও হেডের অবস্থান অপরিবর্তিত রাখে)।
+
+খেয়াল করো, যন্ত্র~$M$ শৃঙ্খলাবদ্ধ না হলে $M$ থামার সময় ফিতার হেডটি
+কোথায় থাকে তা আমরা জানি না; তাই~$M$-এর থামা-কনফিগারেশনে হেডটি ঘর~$1$
+পড়বে, এমন কথা নেই। যন্ত্র সংযোজনের সময় এটি মনে রাখা জরুরি।
+\end{explain}
+
+\begin{ex}
+\emph{যন্ত্রের সংযোজন:} এমন একটি যন্ত্রের নকশা করব, যা দৈর্ঘ্য $n$ ও~$m$-
+এর দুটি $\TMstroke$-খণ্ড নিবেশ হিসেবে নিয়ে শুরু করে এবং ফিতায়
+$2(m+n)$টি $\TMstroke$-এর একটিমাত্র খণ্ড রেখে থামে। যন্ত্রটি তৈরি করতে
+আমাদের পরিচিত দুটি যন্ত্র—যোগ-যন্ত্র ও দ্বিগুণকারী—সংযোজন করা যায়। প্রথমে
+যোগ-যন্ত্রের দশা-চিত্র আঁকি।
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [right of=B] {$q_2$};
+
+  \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
+            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
+        (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
+        (C) edge [loop above] node {\TMtrans{\TMstroke}{\TMblank}{\TMstay}} (C);
+\end{tikzpicture}
+\]
+দশা~$q_2$-তে থামার বদলে নির্গমটিকে দ্বিগুণ করার কাজ চালিয়ে যেতে চাই।
+মনে করো, দ্বিগুণকারী যন্ত্রটি নিবেশের প্রথম দাগটি মুছে আলাদা নির্গমে দুটি
+দাগ লেখে। ফিতার হেড যাতে যোগ-যন্ত্রের নির্গমের প্রথম দাগটি পড়ে, তা
+নিশ্চিত করতে একটি নির্দেশ যোগ করি।
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [right of=B] {$q_2$};
+  \node[state]         (D) [below left of=C] {$q_3$};
+  \node[state]         (E) [below left of=D] {$q_4$};
+
+  \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
+            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
+        (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
+        (C) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (D)
+        (D) edge [loop left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (D)
+            edge node[left, xshift=-2mm] {\TMtrans{\TMendtape}{\TMendtape}{\TMright}} (E);
+\end{tikzpicture}
+\]
+এবার নিবেশটি দ্বিগুণ করা সহজ—দ্বিগুণকারী যন্ত্রটিকে শুধু দশা~$q_4$-এর
+সঙ্গে জুড়ে দিতে হবে। তার জন্য দ্বিগুণকারী যন্ত্রের দশাগুলির নতুন নাম দিতে
+হবে, যাতে তাদের সংখ্যা~$q_0$-র বদলে~$q_4$ থেকে শুরু হয়—এতে দুটি আরম্ভিক
+দশা তৈরি হবে না। চূড়ান্ত চিত্রটি \olref{fig:combined}-এর মতো হবে।
+\begin{figure}
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \node[initial,state] (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [right of=B] {$q_2$};
+  \node[state]         (D) [below left of=C] {$q_3$};
+  \node[state]         (E) [below left of=D] {$q_4$};
+  \node[state]         (2) [right of=E] {$q_5$};
+  \node[state]         (3) [right of=2] {$q_6$};
+  \node[state]         (4) [below of=3] {$q_7$};
+  \node[state]         (5) [left of=4]  {$q_8$};
+  \node[state]         (6) [left of=5]  {$q_9$};
+
+  \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
+            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
+        (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
+        (C) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (D)
+        (D) edge [loop left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (D)
+            edge node[left, xshift=-2mm] {\TMtrans{\TMendtape}{\TMendtape}{\TMright}} (E)
+    (E) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMright}} (2)
+    (2) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (2)
+      edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (3)
+    (3) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (3)
+        edge node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (4)
+    (4) edge [loop below] node {\TMtrans{\TMblank}{\TMstroke}{\TMleft}} (4)
+        edge node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+    (5) edge [loop below]  node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+        edge              node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (6)
+    (6) edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (6)
+        edge              node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (E);
+\end{tikzpicture}
+\]
+\caption{যোগ-যন্ত্র ও দ্বিগুণকারী যন্ত্রের সংযোজন}
+\ollabel{fig:combined}
+\end{figure}
+% BN-SRC-172 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-172):} এই উদাহরণের হিমায়িত ইংরেজি পাঠে যোগ-যন্ত্রের তিনটি পুনরাবৃত্ত চিত্রেই $q_0$-তে $\TMstroke$ পড়ার তীরটি ভুল করে $q_1$-এ যায়। বর্ণিত যোগ-পদ্ধতি অনুযায়ী বাংলা চিত্রগুলির তিনটিতেই তীরটি $q_0$-র স্ব-আবর্তন করা হয়েছে।} % BN-SRC-172 TARGET-CORRECTION-END
+\end{ex}
+
+\begin{prop}
+    যদি $M$ ও~$M'$ শৃঙ্খলাবদ্ধ হয় এবং যথাক্রমে অপেক্ষক
+    $f\colon \Nat^k \to \Nat$ ও $f'\colon \Nat \to \Nat$ গণনা করে,
+    তবে $M \frown M'$ শৃঙ্খলাবদ্ধ এবং~$\comp{f}{f'}$ গণনা করে।
+\end{prop}
+
+\begin{proof}
+    $M$ শৃঙ্খলাবদ্ধ বলে সেটি $f(n_1,\dots,n_k) = m$ নির্গম নিয়ে থামার
+    সময় হেডটি ঘর~$1$ পড়ে। এবার~$M'$-এর আরম্ভিক দশায় প্রবেশ করলে যন্ত্রটি
+    আবার ঘর~$1$ পড়তে পড়তে নির্গম $f'(m)$ নিয়ে থামবে।
+    \olref[dis]{defn:disciplined}-এর অন্য শর্তগুলিও পূরণ হয়।
+\end{proof}
+
+\begin{prob}
+    \cref{tur:mac:dis:prob:disc-succ}-এর যন্ত্র~$M$ নিয়ে $M \frown M$
+    নির্মাণ করে $f(x) = x+2$ গণনাকারী একটি শৃঙ্খলাবদ্ধ টুরিং যন্ত্র দাও।
+\end{prob}
+\end{document}

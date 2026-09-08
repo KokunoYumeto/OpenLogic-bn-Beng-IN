@@ -1,0 +1,95 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: well-behaved-machines
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{dis}
+\olsection{শৃঙ্খলাবদ্ধ যন্ত্র}
+
+\begin{explain}
+\olref[hal]{sec} অংশে আমরা এমন টুরিং যন্ত্র বিবেচনা করেছি, যার একটিমাত্র
+নির্দিষ্ট থামা-দশা~$h$ আছে—এমন যন্ত্র থামলে দশা~$h$-তেই থামবে, তা
+নিশ্চিত। এই অর্থে একটিমাত্র থামা-দশাযুক্ত যন্ত্র সাধারণ টুরিং যন্ত্রের
+জন্য আমাদের অনুমোদিত আচরণের চেয়ে বেশি ``শৃঙ্খলাবদ্ধ''। টুরিং যন্ত্রের
+আচরণের উপর আরও কিছু বিধিনিষেধ আরোপ করা যায়। যেমন, টুরিং যন্ত্রকে ঘর~$0$-
+এর ফিতার শেষ-চিহ্নটি কখনও মুছতে অথবা ঘর~$0$ থেকে বাঁ দিকে যাওয়ার চেষ্টা
+করতে আমরা নিষেধ করিনি। (আমাদের সংজ্ঞায় এমন ক্ষেত্রে হেডটি ঘর~$0$-তেই
+থাকে; অন্য সংজ্ঞায় যন্ত্রটি থেমে যায়।) একইভাবে, টুরিং যন্ত্র থামলে
+ঘর~$1$ পড়ার সময়ই থামে—এটি ধরে নিতে পারাও কখনও কাম্য।
+\end{explain}
+
+\begin{defn}\ollabel{defn:disciplined}
+একটি টুরিং যন্ত্র~$M$ \emph{শৃঙ্খলাবদ্ধ}, যদি এবং কেবল যদি
+\begin{enumerate}
+    \item তার একটিমাত্র নির্দিষ্ট থামা-দশা~$h$ থাকে,
+    \item সেটি থামলে ঘর~$1$ পড়ার সময় থামে,
+    \item সেটি ঘর~$0$-এর $\TMendtape$ প্রতীকটি কখনও মোছে না, এবং
+    \item সেটি ঘর~$0$ থেকে কখনও বাঁ দিকে যাওয়ার চেষ্টা করে না।
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+আমরা আগেই আলোচনা করেছি, যেকোনো টুরিং যন্ত্রকে একই আচরণসম্পন্ন কিন্তু
+নির্দিষ্ট থামা-দশাযুক্ত যন্ত্রে বদলানো যায়। তার জন্য শুধু একটি নতুন
+দশা~$h$ যোগ করতে হয়, এবং আদি~$\delta$ যে প্রতিটি জোড়া
+$\tuple{q,\sigma}$-তে অসংজ্ঞায়িত, তার জন্য একটি নির্দেশ
+$\delta(q, \sigma) = \tuple{h, \sigma, N}$ যোগ করতে হয়। প্রমাণটি
+ক্লান্তিকর হলেও সত্য যে, যেকোনো টুরিং যন্ত্র~$M$-কে এমন একটি
+শৃঙ্খলাবদ্ধ টুরিং যন্ত্র~$M'$-তে বদলানো যায়, যা একই নিবেশে থামে এবং একই
+নির্গম উৎপন্ন করে। যেমন, টুরিং যন্ত্রটি থামলে যদি ঘর~$1$-এ না থাকে, তবে
+হেডটি ফিতার শেষ-চিহ্ন না পাওয়া পর্যন্ত বাঁ দিকে সরবে, তারপর এক ঘর ডান
+দিকে গিয়ে থামবে—এমন কিছু নির্দেশ যোগ করা যায়। অন্য শর্তগুলি কীভাবে
+সামলানো যায়, তা তোমাদের ভেবে দেখতে দিলাম।
+\end{explain}
+
+\begin{ex}
+    \olref{fig:adder-disc}-এ আমরা \olref[una]{ex:adder}-এর যোগ-যন্ত্রটিকে
+    একটি শৃঙ্খলাবদ্ধ যন্ত্রে বদলাই।
+    \begin{figure}\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]         (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [below right of=B] {$q_2$};
+  \node[state]         (D) [below left of=C] {$q_3$};
+  \node[state]         (H) [left of=D] {$h$};
+
+  \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
+           edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
+        (B) edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
+        (C) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (D)
+        (D) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (D)
+        edge node {\TMtrans{\TMendtape}{\TMendtape}{\TMright}} (H);
+\end{tikzpicture}
+\]\caption{একটি শৃঙ্খলাবদ্ধ যোগ-যন্ত্র}
+\ollabel{fig:adder-disc}
+\end{figure}
+% BN-SRC-170 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-170):} হিমায়িত ইংরেজি চিত্রে $q_0$-তে $\TMstroke$ পড়ার তীরটি ভুল করে $q_1$-এ যায়। বর্ণিত যোগ-পদ্ধতি অনুযায়ী বাংলা চিত্রে তীরটি $q_0$-র স্ব-আবর্তন করা হয়েছে; তারপরেই যন্ত্রটি প্রথম খণ্ড পেরিয়ে তার ফাঁকা বিভাজকে $q_1$-এ যায়।} % BN-SRC-170 TARGET-CORRECTION-END
+\end{ex}
+
+\begin{prop}\ollabel{prop:disciplined} প্রতিটি টুরিং যন্ত্র~$M$-এর জন্য
+এমন একটি শৃঙ্খলাবদ্ধ টুরিং যন্ত্র~$M'$ আছে, যাতে $M$ নির্গম~$O$ নিয়ে
+থামলে সেটিও নির্গম~$O$ নিয়ে থামে, আর $M$ না থামলে সেটিও থামে না।
+বিশেষত, কোনো টুরিং যন্ত্রে গণনসাধ্য প্রতিটি অপেক্ষক
+$f\colon\Nat^n \to \Nat$ একটি শৃঙ্খলাবদ্ধ টুরিং যন্ত্রেও গণনসাধ্য।
+\end{prop}
+
+\begin{prob}\label{tur:mac:dis:prob:disc-succ}
+$f(x) = x+1$ গণনা করে এমন একটি শৃঙ্খলাবদ্ধ যন্ত্র দাও।
+\end{prob}
+
+
+\begin{prob}\label{tur:mac:dis:prob:copier}
+এমন একটি শৃঙ্খলাবদ্ধ যন্ত্র খুঁজে বার করো, যা নিবেশ
+$\TMstroke^n$-এ শুরু করে নির্গম
+$\TMstroke^n \concat \TMblank \concat \TMstroke^n$ উৎপন্ন করে।
+\end{prob}
+
+\end{document}

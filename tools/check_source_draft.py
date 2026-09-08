@@ -1763,6 +1763,11 @@ for row in rows:
     self_reference_partial_equality_fix = False
     representing_tm_table_fix = False
     configuration_empty_input_fix = False
+    unary_adder_diagram_fix = False
+    disciplined_adder_diagram_fix = False
+    combined_machine_fixes = False
+    partial_undefined_output_fix = False
+    variant_boundary_marker_fix = False
     if row["unit_id"] == "OLP-0217":
         assert source.count("The less-than relation, $x \\leq y$") == 1
         assert "অনধিক সম্বন্ধ $x \\leq y$" in checked_target
@@ -2090,6 +2095,97 @@ for row in rows:
             "runs_allow_finite_or_infinite_sequences": True,
             "output_requires_preserved_end_marker_form": True,
         }
+    elif row["unit_id"] == "OLP-0258":
+        old = (
+            r"edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)"
+            "\n        (B) edge"
+        )
+        new = (
+            r"edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)"
+            "\n        (B) edge"
+        )
+        assert source.count(old) == 1
+        audited_unary = source.replace(old, new, 1)
+        unary_adder_diagram_fix = (
+            mathparts(audited_unary) == target_math
+            and all(f"BN-SRC-{number}" in documented for number in (169, 173))
+        )
+        flattened_source = re.sub(r"\s+", " ", source)
+        partial_undefined_output_fix = (
+            "does not halt at all, or with an output that is not a single block" in flattened_source
+            and "থামলেও তার কোনো নির্গম নির্ধারিত হয় না" in checked_target
+            and "BN-SRC-173" in documented
+        )
+        assert unary_adder_diagram_fix and partial_undefined_output_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-169", "BN-SRC-173"],
+            "addition_q0_stroke_edge": "q_0 self-loop",
+            "corrected_diagrams": 1,
+            "undefined_value_allows_halt_without_defined_output": True,
+        }
+    elif row["unit_id"] == "OLP-0260":
+        old = (
+            r"edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)"
+            "\n        (B) edge"
+        )
+        new = (
+            r"edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)"
+            "\n        (B) edge"
+        )
+        assert source.count(old) == 1
+        audited_disciplined = source.replace(old, new, 1)
+        disciplined_adder_diagram_fix = (
+            mathparts(audited_disciplined) == target_math
+            and "BN-SRC-170" in documented
+        )
+        assert disciplined_adder_diagram_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-170",
+            "addition_q0_stroke_edge": "q_0 self-loop",
+            "corrected_diagrams": 1,
+        }
+    elif row["unit_id"] == "OLP-0261":
+        old = (
+            r"edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)"
+            "\n        (B) edge"
+        )
+        new = (
+            r"edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)"
+            "\n        (B) edge"
+        )
+        assert source.count(old) == 3
+        audited_combined = source.replace(old, new)
+        audited_combined_math = mathparts(audited_combined)
+        combined_machine_fixes = (
+            audited_combined_math - target_math == collections.Counter()
+            and target_math - audited_combined_math
+            == collections.Counter({r"\delta(q,\sigma)": 1})
+            and all(f"BN-SRC-{number}" in documented for number in range(171, 173))
+            and r"যদি $q \in Q$ এবং $\delta(q,\sigma)$ সংজ্ঞায়িত হয়" in checked_target
+        )
+        assert "\\delta(q,\\sigma) & \\text{if $q \\in Q$}\\\\" in source
+        assert combined_machine_fixes
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-171", "BN-SRC-172"],
+            "first_machine_branch_requires_defined_transition": True,
+            "addition_q0_stroke_edge": "q_0 self-loop",
+            "corrected_diagrams": 3,
+        }
+    elif row["unit_id"] == "OLP-0262":
+        variant_boundary_marker_fix = (
+            "nothing prevents us from writing and reading $\\TMendtape$\n"
+            "on squares other than square~$0$" in source
+            and "আবার ঘর~$0$-এর চিহ্নটিও মুছে ফেলা যায়" in checked_target
+            and "কখনও না মুছে এবং অন্য কোথাও না লিখে" in checked_target
+            and "BN-SRC-174" in documented
+        )
+        assert variant_boundary_marker_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-174",
+            "reserved_boundary_marker_never_overwritten": True,
+            "reserved_boundary_marker_never_written_elsewhere": True,
+            "left_transition_deletion_uses_reserved_marker": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -2169,6 +2265,11 @@ for row in rows:
             self_reference_partial_equality_fix,
             representing_tm_table_fix,
             configuration_empty_input_fix,
+            unary_adder_diagram_fix,
+            disciplined_adder_diagram_fix,
+            combined_machine_fixes,
+            partial_undefined_output_fix,
+            variant_boundary_marker_fix,
             shared_audit_fix,
         )
     )

@@ -1,0 +1,74 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: halting-states
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{hal}
+\olsection{থামা-দশা}
+
+\begin{explain}
+এ পর্যন্ত আমরা যন্ত্রকে তখনই থামতে বলেছি, যখন পালন করার মতো কোনো নির্দেশ
+থাকে না। তবে টুরিং যন্ত্রের প্রচলিত উপস্থাপনাগুলিতে প্রায়ই একটি নির্দিষ্ট
+\emph{থামা-দশা}~$h$ থাকে, যেখানে $h \in Q$।
+
+থামা-দশার ভাবনাটি সহজ: যন্ত্রের কাজ শেষ হলে (যন্ত্রটি নিবেশটি গ্রহণ করার
+সিদ্ধান্ত নিলে, অথবা নির্গম লেখা শেষ করলে) সেটি একটি দশা~$h$-তে যায় এবং
+সেখানে থামে। কোনো কোনো যন্ত্রে দুটি থামা-দশা থাকে—একটি নিবেশ গ্রহণ করে,
+অন্যটি নিবেশ বর্জন করে।
+\end{explain}
+
+\begin{ex}\emph{থামা-দশা}।
+ধারণাটি স্পষ্ট করতে জোড়-যন্ত্রটিকে সামান্য বদলে শুরু করা যাক। নিবেশ জোড়
+হলে যন্ত্রটিকে দশা~$q_0$-তে থামানোর বদলে একটি নির্দেশ যোগ করে তাকে
+থামা-দশায় পাঠানো যায়।
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial, state]         (A)                     {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [below of=A] {$h$};
+
+  \path (A) edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{R}} (B)
+  	    edge node {\TMtrans{\TMblank}{\TMblank}{N}} (C)
+        (B) edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{R}} (B)
+            edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{R}} (A);
+\end{tikzpicture}
+\]
+
+উদাহরণটি আরও একটু বাড়ানো যাক। যন্ত্রটি যখন নির্ধারণ করে যে নিবেশটি বিজোড়,
+তখন সেটি কখনও থামে না। আবর্তনকারী নির্দেশটির জায়গায় বর্জন-
+দশা~$r$-এ যাওয়ার একটি নির্দেশ বসিয়ে যন্ত্রে একটি \emph{বর্জন}-দশা
+যোগ করা যায়।
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]         (A)                     {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [below of=A] {$h$};
+  \node[state]         (D) [below of=B] {$r$};
+
+  \path (A) edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{R}} (B)
+  	    edge node {\TMtrans{\TMblank}{\TMblank}{N}} (C)
+        (B) edge node {\TMtrans{\TMblank}{\TMblank}{N}} (D)
+            edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{R}} (A);
+\end{tikzpicture}
+\]
+\end{ex}
+
+\begin{explain}
+এ ধরনের ক্ষেত্রে নির্দিষ্ট থামা-দশা যোগ করা সুবিধাজনক হতে পারে, কারণ
+যন্ত্র কখন কোন নিবেশ গ্রহণ বা প্রত্যাখ্যান করে তা এতে স্পষ্ট হয়। তবে
+খেয়াল রাখা জরুরি যে নির্দিষ্ট থামা-দশা যোগ করলে গণনক্ষমতা বাড়ে না। একই
+ভাবে, থামার অপেক্ষাকৃত কম আনুষ্ঠানিক ধারণারও নিজস্ব সুবিধা আছে। এ অধ্যায়ে
+এ পর্যন্ত ব্যবহৃত থামার সংজ্ঞাটি \emph{থামা সমস্যার} প্রমাণকে স্বজ্ঞাত ও
+সহজে প্রদর্শনযোগ্য করে। তাই আমরা আমাদের আদি সংজ্ঞাটিই ব্যবহার করে যাব।
+\end{explain}
+
+\end{document}

@@ -273,12 +273,18 @@
       "OLP-0261",
       "OLP-0262",
       "OLP-0263",
+      "OLP-0264",
+      "OLP-0265",
+      "OLP-0266",
+      "OLP-0267",
+      "OLP-0268",
+      "OLP-0269",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 262,
-    "untranslated_count": 460,
-    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, the Model Theory part driver plus complete Basics, Models of Arithmetic, Interpolation and Lindström chapters, the Computability part driver plus complete Recursive Functions and Computability Theory chapters, and the Turing Machines part driver plus the complete Turing Machine Computations chapter are translated; both Size of Sets editorial alternatives remain distinct.",
+    "translated_count": 268,
+    "untranslated_count": 454,
+    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, the Model Theory part driver plus complete Basics, Models of Arithmetic, Interpolation and Lindström chapters, the Computability part driver plus complete Recursive Functions and Computability Theory chapters, the Turing Machines part driver plus the complete Turing Machine Computations chapter and Undecidability through the Decision Problem are translated; both Size of Sets editorial alternatives remain distinct.",
     "reader_state": "The verified reader remains the exact 18-unit v0.2.0 scope. A distinct 25-unit Functions input is prepared but unbuilt. Size of Sets, Arithmetization, Infinite Sets, Propositional Logic, Proof Systems, Sequent Calculus, Natural Deduction, Tableaux, Axiomatic Deduction, Completeness, all translated First-order Logic and Model Theory chapters, both complete Computability chapters, and the current Turing Machines units have not yet been integrated into a built reader."
   },
   "last_verified_public_release": {
@@ -288,11 +294,11 @@
     "status_evidence": "evidence/STATUS.json"
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "b9148e21fb61618fba2f1e0b7b201e131cf0825f",
-    "translated_units": 256,
-    "receipt": "PUBLIC_READBACK_SOURCE_256_2026-09-08.json",
-    "receipt_sha256": "e84383798141c8e0e9527a89bc182a4c761e3bd616e8f3342e46737d6a6c2883",
-    "status": "Anonymous immutable-archive readback verified the Turing Machines foundations checkpoint through Configurations and Computations. The current 262-unit draft completes the Turing Machine Computations chapter."
+    "commit": "98580ba3c1e3f017dcb52864572f0e0db46872b3",
+    "translated_units": 262,
+    "receipt": "PUBLIC_READBACK_SOURCE_262_2026-09-08.json",
+    "receipt_sha256": "c71e96e033d9f1af5e6f2b506e51ec3c44ef8f10a2cbb2346aa4d9ea3acc851f",
+    "status": "Anonymous immutable-archive readback verified the complete Turing Machine Computations checkpoint. The current 268-unit draft extends Undecidability through the Decision Problem."
   },
   "current_checks": {
     "unit_checks": [
@@ -4477,6 +4483,103 @@
         "target_sha256": "646b3c0ec5e3cc4338f8e25d4a4084676b6e8e9f345ba5dbc501ca0cb3bca484"
       },
       {
+        "unit_id": "OLP-0264",
+        "source_blocks": 11,
+        "target_blocks": 11,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "01f879c750eb0d98e4bd2c617c09df6a562239511acb924ec690f3cfbf643d06"
+      },
+      {
+        "unit_id": "OLP-0265",
+        "source_blocks": 8,
+        "target_blocks": 8,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "23bd4b181518c73df07f3816d4b1ceb7ed2d021099321face5f05f2b55082ac2"
+      },
+      {
+        "unit_id": "OLP-0266",
+        "source_blocks": 15,
+        "target_blocks": 15,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-175"
+        ],
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-175",
+          "standard_machine_relation": "simulates arbitrary machine behavior"
+        },
+        "target_sha256": "6fb21eef83ef85e16e14d27112a2733186be389a7e17bec36d48a5d52bbde019"
+      },
+      {
+        "unit_id": "OLP-0267",
+        "source_blocks": 13,
+        "target_blocks": 13,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-176"
+        ],
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-176",
+          "leading_end_marker_code_checked": true,
+          "output_stroke_code_is_three": true,
+          "trailing_blank_code_is_two": true,
+          "entire_encoded_tape_shape_validated": true
+        },
+        "target_sha256": "ee5b8baa2433cb3bc6249eff21fc69a18b0a13cfd5ed1ae9c708672135be4522"
+      },
+      {
+        "unit_id": "OLP-0268",
+        "source_blocks": 16,
+        "target_blocks": 16,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-177"
+        ],
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-177",
+          "machine_combination_symbol": "frown",
+          "corrected_occurrences": 2
+        },
+        "target_sha256": "e05fb51d84be2b24926627bcd0df56734ac94454cfc5491d9872c1a2acc1a949"
+      },
+      {
+        "unit_id": "OLP-0269",
+        "source_blocks": 5,
+        "target_blocks": 5,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "e445c7fa13d622914d80a57ca982d3dc724b30e992887d42c0b481f860d755d5"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -4505,12 +4608,12 @@
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "865da3d6882d8a2b1d5eca26b5aa764e63a459b86cbdbf06b9fcf01d153ab7e2"
+      "sha256": "2c5a4d60552ad0c49b2c9be588c2ddcf59eed69ef6569ab17c74c93840878f72"
     },
-    "segments": 3070,
-    "translated_segments": 2593,
+    "segments": 3138,
+    "translated_segments": 2647,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "18886642ba55e7a172426a0d0cd81e32714e8e0d00ec28ebe99f2ee3f779b805",
+    "segment_index_sha256": "70168d3f0d23aaf99825ce1068f60de62c7e83fcdea27746f6975e58adf870f7",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -4631,6 +4734,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_TURING_MACHINE_COMPUTATIONS_COMPLETION.md",
         "sha256": "676041b8b9788b387eda015a658afbd67e399b6c2bbc740d613ca68781d092ea"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_TURING_UNDECIDABILITY_FOUNDATIONS.md",
+        "sha256": "19b664476934b719f245fd6d3e5de18ab8272bfb1301a02a244b889fcb56d086"
       }
     ],
     "shared_source_audit": {
@@ -4645,7 +4752,7 @@
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "719928223a1e32b4021c8e6d8fb8b81fa46c6e3d2fb1bea1e6d219d4939b8b84",
+      "reconciliation_sha256": "8e9c10c0280400d8da89bb77dd03c95d6bfd4a8519533952f1ff22b007114cec",
       "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
       "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
       "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
@@ -4663,9 +4770,9 @@
     }
   },
   "source_corrections": {
-    "count": 184,
+    "count": 187,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "f83f6c7db393d569a2caa4e1ce45fab2e5db6e331b690cf12e42b7f4890ffb04",
+    "sha256": "15b0d72ffb9cb2b73ac8debb177801ae9d4a0d2c218a8d24454543c1ce55e6d4",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -4846,6 +4953,9 @@
       "BN-SRC-172",
       "BN-SRC-173",
       "BN-SRC-174",
+      "BN-SRC-175",
+      "BN-SRC-176",
+      "BN-SRC-177",
       "OLSIZ-001",
       "OLSIZ-002",
       "OLSIZ-003",
@@ -4854,15 +4964,15 @@
     ]
   },
   "translation_decisions": {
-    "count": 216,
-    "provisional_open": 197,
+    "count": 223,
+    "provisional_open": 204,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "f3b9d9b3e27b49f030bb954390005ce6b12ac8235ab44129eaf0c73e718fbc21",
+    "sha256": "c13a276a10fcf396a361bf67ca63be687c2281af8e4321dfcac6a0ec7ae66162",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 15082,
+    "occurrence_count": 15645,
     "pagination_status": "Final printed/PDF page fields are pending reader integration and final pagination."
   },
   "functions_build_candidate": {
@@ -4876,5 +4986,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "All three bounded global TeX mutex acquisitions concerned the prior input hash and timed out without launching TeX. The freshly prepared current input has not yet been submitted to TeX; no new PDF or HTML is claimed."
   },
-  "remaining": "460 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
+  "remaining": "454 source files, complete reader integration, full-corpus QA, PDF and semantic HTML builds and visual checks, final GitHub release verification, and warranted Zenodo lineage publication."
 }

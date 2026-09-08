@@ -1768,6 +1768,9 @@ for row in rows:
     combined_machine_fixes = False
     partial_undefined_output_fix = False
     variant_boundary_marker_fix = False
+    standard_machine_simulation_fix = False
+    universal_output_decoding_fix = False
+    halting_machine_combination_notation_fix = False
     if row["unit_id"] == "OLP-0217":
         assert source.count("The less-than relation, $x \\leq y$") == 1
         assert "অনধিক সম্বন্ধ $x \\leq y$" in checked_target
@@ -2186,6 +2189,56 @@ for row in rows:
             "reserved_boundary_marker_never_written_elsewhere": True,
             "left_transition_deletion_uses_reserved_marker": True,
         }
+    elif row["unit_id"] == "OLP-0266":
+        standard_machine_simulation_fix = (
+            "why every Turing machine can be computed by a\n"
+            "  ``standard'' machine" in source
+            and "প্রতিটি টুরিং যন্ত্রকে কেন\n"
+            "  কোনো “মানক” যন্ত্র অনুকরণ করতে পারে" in checked_target
+            and source_math == target_math
+            and "BN-SRC-175" in documented
+        )
+        assert standard_machine_simulation_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-175",
+            "standard_machine_relation": "simulates arbitrary machine behavior",
+        }
+    elif row["unit_id"] == "OLP-0267":
+        universal_output_decoding_fix = (
+            "For\n  each block of three~$\\TMstroke$'s" in source
+            and "If $U$ encounters something other than a block of\n"
+            "  three~$\\TMstroke$'s" in source
+            and "প্রথম এক-দাগের খণ্ডটি শেষ-চিহ্নের সংকেত" in checked_target
+            and "দুই-দাগের ফাঁকা-প্রতীকের সংকেত থাকলে তার পরের বাকি সব খণ্ডও একই"
+            in re.sub(r"\s+", " ", checked_target)
+            and source_math == target_math
+            and "BN-SRC-176" in documented
+        )
+        assert universal_output_decoding_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-176",
+            "leading_end_marker_code_checked": True,
+            "output_stroke_code_is_three": True,
+            "trailing_blank_code_is_two": True,
+            "entire_encoded_tape_shape_validated": True,
+        }
+    elif row["unit_id"] == "OLP-0268":
+        old_combination = r"S\concatJ"
+        new_combination = r"S\frownJ"
+        halting_machine_combination_notation_fix = (
+            source_math - target_math == collections.Counter({old_combination: 2})
+            and target_math - source_math == collections.Counter({new_combination: 2})
+            and source.count("$S \\concat J$") == 1
+            and source.count("$S\n  \\concat J$") == 1
+            and checked_target.count("$S \\frown J$") == 2
+            and "BN-SRC-177" in documented
+        )
+        assert halting_machine_combination_notation_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-177",
+            "machine_combination_symbol": "frown",
+            "corrected_occurrences": 2,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -2270,6 +2323,9 @@ for row in rows:
             combined_machine_fixes,
             partial_undefined_output_fix,
             variant_boundary_marker_fix,
+            standard_machine_simulation_fix,
+            universal_output_decoding_fix,
+            halting_machine_combination_notation_fix,
             shared_audit_fix,
         )
     )

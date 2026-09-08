@@ -1,0 +1,272 @@
+% Part: turing-machines
+% Chapter: undecidability
+% Section: trakhtenbrot
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{tra}
+\olsection{ট্রাখতেনব্রোটের উপপাদ্য}
+
+\begin{explain}
+  \olref[rep]{sec}-এ আমরা টুরিং যন্ত্র~$M$ ও নিবেশ স্ট্রিং~$w$-এর জন্য
+  !!{sentence}s $!T(M,w)$ ও~$!E(M,w)$ সংজ্ঞায়িত করেছি। তারপর
+  \olref[ver]{lem:valid-if-halt} ও \olref[ver]{lem:halt-if-valid}-এ
+  দেখিয়েছি, $!T(M,w)\lif !E(M,w)$ সিদ্ধ যদি এবং কেবল যদি নিবেশ~$w$-তে
+  শুরু করা $M$ শেষ পর্যন্ত থামে। থামার সমস্যা অনির্ণেয় বলে এর থেকে
+  প্রথম-ক্রমের যুক্তিবিদ্যার !!{sentence}s-এর সিদ্ধতা ও সন্তোষণীয়তা
+  অনির্ণেয় হয়
+  (\cref{tur:und:uns:thm:decision-prob,tur:und:uns:cor:undecidable-sat})।
+
+  কিন্তু বাক্যের সিদ্ধতা ও সন্তোষণীয়তা সসীম বা অসীম—নির্বিশেষে সব
+  !!{structure}s-এর জন্য সংজ্ঞায়িত। মনে হতে পারে, কোনো !!a{sentence} একটি
+  সসীম !!{structure}-তে সন্তোষণীয় কি না (অথবা সব সসীম !!{structure}s-তে
+  সিদ্ধ কি না) নির্ধারণ করা সহজ। সিদ্ধান্ত সমস্যার অসমাধানযোগ্যতার
+  প্রমাণটিকে এমনভাবে মানিয়ে নেওয়া যায় যাতে দেখা যায়, তা-ও সহজ নয়।
+
+  প্রথমে \olref[ver]{lem:halt-if-valid}-এর প্রমাণে ফিরে গেলে দেখা যাবে,
+  সেখানে আমরা $!T(M,w)$-এর এমন একটি মডেল~$\Struct M$ তৈরি করেছি যা
+  নিবেশ~$w$-তে শুরু করা যন্ত্র~$M$ ঠিক কী করে তা বর্ণনা করে। সেই মডেলের
+  অধিক্ষেত্র ছিল~$\Nat$, অর্থাৎ অসীম। কিন্তু $M$ যদি সত্যিই নিবেশ~$w$-তে
+  থামে, তবে একইভাবে একটি সসীম মডেল~$\Struct M'$ গড়তে পারি। ধরা যাক,
+  নিবেশ~$w$-তে শুরু করা $M$ $k$ ধাপ পরে থামে। অধিক্ষেত্র
+  $\Domain{M'}$ হিসেবে $\{0,\dots,n\}$ নিই, যেখানে $n$ হলো $k+1$ ও
+  $w$-এর দৈর্ঘ্যের মধ্যে বড়টি, এবং ধরি
+  \[
+    \Assign{\prime}{M'}(x) =
+    \begin{cases}
+      x + 1 &\text{যদি $x < n$}\\
+      n &\text{অন্যথায়,}
+    \end{cases}
+  \]
+  আর $\tuple{x,y}\in\Assign{<}{M'}$ যদি এবং কেবল যদি $x<y$ অথবা
+  $x=y=n$। অন্য সব দিক দিয়ে $\Struct{M'}$-কে ঠিক $\Struct{M}$-এর মতো
+  সংজ্ঞায়িত করি। $\Struct{M'}$-এর সংজ্ঞা অনুসারে,
+  \olref[ver]{lem:halt-if-valid}-এর প্রমাণের মতোই
+  $\Sat{M'}{!T(M,w)}$। আবার আমরা $M$-কে নিবেশ~$w$-তে থামতে ধরেছি বলে
+  $\Sat{M'}{!E(M,w)}$। তাই $\Struct{M'}$ হলো
+  $!T(M,w)\land !E(M,w)$-এর একটি সসীম মডেল (লক্ষ করো, $\lif$-এর জায়গায়
+  $\land$ বসেছে)।
+% BN-SRC-190 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-190):} হিমায়িত নির্মাণে $n=\max(k,\len{w})$ নেওয়া হয়েছিল। কিন্তু হেড ঘর~$1$ থেকে শুরু করে $k$টি ডান-চলনের পরে ঘর~$k+1$-এ থামতে পারে; তদুপরি $n=k$ হলে শেষ অবস্থান্তরের $!B(\num{k})$ শর্তটি $\Assign{<}{M'}$-এর $n<n$-এর সঙ্গে সংঘর্ষ করে। বাংলা পাঠ ও নিচের আনুষ্ঠানিক প্রমাণে $n=\max(k+1,\len{w})$ রাখা হয়েছে।} % BN-SRC-190 TARGET-CORRECTION-END
+
+  প্রমাণের অর্ধেক হলো: আমরা দেখিয়েছি, $M$ নিবেশ~$w$-তে থামলে
+  $!T(M,w)\land !E(M,w)$-এর একটি সসীম মডেল আছে। দুর্ভাগ্যক্রমে এর
+  বিপরীতটি সত্য নয়; অর্থাৎ এমন টুরিং যন্ত্র আছে যা কোনো নিবেশ~$w$-তে
+  থামে না, অথচ $!T(M,w)\land !E(M,w)$-এর একটি সসীম মডেল থাকে। যেমন,
+  একমাত্র দশা~$q_0$ এবং নির্দেশ
+  $\delta(q_0,\TMblank)=\tuple{q_0,\TMblank,\TMstay}$-সহ যন্ত্র~$M$
+  বিবেচনা করো। খালি নিবেশ~$w=\emptyseq$-তে শুরু করলে যন্ত্রটি কখনো থামে
+  না: সেটি একটি অসীম চক্রে থাকে, কিন্তু ফিতা বদলায় না বা হেড সরায় না।
+  সব কনফিগারেশন একই (একই দশা, একই হেড-অবস্থান, একই ফিতা-বিষয়বস্তু)।
+  আমরা এমন একটি সসীম !!{structure}~$\Struct{M''}$ সংজ্ঞায়িত করতে পারি যা
+  $!T(M,\emptyseq)\land !E(M,\emptyseq)$ সন্তুষ্ট করে (অনুশীলনী)। তবে
+  $!T(M,w)$-কে উপযুক্তভাবে বদলে এমন !!{structure}s বাদ দেওয়া যায়।
+
+  \begin{prob}
+    $M$ এমন একটি টুরিং যন্ত্র হোক যার একমাত্র দশা~$q_0$ এবং একমাত্র
+    নির্দেশ $\delta(q_0,\TMblank)=\tuple{q_0,\TMblank,\TMstay}$।
+    ধরি $\Domain{M''}=\{0,1,2\}$,
+    $\Assign{\prime}{M''}(0)=\Assign{\prime}{M''}(1)=1$ এবং
+    $\Assign{\prime}{M''}(2)=2$, আর
+    $\Assign{<}{M''}=\{\tuple{0,1},\tuple{1,1},\tuple{2,2}\}$।
+    $\Assign{\Obj Q_{q_0}}{M''}$,
+    $\Assign{\Obj S_{\TMblank}}{M''}$ এবং
+    $\Assign{\Obj S_{\TMendtape}}{M''}$ এমনভাবে সংজ্ঞায়িত করো যেন
+    $!T(M,\emptyseq)$ ও $!E(M,\emptyseq)$ সত্য হয়, এবং কেন সত্য তা
+    ব্যাখ্যা করো। ইঙ্গিত: লক্ষ করো, $\delta(q_0,\TMendtape)$
+    অসংজ্ঞায়িত। নিশ্চিত করো যেন
+    \begin{align*}
+    & \Obj Q_{q_0}(\num{1}, \num{n}) \land \Obj S_{\TMendtape}(\num{0}, \num{n})
+      \land
+      \lforall[x][(\num{0} < x \lif \Obj S_\TMblank(x, \num{n}))] \text{\quad সব $n \in \Nat$-এর জন্য}\\
+    & \lexists[y][(\Obj Q_{q_0}(\num{0}, y) \land \Obj S_{\TMendtape}(\num{0}, y))]
+    \end{align*}
+    দুটিই $\Struct{M''}$-এ সত্য।
+% BN-SRC-191 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-191):} হিমায়িত অনুশীলনীতে একমাত্র দশা $q_0$ ঘোষণা করেও নির্দেশটির লক্ষ্য $q$ লেখা হয়েছিল, এবং $\Struct{M''}$-এর উত্তরসূরি ব্যাখ্যার মাঝের ঘটনে ভুল করে $M'$ ছিল। বাংলা পাঠে যথাক্রমে $q_0$ ও $M''$ রাখা হয়েছে।} % BN-SRC-191 TARGET-CORRECTION-END
+  \end{prob}
+\end{explain}
+
+$w=\sigma_{i_1}\dots\sigma_{i_k}$ নিবেশে টুরিং যন্ত্র~$M$-এর কাজ
+বর্ণনাকারী !!{sentence}s বিবেচনা করো:
+\begin{enumerate}
+\item সংখ্যা ও~$<$ বর্ণনাকারী স্বতঃসিদ্ধ
+  (\olref[rep]{sec}-এ $!T(M,w)$-এর সংজ্ঞার মতো)।
+\item আরম্ভিক কনফিগারেশন বর্ণনাকারী স্বতঃসিদ্ধ: $!T(M,w)$-এর সংজ্ঞার
+  মতোই।
+\item এক কনফিগারেশন থেকে পরেরটিতে অবস্থান্তর বর্ণনাকারী স্বতঃসিদ্ধ:
+
+নিচে $!A(x,y)$ আগের মতোই, এবং
+\[
+  !B(y) \ident \lforall[x][(x < y \lif \eq/[x][y])].
+\]
+\begin{enumerate}
+\item \ollabel{rep-right} প্রতিটি নির্দেশ
+$\delta(q_i,\sigma)=\tuple{q_j,\sigma',\TMright}$-এর জন্য !!{sentence}:
+\begin{align*}
+& \lforall[x][\lforall[y][(
+   (\Obj Q_{q_i}(x, y) \land \Obj S_{\sigma}(x, y)) \lif {}]] \\
+&\qquad   (\Obj Q_{q_j}(x', y') \land \Obj S_{\sigma'}(x, y') \land
+!A(x, y) \land !B(y')))
+\end{align*}
+\item \ollabel{rep-left} প্রতিটি নির্দেশ
+$\delta(q_i,\sigma)=\tuple{q_j,\sigma',\TMleft}$-এর জন্য !!{sentence}:
+\begin{align*}
+& \lforall[x][\lforall[y][
+    ((\Obj Q_{q_i}(x', y) \land \Obj S_{\sigma}(x', y)) \lif {}]]\\
+& \qquad   (\Obj Q_{q_j}(x, y') \land \Obj S_{\sigma'}(x', y') \land
+!A(x', y) \land !B(y'))) \land {}\\
+& \lforall[y][((\Obj Q_{q_i}(\num{0}, y) \land \Obj S_{\sigma}(\num{0},
+    y)) \lif {}]\\
+& \qquad (\Obj Q_{q_j}(\num{0}, y') \land \Obj S_{\sigma'}(\num{0},
+  y') \land !A(\num{0}, y) \land !B(y')))
+\end{align*}
+% BN-SRC-192 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-192):} হিমায়িত বাঁ-চলনের প্রথম শাখা লেখা ঘর~$x'$-এর বদলে নতুন হেড-অবস্থান~$x$-কে $!A$ থেকে বাদ দিয়েছিল এবং, পরের বাক্যে ঘোষিত নিয়মের বিরুদ্ধেও, এই শাখায় $!B(y')$ অনুপস্থিত ছিল। বাংলা সূত্রে $!A(x',y)\land !B(y')$ রাখা হয়েছে।} % BN-SRC-192 TARGET-CORRECTION-END
+\item \ollabel{rep-stay} প্রতিটি নির্দেশ
+$\delta(q_i,\sigma)=\tuple{q_j,\sigma',\TMstay}$-এর জন্য !!{sentence}:
+\begin{align*}
+& \lforall[x][\lforall[y][(
+   (\Obj Q_{q_i}(x, y) \land \Obj S_{\sigma}(x, y)) \lif {}]] \\
+&\qquad (\Obj Q_{q_j}(x, y') \land \Obj S_{\sigma'}(x, y') \land
+!A(x, y) \land !B(y')))
+\end{align*}
+\end{enumerate}
+দেখতেই পাচ্ছ, $M$-এর অবস্থান্তর বর্ণনাকারী !!{sentence}s
+$!T(M,w)$-এর সংশ্লিষ্ট !!{sentence}-এর মতোই, শুধু শেষে $!B(y')$ যোগ করা
+হয়েছে। $!B(y')$ নিশ্চিত করে যে “পরের” কনফিগারেশনের সংখ্যা~$y'$ আগের
+সব সংখ্যা $\Obj 0$, $\Obj 0'$, \dots থেকে আলাদা।
+% \item সঙ্গতি-শর্ত প্রকাশকারী বাক্যগুলি:
+% \begin{enumerate}
+%   \item\ollabel{rep-con-symb}%
+%   একই সময়ে কোনো ঘরে একটির বেশি প্রতীক থাকতে পারে না—এ কথা বলা
+%   !!^a{sentence}:
+%   \[\lforall[x][\lforall[y][(\Obj S_{\sigma}(x, y) \lif \lnot \Obj
+%   S_{\sigma'}(x, y))]],\]
+%   $T$-এর প্রতিটি পৃথক ফিতা-প্রতীকযুগল $\sigma\neq\sigma'$-এর জন্য।
+%   \item\ollabel{rep-con-state}%
+%   একই সময়ে $M$ একটির বেশি দশায় থাকতে পারে না—এ কথা বলা !!^a{sentence}:
+%   \[\lforall[x][\lforall[y][(\Obj Q_{q}(x, y) \lif
+%   \lforall[z][\lnot \Obj
+%   Q_{q'}(z, y))]],\]
+%   $T$-এর প্রতিটি পৃথক দশাযুগল $q\neq q'$-এর জন্য।
+%   \item\ollabel{rep-con-tape}%
+%   একই সময়ে $M$ একটির বেশি ফিতা-ঘরে থাকতে পারে না—এ কথা বলা
+%   !!^a{sentence}:
+%   \[\lforall[x][\lforall[y][(\Obj Q_{q}(x, y) \lif
+%   \lforall[z][\eq/[z][y]\lif \lnot \Obj
+%   Q_{q'}(z, y))]],\]
+%   $T$-এর প্রতিটি দশাযুগল $q$, $q'$-এর জন্য।
+% \end{enumerate}
+\end{enumerate}
+টুরিং যন্ত্র~$M$ ও নিবেশ~$w$-এর জন্য উপরের সব !!{sentence}s-এর সংযোজনকে
+$!T'(M,w)$ বলা হবে।
+
+\begin{lem}\ollabel{lem:halts-sat}
+  নিবেশ~$w$-তে শুরু করা $M$ থামলে
+  $!T'(M,w)\land !E(M,w)$-এর একটি সসীম মডেল আছে।
+\end{lem}
+
+\begin{proof}
+  \olref[ver]{lem:halt-if-valid}-এর প্রমাণের মতোই $\Struct{M'}$ নিই, শুধু
+  \begin{align*}
+    \Domain{M'} & = \{0, \dots, n\},\\
+    \Assign{\prime}{M'}(x) & =
+    \begin{cases}
+      x + 1 &\text{যদি $x < n$}\\
+      n &\text{অন্যথায়,}
+    \end{cases} \\
+    \tuple{x,y} \in \Assign{<}{M'} &\text{যদি এবং কেবল যদি $x < y$ অথবা $x = y = n$,}
+  \end{align*}
+  যেখানে $n=\max(k+1,\len{w})$ এবং $k$ হলো এমন ক্ষুদ্রতম সংখ্যা যাতে
+  নিবেশ~$w$-তে শুরু করা $M$ $k$ ধাপ পরে থামে।
+  $\Sat{M'}{!T'(M,w)\land !E(M,w)}$—এর যাচাই অনুশীলনী হিসেবে রাখা হলো।
+% BN-SRC-193 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-193):} হিমায়িত যাচাই-দাবিতে $E(M,w)$-এর আগে অতিভাষিক চিহ্ন~$!$ অনুপস্থিত ছিল। বাংলা পাঠে লেমারই সংযোজন $!T'(M,w)\land !E(M,w)$ রাখা হয়েছে।} % BN-SRC-193 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prob}
+  $\Sat{M'}{!T'(M,w)\land !E(M,w)}$ প্রমাণ করে
+  \olref[tur][und][tra]{lem:halts-sat}-এর প্রমাণ সম্পূর্ণ করো।
+% BN-SRC-194 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-194):} হিমায়িত অনুশীলনীতে লেমার $!T'$-এর বদলে পুরোনো $!T$ এবং $!E$-এর বদলে $E$ ছিল। বাংলা পাঠে ঠিক যে বাক্যটির সসীম মডেল লেমায় দাবি করা হয়েছে সেটিই পুনঃস্থাপন করা হয়েছে।} % BN-SRC-194 TARGET-CORRECTION-END
+\end{prob}
+
+\begin{lem}\ollabel{lem:sat-halts}
+  $!T'(M,w)\land !E(M,w)$-এর একটি সসীম মডেল থাকলে নিবেশ~$w$-তে শুরু
+  করা $M$ থামে।
+\end{lem}
+
+\begin{proof}
+  আমরা বিপরীত-প্রতিজ্ঞা দেখাই। ধরা যাক, নিবেশ~$w$-তে শুরু করা $M$ থামে
+  না। $!T'(M,w)\land !E(M,w)$-এর কোনো মডেলই না থাকলে কাজ শেষ। অতএব
+  ধরি $\Struct{M}$ হলো $!T'(M,w)\land !E(M,w)$-এর একটি মডেল। দেখাতে
+  হবে এটি সসীম হতে পারে না।
+% BN-SRC-195 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-195):} হিমায়িত বিপরীত-প্রতিজ্ঞার প্রকল্পে $!T'(M,w)$-এর বদলে $!T(M,w)$ লেখা হয়েছিল, যদিও অসীমতার জন্য প্রয়োজনীয় $!B$ শর্তগুলি কেবল $!T'$-তেই আছে। বাংলা পাঠে লেমার প্রকল্প $!T'(M,w)\land !E(M,w)$ রাখা হয়েছে।} % BN-SRC-195 TARGET-CORRECTION-END
+
+  \olref[ver]{lem:config}-এর মতোই প্রমাণ করা যায়: নিবেশ~$w$-তে শুরু
+  করা $M$ যদি কোনো ধনাত্মক সময়~$n$-এর আগে না থামে, তবে
+  $!T'(M,w)\Entails !C(M,w,n)\land !B(\num{n})$। $M$ নিবেশ~$w$-তে
+  শুরু করে থামে না বলে সব ধনাত্মক~$n\in\Nat$-এর জন্য
+  $!T'(M,w)\Entails !C(M,w,n)\land !B(\num{n})$। লক্ষ করো,
+  \olref[rep]{prop:mlessk} অনুসারে সব $k<n$-এর জন্য
+  $!T'(M,w)\Entails\num{k}<\num{n}$। আবার
+  $!B(\num{n})\Entails\num{k}<\num{n}\lif
+  \eq/[\num{k}][\num{n}]$। অতএব সব $k<n$-এর জন্য
+  $\Sat{M}{\eq/[\num{k}][\num{n}]}$; অর্থাৎ অসীমসংখ্যক পদ
+  $\num{k}$-কে $\Struct{M}$-এ সব ভিন্ন মান নিতে হবে। এর জন্য
+  $\Domain{M}$ অসীম হওয়া দরকার। তাই $\Struct{M}$,
+  $!T'(M,w)\land !E(M,w)$-এর কোনো সসীম মডেল হতে পারে না।
+% BN-SRC-196 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-196):} হিমায়িত প্রমাণ ও অনুশীলনী $n=0$-সহ সব সময়ে $!B(\num{n})$ অনুগত বলে, কিন্তু $!B$ কেবল অবস্থান্তরের অনুবর্তীতে যোগ হয়েছে; তাই প্রথম অবস্থান্তর থেকে $!B(\num{1})$ পাওয়া গেলেও $!B(\num{0})$-এর কোনো স্বতঃসিদ্ধ নেই। বাংলা পাঠে দাবিটি ধনাত্মক সময়ে সীমিত এবং সংশ্লিষ্ট কনফিগারেশনের যথার্থ শর্ত—$n$-তম ধাপের আগে না-থামা—দেওয়া হয়েছে; অসীমসংখ্যক সংখ্যাপদ পৃথক করার যুক্তিতে এটিই যথেষ্ট।} % BN-SRC-196 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prob}
+  নিবেশ~$w$-তে শুরু করা $M$ যদি ধনাত্মক~$n$-তম ধাপের আগে না থামে, তবে
+  $!T'(M,w)\Entails !B(\num{n})$—এটি প্রমাণ করে
+  \olref[tur][und][tra]{lem:sat-halts}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{thm}[ট্রাখতেনব্রোটের উপপাদ্য]
+  \ollabel{thm:trakhtenbrodt}
+  প্রথম-ক্রমের যুক্তিবিদ্যার কোনো নির্বিচার !!{sentence}-এর একটি সসীম
+  মডেল আছে কি না (অর্থাৎ সেটি সসীমভাবে সন্তোষণীয় কি না) তা অনির্ণেয়।
+\end{thm}
+
+\begin{proof}
+  ধরা যাক, সসীম সন্তোষণীয়তা সমস্যা নির্ণয় করে এমন একটি টুরিং যন্ত্র~$F$
+  আছে। তাহলে যেকোনো টুরিং যন্ত্র~$M$ ও নিবেশ~$w$ থেকে আমরা
+  $!T'(M,w)\land !E(M,w)$ বাক্যটি গণনা করতে পারতাম এবং এর সসীম মডেল
+  আছে কি না নির্ধারণ করতে~$F$ ব্যবহার করতে পারতাম।
+  \cref{tur:und:tra:lem:halts-sat,tur:und:tra:lem:sat-halts} অনুসারে
+  বাক্যটির সসীম মডেল আছে যদি এবং কেবল যদি নিবেশ~$w$-তে শুরু করা $M$
+  থামে। ফলে $F$ দিয়ে থামার সমস্যা সমাধান করা যেত; কিন্তু আমরা জানি
+  সমস্যাটি অসমাধানযোগ্য।
+\end{proof}
+
+\begin{cor}\ollabel{cor:fproof-incomp}%
+  \emph{সসীম} সিদ্ধতার জন্য যথার্থ ও সম্পূর্ণ এমন কোনো !!{derivation}
+  ব্যবস্থা থাকতে পারে না; অর্থাৎ এমন কোনো !!a{derivation} ব্যবস্থা নেই
+  যাতে প্রতিটি সসীম !!{structure}~$\Struct{M}$-এর জন্য
+  $\Proves !B$ যদি এবং কেবল যদি $\Sat{M}{!B}$।
+\end{cor}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+  \olref[tur][und][tra]{cor:fproof-incomp} প্রমাণ করো। লক্ষ করো,
+  $!B$ প্রতিটি সসীম !!{structure}-তে সন্তুষ্ট যদি এবং কেবল যদি
+  $\lnot !B$ সসীমভাবে সন্তোষণীয় নয়।
+  \olref[tur][und][uns]{thm:valid-ce}-এর অর্থে সসীম সন্তোষণীয়তা কেন
+  অর্ধ-নির্ণেয় তা ব্যাখ্যা করো। এটি ব্যবহার করে যুক্তি দাও: সসীম
+  সিদ্ধতার জন্য কোনো !!a{derivation} ব্যবস্থা থাকলে সসীম সন্তোষণীয়তা
+  নির্ণেয় হতো।
+\end{prob}
+
+
+\end{document}

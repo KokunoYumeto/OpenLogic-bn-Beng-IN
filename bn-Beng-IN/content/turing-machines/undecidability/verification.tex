@@ -1,0 +1,336 @@
+% Part: turing-machines
+% Chapter: undecidability
+% Section: verification
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{ver}
+\olsection{উপস্থাপনের যাচাই}
+
+\begin{explain}
+আমাদের উপস্থাপনটি কাজ করে কি না যাচাই করতে দুটি বিষয় প্রমাণ করতে হবে।
+প্রথমত, দেখাতে হবে যে $M$ নিবেশ~$w$-তে থামলে $!T(M,w)\lif !E(M,w)$ সিদ্ধ।
+তারপর এর বিপরীতটিও দেখাতে হবে: $!T(M,w)\lif !E(M,w)$ সিদ্ধ হলে $M$ সত্যিই
+নিবেশ~$w$-তে শেষ পর্যন্ত থামে।
+
+ফল দুটি প্রমাণের কৌশল একেবারেই আলাদা। প্রথম ফলটির জন্য প্রথম-ক্রমের
+যুক্তিবিদ্যার !!a{sentence}—যথা $!T(M,w)\lif !E(M,w)$—সিদ্ধ দেখাতে হবে।
+এর সবচেয়ে সহজ উপায় হলো একটি !!a{derivation} দেওয়া। তবে প্রমাণটি সব
+$M$ ও~$w$-এর জন্য কাজ করার কথা; তাই আসলে এমন একটি মাত্র !!{sentence} নেই
+যার !!a{derivation} দিতে হবে, আছে অসীমসংখ্যক। ফলে সর্বোচ্চ যা করা যায় তা
+হলো আরোহের সাহায্যে প্রমাণ করা: $M$ ও~$w$ যেমনই হোক এবং $M$-এর
+নিবেশ~$w$-তে থামতে যত ধাপই লাগুক, $!T(M,w)\lif !E(M,w)$-এর একটি
+!!a{derivation} থাকবে।
+
+স্বাভাবিকভাবেই, $M$ একটি থামার কনফিগারেশনে পৌঁছানোর আগে যত ধাপ নেয় তার
+উপর আমাদের আরোহ চলবে। আরোহী প্রমাণে আমরা প্রতিষ্ঠা করব যে নিবেশ~$w$-তে
+$M$-এর চালনার প্রতিটি ধাপ~$n$-এর জন্য
+$!T(M,w)\Entails !C(M,w,n)$, যেখানে $!C(M,w,n)$ নিবেশ~$w$-তে চালানো
+$M$-এর $n$ ধাপ-পরের কনফিগারেশনটি ঠিকভাবে বর্ণনা করে। এখন $M$ যদি,
+ধরা যাক, $n$ ধাপ পরে নিবেশ~$w$-তে থামে, তবে $!C(M,w,n)$ একটি থামার
+কনফিগারেশন বর্ণনা করবে। আমরা আরও দেখাব: $!C(M,w,n)$ যখনই একটি থামার
+কনফিগারেশন বর্ণনা করে, তখন $!C(M,w,n)\Entails !E(M,w)$। অতএব $M$
+নিবেশ~$w$-তে থামলে কোনো~$n$-এর জন্য $n$ ধাপ পরে $M$ একটি থামার
+কনফিগারেশনে থাকবে। তাই তখন $!T(M,w)\Entails !C(M,w,n)$, যেখানে
+$!C(M,w,n)$ একটি থামার কনফিগারেশন বর্ণনা করে; আর সেই ক্ষেত্রে
+$!C(M,w,n)\Entails !E(M,w)$ বলে আমরা পাই
+$!T(M,w)\Entails !E(M,w)$, অর্থাৎ
+$\Entails !T(M,w)\lif !E(M,w)$।
+% BN-SRC-180 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-180):} এই সিদ্ধান্তে হিমায়িত ইংরেজি পাঠ প্রথম অনুগমনটির পূর্বপক্ষে $!T(M,w)$-এর বদলে $T(M,w)$ লিখেছে। বাংলা পাঠে সর্বত্র ব্যবহৃত অতিভাষিক বাক্যনাম $!T(M,w)$ পুনঃস্থাপন করা হয়েছে।} % BN-SRC-180 TARGET-CORRECTION-END
+
+বিপরীত দিকটির কৌশল খুব আলাদা। এখানে আমরা ধরি
+$\Entails !T(M,w)\lif !E(M,w)$ এবং প্রমাণ করতে হবে যে $M$ নিবেশ~$w$-তে
+থামে। প্রকল্প থেকে পাই $!T(M,w)\Entails !E(M,w)$; অর্থাৎ যেসব
+!!{structure}-তে $!T(M,w)$ সত্য, তাদের প্রতিটিতে $!E(M,w)$ সত্য। তাই আমরা
+এমন একটি !!a{structure}~$\Struct{M}$ বর্ণনা করব যেখানে $!T(M,w)$ সত্য।
+এর অধিক্ষেত্র হবে~$\Nat$, আর $M$-কে নিবেশ~$w$-তে চালানোর সময়কার
+কনফিগারেশনগুলি দিয়ে সব $\Obj Q_q$ ও $\Obj S_\sigma$-এর ব্যাখ্যা দেওয়া
+হবে। যেমন,
+$\Sat{M}{\Obj Q_q(\num{m},\num{n})}$ যদি এবং কেবল যদি $M$-কে
+নিবেশ~$w$-তে $n$ ধাপ চালানোর পর সেটি দশা~$q$-তে থাকে এবং ঘর~$m$ পড়ে।
+% BN-SRC-181 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-181):} হিমায়িত ইংরেজি উদাহরণটি এই বাক্যে চলমান যন্ত্র~$M$-এর বদলে অসংজ্ঞায়িত $T$-কে নিবেশে চালিয়েছে। বাংলা পাঠে নির্মাণটির একমাত্র যন্ত্র~$M$ রাখা হয়েছে।} % BN-SRC-181 TARGET-CORRECTION-END
+এখন প্রকল্প অনুসারে $!T(M,w)\Entails !E(M,w)$ এবং নির্মাণ অনুসারে
+$\Sat{M}{!T(M,w)}$; অতএব $\Sat{M}{!E(M,w)}$। কিন্তু
+$\Sat{M}{!E(M,w)}$ যদি এবং কেবল যদি এমন কোনো
+$n\in\Domain{M}=\Nat$ থাকে যাতে নিবেশ~$w$-তে চালানো $M$ যন্ত্রটি
+$n$ ধাপ পরে একটি থামার কনফিগারেশনে থাকে।
+\end{explain}
+
+\begin{defn}
+$!C(M,w,n)$ বলতে নিচের !!{sentence} বোঝানো হবে:
+\[
+\Obj Q_q(\num{m}, \num{n}) \land \Obj S_{\sigma_0}(\num{0}, \num{n})
+\land \dots \land \Obj S_{\sigma_k}(\num{k}, \num{n}) \land
+\lforall[x][(\num{k} < x \lif \Obj S_\TMblank(x, \num{n}))]
+\]
+এখানে $n$ সময়ে $M$-এর দশা~$q$, $n$ সময়ে $M$ ঘর~$m$ পড়ছে, $n$ সময়ে
+$0\le i\le k$ ঘর~$i$-তে প্রতীক~$\sigma_i$, এবং $k$ হলো সময়~$0$-তে
+ফিতার সবচেয়ে ডানের অখালি ঘরের সূচক ও $n$ ধাপের মধ্যে ফিতা-হেডের দেখা
+সবচেয়ে ডানের ঘরের সূচক—এই দুটির মধ্যে বড়টি।
+\end{defn}
+
+\begin{lem}\ollabel{lem:halt-config-implies-halt}
+নিবেশ~$w$-তে চালানো $M$ যদি $n$ ধাপ পরে একটি থামার কনফিগারেশনে থাকে,
+তবে $!C(M,w,n)\Entails !E(M,w)$।
+\end{lem}
+
+\begin{proof}
+ধরা যাক, $M$ নিবেশ~$w$-তে $n$ ধাপ পরে থামে। তাহলে এমন একটি দশা~$q$,
+ঘর~$m$ এবং প্রতীক~$\sigma$ আছে যেন:
+\begin{enumerate}
+\item $n$ ধাপ পরে $M$ দশা~$q$-তে থেকে ঘর~$m$ পড়ে, যেখানে
+  $\sigma$ আছে।
+\item অবস্থান্তর অপেক্ষক $\delta(q,\sigma)$ অসংজ্ঞায়িত।
+\end{enumerate}
+$!C(M,w,n)$ এই কনফিগারেশনের বর্ণনা, তাই এতে
+$\Obj Q_{q}(\num{m},\num{n})$ ও
+$\Obj S_{\sigma}(\num{m},\num{n})$ প্রকরণদুটি থাকবে। প্রকরণদুটি একত্রে
+$!E(M,w)$ অনুগত করে:
+\[
+\lexists[x][\lexists[y][(\bigvee_{\tuple{q, \sigma} \in
+      X}(\Obj Q_q(x, y) \land \Obj S_\sigma(x, y)))]]
+\]
+কারণ $\tuple{q,\sigma}\in X$, তাই
+$\Obj Q_q(\num{m},\num{n})\land\Obj S_\sigma(\num{m},\num{n})
+\Entails \bigvee_{\tuple{q',\sigma'}\in X}
+(\Obj Q_{q'}(\num{m},\num{n})\land
+\Obj S_{\sigma'}(\num{m},\num{n}))$।
+% BN-SRC-182 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-182):} হিমায়িত প্রমাণের শেষ অনুগমনে আগে নির্বাচিত $q,\sigma$-এর জায়গায় অবন্ধ $q',\sigma'$ বসানো হয়েছিল, $S_{\sigma'}$-এর আগে $\Obj$-ও অনুপস্থিত ছিল, এবং তারপর উল্টোভাবে $\tuple{q',\sigma'}\in X$ দাবি করা হয়েছিল। বাংলা পাঠে সাক্ষী $q,\sigma$-কে পূর্বপক্ষে রাখা ও বিসংযোজনের বাঁধা চলককে $q',\sigma'$ করা হয়েছে।} % BN-SRC-182 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{explain}
+অতএব $M$ নিবেশ~$w$-তে থামলে এমন কোনো~$n$ আছে যার জন্য
+$!C(M,w,n)\Entails !E(M,w)$। এখন আমরা দেখাব: $M$ থামার আগের প্রতিটি
+সময়~$n$ এবং প্রথম থামার সময়টির জন্য
+$!T(M,w)\Entails !C(M,w,n)$।
+\end{explain}
+
+\begin{lem}
+\ollabel{lem:config}
+প্রতিটি~$n$-এর জন্য, $M$ যদি $n$-তম ধাপের আগে না থেমে থাকে, তবে
+$!T(M,w)\Entails !C(M,w,n)$।
+\end{lem}
+% BN-SRC-183 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-183):} হিমায়িত লেমার প্রকল্পে “after $n$ steps” ছিল, যা $n$-তম কনফিগারেশনটি থামার কনফিগারেশন হলে সেটিকেই বাদ দেয়; অথচ পরের লেমা প্রথম থামার সময়~$k$-তে এই ফল প্রয়োগ করে। বাংলা বিবৃতি ও দুই সারাংশে সঠিক পরিসর—$n$-তম ধাপের \emph{আগে} না-থামা, অর্থাৎ প্রথম থামার কনফিগারেশন পর্যন্ত—রাখা হয়েছে।} % BN-SRC-183 TARGET-CORRECTION-END
+
+\begin{proof}
+আরোহের ভিত্তি: $n=0$ হলে $!C(M,w,0)$-এর সংযোজকগুলি
+$!T(M,w)$-এরও সংযোজক, তাই সেটির অনুগত।
+
+আরোহী প্রকল্প: $M$ যদি $n$-তম ধাপের আগে না থামে, তবে
+$!T(M,w)\Entails !C(M,w,n)$। দেখাতে হবে যে $!C(M,w,n)$ যদি থামার
+কনফিগারেশন না বর্ণনা করে, তবে
+$!T(M,w)\Entails !C(M,w,n+1)$।
+
+ধরা যাক $n\ge 0$, এবং $w$-তে শুরু করা $M$ যন্ত্রটি $n$ ধাপ পরে
+দশা~$q$-তে থেকে ঘর~$m$ পড়ছে। $M$ যদি $n$ ধাপ পরেই না থামে, তবে তার
+প্রোগ্রামে নিচের তিন আকারের কোনো একটি নির্দেশ অবশ্যই আছে:
+% BN-SRC-184 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-184):} হিমায়িত আরোহী ধাপটি $n>0$ ধরে নেওয়ায় ভিত্তি $C(0)$ থেকে $C(1)$-এ যাওয়ার ঘটনাটি বাদ পড়েছিল। বাংলা পাঠে $n\ge 0$ রাখা হয়েছে; থামার কনফিগারেশন না-হওয়ার পৃথক শর্তই অবস্থান্তরের অস্তিত্ব নিশ্চিত করে।} % BN-SRC-184 TARGET-CORRECTION-END
+
+\begin{enumerate}
+\item \ollabel{right} $\delta(q,\sigma)=\tuple{q',\sigma',\TMright}$
+
+\item \ollabel{left} $\delta(q,\sigma)=\tuple{q',\sigma',\TMleft}$
+
+\item \ollabel{stay} $\delta(q,\sigma)=\tuple{q',\sigma',\TMstay}$
+\end{enumerate}
+
+তিনটি ঘটনা একে একে বিবেচনা করব।
+
+\begin{enumerate}
+\item ধরা যাক, \olref{right} আকারের একটি নির্দেশ আছে।
+  \olref[rep]{defn:tm-descr}\olref[rep]{rep-right} অনুসারে এর অর্থ
+\\begin{align*}
+& \lforall[x][\lforall[y][((\Obj Q_{q}(x,
+  y) \land \Obj S_\sigma(x, y)) \lif {}]]\\
+& \qquad (\Obj Q_{q'}(x',
+  y') \land \Obj S_{\sigma'}(x, y') \land !A(x, y)))
+\intertext{হলো $!T(M,w)$-এর একটি সংযোজক। সার্বিক দৃষ্টান্তায়নে
+  $x$-এর জায়গায় $\num{m}$ ও $y$-এর জায়গায় $\num{n}$ বসিয়ে এটি
+  নিচের !!{sentence}-টি অনুগত করে:}
+& (\Obj Q_{q}(\num{m}, \num{n}) \land \Obj S_{\sigma}(\num{m},
+\num{n})) \lif {}\\
+& \qquad (\Obj Q_{q'}(\num{m}', \num{n}') \land
+\Obj S_{\sigma'}(\num{m}, \num{n}') \land !A(\num{m}, \num{n})).
+\intertext{আরোহী প্রকল্পে $!T(M,w)\Entails !C(M,w,n)$, অর্থাৎ}
+& \Obj Q_q(\num{m}, \num{n}) \land \Obj S_{\sigma_0}(\num{0}, \num{n})
+\land \dots \land \Obj S_{\sigma_k}(\num{k}, \num{n}) \land \\
+& \qquad\lforall[x][(\num{k} < x \lif \Obj S_\TMblank(x, \num{n}))]\\
+\intertext{$n$ ধাপ পরে ফিতার ঘর~$m$-এ $\sigma$ আছে বলে সংশ্লিষ্ট
+  সংযোজকটি $\Obj S_\sigma(\num{m},\num{n})$; তাই এটি অনুগত করে:}
+& \Obj Q_{q}(\num{m}, \num{n}) \land \Obj S_{\sigma}(\num{m},
+   \num{n})
+\intertext{এখন আমরা পাই}
+& \Obj Q_{q'}(\num{m}', \num{n}') \land \Obj S_{\sigma'}(\num{m},
+  \num{n}') \land {}\\
+& \qquad\Obj S_{\sigma_0}(\num{0}, \num{n}') \land \dots \land
+  \Obj S_{\sigma_k}(\num{k}, \num{n}') \land {}\\
+& \qquad \lforall[x][(\num{k} < x \lif \Obj S_\TMblank(x, \num{n}'))]
+\end{align*}
+নিচের যুক্তিতে। প্রথম পঙ্‌ক্তিটি আগের শর্তাধীনটির অনুবর্তী থেকে সরাসরি
+মোডাস পোনেন্সে আসে। মাঝের পঙ্‌ক্তির প্রতিটি সংযোজক—যেখানে
+$\Obj S_{\sigma_m}(\num{m},\num{n}')$ বাদ যায়—$!C(M,w,n)$-এর সংশ্লিষ্ট
+সংযোজক ও $!A(\num{m},\num{n})$ থেকে আসে।
+% BN-SRC-185 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-185):} হিমায়িত ব্যাখ্যায় এই বিধেয়-প্রকরণটির আগে $\Obj$ অনুপস্থিত ছিল। বাংলা পাঠে ভাষা~$\Lang L_M$-এর ঘোষণা ও আশপাশের সব ঘটনের সঙ্গে মিলিয়ে $\Obj S_{\sigma_m}$ রাখা হয়েছে।} % BN-SRC-185 TARGET-CORRECTION-END
+
+$m<k$ হলে $!T(M,w)\Proves \num{m}<\num{k}$
+(\olref[rep]{prop:mlessk}); আর $<$-এর সক্রমতা থেকে পাই
+$\lforall[x][(\num{k}<x\lif\num{m}<x)]$। $m=k$ হলেও শুধু যুক্তিবিদ্যা
+থেকেই $\lforall[x][(\num{k}<x\lif\num{m}<x)]$। তাহলে শেষ পঙ্‌ক্তিটি
+$!C(M,w,n)$-এর সংশ্লিষ্ট সংযোজক,
+$\lforall[x][(\num{k}<x\lif\num{m}<x)]$, এবং
+$!A(\num{m},\num{n})$ থেকে আসে। $m<k$ হলে এটিই ইতিমধ্যে
+$!C(M,w,n+1)$।
+
+এবার ধরা যাক $m=k$। সেক্ষেত্রে $n+1$ ধাপ পরে ফিতা-হেড ঘর~$k+1$-ও
+দেখেছে, আর সেটিই এখন দেখা সবচেয়ে ডানের ঘর। তাই $!C(M,w,n+1)$-এ নতুন
+সংযোজক $\Obj S_\TMblank(\num{k}',\num{n}')$ থাকে, এবং শেষ সংযোজকটি হয়
+$\lforall[x][(\num{k}'<x\lif\Obj S_\TMblank(x,\num{n}'))]$। এই দুটি
+!!{sentence}s-ও অনুগত হয় কি না যাচাই করতে হবে।
+
+আমরা ইতিমধ্যে পেয়েছি
+$\lforall[x][(\num{k}<x\lif\Obj S_\TMblank(x,\num{n}'))]$। বিশেষত এর
+থেকে পাই
+$\num{k}<\num{k}'\lif\Obj S_\TMblank(\num{k}',\num{n}')$। স্বতঃসিদ্ধ
+$\lforall[x][x<x']$ থেকে পাই $\num{k}<\num{k}'$। মোডাস পোনেন্সে
+$\Obj S_\TMblank(\num{k}',\num{n}')$ অনুগত হয়।
+
+আবার $!T(M,w)\Proves\num{k}<\num{k}'$ বলে $<$-এর সক্রমতার স্বতঃসিদ্ধ
+থেকে পাই
+$\lforall[x][(\num{k}'<x\lif\Obj S_\TMblank(x,\num{n}'))]$। (এটির
+যাচাই অনুশীলনী হিসেবে রাখা হলো।)
+
+\item ধরা যাক, \olref{left} আকারের একটি নির্দেশ আছে। তাহলে
+  \olref[rep]{defn:tm-descr}\olref[rep]{rep-left} অনুসারে
+\begin{align*}
+& \lforall[x][\lforall[y][((\Obj Q_{q}(x', y) \land \Obj
+    S_{\sigma}(x', y)) \lif {}]]\\
+& \qquad (\Obj Q_{q'}(x, y') \land \Obj
+  S_{\sigma'}(x', y') \land !A(x', y))) \land {}\\
+& \lforall[y][((\Obj Q_{q_i}(\num{0}, y) \land \Obj S_{\sigma}(\num{0},
+    y)) \lif {}]\\
+& \qquad (\Obj Q_{q_j}(\num{0}, y') \land \Obj S_{\sigma'}(\num{0}, y')
+  \land !A(\num{0}, y)))
+\intertext{হলো $!T(M,w)$-এর একটি সংযোজক। $m>0$ হলে $l=m-1$
+  (অর্থাৎ $m=l+1$) ধরি। উপরের !!{sentence}-টির প্রথম সংযোজকটি অনুগত করে:}
+& (\Obj Q_{q}(\num{l}', \num{n}) \land \Obj S_{\sigma}(\num{l}', \num{n}))
+\lif {} \\
+& \qquad (\Obj Q_{q'}(\num{l}, \num{n}') \land \Obj S_{\sigma'}(\num{l}',
+\num{n}') \land !A(\num{l}', \num{n}))
+\intertext{অন্যথায় $l=m=0$ ধরি এবং দ্বিতীয় সংযোজকটি যে নিচের
+  !!{sentence}-টি অনুগত করে তা বিবেচনা করি:}
+& ((\Obj Q_{q_i}(\num{0}, \num{n}) \land \Obj S_{\sigma}(\num{0}, \num{n})) \lif {}\\
+& \qquad   (\Obj Q_{q_j}(\num{0}, \num{n}') \land \Obj S_{\sigma'}(\num{0}, \num{n}') \land
+!A(\num{0}, \num{n})))
+\intertext{দুটি বাক্যের যেটিই প্রযোজ্য হোক, সেটি অনুগত করে}
+&  \Obj Q_{q'}(\num{l}, \num{n}') \land \Obj S_{\sigma'}(\num{m},
+  \num{n}') \land {}\\
+&\qquad  \Obj S_{\sigma_0}(\num{0}, \num{n}')\land \dots \land
+  \Obj S_{\sigma_k}(\num{k}, \num{n}')  \land {} \\
+& \qquad  \lforall[x][(\num{k} < x
+  \lif \Obj S_\TMblank(x, \num{n}'))]
+\end{align*}
+আগের মতোই। (লক্ষ করো, প্রথম ঘটনায়
+$\num{l}'\ident\num{l+1}\ident\num{m}$ এবং দ্বিতীয় ঘটনায়
+$\num{l}\ident\num{0}$।) কিন্তু এটিই $!C(M,w,n+1)$।
+% BN-SRC-186 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-186):} হিমায়িত বাঁ-চলন প্রমাণটি উৎসের ভুল ফ্রেম-শর্ত পুনরাবৃত্তি করে $!A(x,y)$ এবং দৃষ্টান্তায়নের পরে $!A(\num{l},\num{n})$ ব্যবহার করেছে। লেখা হয় ঘর~$x'$, অর্থাৎ $\num{l}'=\num{m}$-এ; বাংলা সূত্রে তাই যথাক্রমে $!A(x',y)$ ও $!A(\num{l}',\num{n})$ রাখা হয়েছে।} % BN-SRC-186 TARGET-CORRECTION-END
+
+\item \olref{stay} ঘটনাটি অনুশীলনী হিসেবে রাখা হলো।
+\end{enumerate}
+আমরা দেখিয়েছি: যন্ত্রটি থামার আগের প্রতিটি~$n$ এবং প্রথম থামার সময়টির জন্য
+$!T(M,w)\Entails !C(M,w,n)$।
+\end{proof}
+
+\begin{prob}
+\olref[tur][und][ver]{lem:config}-এর প্রমাণের
+\olref[tur][und][ver]{stay} ঘটনাটি সম্পূর্ণ করো।
+\end{prob}
+
+\begin{prob}
+$\Obj S_{\sigma_i}(\num{i},\num{n})$ এবং
+$!A(\num{m},\num{n})$ থেকে
+$\Obj S_{\sigma_i}(\num{i},\num{n}')$-এর একটি !!a{derivation} দাও
+(ধরে নাও $i\neq m$, অর্থাৎ $i<m$ অথবা $m<i$)।
+% BN-SRC-187 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-187):} হিমায়িত অনুশীলনীতে প্রথম ও শেষ প্রকরণে সংখ্যাপদ থাকলেও মাঝের ফ্রেম-সূত্রটি $!A(m,n)$ লেখা হয়েছিল। একই নির্দিষ্ট ঘর ও সময়ে দৃষ্টান্তায়িত পূর্বধারণা পাওয়ার জন্য বাংলা পাঠে $!A(\num{m},\num{n})$ রাখা হয়েছে।} % BN-SRC-187 TARGET-CORRECTION-END
+\end{prob}
+
+\begin{prob}
+$\lforall[x][(\num{k}<x\lif\Obj S_\TMblank(x,\num{n}'))]$,
+$\lforall[x][x<x']$, এবং
+$\lforall[x][\lforall[y][\lforall[z][((x<y\land y<z)\lif x<z)]]]$
+থেকে
+$\lforall[x][(\num{k}'<x\lif\Obj S_\TMblank(x,\num{n}'))]$-এর একটি
+!!a{derivation} দাও।
+% BN-SRC-197 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-197):} হিমায়িত অনুশীলনীর শেষ পূর্ণচ্ছেদের পরে একটি অনাবদ্ধ বন্ধনী ছিল। বাংলা পাঠে সেই অতিরিক্ত মুদ্রণচিহ্নটি বাদ দেওয়া হয়েছে।} % BN-SRC-197 TARGET-CORRECTION-END
+\end{prob}
+
+\begin{lem}
+\ollabel{lem:valid-if-halt}
+$M$ নিবেশ~$w$-তে থামলে $!T(M,w)\lif !E(M,w)$ সিদ্ধ।
+\end{lem}
+
+\begin{proof}
+\olref{lem:config} থেকে জানি, $M$-এর প্রথম থামার সময় পর্যন্ত প্রতিটি
+সময়~$n$-এর কনফিগারেশনের বর্ণনা~$!C(M,w,n)$, অর্থাৎ সময়~$n$-এ তার বর্ণনা,
+$!T(M,w)$-এর অনুগত। ধরা যাক, $M$ $k$ ধাপ পরে থামে। তখন কোনো
+$m\in\Nat$-এর জন্য সেটি ঘর~$m$ পড়বে। ফলে $!C(M,w,k)$, $M$-এর একটি
+থামার কনফিগারেশন বর্ণনা করে; অর্থাৎ এতে
+$\Obj Q_q(\num{m},\num{k})$ ও $\Obj S_\sigma(\num{m},\num{k})$ উভয়ই
+সংযোজক, যেখানে $\delta(q,\sigma)$ অসংজ্ঞায়িত। তাই
+\olref{lem:halt-config-implies-halt} অনুসারে
+$!C(M,w,k)\Entails !E(M,w)$। আবার
+$!T(M,w)\Entails !C(M,w,k)$ বলে
+$!T(M,w)\Entails !E(M,w)$, এবং অতএব $!T(M,w)\lif !E(M,w)$ সিদ্ধ।
+\end{proof}
+
+\begin{explain}
+আমাদের দাবির যাচাই সম্পূর্ণ করতে বিপরীত দিকটিও প্রতিষ্ঠা করতে হবে:
+$!T(M,w)\lif !E(M,w)$ সিদ্ধ হলে $M$ সত্যিই নিবেশ~$w$-তে শুরু করে থামে।
+\end{explain}
+
+\begin{lem}
+\ollabel{lem:halt-if-valid}
+$\Entails !T(M,w)\lif !E(M,w)$ হলে $M$ নিবেশ~$w$-তে থামে।
+\end{lem}
+
+\begin{proof}
+অধিক্ষেত্র~$\Nat$-সহ এমন একটি $\Lang L_M$-!!{structure}~$\Struct M$
+বিবেচনা করি যা $\Obj 0$-কে~$0$, $\prime$-কে উত্তরসূরি অপেক্ষক এবং
+$<$-কে ক্ষুদ্রতর-সম্বন্ধ হিসেবে ব্যাখ্যা করে; আর $\Obj Q_q$ ও
+$\Obj S_\sigma$ বিধেয়দুটিকে নিচের মতো ব্যাখ্যা করে:
+\begin{align*}
+  \Assign{\Obj Q_q}{M} & =
+\Setabs{\tuple{m, n}}{\begin{array}{ll}\text{$w$-তে শুরু করে $n$ ধাপ পরে}\\ \text{$M$ দশা~$q$-তে থেকে
+  ঘর~$m$ পড়ে}\end{array}} \\
+\Assign{\Obj S_\sigma}{M} & = \Setabs{\tuple{m, n}}{\begin{array}{ll}
+\text{$w$-তে শুরু করে $n$ ধাপ পরে}\\ \text{$M$-এর ঘর~$m$-এ
+  প্রতীক~$\sigma$ আছে}\end{array}}
+\end{align*}
+অন্য কথায়, !!{structure}~$\Struct{M}$-কে এমনভাবে গড়ি যেন নিবেশ~$w$-তে
+শুরু করা $M$ ধাপে ধাপে সত্যিই যা করে তা-ই এটি বর্ণনা করে। স্পষ্টতই,
+$\Sat{M}{!T(M,w)}$। যদি $\Entails !T(M,w)\lif !E(M,w)$ হয়, তবে
+$\Sat{M}{!E(M,w)}$-ও হয়, অর্থাৎ
+\[
+\Sat{M}{\lexists[x][\lexists[y][(\bigvee_{\tuple{q, \sigma} \in
+      X}(\Obj Q_q(x, y) \land \Obj S_\sigma(x, y)))]]}.
+\]
+$\Domain{M}=\Nat$ বলে এমন $m$, $n\in\Nat$ অবশ্যই আছে যেন কোনো~$q$ ও
+$\sigma$-এর জন্য
+$\Sat{M}{\Obj Q_q(\num{m},\num{n})\land
+\Obj S_\sigma(\num{m},\num{n})}$, যেখানে $\delta(q,\sigma)$
+অসংজ্ঞায়িত। $\Struct M$-এর সংজ্ঞা অনুসারে এর অর্থ, নিবেশ~$w$-তে শুরু
+করা $M$ $n$ ধাপ পরে দশা~$q$-তে থেকে প্রতীক~$\sigma$ পড়ছে এবং
+অবস্থান্তর অপেক্ষক অসংজ্ঞায়িত; অর্থাৎ $M$ থেমেছে।
+\end{proof}
+
+\end{document}

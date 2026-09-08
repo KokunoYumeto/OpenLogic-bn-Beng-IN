@@ -1771,6 +1771,11 @@ for row in rows:
     standard_machine_simulation_fix = False
     universal_output_decoding_fix = False
     halting_machine_combination_notation_fix = False
+    representing_fo_fixes = False
+    representing_formula_classification_fix = False
+    verification_representation_fixes = False
+    decision_unsolvability_fixes = False
+    trakhtenbrot_fixes = False
     if row["unit_id"] == "OLP-0217":
         assert source.count("The less-than relation, $x \\leq y$") == 1
         assert "অনধিক সম্বন্ধ $x \\leq y$" in checked_target
@@ -2239,6 +2244,168 @@ for row in rows:
             "machine_combination_symbol": "frown",
             "corrected_occurrences": 2,
         }
+    elif row["unit_id"] == "OLP-0270":
+        audited_representation = source
+        old = (
+            r"\Obj S_{\sigma'}(x', y') \land" + "\n"
+            r"!A(x, y))) \land {}"
+        )
+        new = (
+            r"\Obj S_{\sigma'}(x', y') \land" + "\n"
+            r"!A(x', y))) \land {}"
+        )
+        assert audited_representation.count(old) == 1
+        audited_representation = audited_representation.replace(old, new, 1)
+        representing_formula_classification_fix = (
+            "let $!A(x, y)$ be the conjunction of all !!{sentence}s" in source
+            and "$!A(x,y)$ বলতে $\\sigma\\in\\Sigma$-এর প্রত্যেকটির জন্য" in checked_target
+            and "সব !!{formula}-র সংযোজন" in checked_target
+            and semantic_tokens(source)
+            - semantic_tokens(checked_target)
+            == collections.Counter({"!!{sentence}s": 1})
+            and semantic_tokens(checked_target)
+            - semantic_tokens(source)
+            == collections.Counter({"!!{formula}": 1})
+            and "BN-SRC-178" in documented
+        )
+        representing_fo_fixes = (
+            mathparts(audited_representation) == target_math
+            and representing_formula_classification_fix
+            and set(documented) == {"BN-SRC-178", "BN-SRC-179"}
+        )
+        assert representing_fo_fixes
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-178", "BN-SRC-179"],
+            "A_xy_classified_as_formula": True,
+            "left_move_frame_excludes_written_square": "x-prime",
+        }
+    elif row["unit_id"] == "OLP-0271":
+        audited_verification = source
+        replacements = [
+            ("$T(M, w) \\Entails !E(M, w)$", "$!T(M, w) \\Entails !E(M, w)$"),
+            ("iff $T$, when run on input~$w$", "iff $M$, when run on input~$w$"),
+            (
+                "$\\Obj Q_{q'}(\\num{m}, \\num{n}) \\land S_{\\sigma'}(\\num{m},\n"
+                "\\num{n}) \\Entails \\bigvee_{\\tuple{q, \\sigma} \\in X} (\\Obj Q_q(\\num{m},\n"
+                "\\num{n}) \\land \\Obj S_{\\sigma}(\\num{m}, \\num{n}))$",
+                "$\\Obj Q_q(\\num{m},\\num{n})\\land\\Obj S_\\sigma(\\num{m},\\num{n})\n"
+                "\\Entails \\bigvee_{\\tuple{q',\\sigma'}\\in X}\n"
+                "(\\Obj Q_{q'}(\\num{m},\\num{n})\\land\n"
+                "\\Obj S_{\\sigma'}(\\num{m},\\num{n}))$",
+            ),
+            ("$\\tuple{q',\\sigma'} \\in X$", "$\\tuple{q,\\sigma}\\in X$"),
+            ("Suppose $n > 0$", "Suppose $n \\ge 0$"),
+            (
+                "$S_{\\sigma_m}(\\num{m},\\num{n}')$",
+                "$\\Obj S_{\\sigma_m}(\\num{m},\\num{n}')$",
+            ),
+            ("!A(x, y))) \\land {}", "!A(x', y))) \\land {}"),
+            ("!A(\\num{l}, \\num{n}))", "!A(\\num{l}', \\num{n}))"),
+            ("$!A(m, n)$", "$!A(\\num{m},\\num{n})$"),
+        ]
+        for old, new in replacements:
+            assert audited_verification.count(old) == 1, old
+            audited_verification = audited_verification.replace(old, new, 1)
+        verification_representation_fixes = (
+            mathparts(audited_verification) == target_math
+            and checked_target.count("প্রথম থামার সময়") >= 3
+            and "BN-SRC-183" in documented
+            and source.count("      z)]]]$.)") == 1
+            and checked_target.count("অনাবদ্ধ বন্ধনী") == 0
+            and set(documented)
+            == {f"BN-SRC-{number:03d}" for number in range(180, 188)}
+            | {"BN-SRC-197"}
+        )
+        assert verification_representation_fixes
+        tex_command_check = {
+            "documented_corrections": [f"BN-SRC-{number:03d}" for number in range(180, 188)]
+            + ["BN-SRC-197"],
+            "validity_entailment_uses_metavariable_T": True,
+            "canonical_structure_runs_machine_M": True,
+            "halting_disjunction_witnesses_scoped": True,
+            "configuration_induction_includes_halting_time": True,
+            "inductive_step_includes_n_zero": True,
+            "predicate_object_marker_restored": True,
+            "left_move_frame_excludes_written_square": "x-prime",
+            "frame_exercise_uses_numerals": True,
+            "unmatched_exercise_delimiter_removed": True,
+        }
+    elif row["unit_id"] == "OLP-0272":
+        audited_unsolvability = source
+        assert audited_unsolvability.count(r"\concat") == 3
+        audited_unsolvability = audited_unsolvability.replace(r"\concat", r"\frown")
+        old = "!!a{sentence}~$B$ as input"
+        new = "!!a{sentence}~$!B$ as input"
+        assert audited_unsolvability.count(old) == 1
+        audited_unsolvability = audited_unsolvability.replace(old, new, 1)
+        decision_unsolvability_fixes = (
+            mathparts(audited_unsolvability) == target_math
+            and checked_target.count(r"$E\frown D$") == 3
+            and set(documented) == {"BN-SRC-188", "BN-SRC-189"}
+        )
+        assert decision_unsolvability_fixes
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-188", "BN-SRC-189"],
+            "machine_combination_symbol": "frown",
+            "corrected_machine_combination_occurrences": 3,
+            "validity_input_metavariable_marker_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0273":
+        audited_trakhtenbrot = source
+        replacements = [
+            ("larger of~$k$ and the length", "larger of~$k+1$ and the length"),
+            (
+                r"\delta(q_0,\TMblank) = \tuple{q,\TMblank,\TMstay}",
+                r"\delta(q_0,\TMblank) = \tuple{q_0,\TMblank,\TMstay}",
+            ),
+            (
+                r"\Assign{\prime}{M''}(0) =" + "\n"
+                r"    \Assign{\prime}{M'}(1) = 1",
+                r"\Assign{\prime}{M''}(0) =" + "\n"
+                r"    \Assign{\prime}{M''}(1) = 1",
+            ),
+            (
+                "!A(x, y))) \\land {}",
+                "!A(x', y) \\land !B(y'))) \\land {}",
+            ),
+            ("$n = \\max(k,\\len{w})$", "$n = \\max(k+1,\\len{w})$"),
+            (
+                r"\Sat{M'}{!T'(M,w) \land E(M,w)}",
+                r"\Sat{M'}{!T'(M,w) \land !E(M,w)}",
+            ),
+            (
+                r"\Sat{M'}{!T(M,w) \land E(M,w)}",
+                r"\Sat{M'}{!T'(M,w) \land !E(M,w)}",
+            ),
+            (
+                r"model of~$!T(M,w) \land !E(M, w)$",
+                r"model of~$!T'(M,w) \land !E(M, w)$",
+            ),
+        ]
+        for old, new in replacements:
+            assert audited_trakhtenbrot.count(old) == 1, old
+            audited_trakhtenbrot = audited_trakhtenbrot.replace(old, new, 1)
+        trakhtenbrot_fixes = (
+            mathparts(audited_trakhtenbrot) == target_math
+            and checked_target.count(r"\tuple{q_0,\TMblank,\TMstay}") == 2
+            and checked_target.count("সব ধনাত্মক~$n\\in\\Nat$-এর জন্য") == 1
+            and "কোনো ধনাত্মক সময়~$n$-এর আগে না থামে" in checked_target
+            and "ধনাত্মক~$n$-তম ধাপের আগে না থামে" in checked_target
+            and set(documented) == {f"BN-SRC-{number:03d}" for number in range(190, 197)}
+        )
+        assert trakhtenbrot_fixes
+        tex_command_check = {
+            "documented_corrections": [f"BN-SRC-{number:03d}" for number in range(190, 197)],
+            "finite_domain_bound": "max(k+1,len(w))",
+            "single_state_transition_target": "q_0",
+            "successor_interpretation_structure": "M-double-prime",
+            "left_move_frame_excludes_written_square": "x-prime",
+            "left_move_adds_fresh_time_condition": True,
+            "halting_conjunct_marker_restored": True,
+            "exercise_uses_T_prime_and_E_marker": True,
+            "contrapositive_model_uses_T_prime": True,
+            "fresh_time_condition_scope": "positive times",
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -2326,6 +2493,10 @@ for row in rows:
             standard_machine_simulation_fix,
             universal_output_decoding_fix,
             halting_machine_combination_notation_fix,
+            representing_fo_fixes,
+            verification_representation_fixes,
+            decision_unsolvability_fixes,
+            trakhtenbrot_fixes,
             shared_audit_fix,
         )
     )
@@ -2344,6 +2515,7 @@ for row in rows:
         "token_parity": (
             semantic_tokens(source) == semantic_tokens(checked_target)
             or introduction_token_fix
+            or representing_formula_classification_fix
         ),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),
         "documented_source_corrections": documented,

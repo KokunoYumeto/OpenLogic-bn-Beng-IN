@@ -1,0 +1,316 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: proofs-in-nd
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{pnd}
+\olsection{\usetoken{P}{derivation}: স্বাভাবিক নিষ্পাদন}
+
+\begin{explain}
+!!{derivation}s-কে পাটিগণিতায়িত করতে !!{derivation}s-কে সংখ্যা দিয়ে উপস্থাপন করতে
+হবে। !!{derivation}s হলো !!{formula}s-এর বৃক্ষ, যেখানে প্রতিটি অনুমিতির সঙ্গে
+একটি বা দুটি চিহ্ন থাকে; তাই পুনরাবৃত্ত উপস্থাপনই সবচেয়ে স্বাভাবিক। কোনো
+!!{derivation}-কে এমন একটি টিউপল দিয়ে উপস্থাপন করি যার উপাদান হলো শেষ
+অনুমিতির পূর্বধারণায় পৌঁছানো অব্যবহিত উপ-!!{derivation}s-এর সংখ্যা, ওই
+উপ-!!{derivation}s-এর উপস্থাপন, অন্তিম !!{formula}, শেষ অনুমিতির অবমুক্তি-চিহ্ন,
+এবং শেষ অনুমিতির ধরন নির্দেশকারী একটি সংখ্যা।
+\end{explain}
+
+\begin{defn}
+  $\delta$ স্বাভাবিক নিষ্পাদনের একটি !!a{derivation} হলে $\Gn{\delta}$
+  আরোহমূলকভাবে নিচের মতো সংজ্ঞায়িত:
+  \begin{enumerate}
+  \item
+    $\delta$-তে শুধু অনুমান~$!A$ থাকলে $\Gn{\delta}$ হলো
+    $\tuple{0, \Gn{!A}, n}$। অনুমানটি !!{undischarged} হলে সংখ্যা~$n$ হলো~$0$,
+    অন্যথায় সেটি সংখ্যাগত চিহ্ন।
+  \item
+    $\delta$-র শেষ অনুমিতির যথাক্রমে শূন্য, একটি, দুটি অথবা তিনটি পূর্বধারণা
+    থাকলে $\Gn{\delta}$ হলো
+    \begin{align*}
+      & \tuple{0, \Gn{!A}, n, k}, \\
+      & \tuple{1, \Gn{\delta_1}, \Gn{!A}, n, k}, \\
+      & \tuple{2, \Gn{\delta_1}, \Gn{\delta_2}, \Gn{!A}, n, k}, \text{ অথবা}\\
+      & \tuple{3, \Gn{\delta_1}, \Gn{\delta_2}, \Gn{\delta_3}, \Gn{!A}, n,
+        k},
+    \end{align*}
+    এখানে $\delta_1$, $\delta_2$, $\delta_3$ হলো $\delta$-র শেষ অনুমিতির
+    পূর্বধারণা(গুলি)-তে শেষ হওয়া উপ-!!{derivation}s; $!A$ হলো~$\delta$-র শেষ অনুমিতির
+    সিদ্ধান্ত; $n$ হলো শেষ অনুমিতির অবমুক্তি-চিহ্ন (অনুমিতিটি কোনো অনুমান
+    অবমুক্ত না করলে~$0$); এবং শেষ অনুমিতিতে কোন বিধি ব্যবহৃত হয়েছে সেই
+    অনুসারে নিচের সারণি থেকে~$k$ পাওয়া যায়।
+
+    \begin{tabular}{lccccccc}
+      \text{বিধি:} & \Intro{\land} & \Elim{\land} & \Intro{\lor} & \Elim{\lor} \\
+      $k$: & 1 & 2 & 3 & 4  \\[1.5ex]
+      \text{বিধি:} &  \Intro{\lif} & \Elim{\lif} & \Intro{\lnot} & \Elim{\lnot} \\
+      $k$: & 5 & 6 & 7 & 8 \\[1.5ex]
+      \text{বিধি:}  &  \FalseInt & \FalseCl & \Intro{\lforall} & \Elim{\lforall} \\
+      $k$: & 9 & 10 & 11 & 12 \\[1.5ex]
+      \text{বিধি:} & \Intro{\lexists} & \Elim{\lexists} & \Intro{\eq} & \Elim{\eq} \\
+      $k$: & 13 & 14 & 15 & 16
+    \end{tabular}
+  \end{enumerate}
+\end{defn}
+
+\begin{ex}
+  অতি সরল এই !!{derivation}-টি বিবেচনা করো:
+  \begin{prooftree}
+    \AxiomC{$\Discharge{!A \land !B}{1}$}
+    \RightLabel{\Elim{\land}}
+    \UnaryInfC{$!A$}
+    \DischargeRule{\Intro{\lif}}{1}
+    \UnaryInfC{$(!A \land !B) \lif !A$}
+  \end{prooftree}
+  অনুমানটির গ্যোডেল সংখ্যা হবে $d_0 = \tuple{0,
+    \Gn{!A \land !B}, 1}$। $\Elim{\land}$-এর সিদ্ধান্তে শেষ হওয়া
+  !!{derivation}-টির গ্যোডেল সংখ্যা হবে $d_1 = \tuple{1,
+     d_0, \Gn{!A}, 0, 2}$ ($1$, কারণ $\Elim{\land}$-এর একটি পূর্বধারণা;
+  তারপর সিদ্ধান্ত~$!A$-এর গ্যোডেল সংখ্যা; কোনো অনুমান অবমুক্ত হয় না বলে
+  $0$; এবং $2$ হলো $\Elim{\land}$-এর কোড)। গোটা !!{derivation}-টির গ্যোডেল
+  সংখ্যা তখন $\tuple{1, d_1, \Gn{((!A \land !B) \lif
+      !A)}, 1, 5}$, অর্থাৎ
+  \[
+  \tuple{1, \tuple{1, \tuple{0, \Gn{(!A \land !B)}, 1}, \Gn{!A}, 0, 2},
+    \Gn{((!A \land !B) \lif !A)}, 1, 5}.
+  \]
+\end{ex}
+
+\begin{explain}
+!!{derivation}s-এর একটি উপস্থাপন স্থির করার পর দেখাতে হবে যে
+!!{derivation}s-এর গ্যোডেল সংখ্যাকে আদিম পুনরাবৃত্তভাবে নিয়ন্ত্রণ করা যায় এবং তাদের অপরিহার্য ধর্ম ও
+সম্বন্ধও প্রকাশ করা যায়। কিছু ক্রিয়া সরল: যেমন, কোনো !!a{derivation}-এর
+গ্যোডেল সংখ্যা~$d$ দেওয়া থাকলে $\fn{EndFmla}(d) = (d)_{(d)_0+1}$ তার
+অন্তিম !!{formula}-র গ্যোডেল সংখ্যা দেয়,
+$\fn{DischargeLabel}(d) = (d)_{(d)_0 + 2}$ অবমুক্তি-চিহ্ন দেয়, এবং
+$\fn{LastRule}(d) = (d)_{(d)_0 + 3}$ শেষ অনুমিতির ধরন নির্দেশকারী সংখ্যা
+দেয়। কিছু কাজ অনেক কঠিন; এখানে অন্তত তার রূপরেখা দেব। লক্ষ্য হলো,
+``$\delta$ হলো~$\Gamma$ থেকে~$!A$-এর একটি !!a{derivation}'' সম্বন্ধটি
+$\delta$ ও~$!A$-এর গ্যোডেল সংখ্যার একটি আদিম পুনরাবৃত্ত সম্বন্ধ দেখানো।
+\end{explain}
+
+\begin{prop}
+  নিচের সম্বন্ধগুলি আদিম পুনরাবৃত্ত:
+  \begin{enumerate}
+  \item $!A$ চিহ্ন~$n$-সহ~$\delta$-তে একটি অনুমান হিসেবে ঘটে।
+  \item $\delta$-তে চিহ্ন~$n$-সহ সব অনুমান~$!A$ রূপের
+    (অর্থাৎ $\delta$-তে চিহ্ন~$n$ ব্যবহার করে অনুমান~$!A$-কে
+    !!{discharge} করা যায়)।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  !!{formula}s-এর গ্যোডেল সংখ্যা ও !!{derivation}s-এর গ্যোডেল সংখ্যার মধ্যে
+  অনুরূপ সম্বন্ধগুলি আদিম পুনরাবৃত্ত—এটি দেখাতে হবে।
+  \begin{enumerate}
+  \item $x$ যদি $d$ গ্যোডেল সংখ্যাবিশিষ্ট !!{derivation}-টির চিহ্ন~$n$-যুক্ত
+    কোনো অনুমানের গ্যোডেল সংখ্যা হয়, তখন সত্য $\fn{Assum}(x, d, n)$ আদিম
+    পুনরাবৃত্ত দেখাতে চাই। $\tuple{0, x, n}$ গ্যোডেল সংখ্যাবিশিষ্ট
+    !!{derivation}-টি~$d$-এর একটি উপ-!!{derivation} হলেই এটি সত্য। লক্ষ করো,
+    !!{derivation}s-কে আমাদের সংকেতায়ন
+    \olref[cmp][rec][tre]{sec}-এ দেওয়া বৃক্ষ-সংকেতায়নের একটি বিশেষ ঘটনা।
+    তাই আদিম পুনরাবৃত্ত অপেক্ষক $\fn{SubtreeSeq}(d)$ দৈর্ঘ্যে সর্বাধিক~$d$
+    এমন একটি অনুক্রম দেয়, যাতে~$d$-এর সব উপ-!!{derivation}s-এর গ্যোডেল সংখ্যা
+    আছে। অতএব সংজ্ঞায়িত করা যায়:
+    \[
+    \fn{Assum}(x, d, n) \defiff \bexists{i<d}{(\fn{SubtreeSeq}(d))_i =
+      \tuple{0, x, n}}.
+    \]
+  \item $d$ গ্যোডেল সংখ্যাবিশিষ্ট !!{derivation}-টিতে চিহ্ন~$n$-সহ সব অনুমান
+    যদি $x$ গ্যোডেল সংখ্যাবিশিষ্ট !!{formula}-টিই হয়, তখন সত্য
+    $\fn{Discharge}(x, d, n)$ আদিম পুনরাবৃত্ত দেখাতে চাই। এই সম্বন্ধটি সত্য
+    যদি এবং কেবল যদি $\bforall{y<d}{(\fn{Assum}(y, d, n) \lif y = x)}$।
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:followsby}
+  $d$ গ্যোডেল সংখ্যাবিশিষ্ট !!{derivation}~$\delta$-র শেষ অনুমিতি সঠিক হলে
+  এবং কেবল হলেই সত্য ধর্ম $\fn{Correct}(d)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  এখানে প্রত্যেক অনুমিতিবিধি~$R$-এর জন্য সম্বন্ধ $\fn{FollowsBy}_R(d)$ আদিম
+  পুনরাবৃত্ত দেখাতে হবে। $\fn{FollowsBy}_R(d)$ সত্য যদি এবং কেবল যদি $d$
+  হলো !!{derivation}~$\delta$-র গ্যোডেল সংখ্যা এবং~$\delta$-র অন্তিম
+  !!{formula}-টি $\delta$-র অব্যবহিত উপ-!!{derivation}s থেকে $R$-এর সঠিক প্রয়োগে
+  পাওয়া যায়।
+
+  \Intro{\land} বিধির ঘটনাটি সরল। $\delta$ একটি সঠিক
+  $\Intro{\land}$ অনুমিতিতে শেষ হলে তার রূপ:
+  \begin{prooftree}
+    \AxiomC{}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A$}
+
+    \AxiomC{}
+    \RightLabel{$\delta_2$}
+    \DeduceC{$!B$}
+
+    \RightLabel{\Intro\land}
+    \BinaryInfC{$!A \land !B$}
+  \end{prooftree}
+  তখন $\delta$-র গ্যোডেল সংখ্যা~$d$ হলো $\tuple{2, d_1, d_2,
+    \Gn{(!A \land !B)}, 0, k}$, যেখানে $\fn{EndFmla}(d_1) = \Gn{!A}$,
+  $\fn{EndFmla}(d_2) = \Gn{!B}$, $n=0$, এবং $k=1$। তাই
+  $\fn{FollowsBy}_{\Intro\land}(d)$-কে এভাবে সংজ্ঞায়িত করা যায়:
+  \begin{multline*}
+    (d)_0 = 2 \land \fn{DischargeLabel}(d) = 0 \land \fn{LastRule}(d) = 1 \land {}\\
+    \fn{EndFmla}(d) = {}\\
+    \Gn{(} \concat \fn{EndFmla}((d)_1) \concat \Gn{\land}
+    \concat \fn{EndFmla}((d)_2) \concat \Gn{)}.
+  \end{multline*}
+
+  আরেকটি সরল উদাহরণ $\Intro\eq$ বিধি। অনুমানের মতো এরও কোনো পূর্বধারণা নেই,
+  তাই $(d)_0 = 0$। এর কোনো অবমুক্তি-চিহ্নও নেই, অর্থাৎ $n=0$। তবে কোনো বদ্ধ
+  পদ~$t$-এর জন্য $!A$-কে $\eq[t][t]$ রূপের হতে হবে। এখানে একটি আদিম
+  পুনরাবৃত্ত সংজ্ঞা হলো
+  \begin{multline*}
+    (d)_0 = 0 \land \fn{DischargeLabel}(d) = 0 \land {}\\
+    \bexists{t<d}{(\fn{ClTerm}(t) \land
+      \fn{EndFmla}(d) = {}\\
+      \Gn{{\eq}(} \concat t \concat \Gn{,} \concat t \concat \Gn{)})}.
+  \end{multline*}
+
+  আরও জটিল উদাহরণে, $\fn{FollowsBy}_{\Intro{\lif}}(d)$ সত্য যদি এবং কেবল যদি
+  $\delta$-র অন্তিম !!{formula}~$(!A \lif !B)$ রূপের, $\delta_1$-এর অন্তিম
+  !!{formula}~$!B$, এবং $\delta$-তে চিহ্ন~$n$-যুক্ত প্রতিটি অনুমান~$!A$ রূপের।
+  এটি আদিম পুনরাবৃত্তভাবে এভাবে প্রকাশ করা যায়:
+  \begin{multline*}
+    (d)_0 = 1 \land {}\\
+    \bexists{a<d}{(\fn{Discharge}(a, (d)_1, \fn{DischargeLabel}(d)) \land {}}\\
+      \fn{EndFmla}(d) = (\Gn{(} \concat a \concat \Gn{\lif}
+      \concat \fn{EndFmla}((d)_1) \concat \Gn{)}))
+  \end{multline*}
+  ($a$-কে~$!A$-এর গ্যোডেল সংখ্যা মনে করো)।
+
+  আরেকটি উদাহরণ হিসেবে \Intro{\lexists} বিবেচনা করো। এখানে~$\delta$-র শেষ
+  অনুমিতি সঠিক যদি এবং কেবল যদি এমন !!a{formula}~$!A$, বদ্ধ পদ~$t$ ও
+  !!a{variable}~$x$ আছে যাতে $\Subst{!A}{t}{x}$ হলো
+  !!{derivation}~$\delta_1$-এর অন্তিম !!{formula} এবং $\lexists[x][!A]$ শেষ
+  অনুমিতির সিদ্ধান্ত। তাই $\fn{FollowsBy}_{\Intro{\lexists}}(d)$ সত্য যদি এবং
+  কেবল যদি
+  \begin{multline*}
+    (d)_0 = 1 \land \fn{DischargeLabel}(d) = 0 \land {} \\
+    \bexists{a < d}{\bexists{x<d}{\bexists{t<d}{
+          (\fn{ClTerm}(t) \land \fn{Var}(x)  \land {}}}}\\
+    \fn{Subst}(a,t,x) = \fn{EndFmla}((d)_1) \land
+    \fn{EndFmla}(d) = (\Gn{\lexists} \concat x \concat a)).
+  \end{multline*}
+
+  এখন $\fn{Correct}(d)$-কে সংজ্ঞায়িত করি:
+  \begin{multline*}
+    \fn{Sent}(\fn{EndFmla}(d)) \land {}\\
+    (\fn{LastRule}(d) = 1 \land
+    \fn{FollowsBy}_{\Intro\land}(d)) \lor \dots \lor {}\\
+    (\fn{LastRule}(d) = 16 \land \fn{FollowsBy}_{\Elim\eq}(d)) \lor {}\\
+    \bexists{n<d}{\bexists{x<d}{(d = \tuple{0, x, n})}}.
+  \end{multline*}
+  প্রথম পংক্তি নিশ্চিত করে যে~$d$-এর অন্তিম !!{formula}-টি একটি বাক্য। শেষ
+  পংক্তি সেই ঘটনাটি ধরে যেখানে~$d$ শুধু একটি অনুমান।
+\end{proof}
+
+\begin{prob}
+  \olref[inc][art][pnd]{prop:followsby}-এর মতো করে নিচের ধর্মগুলি সংজ্ঞায়িত করো:
+  \begin{enumerate}
+  \item $\fn{FollowsBy}_{\Elim{\lif}}(d)$,
+  \item $\fn{FollowsBy}_{\Elim{\eq}}(d)$,
+  \item $\fn{FollowsBy}_{\Elim{\lor}}(d)$,
+  \item $\fn{FollowsBy}_{\Intro{\lforall}}(d)$।
+  \end{enumerate}
+  শেষটির জন্য আরও দেখাতে হবে যে $d$ গ্যোডেল সংখ্যাবিশিষ্ট
+  !!{derivation}-টির শেষ অনুমিতি আইগেনচল-শর্ত পূরণ করে কি না আদিম
+  পুনরাবৃত্তভাবে পরীক্ষা করা যায়; অর্থাৎ $\Intro{\lforall}$ অনুমিতির
+  আইগেনচল~$a$ $d$-এর অন্তিম !!{formula}-তে অথবা~$d$-এর কোনো খোলা
+  অনুমানে ঘটে না। এর জন্য
+  \olref[inc][art][pnd]{prop:openassum}-এর আদিম পুনরাবৃত্ত বিধেয়
+  $\fn{OpenAssum}$ ব্যবহার করতে পারো।
+\end{prob}
+
+\begin{prop}
+  \ollabel{prop:deriv}
+  $d$ কোনো সঠিক !!{derivation}~$\delta$-র গ্যোডেল সংখ্যা হলে সত্য সম্বন্ধ
+  $\fn{Deriv}(d)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  !!^a{derivation}~$\delta$ সঠিক যদি তার প্রতিটি অনুমিতি কোনো বিধির সঠিক
+  প্রয়োগ হয়; অর্থাৎ তার প্রতিটি উপ-!!{derivation}s সঠিক অনুমিতিতে শেষ হয়।
+  তাই $\fn{Deriv}(d)$ সত্য যদি এবং কেবল যদি
+  \[
+  \bforall{i<\len{\fn{SubtreeSeq}(d)}}{\fn{Correct}((\fn{SubtreeSeq}(d))_i)}
+  \]
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:openassum} $z$ যদি $d$ গ্যোডেল সংখ্যাবিশিষ্ট
+  !!{derivation}~$\delta$-র কোনো !!a{undischarged} অনুমান~$!A$-এর গ্যোডেল
+  সংখ্যা হয়, তখন সত্য সম্বন্ধ $\fn{OpenAssum}(z, d)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  কোনো অনুমানের একটি ঘটনা !!{discharged} হয়, যদি তা~$\delta$-র এমন একটি
+  উপ-!!{derivation}-এ চিহ্ন~$n$-সহ ঘটে, যা অবমুক্তি-চিহ্ন~$n$-যুক্ত বিধিতে
+  শেষ হয়। অতএব~$\delta$-তে ওই অনুমানের অন্তত একটি ঘটনা !!{discharged} না হলে
+  $!A$ হলো~$\delta$-র একটি !!a{undischarged} অনুমান। এখানে সাবধান থাকতে হবে:
+  $\delta$-তে $!A$-এর !!{discharged} ও !!{undischarged}—দুই ধরনের ঘটনাই
+  থাকতে পারে।
+
+  $\delta_0$, \dots, $\delta_k$ অনুক্রমটি বিবেচনা করো, যেখানে
+  $\delta_0 = \delta$, $\delta_k$ হলো অনুমান $\Discharge{!A}{n}$
+  (কোনো~$n$-এর জন্য), এবং $\delta_{i+1}$ হলো $\delta_i$-এর একটি অব্যবহিত
+  উপ-!!{derivation}। যদি এমন একটি অনুক্রম থাকে যার কোনো $\delta_i$-ই
+  অবমুক্তি-চিহ্ন~$n$-যুক্ত অনুমিতিতে শেষ হয় না, তবে $!A$ হলো~$\delta$-র
+  একটি !!a{undischarged} অনুমান।
+
+  আদিম পুনরাবৃত্ত অপেক্ষক $\fn{SubtreeSeq}(d)$ আমাদের~$\delta$-র সব
+  উপ-!!{derivation}s-এর গ্যোডেল সংখ্যার একটি অনুক্রম দেয়। $\delta$-র
+  উপ-!!{derivation}s-এর গ্যোডেল সংখ্যার যেকোনো নির্বাচিত অনুক্রম এর একটি
+  উপ-অনুক্রম। একটি অনুক্রম অন্যটির উপ-অনুক্রম কি না—এটি আদিম পুনরাবৃত্ত
+  সম্বন্ধ: $\fn{Subseq}(s, s')$ সত্য যদি এবং কেবল যদি
+  $\bforall{i<\len{s}}{\lexists[j<\len{s'}][(s)_i = (s')_j]}$। অব্যবহিত
+  উপ-!!{derivation} হওয়াও আদিম পুনরাবৃত্ত: $\fn{Subderiv}(d, d')$ সত্য যদি
+  এবং কেবল যদি $\bexists{j<(d')_0}{d = (d')_{j+1}}$। তাই
+  $\fn{OpenAssum}(z, d)$-কে সংজ্ঞায়িত করা যায়:
+  \begin{multline*}
+    \bexists{s<\fn{SubtreeSeq}(d)}{(\fn{Subseq}(s, \fn{SubtreeSeq}(d))
+      \land (s)_0 = d \land {}} \\
+    \bexists{n<d}{((s)_{\len{s} \tsub 1} = \tuple{0, z, n} \land {}}\\
+      \bforall{i<(\len{s} \tsub 1)}{(\fn{Subderiv}((s)_{i+1}, (s)_i) \land {}}\\
+      \fn{DischargeLabel}((s)_i) \neq n))).
+  \end{multline*}
+% BN-SRC-213 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-213):} হিমায়িত $\fn{Subderiv}$ সংজ্ঞায় $j<(d')_0$ রেখে $d=(d')_j$ লেখা হয়েছিল। কিন্তু টিউপলের $0$-তম ঘরে উপনিষ্পাদনের সংখ্যা থাকে; উপনিষ্পাদনগুলি শুরু হয় $1$-তম ঘর থেকে। বাংলা পাঠে তাই $d=(d')_{j+1}$ রাখা হয়েছে, যাতে প্রথম ঘর ধরা ও শেষ ঘর বাদ না পড়ে।} % BN-SRC-213 TARGET-CORRECTION-END
+% BN-SRC-214 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-214):} হিমায়িত গদ্যের ``Being a subsequence of is'' বাক্যাংশে কোন অনুক্রমের উপ-অনুক্রম বোঝানো হয়েছে তা অনুপস্থিত। বাংলা পাঠে আগের বাক্যের $\fn{SubtreeSeq}(d)$-কেই নিয়ামক অনুক্রম হিসেবে স্পষ্ট করা হয়েছে।} % BN-SRC-214 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:prf-prim-rec}
+  $\Gamma$-কে !!{sentence}s-এর একটি আদিম পুনরাবৃত্ত সেট ধরা যাক। তখন
+  সম্বন্ধ $\Prf[\Gamma](x, y)$ আদিম পুনরাবৃত্ত; এটি প্রকাশ করে, ``$x$ হলো
+  $\Gamma$-র অন্তর্ভুক্ত !!{undischarged} অনুমান থেকে~$!A$-এর
+  !!a{derivation}~$\delta$-র কোড এবং $y$ হলো~$!A$-এর গ্যোডেল সংখ্যা''।
+\end{prop}
+
+\begin{proof}
+  ধরি, ``$y \in \Gamma$'' আদিম পুনরাবৃত্ত বিধেয়~$R_\Gamma(y)$ দিয়ে দেওয়া।
+  দেখাতে হবে $\Prf[\Gamma](x, y)$ আদিম পুনরাবৃত্ত, এবং এটি সত্য যদি এবং কেবল
+  যদি $y$ হলো বাক্য~$!A$-এর গ্যোডেল
+  সংখ্যা এবং $x$ হলো অন্তিম !!{formula}~$!A$-বিশিষ্ট স্বাভাবিক নিষ্পাদনের
+  একটি !!{derivation}-এর কোড, যার সব !!{undischarged} অনুমান~$\Gamma$-তে আছে।
+
+  \olref{prop:deriv} অনুসারে, $x$ কোনো সঠিক স্বাভাবিক নিষ্পাদন
+  !!{derivation}~$\delta$-র গ্যোডেল সংখ্যা হলে সত্য ধর্ম $\fn{Deriv}(x)$ আদিম
+  পুনরাবৃত্ত। তাই $\Prf[\Gamma](x, y)$-কে এভাবে সংজ্ঞায়িত করা যায়:
+  \begin{align*}
+    \Prf[\Gamma](x, y) \defiff {}
+    & \fn{Deriv}(x) \land \fn{EndFmla}(x) = y \land {} \\
+    & \bforall{z < x}{(\fn{OpenAssum}(z, x) \lif R_\Gamma(z))}.
+  \end{align*}
+\end{proof}
+
+\end{document}

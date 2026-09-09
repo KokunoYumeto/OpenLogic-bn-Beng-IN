@@ -1,0 +1,96 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: coding-formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{frm}
+\olsection{\printtoken{P}{formula}-র সংকেতায়ন}
+
+$\fn{Term}(x)$ সম্বন্ধটি আদিম পুনরাবৃত্তভাবে সংজ্ঞায়িত করার পর একই পদ্ধতিতে
+!!{formula}s-এর অনুরূপ সম্বন্ধ $\fn{Frm}(x)$ আদিম পুনরাবৃত্তভাবে সংজ্ঞায়িত
+করা যায়।
+
+\begin{prop}
+$x$ কোনো পারমাণবিক !!{formula}-র গ্যোডেল সংখ্যা হলে এবং কেবল হলেই সত্য
+সম্বন্ধ $\fn{Atom}(x)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+$x$ কোনো পারমাণবিক !!{formula}-র গ্যোডেল সংখ্যা যদি এবং কেবল যদি নিচের
+একটি সত্য হয়:
+\begin{enumerate}
+\item এমন $n$, $j < x$ এবং $z < x$ আছে যাতে $\len{z}=n$, প্রত্যেক $i < n$-এর
+  জন্য $\fn{Term}((z)_i)$, এবং $x = $
+\[
+\Gn{\Obj P^n_j(} \concat \fn{flatten}(z) \concat \Gn{)}.
+\]
+\item এমন $z_1, z_2 < x$ আছে যাতে $\fn{Term}(z_1)$,
+  $\fn{Term}(z_2)$, এবং $x = $
+\[
+\Gn{{\eq}(} \concat z_1 \concat \Gn{,} \concat z_2 \concat{\Gn{)}}.
+\]
+  \tagitem{prvFalse}{$x = \Gn{\lfalse}$.}{}
+  \tagitem{prvTrue}{$x = \Gn{\ltrue}$.}{}
+\end{enumerate}
+% BN-SRC-205 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-205):} হিমায়িত প্রথম শর্তটি $z$-এর প্রথম $n$টি উপাদান পদ কি না পরীক্ষা করে, কিন্তু $z$-এর দৈর্ঘ্য $n$ কি না বলে না। অতিরিক্ত উপাদান থাকলে $n$-স্থানীয় বিধেয়ের পরে ভুলসংখ্যক পদও ওই শর্তে গৃহীত হতো। বাংলা পাঠে $\len{z}=n$ যোগ করে বিধেয়টির স্থানসংখ্যা ও আর্গুমেন্টের সংখ্যা সমান রাখা হয়েছে।} % BN-SRC-205 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:frm-primrec}
+$x$ কোনো !!a{formula}-র গ্যোডেল সংখ্যা হলে এবং কেবল হলেই সত্য সম্বন্ধ
+$\fn{Frm}(x)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+প্রতীক-অনুক্রম~$s$ তখনই একটি !!a{formula}, যখন $s_0$, \dots,
+$s_{k-1} = s$ !!{formula}-র এমন একটি গঠন-অনুক্রম আছে, যা গঠনবিধি অনুসারে
+পারমাণবিক !!{formula}s থেকে~$s$ কীভাবে গঠিত হয়েছে তা নথিভুক্ত করে। প্রতিটি
+$s_i$-র কোড (এবং প্রকৃতপক্ষে $\tuple{s_0, \dots, s_{k-1}}$ অনুক্রমের কোডও)
+$s$-এর কোড~$x$ থেকে পাওয়া একটি আদিম পুনরাবৃত্ত সীমার মধ্যে থাকে।
+% BN-SRC-206 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-206):} হিমায়িত প্রমাণে গঠন-অনুক্রম $\tuple{s_0, \dots, s_{k-1}}$-এর গোটা কোডকেই $s$-এর কোড~$x$-এর চেয়ে ছোট বলা হয়েছে; মৌলিক সংখ্যার ঘাতভিত্তিক সংকেতায়নে তা সাধারণত সত্য নয়। পদের আগের প্রমাণের মতো, প্রতিটি উপসূত্রের কোড $x$ দ্বারা সীমাবদ্ধ এবং সেখান থেকে গোটা গঠন-অনুক্রমের কোডের একটি আদিম পুনরাবৃত্ত সীমা পাওয়া যায়—বাংলা পাঠে এই সঠিক সীমা-দাবিটিই রাখা হয়েছে।} % BN-SRC-206 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prob}
+\olref[inc][art][trm]{prop:term-primrec}-এর প্রথম প্রমাণের ধাঁচে
+\olref[inc][art][frm]{prop:frm-primrec}-এর একটি বিশদ প্রমাণ দাও।
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:freeocc-primrec}
+$x$ গ্যোডেল সংখ্যাবিশিষ্ট সূত্রটির $i$-তম প্রতীক যদি এবং কেবল যদি
+$z$ গ্যোডেল সংখ্যাবিশিষ্ট চলরাশিটির মুক্ত ঘটনা হয়, তখন সত্য সম্বন্ধ
+$\fn{FreeOcc}(x, z, i)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[inc][art][frm]{prop:freeocc-primrec} প্রমাণ করো। কোনো !!a{formula}-র
+যে উপ-প্রতীকক্রম নিজেই !!a{formula}, সেটি ওই সূত্রটির একটি উপ-!!{formula}—
+এই তথ্যটি ব্যবহার করতে পারো।
+\end{prob}
+
+\begin{prop}
+$x$ কোনো !!a{sentence}-এর গ্যোডেল সংখ্যা হলে এবং কেবল হলেই সত্য ধর্ম
+$\fn{Sent}(x)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+!!{sentence} হলো !!a{formula}, যাতে !!{variable}s-এর কোনো মুক্ত ঘটনা নেই।
+তাই $\fn{Sent}(x)$ সত্য যদি এবং কেবল যদি
+\begin{multline*}
+\bforall{i<\len{x}}{\bforall{z<x}{(\bexists{j<z}{z=\Gn{\Obj v_j}} \\
+\lif \lnot\fn{FreeOcc}(x,z,i))}}.
+\end{multline*}
+% BN-SRC-207 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-207):} হিমায়িত প্রদর্শনে ভিতরের $\bforall{z<x}{}$-এর পরিমাণায়িত অংশটি খালি রেখে পরের পংক্তির শর্তটি উভয় পরিমাণসূচকের বাইরে পড়েছে। বাংলা পাঠে শর্তটিকে $i$ ও $z$—উভয়ের আবদ্ধ পরিসরে রাখা হয়েছে।} % BN-SRC-207 TARGET-CORRECTION-END
+\end{proof}
+
+\end{document}

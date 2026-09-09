@@ -36,7 +36,7 @@ def body(text):
 def mathparts(text):
     output = []
     pattern = re.compile(
-        r"(?<!\\)\$(.*?)(?<!\\)\$|\\\[(.*?)\\\]|"
+        r"(?<!\\)\$(.*?)(?<!\\)\$|(?<!\\)\\\[(.*?)\\\]|"
         r"\\begin\{(align\*?|multline\*?|equation\*?)\}(.*?)\\end\{\3\}",
         re.S,
     )
@@ -1268,6 +1268,88 @@ for row in rows:
             mathparts(audited_undecidability) == target_math
             and "BN-SRC-203" in documented
         )
+    arithmetization_syntax_math_fix = False
+    arithmetization_syntax_expected = set()
+    audited_arithmetization_syntax = source
+    if row["unit_id"] == "OLP-0284":
+        arithmetization_syntax_expected = {
+            "BN-SRC-205",
+            "BN-SRC-206",
+            "BN-SRC-207",
+        }
+        repairs = [
+            (
+                "There are $n$, $j < x$, and $z < x$ such that for each $i < n$",
+                "There are $n$, $j < x$, and $z < x$ such that $\\len{z}=n$, for each $i < n$",
+            ),
+            (
+                r"\bforall{i<\len{x}}{\bforall{z<x}{}}\\" + "\n"
+                r"(\bexists{j<z}{z=\Gn{\Obj v_j}} \lif \lnot\fn{FreeOcc}(x,z,i)).",
+                r"\bforall{i<\len{x}}{\bforall{z<x}{(\bexists{j<z}{z=\Gn{\Obj v_j}} \\" + "\n"
+                r"\lif \lnot\fn{FreeOcc}(x,z,i))}}.",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_arithmetization_syntax.count(old) == 1, old
+            audited_arithmetization_syntax = audited_arithmetization_syntax.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0286":
+        arithmetization_syntax_expected = {
+            "BN-SRC-208",
+            "BN-SRC-209",
+            "BN-SRC-210",
+            "BN-SRC-211",
+            "BN-SRC-212",
+        }
+        repairs = [
+            (r"\Gn{!A \Sequent !A)}", r"\Gn{!A \Sequent !A}"),
+            (r"\fn{EndSeq}(p)", r"\fn{EndSequent}(p)"),
+            (r"\fn{InitialSeq}", r"\fn{InitSeq}"),
+            (r"$\fn{Deriv}(d)$", r"$\fn{Deriv}(p)$"),
+            (
+                r"\bforall{i<\len{\fn{SubtreeSeq}(p)}}{\fn{Correct}((\fn{SubtreeSeq}(p))_i}.",
+                r"\bforall{i<\len{\fn{SubtreeSeq}(p)}}{\fn{Correct}((\fn{SubtreeSeq}(p))_i)}.",
+            ),
+            ("end-sequent of~$d$ is actually", "end-sequent of~$p$ is actually"),
+            (
+                r"$\len{(\fn{EndSequent}(x))_1} = 1 \land ((\fn{EndSequent}(x))_1)_0 =" + "\n" + r"x$.",
+                r"$\len{(\fn{EndSequent}(x))_1} = 1 \land ((\fn{EndSequent}(x))_1)_0 = y$.",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_arithmetization_syntax.count(old) == 1, old
+            audited_arithmetization_syntax = audited_arithmetization_syntax.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0287":
+        arithmetization_syntax_expected = {"BN-SRC-213", "BN-SRC-214"}
+        old = r"$\bexists{j<(d')_0}{d = (d')_j}$"
+        new = r"$\bexists{j<(d')_0}{d = (d')_{j+1}}$"
+        assert audited_arithmetization_syntax.count(old) == 1
+        audited_arithmetization_syntax = audited_arithmetization_syntax.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0288":
+        arithmetization_syntax_expected = {
+            "BN-SRC-215",
+            "BN-SRC-216",
+            "BN-SRC-217",
+        }
+        repairs = [
+            (
+                r"\fn{QR}_1(d, i) \defiff \bexists{b < (d)_i}",
+                r"\fn{QR}_1(d, i) \defiff \bexists{j<i}{\bexists{b < (d)_i}",
+            ),
+            (r"\bexists{c < (d)_j}{(}}}}", r"\bexists{c < (d)_j}{(}}}}}"),
+            (
+                r'and that of $a$ less than the G\"odel number of the',
+                r'and that of $c$ less than the G\"odel number of the',
+            ),
+            (r"\concat \fn{Cond}(s, y, n) \concat", r"\concat \fn{hCond}(s, y, n) \concat"),
+        ]
+        for old, new in repairs:
+            assert audited_arithmetization_syntax.count(old) == 1, old
+            audited_arithmetization_syntax = audited_arithmetization_syntax.replace(old, new, 1)
+    if arithmetization_syntax_expected:
+        arithmetization_syntax_math_fix = (
+            mathparts(audited_arithmetization_syntax) == target_math
+            and set(documented) == arithmetization_syntax_expected
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -2442,6 +2524,60 @@ for row in rows:
             "diagonal_family_subscript_restored": True,
             "corrected_subscript_occurrences": 2,
         }
+    elif row["unit_id"] == "OLP-0284":
+        assert arithmetization_syntax_math_fix, (
+            row["unit_id"],
+            mathparts(audited_arithmetization_syntax) - target_math,
+            target_math - mathparts(audited_arithmetization_syntax),
+            documented,
+        )
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-205", "BN-SRC-206", "BN-SRC-207"],
+            "atomic_predicate_argument_count_checked": True,
+            "formation_sequence_uses_primitive_recursive_bound": True,
+            "sentence_quantifier_scope_repaired": True,
+        }
+    elif row["unit_id"] == "OLP-0286":
+        assert arithmetization_syntax_math_fix, (
+            row["unit_id"],
+            mathparts(audited_arithmetization_syntax) - target_math,
+            target_math - mathparts(audited_arithmetization_syntax),
+            documented,
+        )
+        tex_command_check = {
+            "documented_corrections": [f"BN-SRC-{number:03d}" for number in range(208, 213)],
+            "initial_sequent_example_parenthesis_repaired": True,
+            "end_sequent_function_name_consistent": True,
+            "initial_sequent_predicate_name_consistent": True,
+            "derivation_code_variable_consistent": True,
+            "proof_conclusion_parenthesis_closed": True,
+            "proof_sentence_code_variable_is_y": True,
+        }
+    elif row["unit_id"] == "OLP-0287":
+        assert arithmetization_syntax_math_fix, (
+            row["unit_id"],
+            mathparts(audited_arithmetization_syntax) - target_math,
+            target_math - mathparts(audited_arithmetization_syntax),
+            documented,
+        )
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-213", "BN-SRC-214"],
+            "immediate_subderivation_index_offset": 1,
+            "subsequence_reference_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0288":
+        assert arithmetization_syntax_math_fix, (
+            row["unit_id"],
+            mathparts(audited_arithmetization_syntax) - target_math,
+            target_math - mathparts(audited_arithmetization_syntax),
+            documented,
+        )
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-215", "BN-SRC-216", "BN-SRC-217"],
+            "quantifier_rule_preceding_line_index_bounded": True,
+            "quantifier_rule_constant_variable_consistent": True,
+            "nested_conditional_recursion_calls_helper": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -2535,6 +2671,7 @@ for row in rows:
             trakhtenbrot_fixes,
             overview_math_fix,
             undecidability_math_fix,
+            arithmetization_syntax_math_fix,
             shared_audit_fix,
         )
     )

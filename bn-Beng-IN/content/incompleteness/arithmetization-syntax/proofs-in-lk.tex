@@ -1,0 +1,281 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: proofs-in-lk
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{plk}
+\olsection{\usetoken{P}{derivation}: $\Log{LK}$}
+
+\begin{explain}
+!!{derivation}s-কে পাটিগণিতায়িত করতে !!{derivation}s-কে সংখ্যা দিয়ে উপস্থাপন করতে
+হবে। !!{derivation}s হলো সিকোয়েন্টের বৃক্ষ এবং প্রতিটি অনুমিতির সঙ্গে একটি
+চিহ্নও থাকে; তাই পুনরাবৃত্ত উপস্থাপনই সবচেয়ে স্বাভাবিক। কোনো
+!!{derivation}-কে এমন একটি টিউপল দিয়ে উপস্থাপন করি যার উপাদান হলো অন্তিম
+সিকোয়েন্ট, চিহ্ন, এবং শেষ অনুমিতির পূর্বধারণায় পৌঁছানো উপ-!!{derivation}s-এর
+উপস্থাপন।
+\end{explain}
+
+\begin{defn}
+$\Gamma$ যদি !!{sentence}s-এর সসীম অনুক্রম হয়, $\Gamma =
+\tuple{!A_1, \dots, !A_n}$, তবে $\Gn{\Gamma} = \tuple{\Gn{!A_1},
+  \dots, \Gn{!A_n}}$।
+
+$\Gamma \Sequent \Delta$ একটি সিকোয়েন্ট হলে $\Gamma \Sequent \Delta$-র
+একটি গ্যোডেল সংখ্যা হলো
+\[
+\Gn{\Gamma \Sequent \Delta} = \tuple{\Gn{\Gamma}, \Gn{\Delta}}
+\]
+
+$\pi$ যদি $\Log{LK}$-এর একটি !!a{derivation} হয়, তবে $\Gn{\pi}$ নিচের মতো
+সংজ্ঞায়িত:
+\begin{enumerate}
+\item $\pi$-তে শুধু প্রারম্ভিক সিকোয়েন্ট $\Gamma \Sequent \Delta$ থাকলে
+  $\Gn{\pi}$ হলো
+  \[
+    \tuple{0, \Gn{\Gamma \Sequent \Delta}}.
+  \]
+\item $\pi$-র শেষ অনুমিতির একটি অথবা দুটি পূর্বধারণা থাকলে, তার সিদ্ধান্ত
+  $\Gamma \Sequent \Delta$ হলে, এবং $\pi_1$ ও $\pi_2$ শেষ অনুমিতির
+  পূর্বধারণায় শেষ হওয়া অব্যবহিত উপপ্রমাণ হলে, $\Gn{\pi}$ যথাক্রমে
+  \begin{align*}
+    & \tuple{1, \Gn{\pi_1}, \Gn{\Gamma \Sequent \Delta}, k} \text{ অথবা}\\
+    & \tuple{2, \Gn{\pi_1}, \Gn{\pi_2}, \Gn{\Gamma \Sequent \Delta}, k},
+  \end{align*}
+  যেখানে শেষ অনুমিতিতে ব্যবহৃত বিধি অনুসারে নিচের সারণি থেকে $k$ পাওয়া যায়:
+
+  \begin{tabular}{lccccccc}
+    \text{বিধি:} & \LeftR{\Weakening} & \RightR{\Weakening} &
+    \LeftR{\Contraction} & \RightR{\Contraction} &
+    \LeftR{\Exchange} & \RightR{\Exchange} \\
+    $k$: & 1 & 2 & 3 & 4 & 5 & 6 \\[2ex]
+    \text{বিধি:} & \LeftR{\lnot} & \RightR{\lnot} &
+    \LeftR{\land} & \RightR{\land} &
+    \LeftR{\lor} & \RightR{\lor} \\
+    $k$: & 7 & 8 & 9 & 10 & 11 & 12 \\[2ex]
+    \text{বিধি:} & \LeftR{\lif} & \RightR{\lif} &
+    \LeftR{\lforall} & \RightR{\lforall} &
+    \LeftR{\lexists} & \RightR{\lexists} \\
+    $k$: & 13 & 14 & 15 & 16 & 17 & 18 \\[2ex]
+    \text{বিধি:} & \Cut & = \\
+    $k$: & 19 & 20
+  \end{tabular}
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+  অতি সরল এই !!{derivation}-টি বিবেচনা করো:
+  \begin{prooftree}
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B \fCenter !A$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\fCenter (!A \land !B) \lif !A$
+  \end{prooftree}
+  প্রারম্ভিক সিকোয়েন্টটির গ্যোডেল সংখ্যা হবে $p_0 = \tuple{0,
+    \Gn{!A \Sequent !A}}$। $\LeftR{\land}$-এর সিদ্ধান্তে শেষ হওয়া
+  !!{derivation}-টির গ্যোডেল সংখ্যা হবে $p_1 =
+    \tuple{1, p_0, \Gn{!A \land !B \Sequent !A}, 9}$ ($1$, কারণ
+    $\LeftR{\land}$-এর একটি পূর্বধারণা আছে; তারপর সিদ্ধান্ত
+    $!A \land !B \Sequent !A$-এর গ্যোডেল সংখ্যা; এবং $9$ হলো
+    $\LeftR{\land}$-কে সংকেতায়িত করা সংখ্যা)। অতএব গোটা
+    !!{derivation}-টির গ্যোডেল সংখ্যা হলো
+    $\tuple{1, p_1, \Gn{\Sequent (!A \land !B) \lif !A)}, 14}$, অর্থাৎ
+  \[
+  \tuple{1, \tuple{1, \tuple{0, \Gn{!A \Sequent !A}}, \Gn{!A \land !B \Sequent !A}, 9},
+    \Gn{\Sequent (!A \land !B) \lif !A}, 14}.
+  \]
+% BN-SRC-208 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-208):} হিমায়িত বিস্তৃত টিউপলে $\Gn{!A \Sequent !A)}$-এর শেষে একটি অতিরিক্ত ডান বন্ধনী ছিল, যদিও ঠিক আগের সংজ্ঞা ও সংক্ষিপ্ত $p_0$-তে $\Gn{!A \Sequent !A}$ আছে। বাংলা পাঠে অতিরিক্ত বন্ধনীটি বাদ দেওয়া হয়েছে।} % BN-SRC-208 TARGET-CORRECTION-END
+\end{ex}
+
+\begin{explain}
+!!{derivation}s-এর একটি উপস্থাপন স্থির করার পর দেখাতে হবে যে
+!!{derivation}s-এর গ্যোডেল সংখ্যাকে আদিম পুনরাবৃত্তভাবে নিয়ন্ত্রণ করা যায় এবং তাদের অপরিহার্য ধর্ম ও
+সম্বন্ধও সেভাবে প্রকাশ করা যায়। কিছু ক্রিয়া সরল: যেমন, কোনো
+!!a{derivation}-এর গ্যোডেল সংখ্যা~$p$ দেওয়া থাকলে
+$\fn{EndSequent}(p) = (p)_{(p)_0+1}$ তার অন্তিম সিকোয়েন্টের গ্যোডেল সংখ্যা
+দেয়, আর $\fn{LastRule}(p) = (p)_{(p)_0+2}$ শেষ বিধির কোড দেয়।
+$\fn{Sequent}(s)$ ধর্মটি এভাবে সংজ্ঞায়িত:
+\[
+  \len{s} = 2 \land \bforall{i<\len{(s)_0} + \len{(s)_1}}{\fn{Sent}(((s)_0 \concat (s)_1)_i)}
+\]
+$s$ তখনই এই ধর্ম পূরণ করে যখন $s$ হলো !!{sentence}s দিয়ে গঠিত কোনো
+সিকোয়েন্টের গ্যোডেল সংখ্যা। কিছু কাজ অনেক কঠিন; এখানে অন্তত তার রূপরেখা দেব। লক্ষ্য হলো,
+``$\pi$ হলো~$\Gamma$ থেকে~$!A$-এর একটি !!a{derivation}'' সম্বন্ধটি $\pi$ ও
+$!A$-এর গ্যোডেল সংখ্যার একটি আদিম পুনরাবৃত্ত সম্বন্ধ দেখানো।
+% BN-SRC-209 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-209):} হিমায়িত অনুচ্ছেদটি অন্তিম সিকোয়েন্টের অপেক্ষককে একবার $\fn{EndSeq}$ বলে সংজ্ঞায়িত করে, কিন্তু পরের সব সূত্রে $\fn{EndSequent}$ ব্যবহার করে। বাংলা পাঠে সংজ্ঞাটিকেও $\fn{EndSequent}$ করা হয়েছে।} % BN-SRC-209 TARGET-CORRECTION-END
+\end{explain}
+
+\begin{prop}\ollabel{prop:followsby}
+  $p$ গ্যোডেল সংখ্যাবিশিষ্ট !!{derivation}~$\pi$-র শেষ অনুমিতি সঠিক হলে এবং
+  কেবল হলেই সত্য ধর্ম $\fn{Correct}(p)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  $\Gamma \Sequent \Delta$ একটি প্রারম্ভিক সিকোয়েন্ট যদি হয় এমন কোনো
+  !!a{sentence}~$!A$ আছে যাতে $\Gamma \Sequent \Delta$ হলো
+  $!A \Sequent !A$, অথবা এমন কোনো পদ~$t$ আছে যাতে $\Gamma \Sequent \Delta$
+  হলো $\emptyset \Sequent \eq[t][t]$। গ্যোডেল সংখ্যায়,
+  $\fn{InitSeq}(s)$ সত্য যদি এবং কেবল যদি
+  \begin{align*}
+  \bexists{x < s}{} (\fn{Sent}(x) & \land
+  s = \tuple{\tuple{x},\tuple{x}})
+  \lor {}\\
+  \bexists{t<s}{} (\fn{Term}(t) & \land
+  s = \tuple{0, \tuple{\Gn{{\eq}(} \concat t \concat \Gn{,} \concat t \concat \Gn{)}}}).
+  \end{align*}
+
+  প্রত্যেক অনুমিতিবিধি~$R$-এর জন্য সম্বন্ধ $\fn{FollowsBy}_R(p)$ আদিম
+  পুনরাবৃত্ত, তাও দেখাতে হবে। এখানে $\fn{FollowsBy}_R(p)$ সত্য যদি এবং কেবল
+  যদি $p$ হলো !!{derivation}~$\pi$-র গ্যোডেল সংখ্যা এবং~$\pi$-র অন্তিম
+  সিকোয়েন্টটি $\pi$-র অব্যবহিত উপ-!!{derivation}s-এর অন্তিম সিকোয়েন্ট থেকে
+  $R$-এর সঠিক প্রয়োগে পাওয়া যায়।
+
+  \RightR{\land} বিধির ঘটনাটি সরল। $\pi$ একটি সঠিক $\RightR{\land}$
+  অনুমিতিতে শেষ হলে তার রূপ:
+  \begin{prooftree}
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$\Gamma \fCenter \Delta, !B$
+
+    \RightLabel{\RightR\land}
+    \BinaryInf$\Gamma \fCenter \Delta, !A \land !B$
+  \end{prooftree}
+  অতএব !!{derivation}~$\pi$-র শেষ অনুমিতি $\RightR{\land}$-এর সঠিক প্রয়োগ
+  যদি এবং কেবল যদি !!{sentence}s-এর অনুক্রম $\Gamma$ ও $\Delta$, এবং দুটি
+  !!{sentence}s $!A$ ও~$!B$ আছে, যাতে $\pi_1$-এর অন্তিম সিকোয়েন্ট
+  $\Gamma \Sequent \Delta, !A$, $\pi_2$-এর অন্তিম সিকোয়েন্ট
+  $\Gamma \Sequent \Delta, !B$, এবং $\pi$-র অন্তিম সিকোয়েন্ট
+  $\Gamma \Sequent \Delta, !A \land !B$। এখন শুধু একে গ্যোডেল সংখ্যায়
+  অনুবাদ করতে হবে। $s = \Gn{\Gamma \Sequent \Delta}$ হলে
+  $(s)_0 = \Gn{\Gamma}$ এবং $(s)_1 = \Gn{\Delta}$। তাই
+  $\fn{FollowsBy}_{\RightR{\land}}(p)$ সত্য যদি এবং কেবল যদি
+\begin{align*}
+& \bexists{g < p}{\bexists{d < p}{\bexists{a < p}{\bexists{b < p}{\quad}}}} \\
+& \qquad \fn{EndSequent}(p) =
+  \tuple{g, d \concat
+    \tuple{\Gn{(} \concat a \concat \Gn{\land} \concat b \concat \Gn{)}}} \land {} \\
+& \qquad \fn{EndSequent}((p)_1) = \tuple{g, d \concat \tuple{a}} \land {}\\
+& \qquad \fn{EndSequent}((p)_2) = \tuple{g, d \concat \tuple{b}} \land {}\\
+& \qquad (p)_0 = 2 \land \fn{LastRule}(p) = 10.
+\end{align*}
+পংক্তিগুলি যথাক্রমে বলে, ``গ্যোডেল সংখ্যা~$g$-বিশিষ্ট অনুক্রম~($\Gamma$),
+গ্যোডেল সংখ্যা~$d$-বিশিষ্ট অনুক্রম~($\Delta$), গ্যোডেল সংখ্যা~$a$-বিশিষ্ট
+!!a{formula}~($!A$), এবং গ্যোডেল সংখ্যা~$b$-বিশিষ্ট !!a{formula}~($!B$)
+আছে''; এবং ``$\pi$-র অন্তিম সিকোয়েন্ট $\Gamma \Sequent \Delta, !A \land
+!B$'', ``$\pi_1$-এর অন্তিম সিকোয়েন্ট $\Gamma \Sequent \Delta, !A$'',
+``$\pi_2$-এর অন্তিম সিকোয়েন্ট $\Gamma \Sequent \Delta, !B$'', ও
+``$\pi$-র দুটি অব্যবহিত উপনিষ্পাদন আছে এবং শেষ অনুমিতিবিধি হলো
+$\RightR\land$ (সংখ্যা~$10$)''।
+
+$\pi$-র শেষ অনুমিতি $\RightR\lexists$-এর সঠিক প্রয়োগ যদি এবং কেবল যদি
+অনুক্রম $\Gamma$ ও $\Delta$, !!a{formula}~$!A$, চলরাশি~$x$ এবং পদ~$t$ আছে,
+যাতে $\pi$-র অন্তিম সিকোয়েন্ট $\Gamma \Sequent \Delta, \lexists[x][!A]$
+এবং $\pi_1$-এর অন্তিম সিকোয়েন্ট $\Gamma \Sequent \Delta,
+\Subst{!A}{t}{x}$। তাই গ্যোডেল সংখ্যায় $\fn{FollowsBy}_{\RightR\lexists}(p)$
+সত্য যদি এবং কেবল যদি
+\begin{align*}
+  & \bexists{g<p}{\bexists{d<p}{\bexists{a<p}{\bexists{x<p}{\bexists{t<p}{\quad}}}}}\\
+  & \qquad \fn{EndSequent}(p) =
+  \tuple{
+    g,
+    d \concat \tuple{\Gn{\lexists} \concat x \concat a}
+  } \land {}\\
+  & \qquad \fn{EndSequent}((p)_1) =
+  \tuple{
+    g,
+    d \concat \tuple{\fn{Subst}(a, t, x)}
+  } \land {}\\
+  & \qquad (p)_0 = 1 \land \fn{LastRule}(p) = 18.
+\end{align*}
+এখন $\fn{Correct}(p)$-কে সংজ্ঞায়িত করি:
+\begin{multline*}
+  \fn{Sequent}(\fn{EndSequent}(p)) \land {}\\
+  [(\fn{LastRule}(p) = 1 \land
+  \fn{FollowsBy}_{\LeftR\Weakening}(p)) \lor \dots \lor {}\\
+  (\fn{LastRule}(p) = 20 \land \fn{FollowsBy}_{\eq}(p)) \lor {}\\
+  (p)_0 = 0 \land \fn{InitSeq}(\fn{EndSequent}(p))]
+\end{multline*}
+প্রথম পংক্তি নিশ্চিত করে, $p$-এর অন্তিম সিকোয়েন্টটি বাস্তবেই
+!!{sentence}s দিয়ে গঠিত একটি সিকোয়েন্ট। শেষ পংক্তি সেই ঘটনাটি ধরে যেখানে
+$p$ শুধু একটি প্রারম্ভিক সিকোয়েন্ট।
+% BN-SRC-210 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-210):} হিমায়িত প্রমাণে সম্বন্ধটি $\fn{InitSeq}$ নামে সংজ্ঞায়িত হলেও শেষ বিকল্পে অনির্ধারিত $\fn{InitialSeq}$ লেখা হয়েছে। বাংলা পাঠে সংজ্ঞায়িত $\fn{InitSeq}$ রাখা হয়েছে। একই অনুচ্ছেদের ``$d$-এর অন্তিম সিকোয়েন্ট''-কেও চলমান গ্যোডেল সংখ্যা~$p$-এর অন্তিম সিকোয়েন্ট বলা হয়েছে।} % BN-SRC-210 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prob}
+  \olref[inc][art][plk]{prop:followsby}-এর মতো করে নিচের ধর্মগুলি সংজ্ঞায়িত করো:
+  \begin{enumerate}
+  \item $\fn{FollowsBy}_{\Cut}(p)$,
+  \item $\fn{FollowsBy}_{\LeftR\lif}(p)$,
+  \item $\fn{FollowsBy}_{\eq}(p)$,
+  \item $\fn{FollowsBy}_{\RightR{\lforall}}(p)$।
+  \end{enumerate}
+  শেষটির জন্য আরও দেখাতে হবে যে শেষ অনুমিতির আইগেনচল-শর্ত পূরণ হচ্ছে
+  কি না আদিম পুনরাবৃত্তভাবে পরীক্ষা করা যায়; অর্থাৎ $p$ গ্যোডেল সংখ্যাবিশিষ্ট
+  !!{derivation}-টির $\RightR{\lforall}$ অনুমিতির আইগেনচল~$a$ অন্তিম
+  সিকোয়েন্টে ঘটে না।
+  \end{prob}
+
+\begin{prop}
+  \ollabel{prop:deriv}
+  $p$ কোনো সঠিক !!{derivation}~$\pi$-র গ্যোডেল সংখ্যা হলে সত্য সম্বন্ধ
+  $\fn{Deriv}(p)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof}
+  !!^a{derivation}~$\pi$ সঠিক যদি তার প্রতিটি অনুমিতি কোনো বিধির সঠিক প্রয়োগ
+  হয়; অর্থাৎ তার প্রতিটি উপ-!!{derivation}s সঠিক অনুমিতিতে শেষ হয়। অতএব
+  $\fn{Deriv}(p)$ সত্য যদি এবং কেবল যদি
+  \[
+  \bforall{i<\len{\fn{SubtreeSeq}(p)}}{\fn{Correct}((\fn{SubtreeSeq}(p))_i)}.
+  \]
+% BN-SRC-211 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-211):} হিমায়িত প্রমাণটি প্রস্তাবের $p$ থেকে হঠাৎ অনাবদ্ধ $d$-তে বদলে যায় এবং শেষ $\fn{Correct}$-এর ডান বন্ধনী বাদ দেয়। বাংলা পাঠে সর্বত্র $p$ রাখা ও বন্ধনী পূর্ণ করা হয়েছে।} % BN-SRC-211 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prop}
+$\Gamma$-কে !!{sentence}s-এর একটি আদিম পুনরাবৃত্ত সেট ধরা যাক। তখন
+সম্বন্ধ $\Prf[\Gamma](x, y)$ আদিম পুনরাবৃত্ত; এটি প্রকাশ করে, ``$x$ হলো
+কোনো সসীম $\Gamma_0 \subseteq \Gamma$-এর জন্য
+$\Gamma_0 \Sequent !A$-এর !!a{derivation}~$\pi$-র কোড এবং $y$ হলো~$!A$-এর
+গ্যোডেল সংখ্যা''।
+\end{prop}
+
+\begin{proof}
+ধরি, ``$y \in \Gamma$'' আদিম পুনরাবৃত্ত বিধেয়~$R_\Gamma(y)$ দিয়ে দেওয়া।
+দেখাতে হবে $\Prf[\Gamma](x, y)$ আদিম পুনরাবৃত্ত, এবং এটি সত্য যদি এবং কেবল
+যদি $y$ হলো বাক্য~$!A$-এর গ্যোডেল
+সংখ্যা এবং $x$ হলো অন্তিম সিকোয়েন্ট $\Gamma_0 \Sequent !A$-বিশিষ্ট
+$\Log{LK}$-!!{derivation}-এর কোড।
+
+আগের প্রস্তাব অনুসারে, $x$ কোনো সঠিক $\Log{LK}$-!!{derivation}~$\pi$-র কোড
+হলে সত্য ধর্ম $\fn{Deriv}(x)$ আদিম পুনরাবৃত্ত। $x$ এমন কোড হলে
+$\fn{EndSequent}(x)$ হলো~$\pi$-র অন্তিম সিকোয়েন্টের কোড; তাই
+$(\fn{EndSequent}(x))_0$ অন্তিম সিকোয়েন্টের বাম পাশের এবং
+$(\fn{EndSequent}(x))_1$ ডান পাশের কোড। অতএব ``$\pi$-র অন্তিম সিকোয়েন্টের
+ডান পাশে~$!A$ আছে'' কথাটি
+$\len{(\fn{EndSequent}(x))_1} = 1 \land ((\fn{EndSequent}(x))_1)_0 = y$
+দিয়ে প্রকাশ করা যায়। $\pi$-র অন্তিম সিকোয়েন্টের বাম পাশ অবশ্যই সসীম;
+শুধু প্রকাশ করতে হবে যে তার প্রতিটি বাক্য~$\Gamma$-তে আছে। তাই
+$\Prf[\Gamma](x, y)$-কে এভাবে সংজ্ঞায়িত করা যায়:
+\begin{align*}
+\Prf[\Gamma](x, y) \defiff {}&
+\fn{Deriv}(x) \land {} \\
+& \bforall{i <
+  \len{(\fn{EndSequent}(x))_0}}{R_\Gamma(((\fn{EndSequent}(x))_0)_i)} \land {}\\
+& \len{(\fn{EndSequent}(x))_1} = 1 \land ((\fn{EndSequent}(x))_1)_0 = y.
+\end{align*}
+% BN-SRC-212 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-212):} হিমায়িত ব্যাখ্যায় অন্তিম সিকোয়েন্টের ডান পাশের একমাত্র উপাদানকে $x$ বলা হয়েছে, যদিও $x$ নিষ্পাদনের কোড এবং প্রস্তাব ও চূড়ান্ত সংজ্ঞায় বাক্যটির গ্যোডেল সংখ্যা~$y$। বাংলা পাঠে ওই ব্যাখ্যাতেও $y$ রাখা হয়েছে।} % BN-SRC-212 TARGET-CORRECTION-END
+\end{proof}
+
+\end{document}

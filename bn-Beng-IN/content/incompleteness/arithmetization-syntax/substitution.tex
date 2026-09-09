@@ -1,0 +1,53 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{sub}
+\olsection{প্রতিস্থাপন}
+
+মনে করো, প্রতিস্থাপন হলো কোনো !!a{formula}~$!A$-তে কোনো !!a{variable}~$u$-এর
+সব মুক্ত ঘটনাকে পদ~$t$ দিয়ে বদলানোর ক্রিয়া; একে $\Subst{!A}{t}{u}$ লেখা
+হয়। !!{formula}s, পদ ও !!{variable}s-এর গ্যোডেল সংখ্যার উপর এই ক্রিয়াটি
+সম্পন্ন করলে তা আদিম পুনরাবৃত্ত।
+
+\begin{prop}\ollabel{prop:subst-primrec}
+এমন একটি আদিম পুনরাবৃত্ত অপেক্ষক $\fn{Subst}(x, y, z)$ আছে, যার ধর্ম
+\[
+\fn{Subst}(\Gn{!A}, \Gn{t}, \Gn{u}) = \Gn{\Subst{!A}{t}{u}}.
+\]
+\end{prop}
+
+\begin{proof}
+আদিম পুনরাবৃত্তি দিয়ে নিচের মতো অপেক্ষক $\fn{hSubst}$ সংজ্ঞায়িত করা যায়:
+\begin{multline*}
+\begin{aligned}
+\fn{hSubst}(x, y, z, 0) & = \emptyseq \\
+\fn{hSubst}(x, y, z, i+1) & =
+\end{aligned}\\
+\begin{cases}
+\fn{hSubst}(x, y, z, i) \concat y & \text{যদি $\fn{FreeOcc}(x, z, i)$} \\
+\fn{append}(\fn{hSubst}(x, y, z, i), (x)_{i}) & \text{অন্যথায়।}
+\end{cases}
+\end{multline*}
+এখন $\fn{Subst}(x, y, z)$-কে $\fn{hSubst}(x, y, z, \len{x})$ হিসেবে
+সংজ্ঞায়িত করা যায়।
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:free-for}
+$y$ গ্যোডেল সংখ্যাবিশিষ্ট পদটি $x$ গ্যোডেল সংখ্যাবিশিষ্ট সূত্রে $z$
+গ্যোডেল সংখ্যাবিশিষ্ট চলরাশিটির জন্য !!{free for} হলে এবং কেবল হলেই সত্য
+সম্বন্ধ $\fn{FreeFor}(x, y, z)$ আদিম পুনরাবৃত্ত।
+\end{prop}
+
+\begin{proof} অনুশীলনী। \end{proof}
+
+\begin{prob}
+\olref[inc][art][sub]{prop:free-for} প্রমাণ করো।
+\end{prob}
+
+\end{document}

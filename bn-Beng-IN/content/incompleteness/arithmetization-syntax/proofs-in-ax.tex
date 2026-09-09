@@ -1,0 +1,216 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: proofs-in-ax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{pax}
+\olsection{স্বতঃসিদ্ধমূলক \usetoken{P}{derivation}}
+
+\begin{explain}
+স্বতঃসিদ্ধমূলক !!{derivation}s-কে পাটিগণিতায়িত করতে হলে !!{derivation}s-কে সংখ্যা
+দিয়ে উপস্থাপন করতে হবে। যেহেতু !!{derivation}s কেবল !!{formula}s-এর
+অনুক্রম, তাই স্বাভাবিক উপায় হলো প্রতিটি !!{derivation}-কে তার অন্তর্ভুক্ত
+!!{formula}s-এর কোডগুলির অনুক্রমের কোড হিসেবে সংকেতায়িত করা।
+\end{explain}
+
+\begin{defn}
+$\delta$ যদি !!{formula}s $!A_1$, \dots,~$!A_n$ নিয়ে গঠিত একটি
+স্বতঃসিদ্ধমূলক !!{derivation} হয়, তবে $\Gn{\delta}$ হলো
+\[
+\tuple{\Gn{!A_1}, \dots, \Gn{!A_n}}.
+\]
+\end{defn}
+
+\begin{ex}
+  অতি সরল !!{derivation}-টি বিবেচনা করো:
+  \begin{derivation}
+  1. & $!B \lif (!B \lor !A)$ \\
+  2. & $(!B \lif (!B \lor !A)) \lif (!A  \lif (!B \lif (!B \lor !A)))$\\
+  3. & $!A  \lif (!B \lif (!B \lor !A))$
+  \end{derivation}
+  এই !!{derivation}-টির গ্যোডেল সংখ্যা হবে
+  \begin{align*}
+  \openTuple\,
+    & \Gn{!B \lif (!B \lor !A)}, \\
+    &\Gn{(!B \lif (!B \lor !A)) \lif (!A  \lif (!B \lif (!B \lor !A)))},\\
+    & \Gn{!A  \lif (!B \lif (!B \lor !A))} \,\closeTuple.
+  \end{align*}
+\end{ex}
+
+\begin{explain}
+!!{derivation}s-এর একটি উপস্থাপন স্থির করার পর দেখাতে হবে যে
+!!{derivation}s-কে আদিম পুনরাবৃত্ত উপায়ে পরিচালনা করা যায় এবং তাদের অপরিহার্য ধর্ম ও সম্বন্ধও
+সেভাবে প্রকাশ করা যায়। কিছু ক্রিয়া সরল: যেমন, কোনো !!a{derivation}-এর
+গ্যোডেল সংখ্যা~$d$ দেওয়া থাকলে $(d)_{\len{d}-1}$ তার অন্তিম
+!!{formula}-র গ্যোডেল সংখ্যা দেয়। কিছু কাজ অনেক কঠিন; এখানে অন্তত তার
+রূপরেখা দেব। লক্ষ্য হলো ``$\delta$ হলো~$\Gamma$ থেকে~$!A$-এর একটি
+!!a{derivation}'' সম্বন্ধটি $\delta$ ও~$!A$-এর গ্যোডেল সংখ্যার উপর আদিম
+পুনরাবৃত্ত দেখানো।
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:followsby}
+নিচের সম্বন্ধগুলি আদিম পুনরাবৃত্ত:
+\begin{enumerate}
+\item $!A$ একটি স্বতঃসিদ্ধ।
+\item $\delta$-র $i$-তম পংক্তিটি মোডাস পোনেন্স দ্বারা সমর্থিত।
+\item $\delta$-র $i$-তম পংক্তিটি \QR{} দ্বারা সমর্থিত।
+\item $\delta$ একটি সঠিক !!{derivation}।
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+!!{formula}s-এর গ্যোডেল সংখ্যা ও !!{derivation}s-এর গ্যোডেল সংখ্যার মধ্যকার
+সংশ্লিষ্ট সম্বন্ধগুলি আদিম পুনরাবৃত্ত দেখাতে হবে।
+\begin{enumerate}
+\item স্বতঃসিদ্ধ-ছকগুলির একটি নির্দিষ্ট তালিকা আছে, এবং $!A$ স্বতঃসিদ্ধ হয়
+  যদি সেটি এই ছকগুলির কোনো একটির দেওয়া রূপের হয়। ছকের তালিকা সসীম বলে
+  প্রতিটি স্বতঃসিদ্ধ-ছকের জন্য $!A$ সেই রূপের কি না আদিম পুনরাবৃত্তভাবে
+  পরীক্ষা করা যায় দেখালেই যথেষ্ট। যেমন, স্বতঃসিদ্ধ-ছকটি বিবেচনা করো
+  \[
+  !B \lif (!C \lif !B).
+  \]
+  এমন !!{formula}s $!B$ ও $!C$ থাকলে, যাদের দিয়ে `$($', $!B$, `$\lif$',
+  `$($', $!C$, `$\lif$', $!B$ এবং~`$))$' ক্রমান্বয়ে সংযুক্ত করে $!A$ পাওয়া
+  যায়, তবে $!A$ এই স্বতঃসিদ্ধ-ছকের একটি নিদর্শন। $!A$-এর গ্যোডেল
+  সংখ্যা~$n$-এর সংশ্লিষ্ট ধর্মটি পরীক্ষা করা যায়, কারণ অনুক্রম-সংযুক্তি
+  আদিম পুনরাবৃত্ত এবং সম্বন্ধটি সত্য হলে $!B$ ও $!C$ উভয়েই $!A$-এর
+  উপ-!!{formula}s; তাই $!B$ ও $!C$-এর গ্যোডেল সংখ্যা $!A$-এর গ্যোডেল সংখ্যার চেয়ে
+  ছোট। অতএব সংজ্ঞায়িত করা যায়:
+  \begin{multline*}
+  \fn{IsAx}_{!B \lif (!C \lif !B)}(n) \defiff \bexists{b< n}{
+    \bexists{c < n}{(\fn{Sent}(b) \land \fn{Sent}(c) \land {}}}\\ n =
+  \Gn{(} \concat b \concat \Gn{\lif} \concat \Gn{(} \concat c \concat
+  \Gn{\lif} \concat b \concat \Gn{))}).
+  \end{multline*}
+  প্রতিটি স্বতঃসিদ্ধ-ছকের জন্য এমন একটি সংজ্ঞা থাকলে তাদের বিচ্ছেদ
+  $\fn{IsAx}(n)$ ধর্মটি সংজ্ঞায়িত করে: ``$n$ কোনো স্বতঃসিদ্ধের গ্যোডেল
+  সংখ্যা।''
+\item $\delta$-র $i$-তম পংক্তিটি মোডাস পোনেন্স দ্বারা সমর্থিত যদি এবং কেবল
+  যদি $j$ ও $k<i$ এমন পংক্তি থাকে, যেখানে $j$-তম পংক্তির !!{sentence}-টি
+  কোনো সূত্র $!A$, $k$-তম পংক্তির বাক্যটি $!A \lif !B$, এবং $i$-তম
+  পংক্তির বাক্যটি~$!B$।
+  \begin{multline*}
+    \fn{MP}(d, i) \defiff \bexists{j < i}{\bexists{k < i}{}}\\
+    (d)_k = \Gn{(} \concat (d)_j
+      \concat \Gn{\lif} \concat (d)_i \concat \Gn{)}
+  \end{multline*}
+  আবদ্ধ পরিমাণায়ন, অনুক্রম-সংযুক্তি ও $=$ আদিম পুনরাবৃত্ত বলে এই সংজ্ঞা
+  একটি আদিম পুনরাবৃত্ত সম্বন্ধ দেয়।
+\item $\delta$-র কোনো পংক্তি \QR{} দ্বারা সমর্থিত হয় যদি সেটি
+  $!B \lif \lforall[x][!A(x)]$ রূপের হয়, কোনো পূর্ববর্তী পংক্তি কোনো
+  !!{constant}~$c$-এর জন্য $!B \lif !A(c)$ হয়, এবং $c$ যেন~$!B$-তে না
+  ঘটে। এটি সত্য যদি এবং কেবল যদি
+  \begin{enumerate}
+  \item কোনো !!a{sentence}~$!B$ থাকে এবং
+  \item একটিমাত্র মুক্ত চলরাশি~$x$-বিশিষ্ট কোনো !!a{formula}~$!A(x)$ থাকে,
+        যাতে
+  \item $i$-তম পংক্তিতে $!B \lif \lforall[x][!A(x)]$ থাকে,
+  \item কোনো ধ্রুবক~$c$-এর জন্য $j<i$ এমন কোনো পংক্তিতে
+        $!B \lif \Subst{!A}{c}{x}$ থাকে,
+  \item এবং ওই ধ্রুবকটি যেন~$!B$-তে না ঘটে।
+  \end{enumerate}
+  এই সবকিছুই আদিম পুনরাবৃত্তভাবে পরীক্ষা করা যায়, কারণ $!B$, $!A(x)$ ও
+  $x$-এর গ্যোডেল সংখ্যা $i$-তম পংক্তির সূত্রের গ্যোডেল সংখ্যার চেয়ে
+  ছোট, এবং $c$-এর গ্যোডেল সংখ্যা $j$-তম পংক্তির সূত্রের গ্যোডেল সংখ্যার
+  চেয়ে ছোট:
+  \begin{multline*}
+    \fn{QR}_1(d, i) \defiff \bexists{j<i}{\bexists{b < (d)_i}{\bexists{x <
+        (d)_i}{\bexists{a < (d)_i}{\bexists{c < (d)_j}{(}}}}}
+    \\ \fn{Var}(x) \land \fn{Const}(c) \land {} \\
+    (d)_i = \Gn{(} \concat
+    b \concat \Gn{\lif} \concat \Gn{\lforall} \concat x \concat a
+    \concat \Gn{)} \land {}\\
+    (d)_j = \Gn{(} \concat b \concat
+    \Gn{\lif} \concat \fn{Subst}(a,c,x) \concat \Gn{)} \land {}\\ \fn{Sent}(b)
+    \land \fn{Sent}(\fn{Subst}(a,c,x)) \land {} \bforall{k <
+      \len{b}}{(b)_k \neq (c)_0})
+  \end{multline*}
+% BN-SRC-215 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-215):} হিমায়িত $\fn{QR}_1$ সূত্রে $(d)_j$ ও $c<(d)_j$ ব্যবহৃত হলেও পূর্ববর্তী পংক্তির সূচক~$j$ আবদ্ধ ছিল না। বাংলা পাঠে উল্লিখিত শর্ত অনুযায়ী $\bexists{j<i}$ যোগ করা হয়েছে।} % BN-SRC-215 TARGET-CORRECTION-END
+% BN-SRC-216 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-216):} হিমায়িত গদ্যে ``$c$ does on occur'' লেখা এবং পরের অনুচ্ছেদে ধ্রুবক~$c$-এর বদলে $a$-এর কোডকে $j$-তম পংক্তির সূত্রের চেয়ে ছোট বলা হয়েছিল। বাংলা পাঠে যথাক্রমে ``$c$ ঘটে না'' এবং $c$-এর গ্যোডেল সংখ্যা বলা হয়েছে।} % BN-SRC-216 TARGET-CORRECTION-END
+  এখানে ধরে নেওয়া হয়েছে, $c$ ও $x$ হলো পদ হিসেবে বিবেচিত ধ্রুবক ও
+  চলরাশিটির গ্যোডেল সংখ্যা (অর্থাৎ তাদের প্রতীক-কোড নয়)।
+  $\Subst{!A(x)}{c}{x}$ কোনো !!a{sentence} কি না পরীক্ষা করে দেখা হয় যে
+  $x$-ই~$!A(x)$-এর একমাত্র মুক্ত চলরাশি; আর~$!B$-এর প্রতিটি প্রতীক~$c$
+  থেকে আলাদা চেয়ে নিশ্চিত করা হয় যে $c$ যেন~$!B$-তে না ঘটে।
+
+  \QR{}-এর অন্য সংস্করণটি অনুশীলনী হিসেবে রইল।
+\item $d$ কোনো সঠিক !!{derivation}-এর গ্যোডেল সংখ্যা যদি এবং কেবল যদি তার
+  প্রতিটি পংক্তি স্বতঃসিদ্ধ হয়, অথবা মোডাস পোনেন্স কিংবা~\QR{} দ্বারা
+  সমর্থিত হয়। অতএব:
+  \[
+  \fn{Deriv}(d) \defiff \bforall{i < \len{d}}{(\fn{IsAx}((d)_i) \lor
+    \fn{MP}(d,i) \lor \fn{QR}(d, i))}
+  \]
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+\olref[inc][art][pax]{prop:followsby}-এর মতো নিচের সম্বন্ধগুলি সংজ্ঞায়িত
+করো:
+\begin{enumerate}
+\item $\fn{IsAx}_{!A \lif (!B \lif (!A \land !B))}(n)$,
+\item $\fn{IsAx}_{\lforall[x][!A(x)] \lif !A(t)}(n)$,
+\item $\fn{QR}_{2}(d, i)$ (\QR{}-এর অন্য সংস্করণের জন্য)।
+\end{enumerate}
+\end{prob}
+
+\begin{prop}
+$\Gamma$-কে !!{sentence}s-এর একটি আদিম পুনরাবৃত্ত সেট ধরা যাক। তখন
+সম্বন্ধ $\Prf[\Gamma](x, y)$ আদিম পুনরাবৃত্ত; এটি প্রকাশ করে, ``$x$ হলো
+$\Gamma$ থেকে~$!A$-এর কোনো !!a{derivation}~$\delta$-র কোড এবং $y$ হলো
+$!A$-এর গ্যোডেল সংখ্যা''।
+\end{prop}
+
+\begin{proof}
+ধরি, ``$y \in \Gamma$'' আদিম পুনরাবৃত্ত বিধেয়~$R_\Gamma(y)$ দিয়ে দেওয়া।
+$\Prf[\Gamma](x,y)$ সম্বন্ধটি আদিম পুনরাবৃত্ত দেখাতে হবে; এখানে
+$\Prf[\Gamma](x,y)$ সত্য
+যদি এবং কেবল যদি $y$ কোনো !!a{sentence}~$!A$-এর গ্যোডেল সংখ্যা এবং $x$
+হলো $\Gamma$ থেকে~$!A$-এর কোনো !!a{derivation}-এর কোড।
+
+আগের প্রস্তাব অনুসারে, $x$ কোনো সঠিক !!{derivation}~$\delta$-র কোড হলে
+সত্য ধর্ম $\fn{Deriv}(x)$ আদিম পুনরাবৃত্ত। কিন্তু সেই সংজ্ঞায়
+!!{derivation}-এর পংক্তি সমর্থনের অতিরিক্ত উপায় হিসেবে $\Gamma$ সেটটি ধরা
+হয়নি। কোনো পংক্তি \QR{} দ্বারা সমর্থিত কি না তার আদিম পুনরাবৃত্ত পরীক্ষাতেও
+ধ্রুবক~$c$-কে~$\Gamma$-তে ঘটতে না দেওয়ার শর্তটি বাদ গেছে। $\Gamma$-কে
+সরাসরি হিসাবে ধরতে সংজ্ঞাটি সংশোধন করা সম্ভব, কিন্তু $\fn{Deriv}$ ও নিঃসরণ
+উপপাদ্য ব্যবহার করা সহজ। $\Gamma \Proves !A$ যদি এবং কেবল যদি
+$!B_1$, \dots, $!B_n \in \Gamma$ এমন কোনো সসীম !!{sentence}s-এর তালিকা
+থাকে, যাতে $\{!B_1, \dots, !B_n\} \Proves !A$। নিঃসরণ উপপাদ্য অনুসারে,
+$\Proves (!B_1 \lif (!B_2 \lif \cdots (!B_n \lif !A)\cdots))$ হলে এটি
+সত্য। গ্যোডেল সংখ্যা~$z$-বিশিষ্ট কোনো !!a{sentence} এই রূপের কি না আদিম
+পুনরাবৃত্তভাবে পরীক্ষা করা যায়। তাই $x$-কে গ্যোডেল সংখ্যা~$y$-বিশিষ্ট
+!!{sentence}-টির
+\emph{$\Gamma$ থেকে} কোনো !!a{derivation}-এর গ্যোডেল সংখ্যা না ধরে, $x$-কে
+উপরের রূপের কোনো অন্তর্নিহিত শর্তাধীন সূত্রের $\emptyset$ থেকে
+!!a{derivation}-এর গ্যোডেল সংখ্যা ধরা হয়।
+
+প্রথমে, !!{sentence}s-এর একটি অনুক্রম থেকে ওই সব বাক্যকে পূর্বপক্ষ এবং
+একটি নির্দিষ্ট !!{sentence}-কে অনুপক্ষ করে শর্তাধীন সূত্রটি আদিম
+পুনরাবৃত্তভাবে গঠন করা যায়:
+\begin{align*}
+  \fn{hCond}(s, y, 0) & = y \\
+  \fn{hCond}(s, y, n+1) & = \Gn{(} \concat (s)_{n} \concat \Gn{\lif}
+  \concat \fn{hCond}(s, y, n) \concat \Gn{)}\\
+  \fn{Cond}(s, y) & = \fn{hCond}(s, y, \len{s})\\
+  \intertext{অতএব $\Prf[\Gamma](x, y)$-কে সংজ্ঞায়িত করা যায় এভাবে:}
+  \Prf[\Gamma](x, y) & \defiff \bexists{s < \fn{sequenceBound}(x,x)}{(} \\
+  &\qquad (x)_{\len{x}-1} = \fn{Cond}(s,y) \land {} \\
+  &\qquad\bforall{i<\len{s}}{(s)_i \in \Gamma} \land {} \\
+  &\qquad\fn{Deriv}(x)).
+\end{align*}
+% BN-SRC-217 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-217):} হিমায়িত আদিম পুনরাবৃত্ত সংজ্ঞার পুনরাবৃত্ত ধাপে তখনও-অসংজ্ঞায়িত $\fn{Cond}(s,y,n)$ ডাকা হয়েছিল। বাংলা পাঠে সংজ্ঞায়িত সহায়ক অপেক্ষকটির স্ব-আহ্বান $\fn{hCond}(s,y,n)$ রাখা হয়েছে।} % BN-SRC-217 TARGET-CORRECTION-END
+$s$-এর সীমাটি পাওয়া যায় এই দেখে যে প্রতিটি $(s)_i$ হলো
+!!{derivation}-টির শেষ পংক্তির কোনো উপ-!!{formula}-র গ্যোডেল সংখ্যা; অর্থাৎ
+এটি $(x)_{\len{x}-1}$-এর চেয়ে ছোট। পূর্বপক্ষ $!B \in \Gamma$-গুলির সংখ্যা,
+অর্থাৎ $s$-এর দৈর্ঘ্য, $x$-এর শেষ পংক্তির দৈর্ঘ্যের চেয়ে ছোট।
+\end{proof}
+
+\end{document}

@@ -1,0 +1,105 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: coding-symbols
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{cod}
+\olsection{প্রতীকের সংকেতায়ন}
+
+প্রথম-ক্রমের যুক্তিবিদ্যার মৌলিক ভাষা~$\Lang L$-তে নিচের প্রতীকগুলি ব্যবহৃত হয়:
+\[
+\lfalse \quad \lnot \quad \lor \quad \land \quad \lif \quad \lforall
+\quad \lexists \quad \eq \quad ( \quad ) \quad ,
+\]
+এর সঙ্গে থাকে চলরাশি ও !!{constant}s-এর !!{enumerable} সেট, এবং যেকোনো
+স্থানসংখ্যার !!{function}s ও !!{predicate}s-এর !!{enumerable} সেট। প্রত্যেক
+প্রতীককে এমনভাবে একটি অনন্য সংখ্যা তার \emph{কোড} হিসেবে দেওয়া যায় যাতে
+দুটি আলাদা প্রতীক একই সংখ্যা না পায়। সব প্রতীকের সেট !!{enumerable}, তাই তার
+ও স্বাভাবিক সংখ্যার সেটের মধ্যে !!a{bijection} আছে—এ থেকেই এমন সংখ্যায়ন সম্ভব
+বলে জানি। তবে কোনো প্রতীকের কোড থেকে প্রতীকটি (এবং তার সম্বন্ধে কিছু তথ্য,
+যেমন কোনো !!a{function}-এর স্থানসংখ্যা) যেন গণনসাধ্য উপায়ে উদ্ধার করা যায়,
+সেটিও নিশ্চিত করতে হবে। অবশ্যই এর অনেক পদ্ধতি আছে। এখানে আদিম পুনরাবৃত্ত
+অপেক্ষক ব্যবহার করা একটি পদ্ধতি দেওয়া হলো। (মনে করো,
+$\tuple{n_0, \dots, n_k}$ হলো $n_0$, \dots, $n_k$ সংখ্যার অনুক্রমের কোড।)
+
+\begin{defn}
+$s$ যদি~$\Lang L$-এর একটি প্রতীক হয়, তবে তার \emph{প্রতীক-কোড}~$\scode s$
+নিচের মতো সংজ্ঞায়িত:
+\begin{enumerate}
+\item $s$ যৌক্তিক প্রতীকগুলির একটি হলে নিচের সারণি থেকে $\scode s$ পাওয়া যায়:
+\[
+\begin{array}{cccccccccc}
+  \lfalse & \lnot & \lor & \land & \lif & \lforall \\
+\tuple{0, 0} & \tuple{0, 1} & \tuple{0, 2} & \tuple{0, 3} &
+\tuple{0, 4} & \tuple{0, 5} \\
+\lexists & \eq & ( & ) & ,\\
+\tuple{0, 6} & \tuple{0, 7} &
+\tuple{0, 8} & \tuple{0, 9} & \tuple{0, 10}
+\end{array}
+\]
+\item $s$ যদি $i$-তম চলরাশি $\Obj v_i$ হয়, তবে $\scode s = \tuple{1, i}$।
+\item $s$ যদি $i$-তম !!{constant}~$\Obj c_i$ হয়, তবে
+  $\scode s = \tuple{2, i}$।
+\item $s$ যদি $i$-তম $n$-স্থানীয় !!{function}~$\Obj f_i^n$ হয়, তবে
+  $\scode s = \tuple{3, n, i}$।
+\item $s$ যদি $i$-তম $n$-স্থানীয় !!{predicate}~$\Obj P_i^n$ হয়, তবে
+  $\scode s = \tuple{4, n, i}$।
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+নিচের সম্বন্ধগুলি আদিম পুনরাবৃত্ত:
+\begin{enumerate}
+\item $\fn{Fn}(x, n)$ যদি এবং কেবল যদি কোনো~$i$-এর জন্য $x$ হলো
+  $\Obj f^n_i$-এর কোড; অর্থাৎ $x$ কোনো $n$-স্থানীয় !!{function}-এর কোড।
+\item $\fn{Pred}(x, n)$ যদি এবং কেবল যদি কোনো~$i$-এর জন্য $x$ হলো
+  $\Obj P^n_i$-এর কোড, অথবা $x$ হলো $\eq$-এর কোড এবং $n = 2$; অর্থাৎ $x$
+  কোনো $n$-স্থানীয় !!{predicate}-এর কোড।
+\end{enumerate}
+\end{prop}
+
+\begin{defn}
+$s_0, \dots, s_{n-1}$ প্রতীকগুলির একটি অনুক্রম হলে তার \emph{গ্যোডেল
+  সংখ্যা} হলো $\tuple{\scode{s_0}, \dots, \scode{s_{n-1}}}$।
+\end{defn}
+
+\begin{explain}
+লক্ষ করো, \emph{কোড} ও \emph{গ্যোডেল সংখ্যা} আলাদা জিনিস। যেমন,
+চলরাশি~$\Obj v_5$-এর কোড~$\scode{\Obj v_5} = \tuple{1, 5} = 2^2\cdot
+3^6$। কিন্তু পদ হিসেবে বিবেচিত চলরাশি~$\Obj v_5$ আবার দৈর্ঘ্য~$1$-এর
+একটি প্রতীক-অনুক্রম। \emph{পদ}~$\Obj v_5$-এর \emph{গ্যোডেল সংখ্যা}~$\Gn{\Obj
+v_5}$ হলো $\tuple{\scode{\Obj v_5}} = 2^{\scode{\Obj v_5} + 1} =
+2^{2^2\cdot 3^6 + 1}$।
+\end{explain}
+
+\begin{ex}
+মনে করো, $k_0$, \dots, $k_{n-1}$ সংখ্যার অনুক্রম হলে মৌলিক সংখ্যার
+ঘাতভিত্তিক সংকেতায়নে অনুক্রমের কোড $\tuple{k_0, \dots, k_{n-1}}$ হলো
+\[
+2^{k_0+1}\cdot3^{k_1+1}\cdot \dots \cdot p_{n-1}^{k_{n-1}+1},
+\]
+যেখানে $p_i$ হলো $i$-তম মৌলিক সংখ্যা ($p_0 = 2$ থেকে শুরু)। তাই, যেমন,
+সূত্র $\eq[\Obj v_0][\Obj 0]$, অথবা আরও স্পষ্টভাবে
+${\eq}(\Obj v_0,\Obj c_0)$-এর গ্যোডেল সংখ্যা হলো
+\[
+\tuple{\scode{\eq},\scode{(},\scode{\Obj v_0},\scode{,}, \scode{\Obj
+    c_0},\scode{)}}.
+\]
+এখানে $\scode{\eq}$ হলো $\tuple{0,7} = 2^{0+1}\cdot
+3^{7+1}$, $\scode{\Obj v_0}$ হলো $\tuple{1,0} = 2^{1+1}\cdot3^{0+1}$,
+ইত্যাদি। সুতরাং $\Gn{=(\Obj v_0,\Obj c_0)}$ হলো
+\begin{multline*}
+2^{\scode{=} + 1}\cdot 3^{\scode{(}+1}\cdot 5^{\scode{\Obj v_0}+1}
+\cdot 7^{\scode{,} + 1} \cdot 11^{\scode{\Obj c_0}+1} \cdot
+13^{\scode{)}+1} = \\
+2^{2^1\cdot 3^8 + 1}\cdot 3^{2^1\cdot 3^9+1}\cdot 5^{2^2\cdot 3^1+1}
+\cdot 7^{2^1\cdot 3^{11} + 1} \cdot 11^{2^3\cdot3^1+1} \cdot
+13^{2^1\cdot3^{10}+1} = \\
+2^{13\,123}\cdot 3^{39\,367}\cdot 5^{13}\cdot 7^{354\,295}\cdot11^{25}\cdot13^{118\,099}.
+\end{multline*}
+\end{ex}
+
+\end{document}

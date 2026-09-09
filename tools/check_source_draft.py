@@ -1246,6 +1246,28 @@ for row in rows:
             "সমরূপতা পর্যন্ত $\\Th{PA}$-র একমাত্র গণনসাধ্য মডেল"
             in checked_target
         )
+    overview_math_fix = False
+    if row["unit_id"] == "OLP-0278":
+        audited_overview = source
+        old = r"\Prov[\Gamma](\num{n})"
+        new = r"\OProv[\Gamma](\num{n})"
+        assert audited_overview.count(old) == 2
+        audited_overview = audited_overview.replace(old, new)
+        overview_math_fix = (
+            mathparts(audited_overview) == target_math
+            and "BN-SRC-202" in documented
+        )
+    undecidability_math_fix = False
+    if row["unit_id"] == "OLP-0279":
+        audited_undecidability = source
+        old = r"!A(\num{n})"
+        new = r"!A_n(\num{n})"
+        assert audited_undecidability.count(old) == 2
+        audited_undecidability = audited_undecidability.replace(old, new)
+        undecidability_math_fix = (
+            mathparts(audited_undecidability) == target_math
+            and "BN-SRC-203" in documented
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -2406,6 +2428,20 @@ for row in rows:
             "contrapositive_model_uses_T_prime": True,
             "fresh_time_condition_scope": "positive times",
         }
+    elif row["unit_id"] == "OLP-0278":
+        assert overview_math_fix
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-201", "BN-SRC-202"],
+            "roadmap_order_clarified": True,
+            "object_provability_predicate_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0279":
+        assert undecidability_math_fix
+        tex_command_check = {
+            "documented_correction": "BN-SRC-203",
+            "diagonal_family_subscript_restored": True,
+            "corrected_subscript_occurrences": 2,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -2497,6 +2533,8 @@ for row in rows:
             verification_representation_fixes,
             decision_unsolvability_fixes,
             trakhtenbrot_fixes,
+            overview_math_fix,
+            undecidability_math_fix,
             shared_audit_fix,
         )
     )

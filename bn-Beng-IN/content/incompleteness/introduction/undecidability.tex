@@ -1,0 +1,129 @@
+% Part: incompleteness
+% Chapter: introduction
+% Section: decidability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{int}{dec}
+
+\olsection{অণির্ণেয়তা ও অসম্পূর্ণতা}
+
+গ্যোডেলের অসম্পূর্ণতা উপপাদ্যের প্রমাণে syntax-এর arithmetization দরকার। কিন্তু
+তা ছাড়াও, কোনো তত্ত্ব সব !!{decidable} সম্বন্ধকে !!{represents} করে—শুধু এই
+অনুমান থেকে কিছু সুন্দর ফল পাওয়া যায়। প্রমাণটি halting problem-এর
+অণির্ণেয়তার প্রমাণের মতোই একটি diagonal argument।
+
+\begin{thm}
+যদি $\Gamma$ একটি সঙ্গতিপূর্ণ তত্ত্ব হয় এবং প্রতিটি !!{decidable} সম্বন্ধকে
+!!{represents} করে, তবে $\Gamma$ !!{decidable} নয়।
+\end{thm}
+
+\begin{proof}
+ধরি $\Gamma$ !!{decidable}। আমরা দেখাব, $\Gamma$ যদি প্রত্যেক
+!!{decidable} সম্বন্ধকে !!{represents} করে, তবে এটি অসঙ্গতিপূর্ণ হতে বাধ্য।
+
+!!^{decidable} ধর্মগুলি (এক-পদী সম্বন্ধগুলি) একটি মুক্ত চলরাশি-যুক্ত
+!!{formula}s দিয়ে প্রকাশ করা যায়। $!A_0(x)$, $!A_1(x)$, \dots-কে এই ধরনের
+সব !!{formula}s-এর একটি গণনসাধ্য তালিকা ধরি। এখন নিচের সেট $D \subseteq \Nat$
+বিবেচনা করি:
+\[
+D = \Setabs{n}{\Gamma \Proves \lnot !A_n(\num{n})}
+\]
+$D$ !!{decidable}, কারণ $n \in D$ কি না পরীক্ষা করতে প্রথমে $!A_n(x)$
+গণনা করা যায়, এবং সেখান থেকে $\lnot !A_n(\num{n})$ গঠন করা যায়।
+$\num{n}$ পদটি প্রতিটি মুক্ত $x$-এর ঘটনার স্থানে $!A_n(x)$-এ বসানো এবং
+$!A_n(\num{n})$-এর সামনে $\lnot$ বসানো যান্ত্রিক কাজ।
+$\Gamma$ !!{decidable} হওয়ার অনুমান থেকে পরীক্ষা করা যায়
+$\lnot !A_n(\num{n}) \in \Gamma$ কি না। থাকলে $n \in D$, না থাকলে
+$n \notin D$। তাই $D$-ও !!{decidable}।
+% BN-SRC-203 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-203):} হিমায়িত প্রমাণে diagonal পরিবারের $!A_n$-এর সাবস্ক্রিপ্ট পরের দুটি ব্যবহারে হারিয়ে গিয়ে $!A(\num{n})$ লেখা হয়েছে। বাংলা পাঠে উভয় স্থানে $!A_n(\num{n})$ রাখা হয়েছে, যাতে পরীক্ষিত সূত্রটি একই পরিবারের $n$-তম সদস্য থাকে।} % BN-SRC-203 TARGET-CORRECTION-END
+
+যেহেতু $\Gamma$ সব !!{decidable} ধর্মকে !!{represents} করে, তাই এটি
+!!{represents}~$D$। $D$-কে !!{represents}s করা !!{formula}s-গুলি $\Gamma$-র
+মধ্যেই $!A_0(x)$, $!A_1(x)$, \dots তালিকায় আছে। অতএব এমন একটি সংখ্যা $d$ নিই
+যে $!A_d(x)$ !!{represents} $D$-কে $\Gamma$-তে। যদি $d \notin D$ হয়,
+তবে $!A_d(x)$ $D$-কে !!{represents} করার কারণে
+$\Gamma \Proves \lnot !A_d(\num{d})$। কিন্তু এতে $d$-এর $D$-র সংজ্ঞায়িত
+শর্ত পূরণ হয়, তাই $d \in D$। এটি $d \notin D$-র বিরোধী। অতএব পরোক্ষ
+প্রমাণে $d \in D$।
+
+$d \in D$ হওয়ায় $D$-র সংজ্ঞা থেকে
+$\Gamma \Proves \lnot !A_d(\num{d})$। অন্য দিকে, $!A_d(x)$ $D$-কে
+!!{represents} করে $\Gamma$-তে বলে
+$\Gamma \Proves !A_d(\num{d})$। অতএব $\Gamma$ অসঙ্গতিপূর্ণ।
+\end{proof}
+
+\begin{explain}
+আগের উপপাদ্য দেখায়, সব !!{decidable} সম্বন্ধকে !!{represents}s করা কোনো
+সঙ্গতিপূর্ণ তত্ত্ব !!{decidable} হতে পারে না। আমরা দেখাব, $\Th{Q}$ সব
+!!{decidable} সম্বন্ধকে !!{represents} করে; ফলে $\Th{Q}$-কে অন্তর্ভুক্ত করা
+সব তত্ত্ব—যেমন $\Th{PA}$ ও $\Th{TA}$—ও তা করে এবং তাই !!{decidable} নয়।
+(এই তত্ত্বগুলি standard model-এ সত্য হওয়ায় সবগুলিই সঙ্গতিপূর্ণ।)
+
+এই ফল ব্যবহার করে প্রথম অসম্পূর্ণতা উপপাদ্যের একটি দুর্বল রূপও পাওয়া যায়।
+যে কোনো !!{axiomatizable} ও !!{complete} তত্ত্ব !!{decidable}। সুতরাং যে
+সঙ্গতিপূর্ণ !!{axiomatizable} তত্ত্ব সব !!{decidable} ধর্মকে !!{represents}s
+করে, তা
+!!{complete} হতে পারে না।
+\end{explain}
+
+\begin{thm}
+যদি $\Gamma$ !!{axiomatizable} ও !!{complete} হয়, তবে এটি !!{decidable}।
+\end{thm}
+
+\begin{proof}
+যে কোনো অসঙ্গতিপূর্ণ তত্ত্ব !!{decidable}, কারণ অসঙ্গতিপূর্ণ তত্ত্বে সব
+!!{sentence}s থাকে; তাই ``$!A \in \Gamma$ কি?'' প্রশ্নের উত্তর সব সময়
+``হ্যাঁ'', অর্থাৎ তা সিদ্ধান্ত করা যায়।
+
+তাই ধরি $\Gamma$ সঙ্গতিপূর্ণ এবং একই সঙ্গে !!{axiomatizable} ও !!{complete}।
+$\Gamma$ !!{axiomatizable} হওয়ায় এটি !!{computably enumerable}। কারণ
+$\Gamma$-র স্বতঃসিদ্ধ থেকে সব সঠিক !!{derivation}s একটি গণনসাধ্য অপেক্ষক দিয়ে
+তালিকাভুক্ত করা যায়। সঠিক !!{derivation} থেকে সেটি যে !!{sentence}
+!!{derive}s তা গণনা করা যায়; অতএব একটি গণনসাধ্য অপেক্ষক $\Gamma$-র সব
+উপপাদ্য তালিকাভুক্ত করে। একটি
+!!{sentence} তখনই $\Gamma$-এর উপপাদ্য যখন $\lnot !A$ উপপাদ্য নয়; কারণ $\Gamma$ সঙ্গতিপূর্ণ
+ও !!{complete}। তাই $!A \in \Gamma$
+কি না এভাবে সিদ্ধান্ত করা যায়: $\Gamma$-র উপপাদ্যগুলি তালিকাভুক্ত করতে থাকি।
+তালিকায় $!A$ এলে জানি $\Gamma \Proves !A$; আর $\lnot !A$ এলে জানি
+$\Gamma \Proves/ !A$। $\Gamma$ !!{complete} বলে এই দুটির একটি অবশেষে আসবেই,
+তাই পদ্ধতিটি শেষ পর্যন্ত উত্তর দেয়।
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:incompleteness}
+যদি $\Gamma$ সঙ্গতিপূর্ণ, !!{axiomatizable}, এবং প্রতিটি !!{decidable} ধর্মকে
+!!{represents} করে, তবে এটি !!{complete} নয়।
+\end{cor}
+
+\begin{proof}
+$\Gamma$ !!{complete} হলে আগের উপপাদ্য অনুসারে (কারণ এটি !!{axiomatizable}
+ও সঙ্গতিপূর্ণ) !!{decidable} হতো। কিন্তু $\Gamma$ সব !!{decidable} ধর্মকে
+!!{represents} করায় প্রথম উপপাদ্য অনুসারে এটি !!{decidable} নয়।
+\end{proof}
+
+\begin{prob}
+দেখাও যে $\Th{TA} = \Setabs{!A}{\Sat{N}{!A}}$ !!{axiomatizable} নয়। ধরে
+নিতে পারো যে $\Th{TA}$ সব decidable ধর্মকে প্রতিনিধিত্ব করে।
+\end{prob}
+
+যেমন, $\Th{Q}$ সব !!{decidable} ধর্মকে !!{represents}s করে—এটি প্রতিষ্ঠা করতে
+পারলে, উপপাদ্যটি বলে $\Th{Q}$ অসম্পূর্ণ। কিন্তু এই প্রমাণ কোনো স্বাধীন
+!!{sentence}-এর উদাহরণ দেয় না; কেবল দেখায় যে এমন !!a{sentence} থাকবেই।
+এর জন্য syntax arithmetize করে গ্যোডেলের মূল প্রমাণের ধারণা অনুসরণ করতে হবে।
+এবং প্রথম দাবিটিও এখনও দেখাতে হবে—$\Th{Q}$ সত্যিই সব !!{decidable} ধর্মকে
+!!{represents} করে।
+
+মনে রাখা দরকার, প্রত্যেক \emph{আগ্রহজনক} তত্ত্ব অসম্পূর্ণ বা অণির্ণেয় নয়।
+কিছু তত্ত্ব গ্যোডেলের ফল প্রয়োগের শর্ত পূরণ না করেও আকর্ষণীয় গাণিতিক তথ্য
+প্রকাশ করতে যথেষ্ট শক্তিশালী। যেমন,
+$\Th{Pres} = \Setabs{!A \in \Lang{L_{A^+}}}{\Sat{N}{!A}}$ হলো
+standard model-এ সত্য, $\times$-চিহ্নহীন পাটিগণিতের ভাষার !!{sentence}s-গুলির সেট;
+এটি একই সঙ্গে পূর্ণ ও decidable। এই তত্ত্বকে Presburger arithmetic বলা
+হয় এবং এটি কেবল $\Obj{0}$, $\prime$ ও $+$ দিয়ে প্রকাশযোগ্য প্রাকৃতিক সংখ্যা
+সম্বন্ধে সব সত্য প্রমাণ করে।
+
+\end{document}

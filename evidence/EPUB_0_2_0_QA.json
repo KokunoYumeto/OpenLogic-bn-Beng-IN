@@ -1,0 +1,161 @@
+{
+  "archive": {
+    "deterministic_order": true,
+    "entries": 16,
+    "mimetype_first": true,
+    "mimetype_stored": true,
+    "safe_paths": true
+  },
+  "binary_resources": {
+    "font_license_included": true,
+    "fonts": [
+      {
+        "bytes": 263780,
+        "filename": "NotoSerifBengali-Regular.ttf",
+        "sha256": "04935aea18655c451d05b1d4bb5bdc835226a221663f89a2ecfbcfdc4483e399"
+      },
+      {
+        "bytes": 258728,
+        "filename": "NotoSerifBengali-Bold.ttf",
+        "sha256": "f752131cd292f3e0fd7a25c8fc86f5424062bc06e29f6dfadcb3c09ff4881dd0"
+      }
+    ],
+    "svg_figures": [
+      {
+        "bytes": 378105,
+        "filename": "union.svg",
+        "sha256": "f83872c1fb2d2dfa4f5da44815b8fad0bcd77703bbdaa63ef374448ed755885f"
+      },
+      {
+        "bytes": 303637,
+        "filename": "intersection.svg",
+        "sha256": "0757fe674a876d7743fe138215c451798f0c5633b35073ba3898faddbe4d9c0f"
+      },
+      {
+        "bytes": 353520,
+        "filename": "difference.svg",
+        "sha256": "dcf413b376b6377da13c7efc447ee567f65108f08cc2207ee4c3677c5a215b06"
+      },
+      {
+        "bytes": 416165,
+        "filename": "graph-one.svg",
+        "sha256": "d948d1ccaeea07d011bb974af80559b7dfcbc9b3012d8b697aa788784f184bd6"
+      },
+      {
+        "bytes": 416301,
+        "filename": "graph-two.svg",
+        "sha256": "e80b97968f7e175ca9bb4e737b2d0d5f6b0a2d3e43fbdb67d4b711186917166a"
+      },
+      {
+        "bytes": 416989,
+        "filename": "tree.svg",
+        "sha256": "ed690ab8c55f00fd1a23c3bcde6fc5d6667da138743db86cd3f6f99400090921"
+      }
+    ]
+  },
+  "build_receipt": {
+    "canonical_cold_byte_identical": true,
+    "path": "build/epub/BUILD_RECEIPT.json",
+    "sha256": "7e37a944e97cc2a07cf2b6a3625a75abf72f5bccd26564ad3419846c2824dc35"
+  },
+  "checker": {
+    "path": "tools/check_epub.py",
+    "sha256": "e903c5490f1ed59385a74496c13b7f5adae13ecb4cb15662178c1d1e36e41ca1"
+  },
+  "content_equivalence": {
+    "body_semantically_identical": true,
+    "h1_h2_headings": 19,
+    "mathml_expressions": 909,
+    "mathml_semantically_identical": true,
+    "mathml_tex_annotations": 909,
+    "numbered_environments": 88,
+    "packaged_body_semantic_signature_sha256": "a5dd384767d6ab7f3d9e0ddb177738e8b84a74bdb367a2b76efe3d4155ce3f13",
+    "scripts": 0,
+    "sections": 15,
+    "source_body_semantic_signature_sha256": "a5dd384767d6ab7f3d9e0ddb177738e8b84a74bdb367a2b76efe3d4155ce3f13",
+    "svg_images": 6,
+    "svg_images_with_nonempty_alt": 6
+  },
+  "date": "2026-09-13",
+  "epub": {
+    "bytes": 839571,
+    "filename": "openlogic-bn-Beng-IN-sets-relations.epub",
+    "sha256": "7b5791205c0a1e6df769fc4deda1a4ca5f924e034586c8ab2b95e6feab00222a"
+  },
+  "epubcheck": {
+    "errors": 0,
+    "exit_code": 0,
+    "fatal": 0,
+    "jar_sha256": "f7f96617c929371821609b88c8484d6dc9f24fe916499863c46094c5fb778a65",
+    "messages": 0,
+    "report": "build/epub/EPUBCHECK.json",
+    "report_sha256": "e5e38a3246de96dc059dd7afe3c7b707d0bc7f1bfdbc509382a96f388c226f04",
+    "usage": 0,
+    "version": "5.3.0",
+    "warnings": 0
+  },
+  "links": {
+    "broken_links": [],
+    "css_resource_links_checked": 2,
+    "data_uris_remaining": 0,
+    "external_http_links": 4,
+    "fixed_position_css": 0,
+    "fragment_links_checked": 55,
+    "local_resource_links_checked": 66
+  },
+  "package": {
+    "epub_package_version": "3.0",
+    "landmarks": 3,
+    "language": "bn-Beng-IN",
+    "layout": "reflowable",
+    "linear_spine": [
+      "OEBPS/about.xhtml",
+      "OEBPS/content.xhtml"
+    ],
+    "manifest_covers_all_publication_resources": true,
+    "manifest_items": 13,
+    "partial_scope_in_bengali_and_english": true,
+    "spine_items": 3,
+    "toc_links": 20
+  },
+  "schema": "openlogic-bn-epub-qa/1",
+  "source_coverage": {
+    "complete": false,
+    "full_source_manifest_units": 722,
+    "included_unit_count": 18,
+    "included_units": [
+      "OLP-0004",
+      "OLP-0005",
+      "OLP-0006",
+      "OLP-0007",
+      "OLP-0008",
+      "OLP-0009",
+      "OLP-0010",
+      "OLP-0011",
+      "OLP-0012",
+      "OLP-0013",
+      "OLP-0014",
+      "OLP-0015",
+      "OLP-0016",
+      "OLP-0017",
+      "OLP-0018",
+      "OLP-0019",
+      "OLP-0719",
+      "OLP-0721"
+    ],
+    "sealed_html_bytes": 4105887,
+    "sealed_html_sha256": "3d2c1df0ba2f8d91ddf8de832744a70f8e2ba4b179a6ea2a533fed4a273d9346",
+    "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+    "unit_parity_checks_passed": 18,
+    "untranslated_unit_count": 704
+  },
+  "status": "PASS_ALL_REQUIRED_CHECKS",
+  "visual_rendering": {
+    "evidence": "evidence/EPUB_0_2_0_VISUAL_QA.json",
+    "evidence_sha256": "80058209ec308b00bbd722e286a036a8853d3e64a2089e295be650f4401b24e1",
+    "limitations": "This is a bounded representative visual review in Chromium. It is not a claim of exhaustive reading-system interoperability, assistive-technology testing, human accessibility certification, or review of untranslated scope.",
+    "samples_inspected": 6,
+    "status": "PASS_REPRESENTATIVE_SILENT_RENDERING",
+    "visible_clipping_or_overlap": 0
+  }
+}

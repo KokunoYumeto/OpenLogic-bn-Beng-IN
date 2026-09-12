@@ -1,0 +1,215 @@
+{
+  "builder": {
+    "path": "tools/build_epub.py",
+    "reference_pipeline": {
+      "english_auditor_sha256": "64ff600f8db6330bbdb142947aa52198cdb2e303149517321d02366ef17b8f0c",
+      "english_builder_sha256": "eabd909079b09094d50164ef5027818f9db25415106f89e42bb9e03f4cc6f2c8"
+    },
+    "sha256": "31ce6514223152f4cc07e995bfbcb14a0e4deec72f1edc46869e22f02e505a72"
+  },
+  "canonical": {
+    "about": {
+      "bytes": 2558,
+      "path": "OEBPS/about.xhtml",
+      "sha256": "6deca3d301cf9fa84849532ad25a04e7145fe045301703fb0b257f566849fcc8"
+    },
+    "bytes": 3182406,
+    "container": {
+      "container_sha256": "d259eabf3c1e282e4c68489f01c2e607deccee946b065e203ce60ce757391725",
+      "mimetype_sha256": "e468e350d1143eb648f60c7b0bd6031101ec0544a361ca74ecef256ac901f48b"
+    },
+    "content": {
+      "bytes": 355666,
+      "headings": 19,
+      "mathml_expressions": 909,
+      "numbered_environments": 88,
+      "path": "OEBPS/content.xhtml",
+      "sections": 15,
+      "sha256": "2efc7788c9a96a92d055662291b1bee20a18b6a1eda767c9fcf78402297722e8",
+      "style": {
+        "css_bytes": 4533,
+        "css_sha256": "37370558292890c5377176f1211c77d697373c0128f8551bf2fee30ab9333310",
+        "fonts": [
+          {
+            "bytes": 258728,
+            "filename": "NotoSerifBengali-Bold.ttf",
+            "sha256": "f752131cd292f3e0fd7a25c8fc86f5424062bc06e29f6dfadcb3c09ff4881dd0"
+          },
+          {
+            "bytes": 263780,
+            "filename": "NotoSerifBengali-Regular.ttf",
+            "sha256": "04935aea18655c451d05b1d4bb5bdc835226a221663f89a2ecfbcfdc4483e399"
+          }
+        ]
+      }
+    },
+    "epub": {
+      "bytes": 839571,
+      "entries": 16,
+      "path": "openlogic-bn-Beng-IN-sets-relations.epub",
+      "sha256": "7b5791205c0a1e6df769fc4deda1a4ca5f924e034586c8ab2b95e6feab00222a"
+    },
+    "figures": [
+      {
+        "clip": [
+          180.78323364257812,
+          54.486228942871094,
+          410.863525390625,
+          242.40521240234375
+        ],
+        "name": "UNION",
+        "pdf_page": 6,
+        "svg_sha256": "f83872c1fb2d2dfa4f5da44815b8fad0bcd77703bbdaa63ef374448ed755885f"
+      },
+      {
+        "clip": [
+          180.78314208984375,
+          54.486228942871094,
+          410.8634338378906,
+          242.40521240234375
+        ],
+        "name": "INTERSECTION",
+        "pdf_page": 7,
+        "svg_sha256": "0757fe674a876d7743fe138215c451798f0c5633b35073ba3898faddbe4d9c0f"
+      },
+      {
+        "clip": [
+          180.78323364257812,
+          54.48646926879883,
+          410.863525390625,
+          242.40545654296875
+        ],
+        "name": "DIFFERENCE",
+        "pdf_page": 8,
+        "svg_sha256": "dcf413b376b6377da13c7efc447ee567f65108f08cc2207ee4c3677c5a215b06"
+      },
+      {
+        "clip": [
+          227.3602294921875,
+          74.66876220703125,
+          367.91705322265625,
+          173.65740966796875
+        ],
+        "name": "GRAPHONE",
+        "pdf_page": 18,
+        "svg_sha256": "d948d1ccaeea07d011bb974af80559b7dfcbc9b3012d8b697aa788784f184bd6"
+      },
+      {
+        "clip": [
+          227.3602294921875,
+          206.20376586914062,
+          311.2234191894531,
+          305.1924133300781
+        ],
+        "name": "GRAPHTWO",
+        "pdf_page": 18,
+        "svg_sha256": "e80b97968f7e175ca9bb4e737b2d0d5f6b0a2d3e43fbdb67d4b711186917166a"
+      },
+      {
+        "clip": [
+          242.12547302246094,
+          543.5603637695312,
+          353.1496887207031,
+          655.0944213867188
+        ],
+        "name": "TREE",
+        "pdf_page": 18,
+        "svg_sha256": "ed690ab8c55f00fd1a23c3bcde6fc5d6667da138743db86cd3f6f99400090921"
+      }
+    ],
+    "files": 16,
+    "license": {
+      "bytes": 4881,
+      "path": "OEBPS/legal.xhtml",
+      "sha256": "dc7816caa4dac5a3e3a9a5420fd05b954a114effe8c10c6e23ac6edd48d7caad"
+    },
+    "navigation": {
+      "bytes": 2750,
+      "landmarks": 3,
+      "path": "OEBPS/nav.xhtml",
+      "sha256": "353b913d9f1d5ebf5766dbed0bf27485ac11a99e8c4e52868870bed79f071f50",
+      "toc_links": 20
+    },
+    "package": {
+      "bytes": 4521,
+      "manifest_items": 13,
+      "path": "OEBPS/package.opf",
+      "sha256": "50026f167f7f73e4cae5aad02d5ad510fdb11ce1e5830a7ceb8d03a6a54b76b7",
+      "spine_items": 3
+    },
+    "tree_sha256": "e7f8047c1a2c0568191a597121eea9278ecbad8172651a58dffe11462e9e9695",
+    "unpacked": "build/epub/unpacked"
+  },
+  "canonical_cold_byte_identical": true,
+  "cold": {
+    "bytes": 3182406,
+    "epub": {
+      "bytes": 839571,
+      "entries": 16,
+      "path": "openlogic-bn-Beng-IN-sets-relations-cold.epub",
+      "sha256": "7b5791205c0a1e6df769fc4deda1a4ca5f924e034586c8ab2b95e6feab00222a"
+    },
+    "files": 16,
+    "tree_sha256": "e7f8047c1a2c0568191a597121eea9278ecbad8172651a58dffe11462e9e9695",
+    "unpacked": "build/epub/cold-unpacked"
+  },
+  "date": "2026-09-13",
+  "font_license": {
+    "included_as": "OEBPS/legal.xhtml",
+    "name": "SIL Open Font License 1.1",
+    "source_sha256": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb"
+  },
+  "format": {
+    "first_linear_spine_item": "OEBPS/about.xhtml",
+    "language": "bn-Beng-IN",
+    "layout": "reflowable",
+    "mathml_expressions": 909,
+    "numbered_environments": 88,
+    "page_progression": "ltr",
+    "scripts": 0,
+    "sections": 15,
+    "standard": "EPUB 3",
+    "svg_figures": 6
+  },
+  "input": {
+    "bytes": 4105887,
+    "html_receipt_sha256": "fa790c464ab4256a8b783d6ea1edbe4468c19717cf6520dbe99124c2bb7dd49d",
+    "path": "build/reader/openlogic-bn-reader.html",
+    "public_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.2.0-sets-relations/openlogic-bn-Beng-IN-sets-relations.html",
+    "sha256": "3d2c1df0ba2f8d91ddf8de832744a70f8e2ba4b179a6ea2a533fed4a273d9346",
+    "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0"
+  },
+  "package_manifest": {
+    "path": "build/epub/PACKAGE_MANIFEST.json",
+    "sha256": "f80ca6d1ca3339cb2068c988d4d44b66f35f215fa011a3f8ad7ecb7101522f28"
+  },
+  "release": {
+    "complete": false,
+    "scope": "Sets and Relations; 18 of 722 source units",
+    "tag": "v0.2.0-sets-relations",
+    "translated_units": [
+      "OLP-0004",
+      "OLP-0005",
+      "OLP-0006",
+      "OLP-0007",
+      "OLP-0008",
+      "OLP-0009",
+      "OLP-0010",
+      "OLP-0011",
+      "OLP-0012",
+      "OLP-0013",
+      "OLP-0014",
+      "OLP-0015",
+      "OLP-0016",
+      "OLP-0017",
+      "OLP-0018",
+      "OLP-0019",
+      "OLP-0719",
+      "OLP-0721"
+    ],
+    "untranslated_units": 704,
+    "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.2.0-sets-relations"
+  },
+  "schema": "openlogic-bn-epub-build/1",
+  "status": "BUILT_DETERMINISTIC_REFLOWABLE_EPUB3_EXTERNAL_VALIDATION_PENDING"
+}

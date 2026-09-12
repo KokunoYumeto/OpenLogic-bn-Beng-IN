@@ -522,5 +522,37 @@
     "pandoc_warnings": 0,
     "visual_status": "Not browser-verified: local-file navigation was blocked by browser URL security policy. No bypass attempted. Structural MathML/link/font/diagram checks passed."
   },
-  "full_edition_remaining": "All other translation, advanced canon and full reader integration; full semantic HTML visual/accessibility validation; final corpus QA and warranted Zenodo lineage publication."
+  "epub": {
+    "status": "published_and_anonymously_verified",
+    "date": "2026-09-13",
+    "scope": "Sets and Relations; 18 of 722 source units",
+    "complete": false,
+    "format": "reflowable EPUB3",
+    "language": "bn-Beng-IN",
+    "direction": "ltr",
+    "release_tag": "v0.2.0-sets-relations",
+    "release_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.2.0-sets-relations",
+    "asset_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.2.0-sets-relations/openlogic-bn-Beng-IN-sets-relations.epub",
+    "bytes": 839571,
+    "sha256": "7b5791205c0a1e6df769fc4deda1a4ca5f924e034586c8ab2b95e6feab00222a",
+    "mathml_expressions": 909,
+    "svg_figures_with_nonempty_alternative_text": 6,
+    "epubcheck": {
+      "version": "5.3.0",
+      "fatal": 0,
+      "errors": 0,
+      "warnings": 0,
+      "usage": 0
+    },
+    "representative_silent_rendering": "pass_six_samples_wide_and_narrow",
+    "anonymous_readback": "pass_exact_bytes_sha256_and_full_revalidation",
+    "evidence_commit": "8c275295dcf036c3831efbef7c734fab8de83c76",
+    "evidence": [
+      "evidence/EPUB_0_2_0_BUILD.json",
+      "evidence/EPUB_0_2_0_QA.json",
+      "evidence/EPUB_0_2_0_VISUAL_QA.json",
+      "evidence/EPUB_0_2_0_PUBLIC_READBACK.json"
+    ]
+  },
+  "full_edition_remaining": "All other translation, advanced canon and full reader integration; full semantic HTML visual/accessibility validation; cumulative EPUB refreshes as accepted reader scope grows; final corpus QA and warranted Zenodo lineage publication."
 }

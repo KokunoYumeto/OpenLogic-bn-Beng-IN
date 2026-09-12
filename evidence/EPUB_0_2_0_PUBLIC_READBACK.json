@@ -1,0 +1,101 @@
+{
+  "schema": "openlogic-bn-epub-public-readback/1",
+  "checked_at_utc": "2026-09-12T22:08:01.913Z",
+  "status": "PASS_PUBLIC_ANONYMOUS_READBACK",
+  "authentication": "none",
+  "release": {
+    "repository": "KokunoYumeto/OpenLogic-bn-Beng-IN",
+    "tag": "v0.2.0-sets-relations",
+    "name": "Bengali Sets and Relations — 18 of 722 source files",
+    "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.2.0-sets-relations",
+    "prerelease": true,
+    "body_mentions_reflowable_epub3": true,
+    "evidence_commit": "8c275295dcf036c3831efbef7c734fab8de83c76"
+  },
+  "scope": {
+    "description": "Sets and Relations; 18 of 722 OpenLogic source units",
+    "complete": false,
+    "included_units": [
+      "OLP-0004",
+      "OLP-0005",
+      "OLP-0006",
+      "OLP-0007",
+      "OLP-0008",
+      "OLP-0009",
+      "OLP-0010",
+      "OLP-0011",
+      "OLP-0012",
+      "OLP-0013",
+      "OLP-0014",
+      "OLP-0015",
+      "OLP-0016",
+      "OLP-0017",
+      "OLP-0018",
+      "OLP-0019",
+      "OLP-0719",
+      "OLP-0721"
+    ],
+    "included_unit_count": 18,
+    "untranslated_unit_count": 704,
+    "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0"
+  },
+  "asset": {
+    "id": 560027856,
+    "filename": "openlogic-bn-Beng-IN-sets-relations.epub",
+    "direct_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.2.0-sets-relations/openlogic-bn-Beng-IN-sets-relations.epub",
+    "api_content_type": "application/epub+zip",
+    "api_bytes": 839571,
+    "api_digest": "sha256:7b5791205c0a1e6df769fc4deda1a4ca5f924e034586c8ab2b95e6feab00222a",
+    "anonymous_download_status": 200,
+    "anonymous_download_content_type": "application/octet-stream",
+    "anonymous_redirect_host": "release-assets.githubusercontent.com",
+    "downloaded_bytes": 839571,
+    "downloaded_sha256": "7b5791205c0a1e6df769fc4deda1a4ca5f924e034586c8ab2b95e6feab00222a",
+    "matches_local_accepted_epub": true
+  },
+  "checksum_asset": {
+    "id": 560028010,
+    "filename": "SHA256SUMS-sets-relations.txt",
+    "direct_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.2.0-sets-relations/SHA256SUMS-sets-relations.txt",
+    "anonymous_download_status": 200,
+    "downloaded_bytes": 434,
+    "downloaded_sha256": "9942370121a941d034156685010e09c62d6b4f1e034138c4eddea5d3d13c1d30",
+    "contains_exact_epub_entry": true,
+    "epub_entry": "7b5791205c0a1e6df769fc4deda1a4ca5f924e034586c8ab2b95e6feab00222a  openlogic-bn-Beng-IN-sets-relations.epub"
+  },
+  "published_package": {
+    "standard": "EPUB 3",
+    "layout": "reflowable",
+    "language": "bn-Beng-IN",
+    "direction": "ltr",
+    "mathml_expressions": 909,
+    "svg_figures_with_nonempty_alternative_text": 6,
+    "sections": 15,
+    "numbered_environments": 88,
+    "toc_links": 20,
+    "scripts": 0
+  },
+  "anonymous_download_revalidation": {
+    "status": "PASS_ALL_REQUIRED_CHECKS",
+    "qa_report_sha256": "39cde8f336c98bf98e6e12179fb348e5d2810b382f09fd04900f18a59780da14",
+    "epubcheck": {
+      "version": "5.3.0",
+      "fatal": 0,
+      "errors": 0,
+      "warnings": 0,
+      "usage": 0,
+      "messages": 0,
+      "report_sha256": "b6f634bed2fd532a8ff6f21b5793d2f3a9bbcf5a11b0404c1e414c74a40de277"
+    },
+    "sealed_html_sha256": "3d2c1df0ba2f8d91ddf8de832744a70f8e2ba4b179a6ea2a533fed4a273d9346",
+    "body_semantically_identical_to_sealed_html": true,
+    "mathml_semantically_identical_to_sealed_html": true,
+    "local_resource_links_checked": 66,
+    "broken_links": [],
+    "representative_silent_rendering": "PASS_REPRESENTATIVE_SILENT_RENDERING"
+  },
+  "lineage": {
+    "github_release_updated": true,
+    "zenodo_update": "not_applicable_no_existing_bengali_zenodo_lineage_identified"
+  }
+}

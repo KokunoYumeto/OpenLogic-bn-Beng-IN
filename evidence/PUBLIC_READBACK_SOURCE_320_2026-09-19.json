@@ -1,0 +1,162 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-19T20:21:20.222397+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "7ee121b41e501ae3a6172eed6525d810349492e5",
+  "parent": "e1a129b34238929d950cde9f17953f54c9a6c574",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "c5c2ed7e3055a5fcedf1d2827ec6c4016f859178",
+    "receipt": "PUBLIC_READBACK_SOURCE_310_2026-09-19.json",
+    "receipt_sha256": "4a049ac98f62c1a90ed2b5a41acdc8563503d83b5a62c21185768d4d2633f85b"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/7ee121b41e501ae3a6172eed6525d810349492e5.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/7ee121b41e501ae3a6172eed6525d810349492e5",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 26598313,
+  "archive_sha256": "f378322d6f70eab0bc2363fe9c96eeef791457a095ff66cac8cf6b46c32546d1",
+  "raw_correction_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/7ee121b41e501ae3a6172eed6525d810349492e5/bn-Beng-IN/content/incompleteness/incompleteness-provability/lob-thm.tex",
+  "raw_correction_resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/7ee121b41e501ae3a6172eed6525d810349492e5/bn-Beng-IN/content/incompleteness/incompleteness-provability/lob-thm.tex",
+  "raw_correction_content_type": "text/plain; charset=utf-8",
+  "raw_correction_bytes": 12899,
+  "raw_correction_sha256": "a489e42de9838d96b6b9a65f759f6e6b928cdcdff9908b3e97e755ff844dad38",
+  "godel_unprovability_consistency_qualification_present": true,
+  "lob_exercise_theory_macro_normalized": true,
+  "changed_files_verified": 22,
+  "translated_tex_files_in_commit": 10,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 320,
+  "draft_untranslated_total": 402,
+  "segments": 3783,
+  "translated_segments": 3209,
+  "incompleteness_provability_segments": 105,
+  "incompleteness_provability_translated_segments": 85,
+  "incompleteness_provability_unchanged_segments": 20,
+  "source_correction_records": 262,
+  "translation_decisions": 267,
+  "provisional_translation_decisions": 248,
+  "translation_decision_occurrences": 21220,
+  "decisions_with_exact_source_wording": 257,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 320,
+    "blocks": 3783,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/incompleteness-provability/first-incompleteness-thm.tex",
+      "bytes": 9969,
+      "sha256": "b4c613a2371a84666e218f5bfa21511142ea7307194b590f24a93763ed480944"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/incompleteness-provability/fixed-point-lemma.tex",
+      "bytes": 10955,
+      "sha256": "d4833229aaae6ab8f7535bc5f081768765038a0a65887b5cb9b66e0a0ff2046d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/incompleteness-provability/godels-paper.tex",
+      "bytes": 2771,
+      "sha256": "c46ad5daf71f94e34b06f63faaa3ddc82b7250db4ca4e6e9e379e607c54f2314"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/incompleteness-provability/incompleteness-provability.tex",
+      "bytes": 528,
+      "sha256": "3ddfeacc7761bd1d2b2527053e5884307fa7ee02fa893f41c9c8c9d3b78f1e9c"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/incompleteness-provability/introduction.tex",
+      "bytes": 9228,
+      "sha256": "aa44f12a577c8a50e2e264ff5f14d17910e9117a44fa43ba5fab8d09bd300960"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/incompleteness-provability/lob-thm.tex",
+      "bytes": 12899,
+      "sha256": "a489e42de9838d96b6b9a65f759f6e6b928cdcdff9908b3e97e755ff844dad38"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/incompleteness-provability/provability-conditions.tex",
+      "bytes": 6954,
+      "sha256": "bee9e2a0ce9aefd175109dfdace9d6e0842a3e1e238198f84896d0d04755d3e8"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/incompleteness-provability/rosser-thm.tex",
+      "bytes": 12306,
+      "sha256": "417040bccb0a496e130b875f511b68eabec9aa3367ce9167b32527456207e966"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/incompleteness-provability/second-incompleteness-thm.tex",
+      "bytes": 12324,
+      "sha256": "5f9ea6b03b8667ecda61a38c3c7e0ace28c618b7ae666f6eb24e4f4bbfebfb87"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/incompleteness-provability/tarski-thm.tex",
+      "bytes": 8317,
+      "sha256": "92599e6b48d6f6abeb7ba9f6c770ec45a4fff4df8e2ec4fff67f47d9f333183c"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 5877750,
+      "sha256": "36f71c9d6e2b75c3a3d8080dbacb50b4b75750eb52758ddda5688285f2211f24"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 195359,
+      "sha256": "da547a9aaf791e347413b346329290891858afd6ed458d56a3f155bd2da0709b"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_INCOMPLETENESS_PROVABILITY.md",
+      "bytes": 9558,
+      "sha256": "e29839b046bef792408a25926c9a73c86861f8e0fbc736fed2f9f0ed2275fb6c"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "00acf353c96a9116f7cdea0859151a86d2bf598fd6df9c5cd5de10a8d956f3fa"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 503352,
+      "sha256": "dff6a05211c6ee3ad3715943e1d6082d465e53a702dd08c672931e92a562e3ef"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 236815,
+      "sha256": "ee733ce5f5dc1ca2819862dd9546c6f025b3b59d70d5ca3020185d74386236d3"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 50233231,
+      "sha256": "f0df4b08e5cb703d8ac55915e1af23a68c7a33a6c78e53b565598916753d67a5"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 44636601,
+      "sha256": "eaf36f14b589ef106166b9ed0e567f208738703e035989d80fc7e3a6c7d51bf2"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1031466,
+      "sha256": "eb98957e1bdf3aea976b2933664ad9e3fa9141de0d4aab12dc5ee18a1277654b"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 68060971,
+      "sha256": "aa31628fbfa5008c22111f4058190e37f4de445ee6267eb56f6594d0231cb7b2"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 189147,
+      "sha256": "32df057932bee9fcecdcaa7580304d471cc5f5905a8f2a14c674ac033e86a05a"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 149523,
+      "sha256": "5bcabea1c1d63364f67277fd0296fbc04b3de5936b7d99b9022f39dd91707c13"
+    }
+  ],
+  "result": "The anonymous public commit archive reproduces all 22 changed Git objects byte-for-byte; its strict checker passes all 320 draft units and 3,783 blocks; the raw Löb chapter preserves the documented consistency qualification and normalized theory notation."
+}

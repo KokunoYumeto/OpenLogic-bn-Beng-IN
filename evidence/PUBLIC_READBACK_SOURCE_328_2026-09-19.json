@@ -1,0 +1,152 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-19T21:17:22.674107+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "ba314db1896c99821133a979d426b8058629baf1",
+  "parent": "a97980b1ed55bb84765c24bd1c1c7cc02e716d8c",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "7ee121b41e501ae3a6172eed6525d810349492e5",
+    "receipt": "PUBLIC_READBACK_SOURCE_320_2026-09-19.json",
+    "receipt_sha256": "9532038cc852692565c2a2738a5c71fd317bb31e64e84b122b3410ecca650015"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/ba314db1896c99821133a979d426b8058629baf1.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/ba314db1896c99821133a979d426b8058629baf1",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 27471812,
+  "archive_sha256": "ff42f6ddb31d3e023bbaab6f723f4433f23c557b905e8b84dd218795d318e85b",
+  "raw_correction_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/ba314db1896c99821133a979d426b8058629baf1/bn-Beng-IN/content/second-order-logic/syntax-and-semantics/inf-count.tex",
+  "raw_correction_resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/ba314db1896c99821133a979d426b8058629baf1/bn-Beng-IN/content/second-order-logic/syntax-and-semantics/inf-count.tex",
+  "raw_correction_content_type": "text/plain; charset=utf-8",
+  "raw_correction_bytes": 9940,
+  "raw_correction_sha256": "96d0d5198fd16ce00947a1fd6de1a80268dfddad9c7c7eaf79046c248a8e3c1f",
+  "object_variable_notation_normalized": true,
+  "finite_enumeration_terminal_case_restored": true,
+  "changed_files_verified": 20,
+  "translated_tex_files_in_commit": 8,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 328,
+  "draft_untranslated_total": 394,
+  "segments": 3857,
+  "translated_segments": 3268,
+  "second_order_syntax_semantics_segments": 74,
+  "second_order_syntax_semantics_translated_segments": 59,
+  "second_order_syntax_semantics_unchanged_segments": 15,
+  "source_correction_records": 264,
+  "translation_decisions": 274,
+  "provisional_translation_decisions": 255,
+  "translation_decision_occurrences": 22092,
+  "decisions_with_exact_source_wording": 264,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 328,
+    "blocks": 3857,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/second-order-logic.tex",
+      "bytes": 564,
+      "sha256": "c3dbf6757a09c5a34bc1e2dc775fd4a0c6dc8e2517353b20dca30b815d565588"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/syntax-and-semantics/expressive-power.tex",
+      "bytes": 8102,
+      "sha256": "c178d69db1866764de77ace66f894dfc7fcec60ae40b2c671b3babf6b791d944"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/syntax-and-semantics/inf-count.tex",
+      "bytes": 9940,
+      "sha256": "96d0d5198fd16ce00947a1fd6de1a80268dfddad9c7c7eaf79046c248a8e3c1f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/syntax-and-semantics/introduction.tex",
+      "bytes": 6678,
+      "sha256": "1888f549910777cbd2ef64c5064fc71fc332019c4c381288e143644aea080a3b"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/syntax-and-semantics/satisfaction.tex",
+      "bytes": 13872,
+      "sha256": "65bf557fa7632659cc63cf0772f70634231875c71588b455c8c90383474c2c93"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/syntax-and-semantics/semantic-notions.tex",
+      "bytes": 2270,
+      "sha256": "ed46611fdc9bedc1063bf483eecdb12919d36b9192312de9405f1101275a79ba"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/syntax-and-semantics/syntax-and-semantics.tex",
+      "bytes": 1066,
+      "sha256": "6856d9b2b2a8a482cd3527eab45a38772e5686b41e04ff96f0ce3b17f6a0d6ef"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/syntax-and-semantics/terms-formulas.tex",
+      "bytes": 6718,
+      "sha256": "97a30c356fcc0977733fe148e14259b819dd6f84ef51075b1d4e6b013a83da08"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6003100,
+      "sha256": "b0bb724e5823359c6e02ca552cdda66d17d288609e6195f32cd8cd7504bf6bc8"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 199488,
+      "sha256": "6183c6c6eef28fb67cb52c9ffdf9bb9a76f813441960bbb2146991545db5ebb5"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SECOND_ORDER_SYNTAX_SEMANTICS.md",
+      "bytes": 7672,
+      "sha256": "19777cb28e35082c13422eab35fc958d1c02f974ec5ddd9766b748745d252b86"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "2962e20b495da8b60f323de3b5416e0b23c0c578096f358314519d6841fa7f06"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 507653,
+      "sha256": "9e865c52eb2d0ae46b355da93a086dc82b33a76e382a69a545b983261bcd5dcf"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 242520,
+      "sha256": "5195ed6f7e04abb45c1584003ac82de9e8fdeea5df5634f4c5e27079cbdc12cd"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 52199100,
+      "sha256": "699c7d0802274e34ca915d58d3c005efc3d6e7a5cd2d8cfbfb392fe29b0c586e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 46377389,
+      "sha256": "bbbdbe68be65306b52eb6b09489b501602a668477a49da89266a34c5c3be9a17"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1059968,
+      "sha256": "b866af605393df0b350b989704bb03c523e79d6e626e9fd44d0a487a50c6007f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 70717890,
+      "sha256": "edcc3c0900bc61ad12b69fa77b7f85cc2705411aa878b28bd1064086f2f57df8"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 194221,
+      "sha256": "606befe7d82392fc33b89d31ffcda41f2a4e282cb217fd3ca1df0ef8fc0d2f3d"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 151703,
+      "sha256": "1c3963a795064cc230ccb0a094132a3f8d2c5fcc128c6b4d946b47d699046f99"
+    }
+  ],
+  "result": "The anonymous public commit archive reproduces all 20 changed Git objects byte-for-byte; its strict checker passes all 328 draft units and 3,857 blocks; the source preserves the documented object-variable normalization and finite-enumeration terminal case."
+}

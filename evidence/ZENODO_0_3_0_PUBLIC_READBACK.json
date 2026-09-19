@@ -1,0 +1,63 @@
+{
+  "schema": "openlogic-bn-zenodo-public-readback/1",
+  "verified_utc": "2026-09-19T18:39:06.948634+00:00",
+  "record_id": 22848705,
+  "record_url": "https://zenodo.org/records/22848705",
+  "doi": "10.5281/zenodo.22848705",
+  "doi_url": "https://doi.org/10.5281/zenodo.22848705",
+  "concept_doi": "10.5281/zenodo.22848704",
+  "title": "Open Logic — Bengali (India): Reader through Representability in Q (299 of 722 units)",
+  "version": "0.3.0",
+  "language": "ben",
+  "license": "cc-by-4.0",
+  "publication_date": "2026-09-19",
+  "access": "Anonymous HTTPS metadata and file requests; no authentication header or credential used.",
+  "direct_reading_url": "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/",
+  "pertinent_pdf_exists": false,
+  "pdf_created_for_preview": false,
+  "files": [
+    {
+      "filename": "openlogic-bn-Beng-IN-through-representability.html",
+      "bytes": 8687678,
+      "sha256": "30c0e6ce7fbaddede636d0231e1c3773cde97ae57ec8fbb96ec24c20d0f4c846",
+      "download_url": "https://zenodo.org/records/22848705/files/openlogic-bn-Beng-IN-through-representability.html?download=1",
+      "anonymous_readback_match": true
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-through-representability.tex",
+      "bytes": 2546007,
+      "sha256": "0558483a3fe1d3e2c6656ae4cdedccb283846a838c31661e4ac0fba2f71468e2",
+      "download_url": "https://zenodo.org/records/22848705/files/openlogic-bn-Beng-IN-through-representability.tex?download=1",
+      "anonymous_readback_match": true
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-through-representability.epub",
+      "bytes": 907103,
+      "sha256": "443354592762bca73a4f351b0b77e0f17a7e03ee0187f06e261ce7c59967a887",
+      "download_url": "https://zenodo.org/records/22848705/files/openlogic-bn-Beng-IN-through-representability.epub?download=1",
+      "anonymous_readback_match": true
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-v0.3.0-source.zip",
+      "bytes": 24821521,
+      "sha256": "6ff61670fc510728f001391a952ef51a096ce82a41d06ce20c8f9c4ec6472209",
+      "download_url": "https://zenodo.org/records/22848705/files/openlogic-bn-Beng-IN-v0.3.0-source.zip?download=1",
+      "anonymous_readback_match": true
+    },
+    {
+      "filename": "BUILD_QA.json",
+      "bytes": 9047,
+      "sha256": "d6b17117339755ed1fc59cc0cf0561bd3253f95085b50abbdf1af54c0368cb11",
+      "download_url": "https://zenodo.org/records/22848705/files/BUILD_QA.json?download=1",
+      "anonymous_readback_match": true
+    },
+    {
+      "filename": "SHA256SUMS.txt",
+      "bytes": 535,
+      "sha256": "ac1dc96f298b217b0a2e00e2374bbea3cffcdaabe57652e5868a3b1be03dea16",
+      "download_url": "https://zenodo.org/records/22848705/files/SHA256SUMS.txt?download=1",
+      "anonymous_readback_match": true
+    }
+  ],
+  "result": "The Zenodo record and DOI are public. Anonymous readback matched all six published files by filename, byte count, and SHA-256 to the verified GitHub release package."
+}

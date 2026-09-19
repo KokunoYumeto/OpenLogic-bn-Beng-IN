@@ -8,6 +8,7 @@ This is an **in-progress, machine-translated Bengali (India) edition** of the Op
 
 - [Read the 299-unit Bengali reader online](https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/)
 - [Download the v0.3.0 prerelease](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.3.0-through-representability)
+- [Zenodo preservation record and DOI](https://doi.org/10.5281/zenodo.22848705)
 
 The release includes a standalone offline HTML reader, a validated reflowable EPUB 3, a complete expanded cumulative LaTeX source, and the complete source snapshot. It has no PDF because this edition is built directly as semantic HTML with native MathML; the online HTML is the readable preview.
 

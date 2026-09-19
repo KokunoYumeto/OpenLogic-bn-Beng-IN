@@ -1,0 +1,58 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: undecidability-and-axiomatizability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{nax}
+
+\olsection{দ্বিতীয়-ক্রমের যুক্তিবিদ্যা স্বতঃসিদ্ধায়নযোগ্য নয়}
+
+
+\begin{thm}
+\ollabel{thm:sol-undecidable}
+দ্বিতীয়-ক্রমের যুক্তিবিদ্যা অণির্ণেয়।
+\end{thm}
+
+\begin{proof}
+কোনো প্রথম-ক্রমীয় !!{sentence}, প্রথম-ক্রমের যুক্তিবিদ্যায় বৈধ যদি এবং
+কেবল যদি সেটি দ্বিতীয়-ক্রমের যুক্তিবিদ্যায় বৈধ; আর প্রথম-ক্রমের
+যুক্তিবিদ্যা অণির্ণেয়।
+\end{proof}
+
+\begin{thm}
+\ollabel{cor:sol-not-axiomatizable}
+দ্বিতীয়-ক্রমের যুক্তিবিদ্যার কোনো বিশুদ্ধ ও পূর্ণ !!{derivation} ব্যবস্থা
+নেই।
+\end{thm}
+
+\begin{proof}
+ধরি $!A$ পাটিগণিতের ভাষার একটি !!a{sentence}। $\Sat{N}{!A}$ যদি এবং
+কেবল যদি $\Th{PA^2} \Entails !A$। ধরি $!P$ হলো~$\Th{PA^2}$-এর নয়টি
+স্বতঃসিদ্ধের সংযোজন। $\Th{PA^2} \Entails !A$ যদি এবং কেবল যদি
+$\Entails !P \lif !A$, অর্থাৎ $\Sat{M}{!P \lif !A}$।
+% BN-SRC-256 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-256):} হিমায়িত ইংরেজি পাঠে শেষের পরিতৃপ্তি-রাশিটির দ্বিতীয় আর্গুমেন্ট বন্ধ করার আগে গণিত-মোড বন্ধ করা হয়েছে, ফলে রাশিটি বিকৃত। বাংলা পাঠে অভিপ্রেত সুগঠিত রূপ~$\Sat{M}{!P \lif !A}$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-256 TARGET-CORRECTION-END
+এবার~$\Obj{0}$-এর বদলে~$z$,~$\prime$-এর বদলে এক-স্থানীয়
+অপেক্ষক-চলরাশি~$u$, যথাক্রমে $+$ ও~$\times$-এর বদলে দ্বি-স্থানীয়
+অপেক্ষক-চলরাশি~$u'$ ও~$u''$, এবং $<$-এর বদলে দ্বি-স্থানীয়
+সম্পর্ক-চলরাশি~$L$ বসিয়ে ও সার্বিকভাবে পরিমাণায়ন করে পাওয়া
+!!{sentence}
+$\lforall[z][\lforall[u][\lforall[u'][\lforall[u''][\lforall[L][(!P' \lif !A')]]]]]$
+বিবেচনা করি। এটি বিশুদ্ধ দ্বিতীয়-ক্রমের যুক্তিবিদ্যার একটি বৈধ বাক্য
+যদি এবং কেবল যদি মূল বাক্যটি বৈধ, যদি এবং কেবল যদি $\Th{PA^2}
+\Entails !A$, যদি এবং কেবল যদি $\Sat{N}{!A}$। তাই দ্বিতীয়-ক্রমের
+যুক্তিবিদ্যার কোনো বিশুদ্ধ ও পূর্ণ প্রমাণ-ব্যবস্থা থাকলে তা দিয়ে
+~$\Struct{N}$-এ সত্য !!{sentence}s-এর একটি গণনসাধ্য তালিকায়ন
+$f\colon \Nat \to \Sent[L_A]$ সংজ্ঞায়িত করা যেত। এই অপেক্ষকটি কোনো
+প্রথম-ক্রমীয় সূত্র~$!B_f(x, y)$ দিয়ে~$\Th{Q}$-তে প্রতিনিধেয় হতো। তখন
+!!{formula}~$\lexists[x][!B_f(x, y)]$,~$\Struct{N}$-এর সত্য
+প্রথম-ক্রমীয় !!{sentence}s-এর সেটকে সংজ্ঞায়িত করত, যা তারস্কির
+উপপাদ্যের বিরোধী।
+\end{proof}
+
+
+
+\end{document}

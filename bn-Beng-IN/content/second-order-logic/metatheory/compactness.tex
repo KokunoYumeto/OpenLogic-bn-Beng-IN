@@ -1,0 +1,75 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: compactness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{com}
+
+\olsection{দ্বিতীয়-ক্রমের যুক্তিবিদ্যা সংহত নয়}
+
+\begin{explain}
+বাক্যের কোনো সেট~$\Gamma$-র প্রতিটি সসীম উপসেট পরিতৃপ্তিযোগ্য
+হলে তাকে \emph{সসীমভাবে পরিতৃপ্তিযোগ্য} বলি। প্রথম-ক্রমের
+যুক্তিবিদ্যার ধর্ম হলো, !!{sentence}s-এর কোনো সেট~$\Gamma$ সসীমভাবে
+পরিতৃপ্তিযোগ্য হলে সেটি পরিতৃপ্তিযোগ্য। এই ধর্মকে \emph{সংহতি} বলা হয়।
+অনুসিদ্ধান্ত দিয়ে এর একটি তুল্য রূপ বলা যায়: $\Gamma \Entails !A$ হলে
+ইতিমধ্যেই কোনো সসীম উপসেট~$\Gamma_0 \subseteq \Gamma$-র জন্য
+$\Gamma_0 \Entails !A$। এই রূপে এটি পূর্ণতা উপপাদ্যের তাৎক্ষণিক
+অনুসিদ্ধান্ত: কারণ $\Gamma \Entails !A$ হলে পূর্ণতা অনুসারে $\Gamma
+\Proves !A$। কিন্তু কোনো !!{derivation},~$\Gamma$-র কেবল সসীমসংখ্যক
+!!{sentence}s-ই ব্যবহার করতে পারে।
+
+দ্বিতীয়-ক্রমের যুক্তিবিদ্যার ক্ষেত্রে সংহতি সত্য নয়। দ্বিতীয়-ক্রমীয়
+!!{sentence}s-এর এমন সেট আছে যা সসীমভাবে পরিতৃপ্তিযোগ্য কিন্তু
+পরিতৃপ্তিযোগ্য নয়, এবং যা কোনো~$!A$-কে অনুসিদ্ধ করে অথচ তার কোনো সসীম
+উপসেট~$!A$-কে অনুসিদ্ধ করে না।
+\end{explain}
+
+
+\begin{thm}
+\ollabel{thm:sol-not-compact}
+% BN-SRC-257 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-257):} হিমায়িত ইংরেজি পাঠে এই উপপাদ্যের লেবেলটি আগের অণির্ণেয়তা উপপাদ্যের লেবেল~\texttt{thm:sol-undecidable}-এর হুবহু পুনরাবৃত্তি। বাংলা পাঠে সংঘর্ষহীন বিষয়নির্দেশক লেবেল~\texttt{thm:sol-not-compact} রাখা হয়েছে।} % BN-SRC-257 TARGET-CORRECTION-END
+দ্বিতীয়-ক্রমের যুক্তিবিদ্যা সংহত নয়।
+\end{thm}
+
+\begin{proof}
+স্মরণ করো,
+\[
+\fn{Inf} \ident \lexists[u][(\lforall[x][\lforall[y][(\eq[u(x)][u(y)]
+      \lif \eq[x][y])]] \land \lexists[y][\lforall[x][\eq/[y][u(x)]]])]
+\]
+কোনো !!a{structure}-এ পরিতৃপ্ত হয় যদি এবং কেবল যদি তার সংজ্ঞাক্ষেত্র
+অসীম। ধরি $!A^{\ge n}$ এমন একটি বাক্য যা বলে সংজ্ঞাক্ষেত্রে অন্তত
+$n$-টি !!{element}s আছে; যেমন,
+\[
+!A^{\ge n} \ident \lexists[x_1][\dots\lexists[x_n][(\eq/[x_1][x_2]
+    \land \eq/[x_1][x_3] \land \dots \land \eq/[x_{n-1}][x_n])]].
+\]
+!!{sentence}s-এর নিচের সেটটি বিবেচনা করি:
+\[
+\Gamma = \{\lnot \fn{Inf}, !A^{\ge 1}, !A^{\ge 2}, !A^{\ge 3}, \dots\}.
+\]
+এটি সসীমভাবে পরিতৃপ্তিযোগ্য। কারণ, যেকোনো সসীম উপসেট~$\Gamma_0
+\subseteq \Gamma$-র ক্ষেত্রে $\Gamma_0$-তে কোনো $!A^{\ge n}$ না থাকলে
+$k=1$ নিই; নইলে এমন কোনো $k$ আছে যাতে $!A^{\ge k} \in \Gamma_0$ কিন্তু
+$n>k$ হলে কোনো $!A^{\ge n} \in \Gamma_0$ নেই।
+% BN-SRC-258 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-258):} হিমায়িত ইংরেজি প্রমাণে সসীম খণ্ড~$\Gamma_0$-র বদলে দুবার গোটা~$\Gamma$ লেখা হয়েছে; অথচ গোটা সেটে প্রতিটি বড় সূচকের বাক্যই আছে। খণ্ডটিতে কোনো নিম্নসীমার বাক্য না-থাকার ক্ষেত্রও সেখানে বাদ গেছে। বাংলা পাঠে দুই সংঘটনেই~$\Gamma_0$ পুনরুদ্ধার করা হয়েছে এবং ফাঁকা সূচকক্ষেত্রে $k=1$ নেওয়া হয়েছে।} % BN-SRC-258 TARGET-CORRECTION-END
+$\Domain{M}$-এ $k$-টি !!{element}s থাকলে $\Sat{M}{\Gamma_0}$। কিন্তু
+$\Gamma$ পরিতৃপ্তিযোগ্য নয়: $\Sat{M}{\lnot \fn{Inf}}$ হলে
+$\Domain{M}$ অবশ্যই সসীম, ধরা যাক তার আকার~$k$। তখন
+$\Sat/{M}{!A^{\ge k+1}}$।
+\end{proof}
+
+\begin{prob}
+এমন একটি সেট~$\Gamma$ ও একটি !!a{sentence}~$!A$-এর উদাহরণ দাও যাতে
+$\Gamma \Entails !A$, কিন্তু প্রতিটি সসীম উপসেট~$\Gamma_0 \subseteq
+\Gamma$-র জন্য $\Gamma_0 \Entails/ !A$।
+\end{prob}
+
+
+\end{document}

@@ -1,0 +1,134 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: second-order-arithmetic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{spa}
+
+\olsection{দ্বিতীয়-ক্রমীয় পাটিগণিত}
+
+স্মরণ করো, পেয়ানো পাটিগণিতের তত্ত্ব~$\Th{PA}$-তে~$\Th{Q}$-এর আটটি
+স্বতঃসিদ্ধ থাকে,
+\begin{align*}
+& \lforall[x][\eq/[x'][\Obj 0]]\\
+& \lforall[x][\lforall[y][(\eq[x'][y'] \lif \eq[x][y])]]\\
+& \lforall[x][(\eq[x][\Obj 0] \lor \lexists[y][\eq[x][y']])]\\
+& \lforall[x][\eq[(x + \Obj 0)][x]]\\
+& \lforall[x][\lforall[y][\eq[(x + y')][(x + y)']]]\\
+& \lforall[x][\eq[(x \times \Obj 0)][\Obj 0]]\\
+& \lforall[x][\lforall[y][\eq[(x \times y')][((x \times y) + x)]]]\\
+& \lforall[x][\lforall[y][(x < y \liff \lexists[z][\eq[(z' + x)][y]])]]\\
+\intertext{এগুলির সঙ্গে নিচের আকারের সব বাক্যও থাকে}
+& (!A(\Obj 0) \land \lforall[x][(!A(x) \lif !A(x'))]) \lif \lforall[x][!A(x)].
+\end{align*}
+শেষেরটি একটি ``ছক,'' অর্থাৎ পাটিগণিতের ভাষার প্রতিটি
+!!{formula}~$!A(x)$-এর জন্য একটি করে, এইভাবে অসীমসংখ্যক
+!!{sentence}s উৎপন্ন করার নকশা। এই ছককে আমরা (প্রথম-ক্রমীয়)
+\emph{আরোহের স্বতঃসিদ্ধ-ছক} বলি।
+\emph{দ্বিতীয়-ক্রমীয়} পেয়ানো পাটিগণিত~$\Th{PA^2}$-এ আরোহকে একটি
+বাক্য দিয়েই বলা যায়। $\Th{PA^2}$-তে উপরের প্রথম আটটি স্বতঃসিদ্ধের
+সঙ্গে নিচের (দ্বিতীয়-ক্রমীয়) \emph{আরোহের স্বতঃসিদ্ধ} থাকে:
+\[
+\lforall[X][((X(\Obj 0) \land \lforall[x][(X(x) \lif X(x'))]) \lif \lforall[x][X(x)])].
+\]
+এটি বলে, !!{domain}-এর কোনো উপসেট~$X$-এ~$\Assign{\Obj{0}}{M}$ থাকলে
+এবং যেকোনো~$x \in \Domain{M}$-এর সঙ্গে~$\Assign{\prime}{M}(x)$-ও
+থাকলে (অর্থাৎ, সেটটি ``উত্তরসূরির অধীনে বদ্ধ'' হলে), সেটটিতে
+!!{domain}-এর সব কিছুই থাকে (অর্থাৎ, $X = \Domain{M})$।
+
+আরোহের স্বতঃসিদ্ধ নিশ্চিত করে যে, তাকে পরিতৃপ্তকারী যেকোনো
+!!{structure}-এ~$\Domain{M}$-এর কেবল সেই !!{element}s-ই থাকে যেগুলি
+থাকা স্বতঃসিদ্ধগুলি দাবি করে, অর্থাৎ $n \in \Nat$-এর জন্য~$\num{n}$-এর
+মানগুলি। $\Th{PA^2}$-এর কোনো মডেলে অমানক সংখ্যা থাকে না।
+
+\begin{thm}
+\ollabel{thm:sol-pa-standard}
+$\Sat{M}{\Th{PA^2}}$ হলে $\Domain{M} =
+\Setabs{\Value{\num{n}}{M}}{n \in \Nat}$।
+\end{thm}
+
+\begin{proof}
+ধরি $N = \Setabs{\Value{\num{n}}{M}}{n \in \Nat}$ এবং
+$\Sat{M}{\Th{PA^2}}$। অবশ্যই, যেকোনো $n \in \Nat$-এর জন্য
+$\Value{\num{n}}{M} \in \Domain{M}$; তাই $N \subseteq \Domain{M}$।
+
+এবার বিপরীত অন্তর্ভুক্তিটি দেখি। $s(X) = N$ এমন একটি চলরাশি-আরোপ~$s$
+বিবেচনা করি। অনুমান অনুসারে,
+\begin{align*}
+\Sat{M}{\lforall[X][((X(\Obj 0) \land \lforall[x][(X(x)
+      \lif X(x'))]) \lif \lforall[x][X(x)])]}, & \text{ তাই}\\
+\Sat{M}{(X(\Obj 0) \land \lforall[x][(X(x) \lif X(x'))]) \lif
+  \lforall[x][X(x)]}[s]. &
+\end{align*}
+এই শর্তবাক্যের পূর্বগটি বিবেচনা করি। $\Value{\Obj{0}}{M} \in N$, তাই
+$\Sat{M}{X(\Obj{0})}[s]$। দ্বিতীয় সংযোজ্য
+$\lforall[x][(X(x) \lif X(x'))]$-ও পরিতৃপ্ত। কারণ, ধরি $x \in N$।
+$N$-এর সংজ্ঞা অনুসারে, কোনো~$n$-এর জন্য $x =
+\Value{\num{n}}{M}$। ফলে $\Assign{\prime}{M}(x) =
+\Value{\num{n+1}}{M} \in N$। অতএব $\Assign{\prime}{M}(x) \in N$।
+
+তাই $\Sat{M}{X(\Obj 0) \land \lforall[x][(X(x) \lif X(x'))]}[s]$।
+ফলে $\Sat{M}{\lforall[x][X(x)]}[s]$। কিন্তু তার অর্থ, প্রতিটি $x \in
+\Domain{M}$-এর জন্য $x \in s(X) = N$। সুতরাং $\Domain{M} \subseteq
+N$।
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:sol-pa-categorical}
+$\Th{PA^2}$-এর যেকোনো দুটি মডেল সমরূপ।
+\end{cor}
+
+\begin{proof}
+\olref{thm:sol-pa-standard} অনুসারে $\Th{PA^2}$-এর যেকোনো মডেলের
+সংজ্ঞাক্ষেত্র $\Value{\num{n}}{M}$-গুলির দ্বারাই নিঃশেষিত। এমন যেকোনো
+মডেল~$\Th{Q}$-এরও মডেল। \olref[mod][mar][stm]{prop:thq-standard}
+অনুসারে, এমন প্রতিটি মডেল প্রমিত, অর্থাৎ~$\Struct{N}$-এর সমরূপ।
+\end{proof}
+
+উপরে আমরা~$\Th{PA^2}$-কে প্রথম আটটি পাটিগাণিতিক স্বতঃসিদ্ধ ও
+দ্বিতীয়-ক্রমীয় আরোহের স্বতঃসিদ্ধ নিয়ে গঠিত তত্ত্ব হিসেবে সংজ্ঞায়িত
+করেছি। আসলে, দ্বিতীয়-ক্রমের যুক্তিবিদ্যার প্রকাশক্ষমতার জন্য
+দ্বিতীয়-ক্রমীয় পেয়ানো পাটিগণিতে পাটিগাণিতিক স্বতঃসিদ্ধগুলির কেবল
+\emph{প্রথম দুটি} এবং আরোহই যথেষ্ট।
+
+\begin{prop}\ollabel{prop:sol-pa-definable}
+ধরি $\Th{PA^{2\dagger}}$ হলো প্রথম দুটি পাটিগাণিতিক স্বতঃসিদ্ধ
+(উত্তরসূরির স্বতঃসিদ্ধগুলি) এবং দ্বিতীয়-ক্রমীয় আরোহের স্বতঃসিদ্ধ নিয়ে
+গঠিত দ্বিতীয়-ক্রমীয় তত্ত্ব। তাহলে $\le$, $+$ ও~$\times$,
+$\Th{PA^{2\dagger}}$-তে সংজ্ঞেয়।
+\end{prop}
+
+\begin{proof}
+$\le$ সংজ্ঞেয় দেখাতে এমন একটি সূত্র~$!A_\le(x, y)$ খুঁজতে হবে যাতে
+$\Sat{N}{!A_\le(\num n, \num m)}$ যদি এবং কেবল যদি $n \le m$। নিচের
+সূত্রটি বিবেচনা করি:
+\[
+!B(x, Y) \ident Y(x) \land \lforall[y][(Y(y) \lif Y(y'))]
+\]
+স্পষ্টতই, কোনো সেট $Y \subseteq \Nat$,~$!B(\num n, Y)$-কে পরিতৃপ্ত
+করে যদি এবং কেবল যদি $\Setabs{m}{n \le m} \subseteq Y$। তাই নিতে
+পারি $!A_\le(x, y) \ident
+\lforall[Y][(!B(x, Y) \lif Y(y))]$।
+
+যোগ সংজ্ঞেয় দেখতে লক্ষ করো, $k+l=m$ যদি এবং কেবল যদি এমন একটি
+অপেক্ষক~$u$ আছে যাতে $u(0)=k$, সব~$n$-এর জন্য $u(n')=u(n)'$, এবং $m =
+u(l)$। এই তুল্যতা ব্যবহার করে নিচের সূত্রের সাহায্যে
+$\Th{PA^{2\dagger}}$-তে যোগ সংজ্ঞায়িত করা যায়:
+\[
+!A_+(x,y,z) \ident \lexists[u][(u(\Obj 0)=x \land \lforall[w][u(w')=u
+ (w)'] \land u(y)=z)]
+\]
+% BN-SRC-255 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-255):} হিমায়িত ইংরেজি সূত্রটি $w$-এর উপর পরিমাণায়ন করেও পুনরাবৃত্তির দফায় মুক্ত চলরাশি~$x$ ব্যবহার করেছে। ঠিক আগের গদ্যে সব~$n$-এর জন্য $u(n')=u(n)'$ বলা হয়েছে; সেই দফা অনুসারে বাংলা সূত্রে $u(w')=u(w)'$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-255 TARGET-CORRECTION-END
+স্পষ্টতই, $\Sat{N}{!A_+(\num k, \num l, \num m)}$ যদি এবং কেবল যদি
+$k+l=m$।
+\end{proof}
+
+\begin{prob}
+\olref[sol][met][spa]{prop:sol-pa-definable}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\end{document}

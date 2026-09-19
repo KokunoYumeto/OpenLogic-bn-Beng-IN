@@ -1,0 +1,57 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: compactness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{lst}
+
+\olsection{দ্বিতীয়-ক্রমের যুক্তিবিদ্যায় লোয়েনহাইম--স্কোলেম উপপাদ্য ব্যর্থ}
+
+\begin{explain}
+(নিম্নমুখী) লোয়েনহাইম--স্কোলেম উপপাদ্য বলে, অসীম মডেলবিশিষ্ট
+!!{sentence}s-এর প্রতিটি সেটের একটি !!a{enumerable} মডেল আছে। এটিও
+পূর্ণতা উপপাদ্যের একটি পরিণাম: পূর্ণতার প্রমাণ, !!{sentence}s-এর যেকোনো
+সঙ্গত সেটের জন্য একটি মডেল তৈরি করে, এবং সেই মডেলটি !!{enumerable}।
+একটি ঊর্ধ্বমুখী লোয়েনহাইম--স্কোলেম উপপাদ্যও আছে; সেটি নিশ্চিত করে যে,
+!!{sentence}s-এর কোনো সেটের একটি !!a{denumerable} মডেল থাকলে তার একটি
+!!a{nonenumerable} মডেলও আছে। দ্বিতীয়-ক্রমের যুক্তিবিদ্যায় দুটি
+উপপাদ্যই ব্যর্থ।
+\end{explain}
+
+
+\begin{thm}
+\ollabel{thm:sol-no-ls} দ্বিতীয়-ক্রমের যুক্তিবিদ্যায়
+লোয়েনহাইম--স্কোলেম উপপাদ্য ব্যর্থ: এমন !!{sentence}s আছে যাদের অসীম
+মডেল আছে কিন্তু কোনো !!{enumerable} মডেল নেই।
+\end{thm}
+
+\begin{proof}
+স্মরণ করো,
+\[
+\fn{Count} \ident \lexists[z][\lexists[u][\lforall[X][((X(z) \land
+      \lforall[x][(X(x) \lif X(u(x)))]) \lif \lforall[x][X(x)])]]]
+\]
+কোনো !!a{structure}~$\Struct{M}$-এ সত্য যদি এবং কেবল যদি
+$\Domain{M}$ !!{enumerable}; তাই~$\Struct{M}$-এ $\lnot\fn{Count}$ সত্য
+যদি এবং কেবল যদি $\Domain{M}$ !!{nonenumerable}। এমন !!{structure}s
+আছে—যেকোনো !!{nonenumerable} সেটকে !!{domain} হিসেবে নাও, যেমন
+$\Pow{\Nat}$ বা~$\Real$। তাই $\lnot \fn{Count}$-এর অসীম মডেল আছে,
+কিন্তু কোনো !!{enumerable} মডেল নেই।
+\end{proof}
+
+\begin{thm}
+এমন !!{sentence}s আছে যাদের !!{denumerable} মডেল আছে, কিন্তু কোনো
+!!{nonenumerable} মডেল নেই।
+\end{thm}
+
+\begin{proof}
+$\fn{Count} \land \fn{Inf}$,~$\Nat$-এ সত্য, কিন্তু এমন কোনো
+!!{structure}~$\Struct{M}$-এ সত্য নয় যার~$\Domain{M}$
+!!{nonenumerable}।
+\end{proof}
+
+
+\end{document}

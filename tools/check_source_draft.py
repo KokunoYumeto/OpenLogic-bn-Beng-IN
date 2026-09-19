@@ -1667,6 +1667,71 @@ for row in rows:
             semantic_tokens(audited_second_order_syntax_semantics)
             == semantic_tokens(checked_target)
         )
+    second_order_metatheory_math_fix = False
+    second_order_metatheory_control_fix = False
+    second_order_metatheory_token_fix = False
+    second_order_metatheory_expected = {
+        "OLP-0332": {"BN-SRC-255"},
+        "OLP-0333": {"BN-SRC-256"},
+        "OLP-0334": {"BN-SRC-257", "BN-SRC-258"},
+    }
+    audited_second_order_metatheory = source
+    if row["unit_id"] == "OLP-0332":
+        old = r"\lforall[w][u(x')=u" + "\n" + r" (x)']"
+        new = r"\lforall[w][u(w')=u" + "\n" + r" (w)']"
+        assert audited_second_order_metatheory.count(old) == 1
+        audited_second_order_metatheory = audited_second_order_metatheory.replace(
+            old, new, 1
+        )
+    elif row["unit_id"] == "OLP-0333":
+        old = r"$\Sat{M}{!P \lif !A$}"
+        new = r"$\Sat{M}{!P \lif !A}$"
+        assert audited_second_order_metatheory.count(old) == 1
+        audited_second_order_metatheory = audited_second_order_metatheory.replace(
+            old, new, 1
+        )
+    elif row["unit_id"] == "OLP-0334":
+        old = r"\ollabel{thm:sol-undecidable}"
+        new = r"\ollabel{thm:sol-not-compact}"
+        assert audited_second_order_metatheory.count(old) == 1
+        audited_second_order_metatheory = audited_second_order_metatheory.replace(
+            old, new, 1
+        )
+        old = "there is some $k$ so that "
+        new = (
+            "if $\\Gamma_0$ contains no $!A^{\\ge n}$, take $k=1$; "
+            "otherwise there is some $k$ so that "
+        )
+        assert audited_second_order_metatheory.count(old) == 1
+        audited_second_order_metatheory = audited_second_order_metatheory.replace(
+            old, new, 1
+        )
+        old = r"$!A^{\ge k} \in \Gamma$"
+        new = r"$!A^{\ge k} \in \Gamma_0$"
+        assert audited_second_order_metatheory.count(old) == 1
+        audited_second_order_metatheory = audited_second_order_metatheory.replace(
+            old, new, 1
+        )
+        old = r"\in \Gamma$ for $n>k$"
+        new = r"\in \Gamma_0$ for $n>k$"
+        assert audited_second_order_metatheory.count(old) == 1
+        audited_second_order_metatheory = audited_second_order_metatheory.replace(
+            old, new, 1
+        )
+    if 330 <= unit_number <= 335:
+        assert set(documented) == second_order_metatheory_expected.get(
+            row["unit_id"], set()
+        )
+        second_order_metatheory_math_fix = (
+            mathparts(audited_second_order_metatheory) == target_math
+        )
+        second_order_metatheory_control_fix = (
+            controls(audited_second_order_metatheory) == controls(checked_target)
+        )
+        second_order_metatheory_token_fix = (
+            semantic_tokens(audited_second_order_metatheory)
+            == semantic_tokens(checked_target)
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -3118,6 +3183,33 @@ for row in rows:
             "documented_correction": "BN-SRC-254",
             "finite_enumeration_terminal_case_restored": True,
         }
+    elif row["unit_id"] == "OLP-0332":
+        assert second_order_metatheory_math_fix
+        assert r"\lforall[w][u(x')=u" not in checked_target
+        assert r"\lforall[w][u(w')=u" in checked_target
+        tex_command_check = {
+            "documented_correction": "BN-SRC-255",
+            "addition_recursion_binder_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0333":
+        assert second_order_metatheory_math_fix
+        assert r"$\Sat{M}{!P \lif !A}$" in checked_target
+        tex_command_check = {
+            "documented_correction": "BN-SRC-256",
+            "satisfaction_expression_balanced": True,
+        }
+    elif row["unit_id"] == "OLP-0334":
+        assert second_order_metatheory_math_fix
+        assert second_order_metatheory_control_fix
+        assert r"\ollabel{thm:sol-not-compact}" in checked_target
+        assert r"!A^{\ge k} \in \Gamma_0" in checked_target
+        assert r"!A^{\ge n} \in \Gamma_0" in checked_target
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-257", "BN-SRC-258"],
+            "compactness_theorem_label_unique": True,
+            "finite_fragment_indices_scoped": True,
+            "empty_finite_fragment_case_supplied": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -3216,6 +3308,7 @@ for row in rows:
             theories_computability_math_fix,
             incompleteness_provability_math_fix,
             second_order_syntax_semantics_math_fix,
+            second_order_metatheory_math_fix,
             shared_audit_fix,
         )
     )
@@ -3224,6 +3317,7 @@ for row in rows:
         or axd_control_fix
         or completeness_control_fix
         or representability_q_control_fix
+        or second_order_metatheory_control_fix
     )
     checks = {
         "unit_id": row["unit_id"],
@@ -3239,6 +3333,7 @@ for row in rows:
             or theories_computability_token_fix
             or incompleteness_provability_token_fix
             or second_order_syntax_semantics_token_fix
+            or second_order_metatheory_token_fix
         ),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),
         "documented_source_corrections": documented,

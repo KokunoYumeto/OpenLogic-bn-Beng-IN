@@ -1,0 +1,295 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: sigma1-completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{s1c}
+\olsection{\texorpdfstring{$\Sigma_1$}{সিগমা-১} সম্পূর্ণতা}
+% BN-SRC-226 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-226):} হিমায়িত ফাইলটির অধ্যায়-পরিচায়ক ভুল করে \texttt{inp} দিয়েছিল, যদিও অধ্যায়ের চালক ও অন্য দশটি অংশে পরিচায়ক \texttt{req} এবং এই অংশটিও সেই অধ্যায়েই আমদানি করা। বাংলা পাঠে সামঞ্জস্যপূর্ণ \texttt{\string\olfileid\{inc\}\{req\}\{s1c\}} রাখা হয়েছে।} % BN-SRC-226 TARGET-CORRECTION-END
+
+$\Th{Q}$ এবং তার সঙ্গতিপূর্ণ, স্বতঃসিদ্ধায়িত প্রসারণগুলি অসম্পূর্ণ হলেও আমরা
+দেখেছি, সংখ্যাপদ সম্বন্ধে অনেক মৌলিক তথ্য $\Th{Q}$ প্রমাণ করে। বস্তুত এই
+পরিসর অনেক দূর বাড়ানো যায়। $\Th{Q}$-তে কী কী প্রমাণ করা যায় তার পরিসর
+বুঝতে $\Delta_0$, $\Sigma_1$ ও $\Pi_1$ !!{formula}s-এর ধারণা প্রবর্তন করি।
+মোটামুটি বললে, $\Sigma_1$ !!{formula} হলো $\lexists[x][!B(x)]$ রূপের একটি
+সূত্র, যেখানে $!B$ শুধু বচনগত সংযোজক ও সীমাবদ্ধ পরিমাণসূচক দিয়ে নির্মিত।
+আমরা দেখাব, $!A$ যদি $\Struct{N}$-এ সত্য কোনো $\Sigma_1$ !!{sentence} হয়,
+তবে $\Th{Q} \Proves !A$ (\olref{thm:sigma1-completeness})।
+
+\begin{defn}
+\ollabel{defn:bd-quant}
+একটি \emph{সীমাবদ্ধ অস্তিত্বমূলক !!{formula}} হলো
+$\lexists[x][(x < t \land !A(x))]$ রূপের সূত্র, যেখানে $t$ যেকোনো পদ; প্রথা
+অনুসারে একে $\bexists{x < t}{!A(x)}$ লিখি।
+%
+একটি \emph{সীমাবদ্ধ সর্বজনীন !!{formula}} হলো
+$\lforall[x][(x < t \lif !A(x))]$ রূপের সূত্র, যেখানে $t$ যেকোনো পদ; প্রথা
+অনুসারে একে $\bforall{x < t}{!A(x)}$ লিখি।
+\end{defn}
+
+\begin{defn}
+\ollabel{defn:delta0-sigma1-pi1-frm}
+কোনো !!{formula} $!B$-কে $\Delta_0$ বলা হয়, যদি শুধু বচনগত সংযোজক ও
+সীমাবদ্ধ পরিমাণায়ন ব্যবহার করে আণবিক !!{formula}s থেকে সেটি নির্মিত হয়।
+%
+কোনো !!{formula} $!A$-কে $\Sigma_1$ বলা হয়, যদি
+$!A \ident \lexists[x][!B(x)]$, যেখানে $!B$ হলো $\Delta_0$।
+%
+কোনো !!{formula} $!A$-কে $\Pi_1$ বলা হয়, যদি
+$!A \ident \lforall[x][!B(x)]$, যেখানে $!B$ হলো $\Delta_0$।
+\end{defn}
+
+\begin{lem}
+\ollabel{lem:q-proves-clterm-id} ধরি $t$ এমন একটি বদ্ধ পদ যাতে
+$\Value{t}{N} = n$। তাহলে $\Th{Q} \Proves \eq[t][\num n]$।
+\end{lem}
+
+\begin{proof}
+$t$-এর জটিলতার উপর আরোহ দিয়ে প্রমাণ করি। ভিত্তি ক্ষেত্রে
+$\Value{\Obj 0}{N} = 0$, এবং $\num 0 \ident \Obj 0$ বলে
+$\Th{Q} \Proves \eq[\Obj 0][\num 0]$।
+%
+আরোহের ক্ষেত্রের জন্য ধরি $t_1$ ও $t_2$ এমন পদ যাতে
+$\Value{t_1}{N} = n_1$, $\Value{t_2}{N} = n_2$,
+$\Th{Q} \Proves \eq[t_1][\num n_1]$, এবং
+$\Th{Q} \Proves \eq[t_2][\num n_2]$।
+
+তখন $\Value{(t_1')}{N} = n_1 + 1$। আরোহের অনুমান এবং
+!!{formula} $\eq[\num{n_1}'][\num{n_1}']$-এর উপর পরিচয়ের প্রথম-ক্রমের বিধি
+প্রয়োগ করে পাই $\Th{Q} \Proves \eq[t_1'][{\num n_1}']$; তাই সংখ্যাপদের
+সংজ্ঞা অনুসারে $\Th{Q} \Proves \eq[t_1'][\num{n_1 + 1}]$।
+
+যোগের জন্য পাই
+\[
+      \Value{(t_1 + t_2)}{N}
+    = \Value{t_1}{N} + \Value{t_2}{N}
+    = n_1 + n_2.
+\]
+আরোহের অনুমান ও পরিচয়ের বিধি থেকে
+$\Th{Q} \Proves \eq[t_1 + t_2][\num{n_1} + t_2]$, এবং পরিচয়ের বিধি
+দ্বিতীয়বার প্রয়োগ করে
+$\Th{Q} \Proves \eq[t_1 + t_2][\num{n_1} + \num{n_2}]$।
+\olref[inc][req][bre]{lem:q-proves-add} অনুসারে
+$\Th{Q} \Proves \eq[\num{n_1} + \num{n_2}][\num{n_1 + n_2}]$;
+অতএব $\Th{Q} \Proves \eq[t_1 + t_2][\num{n_1 + n_2}]$।
+
+$\times$-এর ক্ষেত্রেও \olref[inc][req][bre]{lem:q-proves-mult} ব্যবহার করে
+একই ধরনের যুক্তি চলে।
+%
+এতেই পাটিগণিতের সব বদ্ধ পদের ক্ষেত্র শেষ; তাই
+$\Value{t}{N} = n$ এমন প্রত্যেক বদ্ধ পদ~$t$-এর জন্য
+$\Th{Q} \Proves \eq[t][\num n]$।
+\end{proof}
+
+\begin{prob}
+$\times$-সংক্রান্ত \olref{lem:q-proves-clterm-id}-এর অংশটি বিশদে প্রমাণ করো।
+\end{prob}
+
+\begin{lem}
+\ollabel{lem:atomic-completeness}
+ধরি $t_1$ ও $t_2$ বদ্ধ পদ। তাহলে
+\begin{enumerate}
+\item $\Value{t_1}{N} = \Value{t_2}{N}$ হলে
+    $\Th{Q} \Proves \eq[t_1][t_2]$।
+\item $\Value{t_1}{N} \neq \Value{t_2}{N}$ হলে
+    $\Th{Q} \Proves \eq/[t_1][t_2]$।
+\item $\Value{t_1}{N} < \Value{t_2}{N}$ হলে
+    $\Th{Q} \Proves t_1 < t_2$।
+\item $\Value{t_2}{N} \leq \Value{t_1}{N}$ হলে
+    $\Th{Q} \Proves \lnot(t_1 < t_2)$।
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+পদ $t_1$ ও $t_2$ দেওয়া থাকলে $n = \Value{t_1}{N}$ এবং
+$m = \Value{t_2}{N}$ স্থির করি।
+
+ধরি $!A \ident t_1 = t_2$। \olref{lem:q-proves-clterm-id} অনুসারে
+$\Th{Q} \Proves \eq[t_1][\num n]$ এবং
+$\Th{Q} \Proves \eq[t_2][\num m]$।
+% BN-SRC-227 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-227):} হিমায়িত প্রমাণে $m=\Value{t_2}{N}$ স্থির করার পরেও দ্বিতীয় পদটির মান ভুল করে $\num n$ লেখা হয়েছিল। বাংলা পাঠে $t_2$-এর জন্য $\num m$ রাখা হয়েছে।} % BN-SRC-227 TARGET-CORRECTION-END
+$n = m$ হলে $\Th{Q} \Proves \eq[\num n][\num m]$, এবং তাই পরিচয়ের
+সঞ্চারিতা থেকে $\Th{Q} \Proves \eq[t_1][t_2]$। $n \neq m$ হলে
+$\Th{Q} \Proves \eq/[\num n][\num m]$, এবং আবার পরিচয়ের সঞ্চারিতা থেকে
+$\Th{Q} \Proves \eq/[t_1][t_2]$।
+
+এবার ধরি $!A \ident t_1 < t_2$। উভয় ক্ষেত্রেই আমরা স্বতঃসিদ্ধ~$!Q_8$
+ব্যবহার করি; সব $x,y$-এর জন্য এটি বলে
+$x < y \liff \lexists[z][\eq[z' + x][y]]$।
+
+ধরি $\Sat{N}{t_1 < t_2}$। তাহলে এমন একটি $k \in \Nat$ আছে যাতে
+$n + k + 1 = m$। \olref{lem:q-proves-clterm-id} অনুসারে
+$\Th{Q} \Proves \eq[t_1][\num n]$ এবং
+$\Th{Q} \Proves \eq[t_2][\num m]$; আর এই সহায়ক উপপাদ্যের প্রথম অংশ থেকে
+$\Th{Q} \Proves \eq[{\num k}' + \num n][\num m]$।
+% BN-SRC-228 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-228):} হিমায়িত ধাপে যোগের দুই পদকে $\num n+{\num k}'$ ক্রমে লেখা হলেও পরের পংক্তি ও $!Q_8$-এর সাক্ষীর জন্য দরকার ${\num k}'+t_1$; আর $\Th{Q}$-তে সাধারণ যোগের বিনিময়যোগ্যতা প্রমাণযোগ্য নয়। বাংলা পাঠে আণবিক সম্পূর্ণতা সরাসরি সত্য বদ্ধ সমতা ${\num k}'+\num n=\num m$-এ প্রয়োগ করা হয়েছে।} % BN-SRC-228 TARGET-CORRECTION-END
+পরিচয়ের সঞ্চারিতা থেকে
+$\Th{Q} \Proves \eq[{\num k}' + t_1][t_2]$, তাই
+$\Th{Q} \Proves \lexists[z][\eq[z' + t_1][t_2]]$। $!Q_8$-এর ডান থেকে বাম
+দিক অনুসারে $\Th{Q} \Proves t_1 < t_2$।
+
+এর বদলে ধরি $\Sat/{N}{t_1 < t_2}$, অর্থাৎ $m \leq n$।
+%
+$\Th{Q}$-তে কাজ করে $t_1 < t_2$ ধরি। $!Q_8$-এর বাম থেকে ডান দিক অনুসারে
+এমন একটি~$z$ আছে যাতে $\eq[z' + t_1][t_2]$। যেহেতু
+$\Th{Q} \Proves \eq[t_1][\num n]$ এবং
+$\Th{Q} \Proves \eq[t_2][\num m]$, তাই
+$\eq[z' + \num n][\num m]$।
+%
+$m$-এর উপর বহিঃস্থ আরোহে $!Q_5$ ব্যবহার করে
+$\eq[z' + \num{n - m}][\Obj 0]$। $m = n$ হলে
+$\eq/[z'][\Obj 0]$, যা $!Q_2$-এর মাধ্যমে বিরোধ দেয়। $m < n$ হলে $!Q_5$
+আবার ব্যবহার করে $\eq[(z' + \num{n - m - 1})'][\Obj 0]$, যা
+$!Q_2$-এর মাধ্যমে বিরোধ দেয়।
+% BN-SRC-229 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-229):} হিমায়িত প্রমাণে উত্তরসূরি $0$-র সমান হওয়ার উভয় বিরোধের জন্য $!Q_3$ উদ্ধৃত হয়েছিল। প্রাসঙ্গিক স্বতঃসিদ্ধটি $!Q_2$, যা বলে $0$ কোনো উত্তরসূরির সমান নয়; বাংলা পাঠে দুটি উদ্ধৃতিই $!Q_2$ করা হয়েছে।} % BN-SRC-229 TARGET-CORRECTION-END
+তাই $\Th{Q} \Proves \lnot(t_1 < t_2)$।
+\end{proof}
+
+\begin{lem}
+\ollabel{lem:bounded-quant-equiv}
+ধরি $!A$ একটি !!a{formula}, $t$ একটি বদ্ধ পদ এবং $k=\Value{t}{N}$। তাহলে
+\begin{enumerate}
+\item $\Th{Q} \Proves \bforall{x<t}{!A(x)}$ যদি এবং কেবল যদি
+    $\Th{Q} \Proves !A(\num 0) \land \dots \land !A(\num{k-1})$।
+\item $\Th{Q} \Proves \bexists{x<t}{!A(x)}$ যদি এবং কেবল যদি
+    $\Th{Q} \Proves !A(\num 0) \lor \dots \lor !A(\num{k-1})$।
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+    সীমাবদ্ধ সর্বজনীন পরিমাণসূচকের ক্ষেত্রটি প্রমাণ করি।
+    $\Value{t}{N} = 0$ হলে সমতুল্যতার বাম দিকটি $\Th{Q}$-তে প্রমাণযোগ্য,
+    কারণ \olref[inc][req][min]{lem:less-zero} অনুসারে কোনো
+    $x<\num 0$ নেই। একইভাবে, শূন্যপদী সংযোজনকে শুধু $\ltrue$ ধরা যায়,
+    যা $\Th{Q}$-তেও প্রমাণযোগ্য।
+% BN-SRC-230 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-230):} হিমায়িত ভিত্তি ক্ষেত্রে সর্বজনীন পরিমাণসূচকের ডান দিককে ভুল করে ``শূন্যপদী বিয়োজন'' বলা হয়েছিল; কিন্তু সহায়ক উপপাদ্যের প্রথম অনুচ্ছেদে ডান দিকটি একটি সংযোজন। বাংলা পাঠে $\ltrue$-সমতুল্য শূন্যপদী সংযোজন রাখা হয়েছে।} % BN-SRC-230 TARGET-CORRECTION-END
+    %
+    তাই ধরি কোনো স্বাভাবিক সংখ্যা~$k$-এর জন্য $\Value{t}{N} = k+1$।
+    \olref{lem:q-proves-clterm-id} অনুসারে ধরে নিতে পারি, আমরা
+    $\bforall{x<\num{k+1}}{!A(x)}$ রূপের একটি !!a{formula} নিয়ে কাজ করছি।
+
+    ধরি $\Th{Q} \Proves \bforall{x<\num{k+1}}{!A(x)}$, এবং $n \leq k$।
+    \olref{lem:atomic-completeness} অনুসারে
+    $\Th{Q} \Proves \num n < \num{k+1}$ বলে যুক্তিবিদ্যা থেকে
+    $\Th{Q} \Proves !A(\num n)$। প্রত্যেক $n \leq k$-এর জন্য এই তথ্য
+    $k+1$ বার প্রয়োগ করে চাওয়া
+    $\Th{Q} \Proves !A(\num 0) \land \dots \land !A(\num k)$ পাই।
+
+    অন্য দিকের জন্য ধরি
+    $\Th{Q} \Proves !A(\num 0) \land \dots \land !A(\num k)$।
+    $\Th{Q}$-তে কাজ করে ধরি $x < \num{k+1}$।
+    \olref[inc][req][min]{lem:less-nsucc} অনুসারে
+    $x = \num 0 \lor \dots \lor x = \num k$; ফলে যুক্তিবিদ্যা থেকে
+    $!A(x)$ এবং তাই সর্বজনীন দাবি
+    $\bforall{x<\num{k+1}}{!A(x)}$ আসে।
+
+    সীমাবদ্ধ অস্তিত্বমূলক পরিমাণায়িত !!{formula}s-এর সমতুল্যতার প্রমাণও
+    অনুরূপ।
+\end{proof}
+
+\begin{prob}
+\olref{lem:bounded-quant-equiv}-এর অস্তিত্বমূলক ক্ষেত্রটির বিশদ প্রমাণ দাও।
+\end{prob}
+
+\begin{lem}
+\ollabel{lem:delta0-completeness}
+$!A$ যদি $\Struct{N}$-এ সত্য কোনো $\Delta_0$ !!{sentence} হয়, তবে
+$\Th{Q} \Proves !A$।
+\end{lem}
+
+\begin{proof}
+!!{formula}-র জটিলতার উপর আরোহ দিয়ে এটি প্রমাণ করি।
+%
+ভিত্তি ক্ষেত্রটি \olref{lem:atomic-completeness} দেয়, তাই আরোহের ধাপে যাই।
+সরলতার জন্য, যে !!{formula}-র উপর নঞর্থকতা প্রয়োগ করা হয়েছে তার গঠন অনুসারে
+নঞর্থকতার ক্ষেত্রটিকে উপক্ষেত্রে ভাগ করি।
+
+\begin{enumerate}
+\item ধরি $(!A \land !B)$ সূত্রটি $\Struct{N}$-এ সত্য; তাই $!A$ ও $!B$
+$\Struct{N}$-এ সত্য। আরোহের অনুমান থেকে $\Th{Q} \Proves !A$ এবং
+$\Th{Q} \Proves !B$; অতএব যুক্তিবিদ্যা থেকে
+$\Th{Q} \Proves (!A \land !B)$।
+%
+\item ধরি $\lnot (!A \land !B)$ সূত্রটি $\Struct{N}$-এ সত্য; তাই
+$\lnot !A$ অথবা $\lnot !B$ সূত্রটি $\Struct{N}$-এ সত্য। সাধারণতা ক্ষুণ্ণ না
+করে প্রথমটি ধরি। আরোহের অনুমান থেকে $\Th{Q} \Proves \lnot !A$, এবং ফলত
+যুক্তিবিদ্যা থেকে $\Th{Q} \Proves \lnot (!A \land !B)$।
+%
+\item ধরি $(!A \lor !B)$ সূত্রটি $\Struct{N}$-এ সত্য; তাই হয় $!A$ সূত্রটি
+$\Struct{N}$-এ সত্য, নয়তো $!B$ সূত্রটি $\Struct{N}$-এ সত্য। সাধারণতা ক্ষুণ্ণ
+না করে প্রথমটি ধরি। আরোহের অনুমান থেকে
+$\Th{Q} \Proves !A$, এবং ফলত যুক্তিবিদ্যা থেকে
+$\Th{Q} \Proves (!A \lor !B)$।
+%
+\item ধরি $\lnot(!A \lor !B)$ সূত্রটি $\Struct{N}$-এ সত্য; তাই
+$\lnot !A$ ও $\lnot !B$ উভয়ই $\Struct{N}$-এ সত্য। আরোহের অনুমান থেকে
+$\Th{Q} \Proves \lnot !A$ এবং $\Th{Q} \Proves \lnot !B$। ফলে
+যুক্তিবিদ্যা থেকে $\Th{Q} \Proves \lnot(!A \lor !B)$।
+%
+\item ধরি $\bforall{x<t}{!A(x)}$ সূত্রটি $\Struct{N}$-এ সত্য, যেখানে $t$
+একটি বদ্ধ পদ এবং $k=\Value{t}{N}$। প্রত্যেক
+$n < \Value{t}{N}$-এর জন্য $!A(\num n)$ যদি $\Struct{N}$-এ সত্য হয়, তবে
+আরোহের অনুমান ও যুক্তিবিদ্যা থেকে
+$\Th{Q} \Proves !A(\num 0) \land \dots \land !A(\num{k-1})$।
+\olref{lem:bounded-quant-equiv} থেকে তাই
+$\Th{Q} \Proves \bforall{x<t}{!A(x)}$।
+%
+\item সীমাবদ্ধ অস্তিত্বমূলক পরিমাণসূচকের ক্ষেত্র, যেখানে
+$\bexists{x < t}{!A(x)}$ রূপের একটি !!a{sentence} আছে, সীমাবদ্ধ সর্বজনীন
+পরিমাণসূচকের ক্ষেত্রটির অনুরূপ।
+%
+\item ধরি $\lnot \bforall{x<t}{!A(x)}$ সূত্রটি $\Struct{N}$-এ সত্য,
+যেখানে $t$ একটি বদ্ধ পদ। এই !!{sentence} সূত্রটি !!{sentence}
+$\bexists{x<t}{\lnot !A(x)}$-এর সমতুল্য, এবং সেই সমতুল্যতা $\Th{Q}$-তে
+নিষ্পাদন করা যায়; তাই সীমাবদ্ধ অস্তিত্বমূলক পরিমাণসূচকের যুক্তি প্রয়োগ করা
+যায়।
+%
+\item একইভাবে ধরি $\lnot \bexists{x<t}{!A(x)}$ সূত্রটি $\Struct{N}$-এ সত্য,
+যেখানে $t$ একটি বদ্ধ পদ। এই !!{sentence} $\Th{Q}$-তে
+$\bforall{x<t}{\lnot!A(x)}$-এর সমতুল্য, তাই সীমাবদ্ধ সর্বজনীন
+পরিমাণসূচকের যুক্তি প্রয়োগ করা যায়।
+% BN-SRC-231 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-231):} হিমায়িত অষ্টম ক্ষেত্রে $\bexists$-এর সূত্র-আর্গুমেন্টের আবশ্যক বন্ধনী অনুপস্থিত ছিল, ফলে নির্দেশটি কেবল পরের প্রতীকটিকে নিতে পারত। বাংলা পাঠে পূর্ণ পরিসর $\bexists{x<t}{!A(x)}$ বন্ধনীর মধ্যে রাখা হয়েছে।} % BN-SRC-231 TARGET-CORRECTION-END
+%
+\item সবশেষে ধরি $\lnot !A$ সূত্রটি $\Struct{N}$-এ সত্য। কেবল দুটি ক্ষেত্র
+বাকি: $!A$ আণবিক, অথবা কোনো $\Delta_0$ !!{sentence} $!B$-এর জন্য
+$\lnot !A \ident \lnot\lnot !B$। $!A$ আণবিক হলে
+\olref{lem:atomic-completeness} অনুসারে $\Th{Q} \Proves \lnot !A$। আর
+$\lnot !A \ident \lnot\lnot !B$ হলে যুক্তিবিদ্যায় এটি $\Th{Q}$-তে
+$!B$-এর সঙ্গে প্রমাণযোগ্যভাবে সমতুল্য; $\lnot !A$ সূত্রটি $\Struct{N}$-এ
+সত্য বলে সেটিও $\Struct{N}$-এ সত্য। তাই আরোহের অনুমান থেকে
+$\Th{Q} \Proves \lnot !A$।
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+\olref{lem:delta0-completeness}-এর অস্তিত্বমূলক ক্ষেত্রটির বিশদ প্রমাণ দাও।
+\end{prob}
+
+\begin{thm}
+\ollabel{thm:sigma1-completeness}
+$!A$ যদি $\Struct{N}$-এ সত্য কোনো $\Sigma_1$ !!{sentence} হয়, তবে
+$\Th{Q} \Proves !A$।
+\end{thm}
+
+\begin{proof}
+$\lexists[x][!A(x)]$ যদি $\Struct{N}$-এ সত্য কোনো $\Sigma_1$ !!{sentence}
+হয়, তবে এমন একটি স্বাভাবিক সংখ্যা~$n$ ও চলরাশি-আরোপ~$s$ আছে যাতে
+$s(x) = n$ এবং $\Sat{N}{!A(x)}[s]$।
+% BN-SRC-232 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-232):} হিমায়িত প্রমাণের প্রথম অস্তিত্বমূলক সূত্রে সংস্করণটির দুই-আর্গুমেন্টের $\lexists$ নির্দেশের বদলে অসামঞ্জস্যপূর্ণ $\string\lexists\{x\}!A(x)$ লেখা হয়েছিল। বাংলা পাঠে অধ্যায়জুড়ে ব্যবহৃত সুগঠিত রূপ $\lexists[x][!A(x)]$ রাখা হয়েছে।} % BN-SRC-232 TARGET-CORRECTION-END
+পরিতৃপ্তি-সম্পর্কের প্রমিত তথ্য থেকে $\Sat{N}{!A(\num n)}$। কিন্তু
+$!A(\num n)$ একটি $\Delta_0$ !!{formula}; তাই
+\olref{lem:delta0-completeness} অনুসারে $\Th{Q} \Proves !A(\num n)$, এবং
+ফলে যুক্তিবিদ্যা থেকে $\Th{Q} \Proves \lexists[x][!A(x)]$।
+\end{proof}
+
+\end{document}

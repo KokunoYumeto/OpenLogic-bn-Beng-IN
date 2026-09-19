@@ -1350,6 +1350,124 @@ for row in rows:
             mathparts(audited_arithmetization_syntax) == target_math
             and set(documented) == arithmetization_syntax_expected
         )
+    representability_q_math_fix = False
+    representability_q_control_fix = False
+    representability_q_expected = {
+        "OLP-0291": {"BN-SRC-218", "BN-SRC-219"},
+        "OLP-0293": {"BN-SRC-220", "BN-SRC-221"},
+        "OLP-0294": {"BN-SRC-233"},
+        "OLP-0295": {"BN-SRC-222", "BN-SRC-223"},
+        "OLP-0296": {"BN-SRC-224"},
+        "OLP-0297": {"BN-SRC-225"},
+        "OLP-0300": {
+            "BN-SRC-226",
+            "BN-SRC-227",
+            "BN-SRC-228",
+            "BN-SRC-229",
+            "BN-SRC-230",
+            "BN-SRC-231",
+            "BN-SRC-232",
+        },
+    }
+    audited_representability_q = source
+    if row["unit_id"] == "OLP-0291":
+        repairs = [
+            (
+                r"!!a{formula}~$!A(x_0, \dots, x_k, y)$",
+                r"!!a{formula}~$!A_f(x_0, \dots, x_k, y)$",
+            ),
+            (
+                r"$A_f(\num{n_0}, \dots," + "\n" + r"\num{n_k}, (s)_1)$",
+                r"$A_f(\num{n_0}, \dots," + "\n" + r"\num{n_k}, \num{(s)_1})$",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_representability_q.count(old) == 1, old
+            audited_representability_q = audited_representability_q.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0293":
+        repairs = [
+            (r"$h(x,\vec" + "\n" + r"z)$", r"$h(\vec x,y)$"),
+            (
+                r"\bforall{i <" + "\n" + r"  y}{\beta(d,i+1) = g(\vec x, i,\beta(d,i)})}.",
+                r"\bforall{i <" + "\n" + r"  y}{\beta(d,i+1) = g(\vec x, i,\beta(d,i))})}.",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_representability_q.count(old) == 1, old
+            audited_representability_q = audited_representability_q.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0294":
+        old = "  0 & otherwise"
+        new = r"  0 & \text{otherwise}"
+        assert audited_representability_q.count(old) == 1
+        audited_representability_q = audited_representability_q.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0295":
+        repairs = [
+            (
+                r"\lexists[y_0\dots][\lexists[y_{k-1}][",
+                r"\lexists[y_0][\dots \lexists[y_{k-1}][",
+            ),
+            (r"\dots \land {}]]\\", r"\dots \land {}\\"),
+            (
+                r"!A_f(y_0,\dots,y_{k-1},z))" + "\n" + r"\end{multline*}",
+                r"!A_f(y_0,\dots,y_{k-1},z))]]" + "\n" + r"\end{multline*}",
+            ),
+            (
+                r"Using the proofs of \olref[inc][req][cmp]{prop:rep2} and",
+                r"Using the proofs of \olref[inc][req][cmp]{prop:rep1} and",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_representability_q.count(old) == 1, old
+            audited_representability_q = audited_representability_q.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0296":
+        old = (
+            r"  \Th{Q} & \Proves \eq[(a' + \num n')][(a' + \num n)'] \quad" + "\n"
+            r"  \text{by axiom $!Q_5$} \ollabel{step5}\\" + "\n"
+            r"  \Th{Q} & \Proves \eq[(a' + \num n')][(a + \num n')'] \quad" + "\n"
+            r"  \text{inductive hypothesis} \ollabel{step6}\\" + "\n"
+            r"  \Th{Q} & \Proves \eq[(a' + \num n)'][(a + \num n')'] \quad" + "\n"
+            r"  \text{by \olref{step5} and \olref{step6}.} \notag"
+        )
+        new = (
+            r"  \Th{Q} & \Proves \eq[(a' + \num n')][(a' + \num n)'] \quad" + "\n"
+            r"  \text{by axiom $!Q_5$} \ollabel{step5}\\" + "\n"
+            r"  \Th{Q} & \Proves \eq[(a' + \num n)'][(a + \num n')'] \quad" + "\n"
+            r"  \text{inductive hypothesis and identity rules} \ollabel{step6}\\" + "\n"
+            r"  \Th{Q} & \Proves \eq[(a' + \num n')][(a + \num n')'] \quad" + "\n"
+            r"  \text{by \olref{step5} and \olref{step6}.} \notag"
+        )
+        assert audited_representability_q.count(old) == 1
+        audited_representability_q = audited_representability_q.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0300":
+        repairs = [
+            (r"\olfileid{inc}{inp}{s1c}", r"\olfileid{inc}{req}{s1c}"),
+            (
+                r"$\Th{Q} \Proves \eq[t_2][\num n]$.",
+                r"$\Th{Q} \Proves \eq[t_2][\num m]$.",
+            ),
+            (
+                r"$\Th{Q} \Proves \eq[\num n + {\num k}'][\num m]$.",
+                r"$\Th{Q} \Proves \eq[{\num k}' + \num n][\num m]$.",
+            ),
+            (r"via~$!Q_3$", r"via~$!Q_2$"),
+            ("an empty disjunction", "an empty conjunction"),
+            (r"$\lnot \bexists{x<t}!A(x)$", r"$\lnot \bexists{x<t}{!A(x)}$"),
+            (r"$\lexists{x}!A(x)$", r"$\lexists[x][!A(x)]$"),
+        ]
+        expected_counts = [1, 1, 1, 2, 1, 1, 1]
+        for (old, new), expected_count in zip(repairs, expected_counts):
+            assert audited_representability_q.count(old) == expected_count, old
+            audited_representability_q = audited_representability_q.replace(old, new)
+    if row["unit_id"] in representability_q_expected:
+        assert set(documented) == representability_q_expected[row["unit_id"]]
+        representability_q_math_fix = (
+            mathparts(audited_representability_q) == target_math
+        )
+        representability_q_control_fix = (
+            controls(audited_representability_q) == controls(checked_target)
+        )
+    if 289 <= int(row["unit_id"].split("-")[1]) <= 300:
+        assert set(documented) == representability_q_expected.get(row["unit_id"], set())
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -2578,6 +2696,91 @@ for row in rows:
             "quantifier_rule_constant_variable_consistent": True,
             "nested_conditional_recursion_calls_helper": True,
         }
+    elif row["unit_id"] == "OLP-0291":
+        assert representability_q_math_fix and representability_q_control_fix
+        assert checked_target.count(r"!!a{formula}~$!A_f(x_0, \dots, x_k, y)$") == 1
+        assert checked_target.count(r"$A_f(\num{n_0}, \dots, \num{n_k}, \num{(s)_1})$") == 1
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-218", "BN-SRC-219"],
+            "representing_formula_subscript_consistent": True,
+            "computed_value_embedded_as_numeral": True,
+        }
+    elif row["unit_id"] == "OLP-0293":
+        assert representability_q_math_fix and representability_q_control_fix
+        assert checked_target.count(r"$h(\vec x,y)$") == 1
+        assert checked_target.count(
+            r"\bforall{i <" + "\n" + r"  y}{\beta(d,i+1) = g(\vec x, i,\beta(d,i))})}."
+        ) == 1
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-220", "BN-SRC-221"],
+            "primitive_recursion_signature_consistent": True,
+            "minimization_condition_parenthesis_closed": True,
+        }
+    elif row["unit_id"] == "OLP-0294":
+        assert representability_q_math_fix and representability_q_control_fix
+        assert checked_target.count(r"0 & \text{অন্যথায়}") == 1
+        tex_command_check = {
+            "documented_correction": "BN-SRC-233",
+            "cases_fallback_is_text": True,
+        }
+    elif row["unit_id"] == "OLP-0295":
+        assert representability_q_math_fix and representability_q_control_fix
+        assert checked_target.count(r"\lexists[y_0][\dots \lexists[y_{k-1}][") == 1
+        assert checked_target.count(r"\olref[inc][req][cmp]{prop:rep1}") == 1
+        assert checked_target.count(r"\olref[inc][req][cmp]{prop:rep2}") == 1
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-222", "BN-SRC-223"],
+            "composition_existentials_balanced": True,
+            "exercise_references_both_guiding_propositions": True,
+        }
+    elif row["unit_id"] == "OLP-0296":
+        assert representability_q_math_fix and representability_q_control_fix
+        assert checked_target.count(
+            r"\Th{Q} & \Proves \eq[(a' + \num n)'][(a + \num n')'] \quad"
+        ) == 1
+        assert checked_target.count(
+            r"\Th{Q} & \Proves \eq[(a' + \num n')][(a + \num n')'] \quad"
+        ) == 1
+        tex_command_check = {
+            "documented_correction": "BN-SRC-224",
+            "successor_addition_induction_not_circular": True,
+        }
+    elif row["unit_id"] == "OLP-0297":
+        assert representability_q_math_fix and representability_q_control_fix
+        assert "যে সঙ্গতিপূর্ণ !!{derivation} পদ্ধতিতে" in checked_target
+        assert "সঙ্গতিপূর্ণ স্বতঃসিদ্ধায়িত তত্ত্বের" in checked_target
+        tex_command_check = {
+            "documented_correction": "BN-SRC-225",
+            "general_representation_claim_requires_consistency": True,
+        }
+    elif row["unit_id"] == "OLP-0300":
+        assert representability_q_math_fix and representability_q_control_fix, (
+            mathparts(audited_representability_q) - target_math,
+            target_math - mathparts(audited_representability_q),
+            controls(audited_representability_q) - controls(checked_target),
+            controls(checked_target) - controls(audited_representability_q),
+        )
+        assert checked_target.count(r"\olfileid{inc}{req}{s1c}") == 1
+        assert checked_target.count(r"$!Q_2$-এর মাধ্যমে বিরোধ দেয়") == 2
+        assert "শূন্যপদী সংযোজন" in checked_target
+        tex_command_check = {
+            "documented_corrections": [
+                "BN-SRC-226",
+                "BN-SRC-227",
+                "BN-SRC-228",
+                "BN-SRC-229",
+                "BN-SRC-230",
+                "BN-SRC-231",
+                "BN-SRC-232",
+            ],
+            "chapter_identifier_consistent": True,
+            "second_term_value_uses_m": True,
+            "less_than_witness_addend_order_matches_q8": True,
+            "successor_zero_contradictions_use_q2": True,
+            "empty_universal_expansion_is_conjunction": True,
+            "bounded_existential_scope_braced": True,
+            "sigma1_existential_macro_well_formed": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -2672,6 +2875,7 @@ for row in rows:
             overview_math_fix,
             undecidability_math_fix,
             arithmetization_syntax_math_fix,
+            representability_q_math_fix,
             shared_audit_fix,
         )
     )
@@ -2679,6 +2883,7 @@ for row in rows:
         controls(source) == controls(checked_target)
         or axd_control_fix
         or completeness_control_fix
+        or representability_q_control_fix
     )
     checks = {
         "unit_id": row["unit_id"],

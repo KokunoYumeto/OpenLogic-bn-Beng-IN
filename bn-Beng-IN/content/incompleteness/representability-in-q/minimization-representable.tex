@@ -1,0 +1,249 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: minimization-representable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{min}
+\olsection{নিয়মিত ন্যূনীকরণ $\Th{Q}$-তে উপস্থাপনযোগ্য}
+
+সীমাহীন অনুসন্ধান বিবেচনা করি। ধরি $g(x, z)$ নিয়মিত এবং $\Th{Q}$-তে
+উপস্থাপনযোগ্য; ধরা যাক, !!{formula}~$!A_g(x, z, y)$ সেটিকে উপস্থাপন করে।
+$f$-কে $f(z) = \umin{x}{[g(x, z) = 0]}$ দ্বারা সংজ্ঞায়িত করি। $f$-কে
+উপস্থাপনকারী !!a{formula}~$!A_f(z, y)$ খুঁজতে চাই। $f(z)$-এর মান সেই
+সংখ্যা~$x$ যা (ক) $g(x, z) = 0$ পূরণ করে এবং (খ) এমন সংখ্যাগুলির মধ্যে
+ক্ষুদ্রতম; অর্থাৎ প্রত্যেক $w < x$-এর জন্য $g(w, z) \neq 0$। তাই নিচেরটি
+একটি স্বাভাবিক পছন্দ:
+\[
+!A_f(z,y) \ident !A_g(y, z, \Obj 0) \land \lforall[w][(w < y \lif \lnot
+  !A_g(w, z, \Obj 0))].
+\]
+অবশ্য সাধারণ ক্ষেত্রে $z$-এর স্থানে $z_0$, \dots, $z_k$ বসাতে হবে।
+
+প্রমাণে আবার এমন কয়েকটি বিষয়ের সহায়ক উপপাদ্য লাগবে, যেগুলি প্রমাণ করার
+মতো শক্তি $\Th{Q}$-এর আছে।
+
+\begin{lem}
+\ollabel{lem:succ} প্রত্যেক !!{constant}~$a$ ও প্রত্যেক স্বাভাবিক
+সংখ্যা~$n$-এর জন্য
+\[
+\Th{Q} \Proves \eq[(a' + \num n)][(a + \num n)'].
+\]
+\end{lem}
+
+\begin{proof}
+প্রমাণটি যথারীতি $n$-এর উপর আরোহ দিয়ে। ভিত্তি ক্ষেত্রে $n = 0$; দেখাতে হবে
+$\Th{Q}$ সূত্র $\eq[(a' + \Obj 0)][(a + \Obj 0)']$ প্রমাণ করে। কিন্তু
+আমাদের আছে:
+\begin{align}
+  \Th{Q} & \Proves \eq[(a' + \Obj 0)][a'] \quad \text{স্বতঃসিদ্ধ $Q_4$ থেকে}
+  \ollabel{step1}\\
+  \Th{Q} & \Proves  \eq[(a + \Obj 0)][a] \quad \text{স্বতঃসিদ্ধ $Q_4$ থেকে}
+  \ollabel{step2} \\
+  \Th{Q} & \Proves \eq[(a + \Obj 0)'][a'] \quad \text{\olref{step2} থেকে}
+  \ollabel{step3} \\
+  \Th{Q} & \Proves \eq[(a' + \Obj 0)][(a + \Obj 0)'] \quad
+  \text{\olref{step1} ও \olref{step3} থেকে।}\notag
+\end{align}
+আরোহের ধাপে ধরে নিই, $\Th{Q} \Proves
+\eq[(a' + \num n)][(a + \num n)']$ দেখানো হয়েছে। যেহেতু $\num{n+1}$ হলো
+$\num{n}'$, তাই দেখাতে হবে $\Th{Q}$ সূত্র
+$\eq[(a' + \num{n}')][(a + \num{n}')']$ প্রমাণ করে। আমাদের আছে:
+\begin{align}
+  \Th{Q} & \Proves \eq[(a' + \num n')][(a' + \num n)'] \quad
+  \text{স্বতঃসিদ্ধ $!Q_5$ থেকে} \ollabel{step5}\\
+  \Th{Q} & \Proves \eq[(a' + \num n)'][(a + \num n')'] \quad
+  \text{আরোহের অনুমান, পঞ্চম স্বতঃসিদ্ধ ও পরিচয়ের বিধি থেকে} \ollabel{step6}\\
+  \Th{Q} & \Proves \eq[(a' + \num n')][(a + \num n')'] \quad
+  \text{\olref{step5} ও \olref{step6} থেকে।} \notag
+\end{align}
+% BN-SRC-224 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-224):} হিমায়িত আরোহ-ধাপে দ্বিতীয় পংক্তিতেই প্রমাণ্য সিদ্ধান্তটি ``আরোহের অনুমান'' বলে ধরে নেওয়া হয়েছিল, ফলে যুক্তিটি বৃত্তাকার হয়; আর শেষ পংক্তিতে ছিল প্রয়োজনীয় মধ্যবর্তী সমতা। বাংলা পাঠে একই তিনটি সমতাকে সঠিক ক্রমে রাখা হয়েছে: $!Q_5$ প্রথম সমতা দেয়, আরোহের অনুমান ও $!Q_5$ মধ্যবর্তী সমতা দেয়, এবং তাদের সঞ্চারিতা চাওয়া সিদ্ধান্ত দেয়।} % BN-SRC-224 TARGET-CORRECTION-END
+\end{proof}
+
+আবার উল্লেখ করা ভালো, এটি $\Th{Q}$ সূত্র
+$\lforall[x][\lforall[y][(x' + y) = (x + y)']]$ প্রমাণ করে বলার চেয়ে দুর্বল।
+এই !!{sentence}~$\Struct{N}$-এ সত্য হলেও $\Th{Q}$ সেটি প্রমাণ করে না।
+
+\begin{lem}
+\ollabel{lem:less-zero}
+$\Th{Q} \Proves \lforall[x][\lnot x < \Obj 0]$।
+\end{lem}
+
+\begin{proof}
+প্রমাণটি অনানুষ্ঠানিকভাবে দিই (অর্থাৎ প্রথাগত !!{derivation} কীভাবে নির্মাণ
+করতে হবে, কেবল তার ইঙ্গিত দিই)।
+
+যেকোনো~$a$-এর জন্য $\lnot a < \Obj 0$ প্রমাণ করতে হবে। $<$-এর সংজ্ঞা
+অনুসারে $\Th{Q}$-তে
+$\lnot \lexists[y][\eq[(y'+a)][\Obj 0]]$ প্রমাণ করতে হবে।
+$\lexists[y][\eq[(y'+a)][\Obj 0]]$ ধরে বিরোধ প্রমাণ করব। ধরি
+$\eq[(b'+a)][\Obj 0]$। $!Q_3$ ব্যবহার করে পাই
+$\eq[a][\Obj 0] \lor \lexists[y][\eq[a][y']]$। দুটি ক্ষেত্র আলাদা করি।
+
+ক্ষেত্র ১: $\eq[a][\Obj 0]$ সত্য। $\eq[(b'+a)][\Obj 0]$ থেকে পাই
+$\eq[(b' + \Obj 0)][\Obj 0]$। $\Th{Q}$-এর স্বতঃসিদ্ধ~$!Q_4$ থেকে পাই
+$\eq[(b' + \Obj 0)][b']$, এবং তাই $\eq[b'][\Obj 0]$। কিন্তু
+স্বতঃসিদ্ধ~$!Q_2$ থেকে $\eq/[b'][\Obj 0]$-ও পাই—বিরোধ।
+
+ক্ষেত্র ২: কোনো $c$-এর জন্য $\eq[a][c']$। তাহলে
+$\eq[(b' + c')][\Obj 0]$ পাই। স্বতঃসিদ্ধ~$!Q_5$ থেকে
+$\eq[(b' + c)'][\Obj 0]$ পাই, যা আবার স্বতঃসিদ্ধ~$Q_2$-এর বিরোধী।
+\end{proof}
+
+\begin{lem}
+\ollabel{lem:less-nsucc}
+প্রত্যেক স্বাভাবিক সংখ্যা~$n$-এর জন্য
+  \[
+  \Th{Q} \Proves
+  \lforall[x][(x < \num {n+1} \lif (\eq[x][\Obj 0] \lor \dots \lor
+    \eq[x][\num n]))].
+  \]
+\end{lem}
+
+\begin{proof}
+$n$-এর উপর আরোহ ব্যবহার করি। প্রথমে $n = 0$ ভিত্তি ক্ষেত্রটি দেখি। তখন
+যেকোনো~$a$-এর জন্য $a < \num 1 \lif \eq[a][\Obj 0]$ দেখাতে হবে। ধরি
+$a < \num 1$। $<$-এর সংজ্ঞায়ক স্বতঃসিদ্ধ থেকে পাই
+$\lexists[y][\eq[(y'+a)][\Obj 0']]$ (কারণ
+$\num 1 \ident \Obj 0'$)।
+
+ধরি $b$-র ওই ধর্মটি আছে; অর্থাৎ $\eq[(b'+a)][\Obj 0']$। দেখাতে হবে
+$\eq[a][\Obj 0]$। স্বতঃসিদ্ধ~$!Q_3$ অনুসারে হয় $\eq[a][\Obj 0]$, নয়তো
+এমন একটি $c$ আছে যাতে $\eq[a][c']$। প্রথম ক্ষেত্রে কিছুই দেখানোর নেই। তাই
+ধরি $\eq[a][c']$। তখন $\eq[(b' + c')][\Obj 0']$ পাই। $\Th{Q}$-এর
+স্বতঃসিদ্ধ~$!Q_5$ থেকে $\eq[(b'+c)'][\Obj 0']$ পাই। স্বতঃসিদ্ধ~$!Q_1$ থেকে
+$\eq[(b' + c)][\Obj 0]$ পাই। কিন্তু স্বতঃসিদ্ধ~$!Q_8$ অনুসারে এর অর্থ
+$c < \Obj 0$, যা \olref{lem:less-zero}-র বিরোধী।
+
+এবার আরোহের ধাপ। $n$-এর ক্ষেত্রটি ধরে $n+1$-এর ক্ষেত্রটি প্রমাণ করি। ধরি
+$a < \num {n+2}$। আবার $!Q_3$ ব্যবহার করে দুটি ক্ষেত্র আলাদা করা যায়:
+$\eq[a][\Obj 0]$, অথবা কোনো $b$-এর জন্য $\eq[a][b']$। প্রথম ক্ষেত্রে
+$\eq[a][\Obj 0] \lor \dots \lor \eq[a][\num{n+1}]$ তৎক্ষণাৎ আসে। দ্বিতীয়
+ক্ষেত্রে $b' < \num {n+2}$, অর্থাৎ $b' < \num{n+1}'$। স্বতঃসিদ্ধ~$!Q_8$
+অনুসারে কোনো $c$-এর জন্য $\eq[(c'+b')][\num{n+1}']$। স্বতঃসিদ্ধ $!Q_5$ থেকে
+$\eq[(c'+b)'][\num{n+1}']$। স্বতঃসিদ্ধ~$!Q_1$ থেকে
+$\eq[(c'+b)][\num{n+1}]$, এবং তাই স্বতঃসিদ্ধ~$!Q_8$ অনুসারে
+$b < \num{n+1}$। আরোহের অনুমান থেকে
+$\eq[b][\Obj 0] \lor \dots \lor \eq[b][\num{n}]$। যুক্তিবিদ্যা থেকে পাই
+$\eq[b'][\Obj 0'] \lor \dots \lor \eq[b'][\num{n}']$; আর
+$\eq[a][b']$ বলে পাই
+$\eq[a][\num{1}] \lor \dots \lor \eq[a][\num{n+1}]$।
+\end{proof}
+
+\begin{lem}
+  \ollabel{lem:trichotomy} প্রত্যেক স্বাভাবিক সংখ্যা~$m$-এর জন্য
+  \[
+  \Th{Q} \Proves
+  \lforall[y][((y < \num{m} \lor \num{m} < y) \lor \eq[y][\num{m}])].
+  \]
+\end{lem}
+
+\begin{proof}
+$m$-এর উপর আরোহ দিয়ে প্রমাণ করি। প্রথমে $m=0$ ক্ষেত্রটি বিবেচনা করি।
+$!Q_3$ থেকে
+$\Th{Q} \Proves \lforall[y][(\eq[y][\Obj 0] \lor
+\lexists[z][\eq[y][z']])]$। $a$ যেকোনো হোক। তখন হয়
+$\eq[a][\Obj 0]$, নয়তো কোনো~$b$-এর জন্য $\eq[a][b']$। প্রথম ক্ষেত্রে
+$(a < \Obj 0 \lor \Obj 0 < a) \lor \eq[a][\Obj 0]$-ও পাই। কিন্তু
+$\eq[a][b']$ হলে $\eq$-এর যুক্তিবিদ্যা থেকে
+$\eq[(b' + \Obj 0)][(a + \Obj 0)]$। $!Q_4$ থেকে
+$\eq[(a + \Obj 0)][a]$, তাই $\eq[(b' + \Obj 0)][a]$ পাই, এবং ফলত
+$\lexists[z][\eq[(z' + \Obj 0)][a]]$। $!Q_8$-এ $<$-এর সংজ্ঞা অনুসারে
+$\Obj 0 < a$। $\Obj 0 < a$ হলে
+$(\Obj 0 < a \lor a < \Obj 0) \lor \eq[a][\Obj 0]$-ও হয়।
+
+এবার ধরি
+\begin{align*}
+  \Th{Q} & \Proves \lforall[y][((y < \num{m} \lor \num{m} < y) \lor
+    \eq[y][\num{m}])]
+  \intertext{এবং দেখাতে চাই}
+  \Th{Q} & \Proves \lforall[y][((y < \num{m+1} \lor \num{m+1} < y) \lor
+    \eq[y][\num{m+1}])]
+\end{align*}
+$a$ যেকোনো হোক। $!Q_3$ অনুসারে হয় $\eq[a][\Obj 0]$, নয়তো কোনো~$b$-এর
+জন্য $\eq[a][b']$। প্রথম ক্ষেত্রে $!Q_4$ থেকে
+$\eq[\num{m}' + a][\num{m+1}]$ পাই, এবং তাই $!Q_8$ থেকে
+$a < \num{m+1}$।
+
+এবার দ্বিতীয় ক্ষেত্র $\eq[a][b']$ বিবেচনা করি। আরোহের অনুমান থেকে
+$(b < \num{m} \lor \num{m} < b) \lor \eq[b][\num{m}]$।
+
+প্রথম বিযোজ্য $b < \num{m}$ স্বতঃসিদ্ধ~$!Q_8$ অনুসারে
+$\lexists[z][\eq[(z' + b)][\num{m}]]$-এর সমতুল্য। ধরি $c$-র ওই ধর্ম আছে।
+$\eq[(c' + b)][\num{m}]$ হলে
+$\eq[(c' + b)'][\num{m}']$-ও হয়। $!Q_5$ অনুসারে
+$\eq[(c' + b)'][(c' + b')]$। তাই $\eq[(c' + b')][\num{m}']$ পাই।
+$c'$-এর উপর অস্তিত্বমূলক সাধারণীকরণ করে এবং
+$\num{m}' \ident \num{m+1}$ মনে রেখে
+$\lexists[u][\eq[(u' + b')][\num{m+1}]]$ পাই। অতএব
+$b < \num{m}$ হলে $b' < \num{m+1}$, এবং তাই $a < \num{m+1}$।
+
+এবার ধরি $\num{m} < b$, অর্থাৎ
+$\lexists[z][\eq[(z' + \num{m})][b]]$। ধরি $c$ এমন একটি~$z$, অর্থাৎ
+$\eq[(c' + \num{m})][b]$। যুক্তিবিদ্যা থেকে
+$\eq[(c' + \num{m})'][b']$। $!Q_5$ থেকে
+$\eq[(c' + \num{m}')][b']$। যেহেতু $\eq[a][b']$ এবং
+$\num{m}' \ident \num{m+1}$, তাই
+$\eq[(c' + \num{m+1})][a]$। $!Q_8$ থেকে $\num{m+1} < a$।
+
+সবশেষে ধরি $\eq[b][\num{m}]$। তাহলে যুক্তিবিদ্যা থেকে
+$\eq[b'][\num{m}']$, এবং তাই $\eq[a][\num{m+1}]$।
+
+সুতরাং $m$ ও~$b$-এর ক্ষেত্রটির প্রত্যেক বিযোজ্য থেকে $m+1$ ও~$a$-এর
+ক্ষেত্রটির সংশ্লিষ্ট বিযোজ্য পাওয়া যায়।
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:rep-minimization}
+$!A_g(x, z, y)$ যদি $\Th{Q}$-তে $g(x, z)$-কে উপস্থাপন করে, তাহলে
+\[
+!A_f(z,y) \ident !A_g(y, z, \Obj 0) \land \lforall[w][(w < y \lif \lnot
+  !A_g(w, z, \Obj 0))]
+\]
+সূত্রটি $f(z) = \umin{x}{[g(x, z) = 0]}$-কে উপস্থাপন করে।
+\end{prop}
+
+\begin{proof}
+প্রথমে দেখাই, $f(n) = m$ হলে $\Th{Q} \Proves !A_f(\num n, \num m)$;
+অর্থাৎ
+\begin{align}
+  \Th{Q} & \Proves !A_g(\num{m}, \num{n}, \Obj 0) \land \lforall[w][(w <
+    \num{m} \lif \lnot !A_g(w, \num{n}, \Obj 0))]. \notag
+  \intertext{যেহেতু $!A_g(x, z, y)$ অপেক্ষক $g(x, z)$-কে উপস্থাপন করে এবং
+    $f(n) = m$ হলে $g(m, n) = 0$, তাই}
+\Th{Q} & \Proves !A_g(\num{m}, \num{n}, \Obj 0). \notag
+\intertext{$f(n) = m$ হলে প্রত্যেক $k < m$-এর জন্য $g(k, n) \neq 0$। তাই}
+\Th{Q} & \Proves \lnot !A_g(\num{k}, \num{n}, \Obj 0). \notag
+\intertext{আমরা পাই}
+\Th{Q} & \Proves \lforall[w][(w < \num{m} \lif \lnot
+  !A_g(w, \num{n}, \Obj 0))]. \ollabel{rep-less}
+\end{align}
+$m = 0$ হলে \olref{lem:less-zero} এবং অন্যথায়
+\olref{lem:less-nsucc} থেকে শেষ পংক্তিটি আসে।
+
+এবার দেখাই, $f(n) = m$ হলে $\Th{Q} \Proves
+\lforall[y][(!A_f(\num{n}, y) \lif \eq[y][\num{m}])]$। আবার যুক্তিটি
+অনানুষ্ঠানিকভাবে রূপরেখা দিই; প্রথাগত রূপ দেওয়া পাঠকের জন্য রেখে দিই।
+
+ধরি $!A_f(\num{n}, b)$। এর থেকে পাই (ক)
+$!A_g(b, \num{n}, \Obj 0)$ এবং (খ)
+$\lforall[w][(w < b \lif \lnot !A_g(w, \num{n}, \Obj 0))]$।
+\olref{lem:trichotomy} অনুসারে
+$(b < \num{m} \lor \num{m} < b) \lor \eq[b][\num{m}]$। দেখাব,
+$b < \num{m}$ ও $\num{m} < b$—দুটিই বিরোধে নিয়ে যায়।
+
+$\num{m} < b$ হলে (খ) থেকে
+$\lnot !A_g(\num{m}, \num{n}, \Obj 0)$। কিন্তু $m = f(n)$ বলে
+$g(m, n) = 0$, এবং $!A_g$ অপেক্ষক~$g$-কে উপস্থাপন করে বলে
+$\Th{Q} \Proves !A_g(\num{m}, \num{n}, \Obj 0)$। অতএব বিরোধ।
+
+এবার ধরি $b < \num{m}$। \olref{rep-less} অনুসারে
+$\Th{Q} \Proves \lforall[w][(w <
+  \num{m} \lif \lnot !A_g(w, \num{n}, \Obj 0))]$ বলে পাই
+$\lnot !A_g(b, \num{n}, \Obj 0)$। এটি আবার (ক)-এর বিরোধী।
+\end{proof}
+
+\end{document}

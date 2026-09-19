@@ -1,0 +1,112 @@
+{
+  "schema": "openlogic-bn-translation-correction/1",
+  "correction_id": "BN-TR-20260917-001",
+  "date": "2026-09-17",
+  "locale": "bn-Beng-IN",
+  "unit_id": "OLP-0281",
+  "segment_id": "OLP-0281-B006",
+  "classification": "confirmed_translation_meaning_reversal",
+  "source": {
+    "path": "upstream/content/incompleteness/arithmetization-syntax/introduction.tex",
+    "file_sha256": "12b6779f25c86d92821b6f2dbd9acd095d934a7d22438493d5f043b9c5526c96",
+    "span": {
+      "byte_start": 3943,
+      "byte_end": 5116,
+      "line_start": 73,
+      "line_end": 90,
+      "sha256": "582a59cb8ca76d2770fb9f6915546dc9d182f05f755031259be2b752fe48a4be"
+    },
+    "wording": "non-trivial insight"
+  },
+  "previous_target": {
+    "public_commit": "474f13a90e423f050791adefe62c7ef93df52418",
+    "path": "bn-Beng-IN/content/incompleteness/arithmetization-syntax/introduction.tex",
+    "file_bytes": 10896,
+    "file_sha256": "153558b035d1ad9ee2584ec5ba37b18612f4d1fbed85a4b017757b4b9445a7d1",
+    "span": {
+      "byte_start": 8247,
+      "byte_end": 10879,
+      "line_start": 62,
+      "line_end": 75,
+      "sha256": "8d6117a3e2f03769c90080d708f9a0360967d78b2a1ba9522db0f7b67c2d56ed"
+    },
+    "wording": "গুরুত্বপূর্ণ ও অনায়াসসাধ্য অন্তর্দৃষ্টি",
+    "defect": "অনায়াসসাধ্য asserts that the insight is easy to accomplish and therefore reverses the source qualification. The added গুরুত্ব claim does not repair that polarity reversal."
+  },
+  "corrected_target": {
+    "path": "bn-Beng-IN/content/incompleteness/arithmetization-syntax/introduction.tex",
+    "file_bytes": 10838,
+    "file_sha256": "779aa58c4e2adb1115bca57eb407643130530383bcd753b1b88b8ab3103573df",
+    "span": {
+      "byte_start": 8247,
+      "byte_end": 10821,
+      "line_start": 62,
+      "line_end": 75,
+      "sha256": "7346700caf6b397aa991104cf68607095dc32577e4ad7256b87a0a560ecc9ce9"
+    },
+    "old_phrase": "গুরুত্বপূর্ণ ও অনায়াসসাধ্য অন্তর্দৃষ্টি",
+    "new_phrase": "অ-তুচ্ছ অন্তর্দৃষ্টি",
+    "public_commit": null,
+    "public_readback_receipt": null
+  },
+  "consulted_evidence": [
+    {
+      "kind": "manager_semantic_audit",
+      "path": "C:/interlanguage-task-state/openlogic-internationalization/lane-audits/2026-09-16/bengali-2348/REPORT.md",
+      "sha256": "8ab713213884fa7680096e5c18660346c3deb41b6555bd6d3f7c271408184dc7",
+      "finding": "BN-MGR-20260917-01",
+      "use": "Identified the exact source/target span, the polarity reversal and the required evidence repair."
+    },
+    {
+      "kind": "manager_byte_receipt",
+      "path": "C:/interlanguage-task-state/openlogic-internationalization/lane-audits/2026-09-16/bengali-2348/AUDIT_BYTES.json",
+      "sha256": "33097c5a28dbc70ae0ceee62ae5193e196ae86b34ccc9c6fc7b87df23c79b168",
+      "use": "Replayed the old public file and block identities and the frozen-source identity."
+    },
+    {
+      "kind": "manager_consistency_replay",
+      "path": "C:/interlanguage-task-state/openlogic-internationalization/lane-audits/2026-09-19/heartbeat-0251/EVIDENCE.json",
+      "sha256": "63fe526bdd9442a440374f2c1ff618b84842d4979fd9b4f3fc56a7516e00da31",
+      "use": "Detected that the interim target still retained a separate importance claim although this correction record said it had been removed; prompted the exact wording and evidence reconciliation recorded here."
+    },
+    {
+      "kind": "government_dictionary",
+      "title": "Accessible Dictionary, Bengali to English, alphabet অ, page 20",
+      "url": "https://accessibledictionary.gov.bd/bengali-to-english/?alp=%E0%A6%85&page=20",
+      "retrieved": "2026-09-17",
+      "http_status": 200,
+      "entry": "অনায়াসসাধ্য",
+      "definition_excerpt": "easy to do; not hard to accomplish",
+      "use": "Confirms the rejected adjective's easy/effortless polarity. It does not establish the preferred India-standard scholarly replacement."
+    },
+    {
+      "kind": "existing_canon_scope_check",
+      "passage_ids": [
+        "BN-IN-P005",
+        "BN-IN-P018"
+      ],
+      "use": "These previously inspected university pages support number and function vocabulary only. They do not attest the advanced phrase ‘non-trivial insight’ and are not claimed as evidence for the replacement."
+    }
+  ],
+  "rejected_interpretation": {
+    "wording": "অনায়াসসাধ্য",
+    "sense": "easy, effortless, not hard to accomplish",
+    "reason": "That sense contradicts the frozen English ‘non-trivial’ and changes the historical claim from a difficult or non-obvious insight into an easy one."
+  },
+  "choice_rationale": "অ-তুচ্ছ preserves the source's explicit negation of triviality without adding a separate importance claim. It is compositionally transparent in scholarly Bengali and fits the predicative phrase ‘অ-তুচ্ছ অন্তর্দৃষ্টি’. The hyphen keeps the negative prefix visibly attached to the technical adjective.",
+  "editorial_confidence": {
+    "level": "high",
+    "reason": "The source polarity is explicit, the discarded adjective's opposite polarity is independently confirmed, and the replacement directly expresses ‘not trivial’. Confidence concerns semantic correction; expert review of stylistic preference remains welcome."
+  },
+  "validation": {
+    "full_source_checker_units": 299,
+    "block_count_parity": true,
+    "math_parity": true,
+    "controls_parity": true,
+    "environment_parity": true,
+    "semantic_token_parity": true,
+    "unicode_nfc": true,
+    "segment_and_file_bindings_regenerated": true,
+    "reader_impact": "The corrected unit was outside the historical 18-unit v0.2.0 reader, so that immutable reader was not rebuilt for this source repair."
+  }
+}

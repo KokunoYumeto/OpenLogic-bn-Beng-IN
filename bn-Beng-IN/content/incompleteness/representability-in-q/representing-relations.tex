@@ -1,0 +1,63 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: representing-relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{rel}
+
+\olsection{সম্বন্ধের উপস্থাপন}
+
+কোনো \emph{সম্বন্ধ} উপস্থাপনযোগ্য হওয়ার অর্থ বলা যাক।
+
+\begin{defn}
+\ollabel{defn:representing-relations} স্বাভাবিক সংখ্যার উপর কোনো সম্বন্ধ
+$R(x_0,\dots,x_k)$-কে {$\Th{Q}$-তে \emph{উপস্থাপনযোগ্য}} বলা হয়, যদি এমন
+একটি সূত্র $!A_R(x_0,\dots,x_k)$ থাকে যাতে $R(n_0,\dots,n_k)$ সত্য হলেই
+$\Th{Q}$ সূত্র $!A_R(\num{n_0},\dots,\num{n_k})$ প্রমাণ করে, এবং
+$R(n_0,\dots,n_k)$ মিথ্যা হলেই $\Th{Q}$ সূত্র
+$\lnot !A_R(\num{n_0}, \dots, \num{n_k})$ প্রমাণ করে।
+\end{defn}
+
+\begin{thm}
+\ollabel{thm:representing-rels} কোনো সম্বন্ধ $\Th{Q}$-তে উপস্থাপনযোগ্য যদি
+এবং কেবল যদি সেটি গণনসাধ্য।
+\end{thm}
+
+\begin{proof}
+সম্মুখ দিকটির জন্য ধরি $R(x_0,\dots,x_k)$ সম্বন্ধটি
+$!A_R(x_0,\dots,x_k)$ সূত্র দ্বারা উপস্থাপিত। $R$ গণনার একটি
+অ্যালগরিদম হলো: নিবেশ $n_0$, \dots,~$n_k$-এর জন্য একই সঙ্গে
+$!A_R(\num{n_0}, \dots, \num{n_k})$-এর একটি প্রমাণ এবং
+$\lnot !A_R(\num{n_0}, \dots, \num{n_k})$-এর একটি প্রমাণ খুঁজতে থাকি।
+আমাদের অনুমান অনুসারে অনুসন্ধানটি প্রথমটি বা দ্বিতীয়টি নিশ্চয়ই পাবে;
+প্রথমটি পেলে ``হ্যাঁ'', অন্যথায় ``না'' জানাই।
+
+অন্য দিকে, ধরি $R(x_0, \dots, x_k)$ গণনসাধ্য। সংজ্ঞা অনুসারে এর অর্থ,
+অপেক্ষক $\Char{R}(x_0, \dots, x_k)$ গণনসাধ্য।
+\olref[int]{thm:representable-iff-comp} অনুসারে $\Char{R}$ কোনো সূত্র দ্বারা
+উপস্থাপিত; ধরা যাক সেটি $!A_{\Char{R}}(x_0, \dots, x_k, y)$।
+$!A_R(x_0, \dots, x_k)$ বলতে সূত্র
+$!A_{\Char{R}}(x_0, \dots, x_k, \num{1})$ বোঝাই। এবার যেকোনো $n_0$,
+\dots,~$n_k$-এর জন্য $R(n_0, \dots, n_k)$ সত্য হলে
+$\Char{R}(n_0, \dots, n_k) = 1$। তখন $\Th{Q}$ সূত্র
+$!A_{\Char{R}}(\num{n_0}, \dots, \num{n_k}, \num{1})$ প্রমাণ করে, এবং
+তাই $\Th{Q}$ সূত্র $!A_R(\num{n_0}, \dots, \num{n_k})$ প্রমাণ করে। অন্য
+দিকে, $R(n_0, \dots, n_k)$ মিথ্যা হলে
+$\Char{R}(n_0, \dots, n_k) = 0$। এর অর্থ, $\Th{Q}$ প্রমাণ করে
+\[
+\lforall[y][(!A_{\Char{R}}(\num{n_0}, \dots, \num{n_k}, y) \lif y =
+  \num{0})].
+\]
+যেহেতু $\Th{Q}$ সূত্র $\eq/[\num{0}][\num{1}]$ প্রমাণ করে, তাই $\Th{Q}$
+সূত্র $\lnot !A_{\Char{R}}(\num{n_0}, \dots, \num{n_k}, \num{1})$ প্রমাণ
+করে; অতএব $\lnot !A_R(\num{n_0}, \dots, \num{n_k})$-ও প্রমাণ করে।
+\end{proof}
+
+\begin{prob}
+দেখাও, $R$ যদি $\Th{Q}$-তে উপস্থাপনযোগ্য হয়, তবে $\Char{R}$-ও তাই।
+\end{prob}
+
+\end{document}

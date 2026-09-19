@@ -1,0 +1,228 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: basic-representable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{bre}
+\olsection{মৌলিক অপেক্ষকগুলি $\Th{Q}$-তে উপস্থাপনযোগ্য}
+
+প্রথমে দেখাতে হবে যে সব মৌলিক অপেক্ষক $\Th{Q}$-তে উপস্থাপনযোগ্য। শেষ পর্যন্ত
+প্রত্যেক $k$-স্থানীয় মৌলিক অপেক্ষক $f(x_0,\dots,x_{k-1})$-কে এমন একটি
+!!a{formula} $!A_f(x_0,\dots,x_{k-1},y)$ দেওয়ার উপায় দেখাতে হবে, যা
+অপেক্ষকটিকে উপস্থাপন করে।
+
+শূন্য, উত্তরসূরি, যোগ, গুণ, সমতার চরিত্রসূচক অপেক্ষক এবং অভিক্ষেপগুলিকে
+উপস্থাপন করা যাবে। প্রতিটি ক্ষেত্রেই উপযুক্ত উপস্থাপক সূত্র একেবারেই সরল;
+যেমন, শূন্যকে $y = \Obj 0$ সূত্রটি, উত্তরসূরিকে !!{formula} $x_0' = y$ এবং
+যোগকে !!{formula} $(x_0 + x_1) = y$ উপস্থাপন করে। আসল কাজ হলো দেখানো যে
+$\Th{Q}$ প্রাসঙ্গিক !!{sentence}s প্রমাণ করতে পারে; যেমন, উপরের !!{formula}
+যোগকে উপস্থাপন করে বলার জন্য দেখাতে হয় যে প্রত্যেক জোড়া স্বাভাবিক সংখ্যা
+$m$ ও $n$-এর জন্য $\Th{Q}$ প্রমাণ করে
+\begin{align*}
+& \eq[\num n + \num m][\num {n+m}] \text{ এবং}\\
+& \lforall[y][(\eq[(\num n + \num m)][y] \lif \eq[y][\num{n+m}])].
+\end{align*}
+
+\begin{prop}
+\ollabel{prop:rep-zero}
+শূন্য অপেক্ষক $\Zero(x) = 0$-কে $\Th{Q}$-তে
+$!A_{\Zero}(x,y) \ident \eq[y][\Obj 0]$ উপস্থাপন করে।
+\end{prop}
+
+\begin{prop}
+\ollabel{prop:rep-succ}
+উত্তরসূরি অপেক্ষক $\Succ(x) = x+1$-কে $\Th{Q}$-তে
+$!A_{\Succ}(x,y) \ident \eq[y][x']$ উপস্থাপন করে।
+\end{prop}
+
+\begin{prop}
+\ollabel{prop:rep-proj}
+অভিক্ষেপ অপেক্ষক $\Proj{n}{i}(x_0, \dots, x_{n-1}) = x_i$-কে
+$\Th{Q}$-তে
+\[!A_{\Proj{n}{i}}(x_0, \dots, x_{n-1}, y) \ident \eq[y][x_i].\]
+উপস্থাপন করে।
+\end{prop}
+
+\begin{prob}
+প্রমাণ করো যে $\eq[y][\Obj 0]$, $\eq[y][x']$ ও $\eq[y][x_i]$ যথাক্রমে
+$\Zero$, $\Succ$ ও $\Proj{n}{i}$-কে উপস্থাপন করে।
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:rep-id}
+$=$-এর চরিত্রসূচক অপেক্ষক
+\[
+\Char{=}(x_0, x_1) =
+\begin{cases}
+  1 & \text{যদি } x_0 =x_1\\
+  0 & \text{অন্যথায়}
+\end{cases}
+\]
+% BN-SRC-233 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-233):} হিমায়িত \texttt{cases} বিন্যাসে প্রথম শর্তটি \texttt{\string\text\{...\}}-এর মধ্যে থাকলেও দ্বিতীয় পংক্তির ``otherwise'' সরাসরি গণিত-মোডে ছিল, ফলে সেটি শব্দের বদলে চলরাশির গুণফলের মতো মুদ্রিত হতো। বাংলা পাঠে দ্বিতীয় পংক্তির পাঠও \texttt{\string\text\{...\}}-এর মধ্যে রাখা হয়েছে।} % BN-SRC-233 TARGET-CORRECTION-END
+$\Th{Q}$-তে নিচের সূত্র দ্বারা উপস্থাপিত:
+\[
+  !A_{\Char{=}}(x_0, x_1, y) \ident (\eq[x_0][x_1] \land \eq[y][\num{1}]) \lor (\eq/[x_0][x_1] \land
+\eq[y][\num{0}]).
+\]
+\end{prop}
+
+প্রমাণটির জন্য নিচের সহায়ক উপপাদ্য দরকার।
+
+\begin{lem}
+\ollabel{lem:q-proves-neq} স্বাভাবিক সংখ্যা $n$ ও $m$ দেওয়া থাকলে, $n
+\neq m$ হলে $\Th{Q} \Proves \eq/[\num n][\num m]$।
+\end{lem}
+
+\begin{proof}
+$n$-এর উপর আরোহ ব্যবহার করে দেখাও: প্রত্যেক $m$-এর জন্য $n \neq m$ হলে
+$Q \Proves \eq/[\num n][\num m]$।
+
+ভিত্তি ক্ষেত্রে $n = 0$। $m$, $0$-র সমান না হলে কোনো স্বাভাবিক সংখ্যা
+$k$-এর জন্য $m = k + 1$। আমাদের একটি স্বতঃসিদ্ধ বলে
+$\lforall[x][\eq/[0][x']]$। একটি পরিমাণসূচক-স্বতঃসিদ্ধে $x$-এর স্থানে
+$\num k$ বসিয়ে $\eq/[0][\num k']$ সিদ্ধান্তে আসতে পারি। কিন্তু
+$\num k'$-ই $\num m$।
+
+আরোহের ধাপে দাবিটি $n$-এর জন্য সত্য ধরে $n+1$ বিবেচনা করি। $m$ যেকোনো
+স্বাভাবিক সংখ্যা হোক। দুটি সম্ভাবনা: হয় $m = 0$, নয়তো কোনো $k$-এর জন্য
+$m = k+1$। প্রথম ক্ষেত্রটি উপরের মতোই সামলানো যায়। দ্বিতীয় ক্ষেত্রে ধরি
+$n+1 \neq k+1$। তাহলে $n \neq k$। $n$-এর জন্য আরোহের অনুমান থেকে পাই
+$\Th{Q} \Proves \eq/[\num n][\num k]$। একটি স্বতঃসিদ্ধ বলে
+$\lforall[x][\lforall[y][\eq[x'][y'] \lif \eq[x][y]]]$। একটি
+পরিমাণসূচক-স্বতঃসিদ্ধ ব্যবহার করে পাই
+$\eq[\num n'][\num k'] \lif \eq[\num n][\num k]$। বচনগত যুক্তিবিদ্যা
+ব্যবহার করে $\Th{Q}$-তে সিদ্ধান্তে আসতে পারি
+$\eq/[\num n][\num k] \lif \eq/[\num n'][\num k']$। modus ponens
+ব্যবহার করে পাই $\eq/[\num n'][\num k']$; এটিই আমাদের দরকার, কারণ
+$\num k'$ হলো $\num m$।
+\end{proof}
+
+\begin{explain}
+সহায়ক উপপাদ্যটি যে খুব বেশি কিছু বলে তা নয়: মূলত বলে, আলাদা সংখ্যাপদ
+আলাদা বস্তুকে নির্দেশ করে—এ কথা $\Th{Q}$ প্রমাণ করতে পারে। যেমন, $\Th{Q}$
+$0'' \neq 0'''$ প্রমাণ করে। কিন্তু সাধারণভাবে কথাটি দেখাতে কিছু সতর্কতা
+দরকার। আরও লক্ষ করো, আমরা আরোহ ব্যবহার করলেও সেটি $\Th{Q}$-এর
+\emph{বাইরের} আরোহ।
+\end{explain}
+
+\begin{proof}[\olref{prop:rep-id}-এর প্রমাণ]
+$n = m$ হলে $\num{n}$ ও $\num{m}$ একই পদ এবং $\Char{=}(n, m) = 1$। কিন্তু
+$\Th{Q} \Proves (\eq[\num{n}][\num{m}] \land
+\eq[\num{1}][\num{1}])$, তাই এটি $!A_=(\num{n}, \num{m},
+\num{1})$ প্রমাণ করে। $n \neq m$ হলে $\Char=(n, m) = 0$।
+\olref{lem:q-proves-neq} অনুসারে $\Th{Q} \Proves
+\eq/[\num{n}][\num{m}]$, এবং তাই
+$(\eq/[\num{n}][\num{m}] \land \Obj 0 = \Obj 0)$-ও। অতএব
+$\Th{Q} \Proves !A_=(\num{n}, \num{m}, \num{0})$।
+
+দ্বিতীয় অংশের জন্যও দুটি ক্ষেত্র আছে। $n = m$ হলে দেখাতে হবে
+$\Th{Q} \Proves \lforall[y][(!A_=(\num{n}, \num{m}, y)
+  \lif \eq[y][\num{1}])]$। অনানুষ্ঠানিকভাবে যুক্তি করি: ধরি
+$!A_=(\num{n}, \num{m}, y)$, অর্থাৎ
+\[
+(\eq[\num{n}][\num{n}] \land \eq[y][\num{1}]) \lor
+(\eq/[\num{n}][\num{n}] \land \eq[y][\num{0}])
+\]
+বাম বিযোজ্যটি যুক্তিবিদ্যা থেকে $\eq[y][\num{1}]$ দেয়; ডান বিযোজ্যটি
+যুক্তিবিদ্যায় প্রমাণযোগ্য $\eq[\num{n}][\num{n}]$-এর বিরোধী।
+
+অন্য দিকে, ধরি $n \neq m$। তখন $!A_=(\num{n}, \num{m}, y)$ হলো
+\[
+(\eq[\num{n}][\num{m}] \land \eq[y][\num{1}]) \lor
+(\eq/[\num{n}][\num{m}] \land \eq[y][\num{0}])
+\]
+এখানে বাম বিযোজ্যটি $\eq/[\num{n}][\num{m}]$-এর বিরোধী; শেষের সূত্রটি
+\olref{lem:q-proves-neq} অনুসারে $\Th{Q}$-তে প্রমাণযোগ্য। ডান বিযোজ্য থেকে
+$\eq[y][\num{0}]$ পাওয়া যায়।
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:rep-add}
+যোগ অপেক্ষক $\Add(x_0, x_1) = x_0+x_1$-কে $\Th{Q}$-তে উপস্থাপন করে
+\[
+  !A_{\Add}(x_0, x_1, y) \ident \eq[y][(x_0 + x_1)].
+\]
+\end{prop}
+
+\begin{lem}
+\ollabel{lem:q-proves-add}
+$\Th{Q} \Proves \eq[(\num{n} + \num{m})][\num{n+m}]$
+\end{lem}
+
+\begin{proof}
+$m$-এর উপর আরোহ দিয়ে এটি প্রমাণ করি। $m = 0$ হলে দাবিটি হলো
+$\Th{Q} \Proves \eq[(\num{n} + \Obj 0)][\num{n}]$। এটি স্বতঃসিদ্ধ~$!Q_4$
+থেকে আসে। এবার দাবিটি $m$-এর জন্য ধরে $m+1$-এর জন্য প্রমাণ করি; অর্থাৎ
+$\Th{Q} \Proves \eq[(\num{n} + \num{m+1})][\num{n+m+1}]$ প্রমাণ করি।
+লক্ষ করো, $\num{m+1}$ হলো $\num{m}'$, আর $\num{n+m+1}$ হলো
+$\num{n+m}'$। স্বতঃসিদ্ধ $!Q_5$ অনুসারে
+$\Th{Q} \Proves \eq[(\num{n} + \num{m}')][(\num{n}+\num{m})']$। আরোহের
+অনুমান অনুসারে $\Th{Q} \Proves
+\eq[(\num{n} + \num{m})][\num{n+m}]$। তাই
+$\Th{Q} \Proves \eq[(\num{n} + \num{m}')][\num{n+m}']$।
+\end{proof}
+
+\begin{proof}[\olref{prop:rep-add}-এর প্রমাণ]
+$\Add$-কে উপস্থাপন করা !!{formula}~$!A_\Add(x_0, x_1, y)$ হলো
+$\eq[y][(x_0 + x_1)]$। প্রথমে দেখাই, $\Add(n, m) = k$ হলে
+$\Th{Q} \Proves !A_\Add(\num{n}, \num{m}, \num{k})$; অর্থাৎ
+$\Th{Q} \Proves \eq[\num{k}][(\num{n} + \num{m})]$। কিন্তু
+$k = n + m$ বলে $\num{k}$-ই $\num{n+m}$, এবং
+\olref{lem:q-proves-add}-এ দেখানো হয়েছে যে
+$\Th{Q} \Proves \eq[(\num{n} + \num{m})][\num{n+m}]$।
+
+আরও দেখাতে হবে, $\Add(n, m) = k$ হলে
+\[
+\Th{Q} \Proves \lforall[y][(!A_\Add(\num{n}, \num{m}, y) \lif
+  \eq[y][\num{k}])].
+\]
+ধরি $\eq[(\num{n} + \num{m})][y]$। যেহেতু
+\[
+\Th{Q} \Proves \eq[(\num{n}+\num{m})][\num{n+m}],
+\]
+তাই বাম দিকটির স্থানে $\num{n+m}$ বসিয়ে যেকোনো~$y$-এর জন্য
+$\eq[\num{n+m}][y]$ পাই।
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:rep-mult}
+গুণ অপেক্ষক $\Mult(x_0, x_1) = x_0 \cdot x_1$-কে $\Th{Q}$-তে উপস্থাপন করে
+\[
+  !A_{\Mult}(x_0, x_1, y) \ident y = (x_0 \times x_1).
+\]
+\end{prop}
+
+\begin{proof} অনুশীলন। \end{proof}
+
+\begin{lem}
+\ollabel{lem:q-proves-mult}
+$\Th{Q} \Proves \eq[(\num{n} \times \num{m})][\num{n \cdot m}]$
+\end{lem}
+
+\begin{proof} অনুশীলন। \end{proof}
+
+\begin{prob}
+\olref[inc][req][bre]{lem:q-proves-mult} প্রমাণ করো।
+\end{prob}
+
+\begin{prob}
+\olref[inc][req][bre]{lem:q-proves-mult} ব্যবহার করে
+\olref[inc][req][bre]{prop:rep-mult} প্রমাণ করো।
+\end{prob}
+
+\begin{explain}
+  মনে করো, পাটিগণিতের ভাষার অপেক্ষক প্রতীকের জন্য আমরা $\times$ এবং সংখ্যার
+  উপর সাধারণ গুণ ক্রিয়ার জন্য $\cdot$ ব্যবহার করি। তাই $\cdot$ সংখ্যার
+  রাশির মধ্যে বসতে পারে (যেমন $m \cdot n$-এ), আর $\times$ শুধু পাটিগণিতের
+  ভাষার পদের মধ্যে বসে (যেমন $(\num{m} \times \num{n})$-এ)। আরও বিভ্রান্তিকর
+  হলো, !!{function} ও যোগ ক্রিয়া—দুটির জন্যই $+$ ব্যবহার করা হয়। পদের মধ্যে
+  থাকলে—যেমন $(\num{n} + \num{m})$-এ—এটি পাটিগণিতের ভাষার $2$-স্থানীয়
+  !!{function}; আর সংখ্যার মধ্যে থাকলে—যেমন $n+m$-এ—এটি যোগ ক্রিয়া। এর
+  মধ্যে $\num{n+m}$-ও পড়ে: এটি সংখ্যা~$n+m$-এর সংশ্লিষ্ট প্রমিত সংখ্যাপদ।
+\end{explain}
+
+\end{document}

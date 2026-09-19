@@ -1,0 +1,105 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: composition-representable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{cmp}
+\olsection{মিশ্রণ $\Th{Q}$-তে উপস্থাপনযোগ্য}
+
+ধরি $h$-কে এভাবে সংজ্ঞায়িত করা হয়েছে:
+\[
+h(x_0,\dots,x_{l-1}) = f(g_0(x_0,\dots,x_{l-1}), \dots,
+g_{k-1}(x_0,\dots,x_{l-1})).
+\]
+এখানে $f$, $g_0$, \dots,~$g_{k-1}$ অপেক্ষকগুলিকে যথাক্রমে উপস্থাপন করে
+এমন !!{formula}s $!A_f, !A_{g_0}, \dots, !A_{g_{k-1}}$ আমরা ইতিমধ্যে
+পেয়েছি। $h$-কে উপস্থাপন করে এমন একটি !!a{formula}~$!A_h$ খুঁজতে হবে।
+
+প্রথমে সব অপেক্ষক $1$-স্থানীয় এমন একটি সরল ক্ষেত্র নিই; অর্থাৎ
+$h(x) = f(g(x))$ বিবেচনা করি। $!A_f(y, z)$ যদি $f$-কে এবং $!A_g(x, y)$
+যদি $g$-কে উপস্থাপন করে, তাহলে $h$-কে উপস্থাপনকারী
+!!a{formula}~$!A_h(x, z)$ দরকার। লক্ষ করো, $h(x) = z$ যদি এবং কেবল যদি এমন
+একটি~$y$ থাকে যাতে $z = f(y)$ ও $y = g(x)$ উভয়ই হয়। ($h(x) = z$ হলে
+$g(x)$ এমন একটি~$y$; আর এমন $y$ থাকলে $y = g(x)$ ও $z = f(y)$ থেকে
+$z = f(g(x))$।) এতে বোঝা যায়,
+$\lexists[y][(!A_g(x, y) \land !A_f(y, z))]$ হলো $!A_h(x, z)$-এর ভালো
+প্রার্থী। শুধু যাচাই করতে হবে যে $\Th{Q}$ প্রাসঙ্গিক !!{formula}s প্রমাণ
+করে।
+
+\begin{prop}
+\ollabel{prop:rep1}
+$h(n) = m$ হলে $\Th{Q} \Proves !A_h(\num{n}, \num{m})$।
+\end{prop}
+
+\begin{proof}
+ধরি $h(n) = m$, অর্থাৎ $f(g(n)) = m$। $k = g(n)$ ধরি। তাহলে
+\begin{align*}
+  \Th{Q} & \Proves !A_g(\num{n}, \num{k})
+  \intertext{কারণ $!A_g$ অপেক্ষক~$g$-কে উপস্থাপন করে, এবং}
+  \Th{Q} & \Proves !A_f(\num{k}, \num{m})
+  \intertext{কারণ $!A_f$ অপেক্ষক~$f$-কে উপস্থাপন করে। তাই}
+  \Th{Q} & \Proves !A_g(\num{n}, \num{k}) \land !A_f(\num{k}, \num{m})
+  \intertext{এবং ফলত}
+  \Th{Q} & \Proves \lexists[y][(!A_g(\num{n}, y) \land !A_f(y, \num{m}))],
+\end{align*}
+অর্থাৎ $\Th{Q} \Proves !A_h(\num{n}, \num{m})$।
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:rep2}
+$h(n) = m$ হলে $\Th{Q} \Proves \lforall[z][(!A_h(\num{n}, z) \lif
+  z = \num{m})]$।
+\end{prop}
+
+\begin{proof}
+ধরি $h(n) = m$, অর্থাৎ $f(g(n)) = m$। $k = g(n)$ ধরি। তাহলে
+\begin{align*}
+  \Th{Q} & \Proves \lforall[y][(!A_g(\num{n}, y) \lif \eq[y][\num{k}])]
+  \intertext{কারণ $!A_g$ অপেক্ষক~$g$-কে উপস্থাপন করে, এবং}
+  \Th{Q} & \Proves \lforall[z][(!A_f(\num{k}, z) \lif \eq[z][\num{m}])]
+  \intertext{কারণ $!A_f$ অপেক্ষক~$f$-কে উপস্থাপন করে। অল্প একটু যুক্তিবিদ্যা
+    ব্যবহার করে আরও দেখানো যায় যে}
+  \Th{Q} & \Proves \lforall[z][(\lexists[y][(!A_g(\num{n}, y) \land
+      !A_f(y, z))] \lif \eq[z][\num{m}])].
+\end{align*}
+অর্থাৎ $\Th{Q} \Proves \lforall[y][(!A_h(\num n, y) \lif \eq[y][\num m])]$।
+\end{proof}
+
+$f$ ও~$g_i$-এর স্থানসংখ্যা $1$-এর বেশি হলেও একই ধারণা কাজে লাগে।
+
+\begin{prop}
+\ollabel{prop:rep-composition}
+$!A_f(y_0, \dots, y_{k-1}, z)$ যদি $\Th{Q}$-তে
+$f(y_0, \dots, y_{k-1})$-কে এবং
+$!A_{g_i}(x_0, \dots, x_{l-1}, y)$ যদি $\Th{Q}$-তে
+$g_i(x_0, \dots, x_{l-1})$-কে উপস্থাপন করে, তাহলে
+\begin{multline*}
+  \lexists[y_0][\dots \lexists[y_{k-1}][(!A_{g_0}(x_0,\dots,x_{l-1},y_0) \land
+      \dots \land {}\\
+  !A_{g_{k-1}}(x_0,\dots,x_{l-1},y_{k-1}) \land !A_f(y_0,\dots,y_{k-1},z))]]
+\end{multline*}
+উপস্থাপন করে
+\[
+h(x_0, \dots, x_{l-1}) = f(g_0(x_0, \dots, x_{l-1}), \dots, g_{k-1}(x_0,
+\dots, x_{l-1})).
+\]
+% BN-SRC-222 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-222):} হিমায়িত উপস্থাপক সূত্রে প্রথম অস্তিত্বমূলক পরিমাণসূচকের চলরাশি-তালিকায় $\dots$ ঢুকে গিয়েছিল, অকালেই দুটি বন্ধনী বন্ধ হয়েছিল, এবং শেষের পরিমাণসূচকগুলির পরিসর খোলা ছিল। বাংলা পাঠে একই উদ্দেশ্যপ্রকাশক সূত্রকে $y_0$ থেকে $y_{k-1}$ পর্যন্ত সঠিকভাবে বদ্ধ ও সুষম বন্ধনীতে লেখা হয়েছে।} % BN-SRC-222 TARGET-CORRECTION-END
+\end{prop}
+
+\begin{proof}
+অনুশীলন।
+\end{proof}
+
+\begin{prob}
+\olref[inc][req][cmp]{prop:rep1} ও
+\olref[inc][req][cmp]{prop:rep2}-এর প্রমাণকে নির্দেশক হিসেবে ব্যবহার করে
+\olref[inc][req][cmp]{prop:rep-composition}-এর প্রমাণ বিশদে সম্পন্ন করো।
+% BN-SRC-223 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-223):} হিমায়িত সমস্যায় নির্দেশক হিসেবে $\mathrm{prop{:}rep2}$-কে দুবার উল্লেখ করা হয়েছিল। বাংলা পাঠে আগের দুটি পৃথক প্রস্তাবের সঠিক জোড়া $\mathrm{prop{:}rep1}$ ও $\mathrm{prop{:}rep2}$ রাখা হয়েছে।} % BN-SRC-223 TARGET-CORRECTION-END
+\end{prob}
+
+\end{document}

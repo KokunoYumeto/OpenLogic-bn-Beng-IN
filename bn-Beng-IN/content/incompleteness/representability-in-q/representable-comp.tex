@@ -1,0 +1,117 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: representable-comp
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{rpc}
+\olsection{$\Th{Q}$-তে উপস্থাপনযোগ্য অপেক্ষক গণনসাধ্য}
+
+$\Th{Q}$-তে উপস্থাপনযোগ্য প্রত্যেক অপেক্ষক গণনসাধ্য—এটি আমরা প্রমাণ করব।
+প্রথমে $\Th{Q}$-তে উপস্থাপনযোগ্য অপেক্ষক সম্বন্ধে একটি সহায়ক উপপাদ্য
+প্রতিষ্ঠা করতে হবে।
+
+\begin{lem}\ollabel{lem:rep-q}
+  $f(x_0, \dots, x_k)$ যদি $\Th{Q}$-তে উপস্থাপনযোগ্য হয়, তবে এমন
+  !!a{formula}~$!A_f(x_0, \dots, x_k, y)$ আছে যাতে
+  \[
+  \Th{Q} \Proves !A_f(\num{n_0}, \dots, \num{n_k}, \num{m})
+  \quad\text{যদি এবং কেবল যদি}\quad m = f(n_0, \dots, n_k).
+  \]
+% BN-SRC-218 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-218):} হিমায়িত সহায়ক উপপাদ্যের পরিচায়ক বাক্যে উপস্থাপক সূত্রকে $!A$ বলা হলেও একই প্রদর্শন ও গোটা প্রমাণে সেটি $!A_f$। বাংলা পাঠে পরিচায়ক বাক্যেও $!A_f$ রাখা হয়েছে।} % BN-SRC-218 TARGET-CORRECTION-END
+\end{lem}
+
+\begin{proof}
+  ``যদি'' দিকটি হলো
+\olref[int]{defn:representable-fn}\olref[int]{defn:rep:a}। ``কেবল যদি''
+দিকটি এভাবে দেখা যায়। ধরি $\Th{Q} \Proves !A_f(\num{n_0},
+\dots, \num{n_k}, \num{m})$, কিন্তু $m \neq f(n_0, \dots, n_k)$।
+$l = f(n_0, \dots, n_k)$ ধরি।
+\olref[int]{defn:representable-fn}\olref[int]{defn:rep:a} অনুসারে
+$\Th{Q} \Proves !A_f(\num{n_0}, \dots, \num{n_k}, \num{l})$।
+\olref[int]{defn:representable-fn}\olref[int]{defn:rep:b} অনুসারে,
+$\lforall[y][(!A_f(\num{n_0}, \dots, \num{n_k}, y) \lif \num{l} =
+y)]$। যুক্তিবিদ্যা এবং $\Th{Q} \Proves
+!A_f(\num{n_0}, \dots, \num{n_k}, \num{m})$ অনুমান ব্যবহার করে পাই
+$\Th{Q} \Proves \eq[\num{l}][\num{m}]$। অন্য দিকে,
+\olref[bre]{lem:q-proves-neq} অনুসারে $\Th{Q} \Proves
+\eq/[\num{l}][\num{m}]$। তাহলে $\Th{Q}$ অসঙ্গতিপূর্ণ। কিন্তু তা অসম্ভব,
+কারণ প্রমিত মডেল $\Th{Q}$-কে পরিতৃপ্ত করে (দেখো
+\olref[int][def]{def:standard-model}), $\Sat{N}{\Th{Q}}$, এবং বিশুদ্ধতা
+উপপাদ্য অনুসারে পরিতৃপ্তিযোগ্য তত্ত্ব সব সময় সঙ্গতিপূর্ণ
+(\tagrefs{prfAX/{fol:axd:sou:cor:consistency-soundness},
+prfSC/{fol:seq:sou:cor:consistency-soundness},
+prfND/{fol:ntd:sou:cor:consistency-soundness},
+prfTab/{fol:tab:sou:cor:consistency-soundness}})।
+\end{proof}
+
+\begin{lem}
+$\Th{Q}$-তে উপস্থাপনযোগ্য প্রত্যেক অপেক্ষক গণনসাধ্য।
+\end{lem}
+
+\begin{proof}
+এটি সত্য কেন, প্রথমে তার স্বজ্ঞামূলক ধারণা দিই। $f$ গণনা করতে আমরা নিচের
+কাজটি করি। পাটিগণিতের ভাষায় সম্ভাব্য সব !!{derivation}s~$\delta$ তালিকাভুক্ত
+করি। এটি যান্ত্রিকভাবে করা সম্ভব। প্রতিটির জন্য পরীক্ষা করি, সেটি
+\olref{lem:rep-q}-এ দেওয়া
+$!A_f(\num{n_0}, \dots, \num{n_k}, \num{m})$ রূপবিশিষ্ট কোনো
+!!a{formula}-র !!a{derivation} কি না; এখানকার !!{formula}-টিই $f$-কে
+$\Th{Q}$-তে উপস্থাপন করে। হলে, \olref{lem:rep-q} অনুসারে
+$m = f(n_0, \dots, n_k)$, তাই $f$-এর মান পেয়ে গেছি। অনুসন্ধানটি শেষ হয়,
+কারণ $\Th{Q} \Proves !A_f(\num{n_0}, \dots, \num{n_k},
+\num{f(n_0, \dots, n_k)})$; ফলে শেষ পর্যন্ত সঠিক ধরনের একটি $\delta$ পাওয়া
+যাবেই।
+
+এটি এখনও পুরোপুরি সুনির্দিষ্ট নয়, কারণ আমাদের পদ্ধতি কেবল সংখ্যার বদলে
+!!{derivation}s ও !!{formula}s-এর উপর কাজ করে, এবং ``সম্ভাব্য সব
+!!{derivation}s তালিকাভুক্ত করা'' ঠিক কেন যান্ত্রিকভাবে সম্ভব, তা আমরা
+ব্যাখ্যা করিনি। কিন্তু আমরা দেখেছি, পদ, !!{formula}s ও !!{derivation}s-কে
+গ্যোডেল সংখ্যা দিয়ে সংকেতায়িত করা যায়। গণনার একটি সুনির্দিষ্ট মডেল—সাধারণ
+পুনরাবৃত্ত অপেক্ষক—আমরাও প্রবর্তন করেছি। আরও দেখেছি, $\Prf[\Th{Q}](d,y)$
+সম্বন্ধটি (যা ঠিক তখনই সত্য, যখন $d$ হলো $\Th{Q}$-এর স্বতঃসিদ্ধ থেকে গ্যোডেল
+সংখ্যা~$y$-বিশিষ্ট !!{formula}-র কোনো !!a{derivation}-এর গ্যোডেল সংখ্যা)
+(আদিম) পুনরাবৃত্ত। আমাদের আরও যে আদিম পুনরাবৃত্ত অপেক্ষকগুলি দরকার সেগুলি
+হলো $\fn{num}$ (\olref[art][trm]{prop:num-primrec}) ও $\fn{Subst}$
+(\olref[art][sub]{prop:subst-primrec})। এগুলি থেকে ন্যূনীকরণের সাহায্যে $f$-কে
+সংজ্ঞায়িত করা যায়; তাই $f$ পুনরাবৃত্ত।
+
+প্রথমে সংজ্ঞায়িত করি
+\begin{multline*}
+  A(n_0, \dots, n_k, m) = \\
+  \fn{Subst}(\fn{Subst}(\dots\fn{Subst}(\Gn{!A_f}, \fn{num}(n_0), \Gn{x_0}),\\ \dots),
+  \fn{num}(n_k),  \Gn{x_k}), \fn{num}(m), \Gn{y})
+\end{multline*}
+দেখতে জটিল হলেও এটি কেবল
+$A(n_0, \dots, n_k, m) = \Gn{!A_f(\num{n_0}, \dots, \num{n_k},
+\num{m})}$ অপেক্ষক।
+
+এবার $R(n_0, \dots, n_k, s)$ সম্বন্ধটি ধরি; এটি তখনই সত্য, যখন $(s)_0$ হলো
+$\Th{Q}$ থেকে
+$!A_f(\num{n_0}, \dots, \num{n_k}, \num{(s)_1})$-এর কোনো
+!!a{derivation}-এর গ্যোডেল সংখ্যা:
+\[
+R(n_0, \dots, n_k, s) \quad\text{যদি এবং কেবল যদি}\quad \Prf[\Th{Q}]((s)_0, A(n_0,
+\dots, n_k, (s)_1))
+\]
+$R(n_0, \dots, n_k, s)$ সত্য এমন কোনো $s$ পাওয়া গেলে, দুটি সংখ্যার একটি
+জোড়া—$(s)_0$ ও~$(s)_1$—পাওয়া যায়, যাতে $(s)_0$ হলো
+$A_f(\num{n_0}, \dots, \num{n_k}, \num{(s)_1})$-এর কোনো
+!!a{derivation}-এর গ্যোডেল সংখ্যা। তাই $s$ খোঁজা অনানুষ্ঠানিক প্রমাণের $d$ ও
+$m$ জোড়াটি খোঁজারই মতো। আর এমন $s$ ``খোঁজে'' যে গণনসাধ্য অপেক্ষক, তাকে
+নিয়মিত ন্যূনীকরণ দিয়ে সংজ্ঞায়িত করা যায়।
+% BN-SRC-219 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-219):} হিমায়িত ব্যাখ্যার শেষ সূত্রে ফলমান সংখ্যা $(s)_1$-কে পাটিগণিতের ভাষার পদে তোলার $\num{\cdot}$ অনুপস্থিত ছিল, যদিও অব্যবহিত আগের সূত্র ও $A$-র সংজ্ঞা উভয়েই $\num{(s)_1}$ দেয়। বাংলা পাঠে $\num{(s)_1}$ রাখা হয়েছে।} % BN-SRC-219 TARGET-CORRECTION-END
+লক্ষ করো, $R$ নিয়মিত: প্রত্যেক $n_0$, \dots, $n_k$-এর জন্য
+$\Th{Q} \Proves !A_f(\num{n_0}, \dots, \num{n_k},
+\num{f(n_0, \dots, n_k)})$-এর একটি !!a{derivation}~$\delta$ আছে; তাই
+$s = \tuple{\Gn{\delta}, f(n_0, \dots, n_k)}$ হলে
+$R(n_0, \dots, n_k, s)$ সত্য। সুতরাং $f$-কে লেখা যায়
+\[
+f(n_0,\dots,n_{k}) = (\umin{s}{R(n_0, \dots, n_k, s)})_1.
+\]
+\end{proof}
+
+\end{document}

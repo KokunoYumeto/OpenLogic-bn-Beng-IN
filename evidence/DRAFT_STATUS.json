@@ -351,7 +351,7 @@
     "translated_count": 334,
     "untranslated_count": 388,
     "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, the Model Theory part driver plus complete Basics, Models of Arithmetic, Interpolation and Lindström chapters, the Computability part driver plus complete Recursive Functions and Computability Theory chapters, the Turing Machines part driver plus the complete Turing Machine Computations and Undecidability chapters, the Incompleteness part driver plus the complete Introduction, Arithmetization of Syntax, Representability in Q, Theories and Computability, and Incompleteness and Provability chapters, and the Second-order Logic part driver plus complete Syntax and Semantics and Metatheory chapters are translated; both Size of Sets editorial alternatives remain distinct.",
-    "reader_state": "The historical v0.2.0 reader remains an exact 18-unit artifact. The public cumulative semantic reader contains 299 units in HTML and EPUB and remains the current reader tranche. The current checked local source draft contains 334 units and leaves 388 source files untranslated; the latest verified public source checkpoint contains 328 units, and 35 checked local source units are not yet integrated into the cumulative reader."
+    "reader_state": "The historical v0.2.0 reader remains an exact 18-unit artifact. The public cumulative semantic reader contains 299 units in HTML and EPUB and remains the current reader tranche. The current verified public source checkpoint contains 334 units and leaves 388 source files untranslated; 35 public source units are not yet integrated into the cumulative reader."
   },
   "last_verified_public_release": {
     "version": "0.3.0",
@@ -397,11 +397,11 @@
     "anonymous_public_readback": "All six GitHub and Zenodo assets matched byte-for-byte."
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "ba314db1896c99821133a979d426b8058629baf1",
-    "translated_units": 328,
-    "receipt": "PUBLIC_READBACK_SOURCE_328_2026-09-19.json",
-    "receipt_sha256": "adb5d6fc3d0e2416b130c9155e8535099876998a46b26dbf2a09b254f7117876",
-    "status": "Anonymous immutable-archive readback verified all 20 changed objects in the Second-order Logic Syntax and Semantics checkpoint, reran the strict checker for 328 units and 3,857 blocks, and confirmed the object-variable notation normalization and finite-enumeration terminal case in the public source."
+    "commit": "cbe4aed810b3eb952d80b2c0fe41670a5bdf66ba",
+    "translated_units": 334,
+    "receipt": "PUBLIC_READBACK_SOURCE_334_2026-09-19.json",
+    "receipt_sha256": "c2c07976ebeb6ebc0c764da522c59e0489ab06bbf4b6828efeae2d9d70af3a86",
+    "status": "Anonymous immutable-archive readback verified all 18 changed objects in the Second-order Logic Metatheory checkpoint, reran the strict checker for 334 units and 3,903 blocks, and confirmed the four documented source corrections in the public source."
   },
   "current_checks": {
     "unit_checks": [
@@ -6416,5 +6416,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "Historical Functions-era TeX candidate record: all three bounded mutex acquisitions timed out without launching TeX. The verified public semantic HTML/EPUB reader is recorded above; no TeX-built PDF is claimed."
   },
-  "remaining": "388 source files, the next cumulative reader tranche, full-corpus QA, and final publication verification. GitHub carries the verified 328-unit source checkpoint; GitHub and Zenodo carry the verified 299-unit reader release."
+  "remaining": "388 source files, the next cumulative reader tranche, full-corpus QA, and final publication verification. GitHub carries the verified 334-unit source checkpoint; GitHub and Zenodo carry the verified 299-unit reader release."
 }

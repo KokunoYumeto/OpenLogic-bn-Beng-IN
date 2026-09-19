@@ -1,0 +1,166 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-19T21:54:25.989445+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "cbe4aed810b3eb952d80b2c0fe41670a5bdf66ba",
+  "parent": "830c4ccd924068edcacb8b3ba26bbcde7b3a023a",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "ba314db1896c99821133a979d426b8058629baf1",
+    "receipt": "PUBLIC_READBACK_SOURCE_328_2026-09-19.json",
+    "receipt_sha256": "adb5d6fc3d0e2416b130c9155e8535099876998a46b26dbf2a09b254f7117876"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/cbe4aed810b3eb952d80b2c0fe41670a5bdf66ba.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/cbe4aed810b3eb952d80b2c0fe41670a5bdf66ba",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 27823264,
+  "archive_sha256": "09a3be989633c6db4abefca124d9a5c5b0922e477652b067ed64810b4cb9b68e",
+  "raw_correction_files": [
+    {
+      "path": "bn-Beng-IN/content/second-order-logic/metatheory/second-order-arithmetic.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/cbe4aed810b3eb952d80b2c0fe41670a5bdf66ba/bn-Beng-IN/content/second-order-logic/metatheory/second-order-arithmetic.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/cbe4aed810b3eb952d80b2c0fe41670a5bdf66ba/bn-Beng-IN/content/second-order-logic/metatheory/second-order-arithmetic.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 9164,
+      "sha256": "9172efc9ee05972ae35abfe1d3db6e68bd6d91f0d09129d0aa2b7f852e045bea"
+    },
+    {
+      "path": "bn-Beng-IN/content/second-order-logic/metatheory/undecidability-and-axiomatizability.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/cbe4aed810b3eb952d80b2c0fe41670a5bdf66ba/bn-Beng-IN/content/second-order-logic/metatheory/undecidability-and-axiomatizability.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/cbe4aed810b3eb952d80b2c0fe41670a5bdf66ba/bn-Beng-IN/content/second-order-logic/metatheory/undecidability-and-axiomatizability.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 4320,
+      "sha256": "e0f48675ff148cb952508c839b4af28a53456168fb94f0dbbebbc9da8e9f2c3b"
+    },
+    {
+      "path": "bn-Beng-IN/content/second-order-logic/metatheory/compactness.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/cbe4aed810b3eb952d80b2c0fe41670a5bdf66ba/bn-Beng-IN/content/second-order-logic/metatheory/compactness.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/cbe4aed810b3eb952d80b2c0fe41670a5bdf66ba/bn-Beng-IN/content/second-order-logic/metatheory/compactness.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 5958,
+      "sha256": "1429d6ab34862043a57423874d108ba02fa68c89cc792d9e71d9e6c3c3eaad51"
+    }
+  ],
+  "addition_recursion_binder_restored": true,
+  "satisfaction_expression_balanced": true,
+  "compactness_theorem_label_unique": true,
+  "finite_fragment_indices_scoped": true,
+  "empty_finite_fragment_case_supplied": true,
+  "changed_files_verified": 18,
+  "translated_tex_files_in_commit": 6,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 334,
+  "draft_untranslated_total": 388,
+  "segments": 3903,
+  "translated_segments": 3303,
+  "second_order_metatheory_segments": 46,
+  "second_order_metatheory_translated_segments": 35,
+  "second_order_metatheory_unchanged_segments": 11,
+  "source_correction_records": 268,
+  "translation_decisions": 280,
+  "provisional_translation_decisions": 261,
+  "translation_decision_occurrences": 22403,
+  "decisions_with_exact_source_wording": 267,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 334,
+    "blocks": 3903,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/metatheory/compactness.tex",
+      "bytes": 5958,
+      "sha256": "1429d6ab34862043a57423874d108ba02fa68c89cc792d9e71d9e6c3c3eaad51"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/metatheory/introduction.tex",
+      "bytes": 4010,
+      "sha256": "c9b6b0db25f55f307a2e4e576b2faccd7fa3a9d70e46ddc8a8dbfb34f192db4e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/metatheory/loewenheim-skolem.tex",
+      "bytes": 3127,
+      "sha256": "1bad198304b484314eda531931739d259a1936539844706a16c9b0e99fbeddc2"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/metatheory/metatheory.tex",
+      "bytes": 463,
+      "sha256": "58ed90d0b2f926c461d3559e04df23a3ba21b7336bb3cceaca80a920635b2783"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/metatheory/second-order-arithmetic.tex",
+      "bytes": 9164,
+      "sha256": "9172efc9ee05972ae35abfe1d3db6e68bd6d91f0d09129d0aa2b7f852e045bea"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/metatheory/undecidability-and-axiomatizability.tex",
+      "bytes": 4320,
+      "sha256": "e0f48675ff148cb952508c839b4af28a53456168fb94f0dbbebbc9da8e9f2c3b"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6079038,
+      "sha256": "90c3076726b7dd75eb2c38a5f3ce52ade1b4c0141540fe0e0cf6de721fa9746b"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 203013,
+      "sha256": "05ec73687f95465aeee9346d8ae9a002420f420a12fc888cfda93c373b7bf0e6"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SECOND_ORDER_METATHEORY.md",
+      "bytes": 7316,
+      "sha256": "1395e7b0fd5ff3cbf33a3019249ad1f341f7fd557302daba6a9aa90f3f2440ef"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "7c41cd802364236315f3527d61be0b882fa3a498f14bda524b22cff72c1b63a7"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 515729,
+      "sha256": "883dc4eaaa5b1939c8b0ce3ef8e83451b30e54d6f47541caac36475fda65d905"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 246901,
+      "sha256": "ef8796ab00fff6f1537bccce935558842e017164e44732ca5c48b50b50a65f8c"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 52922888,
+      "sha256": "3d2373d12ae828380af2146e46f4686c2347dcc7b92fac290aa7ee1ae5e2ca57"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 47016539,
+      "sha256": "0f299566abaa3ed0a2aa2cd762307213d4bea854e11f3a4895de53021be24d54"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1081342,
+      "sha256": "0ddcac96ad701180d6b2a6f33cb6c60a765cb98f2ff9b0d5f535971abab85bae"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 71734458,
+      "sha256": "9d71fd8750f4c0ec2f145c579262f45c3e4b0377d6894a22dc6088d8a731b11b"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 199966,
+      "sha256": "bfa3ae90d0f7854c47363a6ba2a3a4cc26375e03334c049e6dd309d968fdeb5a"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 155844,
+      "sha256": "54246256bbf6806466049ad47e44157d9af37882ca942959a239f8838de9d51c"
+    }
+  ],
+  "result": "The anonymous public commit archive reproduces all 18 changed Git objects byte-for-byte; its strict checker passes all 334 draft units and 3,903 blocks; the public source preserves the four documented Second-order Logic Metatheory corrections."
+}

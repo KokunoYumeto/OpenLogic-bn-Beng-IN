@@ -1,0 +1,167 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-19T19:19:35.292661+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "c5c2ed7e3055a5fcedf1d2827ec6c4016f859178",
+  "parent": "f40e8ade7582e603fce82bc688418cb7cebf79b0",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "d41ea8ac786adce1f94150e08193f8dac13d67b9",
+    "receipt": "PUBLIC_READBACK_SOURCE_299_2026-09-19.json",
+    "receipt_sha256": "56407db918c5506c5b94ca1a2e13e64916dab5c6c3f7ea29b9ef0278e6244003"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/c5c2ed7e3055a5fcedf1d2827ec6c4016f859178.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/c5c2ed7e3055a5fcedf1d2827ec6c4016f859178",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 25577386,
+  "archive_sha256": "4516e0a424bdbfdf78ed846d9ee7574c9cbce1f6fb103104964abf814462f715",
+  "raw_correction_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c5c2ed7e3055a5fcedf1d2827ec6c4016f859178/bn-Beng-IN/content/incompleteness/theories-computability/interpretability.tex",
+  "raw_correction_resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c5c2ed7e3055a5fcedf1d2827ec6c4016f859178/bn-Beng-IN/content/incompleteness/theories-computability/interpretability.tex",
+  "raw_correction_content_type": "text/plain; charset=utf-8",
+  "raw_correction_bytes": 7269,
+  "raw_correction_sha256": "cfcfb853137fc4ef2dc1550d36734d04e8d25e38ea09d9660b54cc0f43ff06d1",
+  "consistent_zfc_extension_qualification_present": true,
+  "standard_model_truth_phrases": 3,
+  "changed_files_verified": 23,
+  "translated_tex_files_in_commit": 11,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 310,
+  "draft_untranslated_total": 412,
+  "segments": 3678,
+  "translated_segments": 3124,
+  "theories_computability_segments": 88,
+  "theories_computability_translated_segments": 66,
+  "theories_computability_unchanged_segments": 22,
+  "source_correction_records": 253,
+  "translation_decisions": 259,
+  "provisional_translation_decisions": 240,
+  "translation_decision_occurrences": 20330,
+  "decisions_with_exact_source_wording": 249,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 310,
+    "blocks": 3678,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/theories-computability/complete-decidable.tex",
+      "bytes": 3460,
+      "sha256": "3457220f54e76a208ab08293bcc7622b0719416a5b1740aebe49f9dfd6e59a19"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/theories-computability/computably-axiomatizable.tex",
+      "bytes": 2977,
+      "sha256": "1e8cb80bab890b9762f4b32e0343dd45f246e9aa4a524e7de7af0093b9b2c1e2"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/theories-computability/consis-with-q.tex",
+      "bytes": 3951,
+      "sha256": "008c514b93e60a7cbdd51ee8d8e98f68aa98d171f5f52003f980f48f630c7b35"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/theories-computability/extensions-of-q-not-decidable.tex",
+      "bytes": 6783,
+      "sha256": "4313c09dac436590cd0fd2869c0526df4530712b7f97e509bb4ffbdc71579386"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/theories-computability/first-incompleteness.tex",
+      "bytes": 4052,
+      "sha256": "139dcbc1c494a665ea30fc430b355f7311bcd5cb1bec1e414cb7b4e1e06464a4"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/theories-computability/inseparability.tex",
+      "bytes": 3145,
+      "sha256": "7b7feb1483fc3a8a349939280350ba551702f8a3f9339c8401264a4fc18972f3"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/theories-computability/interpretability.tex",
+      "bytes": 7269,
+      "sha256": "cfcfb853137fc4ef2dc1550d36734d04e8d25e38ea09d9660b54cc0f43ff06d1"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/theories-computability/introduction.tex",
+      "bytes": 2879,
+      "sha256": "917df7bd424a907de7b4c9244a2c222d6440c74555330b11b2631da11505cb98"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/theories-computability/oconsis-ext-of-q-undec.tex",
+      "bytes": 3716,
+      "sha256": "5e20637c2fd7182cf2b12ee48b7c99ac26235ef62a5495fdd067da40987c754e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/theories-computability/q-is-ce.tex",
+      "bytes": 4901,
+      "sha256": "f3c137416ed580320f25d63498100f25a65a29e975c864fe1e118fb3a0bbd843"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/theories-computability/theories-computability.tex",
+      "bytes": 1192,
+      "sha256": "af3954d9286cc2dba4deb1b7ec9c39d07f8d753b1f34df33ca13ed49afbe43d8"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 5713389,
+      "sha256": "6ec61a7ab66fe234b2b6a081267fd5644bba3b1750c51f412a7227bf0907f5fa"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 189149,
+      "sha256": "78c6f209fc2781e469695cf464035c6f85e3fddd76d5d52fd408712dca7f4f40"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_THEORIES_COMPUTABILITY.md",
+      "bytes": 8910,
+      "sha256": "d4cc3497574e786242b2d8b7fa0800bbbcbc459a48968a0727097d9e5e9e6db8"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "13b2801c903fea460ff3037a753d73f47a6aa7c322a430f2671421574aa33772"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 485355,
+      "sha256": "b297cd07ed2e61e85fb83bba4d6249b021c9ecf340de50f2b5104bfeae3258a0"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 229432,
+      "sha256": "5338993fc46eaf9b836e22fefe694c28e20234b1b6cd1be15cfe8ad1245a6cb4"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 48125926,
+      "sha256": "361c0dec6ca7c5355b1b458f419c10ea4110cb4ad9f82ab7fe9becd9faa265a2"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 42760698,
+      "sha256": "661b33c05fef041582ea42125c37a2f82c13260169caddc492f2bf0ae6e56098"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 992612,
+      "sha256": "897cf1ede37bc6b9d9795181dc3197445406359c98c9a6fc86af9a53bc9c5d8f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 65011605,
+      "sha256": "6d6faca422ad4c372d701e87df96745b252d76af5254000ac2d3de4a79781dea"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 183101,
+      "sha256": "5b4ac411d6ba3271078154d2cac8a58605ffab43001d019eb505681e58936d59"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 143854,
+      "sha256": "4b44e0834fbddd7b530a8210bb0447a916922101a0bae690a8ddd610b47b036a"
+    }
+  ],
+  "result": "The anonymous public commit archive reproduces all 23 changed Git objects byte-for-byte; its strict checker passes all 310 draft units and 3,678 blocks; the raw chapter text preserves the documented ZFC consistency qualification and standard-model scope."
+}

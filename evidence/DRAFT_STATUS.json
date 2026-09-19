@@ -327,7 +327,7 @@
     "translated_count": 310,
     "untranslated_count": 412,
     "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, the Model Theory part driver plus complete Basics, Models of Arithmetic, Interpolation and Lindström chapters, the Computability part driver plus complete Recursive Functions and Computability Theory chapters, the Turing Machines part driver plus the complete Turing Machine Computations and Undecidability chapters, and the Incompleteness part driver plus the complete Introduction, Arithmetization of Syntax, Representability in Q, and Theories and Computability chapters are translated; both Size of Sets editorial alternatives remain distinct.",
-    "reader_state": "The historical v0.2.0 reader remains an exact 18-unit artifact. The public cumulative semantic reader contains 299 units in HTML and EPUB and remains the current reader tranche. The current 310-unit source draft leaves 412 source files untranslated, places 292 translated units beyond the historical reader, and includes 11 source units beyond the public cumulative reader and public source checkpoint."
+    "reader_state": "The historical v0.2.0 reader remains an exact 18-unit artifact. The public cumulative semantic reader contains 299 units in HTML and EPUB and remains the current reader tranche. The current public source checkpoint contains 310 units and leaves 412 source files untranslated; 11 public source units are not yet integrated into the cumulative reader."
   },
   "last_verified_public_release": {
     "version": "0.3.0",
@@ -373,11 +373,11 @@
     "anonymous_public_readback": "All six GitHub and Zenodo assets matched byte-for-byte."
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "d41ea8ac786adce1f94150e08193f8dac13d67b9",
-    "translated_units": 299,
-    "receipt": "PUBLIC_READBACK_SOURCE_299_2026-09-19.json",
-    "receipt_sha256": "56407db918c5506c5b94ca1a2e13e64916dab5c6c3f7ea29b9ef0278e6244003",
-    "status": "Anonymous immutable-archive readback verified all 27 changed objects in the corrected Representability in Q checkpoint, reran the strict checker for 299 units and 3,590 blocks, and confirmed the corrected OLP-0281-B006 raw file."
+    "commit": "c5c2ed7e3055a5fcedf1d2827ec6c4016f859178",
+    "translated_units": 310,
+    "receipt": "PUBLIC_READBACK_SOURCE_310_2026-09-19.json",
+    "receipt_sha256": "4a049ac98f62c1a90ed2b5a41acdc8563503d83b5a62c21185768d4d2633f85b",
+    "status": "Anonymous immutable-archive readback verified all 23 changed objects in the Theories and Computability checkpoint, reran the strict checker for 310 units and 3,678 blocks, and confirmed the ZFC consistency qualification and standard-model scope in the public raw file."
   },
   "current_checks": {
     "unit_checks": [

@@ -1,0 +1,57 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: inseparability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{ins}
+
+\olsection{$\Th{Q}$-তে প্রমাণযোগ্য ও খণ্ডনযোগ্য বাক্যগুলি গণনসাধ্যভাবে
+  অবিচ্ছেদ্য}
+
+
+$\Th{\bar Q}$ দিয়ে সেই সব বাক্যের সেট বোঝাই, যাদের \emph{অস্বীকার}
+$\Th{Q}$-তে প্রমাণযোগ্য; অর্থাৎ,
+$\Th{\bar Q} = \Setabs{!A}{\Th{Q} \Proves \lnot !A}$। মনে করো,
+বিচ্ছিন্ন সেট~$A$ ও $B$-কে \emph{গণনসাধ্যভাবে অবিচ্ছেদ্য} বলা হয় যদি
+এমন কোনো গণনসাধ্য সেট~$C$ না থাকে যাতে $A \subseteq C$ এবং
+$B \subseteq \Complement{C}$।
+
+\begin{lem}
+$\Th{Q}$ ও $\Th{\bar Q}$ গণনসাধ্যভাবে অবিচ্ছেদ্য।
+\end{lem}
+
+\begin{proof}
+ধরি $C$ এমন একটি গণনসাধ্য সেট যাতে $\Th{Q} \subseteq C$ এবং
+$\Th{\bar Q} \subseteq \Complement{C}$। $R(x,y)$ নিচের সম্বন্ধটি হোক:
+\begin{quote}
+$x$ কোনো সূত্র~$!D(u)$-কে সংকেতায়িত করে এবং $!D(\num y)$ $C$-তে আছে।
+\end{quote}
+দেখাব যে $R(x,y)$ একটি সার্বজনীন গণনসাধ্য সম্বন্ধ; তাতেই বিরোধ পাওয়া
+যাবে।
+
+ধরি $S(y)$ গণনসাধ্য এবং $\Th{Q}$-তে $!D_S(u)$ দ্বারা উপস্থাপিত। তাহলে
+\begin{eqnarray*}
+S(n) & \lif & \Th{Q} \Proves !D_S(\num n) \\
+& \lif & !D_S(\num n) \in C
+\end{eqnarray*}
+এবং
+\begin{eqnarray*}
+\lnot S(n) & \lif & \Th{Q} \Proves \lnot !D_S(\num n) \\
+& \lif & !D_S(\num n) \in \Th{\bar Q} \\
+& \lif & !D_S(\num n) \not\in C
+\end{eqnarray*}
+সুতরাং $S(y)$ সম্বন্ধটি $R(\Gn{!D_S(u)},y)$-এর সমতুল্য।
+% BN-SRC-241 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-241):}
+হিমায়িত সমীকরণে মেটা-সম্বন্ধ~$S$-এর যুক্তি হিসেবে বস্তু-ভাষার সংখ্যাপদ
+$\num n$ লেখা হয়েছে; আর শেষ বাক্যে সূত্রের কোড নিতে
+$R(\#(!D_S(\num u)),y)$ লেখা হয়েছে, যেখানে মুক্ত চল~$u$-কে সংখ্যাপদে
+রূপ দেওয়া অনুপযুক্ত। বাংলা পাঠে মেটা-স্তরে $S(n)$ এবং উপস্থাপক
+সূত্রটির গ্যোডেল কোড $\Gn{!D_S(u)}$ রাখা হয়েছে।}
+% BN-SRC-241 TARGET-CORRECTION-END
+\end{proof}
+
+\end{document}

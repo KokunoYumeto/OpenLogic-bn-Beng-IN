@@ -76,10 +76,10 @@ def mathparts(text):
     return collections.Counter(output)
 
 
-def mathparts_with_setbuilder_text_math(text):
+def mathparts_with_setbuilder_text_math(text, binder="x"):
     """Handle set-builder captions that contain legacy nested dollar math."""
     nested = collections.Counter()
-    needle = "$\\Setabs{x}{\\text{"
+    needle = f"$\\Setabs{{{binder}}}{{\\text{{"
     while needle in text:
         start = text.index(needle)
         content_start = start + len(needle)
@@ -92,7 +92,7 @@ def mathparts_with_setbuilder_text_math(text):
         assert depth == 0, "Unclosed set-builder text caption"
         assert text[end : end + 2] == "}$", "Unexpected set-builder caption ending"
         nested.update(mathparts(text[content_start : end - 1]))
-        text = text[:start] + "$\\Setabs{x}{}$" + text[end + 2 :]
+        text = text[:start] + f"$\\Setabs{{{binder}}}{{}}$" + text[end + 2 :]
     return mathparts(text) + nested
 
 
@@ -135,9 +135,10 @@ for row in rows:
     source_blocks = re.split(r"\n\s*\n", body(source).strip())
     target_blocks = re.split(r"\n\s*\n", body(target).strip())
     checked_target = without_documented_corrections(target)
-    if row["unit_id"] == "OLP-0248":
-        source_math = mathparts_with_setbuilder_text_math(source)
-        target_math = mathparts_with_setbuilder_text_math(checked_target)
+    if row["unit_id"] in {"OLP-0248", "OLP-0310"}:
+        binder = "x" if row["unit_id"] == "OLP-0248" else "!A"
+        source_math = mathparts_with_setbuilder_text_math(source, binder=binder)
+        target_math = mathparts_with_setbuilder_text_math(checked_target, binder=binder)
     else:
         source_math = mathparts(source)
         target_math = mathparts(checked_target)
@@ -1468,6 +1469,99 @@ for row in rows:
         )
     if 289 <= int(row["unit_id"].split("-")[1]) <= 300:
         assert set(documented) == representability_q_expected.get(row["unit_id"], set())
+    theories_computability_math_fix = False
+    theories_computability_token_fix = False
+    theories_computability_expected = {
+        "OLP-0303": {"BN-SRC-234", "BN-SRC-235"},
+        "OLP-0305": {"BN-SRC-236", "BN-SRC-237"},
+        "OLP-0306": {"BN-SRC-238"},
+        "OLP-0307": {"BN-SRC-239"},
+        "OLP-0308": {"BN-SRC-240"},
+        "OLP-0309": {"BN-SRC-241"},
+        "OLP-0311": {"BN-SRC-242", "BN-SRC-243"},
+    }
+    audited_theories_computability = source
+    if row["unit_id"] == "OLP-0303":
+        old = (
+            "Conversely, if $\\Th{Q} \\Proves \\lexists[s][!A_T(\\num x, \\num x, s)]$,\n"
+            "then, in fact, for some natural number $n$ the formula $!A_T(\\num x,\n"
+            "\\num x, \\num n)$ must be true.  Now, if $T(x,x,n)$ were false,\n"
+            "$\\Th{Q}$ would prove $\\lnot !A_T(\\num x, \\num x, \\num n)$, since\n"
+            "$!A_T$ represents $T$.  But then $\\Th{Q}$ proves a false formula,\n"
+            "which is a contradiction. So $T(x,x,n)$ must be true, which implies\n"
+            "$!A_x(x) \\downarrow$."
+        )
+        new = (
+            "Conversely, suppose $\\Th{Q} \\Proves \\lexists[s][!A_T(\\num x, \\num x, s)]$.\n"
+            "The axioms of $\\Th{Q}$ are true in the standard model and first-order\n"
+            "derivation is sound, so this existential sentence is true there. Thus,\n"
+            "for some natural number $n$, $!A_T(\\num x, \\num x, \\num n)$ is true.\n"
+            "If $T(x,x,n)$ were false, since $!A_T$ represents $T$, then\n"
+            "$\\Th{Q} \\Proves \\lnot !A_T(\\num x, \\num x, \\num n)$. By soundness,\n"
+            "that negation would also be true, a contradiction. So $T(x,x,n)$ is true,\n"
+            "which implies $!A_x(x) \\downarrow$."
+        )
+        assert audited_theories_computability.count(old) == 1
+        audited_theories_computability = audited_theories_computability.replace(old, new, 1)
+        old_prefix = r"\lexists[s][T(\num x,"
+        new_prefix = r"\lexists[s][!A_T(\num x,"
+        assert audited_theories_computability.count(old_prefix) == 2
+        audited_theories_computability = audited_theories_computability.replace(
+            old_prefix, new_prefix
+        )
+    elif row["unit_id"] == "OLP-0305":
+        meta_repairs = [(r"\lnot S(\num n) &", r"\lnot S(n) &"), (r"S(\num n) &", "S(n) &")]
+        for old, new in meta_repairs:
+            assert audited_theories_computability.count(old) == 1
+            audited_theories_computability = audited_theories_computability.replace(old, new, 1)
+        assert audited_theories_computability.count(r"\Sat{\Nat}{!A}") == 1
+        audited_theories_computability = audited_theories_computability.replace(
+            r"\Sat{\Nat}{!A}", r"\Sat{N}{!A}"
+        )
+    elif row["unit_id"] == "OLP-0307":
+        old = (
+            r"simultaneously search for !!a{derivation} of~$!A$ from~$\Th{T}$ and"
+            + "\n"
+            + r"!!a{derivation} of~$\lnot !A$."
+        )
+        new = (
+            r"simultaneously search for !!a{derivation} of~$!A$ from~$A$ and"
+            + "\n"
+            + r"!!a{derivation} of~$\lnot !A$ from~$A$."
+        )
+        assert audited_theories_computability.count(old) == 1
+        audited_theories_computability = audited_theories_computability.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0308":
+        assert audited_theories_computability.count("!!{axiomatized}") == 1
+        audited_theories_computability = audited_theories_computability.replace(
+            "!!{axiomatized}", "!!{axiomatizable}", 1
+        )
+    elif row["unit_id"] == "OLP-0309":
+        meta_repairs = [(r"\lnot S(\num n) &", r"\lnot S(n) &"), (r"S(\num n) &", "S(n) &")]
+        for old, new in meta_repairs:
+            assert audited_theories_computability.count(old) == 1
+            audited_theories_computability = audited_theories_computability.replace(old, new, 1)
+        old = r"R(\#(!D_S(\num u)),y)"
+        new = r"R(\Gn{!D_S(u)},y)"
+        assert audited_theories_computability.count(old) == 1
+        audited_theories_computability = audited_theories_computability.replace(old, new, 1)
+    unit_number = int(row["unit_id"].split("-")[1])
+    if 301 <= unit_number <= 311:
+        assert set(documented) == theories_computability_expected.get(row["unit_id"], set())
+        audited_theories_math = (
+            mathparts_with_setbuilder_text_math(
+                audited_theories_computability, binder="!A"
+            )
+            if row["unit_id"] == "OLP-0310"
+            else mathparts(audited_theories_computability)
+        )
+        theories_computability_math_fix = (
+            audited_theories_math == target_math
+        )
+        theories_computability_token_fix = (
+            semantic_tokens(audited_theories_computability)
+            == semantic_tokens(checked_target)
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -2781,6 +2875,76 @@ for row in rows:
             "bounded_existential_scope_braced": True,
             "sigma1_existential_macro_well_formed": True,
         }
+    elif row["unit_id"] == "OLP-0303":
+        assert theories_computability_math_fix
+        assert checked_target.count(
+            r"\Th{Q} \Proves \lnot !A_T(\num x, \num x, \num n)"
+        ) == 1
+        assert checked_target.count(
+            r"\lexists[s][!A_T(\num x,\num x,s)]"
+        ) == 2
+        assert checked_target.count(
+            r"\lexists[s][!A_T(\num x,"
+        ) >= 2
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-234", "BN-SRC-235"],
+            "reverse_direction_uses_standard_model_soundness": True,
+            "reduction_sentence_uses_representing_formula": True,
+        }
+    elif row["unit_id"] == "OLP-0305":
+        assert theories_computability_math_fix
+        assert checked_target.count(r"S(n)") == 2
+        assert r"S(\num n) &" not in checked_target
+        assert r"\lnot S(\num n) &" not in checked_target
+        assert checked_target.count(r"\Setabs{!A}{\Sat{N}{!A}}") == 1
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-236", "BN-SRC-237"],
+            "meta_relation_takes_number_argument": True,
+            "true_arithmetic_uses_standard_structure": True,
+        }
+    elif row["unit_id"] == "OLP-0306":
+        assert theories_computability_math_fix
+        assert "হলে তা শনাক্ত করতে স্বতঃসিদ্ধগুলি থেকে" in checked_target
+        tex_command_check = {
+            "documented_correction": "BN-SRC-238",
+            "unbounded_search_is_positive_recognizer": True,
+        }
+    elif row["unit_id"] == "OLP-0307":
+        assert theories_computability_math_fix
+        assert checked_target.count("স্বতঃসিদ্ধসমষ্টি~$A$ থেকে") == 1
+        assert checked_target.count("$A$ থেকে") >= 2
+        tex_command_check = {
+            "documented_correction": "BN-SRC-239",
+            "parallel_proof_search_uses_computable_axiom_set": True,
+        }
+    elif row["unit_id"] == "OLP-0308":
+        assert theories_computability_math_fix and theories_computability_token_fix
+        assert checked_target.count("!!{axiomatized}") == 0
+        assert checked_target.count("!!{axiomatizable}") >= 2
+        tex_command_check = {
+            "documented_correction": "BN-SRC-240",
+            "lemma_hypothesis_uses_axiomatizable": True,
+        }
+    elif row["unit_id"] == "OLP-0309":
+        assert theories_computability_math_fix
+        assert checked_target.count(r"S(n)") == 2
+        assert r"S(\num n) &" not in checked_target
+        assert r"\lnot S(\num n) &" not in checked_target
+        assert checked_target.count(r"R(\Gn{!D_S(u)},y)") == 1
+        tex_command_check = {
+            "documented_correction": "BN-SRC-241",
+            "meta_relation_takes_number_argument": True,
+            "universal_relation_uses_formula_code": True,
+        }
+    elif row["unit_id"] == "OLP-0311":
+        assert theories_computability_math_fix
+        assert "$\\Th{ZFC}$-এর কোনো সঙ্গতিপূর্ণ নির্ণেয় প্রসারণ নেই" in checked_target
+        assert checked_target.count("মানক মডেলে সত্য") >= 3
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-242", "BN-SRC-243"],
+            "zfc_corollary_requires_consistent_extension": True,
+            "presburger_truth_is_in_standard_model": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -2876,6 +3040,7 @@ for row in rows:
             undecidability_math_fix,
             arithmetization_syntax_math_fix,
             representability_q_math_fix,
+            theories_computability_math_fix,
             shared_audit_fix,
         )
     )
@@ -2896,6 +3061,7 @@ for row in rows:
             semantic_tokens(source) == semantic_tokens(checked_target)
             or introduction_token_fix
             or representing_formula_classification_fix
+            or theories_computability_token_fix
         ),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),
         "documented_source_corrections": documented,

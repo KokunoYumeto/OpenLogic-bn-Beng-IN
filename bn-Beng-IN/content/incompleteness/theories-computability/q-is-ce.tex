@@ -1,0 +1,67 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: q-is-ce
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{qce}
+
+\olsection{$\Th{Q}$ একটি সম্পূর্ণ \printtoken{S}{c.e.} সেট}
+
+
+\begin{thm}
+$\Th{Q}$ !!{c.e.}, কিন্তু নির্ণেয় নয়। বস্তুত, এটি একটি সম্পূর্ণ
+!!{c.e.} সেট।
+\end{thm}
+
+\begin{proof}
+$\Th{Q}$ যে !!{c.e.}, তা দেখা কঠিন নয়; কারণ এটি সেই সব বাক্যের
+(কোডের) সেট~$y$, যাদের $\Th{Q}$-তে $y$-এর কোনো প্রমাণ~$x$ আছে:
+\[
+Q = \Setabs{y}{\lexists[x][\Prf[\Th{Q}](x,y)]}.
+\]
+কিন্তু আমরা জানি, $\Prf[\Th{Q}](x,y)$ গণনসাধ্য (বস্তুত আদিম
+পুনরাবৃত্ত), আর উপরের আকারে লেখা যায় এমন প্রতিটি সেটই c.e.
+
+এটি একটি সম্পূর্ণ c.e.\ সেট বলার অর্থ $K \leq_m Q$ বলা, যেখানে
+$K = \Setabs{x}{!A_x(x) \downarrow}$। তাই দেখাই যে $K$-কে $\Th{Q}$-তে
+হ্রাস করা যায়। ক্লিনির বিধেয় $T(e,x,s)$ আদিম পুনরাবৃত্ত বলে সেটি
+$\Th{Q}$-তে কোনো সূত্র~$!A_T$ দ্বারা উপস্থাপিত। তখন প্রত্যেক~$x$-এর জন্য
+\begin{align*}
+x \in K & \lif \lexists[s][T(x,x,s)] \\
+& \lif \lexists[s][(\Th{Q} \Proves !A_T(\num x,\num x, \num s))]
+  \\
+& \lif \Th{Q} \Proves \lexists[s][!A_T(\num x, \num x, s)].
+\end{align*}
+বিপরীত দিকে, ধরি $\Th{Q} \Proves
+\lexists[s][!A_T(\num x, \num x, s)]$। $\Th{Q}$-এর স্বতঃসিদ্ধগুলি
+মানক মডেলে সত্য এবং প্রথম-ক্রমের নিষ্পাদন যথার্থ, তাই ওই অস্তিত্বমূলক
+বাক্যটিও মানক মডেলে সত্য। অতএব কোনো স্বাভাবিক সংখ্যা~$n$-এর জন্য
+$!A_T(\num x, \num x, \num n)$ সত্য। এখন $T(x,x,n)$ মিথ্যা হলে,
+$!A_T$ যে $T$-কে উপস্থাপন করে তা থেকে
+$\Th{Q} \Proves \lnot !A_T(\num x, \num x, \num n)$ হতো। যথার্থতা
+অনুসারে এই অস্বীকারটিও মানক মডেলে সত্য হতো, যা আগের সত্যতার সঙ্গে
+বিরোধ। তাই $T(x,x,n)$ সত্য, এবং সুতরাং $!A_x(x) \downarrow$।
+% BN-SRC-234 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-234):}
+হিমায়িত ইংরেজি বিপরীত দিকটিতে $T(x,x,n)$ মিথ্যা ধরে $\Th{Q}$ যে
+$\lnot !A_T(\num x,\num x,\num n)$ প্রমাণ করবে, সেই সত্য সূত্রটিকেই ভুল
+করে ``মিথ্যা সূত্র'' বলেছে। বাংলা প্রমাণে মানক মডেলে $\Th{Q}$-এর যথার্থতা
+স্পষ্টভাবে ব্যবহার করে $!A_T$ ও তার অস্বীকারের সত্যতার বিরোধটি রাখা হয়েছে।}
+% BN-SRC-234 TARGET-CORRECTION-END
+
+সংক্ষেপে, প্রত্যেক~$x$-এর জন্য $x$ $K$-তে থাকে যদি এবং কেবল যদি
+$\Th{Q}$ সূত্র $\lexists[s][!A_T(\num x,\num x,s)]$ প্রমাণ করে। তাই
+$x$-কে $\lexists[s][!A_T(\num x,\num x,s)]$ বাক্যের (একটি কোডে) পাঠায়
+যে অপেক্ষক~$f$, সেটি $K$ থেকে $\Th{Q}$-তে একটি হ্রাসকরণ।
+% BN-SRC-235 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-235):}
+হিমায়িত শেষ অনুচ্ছেদে বস্তু-ভাষার বাক্যের ভিতরে মেটা-সম্বন্ধ~$T$ বসানো
+হয়েছে। বাংলা পাঠে ঠিক আগেই নির্ধারিত উপস্থাপক সূত্র~$!A_T$ রাখা হয়েছে,
+যাতে হ্রাসকরণের মান সত্যিই $\Th{Q}$-এর ভাষার একটি বাক্যের কোড হয়।}
+% BN-SRC-235 TARGET-CORRECTION-END
+\end{proof}
+
+\end{document}

@@ -1,0 +1,45 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: computably-axiomatizable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{cax}
+
+\olsection{\printtoken{S}{axiomatizable} তত্ত্ব}
+
+কোনো তত্ত্ব~$\Th{T}$-এর স্বতঃসিদ্ধসমষ্টি~$A$ গণনসাধ্য হলে তত্ত্বটিকে
+\emph{!!{axiomatizable}} বলা হয়। ($A$-কে $\Th{T}$-এর স্বতঃসিদ্ধসমষ্টি
+বলার অর্থ $T = \Setabs{!A}{A \Proves !A}$।) স্বাভাবিক সংখ্যার যেকোনো
+``যুক্তিসঙ্গত'' স্বতঃসিদ্ধায়নের এই ধর্ম থাকবে। বিশেষত, সসীম
+স্বতঃসিদ্ধসমষ্টিবিশিষ্ট প্রতিটি তত্ত্ব !!{axiomatizable}।
+
+\begin{lem}
+ধরি $\Th{T}$ !!{axiomatizable}। তাহলে $\Th{T}$
+!!{computably
+enumerable}।
+\end{lem}
+
+\begin{proof}
+ধরি $A$ হলো $\Th{T}$-এর একটি গণনসাধ্য স্বতঃসিদ্ধসমষ্টি। $!A \in T$
+হলে তা শনাক্ত করতে স্বতঃসিদ্ধগুলি থেকে $!A$-এর কোনো !!a{derivation}
+খুঁজতে থাকলেই হয়।
+% BN-SRC-238 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-স্পষ্টীকরণ (BN-SRC-238):}
+হিমায়িত পাঠে এই একমুখী অনুসন্ধানকে ``$!A \in T$ কি না নির্ধারণ'' বলা
+হয়েছে। সদস্য না হলে প্রমাণ-অনুসন্ধান থামার নিশ্চয়তা নেই; তাই লেমার
+c.e. সিদ্ধান্তের সঙ্গে মিলিয়ে বাংলা পাঠে কেবল সদস্য হলে শনাক্ত করার কথা
+বলা হয়েছে।}
+% BN-SRC-238 TARGET-CORRECTION-END
+
+কথাটি আরেকভাবে বলা যায়: $!A$ ঠিক তখনই $\Th{T}$-তে থাকে যখন $A$-তে
+$!B_1$,~\dots, $!B_k$ স্বতঃসিদ্ধের এমন একটি সসীম তালিকা এবং প্রথম-ক্রমের
+যুক্তিবিদ্যায় $(!B_1 \land \dots \land !B_k) \lif !A$-এর কোনো
+!!a{derivation} থাকে। কিন্তু আমরা ইতিমধ্যে জানি, ``এমন কিছু আছে যাতে
+\dots'' আকারের সংজ্ঞাবিশিষ্ট যেকোনো সেট !!{c.e.}, যদি ``\dots''-এর
+পরের শর্তটি গণনসাধ্য হয়।
+\end{proof}
+
+\end{document}

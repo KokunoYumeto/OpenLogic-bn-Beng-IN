@@ -46,8 +46,12 @@
     },
     "old_phrase": "গুরুত্বপূর্ণ ও অনায়াসসাধ্য অন্তর্দৃষ্টি",
     "new_phrase": "অ-তুচ্ছ অন্তর্দৃষ্টি",
-    "public_commit": null,
-    "public_readback_receipt": null
+    "public_commit": "d41ea8ac786adce1f94150e08193f8dac13d67b9",
+    "public_readback_receipt": {
+      "path": "C:/interlanguage-task-state/openlogic-bn-Beng-IN/PUBLIC_READBACK_SOURCE_299_2026-09-19.json",
+      "sha256": "56407db918c5506c5b94ca1a2e13e64916dab5c6c3f7ea29b9ef0278e6244003",
+      "result": "Anonymous immutable-archive and raw-file readback passed for all 27 changed Git objects, 299 checked units and 3,590 aligned blocks."
+    }
   },
   "consulted_evidence": [
     {

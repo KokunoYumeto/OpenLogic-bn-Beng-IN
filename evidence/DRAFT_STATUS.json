@@ -333,11 +333,11 @@
     }
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "c49b1af42516b7b8daf38b844d9950692d3bcf88",
-    "translated_units": 287,
-    "receipt": "PUBLIC_READBACK_SOURCE_287_2026-09-09.json",
-    "receipt_sha256": "03600c7ea2cde7ba5d4bc6a7ae373647ce2d848b284cb1729b021dbccf77b339",
-    "status": "Anonymous immutable-archive readback verified the Arithmetization of Syntax checkpoint. The current 299-unit draft also completes Representability in Q and repairs OLP-0281-B006."
+    "commit": "d41ea8ac786adce1f94150e08193f8dac13d67b9",
+    "translated_units": 299,
+    "receipt": "PUBLIC_READBACK_SOURCE_299_2026-09-19.json",
+    "receipt_sha256": "56407db918c5506c5b94ca1a2e13e64916dab5c6c3f7ea29b9ef0278e6244003",
+    "status": "Anonymous immutable-archive readback verified all 27 changed objects in the corrected Representability in Q checkpoint, reran the strict checker for 299 units and 3,590 blocks, and confirmed the corrected OLP-0281-B006 raw file."
   },
   "current_checks": {
     "unit_checks": [
@@ -5719,7 +5719,7 @@
   "translation_corrections": {
     "count": 1,
     "path": "evidence/TRANSLATION_CORRECTION_OLP_0281_2026-09-17.json",
-    "sha256": "02b8a451bb5bc4ae7fe22c1acc7bb9dfeb55bd414ec02c7b67d84721036fe703",
+    "sha256": "d917978dfa33816b023a147ca71edd700415f88c7d5f7b525b158abafd3c4077",
     "status": "OLP-0281-B006 meaning reversal corrected from the easy/effortless sense to অ-তুচ্ছ; exact old/new bindings and consulted evidence are recorded."
   },
   "functions_build_candidate": {

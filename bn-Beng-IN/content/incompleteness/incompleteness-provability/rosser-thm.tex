@@ -1,0 +1,158 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: rosser-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{ros}
+
+\olsection{রসারের উপপাদ্য}
+
+গ্যোডেলের প্রমাণটি বদলে কি আমরা আরও শক্তিশালী ফল পেতে পারি, যেখানে
+``$\omega$-সঙ্গতিপূর্ণ''-র বদলে শুধু ``সঙ্গতিপূর্ণ'' থাকবে? উত্তর
+``হ্যাঁ''; রসারের আবিষ্কৃত একটি কৌশল দিয়ে তা করা যায়। রসারের কৌশল হলো
+$\OProv[\Th{T}](y)$-এর বদলে একটি ``পরিবর্তিত'' !!{derivability} বিধেয়
+$\ORProv[\Th{T}](y)$ ব্যবহার করা।
+% BN-SRC-250 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-250):}
+হিমায়িত ইংরেজি সূচনায় রসার-বিধেয়টিকে $\ORProv_T$ লিখেছে, কিন্তু তার
+সংজ্ঞা ও প্রমাণের সর্বত্র নির্ধারিত তত্ত্ব-সূচক রূপ
+$\ORProv[\Th{T}]$ ব্যবহার করেছে। বাংলা পাঠে সেই একক রূপটি রাখা হয়েছে।}
+% BN-SRC-250 TARGET-CORRECTION-END
+
+\begin{thm}
+\ollabel{thm:rosser}
+ধরি $\Th{T}$ হলো $\Th{Q}$-কে প্রসারিত করে এমন যেকোনো সঙ্গতিপূর্ণ,
+!!{axiomatizable} তত্ত্ব। তবে $\Th{T}$ সম্পূর্ণ নয়।
+\end{thm}
+
+\begin{proof}
+মনে রেখো, $\OProv[\Th{T}](y)$-কে
+$\lexists[x][\OPrf[\Th{T}](x, y)]$ হিসেবে সংজ্ঞায়িত করা হয়েছে; এখানে
+$\OPrf[\Th{T}](x, y)$ সেই নির্ণেয় সম্বন্ধকে উপস্থাপন করে, যা তখনই সত্য
+যখন $x$ হলো গ্যোডেল সংখ্যা~$y$-বিশিষ্ট !!{sentence}-টির
+!!a{derivation}-এর গ্যোডেল সংখ্যা। $x$ ও~$y$-এর মধ্যে সেই সম্বন্ধটিও
+নির্ণেয়, যা তখনই সত্য যখন $x$ হলো গ্যোডেল সংখ্যা~$y$-বিশিষ্ট বাক্যটির
+একটি \emph{খণ্ডন}-এর গ্যোডেল সংখ্যা। ধরি $\fn{not}(x)$ হলো নিচের কাজটি
+করা আদিম পুনরাবৃত্ত অপেক্ষক: $x$ যদি সূত্র $!A$-এর সংকেত হয়, তবে
+$\fn{not}(x)$ হলো $\lnot !A$-এর একটি সংকেত। তখন
+$\Refut[\Th{T}](x, y)$ তখনই সত্য, যখন
+$\Prf[\Th{T}](x, \fn{not}(y))$ সত্য। এটিকে $\ORefut[\Th{T}](x, y)$
+উপস্থাপন করুক। তখন $\Th{T} \Proves \lnot !A$ এবং $\delta$ যদি তার
+অনুরূপ !!{derivation} হয়, তবে $\Th{Q} \Proves
+\ORefut[\Th{T}](\gn{\delta}, \gn{!A})$। $\ORProv[\Th{T}](y)$-কে
+সংজ্ঞায়িত করি:
+\[
+\lexists[x][(\OPrf[\Th{T}](x,y) \land \lforall[z][(z < x \lif \lnot
+  \ORefut[\Th{T}](z,y))])].
+\]
+মোটামুটি, $\ORProv[\Th{T}](y)$ বলে ``$\Th{T}$-তে $y$-এর একটি প্রমাণ
+আছে, এবং $y$-এর তার চেয়ে ছোট কোনো খণ্ডন নেই।'' $\Th{T}$-কে
+সঙ্গতিপূর্ণ ধরলে $\ORProv[\Th{T}](y)$ ও $\OProv[\Th{T}](y)$ একই
+সংখ্যাগুলির ক্ষেত্রে সত্য; কিন্তু $\Th{T}$-তে \emph{প্রমাণযোগ্যতার}
+দৃষ্টিতে (আর এখন আমরা জানি সত্য ও প্রমাণযোগ্যতার মধ্যে পার্থক্য আছে!)
+দুটির ধর্ম আলাদা। $\Th{T}$ \emph{অ}সঙ্গতিপূর্ণ হলে দুটো একই সংখ্যাগুলির
+ক্ষেত্রে সত্য \emph{নয়}!{} ($\ORProv[\Th{T}](y)$-কে প্রায়ই পড়া হয়
+``$y$ রসার-প্রমাণযোগ্য।'' এইমাত্র যেমন দেখা গেল, রসার-প্রমাণযোগ্যতা
+প্রমাণযোগ্যতার কোনো বিশেষ ধরন নয়—অসঙ্গতিপূর্ণ তত্ত্বে এমন !!{sentence}s
+আছে যা প্রমাণযোগ্য কিন্তু রসার-প্রমাণযোগ্য নয়—তাই এই পাঠটি বিভ্রান্তিকর
+হতে পারে। বিভ্রান্তি এড়াতে চাইলে এর বদলে পড়তে পারো ``$y$
+শ্মোভেবল।'')
+
+স্থির-বিন্দু লেমা অনুসারে এমন একটি সূত্র $!R_\Th{T}$ আছে যাতে
+\begin{equation}
+  \Th{Q} \Proves !R_\Th{T} \liff \lnot \ORProv[\Th{T}](\gn{!R_\Th{T}}).
+  \ollabel{RT}
+\end{equation}
+\olref[1in]{thm:first-incompleteness}-এর প্রমাণের বিপরীতে এখানে আমাদের
+দাবি: $\Th{T}$ সঙ্গতিপূর্ণ হলে $\Th{T}$ সূত্র $!R_\Th{T}$-কে
+!!{derive} করে না, এবং $\Th{T}$ $\lnot !R_\Th{T}$-কেও !!{derive} করে
+না। (অন্য কথায়,
+$\omega$-সঙ্গতির অনুমান আমাদের দরকার নেই।)
+
+প্রথমে দেখাই $\Th{T} \Proves/ !R_{\Th{T}}$। বিপরীতটি ধরি; তাহলে
+$\Th{T}$ থেকে~$!R_{\Th{T}}$-এর !!a{derivation} আছে। তার গ্যোডেল সংখ্যা
+$n$ হোক। তখন $\OPrf[\Th{T}]$ যেহেতু $\Th{Q}$-তে
+$\Prf[\Th{T}]$-কে উপস্থাপন করে, তাই $\Th{Q} \Proves
+\OPrf[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$। আবার প্রতিটি $k < n$-এর
+জন্য $k$ সূত্র $\lnot !R_{\Th{T}}$-এর কোনো !!a{derivation}-এর গ্যোডেল
+সংখ্যা নয়, কারণ $\Th{T}$ সঙ্গতিপূর্ণ। অতএব প্রতিটি $k < n$-এর জন্য
+$\Th{Q} \Proves \lnot \ORefut[\Th{T}](\num{k}, \gn{!R_{\Th{T}}})$।
+\olref[req][min]{lem:less-nsucc} অনুসারে $\Th{Q} \Proves
+\lforall[z][(z < \num{n} \lif \lnot \ORefut[\Th{T}](z,
+  \gn{!R_{\Th{T}}}))]$। তাই
+\[
+\Th{Q} \Proves \lexists[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \land \lforall[z][(z
+    < x \lif \lnot \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])],
+\]
+কিন্তু সেটিই $\ORProv[\Th{T}](\gn{!R_{\Th{T}}})$। \olref{RT} অনুসারে
+$\Th{Q} \Proves \lnot !R_{\Th{T}}$। $\Th{T}$ যেহেতু $\Th{Q}$-কে
+প্রসারিত করে, তাই $\Th{T} \Proves \lnot !R_{\Th{T}}$-ও। আমরা
+$\Th{T} \Proves !R_{\Th{T}}$ ধরে নিয়েছিলাম; ফলে উপপাদ্যের অনুমানের
+বিরুদ্ধে $\Th{T}$ অসঙ্গতিপূর্ণ হতো।
+% BN-SRC-251 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-251):}
+হিমায়িত ইংরেজি এই প্রমাণটির প্রথম বিপরীত অনুমানে নির্ধারিত
+$\Th{T}$-এর বদলে কাঁচা $T$ থেকে নিষ্পাদনের কথা বলেছে। বাংলা পাঠে
+উপপাদ্যের সর্বত্র ব্যবহৃত $\Th{T}$ পুনরুদ্ধার করা হয়েছে।}
+% BN-SRC-251 TARGET-CORRECTION-END
+
+এবার দেখাই $\Th{T} \Proves/ \lnot !R_{\Th{T}}$। আবার বিপরীতটি ধরি,
+এবং ধরি $n$ হলো~$\lnot !R_{\Th{T}}$-এর !!a{derivation}-এর গ্যোডেল
+সংখ্যা। তখন $\Refut[\Th{T}](n, \Gn{!R_{\Th{T}}})$ সত্য; আর
+$\ORefut[\Th{T}]$ যেহেতু $\Th{Q}$-তে $\Refut[\Th{T}]$-কে উপস্থাপন করে,
+তাই $\Th{Q} \Proves
+\ORefut[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$। আবারও দেখাব, তখন
+$\Th{T}$ অসঙ্গতিপূর্ণ হতো, কারণ সেটি $!R_{\Th{T}}$-কেও !!{derive} করত।
+যেহেতু
+\begin{align*}
+\Th{Q} & \Proves !R_{\Th{T}} \liff \lnot \ORProv[\Th{T}](\gn{!R_{\Th{T}}}),
+\intertext{এবং $\Th{T}$ যেহেতু~$\Th{Q}$-কে প্রসারিত করে, তাই নিচেরটি
+দেখালেই যথেষ্ট:}
+\Th{Q} & \Proves \lnot \ORProv[\Th{T}](\gn{!R_{\Th{T}}}).
+\end{align*}
+!!{sentence} $\lnot
+\ORProv[\Th{T}](\gn{!R_{\Th{T}}})$, অর্থাৎ
+\begin{align*}
+  \lnot & \lexists[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \land
+    \lforall[z][(z < x \lif \lnot \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])],
+  \intertext{যুক্তিগতভাবে নিচেরটির সমতুল্য:}
+  & \lforall[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \lif
+    \lexists[z][(z < x \land \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])].
+\end{align*}
+$\Th{Q}$ কী কী !!{derive}s করে সেই তথ্য ব্যবহার করে যুক্তিবিদ্যার ভিতরে
+অনানুষ্ঠানিকভাবে যুক্তি দিই। ধরি $x$ যথেচ্ছ এবং
+$\OPrf[\Th{T}](x, \gn{!R_{\Th{T}}})$। আমরা ইতিমধ্যে জানি যে
+$\Th{T} \Proves/ !R_{\Th{T}}$; তাই প্রতিটি $k$-এর জন্য $\Th{Q}
+\Proves \lnot \OPrf[\Th{T}](\num{k}, \gn{!R_{\Th{T}}})$। ফলে প্রতিটি
+$k$-এর জন্য $\eq/[x][\num{k}]$ অনুসৃত হয়। বিশেষত, (a)
+$\eq/[x][\num{n}]$। আবার
+$\lnot(\eq[x][\num{0}] \lor \eq[x][\num{1}] \lor \dots \lor
+\eq[x][\num{n-1}])$; তাই \olref[req][min]{lem:less-nsucc} অনুসারে (b)
+$\lnot(x < \num{n})$। \olref[req][min]{lem:trichotomy} অনুসারে
+$\num{n} < x$। যেহেতু $\Th{Q} \Proves
+\ORefut[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$, তাই আমাদের কাছে
+$\num{n} < x \land \ORefut[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$ আছে,
+এবং তার থেকে পাই $\lexists[z][(z < x \land
+\ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))]$। $x$ যথেচ্ছ ছিল বলে, চাওয়া
+অনুসারে পাই
+\[
+\lforall[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \lif
+  \lexists[z][(z < x \land \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])].
+\]
+\end{proof}
+
+\begin{prob}
+স্বাভাবিক সংখ্যার দুটি সেট $A$ ও $B$-কে \emph{গণনসাধ্যভাবে অবিচ্ছেদ্য}
+বলা হয়, যদি এমন কোনো !!{decidable} সেট~$X$ না থাকে যাতে
+$A \subseteq X$ এবং $B \subseteq \Complement{X}$
+($\Complement{X}$ হলো~$X$-এর পূরক $\Nat \setminus X$)। ধরি $\Th{T}$
+হলো $\Th{Q}$-এর একটি সঙ্গতিপূর্ণ !!{axiomatizable} প্রসারণ। ধরি $A$
+হলো $\Th{T}$-তে প্রমাণযোগ্য !!{sentence}s-এর গ্যোডেল সংখ্যার সেট এবং
+$B$ হলো $\Th{T}$-তে খণ্ডনযোগ্য বাক্যগুলির গ্যোডেল সংখ্যার সেট। প্রমাণ
+করো যে $A$ ও~$B$ গণনসাধ্যভাবে অবিচ্ছেদ্য।
+\end{prob}
+
+\end{document}

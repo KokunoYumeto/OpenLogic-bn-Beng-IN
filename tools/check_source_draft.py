@@ -96,6 +96,13 @@ def mathparts_with_setbuilder_text_math(text, binder="x"):
     return mathparts(text) + nested
 
 
+def mathparts_with_tarski_quotation(text):
+    """Handle the legacy nested-dollar quote inside Tarski's outer formula."""
+    quoted = "$T(\\text{`$X$'})$"
+    assert text.count(quoted) == 1, "Unexpected Tarski quotation count"
+    return mathparts(text.replace(quoted, "$T(\\text{})$")) + collections.Counter({"X": 1})
+
+
 def controls(text):
     commands = re.findall(
         r"\\(?:ollabel|olref|oliflabeldef|olasset|olimport|cite|citep|citet|citeyear|"
@@ -139,6 +146,9 @@ for row in rows:
         binder = "x" if row["unit_id"] == "OLP-0248" else "!A"
         source_math = mathparts_with_setbuilder_text_math(source, binder=binder)
         target_math = mathparts_with_setbuilder_text_math(checked_target, binder=binder)
+    elif row["unit_id"] == "OLP-0321":
+        source_math = mathparts_with_tarski_quotation(source)
+        target_math = mathparts_with_tarski_quotation(checked_target)
     else:
         source_math = mathparts(source)
         target_math = mathparts(checked_target)
@@ -1562,6 +1572,73 @@ for row in rows:
             semantic_tokens(audited_theories_computability)
             == semantic_tokens(checked_target)
         )
+    incompleteness_provability_math_fix = False
+    incompleteness_provability_token_fix = False
+    incompleteness_provability_expected = {
+        "OLP-0316": {"BN-SRC-250", "BN-SRC-251"},
+        "OLP-0318": {"BN-SRC-244"},
+        "OLP-0319": {"BN-SRC-245", "BN-SRC-246", "BN-SRC-247", "BN-SRC-248"},
+        "OLP-0320": {"BN-SRC-249", "BN-SRC-252"},
+    }
+    audited_incompleteness_provability = source
+    if row["unit_id"] == "OLP-0316":
+        repairs = [
+            (r"\ORProv_T(y)", r"\ORProv[\Th{T}](y)"),
+            (r"from~$T$", r"from~$\Th{T}$"),
+        ]
+        for old, new in repairs:
+            assert audited_incompleteness_provability.count(old) == 1, old
+            audited_incompleteness_provability = (
+                audited_incompleteness_provability.replace(old, new, 1)
+            )
+    elif row["unit_id"] == "OLP-0318":
+        old = r"\lexists[x][\Prf[\Th{PA}](x,y)]"
+        new = r"\lexists[x][\OPrf[\Th{PA}](x,y)]"
+        assert audited_incompleteness_provability.count(old) == 1
+        audited_incompleteness_provability = (
+            audited_incompleteness_provability.replace(old, new, 1)
+        )
+    elif row["unit_id"] == "OLP-0319":
+        repairs = [
+            (r"\Prov[\Th{PA}]", r"\OProv[\Th{PA}]"),
+            (r"\gn{G}", r"\gn{!G}"),
+            ("!!{axiomatized}", "!!{axiomatizable}"),
+            (r"\OCon[T]", r"\OCon[\Th{T}]"),
+        ]
+        for old, new in repairs:
+            assert audited_incompleteness_provability.count(old) == 1, old
+            audited_incompleteness_provability = (
+                audited_incompleteness_provability.replace(old, new, 1)
+            )
+    elif row["unit_id"] == "OLP-0320":
+        old = r"T \Proves"
+        new = r"\Th{T} \Proves"
+        assert audited_incompleteness_provability.count(old) == 6
+        audited_incompleteness_provability = (
+            audited_incompleteness_provability.replace(old, new)
+        )
+        old = "It is not !!{derivable}, because if"
+        new = "If $\\Th{T}$ is consistent, it is not !!{derivable}, because if"
+        assert audited_incompleteness_provability.count(old) == 1
+        audited_incompleteness_provability = (
+            audited_incompleteness_provability.replace(old, new, 1)
+        )
+    if 312 <= unit_number <= 321:
+        assert set(documented) == incompleteness_provability_expected.get(
+            row["unit_id"], set()
+        )
+        audited_incompleteness_math = (
+            mathparts_with_tarski_quotation(audited_incompleteness_provability)
+            if row["unit_id"] == "OLP-0321"
+            else mathparts(audited_incompleteness_provability)
+        )
+        incompleteness_provability_math_fix = (
+            audited_incompleteness_math == target_math
+        )
+        incompleteness_provability_token_fix = (
+            semantic_tokens(audited_incompleteness_provability)
+            == semantic_tokens(checked_target)
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -2945,6 +3022,55 @@ for row in rows:
             "zfc_corollary_requires_consistent_extension": True,
             "presburger_truth_is_in_standard_model": True,
         }
+    elif row["unit_id"] == "OLP-0316":
+        assert incompleteness_provability_math_fix
+        assert r"\ORProv_T(y)" not in checked_target
+        assert r"$T$" not in checked_target
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-250", "BN-SRC-251"],
+            "rosser_predicate_theory_index_normalized": True,
+            "derivation_source_theory_macro_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0318":
+        assert incompleteness_provability_math_fix
+        assert checked_target.count(
+            r"\lexists[x][\OPrf[\Th{PA}](x,y)]"
+        ) == 1
+        tex_command_check = {
+            "documented_correction": "BN-SRC-244",
+            "object_language_provability_definition_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0319":
+        assert (
+            incompleteness_provability_math_fix
+            and incompleteness_provability_token_fix
+        )
+        assert r"\Prov[\Th{PA}]" not in checked_target
+        assert r"\gn{G}" not in checked_target
+        assert "!!{axiomatized}" not in checked_target
+        assert checked_target.count(r"\OCon[\Th{T}]") == 1
+        tex_command_check = {
+            "documented_corrections": [
+                "BN-SRC-245",
+                "BN-SRC-246",
+                "BN-SRC-247",
+                "BN-SRC-248",
+            ],
+            "object_language_provability_macro_restored": True,
+            "godel_sentence_marker_restored": True,
+            "axiomatizable_classification_restored": True,
+            "theory_macro_in_consistency_statement_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0320":
+        assert incompleteness_provability_math_fix
+        assert checked_target.count(r"\Th{T} \Proves") >= 6
+        assert r"T \Proves" not in checked_target
+        assert "$\\Th{T}$ সঙ্গতিপূর্ণ হলে এটি" in checked_target
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-249", "BN-SRC-252"],
+            "exercise_theory_macro_normalized": True,
+            "godel_sentence_unprovability_requires_consistency": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -3041,6 +3167,7 @@ for row in rows:
             arithmetization_syntax_math_fix,
             representability_q_math_fix,
             theories_computability_math_fix,
+            incompleteness_provability_math_fix,
             shared_audit_fix,
         )
     )
@@ -3062,6 +3189,7 @@ for row in rows:
             or introduction_token_fix
             or representing_formula_classification_fix
             or theories_computability_token_fix
+            or incompleteness_provability_token_fix
         ),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),
         "documented_source_corrections": documented,

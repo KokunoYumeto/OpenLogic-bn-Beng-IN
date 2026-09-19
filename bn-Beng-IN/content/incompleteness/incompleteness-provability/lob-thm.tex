@@ -1,0 +1,165 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: lob-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{lob}
+
+\olsection{ল্যোবের উপপাদ্য}
+
+তত্ত্ব~$\Th{T}$-এর গ্যোডেল বাক্যটি $\lnot
+\OProv[\Th{T}](y)$-এর একটি স্থির-বিন্দু; অর্থাৎ এমন !!a{sentence}~$!G$
+যাতে
+\[
+\Th{T} \Proves \lnot \OProv[\Th{T}](\gn{!G}) \liff !G.
+\]
+$\Th{T}$ সঙ্গতিপূর্ণ হলে এটি !!{derivable} নয়, কারণ $\Th{T} \Proves !G$ হলে (a)
+!!{derivability} শর্ত~(১) অনুসারে $\Th{T} \Proves
+\OProv[\Th{T}](\gn{!G})$, এবং (b) $\Th{T} \Proves !G$-এর সঙ্গে
+$\Th{T} \Proves \lnot \OProv[\Th{T}](\gn{!G}) \liff !G$ মিলে দেয়
+$\Th{T} \Proves \lnot \OProv[\Th{T}](\gn{!G})$; তাই $\Th{T}$
+অসঙ্গতিপূর্ণ হতো। এবার স্বাভাবিক প্রশ্ন হলো,
+$\OProv[\Th{T}](y)$-এর কোনো স্থির-বিন্দুর অবস্থা কী; অর্থাৎ এমন
+!!a{sentence}~$!H$-এর অবস্থা কী যাতে
+\[
+\Th{T} \Proves \OProv[\Th{T}](\gn{!H}) \liff !H.
+\]
+এটি !!{derivable} হলে শর্ত~(১) অনুসারে $\Th{T} \Proves
+\OProv[\Th{T}](\gn{!H})$; কিন্তু উপরের সমতুল্যতায় মোডাস পোনেন্স
+প্রয়োগ করলেও একই সিদ্ধান্ত পাওয়া যায়। ফলে, অন্তত গ্যোডেল বাক্যের
+ক্ষেত্রের একই যুক্তি দিয়ে, $\Th{T}$ অসঙ্গতিপূর্ণ—এটি পাওয়া যায় না।
+অবশ্য এর থেকে $\Th{T}$ যে $!H$-কে !!{derive} \emph{করে}, তা প্রমাণিত
+হয় না।
+% BN-SRC-252 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-252):}
+হিমায়িত ইংরেজি বলে যে গ্যোডেল বাক্যটি নিষ্পাদনযোগ্য নয়, কিন্তু দেওয়া
+যুক্তি কেবল দেখায় যে সেটি নিষ্পাদনযোগ্য হলে $\Th{T}$ অসঙ্গতিপূর্ণ হতো।
+বাংলা পাঠে তাই প্রয়োজনীয় সঙ্গতির শর্তটি স্পষ্ট করা হয়েছে।}
+% BN-SRC-252 TARGET-CORRECTION-END
+
+প্রশ্নটিকে একটু সাধারণীকৃত করলে আমরা এগোতে পারি। স্থির-বিন্দু সমতুল্যতার
+বাঁ-থেকে-ডান দিক $\OProv[\Th{T}](\gn{!H}) \lif !H$ হলো
+\emph{প্রতিফলন নীতি} নামের একটি সাধারণ ছকের দৃষ্টান্ত:
+$\OProv[\Th{T}](\gn{!A}) \lif !A$। এর এই নামের কারণ, এক অর্থে এটি বলে
+$\Th{T}$ নিজে কী !!{derive} করতে পারে তা নিয়ে ``প্রতিফলন'' করতে পারে;
+মূলত যেকোনো~$!A$-এর জন্য এটি বলে, ``$\Th{T}$ যদি~$!A$-কে !!{derive}
+করতে পারে, তবে~$!A$ সত্য।'' অবশ্য এটি শুধু বিশুদ্ধ তত্ত্বের ক্ষেত্রেই
+সত্য; এই তথ্য থেকে ধারণা হয়, সাধারণভাবে তত্ত্বগুলি এর প্রতিটি দৃষ্টান্ত
+!!{derive} করবে না। তাহলে কোন দৃষ্টান্তগুলি কোনো তত্ত্ব (যথেষ্ট শক্তিশালী
+এবং !!{derivability} শর্তগুলি পূরণকারী) !!{derive} করতে পারে? নিশ্চয়ই
+যেগুলিতে $!A$ নিজেই !!{derivable}। পরের ফলটি দেখায়, ঠিক সেগুলিই পারে।
+
+\begin{thm}\ollabel{thm:lob}
+ধরি $\Th{T}$ হলো $\Th{Q}$-কে প্রসারিত করে এমন !!a{axiomatizable} তত্ত্ব,
+এবং $\OProv[\Th{T}](y)$ এমন একটি সূত্র যা
+\olref[2in]{sec}-এর P1--P3 শর্ত পূরণ করে। $\Th{T}$ যদি
+$\OProv[\Th{T}](\gn{!A}) \lif !A$-কে !!{derive}s করে, তবে বস্তুত
+$\Th{T}$ $!A$-কে !!{derive}s করে।
+\end{thm}
+
+অন্যভাবে বললে, $\Th{T} \Proves/ !A$ হলে $\Th{T} \Proves/
+\OProv[\Th{T}](\gn{!A}) \lif !A$। এই ফলটি ল্যোবের উপপাদ্য নামে পরিচিত।
+
+\begin{explain}
+ল্যোবের উপপাদ্যের প্রমাণের দিশা দেয় সান্তা ক্লজের অস্তিত্বের একটি চতুর
+প্রমাণ। (সিদ্ধান্তটি পছন্দ না হলে তোমার পছন্দের অন্য যেকোনো সিদ্ধান্ত
+বসাতে পারো।) প্রমাণটি হলো:
+\begin{enumerate}
+\item $X$ হলো এই বাক্যটি: ``$X$ সত্য হলে সান্তা ক্লজ আছেন।''
+\item ধরি $X$ সত্য।
+\item তাহলে সেটি যা বলে তা সত্য; অর্থাৎ পাই: $X$ সত্য হলে সান্তা ক্লজ
+  আছেন।
+\item যেহেতু আমরা $X$-কে সত্য ধরে নিয়েছি, তাই (২) ও~(৩) থেকে মোডাস
+  পোনেন্সে সিদ্ধান্ত নিতে পারি যে সান্তা ক্লজ আছেন।
+\item আমরা অনুমান~(২), ``$X$ সত্য,'' থেকে (৪), ``সান্তা ক্লজ আছেন,''
+  নিষ্পাদন করেছি। শর্তাধীন প্রমাণে দেখালাম: ``$X$ সত্য হলে সান্তা ক্লজ
+  আছেন।''
+\item কিন্তু এটিই বাক্য~$X$। অতএব আমরা দেখালাম $X$ সত্য।
+\item কিন্তু তাহলে উপরের (২)--(৪) যুক্তিতে সান্তা ক্লজ আছেন।
+\end{enumerate}
+``সত্য''-র বদলে ``!!{derivable}'' এবং ``সান্তা ক্লজ আছেন''-এর
+বদলে~$!A$ বসিয়ে এই ধারণাটিকে বিধিবদ্ধ করলে ল্যোবের উপপাদ্যের প্রমাণ
+পাওয়া যায়। কৌশলটি হলো !!{formula}~$\OProv[\Th{T}](y) \lif !A$-এর উপর
+স্থির-বিন্দু লেমা প্রয়োগ করা। তার স্থির-বিন্দুটি আগের রূপরেখার বাক্য~$X$-এর
+অনুরূপ।
+\end{explain}
+
+\begin{proof}[\olref{thm:lob}-এর প্রমাণ]
+ধরি $!A$ এমন !!a{sentence} যাতে $\Th{T}$ সূত্র
+$\OProv[\Th{T}](\gn{!A}) \lif !A$-কে !!{derive}s করে। $!B(y)$ হিসেবে
+!!{formula}~$\OProv[\Th{T}](y) \lif !A$ নিই, এবং স্থির-বিন্দু লেমা
+ব্যবহার করে এমন !!a{sentence}~$!D$ পাই যাতে $\Th{T}$ সূত্র
+$!D \liff !B(\gn{!D})$-কে !!{derive}s করে। তখন নিচের প্রতিটিই $\Th{T}$-তে
+!!{derivable}:
+\begin{align}
+  & !D \liff (\OProv[\Th{T}](\gn{!D}) \lif !A) \ollabel{L-1}\\
+  & \qquad \text{$!D$ হলো~$!B(y)$-এর একটি স্থির-বিন্দু}\notag \\
+  & !D \lif (\OProv[\Th{T}](\gn{!D}) \lif !A) \ollabel{L-2}\\
+  & \qquad\text{\olref{L-1} থেকে}\notag\\
+  & \OProv[\Th{T}](\gn{!D \lif (\OProv[\Th{T}](\gn{!D}) \lif !A)}) \ollabel{L-3}\\
+  & \qquad \text{শর্ত P1 দ্বারা \olref{L-2} থেকে}\notag \\
+  & \OProv[\Th{T}](\gn{!D}) \lif \OProv[\Th{T}](\gn{\OProv[\Th{T}](\gn{!D}) \lif !A})
+  \ollabel{L-4}\\
+  &\qquad \text{শর্ত P2 ব্যবহার করে \olref{L-3} থেকে}\notag \\
+  & \OProv[\Th{T}](\gn{!D}) \lif (\OProv[\Th{T}](\gn{\OProv[\Th{T}](\gn{!D})}) \lif \OProv[\Th{T}](\gn{!A})) \ollabel{L-5}\\
+  &\qquad \text{আবার P2 ব্যবহার করে \olref{L-4} থেকে} \notag\\
+& \OProv[\Th{T}](\gn{!D}) \lif \OProv[\Th{T}](\gn{\OProv[\Th{T}](\gn{!D})}) \ollabel{L-6}\\
+  & \qquad\text{!!{derivability} শর্ত P3 দ্বারা} \notag\\
+  & \OProv[\Th{T}](\gn{!D}) \lif \OProv[\Th{T}](\gn{!A}) \ollabel{L-7} \\
+  &\qquad\text{\olref{L-5} ও \olref{L-6} থেকে}\notag\\
+  & \OProv[\Th{T}](\gn{!A}) \lif !A \ollabel{L-8}\\
+  &\qquad\text{উপপাদ্যের অনুমান দ্বারা} \notag\\
+  & \OProv[\Th{T}](\gn{!D}) \lif !A \ollabel{L-9}\\
+  &\qquad\text{\olref{L-7} ও \olref{L-8} থেকে}\notag\\
+  & (\OProv[\Th{T}](\gn{!D}) \lif !A) \lif !D \ollabel{L-10}\\
+  & \qquad \text{\olref{L-1} থেকে}\notag \\
+  & !D \ollabel{L-11}\\
+  & \qquad\text{\olref{L-9} ও \olref{L-10} থেকে}\notag \\
+  & \OProv[\Th{T}](\gn{!D}) \ollabel{L-12}\\
+  & \qquad\text{শর্ত~P1 দ্বারা \olref{L-11} থেকে}\notag \\
+  & !A \qquad\qquad\text{\olref{L-8} ও \olref{L-12} থেকে}\notag
+\end{align}
+\end{proof}
+
+ল্যোবের উপপাদ্য হাতে থাকলে দ্বিতীয় অসম্পূর্ণতা উপপাদ্যের একটি সংক্ষিপ্ত
+প্রমাণ পাওয়া যায় (যেসব তত্ত্বের P1--P3 শর্ত পূরণকারী
+!!a{derivability} বিধেয় আছে তাদের জন্য): $\Th{T} \Proves
+\OProv[\Th{T}](\gn{\lfalse}) \lif \lfalse$ হলে $\Th{T} \Proves
+\lfalse$। $\Th{T}$ সঙ্গতিপূর্ণ হলে $\Th{T} \Proves/ \lfalse$। তাই
+$\Th{T} \Proves/ \OProv[\Th{T}](\gn{\lfalse}) \lif \lfalse$, অর্থাৎ
+$\Th{T} \Proves/ \OCon[\Th{T}]$। $\OProv[\Th{T}](x)$-এর স্থির-বিন্দু
+$!H$ যে !!{derivable}, তাও এর সাহায্যে দেখানো যায়। কারণ
+\begin{align*}
+  \Th{T} & \Proves \OProv[\Th{T}](\gn{!H}) \liff !H\\
+  \intertext{থেকে বিশেষভাবে পাই}
+    \Th{T} & \Proves \OProv[\Th{T}](\gn{!H}) \lif !H
+\end{align*}
+এবং তাই ল্যোবের উপপাদ্য অনুসারে $\Th{T} \Proves !H$।
+
+% Going in the other direction, for homework I
+% may ask you to work through a short proof of L\"ob's theorem, using
+% the second incompleteness theorem instead of the fixed-point lemma.
+
+\begin{prob}
+ধরি $\Th{T}$ হলো গণনসাধ্যভাবে স্বতঃসিদ্ধায়িত একটি তত্ত্ব, এবং
+$\OProv[\Th{T}]$ হলো $\Th{T}$-এর জন্য !!a{derivability} বিধেয়। নিচের
+চারটি উক্তি বিবেচনা করো:
+\begin{enumerate}
+\item যদি $\Th{T} \Proves !A$, তবে $\Th{T} \Proves \OProv[\Th{T}](\gn{!A})$।
+\item $\Th{T} \Proves !A \lif \OProv[\Th{T}](\gn{!A})$।
+\item যদি $\Th{T} \Proves \OProv[\Th{T}](\gn{!A})$, তবে $\Th{T} \Proves !A$।
+\item $\Th{T} \Proves \OProv[\Th{T}](\gn{!A}) \lif !A$
+\end{enumerate}
+কোন কোন শর্তে এই উক্তিগুলির প্রত্যেকটি সত্য?
+% BN-SRC-249 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-249):}
+হিমায়িত ইংরেজি অনুশীলনটির চারটি উক্তিতে অধ্যায়ের নির্ধারিত তত্ত্ব-চিহ্ন
+$\Th{T}$-এর বদলে কাঁচা $T$ ব্যবহার করেছে। বাংলা পাঠে অনুশীলনের সূচনা ও
+অধ্যায়ের সর্বত্র ব্যবহৃত $\Th{T}$ পুনরুদ্ধার করা হয়েছে।}
+% BN-SRC-249 TARGET-CORRECTION-END
+\end{prob}
+
+\end{document}

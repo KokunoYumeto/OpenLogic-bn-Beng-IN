@@ -1,0 +1,153 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: second-incompleteness-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{2in}
+
+\olsection{দ্বিতীয় অসম্পূর্ণতা উপপাদ্য}
+
+$\Th{PA}$ নিজের সঙ্গতি প্রমাণ করে না—এই উক্তিটি কীভাবে প্রকাশ করা যায়?
+$\Th{PA}$ অসঙ্গতিপূর্ণ বলা মানে $\Th{PA} \Proves \eq[0][1]$ বলা। তাই
+সঙ্গতি-বাক্য $\OCon[\Th{PA}]$ হিসেবে !!{sentence} $\lnot
+\OProv[\Th{PA}](\gn{\eq[0][1]})$ নিতে পারি; তখন নিচের উপপাদ্যটি কাজটি
+করে:
+
+\begin{thm}
+\ollabel{thm:second-incompleteness}
+$\Th{PA}$ সঙ্গতিপূর্ণ ধরে নিলে $\Th{PA}$ সূত্র $\OCon[\Th{PA}]$-কে
+!!{derive} করে না।
+\end{thm}
+
+খেয়াল রাখা জরুরি যে উপপাদ্যটি $\OCon[\Th{PA}]$-এর বিশেষ উপস্থাপনের
+(অর্থাৎ $\OProv[\Th{PA}](y)$-এর বিশেষ উপস্থাপনের) উপর নির্ভর করে। আমরা
+শুধু এইটুকুই ব্যবহার করব যে $\OProv[\Th{PA}](y)$-এর উপস্থাপনটি তিনটি
+!!{derivability} শর্ত পূরণ করে; তাই এই ধর্মগুলিসম্পন্ন
+!!a{derivability} বিধেয় আছে এমন যেকোনো তত্ত্বেই উপপাদ্যটি সাধারণীকৃত হয়।
+
+গ্যোডেলের যুক্তির রূপরেখাটি পড়া শিক্ষণীয়, কারণ উপপাদ্যটি সুন্দর
+সমাপ্তির মতো অনুসৃত হয়। যুক্তিটি এইরকম।
+\olref[1in]{thm:first-incompleteness}-এর প্রমাণে নির্মিত গ্যোডেল বাক্যটি
+$!G_\Th{PA}$ হোক। আমরা দেখিয়েছি, ``$\Th{PA}$ সঙ্গতিপূর্ণ হলে
+$\Th{PA}$ $!G_\Th{PA}$-কে !!{derive} করে না।'' এই যুক্তিকে
+$\Th{PA}$-র \emph{ভিতরে} বিধিবদ্ধ করলে পাই
+\[
+\OCon[\Th{PA}] \lif \lnot \OProv[\Th{PA}](\gn{!G_\Th{PA}}).
+\]
+এবার ধরি $\Th{PA}$ সূত্র $\OCon[\Th{PA}]$-কে !!{derive}s করে। তখন সেটি
+$\lnot \OProv[\Th{PA}](\gn{!G_\Th{PA}})$-কে !!{derive}s করে। কিন্তু
+$!G_\Th{PA}$ যেহেতু একটি গ্যোডেল বাক্য, এটি $!G_\Th{PA}$-এর সমতুল্য।
+তাই $\Th{PA}$ সূত্র $!G_\Th{PA}$-কে !!{derive}s করে।
+% BN-SRC-245 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-245):}
+হিমায়িত ইংরেজি এই অনুচ্ছেদে আগে সংজ্ঞায়িত বস্তু-ভাষার প্রমাণযোগ্যতা
+বিধেয় $\OProv[\Th{PA}]$-এর বদলে অসংজ্ঞায়িত $\Prov[\Th{PA}]$ লিখেছে।
+বাংলা পাঠে উপপাদ্যের ব্যবহৃত $\OProv$ পুনরুদ্ধার করা হয়েছে।}
+% BN-SRC-245 TARGET-CORRECTION-END
+
+কিন্তু আমরা জানি, $\Th{PA}$ সঙ্গতিপূর্ণ হলে সেটি $!G_\Th{PA}$-কে
+!!{derive} করে না!{} অতএব $\Th{PA}$ সঙ্গতিপূর্ণ হলে সেটি
+$\OCon[\Th{PA}]$-কে !!{derive} করতে পারে না।
+
+যুক্তিটিকে আরও নির্ভুল করতে $!G_\Th{PA}$-কে $\Th{PA}$-র গ্যোডেল বাক্য
+ধরব এবং !!{derivability} শর্তগুলি (P1)--(P3) ব্যবহার করে দেখাব যে
+$\Th{PA}$ সূত্র $\OCon[\Th{PA}] \lif !G_\Th{PA}$-কে !!{derive}s করে।
+এ থেকে দেখা যাবে $\Th{PA}$ $\OCon[\Th{PA}]$-কে !!{derive} করে না।
+$\Th{PA}$-র ভিতরে প্রমাণটির একটি রূপরেখা নিচে দেওয়া হলো। (সরলতার জন্য
+$\Th{PA}$ অধোলিপিগুলি বাদ দিই।)
+\begin{align}
+& !G \liff \lnot \OProv(\gn{!G}) \ollabel{G2-1}\\
+& \qquad\text{$!G$ একটি গ্যোডেল বাক্য}\notag \\
+& !G \lif \lnot \OProv(\gn{!G}) \ollabel{G2-2}\\
+  & \qquad\text{\olref{G2-1} থেকে} \notag\\
+& !G \lif
+  (\OProv(\gn{!G}) \lif \lfalse) \ollabel{G2-3}\\
+  & \qquad\text{যুক্তিবিদ্যার সাহায্যে \olref{G2-2} থেকে}\notag\\
+& \OProv(\gn{
+    !G \lif
+    (\OProv(\gn{!G}) \lif \lfalse)
+  }) \ollabel{G2-4}\\
+  & \qquad\text{শর্ত P1 দ্বারা \olref{G2-3} থেকে} \notag\\
+& \OProv(\gn{!G}) \lif
+  \OProv(\gn{
+    (\OProv(\gn{!G}) \lif \lfalse)
+    }) \ollabel{G2-5}\\
+  & \qquad\text{শর্ত P2 দ্বারা \olref{G2-4} থেকে} \notag\\
+& \OProv(\gn{!G}) \lif (\OProv(\gn{\OProv(\gn{!G})}) \lif \OProv(\gn{\lfalse})) \ollabel{G2-6}\\
+  & \qquad\text{শর্ত P2 ও যুক্তিবিদ্যার সাহায্যে \olref{G2-5} থেকে} \notag\\
+& \OProv(\gn{!G}) \lif
+  \OProv(\gn{\OProv(\gn{!G})}) \ollabel{G2-7}\\
+   & \qquad\text{P3 দ্বারা} \notag\\
+& \OProv(\gn{!G}) \lif \OProv(\gn{\lfalse}) \ollabel{G2-8}\\
+  & \qquad \text{যুক্তিবিদ্যার সাহায্যে \olref{G2-6} ও \olref{G2-7} থেকে}\notag\\
+& \OCon \lif \lnot \OProv(\gn{!G}) \ollabel{G2-9}\\
+  & \qquad\text{\olref{G2-8}-এর বিপরীত প্রতিবচন এবং $\OCon \ident \lnot \OProv(\gn{\lfalse})$}\notag \\
+& \OCon \lif !G \notag\\
+  & \qquad\text{যুক্তিবিদ্যার সাহায্যে \olref{G2-1} ও \olref{G2-9} থেকে}\notag
+\end{align}
+উপরের যুক্তিবিদ্যার ব্যবহারগুলি বচনমূলক যুক্তিবিদ্যার প্রাথমিক তথ্য মাত্র;
+যেমন, \olref{G2-3}-এ $\Proves \lnot!A \liff (!A\lif
+\lfalse)$ এবং \olref{G2-8}-এ $!A \lif (!B \lif !C), !A \lif !B
+\Proves !A \lif !C$ ব্যবহৃত হয়েছে। \olref{G2-5} ও \olref{G2-6}-এ
+শর্ত~P2-এর ব্যবহার তার দৃষ্টান্ত
+$\OProv(\gn{!A \lif !B}) \lif
+(\OProv(\gn{!A}) \lif \OProv(\gn{!B}))$-এর উপর নির্ভর করে। প্রথমটিতে
+$!A \ident !G$ এবং $!B \ident \OProv(\gn{!G}) \lif \lfalse$; দ্বিতীয়টিতে
+$!A \ident \OProv(\gn{!G})$ এবং $!B \ident \lfalse$।
+% BN-SRC-246 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-246):}
+হিমায়িত ইংরেজি শেষ বাক্যে দ্বিতীয় P2-দৃষ্টান্তে $\gn{G}$ লিখে গ্যোডেল
+বাক্যের চিহ্ন~$!G$ থেকে বিস্ময়চিহ্নটি বাদ দিয়েছে। বাংলা পাঠে আগের সব
+সমীকরণের সঙ্গে সঙ্গতিপূর্ণ $\gn{!G}$ রাখা হয়েছে।}
+% BN-SRC-246 TARGET-CORRECTION-END
+
+দ্বিতীয় অসম্পূর্ণতা উপপাদ্যের আরও বিমূর্ত রূপটি নিচে দেওয়া হলো:
+
+\begin{thm}
+\ollabel{thm:second-incompleteness-gen} ধরি $\Th{T}$ হলো $\Th{Q}$-কে
+প্রসারিত করে এমন যেকোনো সঙ্গতিপূর্ণ, !!{axiomatizable} তত্ত্ব এবং
+$\OProv[\Th{T}](y)$ হলো $\Th{T}$-এর জন্য !!{derivability} শর্ত P1--P3
+পূরণকারী যেকোনো সূত্র। তবে $\Th{T}$ সূত্র~$\OCon[\Th{T}]$-কে !!{derive}
+করে না।
+% BN-SRC-247 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-247):}
+হিমায়িত ইংরেজি সাধারণ উপপাদ্যে গণনসাধ্য উপস্থাপন দাবি করা
+\texttt{!!\{axiomatizable\}}-এর বদলে \texttt{!!\{axiomatized\}} লিখেছে।
+আগের অধ্যায়ের একই ফল ও প্রমাণযোগ্যতা বিধেয়ের অস্তিত্বের সঙ্গে মিলিয়ে
+বাংলা পাঠে \texttt{!!\{axiomatizable\}} পুনরুদ্ধার করা হয়েছে।}
+% BN-SRC-247 TARGET-CORRECTION-END
+% BN-SRC-248 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-248):}
+একই সিদ্ধান্তে হিমায়িত ইংরেজি তত্ত্বের নির্ধারিত টাইপসেট রূপ
+$\Th{T}$-এর বদলে কাঁচা $T$ ব্যবহার করে $\OCon[T]$ লিখেছে। বাংলা পাঠে
+অধ্যায়জুড়ে ব্যবহৃত $\OCon[\Th{T}]$ রাখা হয়েছে।}
+% BN-SRC-248 TARGET-CORRECTION-END
+\end{thm}
+
+\begin{prob}
+দেখাও যে $\Th{PA}$ সূত্র $!G_{\Th{PA}} \lif \OCon[\Th{PA}]$-কে
+!!{derive}s করে।
+\end{prob}
+
+\begin{digress}
+এই কাহিনির শিক্ষা হলো, গণিতের কোনো ``যুক্তিসঙ্গত'' সঙ্গতিপূর্ণ তত্ত্বই
+নিজের সঙ্গতি-বাক্য !!{derive} করতে পারে না। ধরি $\Th{T}$ এমন একটি
+গাণিতিক তত্ত্ব যাতে $\Th{Q}$ এবং হিলবার্টের ``সসীমতাবাদী'' যুক্তিবিচার
+(তার অর্থ যা-ই হোক) অন্তর্ভুক্ত। তখন সমগ্র $\Th{T}$ $\Th{T}$-এর নিজের
+সঙ্গতি-বাক্য !!{derive} করতে পারে না; তাই আরও বেশি করে তার সসীমতাবাদী
+খণ্ডটিও $\Th{T}$-এর সঙ্গতি-বাক্য !!{derive} করতে পারে না। সেই অর্থে,
+``সমগ্র গণিতের'' কোনো সসীমতাবাদী সঙ্গতি-প্রমাণ থাকতে পারে না।
+
+``সসীমতাবাদী'' শব্দটির ব্যাখ্যায় কিছুটা অবকাশ আছে; ১৯৩১ সালের
+গবেষণাপত্রে গ্যোডেল এই সম্ভাবনা মেনে নিয়েছিলেন যে, আমরা যাকে
+``সসীমতাবাদী'' বলতে পারি তার কিছু অংশ হিলবার্ট যে ধরনের গণিতকে বিধিবদ্ধ
+করতে চেয়েছিলেন তার বাইরে পড়তে পারে। কিন্তু গ্যোডেল উদার ছিলেন; আজ এমন
+কিছু খুঁজে পাওয়া কঠিন যা যুক্তিসঙ্গতভাবে সসীমতাবাদী নামে অভিহিত হতে পারে,
+কিন্তু ধরা যাক, পছন্দের স্বতঃসিদ্ধ-সহ জার্মেলো--ফ্রেঙ্কেল সেটতত্ত্ব
+$\Th{ZFC}$-তে বিধিবদ্ধ করা যায় না।
+\end{digress}
+
+\end{document}

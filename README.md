@@ -9,7 +9,7 @@ This is an **in-progress, machine-translated Bengali (India) edition** of the Op
 - [Read the 299-unit Bengali reader online](https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/)
 - [Download the v0.3.0 prerelease](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.3.0-through-representability)
 
-The release includes a standalone offline HTML reader and a validated, reflowable EPUB 3. It has no PDF because this edition is built directly as semantic HTML with native MathML; the online HTML is the readable preview.
+The release includes a standalone offline HTML reader, a validated reflowable EPUB 3, a complete expanded cumulative LaTeX source, and the complete source snapshot. It has no PDF because this edition is built directly as semantic HTML with native MathML; the online HTML is the readable preview.
 
 ## Scope and provenance
 
@@ -35,7 +35,7 @@ Run:
 python tools/build_cumulative_semantic_reader.py --epubcheck-jar "C:\path\to\epubcheck-5.3.0.jar"
 ```
 
-Requirements are Python 3, Pandoc 3.9 or newer, Java, and EPUBCheck 5.3.0. The builder converts the aligned source directly to semantic HTML and EPUB without a TeX engine. It embeds the pinned Noto Serif Bengali fonts from `fonts/`, emits native MathML, converts proof trees, tableaux, derivations, and diagrams to reflowable structures, validates internal links and EPUB packaging, and checks cold-build determinism.
+Requirements are Python 3, Pandoc 3.9 or newer, Java, and EPUBCheck 5.3.0. The builder converts the aligned source directly to semantic HTML and EPUB without a TeX engine. It also emits a complete expanded cumulative `.tex` file containing all 299 units with no external chapter imports. It embeds the pinned Noto Serif Bengali fonts from `fonts/`, emits native MathML, converts proof trees, tableaux, derivations, and diagrams to reflowable structures, validates internal links and EPUB packaging, and checks cold-build determinism.
 
 ## License
 

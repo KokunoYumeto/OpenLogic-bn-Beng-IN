@@ -4,7 +4,7 @@ This prerelease publishes the first cumulative semantic reader for the current B
 
 Read the edition online at [kokunoyumeto.github.io/OpenLogic-bn-Beng-IN](https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/).
 
-The reader is available as a standalone offline HTML file and a reflowable EPUB 3. Both formats use embedded Bengali fonts and native MathML. Proof trees, tableaux, derivations, and source diagrams are represented as semantic, reflowable structures. The build does not use a TeX engine.
+The reader is available as a standalone offline HTML file and a reflowable EPUB 3. Both formats use embedded Bengali fonts and native MathML. Proof trees, tableaux, derivations, and source diagrams are represented as semantic, reflowable structures. A complete expanded cumulative LaTeX file contains all 299 units without external chapter imports, and the source ZIP preserves the complete editable project snapshot. The build does not use a TeX engine.
 
 Automated validation covered all 299 unit markers, 18,795 MathML expressions, 948 numbered environments, 186 proof trees, 51 tableaux, 7 derivations, 32 diagrams, and 867 internal links. EPUBCheck 5.3.0 reported zero messages. A cold EPUB rebuild was byte-identical. Representative pages throughout the reader were also rendered and visually inspected for Bengali shaping, mathematics, tables of contents, diagrams, tableaux, and boundary units.
 
@@ -14,6 +14,7 @@ No PDF is included because this edition was designed as a semantic, reflowable r
 
 - `openlogic-bn-Beng-IN-through-representability.html` — standalone offline reader
 - `openlogic-bn-Beng-IN-through-representability.epub` — validated EPUB 3 reader
+- `openlogic-bn-Beng-IN-through-representability.tex` — complete expanded 299-unit cumulative LaTeX source
 - `openlogic-bn-Beng-IN-v0.3.0-source.zip` — source snapshot for this release
 - `BUILD_QA.json` — machine-readable build and validation receipt
 - `SHA256SUMS.txt` — SHA-256 checksums for the release files

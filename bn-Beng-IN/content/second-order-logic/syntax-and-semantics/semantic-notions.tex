@@ -1,0 +1,38 @@
+% Part: second-order-logic
+% Chapter: syntax-and-semantics
+% Section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{syn}{sem}
+\olsection{অর্থতাত্ত্বিক ধারণা}
+
+\begin{explain}
+\emph{বৈধতা}, \emph{অনুসিদ্ধান্ত} ও \emph{পরিতৃপ্তিযোগ্যতার} কেন্দ্রীয়
+যৌক্তিক ধারণাগুলি দ্বিতীয়-ক্রমের যুক্তিবিদ্যার জন্য প্রথম-ক্রমের
+যুক্তিবিদ্যার মতোই সংজ্ঞায়িত হয়; শুধু অন্তর্নিহিত পরিতৃপ্তি-সম্পর্কটি
+এখন দ্বিতীয়-ক্রমীয় !!{formula}s-এর পরিতৃপ্তি-সম্পর্ক। অবশ্যই,
+দ্বিতীয়-ক্রমীয় কোনো !!{sentence} হলো এমন !!a{formula}, যাতে বিধেয় ও
+অপেক্ষক-চলরাশিসহ সব চলরাশি বদ্ধ।
+\end{explain}
+
+\begin{defn}[বৈধতা]
+কোনো বাক্য $!A$ \emph{বৈধ}, $\Entails !A$, যদি এবং কেবল যদি প্রত্যেক
+!!{structure}~$\Struct M$-এর জন্য $\Sat{M}{!A}$।
+\end{defn}
+
+\begin{defn}[অনুসিদ্ধান্ত]
+বাক্যের কোনো সেট~$\Gamma$ থেকে বাক্য~$!A$ \emph{অনুসৃত হয়}, $\Gamma
+\Entails !A$, যদি এবং কেবল যদি $\Sat{M}{\Gamma}$ এমন প্রত্যেক
+!!{structure}~$\Struct M$-এর জন্য $\Sat{M}{!A}$।
+\end{defn}
+
+\begin{defn}[পরিতৃপ্তিযোগ্যতা]
+বাক্যের কোনো সেট~$\Gamma$ \emph{পরিতৃপ্তিযোগ্য}, যদি কোনো
+!!{structure}~$\Struct M$-এর জন্য $\Sat{M}{\Gamma}$। $\Gamma$
+পরিতৃপ্তিযোগ্য না হলে তাকে \emph{অপরিতৃপ্তিযোগ্য} বলা হয়।
+\end{defn}
+
+\end{document}

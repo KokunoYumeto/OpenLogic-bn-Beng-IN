@@ -1,0 +1,218 @@
+% Part: second-order-logic
+% Chapter: syntax-and-semantics
+% Section: satisfaction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{syn}{sat}
+
+\olsection{পরিতৃপ্তি}
+
+\begin{explain}
+দ্বিতীয়-ক্রমীয় !!{formula}s-এর জন্য পরিতৃপ্তি-সম্পর্ক
+$\Sat{M}{!A}[s]$ সংজ্ঞায়িত করতে হলে দ্বিতীয়-ক্রমীয় !!{variable}s-ও
+যাতে অন্তর্ভুক্ত হয় সেইভাবে আগের সংজ্ঞাগুলি প্রসারিত করতে হবে।
+দ্বিতীয়-ক্রম ও প্রথম-ক্রমের যুক্তিবিদ্যায় !!a{structure}-এর ধারণা একই।
+পার্থক্য শুধু চলরাশি-আরোপ~$s$-এর ক্ষেত্রে: এখন তাকে শুধু প্রথম-ক্রমীয়
+!!{variable}s-এর মান দিলেই হবে না, দ্বিতীয়-ক্রমীয় !!{variable}s-এরও
+মান দিতে হবে।
+\end{explain}
+
+\begin{defn}[চলরাশি-আরোপ]
+কোনো !!a{structure}~$\Struct{M}$-এর জন্য একটি \emph{চলরাশি-আরোপ}~$s$
+এমন একটি অপেক্ষক, যা প্রত্যেক
+\begin{enumerate}
+\item বস্তু-!!{variable}~$\Obj{v_i}$-কে~$\Domain M$-এর একটি উপাদানে
+  পাঠায়, অর্থাৎ $s(\Obj{v_i}) \in \Domain{M}$;
+\item $n$-স্থানীয় সম্পর্ক-চলরাশি~$\Obj{V_i^n}$-কে~$\Domain{M}$-এর উপর
+  একটি $n$-স্থানীয় সম্পর্কে পাঠায়, অর্থাৎ $s(\Obj{V_i^n}) \subseteq
+  \Domain{M}^n$;
+\item $n$-স্থানীয় অপেক্ষক-চলরাশি~$\Obj{u_i^n}$-কে~$\Domain{M}$ থেকে
+  $\Domain{M}$-এ একটি $n$-স্থানীয় অপেক্ষকে পাঠায়, অর্থাৎ
+  $s(\Obj{u_i^n})\colon \Domain{M}^n \to \Domain{M}$।
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+!!^a{structure} প্রত্যেক !!{constant} ও !!{function}-কে !!a{value}
+আরোপ করে, আর দ্বিতীয়-ক্রমীয় চলরাশি-আরোপ প্রত্যেক বস্তু-চলরাশি ও
+অপেক্ষক-চলরাশিকে যথাক্রমে বস্তু ও অপেক্ষক আরোপ করে। তারা একসঙ্গে
+প্রত্যেক পদের একটি মান নির্ধারণ করতে দেয়।
+\end{explain}
+
+\begin{defn}[কোনো পদের \usetoken{S}{value}]
+$t$ যদি ভাষা~$\Lang L$-এর একটি পদ, $\Struct M$ যদি~$\Lang L$-এর জন্য
+!!a{structure}, এবং $s$ যদি~$\Struct M$-এর জন্য !!a{variable}
+আরোপ হয়, তবে \emph{!!{value}}~$\Value{t}{M}[s]$ প্রথম-ক্রমীয়
+পদের মতোই সংজ্ঞায়িত হয়, সঙ্গে নিচের দফাটি যোগ হয়:
+\begin{quote}
+\indcase{t}{\Atom{u}{t_1, \ldots, t_n}}{
+\[
+\Value{\indfrm}{M}[s] = s(u)(\Value{t_1}{M}[s], \ldots,
+\Value{t_n}{M}[s]).
+\]}
+\end{quote}
+\end{defn}
+
+\begin{defn}[$x$-বিকল্প]
+$s$ যদি !!a{structure}~$\Struct M$-এর জন্য !!a{variable} আরোপ হয়,
+তবে $\Struct M$-এর এমন যেকোনো !!{variable} আরোপ $s'$, যা $x$-কে
+কী আরোপ করে শুধু তাতেই সম্ভবত $s$-এর থেকে আলাদা, তাকে~$s$-এর একটি
+\emph{$x$-বিকল্প} বলা হয়। $s'$ যদি $s$-এর $x$-বিকল্প হয়, তবে আমরা
+$\varAssign{s'}{s}{x}$ লিখি। (দ্বিতীয়-ক্রমীয় চলরাশি $X$ বা $u$-এর
+ক্ষেত্রেও একইভাবে।)
+\end{defn}
+
+\begin{defn}
+  $s$ যদি !!a{structure}~$\Struct M$-এর জন্য !!a{variable} আরোপ
+  এবং $m \in \Domain{M}$ হয়, তবে আরোপ~$\Subst{s}{m}{x}$ হলো
+  নিচে সংজ্ঞায়িত !!{variable} আরোপ:
+  \[\Subst{s}{m}{y} = \begin{cases}
+    m & \text{যদি } y \ident x\\
+    s(y) & \text{অন্যথায়},
+  \end{cases}\]
+  $X$ যদি একটি $n$-স্থানীয় সম্পর্ক-!!{variable} এবং $M \subseteq
+  \Domain{M}^n$ হয়, তবে $\Subst{s}{M}{X}$ হলো নিচে সংজ্ঞায়িত
+  !!{variable} আরোপ:
+  \[\Subst{s}{M}{y} = \begin{cases}
+    M & \text{যদি } y \ident X\\
+    s(y) & \text{অন্যথায়}.
+  \end{cases}\]
+  $u$ যদি একটি $n$-স্থানীয় অপেক্ষক-!!{variable} এবং $f\colon
+  \Domain{M}^n \to \Domain{M}$ হয়, তবে $\Subst{s}{f}{u}$ হলো নিচে
+  সংজ্ঞায়িত !!{variable} আরোপ:
+  \[\Subst{s}{f}{y} = \begin{cases}
+    f & \text{যদি } y \ident u\\
+    s(y) & \text{অন্যথায়}.
+  \end{cases}\]
+  প্রতিটি ক্ষেত্রেই $y$ যেকোনো প্রথম- বা দ্বিতীয়-ক্রমীয়
+  !!{variable} হতে পারে।
+\end{defn}
+
+\begin{defn}[পরিতৃপ্তি]
+দ্বিতীয়-ক্রমীয় !!{formula}s~$!A$-এর জন্য পরিতৃপ্তির সংজ্ঞাটি
+\olref[fol][syn][sat]{defn:satisfaction}-এর মতো, তবে তাতে নিচের দফাগুলি
+যোগ হয়:
+\begin{enumerate}
+\item \indcase{!A}{\Atom{X^n}{t_1, \dots, t_n}}{$\Sat{M}{\indfrm}[s]$
+  তখনই, যখন $\langle \Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s]
+  \rangle \in s(X^n)$।}
+\tagitem{prvAll}{%
+  \indcase{!A}{\lforall[X][!B]}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন প্রত্যেক
+  $M \subseteq \Domain{M}^n$-এর জন্য
+  $\Sat{M}{!B}[\Subst{s}{M}{X}]$।}}{}
+
+\tagitem{prvEx}{%
+  \indcase{!A}{\lexists[X][!B]}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন অন্তত
+  একটি $M \subseteq \Domain{M}^n$ আছে যাতে
+  $\Sat{M}{!B}[\Subst{s}{M}{X}]$।}}{}
+
+\tagitem{prvAll}{%
+  \indcase{!A}{\lforall[u][!B]}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন প্রত্যেক
+  $f\colon \Domain{M}^n \to \Domain{M}$-এর জন্য
+  $\Sat{M}{!B}[\Subst{s}{f}{u}]$।}}{}
+
+\tagitem{prvEx}{%
+  \indcase{!A}{\lexists[u][!B]}{$\Sat{M}{\indfrm}[s]$ তখনই, যখন অন্তত
+  একটি $f\colon \Domain{M}^n \to \Domain{M}$ আছে যাতে
+  $\Sat{M}{!B}[\Subst{s}{f}{u}]$।}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+  !!{formula} $\lforall[z][(\Atom{X}{z} \liff \lnot
+    \Atom{Y}{z})]$ বিবেচনা করো। এতে কোনো দ্বিতীয়-ক্রমীয় পরিমাণসূচক
+  নেই, কিন্তু দ্বিতীয়-ক্রমীয় !!{variable}s $X$ ও~$Y$ আছে (এখানে
+  এক-স্থানীয় বলে ধরা হয়েছে)। অনুরূপ প্রথম-ক্রমীয় !!{sentence}
+  $\lforall[z][(\Atom{P}{z} \liff \lnot \Atom{R}{z})]$ বলে,
+  $P$-এর ব্যাখ্যার অধীনে যা পড়ে তা $R$-এর ব্যাখ্যার অধীনে পড়ে না এবং
+  বিপরীতটিও সত্য। কোনো !!a{structure}-এ !!a{predicate}~$P$-এর ব্যাখ্যা
+  পাওয়া যায় ব্যাখ্যা~$\Assign{P}{M}$ থেকে। কিন্তু $X$ ও~$Y$-এর
+  মতো দ্বিতীয়-ক্রমীয় !!{variable}s-এর ব্যাখ্যা !!{structure} নিজে নয়,
+  !!a{variable} আরোপ দেয়। দ্বিতীয়-ক্রমীয় !!{formula}-টি কোনো
+  !!a{sentence} নয় (এতে মুক্ত !!{variable}s $X$ ও~$Y$ আছে), তাই এটি
+  শুধু !!a{structure}~$\Struct{M}$ এবং !!a{variable} আরোপ~$s$
+  উভয়ের সাপেক্ষে পরিতৃপ্ত হয়।
+
+  $s(X)$-এর !!{element}s যখন $s(Y)$-এর !!{element}s নয় এবং বিপরীতটিও
+  সত্য, অর্থাৎ যদি এবং কেবল যদি $s(Y) = \Domain{M} \setminus s(X)$,
+  তখন
+  $\Sat{M}{\lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})]}[s]$।
+  যেমন, $\Domain{M} = \{1, 2, 3\}$ নাও। কোনো !!{predicate}s,
+  !!{function}s বা !!{constant}s জড়িত নেই বলে এখানে শুধু
+  $\Struct{M}$-এর সংজ্ঞাক্ষেত্রটিই প্রাসঙ্গিক। এবার $s_1(X) = \{1, 2\}$ এবং
+  $s_1(Y) = \{3\}$ হলে
+  $\Sat{M}{\lforall[z][(\Atom{X}{z}
+      \liff \lnot \Atom{Y}{z})]}[s_1]$।
+
+  অন্যদিকে, $s_2(X) = \{1, 2\}$ এবং $s_2(Y) = \{2, 3\}$ হলে
+  $\Sat/{M}{\lforall[z][(\Atom{X}{z} \liff \lnot
+      \Atom{Y}{z})]}[s_2]$। কারণ
+  $\Sat{M}{\Atom{X}{z}}[\Subst{s_2}{2}{z}]$ (যেহেতু $2 \in
+  \Subst{s_2}{2}{z}(X)$), কিন্তু
+  $\Sat/{M}{\lnot \Atom{Y}{z}}[\Subst{s_2}{2}{z}]$ (যেহেতু একই সঙ্গে
+  $2 \in \Subst{s_2}{2}{z}(Y)$)।
+\end{ex}
+
+\begin{ex}
+  $\Sat{M}{\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+  \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]}[s]$ তখনই,
+  যখন এমন কোনো $N \subseteq \Domain{M}$ আছে যাতে
+  $\Sat{M}{(\lexists[y][\Atom{Y}{y}] \land \lforall[z][(\Atom{X}{z}
+  \liff \lnot \Atom{Y}{z})])}[\Subst{s}{N}{Y}]$। আর আগের
+  উদাহরণের মতো যেকোনো $N \neq \emptyset$-এর জন্য কথাটি সিদ্ধ হয়
+  (যাতে $\Sat{M}{\lexists[y][\Atom{Y}{y}]}[\Subst{s}{N}{Y}]$) এবং
+  $N = \Domain{M} \setminus s(X)$। অন্যভাবে বললে,
+  $\Sat{M}{\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+  \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]}[s]$ তখনই,
+  যখন $\Domain{M} \setminus s(X)$ অশূন্য, অর্থাৎ $s(X) \neq
+  \Domain{M}$। তাই, যেমন, $\Domain{M} = \{1, 2, 3\}$ ও $s(X) =
+  \{1, 2\}$ হলে !!{formula}-টি পরিতৃপ্ত, কিন্তু $s(X) = \{1, 2, 3\}
+  = \Domain{M}$ হলে নয়।
+
+  $s(X) = \Domain{M}$ হলেই !!{formula}-টি পরিতৃপ্ত হয় না বলে
+  !!{sentence}
+  \[
+  \lforall[X][\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+      \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]]
+  \]
+  কখনোই পরিতৃপ্ত হয় না: যেকোনো !!{structure}~$\Struct{M}$-এর জন্য
+  আরোপ~$s(X) = \Domain{M}$ !!{sentence}-টিকে মিথ্যা করবে। অন্যদিকে,
+  বাক্যটি
+  \[
+  \lexists[X][\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+      \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]]
+  \]
+  যেকোনো আরোপ~$s$-এর সাপেক্ষে পরিতৃপ্ত, কারণ সব সময় এমন
+  $M \subseteq \Domain{M}$ পাওয়া যায় যাতে $M \neq \Domain{M}$
+  (যেমন, $M = \emptyset$)।
+\end{ex}
+
+\begin{ex}
+  দ্বিতীয়-ক্রমীয় !!{sentence}~$\lforall[X][\lforall[y][X(y)]]$ বলে,
+  প্রত্যেক $1$-স্থানীয় সম্পর্ক, অর্থাৎ প্রত্যেক ধর্ম, প্রতিটি বস্তুর
+  ক্ষেত্রে সিদ্ধ হয়। এটি স্পষ্টতই কখনো সত্য নয়, কারণ প্রত্যেক
+  $\Struct{M}$-এ $s(X) = \emptyset$ এবং $s(y) = a \in \Domain{M}$ এমন
+  একটি চলরাশি-আরোপ~$s$-এর জন্য $\Sat/{M}{X(y)}[s]$। এর অর্থ,
+  দ্বিতীয়-ক্রমের যুক্তিবিদ্যায় $!A \lif
+  \lforall[X][\lforall[y][X(y)]]$, $\lnot !A$-এর সমতুল্য; অর্থাৎ
+  $\Sat{M}{!A \lif \lforall[X][\lforall[y][X(y)]]}$ যদি এবং কেবল যদি
+  $\Sat{M}{\lnot !A}$। অন্যভাবে বললে, দ্বিতীয়-ক্রমের যুক্তিবিদ্যায়
+  $\lforall$ ও~$\lif$ দিয়ে $\lnot$ সংজ্ঞায়িত করা যায়।
+\end{ex}
+
+\begin{prob}
+  দেখাও যে দ্বিতীয়-ক্রমের যুক্তিবিদ্যায় $\lforall$ ও~$\lif$ দিয়ে
+  অন্য সংযোজকগুলি সংজ্ঞায়িত করা যায়:
+  \begin{enumerate}
+    \item প্রমাণ করো, দ্বিতীয়-ক্রমের যুক্তিবিদ্যায় $!A \land !B$,
+    $\lforall[X][(!A \lif (!B \lif \lforall[x][X(x)])\lif
+    \lforall[x][X(x)])]$-এর সমতুল্য।
+    \item শুধু $\lforall$ ও~$\lif$ ব্যবহার করে $!A \lor !B$-এর
+    সমতুল্য একটি দ্বিতীয়-ক্রমীয় সূত্র খুঁজে বার করো।
+  \end{enumerate}
+\end{prob}
+
+\end{document}

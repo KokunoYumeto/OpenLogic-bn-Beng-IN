@@ -1,0 +1,139 @@
+% Part: second-order-logic
+% Chapter: syntax-and-semantics
+% Section: size-of-domain
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{syn}{siz}
+
+\olsection{অসীম ও \usetoken{S}{enumerable}
+  \usetoken{P}{domain} বর্ণনা}
+
+কোনো সেট~$M$ ডেডেকিন্ড-অসীম যদি এবং কেবল যদি একটি !!a{injective}
+অপেক্ষক~$f\colon M \to M$ থাকে যা !!{surjective} নয়, অর্থাৎ যার
+$\ran{f} \neq M$। প্রথম-ক্রমের যুক্তিবিদ্যায় আমরা একটি এক-স্থানীয়
+!!{function}~$f$ বিবেচনা করে বলতে পারি, !!a{structure}~$\Struct{M}$-এ
+তাকে যে অপেক্ষক~$\Assign{f}{M}$ আরোপ করা হয়েছে তা !!{injective}, এবং
+$\ran{f} \neq \Domain{M}$:
+\[
+\lforall[x][\lforall[y][(\eq[f(x)][f(y)] \to \eq[x][y])]] \land
+\lexists[y][\lforall[x][\eq/[y][f(x)]]].
+\]
+$\Struct{M}$ এই !!{sentence}-টিকে পরিতৃপ্ত করলে $\Assign{f}{M}:
+\Domain{M} \to \Domain{M}$ !!{injective}; তাই $\Domain{M}$ অবশ্যই
+অসীম। $\Domain{M}$ অসীম হলে এবং ফলে এমন একটি অপেক্ষক থাকলে আমরা সেই
+অপেক্ষকটিকেই $\Assign{f}{M}$ নিতে পারি; তখন $\Struct{M}$
+!!{sentence}-টিকে পরিতৃপ্ত করবে। কিন্তু এর জন্য ভাষায় এই উদ্দেশ্যে
+ব্যবহারযোগ্য অ-যৌক্তিক সংকেত~$f$ থাকা দরকার। দ্বিতীয়-ক্রমের
+যুক্তিবিদ্যায় আমরা সরাসরি বলতে পারি যে এমন একটি অপেক্ষক
+\emph{আছে}। তখন আর~$f$ দরকার হয় না, এবং বিশুদ্ধ দ্বিতীয়-ক্রমের
+যুক্তিবিদ্যায় নিচের !!{sentence}-টি পাই:
+\[
+\fn{Inf} \ident \lexists[u][(\lforall[x][\lforall[y][(\eq[u(x)][u(y)]
+      \lif \eq[x][y])]] \land \lexists[y][\lforall[x][\eq/[y][u(x)]]])].
+\]
+$\Sat{M}{\fn{Inf}}$ যদি এবং কেবল যদি $\Domain{M}$ অসীম। তখন
+$\fn{Fin} \ident \lnot \fn{Inf}$ সংজ্ঞায়িত করা যায়;
+$\Sat{M}{\fn{Fin}}$ যদি এবং কেবল যদি $\Domain{M}$ সসীম। বিশুদ্ধ
+প্রথম-ক্রমের যুক্তিবিদ্যার কোনো একক !!{sentence} দিয়ে !!{domain} অসীম
+হওয়া প্রকাশ করা যায় না, যদিও এমন বাক্যের একটি অসীম সেট দিয়ে যায়।
+বিশুদ্ধ প্রথম-ক্রমের যুক্তিবিদ্যায় !!{sentence}s-এর এমন কোনো সেট নেই,
+যা কোনো !!a{structure}-এ পরিতৃপ্ত হয় যদি এবং কেবল যদি তার
+সংজ্ঞাক্ষেত্র সসীম।
+
+\begin{prop}
+$\Sat{M}{\fn{Inf}}$ যদি এবং কেবল যদি $\Domain{M}$ অসীম।
+\end{prop}
+
+\begin{proof}
+$\Sat{M}{\fn{Inf}}$ যদি এবং কেবল যদি কোনো~$s$-এর জন্য
+  $\Sat{M}{\lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif \eq[x][y])]]
+    \land \lexists[y][\lforall[x][\eq/[y][u(x)]]]}[s]$। এটি সিদ্ধ
+  হলে $s(u)$ একটি !!a{injective} অপেক্ষক, এবং কোনো $y \in \Domain{M}$
+  $s(u)$-এর মানপরিসরে নেই। বিপরীতভাবে, যদি এমন কোনো !!a{injective}
+  $f\colon \Domain{M} \to \Domain{M}$ থাকে যাতে $\ran{f} \neq
+  \Domain{M}$, তবে $s(u) = f$ এমন একটি চলরাশি-আরোপ।
+\end{proof}
+
+কোনো সেট $M$ \emph{!!{enumerable}}, যদি তার !!{element}s-এর একটি
+তালিকায়ন
+\[
+m_0, m_1, m_2, \dots
+\]
+থাকে (পুনরাবৃত্তি ছাড়া, তবে তালিকাটি সসীম হতে পারে)। এমন তালিকায়ন
+থাকে যদি এবং কেবল যদি !!a{element} $z \in M$ এবং একটি অপেক্ষক
+$f\colon M \to M$ থাকে, যাতে $z$, $f(z)$, $f(f(z))$, \dots হলো
+~$M$-এর সব !!{element}s। তালিকায়নটি থাকলে $z = m_0$ এবং
+$f(m_k) = m_{k+1}$ (অথবা $m_k$ তালিকার শেষ !!{element} হলে
+$f(m_k) = m_k$) হলো প্রয়োজনীয় !!{element} ও অপেক্ষক। বিপরীতভাবে, এমন
+$z$ ও~$f$ থাকলে $z$, $f(z)$, $f(f(z))$, \dots হলো~$M$-এর একটি
+তালিকায়ন, তাই $M$ !!{enumerable}। দ্বিতীয়-ক্রমের যুক্তিবিদ্যায় $z$
+ও~$f$-এর অস্তিত্ব প্রকাশ করে এমন একটি !!{sentence} পাওয়া যায়, যা
+কোনো !!a{structure}-এ সত্য হয় যদি এবং কেবল যদি !!{structure}-টি
+!!{enumerable}:
+\[
+\fn{Count} \ident
+\lexists[z][\lexists[u][\lforall[X][((X(z) \land
+      \lforall[x][(X(x) \lif X(u(x)))]) \lif \lforall[x][X(x)])]]]
+\]
+
+\begin{prop}
+$\Sat{M}{\fn{Count}}$ যদি এবং কেবল যদি $\Domain{M}$
+!!{enumerable}।
+\end{prop}
+
+\begin{proof}
+ধরি $\Domain{M}$ !!{enumerable}, এবং $m_0$, $m_1$, \dots তার একটি
+তালিকায়ন। পুনরাবৃত্তি বাদ দিয়ে নিশ্চিত করা যায় যে কোনো $m_k$ দুবার
+আসে না। পরবর্তী উপাদান থাকলে $f(m_k) = m_{k+1}$ সংজ্ঞায়িত করো, সসীম
+তালিকার শেষ উপাদানকে নিজের কাছেই পাঠাও, এবং $s(z) = m_0$ ও
+$s(u) = f$ নাও। আমরা দেখাব:
+% BN-SRC-254 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-254):} হিমায়িত ইংরেজি প্রমাণে সসীম তালিকায়নের অনুমতি থাকা সত্ত্বেও শুধু $f(m_k)=m_{k+1}$ লেখা হয়েছে, ফলে শেষ উপাদানে অপেক্ষকটি অসংজ্ঞায়িত থেকে যায়। ঠিক আগের অনুচ্ছেদের নির্মাণ অনুসারে বাংলা প্রমাণে পরবর্তী উপাদান না থাকলে শেষ উপাদানকে নিজের কাছেই পাঠানোর দফাটি পুনরুদ্ধার করা হয়েছে।} % BN-SRC-254 TARGET-CORRECTION-END
+\[
+\Sat{M}{\lforall[X][((X(z) \land \lforall[x][(X(x) \lif X(u(x)))])
+    \lif \lforall[x][X(x)])]}[s]
+\]
+ধরি $M \subseteq \Domain{M}$ যেকোনো। আরও ধরি,
+$\Sat{M}{(X(z) \land \lforall[x][(X(x) \lif
+X(u(x)))])}[\Subst{s}{M}{X}]$। তাহলে $\Subst{s}{M}{X}(z) \in M$, এবং
+যখনই $x \in M$, তখন $(\Subst{s}{M}{X}(u))(x) \in M$। অন্যভাবে বললে,
+$\varAssign{\Subst{s}{M}{X}}{s}{X}$ বলে $m_0 \in M$, এবং $x \in M$
+হলে $f(x) \in M$; তাই $m_0 \in M$, $m_1 = f(m_0) \in M$, $m_2 =
+f(f(m_0)) \in M$ ইত্যাদি। সুতরাং $M = \Domain{M}$, এবং তাই
+$\Sat{M}{\lforall[x][X(x)]}[\Subst{s}{M}{X}]$। যেহেতু $M \subseteq
+\Domain{M}$ যেকোনো ছিল, প্রমাণ শেষ:
+$\Sat{M}{\fn{Count}}$।
+
+এবার ধরি $\Sat{M}{\fn{Count}}$, অর্থাৎ কোনো~$s$-এর জন্য
+\[
+\Sat{M}{\lforall[X][((X(z) \land \lforall[x][(X(x) \lif X(u(x)))])
+    \lif \lforall[x][X(x)])]}[s]
+\]
+ধরি $m = s(z)$ ও $f = s(u)$, এবং $M = \{m, f(m), f(f(m)), \dots\}$
+বিবেচনা করি। এইভাবে সংজ্ঞায়িত $M$ স্পষ্টতই !!{enumerable}। অনুমান
+অনুসারে
+\[
+\Sat{M}{(X(z) \land \lforall[x][(X(x) \lif X(u(x)))])
+    \lif \lforall[x][X(x)]}[\Subst{s}{M}{X}]
+\]
+আর $M \ni m = \Subst{s}{M}{X}(z)$ বলে
+$\Sat{M}{X(z)}[\Subst{s}{M}{X}]$; এবং $x \in M$ হলেই $f(x) \in M$
+বলে $\Sat{M}{\lforall[x][(X(x) \lif
+X(u(x)))]}[\Subst{s}{M}{X}]$। অতএব পূর্বগ ও শর্তবাক্য উভয়ই পরিতৃপ্ত
+বলে অনুগটিও পরিতৃপ্ত হতে হবে:
+$\Sat{M}{\lforall[x][X(x)]}[\Subst{s}{M}{X}]$। কিন্তু তার মানে
+$M = \Domain{M}$; তাই সংজ্ঞা অনুসারে $M$ তালিকায়নযোগ্য বলে
+$\Domain{M}$-ও !!{enumerable}।
+\end{proof}
+
+\begin{prob}
+!!{sentence} $\fn{Inf} \land \fn{Count}$ ঠিক সব !!{denumerable}
+সংজ্ঞাক্ষেত্রে সত্য। $\fn{Count}$-এর সংজ্ঞা বদলে এমন একটি আলাদা
+!!{sentence} বানাও, যা সংজ্ঞাক্ষেত্র !!{denumerable} হওয়া সরাসরি প্রকাশ করে,
+এবং প্রমাণ করো যে তা করে।
+\end{prob}
+
+\end{document}

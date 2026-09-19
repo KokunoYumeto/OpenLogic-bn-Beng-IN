@@ -1639,6 +1639,34 @@ for row in rows:
             semantic_tokens(audited_incompleteness_provability)
             == semantic_tokens(checked_target)
         )
+    second_order_syntax_semantics_math_fix = False
+    second_order_syntax_semantics_token_fix = False
+    second_order_syntax_semantics_expected = {
+        "OLP-0324": {"BN-SRC-253"},
+        "OLP-0329": {"BN-SRC-254"},
+    }
+    audited_second_order_syntax_semantics = source
+    if row["unit_id"] == "OLP-0324":
+        repairs = [
+            (r"\Obj{V^1_0}(\Obj v_0)", r"\Obj{V^1_0}(\Obj{v_0})"),
+            (r"\Obj{V^1_0}(v_0)", r"\Obj{V^1_0}(\Obj{v_0})"),
+        ]
+        for old, new in repairs:
+            assert audited_second_order_syntax_semantics.count(old) == 1, old
+            audited_second_order_syntax_semantics = (
+                audited_second_order_syntax_semantics.replace(old, new, 1)
+            )
+    if 322 <= unit_number <= 329:
+        assert set(documented) == second_order_syntax_semantics_expected.get(
+            row["unit_id"], set()
+        )
+        second_order_syntax_semantics_math_fix = (
+            mathparts(audited_second_order_syntax_semantics) == target_math
+        )
+        second_order_syntax_semantics_token_fix = (
+            semantic_tokens(audited_second_order_syntax_semantics)
+            == semantic_tokens(checked_target)
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -3071,6 +3099,25 @@ for row in rows:
             "exercise_theory_macro_normalized": True,
             "godel_sentence_unprovability_requires_consistency": True,
         }
+    elif row["unit_id"] == "OLP-0324":
+        assert second_order_syntax_semantics_math_fix
+        assert r"\Obj{V^1_0}(\Obj v_0)" not in checked_target
+        assert r"\Obj{V^1_0}(v_0)" not in checked_target
+        assert checked_target.count(r"\Obj{V^1_0}(\Obj{v_0})") >= 4
+        tex_command_check = {
+            "documented_correction": "BN-SRC-253",
+            "object_variable_notation_normalized": True,
+        }
+    elif row["unit_id"] == "OLP-0329":
+        assert second_order_syntax_semantics_math_fix
+        assert re.search(
+            r"সসীম\s+তালিকার শেষ উপাদানকে নিজের কাছেই পাঠাও",
+            checked_target,
+        )
+        tex_command_check = {
+            "documented_correction": "BN-SRC-254",
+            "finite_enumeration_terminal_case_restored": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -3168,6 +3215,7 @@ for row in rows:
             representability_q_math_fix,
             theories_computability_math_fix,
             incompleteness_provability_math_fix,
+            second_order_syntax_semantics_math_fix,
             shared_audit_fix,
         )
     )
@@ -3190,6 +3238,7 @@ for row in rows:
             or representing_formula_classification_fix
             or theories_computability_token_fix
             or incompleteness_provability_token_fix
+            or second_order_syntax_semantics_token_fix
         ),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),
         "documented_source_corrections": documented,

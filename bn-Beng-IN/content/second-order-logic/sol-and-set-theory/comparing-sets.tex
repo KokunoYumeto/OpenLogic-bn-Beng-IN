@@ -1,0 +1,88 @@
+% Part: second-order-logic
+% Chapter: sol-and-sets
+% Section: comparing-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{set}{cmp}
+
+\olsection{সেটের তুলনা}
+
+\begin{prop}
+!!{formula}~$\lforall[x][(X(x) \lif Y(x))]$ উপসেট-সম্পর্ককে
+সংজ্ঞায়িত করে; অর্থাৎ, $\Sat{M}{\lforall[x][(X(x) \lif Y(x))]}[s]$
+যদি এবং কেবল যদি $s(X) \subseteq s(Y)$।
+\end{prop}
+
+\begin{prop}
+!!{formula}~$\lforall[x][(X(x) \liff Y(x))]$ সেটগুলির উপর অভেদ
+সম্পর্ককে সংজ্ঞায়িত করে; অর্থাৎ,
+$\Sat{M}{\lforall[x][(X(x) \liff Y(x))]}[s]$ যদি এবং কেবল যদি $s(X) =
+s(Y)$।
+\end{prop}
+
+\begin{prop}
+!!{formula}~$\lexists[x][X(x)]$ অশূন্য হওয়ার ধর্মকে সংজ্ঞায়িত করে;
+অর্থাৎ, $\Sat{M}{\lexists[x][X(x)]}[s]$ যদি এবং কেবল যদি $s(X) \neq
+\emptyset$।
+\end{prop}
+
+কোনো সেট~$X$, কোনো সেট~$Y$-এর চেয়ে আকারে বড় নয়, $\cardle{X}{Y}$,
+যদি এবং কেবল যদি একটি !!a{injective} অপেক্ষক $f\colon X \to Y$ থাকে।
+কোনো অপেক্ষক যে একৈক, এবং~$X$-এর আর্গুমেন্টগুলিতে তার মানগুলি যে~$Y$-তে
+আছে, তা আমরা প্রকাশ করতে পারি। তাই সংজ্ঞাক্ষেত্রের উপসেটগুলির উপর আকারে
+বড় না-হওয়ার সম্পর্কটিও সংজ্ঞায়িত করতে পারি।
+
+\begin{prop}
+নিচের সূত্রটি
+\[
+\lexists[u][(\lforall[x][(X(x) \lif Y(u(x)))] \land
+  \lforall[x][\lforall[y][((X(x) \land X(y) \land
+      \eq[u(x)][u(y)]) \lif \eq[x][y])]])]
+\]
+আকারে বড় না-হওয়ার সম্পর্ককে সংজ্ঞায়িত করে।
+% BN-SRC-259 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-259):} হিমায়িত সূত্রে~$u$-কে গোটা সংজ্ঞাক্ষেত্রে একৈক হতে বলা হয়েছে, যদিও সংজ্ঞেয় সম্পর্কটির জন্য কেবল~$X$-এ তার সীমাবদ্ধতাই একৈক হওয়া দরকার। ওই শক্ততর শর্ত সমসংখ্যক উপসেটের ক্ষেত্রেও সম্প্রসারণযোগ্য নাও হতে পারে। বাংলা সূত্রে একৈকতার পূর্বগে~$X(x) \land X(y)$ যোগ করে যথাযথ সীমাবদ্ধতা পুনরুদ্ধার করা হয়েছে।} % BN-SRC-259 TARGET-CORRECTION-END
+\end{prop}
+
+দুটি সেটের আকার একই, অথবা তারা ``সমসংখ্যক,'' $\cardeq{X}{Y}$, যদি এবং
+কেবল যদি একটি !!a{bijective} অপেক্ষক~$f\colon X \to Y$ থাকে।
+
+\begin{prop}
+নিচের সূত্রটি
+\begin{multline*}
+  \lexists[u][(\lforall[x][(X(x) \lif Y(u(x)))] \land {}\\
+    \lforall[x][\lforall[y][((X(x) \land X(y) \land
+      \eq[u(x)][u(y)]) \lif \eq[x][y])]]
+  \land {} \\\lforall[y][(Y(y) \lif \lexists[x][(X(x)
+      \land \eq[y][u(x)])])])]
+\end{multline*}
+সমসংখ্যক হওয়ার সম্পর্ককে সংজ্ঞায়িত করে।
+% BN-SRC-260 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-260):} হিমায়িত সূত্রটি~$X$ থেকে~$Y$-তে দ্বৈকতার বদলে~$u$-কে গোটা সংজ্ঞাক্ষেত্রে একৈক হতে বলে। যেমন, অসীম সংজ্ঞাক্ষেত্রে~$X$ একটি এক-উপাদান-বর্জিত উপসেট ও~$Y$ গোটা সংজ্ঞাক্ষেত্র হলে তারা সমসংখ্যক হলেও এমন বিশ্বব্যাপী একৈক সম্প্রসারণ অসম্ভব। বাংলা সূত্রে একৈকতা~$X$-এর উপাদানযুগলের মধ্যে সীমাবদ্ধ করা হয়েছে।} % BN-SRC-260 TARGET-CORRECTION-END
+\end{prop}
+
+এই !!{formula}s-কে আমরা যথাক্রমে $X \subseteq Y$, $X = Y$, $X \neq
+\emptyset$, $\cardle{X}{Y}$ ও~$\cardeq{X}{Y}$ দিয়ে সংক্ষেপ করব। (এতে
+সামান্য বিভ্রান্তি হতে পারে, কারণ $X$ ও~$Y$ সেট নিয়ে অনানুষ্ঠানিকভাবে
+কথা বলার সময়ও আমরা একই সংকেত ব্যবহার করি---কিন্তু এখানে সংকেতগুলি
+এক-স্থানীয় সম্পর্ক-চলরাশি $X$ ও~$Y$-সম্পৃক্ত দ্বিতীয়-ক্রমের
+যুক্তিবিদ্যার !!{formula}s-এর সংক্ষিপ্ত রূপ।)
+
+\begin{prop}
+!!{sentence}~$\lforall[X][\lforall[Y][((\cardle{X}{Y} \land
+    \cardle{Y}{X}) \lif \cardeq{X}{Y})]]$ বৈধ।
+\end{prop}
+
+\begin{proof}
+!!{sentence}-টি কোনো !!a{structure}~$\Struct{M}$-এ পরিতৃপ্ত হয় যদি,
+যেকোনো উপসেট $X \subseteq \Domain{M}$ ও~$Y \subseteq \Domain{M}$-এর
+ক্ষেত্রে, $\cardle{X}{Y}$ এবং $\cardle{Y}{X}$ হলে
+$\cardeq{X}{Y}$ হয়। কিন্তু এটি \emph{যেকোনো} সেট $X$ ও~$Y$-এর জন্যই
+সত্য---এটাই শ্র্যোডার--বার্নস্টাইন উপপাদ্য।
+\end{proof}
+
+
+\end{document}

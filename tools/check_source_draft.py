@@ -1732,6 +1732,119 @@ for row in rows:
             semantic_tokens(audited_second_order_metatheory)
             == semantic_tokens(checked_target)
         )
+    second_order_set_theory_math_fix = False
+    second_order_set_theory_expected = {
+        "OLP-0338": {"BN-SRC-259", "BN-SRC-260"},
+        "OLP-0339": {"BN-SRC-261", "BN-SRC-262", "BN-SRC-263"},
+        "OLP-0340": {"BN-SRC-264", "BN-SRC-265", "BN-SRC-266"},
+    }
+    audited_second_order_set_theory = source
+    if row["unit_id"] == "OLP-0338":
+        global_injectivity = re.compile(
+            r"\\lforall\[x\]\[\\lforall\[y\]\[\("
+            r"\\eq\[u\(x\)\]\[u\(y\)\]\s*\\lif\s*\\eq\[x\]\[y\]\)\]\]"
+        )
+        restricted_injectivity = (
+            r"\lforall[x][\lforall[y][((X(x) \land X(y) \land "
+            r"\eq[u(x)][u(y)]) \lif \eq[x][y])]]"
+        )
+        audited_second_order_set_theory, count = global_injectivity.subn(
+            lambda _: restricted_injectivity,
+            audited_second_order_set_theory,
+        )
+        assert count == 2
+    elif row["unit_id"] == "OLP-0339":
+        inf_pattern = re.compile(
+            r"\\begin\{multline\*\}\n\\lexists\[u\].*?\\end\{multline\*\}",
+            re.S,
+        )
+        corrected_inf = r"""\begin{multline*}
+\lexists[u][(\lforall[x][(X(x) \lif X(u(x)))] \land {}\\
+  \lforall[x][\lforall[y][((X(x) \land X(y) \land
+      \eq[u(x)][u(y)]) \lif \eq[x][y])]] \land {}\\
+  \lexists[y][(X(y) \land \lforall[x][(X(x)
+      \lif \eq/[y][u(x)])]])]
+\end{multline*}"""
+        audited_second_order_set_theory, count = inf_pattern.subn(
+            lambda _: corrected_inf,
+            audited_second_order_set_theory,
+            count=1,
+        )
+        assert count == 1
+        count_pattern = re.compile(
+            r"\\begin\{multline\*\}\n\\lexists\[z\].*?\\end\{multline\*\}",
+            re.S,
+        )
+        corrected_count = r"""\begin{multline*}
+\lnot\lexists[x][X(x)] \lor {}\\
+\lexists[z][\lexists[u][(X(z) \land
+    \lforall[x][(X(x) \lif X(u(x)))] \land {}\\
+    \lforall[Y][(((Y \subseteq X \land Y(z)) \land
+      \lforall[x][(Y(x) \lif Y(u(x)))]) \lif X = Y)])]]
+\end{multline*}"""
+        audited_second_order_set_theory, count = count_pattern.subn(
+            lambda _: corrected_count,
+            audited_second_order_set_theory,
+            count=1,
+        )
+        assert count == 1
+        old = r"\fn{Aleph_1}(X) \ident \lforall[Y]"
+        new = r"\fn{Aleph_1}(X) \ident \fn{Inf}(X) \land \lforall[Y]"
+        assert audited_second_order_set_theory.count(old) == 1
+        audited_second_order_set_theory = audited_second_order_set_theory.replace(
+            old, new, 1
+        )
+    elif row["unit_id"] == "OLP-0340":
+        marker = r"$\cardeq{\Domain{M}}{\Real}$ iff" + "\n"
+        marker_index = audited_second_order_set_theory.index(marker)
+        global_injectivity = re.compile(
+            r"\\lforall\[x\]\[\\lforall\[y\]\[\("
+            r"\\eq\[u\(x\)\]\[u\(y\)\]\s*\\lif\s*\\eq\[x\]\[y\]\)\]\]"
+        )
+        restricted_injectivity = (
+            r"\lforall[x][\lforall[y][((Y(x) \land Y(y) \land "
+            r"\eq[u(x)][u(y)]) \lif \eq[x][y])]]"
+        )
+        cantor_prefix, count = global_injectivity.subn(
+            lambda _: restricted_injectivity,
+            audited_second_order_set_theory[:marker_index],
+            count=1,
+        )
+        assert count == 1
+        audited_second_order_set_theory = (
+            cantor_prefix + audited_second_order_set_theory[marker_index:]
+        )
+        old = "subsets of $s(Z)$ via"
+        new = "subsets of $s(X)$ via"
+        assert audited_second_order_set_theory.count(old) == 1
+        audited_second_order_set_theory = audited_second_order_set_theory.replace(
+            old, new, 1
+        )
+        marker_start = audited_second_order_set_theory.index(marker) + len(marker)
+        block_start = audited_second_order_set_theory.index(
+            r"\begin{multline*}", marker_start
+        )
+        block_end = audited_second_order_set_theory.index(
+            r"\end{multline*}", block_start
+        ) + len(r"\end{multline*}")
+        corrected_domain_continuum = r"""\begin{multline*}
+  \Sat{M}{\lexists[Y][(\fn{Cont}(Y) \land {}\\
+    \lexists[u][(\lforall[x][Y(u(x))] \land
+      \lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif \eq[x][y])]] \land {}\\
+      \lforall[y][(Y(y) \lif \lexists[x][\eq[y][u(x)]])])])]}.
+\end{multline*}"""
+        audited_second_order_set_theory = (
+            audited_second_order_set_theory[:block_start]
+            + corrected_domain_continuum
+            + audited_second_order_set_theory[block_end:]
+        )
+    if 336 <= unit_number <= 340:
+        assert set(documented) == second_order_set_theory_expected.get(
+            row["unit_id"], set()
+        )
+        second_order_set_theory_math_fix = (
+            mathparts(audited_second_order_set_theory) == target_math
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -3210,6 +3323,43 @@ for row in rows:
             "finite_fragment_indices_scoped": True,
             "empty_finite_fragment_case_supplied": True,
         }
+    elif row["unit_id"] == "OLP-0338":
+        assert second_order_set_theory_math_fix
+        restricted = r"X(x) \land X(y) \land"
+        assert checked_target.count(restricted) == 2
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-259", "BN-SRC-260"],
+            "comparison_injectivity_restricted_to_X": True,
+            "equinumerosity_injectivity_restricted_to_X": True,
+        }
+    elif row["unit_id"] == "OLP-0339":
+        assert second_order_set_theory_math_fix
+        assert r"X(x) \lif X(u(x))" in checked_target
+        assert r"\lnot\lexists[x][X(x)] \lor" in checked_target
+        assert r"Y \subseteq X \land Y(z)" in checked_target
+        assert r"\fn{Aleph_1}(X) \ident \fn{Inf}(X) \land" in checked_target
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-261", "BN-SRC-262", "BN-SRC-263"],
+            "infinite_subset_endomap_restricted": True,
+            "empty_enumerable_subset_case_included": True,
+            "enumeration_minimality_restricted_to_X": True,
+            "aleph_one_requires_infinite_X": True,
+        }
+    elif row["unit_id"] == "OLP-0340":
+        assert second_order_set_theory_math_fix
+        assert "$s(X)$-এর" in checked_target
+        assert r"\fn{Cont}(Y) \land" in checked_target
+        assert r"\lforall[x][Y(u(x))]" in checked_target
+        assert norm(
+            r"\lforall[x][\lforall[y][((Y(x) \land Y(y) \land "
+            r"\eq[u(x)][u(y)]) \lif \eq[x][y])]]"
+        ) in norm(checked_target)
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-264", "BN-SRC-265", "BN-SRC-266"],
+            "continuum_proof_base_set_restored": True,
+            "domain_continuum_bijection_complete": True,
+            "cantor_injectivity_restricted_to_Y": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -3309,6 +3459,7 @@ for row in rows:
             incompleteness_provability_math_fix,
             second_order_syntax_semantics_math_fix,
             second_order_metatheory_math_fix,
+            second_order_set_theory_math_fix,
             shared_audit_fix,
         )
     )

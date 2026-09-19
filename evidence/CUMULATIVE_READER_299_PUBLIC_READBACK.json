@@ -1,10 +1,11 @@
 {
   "schema": "openlogic-bn-reader-public-readback/1",
-  "verified_utc": "2026-09-19T18:28:08.8723923Z",
+  "verified_utc": "2026-09-19T18:36:46.3546488Z",
   "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
   "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
   "source_manifest_sha256": "5a6fef5c16c15a5b2f90f874c268512cfd6ed2e846bdfa850a67304a4c05a155",
   "publication_commit": "fdd01e659f413649c64c1c6d77552f9df057963d",
+  "packaging_repair_commit": "e4a483aeb6239fd9e61f7622dfc4cea858adda89",
   "access": "Anonymous HTTPS requests; no authentication header or credential used for public readback.",
   "github_pages": {
     "url": "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/",
@@ -23,7 +24,7 @@
     "published_utc": "2026-09-19T18:27:03Z",
     "prerelease": true,
     "draft": false,
-    "asset_count": 5
+    "asset_count": 6
   },
   "assets": [
     {
@@ -45,6 +46,15 @@
       "anonymous_readback_match": true
     },
     {
+      "filename": "openlogic-bn-Beng-IN-through-representability.tex",
+      "bytes": 2546007,
+      "sha256": "0558483a3fe1d3e2c6656ae4cdedccb283846a838c31661e4ac0fba2f71468e2",
+      "unit_markers": 299,
+      "unique_unit_markers": 299,
+      "external_body_imports": 0,
+      "anonymous_readback_match": true
+    },
+    {
       "filename": "openlogic-bn-Beng-IN-v0.3.0-source.zip",
       "bytes": 24821521,
       "sha256": "6ff61670fc510728f001391a952ef51a096ce82a41d06ce20c8f9c4ec6472209",
@@ -52,8 +62,8 @@
     },
     {
       "filename": "SHA256SUMS.txt",
-      "bytes": 419,
-      "sha256": "f061b5994c7fcb15f4adaa63e710d0b37b42ae8aa9996b253ef831d9a6c5d3a8",
+      "bytes": 535,
+      "sha256": "ac1dc96f298b217b0a2e00e2374bbea3cffcdaabe57652e5868a3b1be03dea16",
       "anonymous_readback_match": true
     }
   ],
@@ -78,5 +88,5 @@
     "pdf_created_for_preview": false,
     "direct_online_reading_link_provided": true
   },
-  "result": "The GitHub Pages reader and all five GitHub release assets were fetched anonymously and matched the validated local bytes. The public prerelease is an explicitly incomplete 299-of-722-unit Bengali reader."
+  "result": "The GitHub Pages reader and all six GitHub release assets were fetched anonymously and matched the validated local bytes. The directly downloadable cumulative LaTeX contains all 299 units and no external body imports. The public prerelease is an explicitly incomplete 299-of-722-unit Bengali reader."
 }

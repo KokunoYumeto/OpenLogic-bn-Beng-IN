@@ -1,0 +1,179 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-19T23:47:52.381763+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "fe91532fa60203f2e30a7ea2879c0226926a8b3e",
+  "parent": "6d9156fc3fe39820e0329393018707d1fae29cd3",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "cbe4aed810b3eb952d80b2c0fe41670a5bdf66ba",
+    "receipt": "PUBLIC_READBACK_SOURCE_334_2026-09-19.json",
+    "receipt_sha256": "c2c07976ebeb6ebc0c764da522c59e0489ab06bbf4b6828efeae2d9d70af3a86"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/fe91532fa60203f2e30a7ea2879c0226926a8b3e.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/fe91532fa60203f2e30a7ea2879c0226926a8b3e",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 28111662,
+  "archive_sha256": "56903c931dc1606d1524d1d548f06c67bcb0f052000e14ad7fc4bc1283f410da",
+  "raw_correction_files": [
+    {
+      "path": "bn-Beng-IN/content/incompleteness/introduction/definitions.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fe91532fa60203f2e30a7ea2879c0226926a8b3e/bn-Beng-IN/content/incompleteness/introduction/definitions.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fe91532fa60203f2e30a7ea2879c0226926a8b3e/bn-Beng-IN/content/incompleteness/introduction/definitions.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 27088,
+      "sha256": "248b5fe4a8bcac41ab563d1e4e3b7dcaa3f9b6e2f756ee14feae164c3a22f025"
+    },
+    {
+      "path": "bn-Beng-IN/content/second-order-logic/sol-and-set-theory/comparing-sets.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fe91532fa60203f2e30a7ea2879c0226926a8b3e/bn-Beng-IN/content/second-order-logic/sol-and-set-theory/comparing-sets.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fe91532fa60203f2e30a7ea2879c0226926a8b3e/bn-Beng-IN/content/second-order-logic/sol-and-set-theory/comparing-sets.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6319,
+      "sha256": "6df05a8a3c11bc39b4bb2453a9df072d9bd09a6295de673eedfe74f92f3881db"
+    },
+    {
+      "path": "bn-Beng-IN/content/second-order-logic/sol-and-set-theory/cardinalities.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fe91532fa60203f2e30a7ea2879c0226926a8b3e/bn-Beng-IN/content/second-order-logic/sol-and-set-theory/cardinalities.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fe91532fa60203f2e30a7ea2879c0226926a8b3e/bn-Beng-IN/content/second-order-logic/sol-and-set-theory/cardinalities.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 7569,
+      "sha256": "2373b374cabb6a5b0811cdf39f24918588b68145dc34c401a6fac4ea371c868c"
+    },
+    {
+      "path": "bn-Beng-IN/content/second-order-logic/sol-and-set-theory/power-of-continuum.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fe91532fa60203f2e30a7ea2879c0226926a8b3e/bn-Beng-IN/content/second-order-logic/sol-and-set-theory/power-of-continuum.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fe91532fa60203f2e30a7ea2879c0226926a8b3e/bn-Beng-IN/content/second-order-logic/sol-and-set-theory/power-of-continuum.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 14460,
+      "sha256": "5d183333883a200efcc0555aef5405d516e3160edc8742fb746d92fefc61be53"
+    }
+  ],
+  "nonlogical_vocabulary_semantically_disambiguated": true,
+  "comparison_injectivity_restricted_to_X": true,
+  "equinumerosity_injectivity_restricted_to_X": true,
+  "infinite_subset_endomap_restricted": true,
+  "empty_enumerable_subset_case_included": true,
+  "enumeration_minimality_restricted_to_X": true,
+  "aleph_one_requires_infinite_X": true,
+  "continuum_proof_base_set_restored": true,
+  "domain_continuum_bijection_complete": true,
+  "cantor_injectivity_restricted_to_Y": true,
+  "changed_files_verified": 18,
+  "translated_tex_files_in_commit": 6,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 339,
+  "draft_untranslated_total": 383,
+  "segments": 3949,
+  "translated_segments": 3340,
+  "second_order_set_theory_segments": 46,
+  "second_order_set_theory_translated_segments": 37,
+  "second_order_set_theory_unchanged_segments": 9,
+  "source_correction_records": 276,
+  "translation_decisions": 285,
+  "provisional_translation_decisions": 266,
+  "translation_decision_occurrences": 22687,
+  "decisions_with_exact_source_wording": 270,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 339,
+    "blocks": 3949,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/introduction/definitions.tex",
+      "bytes": 27088,
+      "sha256": "248b5fe4a8bcac41ab563d1e4e3b7dcaa3f9b6e2f756ee14feae164c3a22f025"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/sol-and-set-theory/cardinalities.tex",
+      "bytes": 7569,
+      "sha256": "2373b374cabb6a5b0811cdf39f24918588b68145dc34c401a6fac4ea371c868c"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/sol-and-set-theory/comparing-sets.tex",
+      "bytes": 6319,
+      "sha256": "6df05a8a3c11bc39b4bb2453a9df072d9bd09a6295de673eedfe74f92f3881db"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/sol-and-set-theory/introduction.tex",
+      "bytes": 1735,
+      "sha256": "2c37acaf9db3f56a3c8d2701005bae0fa374099ce45fbdc2c94a02ddbfee1b3a"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/sol-and-set-theory/power-of-continuum.tex",
+      "bytes": 14460,
+      "sha256": "5d183333883a200efcc0555aef5405d516e3160edc8742fb746d92fefc61be53"
+    },
+    {
+      "filename": "bn-Beng-IN/content/second-order-logic/sol-and-set-theory/sol-and-set-theory.tex",
+      "bytes": 1207,
+      "sha256": "f0671a517a14af8f3e17de88ab1e894a824fa4f176c913cf009cb02afc80175a"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6157272,
+      "sha256": "47f069dcd76daf08fab6ec5c4ec8a144b169495d3d76f4a839f8711ddc23cd5f"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 206696,
+      "sha256": "8fd031d57fe551d9e32eb1ca7f677b98358e4ceaaa25141478eb4ed0367c41a9"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SECOND_ORDER_SET_THEORY.md",
+      "bytes": 8818,
+      "sha256": "039579426159e011396ea9a6e735d5713c73fc8b93eecc093363037cc49e5953"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "e93dc82341be5692f9ec06e7b5ea3be188c2cd21944826ef744afe2929341e41"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 531191,
+      "sha256": "cc6de668b7f835a693e36cf95f38e207201212c0d048e169ef04b7f146218ec1"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 251878,
+      "sha256": "93cbcd0bc7f1a639f773ce62b8dce8b6f9eed3e5fe35d65a4028e42e72885985"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 53518216,
+      "sha256": "c30b1288cf600f2c4939892b406a2261e6b8a28ede2320b7480d7083825f1981"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 47535778,
+      "sha256": "d2f9f93e159833c513af6a69d00d19eb67554adc7d24066a2175ebd82ad7324f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1099959,
+      "sha256": "1dff0859b0ba81847c9ada1aab620343f274fbdd6a4897b8338e7d126d854dd5"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 72481879,
+      "sha256": "2ac2bb9ae35480ced6605b3569e03b8245387bd26e110a9b3e95b44734550373"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 204634,
+      "sha256": "ef015dce871a0c5995495905a363c776e3096f585b4fa57f5c5ad8e0df6e91e2"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 162451,
+      "sha256": "482b1726545041302cd59151c1b33fa3e5d92a4f81583d307139c87d8f45edd3"
+    }
+  ],
+  "result": "The anonymous public commit archive reproduces all 18 changed Git objects byte-for-byte; its strict checker passes all 339 draft units and 3,949 blocks; the public source preserves the eight documented Second-order Logic and Set Theory corrections and the nonlogical-vocabulary semantic harmonization."
+}

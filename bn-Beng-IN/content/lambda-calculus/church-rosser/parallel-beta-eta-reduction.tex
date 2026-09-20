@@ -1,0 +1,120 @@
+% Part: lambda-calculus
+% Chapter: church-rosser
+% Section: parallel-beta-eta-reduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{cr}{pbe}
+
+\olsection{সমান্তরাল $\beta\eta$-হ্রাস}
+
+এই অনুচ্ছেদে আমরা সমান্তরাল $\beta\eta$-হ্রাসের চার্চ--রসার ধর্ম
+প্রমাণ করব; এটি $\beta\eta$-হ্রাসের অনুরূপ সমান্তরাল হ্রাসের ধারণা।
+
+\begin{defn}[সমান্তরাল $\beta\eta$-হ্রাস, $\beredpar$] \ollabel{defn:beredpar}
+  পদগুলির উপর \emph{সমান্তরাল $\beta\eta$-হ্রাস} ($\beredpar$)
+  আরোহমূলকভাবে নিচের মতো সংজ্ঞায়িত:
+  \begin{enumerate}
+    \item \ollabel{defn:beredpar1} $x \beredpar x$।
+    \item \ollabel{defn:beredpar2} $N \beredpar N'$ হলে $\lambd[x][N] \beredpar
+      \lambd[x][N']$।
+% BN-SRC-297 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-297):} হিমায়িত দ্বিতীয় বিধির পূর্বধারণা $N\xrightarrow{\beta}N'$ সাধারণ $\beta$-হ্রাস ব্যবহার করে, যদিও সংজ্ঞাটি সমান্তরাল $\beta\eta$-হ্রাসের আরোহমূলক বিধি দিচ্ছে এবং পরের প্রমাণগুলি একই বিধিকে $N\beredpar N'$ পূর্বধারণাসহ ব্যবহার করে। বাংলা বিধিতে তাই সংজ্ঞায়িত সম্বন্ধ~$\beredpar$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-297 TARGET-CORRECTION-END
+    \item \ollabel{defn:beredpar3} $P \beredpar P'$ এবং $Q \beredpar Q'$ হলে
+      $PQ \beredpar P'Q'$।
+    \item \ollabel{defn:beredpar4} $N \beredpar N'$ এবং $Q \beredpar Q'$ হলে
+      $(\lambd[x][N])Q \beredpar \Subst{N'}{Q'}{x}$।
+    \item \ollabel{defn:beredpar5} $N \beredpar N'$ হলে $\lambd[x][Nx]
+      \beredpar N'$, যদি $x \notin \FV{N}$।
+  \end{enumerate}
+% BN-SRC-298 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-298):} হিমায়িত সংজ্ঞা ও দুই প্রমাণে চারবার কাঁচা $FV(N)$ লেখা হয়েছে। বাংলা পাঠে চারটিকেই এই অধ্যায়ে সংজ্ঞায়িত $\FV{N}$ সংকেতে স্বাভাবিক করা হয়েছে।} % BN-SRC-298 TARGET-CORRECTION-END
+\end{defn}
+
+\begin{thm}\ollabel{thm:refl}
+  $M \beredpar M$।
+\end{thm}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+  \olref[lam][cr][pbe]{thm:refl} প্রমাণ করো।
+\end{prob}
+
+\begin{defn}[$\beta\eta$-পূর্ণ বিকাশ]\ollabel{defn:becd}
+  $M$-এর \emph{$\beta\eta$-পূর্ণ বিকাশ}~$\becd{M}$ নিচের মতো
+  সংজ্ঞায়িত; একাধিক ধারা প্রযোজ্য হলে অধিক বিশেষ চতুর্থ ও পঞ্চম ধারা
+  যথাক্রমে তৃতীয় ও দ্বিতীয় ধারার আগে প্রয়োগ হবে:
+% BN-SRC-299 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-299):} হিমায়িত সংজ্ঞার দ্বিতীয় ধারা প্রতিটি বিমূর্ত পদে প্রযোজ্য, আর পঞ্চম ধারা একই সঙ্গে $\lambd[x][Nx]$-এ প্রযোজ্য যখন $x\notin\FV{N}$; অগ্রাধিকার না দিলে $\becd{}$ একক অপেক্ষক নয়। বাংলা সংজ্ঞায় অধিক বিশেষ $\eta$-ধারাকে অগ্রাধিকার দেওয়া হয়েছে। এর ফলে continuation lemma-র দ্বিতীয়-বিধির ক্ষেত্রে শক্ত আরোহে ধারা-অতিক্রম বিশ্লেষণ দরকার। মূল পদ $\lambd[x][Px]$ হলে দেহের $Px\beredpar B$ ব্যুৎপত্তির শেষ বিধি হয় (ক) প্রয়োগ-বিধি, যেখানে $B=P'x$, $P\beredpar P'$; মুক্ত চলকের অনুপস্থিতি বজায় থাকে এবং $P'\beredpar\becd{P}$ আরোহ-অনুমানসহ পঞ্চম বিধি সরাসরি লক্ষ্য দেয়, অথবা (খ) বিটা-বিধি, যেখানে $P=\lambd[y][Q]$ এবং $B=\Subst{Q'}{x}{y}$; তাজা প্রতিনিধি নিলে $\lambd[x][B]$ আলফা-অভিন্ন $\lambd[y][Q']$-এর সঙ্গে, আর ক্ষুদ্রতর $P\beredpar\lambd[y][Q']$ ব্যুৎপত্তিতে শক্ত আরোহ-অনুমান লক্ষ্য দেয়। হিমায়িত প্রমাণটি এই দুই উপক্ষেত্রকে “আগের মতো” বলে বাদ দিয়েছিল।} % BN-SRC-299 TARGET-CORRECTION-END
+  \begin{align}
+    \becd{x} &= x \ollabel{defn:becd1} \\
+    \becd{(\lambd[x][N])} &= \lambd[x][\becd{N}] \ollabel{defn:becd2}\\
+    \becd{(PQ)} &= \becd{P}\becd{Q} && \text{যদি $P$ কোনো $\lambd$-বিমূর্ত পদ না হয়}
+    \ollabel{defn:becd3} \\
+    \becd{((\lambd[x][N])Q)} &= \Subst{\becd{N}}{\becd{Q}}{x}
+                             \ollabel{defn:becd4} \\
+    \becd{(\lambd[x][Nx])} &= \becd{N} \ollabel{defn:becd5} & \text{যদি $x
+                                                      \notin \FV{N}$}
+  \end{align}
+\end{defn}
+
+\begin{lem}\ollabel{lem:comp}
+  $M \beredpar M'$ এবং $R \beredpar R'$ হলে $\Subst{M}{R}{y}
+  \beredpar \Subst{M'}{R'}{y}$।
+\end{lem}
+
+\begin{proof}
+  $M \beredpar M'$-এর !!{derivation}-এর উপর আরোহ প্রয়োগ করি।
+
+  প্রথম চারটি ক্ষেত্র ঠিক \olref[pb]{lem:comp}-এর ক্ষেত্রগুলির মতো।
+  শেষ বিধিটি \olref{defn:beredpar5} হলে কোনো $x$, $N$ ও~$N'$-এর জন্য
+  $M$ হলো $\lambd[x][Nx]$, $M'$ হলো $N'$, যেখানে
+  $x \notin \FV{N}$ এবং $N \beredpar N'$। দেখাতে হবে
+% BN-SRC-303 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-303):} হিমায়িত সাক্ষীতালিকায় কেবল $x$ ও~$N'$ আছে, যদিও উৎসপদ $\lambd[x][Nx]$, পার্শ্বশর্ত এবং পূর্বধারণা সর্বত্র আলাদা পদ~$N$ ব্যবহার করে। বাংলা তালিকায় অনুল্লিখিত $N$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-303 TARGET-CORRECTION-END
+  আলফা-অভিন্ন তাজা প্রতিনিধি নিয়ে আবদ্ধ চলকটিকে প্রতিস্থাপনের চলক
+  এবং প্রতিস্থাপন পদের মুক্ত চলকগুলি থেকে আলাদা ধরি।
+% BN-SRC-304 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-304):} হিমায়িত প্রমাণটি সরাসরি $\Subst{(\lambd[x][Nx])}{R}{y}=\lambd[x][\Subst{N}{R}{y}x]$ লেখে এবং পঞ্চম বিধি প্রয়োগ করে, কিন্তু এর জন্য $x\ne y$ ও $x\notin\FV{R}$ দরকার; নইলে আবদ্ধ $x$ প্রতিস্থাপন পদের মুক্ত চলক ধরে ফেলতে পারে এবং নতুন দেহে ইটা-পার্শ্বশর্ত ব্যর্থ হতে পারে। পদগুলি আলফা-অভেদ শ্রেণি হওয়ায় বাংলা প্রমাণে আগে এই সসীম চলকসমষ্টির বাইরে একটি তাজা আবদ্ধ চলকসহ প্রতিনিধি নেওয়া হয়েছে; সমান্তরাল হ্রাস মুক্ত চলক না বাড়ানোয় একই তাজাভাব ডান দিকেও বজায় থাকে।} % BN-SRC-304 TARGET-CORRECTION-END
+  $\Subst{(\lambd[x][Nx])}{R}{y} \beredpar \Subst{N'}{R'}{y}$; অর্থাৎ,
+  $\lambd[x][\Subst{N}{R}{y} x] \beredpar \Subst{N'}{R'}{y}$। এটি
+  \olref{defn:beredpar}\olref{defn:beredpar5} এবং আরোহ-অনুমান থেকে
+  অনুসৃত হয়।
+\end{proof}
+
+\begin{lem}\ollabel{lem:cont}
+  $M \beredpar M'$ হলে $M' \beredpar \becd{M}$।
+\end{lem}
+
+\begin{proof}
+  $M \beredpar M'$-এর !!{derivation}-এর উচ্চতার উপর শক্ত আরোহ প্রয়োগ
+  করি।
+
+  প্রথম চারটি ক্ষেত্র \olref[pb]{lem:cont}-এর ক্ষেত্রগুলির মতো; তবে
+  দ্বিতীয় বিধির যে উপক্ষেত্রে অধিক বিশেষ পঞ্চম পূর্ণ-বিকাশ ধারা
+  অগ্রাধিকার পায়, সেখানে দেহের ব্যুৎপত্তির শেষ বিধি অনুযায়ী প্রয়োগ
+  ও বিটা-রিডেক্সের দুই ধারা-অতিক্রম উপক্ষেত্র হয়। প্রথমটিতে মুক্ত চলকের
+  অনুপস্থিতি, পঞ্চম সমান্তরাল বিধি ও আরোহ-অনুমান লক্ষ্য দেয়; দ্বিতীয়টিতে
+  তাজা প্রতিনিধির আলফা-অভেদ এবং সংশ্লিষ্ট ক্ষুদ্রতর ব্যুৎপত্তির শক্ত
+  আরোহ-অনুমান লক্ষ্য দেয়।
+  শেষ বিধিটি \olref{defn:beredpar5} হলে কোনো $x$, $N$, $N'$-এর জন্য
+  $M$ হলো $\lambd[x][Nx]$ এবং $M'$ হলো $N'$, যেখানে
+  $x \notin \FV{N}$ ও~$N \beredpar N'$। দেখাতে হবে
+  $N' \beredpar \becd{(\lambd[x][Nx])}$; অর্থাৎ,
+  $N' \beredpar \becd{N}$, যা আরোহ-অনুমান থেকে অবিলম্বে অনুসৃত।
+\end{proof}
+
+\begin{thm}\ollabel{thm:cr}
+  $\beredpar$ চার্চ--রসার ধর্ম পূরণ করে।
+\end{thm}
+
+\begin{proof}
+  \olref{lem:cont} থেকে অবিলম্বে।
+\end{proof}
+
+\end{document}

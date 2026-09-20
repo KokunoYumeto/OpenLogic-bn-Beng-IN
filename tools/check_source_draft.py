@@ -2077,6 +2077,9 @@ for row in rows:
     lambda_church_rosser_expected = {
         "OLP-0368": {"BN-SRC-292"},
         "OLP-0369": {"BN-SRC-293", "BN-SRC-294"},
+        "OLP-0370": {"BN-SRC-295", "BN-SRC-296"},
+        "OLP-0371": {"BN-SRC-297", "BN-SRC-298", "BN-SRC-299", "BN-SRC-303", "BN-SRC-304"},
+        "OLP-0372": {"BN-SRC-300", "BN-SRC-301", "BN-SRC-302"},
     }
     audited_lambda_church_rosser = source
     if row["unit_id"] == "OLP-0368":
@@ -2099,7 +2102,34 @@ for row in rows:
         for old, new in repairs:
             assert audited_lambda_church_rosser.count(old) == 1, old
             audited_lambda_church_rosser = audited_lambda_church_rosser.replace(old, new, 1)
-    if 367 <= unit_number <= 369:
+    elif row["unit_id"] == "OLP-0370":
+        old = "$N$, $M'$, $Q$, $Q'$, where"
+        new = "$N$, $N'$, $Q$, $Q'$, where"
+        assert audited_lambda_church_rosser.count(old) == 1, old
+        audited_lambda_church_rosser = audited_lambda_church_rosser.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0371":
+        old = r"$N \xrightarrow{\beta} N'$"
+        new = r"$N \beredpar N'$"
+        assert audited_lambda_church_rosser.count(old) == 1, old
+        audited_lambda_church_rosser = audited_lambda_church_rosser.replace(old, new, 1)
+        old = "$M'$ is $N'$ for some $x$ and~$N'$ where"
+        new = "$M'$ is $N'$ for some $x$, $N$, and~$N'$ where"
+        assert audited_lambda_church_rosser.count(old) == 1, old
+        audited_lambda_church_rosser = audited_lambda_church_rosser.replace(old, new, 1)
+        assert audited_lambda_church_rosser.count("FV(N)") == 4
+        audited_lambda_church_rosser = audited_lambda_church_rosser.replace(
+            "FV(N)", r"\FV{N}"
+        )
+    elif row["unit_id"] == "OLP-0372":
+        old = "$M \\bredone\n  M'$ by $\\eta$-conversion"
+        new = "$M \\eredone M'$ by $\\eta$-conversion"
+        assert audited_lambda_church_rosser.count(old) == 1, old
+        audited_lambda_church_rosser = audited_lambda_church_rosser.replace(old, new, 1)
+        assert audited_lambda_church_rosser.count("FV(N)") == 1
+        audited_lambda_church_rosser = audited_lambda_church_rosser.replace(
+            "FV(N)", r"\FV{N}"
+        )
+    if 367 <= unit_number <= 372:
         assert set(documented) == lambda_church_rosser_expected.get(row["unit_id"], set())
         lambda_church_rosser_math_fix = mathparts(audited_lambda_church_rosser) == target_math
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
@@ -3848,6 +3878,53 @@ for row in rows:
             "parallel_beta_rules_reviewed": True,
             "complete_development_argument_reviewed": True,
             "substitution_replacement_prime_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0370":
+        assert lambda_church_rosser_math_fix
+        assert set(documented) == {"BN-SRC-295", "BN-SRC-296"}
+        assert all(
+            phrase in checked_target
+            for phrase in (r"$\beta$-হ্রাস", "ব্যুৎপত্তির উপর আরোহ", "ক্ষুদ্রতম পরিযায়ী সম্বন্ধ", "চার্চ--রসার ধর্ম")
+        )
+        assert "$N$, $N'$," in checked_target
+        assert "$Q$, $Q'$-এর জন্য" in checked_target
+        tex_command_check = {
+            "documented_corrections": documented,
+            "compatible_beta_contraction_cases_restored": True,
+            "parallel_and_ordinary_beta_equivalence_reviewed": True,
+            "missing_reduced_body_metavariable_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0371":
+        assert lambda_church_rosser_math_fix
+        assert set(documented) == {"BN-SRC-297", "BN-SRC-298", "BN-SRC-299", "BN-SRC-303", "BN-SRC-304"}
+        assert all(
+            phrase in checked_target
+            for phrase in (r"সমান্তরাল $\beta\eta$-হ্রাস", r"$\beta\eta$-পূর্ণ বিকাশ", "অধিক বিশেষ চতুর্থ ও পঞ্চম ধারা", "চার্চ--রসার ধর্ম")
+        )
+        assert r"$N \beredpar N'$" in checked_target
+        assert checked_target.count(r"\FV{N}") == 4
+        assert "কোনো $x$, $N$ ও~$N'$-এর জন্য" in checked_target
+        assert "আলফা-অভিন্ন তাজা প্রতিনিধি" in checked_target
+        tex_command_check = {
+            "documented_corrections": documented,
+            "parallel_beta_eta_abstraction_rule_restored": True,
+            "free_variable_notation_normalized": True,
+            "complete_development_priority_and_overlap_case_restored": True,
+            "missing_eta_body_witness_restored": True,
+            "capture_avoiding_fresh_representative_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0372":
+        assert lambda_church_rosser_math_fix
+        assert set(documented) == {"BN-SRC-300", "BN-SRC-301", "BN-SRC-302"}
+        assert all(
+            phrase in checked_target
+            for phrase in (r"$\beta\eta$-হ্রাস", r"$M \eredone M'$", r"$x \notin \FV{N}$", "প্রথম চারটি ক্ষেত্র")
+        )
+        tex_command_check = {
+            "documented_corrections": documented,
+            "mixed_one_step_relation_defined_and_eta_symbol_restored": True,
+            "free_variable_notation_normalized": True,
+            "parallel_to_ordinary_missing_cases_restored": True,
         }
     audited_source = source
     shared_description = None

@@ -1,0 +1,188 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-20T00:40:22.826834+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "090a2cc22f857560aec3dac3dfb4d931facdb23e",
+  "parent": "c144d1a0d62cdfc14faf00198fc13eb564330be2",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "c7ce16767386a3f055f2fa10d0394bb28cadb9d1",
+    "receipt": "PUBLIC_READBACK_SOURCE_345_2026-09-20.json",
+    "receipt_sha256": "23b6e7357a0d437757e32e4479cd04d57ffbe1a10a9317d002867ee805206df6"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/090a2cc22f857560aec3dac3dfb4d931facdb23e.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/090a2cc22f857560aec3dac3dfb4d931facdb23e",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 28548841,
+  "archive_sha256": "ab4c24adf42f2c82c1049199077b907b3c1095e956f4d4ab99a7c48cd50d711b",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/basic-pr-lambda.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/basic-pr-lambda.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/basic-pr-lambda.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 1617,
+      "sha256": "dc1871b7b6a606fa01b4d2eabf5e80f07b28e28625fc153d9060e26cd1f81978"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/composition.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/composition.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/composition.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 1420,
+      "sha256": "6a0fa3eccc34149a2997ba8d6b656ad064a3e77575a0c815bf7b2fb7a00aaa66"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/computable-lambda.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/computable-lambda.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/computable-lambda.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 3283,
+      "sha256": "b494ff5fc9bad67b6f43d0117c884d7c5204633bc1872f2fccb12f98fca9ac93"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/currying.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/currying.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/currying.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6914,
+      "sha256": "0ae9fd891d1bd5ae88a577376dacd5653ce17e0f46508e1da27363ace65de01a"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/lambda-computable.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/lambda-computable.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/lambda-computable.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 3786,
+      "sha256": "0efc4b6d5d19c29a22fa03b5481e0c0a8f29415f9b87dabe7013b64d066bb7e8"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/lambda-definability.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/lambda-definability.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/090a2cc22f857560aec3dac3dfb4d931facdb23e/bn-Beng-IN/content/lambda-calculus/introduction/lambda-definability.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 5016,
+      "sha256": "dd06804ca07f14dd7dc191ec7b92d74aaad18a1ae4e0e6c1bc2f31e65e1d890f"
+    }
+  ],
+  "changed_files_verified": 18,
+  "translated_tex_files_in_commit": 6,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 351,
+  "draft_untranslated_total": 371,
+  "segments": 4026,
+  "translated_segments": 3398,
+  "lambda_introduction_segments": 77,
+  "lambda_introduction_translated_segments": 58,
+  "lambda_introduction_unchanged_segments": 19,
+  "new_batch_segments": 28,
+  "new_batch_translated_segments": 28,
+  "source_correction_records": 280,
+  "new_source_correction_records": 4,
+  "translation_decisions": 295,
+  "provisional_translation_decisions": 276,
+  "translation_decision_occurrences": 23102,
+  "decisions_with_exact_source_wording": 280,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 351,
+    "blocks": 4026,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/basic-pr-lambda.tex",
+      "bytes": 1617,
+      "sha256": "dc1871b7b6a606fa01b4d2eabf5e80f07b28e28625fc153d9060e26cd1f81978"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/composition.tex",
+      "bytes": 1420,
+      "sha256": "6a0fa3eccc34149a2997ba8d6b656ad064a3e77575a0c815bf7b2fb7a00aaa66"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/computable-lambda.tex",
+      "bytes": 3283,
+      "sha256": "b494ff5fc9bad67b6f43d0117c884d7c5204633bc1872f2fccb12f98fca9ac93"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/currying.tex",
+      "bytes": 6914,
+      "sha256": "0ae9fd891d1bd5ae88a577376dacd5653ce17e0f46508e1da27363ace65de01a"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/lambda-computable.tex",
+      "bytes": 3786,
+      "sha256": "0efc4b6d5d19c29a22fa03b5481e0c0a8f29415f9b87dabe7013b64d066bb7e8"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/lambda-definability.tex",
+      "bytes": 5016,
+      "sha256": "dd06804ca07f14dd7dc191ec7b92d74aaad18a1ae4e0e6c1bc2f31e65e1d890f"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6279045,
+      "sha256": "079a470edde484b18550bb6c65c940cccd53f39cad107aa59cdcde9fe8553103"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 213173,
+      "sha256": "7ee3aafa2cb7d38a928ff9cd83512e058bd074f78d6b769f296c09208abe5840"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_INTRODUCTION.md",
+      "bytes": 12485,
+      "sha256": "7068f97666ca291d009e39d869178ab162a4c34c0c8e0df590bdedf8923e7d34"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "89b35a9631bac96afbce9848de9f233d32b7209103980339b4956761ee2ef270"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 538935,
+      "sha256": "ee3e4e459db2769f428d91fc28c371d36393206bef7d36a702c2e55523d42ce9"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 261638,
+      "sha256": "4c13abd1ccf74d4d5277bb8d4cdc5b1448d29a61182dc4928ddbf0f3bc540fa9"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 54385472,
+      "sha256": "a46b68c6cc305b70fbe3cdb1d2152edaac29e79a3865c2dcf54501c237184185"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 48290508,
+      "sha256": "4cee93b22a05a0f9c5ea2a1997f7ebd7451b2f6f8cd30703382077498e0b39b9"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1139313,
+      "sha256": "c95453214083e55445da27732c63e5fad0a94b153f8d1731e9a86b8db825d5bd"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 73725942,
+      "sha256": "97547524d37d33d5acb457eb5936331f98d8afb6fb551c81e7f9bded59ddd123"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 213824,
+      "sha256": "ce92cd6c5369cae429804b1521623f643d4567c88323645e77b9976cc9c35dc6"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 165677,
+      "sha256": "27d338ce380450623fd0e14c98feabc3f8ca041f227dc8eff6e6b584eaa44d19"
+    }
+  ],
+  "result": "The anonymous public commit archive reproduces all 18 changed Git objects byte-for-byte; its strict checker passes all 351 draft units and 4,026 blocks; the public source preserves the reviewed currying, Church-numeral, computability-equivalence, primitive-recursive, and composition arguments with four audited notation corrections and five indexed terminology decisions."
+}

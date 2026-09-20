@@ -1923,7 +1923,11 @@ for row in rows:
         "OLP-0360": {"BN-SRC-275"},
         "OLP-0361": {"BN-SRC-276", "BN-SRC-277", "BN-SRC-282", "BN-SRC-283"},
         "OLP-0362": {"BN-SRC-278", "BN-SRC-279", "BN-SRC-280", "BN-SRC-281", "BN-SRC-284"},
+        "OLP-0364": {"BN-SRC-285", "BN-SRC-286", "BN-SRC-287", "BN-SRC-288"},
+        "OLP-0365": {"BN-SRC-289"},
+        "OLP-0366": {"BN-SRC-290", "BN-SRC-291"},
     }
+    lambda_syntax_control_fix = False
     audited_lambda_syntax_foundations = source
     if row["unit_id"] == "OLP-0360":
         old = (
@@ -2009,7 +2013,60 @@ for row in rows:
             audited_lambda_syntax_foundations = (
                 audited_lambda_syntax_foundations.replace(old, new, 1)
             )
-    if 356 <= unit_number <= 363:
+    elif row["unit_id"] == "OLP-0364":
+        repairs = [
+            (
+                r"and $\rep{M}[0], \rep{M}[1], etc. $ if",
+                r"and $\rep{M}[0]$, $\rep{M}[1]$, etc. if",
+            ),
+            (r"$FV(M)$", r"$\FV{M}$"),
+            (r"$FV(\rep{M})$", r"$\FV{\rep{M}}$"),
+            (
+                "$FV(\\rep{M}[0]) =\nFV(\\rep{M}[1])$",
+                "$\\FV{\\rep{M}[0]} =\n\\FV{\\rep{M}[1]}$",
+            ),
+            (r"$x \notin FV(R)$", r"$x \notin \FV{R}$"),
+            (
+                r"  \Subst{\lambd[x][x]}{y}{x} & =\ollabel{eq:1}\\",
+                r"  \Subst{\lambd[x][x]}{y}{x} & \ollabel{eq:1}\\",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_lambda_syntax_foundations.count(old) == 1, old
+            audited_lambda_syntax_foundations = (
+                audited_lambda_syntax_foundations.replace(old, new, 1)
+            )
+    elif row["unit_id"] == "OLP-0365":
+        old = r"\olfileid{lam}{int}{bet}"
+        new = r"\olfileid{lam}{syn}{bet}"
+        assert audited_lambda_syntax_foundations.count(old) == 1
+        audited_lambda_syntax_foundations = (
+            audited_lambda_syntax_foundations.replace(old, new, 1)
+        )
+        lambda_syntax_control_fix = (
+            controls(audited_lambda_syntax_foundations) == controls(checked_target)
+        )
+    elif row["unit_id"] == "OLP-0366":
+        repairs = [
+            (r"x \notin FV(M)", r"x \notin \FV{M}"),
+            (
+                r"  \lambd[x][f x] \equal f",
+                r"  \lambd[x][M x] \equal M \text{ provided } x \notin \FV{M}",
+            ),
+            (r"$x \notin FV(MN)$", r"$x \notin \FV{MN}$"),
+            (
+                "$x \\notin\n  FV(M)$",
+                "$x \\notin\n  \\FV{M}$",
+            ),
+            (r"$ext$ rule", r"\ext{} rule"),
+            (r"$\equal[ext]$", r"$\equal[\ext]$"),
+        ]
+        for old, new in repairs:
+            assert audited_lambda_syntax_foundations.count(old) == 1, old
+            audited_lambda_syntax_foundations = (
+                audited_lambda_syntax_foundations.replace(old, new, 1)
+            )
+    if 356 <= unit_number <= 366:
         assert set(documented) == lambda_syntax_foundations_expected.get(
             row["unit_id"], set()
         )
@@ -3692,6 +3749,46 @@ for row in rows:
             "forward_and_inverse_translations_preserved": True,
             "alpha_invariance_proposition_preserved": True,
         }
+    elif row["unit_id"] == "OLP-0364":
+        assert lambda_syntax_foundations_math_fix
+        assert set(documented) == {"BN-SRC-285", "BN-SRC-286", "BN-SRC-287", "BN-SRC-288"}
+        assert all(
+            phrase in checked_target
+            for phrase in ("সমতুল্যতা-শ্রেণি", "প্রতিনিধি", r"\Lambda$-পদ", "প্রক্ষেপণ")
+        )
+        assert r"$\FV{\rep{M}[0]} = \FV{\rep{M}[1]}$" in checked_target
+        tex_command_check = {
+            "documented_corrections": documented,
+            "alpha_equivalence_class_operations_reviewed": True,
+            "class_valued_substitution_repaired": True,
+            "free_variable_notation_normalized": True,
+        }
+    elif row["unit_id"] == "OLP-0365":
+        assert lambda_syntax_foundations_math_fix and lambda_syntax_control_fix
+        assert set(documented) == {"BN-SRC-289"}
+        assert r"\olfileid{lam}{syn}{bet}" in checked_target
+        assert all(
+            phrase in checked_target
+            for phrase in (r"$\beta$-সংকোচন", "রিডেক্স", "স্বাভাবিক রূপ", "স্বাভাবিক কৌশল", r"$\beta$-সমতুল্যতা")
+        )
+        tex_command_check = {
+            "documented_correction": "BN-SRC-289",
+            "syntax_file_identity_restored": True,
+            "beta_reduction_and_equivalence_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0366":
+        assert lambda_syntax_foundations_math_fix
+        assert set(documented) == {"BN-SRC-290", "BN-SRC-291"}
+        assert r"\lambd[x][M x] \equal M \text{ যদি } x \notin \FV{M}" in checked_target
+        assert all(
+            phrase in checked_target
+            for phrase in (r"$\eta$-সংকোচন", r"$\beta\eta$-হ্রাস", r"$\eta$-সমতুল্যতা", "ব্যাপ্তিগততা")
+        )
+        tex_command_check = {
+            "documented_corrections": documented,
+            "eta_conversion_schema_and_freshness_restored": True,
+            "extensionality_notation_normalized": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -3803,6 +3900,7 @@ for row in rows:
         or completeness_control_fix
         or representability_q_control_fix
         or second_order_metatheory_control_fix
+        or lambda_syntax_control_fix
     )
     checks = {
         "unit_id": row["unit_id"],

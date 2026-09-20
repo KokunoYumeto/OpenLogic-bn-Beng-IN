@@ -1,0 +1,91 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: eta
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{eta}
+\olsection{$\eta$-রূপান্তর}
+
+$\lambda$-পদগুলির উপর আরও একটি সম্বন্ধ আছে। \olref[fv]{sec}-এ আমরা
+$\lambd[x][(fx)]$ উদাহরণটি ব্যবহার করেছিলাম; এটি একটি আর্গুমেন্ট নিয়ে
+তার উপর $f$ প্রয়োগ করে। অন্য কথায়, এটি~$f$-এরই মতো একই অপেক্ষক:
+$\lambd[x][(fx)]N$ ও~$fN$ উভয়েই হ্রাস পেয়ে~$fN$ হয়। এই ধারণা
+প্রকাশ করতে আমরা $\eta$-হ্রাস (এবং $\eta$-সম্প্রসারণ) ব্যবহার করি।
+
+\begin{defn}[$\eta$-সংকোচন, $\eredone$]
+  \ollabel{defn:beredone}
+  \emph{$\eta$-সংকোচন} ($\eredone$) হলো পদগুলির উপর এমন ক্ষুদ্রতম
+  সামঞ্জস্যশীল সম্বন্ধ যা নিচের শর্তটি পূরণ করে:
+  \[
+    \lambd[x][M x] \eredone M \text{ যদি } x \notin \FV{M}
+  \]
+% BN-SRC-291 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-291):} হিমায়িত অংশে মুক্ত-চলরাশির তিনটি সংঘটন কাঁচা $FV(M)$ বা~$FV(MN)$ আকারে আছে, প্রমাণে বিধির নাম একবার কাঁচা $ext$ এবং শেষ তুল্যতা একবার $\equal[ext]$ লেখা। বাংলা অংশে এগুলিকে যথাক্রমে সংজ্ঞায়িত $\FV{M}$, $\FV{MN}$, \ext{} এবং $\equal[\ext]$ সংকেতে স্বাভাবিক করা হয়েছে।} % BN-SRC-291 TARGET-CORRECTION-END
+\end{defn}
+
+\begin{defn}[$\beta\eta$-হ্রাস, $\bered$] \ollabel{defn:bered}
+  \emph{$\beta\eta$-হ্রাস} ($\bered$) হলো পদগুলির উপর এমন ক্ষুদ্রতম
+  প্রতিবিম্ব ধর্মবিশিষ্ট ও পরিযায়ী সম্বন্ধ যাতে $\bredone$ ও
+  $\eredone$ অন্তর্ভুক্ত; অর্থাৎ প্রতিবিম্ব ধর্ম ও পরিযায়িতার বিধির
+  সঙ্গে নিচের দুটি বিধি থাকে:
+  \begin{enumerate}
+  \item $M \bredone N$ হলে $M \bered N$। \ollabel{defn:bered3}
+  \item $M \eredone N$ হলে $M \bered N$। \ollabel{defn:bered4}
+  \end{enumerate}
+    
+\end{defn}
+
+\begin{defn}
+  $\eta$-রূপান্তরের নিচের বিধিটি দিয়ে তুল্যতা সম্পর্ক~$\equal$-কে
+  প্রসারিত করি:
+  \[
+  \lambd[x][M x] \equal M \text{ যদি } x \notin \FV{M}
+  \]
+  এবং প্রসারিত সম্বন্ধটি $\equal[\eta]$ লিখি।
+% BN-SRC-290 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-290):} হিমায়িত $\eta$-রূপান্তর বিধিটি শুধু $\lambd[x][f x]\equal f$ লেখে এবং সতেজতা-শর্তটি বাদ দেয়, যদিও ঠিক আগের $\eta$-সংকোচন সংজ্ঞা সাধারণ পদ~$M$ ও অপরিহার্য শর্ত $x\notin\FV{M}$ দেয়। শর্তটি না থাকলে, যেমন, $\lambd[x][x x]\equal x$-ও মেনে নিতে হয়। বাংলা বিধিতে সাধারণ স্কিমা ও তার সতেজতা-শর্ত পুনরুদ্ধার করা হয়েছে।} % BN-SRC-290 TARGET-CORRECTION-END
+\end{defn}
+
+$\eta$-সমতুল্যতা গুরুত্বপূর্ণ, কারণ এটি ল্যাম্বডা পদগুলির
+ব্যাপ্তিগততার সঙ্গে সম্পর্কিত:
+
+\begin{defn}[ব্যাপ্তিগততা]
+  (\ext) বিধি দিয়ে তুল্যতা সম্পর্ক~$\equal$-কে প্রসারিত করি:
+  \begin{center}
+  $Mx \equal Nx$ হলে $M \equal N$, যদি $x \notin \FV{MN}$।
+  \end{center}
+  এবং প্রসারিত সম্বন্ধটি $\equal[\ext]$ লিখি।
+\end{defn}
+
+মোটামুটি বললে, বিধিটি জানায়: দুটি পদকে অপেক্ষক হিসেবে দেখলে একই
+আর্গুমেন্টে তারা একই আচরণ করলে তাদের সমান বলে গণ্য করা উচিত।
+
+এখন প্রমাণ করব, $\eta$ বিধিটি ঠিক ব্যাপ্তিগততাই দেয়, অতিরিক্ত কিছু
+নয়।
+
+\begin{thm}
+  $M \equal[\ext] N$ ঠিক তখনই, যখন $M \equal[\eta] N$।
+\end{thm}
+
+\begin{proof}
+  প্রথমে প্রমাণ করি, $\equal[\eta]$ ব্যাপ্তিগততার বিধির অধীনে বদ্ধ।
+  অর্থাৎ, \ext{} বিধি $\equal[\eta]$-তে নতুন কিছু যোগ করে না। ফলে
+  $\equal[\eta]$-এর মধ্যে $\equal[\ext]$ অন্তর্ভুক্ত; এবং
+  $M \equal[\ext] N$ হলে $M \equal[\eta] N$।
+
+  $\equal[\eta]$ যে \ext-এর অধীনে বদ্ধ, তা দেখাতে ধরি \ext{} বিধি
+  থেকে কোনো $M \equal N$ পাওয়া গেছে। এর পূর্বধারণা হলো
+  $Mx \equal[\eta] Nx$। তখন $\equal$-এর একটি বিধি থেকে
+  $\lambd[x][Mx] \equal[\eta] \lambd[x][Nx]$; উভয় পাশে $\eta$
+  প্রয়োগ করে পাই $M \equal[\eta] N$।
+
+  একইভাবে দেখাই, $\eta$ বিধিটি $\equal[\ext]$-এর মধ্যে অন্তর্ভুক্ত।
+  যেকোনো $\lambd[x][Mx]$ ও~$M$-এর জন্য, যেখানে $x \notin
+  \FV{M}$, আমাদের আছে $(\lambd[x][Mx])x \equal[\ext] Mx$; তাই
+  \ext{} বিধি থেকে $\lambd[x][Mx] \equal[\ext] M$।
+\end{proof}
+
+\end{document}

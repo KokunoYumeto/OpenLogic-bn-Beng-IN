@@ -2132,6 +2132,33 @@ for row in rows:
     if 367 <= unit_number <= 372:
         assert set(documented) == lambda_church_rosser_expected.get(row["unit_id"], set())
         lambda_church_rosser_math_fix = mathparts(audited_lambda_church_rosser) == target_math
+    lambda_definability_opening_math_fix = False
+    lambda_definability_opening_expected = {
+        "OLP-0374": {"BN-SRC-305"},
+        "OLP-0375": {"BN-SRC-306"},
+    }
+    audited_lambda_definability_opening = source
+    if row["unit_id"] == "OLP-0374":
+        old = r"$c(n) = k$"
+        new = r"$c_k(n) = k$"
+        assert audited_lambda_definability_opening.count(old) == 1, old
+        audited_lambda_definability_opening = (
+            audited_lambda_definability_opening.replace(old, new, 1)
+        )
+    elif row["unit_id"] == "OLP-0375":
+        old = r"\fn{Mult}' \ident \lambd[ab][a (\fn{Add}\, a) \num{0}]."
+        new = r"\fn{Mult}' \ident \lambd[ab][a (\fn{Add}\, b) \num{0}]."
+        assert audited_lambda_definability_opening.count(old) == 1, old
+        audited_lambda_definability_opening = (
+            audited_lambda_definability_opening.replace(old, new, 1)
+        )
+    if 373 <= unit_number <= 375:
+        assert set(documented) == lambda_definability_opening_expected.get(
+            row["unit_id"], set()
+        )
+        lambda_definability_opening_math_fix = (
+            mathparts(audited_lambda_definability_opening) == target_math
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -3926,6 +3953,61 @@ for row in rows:
             "free_variable_notation_normalized": True,
             "parallel_to_ordinary_missing_cases_restored": True,
         }
+    elif row["unit_id"] == "OLP-0373":
+        assert lambda_definability_opening_math_fix
+        assert not documented
+        assert r"\olchapter{lam}{rep}{ল্যাম্বডা-সংজ্ঞেয়তা}" in checked_target
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                r"\olimport{introduction}",
+                r"\olimport{arithmetical-functions}",
+                r"\olimport{lambda-definable-recursive}",
+                r"%\olimport{lists}",
+            )
+        )
+        tex_command_check = {
+            "lambda_definability_chapter_title_reviewed": True,
+            "all_nine_active_imports_and_commented_lists_import_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0374":
+        assert lambda_definability_opening_math_fix
+        assert set(documented) == {"BN-SRC-305"}
+        collapsed_target = re.sub(r"\s+", " ", checked_target)
+        assert all(
+            phrase in collapsed_target
+            for phrase in (
+                "চার্চ সংখ্যাপদ",
+                "চার্চ--রসার ধর্ম",
+                "বহুস্থানীয় ও আংশিক অপেক্ষক",
+                "স্বাভাবিক রূপ নেই",
+                r"$c_k(n) = k$",
+            )
+        )
+        tex_command_check = {
+            "documented_correction": "BN-SRC-305",
+            "church_numeral_computation_and_partial_definability_reviewed": True,
+            "constant_function_subscript_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0375":
+        assert lambda_definability_opening_math_fix
+        assert set(documented) == {"BN-SRC-306"}
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "উত্তরসূরি অপেক্ষক",
+                "যোগ",
+                "গুণ",
+                "সূচক",
+                "ক্রমযুগলের সাংকেতিকরণ",
+            )
+        )
+        assert r"\fn{Mult}' \ident \lambd[ab][a (\fn{Add}\, b) \num{0}]." in checked_target
+        tex_command_check = {
+            "documented_correction": "BN-SRC-306",
+            "church_successor_addition_multiplication_exponentiation_reviewed": True,
+            "alternate_multiplication_operand_restored": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -4029,6 +4111,7 @@ for row in rows:
             lambda_introduction_completion_math_fix,
             lambda_syntax_foundations_math_fix,
             lambda_church_rosser_math_fix,
+            lambda_definability_opening_math_fix,
             shared_audit_fix,
         )
     )

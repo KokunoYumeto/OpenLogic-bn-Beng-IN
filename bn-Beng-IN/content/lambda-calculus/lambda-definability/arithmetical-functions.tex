@@ -1,0 +1,141 @@
+% Part: lambda-calculus
+% Chapter: lambda-definablity
+% Section: arithmetical-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{rep}{arf}
+\olsection{\usetoken{S}{lambda definable} পাটিগাণিতিক অপেক্ষক}
+
+\begin{prop}
+  \ollabel{prop:succ-ld}
+  উত্তরসূরি অপেক্ষক~$\Succ$ হলো !!{lambda definable}।
+\end{prop}
+
+\begin{proof}
+উত্তরসূরি অপেক্ষককে !!{lambda define}s এমন একটি পদ হলো
+\begin{align*}
+  \fn{Succ} & \ident \lambd[a][\lambd[fx][f ({a} f x)]].
+  \intertext{আমাদের প্রথা অনুসারে এটি নিচের পদের সংক্ষিপ্ত রূপ:}
+  \fn{Succ} & \ident \lambd[a][\lambd[f][\lambd[x][(f (({a} f) x))]]].
+  \intertext{$\fn{Succ}$ এমন একটি অপেক্ষক যা নিবেশ হিসেবে একটি
+    সংখ্যা~$a$ গ্রহণ করে এবং আরেকটি অপেক্ষক,
+    $\lambd[fx][f ({a} f x)]$-তে মূল্যায়িত হয়। সেই অপেক্ষকটি নিজে
+    কোনো চার্চ সংখ্যাপদ নয়। কিন্তু নিবেশ~$a$ যদি চার্চ সংখ্যাপদ হয়,
+    তবে সেটি একটি চার্চ সংখ্যাপদে হ্রাস পায়। দেখো:}
+   (\lambd[a][\lambd[fx][f ({a} f x)]])\,\num{n} & \redone
+   \lambd[fx][f ({\num{n}} f x)].
+   \intertext{ভিতরের পদ $\num{n}fx$ একটি রিডেক্স, কারণ $\num{n}$ হলো
+     $\lambd[fx][f^nx]$। তাই $\num{n}fx \redone f^nx$ এবং সম্পূর্ণ
+     পদটির ক্ষেত্রে পাই}
+   \fn{Succ}\, \num n & \red \lambd[fx][f(f^n(x))],
+\end{align*}
+অর্থাৎ, $\num{n+1}$।
+\end{proof}
+
+\begin{ex}
+  $\fn{Succ}$-কে~$\num{0}$, অর্থাৎ $\lambd[fx][x]$-এর উপর প্রয়োগ
+  করলে কী ঘটে, তা দেখি। পদগুলি পুরোপুরি লিখব:
+  \begin{align*}
+    \fn{Succ}\, \num{0} & \ident (\lambd[a][\lambd[f][\lambd[x][(f (({a} f) x))]]])(\lambd[f][\lambd[x][x]])\\
+    & \redone \lambd[f][\lambd[x][(f (({(\lambd[f][\lambd[x][x]])} f) x))]] \\
+    & \redone \lambd[f][\lambd[x][(f ({(\lambd[x][x])} x))]] \\
+    & \redone \lambd[f][\lambd[x][(f x)]] \ident \num{1}\\
+  \end{align*}
+\end{ex}
+
+\begin{prob}
+  পদটি
+  \begin{align*}
+    \fn{Succ}' & \ident \lambd[{n}][\lambd[fx][{n} f (f x)]]
+  \end{align*}
+  উত্তরসূরি অপেক্ষককে !!{lambda define}s। কেন, ব্যাখ্যা করো।
+\end{prob}
+
+\begin{prop}
+  \ollabel{prop:add-ld}
+  যোগ অপেক্ষক~$\Add$ হলো !!{lambda definable}।
+\end{prop}
+
+\begin{proof}
+যোগকে নিচের পদগুলি !!{lambda define} করে:
+\begin{align*}
+  \fn{Add} & \ident \lambd[{a}{b}][\lambd[fx][{a} f ({b} f x)]]
+\intertext{অথবা, বিকল্পভাবে,}
+  \fn{Add}' & \ident \lambd[{a}{b}][{a}\, \fn{Succ} \, {b}].
+\intertext{প্রথম যোগ-পদটি এইভাবে কাজ করে: $\fn{Add}$ প্রথমে দুটি
+  সংখ্যা ${a}$ ও~${b}$ গ্রহণ করে। ফলটি এমন একটি অপেক্ষক যা $f$ ও~$x$
+  গ্রহণ করে এবং $af(bfx)$ ফেরত দেয়। $a$ ও~$b$ যদি চার্চ সংখ্যাপদ
+  $\num{n}$ ও~$\num{m}$ হয়, তবে এটি $f^{n+m}(x)$-এ হ্রাস পায়, যা
+  $f^{n}(f^{m}(x))$-এর অভিন্ন। অথবা, ধীরে ধীরে:}
+  (\lambd[{a}{b}][\lambd[fx][{a} f ({b} f x)]])\num n\,\num m & \redone
+  \lambd[fx][\num{n}\, f (\num {m}\, f x)] \\
+  & \redone \lambd[fx][\num{n}\, f (f^m x)] \\
+  & \redone \lambd[fx][f^n (f^m x)] \ident \num {n+m}.
+\intertext{যোগের দ্বিতীয় উপস্থাপন $\fn{Add'}$ অন্যভাবে কাজ করে। দুটি
+  চার্চ সংখ্যাপদ $\num{n}$ ও~$\num{m}$-এর উপর প্রয়োগ করলে,}
+\fn{Add}' \num n \,\num m
+& \redone \num{n}\, \fn{Succ}\, \num{m}.
+\intertext{কিন্তু $\num{n} f x$ সবসময় $f^n(x)$-এ হ্রাস পায়। তাই,}
+  \num{n}\,  \fn{Succ}\, \num{m} & \red \fn{Succ}^n(\num{m}).
+\end{align*}
+আর যেহেতু $\fn{Succ}$ উত্তরসূরি অপেক্ষককে !!{lambda define}s, এবং
+উত্তরসূরি অপেক্ষককে~$m$-এর উপর $n$ বার প্রয়োগ করলে $n+m$ পাওয়া যায়,
+তাই এটিও~$\num{n+m}$-এ হ্রাস পায়।
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:mult-ld}
+  গুণ নিচের পদটি দ্বারা !!{lambda definable}:
+  \[
+  \fn{Mult} \ident \lambd[ab][\lambd[fx][a (b f) x]]
+  \]
+\end{prop}
+
+\begin{proof}
+  এটি কীভাবে কাজ করে তা দেখতে ধরা যাক, $\fn{Mult}$-কে চার্চ সংখ্যাপদ
+  $\num{n}$ ও~$\num{m}$-এর উপর প্রয়োগ করা হলো: $\fn{Mult} \, \num{n}
+  \, \num{m}$ হ্রাস পেয়ে হয় $\lambd[fx][\num{n}(\num{m}\, f)x]$।
+  $\num{m} f$ পদটি এমন একটি অপেক্ষক সংজ্ঞায়িত করে, যা তার নিবেশের উপর
+  $f$-কে $m$ বার প্রয়োগ করে। ফলে $\num{n} (\num{m} f) x$ ``$f$-কে
+  $m$ বার প্রয়োগ করো'' অপেক্ষকটিকেই~$x$-এর উপর $n$ বার প্রয়োগ করে।
+  অন্যভাবে বললে, $x$-এর উপর $f$-কে $n\cdot m$ বার প্রয়োগ করি। কিন্তু
+  প্রাপ্ত স্বাভাবিক পদটি ঠিক চার্চ সংখ্যাপদ $\num{nm}$।
+\end{proof}
+
+\begin{editorial}
+বাস্তবে $\eta$-হ্রাস দিয়ে পদটিকে আরও সরল করা যায়:
+\[
+  \fn{Mult} \ident \lambd[ab][\lambd[f][a (b f)]].
+\]
+
+কিন্তু সেক্ষেত্রে প্রথমে আমাদের $\eta$-হ্রাস ব্যাখ্যা করতে হবে।
+\end{editorial}
+
+\begin{prob}
+গুণকে নিচের পদটি !!{lambda define} করে:
+\[
+  \fn{Mult}' \ident \lambd[ab][a (\fn{Add}\, b) \num{0}].
+\]
+% BN-SRC-306 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-306):} হিমায়িত বিকল্প পদে $a (\fn{Add}\,a)\num{0}$ লেখা আছে; এতে আবদ্ধ চল~$b$ অব্যবহৃত থেকে যায় এবং $\fn{Add}\,a$-কে $a$ বার প্রয়োগ করে $a^2$ পাওয়া যায়, $ab$ নয়। বাংলা সূত্রে যোগক~$b$ পুনরুদ্ধার করা হয়েছে; তখন $\fn{Add}\,b$-কে $a$ বার প্রয়োগে $ab$ পাওয়া যায়।} % BN-SRC-306 TARGET-CORRECTION-END
+এটি কেন কাজ করে, ব্যাখ্যা করো।
+\end{prob}
+
+ঘাতের অপেক্ষকের $\lambd$-পদ হিসেবে সংজ্ঞাটি আশ্চর্যজনকভাবে সরল:
+\[
+  \fn{Exp} \ident \lambd[be][e b].
+\]
+প্রথম নিবেশ~$b$ হলো ভিত্তি এবং দ্বিতীয়~$e$ হলো সূচক। সংখ্যার এই
+সাংকেতিকরণ অনুসারে স্বজ্ঞামূলকভাবে $e f$ হলো $f^e$। এটি বুঝতে অসুবিধা
+হলে পুনরাবৃত্ত গুণ দিয়েও ঘাতের অপেক্ষককে সংজ্ঞায়িত করা যায়:
+\[
+  \fn{Exp}' \ident \lambd[be][e (\fn{Mult}\, b) \num{1}].
+\]
+
+চার্চ সংখ্যাপদের পূর্বসূরি ও বিয়োগ আমাদের ধারণার মতো সরল নয়: এর জন্য
+ক্রমযুগলের সাংকেতিকরণ দরকার।
+
+\end{document}

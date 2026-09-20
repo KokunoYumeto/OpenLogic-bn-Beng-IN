@@ -1921,6 +1921,8 @@ for row in rows:
     lambda_syntax_foundations_math_fix = False
     lambda_syntax_foundations_expected = {
         "OLP-0360": {"BN-SRC-275"},
+        "OLP-0361": {"BN-SRC-276", "BN-SRC-277", "BN-SRC-282", "BN-SRC-283"},
+        "OLP-0362": {"BN-SRC-278", "BN-SRC-279", "BN-SRC-280", "BN-SRC-281", "BN-SRC-284"},
     }
     audited_lambda_syntax_foundations = source
     if row["unit_id"] == "OLP-0360":
@@ -1936,7 +1938,78 @@ for row in rows:
         audited_lambda_syntax_foundations = (
             audited_lambda_syntax_foundations.replace(old, new, 1)
         )
-    if 356 <= unit_number <= 360:
+    elif row["unit_id"] == "OLP-0361":
+        repairs = [
+            (
+                "    \\item $\\Subst{(\\lambd[y][P])}{N}{x} = \\lambd[y][\\Subst{P}{N}{x}]$,\n"
+                "      if $x \\neq y$ and $y \\notin \\FV{N}$, otherwise undefined.",
+                "    \\item $\\Subst{(\\lambd[x][P])}{N}{x} = \\lambd[x][P]$; and\n"
+                "      if $x \\neq y$ and $y \\notin \\FV{N}$,\n"
+                "      $\\Subst{(\\lambd[y][P])}{N}{x} = \\lambd[y][\\Subst{P}{N}{x}]$.\n"
+                "      If $x \\neq y$ but $y \\in \\FV{N}$, it is undefined.",
+            ),
+            (r"$x \notin \FV{Q}$", r"$x \notin \FV{P}$"),
+            (r"$x \in \FV{M})$", r"$x \in \FV{M}$"),
+            (r"$\Subst{(PQ)}{N}{y}$", r"$\Subst{(PQ)}{N}{x}$"),
+            (
+                "since $y \\in\n    \\FV{\\lambd[x][P]}$, we have $y \\in \\FV{P}$ too",
+                "since $x \\in\n    \\FV{\\lambd[y][P]}$, we have $x \\in \\FV{P}$ too",
+            ),
+            (
+                "& = ((\\FV{P} \\setminus \\{y\\}) \\cup (\\FV{N} \\setminus \\{x\\})\n"
+                "       && \\text{by inductive hypothesis}",
+                "& = ((\\FV{P} \\setminus \\{x\\}) \\cup \\FV{N}) \\setminus \\{y\\}\n"
+                "       && \\text{by inductive hypothesis}",
+            ),
+            (r"&& x \notin \FV{N}", r"&& y \notin \FV{N}"),
+            (
+                "$x \\notin \\FV{\\Subst{M}{N}{x}}$, if the right-hand side is\n"
+                "  defined and $x \\notin \\FV{N}$.",
+                "If $\\Subst{M}{N}{x}$ is defined and $x \\notin \\FV{N}$, then\n"
+                "  $x \\notin \\FV{\\Subst{M}{N}{x}}$.",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_lambda_syntax_foundations.count(old) == 1, old
+            audited_lambda_syntax_foundations = (
+                audited_lambda_syntax_foundations.replace(old, new, 1)
+            )
+    elif row["unit_id"] == "OLP-0362":
+        repairs = [
+            (
+                "contains an occurrence of $\\lambd[x][N]$, $y \\notin\n  \\FV{N}$",
+                "contains an occurrence of $\\lambd[x][N]$, $x \\neq y$, $y \\notin\n  \\FV{N}$",
+            ),
+            (r"$x \in FV(N)$", r"$x \in \FV{N}$"),
+            (r"$x \notin FV(N)$", r"$x \notin \FV{N}$"),
+            (r"& = FV{\Subst{N}{y}{x}}", r"& = \FV{\Subst{N}{y}{x}}"),
+            (r"$z \notin FV(N')$", r"$z \notin \FV{N'}$"),
+            (r"$z \notin FV(R)$", r"$z \notin \FV{R}$"),
+            (
+                "      &= \\lambd[z][\\Subst{\\Subst{N''}{z}{x}}{R}{y}] && \\text{by\n"
+                "        \\olref{lem:sub:R}}",
+                "      &\\aeq \\lambd[z][\\Subst{\\Subst{N''}{z}{x}}{R}{y}] && \\text{by\n"
+                "        \\olref{lem:sub:R}}",
+            ),
+            (
+                "      &=\\lambd[z][\\Subst{\\Subst{N'}{z}{x}}{R}{y}]\n"
+                "      && \\text{by inductive",
+                "      &\\aeq\\lambd[z][\\Subst{\\Subst{N'}{z}{x}}{R}{y}]\n"
+                "      && \\text{by inductive",
+            ),
+            (
+                "if there is another pair $M'' \\aeq M$ and $R''$\n"
+                "  with $\\Subst{M'}{R'}{y}$ defined",
+                "if there is another pair $M'' \\aeq M$ and $R'' \\aeq R$\n"
+                "  with $\\Subst{M''}{R''}{y}$ defined",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_lambda_syntax_foundations.count(old) == 1, old
+            audited_lambda_syntax_foundations = (
+                audited_lambda_syntax_foundations.replace(old, new, 1)
+            )
+    if 356 <= unit_number <= 363:
         assert set(documented) == lambda_syntax_foundations_expected.get(
             row["unit_id"], set()
         )
@@ -3578,6 +3651,46 @@ for row in rows:
             "documented_correction": "BN-SRC-275",
             "lambda_scope_is_abstraction_body": True,
             "free_bound_environment_vocabulary_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0361":
+        assert lambda_syntax_foundations_math_fix
+        assert set(documented) == {"BN-SRC-276", "BN-SRC-277", "BN-SRC-282", "BN-SRC-283"}
+        assert r"\Subst{(\lambd[x][P])}{N}{x} = \lambd[x][P]" in checked_target
+        assert all(
+            phrase in checked_target
+            for phrase in ("প্রতিস্থাপন", "অসংজ্ঞায়িত", "আরোহ-অনুমান", "মুক্ত চলরাশি")
+        )
+        tex_command_check = {
+            "documented_corrections": documented,
+            "capture_avoiding_substitution_reviewed": True,
+            "shadowing_clause_restored": True,
+            "free_variable_theorems_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0362":
+        assert lambda_syntax_foundations_math_fix
+        assert set(documented) == {"BN-SRC-278", "BN-SRC-279", "BN-SRC-280", "BN-SRC-281", "BN-SRC-284"}
+        assert r"$R'' \aeq R$" in checked_target
+        assert all(
+            phrase in checked_target
+            for phrase in ("বদ্ধ চলরাশির পরিবর্তন", "সামঞ্জস্যশীল", "প্রতিবিম্ব ধর্ম", "তুল্যতা সম্পর্ক")
+        )
+        tex_command_check = {
+            "documented_corrections": documented,
+            "alpha_conversion_relations_reviewed": True,
+            "substitution_modulo_alpha_reviewed": True,
+            "free_variable_notation_normalized": True,
+        }
+    elif row["unit_id"] == "OLP-0363":
+        assert lambda_syntax_foundations_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in ("দ্য ব্রুইন সূচক", "শূন্য থেকে সূচকিত", r"F_\Gamma", r"G_\Gamma")
+        )
+        tex_command_check = {
+            "de_bruijn_index_vocabulary_reviewed": True,
+            "forward_and_inverse_translations_preserved": True,
+            "alpha_invariance_proposition_preserved": True,
         }
     audited_source = source
     shared_description = None

@@ -1,0 +1,189 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{sub}
+\olsection{প্রতিস্থাপন}
+
+\begin{explain}
+মুক্ত চলরাশি পরিবেশের চলরাশিকে নির্দেশ করে; তাই কোনো মুক্ত চলরাশির
+জায়গায় বাস্তবে একটি নির্দিষ্ট মান ব্যবহার করা অর্থপূর্ণ। যেমন,
+$\lambd[x][f x]$-এ $f$-এর জায়গায় অভেদ অপেক্ষক~$\lambd[y][y]$-এর
+মতো একটি নির্দিষ্ট পদ বসাতে চাইতে পারি। এতে
+$\lambd[x][(\lambd[y][y]) x]$ পাওয়া যায়। মুক্ত চলরাশির জায়গায়
+ল্যাম্বডা পদ বসানোর এই প্রক্রিয়াকে \emph{প্রতিস্থাপন} বলে।
+\end{explain}
+
+\begin{defn}[প্রতিস্থাপন] \ollabel{defn:substitution}
+  কোনো পদ~$M$-এ চলরাশি~$x$-এর জায়গায় পদ~$N$-এর
+  \emph{প্রতিস্থাপন}, $\Subst{M}{N}{x}$, আরোহমূলকভাবে এভাবে সংজ্ঞায়িত:
+  \begin{enumerate}
+    \item $\Subst{x}{N}{x} = N$. \ollabel{defn:substitution-1}
+    \item $x \neq y$ হলে $\Subst{y}{N}{x}  = y$। \ollabel{defn:substitution-2}
+    \item $\Subst{PQ}{N}{x}  = (\Subst{P}{N}{x}) (\Subst{Q}{N}{x})$।
+      \ollabel{def:substitution-3}
+    \item $\Subst{(\lambd[x][P])}{N}{x} = \lambd[x][P]$; আর
+      $x \neq y$ এবং $y \notin \FV{N}$ হলে
+      $\Subst{(\lambd[y][P])}{N}{x} = \lambd[y][\Subst{P}{N}{x}]$।
+      $x \neq y$ কিন্তু $y \in \FV{N}$ হলে এটি অসংজ্ঞায়িত।
+      \ollabel{defn:substitution-4}
+  \end{enumerate}
+% BN-SRC-282 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-282):} হিমায়িত বিমূর্তন-ধারাটি $x=y$ হলে প্রতিস্থাপনকে অসংজ্ঞায়িত করে, অথচ পরের ব্যাখ্যাই বলে যে আবদ্ধ~$x$-এর সংঘটনগুলি বদলাবে না এবং $\Subst{\lambd[x][x]}{y}{x}$-এর ফল $\lambd[x][x]$ হওয়া উচিত। বাংলা সংজ্ঞায় ছায়াবৃত চলরাশির মানক ধারাটি $\Subst{\lambd[x][P]}{N}{x}=\lambd[x][P]$ পুনরুদ্ধার করা হয়েছে; স্বতন্ত্র আবদ্ধ চলরাশির ক্ষেত্রে মুক্ত চলরাশি অধিগ্রহণের ঝুঁকি থাকলেই প্রতিস্থাপন অসংজ্ঞায়িত থাকে।} % BN-SRC-282 TARGET-CORRECTION-END
+\end{defn}
+
+\begin{explain}
+\olref{defn:substitution}\olref{defn:substitution-4}-এ আমরা $x \neq y$
+চাই, কারণ $M$-এ চলরাশি~$x$-এর \emph{বদ্ধ} সংঘটনগুলিকে~$N$ দিয়ে
+প্রতিস্থাপন করতে চাই না। যেমন,
+$\Subst{\lambd[x][x]}{y}{x}$ প্রতিস্থাপনটি করলে ফল
+$\lambd[x][y]$ নয়, কেবল $\lambd[x][x]$ হওয়া উচিত।
+
+$\lambd[y][P]$-এ $x$-এর জায়গায়~$N$ বসানোর সময় আমরা
+$y \notin \FV{N}$-ও চাই। যেমন, $\lambd[y][x]$-এ $x$-এর জায়গায়
+$y$ বসানো যায় না, অর্থাৎ $\Subst{\lambd[y][x]}{y}{x}$ করা যায় না;
+কারণ তাতে ফল হতো $\lambd[y][y]$, যে পদটি এমন অপেক্ষক বোঝায় যা একটি
+আর্গুমেন্ট নিয়ে সেটিকেই সরাসরি ফেরত দেয়। কিন্তু $\lambd[y][x]$
+এমন অপেক্ষক বোঝায় যা সর্বদা পদ~$x$ (অথবা $x$ যা নির্দেশ করে) ফেরত
+দেয়। অতএব আমরা আসলে এমন একটি অপেক্ষক চাই যা একটি আর্গুমেন্ট নেয়,
+সেটিকে উপেক্ষা করে এবং পরিবেশের চলরাশি~$y$ ফেরত দেয়। এটি ঠিকভাবে
+করতে হলে আগে বদ্ধ চলরাশি~$y$-এর ``নাম বদলাতে'' হবে।
+\end{explain}
+
+\begin{prob}
+  নিচের প্রতিস্থাপনগুলির ফল কী?
+  \begin{enumerate}
+  \item $\Subst{\lambd[y][x(\lambd[w][vwx])]}{(uv)}{x}$
+  \item $\Subst{\lambd[y][x(\lambd[x][x])]}{(\lambd[y][xy])}{x}$
+  \item $\Subst{y(\lambd[v][xv])}{(\lambd[y][vy])}{x}$
+  \end{enumerate}
+\end{prob}
+
+\begin{thm} \ollabel{thm:notinfv}
+  $x \notin \FV{M}$ হলে, বাঁ দিকটি সংজ্ঞায়িত থাকা সাপেক্ষে,
+  $\FV{\Subst{M}{N}{x}} = \FV{M}$।
+\end{thm}
+
+\begin{proof}
+  $M$-এর গঠনের উপর আরোহ প্রয়োগ করি।
+  \begin{enumerate}
+  \item $M$ একটি চলরাশি: অনুশীলনী।
+  \item $M$-এর রূপ $(PQ)$: অনুশীলনী।
+  \item $M$-এর রূপ $\lambd[y][P]$। যেহেতু
+    $\Subst{\lambd[y][P]}{N}{x}$ সংজ্ঞায়িত, সেটি অবশ্যই
+    $\lambd[y][\Subst{P}{N}{x}]$। অতএব $\Subst{P}{N}{x}$-ও
+    সংজ্ঞায়িত; আরও, $x \neq y$ এবং $x \notin \FV{P}$। তখন:
+    \begin{multline*}
+      \FV{\Subst{\lambd[y][P]}{N}{x}} = \\
+    \begin{aligned}
+      & = \FV{\lambd[y][\Subst{P}{N}{x}]} &&
+      \text{\olref{defn:substitution-4} অনুসারে}\\
+      & = \FV{\Subst{P}{N}{x}} \setminus \{y\} &&
+      \text{\olref[fv]{def:fv}\olref[fv]{def:fv2} অনুসারে}\\
+      & = \FV{P} \setminus \{y\} && \text{আরোহ-অনুমান অনুসারে} \\
+      & = \FV{\lambd[y][P]} && \text{\olref[fv]{def:fv}\olref[fv]{def:fv2} অনুসারে}
+    \end{aligned}
+    \end{multline*}
+  \end{enumerate}
+% BN-SRC-276 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-276):} হিমায়িত প্রমাণের বিমূর্তন-ক্ষেত্রে $x\notin\FV{Q}$ লেখা হয়েছে, যদিও ওই ক্ষেত্রে কোনো~$Q$ নেই এবং আরোহ-অনুমান প্রয়োগ করতে $x\notin\FV{P}$ দরকার। বাংলা প্রমাণে বিমূর্তনের দেহ~$P$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-276 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prob}
+  \olref[lam][syn][sub]{thm:notinfv}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{thm} \ollabel{thm:infv}
+  $x \in \FV{M}$ হলে, বাঁ দিকটি সংজ্ঞায়িত থাকা সাপেক্ষে,
+  $\FV{\Subst{M}{N}{x}} = (\FV{M} \setminus
+  \{x\}) \cup \FV{N}$।
+\end{thm}
+
+\begin{proof}
+  $M$-এর গঠনের উপর আরোহ প্রয়োগ করি।
+  \begin{enumerate}
+  \item $M$ একটি চলরাশি: অনুশীলনী।
+  \item $M$-এর রূপ $PQ$। যেহেতু
+    $\Subst{(PQ)}{N}{x}$ সংজ্ঞায়িত, সেটি অবশ্যই
+    $(\Subst{P}{N}{x})(\Subst{Q}{N}{x})$, যেখানে দুটি প্রতিস্থাপনই
+    সংজ্ঞায়িত। আবার $x \in \FV{PQ}$ বলে $x \in \FV{P}$ অথবা
+    $x \in \FV{Q}$, অথবা দুটিই। বাকিটুকু অনুশীলনী হিসেবে রইল।
+  \item $M$-এর রূপ $\lambd[y][P]$। যেহেতু
+    $\Subst{\lambd[y][P]}{N}{x}$ সংজ্ঞায়িত, সেটি অবশ্যই
+    $\lambd[y][\Subst{P}{N}{x}]$; এখানে $\Subst{P}{N}{x}$
+    সংজ্ঞায়িত, $x \neq y$ এবং $y \notin \FV{N}$। আরও, যেহেতু
+    $x \in \FV{\lambd[y][P]}$, তাই $x \in \FV{P}$-ও। এখন:
+    \begin{multline*}
+      \FV{\Subst{(\lambd[y][P])}{N}{x}} = \\
+      \begin{aligned}
+      & = \FV{\lambd[y][\Subst{P}{N}{x}]} \\
+      & = \FV{\Subst{P}{N}{x}} \setminus \{y\} \\
+      & = ((\FV{P} \setminus \{x\}) \cup \FV{N}) \setminus \{y\}
+       && \text{আরোহ-অনুমান অনুসারে} \\
+      & = (\FV{P} \setminus \{x, y\}) \cup \FV{N}
+       && y \notin \FV{N} \\
+      & = (\FV{\lambd[y][P]} \setminus \{x\}) \cup \FV{N}
+      \end{aligned}
+      \end{multline*}
+  \end{enumerate}
+% BN-SRC-277 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-277):} হিমায়িত দ্বিতীয় উপপাদ্য ও প্রমাণে পরস্পর-সংযুক্ত কয়েকটি চলরাশি ও সেট-অভিব্যক্তি অসঙ্গত: অনুমানের পরে একটি অতিরিক্ত বন্ধনী আছে; প্রয়োগ-ক্ষেত্রে $x$-এর বদলে~$y$ প্রতিস্থাপিত; বিমূর্তন-ক্ষেত্রে অনুমানটি $x\in\FV{\lambd[y][P]}$ হওয়ার বদলে $y\in\FV{\lambd[x][P]}$; এবং আরোহ-ধাপে $\FV{P}\setminus\{x\}$ ও $\FV{N}$-এর সংযোজন থেকে~$y$ বাদ দেওয়ার বদলে ভুল চলরাশিগুলি বাদ দেওয়া হয়েছে। বাংলা পাঠে উপপাদ্যের ঘোষিত $x$-প্রতিস্থাপন এবং $y\notin\FV{N}$ শর্তের সঙ্গে মিলিয়ে চারটিই পুনরুদ্ধার করা হয়েছে।} % BN-SRC-277 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prob}
+  \olref[lam][syn][sub]{thm:infv}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{thm}\ollabel{thm:clr}
+  $\Subst{M}{N}{x}$ সংজ্ঞায়িত এবং $x \notin \FV{N}$ হলে
+  $x \notin \FV{\Subst{M}{N}{x}}$।
+% BN-SRC-283 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-283):} হিমায়িত উপপাদ্যটি ``ডান দিক'' সংজ্ঞায়িত হওয়ার শর্ত দেয়, যদিও ঘোষণাটি কোনো সমতা বা দুই-পক্ষবিশিষ্ট সম্বন্ধ নয়। বাংলা পাঠে শর্তটির প্রকৃত বস্তু, $\Subst{M}{N}{x}$, স্পষ্ট করা হয়েছে।} % BN-SRC-283 TARGET-CORRECTION-END
+\end{thm}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+  \olref[lam][syn][sub]{thm:clr} প্রমাণ করো।
+\end{prob}
+
+
+\begin{thm}\ollabel{thm:inv}
+  $\Subst{M}{y}{x}$ সংজ্ঞায়িত এবং $y \notin \FV{M}$ হলে
+  $\Subst{\Subst{M}{y}{x}}{x}{y} = M$।
+\end{thm}
+
+\begin{proof}
+  $M$-এর গঠনের উপর আরোহ প্রয়োগ করি।
+  \begin{enumerate}
+  \item $M$ চলরাশি~$z$: অনুশীলনী।
+  \item $M$-এর রূপ $(PQ)$। তাহলে:
+    \begin{align*}
+      \Subst{\Subst{(PQ)}{y}{x}}{x}{y}
+      &=\Subst{((\Subst{P}{y}{x})(\Subst{Q}{y}{x}))}{x}{y} \\
+      &= (\Subst{\Subst{P}{y}{x}}{x}{y})(\Subst{\Subst{Q}{y}{x}}{x}{y}) \\
+      &= (PQ) \text{ আরোহ-অনুমান অনুসারে।}
+    \end{align*}
+  \item $M$-এর রূপ $\lambd[z][N]$। যেহেতু
+    $\Subst{\lambd[z][N]}{y}{x}$ সংজ্ঞায়িত, আমরা জানি
+    $z \neq y$। অতএব:
+    \begin{align*}
+      \Subst{\Subst{(\lambd[z][N])}{y}{x}}{x}{y}\\
+      & = \Subst{(\lambd[z][\Subst{N}{y}{x}])}{x}{y} \\
+      & = \lambd[z][\Subst{\Subst{N}{y}{x}}{x}{y}] \\
+      &= \lambd[z][N] \text{ আরোহ-অনুমান অনুসারে।}
+    \end{align*}
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  \olref[lam][syn][sub]{thm:inv}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\end{document}

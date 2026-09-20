@@ -1,0 +1,291 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: alpha
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{alp}
+\olsection{$\alpha$-রূপান্তর}
+
+$\lambd[x][x]$ ও $\lambd[y][y]$-এর মধ্যে সম্পর্ক কী? উভয়েই অভেদ
+অপেক্ষককে উপস্থাপন করে। অবশ্যই তারা বাক্যতাত্ত্বিকভাবে ভিন্ন পদ। তাদের
+পার্থক্য কেবল বদ্ধ চলরাশিটির নামে, এবং একটির বদ্ধ চলরাশির ``নাম
+বদলালে'' অন্যটি পাওয়া যায়। একেই \emph{$\alpha$-রূপান্তর} বলে।
+
+\begin{defn}[বদ্ধ চলরাশির পরিবর্তন, $\aconvone$]
+  কোনো পদ~$M$-এ $\lambd[x][N]$-এর একটি সংঘটন থাকলে, $x \neq y$,
+  $y \notin \FV{N}$, এবং $\Subst{N}{y}{x}$ সংজ্ঞায়িত হলে, ওই সংঘটনকে
+  \begin{equation*}
+    \lambd[y][\Subst{N}{y}{x}]
+  \end{equation*}
+  দিয়ে বদলে যে~$M'$ পাওয়া যায়, তাকে \emph{বদ্ধ চলরাশির পরিবর্তন}
+  বলে; লিখি $M \redone[\alpha] M'$।
+% BN-SRC-278 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-278):} হিমায়িত প্রথম সংজ্ঞায় $x\neq y$ শর্তটি নেই, যদিও পরের দুটি সমতুল্য সংজ্ঞার মৌলিক বিধিতে শর্তটি স্পষ্টভাবে আছে। শর্তটি না থাকলে কিছু অপরিবর্তিত পদকেও এক-ধাপের নামপরিবর্তন ধরা হয় এবং ঘোষিত সংজ্ঞাগুলি আর একই সম্বন্ধ দেয় না। বাংলা প্রথম সংজ্ঞায় পরের সংজ্ঞাদুটির শর্তটি পুনরুদ্ধার করা হয়েছে।} % BN-SRC-278 TARGET-CORRECTION-END
+\end{defn}
+
+\begin{defn}[সম্বন্ধের সামঞ্জস্যশীলতা]
+  পদগুলির উপর কোনো সম্বন্ধ~$R$-কে \emph{সামঞ্জস্যশীল} বলা হয় যদি তা
+  নিচের শর্তগুলি পূরণ করে:
+  \begin{enumerate}
+  \item $R N N'$ হলে $R \lambd[x][N] \lambd[x][N']$।
+  \item $R P P'$ হলে $R (PQ) (P'Q)$।
+  \item $R Q Q'$ হলে $R (PQ) (PQ')$।
+  \end{enumerate}
+\end{defn}
+
+তাহলে সংজ্ঞাটি নতুনভাবে বলা যাক:
+\begin{defn}[বদ্ধ চলরাশির পরিবর্তন, $\aconvone$]
+  \emph{বদ্ধ চলরাশির পরিবর্তন} ($\redone[\alpha]$) হলো পদগুলির উপর
+  এমন ক্ষুদ্রতম সামঞ্জস্যশীল সম্বন্ধ যা নিচের শর্তটি পূরণ করে:
+  \begin{align*}
+    &\lambd[x][N] \redone[\alpha] \lambd[y][\Subst{N}{y}{x}] && \text{যদি
+      $x \neq y$, $y \notin \FV{N}$} \\
+    & &&\text{এবং $\Subst{N}{y}{x}$ সংজ্ঞায়িত হয়।}
+  \end{align*}
+\end{defn}
+
+এখানে ``ক্ষুদ্রতম'' মানে, সম্বন্ধটিতে সামঞ্জস্যশীলতা ও অতিরিক্ত শর্তটির
+কারণে আবশ্যক যুগলগুলিই আছে, আর কিছু নেই। তাই সম্বন্ধটিকে নিচেরভাবেও
+সংজ্ঞায়িত করা যায়:
+
+\begin{defn}[বদ্ধ চলরাশির পরিবর্তন, $\aconvone$] \ollabel{defn:aconvone}
+  \emph{বদ্ধ চলরাশির পরিবর্তন} ($\aconvone$) আরোহমূলকভাবে এভাবে
+  সংজ্ঞায়িত:
+  \begin{enumerate}
+  \item $N \aconvone N'$ হলে $\lambd[x][N] \aconvone
+    \lambd[x][N']$। \ollabel{defn:aconvone1}
+  \item $P \aconvone P'$ হলে $(PQ) \aconvone (P'Q)$। \ollabel{defn:aconvone2}
+  \item $Q \aconvone Q'$ হলে $(PQ) \aconvone (PQ')$। \ollabel{defn:aconvone3}
+  \item $x \neq y$, $y \notin \FV{N}$ এবং $\Subst{N}{y}{x}$ সংজ্ঞায়িত হলে
+    $\lambd[x][N] \redone[\alpha] \lambd[y][\Subst{N}{y}{x}]$।
+    \ollabel{defn:aconvone4}
+  \end{enumerate}
+\end{defn}
+
+সংজ্ঞাগুলি সমতুল্য, তবে প্রমাণটি অনুশীলনী হিসেবে রাখলাম। এখন থেকে আমরা
+আরোহমূলক সংজ্ঞাটি ব্যবহার করব।
+
+\begin{defn}[$\alpha$-রূপান্তর, $\aconv$]
+  \emph{$\alpha$-রূপান্তর} ($\aconv$) হলো পদগুলির উপর এমন ক্ষুদ্রতম
+  প্রতিবিম্ব ধর্মবিশিষ্ট ও পরিযায়ী সম্বন্ধ যাতে~$\aconvone$ অন্তর্ভুক্ত।
+\end{defn}
+
+আগের মতোই, ``ক্ষুদ্রতম'' মানে সম্বন্ধটিতে প্রতিবিম্ব ধর্ম, পরিযায়িতা
+ও~$\aconvone$ দ্বারা আবশ্যক যুগলগুলিই আছে। তাই নিচের সমতুল্য সংজ্ঞা পাই:
+% BN-SRC-279 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-279):} হিমায়িত ব্যাখ্যাটি ``ক্ষুদ্রতম'' সম্বন্ধে কেবল পরিযায়িতা ও~$\aconvone$-এর কারণে আবশ্যক যুগলগুলির কথা বলে, অথচ ঠিক আগের সংজ্ঞা এবং পরের তৃতীয় আরোহমূলক বিধি প্রতিবিম্ব ধর্মও দাবি করে। বাংলা ব্যাখ্যায় সেই ঘোষিত ধর্মটি পুনরুদ্ধার করা হয়েছে।} % BN-SRC-279 TARGET-CORRECTION-END
+
+\begin{defn}[$\alpha$-রূপান্তর, $\aconv$] \ollabel{defn:aconv}
+  \emph{$\alpha$-রূপান্তর} ($\aconv$) আরোহমূলকভাবে এভাবে সংজ্ঞায়িত:
+  \begin{enumerate}
+  \item $P \aconv Q$ এবং $Q \aconv R$ হলে $P \aconv R$।
+    \ollabel{defn:aconv1}
+  \item $P \aconvone Q$ হলে $P \aconv Q$। \ollabel{defn:aconv2}
+  \item $P \aconv P$। \ollabel{defn:aconv3}
+  \end{enumerate}
+\end{defn}
+
+\begin{ex}
+  $\lambd[x][f x]$ থেকে $\alpha$-রূপান্তরে $\lambd[y][f y]$ পাওয়া
+  যায়, এবং বিপরীত দিকেও যায়। অনানুষ্ঠানিকভাবে বললে, উভয়েই এমন অপেক্ষক
+  যা একটি আর্গুমেন্ট নেয় এবং পরিবেশের চলরাশি~$f$ যে অপেক্ষককে নির্দেশ
+  করে, সেটি ওই আর্গুমেন্টের উপর প্রয়োগ করে; অর্থাৎ আর্গুমেন্টটির
+  $f$-প্রতিচ্ছবি ফেরত দেয়।
+
+  $\lambd[x][f x]$ থেকে $\alpha$-রূপান্তরে $\lambd[x][g x]$ পাওয়া
+  যায় না। অনানুষ্ঠানিকভাবে বললে, তারা যথাক্রমে পরিবেশের চলরাশি~$f$ ও~$g$-কে
+  নির্দেশ করে; তাই তারা ভিন্ন অপেক্ষক: যে পরিবেশে $f$ ও~$g$ ভিন্ন, সেখানে
+  তাদের আচরণও ভিন্ন।
+\end{ex}
+
+\begin{prob}
+  নিচের পদ-যুগলগুলি কি $\alpha$-রূপান্তরযোগ্য?
+  \begin{enumerate}
+  \item $\lambd[x][\lambd[y][x]]$ এবং $\lambd[y][\lambd[x][y]]$
+  \item $\lambd[x][\lambd[y][x]]$ এবং $\lambd[c][\lambd[b][a]]$
+  \item $\lambd[x][\lambd[y][x]]$ এবং $\lambd[c][\lambd[b][a]]$
+  \end{enumerate}
+\end{prob}
+
+\begin{lem}\ollabel{lem:fv-one}
+  $P \aconvone Q$ হলে $\FV{P} = \FV{Q}$।
+\end{lem}
+
+\begin{proof}
+  $P \aconvone Q$-এর !!{derivation}-এর উপর আরোহ প্রয়োগ করি।
+  \begin{enumerate}
+  \item শেষ বিধিটি \olref{defn:aconvone4} হলে $P$-এর রূপ
+    $\lambd[x][N]$ এবং $Q$-এর রূপ
+    $\lambd[y][\Subst{N}{y}{x}]$; এখানে $x \neq y$,
+    $y \notin \FV{N}$ এবং $\Subst{N}{y}{x}$ সংজ্ঞায়িত।
+    $x \in \FV{N}$ কি না, সেই অনুসারে দুটি ক্ষেত্র করি:
+    \begin{enumerate}
+    \item $x \in \FV{N}$ হলে:
+      \begin{align*}
+        \FV{\lambd[y][\Subst{N}{y}{x}]} &=
+        \FV{\Subst{N}{y}{x}} \setminus \{y\} \\
+        & = ((\FV{N} \setminus \{x\}) \cup \{y\}) \setminus \{y\}
+         && \text{\olref[sub]{thm:infv} অনুসারে} \\
+        & = \FV{N} \setminus \{x\} \\
+        & = \FV{\lambd[x][N]}
+      \end{align*}
+    \item $x \notin \FV{N}$ হলে:
+      \begin{align*}
+        \FV{\lambd[y][\Subst{N}{y}{x}]}
+        & = \FV{\Subst{N}{y}{x}} \setminus \{y\} \\
+        & = \FV{N} \setminus \{x\}
+         && \text{\olref[sub]{thm:notinfv} অনুসারে} \\
+        & = \FV{\lambd[x][N]}.
+      \end{align*}
+    \end{enumerate}
+  \item বাকি তিনটি ক্ষেত্র অনুশীলনী হিসেবে রইল।
+  \end{enumerate}
+% BN-SRC-284 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-284):} হিমায়িত এক-ধাপের $\alpha$-রূপান্তরে মুক্ত চলরাশি সংরক্ষণের প্রমাণে তিনটি অভিব্যক্তি সংজ্ঞায়িত $\FV{N}$ সংকেতের বদলে কাঁচা $FV(N)$ বা $FV\{\cdot\}$ আকারে আছে। বাংলা প্রমাণে তিনটিকেই অধ্যায়ের সংজ্ঞায়িত~$\FV{\cdot}$ সংকেতে স্বাভাবিক করা হয়েছে।} % BN-SRC-284 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prob}
+  \olref[lam][syn][alp]{lem:fv-one}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{lem}\ollabel{lem:inv}
+  $P \aconvone Q$ হলে $Q \aconvone P$।
+\end{lem}
+
+\begin{proof}
+  $P \aconvone Q$-এর !!{derivation}-এর উপর আরোহ প্রয়োগ করি।
+  \begin{enumerate}
+  \item শেষ বিধিটি \olref{defn:aconvone4} হলে $P$-এর রূপ
+    $\lambd[x][N]$ এবং $Q$-এর রূপ
+    $\lambd[y][\Subst{N}{y}{x}]$; এখানে $x \neq y$,
+    $y \notin \FV{N}$ এবং $\Subst{N}{y}{x}$ সংজ্ঞায়িত। প্রথমে,
+    \olref[sub]{thm:clr} অনুসারে
+    $y \notin \FV{\Subst{N}{y}{x}}$। \olref[sub]{thm:inv} থেকে
+    $\Subst{\Subst{N}{y}{x}}{x}{y}$ শুধু সংজ্ঞায়িতই নয়,
+    $N$-এর সমানও। অতএব \olref{defn:aconvone4} অনুসারে
+    $\lambd[y][\Subst{N}{y}{x}]
+    \aconvone \lambd[x][\Subst{\Subst{N}{y}{x}}{x}{y}] =
+    \lambd[x][N]$।
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  \olref[lam][syn][alp]{lem:inv}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{thm}
+  $\alpha$-রূপান্তর পদগুলির উপর একটি তুল্যতা সম্পর্ক; অর্থাৎ সেটি
+  প্রতিবিম্ব ধর্মবিশিষ্ট, প্রতিসম এবং পরিযায়ী।
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+  \item প্রতিটি পদ~$M$-এর জন্য বদ্ধ চলরাশির \emph{শূন্যটি} পরিবর্তনে
+    $M$ থেকে $M$-ই পাওয়া যায়।
+  \item বদ্ধ চলরাশির এক সারি পরিবর্তনে $P$ থেকে $\alpha$-রূপান্তরে
+    $Q$ পাওয়া গেলে, $Q$ থেকে পরিবর্তনগুলিকে বিপরীত ক্রমে উল্টে
+    (\olref{lem:inv} অনুসারে) $P$ পাওয়া যায়।
+  \item বদ্ধ চলরাশির এক সারি পরিবর্তনে $P$ থেকে $\alpha$-রূপান্তরে
+    $Q$, এবং আরেক সারিতে $Q$ থেকে $R$ পাওয়া গেলে, প্রথমে প্রথম সারি ও
+    তারপর দ্বিতীয় সারি প্রয়োগ করে $P$-কে $R$-এ বদলানো যায়।
+  \end{enumerate}
+\end{proof}
+
+এখন থেকে $M$ ও~$N$-কে \emph{$\alpha$-সমতুল্য}, $M \aeq N$, বলব যদি
+এবং কেবল যদি $M$ থেকে $\alpha$-রূপান্তরে $N$ পাওয়া যায় (এইমাত্র
+দেখানো ফল অনুসারে, ঠিক তখনই $N$ থেকে $\alpha$-রূপান্তরে $M$-ও পাওয়া যায়)।
+
+\begin{thm}\ollabel{thm:fv}
+  $M \aeq N$ হলে $\FV{M} = \FV{N}$।
+\end{thm}
+
+\begin{proof}
+  \olref{lem:fv-one} থেকে অবিলম্বে।
+\end{proof}
+
+\begin{lem}\ollabel{lem:sub:R}
+  $R \aeq R'$ এবং $\Subst{M}{R}{y}$ সংজ্ঞায়িত হলে
+  $\Subst{M}{R'}{y}$ সংজ্ঞায়িত এবং $\Subst{M}{R}{y}$-এর
+  $\alpha$-সমতুল্য।
+\end{lem}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+  \olref[lam][syn][alp]{lem:sub:R} প্রমাণ করো।
+\end{prob}
+
+মনে করো, \olref[sub]{sec}-এ কিছু ক্ষেত্রে প্রতিস্থাপন অসংজ্ঞায়িত। কিন্তু
+পদে $\alpha$-রূপান্তর ব্যবহার করে বদ্ধ চলরাশির নাম বদলালে প্রতিস্থাপনকে
+সর্বদা সংজ্ঞায়িত করা যায়। নিচের উপপাদ্য অনুযায়ী ফলটি
+$\alpha$-সমতুল্যতা রক্ষা করে:
+
+\begin{thm}\ollabel{thm:sub}
+  যেকোনো $M$, $R$ ও~$y$-এর জন্য এমন $M'$ আছে যাতে $M \aeq M'$ এবং
+  $\Subst{M'}{R}{y}$ সংজ্ঞায়িত। আরও, $M'' \aeq M$ ও~$R''$-এর এমন
+  আরেকটি যুগল থাকলে যাতে $\Subst{M''}{R''}{y}$ সংজ্ঞায়িত এবং
+  $R'' \aeq R$, তবে
+  $\Subst{M'}{R}{y} \aeq \Subst{M''}{R''}{y}$।
+\end{thm}
+
+\begin{proof}
+  $M$-এর গঠনের উপর আরোহ প্রয়োগ করি:
+  \begin{enumerate}
+  \item $M$ চলরাশি~$z$: অনুশীলনী।
+  \item ধরি $M$-এর রূপ $\lambd[x][N]$। $x$ ও~$y$ থেকে ভিন্ন এবং
+    $z \notin \FV{N}$ ও~$z \notin \FV{R}$ হয় এমন একটি চলরাশি~$z$
+    বেছে নিই। আরোহ-অনুমান অনুসারে এমন $N'$ আছে যাতে $N' \aeq N$ এবং
+    $\Subst{N'}{z}{x}$ সংজ্ঞায়িত।
+    \olref{defn:aconvone}\olref{defn:aconvone1} অনুসারে
+    $\lambd[x][N] \aeq \lambd[x][N']$-ও। আবার
+    \olref{defn:aconvone}\olref{defn:aconvone4} অনুসারে
+    $\lambd[x][N'] \aeq \lambd[z][\Subst{N'}{z}{x}]$। এটি করা যায়,
+    কারণ $z \ne x$, $z \notin \FV{N'}$ এবং $\Subst{N'}{z}{x}$
+    সংজ্ঞায়িত। সব শেষে,
+    $\Subst{\lambd[z][\Subst{N'}{z}{x}]}{R}{y}$ সংজ্ঞায়িত, কারণ
+    $z \neq y$ এবং $z \notin \FV{R}$।
+% BN-SRC-284 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-284):} হিমায়িত অস্তিত্ব-প্রমাণে আরও দুটি মুক্ত-চলরাশি অভিব্যক্তি কাঁচা $FV(N')$ ও~$FV(R)$ আকারে আছে। বাংলা প্রমাণে এগুলিকেও একই সংজ্ঞায়িত~$\FV{\cdot}$ সংকেতে স্বাভাবিক করা হয়েছে।} % BN-SRC-284 TARGET-CORRECTION-END
+
+    আরও, একই শর্তপূরণকারী অন্য $N''$ ও~$R''$ থাকলে,
+    \begin{multline*}
+      \Subst{(\lambd[z][\Subst{N''}{z}{x}])}{R''}{y} =\\
+    \begin{aligned}
+      &= \lambd[z][\Subst{\Subst{N''}{z}{x}}{R''}{y}] \\
+      &\aeq \lambd[z][\Subst{\Subst{N''}{z}{x}}{R}{y}] && \text{
+        \olref{lem:sub:R} অনুসারে}\\
+      &\aeq\lambd[z][\Subst{\Subst{N'}{z}{x}}{R}{y}]
+      && \text{আরোহ-অনুমান অনুসারে}\\
+      &=\Subst{(\lambd[z][\Subst{N'}{z}{x}])}{R}{y}
+    \end{aligned}
+    \end{multline*}
+% BN-SRC-280 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-280):} হিমায়িত এককতার গণনায় $R''\aeq R$ এবং আরোহ-অনুমান থেকে পাওয়া মধ্যবর্তী দুই ধাপে সাধারণ সমতা লেখা হয়েছে। উল্লিখিত সহায়ক উপপাদ্য ও আরোহ-অনুমান কেবল $\alpha$-সমতুল্যতা দেয়; তাই বাংলা গণনায় ওই দুই সম্পর্ক~$\aeq$ করা হয়েছে। প্রথম ও শেষ ধাপের সংজ্ঞাগত সমতা অপরিবর্তিত।} % BN-SRC-280 TARGET-CORRECTION-END
+    \item $M$-এর রূপ $(PQ)$: অনুশীলনী।
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  \olref[lam][syn][alp]{thm:sub}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{cor}\ollabel{cor:sub}
+  যেকোনো $M$, $R$ ও~$y$-এর জন্য এমন $M'$ ও~$R'$-এর যুগল আছে যাতে
+  $M' \aeq M$, $R \aeq R'$ এবং $\Subst{M'}{R'}{y}$ সংজ্ঞায়িত।
+  আরও, $M'' \aeq M$ ও~$R'' \aeq R$-এর এমন আরেকটি যুগল থাকলে যাতে
+  $\Subst{M''}{R''}{y}$ সংজ্ঞায়িত, তবে
+  $\Subst{M'}{R'}{y} \aeq \Subst{M''}{R''}{y}$।
+% BN-SRC-281 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-281):} হিমায়িত অনুসিদ্ধান্তে ``আরেকটি যুগল'' $M'',R''$ প্রবর্তনের পর প্রথমে $R''\aeq R$ শর্তটি বাদ গেছে, তারপর তার সংজ্ঞায়িততার শর্তে ভুল করে প্রথম যুগলের $\Subst{M'}{R'}{y}$ আবার লেখা হয়েছে। এই দুটি শর্ত ছাড়া ঘোষিত এককতা মিথ্যা। বাংলা পাঠে $R''\aeq R$ এবং ঘোষিত দ্বিতীয় যুগলের $\Subst{M''}{R''}{y}$—দুটিই পুনরুদ্ধার করা হয়েছে।} % BN-SRC-281 TARGET-CORRECTION-END
+\end{cor}
+
+\begin{proof}
+  \olref{thm:sub} থেকে অবিলম্বে।
+\end{proof}
+
+\end{document}

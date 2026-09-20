@@ -1,0 +1,142 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-20T22:17:05.616322+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "0dbe1225b875617fec2db0a2deeff4712c30ccf5",
+  "parent": "eb37eff1500178780e3e2cac03662deb970699c5",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "8eb35625f123fcdf30ad96b93ebfdf02e13332cd",
+    "receipt": "PUBLIC_READBACK_SOURCE_371_2026-09-20.json",
+    "receipt_sha256": "75e925f609cf2085a3b68edf4ff17e5e029ff12f4f6a61d920f0c10dd65c196f"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/0dbe1225b875617fec2db0a2deeff4712c30ccf5.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/0dbe1225b875617fec2db0a2deeff4712c30ccf5",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 30026941,
+  "archive_sha256": "d7253bac93534d601a3614c01536962762b49ab751b34345ac17a0050638f462",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/lambda-definability/arithmetical-functions.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0dbe1225b875617fec2db0a2deeff4712c30ccf5/bn-Beng-IN/content/lambda-calculus/lambda-definability/arithmetical-functions.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0dbe1225b875617fec2db0a2deeff4712c30ccf5/bn-Beng-IN/content/lambda-calculus/lambda-definability/arithmetical-functions.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 8684,
+      "sha256": "7b2d7e7f776cde3a36c77b2e303b190de77a765680395ce78a0370af2ebcce8d"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/lambda-definability/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0dbe1225b875617fec2db0a2deeff4712c30ccf5/bn-Beng-IN/content/lambda-calculus/lambda-definability/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0dbe1225b875617fec2db0a2deeff4712c30ccf5/bn-Beng-IN/content/lambda-calculus/lambda-definability/introduction.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 7939,
+      "sha256": "b38a128a085be065bb3af760c80fe9690fa8394dabd98332e4b72100339a7bc0"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/lambda-definability/lambda-definability.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0dbe1225b875617fec2db0a2deeff4712c30ccf5/bn-Beng-IN/content/lambda-calculus/lambda-definability/lambda-definability.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0dbe1225b875617fec2db0a2deeff4712c30ccf5/bn-Beng-IN/content/lambda-calculus/lambda-definability/lambda-definability.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 977,
+      "sha256": "cd7b8e2162abf08264205c5a316c2621ddde187c5d5dfafe76f9bed16d5803ee"
+    }
+  ],
+  "changed_files_verified": 14,
+  "translated_tex_files_in_commit": 3,
+  "evidence_files_in_commit": 10,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 374,
+  "draft_untranslated_total": 348,
+  "segments": 4302,
+  "translated_segments": 3652,
+  "new_batch_segments": 27,
+  "new_batch_translated_segments": 25,
+  "new_batch_unchanged_segments": 2,
+  "source_correction_records": 313,
+  "new_source_correction_records": 2,
+  "source_normalization_records": 3,
+  "translation_decisions": 309,
+  "provisional_translation_decisions": 290,
+  "translation_decision_occurrences": 24632,
+  "decisions_with_exact_source_wording": 294,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 374,
+    "blocks": 4302,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/lambda-definability/arithmetical-functions.tex",
+      "bytes": 8684,
+      "sha256": "7b2d7e7f776cde3a36c77b2e303b190de77a765680395ce78a0370af2ebcce8d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/lambda-definability/introduction.tex",
+      "bytes": 7939,
+      "sha256": "b38a128a085be065bb3af760c80fe9690fa8394dabd98332e4b72100339a7bc0"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/lambda-definability/lambda-definability.tex",
+      "bytes": 977,
+      "sha256": "cd7b8e2162abf08264205c5a316c2621ddde187c5d5dfafe76f9bed16d5803ee"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6761716,
+      "sha256": "62174879784e4448a1acff226d35651267afa9e9d3a6a222ad4db4c7080e664b"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 231371,
+      "sha256": "2a2bb27547a8b10ac618d56056595dd341a13c59ffe7e19eb24733e32026d08b"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_LAMBDA_DEFINABILITY.md",
+      "bytes": 7790,
+      "sha256": "7ca8fa9b4a0ff4edcb0f3235e523cfb412d9197a757f7cea2efb66c984ee48e2"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "c9f690b801e6c089f7e705fff7839d8d3973d8f6a253dd8c0853fe8351e6b346"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 606957,
+      "sha256": "97957a83eaee758f63d3714ecbb53631cc8b2f35155b26f7c1894fb866a6cf6e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 57498025,
+      "sha256": "69a9759cdceae951f774683c5c0b2dbd5aaeba1102c3d05d49e7df284b878dbf"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 51007251,
+      "sha256": "38bab93d22df8e9a443a9425db6bf6e4aec94e9b812ac6c41868bdcc1a95c57e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1199363,
+      "sha256": "73307db8018a1a8f94a100cc68bc06625033bb153dd2a9f7a4e17846bd6c922f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 78518522,
+      "sha256": "a024f5383de1ffe906475b584f2e9637608c06aa93332ef6e75e5f9fb366c26e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 226230,
+      "sha256": "d20fbe88b95386c630f66fe466c2b14fd9354e5939153784e0ff429363be1dbf"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 195153,
+      "sha256": "535b04f7324b2fd51ea597c67ff413bd89a43d65572e3acb37e580a0e13963e6"
+    }
+  ]
+}

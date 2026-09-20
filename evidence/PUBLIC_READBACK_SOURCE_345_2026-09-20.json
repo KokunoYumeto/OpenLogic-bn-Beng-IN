@@ -1,0 +1,171 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-20T00:11:15.262780+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "c7ce16767386a3f055f2fa10d0394bb28cadb9d1",
+  "parent": "dc13374b1ed2a6c6f927dd2123f790d74ba81708",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "fe91532fa60203f2e30a7ea2879c0226926a8b3e",
+    "receipt": "PUBLIC_READBACK_SOURCE_339_2026-09-20.json",
+    "receipt_sha256": "b96616b8ca959913a094a556d3c9cac789eb761b2d15d35e4c65fac8374f6ffc"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/c7ce16767386a3f055f2fa10d0394bb28cadb9d1.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/c7ce16767386a3f055f2fa10d0394bb28cadb9d1",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 28306968,
+  "archive_sha256": "a45cbacd25d254e38410a3bd319851c17eeb28590de1dbf8b3e99b1e08106ac5",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/church-rosser.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/introduction/church-rosser.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/introduction/church-rosser.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 2211,
+      "sha256": "30fff2095f83f5a060883d983392ee2dd2420282bab1d46fec7a66bb2fb70ea0"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/introduction/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/introduction/introduction.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 1169,
+      "sha256": "0971c1bb51759fa32a9a5cb7330d1767814ca6576434213a5803ef630ddb3ad7"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/overview.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/introduction/overview.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/introduction/overview.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6992,
+      "sha256": "cd11a3bfa89bd69e574df6dd2636056f979f4f141bc963170a2ffbdbbea60e9e"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/reduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/introduction/reduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/introduction/reduction.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 4694,
+      "sha256": "9acdc945ad255f04cb64f22f65734f3db0c4b3689cbb277970502eb37f4bf5e2"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/syntax.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/introduction/syntax.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/introduction/syntax.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 4532,
+      "sha256": "30e77440ff1c327a5d06b0f26257f153bdd9bea9f5d8e0746abc9c2b0683e6dc"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/lambda-calculus.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/lambda-calculus.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7ce16767386a3f055f2fa10d0394bb28cadb9d1/bn-Beng-IN/content/lambda-calculus/lambda-calculus.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 1331,
+      "sha256": "18a3f2318dc1015664126ea381daba0ac957af25c2f6175a8ee8251659dba351"
+    }
+  ],
+  "changed_files_verified": 15,
+  "translated_tex_files_in_commit": 6,
+  "evidence_files_in_commit": 9,
+  "checker_files_in_commit": 0,
+  "draft_translated_total": 345,
+  "draft_untranslated_total": 377,
+  "segments": 3998,
+  "translated_segments": 3370,
+  "lambda_introduction_segments": 49,
+  "lambda_introduction_translated_segments": 30,
+  "lambda_introduction_unchanged_segments": 19,
+  "source_correction_records": 276,
+  "new_source_correction_records": 0,
+  "translation_decisions": 290,
+  "provisional_translation_decisions": 271,
+  "translation_decision_occurrences": 22865,
+  "decisions_with_exact_source_wording": 275,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 345,
+    "blocks": 3998,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/church-rosser.tex",
+      "bytes": 2211,
+      "sha256": "30fff2095f83f5a060883d983392ee2dd2420282bab1d46fec7a66bb2fb70ea0"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/introduction.tex",
+      "bytes": 1169,
+      "sha256": "0971c1bb51759fa32a9a5cb7330d1767814ca6576434213a5803ef630ddb3ad7"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/overview.tex",
+      "bytes": 6992,
+      "sha256": "cd11a3bfa89bd69e574df6dd2636056f979f4f141bc963170a2ffbdbbea60e9e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/reduction.tex",
+      "bytes": 4694,
+      "sha256": "9acdc945ad255f04cb64f22f65734f3db0c4b3689cbb277970502eb37f4bf5e2"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/syntax.tex",
+      "bytes": 4532,
+      "sha256": "30e77440ff1c327a5d06b0f26257f153bdd9bea9f5d8e0746abc9c2b0683e6dc"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/lambda-calculus.tex",
+      "bytes": 1331,
+      "sha256": "18a3f2318dc1015664126ea381daba0ac957af25c2f6175a8ee8251659dba351"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6231555,
+      "sha256": "88018a6a6b93cd5160f23a9305bb9b85975c183a4859ce783cd361e909f3a569"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 209688,
+      "sha256": "3ed96882a7f6aeb832f42043193360be0a18f7eed2912ff7f95d88c837a26e2a"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_INTRODUCTION.md",
+      "bytes": 7632,
+      "sha256": "8613d58507e1771f6f1eb26a322e45e80efea46fe7d534deb1f2e0861e9dc261"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 257065,
+      "sha256": "09836dbeb6ed3875d3ac695678f58b59e483e7d333a8e1427f1ae5670b444d36"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 53895232,
+      "sha256": "5e575cf79356374a6650c269e4507e0aa5c1d10570c61cd6354ae22f4af3dfde"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 47863251,
+      "sha256": "5156bba500bf22883859e85c171dbc3df142efef8e2a38ad64740ddff9027950"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1122029,
+      "sha256": "0b7e693261082855812f2ec3fd856348719ad730032eb00be15cebc4df6a6eab"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 73025842,
+      "sha256": "8facbab21c3331fc2460cf1e5ebf52ea609acb828fd48cdc48ba9d3fe98edc25"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 209569,
+      "sha256": "9a2f8b31cec71017ea71f5c9a48b74b24571cf24d50c9ccd736f2aaa5d6d150f"
+    }
+  ],
+  "result": "The anonymous public commit archive reproduces all 15 changed Git objects byte-for-byte; its strict checker passes all 345 draft units and 3,998 blocks; the public source preserves the reviewed Lambda Calculus overview, syntax, reduction, and Church--Rosser content with five indexed terminology decisions."
+}

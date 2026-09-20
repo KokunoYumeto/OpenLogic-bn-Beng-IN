@@ -1,0 +1,147 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-20T21:09:26.798790+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "f32771a6d23ac83a28b959a3b60eac6eebca7613",
+  "parent": "3236abc7d415b603cb4f863086d65fc2f6bf2283",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "86d0c3f89216a6e2f424cae15ce3c699c617b1b2",
+    "receipt": "PUBLIC_READBACK_SOURCE_365_2026-09-20.json",
+    "receipt_sha256": "fddf41b7ee568790786b6097e6b280da6dc22f048493d8d3378894725a319cf2"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/f32771a6d23ac83a28b959a3b60eac6eebca7613.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/f32771a6d23ac83a28b959a3b60eac6eebca7613",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 29715550,
+  "archive_sha256": "cb44bc79c4505c1602c146276e0bcf52c239d3e07123623238899b5bec28dd0f",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/church-rosser/church-rosser.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/f32771a6d23ac83a28b959a3b60eac6eebca7613/bn-Beng-IN/content/lambda-calculus/church-rosser/church-rosser.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/f32771a6d23ac83a28b959a3b60eac6eebca7613/bn-Beng-IN/content/lambda-calculus/church-rosser/church-rosser.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 399,
+      "sha256": "7efc8f26568260df714082546bc004d2cd58068a6a6e25eb034e44f643f18a6b"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/church-rosser/definitions-and-properties.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/f32771a6d23ac83a28b959a3b60eac6eebca7613/bn-Beng-IN/content/lambda-calculus/church-rosser/definitions-and-properties.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/f32771a6d23ac83a28b959a3b60eac6eebca7613/bn-Beng-IN/content/lambda-calculus/church-rosser/definitions-and-properties.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6852,
+      "sha256": "a1bec4e98917f24cc418cb9a84cb49f2eb8e709253e0e63e2e6d73d9a22022e4"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/church-rosser/parallel-beta-reduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/f32771a6d23ac83a28b959a3b60eac6eebca7613/bn-Beng-IN/content/lambda-calculus/church-rosser/parallel-beta-reduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/f32771a6d23ac83a28b959a3b60eac6eebca7613/bn-Beng-IN/content/lambda-calculus/church-rosser/parallel-beta-reduction.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 10876,
+      "sha256": "6c50c0d2319e7b1f73eb307e25b31f1f56a8725fc5725cf490eae3b996de6479"
+    }
+  ],
+  "changed_files_verified": 15,
+  "translated_tex_files_in_commit": 3,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 368,
+  "draft_untranslated_total": 354,
+  "segments": 4236,
+  "translated_segments": 3591,
+  "new_batch_segments": 33,
+  "new_batch_translated_segments": 29,
+  "new_batch_unchanged_segments": 4,
+  "source_correction_records": 301,
+  "new_source_correction_records": 3,
+  "source_normalization_records": 3,
+  "translation_decisions": 308,
+  "provisional_translation_decisions": 289,
+  "translation_decision_occurrences": 24303,
+  "decisions_with_exact_source_wording": 293,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 368,
+    "blocks": 4236,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/church-rosser/church-rosser.tex",
+      "bytes": 399,
+      "sha256": "7efc8f26568260df714082546bc004d2cd58068a6a6e25eb034e44f643f18a6b"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/church-rosser/definitions-and-properties.tex",
+      "bytes": 6852,
+      "sha256": "a1bec4e98917f24cc418cb9a84cb49f2eb8e709253e0e63e2e6d73d9a22022e4"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/church-rosser/parallel-beta-reduction.tex",
+      "bytes": 10876,
+      "sha256": "6c50c0d2319e7b1f73eb307e25b31f1f56a8725fc5725cf490eae3b996de6479"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6640392,
+      "sha256": "a444ca90861e6cc3fc548df9d7889ee62aff0bb4a2b34c6c59e7b90323e21439"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 226323,
+      "sha256": "be0fd1f17d5f46d8659877565b95bf841f0de08fa6994f7c4ec02691b9e34ad6"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_CHURCH_ROSSER.md",
+      "bytes": 9552,
+      "sha256": "22cd4250bb604a20c36e0cd09dfe1698a74138aa8477b5a548c09a137d976451"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "0a7e8f7acd569a04002237c63aa773da89b39e689dd42a45926b9a8d05cc2f9e"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 581194,
+      "sha256": "ea8e16d70b0ce784db9b1ab112faa65671d68863b749f6eb37923c1214672aec"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 276812,
+      "sha256": "3f723a3c44cafcad652a297560170b0d469a764299a5534f708ac8ad31ad8581"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 56843271,
+      "sha256": "d6651f93b55b4db6a3c1cecaf22b9292bcca545f44b38dd1bf19838420e1d0c5"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 50435010,
+      "sha256": "ce914427891f316b88b357423d0fcfe233d291a6507c2e1a174697fc64a36b19"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1193872,
+      "sha256": "24109d2504954527241ded7b53298861760ce6c658e03f187468a2fa6215b107"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 77507782,
+      "sha256": "5048d576d6b03094da5a6af82a665053de14e09a99d71f53d259883090247a06"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 225200,
+      "sha256": "400293fc232719a729309f659d3f0802497668853d26a6b656cdc75d22210076"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 187051,
+      "sha256": "727db61c8e869914b97b7ff3d450a7b23f80e46015c7e5092678f158b8ec4ce1"
+    }
+  ]
+}

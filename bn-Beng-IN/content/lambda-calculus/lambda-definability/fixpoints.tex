@@ -1,0 +1,172 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: fixpoints
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{fp}
+
+\olsection{স্থির-বিন্দুসমূহ}
+
+ধরা যাক, আমরা পুনরাবৃত্তির সাহায্যে ক্রমগুণিতক অপেক্ষকটিকে এমন একটি
+পদ~$\fn{Fac}$ হিসেবে সংজ্ঞায়িত করতে চাই, যার নিচের ধর্মটি আছে:
+\[
+\fn{Fac} \ident \lambd[n][\fn{IsZero}\, n\, \num 1 (\fn{Mult}\, n (\fn{Fac}(\fn{Pred} \, n)))]
+\]
+অর্থাৎ $n = 0$ হলে $n$-এর ক্রমগুণিতক $1$, আর অন্যথায় তা $n$ গুণ
+$n-1$-এর ক্রমগুণিতক। অবশ্যই এভাবে $\fn{Fac}$ পদটি সংজ্ঞায়িত করা যায়
+না, কারণ ডান পাশেই $\fn{Fac}$ আছে। আত্মউল্লেখসংবলিত এমন পুনরাবৃত্ত
+সংজ্ঞা ল্যাম্বডা ক্যালকুলাসের অংশ নয়। যেমন, কোনো পদকে নিচের মতো
+সংজ্ঞায়িত করলে
+\[
+\fn{Mult} \ident \lambd[ab][a (\fn{Add}\, b) \num{0}]
+\]
+ডান পাশে শুধু $\fn{Add}$-এর মতো আগে সংজ্ঞায়িত পদ থাকে। $\fn{Add}$-এর
+জায়গায় তার সংজ্ঞাকারী পদ বসিয়ে আমরা সবসময় সেটিকে বাদ দিতে পারি। এতে
+$\fn{Mult}$ একটি বিশুদ্ধ ল্যাম্বডা পদ হিসেবে পাওয়া যাবে; $\fn{Add}$
+নিজেও যদি কোনো সংজ্ঞায়িত পদ ব্যবহার করত (যেমন $\fn{Add}'$ করে), তবে
+প্রক্রিয়াটি চালিয়ে শেষ পর্যন্ত একটি বিশুদ্ধ ল্যাম্বডা পদে পৌঁছানো যেত।
+% BN-SRC-311 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-311):} হিমায়িত উদাহরণটি $\lambd[ab][a(\fn{Add}\,a)0]$ লেখে; এতে আবদ্ধ~$b$ অব্যবহৃত থেকে যায়, ফলে পদটি গুণফলের বদলে~$a$-এর বর্গ গণনা করে, এবং কাঁচা~$0$ বিশুদ্ধ ল্যাম্বডা পদও নয়। ঠিক আগের পাটীগাণিতিক অংশের সংশোধিত নির্মাণ অনুসারে বাংলা উদাহরণে $\lambd[ab][a(\fn{Add}\,b)\num{0}]$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-311 TARGET-CORRECTION-END
+
+কিন্তু উপরের $\fn{Fac}$-এর মতো পুনরাবৃত্ত সংজ্ঞার ক্ষেত্রে এটি সত্য নয়।
+ডান পাশের $\fn{Fac}$-এর জায়গায় $\fn{Fac}$-এর সংজ্ঞাটিই বসালে পাই:
+\begin{align*}
+  \fn{Fac} & \ident \lambd[n][\fn{IsZero}\, n\, \num{1}] \\
+    & \qquad (\fn{Mult}\, n
+  ((\lambd[n][\fn{IsZero} \, n \, \num 1\, (\fn{Mult}\, n\, (\fn{Fac}
+    (\fn{Pred}\, n)))]) (\fn{Pred}\, n)))
+\end{align*}
+তবুও ডান পাশ থেকে $\fn{Fac}$ বাদ যায়নি। স্পষ্টতই, প্রক্রিয়াটি আবার
+করলে সংজ্ঞাটি ক্রমশ দীর্ঘ হবে এবং কখনোই কোনো বিশুদ্ধ ল্যাম্বডা পদ দেবে
+না। তাই ক্রমগুণিতককে (বা আরও সাধারণভাবে পুনরাবৃত্ত অপেক্ষককে) এভাবে
+সংজ্ঞায়িত করা কার্যকর নয়।
+
+তবে পুনরাবৃত্ত সংজ্ঞাটি আমাদের কিছু তথ্য দেয়। $f$ যদি ক্রমগুণিতক
+অপেক্ষকের উপস্থাপক কোনো পদ হতো, তাহলে
+\[
+\fn{Fac}' \ident \lambd[g][\lambd[n][\fn{IsZero} \, n \, \num 1\, (\fn{Mult} \, n\, (g (\fn{Pred} n)))]]
+\]
+পদটিকে $f$-এর উপর প্রয়োগ করলে, অর্থাৎ $\fn{Fac}'\,f$, সেটিও
+ক্রমগুণিতক অপেক্ষকের উপস্থাপক হতো। অর্থাৎ $\fn{Fac}'$-কে একটি অপেক্ষক
+গ্রহণ করে আরেকটি অপেক্ষক ফেরত দেওয়া অপেক্ষক হিসেবে দেখলে,
+$f$ ক্রমগুণিতকের উপস্থাপক হওয়ার শর্তে $\fn{Fac'}\, f$-এর মান ঠিক~$f$।
+$\fn{Fac}' \, f \equal[\beta] f$ ধর্মের কোনো অপেক্ষক~$f$-কে
+$\fn{Fac}'$-এর একটি \emph{স্থির-বিন্দু} বলা হয়। অতএব ক্রমগুণিতক
+$\fn{Fac}'$-এর একটি স্থির-বিন্দু।
+
+ল্যাম্বডা ক্যালকুলাসে এমন পদ আছে, যা কোনো প্রদত্ত পদের স্থির-বিন্দু
+গণনা করে; সেগুলি ব্যবহার করে $\fn{Fac}'$-এর মতো একটি পদকে ক্রমগুণিতকের
+সংজ্ঞায় পরিণত করা যায়।
+
+\begin{defn}
+  \ollabel{defn:Turing-Y}
+  \emph{Y-সমাবেশক} হলো নিচের পদটি:
+  \[
+  Y \ident (\lambd[ux][x(uux)])(\lambd[ux][x(uux)]).
+  \]
+\end{defn}
+
+\begin{thm}
+  যেকোনো পদ~$g$-এর জন্য $Yg \red g(Yg)$---এই ধর্মটি $Y$-এর আছে। অতএব
+  $Yg$ সর্বদা~$g$-এর একটি স্থির-বিন্দু।
+\end{thm}
+
+\begin{proof}
+  $(\lambd[ux][x(uux)])$-কে সংক্ষেপে~$U$ লিখি, যাতে $Y \ident UU$। তাহলে
+  \begin{align*}
+    Y g &\ident (\lambd[ux][x(uux)])U\,g \\
+    &\red (\lambd[x][x(UUx)])g\\
+    & \red g(UUg) \ident g(Yg).
+  \end{align*}
+  যেহেতু $g(Yg)$ ও~$Yg$ উভয়ই $g(Yg)$-তে হ্রাস পায়, তাই $g(Yg)
+  \equal[\beta] Yg$; অতএব $Yg$ হলো~$g$-এর একটি স্থির-বিন্দু।
+\end{proof}
+
+অবশ্য $Yg$ একটি রিডেক্স বলে হ্রাস অনির্দিষ্টকাল চলতে পারে:
+\begin{align*}
+  Y g &\red g (Y g) \\
+    &\red g (g (Y g)) \\
+    &\red g(g (g (Y g)))\\
+    &\ldots
+\end{align*}
+তাই $Yg$-কে নিজের উপর~$g$-এর অসীম পুনরাবৃত্ত প্রয়োগ হিসেবে ভাবা যায়।
+এর উপর $g$-কে আরও একবার প্রয়োগ করলে---কথার কথা হিসেবে---নতুন কিছুই ঘটে
+না: $Yg$-এর উপর অসীমবার~$g$ প্রয়োগ করে পাওয়া পদের উপর আরেকবার~$g$
+প্রয়োগ করলেও সেটি $Yg$-এর উপর অসীমবার~$g$ প্রয়োগের ফলই থাকে।
+
+লক্ষ করো, $Yg$ থেকে শুরু হওয়া উপরের $\beta$-হ্রাসের অনুক্রমটি অসীম।
+তাই $Yg$-কে কোনো পদে প্রয়োগ করে $(Yg)N$ নিলে, সেটিও অসীমসংখ্যক ভিন্ন
+পদে হ্রাস পাবে: $(g(Yg))N$, $(g(g(Yg)))N$, \dots। তা সত্ত্বেও হ্রাসের
+\emph{অন্য} কোনো অনুক্রম স্বাভাবিক রূপে গিয়ে শেষ হতে পারে।
+
+উদাহরণ হিসেবে ক্রমগুণিতকই নাও। $\fn{Fac}$-কে $Y\, \fn{Fac}'$ (অর্থাৎ
+$\fn{Fac'}$-এর একটি স্থির-বিন্দু) হিসেবে সংজ্ঞায়িত করো। তাহলে:
+\begin{align*}
+  \fn{Fac}\,\num 3
+  &\red Y\, \fn{Fac}' \, \num 3 \\
+  &\red \fn{Fac}' (Y \,\fn{Fac}') \, \num 3 \\
+  &\ident (\lambd[x][\lambd[n][\fn{IsZero} \, n\, \num 1\,
+      (\fn{Mult}\, n\, (x (\fn{Pred}\, n)))]]) \, \fn{Fac} \, \num 3\\
+  & \red \fn{IsZero} \, \num 3\, \num 1\,
+      (\fn{Mult}\, \num 3\, (\fn{Fac} (\fn{Pred}\, \num 3))) \\
+  &\red  \fn{Mult}\, \num 3 \, (\fn{Fac} \, \num 2).
+  \intertext{একইভাবে,}
+  \fn{Fac}\,\num 2
+  &\red  \fn{Mult}\, \num 2 \, (\fn{Fac} \, \num 1) \\
+  \fn{Fac}\,\num 1
+  &\red  \fn{Mult}\, \num 1 \, (\fn{Fac} \, \num 0)
+  \intertext{কিন্তু}
+  \fn{Fac}\,\num 0
+  &\red \fn{Fac}' (Y \,\fn{Fac}') \, \num 0 \\
+  &\ident (\lambd[x][\lambd[n][\fn{IsZero} \, n\, \num 1\,
+      (\fn{Mult}\, n\, (x (\fn{Pred}\, n)))]]) \, \fn{Fac} \, \num 0\\
+  & \red \fn{IsZero} \, \num 0\, \num 1\,
+      (\fn{Mult}\, \num 0\, (\fn{Fac} (\fn{Pred}\, \num 0))).\\
+  &\red \num 1.
+  \intertext{অতএব সব মিলিয়ে}
+  \fn{Fac}\,\num 3
+  &\red  \fn{Mult}\, \num 3 \,
+  (\fn{Mult} \, \num 2\, (\fn{Mult} \, \num 1\, \num 1)).
+\end{align*}
+
+$\fn{Fac'}$-এর ক্ষেত্রে যা ঘটে, যেকোনো পুনরাবৃত্ত সংজ্ঞার ক্ষেত্রেও তা-ই।
+ধরা যাক, আমাদের একটি পুনরাবৃত্ত সমীকরণ আছে
+\begin{align*}
+g\,x_1\dots x_n & \equal[\beta] N
+\intertext{যেখানে $N$-এর মধ্যে~$g$ ও~$x_1$, \dots,~$x_n$ থাকতে পারে। তাহলে
+এমন একটি পদ~$G \ident (Y \lambd[g][\lambd[x_1\dots x_n][N]])$ সর্বদাই
+আছে, যাতে}
+G\,x_1 \dots x_n & \equal[\beta] \Subst{N}{G}{g}.
+\intertext{কারণ স্থির-বিন্দু উপপাদ্য অনুসারে,}
+G \ident (Y \lambd[g][\lambd[x_1\dots x_n][N]]) & \red \lambd[g][\lambd[x_1\dots x_n][N]](Y \lambd[g][\lambd[x_1\dots x_n][N]])\\
+& \ident (\lambd[g][\lambd[x_1\dots x_n][N]])\,G
+\intertext{এবং তাই}
+G\,x_1 \dots x_n
+& \red (\lambd[g][\lambd[x_1\dots x_n][N]])\,G\,x_1\dots x_n\\
+& \red (\lambd[x_1\dots x_n][\Subst{N}{G}{g}])\,x_1\dots x_n\\
+  & \red \Subst{N}{G}{g}.
+\end{align*}
+
+\olref{defn:Turing-Y}-এর $Y$-সমাবেশকটি অ্যালান টুরিংয়ের। অ্যালোন্‌জো
+চার্চ আরেকটি রূপ প্রস্তাব করেছিলেন; সেটিকে~$Y_C$ বলব:
+\[
+Y_C \ident \lambd[g][(\lambd[x][g(xx)])(\lambd[x][g(xx)])].
+\]
+চার্চের সমাবেশকটি টুরিংয়েরটির চেয়ে একটু দুর্বল: $Y_C g
+\equal[\beta] g(Y_C g)$, কিন্তু $Y_C g \bred g(Y_C g)$ নয়। $V$-কে
+$\lambd[x][g(xx)]$ পদটি ধরো, যাতে $Y_C \ident \lambd[g][VV]$। তাহলে
+\begin{align*}
+  VV & \ident (\lambd[x][g(xx)])V \red g(VV)
+  \text{ এবং তাই}\\
+  Y_C g & \ident (\lambd[g][VV])g \red VV \red g(VV), \text{ কিন্তু আবার}\\
+  g(Y_C g) & \ident g((\lambd[g][VV])g) \red g(VV).
+\end{align*}
+অন্যভাবে বললে, $Y_Cg$ ও~$g(Y_Cg)$ একই পদ~$g(VV)$-তে হ্রাস পায়; তাই
+$Y_Cg \equal[\beta] g(Y_Cg)$। প্রয়োগের জন্য এটিই প্রায়ই যথেষ্ট।
+% BN-SRC-312 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-312):} হিমায়িত তুলনামূলক বাক্যটি চার্চের~$Y_C$ নিয়ে কথা বলেও দুইবার টুরিংয়ের~$Y$ লিখেছে এবং তাই ঠিক আগের উপপাদ্যের প্রত্যক্ষ $Yg\bred g(Yg)$ ধর্মকেই অস্বীকার করেছে। বাংলা বাক্যে উভয় স্থানে~$Y_C$ পুনরুদ্ধার করা হয়েছে; নিচের সাধারণ-পদ হিসাবটিও ঠিক এই দুর্বল $\beta$-সমতুল্যতাই প্রমাণ করে।} % BN-SRC-312 TARGET-CORRECTION-END
+
+\end{document}

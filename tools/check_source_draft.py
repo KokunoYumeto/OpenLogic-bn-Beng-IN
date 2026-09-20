@@ -2202,6 +2202,54 @@ for row in rows:
         lambda_definability_pairs_truth_pr_math_fix = (
             mathparts(audited_lambda_definability_pairs_truth_pr) == target_math
         )
+    lambda_definability_completion_math_fix = False
+    lambda_definability_completion_expected = {
+        "OLP-0379": {"BN-SRC-311", "BN-SRC-312"},
+        "OLP-0380": {"BN-SRC-313", "BN-SRC-314"},
+    }
+    audited_lambda_definability_completion = source
+    if row["unit_id"] == "OLP-0379":
+        repairs = [
+            (
+                r"\fn{Mult} \ident \lambd[ab][a (\fn{Add}\, a) 0]",
+                r"\fn{Mult} \ident \lambd[ab][a (\fn{Add}\, b) \num{0}]",
+            ),
+            (
+                "$Yg\n\\equal[\\beta] g(Yg)$",
+                "$Y_C g\n\\equal[\\beta] g(Y_C g)$",
+            ),
+            (r"$Yg \bred g(Yg)$", r"$Y_C g \bred g(Y_C g)$"),
+        ]
+        for old, new in repairs:
+            assert audited_lambda_definability_completion.count(old) == 1, old
+            audited_lambda_definability_completion = (
+                audited_lambda_definability_completion.replace(old, new, 1)
+            )
+    elif row["unit_id"] == "OLP-0380":
+        repairs = [
+            (r"To !!{lambda define}~$h$", r"To !!{lambda define}~$g$"),
+            (r"    H & \ident", r"    G & \ident"),
+            (
+                r"(g\, \vec{x} (\fn{Succ}\, y)]]",
+                r"(g\, \vec{x} (\fn{Succ}\, y))]]",
+            ),
+            (
+                r"\num{h(n_1, \dots, n_k)}",
+                r"\num{g(n_1, \dots, n_k)}",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_lambda_definability_completion.count(old) == 1, old
+            audited_lambda_definability_completion = (
+                audited_lambda_definability_completion.replace(old, new, 1)
+            )
+    if 379 <= unit_number <= 382:
+        assert set(documented) == lambda_definability_completion_expected.get(
+            row["unit_id"], set()
+        )
+        lambda_definability_completion_math_fix = (
+            mathparts(audited_lambda_definability_completion) == target_math
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -4112,6 +4160,86 @@ for row in rows:
             "composition_representer_index_and_conclusion_restored": True,
             "primitive_recursion_step_function_restored": True,
         }
+    elif row["unit_id"] == "OLP-0379":
+        assert lambda_definability_completion_math_fix
+        assert set(documented) == {"BN-SRC-311", "BN-SRC-312"}
+        collapsed_target = re.sub(r"\s+", " ", checked_target)
+        assert all(
+            phrase in collapsed_target
+            for phrase in (
+                "স্থির-বিন্দুসমূহ",
+                r"\fn{Fac} \ident",
+                r"Y \ident (\lambd[ux][x(uux)])(\lambd[ux][x(uux)])",
+                r"Y_C \ident \lambd[g][(\lambd[x][g(xx)])(\lambd[x][g(xx)])]",
+                r"Y_C g \equal[\beta] g(Y_C g)",
+                r"Y_C g \bred g(Y_C g)",
+            )
+        )
+        assert r"Yg \equal[\beta] g(Yg)" not in collapsed_target
+        assert r"\fn{Mult} \ident \lambd[ab][a (\fn{Add}\, b) \num{0}]" in checked_target
+        tex_command_check = {
+            "documented_corrections": documented,
+            "factorial_fixpoints_turing_and_church_combinators_reviewed": True,
+            "multiplication_example_operand_and_church_zero_restored": True,
+            "church_combinator_comparison_subscript_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0380":
+        assert lambda_definability_completion_math_fix
+        assert set(documented) == {"BN-SRC-313", "BN-SRC-314"}
+        collapsed_target = re.sub(r"\s+", " ", checked_target)
+        assert all(
+            phrase in collapsed_target
+            for phrase in (
+                "ন্যূনীকরণ",
+                r"\umin{y}{f(x_1,\dots,x_k, y) = 0}",
+                r"\fn{Search} & \ident",
+                r"G & \ident \lambd[\vec x]",
+                r"\num{g(n_1, \dots, n_k)}",
+            )
+        )
+        assert r"(g\, \vec{x} (\fn{Succ}\, y))]]" in checked_target
+        assert r"    H & \ident" not in checked_target
+        tex_command_check = {
+            "documented_corrections": documented,
+            "regular_minimization_search_and_closure_reviewed": True,
+            "minimized_function_and_representer_names_restored": True,
+            "recursive_search_application_closed": True,
+        }
+    elif row["unit_id"] == "OLP-0381":
+        assert lambda_definability_completion_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                r"আংশিক পুনরাবৃত্ত অপেক্ষকগুলি \usetoken{S}{lambda definable}",
+                r"\lambd[x][F (G x)]",
+                "স্বাভাবিক রূপহীন",
+                "সব আংশিক পুনরাবৃত্ত অপেক্ষক !!{lambda definable}।",
+            )
+        )
+        tex_command_check = {
+            "partial_recursive_composition_strictness_issue_reviewed": True,
+            "partial_recursive_lambda_definability_theorem_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0382":
+        assert lambda_definability_completion_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                r"\usetoken{S}{lambda definable} অপেক্ষকগুলি পুনরাবৃত্ত",
+                r"\ollabel{thm:lambda-computable}",
+                "পাটিগণিতায়ন",
+                r"\fn{normalize}(t)",
+                r"\fn{toChurch}",
+                r"\fn{fromChurch}",
+                r"!!{lambda define}s",
+            )
+        )
+        tex_command_check = {
+            "lambda_definable_to_partial_recursive_converse_reviewed": True,
+            "godel_coding_normalization_and_church_conversion_outline_reviewed": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -4217,6 +4345,7 @@ for row in rows:
             lambda_church_rosser_math_fix,
             lambda_definability_opening_math_fix,
             lambda_definability_pairs_truth_pr_math_fix,
+            lambda_definability_completion_math_fix,
             shared_audit_fix,
         )
     )

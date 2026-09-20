@@ -1,0 +1,74 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: minimization
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{min}
+\olsection{ন্যূনীকরণ}
+
+মৌলিক অপেক্ষক $\Zero$, $\Succ$, $\Proj{n}{i}$ থেকে মিশ্রণ, আদিম
+পুনরাবৃত্তি ও নিয়মিত ন্যূনীকরণের সাহায্যে যেসব অপেক্ষক পাওয়া যায়,
+সেগুলিই সাধারণ পুনরাবৃত্ত অপেক্ষক। সব সাধারণ পুনরাবৃত্ত অপেক্ষক
+!!{lambda definable} দেখাতে হলে প্রমাণ করতে হবে, কোনো !!a{lambda
+  definable} অপেক্ষক থেকে নিয়মিত ন্যূনীকরণের সাহায্যে সংজ্ঞায়িত যেকোনো
+অপেক্ষকও !!{lambda definable}।
+
+\begin{lem}
+  \ollabel{lem:min} $f(x_1, \dots, x_k, y)$ যদি নিয়মিত ও
+  !!{lambda definable} হয়, তাহলে নিচের মতো সংজ্ঞায়িত~$g$
+  \[
+  g(x_1, \dots, x_k) = \umin{y}{f(x_1,\dots,x_k, y) = 0}
+  \]
+  অপেক্ষকটিও !!{lambda definable}।
+\end{lem}
+
+\begin{proof}
+  ধরা যাক, ল্যাম্বডা পদ~$F$ নিয়মিত অপেক্ষক $f(\vec x, y)$-কে
+  $\lambda$-সংজ্ঞায়িত করে। $g$-কে !!{lambda define} করার জন্য একটি
+  অনুসন্ধান-অপেক্ষক ও একটি স্থির-বিন্দু সমাবেশক ব্যবহার করি:
+  \begin{align*}
+    \fn{Search} & \ident \lambd[g][\lambd[f\,\vec{x}\,y][
+        \fn{IsZero} (f\, \vec{x}\, y)\, y\, (g\, \vec{x} (\fn{Succ}\, y))]]\\
+    G & \ident \lambd[\vec x][(Y \, \fn{Search}) F\, \vec{x}\, \num{0}],
+  \end{align*}
+% BN-SRC-313 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-313):} লেমাটি ন্যূনীকরণে পাওয়া অপেক্ষককে~$g$ বলে, কিন্তু হিমায়িত প্রমাণটি তাকে~$h$ বলে, উপস্থাপক পদটিকে~$H$ লেখে এবং শেষ হ্রাসে আবার~$h$ ব্যবহার করে। বাংলা প্রমাণে লেমার ঘোষিত নামকে নিয়ামক ধরে অপেক্ষক~$g$ ও তার উপস্থাপক পদ~$G$ সর্বত্র রাখা হয়েছে।} % BN-SRC-313 TARGET-CORRECTION-END
+% BN-SRC-314 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-314):} হিমায়িত $\fn{Search}$ পদে পুনরাবৃত্ত ডাক~$(g\,\vec{x}(\fn{Succ}\,y)$-এর ডান বন্ধনীটি অনুপস্থিত। বাংলা সূত্রে $g$-এর সম্পূর্ণ প্রয়োগের পরে বন্ধনীটি পুনরুদ্ধার করা হয়েছে, যাতে নির্বাচক~$\fn{IsZero}$-র তৃতীয় আর্গুমেন্টটি সুগঠিত হয়।} % BN-SRC-314 TARGET-CORRECTION-END
+  যেখানে $Y$ যেকোনো স্থির-বিন্দু সমাবেশক। অনানুষ্ঠানিকভাবে,
+  $\fn{Search}$ একটি আত্মউল্লেখকারী অপেক্ষক: $y$ থেকে শুরু করে পরীক্ষা
+  করো $f\, \vec x\, y$ শূন্য কি না; শূন্য হলে~$y$ ফেরত দাও, আর না হলে
+  $\fn{Succ}\, y$ দিয়ে নিজেকেই আবার ডাকো। অতএব $(Y \, \fn{Search}) F
+  \num{n_1}\dots\num{n_k}\,\num{0}$ সেই ক্ষুদ্রতম~$m$ ফেরত দেয়, যার
+  জন্য $f(n_1, \dots, n_k, m) = 0$।
+
+  বিশেষভাবে লক্ষ করো,
+  \begin{align*}
+    (Y \, \fn{Search}) F \num{n_1}
+    \dots\num{n_k}\, \num{m} & \red \num{m}
+    \intertext{যদি $f(n_1, \dots,
+      n_k, m) = 0$ হয়; অথবা}
+    & \red (Y \, \fn{Search}) F\, \num{n_1} \dots\num{n_k}\, \num{m+1}
+    \intertext{অন্যথায়। যেহেতু $f$ নিয়মিত, তাই কোনো $y$-এর জন্য
+      $f(n_1, \dots, n_k, y) = 0$; অতএব}
+    (Y \, \fn{Search}) F \num{n_1} \dots\num{n_k}\,\num{0}
+    & \red \num{g(n_1, \dots, n_k)}.
+    \end{align*}
+\end{proof}
+
+
+\begin{prop}
+  প্রতিটি সাধারণ পুনরাবৃত্ত অপেক্ষক !!{lambda definable}।
+\end{prop}
+
+\begin{proof}
+ \olref[prf]{lem:basic} অনুসারে সব মৌলিক অপেক্ষক !!{lambda definable};
+ আর \olref[prf]{lem:comp}, \olref[prf]{lem:prim} ও~\olref{lem:min}
+ অনুসারে !!{lambda definable} অপেক্ষকগুলি মিশ্রণ, আদিম পুনরাবৃত্তি ও
+ নিয়মিত ন্যূনীকরণের অধীনে বদ্ধ।
+\end{proof}
+
+\end{document}

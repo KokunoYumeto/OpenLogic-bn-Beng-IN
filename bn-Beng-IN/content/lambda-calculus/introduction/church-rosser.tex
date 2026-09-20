@@ -1,0 +1,39 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: church-rosser
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{cr}
+\olsection{চার্চ--রসার ধর্ম}
+
+\begin{thm}
+\ollabel{thm:church-rosser}
+ধরা যাক $M$, $N_1$ ও $N_2$ এমন পদ, যেখানে $M \red N_1$ এবং $M \red
+N_2$। তাহলে এমন একটি পদ~$P$ আছে যাতে $N_1 \red P$ এবং $N_2 \red P$।
+\end{thm}
+
+\begin{cor}
+ধরা যাক $M$-কে স্বাভাবিক রূপে হ্রাস করা যায়। তাহলে এই স্বাভাবিক রূপটি
+একক।
+\end{cor}
+
+\begin{proof}
+$M \red N_1$ এবং $M \red N_2$ হলে আগের উপপাদ্য অনুসারে এমন একটি
+পদ~$P$ আছে যাতে $N_1$ ও $N_2$ উভয়ই~$P$-তে হ্রাস পায়। $N_1$ ও~$N_2$
+উভয়ই স্বাভাবিক রূপে থাকলে এটি কেবল তখনই ঘটতে পারে যখন $N_1 \ident P
+\ident N_2$।
+\end{proof}
+
+সবশেষে, দুটি পদ~$M$ ও~$N$ একটি সাধারণ পদে হ্রাস পেলে তাদের
+\emph{$\beta$-সমতুল্য}, অথবা শুধু \emph{সমতুল্য}, বলব; অন্যভাবে বললে,
+এমন কোনো~$P$ থাকতে হবে যাতে $M \red P$ এবং $N \red P$। এটি $M
+\equal[\beta] N$ লিখি। \olref{thm:church-rosser} ব্যবহার করে যাচাই করা
+যায় যে $\equal[\beta]$ একটি সমতুল্যতা-সম্বন্ধ; তার আরও ধর্ম হলো, প্রত্যেক
+$M$ ও~$N$-এর জন্য $M \red N$ অথবা $N \red M$ হলে $M \equal[\beta]
+N$। (আসলে দেখানো যায়, এই ধর্মবিশিষ্ট সমতুল্যতা-সম্বন্ধগুলির মধ্যে
+$\equal[\beta]$-ই \emph{ক্ষুদ্রতম}।)
+
+\end{document}

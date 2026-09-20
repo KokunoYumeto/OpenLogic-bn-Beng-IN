@@ -2159,6 +2159,49 @@ for row in rows:
         lambda_definability_opening_math_fix = (
             mathparts(audited_lambda_definability_opening) == target_math
         )
+    lambda_definability_pairs_truth_pr_math_fix = False
+    lambda_definability_pairs_truth_pr_expected = {
+        "OLP-0376": {"BN-SRC-307"},
+        "OLP-0377": {"BN-SRC-308"},
+        "OLP-0378": {"BN-SRC-309", "BN-SRC-310"},
+    }
+    audited_lambda_definability_pairs_truth_pr = source
+    if row["unit_id"] == "OLP-0376":
+        old = r"\tuple{0,0}"
+        new = r"\tuple{\num{0}, \num{0}}"
+        assert audited_lambda_definability_pairs_truth_pr.count(old) == 2, old
+        audited_lambda_definability_pairs_truth_pr = (
+            audited_lambda_definability_pairs_truth_pr.replace(old, new)
+        )
+    elif row["unit_id"] == "OLP-0377":
+        old = r"R \subseteq \Nat^n"
+        new = r"R \subseteq \Nat^k"
+        assert audited_lambda_definability_pairs_truth_pr.count(old) == 1, old
+        audited_lambda_definability_pairs_truth_pr = (
+            audited_lambda_definability_pairs_truth_pr.replace(old, new, 1)
+        )
+    elif row["unit_id"] == "OLP-0378":
+        repairs = [
+            (r"$F$, $G_0$, \dots, $G_k$", r"$F$, $G_0$, \dots, $G_{k-1}$"),
+            (r"Then $H$ is !!{lambda definable}.", r"Then $h$ is !!{lambda definable}."),
+            (
+                r"h(x_1, \dots, x_n, y+1) & = h(x_1, \dots, x_n, y, h(x_1, \dots, x_n, y)).",
+                r"h(x_1, \dots, x_n, y+1) & = g(x_1, \dots, x_n, y, h(x_1, \dots, x_n, y)).",
+            ),
+            (r"application of the function $h$ $y$ times", r"application of the function $g$ $y$ times"),
+        ]
+        for old, new in repairs:
+            assert audited_lambda_definability_pairs_truth_pr.count(old) == 1, old
+            audited_lambda_definability_pairs_truth_pr = (
+                audited_lambda_definability_pairs_truth_pr.replace(old, new, 1)
+            )
+    if 376 <= unit_number <= 378:
+        assert set(documented) == lambda_definability_pairs_truth_pr_expected.get(
+            row["unit_id"], set()
+        )
+        lambda_definability_pairs_truth_pr_math_fix = (
+            mathparts(audited_lambda_definability_pairs_truth_pr) == target_math
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -4008,6 +4051,67 @@ for row in rows:
             "church_successor_addition_multiplication_exponentiation_reviewed": True,
             "alternate_multiplication_operand_restored": True,
         }
+    elif row["unit_id"] == "OLP-0376":
+        assert lambda_definability_pairs_truth_pr_math_fix
+        assert set(documented) == {"BN-SRC-307"}
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "ক্রমযুগল ও পূর্বসূরি",
+                "অভিক্ষেপ অপেক্ষক",
+                "ছাঁটা বিয়োগ",
+                r"\fn{Pred}",
+                r"\fn{Sub}",
+            )
+        )
+        assert checked_target.count(r"\tuple{\num{0}, \num{0}}") == 2
+        tex_command_check = {
+            "documented_correction": "BN-SRC-307",
+            "pair_constructor_projections_predecessor_and_subtraction_reviewed": True,
+            "raw_zero_pair_states_restored_as_church_numerals": True,
+        }
+    elif row["unit_id"] == "OLP-0377":
+        assert lambda_definability_pairs_truth_pr_math_fix
+        assert set(documented) == {"BN-SRC-308"}
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "সত্যমান ও সম্বন্ধ",
+                "নির্বাচক",
+                "নঞর্থকরণ ও সংযোজন",
+                "অন্তর্ভুক্তিমূলক ও",
+                "বর্জনমূলক বিয়োজন",
+                r"R \subseteq \Nat^k",
+            )
+        )
+        tex_command_check = {
+            "documented_correction": "BN-SRC-308",
+            "selector_encoding_relation_definability_and_boolean_functions_reviewed": True,
+            "relation_arity_symbol_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0378":
+        assert lambda_definability_pairs_truth_pr_math_fix
+        assert set(documented) == {"BN-SRC-309", "BN-SRC-310"}
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "মৌলিক আদিম পুনরাবৃত্ত অপেক্ষক",
+                "মিশ্রণ",
+                "আদিম পুনরাবৃত্তি",
+                "ক্রমযুগল; এর প্রথম",
+                "আরোহ-অনুমান থেকে",
+                r"$G_{k-1}$",
+                r"তাহলে $h$ হলো",
+                r"g(x_1, \dots, x_n, y, h(x_1, \dots, x_n, y))",
+            )
+        )
+        assert r"তাহলে $H$ হলো" not in checked_target
+        tex_command_check = {
+            "documented_corrections": documented,
+            "basic_functions_composition_and_primitive_recursion_reviewed": True,
+            "composition_representer_index_and_conclusion_restored": True,
+            "primitive_recursion_step_function_restored": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -4112,6 +4216,7 @@ for row in rows:
             lambda_syntax_foundations_math_fix,
             lambda_church_rosser_math_fix,
             lambda_definability_opening_math_fix,
+            lambda_definability_pairs_truth_pr_math_fix,
             shared_audit_fix,
         )
     )

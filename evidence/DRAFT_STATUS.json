@@ -385,13 +385,16 @@
       "OLP-0373",
       "OLP-0374",
       "OLP-0375",
+      "OLP-0376",
+      "OLP-0377",
+      "OLP-0378",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 374,
-    "untranslated_count": 348,
-    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, the Model Theory part driver plus complete Basics, Models of Arithmetic, Interpolation and Lindström chapters, the Computability part driver plus complete Recursive Functions and Computability Theory chapters, the Turing Machines part driver plus the complete Turing Machine Computations and Undecidability chapters, the Incompleteness part driver plus the complete Introduction, Arithmetization of Syntax, Representability in Q, Theories and Computability, and Incompleteness and Provability chapters, the Second-order Logic part driver plus complete Syntax and Semantics, Metatheory, and Second-order Logic and Set Theory chapters, and the Lambda Calculus part driver plus the complete Introduction, Syntax, and Church--Rosser chapters and the first two Lambda Definability sections are translated; both Size of Sets editorial alternatives remain distinct.",
-    "reader_state": "The historical v0.2.0 reader remains an exact 18-unit artifact. The public cumulative semantic reader contains 299 units in HTML and EPUB and remains the current reader tranche. The current checked draft and latest anonymously verified public source checkpoint contain 374 units and leave 348 source files untranslated. Seventy-five checked source units are not yet integrated into the cumulative reader."
+    "translated_count": 377,
+    "untranslated_count": 345,
+    "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, the Model Theory part driver plus complete Basics, Models of Arithmetic, Interpolation and Lindström chapters, the Computability part driver plus complete Recursive Functions and Computability Theory chapters, the Turing Machines part driver plus the complete Turing Machine Computations and Undecidability chapters, the Incompleteness part driver plus the complete Introduction, Arithmetization of Syntax, Representability in Q, Theories and Computability, and Incompleteness and Provability chapters, the Second-order Logic part driver plus complete Syntax and Semantics, Metatheory, and Second-order Logic and Set Theory chapters, and the Lambda Calculus part driver plus the complete Introduction, Syntax, and Church--Rosser chapters and the first five Lambda Definability sections are translated; both Size of Sets editorial alternatives remain distinct.",
+    "reader_state": "The historical v0.2.0 reader remains an exact 18-unit artifact. The public cumulative semantic reader contains 299 units in HTML and EPUB and remains the current reader tranche. The current checked draft contains 377 units and leaves 345 source files untranslated; the latest anonymously verified public source checkpoint contains 374 units. Seventy-eight checked source units are not yet integrated into the cumulative reader."
   },
   "last_verified_public_release": {
     "version": "0.3.0",
@@ -6696,6 +6699,68 @@
         "target_sha256": "7b2d7e7f776cde3a36c77b2e303b190de77a765680395ce78a0370af2ebcce8d"
       },
       {
+        "unit_id": "OLP-0376",
+        "source_blocks": 6,
+        "target_blocks": 6,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-307"
+        ],
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-307",
+          "pair_constructor_projections_predecessor_and_subtraction_reviewed": true,
+          "raw_zero_pair_states_restored_as_church_numerals": true
+        },
+        "target_sha256": "4a304331d33361d50ef14fe07851aba9cbd74763fef30d989ebdaa34604423c8"
+      },
+      {
+        "unit_id": "OLP-0377",
+        "source_blocks": 8,
+        "target_blocks": 8,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-308"
+        ],
+        "tex_command_check": {
+          "documented_correction": "BN-SRC-308",
+          "selector_encoding_relation_definability_and_boolean_functions_reviewed": true,
+          "relation_arity_symbol_restored": true
+        },
+        "target_sha256": "e4e13359dee67b41597892b0c1aa9dfd989e8c17e571caec95d54c1fdca5fed5"
+      },
+      {
+        "unit_id": "OLP-0378",
+        "source_blocks": 17,
+        "target_blocks": 17,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-309",
+          "BN-SRC-310"
+        ],
+        "tex_command_check": {
+          "documented_corrections": [
+            "BN-SRC-309",
+            "BN-SRC-310"
+          ],
+          "basic_functions_composition_and_primitive_recursion_reviewed": true,
+          "composition_representer_index_and_conclusion_restored": true,
+          "primitive_recursion_step_function_restored": true
+        },
+        "target_sha256": "193aad6b222b3c1213448694935268a5226bb7122978b9b9ebf7219a64e71aa4"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -6724,12 +6789,12 @@
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "535b04f7324b2fd51ea597c67ff413bd89a43d65572e3acb37e580a0e13963e6"
+      "sha256": "aad1b5f8a351858630d7c9b4c5d385bf7ed39edfee6304e04fb60d70977ffc13"
     },
-    "segments": 4302,
-    "translated_segments": 3652,
+    "segments": 4333,
+    "translated_segments": 3683,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "62174879784e4448a1acff226d35651267afa9e9d3a6a222ad4db4c7080e664b",
+    "segment_index_sha256": "984a09297b3cc0986d78a20858dda466d9ea8306c02119a658f3dd05b396686d",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -6905,7 +6970,7 @@
       },
       {
         "path": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_LAMBDA_DEFINABILITY.md",
-        "sha256": "29792959c353fee9ce2e3c621a0c3b5eb6c9d966a11a0ead54390f732440997a"
+        "sha256": "7dd5b4c6a2269f77c90774f8969a6770a37d49fb6fdd878da138662ae0687657"
       }
     ],
     "shared_source_audit": {
@@ -6920,7 +6985,7 @@
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "c9f690b801e6c089f7e705fff7839d8d3973d8f6a253dd8c0853fe8351e6b346",
+      "reconciliation_sha256": "38cdfa5bedbad0acc6dd37a7a203175e32162057f922ee14f04a87e886c5b22a",
       "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
       "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
       "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
@@ -6938,9 +7003,9 @@
     }
   },
   "source_corrections": {
-    "count": 313,
+    "count": 317,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "97957a83eaee758f63d3714ecbb53631cc8b2f35155b26f7c1894fb866a6cf6e",
+    "sha256": "30f9282154593c7145f43e9b7aa2d554f93c33fa94f12c656da2261601424c57",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -7254,7 +7319,11 @@
       "BN-SRC-303",
       "BN-SRC-304",
       "BN-SRC-305",
-      "BN-SRC-306"
+      "BN-SRC-306",
+      "BN-SRC-307",
+      "BN-SRC-308",
+      "BN-SRC-309",
+      "BN-SRC-310"
     ]
   },
   "source_normalizations": {
@@ -7274,15 +7343,15 @@
     "classification": "render-equivalent TikZ endpoint normalizations; no mathematical or rendered-machine correction"
   },
   "translation_decisions": {
-    "count": 309,
-    "provisional_open": 290,
+    "count": 310,
+    "provisional_open": 291,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "38bab93d22df8e9a443a9425db6bf6e4aec94e9b812ac6c41868bdcc1a95c57e",
+    "sha256": "dc678be89312b5f47039eee830240c2e18cd055275bb4172bb36dac9132c179d",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 24632,
+    "occurrence_count": 24856,
     "pagination_status": "Final printed/PDF page fields are pending reader integration and final pagination."
   },
   "translation_corrections": {
@@ -7302,5 +7371,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "Historical Functions-era TeX candidate record: all three bounded mutex acquisitions timed out without launching TeX. The verified public semantic HTML/EPUB reader is recorded above; no TeX-built PDF is claimed."
   },
-  "remaining": "348 source files, the next cumulative reader tranche, full-corpus QA, and final publication verification. The checked draft and latest anonymously verified GitHub source checkpoint contain 374 units; GitHub and Zenodo carry the verified 299-unit reader release."
+  "remaining": "345 source files, publication and anonymous verification of the current 377-unit source checkpoint, the next cumulative reader tranche, full-corpus QA, and final publication verification. The latest anonymously verified GitHub source checkpoint contains 374 units; GitHub and Zenodo carry the verified 299-unit reader release."
 }

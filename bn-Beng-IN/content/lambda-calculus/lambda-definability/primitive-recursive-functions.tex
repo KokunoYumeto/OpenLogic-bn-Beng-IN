@@ -1,0 +1,158 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: primitive-recursive-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{prf}
+\olsection{আদিম পুনরাবৃত্ত অপেক্ষকগুলি \usetoken{S}{lambda definable}}
+
+মনে করো, মৌলিক অপেক্ষক $\Zero$, $\Succ$ ও~$\Proj{n}{i}$ থেকে মিশ্রণ এবং
+আদিম পুনরাবৃত্তির সাহায্যে যেসব অপেক্ষক সংজ্ঞায়িত করা যায়, সেগুলিই
+আদিম পুনরাবৃত্ত অপেক্ষক।
+
+\begin{lem}
+  \ollabel{lem:basic}
+  মৌলিক আদিম পুনরাবৃত্ত অপেক্ষক $\Zero$, $\Succ$ এবং
+  অভিক্ষেপগুলি~$\Proj{n}{i}$ হলো !!{lambda definable}।
+\end{lem}
+
+\begin{proof}
+নিচের পদগুলি তাদের !!{lambda define} করে:
+\begin{align*}
+  \fn{Zero} & \ident \lambd[a][\lambd[fx][x]]\\
+  \fn{Succ} & \ident \lambd[a][\lambd[fx][f (a f x)]] \\
+  \fn{Proj}^n_i & \ident \lambd[x_0\dots x_{n-1}][x_i]
+\end{align*}
+\end{proof}
+
+\begin{lem}
+  \ollabel{lem:comp} ধরা যাক, $k$-স্থানীয় অপেক্ষক~$f$ এবং $n$-স্থানীয়
+  অপেক্ষক $g_0, \dots, g_{k-1}$ যথাক্রমে $F$, $G_0$, \dots,
+  $G_{k-1}$ পদগুলি দ্বারা !!{lambda definable}, এবং তাদের মিশ্রণ দিয়ে
+  $h$ সংজ্ঞায়িত। তাহলে $h$ হলো !!{lambda definable}।
+% BN-SRC-309 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-309):} হিমায়িত লেমাটি $g_0,\dots,g_{k-1}$-এর উপস্থাপক পদ হিসেবে $G_0,\dots,G_k$ লেখে, অর্থাৎ একটি অতিরিক্ত পদ যোগ করে; তারপর সংজ্ঞায়িত অপেক্ষক~$h$-এর বদলে অনির্ধারিত বড় হাতের~$H$-কে !!{lambda definable} বলে। বাংলা লেমায় শেষ উপস্থাপককে $G_{k-1}$ এবং সিদ্ধান্তের অপেক্ষককে~$h$ করা হয়েছে; প্রমাণে বড় হাতের~$H$ তার উপস্থাপক পদ হিসেবেই আছে।} % BN-SRC-309 TARGET-CORRECTION-END
+\end{lem}
+
+\begin{proof}
+  নিচের পদটি~$h$-কে !!{lambda define} করে:
+  \[
+  H \ident \lambd[x_0 \dots x_{n-1}][F\, (G_0 x_0 \dots
+    x_{n-1}) \dots (G_{k-1} x_0 \dots x_{n-1})]
+  \]
+  এই কথাটির যাচাই অনুশীলন হিসেবে রেখে দিলাম।
+\end{proof}
+
+\begin{prob}
+  $H\num{n_0}\dots\num{n_{n-1}} \red \num{h(n_0, \dots,
+    n_{n-1})}$ দেখিয়ে \olref[lam][ldf][prf]{lem:comp}-এর প্রমাণটি
+  সম্পূর্ণ করো।
+\end{prob}
+
+লক্ষ করো, $f$ ও~$g_0$, \dots,~$g_{k-1}$ আদিম পুনরাবৃত্ত---এ কথা
+\olref{lem:comp}-এ দরকার হয়নি; শুধু দরকার হয়েছে যে তারা সম্পূর্ণ এবং
+!!{lambda definable}।
+
+\begin{lem}\ollabel{lem:prim}
+  ধরা যাক $f$ একটি $n$-স্থানীয় এবং~$g$ একটি $n+2$-স্থানীয় অপেক্ষক,
+  তারা যথাক্রমে $F$ ও~$G$ পদ দ্বারা !!{lambda definable}, এবং $f$ ও~$g$
+  থেকে আদিম পুনরাবৃত্তির মাধ্যমে অপেক্ষক~$h$ সংজ্ঞায়িত। তাহলে $h$-ও
+  !!{lambda definable}।
+\end{lem}
+
+\begin{proof}
+  মনে করো, $h$-কে নিচের সমীকরণদুটি দিয়ে সংজ্ঞায়িত করা হয়:
+  \begin{align*}
+    h(x_1, \dots, x_n, 0) &= f(x_1, \dots, x_n)\\
+    h(x_1, \dots, x_n, y+1) & = g(x_1, \dots, x_n, y, h(x_1, \dots, x_n, y)).
+  \end{align*}
+  অনানুষ্ঠানিকভাবে বললে, আদিম পুনরাবৃত্তির সংজ্ঞাটি $g$-নির্ভর
+  ধাপ-রূপান্তরকে $y$ বার পুনরাবৃত্ত করে এবং $f(x_1, \dots, x_n)$-কে
+  প্রারম্ভিক মান হিসেবে নেয়। এটি চার্চ সংখ্যাপদের সংজ্ঞার কথা মনে করায়;
+  চার্চ সংখ্যাপদও পুনরাবর্তক হিসেবে সংজ্ঞায়িত।
+% BN-SRC-310 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-310):} হিমায়িত উত্তরসূরি-দফার ডান পাশে ধাপ-অপেক্ষক~$g$-এর বদলে ফল-অপেক্ষক~$h$-কেই $n+2$টি আর্গুমেন্টে ডাকা হয়েছে; পরের অনানুষ্ঠানিক বাক্যটিও ভুল করে~$h$-এর প্রয়োগ পুনরাবৃত্ত করার কথা বলে। কিন্তু নিচের নির্মাণের~$D$ প্রতিটি ধাপে ঠিক $G\,x\,(\fn{Fst}\,p)\,(\fn{Snd}\,p)$ ব্যবহার করে। বাংলা সমীকরণে তাই~$g$ পুনরুদ্ধার করা হয়েছে এবং ব্যাখ্যায় $g$-নির্ভর অবস্থা-রূপান্তরের পুনরাবৃত্তি বলা হয়েছে।} % BN-SRC-310 TARGET-CORRECTION-END
+
+  সরলতার জন্য আমরা একটিমাত্র অতিরিক্ত আর্গুমেন্ট~$x$-এর ক্ষেত্রে সংজ্ঞা
+  ও প্রমাণ দিই। নিচের পদটি~$h$-কে !!{lambda define} করে:
+  \begin{align*}
+    H \ident & \lambd[x][\lambd[y][\fn{Snd} (y
+        D \tuple{\num{0}, F x})]]
+    \intertext{যেখানে}
+    D \ident & \lambd[p][\tuple{\fn{Succ} (\fn{Fst}\, p), (G x
+          (\fn{Fst}\, p) (\fn{Snd}\, p))}]
+  \end{align*}
+  আমরা পুনরাবৃত্তির যে অবস্থা বজায় রাখি, তা একটি ক্রমযুগল; এর প্রথম
+  উপাংশটি বর্তমান~$y$ এবং দ্বিতীয়টি~$h$-এর সংশ্লিষ্ট মান। পুনরাবৃত্তির
+  প্রতিটি ধাপে $y$ ও~$h$-এর নতুন মান নিয়ে একটি ক্রমযুগল তৈরি করি;
+  পুনরাবৃত্তি শেষ হলে ক্রমযুগলটির দ্বিতীয় অংশ ফেরত দিই, আর সেটিই
+  $h$-এর চূড়ান্ত মান। এবার প্রমাণ করি যে এটি সত্যিই আদিম পুনরাবৃত্তির
+  একটি উপস্থাপন।
+
+  আমরা প্রমাণ করতে চাই, যেকোনো $n$ ও~$m$-এর জন্য
+  $H\,\num{n}\,\num{m} \red \num{h(n,m)}$। এর জন্য প্রথমে দেখাই,
+  $D_n \ident \Subst{D}{\num{n}}{x}$ হলে
+  $D_n^m \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{m}, \num{h(n, m)}}$। $m$-এর উপর আরোহ প্রয়োগ করি।
+
+  যদি $m=0$ হয়, তবে আমাদের দেখাতে হবে
+  $D_n^0 \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{0}, \num{h(n, 0)}}$। কিন্তু
+  $D_n^0 \tuple{\num{0}, F\, \num{n}}$ স্রেফ
+  $\tuple{\num{0}, F\, \num{n}}$। যেহেতু $F$ অপেক্ষক~$f$-কে
+  !!{lambda define}s, তাই এটি $\tuple{\num{0}, \num{f(n)}}$-এ হ্রাস
+  পায়; আর $f(n) = h(n, 0)$ বলে এটি
+  $\tuple{\num{0}, \num{h(n,0)}}$।
+
+  এবার ধরি $D_n^m \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{m}, \num{h(n, m)}}$। আমাদের দেখাতে হবে
+  $D_n^{m+1} \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{m+1}, \num{h(n, m+1)}}$।
+  \begin{align*}
+    D_n^{m+1} \tuple{\num{0}, F\, \num{n}}
+    & \ident D_n(D_n^{m} \tuple{\num{0}, F\, \num{n}})\\
+    & \red D_n\,\tuple{\num{m}, \num{h(n, m)}} \text{\qquad (আরোহ-অনুমান থেকে)}\\
+    & \ident (\lambd[p][
+      \tuple{
+        \fn{Succ} (\fn{Fst}\, p), (G \, \num{n} (\fn{Fst}\, p) (\fn{Snd}\, p))
+    }]) \tuple{\num{m}, \num{h(n,m)}}\\
+    & \redone
+    \tuple{\fn{Succ} (\fn{Fst}\, \tuple{\num{m}, \num{h(n,m)}}),\\
+      & \qquad (G \, \num{n} (\fn{Fst}\, \tuple{\num{m}, \num{h(n,m)}}) (\fn{Snd}\, \tuple{\num{m}, \num{h(n,m)}}))}\\
+    & \red
+    \tuple{\fn{Succ}\, \num{m}, (G \, \num{n} \,\num{m} \, \num{h(n,m)})}\\
+    & \red \tuple{\num{m+1}, \num{g(n, m, h(n, m))}}
+  \end{align*}
+  যেহেতু $g(n, m, h(n, m)) = h(n, m+1)$, প্রমাণ সম্পূর্ণ।
+
+  সবশেষে নিচের পদটি বিবেচনা করো:
+  \begin{align*}
+    H\,\num n\,\num m &\ident \lambd[x][\lambd[y][\fn{Snd} (y
+        (\lambd[p].\tuple{\fn{Succ} (\fn{Fst}\, p), (G\, x\,
+          (\fn{Fst}\, p)\, (\fn{Snd}\, p))}) \tuple{\num{0}, F x})]]\\
+    & \qquad\,\num n\, \num m\\
+    & \red \fn{Snd} (\num m \,
+    \underbrace{(\lambd[p].\tuple{\fn{Succ} (\fn{Fst}\, p), (G \,\num n\,
+      (\fn{Fst}\, p) (\fn{Snd}\, p))})}_{D_n} \tuple{\num{0}, F \num n})\\
+    & \ident \fn{Snd} (\num m \, D_n\, \tuple{\num{0}, F \num n})\\
+    & \red \fn{Snd} \,(D_n^m  \tuple{\num{0}, F \num n})\\
+    & \red \fn{Snd} \,\tuple{\num{m}, \num{h(n, m)}} \\
+    & \red \num{h(n,m)}.
+  \end{align*}
+\end{proof}
+
+
+\begin{prop}
+  প্রতিটি আদিম পুনরাবৃত্ত অপেক্ষক !!{lambda definable}।
+\end{prop}
+
+\begin{proof}
+  \olref{lem:basic} অনুসারে সব মৌলিক অপেক্ষক !!{lambda definable}, এবং
+  \olref{lem:comp} ও~\olref{lem:prim} অনুসারে !!{lambda definable}
+  অপেক্ষকগুলি মিশ্রণ ও আদিম পুনরাবৃত্তির অধীনে বদ্ধ।
+\end{proof}
+
+\end{document}

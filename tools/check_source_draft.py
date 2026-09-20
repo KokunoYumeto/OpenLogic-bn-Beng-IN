@@ -1850,6 +1850,8 @@ for row in rows:
         "OLP-0347": {"BN-SRC-267"},
         "OLP-0348": {"BN-SRC-268", "BN-SRC-269"},
         "OLP-0349": {"BN-SRC-270"},
+        "OLP-0353": {"BN-SRC-271", "BN-SRC-272", "BN-SRC-273"},
+        "OLP-0355": {"BN-SRC-274"},
     }
     audited_lambda_introduction_completion = source
     if row["unit_id"] == "OLP-0347":
@@ -1876,7 +1878,39 @@ for row in rows:
         audited_lambda_introduction_completion = (
             audited_lambda_introduction_completion.replace(old, new, 1)
         )
-    if 347 <= unit_number <= 352:
+    elif row["unit_id"] == "OLP-0353":
+        repairs = [
+            (
+                "that we already have terms $G$ and $H$ that !!{lambda define} functions",
+                "that we already have terms $G'$ and $H'$ that !!{lambda define} functions",
+            ),
+            (
+                "we want a term $H$ that !!{lambda define}s the",
+                "we want a term $F$ that !!{lambda define}s the",
+            ),
+            (
+                r"f(x+1, \vec z) & = h(z, f(x,\vec z), \vec z).",
+                r"f(x+1, \vec z) & = h(x, f(x,\vec z), \vec z).",
+            ),
+            (
+                r"F(\num{0}, \vec z) & \equiv G(\vec z)",
+                r"F(\num{0}, \vec z) & \equiv G'(\vec z)",
+            ),
+            (
+                r"F(\overline{n+1}, \vec z) & \equiv H(\num{n}, F(\num{n}, \vec z), \vec z)",
+                r"F(\overline{n+1}, \vec z) & \equiv H'(\num{n}, F(\num{n}, \vec z), \vec z)",
+            ),
+            (
+                r"H(u,v) & = \lambd[\vec z][H'(u,v(u,\vec z),\vec z)].",
+                r"H(u,v) & = \lambd[\vec z][H'(u,v(\vec z),\vec z)].",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_lambda_introduction_completion.count(old) == 1, old
+            audited_lambda_introduction_completion = (
+                audited_lambda_introduction_completion.replace(old, new, 1)
+            )
+    if 347 <= unit_number <= 355:
         assert set(documented) == lambda_introduction_completion_expected.get(
             row["unit_id"], set()
         )
@@ -3426,6 +3460,36 @@ for row in rows:
         tex_command_check = {
             "documented_correction": "BN-SRC-270",
             "church_numeral_macro_arguments_braced": True,
+        }
+    elif row["unit_id"] == "OLP-0353":
+        assert lambda_introduction_completion_math_fix
+        assert r"f(x+1, \vec z) & = h(x, f(x,\vec z), \vec z)." in checked_target
+        assert r"F(\num{0}, \vec z) & \equiv G'(\vec z)" in checked_target
+        assert r"F(\overline{n+1}, \vec z) & \equiv H'(\num{n}, F(\num{n}, \vec z), \vec z)" in checked_target
+        assert r"H(u,v) & = \lambd[\vec z][H'(u,v(\vec z),\vec z)]." in checked_target
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-271", "BN-SRC-272", "BN-SRC-273"],
+            "primitive_recursion_term_roles_restored": True,
+            "recursion_index_restored": True,
+            "curried_recursive_value_application_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0354":
+        assert lambda_introduction_completion_math_fix
+        assert all(
+            phrase in checked_target
+            for phrase in ("স্থির-বিন্দু সমাবেশক", "কারির সমাবেশক", "টুরিংয়ের সমাবেশক")
+        )
+        tex_command_check = {
+            "fixed_point_combinator_terms_reviewed": True,
+            "curry_and_turing_forms_distinguished": True,
+        }
+    elif row["unit_id"] == "OLP-0355":
+        assert lambda_introduction_completion_math_fix
+        assert "যেহেতু $f$ ল্যাম্বডা-সংজ্ঞেয়" in checked_target
+        assert "যেহেতু $f$ আদিম পুনরাবৃত্ত" not in checked_target
+        tex_command_check = {
+            "documented_correction": "BN-SRC-274",
+            "lemma_premise_used_without_extra_primitive_recursive_assumption": True,
         }
     audited_source = source
     shared_description = None

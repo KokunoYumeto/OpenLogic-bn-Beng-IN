@@ -1,0 +1,40 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: fixed-point-combinator
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{fix}
+\olsection{স্থির-বিন্দু সমাবেশক}
+
+ধরা যাক, তোমার কাছে একটি ল্যাম্বডা পদ~$g$ আছে, এবং এমন আরেকটি পদ~$k$
+চাই যার ধর্ম হলো, $k$ পদটি $gk$-এর $\beta$-সমতুল্য। আমাদের সংকেতলিপির
+প্রথা অনুসারে পদদুটি সংজ্ঞায়িত করো:
+\[
+\fn{diag}(x) = xx
+\]
+এবং
+\[
+l(x) = g(\fn{diag}(x))
+\]
+অর্থাৎ $l$ হলো $\lambd[x][g(xx)]$ পদ। $k$-কে $ll$ পদটি ধরো। তাহলে
+\begin{align*}
+k & = (\lambd[x][g(xx)])(\lambd[x][g(xx)]) \\
+& \red  g((\lambd[x][g(xx)])(\lambd[x][g(xx)])) \\
+& = gk.
+\end{align*}
+যদি নেওয়া হয়
+\[
+Y = \lambd[g][((\lambd[x][g(xx)])(\lambd[x][g(xx)]))]
+\]
+তাহলে $Yg$ ও $g(Yg)$ একটি সাধারণ পদে হ্রাস পায়; তাই $Yg \equiv_\beta
+g(Yg)$। একে ``কারির সমাবেশক'' বলা হয়। এর বদলে যদি নেওয়া হয়
+\[
+Y = (\lambd[xg][g(xxg)])(\lambd[xg][g(xxg)])
+\]
+তবে বস্তুত $Yg$, $g(Yg)$-তে হ্রাস পায়—এটি আরও শক্তিশালী বক্তব্য।
+$Y$-এর এই শেষের রূপটিকে ``টুরিংয়ের সমাবেশক'' বলা হয়।
+
+\end{document}

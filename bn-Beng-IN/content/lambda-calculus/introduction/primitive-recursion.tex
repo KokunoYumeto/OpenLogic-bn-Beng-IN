@@ -1,0 +1,148 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: primitive-recursion
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{pr}
+\olsection{\usetoken{S}{lambda definable} অপেক্ষকগুলি আদিম পুনরাবৃত্তির অধীনে বদ্ধ}
+
+আদিম পুনরাবৃত্তির ক্ষেত্রে এসে অবশেষে আমাদের কিছুটা কাজ করতে হবে। ধাপে
+ধাপে এগোতে হবে। আগের মতোই ধরি, আমাদের কাছে ইতিমধ্যে এমন $G'$ ও~$H'$
+পদ আছে, যা যথাক্রমে $g$ ও~$h$ অপেক্ষককে !!{lambda define} করে; আমরা এমন
+একটি $F$ পদ চাই, যা নিচের সমীকরণদুটি দিয়ে সংজ্ঞায়িত অপেক্ষক~$f$-কে
+!!{lambda define}s:
+\begin{align*}
+f(0, \vec z) & = g(\vec z) \\
+f(x+1, \vec z) & = h(x, f(x,\vec z), \vec z).
+\end{align*}
+তাই সাধারণভাবে, $G'$ ও~$H'$ ল্যাম্বডা পদ দুটি দেওয়া থাকলে এমন একটি
+পদ~$F$ খুঁজে পেলেই যথেষ্ট, যাতে
+\begin{align*}
+F(\num{0}, \vec z) & \equiv G'(\vec z) \\
+F(\overline{n+1}, \vec z) & \equiv H'(\num{n}, F(\num{n}, \vec z), \vec z)
+\end{align*}
+প্রতিটি স্বাভাবিক সংখ্যা~$n$-এর জন্য সত্য হয়। $G'$ ও~$H'$ যথাক্রমে
+$g$ ও~$h$-কে !!{lambda define} করে বলে, $\vec z$-এর জায়গায়
+$\num{\vec m}$ সংখ্যাপদগুলি বসালে $F(\num{n+1}, \num{\vec m})$
+সঠিক উত্তরের স্বাভাবিক রূপে হ্রাস পাবে।
+
+কিন্তু এর জন্য এমন একটি পদ~$F$ খুঁজে পেলেই যথেষ্ট, যা
+\begin{align*}
+F(\num 0) & \equiv G \\
+F(\overline {n+1}) & \equiv H(\num{n},F(\num{n}))
+\intertext{প্রতিটি স্বাভাবিক সংখ্যা $n$-এর জন্য পূরণ করে, যেখানে}
+G & = \lambd[\vec z][G'(\vec z)] \text{ এবং}\\
+H(u,v) & = \lambd[\vec z][H'(u,v(\vec z),\vec z)].
+\end{align*}
+% BN-SRC-271 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-271):} হিমায়িত অনুচ্ছেদে মূল সংজ্ঞাকারী পদদুটিকে প্রথমে~$G,H$ এবং পরক্ষণেই~$G',H'$ বলা হয়েছে; চাওয়া ফল-পদটিকেও ভুল করে~$H$ বলা হয়েছে; তদুপরি প্রথম প্রদর্শনে নিচে সংজ্ঞায়িত আবৃত~$G,H$ আগাম ব্যবহার করা হয়েছে। বাংলা পাঠে মূল পদদুটি সর্বত্র~$G',H'$, চাওয়া পদ~$F$, এবং~$G,H$ কেবল নিচের আবৃত পদদুটি।} % BN-SRC-271 TARGET-CORRECTION-END
+% BN-SRC-272 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-272):} হিমায়িত প্রথম পুনরাবৃত্তি-সমীকরণে~$h$-এর প্রথম আর্গুমেন্টে পুনরাবৃত্তি-সূচক~$x$-এর বদলে অসংগত~$z$ আছে। বাংলা সূত্রে~$h(x,f(x,\vec z),\vec z)$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-272 TARGET-CORRECTION-END
+% BN-SRC-273 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-273):} আবৃত ধাপ-পদে~$v$ হলো~$F(\num n)$, অর্থাৎ অবশিষ্ট~$\vec z$ আর্গুমেন্টের অপেক্ষক; হিমায়িত~$v(u,\vec z)$ তাই পুনরাবৃত্তি-সূচকটি দ্বিতীয়বার প্রয়োগ করে। বাংলা সূত্রে~$v(\vec z)$ লেখা হয়েছে, ফলে তা আগের~$F(\num n,\vec z)$ দফার ঠিক সমতুল্য।} % BN-SRC-273 TARGET-CORRECTION-END
+অন্যভাবে বললে, ল্যাম্বডা-কৌশল ব্যবহার করে অতিরিক্ত পরামিতি $\vec z$ নিয়ে
+আলাদা করে চিন্তা এড়ানো যায়—সেগুলি ল্যাম্বডা সংকেতলিপির মধ্যেই শোষিত হয়।
+
+$F$ পদটি সংজ্ঞায়িত করার আগে ক্রমযুগল নিয়ে কাজ করার একটি ব্যবস্থা
+দরকার। পরের লেমাটি সেই ব্যবস্থা দেয়।
+
+\begin{lem}
+এমন একটি ল্যাম্বডা পদ~$D$ আছে, যাতে যেকোনো দুটি ল্যাম্বডা পদ $M$ ও~$N$-এর
+জন্য $D(M,N)(\num{0}) \red M$ এবং $D(M,N)(\num{1}) \red N$।
+\end{lem}
+
+\begin{proof}
+প্রথমে ল্যাম্বডা পদ~$K$-কে সংজ্ঞায়িত করো:
+\[
+K(y) = \lambd[x][y].
+\]
+অর্থাৎ $K$ হলো $\lambd[y][\lambd[x][y]]$ পদটি। অন্যভাবে দেখলে, প্রতিটি
+$M$-এর জন্য $K(M)$ এমন একটি ধ্রুবক অপেক্ষক, যা যেকোনো নিবেশে~$M$ ফেরত
+দেয়।
+
+এবার $D(x,y,z)$-কে $D(x,y,z) = z (K(y))x$ দিয়ে সংজ্ঞায়িত করো। তাহলে
+\begin{align*}
+D(M,N,\num 0) & \red \num 0 (K(N)) M \red M \text{ এবং}\\
+D(M,N,\num 1) & \red \num 1 (K(N)) M \red K(N) M \red N,
+\end{align*}
+যেমনটি দরকার ছিল।
+\end{proof}
+
+মূল ধারণা হলো, $D(M,N)$ ক্রমযুগল $\tuple{M, N}$-কে উপস্থাপন করে; আর
+$P$-কে এমন একটি ক্রমযুগলের উপস্থাপক ধরা হলে $P(\num 0)$ ও $P(\num 1)$
+যথাক্রমে বাঁ ও ডান অভিক্ষেপ $(P)_0$ ও~$(P)_1$-কে উপস্থাপন করে। নিচে আমরা
+শেষের সংকেতলিপিদুটি ব্যবহার করব।
+
+\begin{lem}
+!!{lambda definable} অপেক্ষকগুলি আদিম পুনরাবৃত্তির অধীনে বদ্ধ।
+\end{lem}
+
+\begin{proof}
+আমাদের দেখাতে হবে, যেকোনো $G$ ও~$H$ পদ দেওয়া থাকলে এমন একটি পদ~$F$
+পাওয়া যায়, যাতে
+\begin{align*}
+F(\num{0}) & \equiv G \\
+F(\num{n+1}) & \equiv H(\num{n}, F(\num{n}))
+\end{align*}
+প্রতিটি স্বাভাবিক সংখ্যা~$n$-এর জন্য সত্য হয়। মোটামুটি ধারণাটি হলো,
+সংখ্যাপদগুলিকে পুনরাবর্তক হিসেবে ব্যবহার করে নিচের \emph{ক্রমযুগলগুলির}
+অনুক্রম গণনা করা:
+\[
+\tuple{\num 0, F(\num 0)}, \tuple{\num 1, F(\num 1)}, \dots,
+\]
+লক্ষ করো, প্রথম ক্রমযুগলটি ঠিক $\tuple{\num 0, G}$। কোনো ক্রমযুগল
+$\tuple{\num{n}, F(\num{n})}$ দেওয়া থাকলে পরের ক্রমযুগল
+$\tuple{\num{n+1}, F(\num{n+1})}$-এর সমতুল্য হওয়ার কথা
+$\tuple{\num{n+1}, H(\num{n}, F(\num{n}))}$-এর। এমন এক-ধাপের রূপান্তর
+ঘটায় এমন একটি ল্যাম্বডা পদ~$T$ আমরা তৈরি করব।
+
+বিস্তারিত হলো এই। $T(u)$-কে সংজ্ঞায়িত করো:
+\[
+T(u) = \tuple{S((u)_0), H((u)_0,(u)_1)}.
+\]
+এখন সহজেই যাচাই করা যায়, যেকোনো সংখ্যা~$n$-এর জন্য
+\[
+T(\tuple{\num{n}, M}) \red \tuple{\num{n+1}, H(\num{n}, M)}.
+\]
+উপরের ইঙ্গিতমতো, $G$ ও~$H$ দেওয়া থাকলে $F(u)$-কে সংজ্ঞায়িত করো:
+\[
+F(u) = (u(T,\tuple{\num 0, G}))_1.
+\]
+অর্থাৎ নিবেশ~$\num{n}$-এ $F$, $\tuple{\num 0, G}$-এর উপর $T$-কে
+$n$ বার পুনরাবৃত্ত করে, তারপর দ্বিতীয় উপাংশটি ফেরত দেয়। শুরুতে পাই
+\begin{enumerate}
+\item $\num{0} (T, \tuple{\num 0, G}) \equiv \tuple{\num{0}, G}$
+\item $F(\num{0}) \equiv G$
+\end{enumerate}
+$n$-এর উপর আরোহ প্রয়োগ করে দেখানো যায় যে প্রতিটি স্বাভাবিক সংখ্যার
+জন্য নিচের কথাদুটি সত্য:
+\begin{enumerate}
+\item $\num{n+1}(T, \tuple{\num{0}, G}) \equiv \tuple{\num{n+1}, F(\num{n+1})}$
+\item $F(\num{n+1}) \equiv H(\num{n}, F(\num{n}))$
+\end{enumerate}
+দ্বিতীয় দফার জন্য পাই
+\begin{align*}
+F(\num{n+1}) & \red (\num{n+1}(T, \tuple{\num 0, G}))_1 \\
+& \equiv (T(\num{n} (T, \tuple{\num 0, G})))_1 \\
+& \equiv (T(\tuple{\num{n}, F(\num{n})}))_1 \\
+& \equiv (\tuple{\num{n+1}, H(\num{n}, F(\num{n}))})_1 \\
+& \equiv H(\num{n}, F(\num{n})).
+\end{align*}
+এখানে শেষের আগের পঙ্‌ক্তিতে আরোহানুমান ব্যবহার করেছি। প্রথম দফার জন্য
+পাই
+\begin{align*}
+\num{n+1} (T, \tuple{\num 0, G}) &
+\equiv T(\num{n} (T, \tuple{\num 0, G})) \\
+& \equiv T( \tuple{\num{n}, F(\num{n})}) \\
+& \equiv \tuple{\num{n+1}, H(\num{n}, F(\num{n}))} \\
+& \equiv \tuple{\num{n+1}, F(\num{n+1})}.
+\end{align*}
+এখানে শেষ পঙ্‌ক্তিতে দ্বিতীয় দফাটি ব্যবহার করেছি। অতএব আমরা দেখিয়েছি
+$F(\num 0) \equiv G$ এবং প্রতিটি $n$-এর জন্য $F(\num {n+1}) \equiv H(\num
+n, F(\num{n}))$; ঠিক এটিই আমাদের দরকার ছিল।
+\end{proof}
+
+\end{document}

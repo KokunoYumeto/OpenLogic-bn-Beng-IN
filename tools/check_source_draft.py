@@ -2073,6 +2073,35 @@ for row in rows:
         lambda_syntax_foundations_math_fix = (
             mathparts(audited_lambda_syntax_foundations) == target_math
         )
+    lambda_church_rosser_math_fix = False
+    lambda_church_rosser_expected = {
+        "OLP-0368": {"BN-SRC-292"},
+        "OLP-0369": {"BN-SRC-293", "BN-SRC-294"},
+    }
+    audited_lambda_church_rosser = source
+    if row["unit_id"] == "OLP-0368":
+        repairs = [
+            (
+                "  Suppose \n  \\begin{align*}",
+                "  Suppose $M \\xred P$ and $M \\xred Q$; that is,\n  \\begin{align*}",
+            ),
+            (r"P_m \text{ and}", r"P_m \, (=P) \text{ and}"),
+            (r"Q_n.", r"Q_n \, (=Q)."),
+        ]
+        for old, new in repairs:
+            assert audited_lambda_church_rosser.count(old) == 1, old
+            audited_lambda_church_rosser = audited_lambda_church_rosser.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0369":
+        repairs = [
+            (r"$N \xrightarrow{\beta} N'$", r"$N \bredpar N'$"),
+            (r"\lambd[x][\Subst{N'}{R}{y}]", r"\lambd[x][\Subst{N'}{R'}{y}]"),
+        ]
+        for old, new in repairs:
+            assert audited_lambda_church_rosser.count(old) == 1, old
+            audited_lambda_church_rosser = audited_lambda_church_rosser.replace(old, new, 1)
+    if 367 <= unit_number <= 369:
+        assert set(documented) == lambda_church_rosser_expected.get(row["unit_id"], set())
+        lambda_church_rosser_math_fix = mathparts(audited_lambda_church_rosser) == target_math
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -3789,6 +3818,37 @@ for row in rows:
             "eta_conversion_schema_and_freshness_restored": True,
             "extensionality_notation_normalized": True,
         }
+    elif row["unit_id"] == "OLP-0367":
+        assert lambda_church_rosser_math_fix
+        assert not documented
+        assert r"\olchapter{lam}{cr}{চার্চ--রসার ধর্ম}" in checked_target
+        assert checked_target.count(r"\olimport{") == 5
+        tex_command_check = {
+            "church_rosser_chapter_title_reviewed": True,
+            "all_five_source_imports_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0368":
+        assert lambda_church_rosser_math_fix
+        assert set(documented) == {"BN-SRC-292"}
+        assert all(phrase in checked_target for phrase in ("চার্চ--রসার ধর্ম", "হ্রাসযোগ্যতা-সম্বন্ধ", "তুচ্ছ হ্রাস", "চূড়ান্ত ফল"))
+        assert r"P_m \, (=P)" in checked_target and r"Q_n \, (=Q)" in checked_target
+        tex_command_check = {
+            "documented_correction": "BN-SRC-292",
+            "church_rosser_grid_argument_reviewed": True,
+            "transitive_closure_endpoints_identified": True,
+        }
+    elif row["unit_id"] == "OLP-0369":
+        assert lambda_church_rosser_math_fix
+        assert set(documented) == {"BN-SRC-293", "BN-SRC-294"}
+        assert all(phrase in checked_target for phrase in (r"সমান্তরাল $\beta$-হ্রাস", r"$\beta$-পূর্ণ বিকাশ", "আরোহ-অনুমান", "চার্চ--রসার ধর্ম"))
+        assert r"$N \bredpar N'$" in checked_target
+        assert r"\lambd[x][\Subst{N'}{R'}{y}]" in checked_target
+        tex_command_check = {
+            "documented_corrections": documented,
+            "parallel_beta_rules_reviewed": True,
+            "complete_development_argument_reviewed": True,
+            "substitution_replacement_prime_restored": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -3891,6 +3951,7 @@ for row in rows:
             second_order_set_theory_math_fix,
             lambda_introduction_completion_math_fix,
             lambda_syntax_foundations_math_fix,
+            lambda_church_rosser_math_fix,
             shared_audit_fix,
         )
     )

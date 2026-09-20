@@ -1,0 +1,163 @@
+% Part: lambda-calculus
+% Chapter: church-rosser
+% Section: parallel-beta-reduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{cr}{pb}
+
+\olsection{সমান্তরাল $\beta$-হ্রাস}
+
+আমরা \emph{সমান্তরাল $\beta$-হ্রাস}-এর ধারণা প্রবর্তন করব এবং প্রমাণ
+করব যে এটি চার্চ--রসার ধর্ম পূরণ করে।
+
+\begin{defn}[সমান্তরাল $\beta$-হ্রাস, $\bredpar$] \ollabel{defn:bredpar}
+  পদগুলির সমান্তরাল হ্রাস ($\bredpar$) আরোহমূলকভাবে নিচের মতো সংজ্ঞায়িত:
+  \begin{enumerate}
+    \item \ollabel{defn:bredpar1} $x \bredpar x$।
+    \item \ollabel{defn:bredpar2} $N \bredpar N'$ হলে $\lambd[x][N] \bredpar
+      \lambd[x][N']$।
+% BN-SRC-293 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-293):} হিমায়িত দ্বিতীয় বিধির পূর্বধারণা $N\xrightarrow{\beta}N'$ সাধারণ $\beta$-হ্রাস ব্যবহার করে, যদিও সংজ্ঞাটি সমান্তরাল $\beta$-হ্রাসের আরোহমূলক বিধি দিচ্ছে এবং পরের দুই প্রমাণ একই বিধিকে $N\bredpar N'$ পূর্বধারণাসহ ব্যবহার করে। বাংলা বিধিতে তাই সংজ্ঞায়িত সম্বন্ধ~$\bredpar$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-293 TARGET-CORRECTION-END
+    \item \ollabel{defn:bredpar3} $P \bredpar P'$ এবং $Q \bredpar Q'$ হলে $PQ \bredpar
+      P'Q'$।
+    \item \ollabel{defn:bredpar4} $N \bredpar N'$ এবং $Q \bredpar Q'$ হলে
+      $(\lambd[x][N])Q \bredpar \Subst{N'}{Q'}{x}$।
+  \end{enumerate}
+\end{defn}
+
+সমান্তরাল $\beta$-হ্রাসে কোনো পদের যেকোনো সংখ্যক রিডেক্সকে এক ধাপে
+হ্রাস করা যায়। এটি $\beta$-হ্রাস থেকে এই অর্থে আলাদা যে, শুধু মূল
+পদে থাকা রিডেক্সগুলিই সংকুচিত করা যায়; সমান্তরাল $\beta$-হ্রাস থেকে
+নতুন যে রিডেক্স তৈরি হয়, তাকে একই ধাপে সংকুচিত করা যায় না। যেমন,
+$(\lambd[f][fx])(\lambd[y][y])$ পদটিকে সমান্তরাল $\beta$-হ্রাস করে
+শুধু পদটি নিজে অথবা $(\lambd[y][y])x$ পাওয়া যায়, আর এক ধাপেই~$x$
+পাওয়া যায় না। অথচ সাধারণ $\beta$-হ্রাসে পদটি~$x$-এ হ্রাস পায়;
+কারণ এই রিডেক্সটি সমান্তরাল $\beta$-হ্রাসের প্রথম ধাপের পরেই তৈরি হয়।
+তবে সমান্তরাল $\beta$-হ্রাসের দ্বিতীয় ধাপে~$x$ পাওয়া যায়।
+
+\begin{thm}\ollabel{thm:refl}
+  $M \bredpar M$।
+\end{thm}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+  \olref[lam][cr][pb]{thm:refl} প্রমাণ করো।
+\end{prob}
+
+\begin{defn}[$\beta$-পূর্ণ বিকাশ]\ollabel{defn:bcd}
+  $M$-এর \emph{$\beta$-পূর্ণ বিকাশ}~$\bcd{M}$ আরোহমূলকভাবে নিচের মতো
+  সংজ্ঞায়িত:
+  \begin{align}
+    \bcd{x} &= x \ollabel{defn:bcd1} \\
+    \bcd{(\lambd[x][N])} &= \lambd[x][\bcd{N}] \ollabel{defn:bcd2}\\
+    \bcd{(PQ)} &= \bcd{P}\bcd{Q} && \text{যদি $P$ কোনো $\lambd$-বিমূর্ত পদ না হয়}
+    \ollabel{defn:bcd3} \\
+    \bcd{((\lambd[x][N])Q)} &= \Subst{\bcd{N}}{\bcd{Q}}{x} \ollabel{defn:bcd4}
+  \end{align}
+\end{defn}
+
+নাম থেকেই বোঝা যায়, কোনো পদের $\beta$-পূর্ণ বিকাশ হলো একটি “পূর্ণ
+সমান্তরাল হ্রাস”। সমান্তরাল $\beta$-হ্রাসে কোনো রিডেক্সকে সংকুচিত না
+করার সুযোগ থাকে, কিন্তু পূর্ণ বিকাশে সব কটিকেই সংকুচিত করতে হয়। তাই
+$(\lambd[f][fx])(\lambd[y][y])$-এর পূর্ণ বিকাশ পদটি নিজে নয়, বরং
+$(\lambd[y][y])x$।
+
+\begin{editorial}
+  এই সংজ্ঞার একটি সমস্যা আছে: $\lambd$-পদের উপর অপেক্ষককে
+  পুনরাবৃত্তিমূলকভাবে কীভাবে সংজ্ঞায়িত করতে হয়, তা এখনও প্রবর্তন করা
+  হয়নি। ভবিষ্যতে এটি ঠিক করা হবে।
+\end{editorial}
+
+\begin{lem}\ollabel{lem:comp}
+  $M \bredpar M'$ এবং $R \bredpar R'$ হলে $\Subst{M}{R}{y}
+  \bredpar \Subst{M'}{R'}{y}$।
+\end{lem}
+
+\begin{proof}
+  $M \bredpar M'$-এর !!{derivation}-এর উপর আরোহ প্রয়োগ করি।
+  \begin{enumerate}
+    \item শেষ ধাপটি \olref{defn:bredpar1}: অনুশীলনী।
+    \item শেষ ধাপটি \olref{defn:bredpar2}: তখন $M$ হলো
+      $\lambd[x][N]$ এবং $M'$ হলো $\lambd[x][N']$,
+      যেখানে $N \bredpar N'$। আমাদের প্রমাণ করতে হবে
+      $\Subst{(\lambd[x][N])}{R}{y} \bredpar
+      \Subst{(\lambd[x][N'])}{R'}{y}$; অর্থাৎ,
+      $\lambd[x][\Subst{N}{R}{y}] \bredpar
+      \lambd[x][\Subst{N'}{R'}{y}]$। এটি \olref{defn:bredpar2} ও
+      আরোহ-অনুমান থেকে অবিলম্বে অনুসৃত।
+% BN-SRC-294 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-294):} হিমায়িত বিমূর্তন-ক্ষেত্রের “অর্থাৎ” সম্বন্ধের ডান পাশে $\Subst{N'}{R}{y}$ লেখা, যদিও উপপাদ্যের সিদ্ধান্তে $\Subst{N'}{R'}{y}$ এবং আরোহ-অনুমানও $R\bredpar R'$ ব্যবহার করে ঠিক সেই ফল দেয়। বাংলা গণনায় হারিয়ে যাওয়া প্রাইমটি পুনরুদ্ধার করা হয়েছে।} % BN-SRC-294 TARGET-CORRECTION-END
+    \item শেষ ধাপটি \olref{defn:bredpar3}: অনুশীলনী।
+    \item শেষ ধাপটি \olref{defn:bredpar4}: $M$ হলো
+      $(\lambd[x][N])Q$ এবং $M'$ হলো $\Subst{N'}{Q'}{x}$। আমাদের
+      প্রমাণ করতে হবে $\Subst{((\lambd[x][N])Q)}{R}{y} \bredpar
+      \Subst{\Subst{N'}{Q'}{x}}{R'}{y}$; অর্থাৎ,
+      $(\lambd[x][\Subst{N}{R}{y}])\Subst{Q}{R}{y} \bredpar
+      \Subst{\Subst{N'}{R'}{y}}{\Subst{Q'}{R'}{y}}{x}$। এটি
+      \olref{defn:bredpar4} ও আরোহ-অনুমান থেকে অনুসৃত।
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  \olref[lam][cr][pb]{lem:comp}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{lem}\ollabel{lem:cont}
+  $M \bredpar M'$ হলে $M' \bredpar \bcd{M}$।
+\end{lem}
+\begin{proof}
+  $M \bredpar M'$-এর !!{derivation}-এর উপর আরোহ প্রয়োগ করি।
+  \begin{enumerate}
+    \item শেষ বিধিটি \olref{defn:bredpar1}: অনুশীলনী।
+    \item শেষ বিধিটি \olref{defn:bredpar2}: $M$ হলো
+      $\lambd[x][N]$ এবং $M'$ হলো $\lambd[x][N']$, যেখানে
+      $N \bredpar N'$। দেখাতে হবে $\lambd[x][N'] \bredpar
+      \bcd{(\lambd[x][N])}$; অর্থাৎ, \olref{defn:bcd2} অনুসারে
+      $\lambd[x][N'] \bredpar \lambd[x][\bcd{N}]$।
+      \olref{defn:bredpar2} ও আরোহ-অনুমান থেকে এটি অনুসৃত।
+    \item শেষ বিধিটি \olref{defn:bredpar3}: $M$ হলো $PQ$ এবং $M'$
+      হলো $P'Q'$; এখানে কোনো $P$, $Q$, $P'$ ও~$Q'$-এর জন্য
+      $P \bredpar P'$ এবং $Q \bredpar Q'$। আরোহ-অনুমান থেকে পাই
+      $P' \bredpar \bcd{P}$ এবং $Q' \bredpar \bcd{Q}$।
+      \begin{enumerate}
+        \item কোনো $x$ ও~$N$-এর জন্য $P$ যদি $\lambd[x][N]$ হয়,
+          তবে কোনো $N'$-এর জন্য $P'$-কে $\lambd[x][N']$ হতে হবে,
+          যেখানে $N \bredpar N'$। আরোহ-অনুমান থেকে
+          $N' \bredpar \bcd{N}$ এবং $Q' \bredpar \bcd{Q}$। তখন
+          \olref{defn:bredpar4} অনুসারে $(\lambd[x][N'])Q' \bredpar
+          \Subst{\bcd{N}}{\bcd{Q}}{x}$।
+        \item $P$ কোনো $\lambd$-বিমূর্ত পদ না হলে
+          \olref{defn:bredpar3} অনুসারে $P'Q' \bredpar
+          \bcd{P}\bcd{Q}$; আর \olref{defn:bcd3} অনুসারে ডান পাশটি
+          হলো $\bcd{PQ}$।
+      \end{enumerate}
+    \item শেষ বিধিটি \olref{defn:bredpar4}: $M$ হলো
+      $(\lambd[x][N])Q$ এবং $M'$ হলো $\Subst{N'}{Q'}{x}$; এখানে
+      কোনো $x$, $N$, $Q$, $N'$ ও~$Q'$-এর জন্য $N \bredpar N'$ এবং
+      $Q \bredpar Q'$। আরোহ-অনুমান থেকে জানি
+      $N' \bredpar \bcd{N}$ এবং $Q' \bredpar \bcd{Q}$।
+      \olref{lem:comp} অনুসারে
+      $\Subst{N'}{Q'}{x} \bredpar \Subst{\bcd{N}}{\bcd{Q}}{x}$;
+      এখানে ডান পাশটি ঠিক $\bcd{((\lambd[x][N])Q)}$।
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  \olref[lam][cr][pb]{lem:cont}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{thm}\ollabel{thm:cr}
+  $\bredpar$ চার্চ--রসার ধর্ম পূরণ করে।
+\end{thm}
+
+\begin{proof}
+  \olref{lem:cont} থেকে অবিলম্বে।
+\end{proof}
+
+\end{document}

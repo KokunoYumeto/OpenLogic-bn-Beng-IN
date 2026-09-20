@@ -1845,6 +1845,44 @@ for row in rows:
         second_order_set_theory_math_fix = (
             mathparts(audited_second_order_set_theory) == target_math
         )
+    lambda_introduction_completion_math_fix = False
+    lambda_introduction_completion_expected = {
+        "OLP-0347": {"BN-SRC-267"},
+        "OLP-0348": {"BN-SRC-268", "BN-SRC-269"},
+        "OLP-0349": {"BN-SRC-270"},
+    }
+    audited_lambda_introduction_completion = source
+    if row["unit_id"] == "OLP-0347":
+        old = r"\Subst{\Subst{P}{M_1}{x_1}\ldots}{M_n}{x_n}"
+        new = r"\Subst{\Subst{N}{M_1}{x_1}\ldots}{M_n}{x_n}"
+        assert audited_lambda_introduction_completion.count(old) == 1
+        audited_lambda_introduction_completion = (
+            audited_lambda_introduction_completion.replace(old, new, 1)
+        )
+    elif row["unit_id"] == "OLP-0348":
+        repairs = [
+            ("an $n$-ary partial function", "a $k$-ary partial function"),
+            (r"$F, \num{n_0}\,", r"$F\, \num{n_0}\,"),
+        ]
+        for old, new in repairs:
+            assert audited_lambda_introduction_completion.count(old) == 1, old
+            audited_lambda_introduction_completion = (
+                audited_lambda_introduction_completion.replace(old, new, 1)
+            )
+    elif row["unit_id"] == "OLP-0349":
+        old = r"$X \num m_0 \ldots \num" + "\n" + r"m_{n-1}$"
+        new = r"$X \num{m_0} \ldots \num{m_{n-1}}$"
+        assert audited_lambda_introduction_completion.count(old) == 1
+        audited_lambda_introduction_completion = (
+            audited_lambda_introduction_completion.replace(old, new, 1)
+        )
+    if 347 <= unit_number <= 352:
+        assert set(documented) == lambda_introduction_completion_expected.get(
+            row["unit_id"], set()
+        )
+        lambda_introduction_completion_math_fix = (
+            mathparts(audited_lambda_introduction_completion) == target_math
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -3360,6 +3398,35 @@ for row in rows:
             "domain_continuum_bijection_complete": True,
             "cantor_injectivity_restricted_to_Y": True,
         }
+    elif row["unit_id"] == "OLP-0347":
+        assert lambda_introduction_completion_math_fix
+        assert r"\Subst{\Subst{P}{M_1}{x_1}\ldots}{M_n}{x_n}" not in checked_target
+        assert checked_target.count(
+            r"\Subst{\Subst{N}{M_1}{x_1}\ldots}{M_n}{x_n}"
+        ) == 1
+        tex_command_check = {
+            "documented_correction": "BN-SRC-267",
+            "curried_body_symbol_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0348":
+        assert lambda_introduction_completion_math_fix
+        assert r"f(x_0, \dots, x_{k-1})$ একটি $k$-স্থানীয়" in checked_target
+        assert r"F, \num{n_0}" not in checked_target
+        assert checked_target.count(r"F\, \num{n_0}") == 2
+        tex_command_check = {
+            "documented_corrections": ["BN-SRC-268", "BN-SRC-269"],
+            "lambda_definition_arity_index_restored": True,
+            "undefined_case_application_separator_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0349":
+        assert lambda_introduction_completion_math_fix
+        assert r"X \num m_0" not in checked_target
+        assert checked_target.count(r"X \num{m_0} \ldots \num{m_{n-1}}") == 1
+        assert checked_target.count(r"X \num{m_0} \dots \num{m_{n-1}}") == 1
+        tex_command_check = {
+            "documented_correction": "BN-SRC-270",
+            "church_numeral_macro_arguments_braced": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -3460,6 +3527,7 @@ for row in rows:
             second_order_syntax_semantics_math_fix,
             second_order_metatheory_math_fix,
             second_order_set_theory_math_fix,
+            lambda_introduction_completion_math_fix,
             shared_audit_fix,
         )
     )

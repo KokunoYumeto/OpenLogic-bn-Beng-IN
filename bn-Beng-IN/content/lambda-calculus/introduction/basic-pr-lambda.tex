@@ -1,0 +1,32 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: basic-pr-lambda
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{bas}
+\olsection{মৌলিক আদিম পুনরাবৃত্ত অপেক্ষকগুলি \usetoken{S}{lambda definable}}
+
+\begin{lem}
+$\Zero$, $\Succ$, এবং $\Proj{n}{i}$ অপেক্ষকগুলি !!{lambda definable}।
+\end{lem}
+
+\begin{proof}
+$\Zero$ স্রেফ
+$\lambd[x][\lambd[y][y]]$।
+
+উত্তরসূরি অপেক্ষক~$\Succ$-কে
+$\fn{Succ}(u) = \lambd[x][\lambd[y][x(uxy)]]$ দ্বারা সংজ্ঞায়িত করা হয়।
+কেন এটি কাজ করে, তা ভেবে দেখো: প্রতিটি সংখ্যাপদ $\num{n}$-কে পুনরাবর্তক
+হিসেবে এবং যেকোনো অপেক্ষক~$f$-কে নিলে, $\fn{Succ}(\num{n},f)$ এমন একটি
+অপেক্ষক যা নিবেশ~$y$ পেলে~$y$ থেকে শুরু করে $f$-কে $n$ বার প্রয়োগ করে,
+তারপর আরও একবার প্রয়োগ করে।
+
+অভিক্ষেপগুলি নিয়ে আর কিছু বলার নেই: $\fn{Proj}^n_i(x_0, \dots,
+x_{n-1}) = x_i$। অন্যভাবে বললে, আমাদের প্রথা অনুসারে $\fn{Proj}^n_i$
+হলো ল্যাম্বডা পদ $\lambd[x_0][\dots \lambd[x_{n-1}][x_i]]$।
+\end{proof}
+
+\end{document}

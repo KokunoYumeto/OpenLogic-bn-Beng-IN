@@ -1,0 +1,31 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: composition
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{com}
+\olsection{\usetoken{S}{lambda definable} অপেক্ষকগুলি মিশ্রণের অধীনে বদ্ধ}
+
+\begin{lem}
+!!{lambda definable} অপেক্ষকগুলি মিশ্রণের অধীনে বদ্ধ।
+\end{lem}
+
+\begin{proof}
+ধরা যাক $h$, $g_0,$ \dots,~$g_{k-1}$ থেকে মিশ্রণের সাহায্যে~$f$-কে
+সংজ্ঞায়িত করা হয়েছে। যথাক্রমে $H$, $G_0$, \dots,~$G_{k-1}$ যদি
+$h$, $g_0$, \dots,~$g_{k-1}$-কে !!{lambda defined} করে, তাহলে আমাদের
+এমন একটি পদ~$F$ খুঁজতে হবে, যা~$f$-কে !!{lambda define}s। কিন্তু আমরা
+স্রেফ নিচের মতো করে~$F$-কে সংজ্ঞায়িত করতে পারি:
+\[
+F(x_0, \dots, x_{l-1}) = H(G_0(x_0, \dots, x_{l-1}),
+\dots, G_{k-1}(x_0, \dots, x_{l-1})).
+\]
+অন্যভাবে বললে, ল্যাম্বডা ক্যালকুলাসের ভাষা মিশ্রণ প্রকাশের পক্ষে
+বিশেষভাবে উপযোগী।
+\end{proof}
+
+\end{document}
+

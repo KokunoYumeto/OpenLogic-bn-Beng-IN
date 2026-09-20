@@ -379,7 +379,7 @@
     "translated_count": 362,
     "untranslated_count": 360,
     "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, the Model Theory part driver plus complete Basics, Models of Arithmetic, Interpolation and Lindström chapters, the Computability part driver plus complete Recursive Functions and Computability Theory chapters, the Turing Machines part driver plus the complete Turing Machine Computations and Undecidability chapters, the Incompleteness part driver plus the complete Introduction, Arithmetization of Syntax, Representability in Q, Theories and Computability, and Incompleteness and Provability chapters, the Second-order Logic part driver plus complete Syntax and Semantics, Metatheory, and Second-order Logic and Set Theory chapters, and the Lambda Calculus part driver plus the complete Introduction chapter and Syntax through De Bruijn Index are translated; both Size of Sets editorial alternatives remain distinct.",
-    "reader_state": "The historical v0.2.0 reader remains an exact 18-unit artifact. The public cumulative semantic reader contains 299 units in HTML and EPUB and remains the current reader tranche. The current checked draft contains 362 units and leaves 360 source files untranslated; the latest anonymously verified public source checkpoint contains 359 units. Sixty-three checked source units are not yet integrated into the cumulative reader."
+    "reader_state": "The historical v0.2.0 reader remains an exact 18-unit artifact. The public cumulative semantic reader contains 299 units in HTML and EPUB and remains the current reader tranche. The current checked draft and latest anonymously verified public source checkpoint contain 362 units and leave 360 source files untranslated. Sixty-three checked source units are not yet integrated into the cumulative reader."
   },
   "last_verified_public_release": {
     "version": "0.3.0",
@@ -425,11 +425,11 @@
     "anonymous_public_readback": "All six GitHub and Zenodo assets matched byte-for-byte."
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "a41caa3a0101e8824c53dde559d35b3d21ae27cd",
-    "translated_units": 359,
-    "receipt": "PUBLIC_READBACK_SOURCE_359_2026-09-20.json",
-    "receipt_sha256": "22aae6b2f565e674d492c2515c63c35b7ab66cfa4c7beadddbe3a32de2b89c2d",
-    "status": "Anonymous immutable-archive readback verified all 17 changed objects in the Lambda Calculus Syntax foundations checkpoint, reran the strict checker for 359 units and 4,093 blocks, and confirmed term formation, unique readability, syntax abbreviations, free variables, one source correction, and four new terminology decisions in the public source."
+    "commit": "b2c847554ea8b45e495ddb3d0d9bb5d28621b615",
+    "translated_units": 362,
+    "receipt": "PUBLIC_READBACK_SOURCE_362_2026-09-20.json",
+    "receipt_sha256": "0fe73fdd58fc1c052662f84fcf6eb8a73803f2f067e6f36b7f1e5da2caadca4f",
+    "status": "Anonymous immutable-archive readback verified all 15 changed objects in the Lambda Calculus Syntax substitution, alpha-conversion and De Bruijn checkpoint, reran the strict checker for 362 units and 4,158 blocks, and confirmed nine new source corrections and three new terminology decisions in the public source."
   },
   "current_checks": {
     "unit_checks": [
@@ -6620,7 +6620,7 @@
       },
       {
         "path": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_SYNTAX.md",
-        "sha256": "e2896b64bf7942117f27c1b0ba11ee916b540945d9eeadbf3d02a68eec65275c"
+        "sha256": "3a56b82105adecbd751961af392fbebd5c6e4788d11da8d7e9adc47e0ea6a91f"
       }
     ],
     "shared_source_audit": {
@@ -6995,5 +6995,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "Historical Functions-era TeX candidate record: all three bounded mutex acquisitions timed out without launching TeX. The verified public semantic HTML/EPUB reader is recorded above; no TeX-built PDF is claimed."
   },
-  "remaining": "360 source files, the next cumulative reader tranche, full-corpus QA, and final publication verification. The checked draft contains 362 units and the latest anonymously verified GitHub source checkpoint contains 359 units; GitHub and Zenodo carry the verified 299-unit reader release."
+  "remaining": "360 source files, the next cumulative reader tranche, full-corpus QA, and final publication verification. The checked draft and latest anonymously verified GitHub source checkpoint contain 362 units; GitHub and Zenodo carry the verified 299-unit reader release."
 }

@@ -1,0 +1,152 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-20T15:37:08.650523+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "b2c847554ea8b45e495ddb3d0d9bb5d28621b615",
+  "parent": "6594339a17b5157c3a4c1cb95d1dc438e198fae5",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "a41caa3a0101e8824c53dde559d35b3d21ae27cd",
+    "receipt": "PUBLIC_READBACK_SOURCE_359_2026-09-20.json",
+    "receipt_sha256": "22aae6b2f565e674d492c2515c63c35b7ab66cfa4c7beadddbe3a32de2b89c2d"
+  },
+  "prior_verified_normalization_erratum": {
+    "commit": "10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6",
+    "receipt": "PUBLIC_READBACK_TIKZ_NORMALIZATION_359_2026-09-20.json",
+    "receipt_sha256": "f63f796739dd7ec5af68bd5ea5917fb2c20c318a6d00c41e727fe14fcddecdaf"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/b2c847554ea8b45e495ddb3d0d9bb5d28621b615.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/b2c847554ea8b45e495ddb3d0d9bb5d28621b615",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 29369976,
+  "archive_sha256": "5cc10e720357a60cf1174167076f4d46419c36984b0f4eb2e1d39da1dc6faf08",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/alpha.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b2c847554ea8b45e495ddb3d0d9bb5d28621b615/bn-Beng-IN/content/lambda-calculus/syntax/alpha.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b2c847554ea8b45e495ddb3d0d9bb5d28621b615/bn-Beng-IN/content/lambda-calculus/syntax/alpha.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 20596,
+      "sha256": "86a9774b006b96a97d682a2d05349b09263d868b8dbe646b227ab022266b31e6"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/de-bruijn.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b2c847554ea8b45e495ddb3d0d9bb5d28621b615/bn-Beng-IN/content/lambda-calculus/syntax/de-bruijn.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b2c847554ea8b45e495ddb3d0d9bb5d28621b615/bn-Beng-IN/content/lambda-calculus/syntax/de-bruijn.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 5485,
+      "sha256": "0e719eae62cbdffc0286edb8b39ec6c758f9445d5eabb7555f7055b05f17cb86"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/substitution.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b2c847554ea8b45e495ddb3d0d9bb5d28621b615/bn-Beng-IN/content/lambda-calculus/syntax/substitution.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b2c847554ea8b45e495ddb3d0d9bb5d28621b615/bn-Beng-IN/content/lambda-calculus/syntax/substitution.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 12990,
+      "sha256": "6aa03d1e8201c76f46cf06042f87c6c8b4a9fcad84583d479e7d1265e45be532"
+    }
+  ],
+  "changed_files_verified": 15,
+  "translated_tex_files_in_commit": 3,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 362,
+  "draft_untranslated_total": 360,
+  "segments": 4158,
+  "translated_segments": 3518,
+  "new_batch_segments": 65,
+  "new_batch_translated_segments": 64,
+  "new_batch_unchanged_segments": 1,
+  "source_correction_records": 291,
+  "new_source_correction_records": 9,
+  "source_normalization_records": 3,
+  "translation_decisions": 304,
+  "provisional_translation_decisions": 285,
+  "translation_decision_occurrences": 23926,
+  "decisions_with_exact_source_wording": 289,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 362,
+    "blocks": 4158,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/alpha.tex",
+      "bytes": 20596,
+      "sha256": "86a9774b006b96a97d682a2d05349b09263d868b8dbe646b227ab022266b31e6"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/de-bruijn.tex",
+      "bytes": 5485,
+      "sha256": "0e719eae62cbdffc0286edb8b39ec6c758f9445d5eabb7555f7055b05f17cb86"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/substitution.tex",
+      "bytes": 12990,
+      "sha256": "6aa03d1e8201c76f46cf06042f87c6c8b4a9fcad84583d479e7d1265e45be532"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6505655,
+      "sha256": "8bb7d59656e02d79cb6d1be0d023a78dd68d35cce19056cc9b4390f8c265c1be"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 221705,
+      "sha256": "586e7017dbfb4445e47078b393771a5a4f3674c287b567aaeaf48325aa2db084"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_SYNTAX.md",
+      "bytes": 19632,
+      "sha256": "e2896b64bf7942117f27c1b0ba11ee916b540945d9eeadbf3d02a68eec65275c"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "08dd6814a2a5c0b862baa4d1845aba331ff4ae5ecab953b38ef25553a5ce053a"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 561006,
+      "sha256": "6d33657cc2d7685ad9320842cd5e59596a7c22b59b5f0293fecd54484fbfef92"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 271198,
+      "sha256": "6d868037356625197723cd7f587617104a2f94e721adf80fdc0a02cdbefee8e9"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 56106151,
+      "sha256": "61423b74bd9244a198bc985df874e0b8d4b808fa7154ca459da387057c46f098"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 49796912,
+      "sha256": "4fe80f855ed5f27c7627d7035fdd5bfc291e4d6f725bc4324961d95378b81fcf"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1176121,
+      "sha256": "f629aa4465b4d3e6e91624389445c7249a201c3def47643c54de1601ac986b9c"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 76319311,
+      "sha256": "e8259a2649ce3d241712301f68334a0a0be660997512cb6e15e37223d388c0ab"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 221500,
+      "sha256": "3dd9e3ca625b8576843dadc940690f54d2a7573ae5c8001c343b143065b05fac"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 179252,
+      "sha256": "c68619b512a798c71a537979840d5007844c3c4f52b61e45107639d37226122b"
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-20T22:40:06.132379+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "5568d702c636545e63613918f90eaf1ad36ea8a4",
+  "parent": "d4327f18271a0b9d58bf4e4bc987db344060b925",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "0dbe1225b875617fec2db0a2deeff4712c30ccf5",
+    "receipt": "PUBLIC_READBACK_SOURCE_374_2026-09-21.json",
+    "receipt_sha256": "2f1c17939429a9840a9fee1ba2f73ad1eb4399976fdcb05060c5ab173a38e1ef"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/5568d702c636545e63613918f90eaf1ad36ea8a4.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/5568d702c636545e63613918f90eaf1ad36ea8a4",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 30219448,
+  "archive_sha256": "483abbf262e5cf2e85f9a16568f8787976fac1213c484161c9d8d832fe35bea1",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/lambda-definability/pairs.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/5568d702c636545e63613918f90eaf1ad36ea8a4/bn-Beng-IN/content/lambda-calculus/lambda-definability/pairs.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/5568d702c636545e63613918f90eaf1ad36ea8a4/bn-Beng-IN/content/lambda-calculus/lambda-definability/pairs.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 4212,
+      "sha256": "4a304331d33361d50ef14fe07851aba9cbd74763fef30d989ebdaa34604423c8"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/lambda-definability/primitive-recursive-functions.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/5568d702c636545e63613918f90eaf1ad36ea8a4/bn-Beng-IN/content/lambda-calculus/lambda-definability/primitive-recursive-functions.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/5568d702c636545e63613918f90eaf1ad36ea8a4/bn-Beng-IN/content/lambda-calculus/lambda-definability/primitive-recursive-functions.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 10793,
+      "sha256": "193aad6b222b3c1213448694935268a5226bb7122978b9b9ebf7219a64e71aa4"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/lambda-definability/truth-values.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/5568d702c636545e63613918f90eaf1ad36ea8a4/bn-Beng-IN/content/lambda-calculus/lambda-definability/truth-values.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/5568d702c636545e63613918f90eaf1ad36ea8a4/bn-Beng-IN/content/lambda-calculus/lambda-definability/truth-values.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6791,
+      "sha256": "e4e13359dee67b41597892b0c1aa9dfd989e8c17e571caec95d54c1fdca5fed5"
+    }
+  ],
+  "changed_files_verified": 15,
+  "translated_tex_files_in_commit": 3,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 377,
+  "draft_untranslated_total": 345,
+  "segments": 4333,
+  "translated_segments": 3683,
+  "new_batch_segments": 31,
+  "new_batch_translated_segments": 31,
+  "new_batch_unchanged_segments": 0,
+  "source_correction_records": 317,
+  "new_source_correction_records": 4,
+  "source_normalization_records": 3,
+  "translation_decisions": 310,
+  "provisional_translation_decisions": 291,
+  "translation_decision_occurrences": 24856,
+  "decisions_with_exact_source_wording": 295,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 377,
+    "blocks": 4333,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/lambda-definability/pairs.tex",
+      "bytes": 4212,
+      "sha256": "4a304331d33361d50ef14fe07851aba9cbd74763fef30d989ebdaa34604423c8"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/lambda-definability/primitive-recursive-functions.tex",
+      "bytes": 10793,
+      "sha256": "193aad6b222b3c1213448694935268a5226bb7122978b9b9ebf7219a64e71aa4"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/lambda-definability/truth-values.tex",
+      "bytes": 6791,
+      "sha256": "e4e13359dee67b41597892b0c1aa9dfd989e8c17e571caec95d54c1fdca5fed5"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6819360,
+      "sha256": "984a09297b3cc0986d78a20858dda466d9ea8306c02119a658f3dd05b396686d"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 233617,
+      "sha256": "11c9b608ee86a44d3057d58647fb22cc793c0865bd39fac7349a58510b89d329"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_LAMBDA_DEFINABILITY.md",
+      "bytes": 13705,
+      "sha256": "7dd5b4c6a2269f77c90774f8969a6770a37d49fb6fdd878da138662ae0687657"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "38cdfa5bedbad0acc6dd37a7a203175e32162057f922ee14f04a87e886c5b22a"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 615401,
+      "sha256": "30f9282154593c7145f43e9b7aa2d554f93c33fa94f12c656da2261601424c57"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 279435,
+      "sha256": "0d618e5e23c0c77b4432690ce9875cd5229d2d66dd492b211cf8c1f2dd6b4ca4"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 57928857,
+      "sha256": "daf5c2edd73408472167aa01d8f132f2509e71ec909c7ae595d514bb6d9b5648"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 51382518,
+      "sha256": "dc678be89312b5f47039eee830240c2e18cd055275bb4172bb36dac9132c179d"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1202951,
+      "sha256": "0a5cae753ed68d6676ff97727da369639524957bf535eaf895d7ba3ff19e7820"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 79160831,
+      "sha256": "4be64fde4590ed3ef10b6ebf6b3b3946ffe374bb0fd88f5f42f2589b519c564d"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 226773,
+      "sha256": "40e66919e39b15dee28bb1f2786b142d127ef89888981eb59dc467a34558da9d"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 200104,
+      "sha256": "aad1b5f8a351858630d7c9b4c5d385bf7ed39edfee6304e04fb60d70977ffc13"
+    }
+  ]
+}

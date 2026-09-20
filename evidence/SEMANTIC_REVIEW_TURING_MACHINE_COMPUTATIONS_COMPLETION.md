@@ -5,9 +5,9 @@ This review covers OLP-0258 through OLP-0263: Unary Representation of Numbers, H
 ## Scope and method
 
 - The six units contain 19 + 10 + 10 + 13 + 7 + 5 aligned source/target blocks, for 64 aligned blocks in total. Fifty-five contain Bengali translation and are marked `translated_semantically_reviewed`; nine are diagram-only or other structural/formal blocks and are marked `unchanged_structural_or_formal`.
-- Source-to-target replay passes for every unit: aligned block counts, protected controls, environment order, OpenLogic semantic-token multisets, mathematical fragments and Unicode NFC all agree after the six documented source repairs are normalized for comparison.
+- Source-to-target replay passes for every unit: aligned block counts, protected controls, environment order, OpenLogic semantic-token multisets, mathematical fragments and Unicode NFC all agree after three documented source corrections and three render-equivalent TikZ endpoint normalizations are accounted for.
 - I consulted BN-IN-P001, BN-IN-P005 through BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023 and BN-IN-P025 for number, set, relation, function, sequence, logic, proof and complexity language. BN-IN-T170 governs the established Church--Turing thesis wording; BN-IN-T201 through BN-IN-T216 govern the chapter's machine and computation register, with T209 through T216 added for this batch.
-- BN-SRC-169 through BN-SRC-174 disclose and repair six frozen-source defects beside their affected passages. No frozen English byte is changed.
+- BN-SRC-171, BN-SRC-173 and BN-SRC-174 disclose three frozen-source defects beside their affected passages. BN-NORM-169, BN-NORM-170 and BN-NORM-172 document endpoint normalizations whose rendered loops are unchanged. No frozen English byte is changed.
 
 ## Unit review
 
@@ -17,7 +17,7 @@ The representation keeps zero as the empty stroke block and a positive natural n
 
 The addition machine scans the first stroke block in `q_0`, erases its separator blank while entering `q_1`, and scans the second block until it halts, leaving one contiguous block of `n+m` strokes. Both doubling constructions preserve the intended distinction: one invokes a previously built doubler for a single input block, while the disciplined construction marks, traverses and restores tape regions so that the final doubled output is contiguous. The mover construction shifts a stroke block across the tape using a temporary marker. All six exercises retain their specified arithmetic operations and machine-combination tasks.
 
-BN-SRC-169 repairs the addition diagram's stroke transition from an erroneous edge into `q_1` to a `q_0` self-loop, making the separator blank the unique transition into `q_1`. BN-SRC-173 adds the absent-output case required by the output convention repaired in BN-SRC-168.
+BN-NORM-169 records that TikZ's `loop above` style already overrides the explicit endpoint and renders the frozen edge as a `q_0` self-loop; spelling the endpoint as its start node is source normalization only. BN-SRC-173 adds the absent-output case required by the output convention repaired in BN-SRC-168.
 
 ### OLP-0259 — Halting states
 
@@ -27,7 +27,7 @@ The two parity examples preserve their machine behavior while replacing implicit
 
 The four discipline conditions remain distinct: the machine preserves the end marker, halts only in a designated state, halts while scanning the first input square, and leaves output in the required canonical tape form. The normalization argument retains the claim that every ordinary machine can be converted to this form without changing the partial function it computes. The disciplined addition machine performs the same block-joining addition and then returns the head to square 1 before halting. Reverse paraphrase: standard entry, exit, tape and head conventions make machines easier to connect while preserving their computed functions.
 
-BN-SRC-170 repairs the repeated addition diagram's `q_0` stroke edge to the required self-loop. The proposition and both exercises preserve their construction claims and scope.
+BN-NORM-170 records the corresponding `loop below` endpoint normalization; the frozen and Bengali sources render the same `q_0` self-loop. The proposition and both exercises preserve their construction claims and scope.
 
 ### OLP-0261 — Combining machines
 
@@ -35,7 +35,7 @@ The staged construction first renames states so that the two state sets are disj
 
 The worked machine first adds `n` and `m`, then doubles the resulting block, producing `2(n+m)`. Its three displayed versions preserve the same addition phase and the combined diagram preserves every state and transition of its components. The composition proposition retains the order of partial functions and its definedness conditions, and the exercise retains the requested construction.
 
-BN-SRC-171 restricts the first branch of the piecewise transition definition to defined transitions, removing its overlap with the handoff branch. BN-SRC-172 repairs all three repeated addition diagrams so their `q_0` stroke edges are self-loops.
+BN-SRC-171 restricts the first branch of the piecewise transition definition to defined transitions, removing its overlap with the handoff branch. BN-NORM-172 records three endpoint normalizations; each frozen `loop above` edge already renders as the same `q_0` self-loop.
 
 ### OLP-0262 — Variants of Turing machines
 
@@ -49,11 +49,11 @@ The section retains the thesis in its intended extensional form: a function is e
 
 ## Technical claim audit
 
-- All file identifiers, imports, labels, cross-references, captions, environments, transition labels, function signatures and mathematical expressions are preserved except the four audited diagram endpoints and the added definedness condition documented by BN-SRC-169 through BN-SRC-172.
-- The checker transforms exactly one diagram edge in OLP-0258, one in OLP-0260 and three in OLP-0261 before mathematical comparison. It separately asserts the repaired piecewise condition, absent-output case and permanent-boundary-marker invariant.
+- All file identifiers, imports, labels, cross-references, captions, environments, transition labels and function signatures are preserved. Five explicit endpoint tokens are normalized from the redundant target node to the loop's start node; TikZ renders the same loops before and after. BN-SRC-171 supplies the definedness condition.
+- The checker accounts for exactly one endpoint normalization in OLP-0258, one in OLP-0260 and three in OLP-0261 before source-token comparison. It separately asserts the corrected piecewise condition, absent-output case and permanent-boundary-marker invariant.
 - The addition diagrams now agree with the prose algorithm: strokes keep control in `q_0`, and only the separator blank enters `q_1`. The combined-machine cases are disjoint and exhaustive over transitions belonging to the two component state sets.
 - The reserved-marker repair closes the square-0 overwrite case left open by the frozen variant argument; it preserves the stated one-way-tape model and does not strengthen unrelated machines.
-- All six correction notes share the target file hashes recorded in the correction ledger and are stripped before structural comparison. Every translated block cites the canon pages actually consulted.
+- The three correction notes are recorded in the correction ledger; the three normalization notes are recorded separately and both note classes are stripped before structural comparison. The authority is `tikzlibrarytopaths.code.tex`, SHA-256 `992706da31e055cdbecf5b1bf1b9c267383e3b4d4385773448f868e1cabf17f2`, whose loop styles route the edge back to its start. Every translated block cites the canon pages actually consulted.
 - No TeX build was attempted because the shared TeX mutex is reserved elsewhere. Reader rendering, glyph inspection, semantic HTML validation and final printed-page locators remain pending.
 
 ## Terminology and edition scope

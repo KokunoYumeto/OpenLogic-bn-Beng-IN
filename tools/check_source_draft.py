@@ -21,8 +21,8 @@ def norm(text):
 
 def without_documented_corrections(text):
     return re.sub(
-        r"% (?:OLFUN-\d+|BN-SRC-\d+|OLSIZ-\d+) TARGET-CORRECTION-BEGIN.*?"
-        r"% (?:OLFUN-\d+|BN-SRC-\d+|OLSIZ-\d+) TARGET-CORRECTION-END",
+        r"% (?:OLFUN-\d+|BN-SRC-\d+|BN-NORM-\d+|OLSIZ-\d+) TARGET-(?:CORRECTION|NORMALIZATION)-BEGIN.*?"
+        r"% (?:OLFUN-\d+|BN-SRC-\d+|BN-NORM-\d+|OLSIZ-\d+) TARGET-(?:CORRECTION|NORMALIZATION)-END",
         "",
         text,
         flags=re.S,
@@ -155,6 +155,7 @@ for row in rows:
     documented = sorted(
         set(re.findall(r"(?:OLFUN-\d+|BN-SRC-\d+|OLSIZ-\d+)", target))
     )
+    normalizations = sorted(set(re.findall(r"BN-NORM-\d+", target)))
     alpha_fix = (
         row["unit_id"] == "OLP-0021"
         and source_math - target_math == collections.Counter({"n": 1})
@@ -2459,9 +2460,9 @@ for row in rows:
     self_reference_partial_equality_fix = False
     representing_tm_table_fix = False
     configuration_empty_input_fix = False
-    unary_adder_diagram_fix = False
-    disciplined_adder_diagram_fix = False
-    combined_machine_fixes = False
+    unary_adder_endpoint_normalization = False
+    disciplined_adder_endpoint_normalization = False
+    combined_machine_fix_and_endpoint_normalization = False
     partial_undefined_output_fix = False
     variant_boundary_marker_fix = False
     standard_machine_simulation_fix = False
@@ -2810,9 +2811,10 @@ for row in rows:
         )
         assert source.count(old) == 1
         audited_unary = source.replace(old, new, 1)
-        unary_adder_diagram_fix = (
+        unary_adder_endpoint_normalization = (
             mathparts(audited_unary) == target_math
-            and all(f"BN-SRC-{number}" in documented for number in (169, 173))
+            and "BN-SRC-173" in documented
+            and "BN-NORM-169" in normalizations
         )
         flattened_source = re.sub(r"\s+", " ", source)
         partial_undefined_output_fix = (
@@ -2820,11 +2822,13 @@ for row in rows:
             and "থামলেও তার কোনো নির্গম নির্ধারিত হয় না" in checked_target
             and "BN-SRC-173" in documented
         )
-        assert unary_adder_diagram_fix and partial_undefined_output_fix
+        assert unary_adder_endpoint_normalization and partial_undefined_output_fix
         tex_command_check = {
-            "documented_corrections": ["BN-SRC-169", "BN-SRC-173"],
-            "addition_q0_stroke_edge": "q_0 self-loop",
-            "corrected_diagrams": 1,
+            "documented_correction": "BN-SRC-173",
+            "source_normalization": "BN-NORM-169",
+            "rendered_addition_q0_stroke_edge": "q_0 self-loop in source and target",
+            "normalized_endpoint_count": 1,
+            "tikz_loop_style_overrides_explicit_endpoint": True,
             "undefined_value_allows_halt_without_defined_output": True,
         }
     elif row["unit_id"] == "OLP-0260":
@@ -2838,15 +2842,16 @@ for row in rows:
         )
         assert source.count(old) == 1
         audited_disciplined = source.replace(old, new, 1)
-        disciplined_adder_diagram_fix = (
+        disciplined_adder_endpoint_normalization = (
             mathparts(audited_disciplined) == target_math
-            and "BN-SRC-170" in documented
+            and "BN-NORM-170" in normalizations
         )
-        assert disciplined_adder_diagram_fix
+        assert disciplined_adder_endpoint_normalization
         tex_command_check = {
-            "documented_correction": "BN-SRC-170",
-            "addition_q0_stroke_edge": "q_0 self-loop",
-            "corrected_diagrams": 1,
+            "source_normalization": "BN-NORM-170",
+            "rendered_addition_q0_stroke_edge": "q_0 self-loop in source and target",
+            "normalized_endpoint_count": 1,
+            "tikz_loop_style_overrides_explicit_endpoint": True,
         }
     elif row["unit_id"] == "OLP-0261":
         old = (
@@ -2860,20 +2865,23 @@ for row in rows:
         assert source.count(old) == 3
         audited_combined = source.replace(old, new)
         audited_combined_math = mathparts(audited_combined)
-        combined_machine_fixes = (
+        combined_machine_fix_and_endpoint_normalization = (
             audited_combined_math - target_math == collections.Counter()
             and target_math - audited_combined_math
             == collections.Counter({r"\delta(q,\sigma)": 1})
-            and all(f"BN-SRC-{number}" in documented for number in range(171, 173))
+            and "BN-SRC-171" in documented
+            and "BN-NORM-172" in normalizations
             and r"যদি $q \in Q$ এবং $\delta(q,\sigma)$ সংজ্ঞায়িত হয়" in checked_target
         )
         assert "\\delta(q,\\sigma) & \\text{if $q \\in Q$}\\\\" in source
-        assert combined_machine_fixes
+        assert combined_machine_fix_and_endpoint_normalization
         tex_command_check = {
-            "documented_corrections": ["BN-SRC-171", "BN-SRC-172"],
+            "documented_correction": "BN-SRC-171",
+            "source_normalization": "BN-NORM-172",
             "first_machine_branch_requires_defined_transition": True,
-            "addition_q0_stroke_edge": "q_0 self-loop",
-            "corrected_diagrams": 3,
+            "rendered_addition_q0_stroke_edge": "q_0 self-loop in source and target",
+            "normalized_endpoint_count": 3,
+            "tikz_loop_style_overrides_explicit_endpoint": True,
         }
     elif row["unit_id"] == "OLP-0262":
         variant_boundary_marker_fix = (
@@ -3650,9 +3658,9 @@ for row in rows:
             self_reference_partial_equality_fix,
             representing_tm_table_fix,
             configuration_empty_input_fix,
-            unary_adder_diagram_fix,
-            disciplined_adder_diagram_fix,
-            combined_machine_fixes,
+            unary_adder_endpoint_normalization,
+            disciplined_adder_endpoint_normalization,
+            combined_machine_fix_and_endpoint_normalization,
             partial_undefined_output_fix,
             variant_boundary_marker_fix,
             standard_machine_simulation_fix,
@@ -3704,6 +3712,8 @@ for row in rows:
         "tex_command_check": tex_command_check,
         "target_sha256": hashlib.sha256(target_path.read_bytes()).hexdigest(),
     }
+    if normalizations:
+        checks["documented_source_normalizations"] = normalizations
     assert checks["source_blocks"] == checks["target_blocks"], row["unit_id"]
     assert all(
         checks[key]

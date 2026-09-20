@@ -1,0 +1,172 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-20T04:03:36.556487+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "a41caa3a0101e8824c53dde559d35b3d21ae27cd",
+  "parent": "2f4d14c98f4722044246117de05a8e56b7d961cb",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "27c434b0a320c245deb978de1364086b1587f029",
+    "receipt": "PUBLIC_READBACK_SOURCE_354_2026-09-20.json",
+    "receipt_sha256": "25f1d9e6fac86e5b6c8ae64bec2be4441a315f27844caac493f62b55303e3a7f"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/a41caa3a0101e8824c53dde559d35b3d21ae27cd.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/a41caa3a0101e8824c53dde559d35b3d21ae27cd",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 29060200,
+  "archive_sha256": "2cba16c61cba61b76b84fc41dd079cac14d52caca089b6221e117cceb001d2d9",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/abbreviated-syntax.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a41caa3a0101e8824c53dde559d35b3d21ae27cd/bn-Beng-IN/content/lambda-calculus/syntax/abbreviated-syntax.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a41caa3a0101e8824c53dde559d35b3d21ae27cd/bn-Beng-IN/content/lambda-calculus/syntax/abbreviated-syntax.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 2239,
+      "sha256": "4b08e9022e746ae49edf8f93efc3fe16e25b03043f1d5f0724d592f3cef1f62d"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/free-variables.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a41caa3a0101e8824c53dde559d35b3d21ae27cd/bn-Beng-IN/content/lambda-calculus/syntax/free-variables.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a41caa3a0101e8824c53dde559d35b3d21ae27cd/bn-Beng-IN/content/lambda-calculus/syntax/free-variables.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 8668,
+      "sha256": "91b4321482650d8217fe51240f3165a01baf204841cb607cef41520adee7edfc"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/syntax.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a41caa3a0101e8824c53dde559d35b3d21ae27cd/bn-Beng-IN/content/lambda-calculus/syntax/syntax.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a41caa3a0101e8824c53dde559d35b3d21ae27cd/bn-Beng-IN/content/lambda-calculus/syntax/syntax.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 438,
+      "sha256": "077548b993946169ed3a37aec65378425bc3cf1245ac38a8155bb513d4575e3f"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/terms.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a41caa3a0101e8824c53dde559d35b3d21ae27cd/bn-Beng-IN/content/lambda-calculus/syntax/terms.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a41caa3a0101e8824c53dde559d35b3d21ae27cd/bn-Beng-IN/content/lambda-calculus/syntax/terms.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 3249,
+      "sha256": "61c0c8bbc6169cd5511487d650dad151c2afa65cd238f27065b7655568ac2dbc"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/unique-readability.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a41caa3a0101e8824c53dde559d35b3d21ae27cd/bn-Beng-IN/content/lambda-calculus/syntax/unique-readability.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a41caa3a0101e8824c53dde559d35b3d21ae27cd/bn-Beng-IN/content/lambda-calculus/syntax/unique-readability.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6676,
+      "sha256": "a4125bc850a3392520e0ca2e72be79d19ff830616aa0987d0a1e0e5966beda9a"
+    }
+  ],
+  "changed_files_verified": 17,
+  "translated_tex_files_in_commit": 5,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 359,
+  "draft_untranslated_total": 363,
+  "segments": 4093,
+  "translated_segments": 3454,
+  "new_batch_segments": 48,
+  "new_batch_translated_segments": 37,
+  "new_batch_unchanged_segments": 11,
+  "source_correction_records": 285,
+  "new_source_correction_records": 1,
+  "translation_decisions": 301,
+  "provisional_translation_decisions": 282,
+  "translation_decision_occurrences": 23616,
+  "decisions_with_exact_source_wording": 286,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 359,
+    "blocks": 4093,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/abbreviated-syntax.tex",
+      "bytes": 2239,
+      "sha256": "4b08e9022e746ae49edf8f93efc3fe16e25b03043f1d5f0724d592f3cef1f62d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/free-variables.tex",
+      "bytes": 8668,
+      "sha256": "91b4321482650d8217fe51240f3165a01baf204841cb607cef41520adee7edfc"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/syntax.tex",
+      "bytes": 438,
+      "sha256": "077548b993946169ed3a37aec65378425bc3cf1245ac38a8155bb513d4575e3f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/terms.tex",
+      "bytes": 3249,
+      "sha256": "61c0c8bbc6169cd5511487d650dad151c2afa65cd238f27065b7655568ac2dbc"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/unique-readability.tex",
+      "bytes": 6676,
+      "sha256": "a4125bc850a3392520e0ca2e72be79d19ff830616aa0987d0a1e0e5966beda9a"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6388396,
+      "sha256": "cc95998d1b171bcfbe01933ad00b5371e634afaa98bd9eb82985ed885a847746"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 218212,
+      "sha256": "d883543d77bfe2e8ad6769bedcf9b43c9564084d3f59118eb0f87a2c9df55cca"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_SYNTAX.md",
+      "bytes": 11796,
+      "sha256": "3c5f608e576f166341bba29b1b5d556f8b84f993773dfcd58d9a3177af6c206c"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "961c8c2b8cebc6086e611c38a52f3ab091e7b13a8478b8700d92663ffe0301f1"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 549334,
+      "sha256": "938365b9cc7fce09222da95ff8b9d8a25300c1a21e6e1732e821007a90ca089b"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 267269,
+      "sha256": "1241d62e2f75e1211441724264408bfc73992b08ee555a1e93a204ee31157f0d"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 55483575,
+      "sha256": "b3fe0422bb155c93ba6fe362b397e865884eb8f5ae71f0236c0bdea4078885ac"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 49254855,
+      "sha256": "c285f98db78061a1080f8cc173f1b3bc8d28a1d29a863970e9815627b1050d39"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1163244,
+      "sha256": "77b809065ef87054241ef2d4b16c7635c7d32f2e582ccf23d20243756578b67a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 75383909,
+      "sha256": "1829e8068cfa646b10d2d9b0165fa5ccf8e05dbd7436f01a75b643c795f96908"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 218520,
+      "sha256": "53c0093e78061eae1d01b7766c9d47da59ff57d1c6137b3ac9063616c264977c"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 172576,
+      "sha256": "31518307c0a6cb3e360964203efacf18396324e2b95bd81293461dedfde7373e"
+    }
+  ]
+}

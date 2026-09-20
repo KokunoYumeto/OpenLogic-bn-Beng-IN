@@ -1,0 +1,148 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-20T01:04:01.587882+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "27c434b0a320c245deb978de1364086b1587f029",
+  "parent": "df32ad15a8e81735bfa5af831144a97b2cc01439",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "090a2cc22f857560aec3dac3dfb4d931facdb23e",
+    "receipt": "PUBLIC_READBACK_SOURCE_351_2026-09-20.json",
+    "receipt_sha256": "4b7d9cfb73976b439cda0fafd8a15e3588581d2a345f8f3ce5100032b33f0901"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/27c434b0a320c245deb978de1364086b1587f029.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/27c434b0a320c245deb978de1364086b1587f029",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 28735288,
+  "archive_sha256": "884815e7339cde35df40ee49bb457144599bef8ba484500f1b1fcde04da6187f",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/fixed-point-combinator.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/27c434b0a320c245deb978de1364086b1587f029/bn-Beng-IN/content/lambda-calculus/introduction/fixed-point-combinator.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/27c434b0a320c245deb978de1364086b1587f029/bn-Beng-IN/content/lambda-calculus/introduction/fixed-point-combinator.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 1722,
+      "sha256": "03d9608382ea0151e02179607b14a13494d35c1e6f1c60a7834572af1b04da4c"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/minimization.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/27c434b0a320c245deb978de1364086b1587f029/bn-Beng-IN/content/lambda-calculus/introduction/minimization.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/27c434b0a320c245deb978de1364086b1587f029/bn-Beng-IN/content/lambda-calculus/introduction/minimization.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 4682,
+      "sha256": "629604d711c1c21dab47320cc9251330eb2aaf0ec7c353998f9f7fad5c993056"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/introduction/primitive-recursion.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/27c434b0a320c245deb978de1364086b1587f029/bn-Beng-IN/content/lambda-calculus/introduction/primitive-recursion.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/27c434b0a320c245deb978de1364086b1587f029/bn-Beng-IN/content/lambda-calculus/introduction/primitive-recursion.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 10909,
+      "sha256": "15c6488801f23513dbd65f71b8080495c2aaf59fa16b4ab5ba238078a36e6b1d"
+    }
+  ],
+  "changed_files_verified": 15,
+  "translated_tex_files_in_commit": 3,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 354,
+  "draft_untranslated_total": 368,
+  "segments": 4045,
+  "translated_segments": 3417,
+  "lambda_introduction_segments": 96,
+  "lambda_introduction_translated_segments": 77,
+  "lambda_introduction_unchanged_segments": 19,
+  "new_batch_segments": 19,
+  "new_batch_translated_segments": 19,
+  "source_correction_records": 284,
+  "new_source_correction_records": 4,
+  "translation_decisions": 297,
+  "provisional_translation_decisions": 278,
+  "translation_decision_occurrences": 23259,
+  "decisions_with_exact_source_wording": 282,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 354,
+    "blocks": 4045,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/fixed-point-combinator.tex",
+      "bytes": 1722,
+      "sha256": "03d9608382ea0151e02179607b14a13494d35c1e6f1c60a7834572af1b04da4c"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/minimization.tex",
+      "bytes": 4682,
+      "sha256": "629604d711c1c21dab47320cc9251330eb2aaf0ec7c353998f9f7fad5c993056"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/introduction/primitive-recursion.tex",
+      "bytes": 10909,
+      "sha256": "15c6488801f23513dbd65f71b8080495c2aaf59fa16b4ab5ba238078a36e6b1d"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6311897,
+      "sha256": "ea0bd74b20c34d1eb57e0735e9ce8aa38c3823611aff38aa5998b70da862a495"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 215188,
+      "sha256": "47b048aee49f1164d4db1a8743f8013619eca61208fb51e98dc60925285d00a4"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_INTRODUCTION.md",
+      "bytes": 15983,
+      "sha256": "27a9967f858d07d0754e75c8ce56b8cf535bb4ee480e9dec2dc8d65f7d2c8511"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "b5341e17e37dc89387fc2e55e33aff2334514b86bc4ee5244cf67719cfb9a79d"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 547051,
+      "sha256": "84f0c87775ff6589b2047d8535ccc29f24f09ba6ee6c4f0be8791185942e26db"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 263673,
+      "sha256": "e46e4ee851a8919d51dba115db631dda624fdc016ed21d025bf14fa884b7a8c3"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 54748345,
+      "sha256": "7c52ec94e549caed1e9ff90c36c6958e7fe44baaf77b18b78da641554f20eb28"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 48611827,
+      "sha256": "7760d8c0835ba2ce0501b62b457f0a92f8a9160354239ce9c6733387b2a394cf"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1148127,
+      "sha256": "a42b6cfb19f134807fe309125c544f2db85d6eeb1377ce617e2b7ae29f2aee51"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 74253360,
+      "sha256": "d5ee33b1b8eba1e6016aa7f176a46c02af974a3e4526e693770b8b947eea8593"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 215550,
+      "sha256": "5732884b4de5d79c5de0d57206a2854619917c9c449386a356b6c4406a0935e2"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 168905,
+      "sha256": "14c07fddd2ff0b8152cacd9259d747d0b7fd20fd301e2e6232246e324eaa1668"
+    }
+  ]
+}

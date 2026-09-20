@@ -1,0 +1,147 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-20T19:18:52.155955+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "86d0c3f89216a6e2f424cae15ce3c699c617b1b2",
+  "parent": "2449ad2a8fc296c00377231c7d1a9b2a0c411405",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "b2c847554ea8b45e495ddb3d0d9bb5d28621b615",
+    "receipt": "PUBLIC_READBACK_SOURCE_362_2026-09-20.json",
+    "receipt_sha256": "0fe73fdd58fc1c052662f84fcf6eb8a73803f2f067e6f36b7f1e5da2caadca4f"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/86d0c3f89216a6e2f424cae15ce3c699c617b1b2.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/86d0c3f89216a6e2f424cae15ce3c699c617b1b2",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 29591862,
+  "archive_sha256": "d89c818e0f5fc426c44420ee592b967102426cd137c93f95fe7393645f8dc01b",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/beta.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/86d0c3f89216a6e2f424cae15ce3c699c617b1b2/bn-Beng-IN/content/lambda-calculus/syntax/beta.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/86d0c3f89216a6e2f424cae15ce3c699c617b1b2/bn-Beng-IN/content/lambda-calculus/syntax/beta.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 9516,
+      "sha256": "45f8555124745ec2bb66decc8188deba3f8e466e50738b4f030c1d6f1b5ead44"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/eta.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/86d0c3f89216a6e2f424cae15ce3c699c617b1b2/bn-Beng-IN/content/lambda-calculus/syntax/eta.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/86d0c3f89216a6e2f424cae15ce3c699c617b1b2/bn-Beng-IN/content/lambda-calculus/syntax/eta.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6731,
+      "sha256": "4fbbb19553d0dacd6b7b1aa2bdc29b20bf4a99aacc6b21cb3e724d82f791f30a"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/term-revisited.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/86d0c3f89216a6e2f424cae15ce3c699c617b1b2/bn-Beng-IN/content/lambda-calculus/syntax/term-revisited.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/86d0c3f89216a6e2f424cae15ce3c699c617b1b2/bn-Beng-IN/content/lambda-calculus/syntax/term-revisited.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 10068,
+      "sha256": "1337624e9b5f4d016c3414dffeda78598ad55b190a6fcadc0a270af9931aaecb"
+    }
+  ],
+  "changed_files_verified": 15,
+  "translated_tex_files_in_commit": 3,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 365,
+  "draft_untranslated_total": 357,
+  "segments": 4203,
+  "translated_segments": 3562,
+  "new_batch_segments": 45,
+  "new_batch_translated_segments": 44,
+  "new_batch_unchanged_segments": 1,
+  "source_correction_records": 298,
+  "new_source_correction_records": 7,
+  "source_normalization_records": 3,
+  "translation_decisions": 307,
+  "provisional_translation_decisions": 288,
+  "translation_decision_occurrences": 24171,
+  "decisions_with_exact_source_wording": 292,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 365,
+    "blocks": 4203,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/beta.tex",
+      "bytes": 9516,
+      "sha256": "45f8555124745ec2bb66decc8188deba3f8e466e50738b4f030c1d6f1b5ead44"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/eta.tex",
+      "bytes": 6731,
+      "sha256": "4fbbb19553d0dacd6b7b1aa2bdc29b20bf4a99aacc6b21cb3e724d82f791f30a"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/term-revisited.tex",
+      "bytes": 10068,
+      "sha256": "1337624e9b5f4d016c3414dffeda78598ad55b190a6fcadc0a270af9931aaecb"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6583721,
+      "sha256": "9e8332e13a21027148499dea1d026f099ea1d4fb6d25cbcbe4dfa34afc4b0f87"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 224053,
+      "sha256": "5596c5546cfe11183807d8ea4ce86a74466b116816f2591709ff034030af4ebe"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_SYNTAX.md",
+      "bytes": 26701,
+      "sha256": "4a8b0e57bb8d282515effe0a03a449fd312d4f1f77c6396853cae5fdb73275cb"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "3fb99de73eb7a223daec823f6be4fdc808b23ca083dedb21339fda7189aca305"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 574973,
+      "sha256": "92626a8bbd22383f308524e4fc3d8771dceaeb7e8324944d6debd57ef426b94b"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 275130,
+      "sha256": "73b6ac01b7eaffd906f959afcdd56dc6eb3e44093a968595817ceae2d77157fe"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 56563515,
+      "sha256": "abed8524c06ef1837ef11d185e19c291d6c0b10ab5b6708227f83488988b2a49"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 50189767,
+      "sha256": "d851718927d5cad9cab687cf48a50be9ab84af35b7487ab6aa05575601f2f956"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1188864,
+      "sha256": "4d3d1fccf2f730093c1e0302bc51a3c57e9be4f4b00afb1da03c784f5591d44d"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 77059069,
+      "sha256": "6cb9ab6c59440312656d5961ae58af2c7293cf6058692a0ae338a02d0d6287f2"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 224135,
+      "sha256": "cf3769d07b37fe2d9716677f8cf249e1c38511f2f7eb9f663da7c5bc2a7b24ec"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 183781,
+      "sha256": "365687313db789fd11cbf12e2bab1e996d051c792bd8e6b06d7580298075551d"
+    }
+  ]
+}

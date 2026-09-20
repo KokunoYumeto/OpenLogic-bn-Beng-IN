@@ -1917,6 +1917,31 @@ for row in rows:
         lambda_introduction_completion_math_fix = (
             mathparts(audited_lambda_introduction_completion) == target_math
         )
+    lambda_syntax_foundations_math_fix = False
+    lambda_syntax_foundations_expected = {
+        "OLP-0360": {"BN-SRC-275"},
+    }
+    audited_lambda_syntax_foundations = source
+    if row["unit_id"] == "OLP-0360":
+        old = (
+            "then the corresponding\noccurrence of~$N$ is the "
+            r"\emph{scope} of the~$\lambd[x]$."
+        )
+        new = (
+            "then the corresponding\noccurrence of~$M$ is the "
+            r"\emph{scope} of the~$\lambd[x]$."
+        )
+        assert audited_lambda_syntax_foundations.count(old) == 1
+        audited_lambda_syntax_foundations = (
+            audited_lambda_syntax_foundations.replace(old, new, 1)
+        )
+    if 356 <= unit_number <= 360:
+        assert set(documented) == lambda_syntax_foundations_expected.get(
+            row["unit_id"], set()
+        )
+        lambda_syntax_foundations_math_fix = (
+            mathparts(audited_lambda_syntax_foundations) == target_math
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -3491,6 +3516,61 @@ for row in rows:
             "documented_correction": "BN-SRC-274",
             "lemma_premise_used_without_extra_primitive_recursive_assumption": True,
         }
+    elif row["unit_id"] == "OLP-0356":
+        assert lambda_syntax_foundations_math_fix
+        assert r"\olchapter{lam}{syn}{বাক্যগঠন}" in checked_target
+        assert checked_target.count(r"\olimport{") == 10
+        tex_command_check = {
+            "syntax_chapter_title_reviewed": True,
+            "all_ten_source_imports_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0357":
+        assert lambda_syntax_foundations_math_fix
+        assert r"$\Obj{v_0}$, $\Obj{v_1}$" in checked_target
+        assert all(
+            phrase in checked_target
+            for phrase in ("আরোহীভাবে", "বিমূর্তনের", "প্রয়োগের", "পূর্ণ-বন্ধনীযুক্ত")
+        )
+        tex_command_check = {
+            "term_formation_vocabulary_reviewed": True,
+            "object_variable_macros_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0358":
+        assert lambda_syntax_foundations_math_fix
+        assert all(
+            phrase in checked_target
+            for phrase in ("একক পাঠযোগ্যতা", "গঠনপ্রণালী", "প্রকৃত পূর্বাংশ")
+        )
+        tex_command_check = {
+            "unique_readability_vocabulary_reviewed": True,
+            "unique_formation_argument_symbols_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0359":
+        assert lambda_syntax_foundations_math_fix
+        assert all(
+            phrase in checked_target
+            for phrase in ("সংক্ষিপ্ত পদ", "বাঁ থেকে ডান দিকে", "সর্বাধিক বিস্তৃত")
+        )
+        tex_command_check = {
+            "abbreviation_conventions_reviewed": True,
+            "application_associativity_and_scope_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0360":
+        assert lambda_syntax_foundations_math_fix
+        assert "BN-SRC-275" in documented
+        assert (
+            "কোনো পদ~$N$-এর ভিতরে $\\lambd[x][M]$ ঘটলে~$M$-এর সংশ্লিষ্ট সংঘটনটিই"
+            in checked_target
+        )
+        assert all(
+            phrase in checked_target
+            for phrase in ("পরিসর", "মুক্ত ও বদ্ধ সংঘটন", "পরিবেশের", "বদ্ধ পদ, সমাবেশক")
+        )
+        tex_command_check = {
+            "documented_correction": "BN-SRC-275",
+            "lambda_scope_is_abstraction_body": True,
+            "free_bound_environment_vocabulary_reviewed": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -3592,6 +3672,7 @@ for row in rows:
             second_order_metatheory_math_fix,
             second_order_set_theory_math_fix,
             lambda_introduction_completion_math_fix,
+            lambda_syntax_foundations_math_fix,
             shared_audit_fix,
         )
     )

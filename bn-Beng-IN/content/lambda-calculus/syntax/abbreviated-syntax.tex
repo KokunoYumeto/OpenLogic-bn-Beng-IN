@@ -1,0 +1,42 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: abbreviated-syntax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{abb}
+\olsection{সংক্ষিপ্ত বাক্যগঠন}
+
+\olref[trm]{defn:term}-এ সংজ্ঞায়িত পদগুলি কখনো কখনো লিখতে দুরূহ হয়,
+তাই আরও সংক্ষিপ্ত বাক্যগঠন চালু করা সুবিধাজনক। অবশ্যই নিশ্চিত করতে হবে,
+সংক্ষিপ্ত সংকেতলিপির পদগুলিও যেন এককভাবে পাঠযোগ্য হয়। বহুল ব্যবহৃত একটি
+রূপকে \emph{সংক্ষিপ্ত পদ} বলা হয়; নিয়মগুলি নিচে দেওয়া হলো।
+
+\begin{enumerate}
+\item বন্ধনী বাদ দিলে প্রয়োগ বাঁ থেকে ডান দিকে ঘটে। যেমন, $M$, $N$,
+  $P$ ও~$Q$ পদ হলে $MNPQ$ হলো $(((MN)P)Q)$-এর সংক্ষিপ্ত রূপ।
+\item আবার, বন্ধনী বাদ দিলে ল্যাম্বডা-বিমূর্তনকে সম্ভাব্য সর্বাধিক বিস্তৃত
+  পরিসর দেওয়া হয়। যেমন, $\lambd[x][MNP]$-কে
+  $(\lambd[x][MNP])$ হিসেবে পড়া হয়।
+\item একটি ল্যাম্বডা দিয়ে একাধিক চলরাশির উপর বিমূর্তন করা যায়। যেমন,
+  $\lambd[xyz][M]$ হলো $\lambd[x][\lambd[y][\lambd[z][M]]]$-এর সংক্ষিপ্ত
+  রূপ।
+\end{enumerate}
+
+যেমন,
+\[
+\lambd[xy][xxyx \lambd[z][xz]]
+\]
+নিচের পদের সংক্ষিপ্ত রূপ:
+\[
+(\lambd[x][(\lambd[y][((((xx)y)x)(\lambd[z][(xz)]))])]).
+\]
+
+\begin{prob}
+সংক্ষিপ্ত পদ $\lambd[g][(\lambd[x][g (x x)])
+  \lambd[x][g (x x)]]$-কে পূর্ণ রূপে লেখো।
+\end{prob}
+
+\end{document}

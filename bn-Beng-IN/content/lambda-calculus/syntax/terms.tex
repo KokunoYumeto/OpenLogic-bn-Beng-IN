@@ -1,0 +1,48 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: terms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{trm}
+\olsection{পদ}
+
+ল্যাম্বডা ক্যালকুলাসের পদগুলি চলরাশি $\Obj{v_0}$, $\Obj{v_1}$, \dots-এর
+অসীম ভাণ্ডার, ``$\lambd$'' সংকেত এবং বন্ধনী থেকে আরোহীভাবে গড়ে ওঠে।
+চলরাশি নির্দেশ করতে আমরা $x$, $y$, $z$, \dots{} এবং পদ নির্দেশ করতে
+$M$, $N$, $P$, \dots{} ব্যবহার করব।
+
+\begin{defn}[পদ] \ollabel{defn:term}
+ল্যাম্বডা ক্যালকুলাসের \emph{পদসমূহের} সেটটি নিচের নিয়মে আরোহীভাবে
+সংজ্ঞায়িত:
+\begin{enumerate}
+  \item \ollabel{defn:term-var} $x$ চলরাশি হলে $x$ একটি পদ।
+  \item \ollabel{defn:term-abs} $x$ চলরাশি এবং $M$ পদ হলে
+    $(\lambd[x][M])$ একটি পদ।
+  \item \ollabel{defn:term-app} $M$ ও $N$ উভয়ই পদ হলে $(MN)$ একটি পদ।
+\end{enumerate}
+\end{defn}
+
+কোনো পদ $(\lambd[x][M])$ যদি \olref{defn:term-abs} অনুসারে গঠিত হয়,
+তাহলে বলি সেটি একটি \emph{বিমূর্তনের} ফল, এবং $\lambd[x]$-এর~$x$-কে
+একটি \emph{!!{parameter}} বলা হয়। \olref{defn:term-app} অনুসারে গঠিত
+কোনো পদ $(MN)$ হলো একটি \emph{প্রয়োগের} ফল।
+
+উপরে সংজ্ঞায়িত পদগুলি পূর্ণ-বন্ধনীযুক্ত। এতে লেখা বেশ দুরূহ হয়ে উঠতে
+পারে, যেমন $(\lambd[x][((\lambd[x][x])(\lambd[x][(xx)]))])$ পদটি দেখায়।
+বন্ধনী এড়ানোর কিছু প্রথা আমরা চালু করব। তবে আনুষ্ঠানিক সংজ্ঞাটি ব্যবহার
+করে \olref{defn:term} অনুসারে কোনো পদ কীভাবে গঠিত, তা সহজে নির্ধারণ করা
+যায়। যেমন, $(\lambd[x][((\lambd[x][x])(\lambd[x][(xx)]))])$ পদটি
+গঠনের শেষ ধাপটি অবশ্যই এমন একটি বিমূর্তন, যার !!{parameter} হলো~$x$।
+এই বিমূর্তনটি $((\lambd[x][x])(\lambd[x][(xx)]))$ পদ থেকে পাওয়া যায়;
+আর সেই পদটি দুটি পদের প্রয়োগ। ওই পদদুটির প্রত্যেকটিই আবার একটি
+বিমূর্তনের ফল, এবং এভাবেই বিশ্লেষণ চলতে থাকে।
+
+\begin{prob}
+$(\lambd[g][(\lambd[x][(g (x x))])
+  (\lambd[x][(g (x x))])])$-এর গঠন বর্ণনা করো।
+\end{prob}
+
+\end{document}

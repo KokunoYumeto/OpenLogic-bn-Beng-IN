@@ -1,0 +1,165 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-20T15:02:47.219966+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6",
+  "parent": "a7606ec5dffe336df5d45a351a167d36936730ac",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "purpose": "Retract three false TikZ endpoint correction claims and classify the unchanged rendered loops as source normalizations.",
+  "prior_verified_source_checkpoint": {
+    "commit": "a41caa3a0101e8824c53dde559d35b3d21ae27cd",
+    "receipt": "PUBLIC_READBACK_SOURCE_359_2026-09-20.json",
+    "receipt_sha256": "22aae6b2f565e674d492c2515c63c35b7ab66cfa4c7beadddbe3a32de2b89c2d"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 29077081,
+  "archive_sha256": "6798dad661d4bff189dcf1a14de74209754c87f5ba10c3b59e4729268f686b0a",
+  "raw_files": [
+    {
+      "path": "bn-Beng-IN/content/turing-machines/machines-computations/combining-machines.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6/bn-Beng-IN/content/turing-machines/machines-computations/combining-machines.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6/bn-Beng-IN/content/turing-machines/machines-computations/combining-machines.tex",
+      "content_type": "text/plain",
+      "bytes": 14092,
+      "sha256": "b693ba75df8f0aae7abff3dc1b8da1cf7a6e2eea2114477cf30529ca7177dac3"
+    },
+    {
+      "path": "bn-Beng-IN/content/turing-machines/machines-computations/disciplined-machines.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6/bn-Beng-IN/content/turing-machines/machines-computations/disciplined-machines.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6/bn-Beng-IN/content/turing-machines/machines-computations/disciplined-machines.tex",
+      "content_type": "text/plain",
+      "bytes": 7865,
+      "sha256": "5727c95038f1d56e37d493418ef17e2cdf6a3afce9894bb923cab5aec9c0fa86"
+    },
+    {
+      "path": "bn-Beng-IN/content/turing-machines/machines-computations/unary-numbers.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6/bn-Beng-IN/content/turing-machines/machines-computations/unary-numbers.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6/bn-Beng-IN/content/turing-machines/machines-computations/unary-numbers.tex",
+      "content_type": "text/plain",
+      "bytes": 17938,
+      "sha256": "5cfc58296ca9d7f95d33712b0ea294013fe34b1c2b3444b8f3c0b9f084053b84"
+    },
+    {
+      "path": "evidence/SOURCE_NORMALIZATIONS.jsonl",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6/evidence/SOURCE_NORMALIZATIONS.jsonl",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/10f6f332f04f64c4b8fee64c2c0e478c7e4cafb6/evidence/SOURCE_NORMALIZATIONS.jsonl",
+      "content_type": "text/plain",
+      "bytes": 5049,
+      "sha256": "e959349e99ea476e4f9aa2c3addcf1d5a39c52f3a88b6de9f82ad83f0420e64b"
+    }
+  ],
+  "changed_files_verified": 16,
+  "draft_translated_total": 359,
+  "draft_untranslated_total": 363,
+  "segments": 4093,
+  "translated_segments": 3454,
+  "source_correction_records": 282,
+  "source_normalization_records": 3,
+  "retracted_source_correction_ids": [
+    "BN-SRC-169",
+    "BN-SRC-170",
+    "BN-SRC-172"
+  ],
+  "source_normalization_ids": [
+    "BN-NORM-169",
+    "BN-NORM-170",
+    "BN-NORM-172"
+  ],
+  "tikz_authority_sha256": "992706da31e055cdbecf5b1bf1b9c267383e3b4d4385773448f868e1cabf17f2",
+  "translation_decisions": 301,
+  "provisional_translation_decisions": 282,
+  "translation_decision_occurrences": 23624,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 359,
+    "blocks": 4093,
+    "result": "passed_from_anonymous_archive"
+  },
+  "tex_executed": false,
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/turing-machines/machines-computations/combining-machines.tex",
+      "bytes": 14092,
+      "sha256": "b693ba75df8f0aae7abff3dc1b8da1cf7a6e2eea2114477cf30529ca7177dac3"
+    },
+    {
+      "filename": "bn-Beng-IN/content/turing-machines/machines-computations/disciplined-machines.tex",
+      "bytes": 7865,
+      "sha256": "5727c95038f1d56e37d493418ef17e2cdf6a3afce9894bb923cab5aec9c0fa86"
+    },
+    {
+      "filename": "bn-Beng-IN/content/turing-machines/machines-computations/unary-numbers.tex",
+      "bytes": 17938,
+      "sha256": "5cfc58296ca9d7f95d33712b0ea294013fe34b1c2b3444b8f3c0b9f084053b84"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6388507,
+      "sha256": "b29632b8b12961db3b7191b1f2a66f0204e1a3a614d79a420a8eaa9cbf7e3ef6"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 219062,
+      "sha256": "c3e2456d1dc42266d9bc8a12a0dbe95575b25d7968303b06478bbbfcce7dfaa5"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_SYNTAX.md",
+      "bytes": 11867,
+      "sha256": "83befaf570160cfc739cfabdb42e9aa1865427ef9c741e2ce7c8de2c1c648007"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_TURING_MACHINE_COMPUTATIONS_COMPLETION.md",
+      "bytes": 10849,
+      "sha256": "c1c0a5eda95196e4b95294712116708351a3ead051d77525d840eb057b0eaee6"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "bc8104c64cafab4cc98e4c65a09759eca60a9df62b5f93a73a21d6c1dc6f3d88"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 542954,
+      "sha256": "b12a6a83da612efb0bc7cdb259198a084ea77b37bb10e589d6a4bfd21836bcf2"
+    },
+    {
+      "filename": "evidence/SOURCE_NORMALIZATIONS.jsonl",
+      "bytes": 5049,
+      "sha256": "e959349e99ea476e4f9aa2c3addcf1d5a39c52f3a88b6de9f82ad83f0420e64b"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 55509958,
+      "sha256": "a25c2e62c02191e3e6b2a811399e99630a6bad8ad9ae772ffcd4e7a3932dbba1"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 49279234,
+      "sha256": "51f17c14c0b943d3f31514f52e0b0adfc29d7a2d2e3da89b5c5647dbfd6044d9"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1163243,
+      "sha256": "b95fcc0f7df30c4be036c07a0a1ff08ad870a7f318bcc33270308f8f7908457f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 75415885,
+      "sha256": "8878c6bad469c9599659cbae27cbb7eae1923a33b3e1d84ca73920733608c340"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 218520,
+      "sha256": "b4cba9bad4fc4a5f3ca194fde9aaebaf45ea3913e854f174dc4f2a2019e0ff85"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 173382,
+      "sha256": "7b92311fd9d0ae1ab332ab2d824a60d7567cc33cc5776a22fd8fcecd88c047e4"
+    }
+  ]
+}

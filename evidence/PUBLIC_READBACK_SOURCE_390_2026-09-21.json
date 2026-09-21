@@ -1,0 +1,243 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-21T00:10:22.727395+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "63bfe3604089ca710cb4528434c65496f78668e2",
+  "parent": "a536de2c469b6f70388d6469eab3ac311f6901fc",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "21efccc5c7aba4b2cf3a0681de456788ce77a250",
+    "receipt": "PUBLIC_READBACK_SOURCE_381_2026-09-21.json",
+    "receipt_sha256": "d38510f57b3c52eed8a2d223c1d113aab1dd18724432170a8f663ce8efa56fa0"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/63bfe3604089ca710cb4528434c65496f78668e2.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/63bfe3604089ca710cb4528434c65496f78668e2",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 30801303,
+  "archive_sha256": "e1dd5efbd813e8d81b8d4a36cd6387b7d3822e342d6e10b4c24baea4f47dc401",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/lambda-definability/minimization.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/lambda-calculus/lambda-definability/minimization.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/lambda-calculus/lambda-definability/minimization.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6358,
+      "sha256": "fc825a03020a2362466abd38980b1d8d61ae2ed27e84dcee38b6f8a1713bd832"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/many-valued-logic.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/many-valued-logic.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/many-valued-logic.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 632,
+      "sha256": "5bfd50f4b814060c69f1ca357953bb56d4c5330d602cdd98920a4a083dbd019e"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/connectives.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/connectives.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/connectives.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 4963,
+      "sha256": "08955065e016432830cf0dcfe2d688e083df1b7e7be1ced8b37f545a356eaa5e"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/formulas.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/formulas.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/formulas.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 2248,
+      "sha256": "1afbce7dc870186f4e5bb4d7d5c6e28157cef422f5e9e6cd55a14205be565ed0"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/introduction.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6524,
+      "sha256": "c88d4ef22e6864338c4b2d32ebdb6dcb019ec73974db82f84b63affacf12f08f"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/matrices.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/matrices.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/matrices.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 3467,
+      "sha256": "ea81c851d75b8c00fda0b0d3c08b34c6b575a350384853b83636a791be453e3a"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/semantic-notions.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/semantic-notions.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/semantic-notions.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 4133,
+      "sha256": "7786216d8468eaf2c8554f194702b8fa97b5b014c4554057080a86f197c8e758"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/sublogics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/sublogics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/sublogics.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 8179,
+      "sha256": "44d14404bdfddfb7b15b8168b3326abb6da86c8799cd5b87f0d9d6534d93bb79"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/syntax-and-semantics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/syntax-and-semantics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/syntax-and-semantics.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 438,
+      "sha256": "b1a42f2452001e281e322ca2a4cf59c2e753ea0bf32a2f33a9f9563d4f93aa91"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/valuations-sat.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/valuations-sat.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/63bfe3604089ca710cb4528434c65496f78668e2/bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/valuations-sat.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 2430,
+      "sha256": "e5b064b0df56e468f68c0b914e0d262557e34efda09741bbe666f13aa229e3dc"
+    }
+  ],
+  "changed_files_verified": 23,
+  "translated_tex_files_in_commit": 10,
+  "evidence_files_in_commit": 12,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 390,
+  "draft_untranslated_total": 332,
+  "segments": 4424,
+  "translated_segments": 3752,
+  "new_batch_segments": 60,
+  "new_batch_translated_segments": 39,
+  "new_batch_unchanged_segments": 21,
+  "source_correction_records": 324,
+  "new_source_correction_records": 3,
+  "source_normalization_records": 3,
+  "translation_decisions": 312,
+  "provisional_translation_decisions": 293,
+  "translation_decision_occurrences": 25463,
+  "decisions_with_exact_source_wording": 297,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 390,
+    "blocks": 4424,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/lambda-definability/minimization.tex",
+      "bytes": 6358,
+      "sha256": "fc825a03020a2362466abd38980b1d8d61ae2ed27e84dcee38b6f8a1713bd832"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/many-valued-logic.tex",
+      "bytes": 632,
+      "sha256": "5bfd50f4b814060c69f1ca357953bb56d4c5330d602cdd98920a4a083dbd019e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/connectives.tex",
+      "bytes": 4963,
+      "sha256": "08955065e016432830cf0dcfe2d688e083df1b7e7be1ced8b37f545a356eaa5e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/formulas.tex",
+      "bytes": 2248,
+      "sha256": "1afbce7dc870186f4e5bb4d7d5c6e28157cef422f5e9e6cd55a14205be565ed0"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/introduction.tex",
+      "bytes": 6524,
+      "sha256": "c88d4ef22e6864338c4b2d32ebdb6dcb019ec73974db82f84b63affacf12f08f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/matrices.tex",
+      "bytes": 3467,
+      "sha256": "ea81c851d75b8c00fda0b0d3c08b34c6b575a350384853b83636a791be453e3a"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/semantic-notions.tex",
+      "bytes": 4133,
+      "sha256": "7786216d8468eaf2c8554f194702b8fa97b5b014c4554057080a86f197c8e758"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/sublogics.tex",
+      "bytes": 8179,
+      "sha256": "44d14404bdfddfb7b15b8168b3326abb6da86c8799cd5b87f0d9d6534d93bb79"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/syntax-and-semantics.tex",
+      "bytes": 438,
+      "sha256": "b1a42f2452001e281e322ca2a4cf59c2e753ea0bf32a2f33a9f9563d4f93aa91"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/syntax-and-semantics/valuations-sat.tex",
+      "bytes": 2430,
+      "sha256": "e5b064b0df56e468f68c0b914e0d262557e34efda09741bbe666f13aa229e3dc"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 6979401,
+      "sha256": "2542f817aab2d167892e858c57c451b34b55d9da05b7e27f83e805e869434e88"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 242331,
+      "sha256": "a29a0329e10b852c4340a7d6eea7eb30c7c384cfd911918535d54db005a72e2a"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LAMBDA_CALCULUS_LAMBDA_DEFINABILITY.md",
+      "bytes": 20197,
+      "sha256": "29a5e65bc056b5e85bd6a77df0867c313a27a8cf0afd43375a8ad7e383db6030"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_MANY_VALUED_LOGIC_SYNTAX_SEMANTICS.md",
+      "bytes": 11513,
+      "sha256": "b4e3b7dd25615e254b41e163c49cee8df8f05e988274b26070a0b036d174f0e7"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "220924638397be2bccd635b78a8fb7f786a78c9d9e3997be2b95bae3a20dda5e"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 631023,
+      "sha256": "4daeb601ce14001a55f91b5c40b4f94e3f1927c6b44681f1e0e104f72345a931"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 281651,
+      "sha256": "c69bc8846fbf535011366fbd6faf8d4a829b0f6f336f3301655f84e8c36ee745"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 59185897,
+      "sha256": "7d2ccc1040e3c88e97eb0dab8bbc9de8532b00a5c47ec42eecdea140a621c89d"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 52488448,
+      "sha256": "e0ad63d7978cb2d8f4cf7e92430f78db1fed7938983c829445194a19ff4057b9"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1211464,
+      "sha256": "909f9b37e63ff038ff1a514b691b2cb1c54db9ffbb8de7b396bfc8bd0d8b87cd"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 80986734,
+      "sha256": "4d6f8edc40f2760aabe685c997860a85aed2462eb09ea7dedcb0f70935f3d126"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 228146,
+      "sha256": "60d26199cff35c0e48cc9f08ec0b0dfdb175a6cafd267713c14e77046b6b5091"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 213780,
+      "sha256": "21d3fa2b23116355d5f7f33fb99e7cf18106d4676514c87c7c1aab4662e0d86e"
+    }
+  ]
+}

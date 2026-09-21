@@ -1,0 +1,71 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{sem}
+
+\olsection{অর্থগত ধারণাসমূহ}
+
+ধরা যাক, বহুমানী যুক্তিবিদ্যা~$\Log L$ একটি ম্যাট্রিক্স দিয়ে দেওয়া আছে।
+তাহলে আমরা~$\Log L$-এর জন্য প্রচলিত অর্থগত ধারণাগুলি সংজ্ঞায়িত করতে পারি।
+
+\begin{defn}
+\begin{enumerate}
+\item কোনো !!^a{formula}~$!A$ \emph{পরিতৃপ্তিযোগ্য}, যদি কোনো
+  $\pAssign{v}$-এর জন্য $\pSat{v}{!A}$ হয়; কোনো $\pAssign{v}$-এর
+  জন্যই $\pSat{v}{!A}$ না হলে সেটি \emph{অপরিতৃপ্তিযোগ্য};
+\item কোনো !!^a{formula}~$!A$ \emph{সর্বতঃসত্য}, যদি সব
+  !!{valuation}s~$v$-এর জন্য $\pSat{v}{!A}$ হয়;
+\item $\Gamma$ যদি !!{formula}s-এর একটি সেট হয়, তবে
+  $\Gamma \Entails !A$ (“$\Gamma$ থেকে $!A$ অনুসৃত হয়”) তখনই, যখন
+  $\pSat{v}{\Gamma}$ হয় এমন প্রত্যেক !!{valuation}~$\pAssign{v}$-এর
+  জন্য $\pSat{v}{!A}$ হয়।
+\item $\Gamma$ যদি !!{formula}s-এর একটি সেট হয়, তবে এমন
+  !!a{valuation}~$\pAssign{v}$ থাকলে $\Gamma$ \emph{পরিতৃপ্তিযোগ্য},
+  যার জন্য $\pSat{v}{\Gamma}$; অন্যথায় $\Gamma$
+  \emph{অপরিতৃপ্তিযোগ্য}।
+\end{enumerate}
+\end{defn}
+
+ধ্রুপদি যুক্তিবিদ্যার ক্ষেত্রে এই ধারণাগুলির জন্য যে তথ্যগুলি পাওয়া যায়,
+সেগুলির কয়েকটি এখানেও পাওয়া যায়:
+
+\begin{prop}
+\ollabel{prop:semanticalfacts}
+\begin{enumerate}
+\item $!A$ তখনই সর্বতঃসত্য, যখন
+  $\emptyset \Entails !A$;
+\item $\Gamma$ পরিতৃপ্তিযোগ্য হলে $\Gamma$-র প্রতিটি সসীম উপসেটও
+  পরিতৃপ্তিযোগ্য;
+\item\ollabel{def:monotonicity}%
+একঘেয়েতা: যদি $\Gamma \subseteq \Delta$
+  এবং $\Gamma \Entails !A$ হয়, তবে $\Delta \Entails !A$-ও হয়;
+\item\ollabel{def:Cut}%
+পরিযায়িতা: যদি $\Gamma \Entails !A$ এবং
+  $\Delta \cup \{ !A\} \Entails !B$ হয়, তবে $\Gamma \cup \Delta \Entails
+  !B$;
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+\olref[mvl][syn][sem]{prop:semanticalfacts} প্রমাণ করো।
+\end{prob}
+
+ধ্রুপদি যুক্তিবিদ্যায় অনুসিদ্ধান্তের সঙ্গে শর্তবচনের সম্পর্ক স্থাপন করা
+যায়। যেমন, \emph{মোডাস পোনেন্স}-এর বৈধতা আছে: যদি $\Gamma
+\Entails !A$ এবং $\Gamma \Entails !A \lif !B$ হয়, তবে $\Gamma \Entails
+!B$। ধ্রুপদি যুক্তিবিদ্যায় $\Entails$ ও~$\lif$-এর আরেকটি গুরুত্বপূর্ণ
+সম্পর্ক হলো অর্থগত নিঃসরণ উপপাদ্য: $\Gamma \Entails !A
+\lif !B$ তখনই, যখন $\Gamma \cup \{!A\} \Entails !B$। বহুমানী
+যুক্তিবিদ্যায় এই ফলগুলি \emph{সবসময় সত্য নয়}। সেগুলি সত্য কি না,
+তা সত্যমান-অপেক্ষক~$\tf{\lif}$-এর উপর নির্ভর করে।
+
+\end{document}

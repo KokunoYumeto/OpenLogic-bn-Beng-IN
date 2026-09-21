@@ -1,0 +1,44 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{fml}
+
+\olsection{\usetoken{P}{formula}}
+
+\begin{defn}[সূত্র]
+\ollabel{defn:formulas}
+কোনো বচনমূলক ভাষা~$\Lang L$-এর \emph{!!{formula}s}-এর সেট~$\Frm[L]$
+নিচের মতো আরোহীভাবে সংজ্ঞায়িত:
+\begin{enumerate}
+\item প্রতিটি !!{propositional variable}~$\Obj p_i$ একটি পরমাণু
+  !!{formula}।
+\item $\Lang L$-এর প্রতিটি $0$-স্থানীয় সংযোজক (বচনধ্রুবক) একটি পরমাণু
+  !!{formula}।
+\item $\star$ যদি $\Lang L$-এর একটি $n$-স্থানীয় সংযোজক হয় এবং $!A_1$,
+\dots, $!A_n$ যদি !!{formula}s হয়, তবে $\star(!A_1, \dots, !A_n)$
+  !!a{formula}।
+\tagitem{limitClause}{অন্য কিছুই !!a{formula} নয়।}{}
+\end{enumerate}
+$\star$ যদি $1$-স্থানীয় হয়, তবে $\star(!A_1)$-কে প্রায়ই সংক্ষেপে
+$\star !A_1$ লেখা হবে। $\star$ যদি $2$-স্থানীয় হয়, তবে
+$\star(!A_1,!A_2)$-কে প্রায়ই $(!A_1 \star !A_2)$ লেখা হবে।
+\end{defn}
+
+প্রচলিত রীতি অনুযায়ী আমরা প্রায়ই সবচেয়ে বাইরের বন্ধনী নিঃশব্দে বাদ দেব।
+
+\begin{ex}
+  মানক ভাষা~$\Lang{L_0}$-তে $\Obj p_1 \lif (\Obj p_1
+  \land \lnot \Obj p_2)$ একটি সূত্র। গুণন যুক্তিবিদ্যার ভাষায় সেটি
+  বরং $\Obj p_1 \lif (\Obj p_1 \odot
+  \lnot \Obj p_2)$ লেখা হবে। ভাষায় $1$-স্থানীয়~$\triangle$ যোগ করলে
+  $\triangle (\Obj p_1
+  \land \Obj p_2) \lif (\triangle \Obj p_1 \land \triangle \Obj p_2)$-এর
+  মতো সূত্রও পাওয়া যাবে।
+\end{ex}
+
+\end{document}

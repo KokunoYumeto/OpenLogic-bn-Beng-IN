@@ -1,0 +1,68 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: connectives
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{con}
+
+\olsection{ভাষা ও সংযোজক}
+
+ধ্রুপদি বচনমূলক যুক্তিবিদ্যা এবং আরও অনেক যুক্তিবিদ্যায়
+\emph{বচনধ্রুবক} ও \emph{সংযোজক}-এর একটি নির্দিষ্ট ভাণ্ডার ব্যবহার করা
+হয়। যেমন, আমরা নিচেরগুলিকে মৌলিক সংকেত হিসেবে ব্যবহার করি:
+\begin{enumerate}
+\tagitem{prvFalse}{!!{falsity}-র বচনধ্রুবক~$\lfalse$।}{}
+\tagitem{prvTrue}{!!{truth}-এর বচনধ্রুবক~$\ltrue$।}{}
+\item যৌক্তিক সংযোজকগুলি:
+  \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (নঞর্থকরণ)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (সংযোজন)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (বিয়োজন)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+\end{enumerate}
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}{%
+উপরের মৌলিক সংযোজকগুলির পাশাপাশি আমরা সংক্ষিপ্ত রূপ হিসেবে সংজ্ঞায়িত
+সংকেতও ব্যবহার করি, যেমন
+\startycommalist
+  \iftag{defNot}{\ycomma $\lnot$ (নঞর্থকরণ)}{}%
+  \iftag{defAnd}{\ycomma $\land$ (সংযোজন)}{}%
+  \iftag{defOr}{\ycomma $\lor$ (বিয়োজন)}{}%
+  \iftag{defIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{defIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{defFalse}{\ycomma $\lfalse$ (!!{falsity})}{}%
+  \iftag{defTrue}{\ycomma $\ltrue$ (!!{truth})}.}{}
+
+বহুমানী যুক্তিবিদ্যাতেও একই সংযোজকগুলি ব্যবহৃত হয়। কিন্তু একই
+যুক্তিবিদ্যায়, যেমন, সংযোজনের একাধিক সংস্করণ রাখা প্রায়ই উপযোগী; তখন
+সংস্করণগুলিকে আলাদা রাখতে পৃথক সংকেত দরকার। কোনো কোনো বহুমানী
+যুক্তিবিদ্যায় এমন সংযোজকও থাকে, যার ধ্রুপদি যুক্তিবিদ্যায় কোনো সমতুল্য
+নেই। তাই আমরা প্রচলিত রীতির চেয়ে একটু বেশি সাধারণ হব।
+
+\begin{defn}
+  একটি \emph{বচনমূলক ভাষা} সংযোজকসমূহের একটি সেট~$\Lang L$ নিয়ে গঠিত।
+  প্রতিটি সংযোজক~$\star$-এর একটি \emph{স্থানসংখ্যা} থাকে; স্থানসংখ্যা~$n$
+  হলে সংযোজকটিকে \emph{$n$-স্থানীয়} বলা হয়। স্থানসংখ্যা~$0$-এর
+  সংযোজকগুলিকে \emph{ধ্রুবক}-ও বলা হয়; স্থানসংখ্যা~$1$-এর সংযোজক
+  \emph{এক-স্থানীয়}, আর স্থানসংখ্যা~$2$-এর সংযোজক \emph{দ্বি-স্থানীয়}।
+\end{defn}
+
+\begin{ex}
+  বচনমূলক যুক্তিবিদ্যার মানক ভাষা~$\Lang L_0$ নিচের সংযোজকগুলি নিয়ে
+  গঠিত (সঙ্গে তাদের স্থানসংখ্যা দেওয়া হয়েছে):
+  $\lfalse$~($0$),
+  $\lnot$~($1$),
+  $\land$~($2$),
+  $\lor$~($2$),
+  $\lif$~($2$)। আমরা যে অধিকাংশ যুক্তিবিদ্যা বিবেচনা করব, সেগুলিতে এই
+  ভাষাই ব্যবহৃত হবে। প্রথা ও রীতি অনুসারে কোনো কোনো যুক্তিবিদ্যায় কিছু
+  সংযোজকের জন্য আলাদা সংকেত ব্যবহৃত হয়। যেমন, গুণন যুক্তিবিদ্যায়
+  সংযোজনের সংকেত প্রায়ই~$\land$-এর বদলে~$\odot$ হয়। কখনো নতুন অপারেটর
+  যোগ করা সুবিধাজনক; যেমন নির্ধারিততা অপারেটর~$\triangle$
+  ($1$-স্থানীয়)।
+\end{ex}
+
+\end{document}

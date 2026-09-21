@@ -1,0 +1,77 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: matrices
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{mat}
+
+\olsection{ম্যাট্রিক্স}
+
+কোনো বহুমানী যুক্তিবিদ্যা তার ভাষা, সত্যমানের সেট~$V$, মনোনীত
+সত্যমানগুলির একটি উপসেট এবং তার সংযোজকগুলির সত্যমান-অপেক্ষক দিয়ে
+সংজ্ঞায়িত হয়। এই উপাদানগুলিকে একসঙ্গে একটি \emph{ম্যাট্রিক্স} বলা হয়।
+
+\begin{defn}[ম্যাট্রিক্স]
+\ollabel{defn:matrix}
+যুক্তিবিদ্যা~$\Log L$-এর একটি \emph{ম্যাট্রিক্স} নিচের উপাদানগুলি নিয়ে
+গঠিত:
+\begin{enumerate}
+\item ভাষা~$\Lang L$ গঠনকারী সংযোজকসমূহের একটি সেট;
+\item সত্যমানের একটি সেট $V \neq \emptyset$;
+\item মনোনীত সত্যমানের একটি সেট $V^+ \subseteq V$;
+\item $\Lang L$-এর প্রতিটি $n$-স্থানীয় সংযোজক~$\star$-এর জন্য একটি
+সত্যমান-অপেক্ষক~$\tf{\star} : V^n \to V$। যদি $n = 0$ হয়, তবে
+$\tf{\star}$ কেবল~$V$-এর একটি সদস্য।
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+ধ্রুপদি যুক্তিবিদ্যা~\LogCL{}-এর ম্যাট্রিক্স নিচের উপাদানগুলি নিয়ে গঠিত:
+\begin{enumerate}
+  \item $\lfalse$, $\lnot$, $\land$, $\lor$, $\lif$-সহ মানক বচনমূলক
+  ভাষা~$\Lang L_0$।
+  \item সত্যমানের সেট $V = \{\True, \False\}$।
+  \item $\True$ একমাত্র মনোনীত মান; অর্থাৎ $V^+ = \{\True\}$।
+  \item $\lfalse$-এর জন্য $\tf{\lfalse} = \False$। অন্য
+  সত্যমান-অপেক্ষকগুলি পরিচিত সত্যসারণি দিয়ে দেওয়া হয়েছে
+  (\olref{fig:tf-CL} দেখো)।
+\end{enumerate}
+\begin{figure}
+  \begin{center}
+      \begin{tabular}{c|c}
+        $\tf{\lnot}$ & \\
+        \hline
+        $\True$ & $\False$ \\
+        $\False$ & $\True$
+      \end{tabular}
+      \quad
+      \begin{tabular}{c|cc}
+        $\tf{\land}$ & $\True$ & $\False$ \\
+        \hline
+        $\True$ & $\True$ & $\False$ \\
+        $\False$ & $\False$ & $\False$
+      \end{tabular}
+      \quad
+      \begin{tabular}{c|cc}
+        $\tf{\lor}$ & $\True$ & $\False$ \\
+        \hline
+        $\True$ & $\True$ & $\True$ \\
+        $\False$ & $\True$ & $\False$
+      \end{tabular}
+      \quad
+      \begin{tabular}{c|cc}
+        $\tf{\lif}$ & $\True$ & $\False$ \\
+        \hline
+        $\True$ & $\True$ & $\False$ \\
+        $\False$ & $\True$ & $\True$
+      \end{tabular}
+    \end{center}
+    \caption{ধ্রুপদি যুক্তিবিদ্যা~$\LogCL$-এর সত্যমান-অপেক্ষকসমূহ।}
+    \ollabel{fig:tf-CL}
+  \end{figure}
+  \end{ex}
+
+\end{document}

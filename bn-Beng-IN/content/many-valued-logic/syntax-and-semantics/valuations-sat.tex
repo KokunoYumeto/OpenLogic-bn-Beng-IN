@@ -1,0 +1,48 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: valuations-sat
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{val}
+
+\olsection{\usetoken{P}{valuation} ও পরিতৃপ্তি}
+
+\begin{defn}[!!^{valuation}s]
+$V$ সত্যমানের একটি সেট হোক। $\Lang{L}$-এর জন্য~$V$-তে মান নেওয়া একটি
+\emph{!!{valuation}} হলো এমন একটি অপেক্ষক~$\pAssign{v}$, যা ভাষাটির
+!!{propositional variable}s-কে $V$-এর !!a{element} আরোপ করে; অর্থাৎ
+$\pAssign{v} \colon \PVar \to V$।
+\end{defn}
+
+\begin{defn}\ollabel{defn:pValue}
+  বহুমানী যুক্তিবিদ্যা~$\Log L$-এর সত্যমানের সেট~$V$-তে মান নেওয়া
+  কোনো !!a{valuation}~$\pAssign{v}$ দেওয়া থাকলে, মূল্যায়ন অপেক্ষক
+  $\pValue{v} \colon \Frm[L] \to V$-কে নিচের মতো আরোহীভাবে সংজ্ঞায়িত
+  করি:
+  \begin{enumerate}
+    \item $\pValue{v}(\Obj p_n) = \pAssign{v}(\Obj p_n)$;
+    \item $\star$ যদি একটি $0$-স্থানীয় সংযোজক হয়, তবে $\pValue{v}(\star)  = \tf{\star}[\Log L]$;
+    \item $\star$ যদি একটি $n$-স্থানীয় সংযোজক হয়, তবে
+    \[
+      \pValue{v}(\star(!A_1, \dots, !A_n)) = \tf{\star}[\Log L]
+      (\pValue{v}(!A_1), \dots, \pValue{v}(!A_n)).
+    \]
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}[পরিতৃপ্তি]
+\ollabel{defn:satisfaction} কোনো !!{formula}~$!A$ কোনো
+  !!a{valuation}~$\pAssign{v}$ দ্বারা \emph{পরিতৃপ্ত},
+  $\pSat{v}{!A}[\Log L]$, তখনই যখন $\pValue{v}(!A)[\Log L] \in V^+$,
+  যেখানে $V^+$ হলো~$\Log L$-এর মনোনীত সত্যমানের সেট।
+
+  “$\pSat{v}{!A}[\Log L]$ নয়” বোঝাতে আমরা
+  $\pSat/{v}{!A}[\Log L]$ লিখি। $\Gamma$ যদি !!{formula}s-এর একটি সেট
+  হয়, তবে $\pSat{v}{\Gamma}[\Log L]$ তখনই, যখন প্রতিটি~$!A \in
+  \Gamma$-এর জন্য $\pSat{v}{!A}[\Log L]$।
+\end{defn}
+
+\end{document}

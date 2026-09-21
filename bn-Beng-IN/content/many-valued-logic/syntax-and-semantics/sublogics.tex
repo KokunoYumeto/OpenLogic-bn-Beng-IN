@@ -1,0 +1,98 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: sublogics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{sub}
+
+\olsection{$\LogCL$-এর উপযুক্তিবিদ্যা হিসেবে বহুমানী যুক্তিবিদ্যা}
+
+প্রচলিত বহুমানী যুক্তিবিদ্যাগুলি এমন ম্যাট্রিক্স দিয়ে সংজ্ঞায়িত হয়,
+যেখানে $\{\True, \False\}$ থেকে নেওয়া আর্গুমেন্টে কোনো
+সত্যমান-অপেক্ষকের মান ধ্রুপদি সত্যমান-অপেক্ষকের সঙ্গে মেলে। নির্দিষ্টভাবে,
+এই যুক্তিবিদ্যাগুলিতে $x \in \{\True, \False\}$ হলে
+$\tf{\lnot}[\Log L](x) = \tf{\lnot}[\LogCL](x)$; এবং $\star$ যদি
+$\land$, $\lor$, $\lif$-এর যেকোনো একটি হয় ও $x, y \in \{\True,
+\False\}$ হয়, তবে $\tf{\star}[\Log L](x,y) =
+\tf{\star}[\LogCL](x,y)$। অন্যভাবে বললে, $\{\True,\False\}$-এ সীমিত
+$\lnot$, $\land$, $\lor$, $\lif$-এর সত্যমান-অপেক্ষকগুলি অবিকল ধ্রুপদি
+সত্যমান-অপেক্ষক।
+
+\begin{prop}\ollabel{prop:mvl-cl}
+  ধরা যাক, কোনো বহুমানী যুক্তিবিদ্যা~$\Log L$-এর ভাষায়
+  $\lnot$, $\land$, $\lor$, $\lif$ সংযোজকগুলি আছে, $\True, \False \in
+  V$, এবং তার সত্যমান-অপেক্ষকগুলি নিচের শর্তগুলি পূরণ করে:
+  \begin{enumerate}
+    \item\ollabel{prop:not} $\tf{\lnot}[\Log L](x) = \tf{\lnot}[\LogCL](x)$ যদি $x =
+    \True$ অথবা $x = \False$;
+    \item\ollabel{prop:land} $\tf{\land}[\Log L](x,y) = \tf{\land}[\LogCL](x,y)$,
+    \item\ollabel{prop:lor} $\tf{\lor}[\Log L](x,y) = \tf{\lor}[\LogCL](x,y)$,
+    \item\ollabel{prop:lif} $\tf{\lif}[\Log L](x,y) = \tf{\lif}[\LogCL](x,y)$,
+    যদি $x, y \in \{\True, \False\}$।
+  \end{enumerate}
+  তাহলে উল্লিখিত চারটি সংযোজক ব্যবহার করে বচনচল থেকে গঠিত যেকোনো
+  সূত্র এবং $V$-তে মান নেওয়া এমন যেকোনো সত্যমান-আরোপ
+  $\pAssign v$-এর জন্য, যার ক্ষেত্রে $\pAssign
+  v(p) \in \{\True,\False\}$, $\pValue v[\Log L](!A) = \pValue
+  v[\LogCL](!A)$।
+\end{prop}
+
+\begin{proof}
+  $!A$-এর উপর আরোহ প্রয়োগ করি।
+  \begin{enumerate}
+  \item $!A \ident p$ পরমাণু হলে $\pValue v[\Log L](!A) =
+  \pAssign v(p) = \pValue
+  v[\LogCL](!A)$।
+  \item $!A \ident \lnot B$ হলে
+  \begin{align*}
+    \pValue v[\Log L](!A) & = \tf{\lnot}[\Log L](\pValue v[\Log L](!B)) & &\text{\olref[val]{defn:pValue} অনুসারে}\\
+    & = \tf{\lnot}[\Log L](\pValue v[\LogCL](!B)) && \text{আরোহের অনুমান অনুসারে}\\
+    & = \tf{\lnot}[\LogCL](\pValue v[\LogCL](!B))
+&&\text{শর্ত \olref{prop:not} অনুসারে,}\\
+&&&\text{কারণ $\pValue v[\LogCL](!B) \in \{\True, \False\}$,}\\
+& = \pValue v[\LogCL](!A) &&\text{\olref[val]{defn:pValue} অনুসারে}.
+\end{align*}
+\item $!A \ident (!B \land !C)$ হলে
+\begin{align*}
+  \pValue v[\Log L](!A) & = \tf{\land}[\Log L](\pValue v[\Log L](!B), \pValue v[\Log L](!C)) & &\text{\olref[val]{defn:pValue} অনুসারে}\\
+  & = \tf{\land}[\Log L](\pValue v[\LogCL](!B),\pValue v[\LogCL](!C)) && \text{আরোহের অনুমান অনুসারে}\\
+  & = \tf{\land}[\LogCL](\pValue v[\LogCL](!B),\pValue v[\LogCL](!C))
+&&\text{শর্ত \olref{prop:land} অনুসারে,}\\
+&&&\text{কারণ $\pValue v[\LogCL](!B),\pValue v[\LogCL](!C) \in \{\True, \False\}$,}\\
+& = \pValue v[\LogCL](!A) &&\text{\olref[val]{defn:pValue} অনুসারে}.
+\end{align*}
+\end{enumerate}
+$!A \ident (!B \lor !C)$ এবং $!A \ident (!B \lif !C)$ ক্ষেত্রদুটিও
+একই রকম।
+\end{proof}
+
+\begin{cor}
+  কোনো বহুমানী যুক্তিবিদ্যা যদি \olref{prop:mvl-cl}-এর শর্তগুলি পূরণ করে,
+  $\True \in V^+$ ও $\False \notin V^+$ হয়, তবে সাধারণ চার-সংযোজক ভাষার সূত্রসমষ্টি ও সূত্রের জন্য
+  ${\Entails[\Log L]} \subseteq {\Entails[\LogCL]}$; অর্থাৎ $\Gamma
+  \Entails[\Log L] !B$ হলে $\Gamma \Entails[\LogCL] !B$। বিশেষত,
+  $\Log L$-এর প্রতিটি সর্বতঃসত্য ধ্রুপদি সর্বতঃসত্যও বটে।
+\end{cor}
+
+\begin{proof}
+  আমরা বিপরীত-প্রতিজ্ঞাটি প্রমাণ করি। ধরা যাক, $\Gamma
+  \Entails/[\LogCL] !B$। তাহলে এমন একটি
+  !!{valuation}~$\pAssign v\colon \PVar \to
+  \{\True, \False\}$ আছে, যাতে প্রতিটি $!A \in \Gamma$-এর জন্য
+  $\pValue v[\LogCL](!A) = \True$ এবং $\pValue v[\LogCL](!B) =
+  \False$। যেহেতু $\True,
+  \False \in V$, তাই !!{valuation}~$\pAssign v$ হলো~$\Log L$-এরও
+  !!a{valuation}। \olref{prop:mvl-cl} অনুসারে, প্রতিটি
+  $!A \in \Gamma$-এর জন্য $\pValue v[\Log L](!A) =
+  \True$ এবং $\pValue v[\Log L](!B) = \False$। যেহেতু $\True \in V^+$
+  এবং $\False \notin V^+$, তার মানে $\pSat{v}{\Gamma}[\Log L]$ এবং
+  $\pSat/{v}{!B}[\Log L]$; অর্থাৎ $\Gamma \Entails/[\Log L] !B$।
+% BN-SRC-315 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-315):} হিমায়িত প্রমাণের শেষ ধাপে সত্যমান-আরোপ~$v$-এর সামনে ভুল করে অনুসিদ্ধান্ত-চিহ্ন বসিয়ে $\pAssign v\Entails[\Log L]\Gamma$ ও $\pAssign v\Entails/[\Log L]!B$ লেখা হয়েছে। অনুসিদ্ধান্ত সূত্রসমষ্টি ও সূত্রের মধ্যে সম্পর্ক; এখানে সংজ্ঞা অনুযায়ী দরকার $\pSat{v}{\Gamma}[\Log L]$ এবং $\pSat/{v}{!B}[\Log L]$, যা বাংলা প্রমাণে পুনরুদ্ধার করা হয়েছে।} % BN-SRC-315 TARGET-CORRECTION-END
+% BN-SRC-316 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-316):} হিমায়িত প্রস্তাবটি~$\Log L$-এর শুধু $\lnot,\land,\lor,\lif$ সত্যমান-অপেক্ষকের সঙ্গে ধ্রুপদি মিল ধরে, কিন্তু সিদ্ধান্তটি ভাষার “যেকোনো” সূত্রের জন্য বলে। অতিরিক্ত সংযোজকযুক্ত সূত্রে $\LogCL$-এর মূল্যায়ন সংজ্ঞায়িত নাও হতে পারে এবং আরোহ-প্রমাণও কেবল এই চার সংযোজকের ক্ষেত্রগুলি দেয়। তাই বাংলা প্রস্তাব ও অনুবর্তী সিদ্ধান্তে সূত্রগুলিকে বচনচল থেকে এই সাধারণ চার সংযোজকে গঠিত খণ্ডে সীমিত করা হয়েছে।} % BN-SRC-316 TARGET-CORRECTION-END
+\end{proof}
+\end{document}

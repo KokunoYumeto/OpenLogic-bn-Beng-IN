@@ -2205,7 +2205,7 @@ for row in rows:
     lambda_definability_completion_math_fix = False
     lambda_definability_completion_expected = {
         "OLP-0379": {"BN-SRC-311", "BN-SRC-312"},
-        "OLP-0380": {"BN-SRC-313", "BN-SRC-314"},
+        "OLP-0380": {"BN-SRC-313", "BN-SRC-314", "BN-SRC-317"},
     }
     audited_lambda_definability_completion = source
     if row["unit_id"] == "OLP-0379":
@@ -2234,6 +2234,10 @@ for row in rows:
                 r"(g\, \vec{x} (\fn{Succ}\, y))]]",
             ),
             (
+                r"(g\, \vec{x} (\fn{Succ}\, y))]]",
+                r"(g\, f\, \vec{x} (\fn{Succ}\, y))]]",
+            ),
+            (
                 r"\num{h(n_1, \dots, n_k)}",
                 r"\num{g(n_1, \dots, n_k)}",
             ),
@@ -2249,6 +2253,32 @@ for row in rows:
         )
         lambda_definability_completion_math_fix = (
             mathparts(audited_lambda_definability_completion) == target_math
+        )
+    many_valued_syntax_semantics_math_fix = False
+    audited_many_valued_syntax_semantics = source
+    if row["unit_id"] == "OLP-0391":
+        repairs = [
+            (
+                "$\\pAssign v\n  \\Entails[\\Log L] \\Gamma$",
+                "$\\pSat{v}{\\Gamma}[\\Log L]$",
+            ),
+            (
+                r"$\pAssign v \Entails/[\Log L] !B$",
+                r"$\pSat/{v}{!B}[\Log L]$",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_many_valued_syntax_semantics.count(old) == 1, old
+            audited_many_valued_syntax_semantics = (
+                audited_many_valued_syntax_semantics.replace(old, new, 1)
+            )
+    if 383 <= unit_number <= 391:
+        expected_many_valued = {
+            "OLP-0391": {"BN-SRC-315", "BN-SRC-316"},
+        }
+        assert set(documented) == expected_many_valued.get(row["unit_id"], set())
+        many_valued_syntax_semantics_math_fix = (
+            mathparts(audited_many_valued_syntax_semantics) == target_math
         )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
@@ -4185,7 +4215,7 @@ for row in rows:
         }
     elif row["unit_id"] == "OLP-0380":
         assert lambda_definability_completion_math_fix
-        assert set(documented) == {"BN-SRC-313", "BN-SRC-314"}
+        assert set(documented) == {"BN-SRC-313", "BN-SRC-314", "BN-SRC-317"}
         collapsed_target = re.sub(r"\s+", " ", checked_target)
         assert all(
             phrase in collapsed_target
@@ -4197,13 +4227,14 @@ for row in rows:
                 r"\num{g(n_1, \dots, n_k)}",
             )
         )
-        assert r"(g\, \vec{x} (\fn{Succ}\, y))]]" in checked_target
+        assert r"(g\, f\, \vec{x} (\fn{Succ}\, y))]]" in checked_target
         assert r"    H & \ident" not in checked_target
         tex_command_check = {
             "documented_corrections": documented,
             "regular_minimization_search_and_closure_reviewed": True,
             "minimized_function_and_representer_names_restored": True,
             "recursive_search_application_closed": True,
+            "recursive_search_representer_carried": True,
         }
     elif row["unit_id"] == "OLP-0381":
         assert lambda_definability_completion_math_fix
@@ -4239,6 +4270,163 @@ for row in rows:
         tex_command_check = {
             "lambda_definable_to_partial_recursive_converse_reviewed": True,
             "godel_coding_normalization_and_church_conversion_outline_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0383":
+        assert many_valued_syntax_semantics_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                r"\olpart{mvl}{বহুমানী যুক্তিবিদ্যা}",
+                "বচনমূলক বহুমানী যুক্তিবিদ্যা",
+                r"\olimport[syntax-and-semantics]{syntax-and-semantics}",
+                r"\olimport[three-valued-logics]{three-valued-logics}",
+                r"\olimport[infinite-valued-logics]{infinite-valued-logics}",
+                r"\olimport[sequent-calculus]{sequent-calculus}",
+            )
+        )
+        tex_command_check = {
+            "many_valued_logic_part_title_reviewed": True,
+            "all_four_part_imports_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0384":
+        assert many_valued_syntax_semantics_math_fix
+        assert not documented
+        assert r"\olchapter{mvl}{syn}{সংকেতবিন্যাস ও অর্থতত্ত্ব}" in checked_target
+        assert all(
+            rf"\olimport{{{name}}}" in checked_target
+            for name in (
+                "introduction",
+                "connectives",
+                "formulas",
+                "matrices",
+                "valuations-sat",
+                "semantic-notions",
+                "sublogics",
+            )
+        )
+        tex_command_check = {
+            "syntax_semantics_chapter_title_reviewed": True,
+            "all_seven_chapter_imports_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0385":
+        assert many_valued_syntax_semantics_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "ধ্রুপদি দ্বিমানী যুক্তিবিদ্যার এমন সাধারণীকরণ",
+                "সত্যমান-অপেক্ষকধর্মী",
+                "মনোনীত মানসমূহ",
+                r"\pSat{v}{!A}[\Log L]",
+                r"\Gamma \Entails[\Log L] !A",
+            )
+        )
+        tex_command_check = {
+            "many_valued_generalization_and_designated_values_reviewed": True,
+            "satisfaction_tautology_and_entailment_overview_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0386":
+        assert many_valued_syntax_semantics_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "বচনমূলক ভাষা",
+                "স্থানসংখ্যা",
+                "$n$-স্থানীয়",
+                "গুণন যুক্তিবিদ্যা",
+                "নির্ধারিততা অপারেটর",
+            )
+        )
+        tex_command_check = {
+            "language_connective_arity_definition_reviewed": True,
+            "product_logic_and_determinateness_examples_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0387":
+        assert many_valued_syntax_semantics_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                r"\Frm[L]",
+                "আরোহীভাবে সংজ্ঞায়িত",
+                r"\star(!A_1, \dots, !A_n)",
+                r"\triangle (\Obj p_1",
+            )
+        )
+        tex_command_check = {
+            "general_propositional_formula_formation_reviewed": True,
+            "product_and_determinateness_formula_examples_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0388":
+        assert many_valued_syntax_semantics_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "ম্যাট্রিক্স",
+                r"V \neq \emptyset",
+                r"V^+ \subseteq V",
+                r"\tf{\star} : V^n \to V",
+                r"\ollabel{fig:tf-CL}",
+            )
+        )
+        tex_command_check = {
+            "logical_matrix_definition_reviewed": True,
+            "classical_matrix_truth_tables_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0389":
+        assert many_valued_syntax_semantics_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                r"\pAssign{v} \colon \PVar \to V",
+                r"\pValue{v} \colon \Frm[L] \to V",
+                r"\pValue{v}(!A)[\Log L] \in V^+",
+                r"\pSat/{v}{!A}[\Log L]",
+            )
+        )
+        tex_command_check = {
+            "many_valued_valuation_and_evaluation_recursion_reviewed": True,
+            "designated_value_satisfaction_definition_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0390":
+        assert many_valued_syntax_semantics_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "পরিতৃপ্তিযোগ্য",
+                "সর্বতঃসত্য",
+                "একঘেয়েতা",
+                "পরিযায়িতা",
+                "অর্থগত নিঃসরণ উপপাদ্য",
+                "সবসময় সত্য নয়",
+            )
+        )
+        tex_command_check = {
+            "many_valued_semantic_notions_reviewed": True,
+            "conditional_dependent_failures_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0391":
+        assert many_valued_syntax_semantics_math_fix
+        assert set(documented) == {"BN-SRC-315", "BN-SRC-316"}
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "উল্লিখিত চারটি সংযোজক ব্যবহার করে বচনচল থেকে গঠিত",
+                "সাধারণ চার-সংযোজক ভাষার সূত্রসমষ্টি ও সূত্রের জন্য",
+                r"\pSat{v}{\Gamma}[\Log L]",
+                r"\pSat/{v}{!B}[\Log L]",
+                r"{\Entails[\Log L]} \subseteq {\Entails[\LogCL]}",
+            )
+        )
+        tex_command_check = {
+            "classical_fragment_agreement_induction_reviewed": True,
+            "satisfaction_not_entailment_for_countervaluation_restored": True,
+            "shared_four_connective_scope_restored": True,
         }
     audited_source = source
     shared_description = None
@@ -4346,6 +4534,7 @@ for row in rows:
             lambda_definability_opening_math_fix,
             lambda_definability_pairs_truth_pr_math_fix,
             lambda_definability_completion_math_fix,
+            many_valued_syntax_semantics_math_fix,
             shared_audit_fix,
         )
     )

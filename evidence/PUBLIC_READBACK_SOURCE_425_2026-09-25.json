@@ -1,0 +1,217 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-25T04:29:57.907482+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "b058bd88055f2ad127b51eb53a182a75d5ef614e",
+  "parent": "daf9a66cbb235f8dd6faaaabcbaf89fd1b668434",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "41a2d22a6d817017c946bac5dee894b200b48a87",
+    "receipt": "PUBLIC_READBACK_SOURCE_417_2026-09-25.json",
+    "receipt_sha256": "596dcba797899b6a105344120c70bd7b166e40b51ad0e3b0a0b2e76fe87858cb"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/b058bd88055f2ad127b51eb53a182a75d5ef614e.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/b058bd88055f2ad127b51eb53a182a75d5ef614e",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 12474126,
+  "archive_sha256": "85f995e9acbbf3108550cd9c26df56fb4ec15305f443bc5a13fa9309698a5560",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/definability.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/definability.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/definability.tex",
+      "content_type": "text/plain",
+      "bytes": 13525,
+      "sha256": "1f6b7f5da98e84e471cbc368ba34f0a36c0f805db9e34ab140cbc3df5bdbaa21"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/equivalence-S5.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/equivalence-S5.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/equivalence-S5.tex",
+      "content_type": "text/plain",
+      "bytes": 9519,
+      "sha256": "9b5f06f0bac64e80d9d8b180f391fabeb6df327b5c79b51d8cc62e6b86f075f4"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/first-order-definability.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/first-order-definability.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/first-order-definability.tex",
+      "content_type": "text/plain",
+      "bytes": 7917,
+      "sha256": "63bca8e7c2748549c59d67e3c95426b6f55817bb677d5751f0a99af695f58714"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/frame-definability.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/frame-definability.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/frame-definability.tex",
+      "content_type": "text/plain",
+      "bytes": 466,
+      "sha256": "f3a83eadfb4b3b11bd7322d4a03d723658eb9f6f76c94f103cb3da74b1a2fc0a"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/frames.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/frames.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/frames.tex",
+      "content_type": "text/plain",
+      "bytes": 3255,
+      "sha256": "dd5a92875727ae4585b3bc1573e968c45cf21ce0d739e3c789bc214542509cca"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 5450,
+      "sha256": "28025dc0f0618ff06b2304a498c860415d2f0c258ac148bd6fffc8bd26e136ed"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/properties-accessibility.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/properties-accessibility.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/properties-accessibility.tex",
+      "content_type": "text/plain",
+      "bytes": 12130,
+      "sha256": "3254dd0feb9ff6d12b0bd5f8698fd9f4d48b5cfbac938e7e093078b75d454b49"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/second-order-definability.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/second-order-definability.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b058bd88055f2ad127b51eb53a182a75d5ef614e/bn-Beng-IN/content/normal-modal-logic/frame-definability/second-order-definability.tex",
+      "content_type": "text/plain",
+      "bytes": 11483,
+      "sha256": "152a3c315374a8106446dcacfe3e8b481346600f5329bd9f2dd9525b9ea9ebb0"
+    }
+  ],
+  "changed_files_verified": 20,
+  "translated_tex_files_in_commit": 8,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 425,
+  "draft_untranslated_total": 297,
+  "segments": 4800,
+  "translated_segments": 4063,
+  "new_batch_segments": 86,
+  "new_batch_translated_segments": 77,
+  "new_batch_unchanged_segments": 9,
+  "source_correction_records": 355,
+  "new_source_correction_records": 6,
+  "source_normalization_records": 3,
+  "translation_decisions": 327,
+  "provisional_translation_decisions": 308,
+  "translation_decision_occurrences": 26744,
+  "decisions_with_exact_source_wording": 311,
+  "ai_assistance": {
+    "product": "OpenAI Codex",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "ultra"
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 425,
+    "blocks": 4800,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/frame-definability/definability.tex",
+      "bytes": 13525,
+      "sha256": "1f6b7f5da98e84e471cbc368ba34f0a36c0f805db9e34ab140cbc3df5bdbaa21"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/frame-definability/equivalence-S5.tex",
+      "bytes": 9519,
+      "sha256": "9b5f06f0bac64e80d9d8b180f391fabeb6df327b5c79b51d8cc62e6b86f075f4"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/frame-definability/first-order-definability.tex",
+      "bytes": 7917,
+      "sha256": "63bca8e7c2748549c59d67e3c95426b6f55817bb677d5751f0a99af695f58714"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/frame-definability/frame-definability.tex",
+      "bytes": 466,
+      "sha256": "f3a83eadfb4b3b11bd7322d4a03d723658eb9f6f76c94f103cb3da74b1a2fc0a"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/frame-definability/frames.tex",
+      "bytes": 3255,
+      "sha256": "dd5a92875727ae4585b3bc1573e968c45cf21ce0d739e3c789bc214542509cca"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/frame-definability/introduction.tex",
+      "bytes": 5450,
+      "sha256": "28025dc0f0618ff06b2304a498c860415d2f0c258ac148bd6fffc8bd26e136ed"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/frame-definability/properties-accessibility.tex",
+      "bytes": 12130,
+      "sha256": "3254dd0feb9ff6d12b0bd5f8698fd9f4d48b5cfbac938e7e093078b75d454b49"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/frame-definability/second-order-definability.tex",
+      "bytes": 11483,
+      "sha256": "152a3c315374a8106446dcacfe3e8b481346600f5329bd9f2dd9525b9ea9ebb0"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 7652028,
+      "sha256": "e911fa37fcb95dc867835229dab263aa00380dad3905856a046b12f9dd4abe44"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 266298,
+      "sha256": "7efd605c14089b25e96bfe316e3c08017035c07e7af1e98391d29c7effa166d7"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_FRAME_DEFINABILITY.md",
+      "bytes": 10374,
+      "sha256": "9046f971485c9cc665b58457f984689a52c0d93b68d491e463f23ec88c99714d"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "7971af907d44df128ca18b5e0de119d85a0cebf2433860d64ccac2f8a74cecee"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 693521,
+      "sha256": "33a4ce7d2bc321e0171148255065b6cdc578303fa797c74a1f06a2161a616867"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 297345,
+      "sha256": "a56dc28d5ace9fe1fc32f4e8ccce7d95bbfcaf5ac7d5ca181463c7d11f6c659e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 16370489,
+      "sha256": "8f99f67a20108ca2518681088d4e5485ebd616a05d244439b0c49fa18015afec"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 12817113,
+      "sha256": "5fc9a2dd3311de999f90f75acc5ffb7a80b53fff14ff38e6959a70586287ae8a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1270922,
+      "sha256": "a93c20f2902970153f9c6c94f92298e2a71722d24710b7399aca06e1e6e8c6e3"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 7340397,
+      "sha256": "36b11255f8837537f69b7b953450d9b0155f4cce098cac262143df59b5ed1c65"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 241264,
+      "sha256": "87a00c437c74dc44c10cddd00cf69d9a61d4b1531589dea2874f798c9a499a9a"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 245938,
+      "sha256": "e3dae0e7590bf1c8c79ed1000afcd9cf009a28b16ab824fad1c6afd4ff993241"
+    }
+  ]
+}

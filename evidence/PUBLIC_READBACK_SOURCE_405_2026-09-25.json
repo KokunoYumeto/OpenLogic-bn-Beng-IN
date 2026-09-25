@@ -1,0 +1,173 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-25T02:24:57.041574+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "3b2bcfdaa6381a3489f546072f7f9283b0fc6488",
+  "parent": "dd7338c59cb4d46be57bc9875d976ac703d700e2",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "c7d9e0c8df7edc415be5fd3af4e15807ceec4326",
+    "receipt": "PUBLIC_READBACK_SOURCE_400_2026-09-25.json",
+    "receipt_sha256": "862d4bb10274a4f8bb0b4d6fe1b2681151751e3c36ea1ae21bac1f10453aaa5e"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/3b2bcfdaa6381a3489f546072f7f9283b0fc6488.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/3b2bcfdaa6381a3489f546072f7f9283b0fc6488",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 31400063,
+  "archive_sha256": "4ba05aa2d304777e30d748afb09d39c1ecddc2f4d074f1a9d7fe80e9ceea41bb",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b2bcfdaa6381a3489f546072f7f9283b0fc6488/bn-Beng-IN/content/many-valued-logic/sequent-calculus/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b2bcfdaa6381a3489f546072f7f9283b0fc6488/bn-Beng-IN/content/many-valued-logic/sequent-calculus/introduction.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6006,
+      "sha256": "d58132be40d50049794021fa3b4ff57ddec0e3e5f6551688c50dd86268bf9b27"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/propositional-rules.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b2bcfdaa6381a3489f546072f7f9283b0fc6488/bn-Beng-IN/content/many-valued-logic/sequent-calculus/propositional-rules.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b2bcfdaa6381a3489f546072f7f9283b0fc6488/bn-Beng-IN/content/many-valued-logic/sequent-calculus/propositional-rules.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 9246,
+      "sha256": "e436e94d30eb8ab784d47ce17bbb21c557de353130783646afb788952795ff14"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/rules-and-proofs.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b2bcfdaa6381a3489f546072f7f9283b0fc6488/bn-Beng-IN/content/many-valued-logic/sequent-calculus/rules-and-proofs.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b2bcfdaa6381a3489f546072f7f9283b0fc6488/bn-Beng-IN/content/many-valued-logic/sequent-calculus/rules-and-proofs.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6009,
+      "sha256": "aada51e6b18271dce3e701ce5e175ec95a70f0065a03a33fc9d3c4a940eca245"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/sequent-calculus.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b2bcfdaa6381a3489f546072f7f9283b0fc6488/bn-Beng-IN/content/many-valued-logic/sequent-calculus/sequent-calculus.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b2bcfdaa6381a3489f546072f7f9283b0fc6488/bn-Beng-IN/content/many-valued-logic/sequent-calculus/sequent-calculus.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 349,
+      "sha256": "ccb2352400ed7660d0e4a42d334933a52250cb9355ad1e286244adfb85c86ae6"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/structural-rules.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b2bcfdaa6381a3489f546072f7f9283b0fc6488/bn-Beng-IN/content/many-valued-logic/sequent-calculus/structural-rules.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b2bcfdaa6381a3489f546072f7f9283b0fc6488/bn-Beng-IN/content/many-valued-logic/sequent-calculus/structural-rules.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 2310,
+      "sha256": "cebeac76233733f3332c240f5f7af7945b8fcf43acb1c22c34e681030c7b2d78"
+    }
+  ],
+  "changed_files_verified": 17,
+  "translated_tex_files_in_commit": 5,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 405,
+  "draft_untranslated_total": 317,
+  "segments": 4588,
+  "translated_segments": 3881,
+  "new_batch_segments": 54,
+  "new_batch_translated_segments": 37,
+  "new_batch_unchanged_segments": 17,
+  "source_correction_records": 338,
+  "new_source_correction_records": 3,
+  "source_normalization_records": 3,
+  "translation_decisions": 318,
+  "provisional_translation_decisions": 299,
+  "translation_decision_occurrences": 26061,
+  "decisions_with_exact_source_wording": 302,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 405,
+    "blocks": 4588,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/introduction.tex",
+      "bytes": 6006,
+      "sha256": "d58132be40d50049794021fa3b4ff57ddec0e3e5f6551688c50dd86268bf9b27"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/propositional-rules.tex",
+      "bytes": 9246,
+      "sha256": "e436e94d30eb8ab784d47ce17bbb21c557de353130783646afb788952795ff14"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/rules-and-proofs.tex",
+      "bytes": 6009,
+      "sha256": "aada51e6b18271dce3e701ce5e175ec95a70f0065a03a33fc9d3c4a940eca245"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/sequent-calculus.tex",
+      "bytes": 349,
+      "sha256": "ccb2352400ed7660d0e4a42d334933a52250cb9355ad1e286244adfb85c86ae6"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/structural-rules.tex",
+      "bytes": 2310,
+      "sha256": "cebeac76233733f3332c240f5f7af7945b8fcf43acb1c22c34e681030c7b2d78"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 7277937,
+      "sha256": "0a54cf5367f3ad249fef87b134d1329571637489b4f41a1aef4891165dc8c8bf"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 252568,
+      "sha256": "031a9bf8b8de60e8935f8befe9270cfaeb6c7e8880a04e4012b5509d59390402"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_MANY_VALUED_LOGIC_SEQUENT_CALCULUS.md",
+      "bytes": 8085,
+      "sha256": "aba3d075ad8f08ed2096771dc09bd394284d86183ec2f451ada6f35350069210"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "986f118251ac8af20d14ee30868ae53ba6d2558fcb323afdf9f0309d6bfcde43"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 662034,
+      "sha256": "0f47c101764de9e147bf8072de4e9a158c4b0cd07b3e84190a9739cbcb613c61"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 288967,
+      "sha256": "0544ca0acbdbbaca1c4d3c830b3e13ccad13f7297ecc6ec0109da4220a9d8863"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 60446803,
+      "sha256": "f0387992261a8c1a86a09fa95015988930236fdc1fe17c655ee25c5070b6d2a9"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 53595444,
+      "sha256": "9d7df36d3ec643f433fff0e2f8d7b6f37fb3c246778f83d1f635904d1a1e7723"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1235731,
+      "sha256": "5976b10b23e663577b6e31850e1b5e82eccba6b680a1da161891a63592d9224c"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 82802617,
+      "sha256": "9d47db5193bcb8af8d65b091cdb40c0365b24401226267f78344cd69d9a3fa1f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 233643,
+      "sha256": "7635edf11ec19230c19f2efce00b1c114b3d0ed2f4874360a74f10e5cdd013fe"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 230560,
+      "sha256": "579576086879c024d8f67f52dc70c95f2a294fa36d5c2b14a85e9eb2a643d10b"
+    }
+  ]
+}

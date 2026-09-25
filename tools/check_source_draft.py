@@ -2437,6 +2437,25 @@ for row in rows:
             assert formal_rule_bodies(source) == formal_rule_bodies(checked_target)
         if row["unit_id"] == "OLP-0406":
             assert sideways_derivation_before_caption(source) == sideways_derivation_before_caption(checked_target)
+    normal_modal_opening_math_fix = False
+    if 407 <= unit_number <= 412:
+        expected_modal_opening = {
+            "OLP-0410": {"BN-SRC-332"},
+            "OLP-0411": {"BN-SRC-333", "BN-SRC-334"},
+        }
+        assert set(documented) == expected_modal_opening.get(row["unit_id"], set())
+        audited_modal_opening = source
+        if row["unit_id"] == "OLP-0410":
+            old = r"$\lnot !A \lor !B)$"
+            new = r"$\lnot !A \lor !B$"
+            assert audited_modal_opening.count(old) == 1
+            audited_modal_opening = audited_modal_opening.replace(old, new, 1)
+        if row["unit_id"] == "OLP-0411":
+            assert source.count(r"\tagitem{prvIf}{\indcase{!A}{(!B \liff") == 1
+            assert checked_target.count(r"\tagitem{prvIff}{\indcase{!A}{(!B \liff") == 1
+            assert source.count(r"\item \indcase{!A}{\Box !B}") == 1
+            assert checked_target.count(r"\tagitem{prvBox}{\indcase{!A}{\Box !B}") == 1
+        normal_modal_opening_math_fix = mathparts(audited_modal_opening) == target_math
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -4777,6 +4796,54 @@ for row in rows:
             "negation_conjunction_disjunction_implication_rule_families_reviewed": True,
             "example_derivation_and_caption_preserved": True,
         }
+    elif row["unit_id"] == "OLP-0407":
+        assert normal_modal_opening_math_fix
+        assert r"\olpart{nml}{স্বাভাবিক মোডাল যুক্তিবিদ্যা}" in checked_target
+        assert all(rf"\olimport[{name}]{{{name}}}" in checked_target for name in (
+            "syntax-and-semantics", "frame-definability", "axioms-systems",
+            "completeness", "filtrations", "tableaux", "sequent-calculus",
+        ))
+        tex_command_check = {"normal_modal_part_title_and_all_seven_imports_reviewed": True}
+    elif row["unit_id"] == "OLP-0408":
+        assert normal_modal_opening_math_fix
+        assert r"\olchapter{nml}{syn}{সংকেতবিন্যাস ও অর্থতত্ত্ব}" in checked_target
+        assert all(rf"\olimport{{{name}}}" in checked_target for name in (
+            "introduction", "language-modal-logic", "substitution", "relational-models",
+            "truth-at-w", "truth-in-model", "modal-validity", "tautological-instances",
+            "schemas", "entailment",
+        ))
+        tex_command_check = {"syntax_semantics_title_and_ten_imports_reviewed": True}
+    elif row["unit_id"] == "OLP-0409":
+        assert normal_modal_opening_math_fix
+        assert all(phrase in checked_target for phrase in (
+            "আবশ্যিকভাবে সম্ভব", "কার্নাপ", "ক্রিপকে", "অভিগম্যতা",
+            "অনুরূপতা তত্ত্ব", r"\Ax{D}", r"\Ax{T}", r"\Ax{B}", r"\Ax{4}", r"\Ax{5}",
+        ))
+        tex_command_check = {"modal_history_kripke_accessibility_and_correspondence_reviewed": True}
+    elif row["unit_id"] == "OLP-0410":
+        assert normal_modal_opening_math_fix
+        assert set(documented) == {"BN-SRC-332"}
+        assert all(phrase in checked_target for phrase in (
+            "মৌলিক মোডাল যুক্তিবিদ্যার ভাষা", r"\tagitem{prvBox}",
+            r"\tagitem{prvDiamond}", r"\iftag{prvOr}{$\lnot !A \lor !B$}",
+        ))
+        tex_command_check = {"modal_language_formation_and_connective_definitions_reviewed": True}
+    elif row["unit_id"] == "OLP-0411":
+        assert normal_modal_opening_math_fix
+        assert set(documented) == {"BN-SRC-333", "BN-SRC-334"}
+        assert all(phrase in checked_target for phrase in (
+            "যুগপৎ প্রতিস্থাপন", r"\tagitem{prvIff}{\indcase{!A}{(!B \liff",
+            r"\tagitem{prvBox}{\indcase{!A}{\Box !B}",
+            "পর্যায়ক্রমিক প্রতিস্থাপনের", r"\Subst{(\Subst{!A}{!D_2}{p_2})}{!D_1}{p_1}",
+        ))
+        tex_command_check = {"simultaneous_substitution_cases_and_iterated_counterexamples_reviewed": True}
+    elif row["unit_id"] == "OLP-0412":
+        assert normal_modal_opening_math_fix
+        assert all(phrase in checked_target for phrase in (
+            r"\mModel{M}", r"\tuple{W, R, V}", r"\olref{fig:simple}",
+            r"\caption{একটি সরল মডেল।}",
+        ))
+        tex_command_check = {"relational_model_world_relation_valuation_and_diagram_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -4887,6 +4954,7 @@ for row in rows:
             three_valued_logics_math_fix,
             infinite_valued_logics_math_fix,
             many_valued_sequent_calculus_math_fix,
+            normal_modal_opening_math_fix,
             shared_audit_fix,
         )
     )

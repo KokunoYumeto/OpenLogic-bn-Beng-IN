@@ -1,0 +1,55 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: relational-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{rel}
+
+\olsection{সম্পর্কমূলক মডেল}
+
+স্বাভাবিক মোডাল যুক্তিবিদ্যার অর্থতত্ত্বের মূল ধারণা হলো \emph{সম্পর্কমূলক
+মডেল}। এটি জগৎগুলির একটি সেট নিয়ে গঠিত; জগৎগুলি একটি দ্বিপদী
+``অভিগম্যতা সম্পর্ক'' দ্বারা যুক্ত। আরও থাকে এমন একটি মাননির্ধারণ, যা
+ঠিক করে কোন !!{propositional variable}s কোন জগতে ``সত্য'' ধরা হবে।
+
+\begin{defn}
+  মৌলিক মোডাল ভাষার একটি \emph{মডেল} হলো ত্রয়ী $\mModel{M}
+  = \tuple{W, R, V}$, যেখানে
+  \begin{enumerate}
+  \item $W$ হলো ``জগৎ''-এর একটি অশূন্য সেট,
+  \item $R$ হলো $W$-এর ওপর একটি দ্বিপদী অভিগম্যতা সম্পর্ক, এবং
+  \item $V$ একটি অপেক্ষক, যা প্রতিটি !!{propositional
+    variable}~$p$-কে সম্ভাব্য জগৎগুলির একটি সেট $V(p)$ নির্ধারণ করে।
+  \end{enumerate}
+  $Rww'$ সত্য হলে বলি $w$ থেকে $w'$ \emph{অভিগম্য}। $w \in V(p)$ হলে
+  বলি $w$-তে $p$ \emph{সত্য}।
+\end{defn}
+
+সম্পর্কমূলক অর্থতত্ত্বের বড় সুবিধা হলো \olref{fig:simple}-এর মতো সহজ
+চিত্রে মডেল দেখানো যায়। জগৎগুলি বিন্দু দিয়ে দেখানো হয়; $w$ থেকে
+$w'$-এ তির থাকলেই এবং কেবল তখনই $w$ থেকে $w'$ অভিগম্য। উপরন্তু
+$w \in V(p)$ হলে বিন্দুটিতে (জগৎটিতে)~$\mTrue{p}$ এবং অন্যথায়
+\mFalse{p} লেখা হয়। \olref{fig:simple}-এ দেখানো মডেলে
+$W = \{w_1, w_2, w_3\}$, $R = \{\tuple{w_1, w_2},\tuple{w_1,
+  w_3}\}$, $V(p) = \{w_1, w_2\}$, এবং $V(q) = \{w_2\}$।
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]right:\mTrue{p}\\ \mFalse{q}}]{$w_1$};
+      \node[world] (w2) [label={[align=right]right:\mTrue{p}\\ \mTrue{q}},
+        above right=of w1]{$w_2$};
+      \node[world] (w3) [label={[align=right]right:\mFalse{p}\\ \mFalse{q}},
+        below right=of w1] {$w_3$};
+      \draw[->] (w1) to (w2);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  \caption{একটি সরল মডেল।}
+  \ollabel{fig:simple}
+\end{figure}
+
+\end{document}

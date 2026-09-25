@@ -1,0 +1,103 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{sub}
+
+\olsection{যুগপৎ প্রতিস্থাপন}
+
+!!a{formula}~$!A$-এর !!a{propositional variable}-এর সব উপস্থিতি
+অন্য কোনো !!{formula} দিয়ে বদলে যে ফল পাওয়া যায়, তা $!A$-এর
+একটি \emph{উদাহরণ}। বৈধতা ও !!{derivability} আলোচনায় !!{formula}s-এর
+উদাহরণ বারবার আসবে। তাই ধারণাটি নির্ভুলভাবে সংজ্ঞায়িত করা দরকার।
+
+\begin{defn}\ollabel{def:subst-inst}
+  ধরা যাক, $!A$ একটি মোডাল !!{formula}, যার সব !!{propositional
+    variable}s $p_1$, \dots, $p_n$-এর মধ্যে রয়েছে, এবং $!D_1$,
+  \dots, $!D_n$-ও মোডাল !!{formula}s। তাহলে $!A$-তে প্রতিটি
+  $p_i$-এর স্থানে যুগপৎ $!D_i$ প্রতিস্থাপন করে পাওয়া ফলকে
+  $\SSubst{!A}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$ দিয়ে
+  সংজ্ঞায়িত করি। আনুষ্ঠানিকভাবে এটি $!A$-এর ওপর আবেশের সংজ্ঞা:
+  \begin{enumerate}
+    \tagitem{prvFalse}{\indcase{!A}{\lfalse}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ হলো $\lfalse$।}}{}
+    \tagitem{prvTrue}{\indcase{!A}{\ltrue}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ হলো $\ltrue$।}}{}
+    \item \indcase{!A}{q}{$q \not\ident p_i$ ($i
+      = 1$, \dots,~$n$) হলে $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+        \subst{!D_n}{p_n}}$ হলো $q$।}
+    \item \indcase{!A}{p_i}{$\SSubst{\indfrm}{\subst{!D_1}{p_1},
+        \dots, \subst{!D_n}{p_n}}$ হলো $!D_i$।}
+    \tagitem{prvNot}{\indcase{!A}{\lnot !B}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$ হলো
+        $\lnot \SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$।}}{}
+    \tagitem{prvAnd}{\indcase{!A}{(!B \land
+        !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ হলো
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \land
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    \tagitem{prvOr}{\indcase{!A}{(!B \lor
+          !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ হলো
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \lor
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    \tagitem{prvIf}{\indcase{!A}{(!B \lif
+          !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ হলো
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \lif
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    \tagitem{prvIff}{\indcase{!A}{(!B \liff
+          !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ হলো
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \liff
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    % BN-SRC-333 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-333):} হিমায়িত উৎসে দ্বিশর্তবাচক প্রতিস্থাপনের ক্ষেত্রটি শর্তবাচক সংযোজকের ট্যাগে বাঁধা; এখানে দ্বিশর্তবাচকের ট্যাগ ব্যবহার করা হয়েছে।} % BN-SRC-333 TARGET-CORRECTION-END
+    \tagitem{prvBox}{\indcase{!A}{\Box !B}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$ হলো
+        $\Box
+        \SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}.$}}{}
+    % BN-SRC-334 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-334):} হিমায়িত উৎসে বক্সের ক্ষেত্রটি ভাষার ট্যাগ ছাড়াই দেওয়া; এখানে সেই ট্যাগ যোগ করা হয়েছে।} % BN-SRC-334 TARGET-CORRECTION-END
+    \tagitem{prvDiamond}{\indcase{!A}{\Diamond !B}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$ হলো
+        $\Diamond
+        \SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}.$}}{}
+  \end{enumerate}
+  !!{formula} $\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
+    \subst{!D_n}{p_n}}$-কে $!A$-এর একটি \emph{প্রতিস্থাপনজাত
+    উদাহরণ} বলে।
+\end{defn}
+
+\begin{ex}
+  ধরা যাক, $!A$ হলো $p_1 \lif \Box(p_1 \land p_2)$, $!D_1$ হলো
+  $\Diamond(p_2 \lif p_3)$ এবং $!D_2$ হলো $\lnot\Box p_1$। তাহলে
+  $\SSubst{!A}{\subst{!D_1}{p_1}, \subst{!D_2}{p_2}}$ হলো
+  \begin{align*}
+    \Diamond(p_2 \lif p_3) &
+    \lif \Box(\Diamond(p_2 \lif p_3) \land \lnot\Box p_1)
+    \intertext{অন্যদিকে $\SSubst{!A}{\subst{!D_2}{p_1}, \subst{!D_1}{p_2}}$ হলো}
+    \lnot\Box p_1 &
+    \lif \Box(\lnot\Box p_1 \land \Diamond(p_2 \lif p_3))
+    \intertext{লক্ষ্য করুন, যুগপৎ প্রতিস্থাপন সাধারণত পর্যায়ক্রমিক প্রতিস্থাপনের
+      সমান নয়। যেমন, উপরের $\SSubst{!A}{\subst{!D_1}{p_1}, \subst{!D_2}{p_2}}$-এর
+      সঙ্গে $\Subst{(\Subst{!A}{!D_1}{p_1})}{!D_2}{p_2}$ তুলনা করুন, যা হলো:}
+    \Diamond(p_2 \lif p_3) & \Subst{\lif \Box(\Diamond(p_2 \lif p_3) \land p_2)}{\lnot\Box p_1}{p_2}, \text{ অর্থাৎ,}\\
+    \Diamond(\lnot\Box p_1 \lif p_3) &
+    \lif \Box(\Diamond(\lnot\Box p_1
+    \lif p_3) \land \lnot\Box p_1)\\
+    \intertext{আর $\Subst{(\Subst{!A}{!D_2}{p_2})}{!D_1}{p_1}$-এর সঙ্গে তুলনা করুন:}
+    p_1 & \lif \Subst{\Box(p_1 \land \lnot\Box p_1)}{\Diamond(p_2 \lif p_3)}{p_1}, \text{ অর্থাৎ,}\\
+    \Diamond(p_2 \lif p_3) &
+    \lif \Box(\Diamond(p_2
+    \lif p_3) \land \lnot\Box\Diamond(p_2 \lif p_3)).
+  \end{align*}
+\end{ex}
+
+\end{document}

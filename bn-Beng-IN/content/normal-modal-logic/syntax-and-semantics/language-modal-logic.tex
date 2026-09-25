@@ -1,0 +1,107 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: language-modal-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{lan}
+
+\olsection{মৌলিক মোডাল যুক্তিবিদ্যার ভাষা}
+
+\begin{defn}
+মোডাল যুক্তিবিদ্যার মৌলিক ভাষায় রয়েছে
+\begin{enumerate}
+  \tagitem{prvFalse}{!!{falsity}-র বচনমূলক ধ্রুবক~$\lfalse$।}{}
+  \tagitem{prvTrue}{!!{truth}-এর বচনমূলক ধ্রুবক~$\ltrue$।}{}
+  \item !!{propositional variable}s-এর একটি !!{denumerable}s সেট: $\Obj
+    p_0$, $\Obj p_1$, $\Obj p_2$, \dots
+  \item বচনমূলক সংযোজকগুলি: \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (নিষেধ)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (সংযোগ)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (বিয়োজন)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}।
+  \tagitem{prvBox}{মোডাল অপারেটর $\Box$।}{}
+  \tagitem{prvDiamond}{মোডাল অপারেটর $\Diamond$।}{}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+মৌলিক মোডাল ভাষার \emph{!!^{formula}s} আবেশের মাধ্যমে এভাবে সংজ্ঞায়িত:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ একটি পরমাণু !!{formula}।}{}
+
+\tagitem{prvTrue}{$\ltrue$ একটি পরমাণু !!{formula}।}{}
+
+\item প্রতিটি !!{propositional variable} $\Obj p_i$ একটি (পরমাণু) !!{formula}।
+
+\tagitem{prvNot}{$!A$ !!a{formula} হলে $\lnot !A$-ও
+  !!a{formula}।}{}
+
+\tagitem{prvAnd}{$!A$ ও $!B$ !!{formula}s হলে $(!A \land
+  !B)$-ও !!a{formula}।}{}
+
+\tagitem{prvOr}{$!A$ ও $!B$ !!{formula}s হলে $(!A \lor !B)$-ও
+  !!a{formula}।}{}
+
+\tagitem{prvIf}{$!A$ ও $!B$ !!{formula}s হলে $(!A \lif !B)$-ও
+  !!a{formula}।}{}
+
+\tagitem{prvIff}{$!A$ ও $!B$ !!{formula}s হলে $(!A \liff !B)$-ও
+  !!a{formula}।}{}
+
+\tagitem{prvBox}{$!A$ !!a{formula} হলে $\Box !A$-ও
+  !!a{formula}।}{}
+
+\tagitem{prvDiamond}{$!A$ !!a{formula} হলে $\Diamond !A$-ও
+  !!a{formula}।}{}
+
+\tagitem{limitClause}{এগুলি ছাড়া আর কিছুই !!a{formula} নয়।}{}
+\end{enumerate}
+\end{defn}
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defBox,defDiamond}
+\begin{defn}
+সংজ্ঞায়িত অপারেটর ব্যবহার করে গঠিত সূত্রগুলিকে নিম্নরূপে বুঝতে হবে:
+
+\begin{tagenumerate}{defTrue,defFalse,defNot,defOr,defAnd,defIf,defIff,defBox,defDiamond}
+
+\tagitem{defTrue}{$\ltrue$ হলো
+  \iftag{prvFalse}{$\lnot\lfalse$}{$(!A \lor \lnot !A)$-এর সংক্ষিপ্ত রূপ,
+    যেখানে $!A$ একটি নির্দিষ্ট পরমাণু !!{formula}}।}{}
+
+\tagitem{defFalse}{$\lfalse$ হলো
+  \iftag{prvTrue}{$\lnot\ltrue$}{$(!A \land \lnot !A)$-এর সংক্ষিপ্ত রূপ,
+    যেখানে $!A$ একটি নির্দিষ্ট পরমাণু !!{formula}}।}{}
+
+\tagitem{defNot}{$\lnot !A$ হলো $!A \lif \lfalse$-এর সংক্ষিপ্ত রূপ।}{}
+
+\tagitem{defOr}{$!A \lor !B$ হলো
+  \iftag{prvAnd}{$\lnot(\lnot !A \land \lnot !B)$}{$\lnot !A \lif
+    !B$}-এর সংক্ষিপ্ত রূপ।}{}
+
+\tagitem{defAnd}{$!A \land !B$ হলো
+  \iftag{prvOr}{$\lnot(\lnot !A \lor \lnot !B)$}{$\lnot (!A \lif
+    \lnot !B)$}-এর সংক্ষিপ্ত রূপ।}{}
+
+\tagitem{defIf}{$!A \lif !B$ হলো
+  \iftag{prvOr}{$\lnot !A \lor !B$}{$\lnot (!A \land \lnot !B)$}-এর সংক্ষিপ্ত রূপ।}{}
+% BN-SRC-332 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-332):} হিমায়িত উৎসে বিকল্প সংজ্ঞার প্রথম সূত্রের শেষে একটি অতিরিক্ত বন্ধনী আছে; এখানে সেটি বাদ দেওয়া হয়েছে।} % BN-SRC-332 TARGET-CORRECTION-END
+
+\tagitem{defIff}{$!A \liff !B$ হলো $(!A \lif !B) \land (!B
+  \lif !A)$-এর সংক্ষিপ্ত রূপ।}{}
+
+\tagitem{defBox}{$\Box !A$ হলো $\lnot\Diamond\lnot !A$-এর সংক্ষিপ্ত রূপ। }{}
+
+\tagitem{defDiamond}{$\Diamond !A$ হলো $\lnot\Box\lnot !A$-এর সংক্ষিপ্ত রূপ।}{}
+\end{tagenumerate}
+\end{defn}
+\end{tagblock}
+
+!!a{formula}~$!A$-তে $\Box$ বা $\Diamond$ কোনোটিই না থাকলে তাকে
+\emph{মোডাল অপারেটরবিহীন} বলি।
+
+\end{document}

@@ -1,0 +1,36 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{con}
+
+\olsection{সঙ্গতি}
+
+সঙ্গতি !!{formula}s-এর সমষ্টির একটি গুরুত্বপূর্ণ বৈশিষ্ট্য। কোনো !!{formula}s-এর সমষ্টি থেকে~$\lfalse$-এর মতো স্ববিরোধ !!{derivable} হলে সমষ্টিটি অসঙ্গত; নইলে সঙ্গতি আছে। সমষ্টিটি অসঙ্গত হলে তার সব !!{formula}s কোনো মডেলের একটি জগতে একসঙ্গে সত্য হতে পারে না। পূর্ণতার উপপাদ্যের জন্য আমরা বিপরীতটিও প্রমাণ করব: প্রতিটি সঙ্গতি-সম্পন্ন সমষ্টি কোনো মডেলের একটি জগতে সত্য; সেই মডেলটি ‘প্রামাণিক মডেল’।
+
+\begin{defn}
+  সমষ্টি $\Gamma$ পদ্ধতি~$\Sigma$-র সাপেক্ষে \emph{সঙ্গতি-সম্পন্ন}, অথবা সংক্ষেপে $\Sigma$-সঙ্গত, তখনই এবং কেবল তখনই, যখন $\Gamma \Proves/[\Sigma] \lfalse$।
+\end{defn}
+
+যেমন, সমষ্টি $\{ \Box(p \lif q), \Box p, \lnot\Box q \}$ প্রতিজ্ঞামূলক যুক্তিবিদ্যার সাপেক্ষে সঙ্গতি-সম্পন্ন, কিন্তু \Log{K}-সঙ্গত নয়। একইভাবে $\{ \Diamond p, \Box\Diamond p \lif q, \lnot q \}$ \Log{K5}-সঙ্গত নয়।
+
+\begin{prop}\ollabel{prop:consistencyfacts}
+  ধরা যাক $\Gamma$ !!{formula}s-এর একটি সমষ্টি। তবে:
+  \begin{enumerate}
+  \item $\Gamma$ তখনই এবং কেবল তখনই $\Sigma$-সঙ্গত, যখন এমন কোনো !!{formula}~$!A$ আছে যার জন্য $\Gamma \Proves/[\Sigma] !A$।
+  \item \ollabel{prop:consistencyfacts-b}%
+    $\Gamma \Proves[\Sigma] !A$ তখনই এবং কেবল তখনই, যখন $\Gamma \cup \{ \lnot!A \}$ $\Sigma$-সঙ্গত নয়।
+  \item \ollabel{prop:consistencyfacts-c}%
+    $\Gamma$ $\Sigma$-সঙ্গত হলে যেকোনো !!{formula} $!A$-এর জন্য হয় $\Gamma \cup \{ !A \}$ $\Sigma$-সঙ্গত, নয়তো $\Gamma \cup \{ \lnot!A \}$ $\Sigma$-সঙ্গত।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  ধ্রুপদি প্রতিজ্ঞামূলক যুক্তিবিদ্যা থেকে এই তথ্যগুলি সহজেই পাওয়া যায়। \olref{prop:consistencyfacts-c}-এর যুক্তিটি দিই। বিপরীতক্রমে ধরি, $\Gamma \cup \{ !A \}$ এবং $\Gamma \cup \{ \lnot!A \}$—কোনোটিই $\Sigma$-সঙ্গত নয়। তখন \olref{prop:consistencyfacts-b} অনুসারে $\Gamma, !A \Proves[\Sigma] \lfalse$ এবং $\Gamma, \lnot !A \Proves[\Sigma] \lfalse$—উভয়ই সত্য। নিষ্পাদন উপপাদ্য অনুসারে $\Gamma \Proves[\Sigma] !A \to \lfalse$ এবং $\Gamma \Proves[\Sigma] \lnot!A \lif \lfalse$। কিন্তু $(!A \lif \lfalse) \lif ((\lnot!A \lif \lfalse) \lif \lfalse)$ সর্বতঃসত্য সূত্রের একটি উদাহরণ। অতএব \olref[prp]{prop:derivabilityfacts}\olref[prp]{prop:derivabilityfacts-ruleT} থেকে $\Gamma \Proves[\Sigma] \lfalse$।
+\end{proof}
+
+\end{document}

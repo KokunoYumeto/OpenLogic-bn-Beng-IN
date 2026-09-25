@@ -1,0 +1,103 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: proofs-modal-systems
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{prs}
+
+\olsection{মোডাল পদ্ধতিতে প্রমাণ}
+
+এবার~\Log{K} ছাড়া অন্য মোডাল যুক্তিবিদ্যার পদ্ধতিগুলিতে প্রমাণ নিয়ে আলোচনা করি।
+
+\begin{prop}\ollabel{prop:S5facts}
+নিচের প্রমাণযোগ্যতার ফলগুলি সত্য:
+  \begin{enumerate}
+  \item $\Log{KT5} \Proves \Ax{B}$;
+  \item $\Log{KT5} \Proves \Ax{4}$;
+  \item $\Log{KDB4} \Proves \Ax{T}$;
+  \item $\Log{KB4} \Proves \Ax{5}$;
+  \item $\Log{KB5} \Proves \Ax{4}$;
+  \item \ollabel{prop:S5facts-KT-D}$\Log{KT} \Proves \Ax{D}$।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  প্রতিটির প্রমাণ দেখাই।
+  \begin{enumerate}
+    \item $\Log{KT5} \Proves \Ax{B}$:
+      \begin{derivation}
+        1. & $\Log{KT5} \Proves \Diamond!A \lif \Box\Diamond!A$ & \Ax{5}\\
+        2. & $\Log{KT5} \Proves !A \lif \Diamond!A$ & $\Ax{T_\Diamond}$\\
+        3. & $\Log{KT5} \Proves !A \lif \Box\Diamond!A$ & \PL, 2, 1.
+      \end{derivation}
+    \item $\Log{KT5} \Proves \Ax{4}$:
+      \begin{derivation}
+        1. &$\Log{KT5} \Proves \Diamond\Box!A \lif \Box\Diamond\Box!A$ & \Ax{5}
+        যেখানে $p$-এর জায়গায় $\Box!A$\\
+        2. & $\Log{KT5} \Proves \Box!A \lif \Diamond\Box!A$ & $\Ax{T_\Diamond}$
+        যেখানে $p$-এর জায়গায় $\Box!A$\\
+        3. & $\Log{KT5} \Proves \Box!A \lif \Box\Diamond\Box!A$ & \PL, 2, 1\\
+        4. & $\Log{KT5} \Proves \Diamond\Box!A \lif \Box!A$ & $\Ax{5_\Diamond}$\\
+        5. & $\Log{KT5} \Proves \Box\Diamond\Box!A \lif \Box\Box!A$ & \RK{}, 4 \\
+        6. & $\Log{KT5} \Proves \Box!A \lif \Box\Box!A$ & \PL, 3, 5. \\
+      \end{derivation}
+    \item $\Log{KDB4} \Proves \Ax{T}$:
+      \begin{derivation}
+        1. & $\Log{KDB4} \Proves \Diamond\Box!A \lif !A $ & $\Ax{B_\Diamond}$ \\
+        2. & $\Log{KDB4} \Proves \Box\Box!A \lif \Diamond\Box!A$ & $\Ax{D}$
+        যেখানে $p$-এর জায়গায় $\Box!A$\\
+        3. & $\Log{KDB4} \Proves \Box\Box!A \lif !A$ & \PL, 1, 2\\
+        4. & $\Log{KDB4} \Proves \Box!A \lif \Box\Box!A$ & \Ax{4} \\
+        5. & $\Log{KDB4} \Proves \Box!A \lif !A$ & \PL, 4, 3. \\
+      \end{derivation}
+    \item $\Log{KB4} \Proves \Ax{5}$:
+      \begin{derivation}
+        1. & $\Log{KB4} \Proves \Diamond!A \lif \Box \Diamond\Diamond!A$ & \Ax{B}
+        যেখানে $p$-এর জায়গায় $\Diamond!A$\\
+        2. & $\Log{KB4} \Proves \Diamond\Diamond !A \lif \Diamond !A$ &
+        $\Ax{4_\Diamond}$ \\
+        3. & $\Log{KB4} \Proves \Box\Diamond\Diamond !A \lif \Box \Diamond!A$ &
+        \RK{}, 2 \\
+        4. & $\Log{KB4} \Proves \Diamond!A \lif \Box\Diamond!A$ & \PL, 1, 3.
+      \end{derivation}
+    \item $\Log{KB5} \Proves \Ax{4}$:
+      \begin{derivation}
+        1. & $\Log{KB5} \Proves \Box!A \lif \Box\Diamond\Box !A$ & \Ax{B} যেখানে
+        $p$-এর জায়গায় $\Box!A$ \\
+        2. & $\Log{KB5} \Proves  \Diamond\Box!A \lif \Box !A$ &
+        $\Ax{5_\Diamond}$\\
+        3. & $\Log{KB5} \Proves  \Box\Diamond\Box!A \lif \Box\Box !A$ & \RK{}, 2 \\
+        4. & $\Log{KB5} \Proves  \Box!A \lif \Box\Box!A$ & \PL, 1, 3.
+      \end{derivation}
+    \item $\Log{KT} \Proves \Ax{D}$:
+      \begin{derivation}
+        1. & $\Log{KT} \Proves \Box !A \lif !A$ & \Ax{T} \\
+        2. & $\Log{KT} \Proves !A \lif \Diamond!A$ & $\Ax{T_\Diamond}$ \\
+        3. & $\Log{KT} \Proves \Box !A \lif \Diamond !A$ &  \PL, 1, 2
+      \end{derivation}
+  \end{enumerate}
+\end{proof}
+
+\begin{defn}
+  প্রচলিত রীতি অনুসারে, \Log{S4} বলতে \Log{KT4} পদ্ধতিকে এবং \Log{S5} বলতে \Log{KTB4} পদ্ধতিকে বোঝাই।
+\end{defn}
+
+নিচের প্রস্তাবটি দেখায়, ধ্রুপদি \Log{S5} পদ্ধতির কয়েকটি সমতুল্য স্বতঃসিদ্ধায়ন আছে। এতে বিস্ময়ের কিছু নেই: স্বতঃসিদ্ধগুলির বিভিন্ন সমন্বয়ই তুল্যতা সম্পর্ককে চিহ্নিত করে (\olref[frd][es5]{prop:equivalences} দেখুন)।
+
+\begin{prop}\ollabel{prop:S5}
+  $\Log{KTB4} = \Log{KT5} = \Log{KDB4} = \Log{KDB5}$।
+\end{prop}
+
+\begin{proof}
+  অনুশীলন।
+\end{proof}
+
+\begin{prob}
+  \olref[nml][prf][prs]{prop:S5} প্রমাণ করুন।
+\end{prob}
+
+
+\end{document}

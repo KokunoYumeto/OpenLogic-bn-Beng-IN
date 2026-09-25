@@ -2544,6 +2544,49 @@ for row in rows:
             assert source.count(r"\tagitem{prvTrue}{\indcase{!A}{\lfalse}") == 1
             assert checked_target.count(r"\tagitem{prvTrue}{\indcase{!A}{\ltrue}") == 1
             assert checked_target.count(r"\tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}") == 1
+    axioms_systems_math_fix = False
+    if 427 <= unit_number <= 440:
+        expected_axioms_corrections = {
+            "OLP-0430": {"BN-SRC-349"},
+            "OLP-0432": {"BN-SRC-350", "BN-SRC-351"},
+            "OLP-0437": {"BN-SRC-352", "BN-SRC-353"},
+        }
+        assert set(documented) == expected_axioms_corrections.get(row["unit_id"], set())
+        expected_axioms_delta = {
+            "OLP-0430": (
+                collections.Counter({r"K\in\Sigma": 1}),
+                collections.Counter({r"\Ax{K}\in\Sigma": 1}),
+            ),
+            "OLP-0432": (
+                collections.Counter({
+                    r"\Log{K}\Proves\Box!A\lif(\Box!B\lif\Box(!A\land!B)))": 1,
+                    r"\Log{K}\Proves\Subst{!C}{B}{q}": 1,
+                }),
+                collections.Counter({
+                    r"\Log{K}\Proves\Box!A\lif(\Box!B\lif\Box(!A\land!B))": 1,
+                    r"\Log{K}\Proves\Subst{!C}{!B}{q}": 1,
+                }),
+            ),
+            "OLP-0437": (
+                collections.Counter({
+                    r"\Log{KT}\Proves\Log{D}": 1,
+                    r"\Log{KTB}\Proves/\Log{4}": 1,
+                    r"\Log{KTB}\Proves/\Log{5}": 1,
+                }),
+                collections.Counter({
+                    r"\Log{KT}\Proves\Ax{D}": 1,
+                    r"\Log{KTB}\Proves/\Ax{4}": 1,
+                    r"\Log{KTB}\Proves/\Ax{5}": 1,
+                }),
+            ),
+        }
+        expected_removed, expected_added = expected_axioms_delta.get(
+            row["unit_id"], (collections.Counter(), collections.Counter())
+        )
+        axioms_systems_math_fix = (
+            source_math - target_math == expected_removed
+            and target_math - source_math == expected_added
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -5039,6 +5082,26 @@ for row in rows:
             r"\ollabel{prop:st}",
         ))
         tex_command_check = {"standard_translation_all_cases_monadic_definition_and_reflexivity_proof_reviewed": True}
+    elif 427 <= unit_number <= 440:
+        assert axioms_systems_math_fix
+        axioms_review_anchors = {
+            "OLP-0427": (r"\olchapter{nml}{prf}", r"\olimport{consistency}"),
+            "OLP-0428": (r"\olfileid{nml}{axs}{int}", r"\begin{prooftree}", r"\Sigma \Proves !A"),
+            "OLP-0429": (r"\ollabel{prop:rk}", r"\ollabel{prop:notDiamondBot}", r"\Frm[L]"),
+            "OLP-0430": (r"\Setabs{!B}{\Log{K}", r"\Ax{K} \in \Sigma"),
+            "OLP-0431": (r"\olfileid{nml}{prf}{prk}", r"\begin{derivation}", r"\iftag{prvBox}"),
+            "OLP-0432": (r"\ollabel{prop:rewriting}", r"\Subst{!C}{!B}{q}", r"\PL"),
+            "OLP-0433": (r"\Diamond(!A \lor!B)", r"\olref[der]{sec}"),
+            "OLP-0434": (r"\ollabel{def:duals}", r"\Ax{5_\Diamond}", r"\ollabel{prop:dualsys}"),
+            "OLP-0435": (r"\ollabel{prop:S5facts}", r"\Log{KTB4} = \Log{KT5}", r"\ollabel{prop:S5}"),
+            "OLP-0436": (r"\ollabel{thm:soundness}", r"\mClass{C}_1 \cap \dots \cap \mClass{C}_n"),
+            "OLP-0437": (r"\ollabel{thm:KTBnot45}", r"\ollabel{thm:KD5not4}", r"\ollabel{fig:KD5not4}"),
+            "OLP-0438": (r"\ollabel{defn:Gammaproves}", r"\Gamma \Proves[\Sigma] !A"),
+            "OLP-0439": (r"\ollabel{prop:derivabilityfacts-cut}", r"\ollabel{prop:derivabilityfacts-ruleT}"),
+            "OLP-0440": (r"\ollabel{prop:consistencyfacts}", r"\Gamma \Proves/[\Sigma] \lfalse"),
+        }
+        assert all(anchor in checked_target for anchor in axioms_review_anchors[row["unit_id"]])
+        tex_command_check = {"modal_axioms_systems_proofs_and_anchors_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5152,6 +5215,7 @@ for row in rows:
             normal_modal_opening_math_fix,
             normal_modal_completion_math_fix,
             frame_definability_math_fix,
+            axioms_systems_math_fix,
             shared_audit_fix,
         )
     )

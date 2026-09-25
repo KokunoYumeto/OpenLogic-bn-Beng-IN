@@ -1,0 +1,93 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: normal-logics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{nor}
+
+\olsection{স্বাভাবিক মোডাল যুক্তিবিদ্যা}
+
+মোডাল !!{formula}s-এর যেকোনো সমষ্টিকে স্বতঃসিদ্ধসমষ্টি থেকে নিষ্পাদনযোগ্য !!{formula}s হিসেবে সহজে চিহ্নিত করা যায় না। তাই মোডাল যুক্তিবিদ্যার কিছু সুবিন্যস্ত বৈশিষ্ট্য চাই। প্রথমত, ধ্রুপদি প্রতিজ্ঞামূলক যুক্তিবিদ্যায় যা কিছু !!{derive} করা যায়, তা এখানেও !!{derivable} হওয়া উচিত; অবশ্য এখন !!{formula}s-এর মধ্যে \iftag{prvBox}{$\Box$\iftag{prvDiamond}{ এবং~}{}}{}\iftag{prvDiamond}{$\Diamond$}{}-ও থাকতে পারে। এই উদ্দেশ্যে চাই, মোডাল যুক্তিবিদ্যায় সর্বতঃসত্য সূত্রের সব উদাহরণ থাকুক এবং তা মোডাস পোনেন্সের অধীনে বদ্ধ থাকুক।
+
+\begin{defn}
+  একটি \emph{মোডাল যুক্তিবিদ্যা} হলো মোডাল !!{formula}s-এর এমন সমষ্টি~$\Sigma$, যা
+  \begin{enumerate}
+  \item সব সর্বতঃসত্য সূত্র ধারণ করে; এবং
+  \item প্রতিস্থাপনের অধীনে বদ্ধ, অর্থাৎ $!A \in \Sigma$ এবং $!D_1$, \dots, $!D_n$ যদি !!{formula}s হয়, তবে
+    \[
+    \SSubst{!A}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \in \Sigma,
+    \]
+    \item \emph{মোডাস পোনেন্সের} অধীনে বদ্ধ, অর্থাৎ $!A$ এবং $!A
+      \lif !B \in \Sigma$ হলে $!B \in \Sigma$।
+  \end{enumerate}
+\end{defn}
+
+মোডাল যুক্তিবিদ্যার জন্য সম্পর্কমূলক অর্থতত্ত্ব ব্যবহার করতে চাইলে, সব মোডাল মডেলে বৈধ !!{formula}s-ও তাতে থাকা চাই। দেখা যায়, \Ax{K}\iftag{prvDiamond}{ এবং~\Dual{}}{}-এর সব উদাহরণ !!{derivable} হলেই এবং কোনো !!a{formula}~$!A$ !!{derivable} হলে~$\Box !A$-ও নিষ্পাদনযোগ্য হলেই এই শর্ত পূরণ হয়। এই শর্তপূরণকারী মোডাল যুক্তিবিদ্যাকে \emph{স্বাভাবিক} বলে। (অবশ্য অস্বাভাবিক মোডাল যুক্তিবিদ্যাও আছে, কিন্তু প্রচলিত সম্পর্কমূলক মডেল সেগুলির জন্য যথাযথ নয়।)
+
+\begin{defn}
+  একটি মোডাল যুক্তিবিদ্যা $\Sigma$ \emph{স্বাভাবিক}, যদি তাতে থাকে
+  \begin{align*}
+    \tag{\Ax{K}} & \Box(p \lif q) \lif (\Box p \lif \Box q),
+    \iftag{prvDiamond}{\\
+      \tag{\Dual} & \Diamond p \liff \lnot\Box\lnot p}{}
+  \end{align*}
+  এবং তা \emph{আবশ্যকীকরণের} অধীনে বদ্ধ হয়, অর্থাৎ $!A \in
+  \Sigma$ হলে $\Box !A \in \Sigma$।
+\end{defn}
+
+লক্ষ করুন, সর্বতঃসত্য সূত্র থেকে অনুসরণের ধারণা \emph{কোনো জগতে সত্যতা} বজায় রাখার মতো যথেষ্ট সূক্ষ্ম; কিন্তু \Nec{} বিধিটি শুধু \emph{কোনো মডেলে সত্যতা} বজায় রাখে (ফলে কোনো কাঠামোতে বা কাঠামোর শ্রেণিতে বৈধতাও বজায় রাখে)।
+
+\begin{prop}\ollabel{prop:rk}
+  প্রতিটি স্বাভাবিক মোডাল যুক্তিবিদ্যা \RK{} বিধির অধীনে বদ্ধ:
+  \begin{prooftree}
+    \AxiomC{$!A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif !A_n)\cdots)$}
+    \RightLabel{\RK}
+    \UnaryInfC{$\Box!A_1 \lif (\Box!A_2 \lif \cdots (\Box!A_{n-1}
+      \lif \Box!A_n)\cdots).$}
+  \end{prooftree}
+\end{prop}
+
+\begin{proof}
+  $n$-এর উপর গাণিতিক আরোহে প্রমাণ করি। $n = 1$ হলে বিধিটি ঠিক \Nec, আর প্রতিটি স্বাভাবিক মোডাল যুক্তিবিদ্যা \Nec{}-এর অধীনে বদ্ধ।
+
+  এবার ধরা যাক, ফলটি $n-1$-এর জন্য সত্য; $n$-এর জন্য দেখাই।
+
+  ধরি,
+  \begin{align*}
+  & !A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif !A_n)\cdots) \in \Sigma
+  \intertext{আরোহের অনুমান থেকে পাই}
+  & \Box!A_1 \lif (\Box!A_2 \lif \cdots \Box(!A_{n-1} \lif !A_n)\cdots)
+  \in \Sigma
+  \intertext{$\Sigma$ স্বাভাবিক মোডাল যুক্তিবিদ্যা বলে তাতে~$\Ax{K}$-এর সব উদাহরণ আছে, বিশেষত}
+  & \Box(!A_{n-1} \lif !A_n) \lif (\Box!A_{n-1} \lif \Box!A_n) \in \Sigma
+  \intertext{মোডাস পোনেন্স ও উপযুক্ত সর্বতঃসত্য সূত্রের উদাহরণ প্রয়োগে পাই}
+  & \Box!A_1 \lif (\Box!A_2 \lif \cdots (\Box!A_{n-1}
+  \lif \Box!A_n)\cdots) \in \Sigma.
+  \end{align*}
+\end{proof}
+
+\begin{prop}\ollabel{prop:notDiamondBot}
+  প্রতিটি স্বাভাবিক মোডাল যুক্তিবিদ্যা $\Sigma$-তে~$\lnot\Diamond\lfalse$ আছে।
+\end{prop}
+
+\begin{prob}
+  \olref[nml][prf][nor]{prop:notDiamondBot} প্রমাণ করুন।
+\end{prob}
+
+\begin{prop}
+  ধরা যাক $!A_1$, \dots, $!A_n$ হলো !!{formula}s। তবে $!A_1$, \dots, $!A_n$-এর সব উদাহরণ ধারণকারী একটি ক্ষুদ্রতম মোডাল যুক্তিবিদ্যা $\Sigma$ আছে।
+\end{prop}
+
+\begin{proof}
+  $!A_1$, \dots, $!A_n$ দেওয়া থাকলে $!A_1$, \dots, $!A_n$-এর সব উদাহরণ ধারণকারী সমস্ত স্বাভাবিক মোডাল যুক্তিবিদ্যার ছেদকে $\Sigma$ ধরি। ছেদটি শূন্য নয়: সব !!{formula}s-এর সমষ্টি $\Frm[L]$ নিজেই এমন একটি মোডাল যুক্তিবিদ্যা।
+\end{proof}
+
+\begin{defn}
+$!A_1$, \dots, $!A_n$ ধারণকারী ক্ষুদ্রতম স্বাভাবিক মোডাল যুক্তিবিদ্যাকে একটি \emph{মোডাল পদ্ধতি} বলে এবং $\Log{K} !A_1 \dots
+!A_n$ দিয়ে প্রকাশ করে। ক্ষুদ্রতম স্বাভাবিক মোডাল যুক্তিবিদ্যাকে~\Log{K} দিয়ে প্রকাশ করে।
+\end{defn}
+
+\end{document}

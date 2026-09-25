@@ -1,0 +1,49 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: logics-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{prf}
+
+\olsection{\usetoken{P}{derivation} ও মোডাল পদ্ধতি}
+
+প্রথমে স্বাভাবিক মোডাল যুক্তিবিদ্যায় !!a{derivation} কী, তা সংজ্ঞায়িত করি। মোটামুটিভাবে !!a{derivation} হলো !!{formula}s-এর একটি ক্রম, যার প্রতিটি !!{element} হয় কয়েকটি \emph{স্বতঃসিদ্ধ}-এর কোনো একটির (প্রতিস্থাপনজাত উদাহরণ), নয়তো কয়েকটি অনুমান-বিধির কোনো একটি দ্বারা আগের !!{element}s থেকে প্রাপ্ত। স্বাভাবিক মোডাল যুক্তিবিদ্যায় সর্বতঃসত্য সূত্রের সব উদাহরণ\iftag{prvDiamond}{, \Ax{K} এবং~\Dual{}}{ এবং~\Ax{K}} স্বতঃসিদ্ধ হিসেবে গণ্য হয়। এর ফলে ক্ষুদ্রতম স্বাভাবিক মোডাল যুক্তিবিদ্যা, মোডাল পদ্ধতি~$\Log{K}$, পাওয়া যায়। তবে অন্যান্য পদ্ধতি পেতে অতিরিক্ত স্বতঃসিদ্ধ যোগ করতে পারি। বিধি সর্বদা মোডাস পোনেন্স~\MP{} এবং আবশ্যকীকরণ~\Nec।
+
+\begin{defn}
+  একটি মোডাল পদ্ধতি $\Log{K} !A_1 \dots !A_n$ এবং !!a{formula}~$!B$ দেওয়া থাকলে, বলি $!B$ পদ্ধতি $\Log{K} !A_1 \dots
+  !A_n$-তে \emph{!!{derivable}}; লিখি $\Log{K} !A_1 \dots !A_n \Proves !B$। ঠিক তখনই এমন !!{formula}s $!C_1$, \dots, $!C_k$ থাকবে, যাতে $!C_k = !B$ এবং প্রতিটি $!C_i$ হয় সর্বতঃসত্য সূত্রের কোনো উদাহরণ, নয়তো $\Ax{K}$,\iftag{prvDiamond}{ $\Dual$,}{} $!A_1$, \dots, $!A_n$-এর কোনো একটির উদাহরণ, অথবা আগের !!{formula}s থেকে \MP{} কিংবা~\Nec{} বিধিতে প্রাপ্ত।
+\end{defn}
+
+নিচের প্রস্তাব অনুসারে $!B$-এর একটি $\Sigma$-!!{derivation} প্রদর্শন করেই $!B \in \Sigma$ দেখানো যায়।
+
+\begin{prop}
+  $\Log{K} !A_1 \dots !A_n = \Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B}$।
+\end{prop}
+
+\begin{proof}
+  !!{derivation}s-এর দৈর্ঘ্যের উপর গাণিতিক আরোহে দেখাই,
+  $\Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B} \subseteq
+  \Log{K} !A_1 \dots !A_n$।
+
+  $!B$-এর !!{derivation}-এর দৈর্ঘ্য~$1$ হলে তাতে একটিমাত্র !!{formula} আছে। ওই !!{formula}-টি আগের কোনো সূত্র থেকে \MP{} বা \Nec{}-এর সাহায্যে পাওয়া যায় না। তাই সেটি অবশ্যই সর্বতঃসত্য সূত্রের উদাহরণ, \Ax{K}\iftag{prvDiamond}{, $\Dual$}{}-এর উদাহরণ, অথবা $!A_1$, \dots,~$!A_n$-এর কোনো একটির উদাহরণ। কিন্তু $\Log{K}!A_1\dots!A_n$-তেও এগুলি আছে; সুতরাং $!B \in \Log{K}!A_1 \dots !A_n$।
+
+  $!B$-এর !!{derivation}-এর দৈর্ঘ্য~$> 1$ হলে, উপরোক্ত ক্ষেত্রগুলি ছাড়াও $!B$-কে এমন !!{formula}s থেকে \MP{} বা \Nec{} দ্বারা পাওয়া যেতে পারে, যেগুলি !!{derivation}-এর শেষ পংক্তি নয়। $!B$ যদি $!C$ ও $!C \lif !B$ থেকে (\MP{} দ্বারা) পাওয়া যায়, তবে আরোহের অনুমানে $!C$ এবং $!C \lif !B \in \Log{K}!A_1 \dots !A_n$। প্রতিটি মোডাল যুক্তিবিদ্যা মোডাস পোনেন্সের অধীনে বদ্ধ বলে $!B \in \Log{K}!A_1 \dots !A_n$। অন্যদিকে $!B \equiv \Box !C$ যদি $!C$ থেকে \Nec{} দ্বারা পাওয়া যায়, তবে আরোহের অনুমানে $!C \in \Log{K}!A_1 \dots !A_n$। প্রতিটি স্বাভাবিক মোডাল যুক্তিবিদ্যা $\Nec$-এর অধীনে বদ্ধ বলে $!B \in \Log{K}!A_1\dots!A_n$।
+
+  বিপরীত অন্তর্ভুক্তির জন্য দেখাই,
+  $\Sigma = \Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B }$ একটি স্বাভাবিক মোডাল যুক্তিবিদ্যা, যাতে $!A_1$, \dots, $!A_n$-এর সব উদাহরণ আছে। সংজ্ঞা অনুসারে $\Log{K} !A_1 \dots !A_n$ এমন ক্ষুদ্রতম যুক্তিবিদ্যা।
+  \begin{enumerate}
+    \item প্রতিটি সর্বতঃসত্য সূত্র~$!B$ সর্বতঃসত্য সূত্রের একটি উদাহরণ। তাই $\Log{K}!A_1\dots!A_n \Proves !B$ এবং $\Sigma$-তে সব সর্বতঃসত্য সূত্র আছে।
+    \item $\Log{K}!A_1\dots!A_n \Proves !C$ এবং $\Log{K}!A_1\dots!A_n \Proves !C \lif !B$ হলে $\Log{K}!A_1\dots!A_n \Proves !B$: $!C$-এর !!{derivation}-এর সঙ্গে $!C \lif !B$-এর নিষ্পাদন জুড়ে শেষে~$!B$ পংক্তিটি যোগ করি। শেষ পংক্তিটি \MP{} দ্বারা সমর্থিত। তাই $\Sigma$ মোডাস পোনেন্সের অধীনে বদ্ধ।
+    \item $!B$-এর !!a{derivation} থাকলে $!B$-এর প্রতিটি প্রতিস্থাপনজাত উদাহরণেরও !!a{derivation} আছে: !!{derivation}-এর প্রতিটি !!{formula}-এ একই প্রতিস্থাপন প্রয়োগ করি। (অনুশীলন: !!{derivation}s-এর দৈর্ঘ্যের উপর গাণিতিক আরোহে প্রমাণ করুন যে ফলটিও সঠিক !!{derivation}।) তাই $\Sigma$ যুগপৎ প্রতিস্থাপনের অধীনে বদ্ধ। (এতে $\Sigma$-র মোডাল যুক্তিবিদ্যা হওয়ার সব শর্ত প্রতিষ্ঠিত হলো।)
+    % BN-SRC-349: The conclusion must assert membership of the axiom formula, not of the system-name K.
+    \item $\Log{K}!A_1\dots!A_n \Proves \Ax{K}$, তাই $\Ax{K} \in \Sigma$।
+    \tagitem{prvDiamond}{আমরা পাই,
+      $\Log{K}!A_1\dots!A_n \Proves \Dual$, তাই $\Dual \in \Sigma$।}{}
+    \item $\Log{K}!A_1\dots!A_n \Proves !C$ হলে অতিরিক্ত পংক্তি~$\Box !C$ \Nec{} দ্বারা সমর্থিত। অতএব $\Sigma$ \Nec{}-এর অধীনে বদ্ধ। তাই $\Sigma$ স্বাভাবিক।
+  \end{enumerate}
+\end{proof}
+
+\end{document}

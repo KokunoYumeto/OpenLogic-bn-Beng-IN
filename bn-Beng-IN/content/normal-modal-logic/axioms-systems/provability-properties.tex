@@ -1,0 +1,35 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: provability-properties
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{prp}
+
+\olsection{\usetoken{S}{derivability}-এর বৈশিষ্ট্য}
+
+\begin{prop}\ollabel{prop:derivabilityfacts}
+  ধরা যাক $\Sigma$ একটি মোডাল পদ্ধতি এবং $\Gamma$ মোডাল !!{formula}s-এর সমষ্টি। তখন নিচের বৈশিষ্ট্যগুলি সত্য:
+  \begin{enumerate}
+  \item\ollabel{prop:derivabilityfacts-monotonicity} \emph{একঘেয়েতা}: $\Gamma \Proves[\Sigma] !A$ এবং $\Gamma \subseteq \Delta$ হলে $\Delta \Proves[\Sigma] !A$;
+  \item\ollabel{prop:derivabilityfacts-reflexivity}
+    \emph{প্রতিবিম্ব ধর্ম}: $!A \in \Gamma$ হলে $\Gamma \Proves[\Sigma] !A$;
+  \item\ollabel{prop:derivabilityfacts-cut} \emph{কাট}: $\Gamma \Proves[\Sigma] !A$ এবং $\Delta \cup \{!A\} \Proves[\Sigma] !B$ হলে $\Gamma \cup \Delta \Proves[\Sigma] !B$;
+  \item\ollabel{prop:derivabilityfacts-deduction} \emph{নিষ্পাদন উপপাদ্য}: $\Gamma \cup \{!B\} \Proves[\Sigma] !A$ তখনই এবং কেবল তখনই, যখন $\Gamma \Proves[\Sigma] !B \lif !A$;
+  \item \ollabel{prop:derivabilityfacts-ruleT}% \emph{Rule T}: If
+    $\Gamma \Proves[\Sigma] !A_1$ এবং \dots এবং $\Gamma
+    \Proves[\Sigma] !A_n$ হয় ও $!A_1 \to (!A_2 \lif \cdots (!A_n \lif
+    !B)\cdots)$ সর্বতঃসত্য সূত্রের একটি উদাহরণ হয়, তবে $\Gamma
+    \Proves[\Sigma] !B$।
+  \end{enumerate}
+\end{prop}
+
+এর প্রমাণ সহজ অনুশীলন। \olref{prop:derivabilityfacts}-এর \olref{prop:derivabilityfacts-ruleT} অংশ থেকে, যেমন, $\Gamma \Proves[\Sigma] !A \lor !B$ এবং $\Gamma \Proves[\Sigma] \lnot !A$ হলে $\Gamma \Proves[\Sigma] !B$ পাই। এরপর $\Gamma \cup \{ !A\} \Proves[\Sigma] !B$-এর জায়গায় $\Gamma, !A \Proves[\Sigma] !B$ লিখব।
+
+\begin{defn}
+  $\Sigma$ পদ্ধতির সাপেক্ষে সমষ্টি $\Gamma$-কে \emph{নিষ্পাদনগতভাবে বদ্ধ} বলে তখনই এবং কেবল তখনই, যখন $\Gamma \Proves[\Sigma] !A$ থেকে $!A \in \Gamma$ অনুসৃত হয়।
+\end{defn}
+
+\end{document}

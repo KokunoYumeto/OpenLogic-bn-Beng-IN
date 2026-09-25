@@ -1,0 +1,29 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{snd}
+
+\olsection{বিশুদ্ধতা}
+
+!!^a{derivation}-পদ্ধতিতে যা কিছু !!{derive}d করা যায়, সবই বৈধ হলে পদ্ধতিটিকে নির্ভুল বলে। মোডাল পদ্ধতির ক্ষেত্রে, অর্থাৎ \Ax{K}-এর পাশাপাশি কয়েকটি !!{formula}s $!A_1$, \dots,~$!A_n$-এর উদাহরণ ব্যবহারের অনুমতি আছে এমন !!{derivation}s-এর ক্ষেত্রে, চাই প্রতিটি !!{derivable} সূত্র এমন যেকোনো মডেলে সত্য হোক, যাতে $!A_1$, \dots, $!A_n$ সত্য।
+
+\begin{thm}[বিশুদ্ধতার উপপাদ্য]\ollabel{thm:soundness}
+  $!A_1$, \dots, $!A_n$-এর প্রতিটির সব উদাহরণ যদি যথাক্রমে মডেলের শ্রেণি $\mClass{C}_1$, \dots, $\mClass{C}_n$-তে বৈধ হয়, তবে $\Log{K}!A_1\dots !A_n
+  \Proves !B$ থেকে অনুসৃত হয় যে $!B$ মডেলের শ্রেণি $\mClass{C}_1 \cap \dots \cap \mClass{C}_n$-তে বৈধ।
+\end{thm}
+
+\begin{proof}
+  প্রমাণের দৈর্ঘ্যের উপর গাণিতিক আরোহে দেখাই। সংক্ষেপে $\mClass{C} =
+  \mClass{C}_1 \cap \dots \cap \mClass{C}_n$ ধরি।
+  \begin{enumerate}
+  \item আরোহের ভিত্তি: $!B$-এর প্রমাণের দৈর্ঘ্য~$1$ হলে এটি হয় সর্বতঃসত্য সূত্রের উদাহরণ, নয়তো~\Ax{K}\iftag{prvDiamond}{ বা~\Dual{}}{}-এর উদাহরণ, অথবা $!A_1$, \dots,~$!A_n$-এর কোনো একটির উদাহরণ। প্রথম ক্ষেত্রে $!B$ শ্রেণি $\mClass{C}$-তে বৈধ, কারণ \olref[syn][tau]{prop:valid-taut} অনুসারে সর্বতঃসত্য সূত্রের উদাহরণ \emph{যেকোনো} মডেল-শ্রেণিতে বৈধ। দ্বিতীয় ক্ষেত্রেও একই কথা \olref[syn][sch]{prop:Kvalid}\iftag{prvDiamond}{ এবং \olref[syn][sch]{prop:Dual-valid}}{} থেকে পাওয়া যায়। তৃতীয় ক্ষেত্রে $!B$ যেহেতু $\mClass{C}_i$-তে বৈধ এবং $\mClass{C} \subseteq \mClass{C}_i$, তাই \olref[syn][val]{prop:subset-class} থেকে $!B$-এর $\mClass{C}$-তে বৈধতা পাওয়া যায়।
+  \item আরোহের ধাপ: ধরা যাক $!B$-এর প্রমাণের দৈর্ঘ্য $k>1$। $!B$ সর্বতঃসত্য সূত্রের উদাহরণ অথবা $!A_1$, \dots, $!A_n$-এর কোনো একটির উদাহরণ হলে আগের ধাপের মতোই চলি। এখন ধরি, আগের !!{formula}s $!C \lif !B$ এবং $!C$ থেকে \MP{} দ্বারা $!B$ পাওয়া গেছে। তখন $!C \lif !B$ এবং $!C$-এর প্রমাণের দৈর্ঘ্য $<k$; আরোহের অনুমানে তারা~$\mClass{C}$-তে বৈধ। \olref[syn][sch]{prop:soundMP} থেকে $!B$-ও $\mClass{C}$-তে বৈধ। শেষে ধরি, $!C$ থেকে \Nec{} দ্বারা $!B$ পাওয়া গেছে (অর্থাৎ $!B = \Box!C$)। আরোহের অনুমানে $!C$ শ্রেণি $\mClass{C}$-তে বৈধ; \olref[syn][val]{prop:Nec-rule} থেকে~$!B$-ও সেখানে বৈধ।
+  \end{enumerate}
+\end{proof}
+
+\end{document}

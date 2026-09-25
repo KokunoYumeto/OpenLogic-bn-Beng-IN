@@ -1,0 +1,123 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: derived-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{der}
+
+\olsection{নিষ্পন্ন বিধি}
+
+!!{derivation}s খুঁজে বের করা ও লেখা যে কঠিন, দীর্ঘ এবং পুনরাবৃত্তিমূলক, তা স্পষ্ট। যেমন, প্রায়ই $!A \lif !B$ থেকে $\Box !A \lif \Box !B$-তে যেতে চাই, অর্থাৎ \RK{} বিধি প্রয়োগ করতে চাই। এর জন্য প্রথমে \Nec{} প্রয়োগ, তারপর~\Ax{K}-এর যথাযথ উদাহরণ লেখা এবং শেষে~\MP{} প্রয়োগ করতে হয়। আবার $!A \lif !B$ এবং $!B \lif !C$ থেকে $!A \lif !C$-তে যেতে হলে দীর্ঘ সর্বতঃসত্য সূত্রের উদাহরণটি লিখতে হয়:
+\[
+(!A \lif !B) \lif ((!B \lif !C) \lif (!A \lif !C))
+\]
+তারপর \MP{} দুবার প্রয়োগ করতে হয়। অনেক সময় কোনো উপ-!!{formula}-এর জায়গায় তার সমতুল্য বলে জানা সূত্র বসাতে চাই; যেমন \iftag{prvDiamond}{$\Diamond
+  !A$-এর জায়গায় $\lnot\Box\lnot !A$}{$\Box !A$-এর জায়গায় $\lnot\Diamond\lnot !A$}, অথবা $\lnot\lnot !A$-এর জায়গায় $!A$। তাই প্রকৃত !!{derivation} সম্পূর্ণ না লিখে মধ্যবর্তী ধাপগুলি কেন !!{derivable}, তা লিখলেই সুবিধা। এই উদ্দেশ্যে !!{derivability} সম্বন্ধে কয়েকটি তথ্য সংগ্রহ করি।
+
+\begin{prop}
+  যদি $\Log{K} \Proves !A_1$, \dots, $\Log{K} \Proves !A_n$ হয় এবং প্রতিজ্ঞামূলক যুক্তিবিদ্যা অনুসারে $!A_1$, \dots, $!A_n$ থেকে $!B$ পাওয়া যায়, তবে $\Log{K} \Proves !B$।
+\end{prop}
+
+\begin{proof}
+  প্রতিজ্ঞামূলক যুক্তিবিদ্যা অনুসারে $!A_1$, \dots,~$!A_n$ থেকে $!B$ পাওয়া গেলে
+  \[
+  !A_1 \lif (!A_2 \lif \cdots (!A_n \lif !B)\dots)
+  \]
+  সর্বতঃসত্য সূত্রের একটি উদাহরণ। \MP{} $n$ বার প্রয়োগে~$!B$-এর একটি !!{derivation} পাওয়া যায়।
+\end{proof}
+
+এই প্রস্তাবের ব্যবহার~\PL{} দিয়ে নির্দেশ করব।
+
+\begin{prop}
+  $\Log{K} \Proves !A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif
+  !A_n)\dots)$ হলে $\Log{K} \Proves \Box !A_1 \lif (\Box !A_2 \lif
+  \cdots (\Box !A_{n-1} \lif \Box !A_n)\dots)$।
+\end{prop}
+
+\begin{proof}
+  \olref[nor]{prop:rk}-এর প্রমাণের মতোই $n$-এর উপর গাণিতিক আরোহে প্রমাণ হয়।
+\end{proof}
+
+এই প্রস্তাবের ব্যবহার~\RK{} দিয়ে নির্দেশ করব। এখন দেখাই, ফলগুলি কীভাবে !!{derivability} প্রতিষ্ঠা সহজ করে।
+
+\begin{prop}
+  $\Log{K} \Proves (\Box!A \land \Box!B) \lif \Box (!A \land !B)$
+\end{prop}
+
+\begin{proof}
+  \begin{derivation}
+    1. & $\Log{K} \Proves !A \lif (!B \lif (!A \land !B))$ & \Taut \\
+    % BN-SRC-350: Remove the unmatched third closing parenthesis in line 2.
+    2. & $\Log{K} \Proves \Box!A \lif (\Box !B \lif \Box(!A \land !B))$ & \RK, 1\\
+    3. & $\Log{K} \Proves (\Box!A \land \Box!B) \lif \Box(!A \land !B)$ & \PL, 2
+  \end{derivation}
+\end{proof}
+
+\begin{prop}\ollabel{prop:rewriting}
+  $\Log{K} \Proves !A \liff !B$ এবং $\Log{K} \Proves \Subst{!C}{!A}{q}$ হলে
+  % BN-SRC-351: Preserve the formula metavariable prefix on the substituted B.
+  $\Log{K} \Proves \Subst{!C}{!B}{q}$।
+\end{prop}
+
+\begin{proof}
+  অনুশীলন।
+\end{proof}
+
+\begin{prob}
+  \olref[nml][prf][der]{prop:rewriting} প্রমাণ করুন। এর জন্য $!C$-এর জটিলতার উপর গাণিতিক আরোহে দেখান যে $\Log{K} \Proves !A \liff !B$ হলে $\Log{K} \Proves \Subst{!C}{!A}{q} \liff \Subst{!C}{!B}{q}$।
+\end{prob}
+
+বিশেষত $\Diamond$-কে $\Box$-এ (বা বিপরীতক্রমে) রূপান্তর করতে অথবা !!a{formula}-এর ভিতর থেকে দ্বৈত নঞর্থকতা সরাতে এই প্রস্তাব কাজে লাগে। এরপর যখনই !!a{formula}~$!C(!B)$-কে~$!C(!A)$ থেকে নতুন করে লিখব, তখন \olref{prop:rewriting}-এর প্রয়োগকে ‘$!A$-এর বদলে $!B$’ বলে নির্দেশ করব। অন্য কথায়, ‘$!A$-এর বদলে $!B$’ হলো নিচের সংক্ষিপ্ত রূপ:
+  \begin{derivation}
+    & $\Proves !C(!A)$ \\
+    & $\Proves !A \liff !B$\\
+    & $\Proves !C(!B)$ & \olref{prop:rewriting} দ্বারা
+  \end{derivation}
+যেমন:
+
+\begin{prop}
+  $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$
+\end{prop}
+
+\begin{proof}
+  \iftag{prvDiamond}{% Diamond is primitive
+  \begin{derivation}
+    1. & $\Log{K} \Proves \Diamond \lnot p \liff \lnot\Box\lnot\lnot p$ &
+    \Dual\\
+    2. & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot p$ & \PL, 1\\
+    3. & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & $\lnot\lnot p$-এর বদলে $p$\\
+  \end{derivation}
+  }{% Diamond is defined
+  \begin{derivation}
+    1. & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot p$ & \Taut\\
+    2. & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & $\lnot\lnot p$-এর বদলে $p$\\
+  \end{derivation}
+  $1$ নম্বর পংক্তির সূত্রটি $\lnot q \lif \lnot q$-এর একটি উদাহরণ; এখানে~$q$-এর জায়গায় $\Box\lnot\lnot p$ বসানো হয়েছে। $\Diamond\lnot p$ এবং $\lnot\Box\lnot\lnot p$ অভিন্ন, কারণ $\Diamond$-এর সংজ্ঞা~$\lnot\Box\lnot$।}
+\end{proof}
+
+উপরের !!{derivation}-এ শেষ ধাপ ‘$\lnot\lnot p$-এর বদলে $p$’ হলো নিচের সংক্ষিপ্ত রূপ:
+  \begin{derivation}
+    & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot
+    p$\\
+    & $\Log{K} \Proves \lnot\lnot p \liff p$ & \Taut\\
+    & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & \olref{prop:rewriting} দ্বারা
+  \end{derivation}
+\olref{prop:rewriting}-এ $!C(q)$, $!A$ ও $!B$-এর ভূমিকা এখানে যথাক্রমে $\lnot \Box q \lif \Diamond \lnot p$, $\lnot\lnot p$ এবং~$p$ পালন করছে।
+
+কোনো !!a{formula}-এ উপ-!!{formula} $\lnot\Diamond !A$ থাকলে \olref{prop:rewriting} ব্যবহার করে তার জায়গায় $\Box\lnot !A$ বসাতে পারি, কারণ $\Log{K} \Proves \lnot\Diamond !A \liff \Box\lnot !A$। এই এবং অনুরূপ প্রতিস্থাপনকে সংক্ষেপে ‘$\lnot\Diamond$-এর বদলে $\Box\lnot$’ বলে নির্দেশ করব।
+
+পরের প্রস্তাবটি নিশ্চিত করে যে !!{derivability}-এর ফলগুলি ছক আকারেও প্রতিষ্ঠা করা যায়। যেমন, আগের প্রস্তাব শুধু $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$-ই প্রতিষ্ঠা করে না; যেকোনো~$!A$-এর জন্য $\Log{K} \Proves \lnot\Box !A \lif \Diamond \lnot !A$-ও প্রতিষ্ঠা করে।
+
+\begin{prop}
+  $!A$ যদি $!B$-এর প্রতিস্থাপনজাত উদাহরণ হয় এবং $\Log{K} \Proves !B$ হয়, তবে $\Log{K} \Proves !A$।
+\end{prop}
+
+\begin{proof}
+  যাচাই কিছুটা দীর্ঘ হলেও নিয়মিত পদ্ধতিতে ($!B$-এর !!{derivation}-এর দৈর্ঘ্যের উপর গাণিতিক আরোহে) দেখানো যায় যে সম্পূর্ণ !!{derivation}-এ একই প্রতিস্থাপন প্রয়োগ করলেও সঠিক !!{derivation} পাওয়া যায়। নির্দিষ্টভাবে, সর্বতঃসত্য সূত্রের উদাহরণের প্রতিস্থাপনজাত উদাহরণও সর্বতঃসত্য সূত্রের উদাহরণ; \iftag{prvDiamond}{\Dual{} ও~}{}\Ax{K}-এর উদাহরণগুলির প্রতিস্থাপনজাত উদাহরণও \iftag{prvDiamond}{\Dual{} ও~}{}\Ax{K}-এর উদাহরণ; আর পূর্বধারণা ও সিদ্ধান্তে !!{propositional variable}s-এর জায়গায় !!{formula}s বসালেও \MP{} ও~\Nec{}-এর প্রয়োগ সঠিক থাকে।
+\end{proof}
+
+
+\end{document}

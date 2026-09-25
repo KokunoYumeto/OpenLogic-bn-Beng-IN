@@ -1,0 +1,122 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: systems-distinct
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{dis}
+
+\olsection{মোডাল পদ্ধতিগুলির পার্থক্য দেখানো}
+
+\olref[prs]{sec}-এ দেখেছি, মোডাল যুক্তিবিদ্যার দুটি পদ্ধতি আসলে একই পদ্ধতি—এটি কীভাবে প্রমাণ করতে হয়। \olref[snd]{thm:soundness} ব্যবহার করে দুটি মোডাল পদ্ধতি $\Sigma$ ও $\Sigma'$ পৃথক, তাও দেখানো যায়: এমন !!a{formula}~$!A$ খুঁজতে হবে যার জন্য $\Sigma' \Proves !A$, কিন্তু যা~$\Sigma$-র কোনো মডেলে ব্যর্থ।
+
+\begin{prop}
+  $\Log{KD} \subsetneq \Log{KT}$
+\end{prop}
+
+\begin{proof} প্রতিটি প্রতিবিম্বী সম্পর্ক যে সিরিয়াল, এই অর্থতাত্ত্বিক তথ্যের প্রমাণতাত্ত্বিক প্রতিরূপ এটি। $\Log{KD} \subseteq \Log{KT}$ দেখাতে চাই: $\Log{KD} \Proves !B$ থেকে $\Log{KT} \Proves !B$ অনুসৃত হয়।
+  % BN-SRC-352: The displayed derivability claim concerns axiom D, not a modal system named D.
+  এর কারণ $\Log{KT} \Proves \Ax{D}$, যা \olref[prs]{prop:S5facts}\olref[prs]{prop:S5facts-KT-D}-এ দেখানো হয়েছে। অন্তর্ভুক্তিটি প্রকৃত দেখাতে, বিশুদ্ধতা (\olref[snd]{thm:soundness}) অনুসারে~\Log{KD}-এর এমন একটি মডেল দিলেই যথেষ্ট, যেখানে \Ax{T}, অর্থাৎ $\Box p \lif p$, ব্যর্থ (এটি সহজ অনুশীলন)। তখন বিশুদ্ধতা থেকে $\Log{KD} \Proves/ \Box p \lif p$।
+\end{proof}
+
+\begin{prop}
+  $\Log{KB} \neq \Log{K4}$।
+\end{prop}
+
+\begin{proof}
+  এমন একটি প্রতিসম মডেল নির্মাণ করি, যেখানে \Ax{4}-এর কোনো উদাহরণ ব্যর্থ। উদাহরণটি \Log{K4}-তে স্পষ্টতই !!{derivable}, কিন্তু \Log{KB}-তে নয়; তাই $\Log{K4} \nsubseteq \Log{KB}$। \olref{fig:Bnot4}-এর প্রতিসম মডেল $\mModel{M}$ বিবেচনা করুন। মডেলটি প্রতিসম বলে $\mModel{M}$-এ \Ax{K} এবং~\Ax{B} সত্য (যথাক্রমে \olref[syn][sch]{prop:Kvalid} এবং \olref[frd][acc]{thm:soundschemas} অনুসারে)। কিন্তু $\mSat/{M}{\Box p \lif \Box\Box p}[w_1]$।
+\end{proof}
+
+\begin{figure}[htpb]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w1) [label=above:\mFalse{p},
+    label={below:$\mSat{{}}{\Box p}$\\ $\mSat/{{}}{\Box\Box p}$}] {$w_1$};
+    \node[world] (w2) [label=above:\mTrue{p},
+      label=below:$\mSat/{{}}{\Box p}$, right=of w1]{$w_2$};
+    \draw[->, bend left] (w1) to (w2);
+    \draw[->, bend left] (w2) to (w1);
+  \end{tikzpicture}
+  \caption{\Ax{4}-এর একটি উদাহরণ মিথ্যা করে এমন প্রতিসম মডেল।}
+  \ollabel{fig:Bnot4}
+\end{figure}
+
+\begin{thm}\ollabel{thm:KTBnot45}
+  % BN-SRC-353: Non-derivability concerns the axiom formulas 4 and 5, not system names.
+  $\Log{KTB} \Proves/ \Ax{4}$ এবং $\Log{KTB} \Proves/ \Ax{5}$।
+\end{thm}
+
+\begin{proof}
+  \olref[frd][acc]{thm:soundschemas} থেকে জানি, প্রতিটি প্রতিবিম্বী প্রতিসম মডেলে \Ax{T} এবং \Ax{B}-এর সব উদাহরণ (যথাক্রমে) সত্য। তাই বিশুদ্ধতা অনুসারে এমন একটি প্রতিবিম্বী প্রতিসম মডেল খুঁজলেই যথেষ্ট, যার কোনো জগতে~\Ax{4}-এর একটি উদাহরণ ব্যর্থ; একইভাবে~\Ax{5}-এর জন্যও। উভয় দাবির জন্য একই মডেল ব্যবহার করি। \olref{fig:KTBnot45}-এর প্রতিসম ও প্রতিবিম্বী মডেলটি বিবেচনা করুন। সেখানে $\mSat/{M}{\Box p \to \Box \Box
+    p}[w_1]$, তাই $w_1$-এ \Ax{4} ব্যর্থ। একইভাবে $\mSat/{M}{\Diamond
+    \lnot p \lif \Box \Diamond \lnot p}[w_2]$, তাই $!A = \lnot p$-বিশিষ্ট~\Ax{5}-এর উদাহরণটি~$w_2$-এ ব্যর্থ।
+\end{proof}
+
+\begin{figure}[htpb]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w1) [label={right:\mTrue{p}},
+      label={below: $\mSat{{}}{\Box p}$\\
+        $\mSat/{{}}{\Box\Box p}$\\
+        $\mSat/{{}}{\Diamond\lnot p}$}] {$w_1$};
+    \draw[reflexive above] (w1) to (w1);
+    \node[world] (w2) [label={right:\mTrue{p}}, label={below:
+        $\mSat{{}}{\Diamond\lnot p}$\\
+        $\mSat/{{}}{\Box\Diamond\lnot p}$}, right=of w1] {$w_2$} ;
+    \draw[reflexive above] (w2) to (w2);
+    \node[world] (w3) [label={right:\mFalse{p}},right=of w2] {$w_3$};
+    \draw[reflexive above] (w3) to (w3);
+    \draw[->, bend left] (w1) to (w2);
+    \draw[->, bend left] (w2) to (w3);
+    \draw[->, bend left] (w3) to (w2);
+    \draw[->, bend left] (w2) to (w1);
+  \end{tikzpicture}
+  \caption{\olref{thm:KTBnot45}-এর জন্য ব্যবহৃত মডেল।}
+  \ollabel{fig:KTBnot45}
+\end{figure}
+
+\begin{thm}\ollabel{thm:KD5not4}
+  $\Log{KD5} \neq \Log{KT4} = \Log{S4}$।
+\end{thm}
+
+\begin{proof}
+  \olref[frd][acc]{thm:soundschemas} থেকে জানি, সব সিরিয়াল ইউক্লিডীয় মডেলে \Ax{D} এবং~\Ax{5}-এর সব উদাহরণ সত্য। তাই এমন একটি সিরিয়াল ইউক্লিডীয় মডেল খুঁজলেই যথেষ্ট, যার কোনো জগতে~\Ax{4}-এর উদাহরণ ব্যর্থ। \olref{fig:KD5not4}-এর মডেলটি বিবেচনা করুন; লক্ষ করুন, $\mSat/{M}{\Box p
+  \lif \Box\Box p}[w_1]$।
+\end{proof}
+
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w2) [label=north west:\mTrue{p}]{$w_2$} ;
+    \draw[reflexive left] (w2) to (w2);
+    \node[world] (w1) [label=right:\mFalse{p},
+      label=below:{$\mSat{{}}{\Box p}, \mSat/{{}}{\Box\Box p}$},
+      below right=of w2]{$w_1$};
+    \node[world] (w3) [label=north east:\mTrue{p}, above right=of w1]{$w_3$} ;
+    \draw[reflexive right] (w3) to (w3);
+    \node[world] (w4) [label=right:\mFalse{p},above right=of w2]{$w_4$};
+    \draw[reflexive above] (w4) to (w4);
+    \draw[->] (w1) to (w2);
+    \draw[->] (w1) to (w3);
+    \draw[->, bend left=15] (w2) to (w3);
+    \draw[->, bend left=15] (w3) to (w2);
+    \draw[->, bend left=15] (w2) to (w4);
+    \draw[->, bend left=15] (w4) to (w2);
+    \draw[->, bend left=15] (w3) to (w4);
+    \draw[->, bend left=15] (w4) to (w3);
+  \end{tikzpicture}
+  \caption{\olref{thm:KD5not4}-এর জন্য ব্যবহৃত মডেল।}
+  \ollabel{fig:KD5not4}
+\end{figure}
+
+\begin{prob}
+  $3$টি জগৎবিশিষ্ট মডেল ব্যবহার করে \olref[nml][prf][dis]{thm:KD5not4}-এর একটি বিকল্প প্রমাণ দিন।
+\end{prob}
+
+\begin{prob}
+  এমন একটি প্রতিবিম্বী পরিযায়ী মডেল দিন, যা একই সঙ্গে $\Log{KT4} \Proves/ \Ax{B}$ এবং $\Log{KT4} \Proves/ \Ax{5}$ দেখায়।
+\end{prob}
+
+\end{document}

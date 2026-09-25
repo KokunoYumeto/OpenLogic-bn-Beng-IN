@@ -1,0 +1,35 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: duals
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{dua}
+
+\olsection{দ্বৈত \usetoken{P}{formula}}
+
+\begin{defn}\ollabel{def:duals}
+  \Ax{T}, \Ax{B}, \Ax{4} এবং \Ax{5}—এই !!{formula}s-এর প্রত্যেকটির একটি করে \emph{দ্বৈত} আছে। নিচে এগুলিকে অধঃসূচক ডায়মন্ড দিয়ে চিহ্নিত করা হলো:
+  \begin{align}
+    \tag{\Ax{T_\Diamond}} p & \lif \Diamond p\\
+    \tag{\Ax{B_\Diamond}} \Diamond\Box p & \lif p\\
+    \tag{\Ax{4_\Diamond}} \Diamond\Diamond p & \lif \Diamond p\\
+    \tag{\Ax{5_\Diamond}} \Diamond\Box p & \lif \Box p
+    \end{align}
+\end{defn}
+
+উপরের দ্বৈত !!{formula}s-এর প্রত্যেকটি সংশ্লিষ্ট !!{formula} থেকে এভাবে পাওয়া যায়: $p$-এর জায়গায় $\lnot p$ বসাই, তারপর শর্তমূলক সূত্রকে তার প্রতিবিপরীত রূপে লিখি, $\lnot\Box\lnot$-এর জায়গায় $\Diamond$ বসাই এবং $\lnot\Diamond\lnot$-এর জায়গায়~$\Box$ বসাই। এই অর্থে \Ax{D}, অর্থাৎ $\Box!A \lif \Diamond!A$, নিজেই নিজের দ্বৈত।
+
+\begin{prop}\ollabel{prop:dualsys}
+  \olref[nml][prf][dua]{def:duals}-এর প্রতিটি !!{formula}~$!A$-এর জন্য $\Log{K}!A = \Log{K}!A_{\Diamond}$।
+\end{prop}
+\begin{proof}
+  অনুশীলন।
+\end{proof}
+\begin{prob}
+  \olref[nml][prf][dua]{prop:dualsys} প্রমাণ করুন।
+\end{prob}
+
+\end{document}

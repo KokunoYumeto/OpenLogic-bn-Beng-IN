@@ -434,7 +434,7 @@
     "translated_count": 417,
     "untranslated_count": 305,
     "chapter_state": "Sets, Relations, Functions, the complete Size of Sets, Arithmetization and Infinite Sets source chapters, the Propositional Logic part driver plus complete Syntax and Semantics chapter, the complete shared Proof Systems chapter, the complete Sequent Calculus, Natural Deduction, Tableaux, reader-reachable Axiomatic Deduction and Completeness chapters, the First-order Logic part driver plus complete Introduction, Syntax and Semantics, Models and Theories, and Beyond chapters, the Model Theory part driver plus complete Basics, Models of Arithmetic, Interpolation and Lindström chapters, the Computability part driver plus complete Recursive Functions and Computability Theory chapters, the Turing Machines part driver plus the complete Turing Machine Computations and Undecidability chapters, the Incompleteness part driver plus the complete Introduction, Arithmetization of Syntax, Representability in Q, Theories and Computability, and Incompleteness and Provability chapters, the Second-order Logic part driver plus complete Syntax and Semantics, Metatheory, and Second-order Logic and Set Theory chapters, the Lambda Calculus part driver plus the complete Introduction, Syntax, Church--Rosser, and Lambda Definability chapters, the Many-Valued Logic part driver plus the complete Syntax and Semantics, Three-Valued Logics, Infinite-Valued Logics, and Sequent Calculus chapters, and the Normal Modal Logic part driver plus its complete Syntax and Semantics source chapter are translated; both Size of Sets editorial alternatives remain distinct. Other Normal Modal Logic chapters remain untranslated.",
-    "reader_state": "The historical v0.2.0 reader remains an exact 18-unit artifact. The public cumulative semantic reader contains 299 units in HTML and EPUB and remains the current reader tranche. The checked local draft contains 417 units and leaves 305 source files untranslated; the latest anonymously verified public source checkpoint contains 411 units. One hundred eighteen checked local source units are not yet integrated into the cumulative reader."
+    "reader_state": "The historical v0.2.0 reader remains an exact 18-unit artifact. The public cumulative semantic reader contains 299 units in HTML and EPUB and remains the current reader tranche. The checked local draft and latest anonymously verified public source checkpoint contain 417 units and leave 305 source files untranslated. One hundred eighteen checked source units are not yet integrated into the cumulative reader."
   },
   "last_verified_public_release": {
     "version": "0.3.0",
@@ -480,11 +480,11 @@
     "anonymous_public_readback": "All six GitHub and Zenodo assets matched byte-for-byte."
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "c6b64427f776cf7ef53e4da5da1f0b755ebc5ac3",
-    "translated_units": 411,
-    "receipt": "PUBLIC_READBACK_SOURCE_411_2026-09-25.json",
-    "receipt_sha256": "985af00c3c15fec04063d7bd2e7b654ea22448d82433002a23e80b61d9b86eaf",
-    "status": "Anonymous immutable-archive readback verified all 18 changed objects in the Normal Modal Logic opening checkpoint, matched all six raw translation URLs, reran the strict checker for 411 units and 4,647 blocks, confirmed BN-SRC-332 through BN-SRC-334, and retained the 299-unit reader release without claiming a new reader artifact."
+    "commit": "41a2d22a6d817017c946bac5dee894b200b48a87",
+    "translated_units": 417,
+    "receipt": "PUBLIC_READBACK_SOURCE_417_2026-09-25.json",
+    "receipt_sha256": "596dcba797899b6a105344120c70bd7b166e40b51ad0e3b0a0b2e76fe87858cb",
+    "status": "Anonymous immutable-archive readback verified all 18 changed objects in the Normal Modal Logic Syntax and Semantics completion checkpoint, matched all six raw translation URLs, reran the strict checker for 417 units and 4,714 blocks, confirmed BN-SRC-335 through BN-SRC-342, and retained the 299-unit reader release without claiming a new reader artifact."
   },
   "current_checks": {
     "unit_checks": [
@@ -8170,5 +8170,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "Historical Functions-era TeX candidate record: all three bounded mutex acquisitions timed out without launching TeX. The verified public semantic HTML/EPUB reader is recorded above; no TeX-built PDF is claimed."
   },
-  "remaining": "305 source files, the next cumulative reader tranche, full-corpus QA, and final publication verification. The checked local draft contains 417 units, while the latest anonymously verified GitHub source checkpoint contains 411; GitHub and Zenodo carry the verified 299-unit reader release."
+  "remaining": "305 source files, the next cumulative reader tranche, full-corpus QA, and final publication verification. The checked local draft and latest anonymously verified GitHub source checkpoint contain 417 units; GitHub and Zenodo carry the verified 299-unit reader release."
 }

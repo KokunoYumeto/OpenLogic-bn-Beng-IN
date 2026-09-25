@@ -1,0 +1,186 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-25T03:53:04.275675+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "41a2d22a6d817017c946bac5dee894b200b48a87",
+  "parent": "88aa0870bf87ea572671b618062ebecec6da17c5",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "c6b64427f776cf7ef53e4da5da1f0b755ebc5ac3",
+    "receipt": "PUBLIC_READBACK_SOURCE_411_2026-09-25.json",
+    "receipt_sha256": "985af00c3c15fec04063d7bd2e7b654ea22448d82433002a23e80b61d9b86eaf"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/41a2d22a6d817017c946bac5dee894b200b48a87.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/41a2d22a6d817017c946bac5dee894b200b48a87",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 12314055,
+  "archive_sha256": "a844eff0cea0c21ce0c6b30f4daa675b8ddc2b5971592c79844675429bffcd3d",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/entailment.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/entailment.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/entailment.tex",
+      "content_type": "text/plain",
+      "bytes": 5021,
+      "sha256": "99fbb8ac42e7cd0412dd202b9fbd3cc4f897aa02a0aee7baf249c97cdadec00f"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/modal-validity.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/modal-validity.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/modal-validity.tex",
+      "content_type": "text/plain",
+      "bytes": 4485,
+      "sha256": "42df1eb7c54a9ba037ecbc55395fe8cf2a0b385037cd726dd625a71c9624abf1"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/schemas.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/schemas.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/schemas.tex",
+      "content_type": "text/plain",
+      "bytes": 9863,
+      "sha256": "6443095224e4b4ac29954b8bffa3419a4bf2cff6a8534bd31b07ba8dc9abca98"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/tautological-instances.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/tautological-instances.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/tautological-instances.tex",
+      "content_type": "text/plain",
+      "bytes": 9319,
+      "sha256": "0fcb217ef82405611531e40da7da71eac246d659a70012182b5186bd9dc53833"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/truth-at-w.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/truth-at-w.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/truth-at-w.tex",
+      "content_type": "text/plain",
+      "bytes": 8429,
+      "sha256": "93199501ca7a504fb66a0a73041637ba2d28392de535ab3f36ad36de0cf229dc"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/truth-in-model.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/truth-in-model.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/41a2d22a6d817017c946bac5dee894b200b48a87/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/truth-in-model.tex",
+      "content_type": "text/plain",
+      "bytes": 4516,
+      "sha256": "fb9b74e797a0d6e54ce8ff1d3a98c03c656b29bdc174e14d01fd4799f4acc50d"
+    }
+  ],
+  "changed_files_verified": 18,
+  "translated_tex_files_in_commit": 6,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 417,
+  "draft_untranslated_total": 305,
+  "segments": 4714,
+  "translated_segments": 3986,
+  "new_batch_segments": 67,
+  "new_batch_translated_segments": 61,
+  "new_batch_unchanged_segments": 6,
+  "source_correction_records": 349,
+  "new_source_correction_records": 8,
+  "source_normalization_records": 3,
+  "translation_decisions": 322,
+  "provisional_translation_decisions": 303,
+  "translation_decision_occurrences": 26391,
+  "decisions_with_exact_source_wording": 306,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 417,
+    "blocks": 4714,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/entailment.tex",
+      "bytes": 5021,
+      "sha256": "99fbb8ac42e7cd0412dd202b9fbd3cc4f897aa02a0aee7baf249c97cdadec00f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/modal-validity.tex",
+      "bytes": 4485,
+      "sha256": "42df1eb7c54a9ba037ecbc55395fe8cf2a0b385037cd726dd625a71c9624abf1"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/schemas.tex",
+      "bytes": 9863,
+      "sha256": "6443095224e4b4ac29954b8bffa3419a4bf2cff6a8534bd31b07ba8dc9abca98"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/tautological-instances.tex",
+      "bytes": 9319,
+      "sha256": "0fcb217ef82405611531e40da7da71eac246d659a70012182b5186bd9dc53833"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/truth-at-w.tex",
+      "bytes": 8429,
+      "sha256": "93199501ca7a504fb66a0a73041637ba2d28392de535ab3f36ad36de0cf229dc"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/truth-in-model.tex",
+      "bytes": 4516,
+      "sha256": "fb9b74e797a0d6e54ce8ff1d3a98c03c656b29bdc174e14d01fd4799f4acc50d"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 7499377,
+      "sha256": "0366fb91850ecade40b4fdb9ea3f157baab2833201d7fa75c5bb5e05461f5f4e"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 260523,
+      "sha256": "00e70f2a0e38309bdcc2a6a4bde624e4e4366629eede0db8228b0854ed19c56a"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_NORMAL_MODAL_LOGIC_COMPLETION.md",
+      "bytes": 5771,
+      "sha256": "c6875c087b56af147bc7ea27c80d5ad9518ef0295e5350a610f14d1a7cf45c1f"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "b71d12cee72f58ae6ab552aed158985a1eba1f598b9403b122886e441ada28f1"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 682241,
+      "sha256": "8f4a8f1919d8e76e5ce667498841138de4bb6fe21d0ad8ab6d9b9185098cdbd2"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 292970,
+      "sha256": "1d658ee570ce546e5cb57090d0f7112e7b04c4f39d32da24db76f18b5a247219"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 16146605,
+      "sha256": "c40331979306c99d66862c9ed8ab299d80f40e242f88a378b7b3845086612a26"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 12640750,
+      "sha256": "de066c693d641aa9730c22fb7f6bf46669c565eba7ae87eea304378295f03637"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1250602,
+      "sha256": "c6da0eed1a4c10905cacab9eab61c8dee150758e2c24b23900c33fd012ad0694"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 7239741,
+      "sha256": "a44eeb518069054bed022f2b39eac0403fecd828215f8c77117cf69b4eea5bfa"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 236997,
+      "sha256": "e68ee5ece1fcfdb6f8ea3b7bab1dea5c34cfd562258f4be354154e740563c23e"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 240183,
+      "sha256": "9337a32c64b2cee255b918254f4c715ee71c6bc37898fbeb531dc176b4416bc6"
+    }
+  ]
+}

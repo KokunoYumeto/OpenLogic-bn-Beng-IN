@@ -1,0 +1,84 @@
+% Section: truth-in-model
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{tru}
+
+\olsection{মডেলে সত্যতা}
+
+কখনো আমরা জানতে চাই, কোনো নির্দিষ্ট মডেলের প্রত্যেক জগতে কোন !!{formula}s সত্য।
+এর জন্য একটি সংকেত নির্ধারণ করি।
+
+\begin{defn}
+  !!^a{formula}~$!A$ মডেল $M = \tuple{W, R,
+    V}$-এ \emph{সত্য}, সংকেতে $\mSat{M}{!A}$, তখনই এবং কেবল তখনই, যখন
+  প্রত্যেক $w \in W$-এর জন্য $\mSat{M}{!A}[w]$।
+\end{defn}
+
+\begin{prop}\ollabel{prop:truthfacts}
+  \begin{enumerate}
+  \item $\mSat{M}{!A}$ হলে $\mSat/{M}{\lnot !A}$; কিন্তু এর বিপরীতটি
+    \emph{সত্য নয়}।
+  \item $\mSat{M}{!A \lif !B}$ হলে $\mSat{M}{!A}$ থেকে
+    $\mSat{M}{!B}$ পাওয়া যায়; কিন্তু এর বিপরীতটি \emph{সত্য নয়}।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item $\mSat{M}{!A}$ হলে $!A$, $W$-এর সব জগতে সত্য। যেহেতু
+    $W \neq \emptyset$, $\mSat{M}{\lnot!A}$ হতে পারে না; তা হলে কোনো
+    জগতে $!A$-কে একই সঙ্গে সত্য ও অসত্য হতে হতো।
+
+    অন্যদিকে, $\mSat/{M}{\lnot !A}$ হলে $!A$ কোনো $w \in W$-তে সত্য।
+    তাই বলে \emph{প্রত্যেক}~$w \in W$-এ $\mSat{M}{!A}[w]$ হয় না।
+    যেমন, \olref[rel]{fig:simple}-এর মডেলে $\mSat/{M}{\lnot p}$,
+    আবার $\mSat/{M}{p}$-ও।
+  \item ধরা যাক, $\mSat{M}{!A \lif !B}$ এবং $\mSat{M}{!A}$।
+    $\mSat{M}{!B}$ দেখাতে যেকোনো $w \in W$ নিই। তখন
+    $\mSat{M}{!A \lif !B}[w]$ এবং $\mSat{M}{!A}[w]$; তাই
+    $\mSat{M}{!B}[w]$। $w$ নির্বিচারে নেওয়া হয়েছে বলে
+    $\mSat{M}{!B}$।
+
+    বিপরীতটি যে সত্য নয়, তা দেখাতে এমন একটি মডেল $\mModel{M}$ চাই যাতে
+    $\mSat{M}{!A}$ হলে $\mSat{M}{!B}$, অথচ
+    $\mSat/{M}{!A \lif !B}$। আবার \olref[rel]{fig:simple}-এর মডেলটি
+    দেখো: $\mSat/{M}{p}$, তাই (শূন্যতাবশে) $\mSat{M}{p}$ হলে
+    $\mSat{M}{q}$। কিন্তু $w_1$-তে $p$ সত্য ও $q$ অসত্য হওয়ায়
+    $\mSat/{M}{p \lif q}$।
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  নিচে এমন ভাষার একটি মডেল $\mModel{M}$ দেওয়া আছে, যেখানে একমাত্র
+  !!{propositional variable}s হলো $p_1$, $p_2$, $p_3$:
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]left:\mTrue{p_1}\\\mFalse{p_2}\\\mFalse{p_3}}]
+            {$w_1$} ;
+      \node[world] (w2) [label={[align=right]right:\mTrue{p_1}\\\mTrue{p_2}\\\mFalse{p_3}},
+        below right=of w1]  {$w_2$};
+      \node[world] (w3) [label={[align=right]right:\mTrue{p_1}\\\mTrue{p_2}\\\mTrue{p_3}},
+        above right=of w2] {$w_3$};
+      \draw[reflexive above] (w3) to (w3);
+      \draw[->] (w1) to (w2);
+      \draw[->] (w2) to (w3);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  নিচের !!{formula}s ও স্কিমাগুলি কি মডেল $\mModel{M}$-এ, অর্থাৎ
+  $\mModel{M}$-এর প্রত্যেক জগতে, সত্য? ব্যাখ্যা করো। এখানে পরমাণু
+  চলটি উল্লিখিত তিনটির যেকোনোটি বোঝায়।
+  \begin{enumerate}
+  \item $p\lif \Diamond p$ ($p$ পরমাণু হলে);
+  \item $!A\lif \Diamond !A$ ($!A$ যেকোনো সূত্র হলে);
+  \item $\Box p \lif p$ ($p$ পরমাণু হলে);
+  \item $\lnot p \lif \Diamond \Box p$ ($p$ পরমাণু হলে);
+  \item $\Diamond \Box !A$ ($!A$ যেকোনো সূত্র হলে);
+  \item $\Box \Diamond p$ ($p$ পরমাণু হলে)।
+  \end{enumerate}
+\end{prob}
+
+\end{document}

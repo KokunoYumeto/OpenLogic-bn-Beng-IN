@@ -2456,6 +2456,48 @@ for row in rows:
             assert source.count(r"\item \indcase{!A}{\Box !B}") == 1
             assert checked_target.count(r"\tagitem{prvBox}{\indcase{!A}{\Box !B}") == 1
         normal_modal_opening_math_fix = mathparts(audited_modal_opening) == target_math
+    normal_modal_completion_math_fix = False
+    if 413 <= unit_number <= 418:
+        expected_modal_completion = {
+            "OLP-0413": {"BN-SRC-335", "BN-SRC-342"},
+            "OLP-0416": {"BN-SRC-336", "BN-SRC-337", "BN-SRC-338"},
+            "OLP-0417": {"BN-SRC-339"},
+            "OLP-0418": {"BN-SRC-340", "BN-SRC-341"},
+        }
+        assert set(documented) == expected_modal_completion.get(row["unit_id"], set())
+        audited_modal_completion = source
+        if row["unit_id"] == "OLP-0413":
+            old = r"$\mSat/{M}{\Box\lnot !A}$."
+            new = r"$\mSat/{M}{\Box\lnot !A}[w]$."
+            assert audited_modal_completion.count(old) == 1
+            audited_modal_completion = audited_modal_completion.replace(old, new, 1)
+            assert source.count(r"\item\ollabel{defn:sub:mmodels-box}") == 1
+            assert source.count(r"\item\ollabel{defn:sub:mmodels-diamond}") == 1
+            assert checked_target.count(r"\tagitem{prvBox}{\ollabel{defn:sub:mmodels-box}") == 1
+            assert checked_target.count(r"\tagitem{prvDiamond}{\ollabel{defn:sub:mmodels-diamond}") == 1
+        if row["unit_id"] == "OLP-0416":
+            old = r"\pSat{v}{!B \lif !C} \Leftrightarrow"
+            new = r"\pSat{v}{!B \liff !C} \Leftrightarrow"
+            assert audited_modal_completion.count(old) == 2
+            before, found, after = audited_modal_completion.rpartition(old)
+            assert found and r"\tagitem{prvIff}" in before
+            audited_modal_completion = before + new + after
+            old = r"\text{by definition of $\pSat{v}{}$}."
+            new = r"\text{by definition of $\mSat{M}{}[w]$}."
+            assert audited_modal_completion.count(old) == 1
+            audited_modal_completion = audited_modal_completion.replace(old, new, 1)
+            assert source.count(r"\tagitem{prvFalse}{\indcase{!A}{\lnot !B}") == 1
+            assert checked_target.count(r"\tagitem{prvNot}{\indcase{!A}{\lnot !B}") == 1
+        if row["unit_id"] == "OLP-0418":
+            old = "\\mModel{M'} =\n  \\{W', R', V'\\}"
+            new = r"\mModel{M'} = \tuple{W', R', V'}"
+            assert audited_modal_completion.count(old) == 1
+            audited_modal_completion = audited_modal_completion.replace(old, new, 1)
+            old = r"\Entails \Box p \lif p$.}"
+            new = r"\Entails/ \Box p \lif p$.}"
+            assert audited_modal_completion.count(old) == 1
+            audited_modal_completion = audited_modal_completion.replace(old, new, 1)
+        normal_modal_completion_math_fix = mathparts(audited_modal_completion) == target_math
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -4844,6 +4886,53 @@ for row in rows:
             r"\caption{একটি সরল মডেল।}",
         ))
         tex_command_check = {"relational_model_world_relation_valuation_and_diagram_reviewed": True}
+    elif row["unit_id"] == "OLP-0413":
+        assert normal_modal_completion_math_fix
+        assert all(phrase in checked_target for phrase in (
+            r"\tagitem{prvBox}{\ollabel{defn:sub:mmodels-box}",
+            r"\tagitem{prvDiamond}{\ollabel{defn:sub:mmodels-diamond}",
+            r"\mSat/{M}{\Box\lnot !A}[w]",
+            "শূন্যতাবশে", "প্রতিবিম্বী",
+        ))
+        tex_command_check = {"pointwise_modal_clauses_duality_and_exercises_reviewed": True}
+    elif row["unit_id"] == "OLP-0414":
+        assert normal_modal_completion_math_fix and not documented
+        assert all(phrase in checked_target for phrase in (
+            r"\ollabel{prop:truthfacts}", r"\mSat{M}{!A \lif !B}",
+            "প্রত্যেক জগতে", r"\draw[reflexive above]",
+        ))
+        tex_command_check = {"global_model_truth_counterexamples_and_three_world_exercise_reviewed": True}
+    elif row["unit_id"] == "OLP-0415":
+        assert normal_modal_completion_math_fix and not documented
+        assert all(phrase in checked_target for phrase in (
+            r"\mClass{C} \Entails !A", r"\Entails \Box!A",
+            "প্রতিবিম্বী মডেলের শ্রেণিতে",
+        ))
+        tex_command_check = {"class_relative_validity_and_necessitation_reviewed": True}
+    elif row["unit_id"] == "OLP-0416":
+        assert normal_modal_completion_math_fix
+        assert all(phrase in checked_target for phrase in (
+            r"\tagitem{prvNot}{\indcase{!A}{\lnot !B}",
+            r"\pSat{v}{!B \liff !C} \Leftrightarrow",
+            r"\mSat{M}{}[w]$-এর সংজ্ঞা",
+            r"\olref{lem:valid-taut}",
+        ))
+        tex_command_check = {"tautological_instance_induction_all_constructor_cases_reviewed": True}
+    elif row["unit_id"] == "OLP-0417":
+        assert normal_modal_completion_math_fix
+        assert all(phrase in checked_target for phrase in (
+            r"\Ax{K}", r"\Dual{}", r"\ollabel{prop:valid-instances}",
+            r"\caption{বৈধ ও অবৈধ স্কিমা।}",
+        ))
+        tex_command_check = {"schema_characteristic_formula_validity_and_table_reviewed": True}
+    elif row["unit_id"] == "OLP-0418":
+        assert normal_modal_completion_math_fix
+        assert all(phrase in checked_target for phrase in (
+            r"p \lif \Diamond p \Entails \Box\lnot p \lif \lnot p",
+            r"\mModel{M'} = \tuple{W', R', V'}",
+            r"\Entails/ \Box p \lif p$-এর বিপরীত উদাহরণ",
+        ))
+        tex_command_check = {"pointwise_entailment_positive_example_and_both_countermodels_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -4955,6 +5044,7 @@ for row in rows:
             infinite_valued_logics_math_fix,
             many_valued_sequent_calculus_math_fix,
             normal_modal_opening_math_fix,
+            normal_modal_completion_math_fix,
             shared_audit_fix,
         )
     )

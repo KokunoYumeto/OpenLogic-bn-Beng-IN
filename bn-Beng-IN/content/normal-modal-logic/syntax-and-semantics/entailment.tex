@@ -1,0 +1,91 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: entailment
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{ent}
+
+\olsection{অনুসিদ্ধান্ত}
+
+\begin{explain}
+  জগতে সত্যতার সংজ্ঞা থেকে !!{formula}s-এর মধ্যে অনুসিদ্ধান্ত-সম্পর্ক
+  সংজ্ঞায়িত করা যায়। !!^a{formula}~$!B$ থেকে~$!A$ অনুসিদ্ধান্ত হয়
+  তখনই এবং কেবল তখনই, যখন $!B$ সত্য হলেই $!A$-ও সত্য। এখানে
+  ``হলেই'' কথাটি যে মডেলই বিবেচনা করি এবং সেই মডেলের যে জগৎই
+  বিবেচনা করি—উভয় ক্ষেত্রেই প্রযোজ্য।
+\end{explain}
+
+\begin{defn}
+  $\Gamma$ যদি !!{formula}s-এর একটি সেট এবং $!A$ !!a{formula} হয়,
+  তবে $\Gamma$ থেকে~$!A$ \emph{অনুসিদ্ধান্ত হয়}, সংকেতে
+  $\Gamma \Entails !A$, তখনই এবং কেবল তখনই, যখন প্রত্যেক মডেল
+  $\mModel{M} = \tuple{W, R, V}$ এবং $w \in W$-এর জন্য,
+  প্রত্যেক $!B \in \Gamma$-তে $\mSat{M}{!B}[w]$ হলে
+  $\mSat{M}{!A}[w]$। $\Gamma$-তে একটিমাত্র !!{formula}~$!B$
+  থাকলে লিখি $!B \Entails !A$।
+\end{defn}
+
+\begin{ex}
+  !!a{formula} থেকে আরেকটি অনুসিদ্ধান্ত হয় দেখাতে,
+  $\mSat{M}{}[w]$-এর সংজ্ঞা ব্যবহার করে সব মডেল সম্পর্কে যুক্তি দিতে
+  হয়। যেমন, $p \lif \Diamond p \Entails \Box\lnot p \lif \lnot p$
+  দেখাতে এভাবে যুক্তি দেওয়া যায়। যেকোনো মডেল
+  $\mModel{M} = \tuple{W, R, V}$ এবং $w \in W$ নিয়ে ধরা যাক,
+  $\mSat{M}{p \lif \Diamond p}[w]$। দেখাতে হবে,
+  $\mSat{M}{\Box\lnot p \lif \lnot p}[w]$। উল্টোটি ধরে নিই।
+  তাহলে $\mSat{M}{\Box\lnot p}[w]$ এবং
+  $\mSat/{M}{\lnot p}[w]$। $\mSat/{M}{\lnot p}[w]$ থেকে
+  $\mSat{M}{p}[w]$। অনুমান অনুসারে
+  $\mSat{M}{p \lif \Diamond p}[w]$, তাই
+  $\mSat{M}{\Diamond p}[w]$। $\mSat{M}{\Diamond p}[w]$-এর
+  সংজ্ঞা থেকে এমন কোনো $w'$ আছে যাতে $Rww'$ এবং
+  $\mSat{M}{p}[w']$। আবার $\mSat{M}{\Box \lnot p}[w]$
+  হওয়ায় $\mSat{M}{\lnot p}[w']$—এটি স্ববিরোধ।
+
+  !!a{formula}~$!B$ থেকে আরেকটি~$!A$ অনুসিদ্ধান্ত হয় না দেখাতে
+  একটি বিপরীত উদাহরণ দিতে হয়। অর্থাৎ, এমন মডেল
+  $\mModel{M} = \tuple{W, R, V}$ দেখাতে হয় যার কোনো $w \in W$-তে
+  $\mSat{M}{!B}[w]$, অথচ $\mSat/{M}{!A}[w]$। দেখাই যে
+  $p \lif \Diamond p \Entails/ \Box p \lif p$।
+  \olref{fig:counterex}-এর মডেলটি বিবেচনা করো। সেখানে
+  $\mSat{M}{\Diamond p}[w_1]$, ফলে
+  $\mSat{M}{p \lif \Diamond p}[w_1]$। কিন্তু
+  $\mSat{M}{\Box p}[w_1]$ হলেও $\mSat/{M}{p}[w_1]$;
+  তাই $\mSat/{M}{\Box p \lif p}[w_1]$।
+  \begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label=right:\mFalse{p}]{$w_1$};
+      \node[world] (w2) [label=right:\mTrue{p}, above left=of w1]{$w_2$};
+      \node[world] (w3) [label=right:\mTrue{p}, above right=of w1] {$w_3$};
+      \draw[->] (w1) to (w2);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  \caption{$p \lif \Diamond p
+  \Entails/ \Box p \lif p$-এর বিপরীত উদাহরণ।} % BN-SRC-341
+  \ollabel{fig:counterex}
+  \end{figure}
+
+  অনেক সময় আরও সরল বিপরীত উদাহরণই যথেষ্ট।
+  $\mModel{M'} = \tuple{W', R', V'}$ মডেলে % BN-SRC-340
+  $W' = \{w\}$, $R' = \emptyset$ এবং $V'(p) = \emptyset$ ধরলেও
+  বিপরীত উদাহরণ পাওয়া যায়। $\mSat/{M'}{p}[w]$ বলে
+  $\mSat{M'}{p \lif \Diamond p}[w]$। $w$ থেকে কোনো জগৎ
+  অভিগম্য নয় বলে $\mSat{M'}{\Box p}[w]$; তাই
+  $\mSat/{M'}{\Box p \lif p}[w]$।
+\end{ex}
+
+\begin{prob}
+  দেখাও, $\Box (!A \land !B) \Entails \Box !A$।
+\end{prob}
+
+\begin{prob}
+  দেখাও, $\Box (p \lif q) \Entails/ p \lif \Box q$ এবং
+  $p \lif \Box q \Entails/\Box (p \lif q)$।
+\end{prob}
+
+\end{document}

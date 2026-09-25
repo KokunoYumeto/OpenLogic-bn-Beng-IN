@@ -1,0 +1,166 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: tautological-instances
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{tau}
+
+\olsection{সর্বতঃসত্য সূত্রের প্রতিস্থাপনজাত উদাহরণ}
+
+\begin{explain}
+মোডাল অপারেটরবিহীন কোনো সূত্র প্রত্যেক সত্যমান-নির্ধারণে সত্য হলে সেটি
+সর্বতঃসত্য। স্পষ্টতই, প্রত্যেক সর্বতঃসত্য সূত্র প্রত্যেক মডেলের প্রত্যেক
+জগতে সত্য। কিন্তু $\Box$ ও~$\Diamond$-যুক্ত !!{formula}s-এর জন্য
+সর্বতঃসত্যতার ধারণাটি সংজ্ঞায়িত নয়। যেমন, বর্জিত মধ্যম নীতির একটি
+উদাহরণ $\Box p \lor \lnot \Box p$ কি বৈধ? এখানে
+\emph{সর্বতঃসত্য সূত্রের প্রতিস্থাপনজাত উদাহরণ} ধারণাটি কাজে লাগে:
+এটি কোনো (মোডাল অপারেটরবিহীন) সর্বতঃসত্য সূত্রের প্রতিস্থাপনজাত
+!!a{formula}। প্রত্যেকটি এমন উদাহরণ বৈধ—বিষয়টি অপ্রত্যাশিত না হলেও
+এর প্রমাণ প্রয়োজন।
+\end{explain}
+
+\begin{defn}
+  একটি মোডাল !!{formula}~$!B$ \emph{সর্বতঃসত্য সূত্রের প্রতিস্থাপনজাত
+  উদাহরণ} তখনই এবং কেবল তখনই, যখন $p_1$, \dots,~$p_n$
+  !!{propositional
+    variable}s-যুক্ত কোনো মোডাল অপারেটরবিহীন সর্বতঃসত্য
+  সূত্র~$!A$ এবং !!{formula}s $!D_1$, \dots,~$!D_n$ আছে, যাতে
+  $!B \ident \SSubst{!A}{\subst{!D_1}{p_1},
+    \dots, \subst{!D_n}{p_n}}$।
+\end{defn}
+
+\begin{lem}\ollabel{lem:valid-taut}
+  ধরা যাক, $!A$ একটি মোডাল অপারেটরবিহীন !!{formula}, যার
+  !!{propositional
+  variable}s $p_1$, \dots, $p_n$; আর $!D_1$,
+  \dots, $!D_n$ মোডাল !!{formula}s। যেকোনো নির্ধারণ $\pAssign{v}$,
+  মডেল $\mModel{M} = \tuple{W, R, V}$ এবং $w \in W$-এর জন্য,
+  $\pAssign{v}(p_i) = \True$ তখনই এবং কেবল তখনই, যখন
+  $\mSat{M}{!D_i}[w]$—এমন হলে $\pSat{v}{!A}$ তখনই এবং কেবল তখনই, যখন
+  $\mSat{M}{\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
+      \subst{!D_n}{p_n}}}[w]$।
+\end{lem}
+
+\begin{proof}
+  $!A$-এর ওপর আবেশ প্রয়োগ করি।
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\pSat/{v}{\lfalse}$
+      এবং $\mSat/{M}{\lfalse}[w]$—দুটিই সত্য।}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\pSat{v}{\ltrue}$
+      এবং $\mSat{M}{\ltrue}[w]$—দুটিই সত্য।}}{}
+  \item \indcase{!A}{p_i}{%
+    \begin{align*}
+      \pSat{v}{p_i} \Leftrightarrow {} & \pAssign{v}(p_i) = \True \\
+      & \qquad \text{$\pSat{v}{p_i}$-এর সংজ্ঞা অনুসারে}\\
+      \Leftrightarrow {} & \mSat{M}{!D_i}[w] \\
+      &\qquad \text{অনুমান অনুসারে}\\
+      \Leftrightarrow {} & \mSat{M}{\SSubst{p_i}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+      &\qquad \text{কারণ $\SSubst{p_i}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}} \ident !D_i$}.
+      \end{align*}}
+  % BN-SRC-336; BN-SRC-337
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{%
+      \begin{align*}
+        \pSat{v}{\lnot !B} \Leftrightarrow {} & \pSat/{v}{!B}\\
+        &\qquad \text{$\pSat{v}{}$-এর সংজ্ঞা অনুসারে};\\
+        \Leftrightarrow {} & \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{আবেশ-অনুমান অনুসারে}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{\lnot !B}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{$\mSat{M}{}[w]$-এর সংজ্ঞা অনুসারে}.
+      \end{align*}}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \land !C} \Leftrightarrow {} &
+        \pSat{v}{!B} \text{ এবং } \pSat{v}{!C}\\
+        &\qquad \text{$\pSat{v}{}$-এর সংজ্ঞা অনুসারে}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ এবং } \\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{আবেশ-অনুমান অনুসারে}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \land !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{$\mSat{M}{}[w]$-এর সংজ্ঞা অনুসারে}.
+      \end{align*}}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \lor !C} \Leftrightarrow{} &
+        \pSat{v}{!B} \text{ অথবা } \pSat{v}{!C}\\
+        &\qquad \text{$\pSat{v}{}$-এর সংজ্ঞা অনুসারে};\\
+        \Leftrightarrow{} & \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ অথবা }\\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{আবেশ-অনুমান অনুসারে}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \lor !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{$\mSat{M}{}[w]$-এর সংজ্ঞা অনুসারে}.
+      \end{align*}}}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \lif !C} \Leftrightarrow{} &
+        \pSat/{v}{!B} \text{ অথবা } \pSat{v}{!C}\\
+        &\qquad \text{$\pSat{v}{}$-এর সংজ্ঞা অনুসারে}\\
+        \Leftrightarrow{} &
+        \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ অথবা }\\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{আবেশ-অনুমান অনুসারে}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \lif !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{$\mSat{M}{}[w]$-এর সংজ্ঞা অনুসারে}.
+      \end{align*}}}{}
+  % BN-SRC-338
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \liff !C} \Leftrightarrow {} &
+        \text{হয় } \pSat{v}{!B} \text{ এবং } \pSat{v}{!C}\\
+        & \text{নয়তো } \pSat/{v}{!B} \text{ এবং } \pSat/{v}{!C}\\
+        &\qquad \text{$\pSat{v}{}$-এর সংজ্ঞা অনুসারে}\\
+        \Leftrightarrow {} &
+        \text{হয় } \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ এবং }\\
+        & \qquad \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &  \text{ নয়তো } \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ এবং }\\
+        & \qquad \mSat/{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad\text{আবেশ-অনুমান অনুসারে}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{(!B \liff !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{$\mSat{M}{}[w]$-এর সংজ্ঞা অনুসারে}.
+      \end{align*}}}{}
+  \end{enumerate}
+  \end{proof}
+
+\begin{prop}\ollabel{prop:valid-taut}
+  সর্বতঃসত্য সূত্রের সব প্রতিস্থাপনজাত উদাহরণ বৈধ।
+\end{prop}
+
+\begin{proof}
+  বিপরীত-প্রতিজ্ঞার সাহায্যে প্রমাণ করি। ধরা যাক, $!A$ এমন যে কোনো মডেল
+  $\mModel{M}$ ও জগৎ~$w$-এর জন্য
+  $\mSat/{M}{\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
+  \subst{!D_n}{p_n}}}[w]$। এমন একটি নির্ধারণ $\pAssign{v}$ নিই যাতে
+  $\pAssign{v}(p_i) = \True$ তখনই এবং কেবল তখনই, যখন
+  $\mSat{M}{!D_i}[w]$ (আর $q \notin \{p_1, \dots, p_n \}$ হলে
+  $\pAssign{v}$ নির্বিচারে সত্যমান নির্ধারণ করে)। তখন
+  \olref{lem:valid-taut} অনুসারে $\pSat/{v}{!A}$; তাই $!A$
+  সর্বতঃসত্য নয়।
+\end{proof}
+
+\end{document}

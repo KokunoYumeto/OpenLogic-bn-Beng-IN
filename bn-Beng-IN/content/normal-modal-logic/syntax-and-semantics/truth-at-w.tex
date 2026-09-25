@@ -1,0 +1,127 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: truth-at-w
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{trw}
+
+\olsection{কোনো জগতে সত্যতা}
+
+প্রতিটি মোডাল মডেল নির্ধারণ করে, তার কোন জগতে কোন মোডাল !!{formula}s সত্য।
+``মডেল $\mModel{M}$-এ জগৎ~$w$-তে !!{formula}~$!A$ সত্য''—এই সম্পর্কই
+সম্পর্কমূলক অর্থতত্ত্বের মৌলিক ধারণা। সম্পর্কটি আবেশের সাহায্যে সংজ্ঞায়িত
+হয় এবং মোডাল অপারেটরবিহীন ক্ষেত্রে সত্যক সারণির প্রচলিত বর্ণনার সঙ্গে মেলে।
+
+\begin{defn}\ollabel{defn:mmodels}
+  $\mModel M$-এ $w$-তে !!a{formula}~$!A$-এর \emph{সত্যতা}, সংকেতে
+  $\mSat{M}{!A}[w]$, নিচের মতো আবেশের সাহায্যে সংজ্ঞায়িত:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat{M}{\lfalse}[w]$ কখনোই নয়।}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[w]$ সর্বদাই।}}{}
+  \item $\mSat{M}{p}[w]$ তখনই এবং কেবল তখনই, যখন $w \in V(p)$।
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat/{M}{!B}[w]$।}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[w]$ এবং $\mSat{M}{!C}[w]$।}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[w]$ অথবা $\mSat{M}{!C}[w]$} (উভয়ই হতে পারে)।}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat/{M}{!B}[w]$ অথবা $\mSat{M}{!C}[w]$।}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[w]$ ও $\mSat{M}{!C}[w]$ উভয়ই সত্য,
+    অথবা $\mSat{M}{!B}[w]$ ও $\mSat{M}{!C}[w]$ কোনোটিই সত্য নয়।}}{}
+  % BN-SRC-342: modal clauses follow their primitive-language tags.
+  \tagitem{prvBox}{\ollabel{defn:sub:mmodels-box}
+    \indcase{!A}{\Box !B}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $Rww'$-যুক্ত প্রত্যেক $w' \in W$-তে $\mSat{M}{!B}[w']$।}}{}
+  \tagitem{prvDiamond}{\ollabel{defn:sub:mmodels-diamond}
+    \indcase{!A}{\Diamond !B}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $Rww'$-যুক্ত অন্তত একটি $w' \in W$-তে $\mSat{M}{!B}[w']$।}}{}
+  \end{enumerate}
+\end{defn}
+
+লক্ষ করো, \olref{defn:sub:mmodels-box} অনুসারে $Rww'$-যুক্ত কোনো $w'$
+না থাকলে !!a{formula}~$\Box !B$ $w$-তে সত্য। সে ক্ষেত্রে $\Box !B$
+$w$-তে \emph{শূন্যতাবশে} সত্য। এমনও হতে পারে যে $!B$ $w$-তে সত্য নয়,
+অথচ $\Box !B$ সেখানে সত্য। আবার $w$-তে $!B$ সত্য হলেই $w$-তে
+$\Diamond !B$ সত্য হবে, এমন নিশ্চয়তা নেই। তবে $Rww$ হলে, যেমন $R$
+প্রতিবিম্বী হলে, তা সত্য। কোনো $w'$-এর জন্যই $Rww'$ না হলে যেকোনো~$!A$-এর
+ক্ষেত্রে $\mSat/{M}{\Diamond !A}[w]$।
+
+\begin{prob}
+  \olref[nml][syn][rel]{fig:simple}-এর মডেলটি বিবেচনা করো। নিচের কোনগুলি সত্য?
+    \begin{enumerate}
+    \item $\mSat{M}{q}[w_1]$;
+    \item $\mSat{M}{\lnot q}[w_3]$;
+    \item $\mSat{M}{p \lor q}[w_1]$;
+    \item $\mSat{M}{\Box (p \lor q)}[w_1]$;
+    \item $\mSat{M}{\Box q}[w_3]$;
+    \item $\mSat{M}{\Box \bot}[w_3]$;
+    \item $\mSat{M}{\Diamond q}[w_1]$;
+    \item $\mSat{M}{\Box q}[w_1]$;
+    \item $\mSat{M}{\lnot \Box\Box \lnot q}[w_1]$।
+    \end{enumerate}
+\end{prob}
+
+% Prove duality of \Box and \Diamond
+\begin{tagblock}{prvDiamond}
+\begin{prop}\ollabel{prop:dual}
+  \begin{enumerate}
+  \item $\mSat{M}{\Box !A}[w]$ তখনই এবং কেবল তখনই, যখন $\mSat{M}{\lnot\Diamond\lnot !A}[w]$।
+  \item $\mSat{M}{\Diamond !A}[w]$ তখনই এবং কেবল তখনই, যখন $\mSat{M}{\lnot\Box\lnot !A}[w]$।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item $\mSat{M}{\lnot\Diamond\lnot !A}[w]$ তখনই এবং কেবল তখনই, যখন $\mSat/{M}{\Diamond\lnot
+      !A}[w]$—$\mSat{M}{}[w]$-এর সংজ্ঞা অনুসারে। $\mSat{M}{\Diamond\lnot
+      !A}[w]$ তখনই এবং কেবল তখনই, যখন $Rww'$-যুক্ত কোনো $w'$-এ $\mSat{M}{\lnot
+      !A}[w']$। অতএব, $\mSat/{M}{\Diamond\lnot !A}[w]$ তখনই এবং কেবল
+    তখনই, যখন $Rww'$-যুক্ত সব $w'$-এ $\mSat/{M}{\lnot !A}[w']$। আরও,
+    $\mSat/{M}{\lnot !A}[w']$ তখনই এবং কেবল তখনই, যখন $\mSat{M}{!A}[w']$।
+    সব মিলিয়ে, $\mSat{M}{\lnot\Diamond\lnot !A}[w]$ তখনই এবং কেবল
+    তখনই, যখন $Rww'$-যুক্ত সব $w'$-এ $\mSat{M}{!A}[w']$। আবার
+    $\mSat{M}{}[w]$-এর সংজ্ঞা অনুসারে, এটি তখনই ঘটে, যখন
+    $\mSat{M}{\Box !A}[w]$।
+    \item \iftag{probDiamond}{অনুশীলন।}{$\mSat{M}{\lnot\Box\lnot !A}[w]$ তখনই এবং কেবল
+      তখনই, যখন $\mSat/{M}{\Box\lnot !A}[w]$। % BN-SRC-335
+      $\mSat{M}{\Box\lnot !A}[w]$ তখনই এবং কেবল তখনই, যখন
+      $Rww'$-যুক্ত সব $w'$-এ $\mSat{M}{\lnot !A}[w']$। অতএব,
+      $\mSat/{M}{\Box\lnot !A}[w]$ তখনই এবং কেবল তখনই, যখন $Rww'$-যুক্ত
+      কোনো $w'$-এ $\mSat/{M}{\lnot !A}[w']$। আরও,
+      $\mSat/{M}{\lnot !A}[w']$ তখনই এবং কেবল তখনই, যখন
+      $\mSat{M}{!A}[w']$। সব মিলিয়ে,
+      $\mSat{M}{\lnot\Box\lnot !A}[w]$ তখনই এবং কেবল তখনই, যখন
+      $Rww'$-যুক্ত কোনো~$w'$-এ $\mSat{M}{!A}[w']$। আবার
+      $\mSat{M}{}[w]$-এর সংজ্ঞা অনুসারে, এটি তখনই ঘটে, যখন
+      $\mSat{M}{\Diamond !A}[w]$।}
+  \end{enumerate}
+\end{proof}
+
+\begin{probtag}{probDiamond}
+  \olref[nml][syn][trw]{prop:dual}-এর প্রমাণ সম্পূর্ণ করো।
+\end{probtag}
+\end{tagblock}
+
+\begin{prob}
+  ধরা যাক, $\mModel{M} = \tuple{W, R, V}$ একটি মডেল এবং $w_1, w_2 \in
+  W$-এর ক্ষেত্রে:
+  \begin{enumerate}
+  \item প্রত্যেক !!{propositional variable} $p$-এর জন্য $w_1 \in V(p)$ তখনই এবং কেবল তখনই, যখন $w_2 \in V(p)$; এবং
+  \item প্রত্যেক $w \in W$-এর জন্য $Rw_1w$ তখনই এবং কেবল তখনই, যখন $Rw_2w$।
+  \end{enumerate}
+  !!{formula}s-এর ওপর আবেশ প্রয়োগ করে দেখাও, প্রত্যেক !!{formula}s $!A$-এর জন্য
+  $\mSat{M}{!A}[w_1]$ তখনই এবং কেবল তখনই, যখন $\mSat{M}{!A}[w_2]$।
+\end{prob}
+
+\begin{probtag}{prvDiamond}
+  ধরা যাক, $\mModel{M} = \tuple{W, R, V}$। দেখাও,
+  $\mSat{M}{\lnot\Diamond !A}[w]$ তখনই এবং কেবল তখনই, যখন
+  $\mSat{M}{\Box\lnot!A}[w]$।
+\end{probtag}
+
+\end{document}

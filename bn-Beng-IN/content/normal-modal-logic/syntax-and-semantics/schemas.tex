@@ -1,0 +1,179 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: schemas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{sch}
+
+\olsection{স্কিমা ও বৈধতা}
+
+\begin{defn}
+  কোনো মোডাল !!{formula}~$!C$-এর সমস্ত এবং কেবলমাত্র প্রতিস্থাপনজাত
+  উদাহরণ নিয়ে গঠিত !!{formula}s-এর সেটকে \emph{স্কিমা} বলে; অর্থাৎ,
+  \[
+  \Setabs{!B}{\lexists[!D_1], \dots, \lexists[!D_n] \left(!B =
+  \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \right) }.
+  \]
+  !!{formula}~$!C$-কে স্কিমাটির \emph{চরিত্রসূচক} !!{formula} বলে;
+  !!{propositional
+  variable}s-এর নাম বদল উপেক্ষা করলে এটি অনন্য।
+  !!^a{formula}~$!A$ সেটটির সদস্য হলে সেটি স্কিমাটির একটি
+  \emph{উদাহরণ}।
+\end{defn}
+
+কোনো স্কিমার চরিত্রসূচক সূত্র~$!C$-এর পরমাণু অংশগুলির জায়গায়
+`$!A$', `$!B$',~\dots, বসিয়ে পাওয়া অধিভাষিক রাশি দিয়ে স্কিমাটি
+প্রকাশ করা সুবিধাজনক। যেমন, `$!A$', `$!A \lif \Box!A$',
+`$!A \lif (!B \lif !A)$'—এগুলি স্কিমা প্রকাশ করে। এদের চরিত্রসূচক
+!!{formula}s যথাক্রমে $p$, $p \lif \Box p$, $p \lif (q
+\lif p)$। `$!A$' স্কিমাটি \emph{সব} !!{formula}s-এর সেট প্রকাশ করে।
+
+\begin{defn}
+  কোনো স্কিমা একটি মডেলে \emph{সত্য} তখনই এবং কেবল তখনই, যখন তার সব
+  উদাহরণ সেখানে সত্য; আর স্কিমাটি \emph{বৈধ} তখনই এবং কেবল তখনই,
+  যখন সেটি প্রত্যেক মডেলে সত্য।
+\end{defn}
+
+\begin{prop}\ollabel{prop:Kvalid}
+  নিচের \Ax{K} স্কিমাটি বৈধ:
+  \begin{equation*}
+  \Box(!A \lif !B) \lif (\Box !A \lif \Box !B). \tag{\Ax{K}}
+  \end{equation*}
+\end{prop}
+
+\begin{proof}
+  দেখাতে হবে, স্কিমাটির সব উদাহরণ প্রত্যেক মডেলের প্রত্যেক জগতে সত্য।
+  তাই যেকোনো $\mModel{M} = \tuple{W,R,V}$ এবং $w \in W$ নিই।
+  কোনো শর্তবাক্য কোনো জগতে সত্য দেখাতে, তার পূর্বপদ সত্য ধরে উত্তরপদও
+  সত্য দেখাই। এখানে ধরা যাক, $\mSat{M}{\Box(!A \lif !B)}[w]$ এবং
+  $\mSat{M}{\Box !A}[w]$। দেখাতে হবে, $\mSat{M}{\Box !B}[w]$।
+  $Rww'$-যুক্ত যেকোনো $w'$ নিই। প্রথম অনুমান থেকে
+  $\mSat{M}{!A \lif !B}[w']$, আর দ্বিতীয় অনুমান থেকে
+  $\mSat{M}{!A}[w']$। ফলে $\mSat{M}{!B}[w']$। $w'$
+  নির্বিচারে নেওয়া হয়েছে বলে $\mSat{M}{\Box !B}[w]$।
+\end{proof}
+
+\begin{prop}\ollabel{prop:Dual-valid}
+  নিচের \Dual{} স্কিমাটি বৈধ:
+  \begin{equation*}
+  \Diamond !A \liff \lnot\Box\lnot !A. \tag{\Dual}
+  \end{equation*}
+\end{prop}
+
+\begin{proof}
+  অনুশীলন।
+\end{proof}
+
+\begin{prob}
+  \olref[nml][syn][sch]{prop:Dual-valid} প্রমাণ করো।
+\end{prob}
+
+\begin{prop}\ollabel{prop:soundMP}
+  কোনো মডেলের কোনো জগতে $!A$ এবং $!A \lif !B$ সত্য হলে $!B$-ও
+  সেখানে সত্য। অতএব, বৈধ !!{formula}s মোডাস পোনেন্স বিধিতে আবদ্ধ।
+\end{prop}
+
+\begin{prop}\ollabel{prop:valid-instances}
+  !!^a{formula}~$!A$ বৈধ তখনই এবং কেবল তখনই, যখন তার সব
+  প্রতিস্থাপনজাত উদাহরণ বৈধ। অন্য কথায়, কোনো স্কিমা বৈধ তখনই এবং
+  কেবল তখনই, যখন তার চরিত্রসূচক !!{formula} বৈধ।
+\end{prop}
+
+\begin{proof}
+  ``যদি'' দিকটি স্পষ্ট, কারণ $!A$ নিজেরই একটি প্রতিস্থাপনজাত উদাহরণ।
+
+  ``কেবল যদি'' দিকটি প্রমাণ করতে নিচের দাবিটি দেখাই। ধরা যাক,
+  $\mModel{M} = \tuple{W, R, V}$ একটি মোডাল মডেল এবং $!B \ident
+  \SSubst{!A}{\subst{!D_1}{p_1},\dots,\subst{!D_n}{p_n}}$ হলো
+  $!A$-এর একটি প্রতিস্থাপনজাত উদাহরণ। $V'(p_i) =
+  \Setabs{w}{\mSat{M}{!D_i}[w]}$ রেখে $\mModel{M'} = \tuple{W, R,
+    V'}$ সংজ্ঞায়িত করি। তখন যেকোনো~$w \in W$-এর জন্য
+  $\mSat{M}{!B}[w]$ তখনই এবং কেবল তখনই, যখন $\mSat{M'}{!A}[w]$
+  (প্রমাণটি অনুশীলন হিসেবে রাখা হলো)। এবার ধরা যাক, $!A$ বৈধ,
+  কিন্তু $!A$-এর কোনো প্রতিস্থাপনজাত উদাহরণ $!B$ বৈধ নয়। তবে কোনো
+  $\mModel{M} = \tuple{W, R, V}$ এবং $w \in W$-এর জন্য
+  $\mSat/{M}{!B}[w]$। কিন্তু দাবিটি অনুসারে
+  $\mSat/{M'}{!A}[w]$; ফলে $!A$ বৈধ নয়—স্ববিরোধ।
+\end{proof}
+
+\begin{prob}
+  \olref[nml][syn][sch]{prop:valid-instances}-এর প্রমাণে ``কেবল যদি''
+  অংশের দাবিটি প্রমাণ করো। (ইঙ্গিত: $!A$-এর ওপর আবেশ প্রয়োগ করো।)
+\end{prob}
+
+তবে লক্ষ করো, কোনো স্কিমা একটি মডেলে সত্য তখনই এবং কেবল তখনই, যখন
+তার চরিত্রসূচক সূত্রটি সেখানে সত্য—এ কথা ঠিক নয়। অবশ্য ``কেবল যদি''
+দিকটি ঠিক: $!A$-এর সব উদাহরণ $\mModel{M}$-এ সত্য হলে
+$!A$ নিজেও $\mModel{M}$-এ সত্য। কিন্তু $!A$, $\mModel{M}$-এ সত্য
+হলেও $!A$-এর কোনো উদাহরণ $\mModel{M}$-এর কোনো জগতে অসত্য হতে পারে।
+খুব সহজ বিপরীত উদাহরণ: $p$-কে একটিমাত্র জগৎ~$w$-যুক্ত কোনো মডেলে নিই;
+$V(p) = \{w\}$
+হলে $p$, $w$-তে সত্য। কিন্তু $\lfalse$, $p$-এর একটি উদাহরণ;
+সেটি $w$-তে সত্য নয়।
+
+\begin{prob}
+  দেখাও, নিচের কোনো !!{formula}s বৈধ নয়:
+  \begin{enumerate}
+    \item[\Ax{D}:] \quad $\Box p \lif \Diamond p$;
+    \item[\Ax{T}:] \quad $\Box p \lif p$;
+    \item[\Ax{B}:] \quad $p \lif \Box\Diamond p$;
+    \item[\Ax{4}:] \quad $\Box p \lif \Box \Box p$;
+    \item[\Ax{5}:] \quad $\Diamond p \lif \Box \Diamond
+      p$।
+  \end{enumerate}
+\end{prob}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{| l || l |}
+      \hline
+      {\emph{বৈধ স্কিমা}} & {\emph{অবৈধ স্কিমা}} \\
+      \hline\hline
+      $\Box(!A \lif !B) \lif (\Diamond !A \lif \Diamond !B)$
+      & $\Box (!A \lor !B) \lif (\Box !A \lor \Box !B)$ \\
+      $\Diamond (!A \lif !B) \lif (\Box !A \lif \Diamond
+      !B)$
+      & $(\Diamond !A \land \Diamond !B) \lif \Diamond (!A
+      \land !B)$\\
+      $\Box (!A \land !B) \liff (\Box !A \land \Box !B)$
+      & $!A \lif \Box !A$ \\
+      $\Box !A \lif \Box (!B \lif !A)$
+      & $\Box \Diamond !A \lif !B$ \\
+      $\lnot \Diamond !A \lif \Box (!A \lif !B)$
+      & $\Box \Box !A \lif \Box !A$ \\
+      $\Diamond (!A \lor !B) \liff (\Diamond !A \lor
+      \Diamond !B)$
+      & $\Box \Diamond !A \lif \Diamond \Box !A$। \\
+      \hline
+    \end{tabular}
+    \caption{বৈধ ও অবৈধ স্কিমা।} % BN-SRC-339
+    \ollabel{tab:valid-invalidSchemas}
+\end{table}
+
+\begin{prob}%\ollabel{ex:in/validSchemas}
+  \olref[nml][syn][sch]{tab:valid-invalidSchemas}-এর প্রথম স্তম্ভের
+  স্কিমাগুলি বৈধ এবং দ্বিতীয় স্তম্ভেরগুলি অবৈধ প্রমাণ করো।
+\end{prob}
+
+\begin{prob}
+  নিচের স্কিমাগুলি বৈধ কি অবৈধ নির্ধারণ করো:
+  \begin{enumerate}
+  \item $(\Diamond !A \lif \Box !B) \lif (\Box !A \lif \Box
+    !B)$;
+  \item $\Diamond(!A \lif !B) \lor \Box(!B \lif !A)$।
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+  নিচের প্রত্যেকটি স্কিমার জন্য এমন একটি মডেল $\mModel{M}$ বের করো,
+  যাতে সংশ্লিষ্ট !!{formula}-এর প্রত্যেক উদাহরণ $\mModel{M}$-এ সত্য:
+  \begin{enumerate}
+  \item $p \lif \Diamond\Diamond p$;
+  \item $\Diamond p \lif \Box p$।
+  \end{enumerate}
+\end{prob}
+
+\end{document}

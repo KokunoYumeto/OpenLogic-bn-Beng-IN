@@ -1,0 +1,71 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: modal-validity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{val}
+
+\olsection{বৈধতা}
+
+\begin{explain}
+  সব মডেলে, অর্থাৎ প্রত্যেক মডেলের প্রত্যেক জগতে, সত্য !!^{formula}s
+  বিশেষ গুরুত্বপূর্ণ। সম্ভাব্য জগৎগুলির ওপর কোনো অভিগম্যতা সম্পর্ক থেকে
+  উৎপন্ন ``স্বাভাবিক'' ব্যাখ্যা $\Box$ ও $\Diamond$-কে যেভাবেই দেওয়া
+  হোক না কেন, এগুলি সত্য মোডাল বক্তব্য প্রকাশ করে। এ ধরনের !!{formula}s-কে
+  আমরা \emph{বৈধ} বলি। যেমন, $\Box(p \land q) \lif \Box p$ বৈধ। কিন্তু
+  $\Box$-এর সত্যতাসংক্রান্ত ব্যাখ্যা থেকে $\Box p \lif p$-এর মতো কোনো
+  !!{formula}s বৈধ মনে হলেও, তা বৈধ নয়। সম্পর্কমূলক মডেলের একটি আকর্ষণ
+  হলো, বিভিন্ন ধরনের অভিগম্যতা সম্পর্কের মাধ্যমে $\Box$ ও $\Diamond$-এর
+  বিভিন্ন ব্যাখ্যা ধরা যায়। তাই বৈধতা শুধু \emph{সব} মডেলের সাপেক্ষে নয়,
+  \emph{নির্দিষ্ট ধরনের} সব মডেলের সাপেক্ষেও সংজ্ঞায়িত করা উচিত। যেমন,
+  দেখা যাবে যে প্রত্যেক জগৎ নিজের থেকে অভিগম্য, অর্থাৎ $R$ প্রতিবিম্বী,
+  এমন সব মডেলে $\Box p \lif p$ সত্য। মডেলের শ্রেণির সাপেক্ষে বৈধতা
+  সংজ্ঞায়িত করলে সংক্ষেপে বলা যায়: প্রতিবিম্বী মডেলের শ্রেণিতে
+  $\Box p \lif p$ বৈধ।
+\end{explain}
+
+\begin{defn}
+  !!^a{formula}~$!A$ মডেলগুলির কোনো শ্রেণি $\mClass{C}$-তে \emph{বৈধ}
+  তখনই এবং কেবল তখনই, যখন তা $\mClass{C}$-এর প্রত্যেক মডেলে সত্য
+  (অর্থাৎ $\mClass{C}$-এর প্রত্যেক মডেলের প্রত্যেক জগতে সত্য)। $!A$
+  $\mClass{C}$-তে বৈধ হলে লিখি $\mClass{C} \Entails !A$; আর
+  $!A$ \emph{সব} মডেলের শ্রেণিতে বৈধ হলে লিখি $\Entails !A$।
+\end{defn}
+
+\begin{prop}\ollabel{prop:subset-class}
+  $!A$, $\mClass{C}$-তে বৈধ হলে, $\mClass{C}' \subseteq \mClass{C}$
+  এমন প্রত্যেক শ্রেণিতেও বৈধ।
+\end{prop}
+
+\begin{prop}\ollabel{prop:Nec-rule}
+  $!A$ বৈধ হলে $\Box!A$-ও বৈধ।
+\end{prop}
+
+\begin{proof}
+  ধরা যাক, $\Entails !A$। $\Entails \Box!A$ দেখাতে যেকোনো মডেল
+  $\mModel{M} = \tuple{W, R, V}$ ও $w \in W$ নিই। $Rww'$ হলে
+  $!A$-এর বৈধতার কারণে $\mSat{M}{!A}[w']$; ফলে
+  $\mSat{M}{\Box!A}[w]$। $\mModel{M}$ ও $w$ নির্বিচারে নেওয়া হয়েছে
+  বলে $\Entails \Box!A$।
+\end{proof}
+
+\begin{prob}
+  নিচের সূত্রগুলি বৈধ দেখাও:
+  \begin{enumerate}
+  \item $\Box p \lif \Box (q \lif p)$;
+  \item $\Box \lnot \lfalse$;
+  \item $\Box p \lif (\Box q \lif \Box p)$।
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+  $W = \{w\}$-যুক্ত মডেল $\mModel{M} = \tuple{W, R, V}$-গুলির শ্রেণি
+  $\mClass{C}$-তে $!A \lif \Box!A$ বৈধ দেখাও। একইভাবে দেখাও,
+  $R = \emptyset$-যুক্ত মডেল $\mModel{M} = \tuple{W, R, V}$-গুলির
+  শ্রেণিতে $!B \lif \Box !A$ এবং $\Diamond !A \lif !B$ বৈধ।
+\end{prob}
+
+\end{document}

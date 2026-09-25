@@ -1,0 +1,295 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-25T05:01:46.478827+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "9747449322277cd45bf8abac1108db8aa58a4eba",
+  "parent": "bddc92581cb6bb9855f0aba9f3ea63c7a2bbba27",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "b058bd88055f2ad127b51eb53a182a75d5ef614e",
+    "receipt": "PUBLIC_READBACK_SOURCE_425_2026-09-25.json",
+    "receipt_sha256": "6b4e57089c060079c9355596c1a593eb6ca0aaededb340234eaf2d439dd6f2ca"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/9747449322277cd45bf8abac1108db8aa58a4eba.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/9747449322277cd45bf8abac1108db8aa58a4eba",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 12752047,
+  "archive_sha256": "1b440207770be4e022710e8919eb49ea32c35ace72a618446dbf953cbc13723c",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/axioms-systems.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/axioms-systems.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/axioms-systems.tex",
+      "content_type": "text/plain",
+      "bytes": 598,
+      "sha256": "7af47948ff760ba4aad5ba5ee995b5f014ce6d1cf1898d60b49e2345261eea7a"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/consistency.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/consistency.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/consistency.tex",
+      "content_type": "text/plain",
+      "bytes": 3910,
+      "sha256": "6d0972a941594c44c783b147749556f62de3c72b742b86b06295c59e44bc3b26"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/derived-rules.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/derived-rules.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/derived-rules.tex",
+      "content_type": "text/plain",
+      "bytes": 9711,
+      "sha256": "d3db346034726c4416b332310a3e93f46e5e17cdb25fa38af375b6fa4f80f638"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/duals.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/duals.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/duals.tex",
+      "content_type": "text/plain",
+      "bytes": 1847,
+      "sha256": "3b9b76043ae6b19b89da83fd11cf635b1a1aa14f24cdbeffbaee0bd997fb4001"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 7549,
+      "sha256": "2cac9dbc3c75e1cd3dbad0ea6001ec8b112b5e2cbd444b65ff6df4e4e41d15fc"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/logics-proofs.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/logics-proofs.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/logics-proofs.tex",
+      "content_type": "text/plain",
+      "bytes": 7747,
+      "sha256": "584d0f899302b5f068e408483be071cb63d51e4f493ddc99e18c60e5c6f46610"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/more-proofs-in-K.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/more-proofs-in-K.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/more-proofs-in-K.tex",
+      "content_type": "text/plain",
+      "bytes": 3833,
+      "sha256": "64a31d591b0f84e1c90240f8d5a10465be6daa9942cce824f3bac23655c878d1"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/normal-logics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/normal-logics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/normal-logics.tex",
+      "content_type": "text/plain",
+      "bytes": 7704,
+      "sha256": "ce85d34a9bbf2464a7594ff35d2b4c94dba05b36ae56b24ff5e91fab284f7c27"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/proofs-in-K.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/proofs-in-K.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/proofs-in-K.tex",
+      "content_type": "text/plain",
+      "bytes": 7269,
+      "sha256": "82f90575aa0ed5b42e96373c55a1bc97dc043200e4d9940b3755eea4af763ea5"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/proofs-modal-systems.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/proofs-modal-systems.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/proofs-modal-systems.tex",
+      "content_type": "text/plain",
+      "bytes": 4859,
+      "sha256": "c696ddc7e763e887d958ac69be66b740116a93d9fddb44dd216533af253c121e"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/provability-from-set.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/provability-from-set.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/provability-from-set.tex",
+      "content_type": "text/plain",
+      "bytes": 1149,
+      "sha256": "48f12f612074d700cf597cabc9db954964d5237ca5591a39dd2433f713e8303c"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/provability-properties.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/provability-properties.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/provability-properties.tex",
+      "content_type": "text/plain",
+      "bytes": 2554,
+      "sha256": "f5a8d0fff5d03dfcc370c9433dca11b970cadae1d6b6bcf8622044e1d8d50c31"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/soundness.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/soundness.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/soundness.tex",
+      "content_type": "text/plain",
+      "bytes": 4064,
+      "sha256": "0c92b1dc0b0f7462f6935e639209cb219165eac0b87e7a81cd0c1c204200bd79"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/systems-distinct.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/systems-distinct.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9747449322277cd45bf8abac1108db8aa58a4eba/bn-Beng-IN/content/normal-modal-logic/axioms-systems/systems-distinct.tex",
+      "content_type": "text/plain",
+      "bytes": 8049,
+      "sha256": "35a6a7e5a0b599ba4137a806c94321a53ce368fa56e652ab87b89bf66445186c"
+    }
+  ],
+  "changed_files_verified": 26,
+  "translated_tex_files_in_commit": 14,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 439,
+  "draft_untranslated_total": 283,
+  "segments": 4936,
+  "translated_segments": 4172,
+  "new_batch_segments": 136,
+  "new_batch_translated_segments": 109,
+  "new_batch_unchanged_segments": 27,
+  "source_correction_records": 360,
+  "new_source_correction_records": 5,
+  "source_normalization_records": 3,
+  "translation_decisions": 332,
+  "provisional_translation_decisions": 313,
+  "translation_decision_occurrences": 27555,
+  "decisions_with_exact_source_wording": 316,
+  "ai_assistance": {
+    "product": "OpenAI Codex",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "ultra"
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 439,
+    "blocks": 4936,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/axioms-systems.tex",
+      "bytes": 598,
+      "sha256": "7af47948ff760ba4aad5ba5ee995b5f014ce6d1cf1898d60b49e2345261eea7a"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/consistency.tex",
+      "bytes": 3910,
+      "sha256": "6d0972a941594c44c783b147749556f62de3c72b742b86b06295c59e44bc3b26"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/derived-rules.tex",
+      "bytes": 9711,
+      "sha256": "d3db346034726c4416b332310a3e93f46e5e17cdb25fa38af375b6fa4f80f638"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/duals.tex",
+      "bytes": 1847,
+      "sha256": "3b9b76043ae6b19b89da83fd11cf635b1a1aa14f24cdbeffbaee0bd997fb4001"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/introduction.tex",
+      "bytes": 7549,
+      "sha256": "2cac9dbc3c75e1cd3dbad0ea6001ec8b112b5e2cbd444b65ff6df4e4e41d15fc"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/logics-proofs.tex",
+      "bytes": 7747,
+      "sha256": "584d0f899302b5f068e408483be071cb63d51e4f493ddc99e18c60e5c6f46610"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/more-proofs-in-K.tex",
+      "bytes": 3833,
+      "sha256": "64a31d591b0f84e1c90240f8d5a10465be6daa9942cce824f3bac23655c878d1"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/normal-logics.tex",
+      "bytes": 7704,
+      "sha256": "ce85d34a9bbf2464a7594ff35d2b4c94dba05b36ae56b24ff5e91fab284f7c27"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/proofs-in-K.tex",
+      "bytes": 7269,
+      "sha256": "82f90575aa0ed5b42e96373c55a1bc97dc043200e4d9940b3755eea4af763ea5"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/proofs-modal-systems.tex",
+      "bytes": 4859,
+      "sha256": "c696ddc7e763e887d958ac69be66b740116a93d9fddb44dd216533af253c121e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/provability-from-set.tex",
+      "bytes": 1149,
+      "sha256": "48f12f612074d700cf597cabc9db954964d5237ca5591a39dd2433f713e8303c"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/provability-properties.tex",
+      "bytes": 2554,
+      "sha256": "f5a8d0fff5d03dfcc370c9433dca11b970cadae1d6b6bcf8622044e1d8d50c31"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/soundness.tex",
+      "bytes": 4064,
+      "sha256": "0c92b1dc0b0f7462f6935e639209cb219165eac0b87e7a81cd0c1c204200bd79"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/systems-distinct.tex",
+      "bytes": 8049,
+      "sha256": "35a6a7e5a0b599ba4137a806c94321a53ce368fa56e652ab87b89bf66445186c"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 7881314,
+      "sha256": "a6572ec20201480a4807ea7a3a8518c47f126f829356aa17287e67cf71e355f1"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 273942,
+      "sha256": "1d5653500d921ee9f1339f3fc49606e7d7df2f0b55d025470e85bd5c3ee3055c"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_MODAL_AXIOMS_SYSTEMS.md",
+      "bytes": 12416,
+      "sha256": "c170a7be8724b23635d9b16e204ef2684ba15f5c5c17c401c13d5a629be855fe"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "4200c4a36485aec3dfc64b70d5b38d53fef10a4123429c16b6e90233e0c61bd9"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 702537,
+      "sha256": "1611b963ce3802622f90b315c3c39e42d2db45ef0e2f4c0e1d560d1b7fca6992"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 301376,
+      "sha256": "2d1d5b50ac089cb002a453ec1d0a9129afde8a73881e1a45b0ed95261a780279"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 16805250,
+      "sha256": "3afc932be646a83570c76930ea7143aeba89c60c2f7b8fd77f8481ba37d64395"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 13152783,
+      "sha256": "3afae4e9b8cbb98ffc222f34b01d1212bb9d862a65f33be382faed089c9bad14"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1290666,
+      "sha256": "7da69d1da96b4bd3e24d441db3777895238959768e70bb47d323f045c520d992"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 7564627,
+      "sha256": "4274471af1b0ed83e166948eaf734ee8fb37157ea4dd709ef9bcb20675efec03"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 245620,
+      "sha256": "cba50ec3ee87f3f051845d7c36916610586111c132c976aa46f1187d02962f9f"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 249347,
+      "sha256": "e25c27f18fc2224432ae129a729fa1ec358d1177cb3ccce311b66a16ea007409"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+% Part: many-valued-logic
+% Chapter: three-valued-logics
+% Section: kleene
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{thr}{skl}
+
+\olsection{ক্লিনি যুক্তিবিদ্যাসমূহ}
+
+স্টিফেন ক্লিনি দুটি ত্রিমানী যুক্তিবিদ্যা প্রবর্তন করেন। এগুলির প্রেরণা ছিল
+এমন এক যুক্তিবিদ্যা, যেখানে সত্যমানগুলিকে গণনামূলক প্রক্রিয়ার ফল হিসেবে
+ভাবা হয়: কোনো প্রক্রিয়া~$\True$ বা~$\False$ দিতে পারে, আবার থামতে
+ব্যর্থও হতে পারে। শেষ ক্ষেত্রে সংশ্লিষ্ট সত্যমানটি অসংজ্ঞায়িত; একে
+সত্যমান~$\Undef$ দিয়ে প্রকাশ করা হয়।
+
+কোনো বচন~$!A$-এর নঞর্থক রূপ গণনা করতে প্রথমে~$!A$-এর মান গণনা করবে,
+তারপর ফলটির বিপরীত মান ফেরত দেবে। $!A$-এর গণনা না থামলে গোটা
+প্রক্রিয়াটিও থামবে না; তাই $\Undef$-এর নঞর্থক মান~$\Undef$।
+
+কোনো সংযোজন $!A \land !B$ গণনা করার দুটি উপায় আছে। প্রথমে~$!A$,
+তারপর~$!B$ গণনা করা যায়; উভয়ের ফল~$\True$ হলে ফল হবে~$\True$, অন্যথায়
+$\False$। কোনো একটি গণনা থামতে ব্যর্থ হলে গোটা প্রক্রিয়াটিও থামবে না।
+তাই এই ক্ষেত্রে একটি সংযোজ্য অসংজ্ঞায়িত হলে সংযোজনটিও অসংজ্ঞায়িত।
+বিযোজনের ক্ষেত্রেও একই কথা প্রযোজ্য।
+
+কিন্তু $!A$ ও~$!B$-কে সমান্তরালে মূল্যায়ন করতে পারলে আমরা আরও ভালো ফল
+পেতে পারি। তখন প্রক্রিয়া দুটির একটি থেমে~$\False$ ফেরত দিলেই আমরা থামতে
+পারি, কারণ উত্তরটি মিথ্যা হতেই হবে। এই ক্ষেত্রে তাই একটি সংযোজ্য মিথ্যা
+হলে অন্যটি অসংজ্ঞায়িত হলেও সংযোজনটি মিথ্যা। একইভাবে, কোনো বিযোজন
+সমান্তরালে গণনা করার সময় বিযোজ্য দুটির একটির প্রক্রিয়া সত্য ফেরত দিলেই
+আমরা থামতে পারি; তখন বিযোজনটি সত্য হতেই হবে। ফলে কোনো উপাদান
+অসংজ্ঞায়িত হলেও যৌগিক উক্তির ফল কী হবে তা এই ক্ষেত্রে জানা যায়। এই
+ব্যাখ্যায়~$\Undef$-কে “অসংজ্ঞায়িত”-এর বদলে “অজ্ঞাত” বলে পড়া যেতে পারে।
+
+এই দুই ব্যাখ্যা ক্লিনির শক্তিশালী ও দুর্বল যুক্তিবিদ্যার জন্ম দেয়।
+শর্তবচনকে $\lnot !A \lor !B$-এর সমতুল্য হিসেবে সংজ্ঞায়িত করা হয়।
+
+\begin{defn}
+\emph{শক্তিশালী ক্লিনি যুক্তিবিদ্যা}~$\LogKs$ নিচের ম্যাট্রিক্স দিয়ে
+সংজ্ঞায়িত:
+\begin{enumerate}
+  \item $\lnot$, $\land$, $\lor$, $\lif$-সহ প্রমিত বচনগত ভাষা
+  $\Lang L_0$।
+  \item সত্যমানের সেট $V = \{\True, \Undef, \False\}$।
+  \item $\True$ একমাত্র মনোনীত মান; অর্থাৎ $V^+ = \{\True\}$।
+  \item সত্যমান-অপেক্ষকগুলি নিচের সারণিগুলি দিয়ে দেওয়া হয়:
+  \begin{center}
+    \begin{tabular}{c|c}
+      $\tf{\lnot}$ & \\
+      \hline
+      $\True$ & $\False$ \\
+      $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\land}[\LogKs]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\
+      $\Undef$ & $\Undef$ & $\Undef$ & $\False$\\
+      $\False$ & $\False$ & $\False$ & $\False$
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc}
+      $\tf{\lor}[\LogKs]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\True$ & $\True$ \\
+      $\Undef$ & $\True$ & $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ & $\Undef$ & $\False$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\lif}[\LogKs]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\
+      $\Undef$ & $\True$ & $\Undef$ & $\Undef$  \\
+      $\False$ & $\True$ & $\True$ & $\True$
+    \end{tabular}
+  \end{center}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+\emph{দুর্বল ক্লিনি যুক্তিবিদ্যা}~$\LogKw$ নিচের ম্যাট্রিক্স দিয়ে
+সংজ্ঞায়িত:
+\begin{enumerate}
+  \item $\lnot$, $\land$, $\lor$, $\lif$-সহ প্রমিত বচনগত ভাষা
+  $\Lang L_0$।
+  \item সত্যমানের সেট $V = \{\True, \Undef, \False\}$।
+  \item $\True$ একমাত্র মনোনীত মান; অর্থাৎ $V^+ = \{\True\}$।
+  \item সত্যমান-অপেক্ষকগুলি নিচের সারণিগুলি দিয়ে দেওয়া হয়:
+  \begin{center}
+    \begin{tabular}{c|c}
+      $\tf{\lnot}$ & \\
+      \hline
+      $\True$ & $\False$ \\
+      $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\land}[\LogKw]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\
+      $\Undef$ & $\Undef$ & $\Undef$ & $\Undef$\\
+      $\False$ & $\False$ & $\Undef$ & $\False$
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc}
+      $\tf{\lor}[\LogKw]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\Undef$ & $\True$ \\
+      $\Undef$ & $\Undef$ & $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ & $\Undef$ & $\False$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\lif}[\LogKw]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\
+      $\Undef$ & $\Undef$ & $\Undef$ & $\Undef$  \\
+      $\False$ & $\True$ & $\Undef$ & $\True$
+    \end{tabular}
+  \end{center}
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+  $\LogKs$ ও~$\LogKw$-এ কোনো সর্বতঃসত্য নেই।
+\end{prop}
+
+\begin{proof}
+  প্রতিটি !!{propositional variable}s~$p$-এর জন্য
+  $\pAssign v(p) = \Undef$ হলে যেকোনো সূত্র~$!A$-এর সত্যমান হবে
+  $\pValue v(!A) = \Undef$; কারণ উভয় যুক্তিবিদ্যায়
+  \[
+    \tf{\lnot}(\Undef) = \tf{\lor}(\Undef, \Undef) = \tf{\land}(\Undef,
+  \Undef) = \tf{\lif}(\Undef, \Undef) = \Undef
+  \]
+  $\LogKs$ ও~$\LogKw$—কোনোটির জন্যই $\Undef \notin V^+$; তাই এই
+  !!{valuation}-এ $!A$ মনোনীত হবে না।
+\end{proof}
+
+দুর্বল ও শক্তিশালী ক্লিনি যুক্তিবিদ্যা—উভয়েরই কোনো সর্বতঃসত্য না থাকলেও
+তাদের অ-তুচ্ছ অনুসিদ্ধান্ত সম্পর্ক আছে।
+
+\begin{prob}
+  নিচের কোন সম্পর্কগুলি (ক)~শক্তিশালী এবং (খ)~দুর্বল ক্লিনি যুক্তিবিদ্যায়
+  সিদ্ধ? প্রতিটির জন্য একটি সত্যসারণি দাও।
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $p \lor q, \lnot p \Entails q$
+    \item $p \land q \Entails p$
+    \item $p \Entails p \land p$
+    \item $p \Entails p \lor q$
+  \end{enumerate}
+\end{prob}
+
+দিমিত্রি বোচভার $\Undef$-কে “অর্থহীন” হিসেবে ব্যাখ্যা করেন এবং
+কূটাভাসী বাক্যগুলিকে~$\Undef$ মান দেওয়ার বিধান করে মিথ্যাবাদীর
+কূটাভাসের মতো কূটাভাস সমাধানে এটি ব্যবহারের চেষ্টা করেন। তিনি এমন একটি
+যুক্তিবিদ্যা প্রবর্তন করেন, যা মূলত অতিরিক্ত কয়েকটি সংযোজক দিয়ে প্রসারিত
+দুর্বল ক্লিনি যুক্তিবিদ্যা। এগুলির দুটি হলো “বহিঃস্থ নঞর্থকরণ” ও
+“অসংজ্ঞায়িত” অপারেটর:
+\begin{center}
+  \begin{tabular}{c|c}
+    $\tf{\sim}$ & \\
+    \hline
+    $\True$ & $\False$ \\
+    $\Undef$ & $\True$ \\
+    $\False$ & $\True$
+  \end{tabular}
+\quad
+  \begin{tabular}{c|c}
+    $\tf{+}$ & \\
+    \hline
+    $\True$ & $\False$ \\
+    $\Undef$ & $\True$ \\
+    $\False$ & $\False$
+  \end{tabular}
+\end{center}
+
+\begin{prob}
+  বোচভারের যুক্তিবিদ্যায় $\sim$-কে কি $\lnot$ ও~$+$ দিয়ে সংজ্ঞায়িত
+  করতে পারো? অর্থাৎ শুধু !!{propositional
+  variable}~$p$ আছে এবং
+  $\sim$ নেই—এমন !!a{formula} খুঁজে বের করো, যার সত্যমান সবসময়
+  $\mathord{\sim}p$-এর সত্যমানের সমান। তোমার উত্তর সঠিক দেখাতে একটি
+  সত্যসারণি দাও।
+\end{prob}
+
+
+\end{document}

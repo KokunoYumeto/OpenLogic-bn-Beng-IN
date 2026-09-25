@@ -2280,6 +2280,76 @@ for row in rows:
         many_valued_syntax_semantics_math_fix = (
             mathparts(audited_many_valued_syntax_semantics) == target_math
         )
+    three_valued_logics_math_fix = False
+    audited_three_valued_logics = source
+    if row["unit_id"] == "OLP-0394":
+        repairs = [
+            (
+                r"\tf{\land}(\False, \Undef) =" "\n"
+                r"\tf{\land}(\False, \Undef) = \False.",
+                r"\tf{\land}(\False, \Undef) =" "\n"
+                r"\tf{\land}(\Undef, \False) = \False.",
+            ),
+            (r"$(\lnot p \land p) \lif q)$", r"$(\lnot p \land p) \lif q$"),
+            (
+                r"$\pValue v(\lnot \Diamond(p \land \lnot p)) =" "\n"
+                r"\Undef$",
+                r"$\pValue v(\lnot \Diamond(p \land \lnot p)) =" "\n"
+                r"\False$",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_three_valued_logics.count(old) == 1, old
+            audited_three_valued_logics = audited_three_valued_logics.replace(
+                old, new, 1
+            )
+    elif row["unit_id"] == "OLP-0397":
+        old_basis = r"""\item Induction basis: $!A \ident p$. By
+    \olref[syn][val]{defn:pValue}, $\pValue v(!A)[\LogKs]
+    = \pAssign v(p) = \pValue {v'}(!A)[\LogCL]$, which implies both (a)
+    and~(b)."""
+        new_basis = r"""\item Induction basis: $!A \ident p$. By
+    \olref[syn][val]{defn:pValue} and~$v'$, if
+    $\pValue v(!A)[\LogKs] = \False$, then $\pAssign v(p)=\False$ and
+    $\pValue {v'}(!A)[\LogCL]=\False$. If
+    $\pValue v(!A)[\LogKs] = \True$, then $\pAssign v(p)=\True$ and
+    $\pValue {v'}(!A)[\LogCL]=\True$."""
+        assert audited_three_valued_logics.count(old_basis) == 1
+        audited_three_valued_logics = audited_three_valued_logics.replace(
+            old_basis, new_basis, 1
+        )
+        repairs = [
+            (
+                r"$\pValue v(!B)[\LogKs]  =" "\n"
+                r"      \False$ or $\pValue v(!B)[\LogKs]  = \False$",
+                r"$\pValue v(!B)[\LogKs]  =" "\n"
+                r"      \False$ or $\pValue v(!C)[\LogKs]  = \False$",
+            ),
+            (
+                r"$\pValue v(!B)[\LogKs]  =" "\n"
+                r"      \True$ and $\pValue v(!B)[\LogKs]  = \True$",
+                r"$\pValue v(!B)[\LogKs]  =" "\n"
+                r"      \True$ and $\pValue v(!C)[\LogKs]  = \True$",
+            ),
+            (
+                r"Truth functions are the same as \L ukasiewicz logic~$\LogLuk[3]$.",
+                r"The falsum truth function is $\tf{\lfalse}=\False$; truth functions for the remaining connectives are the same as \L ukasiewicz logic~$\LogLuk[3]$.",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_three_valued_logics.count(old) == 1, old
+            audited_three_valued_logics = audited_three_valued_logics.replace(
+                old, new, 1
+            )
+    if 392 <= unit_number <= 397:
+        expected_three_valued = {
+            "OLP-0394": {"BN-SRC-318", "BN-SRC-319", "BN-SRC-323"},
+            "OLP-0397": {"BN-SRC-320", "BN-SRC-321", "BN-SRC-322"},
+        }
+        assert set(documented) == expected_three_valued.get(row["unit_id"], set())
+        three_valued_logics_math_fix = (
+            mathparts(audited_three_valued_logics) == target_math
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -4428,6 +4498,107 @@ for row in rows:
             "satisfaction_not_entailment_for_countervaluation_restored": True,
             "shared_four_connective_scope_restored": True,
         }
+    elif row["unit_id"] == "OLP-0392":
+        assert three_valued_logics_math_fix
+        assert not documented
+        assert "ত্রিমানী যুক্তিবিদ্যা" in checked_target
+        assert all(
+            f"\\olimport{{{name}}}" in checked_target
+            for name in (
+                "introduction",
+                "lukasiewicz",
+                "kleene",
+                "goedel",
+                "multiple-designation",
+            )
+        )
+        tex_command_check = {
+            "three_valued_logics_chapter_title_reviewed": True,
+            "all_five_chapter_imports_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0393":
+        assert three_valued_logics_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in ("আর একটি মান", "যেকোনো সমন্বয়", "উভয়কেই, মনোনীত")
+        )
+        tex_command_check = {
+            "third_truth_value_overview_reviewed": True,
+            "truth_function_and_designation_choices_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0394":
+        assert three_valued_logics_math_fix
+        assert set(documented) == {"BN-SRC-318", "BN-SRC-319", "BN-SRC-323"}
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "ভবিষ্যৎ-আপতিক",
+                r"\tf{\land}(\Undef, \False) = \False",
+                r"$(\lnot p \land p) \lif q$",
+                r"\pValue v(\lnot \Diamond(p \land \lnot p)) = \False",
+                "সম্ভাব্যতা ও",
+                "আবশ্যিকতার মতো মোডাল পার্থক্য",
+            )
+        )
+        tex_command_check = {
+            "lukasiewicz_future_contingent_semantics_reviewed": True,
+            "symmetric_false_conjunction_case_restored": True,
+            "unmatched_exercise_parenthesis_removed": True,
+            "modal_countervaluation_value_restored": True,
+            "modal_extension_and_limitation_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0395":
+        assert three_valued_logics_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "সমান্তরালে মূল্যায়ন",
+                "শক্তিশালী ক্লিনি যুক্তিবিদ্যা",
+                "দুর্বল ক্লিনি যুক্তিবিদ্যা",
+                "বহিঃস্থ নঞর্থকরণ",
+            )
+        )
+        tex_command_check = {
+            "strong_and_weak_kleene_computational_semantics_reviewed": True,
+            "bochvar_external_connectives_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0396":
+        assert three_valued_logics_math_fix
+        assert not documented
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "স্বজ্ঞাবাদী যুক্তিবিদ্যা",
+                r"\tf{\lnot}(\Undef) = \False",
+                r"(p \lif q) \lor (q \lif p)",
+            )
+        )
+        tex_command_check = {
+            "three_valued_godel_matrix_reviewed": True,
+            "intuitionistic_and_classical_comparisons_reviewed": True,
+        }
+    elif row["unit_id"] == "OLP-0397":
+        assert three_valued_logics_math_fix
+        assert set(documented) == {"BN-SRC-320", "BN-SRC-321", "BN-SRC-322"}
+        assert all(
+            phrase in checked_target
+            for phrase in (
+                "কূটাভাসের যুক্তিবিদ্যা",
+                "অর্থহীনতার যুক্তিবিদ্যা",
+                "পরাসঙ্গত",
+                r"\pValue v(!C)[\LogKs] = \False",
+                r"\pValue v(!C)[\LogKs] = \True",
+                r"\tf{\lfalse}=\False",
+            )
+        )
+        tex_command_check = {
+            "multiple_designation_logics_reviewed": True,
+            "lp_induction_basis_repaired": True,
+            "lp_conjunction_induction_variables_restored": True,
+            "rm3_falsum_interpretation_restored": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -4535,6 +4706,7 @@ for row in rows:
             lambda_definability_pairs_truth_pr_math_fix,
             lambda_definability_completion_math_fix,
             many_valued_syntax_semantics_math_fix,
+            three_valued_logics_math_fix,
             shared_audit_fix,
         )
     )

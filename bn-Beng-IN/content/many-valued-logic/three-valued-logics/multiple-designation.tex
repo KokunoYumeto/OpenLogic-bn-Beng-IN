@@ -1,0 +1,234 @@
+% Part: many-valued-logic
+% Chapter: three-valued-logics
+% Section: multiple-designation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{thr}{mul}
+
+\olsection{শুধু~$\True$ নয়, অন্য মানও মনোনীত করা}
+
+এ পর্যন্ত দেখা সব যুক্তিবিদ্যায় মনোনীত সত্যমানের সেট ছিল
+$V^+ = \{\True\}$; অর্থাৎ কোনো কিছুর সত্যমান~$\True$ হলেই এবং কেবল
+তখনই সেটি সত্য বলে গণ্য হতো। কিন্তু কোনো কিছুর সত্যমান শুধু~$\False$
+না হলেই তাকেও সত্য গণ্য করা যেতে পারে। তখন ম্যাট্রিক্সে, যেমন,
+$V^+ = \{\True, \Undef\}$ স্থির করে একটি যুক্তিবিদ্যা পাওয়া যাবে।
+
+\begin{defn}
+\emph{কূটাভাসের যুক্তিবিদ্যা}~$\LogLP$ নিচের ম্যাট্রিক্স দিয়ে সংজ্ঞায়িত:
+\begin{enumerate}
+  \item $\lnot$, $\land$, $\lor$, $\lif$-সহ প্রমিত বচনগত ভাষা
+  $\Lang L_0$।
+  \item সত্যমানের সেট $V = \{\True, \Undef, \False\}$।
+  \item $\True$ ও~$\Undef$ মনোনীত; অর্থাৎ
+  $V^+ = \{\True, \Undef\}$।
+  \item সত্যমান-অপেক্ষকগুলি শক্তিশালী ক্লিনি যুক্তিবিদ্যার মতোই।
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+Halld\'en-এর \emph{অর্থহীনতার যুক্তিবিদ্যা}~$\LogHal$ নিচের ম্যাট্রিক্স
+দিয়ে সংজ্ঞায়িত:
+\begin{enumerate}
+  \item $\lnot$, $\land$, $\lor$, $\lif$ এবং $1$-স্থানীয় সংযোজক~$+$-সহ
+  প্রমিত বচনগত ভাষা $\Lang L_0$।
+  \item সত্যমানের সেট $V = \{\True, \Undef, \False\}$।
+  \item $\True$ ও~$\Undef$ মনোনীত; অর্থাৎ
+  $V^+ = \{\True, \Undef\}$।
+  \item সত্যমান-অপেক্ষকগুলি দুর্বল ক্লিনি যুক্তিবিদ্যার মতো; সঙ্গে আছে
+  “অর্থহীন” অপারেটর:
+  \begin{center}
+    \begin{tabular}{c|c}
+    $\tf{+}$ & \\
+    \hline
+    $\True$ & $\False$ \\
+    $\Undef$ & $\True$ \\
+    $\False$ & $\False$
+    \end{tabular}
+  \end{center}
+\end{enumerate}
+\end{defn}
+
+যে ক্লিনি যুক্তিবিদ্যাগুলির সঙ্গে এদের সত্যসারণি অভিন্ন, তাদের বিপরীতে
+এই যুক্তিবিদ্যাগুলিতে সর্বতঃসত্য \emph{আছে}।
+
+\begin{prop}\ollabel{prop:LP-taut-CL} $\LogLP$-এর সর্বতঃসত্যগুলি ধ্রুপদি
+  বচনগত যুক্তিবিদ্যার সর্বতঃসত্যগুলির সঙ্গে অভিন্ন।
+\end{prop}
+
+\begin{proof}
+  \olref[syn][sub]{prop:mvl-cl} অনুযায়ী,
+  $\Entails[\LogLP] !A$ হলে $\Entails[\LogCL] !A$। বিপরীত দিকটি দেখাতে
+  আমরা প্রমাণ করব: যদি এমন !!a{valuation}
+  $\pAssign v\colon \PVar \to \{\False, \True, \Undef\}$ থাকে যাতে
+  $\pValue v(!A)[\LogKs] = \False$, তবে এমন !!a{valuation}
+  $\pAssign {v'}\colon \PVar \to \{\False, \True\}$ আছে যাতে
+  $\pValue {v'}(!A)[\LogCL] = \False$। এটি $\LogLP$-এর জন্য ফলটি
+  প্রতিষ্ঠা করে; কারণ $\LogKs$ ও~$\LogLP$-এর বৈশিষ্ট্যসূচক
+  সত্যমান-অপেক্ষক অভিন্ন, আর $\LogLP$-এ $\False$-ই একমাত্র অমনোনীত
+  সত্যমান ($\LogLP$ ও~$\LogKs$-এর মধ্যে এটিই একমাত্র পার্থক্য)। অতএব
+  $\Entails/[\LogLP] !A$ হলে কোনো !!{valuation}~$\pAssign v$-এর জন্য
+  $\pValue v(!A)[\LogLP] = \pValue v[\LogKs](!A) = \False$। আমরা যে
+  দাবিটি প্রমাণ করছি, তা থেকে
+  $\pValue{v'}[\LogCL](!A) = \False$, অর্থাৎ
+  $\Entails/[\LogCL] !A$।
+
+  দাবিটি প্রতিষ্ঠা করতে প্রথমে $\pAssign {v'}$-কে এভাবে সংজ্ঞায়িত করি:
+  \[
+    \pAssign {v'}(p) =
+    \begin{cases}
+    \True & \text{যদি } \pAssign {v}(p) \in \{\True, \Undef\}\\
+    \False & \text{অন্যথায়।}
+  \end{cases}
+  \]
+  এখন $!A$-এর উপর আরোহের সাহায্যে দেখাই যে (ক)~যদি
+  $\pValue v(!A)[\LogKs] = \False$ হয়, তবে
+  $\pValue {v'}(!A)[\LogCL] = \False$; এবং (খ)~যদি
+  $\pValue v(!A)[\LogKs] = \True$ হয়, তবে
+  $\pValue {v'}(!A)[\LogCL] = \True$।
+  \begin{enumerate}
+    \item আরোহের ভিত্তি: $!A \ident p$।
+    \olref[syn][val]{defn:pValue} ও~$v'$-এর সংজ্ঞা অনুযায়ী, যদি
+    $\pValue v(!A)[\LogKs] = \False$ হয়, তবে
+    $\pAssign v(p)=\False$; উপরের সংজ্ঞা থেকে
+    $\pValue {v'}(!A)[\LogCL]=\False$। আবার যদি
+    $\pValue v(!A)[\LogKs] = \True$ হয়, তবে
+    $\pAssign v(p)=\True$; তাই
+    $\pValue {v'}(!A)[\LogCL]=\True$। ফলে (ক) ও~(খ) উভয়ই সিদ্ধ।
+
+    আরোহ-ধাপের জন্য ক্ষেত্রগুলি বিবেচনা করি:
+    \item $!A \ident \lnot !B$।
+    \begin{enumerate}
+      \item ধরা যাক, $\pValue v(\lnot!B)[\LogKs] = \False$।
+      $\tf{\lnot}[\LogKs]$-এর সংজ্ঞা অনুযায়ী
+      $\pValue v(!B)[\LogKs] = \True$। আরোহানুমান, ক্ষেত্র~(খ), থেকে
+      $\pValue {v'}(!B)[\LogCL] = \True$; তাই
+      $\pValue {v'}(\lnot !B)[\LogCL] = \False$।
+      \item ধরা যাক, $\pValue v(\lnot!B)[\LogKs] = \True$।
+      $\tf{\lnot}[\LogKs]$-এর সংজ্ঞা অনুযায়ী
+      $\pValue v(!B)[\LogKs] = \False$। আরোহানুমান, ক্ষেত্র~(ক), থেকে
+      $\pValue {v'}(!B)[\LogCL] = \False$; তাই
+      $\pValue {v'}(\lnot !B)[\LogCL] = \True$।
+    \end{enumerate}
+
+    \item $!A \ident (!B \land !C)$।
+    \begin{enumerate}
+      \item ধরা যাক, $\pValue v(!B \land !C)[\LogKs] = \False$।
+      $\tf{\land}[\LogKs]$-এর সংজ্ঞা অনুযায়ী
+      $\pValue v(!B)[\LogKs] = \False$ অথবা
+      $\pValue v(!C)[\LogKs] = \False$। আরোহানুমান, ক্ষেত্র~(ক), থেকে
+      $\pValue {v'}(!B)[\LogCL] = \False$ অথবা
+      $\pValue {v'}(!C)[\LogCL] = \False$; তাই
+      $\pValue {v'}(!B \land !C)[\LogCL] = \False$।
+      \item ধরা যাক, $\pValue v(!B \land !C)[\LogKs] = \True$।
+      $\tf{\land}[\LogKs]$-এর সংজ্ঞা অনুযায়ী
+      $\pValue v(!B)[\LogKs] = \True$ এবং
+      $\pValue v(!C)[\LogKs] = \True$। আরোহানুমান, ক্ষেত্র~(খ), থেকে
+      $\pValue {v'}(!B)[\LogCL] = \True$ এবং
+      $\pValue {v'}(!C)[\LogCL] = \True$; তাই
+      $\pValue {v'}(!B \land !C)[\LogCL] = \True$।
+    \end{enumerate}
+  \end{enumerate}
+
+  অন্য দুটি ক্ষেত্র একই রকম; সেগুলি অনুশীলন হিসেবে রাখা হলো। বিকল্পভাবে,
+  উপরের প্রমাণটি শুধু $\lnot$ ও~$\land$ থাকা সব !!{formula}s-এর জন্য ফলটি
+  প্রতিষ্ঠা করে। এখন ব্যবহার করা যায় যে $\LogKs$ ও~$\LogCL$ উভয়েই,
+  যেকোনো $\pAssign v$-এর জন্য,
+  $\pValue v(!B \lor !C) = \pValue v(\lnot(\lnot!B \land \lnot !C))$
+  এবং
+  $\pValue v(!B \lif !C) = \pValue v(\lnot(!B \land \lnot !C))$।
+\end{proof}
+
+\begin{prob}
+  \olref[mvl][thr][mul]{prop:LP-taut-CL}-এর প্রমাণ সম্পূর্ণ করো; অর্থাৎ
+  $!A \ident (!B \lor !C)$ ও~$!A \ident (!B \lif !C)$ ক্ষেত্রগুলির
+  জন্য (ক) ও~(খ) প্রতিষ্ঠা করো।
+\end{prob}
+
+\begin{prob}
+প্রমাণ করো যে প্রতিটি ধ্রুপদি সর্বতঃসত্য~$\LogHal$-এ সর্বতঃসত্য।
+\end{prob}
+
+ধ্রুপদি যুক্তিবিদ্যার সঙ্গে তাদের সর্বতঃসত্যগুলি অভিন্ন হলেও তাদের
+অনুসিদ্ধান্ত সম্পর্ক আলাদা। যেমন, $\LogLP$ \emph{পরাসঙ্গত}: এতে
+$\lnot p, p \Entails/ q$; তাই বিস্ফোরণ নীতি
+$\lnot !A, !A \Entails !B$ সাধারণভাবে সিদ্ধ নয়। ($!A$ ও~$!B$-এর কোনো
+কোনো ক্ষেত্রে এটি সিদ্ধ; যেমন, $!B$ সর্বতঃসত্য হলে।)
+
+\begin{prob}
+  নিচের কোন সম্পর্কগুলি (ক)~$\LogLP$ এবং (খ)~$\LogHal$-এ সিদ্ধ?
+  প্রতিটির জন্য একটি সত্যসারণি দাও।
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $\lnot q, p \lif q \Entails \lnot p$
+    \item $p \lor q, \lnot p \Entails q$
+    \item $\lnot p, p \Entails q$
+    \item $p \Entails p \lor q$
+    \item $p \lif q, q\lif r \Entails p \lif r$
+  \end{enumerate}
+\end{prob}
+
+$\LogLuk[3]$-এ $\Undef$-কেও মনোনীত করলে কী হয়?
+
+\begin{defn}
+  \emph{3-মানী R-Mingle যুক্তিবিদ্যা}~$\LogRM[3]$ নিচের ম্যাট্রিক্স
+  দিয়ে সংজ্ঞায়িত:
+  \begin{enumerate}
+    \item $\lfalse$, $\lnot$, $\land$, $\lor$, $\lif$-সহ প্রমিত বচনগত
+    ভাষা $\Lang L_0$।
+    \item সত্যমানের সেট $V = \{\True, \Undef, \False\}$।
+    \item $\True$ ও~$\Undef$ মনোনীত; অর্থাৎ
+    $V^+ = \{\True, \Undef\}$।
+    \item $\tf{\lfalse}=\False$; অবশিষ্ট সত্যমান-অপেক্ষকগুলি
+    \L ukasiewicz যুক্তিবিদ্যা~$\LogLuk[3]$-এর মতোই।
+  \end{enumerate}
+\end{defn}
+
+\begin{prob}
+  নিচের কোন সম্পর্কগুলি $\LogRM[3]$-এ সিদ্ধ?
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $p \lor q, \lnot p \Entails q$
+    \item $\lnot p, p \Entails q$
+    \item $p \Entails p \lor q$
+  \end{enumerate}
+\end{prob}
+
+মনোনীত মানগুলি বদলালেই কখনও কখনও আলাদা সত্যসারণি থেকে একই যুক্তিবিদ্যা
+(অনুসিদ্ধান্ত সম্পর্ক) পাওয়া যায়। যেমন, G\"odel যুক্তিবিদ্যায়
+$V^+ = \{\True, \Undef\}$-কে~$\{\True\}$-এর বদলে নিলে এমনটি ঘটে।
+
+\begin{prop}\ollabel{prop:gl-udes}
+  $V = \{\False, \Undef,\True\}$, $V^+=\{\True, \Undef\}$ এবং
+  $3$-মানী G\"odel যুক্তিবিদ্যার সত্যমান-অপেক্ষকবিশিষ্ট ম্যাট্রিক্সটি
+  ধ্রুপদি যুক্তিবিদ্যা সংজ্ঞায়িত করে।
+\end{prop}
+
+\begin{proof}
+  অনুশীলন।
+\end{proof}
+
+\begin{prob}
+  \olref[mvl][thr][mul]{prop:gl-udes} প্রমাণ করো। এজন্য G\"odel
+  যুক্তিবিদ্যার মতোই, কিন্তু $V^+=\{\True,\Undef\}$ নিয়ে সংজ্ঞায়িত
+  যুক্তিবিদ্যা~$\Log L$-এর জন্য দেখাও যে
+  $\Gamma \Entails/[\Log L] !B$ হলে
+  $\Gamma \Entails/[\LogCL] !B$।
+  \olref[mvl][thr][mul]{prop:LP-taut-CL}-এর ধারণা ব্যবহার করো; তবে (ক) ও
+  (খ) বৈশিষ্ট্য প্রমাণের বদলে দেখাও যে
+  $\pValue v(!A)[\LogGod] = \False$ ঠিক তখনই, যখন
+  $\pValue {v'}(!A)[\LogCL] = \False$ (এবং তাই
+  $\pValue v(!A)[\LogGod] \in \{\True,\Undef\}$ ঠিক তখনই, যখন
+  $\pValue {v'}(!A)[\LogCL] = \True$)। এটি কেন প্রস্তাবটি প্রতিষ্ঠা
+  করে তা ব্যাখ্যা করো।
+\end{prob}
+% BN-SRC-320 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-320):} হিমায়িত LP প্রমাণের আরোহ-ভিত্তিতে $\pValue v(p)[\LogKs]=\pAssign v(p)=\pValue{v'}(p)[\LogCL]$ নিঃশর্তভাবে দাবি করা হয়েছে; কিন্তু $\pAssign v(p)=\Undef$ হলে সংজ্ঞা অনুযায়ী $\pAssign{v'}(p)=\True$, তাই সমতাটি মিথ্যা। বাংলা প্রমাণে দাবির জন্য প্রয়োজনীয় $\False$ ও~$\True$ ক্ষেত্র দুটি আলাদাভাবে দেখানো হয়েছে।} % BN-SRC-320 TARGET-CORRECTION-END
+% BN-SRC-321 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-321):} হিমায়িত LP প্রমাণের সংযোজন-ক্ষেত্রে $\pValue v(!B)$-কে “অথবা” ও “এবং” উভয় শাখায় ভুল করে দুবার লেখা হয়েছে। $!B\land !C$-এর শক্তিশালী ক্লিনি সত্যসারণি ও পরের ধ্রুপদি সিদ্ধান্ত অনুযায়ী দ্বিতীয় ঘটনাগুলিতে $\pValue v(!C)$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-321 TARGET-CORRECTION-END
+% BN-SRC-322 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-322):} হিমায়িত R-Mingle সংজ্ঞা ভাষায় শূন্য-স্থানীয় সংযোজক~$\lfalse$ রাখলেও তার সত্যমান-অপেক্ষক নির্ধারণ করেনি; “$\LogLuk[3]$-এর মতো” কথাটি এটি পূরণ করে না, কারণ পূর্ববর্তী $\LogLuk[3]$ ভাষায়~$\lfalse$ নেই। ঘোষিত ম্যাট্রিক্স সম্পূর্ণ করতে বাংলা লক্ষ্যে $\tf{\lfalse}=\False$ স্পষ্ট করা হয়েছে।} % BN-SRC-322 TARGET-CORRECTION-END
+
+\end{document}

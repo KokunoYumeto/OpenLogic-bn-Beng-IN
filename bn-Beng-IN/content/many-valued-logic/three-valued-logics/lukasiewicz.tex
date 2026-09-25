@@ -1,0 +1,242 @@
+% Part: many-valued-logic
+% Chapter: three-valued-logics
+% Section: lukasiewicz
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{thr}{luk}
+
+\olsection{\L ukasiewicz-এর যুক্তিবিদ্যা}
+
+বহুমানী যুক্তিবিদ্যার প্রথম দিকের প্রকাশিত ও বিশদভাবে বিকশিত প্রস্তাবগুলির
+একটি ১৯২১ সালে পোলীয় দার্শনিক ইয়ান \L ukasiewicz দেন। অ্যারিস্টটলের
+সমুদ্রযুদ্ধের সমস্যা তাঁকে অনুপ্রাণিত করেছিল: মনে হয়,
+\emph{আজ} “আগামীকাল একটি সমুদ্রযুদ্ধ হবে” বাক্যটি সত্যও নয়, মিথ্যাও
+নয়—তার সত্যমান এখনও স্থির হয়নি। \L ukasiewicz এই ধরনের
+“ভবিষ্যৎ-আপতিক” বাক্যের জন্য তৃতীয় একটি অনির্ধারিত সত্যমান প্রবর্তনের
+প্রস্তাব দেন।
+\begin{quote}
+আমি স্ববিরোধ ছাড়াই ধরে নিতে পারি যে আগামী বছরের কোনো নির্দিষ্ট মুহূর্তে,
+যেমন ২১ ডিসেম্বর দুপুরে, ওয়ারশতে আমার উপস্থিতি বর্তমানে ইতিবাচকভাবেও
+নির্ধারিত নয়, নেতিবাচকভাবেও নয়। অতএব নির্দিষ্ট সময়ে আমার ওয়ারশতে
+উপস্থিত থাকা সম্ভব, কিন্তু আবশ্যিক নয়। এই অনুমানের ভিত্তিতে “আগামী বছরের
+২১ ডিসেম্বর দুপুরে আমি ওয়ারশতে থাকব” বচনটি বর্তমানে সত্যও হতে পারে না,
+মিথ্যাও হতে পারে না। কারণ এটি এখন সত্য হলে ওয়ারশতে আমার ভবিষ্যৎ উপস্থিতি
+আবশ্যিক হতে হতো, যা অনুমানের বিরোধী। অন্যদিকে, এটি এখন মিথ্যা হলে ওয়ারশতে
+আমার ভবিষ্যৎ উপস্থিতি অসম্ভব হতে হতো, যা অনুমানেরও বিরোধী। তাই আলোচ্য
+বচনটি এই মুহূর্তে সত্যও নয়, মিথ্যাও নয়; এবং “0” বা মিথ্যাত্ব ও~“1”
+বা সত্যতা থেকে পৃথক তৃতীয় একটি মান তার থাকতেই হবে। এই মানকে আমরা
+“$\frac{1}{2}$” দিয়ে চিহ্নিত করতে পারি। এটি “সম্ভব”-কে উপস্থাপন করে এবং
+তৃতীয় মান হিসেবে “সত্য” ও~“মিথ্যা”-র সঙ্গে যুক্ত হয়।
+\end{quote}
+\L ukasiewicz-এর তৃতীয় সত্যমানের জন্য আমরা~$\Undef$ ব্যবহার করব।%
+\footnote{এখানে \L ukasiewicz “সম্ভব” শব্দটি আজকাল অপ্রচলিত এক অর্থে,
+অর্থাৎ সম্ভব কিন্তু আবশ্যিক নয়—এই অর্থে ব্যবহার করেছেন।}
+
+এই ব্যাখ্যায় $\lnot$, $\land$ ও~$\lor$ সংযোজকের সত্যমান-অপেক্ষকগুলি
+সহজেই নির্ধারণ করা যায়: কোনো ভবিষ্যৎ-আপতিক বাক্যের নঞর্থক রূপটিও
+ভবিষ্যৎ-আপতিক বাক্য; তাই $\tf{\lnot}(\Undef) = \Undef$। কোনো
+সংযোজনের একটি সংযোজ্য অনির্ধারিত এবং অন্যটি সত্য হলে সংযোজনটিও
+অনির্ধারিত—কারণ ভবিষ্যৎ-আপতিক সংযোজ্যটি শেষ পর্যন্ত কী হয় তার উপর নির্ভর
+করে সংযোজনটি সত্যও হতে পারে, মিথ্যাও হতে পারে। তাই
+\[
+    \tf{\land}(\True, \Undef) =
+\tf{\land}(\Undef, \True) =
+\Undef.
+\]
+কিন্তু অন্য সংযোজ্যটি মিথ্যা হলে সংযোজনটি শেষ পর্যন্ত সত্য হতে পারে না;
+তাই
+\[\tf{\land}(\False, \Undef) =
+\tf{\land}(\Undef, \False) = \False.\]
+অন্য মানগুলি—অর্থাৎ আর্গুমেন্টগুলি যখন নির্ধারিত সত্যমান $\True$ অথবা
+$\False$—ধ্রুপদি যুক্তিবিদ্যার মতোই।
+
+শর্তবচনের ক্ষেত্রে পরিস্থিতি একটু জটিল। ধরা যাক, $q$ একটি
+ভবিষ্যৎ-আপতিক উক্তি। $p$ মিথ্যা হলে $q$ শেষ পর্যন্ত যাই হোক না কেন,
+$p \lif q$ সত্য হবে; তাই আমাদের $\tf{\lif}(\False, \Undef) = \True$
+স্থির করা উচিত। আবার $p$ সত্য হলে $q$ শেষ পর্যন্ত যাই হোক না কেন,
+$q \lif p$ সত্য হবে; তাই $\tf{\lif}(\Undef, \True) = \True$। $p$ সত্য
+হলে $p \lif q$ শেষ পর্যন্ত সত্য বা মিথ্যা—দুই-ই হতে পারে; তাই
+$\tf{\lif}(\True, \Undef) = \Undef$। একইভাবে, $p$ মিথ্যা হলে
+$q \lif p$ শেষ পর্যন্ত সত্য বা মিথ্যা হতে পারে; তাই
+$\tf{\lif}(\Undef, \False) = \Undef$। এখন কেবল $p$ ও~$q$ উভয়ই
+ভবিষ্যৎ-আপতিক হওয়ার ক্ষেত্রটি বাকি। প্রেরণাটিকে অনুসরণ করলে এখানে
+আসলে~$\Undef$ দেওয়া উচিত। কিন্তু তাতে $!A \lif !A$
+\emph{সর্বতঃসত্য হবে না}। \L ukasiewicz-এর $!A \lor \lnot !A$ এবং
+$\lnot(!A \land \lnot !A)$ ত্যাগ করতে আপত্তি ছিল না, কিন্তু
+$!A \lif !A$ ত্যাগ করতে তিনি রাজি হননি। তাই তিনি
+$\tf{\lif}(\Undef, \Undef) = \True$ স্থির করেন।
+
+\begin{defn}\ollabel{def:lukasiewicz}
+ত্রিমানী \L ukasiewicz যুক্তিবিদ্যা নিচের ম্যাট্রিক্স দিয়ে সংজ্ঞায়িত:
+\begin{enumerate}
+  \item $\lnot$, $\land$, $\lor$, $\lif$-সহ প্রমিত বচনগত ভাষা
+  $\Lang L_0$।
+  \item সত্যমানের সেট $V = \{\True, \Undef, \False\}$।
+  \item $\True$ একমাত্র মনোনীত মান; অর্থাৎ $V^+ = \{\True\}$।
+  \item সত্যমান-অপেক্ষকগুলি নিচের সারণিগুলি দিয়ে দেওয়া হয়:
+  \begin{center}
+    \begin{tabular}{c|c}
+      $\tf{\lnot}$ & \\
+      \hline
+      $\True$ & $\False$ \\
+      $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\land}[\LogLuk[3]]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\
+      $\Undef$ & $\Undef$ & $\Undef$ & $\False$\\
+      $\False$ & $\False$ & $\False$ & $\False$
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc}
+      $\tf{\lor}[\LogLuk[3]]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\True$ & $\True$ \\
+      $\Undef$ & $\True$ & $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ & $\Undef$ & $\False$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\lif}[\LogLuk[3]]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\
+      $\Undef$ & $\True$ & $\True$ & $\Undef$  \\
+      $\False$ & $\True$ & $\True$ & $\True$
+    \end{tabular}
+  \end{center}
+\end{enumerate}
+\end{defn}
+
+সহজেই দেখা যায়, কেবল $\lnot$, $\land$ ও~$\lor$ থাকা যেকোনো
+!!{formula}~$!A$-এর সব !!{propositional variable}s-কে~$\Undef$ আরোপ
+করলে সূত্রটির সত্যমানও~$\Undef$ হবে। তাই, যেমন, ধ্রুপদি সর্বতঃসত্য
+$p \lor \lnot p$ ও~$\lnot(p \land \lnot p)$, $\LogLuk[3]$-এ সর্বতঃসত্য
+নয়; কারণ $\pAssign v(p) = \Undef$ হলে উভয় ক্ষেত্রেই
+$\pValue{v}(!A) = \Undef$।
+
+যেসব !!{valuation}s-এ $\pAssign v(p) = \True$ অথবা~$\False$, সেখানে
+$\pValue v(!A)$ তার ধ্রুপদি সত্যমানের সঙ্গে মিলে যাবে।
+
+\begin{prop}
+  $!A$-তে থাকা প্রতিটি $p$-এর জন্য
+  $\pAssign v(p) \in \{\True, \False\}$ হলে
+  $\pValue v(!A)[\LogLuk[3]] = \pValue v(!A)[\LogCL]$।
+\end{prop}
+
+\begin{prob}\label{mvl:thr:luk:prob:luk-iff} ধরা যাক, $\LogLuk[3]$-এ
+  আমরা $\pValue v(!A \liff !B) = \pValue v((!A \lif !B) \land (!B \lif
+  !A))$ সংজ্ঞায়িত করি। তাহলে $\liff$-এর সত্যসারণি কী হবে?
+\end{prob}
+
+অনেক ধ্রুপদি সর্বতঃসত্য \LogLuk[3]-এও সর্বতঃসত্য; যেমন,
+$\lnot p \lif (p \lif q)$। ধ্রুপদি যুক্তিবিদ্যার মতোই আমরা সত্যসারণি
+দিয়ে এটি যাচাই করতে পারি:
+\begin{center}
+\begin{tabular}{cc|cccccc}
+  $p$ & $q$ & $\lnot$ & $p$ & $\lif$ & $\smash{(}p$ & $\lif$ & $q\smash{)}$ \\ \hline
+  \True & \True & \False & \True & \True & \True & \True & \True \\
+  \True & \Undef & \False & \True & \True & \True & \Undef & \Undef \\
+  \True & \False & \False & \True & \True & \True & \False & \False \\
+  \Undef & \True & \Undef & \Undef & \True & \Undef & \True & \True \\
+  \Undef & \Undef & \Undef & \Undef & \True & \Undef & \True & \Undef \\
+  \Undef & \False & \Undef & \Undef & \True & \Undef & \Undef & \False \\
+  \False & \True & \True & \False & \True & \False & \True & \True \\
+  \False & \Undef & \True & \False & \True & \False & \True & \Undef \\
+  \False & \False & \True & \False & \True & \False & \True & \False \\
+\end{tabular}
+\end{center}
+
+\begin{prob}
+  দেখাও যে নিচের সূত্রগুলি \LogLuk[3]-এ সর্বতঃসত্য:
+  \begin{enumerate}
+    \item $p \lif (q \lif p)$
+    \item\label{mvl:thr:luk:prob:luk-taut-2} $\lnot(p \land q) \liff (\lnot p \lor \lnot q)$
+    \item\label{mvl:thr:luk:prob:luk-taut-3} $\lnot(p \lor q) \liff (\lnot p \land \lnot q)$
+  \end{enumerate}
+  (\olref[mvl][thr][luk]{prob:luk-taut-2} ও
+  \olref[mvl][thr][luk]{prob:luk-taut-3}-এ $!A \liff !B$-কে
+  $(!A \lif !B) \land (!B \lif !A)$-এর সংক্ষেপ হিসেবে নাও, অথবা
+  \olref[mvl][thr][luk]{prob:luk-iff}-এর তোমার সমাধান ব্যবহার করো।)
+\end{prob}
+
+\begin{prob}
+  দেখাও যে নিচের ধ্রুপদি সর্বতঃসত্যগুলি~\LogLuk[3]-এ সর্বতঃসত্য নয়:
+  \begin{enumerate}
+    \item $(\lnot p \land p) \lif q$
+    \item $((p \lif q) \lif p) \lif p$
+    \item $(p \lif (p \lif q)) \lif (p \lif q)$
+  \end{enumerate}
+\end{prob}
+
+তাই কেউ হয়তো ভাবতে পারেন যে সব ধ্রুপদি সর্বতঃসত্য~$\LogLuk[3]$-এ
+সর্বতঃসত্য না হলেও, প্রতিটি !!{valuation}-এ অন্তত তাদের মান~$\True$ অথবা
+$\Undef$ হবে। তা নয়। একটি প্রতিদৃষ্টান্ত হলো
+\[
+  \lnot(p \lif \lnot p) \lor \lnot(\lnot p \lif p)
+\]
+যার মান $p$-এর মান~$\Undef$ হলে~$\False$।
+
+\begin{prob}
+  \L ukasiewicz যুক্তিবিদ্যায় নিচের কোন সম্পর্কগুলি সিদ্ধ? প্রতিটির
+  জন্য একটি সত্যসারণি দাও।
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $\lnot\lnot p \Entails p$
+    \item $p \land q \Entails p$
+    \item $p \Entails p \land p$
+    \item $p \Entails p \lor q$
+  \end{enumerate}
+\end{prob}
+
+\L ukasiewicz তাঁর ত্রিমানী ব্যবস্থার ভিত্তিতে সম্ভাব্যতার একটি যুক্তিবিদ্যা
+গড়তে চেয়েছিলেন। এজন্য তিনি এক-স্থানীয় সংযোজক $\Diamond !A$
+(“$!A$ সম্ভব”) এবং তার অনুরূপ $\Box !A$ (“$!A$ আবশ্যিক”) প্রবর্তন করেন:
+\begin{center}
+  \begin{tabular}{c|c}
+    $\tf{\Diamond}$ & \\
+    \hline
+    $\True$ & $\True$ \\
+    $\Undef$ & $\True$ \\
+    $\False$ & $\False$
+  \end{tabular}
+  \quad
+  \begin{tabular}{c|c}
+    $\tf{\Box}$ & \\
+    \hline
+    $\True$ & $\True$ \\
+    $\Undef$ & $\False$ \\
+    $\False$ & $\False$
+  \end{tabular}
+\end{center}
+অন্যভাবে বললে, $p$ ঠিক তখনই সম্ভব, যখন সেটি ইতিমধ্যেই মিথ্যা বলে স্থির
+হয়নি; আর $p$ ঠিক তখনই আবশ্যিক, যখন সেটি ইতিমধ্যেই সত্য বলে স্থির হয়েছে।
+
+\begin{prob}
+  দেখাও যে $\Box p \liff \lnot\Diamond \lnot p$ এবং $\Diamond p \liff
+  \lnot \Box \lnot p$, $\Box$ ও~$\Diamond$-এর সত্যসারণি দিয়ে প্রসারিত
+  \LogLuk[3]-এ সর্বতঃসত্য।
+\end{prob}
+
+কিন্তু প্রস্তাবিত এই মোডাল যুক্তিবিদ্যার সীমাবদ্ধতা শিগগিরই স্পষ্ট হয়:
+ঘটনা যেভাবেই ঘটুক, $p \land \lnot p$ কখনও সত্য হতে পারে না। তাই এখন
+এটি স্থির না হলেও (এবং সেই কারণে অনির্ধারিত হলেও) একে অসম্ভব গণ্য করা
+উচিত; অর্থাৎ $\lnot \Diamond(p \land \lnot p)$ সর্বতঃসত্য হওয়া উচিত।
+কিন্তু $\pAssign v(p) = \Undef$ হলে
+$\pValue v(\lnot \Diamond(p \land \lnot p)) = \False$। সম্ভাব্যতা ও
+আবশ্যিকতার মতো মোডাল পার্থক্য ধারণ করার জন্য দুটি সত্যমান যথেষ্ট নয়—এই
+বিষয়ে \L ukasiewicz ঠিক ছিলেন; কিন্তু তৃতীয় একটি সত্যমান যোগ করাও
+যথেষ্ট নয়।
+% BN-SRC-318 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-318):} হিমায়িত উৎসে মিথ্যা ও অনির্ধারিত সংযোজ্যের সমমিত ক্ষেত্র দেখাতে $\tf{\land}(\False,\Undef)$ একই আর্গুমেন্ট-ক্রমে দুবার লেখা হয়েছে। সত্যসারণি ও বাক্যের অভিপ্রায় অনুযায়ী দ্বিতীয়টিকে $\tf{\land}(\Undef,\False)$ হিসেবে বাংলা লক্ষ্যে পুনরুদ্ধার করা হয়েছে।} % BN-SRC-318 TARGET-CORRECTION-END
+% BN-SRC-319 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-319):} হিমায়িত অনুশীলনে সূত্র $\bigl((\lnot p\land p)\lif q\bigr)$-এর শেষে উদ্বোধনী জোড়াবিহীন একটি অতিরিক্ত ডান বন্ধনী ছিল। বাংলা লক্ষ্যে অতিরিক্ত বন্ধনীটি বাদ দিয়ে সুষম সূত্রটি পুনরুদ্ধার করা হয়েছে।} % BN-SRC-319 TARGET-CORRECTION-END
+% BN-SRC-323 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-323):} হিমায়িত উৎসে $\pAssign v(p)=\Undef$ হলে $\pValue v(\lnot\Diamond(p\land\lnot p))=\Undef$ বলা হয়েছে। প্রদত্ত সারণি অনুসারে $\lnot p=\Undef$, $p\land\lnot p=\Undef$, $\Diamond\Undef=\True$, এবং $\lnot\True=\False$; তাই বাংলা লক্ষ্যে শেষ মানটি~$\False$ করা হয়েছে। এতে সূত্রটি সর্বতঃসত্য নয়—এই অভীষ্ট সিদ্ধান্তই বজায় থাকে।} % BN-SRC-323 TARGET-CORRECTION-END
+
+\end{document}

@@ -1,0 +1,118 @@
+% Part: many-valued-logic
+% Chapter: three-valued-logics
+% Section: goedel
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{thr}{god}
+
+\olsection{G\"odel যুক্তিবিদ্যাসমূহ}
+
+কুর্ট G\"odel এমন এক ক্রমের $n$-মানী যুক্তিবিদ্যা প্রবর্তন করেন, যাদের
+প্রতিটিতে স্বজ্ঞাবাদী যুক্তিবিদ্যার সব সিদ্ধ !!{formula}s থাকে এবং যাদের
+প্রতিটি ধ্রুপদি যুক্তিবিদ্যার অন্তর্ভুক্ত। প্রথম আকর্ষণীয় যুক্তিবিদ্যাটি
+নিচে দেওয়া হলো:
+
+\begin{defn}\ollabel{defn:goedel}
+\emph{$3$-মানী G\"odel যুক্তিবিদ্যা}~$\LogGod$ নিচের ম্যাট্রিক্স দিয়ে
+সংজ্ঞায়িত:
+\begin{enumerate}
+  \item $\lfalse$, $\lnot$, $\land$, $\lor$, $\lif$-সহ প্রমিত বচনগত
+  ভাষা $\Lang L_0$।
+  \item সত্যমানের সেট $V = \{\True, \Undef, \False\}$।
+  \item $\True$ একমাত্র মনোনীত মান; অর্থাৎ $V^+ = \{\True\}$।
+  \item $\lfalse$-এর জন্য $\tf{\lfalse} = \False$। অবশিষ্ট সংযোজকগুলির
+  সত্যমান-অপেক্ষক নিচের সারণিগুলি দিয়ে দেওয়া হয়:
+  \begin{center}
+    \begin{tabular}{c|c}
+      $\tf{\lnot}[\LogGod]$ & \\
+      \hline
+      $\True$ & $\False$ \\
+      $\Undef$ & $\False$ \\
+      $\False$ & $\True$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\land}[\LogGod]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\
+      $\Undef$ & $\Undef$ & $\Undef$ & $\False$\\
+      $\False$ & $\False$ & $\False$ & $\False$
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc}
+      $\tf{\lor}[\LogGod]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\True$ & $\True$ \\
+      $\Undef$ & $\True$ & $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ & $\Undef$ & $\False$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\lif}[\LogGod]$ & $\True$ & $\Undef$ & $\False$ \\
+      \hline
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\
+      $\Undef$ & $\True$ & $\True$ & $\False$  \\
+      $\False$ & $\True$ & $\True$ & $\True$
+    \end{tabular}
+  \end{center}
+\end{enumerate}
+\end{defn}
+
+লক্ষ করবে, $\land$ ও~$\lor$-এর সত্যসারণি \L ukasiewicz যুক্তিবিদ্যা ও
+শক্তিশালী ক্লিনি যুক্তিবিদ্যার মতোই, কিন্তু $\lnot$ ও~$\lif$-এর
+সত্যসারণি প্রতিটি যুক্তিবিদ্যায় আলাদা। G\"odel যুক্তিবিদ্যায়
+$\tf{\lnot}(\Undef) = \False$। \L ukasiewicz যুক্তিবিদ্যা ও ক্লিনি
+যুক্তিবিদ্যার বিপরীতে $\tf{\lif}(\Undef, \False) = \False$; আবার ক্লিনি
+যুক্তিবিদ্যার বিপরীতে (কিন্তু \L ukasiewicz যুক্তিবিদ্যার মতো)
+$\tf{\lif}(\Undef, \Undef) = \True$।
+
+উপরে ইঙ্গিত করা স্বজ্ঞাবাদী যুক্তিবিদ্যার সঙ্গে সংযোগটি যেমন বোঝায়,
+$\LogGod[3]$ স্বজ্ঞাবাদী যুক্তিবিদ্যার খুব কাছাকাছি। সব স্বজ্ঞাবাদী সত্য
+$\LogGod[3]$-এ সর্বতঃসত্য; আর স্বজ্ঞাবাদীভাবে সিদ্ধ নয় এমন অনেক ধ্রুপদি
+সর্বতঃসত্যও $\LogGod[3]$-এ সর্বতঃসত্য হতে ব্যর্থ। যেমন, নিচের সূত্রগুলি
+সর্বতঃসত্য নয়:
+\begin{align*}
+  & p \lor \lnot p && (p \lif q) \lif (\lnot p \lor q) \\
+  & \lnot\lnot p \lif p && \lnot(\lnot p \land \lnot q) \lif (p \lor q) \\
+  & ((p \lif q) \lif p) \lif p && \lnot(p \lif q) \lif (p \land \lnot q)
+\end{align*}
+কিন্তু $\LogGod[3]$-এর প্রতিটি সর্বতঃসত্য যে স্বজ্ঞাবাদীভাবেও সিদ্ধ তা
+নয়; যেমন, $\lnot\lnot p \lor \lnot p$ অথবা
+$(p \lif q) \lor (q \lif p)$।
+
+\begin{prob}
+  সত্যসারণি দিয়ে দেখাও যে নিচের সূত্রগুলি~$\LogGod[3]$-এ সর্বতঃসত্য:
+  \begin{align*}
+    & \lnot\lnot p \lor \lnot p\\
+    & (p \lif q) \lor (q \lif p) \\
+    & \lnot(p \land q) \lif (\lnot p \lor \lnot q) \\
+    & (p \lif q) \lor (q \lif r) \lor (r \lif s)
+  \end{align*}
+\end{prob}
+
+\begin{prob}
+  সত্যসারণি দিয়ে দেখাও যে নিচের সূত্রগুলি~$\LogGod[3]$-এ সর্বতঃসত্য নয়:
+  \begin{align*}
+    & (p \lif q) \lif (\lnot p \lor q) \\
+    & \lnot(\lnot p \land \lnot q) \lif (p \lor q) \\
+    & ((p \lif q) \lif p) \lif p \\
+    & \lnot(p \lif q) \lif (p \land \lnot q)
+  \end{align*}
+\end{prob}
+
+\begin{prob}
+  G\"odel যুক্তিবিদ্যায় নিচের কোন সম্পর্কগুলি সিদ্ধ? প্রতিটির জন্য একটি
+  সত্যসারণি দাও।
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $p \lor q, \lnot p \Entails q$
+    \item $p \land q \Entails p$
+    \item $p \Entails p \land p$
+    \item $p \Entails p \lor q$
+  \end{enumerate}
+\end{prob}
+
+\end{document}

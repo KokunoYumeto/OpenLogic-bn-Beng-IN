@@ -19,6 +19,22 @@ def norm(text):
     return re.sub(r"\s+", "", text)
 
 
+def formal_rule_bodies(text):
+    return [
+        norm(fragment)
+        for fragment in re.findall(
+            r"\\begin\{defish\}.*?\\end\{defish\}", text, flags=re.S
+        )
+    ]
+
+
+def sideways_derivation_before_caption(text):
+    matches = re.findall(
+        r"\\begin\{sidewaysfigure\}(.*?)\\caption\{", text, flags=re.S
+    )
+    return [norm(fragment) for fragment in matches]
+
+
 def without_documented_corrections(text):
     return re.sub(
         r"% (?:OLFUN-\d+|BN-SRC-\d+|BN-NORM-\d+|OLSIZ-\d+) TARGET-(?:CORRECTION|NORMALIZATION)-BEGIN.*?"
@@ -2390,6 +2406,37 @@ for row in rows:
         infinite_valued_logics_math_fix = (
             mathparts(audited_infinite_valued_logics) == target_math
         )
+    many_valued_sequent_calculus_math_fix = False
+    audited_many_valued_sequent_calculus = source
+    if row["unit_id"] == "OLP-0403":
+        repairs = [
+            (
+                r"!A_1, \dots, !A_n & \Sequent !B_1, \dots, !B_n",
+                r"!A_1, \dots, !A_m & \Sequent !B_1, \dots, !B_n",
+            ),
+            (r"\pValue(!A) =", r"\pValue{v}(!A) ="),
+        ]
+        for old, new in repairs:
+            assert audited_many_valued_sequent_calculus.count(old) == 1, old
+            audited_many_valued_sequent_calculus = audited_many_valued_sequent_calculus.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0404":
+        old = "where each $\\Gamma_1$"
+        new = "where each $\\Gamma_i$"
+        assert audited_many_valued_sequent_calculus.count(old) == 1
+        audited_many_valued_sequent_calculus = audited_many_valued_sequent_calculus.replace(old, new, 1)
+    if 402 <= unit_number <= 406:
+        expected_many_valued_sequent = {
+            "OLP-0403": {"BN-SRC-329", "BN-SRC-330"},
+            "OLP-0404": {"BN-SRC-331"},
+        }
+        assert set(documented) == expected_many_valued_sequent.get(row["unit_id"], set())
+        many_valued_sequent_calculus_math_fix = (
+            mathparts(audited_many_valued_sequent_calculus) == target_math
+        )
+        if row["unit_id"] in {"OLP-0403", "OLP-0405", "OLP-0406"}:
+            assert formal_rule_bodies(source) == formal_rule_bodies(checked_target)
+        if row["unit_id"] == "OLP-0406":
+            assert sideways_derivation_before_caption(source) == sideways_derivation_before_caption(checked_target)
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -4678,6 +4725,58 @@ for row in rows:
             "nested_math_delimiters_removed": True,
             "converse_restricted_to_finite_premises": True,
         }
+    elif row["unit_id"] == "OLP-0402":
+        assert many_valued_sequent_calculus_math_fix and not documented
+        assert r"\olchapter{mvl}{seq}{সিকোয়েন্ট কলন}" in checked_target
+        assert all(f"\\olimport{{{name}}}" in checked_target for name in (
+            "introduction", "rules-and-proofs", "structural-rules", "propositional-rules",
+        ))
+        tex_command_check = {
+            "many_valued_sequent_chapter_title_reviewed": True,
+            "all_four_chapter_imports_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0403":
+        assert many_valued_sequent_calculus_math_fix
+        assert set(documented) == {"BN-SRC-329", "BN-SRC-330"}
+        assert all(phrase in checked_target for phrase in (
+            "সসীমসংখ্যক", "উভমুখী শর্ত", r"!A_1, \dots, !A_m",
+            r"\pValue{v}(!A) = \False", "প্রতি সত্যমানের জন্য",
+        ))
+        tex_command_check = {
+            "classical_to_n_sided_semantic_construction_reviewed": True,
+            "antecedent_index_restored": True,
+            "valuation_argument_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0404":
+        assert many_valued_sequent_calculus_math_fix
+        assert set(documented) == {"BN-SRC-331"}
+        assert all(phrase in checked_target for phrase in (
+            "প্রারম্ভিক সিকোয়েন্ট", "মনোনীত সত্যমান", r"\Gamma_i",
+            r"\Gamma_0 \subseteq \Gamma", "অনুমান-বিধি",
+        ))
+        tex_command_check = {
+            "n_sided_sequent_initial_theorem_derivability_definitions_reviewed": True,
+            "generic_position_index_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0405":
+        assert many_valued_sequent_calculus_math_fix and not documented
+        assert all(phrase in checked_target for phrase in (
+            "গঠনগত বিধি", "দ্বৈত অনুমান-রেখা", r"\iR{\Cut}{i,j}",
+        ))
+        tex_command_check = {
+            "all_positionwise_structural_rules_reviewed": True,
+            "distinct_position_cut_preserved": True,
+        }
+    elif row["unit_id"] == "OLP-0406":
+        assert many_valued_sequent_calculus_math_fix and not documented
+        assert all(phrase in checked_target for phrase in (
+            "নির্বাচিত যুক্তিবিদ্যার বচনগত বিধি", "শক্তিশালী ক্লিনি",
+            r"\begin{sidewaysfigure}", r"\caption{$\LogLuk[3]$-এ !!{derivation}-এর উদাহরণ}",
+        ))
+        tex_command_check = {
+            "negation_conjunction_disjunction_implication_rule_families_reviewed": True,
+            "example_derivation_and_caption_preserved": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -4787,6 +4886,7 @@ for row in rows:
             many_valued_syntax_semantics_math_fix,
             three_valued_logics_math_fix,
             infinite_valued_logics_math_fix,
+            many_valued_sequent_calculus_math_fix,
             shared_audit_fix,
         )
     )

@@ -1,0 +1,86 @@
+% Part: many-valued-logic
+% Chapter: sequent-calculus
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{seq}{int}
+
+\olsection{ভূমিকা}
+
+ধ্রুপদি যুক্তিবিদ্যার সিকোয়েন্ট কলন একটি দক্ষ ও সরল
+!!{derivation} পদ্ধতি। কোনো বহুমানী যুক্তিবিদ্যা যদি সসীমসংখ্যক
+সত্যমানযুক্ত ম্যাট্রিক্স দিয়ে সংজ্ঞায়িত হয়, অর্থাৎ $V$ সসীম হয়,
+তবে তার জন্যও সিকোয়েন্ট কলন দেওয়া সম্ভব। কীভাবে তা করা যায়, সেই
+ধারণাটি আসে ধ্রুপদি ক্ষেত্রে সিকোয়েন্টের অর্থ ও অনুমান-বিধির রূপ
+বিবেচনা থেকে।
+
+মনে করো, একটি সিকোয়েন্ট
+\begin{align*}
+    !A_1, \dots, !A_m & \Sequent !B_1, \dots, !B_n
+\intertext{নিচের !!{formula} হিসেবে ব্যাখ্যা করা যায়:}
+    (!A_1 \land \cdots \land !A_m) & \lif (!B_1 \lor \cdots \lor
+!B_n)
+\end{align*}
+% BN-SRC-329 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-329):} হিমায়িত উৎসে বাঁপাশের শেষ সূত্রটি $!A_n$ লেখা, অথচ সঙ্গে দেওয়া ব্যাখ্যায় সেটি $!A_m$। দুই পাশের দৈর্ঘ্য আলাদা হতে পারে; তাই বাঁপাশের সূচক $m$ করা হয়েছে।} % BN-SRC-329 TARGET-CORRECTION-END
+অর্থাৎ, !!^a{valuation}~$\pAssign{v}$ সিকোয়েন্ট
+$\Gamma \Sequent \Delta$-কে \emph{পরিতৃপ্ত করে} তখনই, যখন
+কোনো $!A \in \Gamma$-র জন্য $\pValue{v}(!A) = \False$ হয়,
+অথবা কোনো $!A \in \Delta$-র জন্য $\pValue{v}(!A) = \True$ হয়।
+এই ব্যাখ্যায় প্রারম্ভিক সিকোয়েন্ট $!A \Sequent !A$ সর্বদা
+পরিতৃপ্ত হয়, কারণ হয় $\pValue v(!A) = \True$,
+নয়তো $\pValue{v}(!A) = \False$।
+% BN-SRC-330 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-330):} হিমায়িত উৎসে শেষ সমীকরণে $\pValue(!A)$ লিখে সত্যমান-অর্পণের বাধ্যতামূলক আর্গুমেন্ট $v$ বাদ গেছে। এখানে $\pValue{v}(!A)$ লেখা হয়েছে; একই অনুচ্ছেদের আগের সমীকরণেও এই অর্পণই ব্যবহৃত।} % BN-SRC-330 TARGET-CORRECTION-END
+
+পাশের সূত্রগুলি $\Gamma$, $\Delta$ বাদ দিয়ে $\Log{LK}$-এ
+শর্তবচনের অনুমান-বিধিগুলি নিচে দেওয়া হলো:
+
+\begin{defish}
+    \Axiom$ \fCenter !A$
+    \Axiom$ !B \fCenter $
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$ !A \lif !B \fCenter $
+    \DisplayProof
+    \hfill
+    \Axiom$ !A \fCenter !B$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$ \fCenter !A \lif !B $
+    \DisplayProof
+\end{defish}
+
+সিকোয়েন্টের উপরোক্ত অর্থগত ব্যাখ্যা প্রয়োগ করলে
+$\LeftR{\lif}$ বিধিটি বলে: $\pValue v(!A) = \True$ এবং
+$\pValue v(!B) = \False$ হলে $\pValue v(!A \lif !B) = \False$।
+অনুরূপভাবে, $\RightR{\lif}$ বিধিটি বলে: $\pValue v(!A) = \False$
+অথবা $\pValue v(!B) = \True$ হলে $\pValue v(!A \lif !B) =
+\True$। বস্তুত, এই শর্তগুলি উভমুখী শর্ত। $\LeftR{\land}$ ও
+$\RightR{\lor}$ বিধির প্রচলিত রূপে সংশ্লিষ্ট শর্তগুলি উভমুখী
+হতো না। তবে এই বিধিগুলির বিকল্প রূপ আছে, যাতে সেগুলি উভমুখী হয়:
+
+\begin{defish}
+    \Axiom$!A, !B, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \hfill
+    \Axiom$ \Gamma \fCenter \Delta, !A, !B$
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$ \Gamma \fCenter \Delta, !A \lor !B$
+    \DisplayProof
+\end{defish}
+
+এই মূল ধারণাটি $n$-মানী যুক্তিবিদ্যায় প্রয়োগ করলে দুই পাশের বদলে
+$n$-টি অবস্থানযুক্ত সিকোয়েন্ট কলন পাওয়া যায়, প্রতি সত্যমানের জন্য
+একটি অবস্থান। $V = \{\False, \Undef, \True\}$-যুক্ত ত্রিমানী
+যুক্তিবিদ্যায় একটি সিকোয়েন্টের রূপ $\Gamma \mid \Pi \mid \Delta$।
+এটি !!a{valuation}~$\pAssign v$-তে পরিতৃপ্ত হয় তখনই, যখন
+কোনো $!A \in \Gamma$-র মান $\pValue{v}(!A) = \False$, অথবা
+কোনো $!A \in \Delta$-র মান $\pValue{v}(!A) = \True$, অথবা
+কোনো $!A \in \Pi$-র মান $\pValue{v}(!A) = \Undef$।
+ফলে প্রারম্ভিক সিকোয়েন্ট $!A \mid !A \mid !A$ সর্বদা পরিতৃপ্ত হয়।
+
+\end{document}

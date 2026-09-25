@@ -1,0 +1,82 @@
+% Part: many-valued-logic
+% Chapter: sequent-calculus
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{seq}{rul}
+
+\olsection{বিধি ও \usetoken{P}{derivation}}
+
+পরের আলোচনায় $\Gamma, \Delta, \Pi, \Lambda$ দিয়ে
+!!{sentence}s-এর সসীম অনুক্রম বোঝানো হবে।
+
+\begin{defn}[সিকোয়েন্ট]
+কোনো \emph{$n$-পাশবিশিষ্ট সিকোয়েন্ট} হলো নিচের রূপের অভিব্যক্তি:
+\[
+\Gamma_1 \nSequent \dots \nSequent \Gamma_n
+\]
+এখানে প্রতিটি $\Gamma_i$ ভাষা~$\Lang L$-এর !!{sentence}s-এর
+একটি সসীম (সম্ভবত ফাঁকা) অনুক্রম।
+% BN-SRC-331 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-331):} হিমায়িত উৎসে ``প্রতিটি $\Gamma_1$'' বলা হয়েছে। উপরের সাধারণ $n$-পাশবিশিষ্ট সিকোয়েন্টে প্রতিটি অবস্থানের অনুক্রম বোঝাতে এখানে $\Gamma_i$ ব্যবহার করা হয়েছে।} % BN-SRC-331 TARGET-CORRECTION-END
+\end{defn}
+
+\begin{defn}[প্রারম্ভিক সিকোয়েন্ট]
+কোনো \emph{$n$-পাশবিশিষ্ট প্রারম্ভিক সিকোয়েন্ট} হলো
+$!A \nSequent \dots \nSequent !A$ রূপের একটি $n$-পাশবিশিষ্ট
+সিকোয়েন্ট, যেখানে $!A$ ভাষাটির যেকোনো !!{sentence}।
+
+ভাষাটিতে যদি কোনো $0$-স্থানবিশিষ্ট সংযোজক~$\star$ থাকে,
+অর্থাৎ কোনো বচনধ্রুবক থাকে, তবে $\dots \nSequent
+\star \nSequent \dots$ সিকোয়েন্টটিকেও প্রারম্ভিক ধরি।
+এখানে $\star$ থাকে $\tf{\star} \in V$ সত্যমানের সঙ্গে
+সংশ্লিষ্ট অবস্থানে; অন্য অবস্থানগুলি ফাঁকা থাকে।
+\end{defn}
+
+$n$-মানী যুক্তিবিদ্যা~$\Log{L}$-এর প্রতিটি সংযোজকের জন্য,
+$\Log{L}$-এ সংযোজকটি যতগুলি সত্যমান নিতে পারে, প্রতিটির
+জন্য একটি করে যৌক্তিক বিধি আছে। $\Log{L}$-এর $n$-পাশবিশিষ্ট
+সিকোয়েন্ট কলনে !!^{derivation}s হলো সিকোয়েন্টের বৃক্ষ।
+সর্বোচ্চ সিকোয়েন্টগুলি প্রারম্ভিক সিকোয়েন্ট; আর কোনো সিকোয়েন্ট
+এক বা একাধিক অন্য সিকোয়েন্টের নিচে থাকলে সেটি অবশ্যই
+$\Log{L}$-এর সংযোজকগুলির কোনো অনুমান-বিধি সঠিকভাবে প্রয়োগ করে
+পাওয়া যেতে হবে।
+
+\begin{defn}[উপপাদ্য]
+কোনো !!^a{sentence}~$!A$ $n$-মানী যুক্তিবিদ্যা~$\Log{L}$-এর
+\emph{উপপাদ্য} তখনই, যখন $\Log{L}$-এর প্রতিটি মনোনীত সত্যমানের
+সংশ্লিষ্ট অবস্থানে $!A$-যুক্ত $n$-সিকোয়েন্টটির একটি
+!!a{derivation} থাকে। $!A$ উপপাদ্য হলে লিখি
+$\Proves[\Log{L}] !A$, আর উপপাদ্য না হলে
+$\Proves/[\Log{L}] !A$।
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+কোনো !!^a{sentence}~$!A$ $n$-মানী যুক্তিবিদ্যা~$\Log{L}$-এ
+!!{sentence}s-এর সেট~$\Gamma$ থেকে \emph{!!{derivable}}, অর্থাৎ
+$\Gamma \Proves[\Log{L}] !A$, তখনই, যখন একটি সসীম
+উপসেট~$\Gamma_0 \subseteq \Gamma$ এবং $\Gamma_0$-র
+!!{sentence}s-এর একটি অনুক্রম $\Gamma_0'$ আছে, যাতে নিচের
+সিকোয়েন্টটির একটি !!a{derivation} থাকে:
+\[ \Lambda_1 \nSequent \dots \nSequent \Lambda_n \]
+এখানে $i$-তম অবস্থান মনোনীত সত্যমানের হলে $\Lambda_i$ হলো
+$!A$, অন্যথায় $\Gamma_0'$। $!A$ যদি $\Gamma$ থেকে
+!!{derivable} না হয়, তবে লিখি $\Gamma \Proves/ !A$।
+\end{defn}
+
+উদাহরণ হিসেবে, $3$-মানী \L ukasiewicz যুক্তিবিদ্যার একটি
+$3$-পাশবিশিষ্ট সিকোয়েন্ট কলন আছে। $3$-পাশবিশিষ্ট
+$\Gamma \nSequent \Pi \nSequent \Delta$ সিকোয়েন্টে
+$\Gamma$-র অবস্থান~$\False$, $\Delta$-র অবস্থান~$\True$,
+আর $\Pi$-র অবস্থান~$\Undef$-এর সঙ্গে সংশ্লিষ্ট।
+প্রারম্ভিক সিকোয়েন্টগুলি $!A \nSequent !A \nSequent !A$।
+শুধু $\True$ মনোনীত বলে $\Gamma \Proves[\LogLuk[3]] !A$
+তখনই, যখন $\Gamma \nSequent \Gamma \nSequent !A$
+সিকোয়েন্টটির একটি !!a{derivation} থাকে। ($\Undef$-ও
+মনোনীত হলে $\Gamma \nSequent !A \nSequent !A$-এর একটি
+!!a{derivation} দরকার হতো।)
+
+\end{document}

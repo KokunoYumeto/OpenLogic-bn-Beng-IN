@@ -1,6 +1,6 @@
 # Bengali translation decision log
 
-This retrospective and forward review index covers every current substantive entry in `TERM_DECISIONS.jsonl` and grows with the unfinished 722-file translation. Machine records give exact frozen-source wording and block hashes, every exact matching target line, Bengali script and locale, consulted-page identities, alternatives, confidence, an explicit expert-review flag and a plain double-check question. Final printed/PDF pages remain explicitly pending until reader integration and final pagination.
+This retrospective and forward review index covers every current substantive entry in `TERM_DECISIONS.jsonl` and grows with the unfinished 722-file translation. Machine records include representative exact frozen-source wording and block hashes, every exact matching target line, Bengali script and locale, consulted-page identities, alternatives, confidence, an explicit expert-review flag and a plain double-check question. For every occurrence, join `source_segment_id` to `DRAFT_SEGMENT_CANON_USE.jsonl` to recover exact source/target paths, spans and hashes, then verify the frozen source block itself. The compact layout keeps the complete traceable index within GitHub file-size limits. Final printed/PDF pages remain explicitly pending until reader integration and final pagination.
 
 ## Edition-scope assessment
 

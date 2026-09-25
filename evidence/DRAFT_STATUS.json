@@ -8018,12 +8018,14 @@
     "count": 320,
     "provisional_open": 301,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "0132682ee1afe18fc10c970201349ddf4b2b6f529ed1aa67e7a9a6722d1580c8",
+    "sha256": "7f8fb8c699e24e727c0e360d335656957d3684fc679ad824a8850b403217412e",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
     "occurrence_count": 26232,
+    "occurrence_schema": "openlogic-bn-translation-decision/3",
+    "occurrence_join": "Join source_segment_id to evidence/DRAFT_SEGMENT_CANON_USE.jsonl for exact source and target paths, block spans and SHA-256; read the frozen source block and verify its hash for exact wording.",
     "pagination_status": "Final printed/PDF page fields are pending reader integration and final pagination."
   },
   "translation_corrections": {

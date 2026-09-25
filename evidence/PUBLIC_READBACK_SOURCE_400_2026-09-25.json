@@ -1,0 +1,160 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-25T01:57:08.921624+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "c7d9e0c8df7edc415be5fd3af4e15807ceec4326",
+  "parent": "c5539b97e721985543b528c14f31a0e11395da58",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "797c54463e6e2c83ff81fac346fd67e0cf319472",
+    "receipt": "PUBLIC_READBACK_SOURCE_396_2026-09-25.json",
+    "receipt_sha256": "e3ea53e329768566b9cd83331d3d230f7b31963898cb836010cc07a41bb0b45e"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/c7d9e0c8df7edc415be5fd3af4e15807ceec4326.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/c7d9e0c8df7edc415be5fd3af4e15807ceec4326",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 31268105,
+  "archive_sha256": "7b7474b141d87e8c4d2e717df0a0d1bd061b365b5cf7ec619a7c53924d8cfed1",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/goedel.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7d9e0c8df7edc415be5fd3af4e15807ceec4326/bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/goedel.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7d9e0c8df7edc415be5fd3af4e15807ceec4326/bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/goedel.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 7638,
+      "sha256": "9bc2924c3314bb2239353f887e50851d753397638826e526cfe813c28cd109bc"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/infinite-valued-logics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7d9e0c8df7edc415be5fd3af4e15807ceec4326/bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/infinite-valued-logics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7d9e0c8df7edc415be5fd3af4e15807ceec4326/bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/infinite-valued-logics.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 341,
+      "sha256": "bf16b94f163e60681d688abe7709c7d3e36df5686e4e692a2505f6cd6be4db4e"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7d9e0c8df7edc415be5fd3af4e15807ceec4326/bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7d9e0c8df7edc415be5fd3af4e15807ceec4326/bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/introduction.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 3397,
+      "sha256": "d78010f37742e5682446e07ba67e6328eb93da673a2f29a09da164ecc50e3345"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/lukasiewicz.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7d9e0c8df7edc415be5fd3af4e15807ceec4326/bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/lukasiewicz.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c7d9e0c8df7edc415be5fd3af4e15807ceec4326/bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/lukasiewicz.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6002,
+      "sha256": "1952dad832ddc924d9bd85961bdf0f1d84134756deba93b86533990767249558"
+    }
+  ],
+  "changed_files_verified": 16,
+  "translated_tex_files_in_commit": 4,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 400,
+  "draft_untranslated_total": 322,
+  "segments": 4534,
+  "translated_segments": 3844,
+  "new_batch_segments": 34,
+  "new_batch_translated_segments": 27,
+  "new_batch_unchanged_segments": 7,
+  "source_correction_records": 335,
+  "new_source_correction_records": 5,
+  "source_normalization_records": 3,
+  "translation_decisions": 317,
+  "provisional_translation_decisions": 298,
+  "translation_decision_occurrences": 25923,
+  "decisions_with_exact_source_wording": 301,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 400,
+    "blocks": 4534,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/goedel.tex",
+      "bytes": 7638,
+      "sha256": "9bc2924c3314bb2239353f887e50851d753397638826e526cfe813c28cd109bc"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/infinite-valued-logics.tex",
+      "bytes": 341,
+      "sha256": "bf16b94f163e60681d688abe7709c7d3e36df5686e4e692a2505f6cd6be4db4e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/introduction.tex",
+      "bytes": 3397,
+      "sha256": "d78010f37742e5682446e07ba67e6328eb93da673a2f29a09da164ecc50e3345"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/infinite-valued-logics/lukasiewicz.tex",
+      "bytes": 6002,
+      "sha256": "1952dad832ddc924d9bd85961bdf0f1d84134756deba93b86533990767249558"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 7186856,
+      "sha256": "054a3f080f9e2eed61e3d87c0a515c354e82e322a002c7ef204fdc387433a9aa"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 249298,
+      "sha256": "6696ffad887e5e82cac699b3c85aec9e387d73025b2c9ad882dd7ad53c0f1cf2"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_MANY_VALUED_LOGIC_INFINITE_VALUED.md",
+      "bytes": 7353,
+      "sha256": "69683fb08977d295787e0d56ecdd5473eeff45f959b159fd5f1ec48aa040fcaf"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "cbede38187d18f9ef1ebdd70c4e21da051b16530372752d1e11820a89fac62a3"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 655712,
+      "sha256": "f42fb843a8624ff5ab5c04c46280c7143d6eb6a323eb93ff2a04920f88f3f08d"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 287614,
+      "sha256": "393ac3a1b1852b2dda076c455c891efbfb95d675c9912c6ee21f20ad282e84b8"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 60200659,
+      "sha256": "75f1cf3070fd3aa500151f3de57e629f8779f3e8b6e1b331d1e555ea10817381"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 53384031,
+      "sha256": "4d1b6200aaf9262e9f5994b4d8ba27d7029f95f4b4c6fe5e244e5d0de2552ceb"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1231589,
+      "sha256": "6f10a11ffe44d20a34b8c931d0164c341d78bb73feeb0ed2e8ebe8fc637d80a0"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 82412148,
+      "sha256": "4cd8b050a433fc3aa7e292d26d67022cb5cf125c6f334dd8c477006bbff191c4"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 232647,
+      "sha256": "bcb8023e7e48e5f0176d10ae29b49df4345710dd5d3befa3a4258e9a4f481b91"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 225626,
+      "sha256": "6c9bfb863198e8106bd90ccf1cbc6075412796cfb438e0d4aed5b9d8ba5dab39"
+    }
+  ]
+}

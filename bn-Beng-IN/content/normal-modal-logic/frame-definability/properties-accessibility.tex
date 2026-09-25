@@ -1,0 +1,140 @@
+% Part: normal-modal-logic
+% Chapter: frame-correspondence
+% Section: properties-accessibility
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{frd}{acc}
+
+\olsection{অভিগম্যতা সম্পর্কের ধর্ম}
+
+অনেক মোডাল !!{formula}s অভিগম্যতা সম্পর্কের সহজ, এমনকি পরিচিত, ধর্মগুলির পরিচায়ক। এর এক দিকে এর অর্থ হলো, কোনো মডেলের একটি নির্দিষ্ট ধর্ম থাকলে তার সঙ্গে সংশ্লিষ্ট !!{formula} (এবং তার সব প্রতিস্থাপন-দৃষ্টান্ত) সেই মডেলে সত্য। প্রথমে অভিগম্যতা সম্পর্কের পাঁচটি প্রচলিত ধর্ম এবং সেগুলির দ্বারা নিশ্চিত সূত্রগুলির উদাহরণ দেখি।
+
+\begin{thm}\ollabel{thm:soundschemas}
+  ধরা যাক, $\mModel{M} = \tuple{W, R, V}$ একটি মডেল। $R$-এর যদি \olref{tab:five}-এর বাম দিকের ধর্মটি থাকে, তবে ডান দিকের !!{formula}-র প্রত্যেকটি দৃষ্টান্ত~$\mModel{M}$-এ সত্য।
+\end{thm}
+
+\begin{table}[t]
+    \begin{tabular}{| l || l |}
+      \hline
+      {\emph{$R$ যদি হয় \dots}} & {\emph{তবে~$\mModel{M}$-এ \dots সত্য:}} \\
+      \hline \hline
+      \emph{সিরিয়াল}: $\forall u \exists v Ruv$ & \hbox to.43\textwidth
+           {$\Box p \lif \Diamond p$ \hfill (\Ax{D})} \\
+      \hline
+      \emph{প্রতিবিম্বী}: $\forall w Rww$
+      & \hbox to.43\textwidth
+          {$\Box p \lif p$ \hfill (\Ax{T})} \\
+      \hline
+      \emph{প্রতিসম}: &  \hbox to .43\textwidth
+           {$p \lif \Box\Diamond p$ \hfill (\Ax{B})} \\
+           $\forall u\forall v(Ruv \lif Rvu)$ & \\
+      \hline
+      \emph{পরিযায়ী}: & \hbox to.43\textwidth
+           {$\Box p \lif \Box \Box p$ \hfill (\Ax{4})} \\
+      $\forall u \forall v \forall w ((Ruv \land Rvw) \lif Ruw)$ & \\
+      \hline
+      \emph{ইউক্লিডীয়}: & \hbox to .43\textwidth
+        {$\Diamond p \lif \Box\Diamond p$ \hfill (\Ax{5})} \\
+      $\forall w \forall u \forall v ((Rwu \land Rwv) \lif Ruv)$ &\\
+      \hline
+    \end{tabular}
+    \caption{পাঁচটি অনুরূপতার তথ্য।}
+    \ollabel{tab:five}
+  \end{table}
+
+
+\begin{proof}
+  \Ax{B}-এর ক্ষেত্রটি দেখা যাক। কোনো মডেলে স্কিমাটি সত্য দেখাতে হলে মডেলটির সব জগতে তার সব দৃষ্টান্ত সত্য দেখাতে হবে। তাই \Ax{B}-এর যেকোনো একটি দৃষ্টান্ত $!A \lif \Box\Diamond !A$ নিই এবং $w \in W$ একটি নির্বিচার জগৎ ধরি। $w$-তে পূর্বপক্ষ $!A$ সত্য ধরে নিয়ে দেখাতে হবে, $w$-তে $\Box \Diamond
+  !A$ সত্য। এর জন্য দেখাতে হবে, $w$ থেকে অভিগম্য প্রতিটি $w'$-তে $\Diamond !A$ সত্য। এখন $Rww'$ হয় এমন যেকোনো $w'$-এর জন্য প্রতিসাম্যের অনুমান থেকে $Rw'w$-ও পাই (\olref{fig:Bsymm} দেখুন)। যেহেতু $\mSat{M}{!A}[w]$, তাই $\mSat{M}{\Diamond !A}[w']$। $Rww'$ হয় এমন $w'$ নির্বিচার ছিল। সুতরাং $\mSat{M}{\Box\Diamond!A}[w]$।
+
+  অন্য ক্ষেত্রগুলি অনুশীলনের জন্য রাখা হলো।
+\end{proof}
+
+\begin{prob}
+  \olref[nml][frd][acc]{thm:soundschemas}-এর প্রমাণ সম্পূর্ণ করুন।
+\end{prob}
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={below:$\mSat{{}}{\formula{A}}$\\
+          $\mSat{{}}{\Box\Diamond \formula{A}}$}] {$w$};
+      \node[world] (w2) [label=below:{$\mSat{{}}{\Diamond \formula{A}}$},
+        right=of w1] {$w'$};
+      \draw[->, bend left] (w1) to (w2);
+      \draw[->, bend left] (w2) to (w1);
+    \end{tikzpicture}
+  \end{center}
+\caption{প্রতিসাম্য থেকে যুক্তিটি।}
+\ollabel{fig:Bsymm}
+\end{figure}
+
+লক্ষ করুন, \olref{thm:soundschemas}-এর বিপরীত নিহিতার্থগুলি চলে না: কোনো মডেলে স্কিমা সত্য হলেই সেই মডেলের অভিগম্যতা সম্পর্কের সংশ্লিষ্ট ধর্মটি থাকবে, এমন নয়। \Ax{T} এবং প্রতিবিম্বী মডেলের ক্ষেত্রে \Ax{T} নিজেই মিথ্যা এমন একটি মডেলের উদাহরণ দেওয়া সহজ: $W = \{w\}$ এবং $V(p) = \emptyset$ ধরি। তখন $R$ প্রতিবিম্বী নয়, অথচ $\mSat{M}{\Box
+  p}[w]$ এবং $\mSat/{M}{p}[w]$। এখানে অবশ্য \Ax{T}-এর মাত্র একটি দৃষ্টান্ত~$\mModel{M}$-এ মিথ্যা; অন্য দৃষ্টান্ত, যেমন $\Box \lnot p \lif \lnot p$, সত্য। \Ax{T}-এর \emph{প্রত্যেক প্রতিস্থাপন-দৃষ্টান্ত}~$\mModel{M}$-এ সত্য, কিন্তু $\mModel{M}$ প্রতিবিম্বী নয়—এমন মডেল দেখানো কঠিন। তবু এমন মডেল আছে:
+
+\begin{prop}\ollabel{prop:reflexive}
+  ধরা যাক, $\mModel{M} = \tuple{W, R, V}$ এমন একটি মডেল, যেখানে $W = \{u, v
+  \}$ এবং $R$-এ $u$ ও $v$ সম্পর্কিত: অর্থাৎ $Ruv$ ও $Rvu$ উভয়ই সত্য। আরও ধরা যাক, সব $p$-এর জন্য $u \in V(p) \Leftrightarrow v
+  \in V(p)$। তবে:
+  \begin{enumerate}
+  \item সব $!A$-এর জন্য $\mSat{M}{!A}[u]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!A}[v]$ ($!A$-এর উপর আবেশ ব্যবহার করুন)।
+  \item \Ax{T}-এর প্রত্যেক দৃষ্টান্ত $\mModel{M}$-এ সত্য।
+  \end{enumerate}
+  যেহেতু $\mModel{M}$ প্রতিবিম্বী নয় (প্রকৃতপক্ষে এটি \emph{অপ্রতিবিম্বী}), \Ax{T}-এর ক্ষেত্রে \olref{thm:soundschemas}-এর বিপরীতটি ব্যর্থ হয় (\olref{thm:soundschemas}-এ উল্লিখিত অন্য কয়েকটি স্কিমার ক্ষেত্রেও অনুরূপ যুক্তি দেওয়া যায়, তবে সবগুলির ক্ষেত্রে নয়)।
+\end{prop}
+
+\begin{prob}
+  \olref[nml][frd][acc]{prop:reflexive}-এর দাবিগুলি প্রমাণ করুন।
+\end{prob}
+
+আমরা যদিও পাঁচটি প্রচলিত !!{formula}s \Ax{D},
+\Ax{T}, \Ax{B}, \Ax{4}, ও \Ax{5}-এর উপর আলোকপাত করব, \olref{tab:anotherfive}-এ অভিগম্যতা সম্পর্কের আরও কয়েকটি ধর্ম নথিবদ্ধ করছি। প্রতিটি জগৎ থেকে সর্বাধিক একটি জগৎ অভিগম্য হলে অভিগম্যতা সম্পর্ক~$R$ \emph{আংশিক অপেক্ষকধর্মী}। প্রতিটি জগৎ থেকে ঠিক একটি জগৎ অভিগম্য হলে তাকে \emph{অপেক্ষকধর্মী} বলি। (অতএব, সিরিয়াল ও আংশিক অপেক্ষকধর্মী—উভয় ধর্মবিশিষ্ট সম্পর্কই ঠিক অপেক্ষকধর্মী সম্পর্ক।) অভিগম্যতা সম্পর্কটি (আংশিক) অপেক্ষকের মতো কাজ করে বলেই এই নাম। $Ruv$ হলেই $u$ ও~$v$-এর ``মাঝখানে'' কোনো~$w$ থাকলে সম্পর্কটি \emph{দুর্বলভাবে ঘন}। এই অর্থে দুর্বলভাবে ঘন সম্পর্ক পরিযায়ী সম্পর্কের বিপরীতমুখী: পরিযায়ী সম্পর্কে~$w$ হয়ে ঘুরপথে $u$ থেকে $v$-তে যাওয়া গেলে সরাসরি $u$ থেকে $v$-তে যাওয়া যায়; দুর্বলভাবে ঘন সম্পর্কে সরাসরি $u$ থেকে $v$-তে যাওয়া গেলে কোনো~$w$ হয়ে ঘুরপথেও যাওয়া যায়। কোনো~$w$ থেকে $u$ ও~$v$—উভয় জগতে যাওয়া গেলে, $u$ ও~$v$ উভয় থেকেই একই জগৎ~$t$-তে যাওয়া যায়—এমন সম্পর্ককে \emph{দুর্বলভাবে অভিমুখী} বলি। একে কখনো ``হীরক ধর্ম'' বা ``অভিসরণ''-ও বলা হয়।
+
+\begin{table}[t]
+    \begin{tabular}{| p{.50\textwidth} || p{.43\textwidth} |}
+      \hline
+      {\emph{$R$ যদি হয় \dots}} & {\emph{তবে~$\mModel{M}$-এ \dots সত্য:}} \\
+      \hline \hline
+      \emph{আংশিক অপেক্ষকধর্মী}: &
+      \multirow{2}{*}{$\Diamond p \lif \Box p$} \\
+      $ \forall w \forall u \forall v ((Rwu \land Rwv) \lif u =v )$ & \\
+      \hline
+      \multirow{2}{*}{\emph{অপেক্ষকধর্মী}: $\forall w \exists v \forall u(Rwu \liff \eq[u][v]) $}
+      & \multirow{2}{*}{$\Diamond p \liff \Box p$} \\
+      & \\
+      \hline
+      \emph{দুর্বলভাবে ঘন}: &  \multirow{2}{*}{$\Box \Box p \lif
+        \Box p$} \\
+      $\forall u\forall v(Ruv \lif \exists w(Ruw \land Rwv))$ & \\
+      \hline
+      \emph{দুর্বলভাবে সংযুক্ত}: &
+      \multirow{3}{*}{\hbox to.43\textwidth{$
+        \begin{array}{@{}l@{}}
+          \Box ((p \land \Box p) \lif q) \lor {} \\
+          \qquad \Box ((q \land \Box q) \lif p)
+        \end{array}$ \hfill (\Ax{L})}
+      } \\
+      $\forall w \forall u \forall v ((Rwu \land Rwv) \lif {}$ &\\
+      \qquad $(Ruv \lor u=v \lor Rvu))$ & \\
+      \hline
+      \emph{দুর্বলভাবে অভিমুখী}: & \multirow{3}{*}{\hbox to .43\textwidth
+        {$\Diamond\Box p \lif \Box\Diamond p$\hfill (\Ax{G})}} \\
+      $\forall w \forall u \forall v ((Rwu \land Rwv) \lif {}$ & \\
+      \qquad $\exists t (Rut \land Rvt))$ & \\
+      \hline
+    \end{tabular}
+    \caption{অনুরূপতার আরও পাঁচটি তথ্য।}
+    \ollabel{tab:anotherfive}
+  \end{table}
+
+\begin{prob}
+  ধরা যাক, $\mModel{M} = \tuple{W, R, V}$ একটি মডেল। দেখান, $R$ যদি \olref[nml][frd][acc]{tab:anotherfive}-এর বাম দিকের ধর্মগুলি পূরণ করে, তবে ডান দিকের সংশ্লিষ্ট সূত্রের প্রত্যেক দৃষ্টান্ত~$\mModel{M}$-এ সত্য।
+\end{prob}
+
+
+
+\end{document}

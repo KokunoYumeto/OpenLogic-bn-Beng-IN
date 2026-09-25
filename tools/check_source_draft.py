@@ -2498,6 +2498,52 @@ for row in rows:
             assert audited_modal_completion.count(old) == 1
             audited_modal_completion = audited_modal_completion.replace(old, new, 1)
         normal_modal_completion_math_fix = mathparts(audited_modal_completion) == target_math
+
+    frame_definability_math_fix = False
+    if 419 <= unit_number <= 426:
+        expected_frame_corrections = {
+            "OLP-0423": {"BN-SRC-343", "BN-SRC-344"},
+            "OLP-0424": {"BN-SRC-345"},
+            "OLP-0426": {"BN-SRC-346", "BN-SRC-347", "BN-SRC-348"},
+        }
+        assert set(documented) == expected_frame_corrections.get(row["unit_id"], set())
+        expected_math_delta = {
+            "OLP-0423": (
+                collections.Counter({r"\mSat{M}{\Box!A}": 1, r"V(q)=\emptyset)": 1}),
+                collections.Counter({r"\mSat{M}{\Box!A}[w]": 1, r"V(q)=\emptyset": 1}),
+            ),
+            "OLP-0424": (
+                collections.Counter({r"\Gamma=\{!F,!A_1,!A_2,\dots\}.": 1}),
+                collections.Counter({
+                    r"n\ge2": 1,
+                    r"\Gamma=\{!F,!A_2,!A_3,\dots\}.": 1,
+                    r"k=2": 1,
+                    r"i\lek": 1,
+                    r"i\ge2": 1,
+                }),
+            ),
+            "OLP-0426": (
+                collections.Counter({
+                    r"\ST_x(\indfrm)=(\ST_x(!B)\liff\ST_x(!C))}": 1,
+                    r"\Sat{M}{\lforall[y][(\Atom{Q}{x,y}\lif\Atom{X}{y})]\lif\Atom{X}{x}}": 1,
+                }),
+                collections.Counter({
+                    r"\ST_x(\indfrm)=(\ST_x(!B)\liff\ST_x(!C))": 1,
+                    r"\Sat{M}{\lforall[y][(\Atom{Q}{x,y}\lif\Atom{X}{y})]\lif\Atom{X}{x}}[s]": 1,
+                }),
+            ),
+        }
+        expected_removed, expected_added = expected_math_delta.get(
+            row["unit_id"], (collections.Counter(), collections.Counter())
+        )
+        frame_definability_math_fix = (
+            source_math - target_math == expected_removed
+            and target_math - source_math == expected_added
+        )
+        if row["unit_id"] == "OLP-0426":
+            assert source.count(r"\tagitem{prvTrue}{\indcase{!A}{\lfalse}") == 1
+            assert checked_target.count(r"\tagitem{prvTrue}{\indcase{!A}{\ltrue}") == 1
+            assert checked_target.count(r"\tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}") == 1
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -4933,6 +4979,66 @@ for row in rows:
             r"\Entails/ \Box p \lif p$-এর বিপরীত উদাহরণ",
         ))
         tex_command_check = {"pointwise_entailment_positive_example_and_both_countermodels_reviewed": True}
+    elif row["unit_id"] == "OLP-0419":
+        assert frame_definability_math_fix and not documented
+        assert r"\olchapter{nml}{frd}{কাঠামো-সংজ্ঞায়নযোগ্যতা}" in checked_target
+        assert all(r"\olimport{" + name + "}" in checked_target for name in (
+            "introduction", "properties-accessibility", "frames", "definability",
+            "first-order-definability", "equivalence-S5", "second-order-definability",
+        ))
+        tex_command_check = {"frame_definability_title_and_seven_imports_reviewed": True}
+    elif row["unit_id"] == "OLP-0420":
+        assert frame_definability_math_fix and not documented
+        assert all(phrase in checked_target for phrase in (
+            r"\mModel{F} \Entails !A", r"V(p) =", r"\Box p \lif p",
+        ))
+        tex_command_check = {"fixed_model_vs_all_valuations_and_frame_intro_reviewed": True}
+    elif row["unit_id"] == "OLP-0421":
+        assert frame_definability_math_fix and not documented
+        assert all(phrase in checked_target for phrase in (
+            r"\ollabel{tab:five}", r"\ollabel{tab:anotherfive}",
+            r"\ollabel{prop:reflexive}", r"\ollabel{fig:Bsymm}",
+            "সিরিয়াল", "প্রতিবিম্বী", "প্রতিসম", "পরিযায়ী", "ইউক্লিডীয়",
+        ))
+        tex_command_check = {"both_correspondence_tables_proof_diagram_and_countermodel_reviewed": True}
+    elif row["unit_id"] == "OLP-0422":
+        assert frame_definability_math_fix and not documented
+        assert all(phrase in checked_target for phrase in (
+            r"\mModel{F} = \tuple{W,R}", r"\mClass{F} \Entails !A",
+            "অশূন্য সমষ্টি", "উপর প্রতিষ্ঠিত",
+        ))
+        tex_command_check = {"frame_model_and_frame_class_validity_definitions_reviewed": True}
+    elif row["unit_id"] == "OLP-0423":
+        assert frame_definability_math_fix
+        assert all(phrase in checked_target for phrase in (
+            r"\mSat{M}{\Box !A}[w]", r"V(q) = \emptyset$)",
+            r"\ollabel{thm:fullCorrespondence}", r"\ollabel{prop:relation-facts}",
+        ))
+        tex_command_check = {"five_converse_constructions_two_corollaries_and_relation_facts_reviewed": True}
+    elif row["unit_id"] == "OLP-0424":
+        assert frame_definability_math_fix
+        assert all(phrase in checked_target for phrase in (
+            r"\Gamma = \{!F, !A_2, !A_3, \dots\}",
+            r"$n\ge 2$", r"$k=2$", r"$i\ge2$",
+            r"\lforall[x][\lforall[y][\Atom{Q}{x,y}]]",
+        ))
+        tex_command_check = {"loeb_compactness_defined_indices_and_universality_reviewed": True}
+    elif row["unit_id"] == "OLP-0425":
+        assert frame_definability_math_fix and not documented
+        assert all(phrase in checked_target for phrase in (
+            r"\ollabel{prop:equivalences}", r"\ollabel{prop:S5=univ}",
+            r"\ollabel{fig:partition}", r"V'(p) = V(p) \cap W'",
+        ))
+        tex_command_check = {"equivalence_s5_partition_and_universal_countermodel_reviewed": True}
+    elif row["unit_id"] == "OLP-0426":
+        assert frame_definability_math_fix
+        assert all(phrase in checked_target for phrase in (
+            r"\tagitem{prvTrue}{\indcase{!A}{\ltrue}",
+            r"\tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}",
+            r"\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif",
+            r"\ollabel{prop:st}",
+        ))
+        tex_command_check = {"standard_translation_all_cases_monadic_definition_and_reflexivity_proof_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5045,6 +5151,7 @@ for row in rows:
             many_valued_sequent_calculus_math_fix,
             normal_modal_opening_math_fix,
             normal_modal_completion_math_fix,
+            frame_definability_math_fix,
             shared_audit_fix,
         )
     )

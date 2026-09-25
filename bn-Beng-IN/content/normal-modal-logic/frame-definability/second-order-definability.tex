@@ -1,0 +1,101 @@
+% Part: normal-modal-logic
+% Chapter: frame-correspondence
+% Section: standard-translation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{frd}{st}
+
+\olsection{দ্বিতীয়-ক্রমে সংজ্ঞায়নযোগ্যতা}
+
+মোডাল সূত্র দিয়ে সংজ্ঞায়নযোগ্য কাঠামোর সব ধর্ম প্রথম-ক্রমে সংজ্ঞায়নযোগ্য নয়। কিন্তু একস্থানীয় বিধেয়ের উপর পরিমাণায়ন (অর্থাৎ, একপদী দ্বিতীয়-ক্রমের পরিমাণায়ন) অনুমোদন করলে মোডাল সূত্রে সংজ্ঞায়নযোগ্য সব কাঠামোগত ধর্ম সংজ্ঞায়িত করা যায়। মূল কৌশলটি হলো, কোনো জগতে মোডাল !!{formula} সত্য হওয়ার শর্তের সঙ্গে প্রথম-ক্রমের !!{formula}s-এর একটি নিয়মিত সম্পর্ক কাজে লাগানো। এটি মোডাল সূত্রের তথাকথিত \emph{প্রমিত অনুবাদ}: এমন একটি ভাষার প্রথম-ক্রমের সূত্রে অনুবাদ, যেখানে অভিগম্যতা সম্পর্কের জন্য দ্বিস্থানের !!{predicate}~$Q$ ছাড়াও~$!A$-তে উপস্থিত !!{propositional variable}s~$\Obj p_i$-গুলির জন্য একস্থানীয় !!{predicate}~$P_i$ থাকে।
+
+\begin{defn}
+  \emph{প্রমিত অনুবাদ}~$\ST_x(!A)$ আবেশিকভাবে এভাবে সংজ্ঞায়িত:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\ST_x(\indfrm) = \lfalse$.}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\ST_x(\indfrm) = \ltrue$.}}{}
+  % BN-SRC-346: সত্য ধ্রুবকের দফায় উৎসের ভুল নির্মাণ-উপপাদ সংশোধিত।
+  \item \indcase{!A}{\Obj p_i}{$\ST_x(\indfrm) = \Atom{P_i}{x}$.}
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\ST_x(\indfrm) = \lnot \ST_x(!B)$.}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \land \ST_x(!C))$.}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \lor \ST_x(!C))$.}}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \lif \ST_x(!C))$.}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \liff \ST_x(!C))$.}}{}
+  % BN-SRC-347: দ্বিমুখী নিহিতার্থের দফার অতিরিক্ত বন্ধনী সরানো হয়েছে।
+  \tagitem{prvBox}{\indcase{!A}{\Box !B}{$\ST_x(\indfrm) =
+      \lforall[y][(\Atom{Q}{x,y} \lif \ST_y(!B))]$.}}{}
+  \tagitem{prvDiamond}{\indcase{!A}{\Diamond !B}{$\ST_x(\indfrm) =
+      \lexists[y][(\Atom{Q}{x,y} \land \ST_y(!B))]$.}}{}
+  \end{enumerate}
+\end{defn}
+
+যেমন, $\ST_x(\Box p \lif p)$ হলো $\lforall[y][(\Atom{Q}{x,y}
+  \lif \Atom{P}{y})] \lif \Atom{P}{x}$।~$\ST_x(!A)$-এর ভাষার যেকোনো !!{structure}-তে একটি আধার,~$Q$-এর জন্য একটি দ্বিপদী সম্পর্ক এবং একস্থানীয় !!{predicate}s~$P_i$-গুলির জন্য আধারের উপসমষ্টি নির্ধারণ করতে হয়। অন্য কথায়, এমন !!a{structure}-র উপাদানগুলি ঠিক~$!A$-এর মডেলের উপাদানগুলিই: আধারটি জগৎসমষ্টি,~$Q$-এর জন্য নির্ধারিত দ্বিপদী সম্পর্কটি অভিগম্যতা সম্পর্ক, আর~$P_i$-গুলির জন্য নির্ধারিত উপসমষ্টিগুলি মানায়ন~$V(\Obj p_i)$। তাই মোডাল মডেলে $!A$-এর সন্তুষ্টি এবং সংশ্লিষ্ট !!{structure}-এ $\ST_x(!A)$-এর সন্তুষ্টি একই হওয়া অপ্রত্যাশিত নয়:
+
+\begin{prop}\ollabel{prop:st}
+  ধরা যাক, $\mModel{M} = \tuple{W, R, V}$; $\Struct{M'}$ হলো প্রথম-ক্রমের এমন !!{structure}, যেখানে $\Domain{M'} = W$, $\Assign{Q}{M'} = R$ এবং $\Assign{P_i}{M'} = V(\Obj p_i)$; আর $s(x) = w$। তাহলে
+  \[
+  \mSat{M}{!A}[w] \text{ তখনই এবং কেবল তখনই, যখন } \Sat{M'}{\ST_x(!A)}[s]
+  \]
+\end{prop}
+
+\begin{proof}
+  $!A$-এর উপর আবেশে।
+\end{proof}
+
+\begin{prop}
+  ধরা যাক, $!A$ একটি মোডাল !!{formula} এবং $\mModel{F} = \tuple{W, R}$ একটি কাঠামো। $\Struct{F'}$ প্রথম-ক্রমের এমন !!{structure}, যেখানে $\Domain{F'} = W$ ও $\Assign{Q}{F'} = R$; আর $!A'$ হলো দ্বিতীয়-ক্রমের সূত্র
+  \[
+  \lforall[X_1][\dots\lforall[X_n][\lforall[x][
+        \SSubst{\ST_x(!A)}{\subst{X_1}{P_1}, \dots,
+          \subst{X_n}{P_n}}]]],
+  \]
+  যেখানে $P_1$, \dots, $P_n$ হলো~$\ST_x(!A)$-এর সব একস্থানীয় !!{predicate}s। তাহলে
+  \[
+  \mModel{F} \Entails !A \text{ তখনই এবং কেবল তখনই, যখন } \Sat{F'}{!A'}
+  \]
+\end{prop}
+
+\begin{proof}
+  $\Sat{F'}{!A'}$ তখনই এবং কেবল তখনই, যখন $i = 1$, \dots,~$n$-এর জন্য $\Assign{P_i}{M'} \subseteq W$ এমন প্রত্যেক !!{structure}~$\mModel{M'}$-তে এবং $s(x) \in W$ এমন প্রত্যেক $s$-এর জন্য $\Sat{M'}{\ST_x(!A)}[s]$। \olref{prop:st} অনুযায়ী, এটি তখনই এবং কেবল তখনই ঘটে, যখন~$\mModel{F}$-এর উপর প্রতিষ্ঠিত সব মডেল~$\mModel{M}$ এবং সব জগৎ~$w \in W$-এর জন্য $\mSat{M}{!A}[w]$; অর্থাৎ $\mModel{F} \Entails !A$।
+\end{proof}
+
+\begin{defn}
+  কাঠামোর শ্রেণি~$\mClass{F}$ \emph{দ্বিতীয়-ক্রমে সংজ্ঞায়নযোগ্য}, যদি একটিমাত্র দ্বিস্থানের !!{predicate}~$P$ এবং শুধু একপদী সমষ্টি-চলকের উপর পরিমাণায়কবিশিষ্ট দ্বিতীয়-ক্রমের ভাষায় এমন একটি !!a{sentence}~$!A$ থাকে যে, $\mModel{F} = \tuple{W, R} \in \mClass{F}$ তখনই এবং কেবল তখনই, যখন $\Domain{M} = W$ ও $\Assign{P}{M} = R$-বিশিষ্ট !!{structure}~$\Struct{M}$-এ $\Sat{M}{!A}$।
+\end{defn}
+
+\begin{cor}
+  কাঠামোর কোনো শ্রেণি !!a{formula}~$!A$ দিয়ে সংজ্ঞায়নযোগ্য হলে, সংশ্লিষ্ট অভিগম্যতা সম্পর্কের শ্রেণি একটি একপদী দ্বিতীয়-ক্রমের বাক্য দিয়ে সংজ্ঞায়নযোগ্য।
+\end{cor}
+
+\begin{proof}
+  আগের প্রমাণের একপদী দ্বিতীয়-ক্রমের বাক্য~$!A'$-এর প্রয়োজনীয় ধর্মটি আছে।
+\end{proof}
+
+উদাহরণ হিসেবে আবার !!{formula}~$\Box p \lif p$ নিই। এটি প্রতিবিম্ব ধর্ম সংজ্ঞায়িত করে। প্রতিবিম্ব ধর্ম অবশ্যই প্রথম-ক্রমের !!{sentence}~$\lforall[x][\Atom{Q}{x,x}]$ দিয়ে সংজ্ঞায়নযোগ্য। কিন্তু এটি একপদী দ্বিতীয়-ক্রমের !!{sentence} দিয়েও সংজ্ঞায়নযোগ্য:
+\[
+\lforall[X][\lforall[x][(\lforall[y][(\Atom{Q}{x,y} \lif \Atom{X}{y})]
+    \lif \Atom{X}{x})]].
+\]
+অর্থাৎ, বাক্য দুটি সমতুল্য। সরাসরি তা বোঝার একটি উপায় হলো: প্রথমে ধরা যাক, দ্বিতীয়-ক্রমের বাক্যটি কোনো !!a{structure}~$\Struct{M}$-এ সত্য। $x$ ও $X$ সর্বজনীনভাবে পরিমাণায়িত বলে, অবশিষ্ট অংশটি প্রত্যেক $x \in W$ ও প্রত্যেক সমষ্টি~$X \subseteq W$-এর জন্য সত্য হতে হবে; বিশেষত $R =
+\Assign{Q}{M}$ হলে সমষ্টি $\Setabs{z}{Rxz}$-এর জন্যও। তাই $s(x) \in W$ এবং $s(X) =
+\Setabs{z}{Rxz}$ এমন প্রত্যেক~$s$-এর জন্য $\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif
+    \Atom{X}{y})] \lif \Atom{X}{x}}[s]$। কিন্তু $s(X)$ যেভাবে বেছে নিয়েছি, তাতে এর অর্থ $\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif
+    \Atom{Q}{x,y})] \lif \Atom{Q}{x,x}}[s]$; পূর্বপক্ষ বৈধ বলে এটি $\Atom{Q}{x,x}$-এর সমতুল্য। $s(x)$ নির্বিচার ছিল; তাই $\Sat{M}{\lforall[x][\Atom{Q}{x,x}]}$।
+% BN-SRC-348: খোলা সূত্রের সত্যতা-দাবিতে বাদ-পড়া মানায়ন পুনরুদ্ধার করা হয়েছে।
+
+এবার ধরা যাক, $\Sat{M}{\lforall[x][\Atom{Q}{x,x}]}$। দেখাতে হবে $\Sat{M}{\lforall[X][\lforall[x][(\lforall[y][(\Atom{Q}{x,y} \lif
+        \Atom{X}{y})] \lif \Atom{X}{x})]]}$। যেকোনো মানায়ন~$s$ নিই এবং ধরি $\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif
+    \Atom{X}{y})]}[s]$। $s'$ ধরি~$s$-এর এমন $y$-ভিন্নক, যেখানে $s'(y)
+= s(x)$; তাহলে $\Sat{M}{\Atom{Q}{x,y} \lif \Atom{X}{y}}[s']$, অর্থাৎ $\Sat{M}{\Atom{Q}{x,x} \lif \Atom{X}{x}}[s]$। যেহেতু $\Sat{M}{\lforall[x][\Atom{Q}{x,x}]}$, পূর্বপক্ষ সত্য; তাই $\Sat{M}{\Atom{X}{x}}[s]$, যা দেখানোর ছিল।
+
+কাঠামোর কয়েকটি সংজ্ঞায়নযোগ্য শ্রেণি প্রথম-ক্রমে সংজ্ঞায়নযোগ্য নয়। তাই~$!A'$-এর আকারের প্রত্যেক একপদী দ্বিতীয়-ক্রমের !!{sentence} কোনো প্রথম-ক্রমের !!{sentence}-র সমতুল্য নয়। কোনগুলি সমতুল্য, তা নির্ণয়ের কোনো কার্যকর পদ্ধতি নেই।
+
+\end{document}

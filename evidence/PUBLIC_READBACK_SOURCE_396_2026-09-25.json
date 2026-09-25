@@ -1,0 +1,186 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-25T01:21:28.011974+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "797c54463e6e2c83ff81fac346fd67e0cf319472",
+  "parent": "05d91a6f69d4946f5221714128f98b2eaf42de27",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "63bfe3604089ca710cb4528434c65496f78668e2",
+    "receipt": "PUBLIC_READBACK_SOURCE_390_2026-09-21.json",
+    "receipt_sha256": "a11af2390348e4569140cc1129b2fa34a96e8e826d6d99b43651d8ebd29bf45d"
+  },
+  "access": "Anonymous HTTPS requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/797c54463e6e2c83ff81fac346fd67e0cf319472.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/797c54463e6e2c83ff81fac346fd67e0cf319472",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 31163983,
+  "archive_sha256": "27f65a51a2676b2e91e8a04f4a73bdec06828ae7723ea1f56072a6fbddd40e37",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/goedel.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/goedel.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/goedel.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 6111,
+      "sha256": "8b90ff109a58eb96b37b985a23e0b21f344fc03b88082df08a47a300ad61ade7"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/introduction.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 1413,
+      "sha256": "44c4d3ef9c0cbc5af12aeaa74c7cb670229c817d4008f64089ff554e48c325d8"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/kleene.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/kleene.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/kleene.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 11002,
+      "sha256": "686762499955a2fe5b984d43139407caa13c7bf5570e7d177d7564a64c47be3b"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/lukasiewicz.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/lukasiewicz.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/lukasiewicz.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 18452,
+      "sha256": "92f2ef5b6deb51bb2a04411d1e640c89a41847d275d98f9ad4bab18857e60bf3"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/multiple-designation.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/multiple-designation.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/multiple-designation.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 15772,
+      "sha256": "1620f46b33753aca0f6d5e0909fa4f69560a360de1b74f28b15423537ce29987"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/three-valued-logics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/three-valued-logics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/797c54463e6e2c83ff81fac346fd67e0cf319472/bn-Beng-IN/content/many-valued-logic/three-valued-logics/three-valued-logics.tex",
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 378,
+      "sha256": "87358bfb72baef7ceb82cbdd85c0f245fdd106f3002666755fe7cbcf0703cb33"
+    }
+  ],
+  "changed_files_verified": 18,
+  "translated_tex_files_in_commit": 6,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 396,
+  "draft_untranslated_total": 326,
+  "segments": 4500,
+  "translated_segments": 3817,
+  "new_batch_segments": 76,
+  "new_batch_translated_segments": 65,
+  "new_batch_unchanged_segments": 11,
+  "source_correction_records": 330,
+  "new_source_correction_records": 6,
+  "source_normalization_records": 3,
+  "translation_decisions": 315,
+  "provisional_translation_decisions": 296,
+  "translation_decision_occurrences": 25819,
+  "decisions_with_exact_source_wording": 300,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 396,
+    "blocks": 4500,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/goedel.tex",
+      "bytes": 6111,
+      "sha256": "8b90ff109a58eb96b37b985a23e0b21f344fc03b88082df08a47a300ad61ade7"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/introduction.tex",
+      "bytes": 1413,
+      "sha256": "44c4d3ef9c0cbc5af12aeaa74c7cb670229c817d4008f64089ff554e48c325d8"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/kleene.tex",
+      "bytes": 11002,
+      "sha256": "686762499955a2fe5b984d43139407caa13c7bf5570e7d177d7564a64c47be3b"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/lukasiewicz.tex",
+      "bytes": 18452,
+      "sha256": "92f2ef5b6deb51bb2a04411d1e640c89a41847d275d98f9ad4bab18857e60bf3"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/multiple-designation.tex",
+      "bytes": 15772,
+      "sha256": "1620f46b33753aca0f6d5e0909fa4f69560a360de1b74f28b15423537ce29987"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/three-valued-logics.tex",
+      "bytes": 378,
+      "sha256": "87358bfb72baef7ceb82cbdd85c0f245fdd106f3002666755fe7cbcf0703cb33"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 7126378,
+      "sha256": "944ad7a95dbb76877c73bdf10f771ea73f9e08abb13acfdd1cad7c7fe1e99433"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 246527,
+      "sha256": "d6b1df5d09b5836ee9b38ac9dc27f08bbb7d8e0ae5ad36c96613cd3da452efa2"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_MANY_VALUED_LOGIC_THREE_VALUED.md",
+      "bytes": 9916,
+      "sha256": "81baf7f8a76e814462b3d62ccdcaf0a3d67a41520dcfabd890e9b2f99d875fa6"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "aa1241b26b073828621c43f701077ef2a6820c8df9a467dbd7e85a70cc23c92c"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 644245,
+      "sha256": "06c190525a9822fe3d9a8fc1ba2a16f99310a757589499a8767149b3503cc782"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 285551,
+      "sha256": "94f204f5cef1bad39a8b5bc5d49cbdb0c8c9a26e4382ac18c3c012acf8a88a9e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 59970961,
+      "sha256": "acacc49202c32b29aa27b7a02ab1f4dbad316fc9253e9061fc6420c25f506ffb"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 53181875,
+      "sha256": "36c42a2091658abb96834c607c3c7ab1e4f906e6f0137dc6d5ec43530428f904"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1224038,
+      "sha256": "8b56970edcd328efd2f5495e30adc4179a4144aa787f78e33e4b2e67c8119efa"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 82101720,
+      "sha256": "f61bf456e104e17f55c74d71112e3b6656e490977ab46e099e105018024221c8"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 230867,
+      "sha256": "6411bbcde7319ec92f26abbdb7c288697473e82a84544aa765b838a26ce110e4"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 221361,
+      "sha256": "05b8ce5eedbb9723e8cf186ea401fd95f1dcb0855c2478fe85c257f26dafefbb"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+% Part: many-valued-logic
+% Chapter: infinite-valued-logics
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{inf}{int}
+
+\olsection{ভূমিকা}
+
+কোনো ম্যাট্রিক্সে সত্যমানের সংখ্যা সসীম হতেই হবে, এমন নয়। অসীমসংখ্যক
+সত্যমানের সেট হিসেবে $0$ ও~$1$-এর মধ্যবর্তী মূলদ সংখ্যাগুলির সেট
+$V_\infty = [0,1] \cap \Rat$ নেওয়া স্বাভাবিক; অর্থাৎ,
+\begin{align*}
+    V_\infty & = \Setabs{\frac{n}{m}}{n,m \in \Nat \text{ and } 0<m \text{ and } n\le m}.
+\intertext{এই অসীম সত্যমান-সেটটি বিবেচনা করার সময় প্রায়ই নিচের
+উপসেটগুলিও কাজে লাগে:}
+V_m & = \Setabs{\frac{n}{m-1}}{n \in \Nat \text{ and } n\le m-1}
+\intertext{যেমন, $V_5$-এ সমান ব্যবধানে অবস্থিত $5$টি সত্যমান আছে:}
+V_5 & = \{0, \frac{1}{4}, \frac{1}{2}, \frac{3}{4}, 1\}.
+\end{align*}
+% BN-SRC-324 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-324):} হিমায়িত উৎসের $V_\infty$ সেট-নির্মাণে $m=0$ বাদ দেওয়া হয়নি; $0\in\Nat$ হলে তাতে শূন্য হর আসে। ঘোষিত $[0,1]\cap\Rat$-এর সঙ্গে মিল রাখতে বাংলা লক্ষ্যে $0<m$ শর্ত যোগ করা হয়েছে।} % BN-SRC-324 TARGET-CORRECTION-END
+% BN-SRC-325 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-325):} হিমায়িত উৎসের $V_m$-এ $n\le m$ লিখলে $V_5$-এ $5/4$-সহ ছয়টি মান পাওয়া যায়। পরের প্রদর্শিত পাঁচ-মানের উদাহরণ এবং $m$-মানী সংজ্ঞার সঙ্গে মিল রাখতে বাংলা লক্ষ্যে $n\le m-1$ করা হয়েছে।} % BN-SRC-325 TARGET-CORRECTION-END
+এই সত্যমান-সেটগুলির উপর ভিত্তি করা যুক্তিবিদ্যায় সাধারণত কেবল $1$-ই
+মনোনীত; অর্থাৎ, $V^+ = \{1\}$। অন্য কথায়, $1$ পরম সত্যের এবং $0$
+পরম মিথ্যার ভূমিকা নেয়; কিন্তু !!{formula}s-এর সত্যমান~$V$-এর মধ্যবর্তী যেকোনো
+মানও হতে পারে।
+
+এ ছাড়া $0$ ও~$1$-এর মধ্যবর্তী সব \emph{বাস্তব} সংখ্যার সেট
+$V_{[0,1]} = [0,1]$, অথবা $[0,1]$-এর অন্য কোনো অসীম উপসেটও নেওয়া
+যায়। এই সত্যমান-সেটের যুক্তিবিদ্যাগুলিকে প্রায়ই \emph{ফাজি} বলা হয়।
+
+\end{document}

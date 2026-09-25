@@ -1,0 +1,135 @@
+% Part: many-valued-logic
+% Chapter: infinite-valued-logics
+% Section: goedel
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{inf}{god}
+
+\olsection{G\"odel যুক্তিবিদ্যাসমূহ}
+
+\begin{editorial}
+  এটি অসীমমানী G\"odel যুক্তিবিদ্যার একটি সংক্ষিপ্ত প্রাথমিক খসড়া।
+\end{editorial}
+
+\begin{defn}\ollabel{def:goedel} অসীমমানী G\"odel
+যুক্তিবিদ্যা~$\LogGod[\infty]$ নিচের ম্যাট্রিক্স দিয়ে সংজ্ঞায়িত:
+\begin{enumerate}
+  \item $\lfalse$, $\lnot$, $\land$, $\lor$, $\lif$-সহ প্রমিত
+  বচনগত ভাষা $\Lang L_0$।
+  \item সত্যমানের সেট $V_\infty$।
+  \item $1$ একমাত্র মনোনীত মান; অর্থাৎ, $V^+ = \{1\}$।
+  \item সত্যমান-অপেক্ষকগুলি নিচের অপেক্ষকগুলির মাধ্যমে নির্ধারিত:
+  \begin{align*}
+    \tf{\lfalse} & = 0\\
+    \tf{\lnot}[\LogGod](x) & = \begin{cases}
+      1 & \text{if } x =0\\
+      0 & \text{otherwise}
+    \end{cases}\\
+    \tf{\land}[\LogGod](x,y) & = \min(x,y)\\
+    \tf{\lor}[\LogGod](x,y) & = \max(x,y)\\
+    \tf{\lif}[\LogGod](x,y) & = \begin{cases}
+      1 & \text{if } x \le y\\
+      y & \text{otherwise.}
+    \end{cases}
+    \end{align*}
+\end{enumerate}
+$m$-মানী G\"odel যুক্তিবিদ্যাও একইভাবে সংজ্ঞায়িত, শুধু
+$V = V_m$ নেওয়া হয়।
+\end{defn}
+% BN-SRC-326 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-326):} হিমায়িত উৎসের \texttt{cases} পরিবেশে নঞর্থকরণের ফল হিসেবে \texttt{\$1\$} ও \texttt{\$0\$} লেখা আছে। ইতিমধ্যে গণিত-মোডে থাকা এই পরিবেশে ভেতরের ডলারচিহ্ন TeX-এর মোড ভাঙে; বাংলা লক্ষ্যে কেবল সেগুলি বাদ দিয়ে যথাক্রমে $1$ ও~$0$ রাখা হয়েছে।} % BN-SRC-326 TARGET-CORRECTION-END
+
+\begin{prop}
+  \olref[thr][god]{defn:goedel} অনুযায়ী সংজ্ঞায়িত
+  $\LogGod[3]$ যুক্তিবিদ্যা এবং \olref{def:goedel} অনুযায়ী
+  সংজ্ঞায়িত $\LogGod[3]$ যুক্তিবিদ্যা একই।
+\end{prop}
+
+\begin{proof}
+  \olref[thr][god]{defn:goedel}-এ দেওয়া সংযোজকগুলির সত্যসারণি
+  \olref{def:goedel}-এর সমীকরণ থেকে পাওয়া নিচের সত্যসারণিগুলির
+  সঙ্গে তুলনা করলেই তা দেখা যায়:
+  \begin{center}
+    \begin{tabular}{c|c}
+      $\tf{\lnot}[\LogGod[3]]$ & \\
+      \hline
+      $1$ & $0$ \\
+      $1/2$ & $0$ \\
+      $0$ & $1$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\land}[\LogGod]$ & $1$ & $1/2$ & $0$ \\
+      \hline
+      $1$ & $1$ & $1/2$ & $0$ \\
+      $1/2$ & $1/2$ & $1/2$ & $0$\\
+      $0$ & $0$ & $0$ & $0$
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc}
+      $\tf{\lor}[\LogGod]$ & $1$ & $1/2$ & $0$ \\
+      \hline
+      $1$ & $1$ & $1$ & $1$ \\
+      $1/2$ & $1$ & $1/2$ & $1/2$ \\
+      $0$ & $1$ & $1/2$ & $0$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\lif}[\LogGod]$ & $1$ & $1/2$ & $0$ \\
+      \hline
+      $1$ & $1$ & $1/2$ & $0$ \\
+      $1/2$ & $1$ & $1$ & $0$ \\
+      $0$ & $1$ & $1$ & $1$
+    \end{tabular}
+  \end{center}
+\end{proof}
+
+\begin{prop}\ollabel{prop:god-infty-m}
+  যদি $\Gamma \Entails[\LogGod[\infty]] !B$ হয়, তবে সব~$m \ge 2$-এর
+  জন্য $\Gamma \Entails[\LogGod[m]] !B$।
+\end{prop}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+  \olref[mvl][inf][god]{prop:god-infty-m} প্রমাণ করো।
+\end{prob}
+
+সসীম $\Gamma$-এর ক্ষেত্রে এর বিপরীত দাবিটিও সত্য।
+% BN-SRC-328 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-328):} হিমায়িত উৎসে $\Gamma$ সসীম হওয়ার শর্ত নেই, অথচ অসীম পূর্বধারণাসেটে দাবিটি ব্যর্থ। $n\ge1$-এর জন্য $\Gamma$-তে $p_n\lif q$ এবং $((p_{n+1}\lif p_n)\lif p_n)$ রাখি। কোনো সসীম $V_m$-এ $q<1$ ধরে সব পূর্বধারণা সত্য হলে প্রথমগুলি থেকে $p_n\le q<1$ এবং দ্বিতীয়গুলি থেকে $p_n<p_{n+1}$ হয়; সসীম $V_m$-এ এমন অসীম ক্রম অসম্ভব। ফলে সব $m$-এ $\Gamma\Entails[\LogGod[m]]q$। কিন্তু $V_\infty$-এ $q=1/2$ ও $p_n=n/(2(n+1))$ দিলে সব পূর্বধারণা সত্য, $q$ মনোনীত নয়। সসীম $\Gamma$-এর কোনো প্রতিবিপরীত মূল্যায়নে যতগুলি মূলদ মান ব্যবহৃত হয়, সবগুলি একটি $V_m$-এ থাকে; তাই সসীম ক্ষেত্রে বিপরীত দাবিটি সত্য।} % BN-SRC-328 TARGET-CORRECTION-END
+
+$\LogGod[3]$-এর মতো $\LogGod[\infty]$-এও সব স্বজ্ঞাবাদীভাবে সিদ্ধ
+!!{formula}s সর্বতঃসত্য, এবং আগের অ-সর্বতঃসত্য সূত্রগুলিও
+$\LogGod[\infty]$-এ অ-সর্বতঃসত্য:
+\begin{align*}
+  & p \lor \lnot p && (p \lif q) \lif (\lnot p \lor q) \\
+  & \lnot\lnot p \lif p && \lnot(\lnot p \land \lnot q) \lif (p \lor q) \\
+  & ((p \lif q) \lif p) \lif p && \lnot(p \lif q) \lif (p \land \lnot q)
+\end{align*}
+স্বজ্ঞাবাদীভাবে সিদ্ধ নয়, অথচ $\LogGod[3]$-এ সর্বতঃসত্য---এমন
+!!{formula}-এর উদাহরণ $(p \lif q) \lor (q \lif p)$-ও
+$\LogGod[\infty]$-এ সর্বতঃসত্য। আরও স্পষ্টভাবে,
+$\LogGod[\infty]$-কে স্বজ্ঞাবাদী যুক্তিবিদ্যার সঙ্গে
+$(!A \lif !B) \lor (!B \lif !A)$ প্রকল্পটি যোগ করে পাওয়া
+যুক্তিবিদ্যা হিসেবে চিহ্নিত করা যায়। মাইকেল ডামেট এটি দেখিয়েছিলেন;
+তাই $\LogGod[\infty]$-কে প্রায়ই G\"odel--Dummett
+যুক্তিবিদ্যা~$\Log{LC}$ বলা হয়।
+
+\begin{prob}
+  দেখাও যে $(p \lif q) \lor (q \lif p)$ সূত্রটি
+  $\LogGod[\infty]$-এ সর্বতঃসত্য।
+\end{prob}
+
+\begin{prob}
+  দেখাও যে $(p \lif q) \lor (q \lif r) \lor (r \lif s)$ সূত্রটি
+  $\LogGod[3]$-এ সর্বতঃসত্য হলেও $\LogGod[\infty]$-এ
+  সর্বতঃসত্য নয়।
+\end{prob}
+
+\end{document}

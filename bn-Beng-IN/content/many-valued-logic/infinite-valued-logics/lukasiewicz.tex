@@ -1,0 +1,111 @@
+% Part: many-valued-logic
+% Chapter: infinite-valued-logics
+% Section: lukasiewicz
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{inf}{luk}
+
+\olsection{\L ukasiewicz যুক্তিবিদ্যা}
+
+\begin{editorial}
+  এটি অসীমমানী \L ukasiewicz যুক্তিবিদ্যার একটি সংক্ষিপ্ত প্রাথমিক খসড়া।
+\end{editorial}
+
+\begin{defn}\ollabel{def:lukasiewicz} অসীমমানী \L ukasiewicz
+যুক্তিবিদ্যা~$\LogLuk[\infty]$ নিচের ম্যাট্রিক্স দিয়ে সংজ্ঞায়িত:
+\begin{enumerate}
+  \item $\lnot$, $\land$, $\lor$, $\lif$-সহ প্রমিত বচনগত ভাষা
+  $\Lang L_0$।
+  \item সত্যমানের সেট $V_\infty$।
+  \item $1$ একমাত্র মনোনীত মান; অর্থাৎ, $V^+ = \{1\}$।
+  \item সত্যমান-অপেক্ষকগুলি নিচের অপেক্ষকগুলির মাধ্যমে নির্ধারিত:
+  \begin{align*}
+    \tf{\lnot}[\LogLuk](x) & = 1 - x\\
+    \tf{\land}[\LogLuk](x,y) & = \min(x,y)\\
+    \tf{\lor}[\LogLuk](x,y) & = \max(x,y)\\
+    \tf{\lif}[\LogLuk](x,y) & = \min(1,1-(x-y)) = \begin{cases}
+      1 & \text{if } x \le y\\
+      1-(x-y) & \text{otherwise.}
+    \end{cases}
+    \end{align*}
+\end{enumerate}
+$m$-মানী \L ukasiewicz যুক্তিবিদ্যাও একইভাবে সংজ্ঞায়িত, শুধু
+$V = V_m$ নেওয়া হয়।
+\end{defn}
+
+\begin{prop}
+  \olref[thr][luk]{def:lukasiewicz} অনুযায়ী সংজ্ঞায়িত
+  $\LogLuk[3]$ যুক্তিবিদ্যা এবং \olref{def:lukasiewicz} অনুযায়ী
+  সংজ্ঞায়িত $\LogLuk[3]$ যুক্তিবিদ্যা একই।
+\end{prop}
+
+\begin{proof}
+  \olref[thr][luk]{def:lukasiewicz}-এ দেওয়া সংযোজকগুলির সত্যসারণি
+  \olref{def:lukasiewicz}-এর সমীকরণ থেকে পাওয়া নিচের সত্যসারণিগুলির
+  সঙ্গে তুলনা করলেই তা দেখা যায়:
+  \begin{center}
+    \begin{tabular}{c|c}
+      $\tf{\lnot}$ & \\
+      \hline
+      $1$ & $0$ \\
+      $1/2$ & $1/2$ \\
+      $0$ & $1$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\land}[\LogLuk[3]]$ & $1$ & $1/2$ & $0$ \\
+      \hline
+      $1$ & $1$ & $1/2$ & $0$ \\
+      $1/2$ & $1/2$ & $1/2$ & $0$\\
+      $0$ & $0$ & $0$ & $0$
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc}
+      $\tf{\lor}[\LogLuk[3]]$ & $1$ & $1/2$ & $0$ \\
+      \hline
+      $1$ & $1$ & $1$ & $1$ \\
+      $1/2$ & $1$ & $1/2$ & $1/2$ \\
+      $0$ & $1$ & $1/2$ & $0$
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\tf{\lif}[\LogLuk[3]]$ & $1$ & $1/2$ & $0$ \\
+      \hline
+      $1$ & $1$ & $1/2$ & $0$ \\
+      $1/2$ & $1$ & $1$ & $1/2$ \\
+      $0$ & $1$ & $1$ & $1$
+    \end{tabular}
+  \end{center}
+\end{proof}
+
+\begin{prop}\ollabel{prop:luk-infty-m}
+  যদি $\Gamma \Entails[\LogLuk[\infty]] !B$ হয়, তবে সব~$m \ge 2$-এর
+  জন্য $\Gamma \Entails[\LogLuk[m]] !B$।
+\end{prop}
+
+\begin{proof}
+  অনুশীলনী।
+\end{proof}
+
+\begin{prob}
+  \olref[mvl][inf][luk]{prop:luk-infty-m} প্রমাণ করো।
+\end{prob}
+
+সসীম $\Gamma$-এর ক্ষেত্রে এর বিপরীত দাবিটিও সত্য।
+% BN-SRC-327 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-327):} হিমায়িত উৎসে ``বিপরীত দাবিটিও সত্য'' বললেও $\Gamma$-কে সসীম ধরা হয়নি। অসীম পূর্বধারণাসেটের জন্য দাবিটি ব্যর্থ: $p\oplus q := \lnot p\lif q$ লিখে, $n\ge2$-এর জন্য $D_n$-কে $p_n$-এর $(n-1)$-বার $\oplus$-যোগফল ধরি। $\Gamma$-তে প্রতিটি $(D_n\lif\lnot p_n)\land(\lnot p_n\lif D_n)$ রাখলে মনোনীত মান~$1$ পাওয়ার জন্য $p_n=1/n$ চাই। কোনো সসীম $V_m$-ই সব পূর্বধারণা একসঙ্গে পূরণ করতে পারে না (কারণ $1/m\notin V_m$); তাই সেখানে $\Gamma$ থেকে যেকোনো $q$ অনুসিদ্ধ। কিন্তু $V_\infty$-এ সব $p_n=1/n$ এবং $q=0$ রাখলে পূর্বধারণাগুলি সত্য, উপসংহার সত্য নয়। সসীম $\Gamma$ হলে একটি প্রতিবিপরীত মূল্যায়নের সসীমসংখ্যক মূলদ মান কোনো একটি $V_m$-এ একসঙ্গে থাকে; তাই সেই সীমিত ক্ষেত্রে বিপরীত দাবিটি ঠিক।} % BN-SRC-327 TARGET-CORRECTION-END
+
+অসীমমানী \L ukasiewicz যুক্তিবিদ্যা সবচেয়ে জনপ্রিয় ফাজি যুক্তিবিদ্যা।
+ফাজি যুক্তিবিদ্যার সাহিত্যে শর্তবচনকে প্রায়ই $\lnot !A \lor !B$
+হিসেবে সংজ্ঞায়িত করা হয়। তাতে অসীমমানী শক্তিশালী ক্লিনি যুক্তিবিদ্যা
+পাওয়া যাবে।
+
+\begin{prob}
+  দেখাও যে $(p \lif q) \lor (q \lif p)$ সূত্রটি
+  $\LogLuk[\infty]$-এ সর্বতঃসত্য।
+\end{prob}
+
+\end{document}

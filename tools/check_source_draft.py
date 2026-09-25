@@ -2350,6 +2350,46 @@ for row in rows:
         three_valued_logics_math_fix = (
             mathparts(audited_three_valued_logics) == target_math
         )
+    infinite_valued_logics_math_fix = False
+    audited_infinite_valued_logics = source
+    if row["unit_id"] == "OLP-0399":
+        repairs = [
+            (
+                r"n,m \in \Nat \text{ and } n\le m",
+                r"n,m \in \Nat \text{ and } 0<m \text{ and } n\le m",
+            ),
+            (
+                r"n \in \Nat \text{ and } n\le m}",
+                r"n \in \Nat \text{ and } n\le m-1}",
+            ),
+        ]
+        for old, new in repairs:
+            assert audited_infinite_valued_logics.count(old) == 1, old
+            audited_infinite_valued_logics = audited_infinite_valued_logics.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0400":
+        old = "In fact, the converse holds as well."
+        new = "For finite $\\Gamma$, the converse holds as well."
+        assert audited_infinite_valued_logics.count(old) == 1
+        audited_infinite_valued_logics = audited_infinite_valued_logics.replace(old, new, 1)
+    elif row["unit_id"] == "OLP-0401":
+        repairs = [
+            (r"      $1$ & \text{if } x =0\\", r"      1 & \text{if } x =0\\"),
+            (r"      $0$ & \text{otherwise}", r"      0 & \text{otherwise}"),
+            ("In fact, the converse holds as well.", "For finite $\\Gamma$, the converse holds as well."),
+        ]
+        for old, new in repairs:
+            assert audited_infinite_valued_logics.count(old) == 1, old
+            audited_infinite_valued_logics = audited_infinite_valued_logics.replace(old, new, 1)
+    if 398 <= unit_number <= 401:
+        expected_infinite_valued = {
+            "OLP-0399": {"BN-SRC-324", "BN-SRC-325"},
+            "OLP-0400": {"BN-SRC-327"},
+            "OLP-0401": {"BN-SRC-326", "BN-SRC-328"},
+        }
+        assert set(documented) == expected_infinite_valued.get(row["unit_id"], set())
+        infinite_valued_logics_math_fix = (
+            mathparts(audited_infinite_valued_logics) == target_math
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -4599,6 +4639,45 @@ for row in rows:
             "lp_conjunction_induction_variables_restored": True,
             "rm3_falsum_interpretation_restored": True,
         }
+    elif row["unit_id"] == "OLP-0398":
+        assert infinite_valued_logics_math_fix and not documented
+        assert "অসীমমানী যুক্তিবিদ্যাসমূহ" in checked_target
+        assert all(f"\\olimport{{{name}}}" in checked_target for name in ("introduction", "lukasiewicz", "goedel"))
+        tex_command_check = {"infinite_valued_logics_chapter_driver_reviewed": True}
+    elif row["unit_id"] == "OLP-0399":
+        assert infinite_valued_logics_math_fix
+        assert set(documented) == {"BN-SRC-324", "BN-SRC-325"}
+        assert all(phrase in checked_target for phrase in (
+            r"0<m \text{ and } n\le m", r"n\le m-1", "সমান ব্যবধানে", "ফাজি",
+        ))
+        tex_command_check = {
+            "rational_unit_interval_and_designation_reviewed": True,
+            "nonzero_denominator_restored": True,
+            "m_value_cardinality_restored": True,
+        }
+    elif row["unit_id"] == "OLP-0400":
+        assert infinite_valued_logics_math_fix
+        assert set(documented) == {"BN-SRC-327"}
+        assert all(phrase in checked_target for phrase in (
+            "অসীমমানী \\L ukasiewicz", r"\min(1,1-(x-y))", "সসীম $\\Gamma$-এর ক্ষেত্রে এর বিপরীত দাবিটিও সত্য",
+        ))
+        tex_command_check = {
+            "infinite_lukasiewicz_matrix_and_finite_restrictions_reviewed": True,
+            "converse_restricted_to_finite_premises": True,
+        }
+    elif row["unit_id"] == "OLP-0401":
+        assert infinite_valued_logics_math_fix
+        assert set(documented) == {"BN-SRC-326", "BN-SRC-328"}
+        assert all(phrase in checked_target for phrase in (
+            "অসীমমানী G\\\"odel", r"\tf{\lnot}[\LogGod](x)",
+            "G\\\"odel--Dummett", "স্বজ্ঞাবাদীভাবে সিদ্ধ নয়",
+            "সসীম $\\Gamma$-এর ক্ষেত্রে এর বিপরীত দাবিটিও সত্য",
+        ))
+        tex_command_check = {
+            "infinite_godel_matrix_and_linearity_reviewed": True,
+            "nested_math_delimiters_removed": True,
+            "converse_restricted_to_finite_premises": True,
+        }
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -4707,6 +4786,7 @@ for row in rows:
             lambda_definability_completion_math_fix,
             many_valued_syntax_semantics_math_fix,
             three_valued_logics_math_fix,
+            infinite_valued_logics_math_fix,
             shared_audit_fix,
         )
     )

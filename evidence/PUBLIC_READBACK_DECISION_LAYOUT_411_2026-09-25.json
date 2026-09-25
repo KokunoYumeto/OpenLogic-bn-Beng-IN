@@ -1,0 +1,69 @@
+{
+  "schema": "openlogic-bn-public-evidence-layout-readback/1",
+  "verified_utc": "2026-09-25T03:26:58.083793+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "9df66389d66ee4c2b15b6725568def2625fd9822",
+  "parent": "c1c76db1802e637273e9d594aa0a67a3b3ccd13a",
+  "access": "Anonymous HTTPS archive and raw requests; no authentication header or credential used.",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/9df66389d66ee4c2b15b6725568def2625fd9822.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/9df66389d66ee4c2b15b6725568def2625fd9822",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 12240244,
+  "archive_sha256": "4e2ead12c1d62cc7c69924726c893198837c6ee796fc97415ee86fe822382e92",
+  "changed_files_verified": 6,
+  "files": [
+    {
+      "path": "evidence/DECISION_OCCURRENCE_LAYOUT.md",
+      "raw_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/DECISION_OCCURRENCE_LAYOUT.md",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/DECISION_OCCURRENCE_LAYOUT.md",
+      "content_type": "text/plain",
+      "bytes": 2162,
+      "sha256": "5ef52ec0c919f0d686bccc762cb462e9656b562ace52598e812cfa17dcca30dd"
+    },
+    {
+      "path": "evidence/DRAFT_STATUS.json",
+      "raw_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/DRAFT_STATUS.json",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/DRAFT_STATUS.json",
+      "content_type": "text/plain",
+      "bytes": 256524,
+      "sha256": "36e1dd0ecf1c574b2277a1bc52562ea9b0854dec4497bdc1ec6ce971372dbc1b"
+    },
+    {
+      "path": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "raw_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/TRANSLATION_DECISION_INDEX.json",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/TRANSLATION_DECISION_INDEX.json",
+      "content_type": "text/plain",
+      "bytes": 16052557,
+      "sha256": "850ddba0a8a0bfefb2d4885e402014b628f3fa0253ed121e096da46230983721"
+    },
+    {
+      "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "raw_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "content_type": "text/plain",
+      "bytes": 12567418,
+      "sha256": "7f8fb8c699e24e727c0e360d335656957d3684fc679ad824a8850b403217412e"
+    },
+    {
+      "path": "evidence/TRANSLATION_DECISION_LOG.md",
+      "raw_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/TRANSLATION_DECISION_LOG.md",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/TRANSLATION_DECISION_LOG.md",
+      "content_type": "text/plain",
+      "bytes": 1242744,
+      "sha256": "74ee59f120fa45172a06ab77cf7b8e898d0d080212c0e6b59bb022f5f398ca9b"
+    },
+    {
+      "path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "raw_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/9df66389d66ee4c2b15b6725568def2625fd9822/evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "content_type": "text/plain",
+      "bytes": 7195768,
+      "sha256": "ed03a173c30e80a63d7ddd01126d84413651758c57fd477a14301764a700e13c"
+    }
+  ],
+  "decision_count": 320,
+  "occurrence_count": 26232,
+  "all_public_changed_files_below_50m_bytes": true,
+  "occurrence_join": "source_segment_id to evidence/DRAFT_SEGMENT_CANON_USE.jsonl; source and target bytes verified by the local full-join audit",
+  "new_reader_release_claimed": false
+}

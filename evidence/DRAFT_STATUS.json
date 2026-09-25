@@ -8026,6 +8026,11 @@
     "occurrence_count": 26232,
     "occurrence_schema": "openlogic-bn-translation-decision/3",
     "occurrence_join": "Join source_segment_id to evidence/DRAFT_SEGMENT_CANON_USE.jsonl for exact source and target paths, block spans and SHA-256; read the frozen source block and verify its hash for exact wording.",
+    "layout_readback": {
+      "commit": "9df66389d66ee4c2b15b6725568def2625fd9822",
+      "receipt": "evidence/PUBLIC_READBACK_DECISION_LAYOUT_411_2026-09-25.json",
+      "receipt_sha256": "867c5b4207e32bb6653e1d8c461602276a2a5c749fa2344a852be6a4087a5ba9"
+    },
     "pagination_status": "Final printed/PDF page fields are pending reader integration and final pagination."
   },
   "translation_corrections": {

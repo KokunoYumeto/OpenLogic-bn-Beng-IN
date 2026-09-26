@@ -1,0 +1,230 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T01:44:08.208138+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "a93e300bec5562a9810f842381438fb9a883848b",
+  "parent": "5c9b2a4d90d1376ea7b3f9ff6779d3242e3ee42e",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "9747449322277cd45bf8abac1108db8aa58a4eba",
+    "receipt": "PUBLIC_READBACK_SOURCE_439_2026-09-25.json",
+    "receipt_sha256": "6ac4c570eeb7f76653dacc8a03f4ee480ea9c06f56b03e3c54d12af9f347de9e"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/a93e300bec5562a9810f842381438fb9a883848b.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/a93e300bec5562a9810f842381438fb9a883848b",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 12918424,
+  "archive_sha256": "fe9d66d7451367b01cae9ee5a7672e1bc8b1127d9f9ee321f4d498f39bc7cde3",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/canonical-models.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/canonical-models.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/canonical-models.tex",
+      "content_type": "text/plain",
+      "bytes": 1501,
+      "sha256": "643f57c8feb1beccfaf2c63ebb0520bc5779e6bb6ef4f878b8a5867ef3f6e62d"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/complete-consistent-sets.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/complete-consistent-sets.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/complete-consistent-sets.tex",
+      "content_type": "text/plain",
+      "bytes": 9383,
+      "sha256": "93500911fc099716abde4c281377a2dc8c1dde64dfdcf01265546e409b86bf38"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/completeness-K.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/completeness-K.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/completeness-K.tex",
+      "content_type": "text/plain",
+      "bytes": 3971,
+      "sha256": "9b948963cb534f1ed100d23caf908b68efd6ee68086ce4add11ac35cd85f80e4"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/completeness.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/completeness.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/completeness.tex",
+      "content_type": "text/plain",
+      "bytes": 480,
+      "sha256": "5ac910682f9cea30e60e920f4a91bd7edced491a5ad138944c74f319aeb3b8f4"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/frame-completeness.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/frame-completeness.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/frame-completeness.tex",
+      "content_type": "text/plain",
+      "bytes": 15060,
+      "sha256": "a3e88df5aa02d60ff697a332de09642885cf6a0edb29ca63a9d1b9b3f509e420"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 6564,
+      "sha256": "b49da64abb459fb8ae550f1ae86456fa3b1c6467d7b6b0e1c36c4f836b9d5996"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/lindenbaums-lemma.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/lindenbaums-lemma.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/lindenbaums-lemma.tex",
+      "content_type": "text/plain",
+      "bytes": 7913,
+      "sha256": "7cb4196a9500c8a99e51490ca4380783bdbd50269fd5799ec09a37f26aba4326"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/modalities-ccs.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/modalities-ccs.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/modalities-ccs.tex",
+      "content_type": "text/plain",
+      "bytes": 16456,
+      "sha256": "1fdb28b910e6c8f0fee11bbd5e0c7c63d231f36fd11783c5b3c03a491fd477af"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/truth-lemma.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/truth-lemma.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a93e300bec5562a9810f842381438fb9a883848b/bn-Beng-IN/content/normal-modal-logic/completeness/truth-lemma.tex",
+      "content_type": "text/plain",
+      "bytes": 10142,
+      "sha256": "aaacc124ae7e1dcc1c142317b724c6144591338301c0655b7232875844678782"
+    }
+  ],
+  "changed_files_verified": 21,
+  "translated_tex_files_in_commit": 9,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 448,
+  "draft_untranslated_total": 274,
+  "segments": 5053,
+  "translated_segments": 4277,
+  "new_batch_segments": 117,
+  "new_batch_translated_segments": 105,
+  "new_batch_unchanged_segments": 12,
+  "source_correction_records": 366,
+  "new_source_correction_records": 6,
+  "source_normalization_records": 3,
+  "translation_decisions": 337,
+  "provisional_translation_decisions": 318,
+  "translation_decision_occurrences": 27936,
+  "decisions_with_exact_source_wording": 321,
+  "ai_assistance": {
+    "product": "OpenAI Codex",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "ultra"
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 448,
+    "blocks": 5053,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/completeness/canonical-models.tex",
+      "bytes": 1501,
+      "sha256": "643f57c8feb1beccfaf2c63ebb0520bc5779e6bb6ef4f878b8a5867ef3f6e62d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/completeness/complete-consistent-sets.tex",
+      "bytes": 9383,
+      "sha256": "93500911fc099716abde4c281377a2dc8c1dde64dfdcf01265546e409b86bf38"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/completeness/completeness-K.tex",
+      "bytes": 3971,
+      "sha256": "9b948963cb534f1ed100d23caf908b68efd6ee68086ce4add11ac35cd85f80e4"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/completeness/completeness.tex",
+      "bytes": 480,
+      "sha256": "5ac910682f9cea30e60e920f4a91bd7edced491a5ad138944c74f319aeb3b8f4"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/completeness/frame-completeness.tex",
+      "bytes": 15060,
+      "sha256": "a3e88df5aa02d60ff697a332de09642885cf6a0edb29ca63a9d1b9b3f509e420"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/completeness/introduction.tex",
+      "bytes": 6564,
+      "sha256": "b49da64abb459fb8ae550f1ae86456fa3b1c6467d7b6b0e1c36c4f836b9d5996"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/completeness/lindenbaums-lemma.tex",
+      "bytes": 7913,
+      "sha256": "7cb4196a9500c8a99e51490ca4380783bdbd50269fd5799ec09a37f26aba4326"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/completeness/modalities-ccs.tex",
+      "bytes": 16456,
+      "sha256": "1fdb28b910e6c8f0fee11bbd5e0c7c63d231f36fd11783c5b3c03a491fd477af"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/completeness/truth-lemma.tex",
+      "bytes": 10142,
+      "sha256": "aaacc124ae7e1dcc1c142317b724c6144591338301c0655b7232875844678782"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 8093831,
+      "sha256": "04c108eee2a89122dbd12f4842269a3a89a910d4a1a507b73024e598f61ebfdd"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 279125,
+      "sha256": "6dff74bdf08347d3cab94e155e036ae832d50f83205907826685520d448811a4"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_MODAL_COMPLETENESS.md",
+      "bytes": 13110,
+      "sha256": "80f8f991b04d8e7079770bbd54816bbbc75104a67ac261b875f87f779f26e080"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "bab449f5bd90f89525fbcbb8d09dace4c31944b2885c445cd2e6eb1bb3f93565"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 713211,
+      "sha256": "919f59d123004c6b2a4cd1cfbdcfa49db6cac1bebc0d36f7b1650806cecafa0f"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 305468,
+      "sha256": "2d9e5db900c95f12f3fe2eec37f18f6ad1a2362c08f5228b6b9d0c2cf0e53940"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 17038573,
+      "sha256": "e463cc65ba580c99b5398713dd7665c9a501d0da0d0cde8945faeeaf9b1ed3ed"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 13335885,
+      "sha256": "f85c4fd4a014f3bba414c4c8f14a7439008f97f9286279412cee26c7904ecd1e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1309418,
+      "sha256": "9c8a11bdd56db97dc21a541aac6940fb80daad112e6dc034f25ea2d232d01a3d"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 7670285,
+      "sha256": "9c1228dc54c51ed588e0311da558b59292cabf18ba1b1ec3d95d62d2aa38f3bf"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 249751,
+      "sha256": "bc312f7c6b535c309e1dbc65802fe95c0c7aca952326259b2547f02fb38cd190"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 253490,
+      "sha256": "9fb2d6975589f1dd74c5a66a257246f82abc493c8ddf7ea992712c113540fa23"
+    }
+  ]
+}

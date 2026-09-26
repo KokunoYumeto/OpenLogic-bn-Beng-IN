@@ -1,0 +1,60 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{int}
+
+\olsection{ভূমিকা}
+
+!!^{tableau}s হলো !!{signed
+  formula}s-এর এক ধরনের (নিচের দিকে
+শাখাবিশিষ্ট) বৃক্ষ। প্রতিটি চিহ্নিত সূত্রে একটি সত্যমানের চিহ্ন
+($\True$ বা $\False$) এবং !!a{sentence} থাকে:
+\[
+\sFmla{\True}{!A} \text{ অথবা } \sFmla{\False}{!A}.
+\]
+!!^a{tableau} কয়েকটি \emph{অনুমিতি} দিয়ে শুরু হয়। পরবর্তী প্রতিটি
+!!{signed formula} কোনো অনুমানবিধি প্রয়োগ করে পাওয়া যায়। কিছু বিধি
+বৃক্ষের একটি অগ্রভাগে এক বা একাধিক !!{signed formula}s যোগ করে; অন্যগুলি
+দুটি নতুন অগ্রভাগ সৃষ্টি করে, ফলে দুটি শাখা হয়। যে !!{signed formula}-তে
+বিধি প্রয়োগ করা হয়, বিধি থেকে পাওয়া !!{signed formula}s-এর মূল !!{formula}
+তার চেয়ে কম জটিল। কোনো শাখায় $\sFmla{\True}{!A}$ ও
+$\sFmla{\False}{!A}$ উভয়ই থাকলে শাখাটিকে \emph{বদ্ধ} বলি। !!a{tableau}-র
+প্রতিটি শাখা বদ্ধ হলে গোটা !!{tableau} বদ্ধ। একটি বদ্ধ !!{tableau}
+হলো এমন !!a{derivation}, যা দেখায় যে !!{tableau} শুরু করার জন্য ব্যবহৃত
+!!{signed formula}s-এর সমষ্টি অপরিতৃপ্তিযোগ্য। এর সাহায্যে $\Proves$ সম্পর্ক
+সংজ্ঞায়িত করা যায়: $\Gamma \Proves !A$ তখনই এবং কেবল তখনই, যখন
+কোনো সসীম সমষ্টি~$\Gamma_0 = \{!B_1,
+\dots, !B_n\} \subseteq \Gamma$-র জন্য নিচের অনুমিতিগুলির একটি বদ্ধ !!{tableau} আছে:
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}.
+\]
+
+মোডাল যুক্তিবিদ্যার ক্ষেত্রে !!{signed
+formula}-র ধারণা প্রসারিত
+করতে এবং~\iftag{prvBox}{$\Box$\iftag{prvDiamond}{ ও
+    $\Diamond$}}{$\Diamond$}-এর জন্য বিধি যোগ করতে হয়। মোডাল
+!!{tableau}s-এর !!{formula}s-এ চিহ্নের ($\True$ বা $\False$) পাশাপাশি
+\emph{পূর্বসূচি}~$\sigma$ থাকে। পূর্বসূচি হলো ধনাত্মক পূর্ণসংখ্যার
+অশূন্য অনুক্রম, অর্থাৎ $\sigma \in (\PosInt)^* \setminus
+\{\emptyseq\}$। লেখার সময় আমরা পূর্বসূচির চারপাশে
+$\tuple{\ }$ রাখি না এবং !!{element}s-কে $,$-র বদলে $.$ দিয়ে
+আলাদা করি। $\sigma$ পূর্বসূচি হলে $\sigma.n$ হলো $\sigma
+\concat \tuple{n}$; যেমন, $\sigma = 1.2.1$ হলে $\sigma.3$ হলো
+$1.2.1.3$। অতএব, উদাহরণস্বরূপ,
+\[
+\sFmla{\True}{\Box !A \lif !A}[1.2]
+\]
+একটি \emph{পূর্বসূচিযুক্ত !!{signed formula}} (সংক্ষেপে,
+\emph{পূর্বসূচিযুক্ত !!{formula}})।
+
+স্বতঃবোধ্য অর্থে, পূর্বসূচিটি মডেলের এমন একটি জগতের নাম দেয় যেখানে
+!!a{tableau}-র কোনো শাখার !!{formula}s সত্য হতে পারে। $\sigma$ যদি
+কোনো জগতের নাম দেয়, তবে $\sigma.n$, $\sigma$-র নামাঙ্কিত জগৎ থেকে অভিগম্য
+একটি জগতের নাম দেয়।
+
+\end{document}

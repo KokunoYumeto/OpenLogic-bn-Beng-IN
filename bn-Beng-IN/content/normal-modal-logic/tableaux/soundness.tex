@@ -1,0 +1,301 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{sou}
+
+\olsection{\Log{K}-এর বিশুদ্ধতা}
+
+\begin{editorial}
+  এই বিশুদ্ধতার প্রমাণটি ধ্রুপদি বচনমূলক যুক্তিবিদ্যার বিশুদ্ধতার
+  প্রমাণের পদ্ধতি পুনর্ব্যবহার করে; অর্থাৎ সবকিছু শুরু থেকে প্রমাণ
+  করে। স্বয়ংসম্পূর্ণ প্রমাণ চাইলে এটি উপযোগী, তবে সাধারণ ট্যাবলোর
+  বিশুদ্ধতা আগে পড়ে থাকলে পুনরুক্তি মনে হবে। পরে স্বয়ংসম্পূর্ণ
+  সংস্করণ এবং অ-মোডাল ক্ষেত্রের প্রমাণের উপর প্রতিষ্ঠিত সংস্করণ
+  দুটির মধ্যে নির্বাচন করার ব্যবস্থা করার পরিকল্পনা আছে।
+\end{editorial}
+
+\begin{explain}
+  পূর্বসূচিযুক্ত !!{tableau}s বিশুদ্ধ দেখাতে আমাদের প্রমাণ করতে হবে:
+  যদি
+  \[
+  \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1], \sFmla{\False}{!A}[1]
+  \]
+  -এর একটি বদ্ধ !!{tableau} থাকে, তবে $!B_1, \dots, !B_n \Entails !A$।
+  এর বিপরীত-প্রতিজ্ঞা প্রমাণ করা সহজ: কোনো $\mModel{M}$ ও জগৎ~$w$-এর জন্য
+  সব $i=1$, \dots,~$n$-এ $\mSat{M}{!B_i}[w]$ কিন্তু
+  % BN-SRC-366: The countermodel falsifies A at w.
+  $\mSat/{M}{!A}[w]$ হলে, কোনো !!{tableau} বদ্ধ হতে পারে না।
+  এমন প্রতিমডেল দেখায় যে !!{tableau}-র প্রাথমিক !!{signed formula}s
+  পরিতৃপ্তিযোগ্য। প্রমাণের কৌশল হলো দেখানো যে !!a{tableau}-র কোনো শাখার
+  সব পূর্বসূচিযুক্ত !!{formula}s পরিতৃপ্তিযোগ্য হলে, যে বিধিই প্রয়োগ
+  করা হোক, প্রসারিত শাখাগুলির অন্তত একটি পরিতৃপ্তিযোগ্য থাকে।
+  বদ্ধ শাখা অপরিতৃপ্তিযোগ্য; তাই পরিতৃপ্তিযোগ্য পূর্বসূচিযুক্ত
+  !!{formula}s-এর যেকোনো !!{tableau}-তে অন্তত একটি উন্মুক্ত শাখা থাকবে।
+
+  মোডাল ক্ষেত্রে এই কৌশল প্রয়োগ করতে ‘পরিতৃপ্তিযোগ্য’-র সংজ্ঞা
+  মোডাল মডেল ও পূর্বসূচির জন্য প্রসারিত করতে হবে। তারপর প্রমাণটি
+  সরল।
+\end{explain}
+
+\begin{defn}
+  ধরা যাক $P$ পূর্বসূচির একটি সমষ্টি, অর্থাৎ $P \subseteq (\PosInt)^*
+  \setminus \{\emptyseq\}$, এবং $\mModel{M}$ একটি মডেল।
+  ফাংশন~$f\colon P \to W$-কে $\mModel{M}$-এ~$P$-এর একটি
+  \emph{ব্যাখ্যা} বলি, যদি $\sigma$ ও $\sigma.n$ উভয়ই~$P$-তে
+  থাকলেই $Rf(\sigma)f(\sigma.n)$ হয়।
+
+  পূর্বসূচির সমষ্টি~$P$-এর একটি ব্যাখ্যা সাপেক্ষে সংজ্ঞা দিই:
+  \begin{enumerate}
+  \item $\mModel{M}$, $\sFmla{\True}{!A}[\sigma]$-কে পরিতৃপ্ত করে
+    তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!A}[f(\sigma)]$.
+  \item $\mModel{M}$, $\sFmla{\False}{!A}[\sigma]$-কে পরিতৃপ্ত করে
+    তখনই এবং কেবল তখনই, যখন
+    $\mSat/{M}{!A}[f(\sigma)]$.
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}
+  ধরা যাক $\Gamma$ পূর্বসূচিযুক্ত !!{formula}s-এর সমষ্টি, আর
+  $P(\Gamma)$ হলো তাতে উপস্থিত পূর্বসূচিগুলির সমষ্টি। $f$ যদি
+  $\mModel{M}$-এ~$P(\Gamma)$-এর ব্যাখ্যা হয়, তবে
+  $\mModel{M}$ যে~$f$ সাপেক্ষে $\Gamma$-কে পরিতৃপ্ত করে,
+  $\mSat{M}{\Gamma}[f]$, তার অর্থ: $\mModel{M}$, $f$ সাপেক্ষে
+  $\Gamma$-র প্রতিটি পূর্বসূচিযুক্ত !!{formula} পরিতৃপ্ত করে।
+  $\Gamma$ তখনই এবং কেবল তখনই \emph{পরিতৃপ্তিযোগ্য}, যখন
+  কোনো মডেল~$\mModel{M}$ ও $P(\Gamma)$-এর কোনো ব্যাখ্যা~$f$-এর জন্য
+  $\mSat{M}{\Gamma}[f]$ হয়।
+\end{defn}
+
+\begin{prop}
+  কোনো !!{formula}~$!A$ ও পূর্বসূচি~$\sigma$-র জন্য
+  $\Gamma$-তে $\sFmla{\True}{!A}[\sigma]$ এবং
+  $\sFmla{\False}{!A}[\sigma]$ উভয়ই থাকলে
+  $\Gamma$ অপরিতৃপ্তিযোগ্য।
+\end{prop}
+
+\begin{proof}
+  এমন কোনো মডেল~$\mModel{M}$ ও $P(\Gamma)$-এর ব্যাখ্যা~$f$
+  থাকতে পারে না, যাতে $\mSat{M}{!A}[f(\sigma)]$ এবং
+  $\mSat/{M}{!A}[f(\sigma)]$ উভয়ই হয়।
+\end{proof}
+
+\begin{thm}[বিশুদ্ধতা]
+  \ollabel{thm:tableau-soundness}
+  $\Gamma$-র একটি বদ্ধ !!{tableau} থাকলে $\Gamma$ অপরিতৃপ্তিযোগ্য।
+\end{thm}
+
+\begin{proof}
+!!a{tableau}-র কোনো শাখায় থাকা !!{signed formula}s-এর সমষ্টি
+পরিতৃপ্তিযোগ্য হলে এবং কেবল তখনই শাখাটিকে পরিতৃপ্তিযোগ্য বলি।
+অন্তত একটি পরিতৃপ্তিযোগ্য শাখা থাকলে !!a{tableau}-কেও
+পরিতৃপ্তিযোগ্য বলি।
+
+আমরা দেখাব: অনুমানবিধি প্রয়োগ করে পরিতৃপ্তিযোগ্য !!{tableau}
+প্রসারিত করলে ফলটিও পরিতৃপ্তিযোগ্য !!{tableau} হয়। এতে উপপাদ্যটি
+প্রমাণিত হবে: $\Gamma$-র অনুমিতিগুলি দিয়ে শুরু হওয়া !!{tableau}-তে
+অনুমানবিধি প্রয়োগ করেই যেকোনো বদ্ধ !!{tableau} পাওয়া যায়।
+সুতরাং $\Gamma$ পরিতৃপ্তিযোগ্য হলে তার প্রতিটি !!{tableau}
+পরিতৃপ্তিযোগ্য হতো। কিন্তু বদ্ধ !!{tableau} পরিতৃপ্তিযোগ্য নয়:
+তার সব শাখাই বদ্ধ, আর বদ্ধ শাখা অপরিতৃপ্তিযোগ্য।
+
+ধরা যাক একটি পরিতৃপ্তিযোগ্য !!{tableau} আছে, অর্থাৎ !!a{tableau}-র অন্তত
+একটি পরিতৃপ্তিযোগ্য শাখা আছে। অনুমানবিধি প্রয়োগে হয় কোনো শাখায়
+!!{signed formula}s যোগ হয়, নয়তো শাখাটি দুটিতে বিভক্ত হয়।
+!!{tableau}-র কোনো পরিতৃপ্তিযোগ্য শাখায় সংশ্লিষ্ট বিধি প্রয়োগ করা না
+হলে, প্রসারিত !!{tableau}-তেও সেই শাখা পরিতৃপ্তিযোগ্য থাকে। তাই শুধু
+পরিতৃপ্তিযোগ্য শাখায় বিধি প্রয়োগের ঘটনাটি বিবেচনা করতে হবে।
+
+শাখাটির !!{signed formula}s-এর সমষ্টি $\Gamma$ ধরি এবং
+বিধিটি $\sFmla{S}{!A}[\sigma] \in \Gamma$-তে প্রয়োগ করা হয়েছে
+ধরি। বিধি শাখাকে বিভক্ত না করলে দেখাতে হবে, বিধি থেকে পাওয়া
+!!{signed formula}s
+যোগ করেও $\Gamma$ পরিতৃপ্তিযোগ্য থাকে। শাখা বিভক্ত হলে দেখাতে
+হবে, ফলের দুটি শাখার অন্তত একটি পরিতৃপ্তিযোগ্য।
+\tagfalse{prvDiamond}
+প্রথমে এক-অনুমিতিবিশিষ্ট অনুমানগুলি বিবেচনা করি।
+\begin{enumerate}
+\item $\sFmla{\True}{\lnot !B}[\sigma] \in \Gamma$-তে
+  $\TRule{\True}{\lnot}$ প্রয়োগ করে শাখাটি প্রসারিত করা হলো।
+  প্রসারিত শাখায় $\Gamma \cup
+  \{\sFmla{\False}{!B}[\sigma]\}$ থাকে। ধরি
+  $\mSat{M}{\Gamma}[f]$; বিশেষত,
+  $\mSat{M}{\lnot !B}[f(\sigma)]$। তাই
+  $\mSat/{M}{!B}[f(\sigma)]$; অর্থাৎ $\mModel{M}$,
+  $f$ সাপেক্ষে $\sFmla{\False}{!B}[\sigma]$ পরিতৃপ্ত করে।
+\item $\sFmla{\False}{\lnot !B}[\sigma] \in \Gamma$-তে
+  $\TRule{\False}{\lnot}$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  অনুশীলন।
+\item $\sFmla{\True}{!B \land !C}[\sigma] \in \Gamma$-তে
+  $\TRule{\True}{\land}$ প্রয়োগ করলে শাখায় দুটি নতুন
+  !!{signed formula}s পাওয়া যায়:
+  $\sFmla{\True}{!B}[\sigma]$ এবং $\sFmla{\True}{!C}[\sigma]$।
+  ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
+  $\mSat{M}{!B \land !C}[f(\sigma)]$। তাহলে
+  $\mSat{M}{!B}[f(\sigma)]$ ও
+  $\mSat{M}{!C}[f(\sigma)]$। অর্থাৎ $\mModel{M}$,
+  $f$ সাপেক্ষে $\sFmla{\True}{!B}[\sigma]$ ও
+  $\sFmla{\True}{!C}[\sigma]$ উভয়ই পরিতৃপ্ত করে।
+% BN-SRC-372: The branch premise carries the same prefix.
+\item $\sFmla{\False}{!B \lor !C}[\sigma] \in \Gamma$-তে
+  $\TRule{\False}{\lor}$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  অনুশীলন।
+\item $\sFmla{\False}{!B \lif !C}[\sigma] \in \Gamma$-তে
+  $\TRule{\False}{\lif}$ প্রয়োগ করলে শাখায় দুটি নতুন
+  !!{signed formula} পাওয়া যায়:
+  $\sFmla{\True}{!B}[\sigma]$ ও
+  $\sFmla{\False}{!C}[\sigma]$। ধরি
+  $\mSat{M}{\Gamma}[f]$, বিশেষত
+  $\mSat/{M}{!B \lif !C}[f(\sigma)]$। তাহলে
+  $\mSat{M}{!B}[f(\sigma)]$ ও
+  $\mSat/{M}{!C}[f(\sigma)]$। অর্থাৎ
+  $\mModel{M}, f$,
+  $\sFmla{\True}{!B}[\sigma]$ ও
+  $\sFmla{\False}{!C}[\sigma]$ উভয়ই পরিতৃপ্ত করে।
+
+\iftag{prvBox}{%
+\item $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$-তে
+  $\TRule{\True}{\Box}$ প্রয়োগ করে শাখাটি প্রসারিত হয়:
+  \iftag{probBox}{অনুশীলন।}{শাখায় নতুন
+    !!{signed
+      formula}~$\sFmla{\True}{!B}[\sigma.n]$ পাওয়া যায়,
+    যেখানে $\sigma.n \in P(\Gamma)$ (কারণ $\sigma.n$ ব্যবহৃত
+    হতে হবে)। ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat{M}{\Box !B}[f(\sigma)]$। $f$ পূর্বসূচিগুলির ব্যাখ্যা এবং
+    $\sigma$, $\sigma.n \in P(\Gamma)$ হওয়ায়
+    $Rf(\sigma)f(\sigma.n)$। তাই
+    $\mSat{M}{!B}[f(\sigma.n)]$; অর্থাৎ
+    $\mModel{M}, f$, $\sFmla{\True}{!B}[\sigma.n]$ পরিতৃপ্ত করে।}
+
+\item $\sFmla{\False}{\Box !B}[\sigma] \in \Gamma$-তে
+  $\TRule{\False}{\Box}$ প্রয়োগ করে শাখাটি প্রসারিত হয়:
+  % BN-SRC-367: The conclusion concerns B, the operand of the false box.
+  % BN-SRC-368: Use modal-model and modal-satisfaction notation consistently.
+  \iftag{probBox}{অনুশীলন।}{এতে নতুন
+    !!{signed
+      formula}~$\sFmla{\False}{!B}[\sigma.n]$ পাওয়া যায়;
+    $\sigma.n$ শাখায় নতুন পূর্বসূচি, অর্থাৎ
+    $\sigma.n \notin P(\Gamma)$। $\Gamma$ পরিতৃপ্তিযোগ্য হওয়ায়
+    কোনো $\mModel{M}$ এবং $P(\Gamma)$-এর ব্যাখ্যা~$f$ আছে,
+    যাতে $\mSat{M}{\Gamma}[f]$; বিশেষত
+    $\mSat/{M}{\Box !B}[f(\sigma)]$। দেখাতে হবে যে
+    $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.n]\}$
+    পরিতৃপ্তিযোগ্য। এজন্য $P(\Gamma) \cup \{\sigma.n\}$-এর
+    একটি ব্যাখ্যা এভাবে সংজ্ঞায়িত করি:
+
+  $\mSat/{M}{\Box !B}[f(\sigma)]$ হওয়ায় এমন $w \in W$ আছে যে
+  $Rf(\sigma)w$ এবং $\mSat/{M}{!B}[w]$। $f'$-কে $f$-এর মতোই
+  নিই, শুধু $f'(\sigma.n) = w$। যেহেতু
+  $f'(\sigma) = f(\sigma)$ ও $Rf(\sigma)w$, তাই
+  $Rf'(\sigma)f'(\sigma.n)$; অতএব $f'$ হলো
+  $P(\Gamma) \cup \{\sigma.n\}$-এর ব্যাখ্যা। স্পষ্টতই
+  $\mSat/{M}{!B}[f'(\sigma.n)]$। সব
+  $\sigma' \in P(\Gamma)$-এ $f(\sigma') = f'(\sigma')$
+  হওয়ায় $\mSat{M}{\Gamma}[f']$। তাই $\mModel{M}, f'$,
+  $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.n]\}$
+  পরিতৃপ্ত করে।}
+  }{}
+
+\iftag{prvDiamond}{%
+\item $\sFmla{\True}{\Diamond !B}[\sigma] \in \Gamma$-তে
+  $\TRule{\True}{\Diamond}$ প্রয়োগ করে শাখাটি প্রসারিত হয়:
+  % BN-SRC-369: The conclusion concerns B, the operand of the true diamond.
+  % BN-SRC-368: The same modal-notation repair applies here.
+  \iftag{probDiamond}{অনুশীলন।}{এতে নতুন
+    !!{signed
+      formula}~$\sFmla{\True}{!B}[\sigma.n]$ পাওয়া যায়;
+    $\sigma.n$ শাখায় নতুন পূর্বসূচি, অর্থাৎ
+    $\sigma.n \notin P(\Gamma)$। $\Gamma$ পরিতৃপ্তিযোগ্য হওয়ায়
+    কোনো $\mModel{M}$ এবং $P(\Gamma)$-এর ব্যাখ্যা~$f$ আছে,
+    যাতে $\mSat{M}{\Gamma}[f]$; বিশেষত
+    $\mSat{M}{\Diamond !B}[f(\sigma)]$। দেখাতে হবে যে
+    $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n]\}$
+    পরিতৃপ্তিযোগ্য। এজন্য $P(\Gamma) \cup \{\sigma.n\}$-এর
+    একটি ব্যাখ্যা এভাবে সংজ্ঞায়িত করি:
+
+  $\mSat{M}{\Diamond !B}[f(\sigma)]$ হওয়ায় এমন $w \in W$ আছে যে
+  $Rf(\sigma)w$ এবং $\mSat{M}{!B}[w]$। $f'$-কে $f$-এর মতোই
+  নিই, শুধু $f'(\sigma.n) = w$। যেহেতু
+  $f'(\sigma) = f(\sigma)$ ও $Rf(\sigma)w$, তাই
+  $Rf'(\sigma)f'(\sigma.n)$; অতএব $f'$ হলো
+  $P(\Gamma) \cup \{\sigma.n\}$-এর ব্যাখ্যা। স্পষ্টতই
+  $\mSat{M}{!B}[f'(\sigma.n)]$। সব
+  $\sigma' \in P(\Gamma)$-এ $f(\sigma') = f'(\sigma')$
+  হওয়ায় $\mSat{M}{\Gamma}[f']$। তাই $\mModel{M}, f'$,
+  $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n]\}$
+  পরিতৃপ্ত করে।}
+\item $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$-তে
+  $\TRule{\False}{\Diamond}$ প্রয়োগ করে শাখাটি প্রসারিত হয়:
+  \iftag{probDiamond}{অনুশীলন।}{শাখায় নতুন
+    !!{signed
+      formula}~$\sFmla{\False}{!B}[\sigma.n]$ পাওয়া যায়,
+    যেখানে $\sigma.n \in P(\Gamma)$ (কারণ $\sigma.n$ ব্যবহৃত
+    হতে হবে)। ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$। $f$ পূর্বসূচিগুলির ব্যাখ্যা
+    এবং $\sigma$, $\sigma.n \in P(\Gamma)$ হওয়ায়
+    $Rf(\sigma)f(\sigma.n)$। তাই
+    $\mSat/{M}{!B}[f(\sigma.n)]$; অর্থাৎ
+    $\mModel{M}, f$, $\sFmla{\False}{!B}[\sigma.n]$ পরিতৃপ্ত করে।}
+  }{}
+\end{enumerate}
+এবার শাখা-বিভাজক অনুমানগুলি বিবেচনা করি।
+\begin{enumerate}
+\item $\sFmla{\False}{!B \land !C}[\sigma] \in \Gamma$-তে
+  $\TRule{\False}{\land}$ প্রয়োগে দুটি শাখা হয়: বাম শাখায়
+  $\sFmla{\False}{!B}[\sigma]$ এবং ডান শাখায়
+  $\sFmla{\False}{!C}[\sigma]$ যোগ হয়। ধরি
+  $\mSat{M}{\Gamma}[f]$, বিশেষত
+  $\mSat/{M}{!B \land !C}[f(\sigma)]$। তাহলে
+  $\mSat/{M}{!B}[f(\sigma)]$ অথবা
+  $\mSat/{M}{!C}[f(\sigma)]$। প্রথম ক্ষেত্রে
+  $\mModel{M}, f$, $\sFmla{\False}{!B}[\sigma]$
+  পরিতৃপ্ত করে, অর্থাৎ বাম শাখাটি পরিতৃপ্তিযোগ্য।
+  দ্বিতীয় ক্ষেত্রে $\mModel{M}, f$,
+  $\sFmla{\False}{!C}[\sigma]$ পরিতৃপ্ত করে, অর্থাৎ
+  ডান শাখাটি পরিতৃপ্তিযোগ্য।
+\item $\sFmla{\True}{!B \lor !C}[\sigma] \in \Gamma$-তে
+  $\TRule{\True}{\lor}$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  অনুশীলন।
+\item $\sFmla{\True}{!B \lif !C}[\sigma] \in \Gamma$-তে
+  $\TRule{\True}{\lif}$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  অনুশীলন।
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+\olref[nml][tab][sou]{thm:tableau-soundness}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+$\Gamma \Proves !A$ হলে $\Gamma \Entails !A$।
+\end{cor}
+
+\begin{proof}
+  $\Gamma \Proves !A$ হলে কোনো $!B_1$, \dots, $!B_n \in
+  \Gamma$-এর জন্য $\Delta = \{\sFmla{\False}{!A}[1],
+  \sFmla{\True}{!B_1}[1], \dots,
+  \sFmla{\True}{!B_n}[1]\}$-র একটি বদ্ধ !!{tableau} আছে।
+  দেখাতে হবে $\Gamma \Entails !A$। ধরি তা নয়। তাহলে কোনো
+  $\mModel{M}$ ও $w$-এর জন্য $i=1$, \dots,~$n$-এ
+  $\mSat{M}{!B_i}[w]$, কিন্তু $\mSat/{M}{!A}[w]$।
+  $f(1) = w$ নিই; তাহলে $f$ হলো $\mModel{M}$-এ
+  $P(\Delta)$-এর একটি ব্যাখ্যা এবং $\mModel{M}$,
+  $f$ সাপেক্ষে~$\Delta$ পরিতৃপ্ত করে। কিন্তু
+  \olref{thm:tableau-soundness} অনুসারে বদ্ধ !!{tableau}
+  থাকায় $\Delta$ অপরিতৃপ্তিযোগ্য—স্ববিরোধ। অতএব
+  % BN-SRC-370: The proof concludes entailment, not derivability.
+  $\Gamma \Entails !A$।
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+$\Proves !A$ হলে $!A$ সব মডেলে সত্য।
+\end{cor}
+
+\end{document}

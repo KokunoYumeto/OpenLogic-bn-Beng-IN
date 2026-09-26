@@ -2687,6 +2687,47 @@ for row in rows:
             source_math - target_math == expected_removed
             and target_math - source_math == expected_added
         )
+    modal_tableaux_math_fix = False
+    if 460 <= unit_number <= 464:
+        expected_modal_tableaux_corrections = {
+            "OLP-0462": {"BN-SRC-371"},
+            "OLP-0464": {
+                "BN-SRC-366", "BN-SRC-367", "BN-SRC-368",
+                "BN-SRC-369", "BN-SRC-370", "BN-SRC-372",
+            },
+        }
+        assert set(documented) == expected_modal_tableaux_corrections.get(
+            row["unit_id"], set()
+        )
+        expected_modal_tableaux_delta = {
+            "OLP-0464": (
+                collections.Counter({
+                    r"\mSat{M}{!A}[w]": 1,
+                    r"\sFmla{\False}{!B\lor!C}\in\Gamma": 1,
+                    r"\sFmla{\False}{!A}[\sigma.n]": 1,
+                    r"\Struct{M}": 2,
+                    r"\Sat{M}{\Gamma}[f]": 2,
+                    r"\sFmla{\True}{!A}[\sigma.n]": 1,
+                    r"\Gamma\Proves!A": 1,
+                }),
+                collections.Counter({
+                    r"\mSat/{M}{!A}[w]": 1,
+                    r"\sFmla{\False}{!B\lor!C}[\sigma]\in\Gamma": 1,
+                    r"\sFmla{\False}{!B}[\sigma.n]": 1,
+                    r"\mModel{M}": 2,
+                    r"\mSat{M}{\Gamma}[f]": 2,
+                    r"\sFmla{\True}{!B}[\sigma.n]": 1,
+                    r"\Gamma\Entails!A": 1,
+                }),
+            ),
+        }
+        expected_removed, expected_added = expected_modal_tableaux_delta.get(
+            row["unit_id"], (collections.Counter(), collections.Counter())
+        )
+        modal_tableaux_math_fix = (
+            source_math - target_math == expected_removed
+            and target_math - source_math == expected_added
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -5238,6 +5279,21 @@ for row in rows:
         }
         assert all(anchor in checked_target for anchor in filtration_review_anchors[row["unit_id"]])
         tex_command_check = {"filtrations_definitions_diagrams_proofs_and_anchors_reviewed": True}
+    elif 460 <= unit_number <= 464:
+        assert modal_tableaux_math_fix
+        modal_tableaux_review_anchors = {
+            "OLP-0460": (r"\olchapter{nml}{tab}", r"\olimport{countermodels}"),
+            "OLP-0461": (r"\olfileid{nml}{tab}{int}", r"\sFmla{\True}{\Box !A \lif !A}[1.2]"),
+            "OLP-0462": (r"\ollabel{tab:prop-rules}", r"\ollabel{tab:rules-K}", r"BN-SRC-371"),
+            "OLP-0463": (r"\olfileid{nml}{tab}{prk}", r"\begin{oltableau}", r"\begin{prob}"),
+            "OLP-0464": (r"\ollabel{thm:tableau-soundness}", r"\ollabel{cor:entailment-soundness}", r"BN-SRC-372"),
+        }
+        assert all(anchor in checked_target for anchor in modal_tableaux_review_anchors[row["unit_id"]])
+        if row["unit_id"] == "OLP-0462":
+            wrong = r"[\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[2]}"
+            right = r"[\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\False}{\Box}[2]}"
+            assert wrong in source and wrong not in checked_target and right in checked_target
+        tex_command_check = {"modal_tableaux_rules_proofs_and_anchors_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5354,6 +5410,7 @@ for row in rows:
             axioms_systems_math_fix,
             modal_completeness_math_fix,
             filtrations_math_fix,
+            modal_tableaux_math_fix,
             shared_audit_fix,
         )
     )

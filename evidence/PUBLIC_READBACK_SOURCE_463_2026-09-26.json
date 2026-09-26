@@ -1,0 +1,176 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T02:46:18.485846+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "1c0a66d4a6e65ae620f17616030f431060db9bce",
+  "parent": "8e299c0e33921d8bc65df8c0c5784a23b7a4beb8",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "90eba078ed57e496d093a3460805dfdf932d4236",
+    "receipt": "PUBLIC_READBACK_SOURCE_458_2026-09-26.json",
+    "receipt_sha256": "3b72bf2b642e6cc11a4bf482cc0fc5c508eb8a659a2043372466984bcda62cd4"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/1c0a66d4a6e65ae620f17616030f431060db9bce.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/1c0a66d4a6e65ae620f17616030f431060db9bce",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 13179792,
+  "archive_sha256": "5557347a468c55826695d09e5c98fca76b468095cb9029233c42dbe94f67830e",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1c0a66d4a6e65ae620f17616030f431060db9bce/bn-Beng-IN/content/normal-modal-logic/tableaux/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1c0a66d4a6e65ae620f17616030f431060db9bce/bn-Beng-IN/content/normal-modal-logic/tableaux/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 4407,
+      "sha256": "1f0ee06e7af059e14e753cbeaca8f244ae57e55e45128526375c26bb20c9b9e9"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/proofs-in-K.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1c0a66d4a6e65ae620f17616030f431060db9bce/bn-Beng-IN/content/normal-modal-logic/tableaux/proofs-in-K.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1c0a66d4a6e65ae620f17616030f431060db9bce/bn-Beng-IN/content/normal-modal-logic/tableaux/proofs-in-K.tex",
+      "content_type": "text/plain",
+      "bytes": 3446,
+      "sha256": "4f3286e4ee0da760ae2f8268386b34170b9781926c628f0a2503e79639603e6f"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/rules-for-K.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1c0a66d4a6e65ae620f17616030f431060db9bce/bn-Beng-IN/content/normal-modal-logic/tableaux/rules-for-K.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1c0a66d4a6e65ae620f17616030f431060db9bce/bn-Beng-IN/content/normal-modal-logic/tableaux/rules-for-K.tex",
+      "content_type": "text/plain",
+      "bytes": 11984,
+      "sha256": "2f81459293e2adc808927ad3d35b01ec80930e5339c2ab8bc74c10bd21e2e764"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/soundness.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1c0a66d4a6e65ae620f17616030f431060db9bce/bn-Beng-IN/content/normal-modal-logic/tableaux/soundness.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1c0a66d4a6e65ae620f17616030f431060db9bce/bn-Beng-IN/content/normal-modal-logic/tableaux/soundness.tex",
+      "content_type": "text/plain",
+      "bytes": 20282,
+      "sha256": "0df2ba35db3f070925a3d86cf17c4123af6dcfc52323d227331bf801c1058809"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/tableaux.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1c0a66d4a6e65ae620f17616030f431060db9bce/bn-Beng-IN/content/normal-modal-logic/tableaux/tableaux.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1c0a66d4a6e65ae620f17616030f431060db9bce/bn-Beng-IN/content/normal-modal-logic/tableaux/tableaux.tex",
+      "content_type": "text/plain",
+      "bytes": 987,
+      "sha256": "2e54338635a7b153c45494a12aeaf9b401aa9dc3bde7cdc2f8cd7203c04c4944"
+    }
+  ],
+  "changed_files_verified": 17,
+  "translated_tex_files_in_commit": 5,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 463,
+  "draft_untranslated_total": 259,
+  "segments": 5208,
+  "translated_segments": 4411,
+  "new_batch_segments": 52,
+  "new_batch_translated_segments": 45,
+  "new_batch_unchanged_segments": 7,
+  "source_correction_records": 379,
+  "new_source_correction_records": 7,
+  "source_normalization_records": 3,
+  "translation_decisions": 346,
+  "provisional_translation_decisions": 327,
+  "translation_decision_occurrences": 28758,
+  "decisions_with_exact_source_wording": 328,
+  "ai_assistance": {
+    "product": "OpenAI Codex"
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 463,
+    "blocks": 5208,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/tableaux/introduction.tex",
+      "bytes": 4407,
+      "sha256": "1f0ee06e7af059e14e753cbeaca8f244ae57e55e45128526375c26bb20c9b9e9"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/tableaux/proofs-in-K.tex",
+      "bytes": 3446,
+      "sha256": "4f3286e4ee0da760ae2f8268386b34170b9781926c628f0a2503e79639603e6f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/tableaux/rules-for-K.tex",
+      "bytes": 11984,
+      "sha256": "2f81459293e2adc808927ad3d35b01ec80930e5339c2ab8bc74c10bd21e2e764"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/tableaux/soundness.tex",
+      "bytes": 20282,
+      "sha256": "0df2ba35db3f070925a3d86cf17c4123af6dcfc52323d227331bf801c1058809"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/tableaux/tableaux.tex",
+      "bytes": 987,
+      "sha256": "2e54338635a7b153c45494a12aeaf9b401aa9dc3bde7cdc2f8cd7203c04c4944"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 8342461,
+      "sha256": "1de0571f0b7eafba21de60834366692684641150814f51887a57c776fecab0df"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 288213,
+      "sha256": "5a87f9a4acb992d2166d2c9a03114e78317f00175698c215795b024ffdf3328e"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_MODAL_TABLEAUX_I.md",
+      "bytes": 3412,
+      "sha256": "72b3669927075978533b71dae7a0812c32166544b22b4648dfa04ca04a7dadbd"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "bb8635d93dad54da43a9780362f771b4489b5a4b14ae7108918861919c0797db"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 735999,
+      "sha256": "7d2fb9413b111dd1440386cac2dde77fd09bed889bb96e726c88c55e77fb5dc9"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 310817,
+      "sha256": "7129548ded48650535f58367adfde9ee53f2f4ddb1fc79f671fa82784da68365"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 17498121,
+      "sha256": "2fda5d95782575973a4ce760c8535153bdd18b186500f45c0bf230edaefe6655"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 13691698,
+      "sha256": "6f128eddf6af23474d3374262e242b460fa737f1fefb3c0ee933905071210b20"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1333899,
+      "sha256": "b7b794a127c4be590d093acede967fc20aaf1f5d9392018cf38bb9def27d35a3"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 7894345,
+      "sha256": "486299d2081c2655da15cc833e51aa7ef372a4a32a9b7bde6167990db2936707"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 254908,
+      "sha256": "5528f5c4d35fd651571a584adae6369f50c03e71fcd1e473d5dfc5d69618a17c"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 259114,
+      "sha256": "71b65b7e4a72abd9b245a5b387e2bb90cd65282b8ae77c684494ba16bacc3109"
+    }
+  ]
+}

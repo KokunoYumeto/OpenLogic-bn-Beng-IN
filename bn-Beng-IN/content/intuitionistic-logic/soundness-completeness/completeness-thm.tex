@@ -1,0 +1,52 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: completeness-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{cpl}
+
+\olsection{সম্পূর্ণতার উপপাদ্য}
+
+\begin{thm}\ollabel{thm:completeness}
+  $\Gamma \Entails !A$ হলে $\Gamma \Proves !A$।
+\end{thm}
+
+\begin{proof}
+  বিপরীতার্থক রূপ প্রমাণ করি। ধরি $\Gamma \Proves/ !A$।
+  তাহলে \olref[lin]{lem:lindenbaum} অনুযায়ী এমন একটি প্রাইম
+  সেট~$\Gamma^* \supseteq \Gamma$ আছে, যাতে
+  $\Gamma^* \Proves/ !A$। \olref[mod]{defn:canonical-model}-এ
+  সংজ্ঞায়িত $\Gamma^*$-র আদর্শ মডেল~$\mModel{M(\Gamma^*)}$
+  বিবেচনা করি। প্রতিটি $!B \in \Gamma$-র জন্য
+  $\Gamma^* \Proves !B$। লক্ষ করুন,
+  $\Gamma^*(\emptyseq) = \Gamma^*$। সত্যতার উপপাদ্য
+  (\olref[tru]{lem:truth}) অনুযায়ী সব $!B \in \Gamma$-র জন্য
+  $\mSat{M(\Gamma^*)}{!B}[\emptyseq]$, কিন্তু
+  $\mSat/{M(\Gamma^*)}{!A}[\emptyseq]$। তাই
+  $\Gamma \Entails/ !A$।
+\end{proof}
+
+\begin{prob}
+  দেখান, $!A$-তে কেবল !!{propositional variable}s, $\lor$ ও
+  $\land$ থাকলে $\Entails/ !A$। এর সাহায্যে সিদ্ধান্ত করুন যে
+  স্বজ্ঞাবাদী যুক্তিবিদ্যায় $\lor$ ও $\land$ দিয়ে $\lif$-কে
+  সংজ্ঞায়িত করা যায় না।
+\end{prob}
+
+\begin{prob}
+  সম্পূর্ণতার উপপাদ্য ব্যবহার করে প্রমাণ করুন:
+  $\Proves !A \lor !B$ হলে $\Proves !A$ অথবা $\Proves !B$।
+  (ইঙ্গিত: $\mSat/{M_1}{!A}$ এবং $\mSat/{M_2}{!B}$ ধরে
+  এমন একটি মডেল~$\mModel{M}$ নির্মাণ করুন যাতে
+  $\mSat/{M}{!A \lor !B}$।)
+\end{prob}
+
+\begin{prob}
+  দেখান, $\mModel{M}$ যদি রৈখিক ক্রমযুক্ত সম্পর্কভিত্তিক মডেল হয়,
+  তবে $\mSat{M}{(!A \lif !B)\lor(!B \lif !A)}$।
+\end{prob}
+
+\end{document}

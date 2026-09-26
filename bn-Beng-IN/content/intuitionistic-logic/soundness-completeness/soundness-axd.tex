@@ -1,0 +1,62 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: soundness-axd
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{sax}
+
+\olsection{স্বতঃসিদ্ধিক \usetoken{P}{derivation}-এর বিশুদ্ধতা}
+
+\begin{editorial}
+  বিশুদ্ধতার প্রমাণ নির্ভর করে সব স্বতঃসিদ্ধ স্বজ্ঞাবাদীভাবে বৈধ
+  হওয়ার ওপর; এটি এখনো প্রমাণ করা দরকার, যেমন অর্থবিজ্ঞান অধ্যায়ে।
+\end{editorial}
+
+\begin{thm}[বিশুদ্ধতা]
+  \ollabel{thm:soundness}
+  $\Gamma \Proves !A$ হলে $ \Gamma \Entails !A$।
+\end{thm}
+
+\begin{proof}
+  আমরা প্রমাণ করি যে $\Gamma \Proves !A$ হলে $\Gamma \Entails !A$।
+  $\Gamma$ থেকে $!A$-এর !!{derivation}-এ !!{formula}s-এর
+  সংখ্যা~$n$-এর ওপর আরোহের সাহায্যে প্রমাণ হবে। দেখাব,
+  $!A_1$, \dots, $!A_n = !A$ যদি~$\Gamma$ থেকে
+  !!a{derivation} হয়, তবে $\Gamma \Entails !A_n$। লক্ষ করুন,
+  $!A_1$, \dots, $!A_n$ !!a{derivation} হলে যেকোনো $k<n$-এর
+  জন্য $!A_1$, \dots, $!A_k$-ও একটি নিষ্পাদন।
+
+  দৈর্ঘ্য~$0$-এর কোনো !!{derivation}s নেই; তাই $n=0$-এর দাবিটি
+  শূন্যতাবশে সত্য। ধরে নিই, দৈর্ঘ্য~$<n$-এর সব
+  !!{derivation}s-এর জন্য দাবিটি সত্য। $!A_n$-এর সমর্থন অনুযায়ী
+  বিভিন্ন ক্ষেত্র বিবেচনা করি।
+
+  \begin{enumerate}
+  \item $!A_n$ একটি স্বতঃসিদ্ধ। সব স্বতঃসিদ্ধ বৈধ; তাই যেকোনো
+    $\Gamma$-র জন্য $\Gamma \Entails !A_n$।
+  \item $!A_n \in \Gamma$। যেকোনো $\mModel{M}$ ও $w$-এর
+    ক্ষেত্রে $\mSat{M}{\Gamma}[w]$ হলে স্পষ্টতই
+    % BN-SRC-400: the satisfaction predicate has two arguments, with the formula in the second.
+    $\mSat{M}{!A_n}[w]$; অর্থাৎ $\Gamma \Entails !A$।
+  \item $!A_i$ এবং $!A_j \ident !A_i \lif !A_n$ থেকে \MP{}-এর
+    সাহায্যে $!A_n$ পাওয়া যায়। $!A_1$, \dots, $!A_i$ এবং
+    $!A_1$, \dots, $!A_j$ হলো~$\Gamma$ থেকে
+    !!{derivation}s; তাই আরোহ-অনুমানে $\Gamma \Entails !A_i$
+    এবং $\Gamma \Entails !A_i \lif !A_n$।
+
+    ধরি $\mSat{M}{\Gamma}[w]$। যেহেতু
+    $\mSat{M}{\Gamma}[w]$ এবং $\Gamma \Entails !A_i \lif
+    !A_n$, তাই $\mSat{M}{!A_i \lif !A_n}[w]$। সংজ্ঞা অনুযায়ী,
+    প্রত্যেক $Rww'$-যুক্ত $w'$-এর জন্য $\mSat{M}{!A_i}[w']$
+    হলে $\mSat{M}{!A_n}[w']$। $R$ প্রতিবিম্বী বলে $Rww'$-যুক্ত
+    $w'$-গুলির মধ্যে $w$ নিজেও আছে; অর্থাৎ
+    $\mSat{M}{!A_i}[w]$ হলে $\mSat{M}{!A_n}[w]$। যেহেতু
+    $\Gamma \Entails !A_i$, তাই $\mSat{M}{!A_i}[w]$। ফলে
+    $\mSat{M}{!A_n}[w]$, যা দেখাতে চেয়েছিলাম।
+  \end{enumerate}
+\end{proof}
+
+\end{document}

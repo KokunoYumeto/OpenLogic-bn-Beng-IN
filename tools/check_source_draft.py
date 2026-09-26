@@ -5474,6 +5474,26 @@ for row in rows:
         }
         assert all(anchor in target for anchor in intuitionistic_semantics_anchors[row["unit_id"]])
         tex_command_check = {"intuitionistic_semantics_hierarchy_truth_and_topology_reviewed": True}
+    elif 503 <= unit_number <= 510:
+        expected_fixes = {
+            "OLP-0504": {"BN-SRC-400"},
+            "OLP-0505": {"BN-SRC-401", "BN-SRC-402", "BN-SRC-403", "BN-SRC-404"},
+            "OLP-0506": {"BN-SRC-405"},
+            "OLP-0510": {"BN-SRC-406", "BN-SRC-407", "BN-SRC-408"},
+        }
+        assert set(documented) == expected_fixes.get(row["unit_id"], set())
+        soundness_completeness_anchors = {
+            "OLP-0503": (r"\olchapter{int}{sc}{", r"\olimport{soundness-axd}", r"\olimport{decidability}"),
+            "OLP-0504": (r"\olfileid{int}{sc}{sax}", r"\ollabel{thm:soundness}", r"\mSat{M}{!A_n}[w]"),
+            "OLP-0505": (r"\olfileid{int}{sc}{snd}", r"\ollabel{thm:soundness}", r"\Intro\lnot"),
+            "OLP-0506": (r"\olfileid{int}{sc}{lin}", r"\ollabel{lem:lindenbaum}", r"\Gamma^* = \bigcup_{n=0}^\infty \Gamma_n"),
+            "OLP-0507": (r"\olfileid{int}{sc}{mod}", r"\ollabel{defn:canonical-model}", r"\Nat^*"),
+            "OLP-0508": (r"\olfileid{int}{sc}{tru}", r"\ollabel{lem:truth}", r"\indcase!{!A}{\lnot !B}{}"),
+            "OLP-0509": (r"\olfileid{int}{sc}{cpl}", r"\ollabel{thm:completeness}", r"\emptyseq"),
+            "OLP-0510": (r"\olfileid{int}{sc}{dec}", r"\ollabel{thm:decidability}", r"T(w)=\Setabs{!B\in\Sigma}{\mSat{M}{!B}[w]}"),
+        }
+        assert all(anchor in target for anchor in soundness_completeness_anchors[row["unit_id"]])
+        tex_command_check = {"intuitionistic_soundness_completeness_finite_model_anchors_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5539,6 +5559,39 @@ for row in rows:
             r"\Prop{X}{!A}\subseteq\Prop{X}{!B}": 1,
             r"\Prop{X}{!A\lif!B}\cap\Prop{X}{!A}\subseteq\Prop{X}{!B}": 1,
         })
+    )
+    intuitionistic_soundness_axiom_math_fix = (
+        row["unit_id"] == "OLP-0504"
+        and set(documented) == {"BN-SRC-400"}
+        and source_math - target_math == collections.Counter({r"\mSat{M}{\Gamma}{!A_n}[w]": 1})
+        and target_math - source_math == collections.Counter({r"\mSat{M}{!A_n}[w]": 1})
+    )
+    intuitionistic_soundness_nd_math_fix = (
+        row["unit_id"] == "OLP-0505"
+        and set(documented) == {"BN-SRC-401", "BN-SRC-402", "BN-SRC-403", "BN-SRC-404"}
+        and source_math - target_math == collections.Counter({
+            r"\Gamma\cup\Delta\Entails!A\land!B": 1,
+            r"\mSat{M}{!B}": 1,
+            r"\Delta_1\cup!B\Entails!D": 1,
+            r"\Delta_2\cup!C\Entails!D": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\Gamma\cup\Delta\Entails!B\land!C": 1,
+            r"\mSat{M}{!B}[w]": 1,
+            r"\Delta_1\cup\{!B\}\Entails!D": 1,
+            r"\Delta_2\cup\{!C\}\Entails!D": 1,
+        })
+    )
+    intuitionistic_finite_model_reconstruction = (
+        row["unit_id"] == "OLP-0510"
+        and set(documented) == {"BN-SRC-406", "BN-SRC-407", "BN-SRC-408"}
+        and r"W'=\Setabs{[w]}{w\inW}" in source_math
+        and r"W'=\Setabs{T(w)}{w\inW}" in target_math
+        and r"T(w)=\Setabs{!B\in\Sigma}{\mSat{M}{!B}[w]}" in target_math
+        and r"\mSat{M}{!B}[w]\mSat{M'}{!B}[{T(w)}]" in target_math
+        and r"\mSat{M}{!B}[w]" in target_math
+        and r"\mSat{M'}{!B}[T(w)]" in target_math
+        and source_math != target_math
     )
     math_ok = any(
         (
@@ -5635,6 +5688,9 @@ for row in rows:
             intuitionistic_natural_deduction_math_fix,
             intuitionistic_semantic_proof_math_fix,
             intuitionistic_topological_inclusion_math_fix,
+            intuitionistic_soundness_axiom_math_fix,
+            intuitionistic_soundness_nd_math_fix,
+            intuitionistic_finite_model_reconstruction,
         )
     )
     controls_ok = (

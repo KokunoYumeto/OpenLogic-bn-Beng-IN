@@ -1,0 +1,76 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: truth-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{tru}
+
+\olsection{সত্যতার উপপাদ্য}
+
+নিচের উপপাদ্যটি আদর্শ মডেলে সত্যতা এবং প্রাইম সেট~$\Delta$-র
+!!{element}s হিসেবে !!{formula}s-এর উপস্থিতির মধ্যে সম্পর্ক স্থাপন করে।
+
+\begin{lem}\ollabel{lem:truth}
+  $\Delta$ প্রাইম হলে $\mSat{M(\Delta)}{!A}[\sigma]$ তখনই,
+  যখন $\Delta(\sigma) \Proves !A$।
+\end{lem}
+
+\begin{proof}
+  $!A$-এর ওপর আরোহে প্রমাণ করি।
+  \begin{enumerate}
+    \item \indcase{!A}{\lfalse}{$\Delta(\sigma)$ প্রাইম বলে
+      সঙ্গত; তাই $\Delta(\sigma) \Proves/ \indfrm$। সংজ্ঞা
+      অনুযায়ী $\mSat/{M(\Delta)}{\indfrm}[\sigma]$।}
+    \item \indcase{!A}{p}{$\mSat{{}}{}$-এর সংজ্ঞায়
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$ তখনই, যখন
+      $\sigma \in V(p)$; অর্থাৎ $\Delta(\sigma) \Proves \indfrm$।}
+    \item \indcase!{!A}{\lnot !B}{}
+    \item \indcase{!A}{!B \land
+      !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ তখনই, যখন
+      $\mSat{M(\Delta)}{!B}[\sigma]$ এবং
+      $\mSat{M(\Delta)}{!C}[\sigma]$। আরোহ-অনুমানে
+      $\mSat{M(\Delta)}{!B}[\sigma]$ তখনই, যখন
+      $\Delta(\sigma) \Proves !B$; $!C$-র ক্ষেত্রেও একই কথা।
+      কিন্তু $\Delta(\sigma) \Proves !B$ এবং
+      $\Delta(\sigma) \Proves !C$ তখনই, যখন
+      $\Delta(\sigma) \Proves \indfrm$।}
+    \item \indcase{!A}{!B \lor
+      !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ তখনই, যখন
+      $\mSat{M(\Delta)}{!B}[\sigma]$ অথবা
+      $\mSat{M(\Delta)}{!C}[\sigma]$। আরোহ-অনুমানে এটি তখনই
+      সত্য, যখন $\Delta(\sigma) \Proves !B$ অথবা
+      $\Delta(\sigma) \Proves !C$। এখন দেখাতে হবে, এটিও
+      $\Delta(\sigma) \Proves \indfrm$-এর সমতুল্য।
+      বাম থেকে ডানের দিকটি স্পষ্ট; ডান থেকে বামের দিকটি
+      $\Delta(\sigma)$ প্রাইম হওয়া থেকে আসে।}
+    \item \indcase{!A}{!B \lif !C}{প্রথমে বাম থেকে ডানের
+      দাবিটির বিপরীতার্থক রূপ। ধরি
+      $\Delta(\sigma) \Proves/ !B \lif !C$। তাহলে
+      $\Delta(\sigma) \cup \{!B\} \Proves/ !C$। কোনো~$n$-এর
+      জন্য $\tuple{!B, !C}$ হলো $\tuple{!B_n, !C_n}$;
+      তাই $\Delta(\sigma.n) = (\Delta(\sigma) \cup
+      \{!B\})^*$, এবং $\Delta(\sigma.n) \Proves !B$ অথচ
+      $\Delta(\sigma.n) \Proves/ !C$। আরোহ-অনুমানে
+      $\mSat{M(\Delta)}{!B}[\sigma.n]$ এবং
+      $\mSat/{M(\Delta)}{!C}[\sigma.n]$। যেহেতু
+      $R\sigma(\sigma.n)$, তাই
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$।
+
+      এবার ধরি $\Delta(\sigma) \Proves !B \lif !C$ এবং
+      $R\sigma\sigma'$। যেহেতু $\Delta(\sigma) \subseteq
+      \Delta(\sigma')$, তাই $\Delta(\sigma') \Proves !B$
+      হলে $\Delta(\sigma') \Proves !C$। অন্যভাবে বললে, প্রতিটি
+      $R\sigma\sigma'$-যুক্ত $\sigma'$-র ক্ষেত্রে হয়
+      $\Delta(\sigma') \Proves/ !B$, নয়
+      $\Delta(\sigma') \Proves !C$। আরোহ-অনুমানে এর অর্থ,
+      $R\sigma\sigma'$ হলে হয়
+      $\mSat/{M(\Delta)}{!B}[\sigma']$, নয়
+      $\mSat{M(\Delta)}{!C}[\sigma']$; অর্থাৎ
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$।}
+  \end{enumerate}
+\end{proof}
+
+\end{document}

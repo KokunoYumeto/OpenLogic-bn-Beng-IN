@@ -1,0 +1,79 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: decidability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{dec}
+
+\olsection{সিদ্ধান্তযোগ্যতা}
+লক্ষ করুন, সম্পূর্ণতার উপপাদ্যের প্রমাণে প্রতিটি
+$\Gamma \Proves/ !A$-র জন্য অসীমসংখ্যক জগৎবিশিষ্ট এমন একটি
+মডেল পাওয়া যায়, যা $\Gamma \Entails/ !A$-র সাক্ষী। নিচের
+প্রস্তাবটি দেখায়, $\Entails !A$ প্রমাণ করতে সব সসীম মডেলে
+(অর্থাৎ সসীম জগৎ-সেটবিশিষ্ট মডেলে) $\mSat{M}{!A}$ প্রমাণ
+করাই যথেষ্ট।
+
+\begin{thm}\ollabel{thm:decidability}
+  $\Entails/ !A$ হলে এমন একটি সসীম মডেল আছে যাতে
+  $\mSat/{M'}{!A}$।
+\end{thm}
+
+\begin{proof}
+  ধরি, $\mModel{M}=\tuple{W, R, V}$-র কোনো জগৎ~$w_0$-তে
+  $\mSat/{M}{!A}[w_0]$। $P$ হলো~$!A$-তে উপস্থিত
+  !!{propositional variable}s-এর সেট। $\Sigma$ ধরি~$!A$-এর
+  সব উপসূত্রের সসীম সেট; তাই $P \subseteq \Sigma$।
+  প্রতিটি $w \in W$-র জন্য
+  \[
+    T(w)=\Setabs{!B\in\Sigma}{\mSat{M}{!B}[w]}
+  \]।
+  % BN-SRC-406: filtration must use subformula truth types, not atomic valuations alone.
+  $\mModel{M'}=\tuple{W', R', V'}$ সংজ্ঞায়িত করি:
+  $W'=\Setabs{T(w)}{w\in W}$, $R'$ হলো $W'$-তে অন্তর্ভুক্তির
+  সম্পর্ক, এবং $p\in P$ হলে
+  $V'(p)=\Setabs{T(w)\in W'}{p\in T(w)}$। $p\notin P$ হলে
+  $V'(p)=\varnothing$ ধরি। $W'$ সসীম—এর সদস্যসংখ্যা
+  সর্বাধিক $2^{|\Sigma|}$—এবং $R'$ আংশিক ক্রম। সত্যতার
+  একদিকতার জন্য $Rwu$ হলে $T(w)\subseteq T(u)$। তাই
+  $\mModel{M'}$ একটি !!a{relational model}।
+
+  $\Sigma$-র সমস্ত !!{formula}s~$!B$-র গঠনের ওপর আরোহে দেখাই:
+  \[
+    \mSat{M}{!B}[w] \text{ iff } \mSat{M'}{!B}[{T(w)}]
+  \]।
+  চলক, অসত্য, সংযোজন ও বিযোজনের ক্ষেত্রগুলি সরাসরি সংজ্ঞা
+  থেকে আসে। নির্দেশের ক্ষেত্রে, $!B\lif !C$ যদি $w$-তে সত্য
+  হয় এবং $T(w)\subseteq T(v)$ হয়, তবে $!B\lif !C$-ও $v$-তে
+  সত্য। তাই $!B$ যদি $v$-তে সত্য হয়, $R$-র প্রতিবিম্বিতায়
+  $!C$-ও সেখানে সত্য; আরোহ-অনুমানে $T(v)$-তেও প্রয়োজনীয়
+  সিদ্ধান্তটি আসে। বিপরীতে, $!B\lif !C$ যদি $w$-তে মিথ্যা হয়,
+  তবে কোনো $Rwu$-যুক্ত $u$-তে $!B$ সত্য ও $!C$ মিথ্যা।
+  $T(w)\subseteq T(u)$, তাই আরোহ-অনুমানে $T(u)$ একই নির্দেশের
+  সসীম মডেলেও প্রতিবাদী সাক্ষী। নঞর্থকতার ক্ষেত্রেও একই যুক্তি:
+  $\lnot !B$ সত্য হলে প্রত্যেক অন্তর্ভুক্ত-বৃহত্তর ধরনের জগতে
+  $!B$ মিথ্যা; মিথ্যা হলে মূল মডেলে কোনো পরবর্তী জগতে $!B$
+  সত্য, যার ধরনটি সসীম মডেলে সাক্ষী হয়।
+  বিশেষত $!A\in\Sigma$, তাই $\mSat/{M'}{!A}[T(w_0)]$।
+\end{proof}
+
+\begin{prob}
+  % BN-SRC-407: the filtration lemma applies to subformulas of A; use the two-argument satisfaction macro.
+  \olref[int][sc][dec]{thm:decidability}-এর প্রমাণ সম্পূর্ণ করুন:
+  $\Sigma$-র !!{formula}s-এর প্রতিটি~$!B$ এবং প্রতিটি $w\in W$-র
+  জন্য—যেখানে $!B$-তে কেবল $P$-র !!{propositional variable}s আছে—
+  দেখান, $\mSat{M}{!B}[w]$ তখনই, যখন
+  $\mSat{M'}{!B}[T(w)]$।
+\end{prob}
+
+\olref{thm:decidability} থেকে সিদ্ধান্ত হয় যে
+$\Entails !A$ কি না নির্ণয়ের একটি অ্যালগরিদম আছে।
+% BN-SRC-408: explicitly run finite-countermodel and proof enumerations in parallel.
+একদিকে সব সসীম আংশিক ক্রমে $P$-র চলকগুলির একদিক মানায়ন
+গণনা করে প্রতিবাদী মডেল খোঁজা যায়; অন্যদিকে সম্ভাব্য নিষ্পাদনগুলি
+গণনা করে $!A$-এর প্রমাণ খোঁজা যায়। বিশুদ্ধতা, সম্পূর্ণতা ও সসীম-মডেল
+ফল অনুযায়ী এই দুই অনুসন্ধানের ঠিক একটি ফল দেবে।
+
+\end{document}

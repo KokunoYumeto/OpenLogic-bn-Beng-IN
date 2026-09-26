@@ -1,0 +1,70 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: canonical-model
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{mod}
+
+\olsection{আদর্শ মডেল}
+
+আমাদের মডেলের জগৎগুলি হবে স্বাভাবিক সংখ্যার সসীম ক্রম~$\sigma$;
+অর্থাৎ $\sigma \in \Nat^*$। লক্ষ করুন, $\Nat^*$-র আরোহী সংজ্ঞা:
+\begin{enumerate}
+\item $\emptyseq \in \Nat^*$।
+\item $\sigma \in \Nat^*$ এবং $n \in \Nat$ হলে $\sigma.n \in
+  \Nat^*$ (এখানে $\sigma.n$ হলো $\sigma \concat \tuple{n}$, আর
+  $\sigma \concat \sigma'$ হলো $\sigma$ ও $\sigma'$-র সংযোজন)।
+\item অন্য কিছু $\Nat^*$-তে নেই।
+\end{enumerate}
+তাই $\Nat^*$-র ওপর আরোহী সংজ্ঞা দেওয়া যায়।
+
+সমস্ত !!{formula}s-এর জোড়ার একটি গণনা
+$\tuple{!B_1, !C_1}$, $\tuple{!B_2, !C_2}$, \dots, ধরি।
+!!{formula}s-এর সেট~$\Delta$ দেওয়া থাকলে, $\Delta(\sigma)$
+আরোহের সাহায্যে এভাবে সংজ্ঞায়িত করি:
+\begin{enumerate}
+\item $\Delta(\emptyseq) = \Delta$
+\item $\Delta(\sigma.n) = {}$
+  \[
+  \begin{cases}
+    (\Delta(\sigma) \cup \{!B_n\})^* &
+    \text{if $\Delta(\sigma) \cup \{!B_n\} \Proves/ !C_n$} \\
+    \Delta(\sigma) & \text{otherwise}
+  \end{cases}
+  \]
+\end{enumerate}
+এখানে $(\Delta(\sigma) \cup \{!B_n\})^*$ বলতে
+$\Delta(\sigma) \cup \{!B_n\}$ সেট ও !!{formula}~$!C_n$-এর
+ক্ষেত্রে \olref[lin]{lem:lindenbaum} প্রয়োগ করে পাওয়া
+!!{formula}s-এর প্রাইম সেটটি
+বোঝাই। এই সংজ্ঞা অনুযায়ী
+$\Delta(\sigma) \cup \{!B_n\} \Proves/ !C_n$ হলে
+$\Delta(\sigma.n) \Proves !B_n$, অথচ
+$\Delta(\sigma.n) \Proves/ !C_n$। আরও লক্ষ করুন,
+যেকোনো~$n$-এর জন্য
+$\Delta(\sigma) \subseteq \Delta(\sigma.n)$। $\Delta$
+প্রাইম হলে প্রত্যেক~$\sigma$-র জন্য $\Delta(\sigma)$ প্রাইম।
+
+\begin{defn}\ollabel{defn:canonical-model}
+  ধরি, $\Delta$ প্রাইম। $\Delta$-র জন্য \emph{আদর্শ মডেল}
+  $\mModel{M(\Delta)}$ এভাবে সংজ্ঞায়িত:
+  \begin{enumerate}
+  \item $W = \Nat^*$, স্বাভাবিক সংখ্যার সসীম ক্রমগুলির সেট।
+  \item $R$ এমন একটি আংশিক ক্রম যেখানে $R\sigma\sigma'$ তখনই,
+    যখন $\sigma$, $\sigma'$-র প্রারম্ভিক খণ্ড
+    (অর্থাৎ কোনো ক্রম~$\sigma''$-র জন্য
+    $\sigma' = \sigma \concat \sigma''$)।
+  \item $V(p) = \Setabs{\sigma}{p \in \Delta(\sigma)}$।
+  \end{enumerate}
+\end{defn}
+
+$R$ যে সত্যিই আংশিক ক্রম, তা সহজে যাচাই করা যায়। $V$-র
+একদিকতার শর্তও পূরণ হয়। যেহেতু
+$\Delta(\sigma) \subseteq \Delta(\sigma.n)$, তাই
+$\sigma$-র দৈর্ঘ্যের ওপর আরোহে, $R\sigma\sigma'$ হলেই
+$\Delta(\sigma) \subseteq \Delta(\sigma')$ পাওয়া যায়।
+
+\end{document}

@@ -1,0 +1,151 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: lindenbaum
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{lin}
+
+\olsection{লিন্ডেনবাউমের উপপাদ্য}
+
+স্বজ্ঞাবাদী যুক্তিবিদ্যার সম্পূর্ণতার উপপাদ্য প্রমাণে $\Gamma \Proves/ !A$
+ধরে এমন একটি মডেল নির্মাণ করি যাতে $\mSat{M}{\Gamma}$ অথচ
+$\mSat/{M}{!A}$।
+
+ধ্রুপদি যুক্তিবিদ্যায় !!{derivability}-র সম্পর্কটিকে সঙ্গতির ধারণায়
+নামিয়ে আনা যায়: !!{formula}~$!A$ একটি !!{formula}s-এর সেট থেকে
+!!{derivable} হবে তখনই, যখন সেটটির সঙ্গে~$!A$-এর নঞর্থক রূপ
+যোগ করলে সেটটি অসঙ্গত হয়। স্বজ্ঞাবাদী যুক্তিবিদ্যায় তা সম্ভব নয়।
+এখানে $\lnot!A$ অসঙ্গত হলে কেবল $\Proves \lnot\lnot !A$ পাওয়া যায়।
+সাধারণভাবে $\lnot\lnot!A \lif !A$ স্বজ্ঞাবাদীভাবে সিদ্ধ নয়; তাই
+$\Proves !A$ সিদ্ধান্তে পৌঁছানো যায় না।
+
+সুতরাং মডেল~$\mModel{M}$ নির্মাণের সময় !!{formula}~$!A$-এর
+অ-!!{derivability}-র হিসাব রাখতে হবে। ফলে ধ্রুপদি প্রমাণের মতো
+সম্পূর্ণ সেট $\Gamma^* \supseteq \Gamma$ দিয়ে মডেল~$\mModel{M}$
+বানানো যাবে না: প্রতিটি সম্পূর্ণ সেট~$\Gamma^*$-তে
+$\Gamma^* \Proves !A \lor \lnot !A$।
+
+সম্পূর্ণ সেট~$\Gamma^*$-এর বদলে আমরা সূত্রসমূহের একটি
+\emph{প্রাইম সেট} ব্যবহার করব:
+
+\begin{defn}\ollabel{defn:prime}
+  !!{formula}s-এর সেট~$\Gamma$ \emph{প্রাইম} তখনই, যখন
+  \begin{enumerate}
+  \item\ollabel{defn:prime1} $\Gamma$ সঙ্গত, অর্থাৎ $\Gamma \Proves/ \lfalse$;
+  \item\ollabel{defn:prime2} $\Gamma \Proves !A$ হলে $!A \in \Gamma$; এবং
+  \item\ollabel{defn:prime3} $!A \lor !B \in \Gamma$ হলে $!A \in
+    \Gamma$ অথবা $!B \in \Gamma$।
+  \end{enumerate}
+\end{defn}
+
+\begin{lem}[লিন্ডেনবাউমের উপপাদ্য]
+  \ollabel{lem:lindenbaum} $\Gamma \Proves/ !A$ হলে এমন একটি
+  $\Gamma^* \supseteq \Gamma$ আছে, যাতে $\Gamma^*$ প্রাইম এবং
+  $\Gamma^* \Proves/ !A$।
+\end{lem}
+
+\begin{proof}
+  $!B_1 \lor !C_1$, $!B_2 \lor !C_2$, \dots, দিয়ে
+  $!B \lor !C$-রূপের সমস্ত !!{formula}s-এর একটি গণনা ধরি।
+  !!{formula}s-এর সেটের একটি বর্ধমান ক্রম~$\Gamma_n$ সংজ্ঞায়িত করব:
+  প্রতিটি $\Gamma_{n+1}$ পাওয়া যাবে $\Gamma_n$-এর সঙ্গে একটি নতুন
+  !!a{formula} যোগ করে। সব~$\Gamma_n$-এর সংযোগই হবে $\Gamma^*$।
+  নতুন !!{formula}s এমনভাবে বাছব যাতে $\Gamma^*$ প্রাইম হয়, অথচ
+  $\Gamma^* \Proves/ !A$ বজায় থাকে। প্রতি ধাপে তাই প্রথম এমন
+  বিযুক্তি~$!B_i \lor !C_i$ খুঁজব যার জন্য:
+  \begin{enumerate}
+  \item\ollabel{gamma-1} $\Gamma_n \Proves !B_i \lor !C_i$
+  \item\ollabel{gamma-2} $!B_i \notin \Gamma_n$ এবং $!C_i \notin \Gamma_n$
+  \end{enumerate}
+  $\Gamma_n \cup \{!B_i\} \Proves/ !A$ হলে $!B_i$, অন্যথায়
+  $!C_i$ যোগ করব। এই পদ্ধতি যে কাজ করে, তা দেখাতে হবে। আপাতত
+  \olref{gamma-1} ও~\olref{gamma-2} পূরণকারী ক্ষুদ্রতম $i$-কে
+  $i(n)$ বলি।
+  $i(n)$-এর মান $i$ নির্ধারিত হলে $\Gamma_n$-র প্রথম অনিষ্পন্ন
+  বিযুক্তি $!B_i \lor !C_i$; তার $!B_i$ বা $!C_i$ যোগ হয়।
+
+  $\Gamma_0 = \Gamma$ ধরি এবং
+  \[
+  \Gamma_{n+1} = \begin{cases}
+    \Gamma_n \cup \{!B_{i(n)}\} &
+    \text{if $\Gamma_n \cup \{!B_{i(n)}\} \Proves/ !A$} \\
+    \Gamma_n \cup \{!C_{i(n)}\} & \text{otherwise}
+    \end{cases}
+  \]
+  যদি $i(n)$ অনির্দিষ্ট হয়—অর্থাৎ $\Gamma_n \Proves !B \lor !C$
+  হলেই $!B \in \Gamma_n$ অথবা $!C \in \Gamma_n$—তবে
+  $\Gamma_{n+1} = \Gamma_n$ ধরি। এবার
+  $\Gamma^* = \bigcup_{n=0}^\infty \Gamma_n$ নিই।
+
+  প্রথমে দেখাই, সব $n$-এর জন্য $\Gamma_n \Proves/ !A$।
+  $n$-এর ওপর আরোহে এগোই। $n = 0$-তে দাবিটি উপপাদ্যের অনুমান
+  $\Gamma \Proves/ !A$ থেকেই আসে। $n>0$ হলে দেখাতে হবে:
+  $\Gamma_n \Proves/ !A$ থেকে $\Gamma_{n+1} \Proves/ !A$।
+  $i(n)$ অনির্দিষ্ট হলে $\Gamma_{n+1} = \Gamma_n$, তাই আর কিছু
+  দেখাতে হয় না। অন্যথায়, সংক্ষেপে $i = i(n)$ ধরি।
+
+  দাবিটির বিপরীতার্থক রূপ প্রমাণ করি। ধরি $\Gamma_{n+1}
+  \Proves !A$। নির্মাণ অনুযায়ী, $\Gamma_n \cup
+  \{!B_i\} \Proves/ !A$ হলে $\Gamma_{n+1} = \Gamma_n \cup
+  \{!B_i\}$; অন্যথায় $\Gamma_{n+1} = \Gamma_n \cup \{!C_i\}$।
+  প্রথমটি হতে পারে না, কারণ সেক্ষেত্রে $\Gamma_{n+1} \Proves/ !A$।
+  অতএব $\Gamma_n \cup \{!B_i\} \Proves !A$ এবং
+  $\Gamma_{n+1} = \Gamma_n \cup \{!C_i\}$। $i(n)$-এর সংজ্ঞায়
+  $\Gamma _n \Proves !B_i \lor !C_i$। আবার
+  $\Gamma_n \cup \{!B_i\} \Proves !A$ এবং
+  $\Gamma_{n+1} = \Gamma_n \cup \{!C_i\} \Proves !A$।
+  তাই $\Gamma_n \Proves !A$; এটাই চেয়েছিলাম।
+
+  $\Gamma^* \Proves !A$ হলে কোনো সসীম উপসেট $\Gamma'
+  \subseteq \Gamma^*$ থেকে $\Gamma' \Proves !A$ হতো। প্রতিটি
+  $!D \in \Gamma'$ কোনো-না-কোনো~$\Gamma_i$-তে থাকে। সেই সূচকগুলির
+  বৃহত্তমটি $n$ ধরি। $i \le n$ হলে $\Gamma_i \subseteq \Gamma_n$;
+  সুতরাং $\Gamma' \subseteq \Gamma_n$। কিন্তু এতে
+  $\Gamma_n \Proves !A$ হয়, যা আগের ফল
+  $\Gamma_n \Proves/ !A$-এর বিরোধী।
+
+  শেষে দেখাই, $\Gamma^*$ প্রাইম—অর্থাৎ
+  \olref{defn:prime}-এর \olref{defn:prime1},
+  \olref{defn:prime2} এবং~\olref{defn:prime3} শর্তগুলি পূরণ করে।
+
+  প্রথমত, $\Gamma^* \Proves/ !A$; তাই $\Gamma^*$ সঙ্গত,
+  অর্থাৎ \olref{defn:prime1} পূরণ করে।
+
+  এবার দেখাই, $\Gamma^* \Proves !B \lor !C$ হলে
+  $!B \in \Gamma^*$ অথবা $!C \in \Gamma^*$। তাতেই
+  \olref{defn:prime3} প্রতিষ্ঠিত হবে: $!B \lor !C \in \Gamma^*$
+  হলে অবশ্যই $\Gamma^* \Proves !B \lor !C$। তাই ধরি,
+  $\Gamma^* \Proves !B \lor !C$, অথচ $!B \notin \Gamma^*$ এবং
+  $!C \notin \Gamma^*$। কোনো~$n$-এর জন্য
+  $\Gamma_n \Proves !B \lor !C$। সমস্ত বিযুক্তির গণনায়
+  $!B \lor !C$-টি $!B_j \lor !C_j$ হিসেবে আসে। তাই
+  $!B_j \lor !C_j$ সূচক~$i(n)$-এর সংজ্ঞার শর্ত পূরণ করে:
+  $\Gamma_n \Proves !B_j \lor !C_j$, কিন্তু
+  $!B_j \notin \Gamma_n$ ও $!C_j \notin \Gamma_n$।
+  % BN-SRC-405: only the finitely many eligible indices below fixed j must be exhausted.
+  ওই সূচকের চেয়ে ছোট সূচক সসীমসংখ্যক। এদের কোনোটি একবার বেছে নিয়ে
+  তার একটি বিযোজ্য পদ যোগ করলে সেই সূচক আর কখনো দ্বিতীয় শর্ত
+  পূরণ করতে পারে না। অথচ নির্দিষ্ট সূচকটির জন্য শর্ত দুটি পূরণ হতে থাকে:
+  সূত্রনিষ্পাদন বর্ধমান থাকে এবং কোনো বিযোজ্য পদই যুক্ত হয় না।
+  ফলে কোনো ধাপ~$m$-এ $j = i(m)$ হতেই হবে। তখন হয়
+  $!B \in \Gamma_{m+1}$, নয় $!C \in \Gamma_{m+1}$;
+  এটি $!B \notin \Gamma^*$ ও $!C \notin \Gamma^*$-এর বিরোধী।
+  তাই $\Gamma^* \Proves !B \lor !C$ অনুমানটির দাবি প্রতিষ্ঠিত।
+
+  এখন ধরি $\Gamma^* \Proves !B$। তাহলে
+  $\Gamma^* \Proves !B \lor !B$। এইমাত্র প্রমাণ করেছি,
+  $\Gamma^* \Proves !B \lor !B$ হলে $!B \in \Gamma^*$।
+  সুতরাং $\Gamma^*$, \olref{defn:prime}-এর
+  \olref{defn:prime2} শর্তও পূরণ করে।
+\end{proof}
+
+\begin{prob}
+  দেখান, $\Gamma \Proves/ \bot$ হলে ধ্রুপদি যুক্তিবিদ্যায়
+  $\Gamma$ সঙ্গত; অর্থাৎ এমন একটি মানায়ন আছে যাতে
+  $\Gamma$-র সব সূত্র সত্য।
+\end{prob}
+
+\end{document}

@@ -1,0 +1,171 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: soundness-nd
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{snd}
+
+\olsection{স্বাভাবিক অবরোহণের বিশুদ্ধতা}
+
+এবার সম্পর্কভিত্তিক অর্থবিজ্ঞানের সাপেক্ষে স্বাভাবিক অবরোহণের
+বিশুদ্ধতা প্রমাণ করব: অনুমানগুলির একটি সেট থেকে !!a{formula}
+!!{derivable} হলে সেই অনুমান-সেট থেকে !!{formula}টি নিহিত হয়।
+
+\begin{thm}[বিশুদ্ধতা]
+  \ollabel{thm:soundness}
+  $\Gamma \Proves !A$ হলে $ \Gamma \Entails !A$।
+\end{thm}
+
+\begin{proof}
+  আমরা প্রমাণ করি যে $\Gamma \Proves !A$ হলে
+  $\Gamma \Entails !A$। $\Gamma$ থেকে $!A$-এর
+  !!{derivation}-এর ওপর আরোহের সাহায্যে প্রমাণ হবে।
+
+  \begin{enumerate}
+  \item !!{derivation}-এ কেবল অনুমান~$!A$ থাকলে
+    $!A \Proves !A$; দেখাতে হবে $!A \Entails !A$। ধরি
+    $\mSat{M}{!A}[w]$। তবে তুচ্ছভাবেই $\mSat{M}{!A}[w]$।
+
+  \item !!{derivation}-এর শেষ নিয়ম $\Intro{\land}$:
+    \iftag{probAnd}{অনুশীলন।}{!!{undischarged}
+      অনুমান~$\Gamma$ থেকে পূর্বপক্ষ~$!B$-এর এবং
+      !!{undischarged} অনুমান~$\Delta$ থেকে~$!C$-এর
+      !!{derivation}s দেখায় যে $\Gamma \Proves !B$ এবং
+      $\Delta \Proves !C$। আরোহ-অনুমানে তাই
+      $\Gamma \Entails !B$ এবং $\Delta \Entails !C$।
+      % BN-SRC-401: the two premises yield B and C, hence B conjunction C.
+      দেখাতে হবে $\Gamma \cup \Delta \Entails !B \land !C$,
+      কারণ সম্পূর্ণ !!{derivation}-এর !!{undischarged} অনুমানগুলি
+      $\Gamma$ ও $\Delta$ একত্রে। ধরি
+      $\mSat{M}{\Gamma \cup \Delta}[w]$। তবে
+      $\mSat{M}{\Gamma}[w]$-ও। $\Gamma \Entails !B$ বলে
+      $\mSat{M}{!B}[w]$। একইভাবে $\mSat{M}{!C}[w]$। তাই
+      $\mSat{M}{!B \land !C}[w]$।}
+
+  \item !!{derivation}-এর শেষ নিয়ম $\Elim{\land}$:
+    \iftag{probAnd}{অনুশীলন।}{!!{undischarged}
+      অনুমান~$\Gamma$ থেকে পূর্বপক্ষ $!B \land !C$-এর
+      !!{derivation} দেখায় যে $\Gamma \Proves !B \land !C$।
+      আরোহ-অনুমানে $\Gamma \Entails !B \land !C$। দেখাতে হবে
+      $\Gamma \Entails !B$। ধরি $\mSat{M}{\Gamma}[w]$। যেহেতু
+      $\Gamma \Entails !B \land !C$, তাই
+      $\mSat{M}{!B \land !C}[w]$। ফলে $\mSat{M}{!B}[w]$-ও।
+      একইভাবে $\Elim\land$-এর সিদ্ধান্ত~$!C$ হলে
+      $\Gamma \Entails !C$।}
+
+  \item !!{derivation}-এর শেষ নিয়ম $\Intro{\lor}$:
+    \iftag{probOr}{অনুশীলন।}{ধরি পূর্বপক্ষ $!B$ এবং $!B$-তে শেষ
+      হওয়া !!{derivation}-এর !!{undischarged} অনুমানগুলি
+      $\Gamma$। তবে $\Gamma \Proves !B$; আরোহ-অনুমানে
+      $\Gamma \Entails !B$। দেখাতে হবে
+      $\Gamma \Entails !B \lor !C$। ধরি
+      $\mSat{M}{\Gamma}[w]$। $\Gamma \Entails !B$ বলে
+      $\mSat{M}{!B}[w]$। তাই $\mSat{M}{!B \lor !C}[w]$-ও।
+      একইভাবে পূর্বপক্ষ~$!C$ হলে $\Gamma \Entails !C$।}
+
+  \item !!{derivation}-এর শেষ নিয়ম~$\Elim{\lor}$:
+    \iftag{probOr}{অনুশীলন।}{তিনটি পূর্বপক্ষে শেষ হওয়া
+      !!{derivation}s যথাক্রমে !!{undischarged} অনুমান~$\Gamma$
+      থেকে $!B \lor !C$, !!{undischarged} অনুমান
+      $\Delta_1 \cup \{!B\}$ থেকে $!D$, এবং !!{undischarged}
+      অনুমান~$\Delta_2 \cup \{!C\}$ থেকে $!D$ প্রতিষ্ঠা করে।
+      তাই $\Gamma \Proves !B \lor !C$,
+      $\Delta_1 \cup \{!B\} \Proves !D$ এবং
+      $\Delta_2 \cup \{!C\} \Proves !D$। আরোহ-অনুমানে
+      $\Gamma \Entails !B \lor !C$,
+      $\Delta_1 \cup \{!B\} \Entails !D$ এবং
+      $\Delta_2 \cup \{!C\} \Entails !D$। প্রমাণ করতে হবে
+      $\Gamma \cup \Delta_1 \cup \Delta_2 \Entails !D$।
+
+    ধরি $\mSat{M}{\Gamma \cup \Delta_1 \cup \Delta_2}[w]$।
+    তবে $\mSat{M}{\Gamma}[w]$; $\Gamma \Entails !B \lor !C$
+    বলে $\mSat{M}{!B \lor !C}[w]$। $\mSat{M}{}$-এর সংজ্ঞায়
+    $\mSat{M}{!B}[w]$ অথবা $\mSat{M}{!C}[w]$। তাই দুই ক্ষেত্র:
+    % BN-SRC-402: the world index belongs inside the satisfaction formula.
+    (a)~$\mSat{M}{!B}[w]$। তবে
+    $\mSat{M}{\Delta_1 \cup \{!B\}}[w]$।
+    % BN-SRC-403: the added assumption is the singleton set {B}.
+    $\Delta_1 \cup \{!B\} \Entails !D$ বলে
+    $\mSat{M}{!D}[w]$। (b)~$\mSat{M}{!C}[w]$। তবে
+    $\mSat{M}{\Delta_2 \cup \{!C\}}[w]$।
+    % BN-SRC-404: likewise the second added assumption is {C}.
+    $\Delta_2 \cup \{!C\} \Entails !D$ বলে
+    $\mSat{M}{!D}[w]$। উভয় ক্ষেত্রেই
+    $\mSat{M}{!D}[w]$, যা দেখাতে চেয়েছিলাম।}
+
+  \item !!{derivation}-এর শেষে $\Intro{\lif}$ দিয়ে সিদ্ধান্ত
+    $!B\lif !C$। পূর্বপক্ষ~$!C$; সেই পূর্বপক্ষে শেষ হওয়া
+    !!{derivation}-এর !!{undischarged} অনুমানগুলি
+    $\Gamma \cup \{!B\}$। তাই
+    $\Gamma \cup \{!B\} \Proves !C$; আরোহ-অনুমানে
+    $\Gamma \cup \{!B\} \Entails !C$। দেখাতে হবে
+    $\Gamma \Entails !B \lif !C$।
+
+    ধরি $\mSat{M}{\Gamma}[w]$। দেখাতে হবে প্রত্যেক
+    $Rww'$-যুক্ত $w'$-এর জন্য $\mSat{M}{!B}[w']$ হলে
+    $\mSat{M}{!C}[w']$। তাই ধরি $Rww'$ এবং
+    $\mSat{M}{!B}[w']$। \olref[sem][rel]{prop:true-monotonic}
+    অনুযায়ী $\mSat{M}{\Gamma}[w']$। যেহেতু
+    $\Gamma \cup \{!B\} \Entails !C$, তাই
+    $\mSat{M}{!C}[w']$; এটাই দেখাতে চেয়েছিলাম।
+
+  \item !!{derivation}-এর শেষ নিয়ম $\Elim{\lif}$ এবং সিদ্ধান্ত
+    $!C$। পূর্বপক্ষ দুটি $!B \lif !C$ ও $!B$; এগুলির
+    !!{derivation}s-এর !!{undischarged} অনুমান যথাক্রমে
+    $\Gamma$ ও $\Delta$। তাই $\Gamma \Proves !B \lif !C$
+    এবং $\Delta \Proves !B$। আরোহ-অনুমানে
+    $\Gamma \Entails !B \lif !C$ ও $\Delta \Entails !B$।
+    দেখাতে হবে $\Gamma \cup \Delta \Entails !C$।
+
+    ধরি $\mSat{M}{\Gamma \cup \Delta}[w]$। যেহেতু
+    $\mSat{M}{\Gamma}[w]$ এবং
+    $\Gamma \Entails !B \lif !C$, তাই
+    $\mSat{M}{!B \lif !C}[w]$। সংজ্ঞা অনুযায়ী প্রত্যেক
+    $Rww'$-যুক্ত $w'$-এর জন্য $\mSat{M}{!B}[w']$ হলে
+    $\mSat{M}{!C}[w']$। $R$ প্রতিবিম্বী বলে এমন $Rww'$-যুক্ত $w'$-এর
+    মধ্যে $w$ নিজেও আছে; অর্থাৎ $\mSat{M}{!B}[w]$ হলে
+    $\mSat{M}{!C}[w]$। $\mSat{M}{\Delta}[w]$ এবং
+    $\Delta \Entails !B$ বলে $\mSat{M}{!B}[w]$। অতএব
+    $\mSat{M}{!C}[w]$, যা দেখাতে চেয়েছিলাম।
+
+  \item !!{derivation}-এর শেষে $\FalseInt$, সিদ্ধান্ত~$!A$।
+    পূর্বপক্ষ $\lfalse$; সেই পূর্বপক্ষের !!{derivation}-এর
+    !!{undischarged} অনুমান~$\Gamma$। তাই
+    $\Gamma \Proves \lfalse$। আরোহ-অনুমানে
+    $\Gamma \Entails \lfalse$। দেখাতে হবে
+    $\Gamma \Entails !A$।
+
+    পরোক্ষভাবে এগোই। $\Gamma \Entails/ !A$ হলে এমন
+    মডেল~$\mModel{M}$ ও জগৎ~$w$ আছে, যেখানে
+    $\mSat{M}{\Gamma}[w]$ অথচ $\mSat/{M}{!A}[w]$।
+    $\Gamma \Entails \lfalse$ বলে $\mSat{M}{\lfalse}[w]$।
+    কিন্তু এটি অসম্ভব: সংজ্ঞা অনুযায়ী
+    $\mSat/{M}{\lfalse}[w]$। তাই $\Gamma \Entails !A$।
+  \item !!{derivation}-এর শেষ নিয়ম $\Intro\lnot$: অনুশীলন।
+  \item !!{derivation}-এর শেষ নিয়ম $\Elim\lnot$: অনুশীলন।
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  \olref[int][sc][snd]{thm:soundness}-এর প্রমাণ সম্পূর্ণ করুন।
+  $\Intro\lnot$ ও $\Elim\lnot$-এর ক্ষেত্রগুলিতে
+  \olref[int][sem][rel]{defn:true-at-w}-এ দেওয়া
+  $\mSat{M}{\lnot !A}[w]$-এর সংজ্ঞা ব্যবহার করুন; অর্থাৎ
+  $\lnot !A$-কে $!A \lif \lfalse$ দিয়ে সংজ্ঞায়িত বলে ধরে
+  নেবেন না।
+\end{prob}
+
+\begin{prob}
+  দেখান, নিচের !!{formula}s স্বজ্ঞাবাদী যুক্তিবিদ্যায়
+  !!{derivable} নয়:
+  \begin{enumerate}
+    \item $(!A \lif !B) \lor (!B \lif !A)$
+    \item $(\lnot\lnot !A \lif !A) \lif (!A \lor \lnot !A)$
+    \item $(!A \lif !B \lor !C) \lif \bigl((!A \lif !B)\lor(!A \lif !C)\bigr)$
+  \end{enumerate}
+\end{prob}
+
+\end{document}

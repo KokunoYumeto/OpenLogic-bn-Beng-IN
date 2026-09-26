@@ -1,0 +1,231 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T23:41:29.579006+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "c56f3277cc27e05b61e5f8e41fb753a1c21c970c",
+  "parent": "67bd7d38208a2c16d6ed8ba8c0ffe01651efe962",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "3344b6c8ac800a9537470bb0f9c59ed46363a67d",
+    "receipt": "PUBLIC_READBACK_SOURCE_535_2026-09-27.json",
+    "receipt_sha256": "35e36e594063147fb2e1b83462024350529b7a16ddf99b256e7e355f3a908c70"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/c56f3277cc27e05b61e5f8e41fb753a1c21c970c.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/c56f3277cc27e05b61e5f8e41fb753a1c21c970c",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 14626235,
+  "archive_sha256": "af209db32d4c4189d2428407bf2fbf5adf9d2c395634f9e66b9e46ebda8828b0",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/arbintersections.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/arbintersections.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/arbintersections.tex",
+      "content_type": "text/plain",
+      "bytes": 5115,
+      "sha256": "d5c48aba7112fa29c6b734eaf4ae19fe8e5e86bdf38bab3df817fa47ca71b548"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/infinity-again.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/infinity-again.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/infinity-again.tex",
+      "content_type": "text/plain",
+      "bytes": 11701,
+      "sha256": "63610152e6c35fbf1aa89dce8e0115446b91612877fab01f7535407336cdcb3d"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/milestone.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/milestone.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/milestone.tex",
+      "content_type": "text/plain",
+      "bytes": 2695,
+      "sha256": "b30c454f970d3a30f1033d4f40ea5f04ec58187bef602294cc6c719d2c1e8b6f"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/nat.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/nat.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/nat.tex",
+      "content_type": "text/plain",
+      "bytes": 5158,
+      "sha256": "53d4384fc6ca1f9dc77ea7c7b0f2cd7c6415ce78e7d517855e42232bb7aeb1c3"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/pairs.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/pairs.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/pairs.tex",
+      "content_type": "text/plain",
+      "bytes": 4274,
+      "sha256": "f7cef73c0fb7b21bed23e854b021c8569cddb3c56fd7bec404affc24fa4e7563"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/powerset.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/powerset.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/powerset.tex",
+      "content_type": "text/plain",
+      "bytes": 3921,
+      "sha256": "07ba4d4bea0a039faf9f6afb48470e7736de514fe39276a3b5bccd67fd4a3b97"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/separation.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/separation.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/separation.tex",
+      "content_type": "text/plain",
+      "bytes": 7982,
+      "sha256": "b1deaf5f7e3d64e34ed01beacf35a0842cf020187341b2e7b63537835abef2d9"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/story.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/story.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/story.tex",
+      "content_type": "text/plain",
+      "bytes": 3490,
+      "sha256": "d106fc2b82b676d5ca0462716e0eca1931b073918406fe0a7ff2302c79503748"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/union.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/union.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/union.tex",
+      "content_type": "text/plain",
+      "bytes": 1691,
+      "sha256": "270fae90b72ed2985e1eb4803244bdfea2a427846c2e4140dea2766e2e6d0d89"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/z.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/z.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/c56f3277cc27e05b61e5f8e41fb753a1c21c970c/bn-Beng-IN/content/set-theory/z/z.tex",
+      "content_type": "text/plain",
+      "bytes": 419,
+      "sha256": "3b278dcf8ae904c66d3bcf334ac4ab5b2aef2c1ec8845214fbc040d946f0fd6a"
+    }
+  ],
+  "changed_files_verified": 21,
+  "translated_tex_files_in_commit": 10,
+  "evidence_files_in_commit": 10,
+  "draft_translated_total": 545,
+  "draft_untranslated_total": 177,
+  "segments": 5952,
+  "translated_segments": 5044,
+  "new_batch_segments": 90,
+  "new_batch_translated_segments": 88,
+  "new_batch_unchanged_segments": 2,
+  "source_correction_records": 441,
+  "new_source_correction_records": 3,
+  "translation_decisions": 390,
+  "provisional_translation_decisions": 368,
+  "translation_decision_occurrences": 33024,
+  "decisions_with_exact_source_wording": 370,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 545,
+    "blocks": 5952,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7343,
+      "sha256": "1fb12b427734a173a3f861dcc1b681e45747433991fdaa0fbd84c65f598bb04f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/z/arbintersections.tex",
+      "bytes": 5115,
+      "sha256": "d5c48aba7112fa29c6b734eaf4ae19fe8e5e86bdf38bab3df817fa47ca71b548"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/z/infinity-again.tex",
+      "bytes": 11701,
+      "sha256": "63610152e6c35fbf1aa89dce8e0115446b91612877fab01f7535407336cdcb3d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/z/milestone.tex",
+      "bytes": 2695,
+      "sha256": "b30c454f970d3a30f1033d4f40ea5f04ec58187bef602294cc6c719d2c1e8b6f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/z/nat.tex",
+      "bytes": 5158,
+      "sha256": "53d4384fc6ca1f9dc77ea7c7b0f2cd7c6415ce78e7d517855e42232bb7aeb1c3"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/z/pairs.tex",
+      "bytes": 4274,
+      "sha256": "f7cef73c0fb7b21bed23e854b021c8569cddb3c56fd7bec404affc24fa4e7563"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/z/powerset.tex",
+      "bytes": 3921,
+      "sha256": "07ba4d4bea0a039faf9f6afb48470e7736de514fe39276a3b5bccd67fd4a3b97"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/z/separation.tex",
+      "bytes": 7982,
+      "sha256": "b1deaf5f7e3d64e34ed01beacf35a0842cf020187341b2e7b63537835abef2d9"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/z/story.tex",
+      "bytes": 3490,
+      "sha256": "d106fc2b82b676d5ca0462716e0eca1931b073918406fe0a7ff2302c79503748"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/z/union.tex",
+      "bytes": 1691,
+      "sha256": "270fae90b72ed2985e1eb4803244bdfea2a427846c2e4140dea2766e2e6d0d89"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/z/z.tex",
+      "bytes": 419,
+      "sha256": "3b278dcf8ae904c66d3bcf334ac4ab5b2aef2c1ec8845214fbc040d946f0fd6a"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 9753322,
+      "sha256": "de441d9246d674b8aacbd8db539270e7e0269dbba54b206c6eacfc0170c52433"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 337716,
+      "sha256": "19b3689e5799f65ea0f324c15ee4f98c57c149ed46ce2e24c48bc33f9fd74169"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SET_THEORY_Z.md",
+      "bytes": 9890,
+      "sha256": "d6cebf8428e1fe8b87e44d3d2fdeaa696ca8b42419a5ab4fb7010ad5c218202e"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 859989,
+      "sha256": "91cfbf78f318a8cbdd10fe4f52b362b79b0eea0d7559b9cbb6f4a15e5b9816c4"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 363886,
+      "sha256": "55c65df001b49bd5a3f9415c8d6cef55da5d67bb418e94ad9a82cbba94c8d26e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 19938222,
+      "sha256": "b797f91d88d7cc9343e61ac98725827fc758fd43f331eb45f8e1d6362b8b5c6a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 15595163,
+      "sha256": "76a99a5fce0e691176f43a72aa212e0979e20f2902fca6a8d98d95d5a3e70740"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1518285,
+      "sha256": "9f16f7aafb8c783bf9ee5284220b3fac1d1aaf442baa4c05dd5a4f587c305190"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 9054517,
+      "sha256": "82ce935d723d49c6cb9a450d276265bccca8f7a539c6a604e536349f8f2076ef"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 281865,
+      "sha256": "be4206528f5d31e06a73bf8ab29b13bc249261db1f0406660e9bc8214348b4d2"
+    }
+  ]
+}

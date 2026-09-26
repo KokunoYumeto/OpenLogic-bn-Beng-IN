@@ -1,0 +1,211 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T22:42:33.155735+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "22f202f6305cf4e88f552a7b892650b25839df3a",
+  "parent": "0fc800ab82af49fc9b750435c75154185194ba65",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "a096d910910fa9056216c4ed0ddfef57150db816",
+    "receipt": "PUBLIC_READBACK_SOURCE_520_2026-09-27.json",
+    "receipt_sha256": "c45d6c7c91f8b9ec2c1917c09588c03e2acd866dc3cc3d1551dfbae8415a0717"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/22f202f6305cf4e88f552a7b892650b25839df3a.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/22f202f6305cf4e88f552a7b892650b25839df3a",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 14322259,
+  "archive_sha256": "fa885f4dc4f2cc5fd68c55b70254464cdae8f55dd76f59651dff00c44184bd0d",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/antecedent-strengthening.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/antecedent-strengthening.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/antecedent-strengthening.tex",
+      "content_type": "text/plain",
+      "bytes": 3976,
+      "sha256": "b1a0a9f3f91403ac70f58e7f765360a72c2ed17cf343d0e40b1f58ade908932a"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/contraposition.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/contraposition.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/contraposition.tex",
+      "content_type": "text/plain",
+      "bytes": 4081,
+      "sha256": "f7b20f5e0bd3e6684ae02f0d7a2939b616405b4849dc267f077436b1d4aaf8f0"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 6173,
+      "sha256": "4f93f4c803477cc4aa5a1b08e1881dd2760661fa727ed6febdfd4c3e011a91f8"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/minimal-change-semantics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/minimal-change-semantics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/minimal-change-semantics.tex",
+      "content_type": "text/plain",
+      "bytes": 446,
+      "sha256": "1925d8aa3ef93c35817783b71a43609b57243d2a006c70deb5a0e93004bb5733"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/sphere-models.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/sphere-models.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/sphere-models.tex",
+      "content_type": "text/plain",
+      "bytes": 8501,
+      "sha256": "d9d960718790ed64f3ad1ed24a4df3de2d5af6ab19bc7b1f775b75e1765a0785"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/transitivity.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/transitivity.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/transitivity.tex",
+      "content_type": "text/plain",
+      "bytes": 6819,
+      "sha256": "a1f95825f673355a900aa2cf76dd295e4b8591702b5e25f9aa42edd74561c56c"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/true-false.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/true-false.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/22f202f6305cf4e88f552a7b892650b25839df3a/bn-Beng-IN/content/counterfactuals/minimal-change-semantics/true-false.tex",
+      "content_type": "text/plain",
+      "bytes": 5020,
+      "sha256": "f9360fce5ba2dcf26074303ab036c3099b425f700410c3e650f2587eafae8868"
+    }
+  ],
+  "changed_files_verified": 20,
+  "translated_tex_files_in_commit": 7,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 527,
+  "draft_untranslated_total": 195,
+  "segments": 5803,
+  "translated_segments": 4901,
+  "new_batch_segments": 50,
+  "new_batch_translated_segments": 39,
+  "new_batch_unchanged_segments": 11,
+  "source_correction_records": 436,
+  "new_source_correction_records": 8,
+  "translation_decisions": 381,
+  "provisional_translation_decisions": 361,
+  "translation_decision_occurrences": 32081,
+  "decisions_with_exact_source_wording": 362,
+  "ai_assistance": {
+    "product": "OpenAI Codex",
+    "earlier_model": "GPT-5.6 Sol",
+    "earlier_effort": "Ultra",
+    "current_batch_model": "GPT-6 Sol",
+    "current_batch_effort": "Ultra",
+    "independent_human_review_claimed": false
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 527,
+    "blocks": 5803,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7348,
+      "sha256": "f5b05322c124b23a22cdb2606df2bf4a81d03db261fc04d3efbf2a7b12283a47"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/antecedent-strengthening.tex",
+      "bytes": 3976,
+      "sha256": "b1a0a9f3f91403ac70f58e7f765360a72c2ed17cf343d0e40b1f58ade908932a"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/contraposition.tex",
+      "bytes": 4081,
+      "sha256": "f7b20f5e0bd3e6684ae02f0d7a2939b616405b4849dc267f077436b1d4aaf8f0"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/introduction.tex",
+      "bytes": 6173,
+      "sha256": "4f93f4c803477cc4aa5a1b08e1881dd2760661fa727ed6febdfd4c3e011a91f8"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/minimal-change-semantics.tex",
+      "bytes": 446,
+      "sha256": "1925d8aa3ef93c35817783b71a43609b57243d2a006c70deb5a0e93004bb5733"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/sphere-models.tex",
+      "bytes": 8501,
+      "sha256": "d9d960718790ed64f3ad1ed24a4df3de2d5af6ab19bc7b1f775b75e1765a0785"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/transitivity.tex",
+      "bytes": 6819,
+      "sha256": "a1f95825f673355a900aa2cf76dd295e4b8591702b5e25f9aa42edd74561c56c"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/true-false.tex",
+      "bytes": 5020,
+      "sha256": "f9360fce5ba2dcf26074303ab036c3099b425f700410c3e650f2587eafae8868"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 9404321,
+      "sha256": "2664cc77463ebaa6bfdc6ca973f9c8a40c00d6cec9a8bf1dd8b80108958a8f38"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 328948,
+      "sha256": "7a3642b122eeae2e9e075e45f00e0f9c1dc68cdaee0fbc7ad965e44754e7abb7"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_COUNTERFACTUALS_MINIMAL_CHANGE.md",
+      "bytes": 8853,
+      "sha256": "dbaaa58dea73a02445359b9624ad2405b26317feaa78c9a9a3ac3ae46d1a76b5"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "9983953fc621cf906bc7f91e08a75f3eac7d3f6deab6b3b9097f948ae1c5eb7c"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 849870,
+      "sha256": "b7f9ba573126b736cd9818d21808328b58d1b9e786bd3a79977d271e69c40357"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 353524,
+      "sha256": "4a907cdc7d7c89c17eadb5717deb1de5ef1ba30da375c627c5733a142d702f84"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 19412478,
+      "sha256": "c01c4409d69362dfbb58d22d5e3a9a6e83078c23c959d4ebec409db10d69580a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 15187962,
+      "sha256": "3e4c9dbe972ab212b17dae3879ab60eea2ac5d79eb78ef0d412307efe34a780e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1485612,
+      "sha256": "731f02f793f68be71a887085ab9aca6e9fb7be9f2a049500d38da825479261f5"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 8799572,
+      "sha256": "7539bde0f13fcc6fe87496e42e85ccd8c8940d9fd6bbaf859162b50210ca23e2"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 277206,
+      "sha256": "03f30831e3b3a8f94409aead95a9e990b60b507cc4cdee2f2fda22385ae40c42"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 282329,
+      "sha256": "4c044a4a0f0b3dee94ac954cca355a2013855e37d7c60ade91ff3c455c4b11f8"
+    }
+  ]
+}

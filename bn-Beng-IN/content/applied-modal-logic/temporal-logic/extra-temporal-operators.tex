@@ -1,0 +1,38 @@
+% Part: applied-modal-logics
+% Chapter: temporal-logic
+% Section: extra-operators
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{tl}{ext}
+
+\olsection{কালগত যুক্তিবিদ্যার অতিরিক্ত অপারেটর}
+
+অতীত ও ভবিষ্যতের একস্থানিক অপারেটরগুলির পাশাপাশি কালগত যুক্তিবিদ্যায় কখনও কখনও দ্বিস্থানিক অপারেটর $\Since $ ও~$\Until$-ও থাকে। এগুলি যথাক্রমে ``যখন থেকে'' ও ``যতক্ষণ না'' বোঝায়। সে ক্ষেত্রে কালগত যুক্তিবিদ্যার ভাষায় $\Since $ ও~$\Until$ যোগ করতে হয় এবং কালগত !!{formula}-এর সংজ্ঞায় নিম্নের শর্তটি যুক্ত করতে হয়:
+
+\begin{itemize}
+\item[] $!A$ ও $!B$ !!{formula}s হলে $(\Since  !A !B)$ এবং
+  $(\Until !A !B)$ উভয়ই !!{formula}s।
+\end{itemize}
+
+এই অপারেটরগুলির অর্থতত্ত্ব তখন নিম্নরূপ:
+
+\begin{defn}\ollabel{defn:since-until}
+  $\mModel M$-তে \emph{বিন্দু~$t$-তে !!a{formula}~$!A$-এর সত্যতা}:
+  \begin{enumerate}
+  \item\ollabel{defn:sub:mmodels-since} \indcase{!A}{\Since  !B
+    !C}{$\mSat{M}{\indfrm}[t]$ তখনই এবং কেবল তখনই, যখন এমন কোনো $t' \in
+    T$ আছে যাতে $t' \prec t$ এবং $\mSat{M}{!B}[t']$; আর $t' \prec s \prec t$-যুক্ত প্রত্যেক $s$-এর জন্য
+    $\mSat{M}{!C}[s]$}
+   \item\ollabel{defn:sub:mmodels-until} \indcase{!A}{\Until !B
+    !C}{$\mSat{M}{\indfrm}[t]$ তখনই এবং কেবল তখনই, যখন এমন কোনো $t' \in
+    T$ আছে যাতে $t \prec t'$ এবং $\mSat{M}{!B}[t']$; আর $t \prec s \prec t'$-যুক্ত প্রত্যেক $s$-এর জন্য
+    $\mSat{M}{!C}[s]$}
+  \end{enumerate}
+\end{defn}
+
+$\Since  !B !C$-এর স্বাভাবিক পাঠ: ``যখন $!B$ সত্য ছিল, তখন থেকে $!C$ সত্য রয়েছে।'' আর $\Until !B !C$-এর স্বাভাবিক পাঠ: ``যতক্ষণ না $!B$ সত্য হবে, ততক্ষণ $!C$ সত্য থাকবে।''
+
+\end{document}

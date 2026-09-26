@@ -2688,6 +2688,7 @@ for row in rows:
             and target_math - source_math == expected_added
         )
     modal_tableaux_math_fix = False
+    temporal_math_fix = False
     if 460 <= unit_number <= 469:
         expected_modal_tableaux_corrections = {
             "OLP-0462": {"BN-SRC-371"},
@@ -5385,6 +5386,27 @@ for row in rows:
             assert wrong in source and wrong not in checked_target
             assert r"\RightLabel{\LeftR{\lnot}}" in checked_target
         tex_command_check = {"modal_sequent_rules_proofs_and_anchors_reviewed": True}
+    elif 475 <= unit_number <= 480:
+        assert set(documented) == (
+            {"BN-SRC-390"} if row["unit_id"] == "OLP-0478" else set()
+        )
+        temporal_review_anchors = {
+            "OLP-0475": (r"\olpart{aml}", r"\begin{editorial}", r"\olimport[epistemic-logic]{epistemic-logic}"),
+            "OLP-0476": (r"\olchapter{aml}{tl}", r"\olimport{possible-histories}"),
+            "OLP-0477": (r"\olfileid{aml}{tl}{int}", r"\olsection{ভূমিকা}"),
+            "OLP-0478": (r"\ollabel{defn:tmodels}", r"\ollabel{defn:sub:mmodels-g}", r"BN-SRC-390"),
+            "OLP-0479": (r"\ollabel{tab:correspondence}", r"$\Ftemp \Ftemp p \lif \Ftemp p$"),
+            "OLP-0480": (r"\ollabel{defn:since-until}", r"\ollabel{defn:sub:mmodels-until}"),
+        }
+        assert all(anchor in checked_target for anchor in temporal_review_anchors[row["unit_id"]])
+        if row["unit_id"] == "OLP-0478":
+            assert "$F !A$" in source and "$F !A$" not in checked_target
+            assert "$\\Ftemp !A$" in checked_target
+            temporal_math_fix = (
+                source_math - target_math == collections.Counter({"F!A": 1})
+                and target_math - source_math == collections.Counter({r"\Ftemp!A": 1})
+            )
+        tex_command_check = {"temporal_semantics_frames_and_operators_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5502,6 +5524,7 @@ for row in rows:
             modal_completeness_math_fix,
             filtrations_math_fix,
             modal_tableaux_math_fix,
+            temporal_math_fix,
             shared_audit_fix,
         )
     )

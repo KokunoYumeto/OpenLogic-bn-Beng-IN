@@ -1,0 +1,119 @@
+% Part: applied-modal-logics
+% Chapter: temporal-logic
+% Section: language-epistemic-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{tl}{sem}
+
+\olsection{কালগত যুক্তিবিদ্যার অর্থতত্ত্ব}
+
+\begin{defn}
+কালগত যুক্তিবিদ্যার মৌলিক ভাষায় থাকে
+\begin{enumerate}
+  \tagitem{prvFalse}{!!{falsity} বোঝানো বচনমূলক ধ্রুবক~$\lfalse$।}{}
+  \tagitem{prvTrue}{!!{truth} বোঝানো বচনমূলক ধ্রুবক~$\ltrue$।}{}
+  \item !!{propositional variable}s-এর একটি !!{denumerable}s সেট: $\Obj
+    p_0$, $\Obj p_1$, $\Obj p_2$, \dots
+  \item বচনমূলক সংযোজকগুলি: \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (নঞর্থকরণ)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (সংযোজন)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (বিয়োজন)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}।
+  \item অতীত-অপারেটর $\Ptemp$ ও $\Htemp$।
+  \item ভবিষ্যৎ-অপারেটর $\Ftemp$ ও $\Gtemp$।
+\end{enumerate}
+\end{defn}
+
+পরে অন্য ধরনের মোডাল অপারেটর যোগ করার সম্ভাবনা নিয়ে আলোচনা করব।
+
+\begin{defn}
+কালগত ভাষার \emph{!!^{formula}s} নিম্নরূপে আরোহভাবে সংজ্ঞায়িত:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ একটি পারমাণবিক !!{formula}।}{}
+
+\tagitem{prvTrue}{$\ltrue$ একটি পারমাণবিক !!{formula}।}{}
+
+\item প্রত্যেক বচনমূলক চলক $\Obj p_i$ একটি (পারমাণবিক) !!{formula}।
+
+\tagitem{prvNot}{$!A$ !!a{formula} হলে $\lnot !A$-ও
+  !!a{formula}।}{}
+
+\tagitem{prvAnd}{$!A$ ও $!B$ !!{formula}s হলে $(!A \land
+  !B)$ একটি !!a{formula}।}{}
+
+\tagitem{prvOr}{$!A$ ও $!B$ !!{formula}s হলে $(!A \lor !B)$
+  একটি !!a{formula}।}{}
+
+\tagitem{prvIf}{$!A$ ও $!B$ !!{formula}s হলে $(!A \lif !B)$
+  একটি !!a{formula}।}{}
+
+\tagitem{prvIff}{$!A$ ও $!B$ !!{formula}s হলে $(!A \liff !B)$
+  একটি !!a{formula}।}{}
+
+% BN-SRC-390: the future operator here is \Ftemp, not the bare letter F.
+\item $!A$ !!a{formula} হলে $\Ptemp  !A$, $\Htemp  !A$, $\Ftemp !A$, $\Gtemp  !A$—সবই
+  !!{formula}s।
+
+\tagitem{limitClause}{অন্য কিছুই !!a{formula} নয়।}{}
+\end{enumerate}
+\end{defn}
+
+অন্য অভিপ্রায়গত যুক্তিবিদ্যার মতোই কালগত যুক্তিবিদ্যার অর্থতত্ত্ব সম্পর্কভিত্তিক মডেলের সাহায্যে দেওয়া হয়।
+
+\begin{defn}
+  কালগত ভাষার একটি \emph{মডেল} হল ত্রয়ী
+  $\mModel{M} = \tuple{T, \prec, V}$, যেখানে
+  \begin{enumerate}
+  \item $T$ একটি অশূন্য সমষ্টি, যার সদস্যদের সময়ের বিন্দু হিসেবে ব্যাখ্যা করা হয়।
+  \item $\prec$ হল $T$-এর ওপর একটি দ্বিপদী সম্পর্ক।
+  \item $V$ এমন একটি অপেক্ষক, যা প্রত্যেক !!{propositional
+    variable}~$p$-কে সময়ের বিন্দুগুলির একটি সমষ্টি $V(p)$ নির্ধারণ করে দেয়।
+  \end{enumerate}
+  $t \prec t'$ হলে আমরা বলি, $t$ বিন্দুটি~$t'$-এর \emph{পূর্ববর্তী}।
+  $t \in V(p)$ হলে বলি, $p$ বিন্দু~$t$-তে \emph{সত্য}।
+\end{defn}
+
+এখন পর্যন্ত আমাদের পূর্ববর্তিতা-সম্পর্ক $\prec$-এর ওপর কোনো শর্ত আরোপ করা হয়নি। তাই আপাতত কালগত মডেলগুলির গঠনে কোনো বাধা নেই: মডেলে সময় রৈখিক, শাখাবিশিষ্ট, চক্রাকার, কিংবা অন্য যেকোনো গঠনের হতে পারে।
+
+স্বাভাবিক মোডাল যুক্তিবিদ্যার মতোই প্রত্যেক কালগত মডেল নির্ধারণ করে, তার কোন বিন্দুতে কোন !!{formula}s সত্য। সম্পর্কভিত্তিক অর্থতত্ত্বের মৌলিক ধারণাটি বোঝাতে আমরা একই রীতি ব্যবহার করি: ``মডেল $\mModel{M}$, বিন্দু~$t$-তে !!{formula}~$!A$-কে সত্য করে''। সম্পর্কটি আরোহভাবে সংজ্ঞায়িত; মোডাল নয় এমন সব অপারেটরের জন্য সংজ্ঞাটি স্বাভাবিক মোডাল যুক্তিবিদ্যার ক্ষেত্রের মতোই।
+
+\begin{defn}\ollabel{defn:tmodels}
+  $\mModel M$-তে \emph{বিন্দু~$t$-তে !!a{formula}~$!A$-এর সত্যতা}, প্রতীকে:
+  $\mSat{M}{!A}[t]$, নিম্নরূপে আরোহভাবে সংজ্ঞায়িত:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat{M}{\lfalse}[t]$ কখনোই নয়।}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[t]$ সর্বদা।}}{}
+  \item $\mSat{M}{p}[t]$ তখনই এবং কেবল তখনই, যখন $t \in V(p)$
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[t]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat/{M}{!B}[t]$।}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[t]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[t]$ এবং $\mSat{M}{!C}[t]$।}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[t]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[t]$ অথবা $\mSat{M}{!C}[t]$} (অথবা উভয়ই)।}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[t]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat/{M}{!B}[t]$ অথবা $\mSat{M}{!C}[t]$।}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[t]$ তখনই এবং কেবল তখনই, যখন
+    হয় $\mSat{M}{!B}[t]$ ও $\mSat{M}{!C}[t]$ উভয়ই,
+    নয়তো $\mSat{M}{!B}[t]$-ও নয়, $\mSat{M}{!C}[t]$-ও নয়।}}{}
+  \item\ollabel{defn:sub:mmodels-p}
+    \indcase{!A}{\Ptemp  !B}{$\mSat{M}{\indfrm}[t]$ তখনই এবং কেবল তখনই, যখন
+    এমন কোনো $t' \in T$ আছে যাতে $t' \prec t$ এবং $\mSat{M}{!B}[t']$}
+\item\ollabel{defn:sub:mmodels-h}
+    \indcase{!A}{\Htemp  !B}{$\mSat{M}{\indfrm}[t]$ তখনই এবং কেবল তখনই, যখন
+    $t' \prec t$-যুক্ত প্রত্যেক $t' \in T$-এর জন্য $\mSat{M}{!B}[t']$}
+   \item\ollabel{defn:sub:mmodels-f}
+    \indcase{!A}{\Ftemp  !B}{$\mSat{M}{\indfrm}[t]$ তখনই এবং কেবল তখনই, যখন
+    এমন কোনো $t' \in T$ আছে যাতে $t \prec t'$ এবং $\mSat{M}{!B}[t']$}
+\item\ollabel{defn:sub:mmodels-g}
+    \indcase{!A}{\Gtemp  !B}{$\mSat{M}{\indfrm}[t]$ তখনই এবং কেবল তখনই, যখন
+    $t \prec t'$-যুক্ত প্রত্যেক $t' \in T$-এর জন্য $\mSat{M}{!B}[t']$}
+  \end{enumerate}
+\end{defn}
+
+অর্থতত্ত্ব থেকে বোঝা যেতে পারে, $\Ptemp$ ও~$\Htemp$ যেমন পরস্পরের দ্বৈত, তেমনি $\Ftemp$ ও $\Gtemp$-ও দ্বৈত। তাই $\Htemp  !A$-কে $\lnot \Ptemp \lnot !A$ দিয়ে সংজ্ঞায়িত করতে পারি; $\Gtemp$ ও~$\Ftemp$-এর ক্ষেত্রেও একই কথা প্রযোজ্য।
+
+\end{document}

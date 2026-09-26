@@ -1,0 +1,103 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: topological-semantics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{top}
+
+\olsection{টপোলজিক্যাল অর্থবিজ্ঞান}
+
+স্বজ্ঞাবাদী যুক্তিবিদ্যার অর্থবিজ্ঞান দেওয়ার আরেকটি উপায় হলো
+টপোলজির গাণিতিক ধারণা ব্যবহার করা।
+
+\begin{defn}
+  ধরি $X$ একটি সেট। $X$-এর ওপর একটি \emph{টপোলজি} হলো
+  $\Top{O} \subseteq \Pow{X}$ সেট, যা নিচের ধর্মগুলি পূরণ করে।
+  $\Top{O}$-এর !!{element}s-কে টপোলজিটির \emph{উন্মুক্ত সেট}
+  বলে। $X$ এবং $\Top{O}$ মিলে একটি \emph{টপোলজিক্যাল স্থান}
+  গঠিত হয়।
+  \begin{enumerate}
+  \item শূন্য সেট ও সম্পূর্ণ স্থান উন্মুক্ত: $\emptyset$, $X \in
+    \Top{O}$।
+  \item উন্মুক্ত সেটগুলি সসীম ছেদে আবদ্ধ: $U$, $V \in \Top{O}$
+    হলে $U \cap V \in \Top{O}$।
+  \item উন্মুক্ত সেটগুলি নির্বিচার সংযোগে আবদ্ধ: প্রত্যেক
+    $i \in I$-এর জন্য $U_i \in \Top{O}$ হলে
+    $\bigcup \Setabs{U_i}{i \in I} \in \Top{O}$।
+  \end{enumerate}
+\end{defn}
+
+% BN-SRC-398: X with a topology is a topological space, not itself a topology.
+প্রসঙ্গ থেকে উন্মুক্ত সেটগুলির সংগ্রহ বোঝা গেলে টপোলজিক্যাল
+স্থানটিকে শুধু $X$ লিখতে পারি। মনে রাখতে হবে, উন্মুক্ত সেটের
+একটি সংগ্রহ নির্দিষ্ট করার পরেই $X$-কে টপোলজিক্যাল স্থান বলা যায়।
+
+\begin{defn}
+  স্বজ্ঞাবাদী বচনমূলক যুক্তিবিদ্যার একটি \emph{টপোলজিক্যাল মডেল}
+  হলো ত্রয়ী $\mModel{X} = \tuple{X, \Top{O}, V}$, যেখানে
+  $\Top{O}$ হলো $X$-এর ওপর একটি টপোলজি এবং $V$ এমন অপেক্ষক,
+  যা প্রত্যেক বচনমূলক চলকের সঙ্গে $\Top{O}$-এর একটি উন্মুক্ত সেট
+  যুক্ত করে।
+
+  টপোলজিক্যাল মডেল~$\mModel{X}$ দেওয়া থাকলে
+  $\Prop{X}{!A}$-কে নিচের মতো আরোহক্রমে সংজ্ঞায়িত করতে পারি:
+  \begin{enumerate}
+  \item $\Prop{X}{\lfalse} = \emptyset$
+  \item $\Prop{X}{p} = V(p)$
+  \item $\Prop{X}{!A \land !B} = \Prop{X}{!A} \cap \Prop{X}{!B}$
+  \item $\Prop{X}{!A \lor !B} = \Prop{X}{!A} \cup \Prop{X}{!B}$
+  \item $\Prop{X}{!A \lif !B} = \Interior{(X \setminus \Prop{X}{!A}) \cup
+    \Prop{X}{!B}}$
+  \end{enumerate}
+  এখানে $\Interior{V}$ হলো সেই অপেক্ষক, যা $V \subseteq X$ সেটকে
+  তার \emph{অভ্যন্তরে} পাঠায়; অর্থাৎ সেই সেটের মধ্যে থাকা সব উন্মুক্ত
+  সেটের সংযোগে। অন্যভাবে,
+  \[
+  \Interior{V} = \bigcup \Setabs{U}{U \subseteq V \text{ এবং } U \in \Top{O}}.
+  \]
+\end{defn}
+
+যেকোনো সেটের অভ্যন্তর উন্মুক্ত, কারণ তা উন্মুক্ত সেটগুলির
+সংযোগ। তাই $\Prop{X}{!A}$ সর্বদাই উন্মুক্ত সেট।
+
+টপোলজিক্যাল অর্থবিজ্ঞান খুব বিমূর্ত হলেও তার পেছনের ধারণা
+বোঝার কিছু উপায় আছে। ধরি $X$-এর !!{element}s, বা
+``বিন্দু''গুলি, এমন বিন্দু যেখানে উক্তি মূল্যায়ন করা যায়। যেসব
+বিন্দুতে $!A$ সত্য, তাদের সকলের সেটই $!A$-এর প্রকাশিত বচন।
+বিন্দুগুলির যেকোনো সেট সম্ভাব্য বচন নয়; কেবল $\Top{O}$-এর
+!!{element}s-ই তা হতে পারে। $!A \Entails !B$ যদি এবং কেবল
+যদি $!A$ সত্য হওয়া প্রত্যেক বিন্দুতে $!B$-ও সত্য হয়; অর্থাৎ সব
+$X$-এর জন্য $\Prop{X}{!A} \subseteq \Prop{X}{!B}$। অসংগত
+উক্তি~$\lfalse$ কখনো সত্য নয়, তাই
+$\Prop{X}{\lfalse} = \emptyset$।
+
+% BN-SRC-399: use non-strict inclusion in two entailment conditions; identity entails itself.
+স্বজ্ঞাবাদীভাবে বৈধ নিয়মগুলি সত্য হতে গেলে $!B \land !C$,
+$!B \lor !C$ এবং $!B \lif !C$-এর প্রকাশিত বচনগুলি $!B$ ও~$!C$-এর
+প্রকাশিত বচনগুলির সঙ্গে কীভাবে সম্পর্কিত হতে হবে? অর্থাৎ $!A
+\Proves !B$ যদি এবং কেবল যদি $\Prop{X}{!A} \subseteq
+\Prop{X}{!B}$ হয়, তা কীভাবে নিশ্চিত করব? যেকোনো $!A$-এর জন্য
+$\lfalse \Proves !A$ চাই; এটি সত্য, কারণ সব $U$-এর জন্য
+$\emptyset \subseteq U$। যেহেতু $!B \land !C \Proves !B$,
+তাই $\Prop{X}{!B \land !C} \subseteq \Prop{X}{!B}$ চাই;
+একইভাবে $\Prop{X}{!B \land !C} \subseteq \Prop{X}{!C}$।
+$W \subseteq U$ এবং $W \subseteq V$ পূরণকারী বৃহত্তম সেট
+$U \cap V$। বিপরীত দিকে $!B \Proves !B \lor !C$ এবং
+$!C \Proves !B \lor !C$; তাই
+$\Prop{X}{!B} \subseteq \Prop{X}{!B \lor !C}$ এবং
+$\Prop{X}{!C} \subseteq \Prop{X}{!B \lor !C}$ চাই।
+$U \subseteq W$ এবং $V \subseteq W$ পূরণকারী ক্ষুদ্রতম সেট~$W$
+হলো $U \cup V$।
+
+$\lif$-এর সংজ্ঞা একটু জটিল: $!A \lif !B$ এমন সবচেয়ে দুর্বল
+বচন প্রকাশ করে, যা $!A$-এর সঙ্গে মিলে $!B$-কে নিহিত করে।
+$!A \lif !B$ ও $!A$ একসঙ্গে $!B$-কে নিহিত করে, তা
+$(!A \lif !B) \land !A \Proves !B $ থেকে স্পষ্ট। তাই
+$\Prop{X}{!A \lif !B}$ এমন বৃহত্তম উন্মুক্ত সেট হওয়া উচিত,
+যার জন্য $\Prop{X}{!A \lif !B} \cap \Prop{X}{!A}
+\subseteq \Prop{X}{!B}$; এই শর্ত থেকেই আমাদের সংজ্ঞা আসে।
+
+\end{document}

@@ -1,0 +1,80 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{sem}
+
+\olsection{অর্থবিজ্ঞানগত ধারণাসমূহ}
+
+\begin{defn}
+  $!A$-কে \emph{মডেল $\mModel{M} = \tuple{W,R,V}$-এ সত্য}
+  বলি, $\mSat{M}{!A}$, যদি এবং কেবল যদি প্রত্যেক $w \in W$-এর
+  জন্য $\mSat{M}{!A}[w]$। $!A$-কে \emph{বৈধ} বলি,
+  $\Entails !A$, যদি এবং কেবল যদি সব মডেলে তা সত্য হয়।
+  !!{formula}s-এর সেট~$\Gamma$ থেকে $!A$ \emph{নিহিত} হয়,
+  $\Gamma \Entails !A$, যদি এবং কেবল যদি প্রত্যেক
+  মডেল~$\mModel{M}$ ও প্রত্যেক এমন~$w$-এর জন্য
+  $\mSat{M}{\Gamma}[w]$ হলে $\mSat{M}{!A}[w]$।
+\end{defn}
+
+\begin{prop}\ollabel{prop:sat-entails}
+  \begin{enumerate}
+  \item\ollabel{prop:sat-entails1} যদি $\mSat{M}{\Gamma}[w]$
+    এবং $\Gamma \Entails !A$, তবে $\mSat{M}{!A}[w]$।
+  \item\ollabel{prop:sat-entails2} যদি $\mSat{M}{\Gamma}$
+    এবং $\Gamma \Entails !A$, তবে $\mSat{M}{!A}$।
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  % BN-SRC-397: the first proof must use the local premise at w; the global argument proves item 2.
+  \begin{enumerate}
+  \item ধরি $\mSat{M}{\Gamma}[w]$। যেহেতু
+    $\Gamma \Entails !A$, নিহিতার্থের সংজ্ঞা থেকে সরাসরি
+    $\mSat{M}{!A}[w]$ পাই।
+  \item ধরি $\mSat{M}{\Gamma}$। তবে প্রত্যেক $u \in W$-এর
+    জন্য $\mSat{M}{\Gamma}[u]$; তাই
+    \olref{prop:sat-entails1} অনুসারে প্রত্যেক এমন জগতের জন্য
+    $\mSat{M}{!A}[u]$। অতএব $\mSat{M}{!A}$।
+  \end{enumerate}
+\end{proof}
+
+
+\begin{defn}\ollabel{defn:restrict}
+  ধরি $\mModel{M}$ একটি সম্পর্কভিত্তিক মডেল এবং $w \in W$।
+  $w$-তে~$\mModel{M}$-এর \emph{সীমায়ন}
+  $\mModel{M}_w=\tuple{W_w, R_w, V_w}$ নিচের মতো দেওয়া হয়:
+  \begin{align*}
+    W_w & = \Setabs{u \in W}{Rwu},\\
+    R_w  & = R \cap (W_w)^2, \text{ এবং}\\
+    V_w(p) & = V(p) \cap W_w.
+  \end{align*}
+\end{defn}
+
+\begin{prop}\ollabel{prop:restrict}
+  $\mSat{M}{!A}[w]$ যদি এবং কেবল যদি $\mSat{M_w}{!A}$।
+\end{prop}
+
+\begin{prob}
+  \olref[int][sem][sem]{prop:restrict} প্রমাণ করুন।
+\end{prob}
+
+\begin{prop}
+  ধরি প্রত্যেক এমন মডেল~$\mModel{M}$-এর জন্য, যেখানে
+  $\mSat{M}{\Gamma}$, সেখানে $\mSat{M}{!A}$। তবে
+  $\Gamma \Entails !A$।
+\end{prop}
+
+\begin{proof}
+  ধরি $\mSat{M}{\Gamma}[w]$। প্রত্যেক $!B \in \Gamma$-এর
+  জন্য \olref{prop:restrict} প্রয়োগ করলে
+  $\mSat{M_w}{\Gamma}$ পাই। অনুমান অনুযায়ী তখন
+  $\mSat{M_w}{!A}$। আবার \olref{prop:restrict} প্রয়োগ করে
+  $\mSat{M}{!A}[w]$ পাই।
+\end{proof}
+
+\end{document}

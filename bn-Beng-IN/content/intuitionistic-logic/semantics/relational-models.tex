@@ -1,0 +1,77 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: relational-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{rel}
+
+\olsection{\usetoken{P}{relational model}}
+
+স্বজ্ঞাবাদী বচনমূলক যুক্তিবিদ্যার সুনির্দিষ্ট অর্থবিজ্ঞান দিতে হলে
+প্রথমে সংজ্ঞায়িত করতে হবে কোন বস্তুকে মডেল ধরা হবে, যার সাপেক্ষে
+!!{formula}s মূল্যায়ন করা যায়। সেই সংজ্ঞার ভিত্তিতে বৈধতা ও
+নিহিতার্থের মতো অর্থবিজ্ঞানগত ধারণাও সংজ্ঞায়িত করা সম্ভব।
+!!{relational model}s দিয়ে এ রকম একটি অর্থবিজ্ঞান পাওয়া যায়।
+
+\begin{defn}
+  স্বজ্ঞাবাদী বচনমূলক যুক্তিবিদ্যার !!^a{relational model} হলো
+  একটি ত্রয়ী $\mModel{M} = \tuple{W, R, V}$, যেখানে
+  \begin{enumerate}
+  \item $W$ একটি অশূন্য সেট,
+  \item $R$ হলো~$W$-এর ওপর একটি আংশিক ক্রম (অর্থাৎ প্রতিবিম্বী,
+    বিপ্রতিসম ও পরিযায়ী দ্বিপদী সম্পর্ক), এবং
+  \item $V$ এমন একটি অপেক্ষক, যা প্রত্যেক !!{propositional
+    variable}~$p$-এর সঙ্গে~$W$-এর একটি উপসেট যুক্ত করে, যার জন্য
+  \item $V$ হলো $R$-এর সাপেক্ষে একঘেয়ে: $w \in V(p)$ এবং
+    $Rww'$ হলে $w' \in V(p)$।
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}\ollabel{defn:true-at-w}
+  $\mModel{M}$-এ $w$-তে $!A$-এর \emph{সত্য হওয়া},
+  $\mSat{M}{!A}[w]$, আমরা নিচের মতো আরোহক্রমে সংজ্ঞায়িত করি:
+  \begin{enumerate}
+  \item \indcase{!A}{p}{$\mSat{M}{\indfrm}[w]$ যদি এবং কেবল যদি
+    $w \in V(p)$।}
+  \item \indcase{!A}{\lfalse}{$\mSat{M}{\indfrm}[w]$ সত্য নয়।}
+  \item \indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ যদি এবং
+    কেবল যদি $Rww'$-যুক্ত কোনো $w'$-তেই $\mSat{M}{!B}[w']$ না হয়।}
+  \item \indcase{!A}{!B \land !C}{$\mSat{M}{\indfrm}[w]$ যদি
+    এবং কেবল যদি $\mSat{M}{!B}[w]$ এবং $\mSat{M}{!C}[w]$।}
+  \item \indcase{!A}{!B \lor !C}{$\mSat{M}{\indfrm}[w]$ যদি
+    এবং কেবল যদি $\mSat{M}{!B}[w]$ অথবা $\mSat{M}{!C}[w]$
+    (অথবা উভয়ই)।}
+  \item \indcase{!A}{!B \lif !C}{$\mSat{M}{\indfrm}[w]$
+    যদি এবং কেবল যদি প্রত্যেক $Rww'$-যুক্ত $w'$-এর ক্ষেত্রে
+    $\mSat{M}{!B}[w']$ না হয় অথবা $\mSat{M}{!C}[w']$ হয়}
+    (অথবা উভয়ই)।
+  \end{enumerate}
+  $\mSat{M}{!A}[w]$ সত্য না হলে আমরা $\mSat/{M}{!A}[w]$ লিখি।
+  $\Gamma$ যদি !!{formula}s-এর একটি সেট হয়, তবে
+  $\mSat{M}{\Gamma}[w]$ বোঝায় যে প্রত্যেক $!B \in \Gamma$-এর
+  জন্য $\mSat{M}{!B}[w]$।
+\end{defn}
+
+\begin{prob}
+  \olref[int][sem][rel]{defn:true-at-w} অনুযায়ী দেখান যে
+  $\mSat{M}{\lnot !A}[w]$ যদি এবং কেবল যদি
+  $\mSat{M}{!A \lif \lfalse}[w]$।
+\end{prob}
+
+\begin{prop}\ollabel{prop:true-monotonic}
+  জগতে সত্যতা $R$-এর সাপেক্ষে একঘেয়ে: অর্থাৎ
+  $\mSat{M}{!A}[w]$ এবং $Rww'$ হলে $\mSat{M}{!A}[w']$।
+\end{prop}
+
+\begin{proof}
+  অনুশীলন।
+\end{proof}
+
+\begin{prob}
+  \olref[int][sem][rel]{prop:true-monotonic} প্রমাণ করুন।
+\end{prob}
+
+\end{document}

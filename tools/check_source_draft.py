@@ -5459,6 +5459,21 @@ for row in rows:
         }
         assert all(anchor in target for anchor in intuitionistic_intro_anchors[row["unit_id"]])
         tex_command_check = {"intuitionistic_introduction_hierarchy_and_formal_anchors_reviewed": True}
+    elif 498 <= unit_number <= 502:
+        expected_fixes = {
+            "OLP-0501": {"BN-SRC-397"},
+            "OLP-0502": {"BN-SRC-398", "BN-SRC-399"},
+        }
+        assert set(documented) == expected_fixes.get(row["unit_id"], set())
+        intuitionistic_semantics_anchors = {
+            "OLP-0498": (r"\olchapter{int}{sem}{", r"\olimport{relational-models}", r"\olimport{topological-semantics}"),
+            "OLP-0499": (r"\olfileid{int}{sem}{int}", r"$Rww'$", r"$\lnot(!A \land \lnot !A)$"),
+            "OLP-0500": (r"\olfileid{int}{sem}{rel}", r"\ollabel{defn:true-at-w}", r"\ollabel{prop:true-monotonic}"),
+            "OLP-0501": (r"\olfileid{int}{sem}{sem}", r"\ollabel{prop:sat-entails1}", r"\ollabel{prop:restrict}"),
+            "OLP-0502": (r"\olfileid{int}{sem}{top}", r"\Prop{X}{!A \lif !B}", r"\Interior{V}"),
+        }
+        assert all(anchor in target for anchor in intuitionistic_semantics_anchors[row["unit_id"]])
+        tex_command_check = {"intuitionistic_semantics_hierarchy_truth_and_topology_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5502,6 +5517,28 @@ for row in rows:
         == collections.Counter({r"!A_1\land!A_1": 1, r"!A\lif(!A\lif\lfalse)\lif\lfalse": 1})
         and target_math - source_math
         == collections.Counter({r"!A_1\land!A_2": 1, r"!A\lif((!A\lif\lfalse)\lif\lfalse)": 1})
+    )
+    intuitionistic_semantic_proof_math_fix = (
+        row["unit_id"] == "OLP-0501"
+        and set(documented) == {"BN-SRC-397"}
+        and source_math - target_math
+        == collections.Counter({r"\mSat{M}{!A}[w]": 1, r"\mSat{M}{\Gamma}[w]": 1})
+        and target_math - source_math
+        == collections.Counter({r"\mSat{M}{!A}": 1, r"\mSat{M}{!A}[u]": 1})
+    )
+    intuitionistic_topological_inclusion_math_fix = (
+        row["unit_id"] == "OLP-0502"
+        and set(documented) == {"BN-SRC-398", "BN-SRC-399"}
+        and source_math - target_math
+        == collections.Counter({
+            r"\Prop{X}{!A}\subset\Prop{X}{!B}": 1,
+            r"\Prop{X}{!A\lif!B}\cap\Prop{X}{!A}\subset\Prop{X}{!B}": 1,
+        })
+        and target_math - source_math
+        == collections.Counter({
+            r"\Prop{X}{!A}\subseteq\Prop{X}{!B}": 1,
+            r"\Prop{X}{!A\lif!B}\cap\Prop{X}{!A}\subseteq\Prop{X}{!B}": 1,
+        })
     )
     math_ok = any(
         (
@@ -5596,6 +5633,8 @@ for row in rows:
             shared_audit_fix,
             intuitionistic_bhk_math_fix,
             intuitionistic_natural_deduction_math_fix,
+            intuitionistic_semantic_proof_math_fix,
+            intuitionistic_topological_inclusion_math_fix,
         )
     )
     controls_ok = (

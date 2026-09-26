@@ -1,0 +1,217 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T18:05:19.604013+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "b15f0250e661e2705ad48c7dd3ea83aa5176f2c4",
+  "parent": "7846da74eb05614022a83c7ef2ba5b09f51601a9",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "dd748c924347c08be4223484c71ca28f55fef4fd",
+    "receipt": "PUBLIC_READBACK_SOURCE_489_2026-09-26.json",
+    "receipt_sha256": "743ac05cabd224fdee9aec221e46e5ec8336ec06f894aea4d771e06699f597d6"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 13740936,
+  "archive_sha256": "d40cc21e735e257ad2ed51ff1e9c1fd1db894119a6ec90d096f667f1531744b1",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/axiomatic-derivations.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/axiomatic-derivations.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/axiomatic-derivations.tex",
+      "content_type": "text/plain",
+      "bytes": 3891,
+      "sha256": "2c00df1d71a017f875f9125673fd1f3058f39bc348aac2e90eb31b6cd6503299"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/bhk-interpretation.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/bhk-interpretation.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/bhk-interpretation.tex",
+      "content_type": "text/plain",
+      "bytes": 14263,
+      "sha256": "9fd3e953202aad9eb92a49c6db296ff209ec251927087e8e067f97e570eae1fd"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/constructive-reasoning.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/constructive-reasoning.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/constructive-reasoning.tex",
+      "content_type": "text/plain",
+      "bytes": 8202,
+      "sha256": "ef2318fc3de6347f1f6909ec9b52006241cb77cd03fea972c5ee6353881725a3"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 361,
+      "sha256": "f6014072e1f58e3d809395731a2866dd503bafbfe8d2ca53189bb9a3f3031293"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/natural-deduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/natural-deduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/natural-deduction.tex",
+      "content_type": "text/plain",
+      "bytes": 11681,
+      "sha256": "6b270e88f51a5b61f9890bf6d9c9ee819b8643821c93fa8d31a323eda646979e"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/syntax.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/syntax.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/introduction/syntax.tex",
+      "content_type": "text/plain",
+      "bytes": 4919,
+      "sha256": "a7cc31737045d8aec1604f2d1ed693e089b1fce678ea60a213a829aa9c1d05fc"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/intuitionistic-logic.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/intuitionistic-logic.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b15f0250e661e2705ad48c7dd3ea83aa5176f2c4/bn-Beng-IN/content/intuitionistic-logic/intuitionistic-logic.tex",
+      "content_type": "text/plain",
+      "bytes": 384,
+      "sha256": "c89dfc4223e0f7797bb19cbfed96525ecd616e6f070fa1bd66fd8e089c8f5766"
+    }
+  ],
+  "changed_files_verified": 21,
+  "translated_tex_files_in_commit": 7,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 496,
+  "draft_untranslated_total": 226,
+  "segments": 5547,
+  "translated_segments": 4690,
+  "new_batch_segments": 95,
+  "new_batch_translated_segments": 73,
+  "new_batch_unchanged_segments": 22,
+  "source_correction_records": 403,
+  "new_source_correction_records": 4,
+  "source_normalization_records": 3,
+  "translation_decisions": 365,
+  "provisional_translation_decisions": 346,
+  "translation_decision_occurrences": 30408,
+  "decisions_with_exact_source_wording": 346,
+  "ai_assistance": {
+    "product": "OpenAI Codex",
+    "earlier_model": "GPT-5.6 Sol",
+    "earlier_effort": "Ultra",
+    "current_batch_model": "GPT-6 Sol",
+    "current_batch_effort": "Ultra",
+    "independent_human_review_claimed": false
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 496,
+    "blocks": 5547,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7201,
+      "sha256": "24651866f494fa548c187450aa8611814336036ae1d9819e808be2effbdc6c44"
+    },
+    {
+      "filename": "RELEASE_NOTES_0_3_0.md",
+      "bytes": 4887,
+      "sha256": "3e2a62a07ee05356b623d2cddfeab3603b62a51192857a6135f3d4c700ac0301"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/introduction/axiomatic-derivations.tex",
+      "bytes": 3891,
+      "sha256": "2c00df1d71a017f875f9125673fd1f3058f39bc348aac2e90eb31b6cd6503299"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/introduction/bhk-interpretation.tex",
+      "bytes": 14263,
+      "sha256": "9fd3e953202aad9eb92a49c6db296ff209ec251927087e8e067f97e570eae1fd"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/introduction/constructive-reasoning.tex",
+      "bytes": 8202,
+      "sha256": "ef2318fc3de6347f1f6909ec9b52006241cb77cd03fea972c5ee6353881725a3"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/introduction/introduction.tex",
+      "bytes": 361,
+      "sha256": "f6014072e1f58e3d809395731a2866dd503bafbfe8d2ca53189bb9a3f3031293"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/introduction/natural-deduction.tex",
+      "bytes": 11681,
+      "sha256": "6b270e88f51a5b61f9890bf6d9c9ee819b8643821c93fa8d31a323eda646979e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/introduction/syntax.tex",
+      "bytes": 4919,
+      "sha256": "a7cc31737045d8aec1604f2d1ed693e089b1fce678ea60a213a829aa9c1d05fc"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/intuitionistic-logic.tex",
+      "bytes": 384,
+      "sha256": "c89dfc4223e0f7797bb19cbfed96525ecd616e6f070fa1bd66fd8e089c8f5766"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 8921188,
+      "sha256": "c360a264f6361dce9ed59e66be09386c7b117f54252550eabbb4886683ba36e5"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 309752,
+      "sha256": "0567d8fcf9aaaa08b980048c1a2294e9e7a60b2cfefa03ff6827b81585ce247c"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_INTUITIONISTIC_INTRODUCTION.md",
+      "bytes": 9677,
+      "sha256": "3adb3997e97bbbf57ec0474cef4d1506ab7272ef04e0eddbe9367d33286931b5"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "537e92fb76ec000af22265e642b42ca0ad1a7f40b3b5b3366cdf9304ba496e44"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 779058,
+      "sha256": "2b2d96512179f5acce40ec0609b9b9239e395210195f1aa4564260f5b78bd6e2"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 333251,
+      "sha256": "be7ea745fde0bc28ad6e67b10da0587ed7364c2b15e230525af721dd458587d2"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 18444257,
+      "sha256": "958cdc5d9a848fe3187e18a56e35b565fac5d47b431c9616374ad591703d39d8"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 14430205,
+      "sha256": "7efc7442e964f4e81ae157eb41c0549bbd9660331971021992e69a2d5fcb3ddc"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1408972,
+      "sha256": "6f7124a0d6cc2301ff447dbb14b5b0cd8a19f01a0425e52e1aec187990490715"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 8344402,
+      "sha256": "ce1ef7a7e2fcec1babbea7de2864643d7a7c76c43ac7580755803b09be9a8248"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 267029,
+      "sha256": "f234ea8eb6193605a1e35fe50800ff6953040dfcbd3b852520e76627d5d2304c"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 270024,
+      "sha256": "4b8990298f3acf8c4945e946cb9c45ba3782c32ccb9cbcf6fdee35f262d04586"
+    }
+  ]
+}

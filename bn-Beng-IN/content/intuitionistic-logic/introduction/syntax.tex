@@ -1,0 +1,77 @@
+% part: intuitionistic-logic
+% chapter: introduction
+% section: syntax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{int}{syn}
+
+\olsection{স্বজ্ঞাবাদী যুক্তিবিদ্যার বাক্যবিন্যাস}
+
+স্বজ্ঞাবাদী যুক্তিবিদ্যার বাক্যবিন্যাস বচনমূলক যুক্তিবিদ্যার মতোই।
+ধ্রুপদি বচনমূলক যুক্তিবিদ্যায় একটি সংযোজককে অন্য সংযোজক দিয়ে
+সংজ্ঞায়িত করা যায়; যেমন, $!A \lif !B$-কে $\lnot !A \lor !B$
+দিয়ে, অথবা $!A \lor !B$-কে $\lnot(\lnot !A \land \lnot
+!B)$ দিয়ে সংজ্ঞায়িত করা যায়। তাই ধ্রুপদি যুক্তিবিদ্যার বিবরণে
+কোনো কোনো সংযোজককে এই সংজ্ঞাগুলির সংক্ষিপ্ত রূপ হিসেবে আনা হয়।
+স্বজ্ঞাবাদী যুক্তিবিদ্যায় তা চলে না, দুটি ব্যতিক্রম ছাড়া:
+$\lnot !A$-কে $!A \lif \lfalse$-এর সংক্ষিপ্ত রূপ হিসেবে
+সংজ্ঞায়িত করা যায়---এবং প্রায়ই করা হয়। সেক্ষেত্রে অবশ্য
+$\lfalse$-কে নিজে আর সংজ্ঞায়িত প্রতীক ধরা চলবে না!{} এছাড়া,
+ধ্রুপদি যুক্তিবিদ্যার মতোই $!A \liff !B$-কে $(!A \lif !B) \land
+(!B \lif !A)$ হিসেবে সংজ্ঞায়িত করা যায়।
+
+বচনমূলক স্বজ্ঞাবাদী যুক্তিবিদ্যার !!^{formula}s গড়ে ওঠে
+\emph{!!{propositional variable}s} এবং বচনমূলক ধ্রুবক~$\lfalse$
+থেকে, \emph{যৌক্তিক সংযোজক} ব্যবহার করে। আমাদের আছে:
+
+\begin{enumerate}
+\item !!^a{denumerable} সেট~$\PVar$, যার !!{propositional variable}s
+  হলো $\Obj p_0$, $\Obj p_1$, \dots
+\item !!{falsity} নির্দেশকারী বচনমূলক ধ্রুবক~$\lfalse$।
+\item যৌক্তিক সংযোজকগুলি: $\land$ (সংযোজন), $\lor$ (বিকল্প),
+  $\lif$ (শর্তসূচক)।
+\item বিরামচিহ্ন: (, ), এবং কমা।
+\end{enumerate}
+
+\begin{defn}[সূত্র]
+\ollabel{defn:formulas} বচনমূলক স্বজ্ঞাবাদী যুক্তিবিদ্যার
+\emph{!!{formula}s}-এর সেট~$\Frm[L_0]$ নিচের মতো আরোহক্রমে
+সংজ্ঞায়িত:
+\begin{enumerate}
+\item $\lfalse$ একটি পারমাণবিক !!{formula}।
+
+\item প্রত্যেক !!{propositional variable}~$\Obj p_i$ একটি পারমাণবিক
+  !!{formula}।
+
+\item $!A$ ও $!B$ !!{formula}s হলে $(!A \land
+  !B)$ একটি !!a{formula}।
+
+\item $!A$ ও $!B$ !!{formula}s হলে $(!A \lor !B)$
+  একটি !!a{formula}।
+
+\item $!A$ ও $!B$ !!{formula}s হলে $(!A \lif !B)$
+  একটি !!a{formula}।
+
+\tagitem{limitClause}{এগুলি ছাড়া আর কিছুই !!a{formula} নয়।}{}
+\end{enumerate}
+\end{defn}
+
+উপরে আনা মৌলিক সংযোজকগুলির পাশাপাশি আমরা নিচের \emph{সংজ্ঞায়িত}
+প্রতীকগুলিও ব্যবহার করি: $\lnot$ (নঞর্থকতা) এবং $\liff$
+(!!{biconditional})। সংজ্ঞায়িত অপারেটর দিয়ে গঠিত সূত্রগুলি নিচের
+অর্থে বুঝতে হবে:
+\begin{enumerate}
+\item $\lnot !A$ হলো $!A \lif \lfalse$-এর সংক্ষিপ্ত রূপ।
+
+\item $!A \liff !B$ হলো $(!A \lif !B) \land (!B
+  \lif !A)$-এর সংক্ষিপ্ত রূপ।
+\end{enumerate}
+
+$\lnot$-কে আনুষ্ঠানিকভাবে সংক্ষিপ্ত রূপ হিসেবে ধরা হলেও কখনো
+কখনো সংজ্ঞায় সেটির জন্য আলাদা নিয়ম ও শর্ত দেব, যেন $\lnot$ মৌলিক
+প্রতীক। প্রধানত অনুশীলনী দেওয়ার সুবিধার জন্যই তা করা হবে।
+
+\end{document}

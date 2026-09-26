@@ -2,6 +2,23 @@
   "schema": "openlogic-bn-draft-status/1",
   "as_of_date": "2026-09-26",
   "complete": false,
+  "ai_assistance": {
+    "product": "OpenAI Codex",
+    "earlier_translation_and_review": {
+      "model": "GPT-5.6 Sol",
+      "effort": "Ultra"
+    },
+    "later_translation_and_review": {
+      "model": "GPT-6 Sol",
+      "effort": "Ultra"
+    },
+    "current_batch_OLP_0491_0497": {
+      "model": "GPT-6 Sol",
+      "effort": "Ultra"
+    },
+    "independent_human_review_claimed": false,
+    "reader_facing_notice_bn_Beng_IN": "অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনায় OpenAI Codex—GPT-5.6 Sol (Ultra) এবং GPT-6 Sol (Ultra) ব্যবহৃত হয়েছে। বর্তমান OLP-0491–0497 পর্ব GPT-6 Sol (Ultra)-এ করা। স্বাধীন মানব-পর্যালোচনা দাবি করা হচ্ছে না।"
+  },
   "source": {
     "authority": "OpenLogicProject/OpenLogic",
     "revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
@@ -500,13 +517,20 @@
       "OLP-0488",
       "OLP-0489",
       "OLP-0490",
+      "OLP-0491",
+      "OLP-0492",
+      "OLP-0493",
+      "OLP-0494",
+      "OLP-0495",
+      "OLP-0496",
+      "OLP-0497",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 489,
-    "untranslated_count": 233,
-    "chapter_state": "সেট, সম্পর্ক, অপেক্ষক, সমষ্টির আকার, পাটিগণিতীকরণ ও অসীম সমষ্টির উৎস-অধ্যায়গুলি; বচনমূলক যুক্তিবিদ্যার গঠন ও অর্থতত্ত্ব; প্রমাণপদ্ধতি, সিকোয়েন্ট কলন, স্বাভাবিক অবরোহণ, ট্যাবলো, স্বতঃসিদ্ধিক অবরোহণ ও পূর্ণতা; প্রথম-ক্রমের যুক্তিবিদ্যা ও মডেল তত্ত্বের চিহ্নিত অধ্যায়গুলি; গণনযোগ্যতা, টিউরিং যন্ত্র, অসম্পূর্ণতা, দ্বিতীয়-ক্রমের যুক্তিবিদ্যা, ল্যাম্বডা ক্যালকুলাস ও বহুমানী যুক্তিবিদ্যার চিহ্নিত অধ্যায়গুলি; এবং স্বাভাবিক মোডাল যুক্তিবিদ্যার গঠন ও অর্থতত্ত্ব, কাঠামো-সংজ্ঞায়নযোগ্যতা, স্বতঃসিদ্ধ-পদ্ধতি, পূর্ণতা, ফিল্ট্রেশন, সিদ্ধান্তযোগ্যতা, ট্যাবলো ও সিকোয়েন্ট কলন উৎস-অধ্যায় অনূদিত। শেষোক্ত অধ্যায়কে মূলেই খসড়া বলা হয়েছে; বিশুদ্ধতা ও সম্পূর্ণতার প্রমাণ মূল উৎসে অনুপস্থিত। প্রয়োগমূলক মোডাল যুক্তিবিদ্যার কালগত অধ্যায়ের পাঁচটি আমদানিকৃত বিভাগসহ পুরো উৎস-অধ্যায় অনূদিত; জ্ঞানতাত্ত্বিক অধ্যায়ের সব আটটি আমদানিকৃত বিভাগসহ পুরো উৎস-অধ্যায় অনূদিত। মূল প্রয়োগমূলক অংশটি পরীক্ষামূলক খসড়া। সমষ্টির আকারের দুটি সম্পাদকীয় বিকল্প পৃথক আছে। আরও ২৩৩টি উৎস ইউনিট অনূদিত নয়।",
-    "reader_state": "ঐতিহাসিক v0.2.0 পাঠকসংস্করণে ঠিক ১৮টি ইউনিট আছে। বর্তমান প্রকাশিত সমষ্টিগত HTML/EPUB পাঠকসংস্করণে ২৯৯টি ইউনিট আছে। সর্বশেষ নামহীনভাবে যাচাইকৃত প্রকাশ্য উৎস-চেকপয়েন্ট ও বর্তমান পরীক্ষিত উৎসে ৪৮৯টি ইউনিট। এর মধ্যে ১৯০টি এখনও সমষ্টিগত পাঠকসংস্করণে যুক্ত হয়নি। ২৩৩টি উৎস ফাইল অনূদিত হয়নি।"
+    "translated_count": 496,
+    "untranslated_count": 226,
+    "chapter_state": "সেট, সম্পর্ক, অপেক্ষক, সমষ্টির আকার, পাটিগণিতীকরণ ও অসীম সমষ্টির উৎস-অধ্যায়গুলি; বচনমূলক যুক্তিবিদ্যার গঠন ও অর্থতত্ত্ব; প্রমাণপদ্ধতি, সিকোয়েন্ট কলন, স্বাভাবিক অবরোহণ, ট্যাবলো, স্বতঃসিদ্ধিক অবরোহণ ও পূর্ণতা; প্রথম-ক্রমের যুক্তিবিদ্যা ও মডেল তত্ত্বের চিহ্নিত অধ্যায়গুলি; গণনযোগ্যতা, টিউরিং যন্ত্র, অসম্পূর্ণতা, দ্বিতীয়-ক্রমের যুক্তিবিদ্যা, ল্যাম্বডা ক্যালকুলাস ও বহুমানী যুক্তিবিদ্যার চিহ্নিত অধ্যায়গুলি; এবং স্বাভাবিক মোডাল যুক্তিবিদ্যার গঠন ও অর্থতত্ত্ব, কাঠামো-সংজ্ঞায়নযোগ্যতা, স্বতঃসিদ্ধ-পদ্ধতি, পূর্ণতা, ফিল্ট্রেশন, সিদ্ধান্তযোগ্যতা, ট্যাবলো ও সিকোয়েন্ট কলন উৎস-অধ্যায় অনূদিত। শেষোক্ত অধ্যায়কে মূলেই খসড়া বলা হয়েছে; বিশুদ্ধতা ও সম্পূর্ণতার প্রমাণ মূল উৎসে অনুপস্থিত। প্রয়োগমূলক মোডাল যুক্তিবিদ্যার কালগত অধ্যায়ের পাঁচটি আমদানিকৃত বিভাগসহ পুরো উৎস-অধ্যায় অনূদিত; জ্ঞানতাত্ত্বিক অধ্যায়ের সব আটটি আমদানিকৃত বিভাগসহ পুরো উৎস-অধ্যায় অনূদিত। মূল প্রয়োগমূলক অংশটি পরীক্ষামূলক খসড়া। সমষ্টির আকারের দুটি সম্পাদকীয় বিকল্প পৃথক আছে। স্বজ্ঞাবাদী যুক্তিবিদ্যার ভূমিকার পাঁচটি বিভাগ এবং অংশ ও অধ্যায়চালক অনূদিত; পরের অধ্যায়গুলি এখনও বাকি। আরও ২২৬টি উৎস ইউনিট অনূদিত নয়।",
+    "reader_state": "ঐতিহাসিক v0.2.0 পাঠকসংস্করণে ঠিক ১৮টি ইউনিট আছে। বর্তমান প্রকাশিত সমষ্টিগত HTML/EPUB পাঠকসংস্করণে ২৯৯টি ইউনিট আছে। সর্বশেষ নামহীনভাবে যাচাইকৃত প্রকাশ্য উৎস-চেকপয়েন্টে ৪৮৯টি ইউনিট; বর্তমান পরীক্ষিত উৎস-খসড়ায় ৪৯৬টি ইউনিট। এর মধ্যে ১৯৭টি এখনও সমষ্টিগত পাঠকসংস্করণে যুক্ত হয়নি। ২২৬টি উৎস ফাইল অনূদিত হয়নি।"
   },
   "last_verified_public_release": {
     "version": "0.3.0",
@@ -8722,6 +8746,117 @@
         "target_sha256": "a1c5869c8ffb6558548a39d5cbaba9fe8e68df10b9cf2b99f30e72cc91bf3a07"
       },
       {
+        "unit_id": "OLP-0491",
+        "source_blocks": 6,
+        "target_blocks": 6,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": {
+          "intuitionistic_introduction_hierarchy_and_formal_anchors_reviewed": true
+        },
+        "target_sha256": "c89dfc4223e0f7797bb19cbfed96525ecd616e6f070fa1bd66fd8e089c8f5766"
+      },
+      {
+        "unit_id": "OLP-0492",
+        "source_blocks": 7,
+        "target_blocks": 7,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": {
+          "intuitionistic_introduction_hierarchy_and_formal_anchors_reviewed": true
+        },
+        "target_sha256": "f6014072e1f58e3d809395731a2866dd503bafbfe8d2ca53189bb9a3f3031293"
+      },
+      {
+        "unit_id": "OLP-0493",
+        "source_blocks": 12,
+        "target_blocks": 12,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": {
+          "intuitionistic_introduction_hierarchy_and_formal_anchors_reviewed": true
+        },
+        "target_sha256": "ef2318fc3de6347f1f6909ec9b52006241cb77cd03fea972c5ee6353881725a3"
+      },
+      {
+        "unit_id": "OLP-0494",
+        "source_blocks": 14,
+        "target_blocks": 14,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": {
+          "intuitionistic_introduction_hierarchy_and_formal_anchors_reviewed": true
+        },
+        "target_sha256": "a7cc31737045d8aec1604f2d1ed693e089b1fce678ea60a213a829aa9c1d05fc"
+      },
+      {
+        "unit_id": "OLP-0495",
+        "source_blocks": 17,
+        "target_blocks": 17,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-393",
+          "BN-SRC-394"
+        ],
+        "tex_command_check": {
+          "intuitionistic_introduction_hierarchy_and_formal_anchors_reviewed": true
+        },
+        "target_sha256": "9fd3e953202aad9eb92a49c6db296ff209ec251927087e8e067f97e570eae1fd"
+      },
+      {
+        "unit_id": "OLP-0496",
+        "source_blocks": 30,
+        "target_blocks": 30,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-395",
+          "BN-SRC-396"
+        ],
+        "tex_command_check": {
+          "intuitionistic_introduction_hierarchy_and_formal_anchors_reviewed": true
+        },
+        "target_sha256": "6b270e88f51a5b61f9890bf6d9c9ee819b8643821c93fa8d31a323eda646979e"
+      },
+      {
+        "unit_id": "OLP-0497",
+        "source_blocks": 9,
+        "target_blocks": 9,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": {
+          "intuitionistic_introduction_hierarchy_and_formal_anchors_reviewed": true
+        },
+        "target_sha256": "2c00df1d71a017f875f9125673fd1f3058f39bc348aac2e90eb31b6cd6503299"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -8750,12 +8885,12 @@
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "f06aea4cf79241aca82251fb9380cafccf04f3438b63bf01be7c784571d988e0"
+      "sha256": "4b8990298f3acf8c4945e946cb9c45ba3782c32ccb9cbcf6fdee35f262d04586"
     },
-    "segments": 5452,
-    "translated_segments": 4617,
+    "segments": 5547,
+    "translated_segments": 4690,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "c843af073d4fdf807f0cdadecb3ce22cbd77fe36a1c2e8e3fbf94d5802d3cf2b",
+    "segment_index_sha256": "c360a264f6361dce9ed59e66be09386c7b117f54252550eabbb4886683ba36e5",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -8996,6 +9131,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_APPLIED_MODAL_EPISTEMIC_COMPLETION.md",
         "sha256": "77e123ecd81c5a8f26c759193a25c58e78190a4084f01e2a330b89bc4b13b51e"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_INTUITIONISTIC_INTRODUCTION.md",
+        "sha256": "3adb3997e97bbbf57ec0474cef4d1506ab7272ef04e0eddbe9367d33286931b5"
       }
     ],
     "shared_source_audit": {
@@ -9010,7 +9149,7 @@
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "3dcdce6fede1b6c22184549d435f78cef2449154e98c2f004633421400c2037d",
+      "reconciliation_sha256": "537e92fb76ec000af22265e642b42ca0ad1a7f40b3b5b3366cdf9304ba496e44",
       "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
       "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
       "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
@@ -9028,9 +9167,9 @@
     }
   },
   "source_corrections": {
-    "count": 399,
+    "count": 403,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "ac761efcd96591153be2e37c6d45bf597b1a09137eb0e5a498d21170208c5e7c",
+    "sha256": "2b2d96512179f5acce40ec0609b9b9239e395210195f1aa4564260f5b78bd6e2",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -9430,7 +9569,11 @@
       "BN-SRC-389",
       "BN-SRC-390",
       "BN-SRC-391",
-      "BN-SRC-392"
+      "BN-SRC-392",
+      "BN-SRC-393",
+      "BN-SRC-394",
+      "BN-SRC-395",
+      "BN-SRC-396"
     ]
   },
   "source_normalizations": {
@@ -9450,15 +9593,15 @@
     "classification": "render-equivalent TikZ endpoint normalizations; no mathematical or rendered-machine correction"
   },
   "translation_decisions": {
-    "count": 360,
-    "provisional_open": 341,
+    "count": 365,
+    "provisional_open": 346,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "184121aea53fb0e0e5561668fc5c9b4038dc93810bb1b7cde1ef938109e9ed91",
+    "sha256": "7efc7442e964f4e81ae157eb41c0549bbd9660331971021992e69a2d5fcb3ddc",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 29830,
+    "occurrence_count": 30408,
     "occurrence_schema": "openlogic-bn-translation-decision/3",
     "occurrence_join": "Join source_segment_id to evidence/DRAFT_SEGMENT_CANON_USE.jsonl for exact source and target paths, block spans and SHA-256; read the frozen source block and verify its hash for exact wording.",
     "layout_readback": {

@@ -5442,6 +5442,23 @@ for row in rows:
             assert target.count(r"\iftag{prvIff}") == 1
             assert r"\tagitem{prvIff}" in source and r"\tagitem{prvIff}" in target
         tex_command_check = {"epistemic_truth_frames_bisimulation_and_announcements_reviewed": True}
+    elif 491 <= unit_number <= 497:
+        expected_fixes = {
+            "OLP-0495": {"BN-SRC-393", "BN-SRC-394"},
+            "OLP-0496": {"BN-SRC-395", "BN-SRC-396"},
+        }
+        assert set(documented) == expected_fixes.get(row["unit_id"], set())
+        intuitionistic_intro_anchors = {
+            "OLP-0491": (r"\olpart{int}{", r"\olimport[introduction]{introduction}", r"\olimport[tableaux]{tableaux}"),
+            "OLP-0492": (r"\olchapter{int}{int}{", r"\olimport{bhk-interpretation}", r"\olimport{axiomatic-derivations}"),
+            "OLP-0493": (r"\olfileid{int}{int}{cr}", r"$a = \sqrt{3}$", r"$b = \log_3"),
+            "OLP-0494": (r"\olfileid{int}{int}{syn}", r"\ollabel{defn:formulas}", r"\tagitem{limitClause}"),
+            "OLP-0495": (r"\olfileid{int}{int}{bhk}", r"$\tuple{1, M_1}$", r"$l(k)$"),
+            "OLP-0496": (r"\olfileid{int}{int}{ntd}", r"\DischargeRule{\Elim{\lor}}{n}", r"\UnaryInfC{$!A \lif ((!A \lif \lfalse) \lif \lfalse)$}"),
+            "OLP-0497": (r"\olfileid{int}{int}{axd}", r"\ollabel{ax:land1}", r"\ollabel{ax:lfalse1}"),
+        }
+        assert all(anchor in target for anchor in intuitionistic_intro_anchors[row["unit_id"]])
+        tex_command_check = {"intuitionistic_introduction_hierarchy_and_formal_anchors_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5470,6 +5487,22 @@ for row in rows:
         audited_source = audited_source.replace("s_{k}", "s").replace("s_k", "s")
         shared_description = "BN-SRC-005 / OLSIZ-010 audited correction"
     shared_audit_fix = shared_description is not None and mathparts(audited_source) == target_math
+    intuitionistic_bhk_math_fix = (
+        row["unit_id"] == "OLP-0495"
+        and set(documented) == {"BN-SRC-393", "BN-SRC-394"}
+        and source_math - target_math
+        == collections.Counter({"C": 1, r"\tuple{1,M_2}": 1})
+        and target_math - source_math
+        == collections.Counter({"!C": 1, r"\tuple{1,M_1}": 1})
+    )
+    intuitionistic_natural_deduction_math_fix = (
+        row["unit_id"] == "OLP-0496"
+        and set(documented) == {"BN-SRC-395", "BN-SRC-396"}
+        and source_math - target_math
+        == collections.Counter({r"!A_1\land!A_1": 1, r"!A\lif(!A\lif\lfalse)\lif\lfalse": 1})
+        and target_math - source_math
+        == collections.Counter({r"!A_1\land!A_2": 1, r"!A\lif((!A\lif\lfalse)\lif\lfalse)": 1})
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -5561,6 +5594,8 @@ for row in rows:
             modal_tableaux_math_fix,
             temporal_math_fix,
             shared_audit_fix,
+            intuitionistic_bhk_math_fix,
+            intuitionistic_natural_deduction_math_fix,
         )
     )
     controls_ok = (

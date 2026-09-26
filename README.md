@@ -1,43 +1,34 @@
-# ওপেন লজিক — বাংলা (ভারত)
+# ওপেন লজিক — ভারতীয় বাংলা (চলমান সংস্করণ)
 
-OpenLogic-এর ভারতীয় বাংলা সংস্করণ তৈরির চলমান প্রকল্প। হিমায়িত উৎসের ৭২২টি TeX এককের মধ্যে বর্তমানে ২৯৯টি একক অনূদিত: OLP-0004–OLP-0300, OLP-0719 এবং OLP-0721। এই খসড়া *Q-তে প্রতিনিধিত্বযোগ্যতা* পর্যন্ত পৌঁছেছে। আরও ৪২৩টি এককের অনুবাদ বাকি, তাই এটি পূর্ণাঙ্গ সংস্করণ নয়।
+[Open Logic Project](https://github.com/OpenLogicProject/OpenLogic)-এর এই ভারতীয় বাংলা সংস্করণটি এখনো অসম্পূর্ণ। হিমায়িত মূল সংস্করণের ৭২২টি বিষয়বস্তু-ফাইলের মধ্যে **৪৯৬টি উৎস-অনুবাদ পরীক্ষিত**; ২২৬টি বাকি। বর্তমান প্রকাশিত সমষ্টিগত **HTML/EPUB পাঠকসংস্করণে ২৯৯টি ইউনিট** আছে। পরের ১৯৭টি পরীক্ষিত অনুবাদ এখনো সেই পাঠকে যুক্ত হয়নি। উৎস-খসড়ার অগ্রগতিকে নতুন পাঠকসংস্করণ বা পূর্ণাঙ্গ বই বলে ধরে নেওয়া যাবে না।
 
-This is an **in-progress, machine-translated Bengali (India) edition** of the Open Logic Project. The source-aligned draft contains 299 translated units through *Representability in Q*: OLP-0004–OLP-0300, OLP-0719, and OLP-0721. Another 423 units remain untranslated.
+## পড়া ও সংগ্রহ
 
-## Read the current edition
+- [বর্তমান ২৯৯-ইউনিট বাংলা পাঠক অনলাইনে পড়ুন](https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/)।
+- [HTML, EPUB, সম্পাদনযোগ্য LaTeX ও পূর্ণ উৎসের v0.3.0 প্রকাশনা](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.3.0-through-representability)।
+- [সংরক্ষণ-নথি ও DOI](https://doi.org/10.5281/zenodo.22848705)।
+- [অনুবাদ-প্রকল্পগুলির আন্তর্জাতিক সূচি](https://github.com/KokunoYumeto/OpenLogic-translations)।
 
-- [Read the 299-unit Bengali reader online](https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/)
-- [Download the v0.3.0 prerelease](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.3.0-through-representability)
-- [Zenodo preservation record and DOI](https://doi.org/10.5281/zenodo.22848705)
+প্রকাশিত HTML সরাসরি অনলাইনে পড়ার উপযোগী; EPUB পুনর্বিন্যাসযোগ্য। এই পাঠকসংস্করণে PDF নেই। প্রকাশনার ZIP অফলাইনে সম্পাদন ও পুনর্নির্মাণের জন্য, অনলাইনে পড়ার বিকল্প নয়।
 
-The release includes a standalone offline HTML reader, a validated reflowable EPUB 3, a complete expanded cumulative LaTeX source, and the complete source snapshot. It has no PDF because this edition is built directly as semantic HTML with native MathML; the online HTML is the readable preview.
+## উৎস, অনুবাদ ও পর্যালোচনার অবস্থা
 
-## Scope and provenance
+মূল কর্তৃপক্ষ: OpenLogicProject/OpenLogic-এর `9620cc73f9c8e0ad003c514a5d3748f29611c4c0` সংস্করণ। ৭২২-ইউনিট উৎস-তালিকার SHA-256: `5a6fef5c16c15a5b2f90f874c268512cfd6ed2e846bdfa850a67304a4c05a155`। `upstream/`-এ মূল ইংরেজি ফাইল অপরিবর্তিত আছে; `bn-Beng-IN/content/`-এ সংশ্লিষ্ট বাংলা অনুবাদ। মূল ইংরেজি ফাইলকে বাংলা অনুবাদ হিসেবে গণনা করা হয়নি।
 
-Source authority: [Open Logic Project](https://github.com/OpenLogicProject/OpenLogic), revision `9620cc73f9c8e0ad003c514a5d3748f29611c4c0`. The source manifest SHA-256 is `5a6fef5c16c15a5b2f90f874c268512cfd6ed2e846bdfa850a67304a4c05a155`.
+এটি **এআই-সহায়তায় করা অনুবাদ ও সংশোধন**। এ সংস্করণের আগের অনুবাদ, সম্পাদনা ও স্বয়ংক্রিয় পর্যালোচনায় **OpenAI Codex — GPT-5.6 Sol, Ultra effort** ব্যবহৃত হয়েছে; পরের উৎস-অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনায় **OpenAI Codex — GPT-6 Sol, Ultra effort** ব্যবহৃত হচ্ছে। বর্তমান স্বজ্ঞাবাদী যুক্তিবিদ্যার ভূমিকা-পর্বের OLP-0491–0497 অনুবাদ ও সংশোধন GPT-6 Sol, Ultra effort-এ করা। **স্বাধীন মানব-পর্যালোচনা দাবি করা হচ্ছে না।**
 
-`upstream/` preserves the pristine English archive, including all 722 content files and upstream/component licenses. `bn-Beng-IN/content/` contains the aligned translations. English files in `upstream/` are not counted as translations. The cumulative reader includes each translated unit once and suppresses driver imports that would duplicate content.
+বাংলা রীতি ও পরিভাষার জন্য ভারতীয় উৎস, বিশেষত পশ্চিমবঙ্গের বিশ্ববিদ্যালয়-গণিত ও দর্শন এবং ত্রিপুরার শিক্ষাসামগ্রী, নির্দিষ্ট পৃষ্ঠা ধরে দেখা হয়েছে। গাণিতিক বক্তব্যে মূল OpenLogic-ই কর্তৃপক্ষ। যেখানে বিশেষজ্ঞ বাংলা পরিভাষা সরাসরি সাক্ষ্যপ্রাপ্ত নয়, সেখানে সিদ্ধান্ত সংশোধনযোগ্য হিসেবে নথিবদ্ধ। স্থানীয় সাক্ষ্য-PDF গবেষণার কপি, এখানে পুনর্বিতরণ করা হয়নি। `evidence/`-এ উৎসের পরিচয়, পৃষ্ঠা ও হ্যাশ, অনুবাদ-সিদ্ধান্ত, সংশোধন এবং প্রতি-ব্লকের পরামর্শ-রেকর্ড আছে।
 
-The international programme is listed at the [OpenLogic translations hub](https://github.com/KokunoYumeto/OpenLogic-translations).
+`evidence/DRAFT_STATUS.json`-এ বর্তমান ৪৯৬-ইউনিট উৎস-খসড়ার সীমা ও স্বয়ংক্রিয় পরীক্ষা; `evidence/SEMANTIC_REVIEW_INTUITIONISTIC_INTRODUCTION.md`-এ নতুন অধ্যায়ের অর্থগত পরীক্ষা; `evidence/CUMULATIVE_READER_299_QA.json`-এ প্রকাশিত ২৯৯-ইউনিট পাঠকের নির্মাণ-পরীক্ষা। সূত্র, লেবেল, নিয়ন্ত্রণ-ক্রম, ব্লক-সামঞ্জস্য ও Unicode পরীক্ষা মানব বিশেষজ্ঞের বিচার বা সম্পূর্ণ দৃশ্যগত পরীক্ষার বিকল্প নয়। নতুন সাতটি ইউনিটের HTML/EPUB বা PDF এখনো নির্মিত হয়নি।
 
-## Evidence and review
+## পুনর্নির্মাণ ও লাইসেন্স
 
-Terminology work uses documented Indian Bengali witnesses, including West Bengal university mathematics and philosophy materials and separately labelled Tripura educational material. OpenLogic remains the authority for mathematical content. The local canon PDFs and page images are research copies and are not redistributed; `evidence/` publishes source identities, hashes, passage roles, terminology decisions, correction records, and consultation receipts.
-
-Review is automated and model-based. No independent human review is claimed. Checks cover source/translation block alignment, formula structure, references, environments, identifiers, token parity, Unicode normalization, semantic comparisons, reverse-paraphrase samples, reader structure, and rendered-page inspection. `python tools/check_source_draft.py` replays the public 299-unit source checks. `evidence/DRAFT_STATUS.json` records the source scope, and `evidence/CUMULATIVE_READER_299_QA.json` records the reader build.
-
-The validated reader contains 299 unit markers, 18,795 native MathML expressions, 948 numbered environments, 186 proof trees, 51 tableaux, 7 derivations, 32 diagrams, and 867 internal links with none broken. EPUBCheck 5.3.0 reported zero messages, and a cold EPUB rebuild was byte-identical. Representative rendered pages were visually inspected for Bengali shaping, mathematics, contents navigation, diagrams, tableaux, and the final translated units.
-
-## Build
-
-Run:
+উৎস-অনুবাদ পুনঃপরীক্ষা:
 
 ```powershell
-python tools/build_cumulative_semantic_reader.py --epubcheck-jar "C:\path\to\epubcheck-5.3.0.jar"
+python tools/check_source_draft.py
 ```
 
-Requirements are Python 3, Pandoc 3.9 or newer, Java, and EPUBCheck 5.3.0. The builder converts the aligned source directly to semantic HTML and EPUB without a TeX engine. It also emits a complete expanded cumulative `.tex` file containing all 299 units with no external chapter imports. It embeds the pinned Noto Serif Bengali fonts from `fonts/`, emits native MathML, converts proof trees, tableaux, derivations, and diagrams to reflowable structures, validates internal links and EPUB packaging, and checks cold-build determinism.
+প্রকাশিত পাঠক-নির্মাণের উপকরণে Python 3, Pandoc 3.9 বা নতুন সংস্করণ, Java এবং EPUBCheck 5.3.0 লাগে; নির্দেশ ও নির্মাণ-স্ক্রিপ্ট `tools/`-এ আছে। পাঠকটি সরাসরি অর্থবহ HTML/MathML ও EPUB বানায় এবং সম্পাদনযোগ্য প্রসারিত LaTeX-ও দেয়। এটি TeX ইঞ্জিনের উপর নির্ভর করে না।
 
-## License
-
-OpenLogic source and this translation: Creative Commons Attribution 4.0 International, with upstream attribution and component exceptions preserved. See `upstream/LICENSE.md` and the source component notices. Noto fonts: SIL Open Font License 1.1. Translation changes are identified by the `bn-Beng-IN/` directory and the machine-translation status above.
+মূল OpenLogic ও এই অনুবাদ Creative Commons Attribution 4.0 International-এর অধীনে; মূলের উপাদানভিত্তিক ব্যতিক্রম অক্ষত। বিস্তারিত `upstream/LICENSE.md` ও সংশ্লিষ্ট নোটে। সংযুক্ত Noto ফন্ট SIL Open Font License 1.1-এর অধীনে।

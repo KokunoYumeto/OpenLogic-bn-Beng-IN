@@ -1,0 +1,259 @@
+% part: intuitionistic-logic
+% chapter: introduction
+% section: natural-deduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{int}{ntd}
+
+\olsection{স্বাভাবিক অবরোহণ}
+
+$\FalseCl$-এর নিয়মগুলি ছাড়া স্বাভাবিক অবরোহণ স্বজ্ঞাবাদী
+যুক্তিবিদ্যার একটি প্রচলিত !!{derivation} ব্যবস্থা। নিয়মগুলি
+এখানে আবার লিখে BHK ব্যাখ্যা দিয়ে তাদের প্রেরণা দেখাব। প্রতিটি
+ক্ষেত্রে নিয়মটিকে এমনভাবে ভাবা যায়: পূর্বপক্ষগুলির নির্মাণ থাকলে
+সিদ্ধান্তটিরও নির্মাণ পাওয়া যায়।
+
+স্বাভাবিক অবরোহণের !!{derivation}s-এ অব্যাহতি না-পাওয়া অনুমান থাকে।
+তাই~$\Gamma$ !!{undischarged} অনুমানগুলি থেকে $!A$-এর এমন
+!!a{derivation}-কে এমন একটি অপেক্ষক হিসেবে ভাবা উচিত, যা
+সব $!B \in \Gamma$-এর নির্মাণ থেকে~$!A$-এর নির্মাণ দেয়। কোনো
+!!{undischarged} অনুমান ছাড়া~$!A$-এর !!a{derivation} থাকলে BHK
+ব্যাখ্যার অর্থে~$!A$-এর একটি নির্মাণ আছে। তবে আলোচনার সুবিধায়
+প্রয়োজন না হলে~$\Gamma$ উল্লেখ করব না।
+
+শুধু অনুমান~$!A$-ই !!{undischarged} অনুমান~$!A$ থেকে~$!A$-এর
+!!a{derivation}। এটি BHK ব্যাখ্যার সঙ্গে মেলে: নির্মাণগুলির উপর
+অভেদ অপেক্ষক~$!A$-এর যেকোনো নির্মাণকে~$!A$-এর নির্মাণে পাঠায়।
+
+\subsection{সংযোজন}
+
+\begin{defish}
+\AxiomC{$!A$}
+\AxiomC{$!B$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!A \land !B$}
+\DisplayProof
+\hfill
+\begin{tabular}{l}
+\AxiomC{$!A \land !B$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!A$}
+\DisplayProof
+\\[3ex]
+\AxiomC{$!A \land !B$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!B$}
+\DisplayProof
+\end{tabular}
+\end{defish}
+
+ধরো, যথাক্রমে $!A_1$ ও $!A_2$-এর নির্মাণ $N_1$, $N_2$ আছে। তাহলে
+$!A_1 \land !A_2$-এরও একটি নির্মাণ আছে, অর্থাৎ জোড়াটি
+$\tuple{N_1, N_2}$।
+
+% BN-SRC-395: the pair eliminates A_1 and A_2, so the conjunction is A_1 and A_2.
+BHK ব্যাখ্যায় $!A_1 \land !A_2$-এর একটি নির্মাণ হলো জোড়া
+$\tuple{N_1, N_2}$। তাই এমন একটি জোড়া আছে ধরে নিলে প্রতিটি
+সংযোজিত অংশের নির্মাণ পাই: $N_1$ হলো~$!A_1$-এর এবং $N_2$ হলো
+$!A_2$-এর নির্মাণ।
+
+\subsection{শর্তসূচক}
+
+\begin{defish}
+  \AxiomC{$\Discharge{!A}{u}$}
+  \DeduceC{$!B$}
+  \DischargeRule{$\Intro{\lif}$}{u}
+  \UnaryInfC{$!A \lif !B$}
+  \DisplayProof
+\hfill
+  \AxiomC{$!A \lif !B$}
+  \AxiomC{$!A$}
+  \RightLabel{$\Elim{\lif}$}
+  \BinaryInfC{$!B$}
+  \DisplayProof
+\end{defish}
+
+!!{undischarged} অনুমান~$!A$ থেকে~$!B$-এর !!a{derivation} থাকলে
+এমন একটি অপেক্ষক~$f$ আছে, যা~$!A$-এর নির্মাণকে~$!B$-এর নির্মাণে
+পাঠায়। সেই অপেক্ষকই $!A \lif !B$-এর একটি নির্মাণ। তাই $\Intro\lif$-এর
+পূর্বপক্ষের নির্মাণ যদি~$!A$-এর নির্মাণের উপর শর্তাধীন হয়, তবে
+সিদ্ধান্ত $!A \lif !B$-এরও নির্মাণ আছে।
+
+অন্যদিকে, ধরো $!A$-এর নির্মাণ~$N$ এবং $!A \lif !B$-এর
+নির্মাণ~$f$ আছে। $!A \lif !B$-এর নির্মাণ এমন একটি অপেক্ষক,
+যা $!A$-এর নির্মাণকে~$!B$-এর নির্মাণে পাঠায়। ফলে $f(N)$ হলো
+$!B$-এর একটি নির্মাণ; অর্থাৎ $\Elim\lif$-এর সিদ্ধান্তের নির্মাণ আছে।
+
+\subsection{বিকল্প}
+
+\begin{defish}
+\begin{tabular}{l}
+\AxiomC{$!A$}
+\RightLabel{\Intro{\lor}}
+\UnaryInfC{$!A \lor !B$}
+\DisplayProof
+\\[3ex]
+\AxiomC{$!B$}
+\RightLabel{\Intro{\lor}}
+\UnaryInfC{$!A \lor !B$}
+\DisplayProof
+\end{tabular}
+\hfill
+\AxiomC{$!A \lor !B$}
+\AxiomC{$\Discharge{!A}{n}$}
+\DeduceC{$!C$}
+\AxiomC{$\Discharge{!B}{n}$}
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lor}}{n}
+\TrinaryInfC{$!C$}
+\DisplayProof
+\end{defish}
+
+যদি~$!A_i$-এর একটি নির্মাণ~$N_i$ থাকে, তবে সেটি দিয়ে
+$!A_1 \lor !A_2$-এর নির্মাণ~$\tuple{i, N_i}$ পাওয়া যায়।
+অন্যদিকে, ধরো $!A_1 \lor !A_2$-এর একটি নির্মাণ আছে, অর্থাৎ একটি
+জোড়া~$\tuple{i, N_i}$ যেখানে $N_i$ হলো~$!A_i$-এর নির্মাণ;
+আর এমন অপেক্ষক $f_1$, $f_2$-ও আছে, যেগুলি যথাক্রমে $!A_1$, $!A_2$-এর
+নির্মাণকে~$!C$-এর নির্মাণে পাঠায়। তাহলে $f_i(N_i)$ হলো~$!C$-এর
+নির্মাণ, অর্থাৎ $\Elim\lor$-এর সিদ্ধান্তের নির্মাণ।
+
+\subsection{অসংগতি}
+
+\begin{defish}
+  \AxiomC{$\lfalse$}
+  \RightLabel{\FalseInt}
+  \UnaryInfC{$!A$}
+  \DisplayProof
+\end{defish}
+
+!!{undischarged} অনুমান~$!B_1$, \dots, $!B_n$ থেকে~$\lfalse$-এর
+একটি !!a{derivation} থাকলে এমন একটি অপেক্ষক~$f(M_1,
+\dots, M_n)$ আছে, যা $!B_1$, \dots, $!B_n$-এর নির্মাণকে
+$\lfalse$-এর নির্মাণে পাঠায়। যেহেতু $\lfalse$-এর কোনো নির্মাণ
+নেই, $!B_1$, \dots, $!B_n$ সকলের নির্মাণও একসঙ্গে থাকতে পারে না।
+ফলে $f$-এর এই ধর্মও আছে: $M_1$, \dots, $M_n$ যথাক্রমে
+$!B_1$, \dots, $!B_n$-এর নির্মাণ \emph{হলে}, $f(M_1, \dots, M_n)$
+হবে~$!A$-এর একটি নির্মাণ।
+
+\subsection{$\lnot$-এর নিয়ম}
+
+যেহেতু $\lnot !A$-কে $!A \lif \lfalse$ হিসেবে সংজ্ঞায়িত করা
+হয়েছে, কঠোর অর্থে~$\lnot$-এর জন্য আলাদা নিয়ম দরকার নেই। তবু
+নিয়ম দিলে সেগুলি এমন হতো:
+
+\begin{defish}
+\AxiomC{$\Discharge{!A}{n}$}
+\noLine
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{n}
+\UnaryInfC{$\lnot !A$}
+\DisplayProof
+\hfill
+\AxiomC{$\lnot !A$}
+\AxiomC{$!A$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\DisplayProof
+\end{defish}
+
+
+\subsection{\usetoken{P}{derivation}-এর উদাহরণ}
+
+\begin{enumerate}
+\item $\Proves !A \lif (\lnot !A \lif \lfalse)$, অর্থাৎ $\Proves !A
+  \lif ((!A \lif \lfalse) \lif \lfalse)$
+  \begin{prooftree}
+    \AxiomC{$\Discharge{!A}{2}$}
+    \AxiomC{$\Discharge{!A \lif \lfalse}{1}$}
+    \RightLabel{\Elim\lif}
+    \BinaryInfC{$\lfalse$}
+    \DischargeRule{\Intro\lif}{1}
+    \UnaryInfC{$(!A \lif \lfalse)\lif \lfalse$}
+    \DischargeRule{\Intro\lif}{2}
+% BN-SRC-396: parenthesize the consequent to match the stated formula and tree.
+    \UnaryInfC{$!A \lif ((!A \lif \lfalse) \lif \lfalse)$}
+  \end{prooftree}
+
+\item $\Proves ((!A \land !B) \lif !C) \lif (!A \lif (!B \lif !C))$
+  \begin{prooftree}
+    \AxiomC{$\Discharge{(!A \land !B) \lif !C}{3}$}
+    \AxiomC{$\Discharge{!A}{2}$}
+    \AxiomC{$\Discharge{!B}{1}$}
+    \RightLabel{\Intro\land}
+    \BinaryInfC{$!A \land !B$}
+    \RightLabel{\Elim\lif}
+    \BinaryInfC{$!C$}
+    \DischargeRule{\Intro\lif}{1}
+    \UnaryInfC{$!B \lif !C$}
+    \DischargeRule{\Intro\lif}{2}
+    \UnaryInfC{$!A \lif (!B \lif !C)$}
+    \DischargeRule{\Intro\lif}{3}
+    \UnaryInfC{$((!A \land !B) \lif !C) \lif (!A \lif (!B \lif !C))$}
+  \end{prooftree}
+
+\item $\Proves \lnot(!A \land \lnot !A)$, অর্থাৎ $\Proves (!A \land (!A
+  \lif \lfalse))\lif \lfalse$
+  \begin{prooftree}
+    \AxiomC{$\Discharge{!A \land (!A \lif \lfalse)}{1}$}
+    \RightLabel{\Elim\land}
+    \UnaryInfC{$!A \lif \lfalse$}
+    \AxiomC{$\Discharge{!A \land (!A \lif \lfalse)}{1}$}
+    \RightLabel{\Elim\land}
+    \UnaryInfC{$!A$}
+    \RightLabel{\Elim\lif}
+    \BinaryInfC{$\lfalse$}
+    \DischargeRule{\Intro\lif}{1}
+    \UnaryInfC{$(!A \land (!A \lif \lfalse))\lif \lfalse$}
+  \end{prooftree}
+
+\item $\Proves \lnot\lnot(!A \lor \lnot !A)$, অর্থাৎ $\Proves ((!A \lor
+  (!A \lif \lfalse))\lif \lfalse)\lif \lfalse$
+  \begin{prooftree}\hskip-3em
+    \AxiomC{$\Discharge{(!A \lor (!A \lif \lfalse))\lif \lfalse}{2}$}
+    \AxiomC{$\Discharge{(!A \lor (!A \lif \lfalse))\lif \lfalse}{2}$}
+    \AxiomC{$\Discharge{!A}{1}$}
+    \RightLabel{\Intro\lor}
+    \UnaryInfC{$!A \lor (!A \lif \lfalse)$}
+    \RightLabel{\Elim\lif}
+    \BinaryInfC{$\lfalse$}
+    \DischargeRule{\Intro\lif}{1}
+    \UnaryInfC{$!A \lif \lfalse$}
+    \RightLabel{\Intro\lor}
+    \UnaryInfC{$!A \lor (!A \lif \lfalse)$}
+    \RightLabel{\Elim\lif}
+    \insertBetweenHyps{\hskip -4em}
+    \BinaryInfC{$\lfalse$}
+    \DischargeRule{\Intro\lif}{2}
+    \UnaryInfC{$((!A \lor (!A \lif \lfalse))\lif \lfalse)\lif \lfalse$}
+  \end{prooftree}
+\end{enumerate}
+
+\begin{prop}
+  স্বজ্ঞাবাদী যুক্তিবিদ্যার স্বাভাবিক অবরোহণে $\Gamma \Proves !A$
+  হলে ধ্রুপদি যুক্তিবিদ্যাতেও $\Gamma \Proves !A$। বিশেষত, $!A$
+  স্বজ্ঞাবাদী উপপাদ্য হলে সেটি ধ্রুপদি উপপাদ্যও।
+\end{prop}
+
+\begin{proof}
+  স্বাভাবিক অবরোহণের প্রতিটি নিয়ম ধ্রুপদি স্বাভাবিক অবরোহণেরও
+  নিয়ম। তাই স্বজ্ঞাবাদী যুক্তিবিদ্যার প্রতিটি !!{derivation} ধ্রুপদি
+  যুক্তিবিদ্যাতেও !!a{derivation}।
+\end{proof}
+
+\begin{prob}
+  নিচের !!{formula}s-এর স্বজ্ঞাবাদী !!{derivation}s দাও:
+  \begin{enumerate}
+    \item $(\lnot !A \lor !B) \lif (!A \lif !B)$
+    \item $\lnot\lnot\lnot !A \lif \lnot !A$
+    \item $\lnot\lnot (!A \land !B) \liff (\lnot\lnot !A\land \lnot \lnot !B)$
+    \item $\lnot (!A \lor !B) \liff (\lnot !A \land \lnot !B)$
+    \item $(\lnot !A \lor \lnot !B) \lif \lnot (!A \land !B)$
+    \item $\lnot\lnot ( !A \land !B) \lif  (\lnot\lnot !A \lor
+    \lnot\lnot !B)$
+  \end{enumerate}
+\end{prob}
+
+\end{document}

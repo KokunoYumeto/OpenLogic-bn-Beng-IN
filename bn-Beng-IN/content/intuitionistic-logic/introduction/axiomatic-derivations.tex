@@ -1,0 +1,71 @@
+% part: intuitionistic-logic
+% chapter: introduction
+% section: axiomatic-derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{int}{axd}
+
+\olsection{স্বতঃসিদ্ধিক \usetoken{P}{derivation}}
+
+স্বজ্ঞাবাদী বচনমূলক যুক্তিবিদ্যার স্বতঃসিদ্ধিক !!{derivation}s ধারণাগতভাবে
+সবচেয়ে সরল এবং ঐতিহাসিকভাবে প্রথম !!{derivation} ব্যবস্থা। এগুলি
+ধ্রুপদি বচনমূলক যুক্তিবিদ্যার মতোই কাজ করে।
+
+\begin{defn}[!!^{derivability}]
+$\Gamma$ যদি $\Lang L$-এর !!{formula}s-এর একটি সেট হয়, তবে
+$\Gamma$ থেকে একটি \emph{!!{derivation}} হলো !!{formula}s-এর একটি সসীম
+ক্রম $!A_1$, \dots,~$!A_n$, যেখানে প্রতিটি $i \le n$-এর জন্য নিচের
+কোনো একটি শর্ত পূরণ হয়:
+\begin{enumerate}
+\item $!A_i \in \Gamma$; অথবা
+\item $!A_i$ একটি স্বতঃসিদ্ধ; অথবা
+\item $j < i$ ও $k < i$ এমন কোনো $!A_j$ এবং $!A_k$ থেকে মোডাস পোনেন্স
+  নিয়মে $!A_i$ পাওয়া যায়; অর্থাৎ, $!A_k \ident !A_j \lif !A_i$।
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[স্বতঃসিদ্ধ]
+স্বজ্ঞাবাদী বচনমূলক যুক্তিবিদ্যার \emph{স্বতঃসিদ্ধ}গুলির সেট~$\PAx$-এ
+নিচের রূপগুলির সব !!{formula}s আছে:
+\begin{align}
+  & (!A \land !B) \lif !A \ollabel{ax:land1}\\
+  & (!A \land !B) \lif !B \ollabel{ax:land2}\\
+  & !A \lif (!B \lif (!A \land !B)) \ollabel{ax:land3}\\
+  & !A \lif (!A \lor !B) \ollabel{ax:lor1}\\
+  & !A \lif (!B \lor !A) \ollabel{ax:lor2}\\
+  & (!A \lif !C) \lif ((!B \lif !C) \lif ((!A \lor !B) \lif !C)) \ollabel{ax:lor3}\\
+  & !A \lif (!B \lif !A) \ollabel{ax:lif1}\\
+  & (!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C)) \ollabel{ax:lif2}\\
+  & \lfalse \lif !A \ollabel{ax:lfalse1}
+\end{align}
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{formula}~$!A$-কে $\Gamma$ থেকে \emph{!!{derivable}} বলা হয়,
+লিখি $\Gamma \Proves !A$, যদি $\Gamma$ থেকে এমন একটি !!a{derivation}
+থাকে যার শেষ সূত্র $!A$।
+\end{defn}
+
+\begin{defn}[উপপাদ্য]
+!!^a{formula}~$!A$ একটি \emph{উপপাদ্য}, যদি শূন্য সেট থেকে~$!A$-এর
+একটি !!a{derivation} থাকে। $!A$ উপপাদ্য হলে লিখি $\Proves !A$,
+আর উপপাদ্য না হলে লিখি $\Proves/ !A$।
+\end{defn}
+
+\begin{prop}
+  স্বজ্ঞাবাদী যুক্তিবিদ্যার স্বতঃসিদ্ধিক !!{derivation} ব্যবস্থায়
+  $\Gamma \Proves !A$ হলে ধ্রুপদি যুক্তিবিদ্যাতেও
+  $\Gamma \Proves !A$। বিশেষত, $!A$ স্বজ্ঞাবাদী উপপাদ্য হলে সেটি
+  ধ্রুপদি উপপাদ্যও।
+\end{prop}
+
+\begin{proof}
+  স্বজ্ঞাবাদী প্রতিটি স্বতঃসিদ্ধ ধ্রুপদি স্বতঃসিদ্ধও। তাই
+  স্বজ্ঞাবাদী যুক্তিবিদ্যার প্রতিটি !!{derivation} ধ্রুপদি
+  যুক্তিবিদ্যাতেও !!a{derivation}।
+\end{proof}
+
+\end{document}

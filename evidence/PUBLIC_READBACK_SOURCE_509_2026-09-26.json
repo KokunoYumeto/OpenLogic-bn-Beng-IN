@@ -1,0 +1,224 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T20:41:24.763343+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "d391cc1e66bc51f8d4ae969ff4a1d298240198fd",
+  "parent": "bd5d99d5261928138d3bd525e1aabeb5656174ec",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "fabc63d1c4998021a0ecfe11b2a8e22df8804e8f",
+    "receipt": "PUBLIC_READBACK_SOURCE_501_2026-09-26.json",
+    "receipt_sha256": "45a1c9c9c6dceba2417df651e49e20e40bec09d7b5ef3fb5d433c1e923307b10"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/d391cc1e66bc51f8d4ae969ff4a1d298240198fd.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/d391cc1e66bc51f8d4ae969ff4a1d298240198fd",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 14029070,
+  "archive_sha256": "f5dc5b62a4a731e65a029401c84974262250ad06dd459b3725569f104de575c8",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/canonical-model.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/canonical-model.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/canonical-model.tex",
+      "content_type": "text/plain",
+      "bytes": 3593,
+      "sha256": "cd6a208267c99166f1481925363a58264282896a0ecd41a47daaf95f670e2ab3"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/completeness-thm.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/completeness-thm.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/completeness-thm.tex",
+      "content_type": "text/plain",
+      "bytes": 2418,
+      "sha256": "5d27ddc4c153c6cb3e74ce92bf745df06089911dc09bc08399dfb74de8d950cf"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/decidability.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/decidability.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/decidability.tex",
+      "content_type": "text/plain",
+      "bytes": 5562,
+      "sha256": "9dc9feb12e095d3c24b71a68f0ef3ee4f3c2ce93a8b8766817c1a4a6174d034c"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/lindenbaum.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/lindenbaum.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/lindenbaum.tex",
+      "content_type": "text/plain",
+      "bytes": 10320,
+      "sha256": "236e0988804eada6c21ec814945b223f3d5d673f84a2c2725d5b3253dbca52e6"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-axd.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-axd.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-axd.tex",
+      "content_type": "text/plain",
+      "bytes": 3633,
+      "sha256": "61bd55df5fff4b161e2070801fdf841e5e9eb8e9ced634dd981f34947be83e24"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-completeness.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-completeness.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-completeness.tex",
+      "content_type": "text/plain",
+      "bytes": 1142,
+      "sha256": "bbe84ce85ab6a39c7f2b89e84594dfb70c08affa983a1dcb5e96d7292272728c"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-nd.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-nd.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-nd.tex",
+      "content_type": "text/plain",
+      "bytes": 10190,
+      "sha256": "4560de813daad0761784bf84d8e21dfabfe9fe870e6c5f71f8eb7261c54554f5"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/truth-lemma.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/truth-lemma.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d391cc1e66bc51f8d4ae969ff4a1d298240198fd/bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/truth-lemma.tex",
+      "content_type": "text/plain",
+      "bytes": 4131,
+      "sha256": "fcc5a6deb43c7c2a293cb7ab833eca3c2b081b0fc160386456ef3264c6d9a4ea"
+    }
+  ],
+  "changed_files_verified": 21,
+  "translated_tex_files_in_commit": 8,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 509,
+  "draft_untranslated_total": 213,
+  "segments": 5666,
+  "translated_segments": 4793,
+  "new_batch_segments": 75,
+  "new_batch_translated_segments": 66,
+  "new_batch_unchanged_segments": 9,
+  "source_correction_records": 415,
+  "new_source_correction_records": 9,
+  "translation_decisions": 371,
+  "provisional_translation_decisions": 352,
+  "translation_decision_occurrences": 31224,
+  "decisions_with_exact_source_wording": 352,
+  "ai_assistance": {
+    "product": "OpenAI Codex",
+    "earlier_model": "GPT-5.6 Sol",
+    "earlier_effort": "Ultra",
+    "current_batch_model": "GPT-6 Sol",
+    "current_batch_effort": "Ultra",
+    "independent_human_review_claimed": false
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 509,
+    "blocks": 5666,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7414,
+      "sha256": "711e383046fbed0828aab28a7558b528723fd3c8c93f76e28c8fe4e5967a4c00"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/canonical-model.tex",
+      "bytes": 3593,
+      "sha256": "cd6a208267c99166f1481925363a58264282896a0ecd41a47daaf95f670e2ab3"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/completeness-thm.tex",
+      "bytes": 2418,
+      "sha256": "5d27ddc4c153c6cb3e74ce92bf745df06089911dc09bc08399dfb74de8d950cf"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/decidability.tex",
+      "bytes": 5562,
+      "sha256": "9dc9feb12e095d3c24b71a68f0ef3ee4f3c2ce93a8b8766817c1a4a6174d034c"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/lindenbaum.tex",
+      "bytes": 10320,
+      "sha256": "236e0988804eada6c21ec814945b223f3d5d673f84a2c2725d5b3253dbca52e6"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-axd.tex",
+      "bytes": 3633,
+      "sha256": "61bd55df5fff4b161e2070801fdf841e5e9eb8e9ced634dd981f34947be83e24"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-completeness.tex",
+      "bytes": 1142,
+      "sha256": "bbe84ce85ab6a39c7f2b89e84594dfb70c08affa983a1dcb5e96d7292272728c"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-nd.tex",
+      "bytes": 10190,
+      "sha256": "4560de813daad0761784bf84d8e21dfabfe9fe870e6c5f71f8eb7261c54554f5"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/truth-lemma.tex",
+      "bytes": 4131,
+      "sha256": "fcc5a6deb43c7c2a293cb7ab833eca3c2b081b0fc160386456ef3264c6d9a4ea"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 9154534,
+      "sha256": "d21bfc7bcdb0e10752701c03a325ca190203adc93c96ba925d01ffcb83868a7a"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 317884,
+      "sha256": "f113409a055fb8d4df1edaf940a0ee80eebb37d7e89c191f9e49900f8b8bdd82"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_INTUITIONISTIC_SOUNDNESS_COMPLETENESS.md",
+      "bytes": 5541,
+      "sha256": "7ed31ee91f5f318ee28671feccdc6aecaecc43b87d08871cad63edb815dfea54"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "b10707bd875113647fde9e58e80a61bef9396850f7fb60c4a09ed1aaf47ea1a4"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 805531,
+      "sha256": "4d18bdf1dd3427dcd168c439e6289b02e78a577a9beb6a3b411fc2fdac0f1090"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 340950,
+      "sha256": "6e298c47295aa42b561054c167c07ce1c98a719c9c8d1d31c5f6f2dffb4f41ef"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 18893336,
+      "sha256": "af2370129e166d1d3634fe9d8bc1760eed1f908383b474cd281bd2a736713b2e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 14777866,
+      "sha256": "0a743742c0bf078d2a471b08e971384942442e50c9d6db271ff3012d1587645f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1434126,
+      "sha256": "9e1f73f37a2e17d266f0ab76715e290b79d5b0ad637edbca5cd327a9fafc3b52"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 8565961,
+      "sha256": "499ba7b8bdafb2713b9ea5b37640147f5f29ed79ce4dc172678e6e539d5f2e2f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 271058,
+      "sha256": "48f0e819903a8ae7d625f7f20050e786fc7ab36e1c320506820094d70f48dd5a"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 275351,
+      "sha256": "41efee39ebe69f461d260af76723be1125d09e57a42a9c37bbdf49a2b5d9662a"
+    }
+  ]
+}

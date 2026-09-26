@@ -1,0 +1,176 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T04:29:22.187680+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "dd748c924347c08be4223484c71ca28f55fef4fd",
+  "parent": "d3caa44c75ce6a789cd8d110387a9c5da2d65d05",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "cbd3d4134b04f900dcbe63f96008f0c6d106404d",
+    "receipt": "PUBLIC_READBACK_SOURCE_484_2026-09-26.json",
+    "receipt_sha256": "74d6a804bee88ceefde522f9f1e825b5886a9a070d2f0a1fb26fb5eca6441f66"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/dd748c924347c08be4223484c71ca28f55fef4fd.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/dd748c924347c08be4223484c71ca28f55fef4fd",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 13567470,
+  "archive_sha256": "bc2561f72f4bd8bc032e719aee7f54d7c599767d7acef3a1ca417177a66a8c1e",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/dd748c924347c08be4223484c71ca28f55fef4fd/bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/dd748c924347c08be4223484c71ca28f55fef4fd/bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex",
+      "content_type": "text/plain",
+      "bytes": 6709,
+      "sha256": "6ea1b576a0b636e9da72289615127e4d9ca60086e460a9400514fe1497ea715c"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/dd748c924347c08be4223484c71ca28f55fef4fd/bn-Beng-IN/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/dd748c924347c08be4223484c71ca28f55fef4fd/bn-Beng-IN/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex",
+      "content_type": "text/plain",
+      "bytes": 6177,
+      "sha256": "380c771e0a1eb52abc5862355093df01a6217ca7e8bca35f0db690a6987cd8e4"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/dd748c924347c08be4223484c71ca28f55fef4fd/bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/dd748c924347c08be4223484c71ca28f55fef4fd/bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex",
+      "content_type": "text/plain",
+      "bytes": 4959,
+      "sha256": "49f596ec9a2b5e0e1361514c8fc4b4df6db226d66895eb089daf49ec2ea3ae4e"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/dd748c924347c08be4223484c71ca28f55fef4fd/bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/dd748c924347c08be4223484c71ca28f55fef4fd/bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex",
+      "content_type": "text/plain",
+      "bytes": 8635,
+      "sha256": "a1c5869c8ffb6558548a39d5cbaba9fe8e68df10b9cf2b99f30e72cc91bf3a07"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/dd748c924347c08be4223484c71ca28f55fef4fd/bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/dd748c924347c08be4223484c71ca28f55fef4fd/bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex",
+      "content_type": "text/plain",
+      "bytes": 8122,
+      "sha256": "9e7001943c537159f21d45ae34d287d1a9c7a677a371db61a596cf9abf95624b"
+    }
+  ],
+  "changed_files_verified": 17,
+  "translated_tex_files_in_commit": 5,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 489,
+  "draft_untranslated_total": 233,
+  "segments": 5452,
+  "translated_segments": 4617,
+  "new_batch_segments": 66,
+  "new_batch_translated_segments": 59,
+  "new_batch_unchanged_segments": 7,
+  "source_correction_records": 399,
+  "new_source_correction_records": 1,
+  "source_normalization_records": 3,
+  "translation_decisions": 360,
+  "provisional_translation_decisions": 341,
+  "translation_decision_occurrences": 29830,
+  "decisions_with_exact_source_wording": 341,
+  "ai_assistance": {
+    "product": "OpenAI Codex"
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 489,
+    "blocks": 5452,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex",
+      "bytes": 6709,
+      "sha256": "6ea1b576a0b636e9da72289615127e4d9ca60086e460a9400514fe1497ea715c"
+    },
+    {
+      "filename": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex",
+      "bytes": 6177,
+      "sha256": "380c771e0a1eb52abc5862355093df01a6217ca7e8bca35f0db690a6987cd8e4"
+    },
+    {
+      "filename": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex",
+      "bytes": 4959,
+      "sha256": "49f596ec9a2b5e0e1361514c8fc4b4df6db226d66895eb089daf49ec2ea3ae4e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex",
+      "bytes": 8635,
+      "sha256": "a1c5869c8ffb6558548a39d5cbaba9fe8e68df10b9cf2b99f30e72cc91bf3a07"
+    },
+    {
+      "filename": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex",
+      "bytes": 8122,
+      "sha256": "9e7001943c537159f21d45ae34d287d1a9c7a677a371db61a596cf9abf95624b"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 8753301,
+      "sha256": "c843af073d4fdf807f0cdadecb3ce22cbd77fe36a1c2e8e3fbf94d5802d3cf2b"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 304460,
+      "sha256": "d27ee23f3c4760c0a1fca70b2e64129ff422bae7bfc8fe6dabd8d7c751578a63"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_APPLIED_MODAL_EPISTEMIC_COMPLETION.md",
+      "bytes": 9711,
+      "sha256": "77e123ecd81c5a8f26c759193a25c58e78190a4084f01e2a330b89bc4b13b51e"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "3dcdce6fede1b6c22184549d435f78cef2449154e98c2f004633421400c2037d"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 770589,
+      "sha256": "ac761efcd96591153be2e37c6d45bf597b1a09137eb0e5a498d21170208c5e7c"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 327192,
+      "sha256": "f3eb8372c4aad397ff5c3cb5b4f76d49b102051791aab35e61fe482e91649f31"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 18125423,
+      "sha256": "2b8a9f1f90a7b5dfaca5f4469688a953a5529fb804a9264ef431b3f27a461ddc"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 14182738,
+      "sha256": "184121aea53fb0e0e5561668fc5c9b4038dc93810bb1b7cde1ef938109e9ed91"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1389198,
+      "sha256": "9b3f9e0603fd74012fc8e9be323a48afb3c9235c0ff588ddf2a2b6de1d25a03a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 8186804,
+      "sha256": "42e7832d3f1037d6033ff4efcec31b74d1e51815c777cd4b9c3541a0d38da53b"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 263688,
+      "sha256": "6490f9ae289b094dcaeede66098953c81f317dda3c5551bdb4823991ff67c547"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 267881,
+      "sha256": "f06aea4cf79241aca82251fb9380cafccf04f3438b63bf01be7c784571d988e0"
+    }
+  ]
+}

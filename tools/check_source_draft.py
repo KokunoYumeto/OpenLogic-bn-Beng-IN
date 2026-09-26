@@ -5407,6 +5407,23 @@ for row in rows:
                 and target_math - source_math == collections.Counter({r"\Ftemp!A": 1})
             )
         tex_command_check = {"temporal_semantics_frames_and_operators_reviewed": True}
+    elif 481 <= unit_number <= 485:
+        assert set(documented) == (
+            {"BN-SRC-391"} if row["unit_id"] == "OLP-0483" else set()
+        )
+        epistemic_opening_anchors = {
+            "OLP-0481": (r"\olfileid{aml}{tl}{poss}", r"\ollabel{defn:phmodels}", r"\Diamond \Ftemp p"),
+            "OLP-0482": (r"\olchapter{aml}{el}", r"\olimport{bisimulations}", r"\olimport{public-announcement-logic-semantics}"),
+            "OLP-0483": (r"\olfileid{aml}{el}{int}", "Jaakko Hintikka", r"BN-SRC-391"),
+            "OLP-0484": (r"\olfileid{aml}{el}{lan}", r"\Knows_a !A", r"\CKnows_G !A"),
+            "OLP-0485": (r"\olfileid{aml}{el}{rel}", r"\tuple{W, R, V}", r"R_a ww'"),
+        }
+        assert all(anchor in checked_target for anchor in epistemic_opening_anchors[row["unit_id"]])
+        if row["unit_id"] == "OLP-0483":
+            assert source.count("Jaako Hintikka") == 1
+            assert "Jaako Hintikka" not in checked_target
+            assert checked_target.count("Jaakko Hintikka") == 1
+        tex_command_check = {"temporal_histories_and_epistemic_opening_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":

@@ -1,0 +1,71 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: language-epistemic-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{lan}
+
+\olsection{জ্ঞানতাত্ত্বিক যুক্তিবিদ্যার ভাষা}
+
+\begin{defn}
+ধরা যাক, $G$ কর্তা-চিহ্নগুলির একটি সমষ্টি। বহু-কর্তা জ্ঞানতাত্ত্বিক যুক্তিবিদ্যার মৌলিক ভাষায় থাকে
+\begin{enumerate}
+  \tagitem{prvFalse}{!!{falsity} বোঝানো বচনমূলক ধ্রুবক~$\lfalse$।}{}
+  \tagitem{prvTrue}{!!{truth} বোঝানো বচনমূলক ধ্রুবক~$\ltrue$।}{}
+  \item !!{propositional variable}s-এর একটি !!{denumerable}s সেট: $\Obj
+    p_0$, $\Obj p_1$, $\Obj p_2$, \dots
+  \item বচনমূলক সংযোজকগুলি: \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (নঞর্থকরণ)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (সংযোজন)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (বিয়োজন)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}।
+  \item জ্ঞান-অপারেটর $\Knows_a$, যেখানে $a \in G$।
+\end{enumerate}
+\end{defn}
+
+আমাদের পদ্ধতিতে যদি কেবল একজন কর্তার জ্ঞানই বিবেচ্য হয়, তবে সমষ্টি~$G$ এবং পৃথক পৃথক কর্তার উল্লেখ বাদ দিতে পারি। তখন কেবল মৌলিক অপারেটর~$\Knows$ থাকে।
+
+\begin{defn}
+জ্ঞানতাত্ত্বিক ভাষার \emph{!!^{formula}s} নিম্নরূপে আরোহভাবে সংজ্ঞায়িত:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ একটি পারমাণবিক !!{formula}।}{}
+
+\tagitem{prvTrue}{$\ltrue$ একটি পারমাণবিক !!{formula}।}{}
+
+\item প্রত্যেক বচনমূলক চলক $\Obj p_i$ একটি (পারমাণবিক) !!{formula}।
+
+\tagitem{prvNot}{$!A$ !!a{formula} হলে $\lnot !A$-ও
+  !!a{formula}।}{}
+
+\tagitem{prvAnd}{$!A$ ও $!B$ !!{formula}s হলে $(!A \land
+  !B)$ একটি !!a{formula}।}{}
+
+\tagitem{prvOr}{$!A$ ও $!B$ !!{formula}s হলে $(!A \lor !B)$
+  একটি !!a{formula}।}{}
+
+\tagitem{prvIf}{$!A$ ও $!B$ !!{formula}s হলে $(!A \lif !B)$
+  একটি !!a{formula}।}{}
+
+\tagitem{prvIff}{$!A$ ও $!B$ !!{formula}s হলে $(!A \liff !B)$
+  একটি !!a{formula}।}{}
+
+\item $!A$ !!a{formula} এবং $a \in G$ হলে $\Knows_a !A$
+  একটি !!a{formula}।
+
+\tagitem{limitClause}{অন্য কিছুই !!a{formula} নয়।}{}
+\end{enumerate}
+\end{defn}
+
+!!a{formula}~$!A$-তে $\Knows_a$ না থাকলে তাকে \emph{মোডাল-অপারেটরবিহীন} বলি।
+
+\begin{defn}
+  $\Knows$ অপারেটর দিয়ে একজনের জ্ঞান বোঝানো হয়; আর $\EKnows$ দিয়ে গোষ্ঠীর সকলের জানা বোঝানো হয়, যাকে প্রায়ই ``সবাই জানে'' বলে পড়া হয়। $G' \subseteq G$ হলে $\EKnows_{G'} !A$-কে \[\bigwedge_{b \in G'} \Knows_b !A.\]-এর সংক্ষিপ্ত রূপ হিসেবে সংজ্ঞায়িত করি।
+\end{defn}
+
+কর্তাদের একটি গোষ্ঠী~$G$-তে জ্ঞানের আরও শক্তিশালী অর্থও সংজ্ঞায়িত করা যায়: \emph{সর্বস্তরে পারস্পরিক জ্ঞান}। কোনো তথ্য গোষ্ঠীতে এই অর্থে জানা থাকলে, গোষ্ঠীর কর্তাদের প্রত্যেক সম্ভাব্য অনুক্রমে সবাই জানে যে অন্যরা জানে, অন্যরা জানে যে অন্যরা জানে, \dots—এভাবে অন্তহীন পর্যায় পর্যন্ত। এটি গোষ্ঠীর সকলের জানার চেয়ে অনেক শক্তিশালী। এমন সম্পর্কভিত্তিক মডেল সহজেই পাওয়া যায়, যেখানে !!a{formula} গোষ্ঠীর সবার জানা হলেও সর্বস্তরে পারস্পরিক জানা নয়। ``গোষ্ঠী~$G$-তে~$!A$ সর্বস্তরে পারস্পরিক জ্ঞাত'' বোঝাতে $\CKnows_G !A$ ব্যবহার করব।
+
+\end{document}

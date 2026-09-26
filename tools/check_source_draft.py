@@ -5514,6 +5514,18 @@ for row in rows:
             assert source.count(r"just= {\TRule{\False}{\land}[4]}") == 2
             assert target.count(r"just= {\TRule{\False}{\land}[7]}") == 2
         tex_command_check = {"intuitionistic_tableaux_hierarchy_rules_and_soundness_reviewed": True}
+    elif 516 <= unit_number <= 521:
+        assert set(documented) == ({"BN-SRC-420", "BN-SRC-421"} if row["unit_id"] == "OLP-0520" else set())
+        counterfactual_introduction_anchors = {
+            "OLP-0516": (r"\olpart{cnt}{", r"\olimport[introduction]{introduction}", r"\olimport[minimal-change-semantics]{minimal-change-semantics}"),
+            "OLP-0517": (r"\olchapter{cnt}{int}{", r"\olimport{material-conditional}", r"\olimport{counterfactuals}"),
+            "OLP-0518": (r"\olfileid{cnt}{int}{mat}", r"\pSat{v}{!A \lif !B}", r"!A \lif !B & \Entails \lnot !B \lif \lnot !A"),
+            "OLP-0519": (r"\olfileid{cnt}{int}{par}", r"p \lif (p \lif q)", r"(!A \lif !B) \lor (!B \lif !A)"),
+            "OLP-0520": (r"\olfileid{cnt}{int}{str}", r"\lnot(!A \strictif !B) & \Entails/ !A \land \lnot !B", r"\Log{S5}"),
+            "OLP-0521": (r"\olfileid{cnt}{int}{cnt}", r"\olsection{", r"\end{quote}"),
+        }
+        assert all(anchor in target for anchor in counterfactual_introduction_anchors[row["unit_id"]])
+        tex_command_check = {"counterfactual_introduction_scope_and_strict_conditional_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5655,6 +5667,19 @@ for row in rows:
             r"\Gamma\Entails!A": 1,
         })
     )
+    strict_conditional_nonentailment_fix = False
+    if row["unit_id"] == "OLP-0520" and set(documented) == {"BN-SRC-420", "BN-SRC-421"}:
+        source_only = source_math - target_math
+        target_only = target_math - source_math
+        if sum(source_only.values()) == sum(target_only.values()) == 1:
+            old_fragment = next(iter(source_only))
+            new_fragment = next(iter(target_only))
+            old_formula = r"\lnot(!A\lif!B)&\Entails/!A\land\lnot!B"
+            new_formula = r"\lnot(!A\strictif!B)&\Entails/!A\land\lnot!B"
+            strict_conditional_nonentailment_fix = (
+                old_fragment.count(old_formula) == 1
+                and old_fragment.replace(old_formula, new_formula, 1) == new_fragment
+            )
     math_ok = any(
         (
             source_math == target_math,
@@ -5755,6 +5780,7 @@ for row in rows:
             intuitionistic_finite_model_reconstruction,
             intuitionistic_tableaux_implication_rule_fix,
             intuitionistic_tableaux_soundness_proof_fix,
+            strict_conditional_nonentailment_fix,
         )
     )
     controls_ok = (

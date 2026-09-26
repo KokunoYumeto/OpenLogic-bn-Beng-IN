@@ -16,7 +16,7 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 
 | ID | Source concept | Chosen Bengali | Status | Confidence | Priority | Occurrences | Authorities | Expert review |
 |---|---|---|---|---|---|---:|---|---|
-| `BN-IN-T001` | set | সেট | attested | high_for_attested_scope | low | 1581 | BN-IN-P001, BN-IN-P006 | welcome/open to correction |
+| `BN-IN-T001` | set | সেট | attested | high_for_attested_scope | low | 1582 | BN-IN-P001, BN-IN-P006 | welcome/open to correction |
 | `BN-IN-T002` | element | উপাদান | attested | high_for_attested_scope | low | 137 | BN-IN-P001 | welcome/open to correction |
 | `BN-IN-T003` | member | সদস্য | attested | high_for_attested_scope | low | 66 | BN-IN-P001 | welcome/open to correction |
 | `BN-IN-T004` | empty set | শূন্য সেট | attested | high_for_attested_scope | low | 22 | BN-IN-P006 | welcome/open to correction |
@@ -25,7 +25,7 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T007` | power set | ঘাত সেট | attested-regional | high_for_attested_scope | low | 17 | BN-IN-P007 | welcome/open to correction |
 | `BN-IN-T008` | extensionality | সদস্যভিত্তিক সমতার নীতি | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 20 | BN-IN-P004, BN-IN-P006 | welcome/open to correction |
 | `BN-IN-T009` | natural number | স্বাভাবিক সংখ্যা | attested | high_for_attested_scope | low | 150 | BN-IN-P005 | welcome/open to correction |
-| `BN-IN-T010` | proposition (logic) | বচন | attested | high_for_attested_scope | low | 148 | BN-IN-P009, BN-IN-P008 | welcome/open to correction |
+| `BN-IN-T010` | proposition (logic) | বচন | attested | high_for_attested_scope | low | 209 | BN-IN-P009, BN-IN-P008 | welcome/open to correction |
 | `BN-IN-T011` | quantifier | পরিমাণসূচক | attested | high_for_attested_scope | low | 122 | BN-IN-P009, BN-IN-P010 | welcome/open to correction |
 | `BN-IN-T012` | universal quantifier | সার্বিক পরিমাণসূচক | attested | high_for_attested_scope | low | 6 | BN-IN-P009 | welcome/open to correction |
 | `BN-IN-T013` | existential quantifier | অস্তিত্বমূলক পরিমাণসূচক | attested | high_for_attested_scope | low | 2 | BN-IN-P010 | welcome/open to correction |
@@ -36,8 +36,8 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T018` | Cartesian product | কার্তেসীয় গুণফল | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 5 | BN-IN-P012 | welcome/open to correction |
 | `BN-IN-T019` | string; sequence; tuple; word | প্রতীকক্রম; অনুক্রম; টিউপল; শব্দ | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 427 | BN-IN-P002, BN-IN-P012 | welcome/open to correction |
 | `BN-IN-T020` | paradox; contradiction; comprehension; naive set theory | কূটাভাস; স্ববিরোধ; ধর্মনির্দেশে সেট গঠন; অনানুষ্ঠানিক সেটতত্ত্ব | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 74 | BN-IN-P001, BN-IN-P004, BN-IN-P009 | welcome/open to correction |
-| `BN-IN-T021` | conjunction; conjunction elimination; absorption | সংযোজন; সংযোজন অপসারণ; শোষণ | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 60 | BN-IN-P008, BN-IN-P012 | welcome/open to correction |
-| `BN-IN-T022` | relation; binary relation; order relation; identity relation | সম্পর্ক; দ্বিপদ সম্পর্ক; ক্রমসম্পর্ক; অভিন্নতার সম্পর্ক | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 488 | BN-IN-P013, BN-IN-P014, BN-IN-P004 | welcome/open to correction |
+| `BN-IN-T021` | conjunction; conjunction elimination; absorption | সংযোজন; সংযোজন অপসারণ; শোষণ | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 61 | BN-IN-P008, BN-IN-P012 | welcome/open to correction |
+| `BN-IN-T022` | relation; binary relation; order relation; identity relation | সম্পর্ক; দ্বিপদ সম্পর্ক; ক্রমসম্পর্ক; অভিন্নতার সম্পর্ক | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 491 | BN-IN-P013, BN-IN-P014, BN-IN-P004 | welcome/open to correction |
 | `BN-IN-T023` | irreflexive; strict order; empty relation; universal relation | আত্মসম্পর্কহীন; কঠোর ক্রম; শূন্য সম্পর্ক; সার্বিক সম্পর্ক | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 20 | BN-IN-P013, BN-IN-P006, BN-IN-P009 | welcome/open to correction |
 | `BN-IN-T024` | continuum; mathematical proposition heading; general conditional proof | সতত সমষ্টি; প্রতিজ্ঞা; সাধারণ শর্তাধীন প্রমাণ | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 39 | BN-IN-P005, BN-IN-P009, BN-IN-P012 | welcome/open to correction |
 | `BN-IN-T025` | predicate; singular term; metaphysical identity; set-theoretic reductionism | বিধেয়; একবস্তুনির্দেশক পদ; অধিবিদ্যাগত অভিন্নতা; সেটতত্ত্বে পর্যবসনবাদ | mixed-contextual-and-provisional | medium_definition_and_adjacent-canon_support | medium | 43 | BN-IN-P009, BN-IN-P013 | welcome/open to correction |
@@ -46,19 +46,19 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T028` | equivalence class; partition; quotient set; congruence modulo n | তুল্যতা শ্রেণি; বিভাজন; ভাগসেট; মডুলো n সমতুল্যতা | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 23 | BN-IN-P015, BN-IN-P016, BN-IN-P017 | welcome/open to correction |
 | `BN-IN-T029` | preorder; partial order; linear order; total order; closure; initial segment | প্রাক্‌ক্রম; আংশিক ক্রম; রৈখিক ক্রম; পূর্ণ ক্রম; আবরণ; প্রারম্ভিক খণ্ড | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 89 | BN-IN-P013, BN-IN-P014, BN-IN-P016 | welcome/open to correction |
 | `BN-IN-T030` | graph; directed graph; vertex; edge; isolated vertex | গ্রাফ; নির্দেশিত গ্রাফ; শীর্ষ; প্রান্ত; বিচ্ছিন্ন শীর্ষ | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 35 | BN-IN-P012, BN-IN-P013 | welcome/open to correction |
-| `BN-IN-T031` | tree; root; successor; predecessor; branch; chain; least element; well-order | বৃক্ষ; মূল; উত্তরসূরি; পূর্বসূরি; শাখা; শৃঙ্খল; ক্ষুদ্রতম উপাদান; সুক্রম | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 859 | BN-IN-P001, BN-IN-P013, BN-IN-P014, BN-IN-P016 | welcome/open to correction |
+| `BN-IN-T031` | tree; root; successor; predecessor; branch; chain; least element; well-order | বৃক্ষ; মূল; উত্তরসূরি; পূর্বসূরি; শাখা; শৃঙ্খল; ক্ষুদ্রতম উপাদান; সুক্রম | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 860 | BN-IN-P001, BN-IN-P013, BN-IN-P014, BN-IN-P016 | welcome/open to correction |
 | `BN-IN-T032` | inverse relation; relative product; restriction; application; transitive closure | বিপরীত সম্পর্ক; আপেক্ষিক গুণফল; সীমাবদ্ধন; প্রয়োগ; পরিযায়ী আবরণ | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 401 | BN-IN-P012, BN-IN-P013, BN-IN-P014 | welcome/open to correction |
 | `BN-IN-T033` | formula; derivation; propositional logic; first-order logic; completeness; computability; König's lemma | সূত্র; নিষ্পাদন; বচনমূলক যুক্তিবিদ্যা; প্রথম-ক্রমের যুক্তিবিদ্যা; পূর্ণতা; গণনাযোগ্যতা; ক্যোনিগের সহায়ক উপপাদ্য | provisional-contextual | medium_definition_and_adjacent-canon_support | medium | 692 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P014 | welcome/open to correction |
-| `BN-IN-T034` | variable; constant; sum; arithmetic product; equation | চল; ধ্রুবক; যোগফল; গুণফল; সমীকরণ | attested-in-school-algebra | high_for_attested_scope | low | 559 | BN-IN-P019, BN-IN-P020, BN-IN-P022 | welcome/open to correction |
-| `BN-IN-T035` | function; mapping; domain; codomain; range; image/value | অপেক্ষক; চিত্রণ; সংজ্ঞাক্ষেত্র; সহসংজ্ঞাক্ষেত্র; বিস্তৃতি; প্রতিবিম্ব/মান | attested-university | high_for_attested_scope | low | 2561 | BN-IN-P018 | welcome/open to correction |
+| `BN-IN-T034` | variable; constant; sum; arithmetic product; equation | চল; ধ্রুবক; যোগফল; গুণফল; সমীকরণ | attested-in-school-algebra | high_for_attested_scope | low | 563 | BN-IN-P019, BN-IN-P020, BN-IN-P022 | welcome/open to correction |
+| `BN-IN-T035` | function; mapping; domain; codomain; range; image/value | অপেক্ষক; চিত্রণ; সংজ্ঞাক্ষেত্র; সহসংজ্ঞাক্ষেত্র; বিস্তৃতি; প্রতিবিম্ব/মান | attested-university | high_for_attested_scope | low | 2567 | BN-IN-P018 | welcome/open to correction |
 | `BN-IN-T036` | function argument; input; output; black box; extensionality for functions | আর্গুমেন্ট; ইনপুট; আউটপুট; ব্ল্যাক বক্স; মানভিত্তিক সমতার নীতি | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 115 | BN-IN-P018, BN-IN-P019, BN-IN-P020, BN-IN-P022 | welcome/open to correction |
 | `BN-IN-T037` | injective/injection; surjective/surjection; bijective/bijection; identity function | একৈক/একৈক অপেক্ষক; সমাপতিত/সমাপতিত অপেক্ষক; একৈক সমাপতিত/একৈক সমাপতিত অপেক্ষক; অভেদ অপেক্ষক | attested-university-with-normalization | high_for_attested_scope | low | 28 | BN-IN-P023, BN-IN-P024 | welcome/open to correction |
 | `BN-IN-T038` | inverse function; left inverse; right inverse; composition | বিপরীত অপেক্ষক; বাম বিপরীত; ডান বিপরীত; মিশ্রণ | attested-root-with-provisional-normalization | medium_definition_and_adjacent-canon_support | medium | 83 | BN-IN-P024, BN-IN-P025, BN-IN-P026 | welcome/open to correction |
 | `BN-IN-T039` | partial function; total function; functional relation; serial relation; Axiom of Choice | আংশিক অপেক্ষক; সর্বত্র সংজ্ঞায়িত অপেক্ষক; অপেক্ষকধর্মী সম্পর্ক; সিরিয়াল সম্পর্ক; নির্বাচন স্বতঃসিদ্ধ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 49 | BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T040` | size of sets; finite/infinite; cardinality; enumeration; enumerable/countable; uncountable | সেটের আকার; সসীম/অসীম; সেটের মাত্রা (অঙ্কবাচক সংখ্যা); তালিকায়ন; তালিকায়নযোগ্য/গণনীয়; অগণনীয় | mixed-attested-and-provisional | medium_definition_and_adjacent-canon_support | medium | 663 | BN-IN-P027, BN-IN-P028, BN-IN-P023, BN-IN-P024 | welcome/open to correction |
 | `BN-IN-T041` | actual infinity | বাস্তবায়িত অসীম | provisional-philosophical | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P009, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
-| `BN-IN-T042` | ceiling function; induction; recursive definition; corollary | ঊর্ধ্ব পূর্ণাংশ অপেক্ষক; গাণিতিক আরোহ; পূর্ববর্তী মানের সাহায্যে ধাপে ধাপে সংজ্ঞা; অনুসিদ্ধান্ত | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 58 | BN-IN-P018, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
-| `BN-IN-T043` | zig-zag method; pairing function; encode/code/decode; triangular number; cofinite; truth table/truth function | আঁকাবাঁকা পথের পদ্ধতি; যুগলায়ন অপেক্ষক; সংকেতায়ন/সংকেত/সংকেতোদ্ধার; ত্রিভুজসংখ্যা; সহসসীম; সত্যসারণি/সত্যমান-অপেক্ষক | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 410 | BN-IN-P009, BN-IN-P012, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P024, BN-IN-P027 | welcome/open to correction |
+| `BN-IN-T042` | ceiling function; induction; recursive definition; corollary | ঊর্ধ্ব পূর্ণাংশ অপেক্ষক; গাণিতিক আরোহ; পূর্ববর্তী মানের সাহায্যে ধাপে ধাপে সংজ্ঞা; অনুসিদ্ধান্ত | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 63 | BN-IN-P018, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
+| `BN-IN-T043` | zig-zag method; pairing function; encode/code/decode; triangular number; cofinite; truth table/truth function | আঁকাবাঁকা পথের পদ্ধতি; যুগলায়ন অপেক্ষক; সংকেতায়ন/সংকেত/সংকেতোদ্ধার; ত্রিভুজসংখ্যা; সহসসীম; সত্যসারণি/সত্যমান-অপেক্ষক | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 413 | BN-IN-P009, BN-IN-P012, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P024, BN-IN-P027 | welcome/open to correction |
 | `BN-IN-T044` | non-enumerable/uncountable; diagonal method; diagonalization; one-way infinite list; mirror sequence | অতালিকায়নযোগ্য/অগণনীয়; কর্ণ পদ্ধতি; কর্ণীকরণ; একদিকে অসীম তালিকা; বিপরীত-বিট অনুক্রম | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 23 | BN-IN-P001, BN-IN-P002, BN-IN-P009, BN-IN-P010, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T045` | reduction (of one enumeration problem to another); characteristic sequence; exhaust a set; reduction direction | হ্রাসকরণ; নির্দেশক অনুক্রম; সেটের সব উপাদান অন্তর্ভুক্ত করা; হ্রাসের অভিমুখ | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 34 | BN-IN-P009, BN-IN-P010, BN-IN-P018, BN-IN-P023, BN-IN-P024, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T046` | equinumerous/equinumerosity; same cardinality; cardinal equality | সমসংখ্যক/সমসংখ্যকতা; একই অঙ্কবাচকতা; মাত্রাসমতা | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 12 | BN-IN-P014, BN-IN-P015, BN-IN-P016, BN-IN-P018, BN-IN-P023, BN-IN-P024, BN-IN-P025, BN-IN-P028 | welcome/open to correction |
@@ -75,19 +75,19 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T057` | Dedekind algebra; successor function; self-map; f-closed set; closure under f | ডেডেকিন্ড বীজগঠন; উত্তরসূরি অপেক্ষক; স্ব-অপেক্ষক; f-বদ্ধ সেট; f-এর অধীনে আবরণ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 38 | BN-IN-P013, BN-IN-P014, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027 | welcome/open to correction |
 | `BN-IN-T058` | parameter of a formula; free variable; recursive definition | সূত্রের পরামিতি; মুক্ত চলরাশি; পুনরাবৃত্ত সংজ্ঞা | provisional-normalized | medium_definition_and_adjacent-canon_support | medium | 55 | BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P020, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T059` | isomorphic structures; structuralist; surrogate for the natural numbers; pure laws of thought | সমরূপ গঠন; গঠনবাদী; স্বাভাবিক সংখ্যার প্রতিস্থাপক; চিন্তার বিশুদ্ধ বিধি | mixed-contextual-and-provisional | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P009, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T060` | syntax; semantics; metatheory; inductive definition; unique readability | সংকেতবিন্যাস; অর্থতত্ত্ব; অধিতত্ত্ব; আরোহী সংজ্ঞা; একক পাঠযোগ্যতা | provisional-formally-governed | medium_definition_and_adjacent-canon_support | medium | 150 | BN-IN-P008, BN-IN-P009, BN-IN-P010 | welcome/open to correction |
-| `BN-IN-T061` | propositional variable; propositional/logical connective; truth value; truth-functional; material conditional | বচনচল; বচনসংযোজক/যৌক্তিক সংযোজক; সত্যমান; সত্যমান-অপেক্ষকধর্মী; বস্তুগত শর্তবচন | mixed-attested-roots-and-provisional | medium_definition_and_adjacent-canon_support | medium | 163 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P020 | welcome/open to correction |
-| `BN-IN-T062` | negation; conjunction; disjunction; conditional/implication; biconditional/material equivalence | নঞর্থকরণ; সংযোজন; বিয়োজন; শর্তবচন/নিহিতকরণ; দ্বিশর্তবচন/বস্তুগত সমতুল্যতা | attested-variants-normalized | high_for_attested_scope | low | 106 | BN-IN-P008, BN-IN-P009, BN-IN-P010 | welcome/open to correction |
+| `BN-IN-T060` | syntax; semantics; metatheory; inductive definition; unique readability | সংকেতবিন্যাস; অর্থতত্ত্ব; অধিতত্ত্ব; আরোহী সংজ্ঞা; একক পাঠযোগ্যতা | provisional-formally-governed | medium_definition_and_adjacent-canon_support | medium | 151 | BN-IN-P008, BN-IN-P009, BN-IN-P010 | welcome/open to correction |
+| `BN-IN-T061` | propositional variable; propositional/logical connective; truth value; truth-functional; material conditional | বচনচল; বচনসংযোজক/যৌক্তিক সংযোজক; সত্যমান; সত্যমান-অপেক্ষকধর্মী; বস্তুগত শর্তবচন | mixed-attested-roots-and-provisional | medium_definition_and_adjacent-canon_support | medium | 186 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P020 | welcome/open to correction |
+| `BN-IN-T062` | negation; conjunction; disjunction; conditional/implication; biconditional/material equivalence | নঞর্থকরণ; সংযোজন; বিয়োজন; শর্তবচন/নিহিতকরণ; দ্বিশর্তবচন/বস্তুগত সমতুল্যতা | attested-variants-normalized | high_for_attested_scope | low | 168 | BN-IN-P008, BN-IN-P009, BN-IN-P010 | welcome/open to correction |
 | `BN-IN-T063` | denumerable; atomic formula; primitive/defined symbol; syntactic identity; string/substring/concatenation | অসীম গণনীয়; পরমাণু সূত্র; মৌলিক/সংজ্ঞায়িত সংকেত; সংকেতবিন্যাসগত অভিন্নতা; প্রতীকক্রম/উপপ্রতীকক্রম/সংযুক্তকরণ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 256 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019 | welcome/open to correction |
 | `BN-IN-T064` | formula induction; balanced formula; proper initial segment; parsing; uniform substitution | সূত্রের উপর আরোহ; সুষম সূত্র; প্রকৃত প্রারম্ভিক খণ্ড; গঠনবিশ্লেষণ; সমরূপ প্রতিস্থাপন | provisional-mathematically-governed | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T065` | formation sequence; junk/redundant formula; strong induction | গঠন-অনুক্রম; অপ্রয়োজনীয় সূত্র; প্রবল আরোহ | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 79 | BN-IN-P008, BN-IN-P009, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T066` | valuation; evaluation function; satisfaction; local determination; truth table | সত্যমান-আরোপ; মূল্যায়ন অপেক্ষক; পরিতৃপ্তি; স্থানীয় নির্ধারণ; সত্যসারণি | mixed-contextual-and-provisional | medium_definition_and_adjacent-canon_support | medium | 277 | BN-IN-P008, BN-IN-P009, BN-IN-P010 | welcome/open to correction |
-| `BN-IN-T067` | satisfiable/unsatisfiable; tautology; contingent; semantic entailment; monotonicity; semantic deduction theorem | পরিতৃপ্তিযোগ্য/অপরিতৃপ্তিযোগ্য; সর্বতঃসত্য; আপতিক; অর্থগত অনুসিদ্ধান্ত; একঘেয়েতা; অর্থগত নিঃসরণ উপপাদ্য | provisional-definition-governed | medium_definition_and_adjacent-canon_support | medium | 297 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T066` | valuation; evaluation function; satisfaction; local determination; truth table | সত্যমান-আরোপ; মূল্যায়ন অপেক্ষক; পরিতৃপ্তি; স্থানীয় নির্ধারণ; সত্যসারণি | mixed-contextual-and-provisional | medium_definition_and_adjacent-canon_support | medium | 278 | BN-IN-P008, BN-IN-P009, BN-IN-P010 | welcome/open to correction |
+| `BN-IN-T067` | satisfiable/unsatisfiable; tautology; contingent; semantic entailment; monotonicity; semantic deduction theorem | পরিতৃপ্তিযোগ্য/অপরিতৃপ্তিযোগ্য; সর্বতঃসত্য; আপতিক; অর্থগত অনুসিদ্ধান্ত; একঘেয়েতা; অর্থগত নিঃসরণ উপপাদ্য | provisional-definition-governed | medium_definition_and_adjacent-canon_support | medium | 300 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T068` | derivation system; purely syntactic object/method; mechanical verification; metatheoretical treatment | নিষ্পাদন পদ্ধতি; সম্পূর্ণ সংকেতবিন্যাসগত বস্তু/পদ্ধতি; যান্ত্রিক যাচাই; অধিতাত্ত্বিক বিচার | provisional-contextual | medium_definition_and_adjacent-canon_support | medium | 276 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T069` | soundness; completeness; consistency/inconsistency; syntactic counterpart | বিশুদ্ধতা; পূর্ণতা; সঙ্গতি/অসঙ্গতি; সংকেতবিন্যাসগত প্রতিরূপ | provisional-definition-governed | medium_definition_and_adjacent-canon_support | medium | 380 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T070` | axiomatic derivation; axiom schema/system; rule of inference; justified line; modus ponens | স্বতঃসিদ্ধমূলক নিষ্পাদন; স্বতঃসিদ্ধ-ছক/পদ্ধতি; অনুমান-বিধি; সমর্থিত পংক্তি; মোডাস পোনেন্স | provisional-formally-governed | medium_definition_and_adjacent-canon_support | medium | 376 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T070` | axiomatic derivation; axiom schema/system; rule of inference; justified line; modus ponens | স্বতঃসিদ্ধমূলক নিষ্পাদন; স্বতঃসিদ্ধ-ছক/পদ্ধতি; অনুমান-বিধি; সমর্থিত পংক্তি; মোডাস পোনেন্স | provisional-formally-governed | medium_definition_and_adjacent-canon_support | medium | 378 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T071` | natural deduction; proof by cases; indirect proof; conditional proof | স্বাভাবিক নিষ্পাদন; ক্ষেত্রবিচারে প্রমাণ; পরোক্ষ প্রমাণ; শর্তাধীন প্রমাণ | provisional-proof-patterns | medium_definition_and_adjacent-canon_support | medium | 38 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T072` | introduction/elimination rule; assumption/hypothesis; discharge/undischarged assumption; proof-theoretic semantics | প্রবর্তন/অপসারণ-বিধি; অনুমিতি/পূর্বধারণা; অনুমিতি অবমুক্ত করা/অনবমুক্ত অনুমিতি; প্রমাণতাত্ত্বিক অর্থতত্ত্ব | provisional-natural-deduction-register | medium_definition_and_adjacent-canon_support | medium | 328 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T072` | introduction/elimination rule; assumption/hypothesis; discharge/undischarged assumption; proof-theoretic semantics | প্রবর্তন/অপসারণ-বিধি; অনুমিতি/পূর্বধারণা; অনুমিতি অবমুক্ত করা/অনবমুক্ত অনুমিতি; প্রমাণতাত্ত্বিক অর্থতত্ত্ব | provisional-natural-deduction-register | medium_definition_and_adjacent-canon_support | medium | 329 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T073` | sequent calculus; sequent; initial sequent; left/right side; weakening rule | সিকোয়েন্ট কলন; সিকোয়েন্ট; প্রারম্ভিক সিকোয়েন্ট; বাঁ/ডানপাশ; দুর্বলীকরণ-বিধি | provisional-transliterated-system | medium_definition_and_adjacent-canon_support | medium | 293 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T074` | tableau/truth tree; signed formula; truth-value sign; closed/open branch; tableau calculus | ট্যাবলো/সত্য-বৃক্ষ; চিহ্নিত সূত্র; সত্যমান-চিহ্ন; বদ্ধ/খোলা শাখা; ট্যাবলো কলন | provisional-explicitly-defined | medium_definition_and_adjacent-canon_support | medium | 527 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T075` | resolution method; resolution refutation; mechanization/implementation; read a satisfying structure off an open branch | রেজোলিউশন পদ্ধতি; রেজোলিউশন খণ্ডন; যান্ত্রিক প্রয়োগ/রূপায়ণ; খোলা শাখা থেকে পরিতৃপ্তিকারী গঠন পড়ে নেওয়া | provisional-descriptive | medium_definition_and_adjacent-canon_support | medium | 4 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
@@ -96,8 +96,8 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T078` | quantifier rule; eigenvariable/eigenvariable condition; closed term | পরিমাণসূচকের বিধি; আইগেনচল/আইগেনচল-শর্ত; বদ্ধ পদ | provisional-quantifier-rule-register | medium_definition_and_adjacent-canon_support | medium | 129 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T079` | contraction; exchange; cut; inference line; LK derivation/end-sequent | সংকোচন; অদলবদল; কর্তন; অনুমান-রেখা; LK-নিষ্পাদন/অন্তিম সিকোয়েন্ট | provisional-structural-rule-register | medium_definition_and_adjacent-canon_support | medium | 92 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T080` | proof search; apply a rule backwards; split into branches; finish at an initial sequent | প্রমাণ-অন্বেষণ; বিধি উল্টো দিকে প্রয়োগ; শাখায় ভাগ; প্রারম্ভিক সিকোয়েন্টে শেষ করা | provisional-pedagogical-register | medium_definition_and_adjacent-canon_support | medium | 5 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T081` | provability/derivability relation; theorem; reflexivity; monotonicity; transitivity; compactness | প্রমাণযোগ্যতা/নিষ্পাদনযোগ্যতা-সম্পর্ক; উপপাদ্য; প্রতিবিম্ব ধর্ম; একঘেয়েতা; পরিযায়িতা; সংহতি | provisional-definition-governed | medium_definition_and_adjacent-canon_support | medium | 483 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T082` | propositional facts about provability; modus ponens; shared sequent context | বচনসংযোজক-সংক্রান্ত প্রমাণযোগ্যতার তথ্য; মোডাস পোনেন্স; অভিন্ন সিকোয়েন্ট-প্রসঙ্গ | provisional-rule-governed | medium_definition_and_adjacent-canon_support | medium | 39 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T081` | provability/derivability relation; theorem; reflexivity; monotonicity; transitivity; compactness | প্রমাণযোগ্যতা/নিষ্পাদনযোগ্যতা-সম্পর্ক; উপপাদ্য; প্রতিবিম্ব ধর্ম; একঘেয়েতা; পরিযায়িতা; সংহতি | provisional-definition-governed | medium_definition_and_adjacent-canon_support | medium | 484 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T082` | propositional facts about provability; modus ponens; shared sequent context | বচনসংযোজক-সংক্রান্ত প্রমাণযোগ্যতার তথ্য; মোডাস পোনেন্স; অভিন্ন সিকোয়েন্ট-প্রসঙ্গ | provisional-rule-governed | medium_definition_and_adjacent-canon_support | medium | 41 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T083` | strong generalization; fresh constant; quantifier provability facts | প্রবল সাধারণীকরণ; নতুন ধ্রুবক; পরিমাণসূচক-সংক্রান্ত প্রমাণযোগ্যতার তথ্য | provisional-quantifier-metatheory | medium_definition_and_adjacent-canon_support | medium | 2 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T084` | valid sequent; satisfy a sequent; soundness induction; induction hypothesis; variable assignment | বৈধ সিকোয়েন্ট; সিকোয়েন্ট পরিতৃপ্ত করা; বিশুদ্ধতার আরোহ-প্রমাণ; আরোহের অনুমান; চলরাশি-আরোপ | provisional-semantics-proof-register | medium_definition_and_adjacent-canon_support | medium | 101 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T085` | identity/equality rules; substitutability of identicals; Leibniz's Law; symmetry and transitivity | অভিন্নতা/সমতার বিধি; অভিন্ন বস্তুর প্রতিস্থাপনযোগ্যতা; লাইবনিজের সূত্র; প্রতিসাম্য ও পরিযায়িতা | mixed-attested-roots-and-provisional | medium_definition_and_adjacent-canon_support | medium | 23 | BN-IN-P013, BN-IN-P020, BN-IN-P025 | welcome/open to correction |
@@ -105,15 +105,15 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T087` | natural-deduction eigenvariable condition; discharged A(a) assumption; major existential premise; freshness | স্বাভাবিক নিষ্পাদনের আইগেনচল-শর্ত; অবমুক্তযোগ্য A(a) অনুমিতি; প্রধান অস্তিত্বসূচক পূর্বধারণা; নতুনত্ব | provisional-rule-specific-freshness | medium_definition_and_adjacent-canon_support | medium | 2 | BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T088` | rule-applicable signed formula; check off with a check mark; branch-splitting rule; repeat a quantified rule with a closed term | বিধি প্রয়োগের উপযোগী চিহ্নিত সূত্র; টিকচিহ্ন দেওয়া; শাখা-বিভাজক বিধি; বদ্ধ পদ দিয়ে বিধিটি কয়েকবার প্রয়োগ | provisional-tableau-construction-register | medium_definition_and_adjacent-canon_support | medium | 2 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T089` | satisfy a signed formula; satisfiable set/branch/tableau; rule extension preserves satisfiability; unsatisfiable; contrapositive | চিহ্নিত সূত্রকে পরিতৃপ্ত করা; পরিতৃপ্তিযোগ্য সমষ্টি/শাখা/ট্যাবলো; বিধি-প্রসারণে পরিতৃপ্তিযোগ্যতা বজায় রাখা; অপরিতৃপ্তিযোগ্য; বিপরীত-প্রতিজ্ঞা | provisional-tableau-soundness-register | medium_definition_and_adjacent-canon_support | medium | 382 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T090` | syntactic deduction theorem; discharge an assumption; axiom instance; concatenate derivations | নিঃসরণ উপপাদ্য; অনুমিতি নিঃসরণ; স্বতঃসিদ্ধের রূপ; নিষ্পাদনগুলি পরপর বসানো | provisional-axiomatic-metatheory-register | medium_definition_and_adjacent-canon_support | medium | 24 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T090` | syntactic deduction theorem; discharge an assumption; axiom instance; concatenate derivations | নিঃসরণ উপপাদ্য; অনুমিতি নিঃসরণ; স্বতঃসিদ্ধের রূপ; নিষ্পাদনগুলি পরপর বসানো | provisional-axiomatic-metatheory-register | medium_definition_and_adjacent-canon_support | medium | 25 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T091` | complete consistent theory; axiomatizable; decidable | পূর্ণ সঙ্গত তত্ত্ব; স্বতঃসিদ্ধযোগ্য; নির্ণেয় | provisional-completeness-metatheory-register | medium_definition_and_adjacent-canon_support | medium | 72 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T092` | Henkin expansion; saturated set; witness; counterexample | হেনকিন সম্প্রসারণ; সম্পৃক্ত সেট; সাক্ষী; প্রতিদৃষ্টান্ত | provisional-henkin-construction-register | medium_definition_and_adjacent-canon_support | medium | 13 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T092` | Henkin expansion; saturated set; witness; counterexample | হেনকিন সম্প্রসারণ; সম্পৃক্ত সেট; সাক্ষী; প্রতিদৃষ্টান্ত | provisional-henkin-construction-register | medium_definition_and_adjacent-canon_support | medium | 15 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T093` | term model; Truth Lemma; covered model; factor a model by an equivalence relation | পদ-মডেল; সত্যতা-সহায়ক উপপাদ্য; আচ্ছাদিত মডেল; তুল্যতা সম্পর্ক দিয়ে মডেলের ভাগকরণ | mixed-attested-roots-and-provisional-model-theory | medium_definition_and_adjacent-canon_support | medium | 26 | BN-IN-P013, BN-IN-P015, BN-IN-P016, BN-IN-P020, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T094` | finitely satisfiable; infinitesimal; standard model of arithmetic | সসীমভাবে পরিতৃপ্তিযোগ্য; অতিক্ষুদ্র সংখ্যা; পাটীগণিতের প্রমিত মডেল | provisional-compactness-application-register | medium_definition_and_adjacent-canon_support | medium | 30 | BN-IN-P008, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T095` | downward Löwenheim–Skolem theorem; countable model; Skolem's paradox | লোয়েনহাইম--স্কোলেম উপপাদ্য; গণনীয় মডেল; স্কোলেমের কূটাভাস | provisional-model-size-register | medium_definition_and_adjacent-canon_support | medium | 18 | BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T096` | formal language; first-order language; quantificational logic; predicate logic; vocabulary; expression/string | বিধিবদ্ধ ভাষা; প্রথম-ক্রমের ভাষা; পরিমাণসূচকীয় যুক্তিবিদ্যা; বিধেয় যুক্তিবিদ্যা; শব্দভাণ্ডার; অভিব্যক্তি/প্রতীকক্রম | mixed-contextual-and-provisional-first-order-register | medium_definition_and_adjacent-canon_support | medium | 132 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019 | welcome/open to correction |
-| `BN-IN-T097` | term; atomic formula; sentence; free/bound variable occurrence; matching quantifier; corresponding occurrence; quantifier scope | পদ; পরমাণু সূত্র; বাক্য; মুক্ত/বদ্ধ চলরাশির সংঘটন; সংশ্লিষ্ট পরিমাণসূচক; অনুরূপ সংঘটন; পরিমাণসূচকের পরিসর | mixed-attested-roots-and-definition-governed | medium_definition_and_adjacent-canon_support | medium | 1408 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T098` | structure; domain; interpretation/denotation; satisfaction relative to an assignment; modified assignment | গঠন; সংজ্ঞাক্ষেত্র; ব্যাখ্যা/নির্দেশিত মান; আরোপ-সাপেক্ষ পরিতৃপ্তি; পরিবর্তিত আরোপ | mixed-attested-roots-and-provisional-semantics | medium_definition_and_adjacent-canon_support | medium | 574 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T097` | term; atomic formula; sentence; free/bound variable occurrence; matching quantifier; corresponding occurrence; quantifier scope | পদ; পরমাণু সূত্র; বাক্য; মুক্ত/বদ্ধ চলরাশির সংঘটন; সংশ্লিষ্ট পরিমাণসূচক; অনুরূপ সংঘটন; পরিমাণসূচকের পরিসর | mixed-attested-roots-and-definition-governed | medium_definition_and_adjacent-canon_support | medium | 1415 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T098` | structure; domain; interpretation/denotation; satisfaction relative to an assignment; modified assignment | গঠন; সংজ্ঞাক্ষেত্র; ব্যাখ্যা/নির্দেশিত মান; আরোপ-সাপেক্ষ পরিতৃপ্তি; পরিবর্তিত আরোপ | mixed-attested-roots-and-provisional-semantics | medium_definition_and_adjacent-canon_support | medium | 577 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T099` | substitution; capture-sensitive replacement; term value; universal instantiation; substitution lemma | প্রতিস্থাপন; চলরাশি-বদ্ধতা-সংবেদনশীল প্রতিস্থাপন; পদের মান; সার্বিক নিদর্শনায়ন; প্রতিস্থাপন-সহায়ক উপপাদ্য | provisional-definition-and-lemma-governed | medium_definition_and_adjacent-canon_support | medium | 92 | BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P020, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T100` | model theory; model of a sentence set; axiomatic method; characterize a class; expressibility; finite/nonenumerable domain | মডেল তত্ত্ব; বাক্যসমষ্টির মডেল; স্বতঃসিদ্ধমূলক পদ্ধতি; কোনো শ্রেণিকে চরিত্রায়িত করা; প্রকাশযোগ্যতা; সসীম/অতালিকায়নযোগ্য সংজ্ঞাক্ষেত্র | mixed-attested-roots-and-provisional-model-theory | medium_definition_and_adjacent-canon_support | medium | 351 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T101` | main operator; immediate subformula; proper subformula; proper prefix | প্রধান অপারেটর; অব্যবহিত উপসূত্র; প্রকৃত উপসূত্র; প্রকৃত পূর্বাংশ | provisional-definition-governed-syntax-register | medium_definition_and_adjacent-canon_support | medium | 10 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
@@ -123,16 +123,16 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T105` | extensionality; relevance; Skolem normal form | ব্যাপ্তিগততা; প্রাসঙ্গিকতা; স্কোলেম স্বাভাবিক রূপ | provisional-definition-and-theorem-governed | medium_definition_and_adjacent-canon_support | medium | 10 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P020, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T106` | axiomatic theory; closure of a sentence set; axiomatized by; intended structure; capture a class; redundant axiom; definability | স্বতঃসিদ্ধমূলক তত্ত্ব; বাক্যসমষ্টির আবরণ; স্বতঃসিদ্ধায়িত; অভিপ্রেত গঠন; কোনো শ্রেণিকে ধারণ করা; অপ্রয়োজনীয় স্বতঃসিদ্ধ; সংজ্ঞেয়তা | mixed-attested-roots-and-provisional-axiomatic-register | medium_definition_and_adjacent-canon_support | medium | 32 | BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T107` | strict linear-order theory; group theory; Peano arithmetic; induction schema; pure set; urelement; set extensionality; naive comprehension scheme | কঠোর রৈখিক ক্রমের তত্ত্ব; গোষ্ঠীর তত্ত্ব; পেয়ানো পাটীগণিত; আরোহ-ছক; বিশুদ্ধ সেট; উর-উপাদান; সেটের সদস্যভিত্তিক সমতা; অনানুষ্ঠানিক ধর্মনির্দেশে সেট-গঠন ছক | mixed-attested-roots-and-provisional-theory-examples | medium_definition_and_adjacent-canon_support | medium | 21 | BN-IN-P001, BN-IN-P002, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P011, BN-IN-P013, BN-IN-P025, BN-IN-P027 | welcome/open to correction |
-| `BN-IN-T108` | mereology; parthood; parthood structure; proper/improper part; mereological sum; fusion | অংশতত্ত্ব; অংশ-সম্পর্ক; অংশ-গঠন; যথার্থ/অযথার্থ অংশ; অংশতাত্ত্বিক যোগ; সংযোজন | provisional-definition-governed-mereology-register | medium_definition_and_adjacent-canon_support | medium | 81 | BN-IN-P001, BN-IN-P013, BN-IN-P018, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T108` | mereology; parthood; parthood structure; proper/improper part; mereological sum; fusion | অংশতত্ত্ব; অংশ-সম্পর্ক; অংশ-গঠন; যথার্থ/অযথার্থ অংশ; অংশতাত্ত্বিক যোগ; সংযোজন | provisional-definition-governed-mereology-register | medium_definition_and_adjacent-canon_support | medium | 83 | BN-IN-P001, BN-IN-P013, BN-IN-P018, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T109` | express a relation in a structure; definable relation; superfluous predicate; successor/predecessor relation; standard arithmetic model | কোনো গঠনে সম্পর্ক প্রকাশ করা; সংজ্ঞেয় সম্পর্ক; অপ্রয়োজনীয় বিধেয়; উত্তরসূরি/পূর্বসূরি সম্পর্ক; পাটীগণিতের প্রমিত মডেল | mixed-attested-roots-and-provisional-definability-register | medium_definition_and_adjacent-canon_support | medium | 71 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T110` | ZFC; axiom of extensionality; empty-set axiom; power-set axiom; function represented as a relation; comprehension principle; separation principle; Russell's paradox | জার্মেলো--ফ্রেঙ্কেল সেটতত্ত্বসহ নির্বাচন স্বতঃসিদ্ধ; সদস্যভিত্তিক সমতার স্বতঃসিদ্ধ; শূন্য সেটের স্বতঃসিদ্ধ; ঘাত সেটের স্বতঃসিদ্ধ; সম্পর্করূপে অপেক্ষক; ধর্মনির্দেশে সেট-গঠন নীতি; পৃথকীকরণ নীতি; রাসেলের কূটাভাস | mixed-attested-set-roots-and-provisional-foundational-register | medium_definition_and_adjacent-canon_support | medium | 18 | BN-IN-P001, BN-IN-P002, BN-IN-P006, BN-IN-P007, BN-IN-P011, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T111` | size of a structure; at least/at most/exactly n elements; finite/infinite structure; purely logical sentence; nonenumerable structure | গঠনের আকার; অন্তত/বড়জোর/ঠিক n-টি উপাদান; সসীম/অসীম গঠন; বিশুদ্ধ যৌক্তিক বাক্য; অতালিকায়নযোগ্য গঠন | mixed-attested-finiteness-and-provisional-model-size-register | medium_definition_and_adjacent-canon_support | medium | 455 | BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T112` | logic beyond first order; extension and variation; formal language; deductive system; intended semantics; logicism; higher-order reasoning | প্রথম-ক্রমের পরিসরের বাইরের যুক্তিবিদ্যা; সম্প্রসারণ ও রূপভেদ; আনুষ্ঠানিক ভাষা; অবরোহী ব্যবস্থা; অভিপ্রেত অর্থতত্ত্ব; যুক্তিবাদ; উচ্চতর-ক্রমের যুক্তিবিচার | mixed-attested-roots-and-provisional-philosophical-register | medium_definition_and_adjacent-canon_support | medium | 10 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T113` | many-sorted logic; sort; sort-specific domain; typed function or relation; relativized quantifier; first-order embedding | বহুজাতীয় যুক্তিবিদ্যা; জাতি; জাতি-নির্দিষ্ট সংজ্ঞাক্ষেত্র; টাইপযুক্ত অপেক্ষক বা সম্পর্ক; আপেক্ষিক পরিমাণসূচক; প্রথম-ক্রমীয় নিবেশন | mixed-attested-roots-and-provisional-many-sorted-register | medium_definition_and_adjacent-canon_support | medium | 26 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T114` | second-order logic; relation variable; comprehension schema; impredicative/predicative comprehension; full/weak second-order semantics; categorical description; effective proof system | দ্বিতীয়-ক্রমের যুক্তিবিদ্যা; সম্পর্ক-চলরাশি; ধর্মনির্দেশ-ছক; অপ্রেডিকেটিভ/প্রেডিকেটিভ ধর্মনির্দেশ; পূর্ণ/দুর্বল দ্বিতীয়-ক্রমীয় অর্থতত্ত্ব; সমরূপতা-অবধি একক বর্ণনা; কার্যকর প্রমাণ-ব্যবস্থা | mixed-attested-roots-and-provisional-second-order-register | medium_definition_and_adjacent-canon_support | medium | 805 | BN-IN-P001, BN-IN-P002, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
+| `BN-IN-T114` | second-order logic; relation variable; comprehension schema; impredicative/predicative comprehension; full/weak second-order semantics; categorical description; effective proof system | দ্বিতীয়-ক্রমের যুক্তিবিদ্যা; সম্পর্ক-চলরাশি; ধর্মনির্দেশ-ছক; অপ্রেডিকেটিভ/প্রেডিকেটিভ ধর্মনির্দেশ; পূর্ণ/দুর্বল দ্বিতীয়-ক্রমীয় অর্থতত্ত্ব; সমরূপতা-অবধি একক বর্ণনা; কার্যকর প্রমাণ-ব্যবস্থা | mixed-attested-roots-and-provisional-second-order-register | medium_definition_and_adjacent-canon_support | medium | 807 | BN-IN-P001, BN-IN-P002, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T115` | higher-order logic; type; function type; product type; functional; lambda abstraction; projection; simple theory of types | উচ্চতর-ক্রমের যুক্তিবিদ্যা; টাইপ; অপেক্ষক-টাইপ; গুণন-টাইপ; ফাংশনাল; ল্যাম্বডা বিমূর্তন; অভিক্ষেপ; সরল টাইপতত্ত্ব | mixed-attested-roots-and-provisional-type-theory-register | medium_definition_and_adjacent-canon_support | medium | 94 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T116` | intuitionistic logic; constructive proof; BHK interpretation; formulas-as-types; Curry--Howard isomorphism; double-negation translation; Kripke structure; forcing relation | স্বজ্ঞাবাদী যুক্তিবিদ্যা; নির্মাণমূলক প্রমাণ; BHK ব্যাখ্যা; সূত্র-হিসেবে-টাইপ; কারি--হাওয়ার্ড সমরূপতা; দ্বিনঞর্থকতা অনুবাদ; ক্রিপকে গঠন; বাধ্যকরণ সম্পর্ক | mixed-attested-roots-and-provisional-intuitionistic-register | medium_definition_and_adjacent-canon_support | medium | 51 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P019, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T117` | modal logic; necessity/possibility; possible world; accessibility relation; intensional/extensional logic; provability/epistemic/temporal logic; S4/S5 | মোডাল যুক্তিবিদ্যা; আবশ্যিকতা/সম্ভাব্যতা; সম্ভাব্য জগৎ; অভিগম্যতা সম্পর্ক; অভিপ্রায়গত/ব্যাপ্তিগত যুক্তিবিদ্যা; প্রমাণযোগ্যতা/জ্ঞানতাত্ত্বিক/কালগত যুক্তিবিদ্যা; S4/S5 | mixed-attested-roots-and-provisional-modal-register | medium_definition_and_adjacent-canon_support | medium | 198 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T117` | modal logic; necessity/possibility; possible world; accessibility relation; intensional/extensional logic; provability/epistemic/temporal logic; S4/S5 | মোডাল যুক্তিবিদ্যা; আবশ্যিকতা/সম্ভাব্যতা; সম্ভাব্য জগৎ; অভিগম্যতা সম্পর্ক; অভিপ্রায়গত/ব্যাপ্তিগত যুক্তিবিদ্যা; প্রমাণযোগ্যতা/জ্ঞানতাত্ত্বিক/কালগত যুক্তিবিদ্যা; S4/S5 | mixed-attested-roots-and-provisional-modal-register | medium_definition_and_adjacent-canon_support | medium | 204 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T118` | fuzzy logic; probabilistic logic; default logic; nonmonotonic logic; defeasible reasoning; epistemic logic; causal logic; deontic logic | ফাজি যুক্তিবিদ্যা; সম্ভাবনামূলক যুক্তিবিদ্যা; ডিফল্ট যুক্তিবিদ্যা; অ-একঘেয়ে যুক্তিবিদ্যা; প্রত্যাহারযোগ্য যুক্তিবিচার; জ্ঞানতাত্ত্বিক যুক্তিবিদ্যা; কারণমূলক যুক্তিবিদ্যা; কর্তব্যগত যুক্তিবিদ্যা | provisional-survey-register | medium_definition_and_adjacent-canon_support | medium | 23 | BN-IN-P008, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T119` | model theory; basics; incomplete and experimental material; adaptation | মডেল তত্ত্ব; মূল বিষয়; অসম্পূর্ণ ও পরীক্ষামূলক উপকরণ; অভিযোজন | mixed-attested-roots-and-provisional-model-theory-editorial-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P001, BN-IN-P006, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T120` | reduct; expansion; substructure; extension; common language; induced relational substructure | হ্রাসিত রূপ; সম্প্রসারণ; উপগঠন; বর্ধিত গঠন; অভিন্ন ভাষা; সম্পর্ক-প্রসূত উপগঠন | mixed-attested-roots-and-provisional-structure-comparison-register | medium_definition_and_adjacent-canon_support | medium | 19 | BN-IN-P001, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
@@ -221,7 +221,7 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T203` | halt; halting state; accept an input; undefined transition | থামে; থামা-দশা; নিবেশ গ্রহণ করে; অসংজ্ঞায়িত অবস্থান্তর | provisional-turing-halting-register | medium_definition_and_adjacent-canon_support | medium | 121 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T204` | time requirement; memory requirement; bounded resources; computational complexity | সময়ের চাহিদা; স্মৃতির চাহিদা; সীমাবদ্ধ সম্পদ; গণনামূলক জটিলতা | provisional-resource-complexity-register | medium_definition_and_adjacent-canon_support | medium | 4 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T205` | state diagram; state node; outgoing arrow; machine table; transition label | দশা-চিত্র; দশা-নোড; বহির্মুখী তীর; যন্ত্র-সারণি; অবস্থান্তর-নির্দেশ | provisional-turing-representation-register | medium_definition_and_adjacent-canon_support | medium | 11 | BN-IN-P001, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T206` | configuration; initial configuration; run; yields in one step; head position | কনফিগারেশন; আরম্ভিক কনফিগারেশন; চালন; এক ধাপে দেয়; হেডের অবস্থান | provisional-turing-configuration-register | medium_definition_and_adjacent-canon_support | medium | 70 | BN-IN-P005, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T206` | configuration; initial configuration; run; yields in one step; head position | কনফিগারেশন; আরম্ভিক কনফিগারেশন; চালন; এক ধাপে দেয়; হেডের অবস্থান | provisional-turing-configuration-register | medium_definition_and_adjacent-canon_support | medium | 71 | BN-IN-P005, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T207` | even machine; accept; reject; loop forever; trace configurations | জোড়-যন্ত্র; গ্রহণ করে; বর্জন করে; চিরকাল চক্রাকারে চলে; কনফিগারেশন ধাপে ধাপে অনুসরণ করে | provisional-turing-execution-register | medium_definition_and_adjacent-canon_support | medium | 33 | BN-IN-P005, BN-IN-P006, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T208` | doubler; strategy; erase input; duplicate a string; alphabetizer | দ্বিগুণকারী; কৌশল; নিবেশ মোছে; প্রতীকক্রমের অনুলিপি করে; বর্ণানুক্রমে সাজানোর যন্ত্র | provisional-turing-construction-register | medium_definition_and_adjacent-canon_support | medium | 62 | BN-IN-P001, BN-IN-P005, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T209` | unary representation; arithmetical function; stroke block; encode a number; compute a partial function | এককীয় উপস্থাপনা; পাটিগাণিতিক অপেক্ষক; দাগের খণ্ড; সংখ্যার সংকেতায়ন; আংশিক অপেক্ষক গণনা করে | provisional-unary-computation-register | medium_definition_and_adjacent-canon_support | medium | 10 | BN-IN-P001, BN-IN-P005, BN-IN-P006, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
@@ -241,11 +241,11 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T223` | validity decision problem; validity function; reduce the halting problem; machine-configuration sentences | সিদ্ধতার সিদ্ধান্ত সমস্যা; সিদ্ধতা-অপেক্ষক; থামার সমস্যাকে হ্রাস করে; যন্ত্র-কনফিগারেশনের বাক্য | provisional-entscheidungsproblem-register | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T224` | first-order machine language; numeral; instant; state; tape symbol | প্রথম-ক্রমের যুক্তিবিদ্যা; সংখ্যাপদ; মুহূর্ত; দশা; ফিতা-প্রতীক | provisional-first-order-machine-encoding-register | medium_definition_and_adjacent-canon_support | medium | 285 | BN-IN-P005, BN-IN-P006, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T225` | machine-description axioms; initial configuration; transition; halting configuration; frame condition | স্বতঃসিদ্ধ; আরম্ভিক কনফিগারেশন; অবস্থান্তর; থামার কনফিগারেশন; অপরিবর্তনশীলতার শর্ত | provisional-machine-description-axiom-register | medium_definition_and_adjacent-canon_support | medium | 366 | BN-IN-P005, BN-IN-P006, BN-IN-P007, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T226` | verification of the representation; induction over computation steps; run; reverse direction | উপস্থাপনের যাচাই; আরোহ; চালনা; বিপরীত দিক | provisional-machine-verification-proof-register | medium_definition_and_adjacent-canon_support | medium | 411 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T226` | verification of the representation; induction over computation steps; run; reverse direction | উপস্থাপনের যাচাই; আরোহ; চালনা; বিপরীত দিক | provisional-machine-verification-proof-register | medium_definition_and_adjacent-canon_support | medium | 412 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T227` | semidecidable validity; effective enumeration of derivations; soundness; completeness | অর্ধ-নির্ণেয়; কার্যকর অ্যালগরিদম; নিগমন; যথার্থতা; সম্পূর্ণতা | provisional-semidecision-proof-enumeration-register | medium_definition_and_adjacent-canon_support | medium | 74 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T228` | Trakhtenbrot's theorem; finite satisfiability; finite validity; finite model; positive time | ট্রাখতেনব্রোটের উপপাদ্য; সসীম সন্তোষণীয়তা; সসীম সিদ্ধতা; সসীম মডেল; ধনাত্মক সময় | provisional-finite-model-undecidability-register | medium_definition_and_adjacent-canon_support | medium | 33 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T229` | incompleteness theorem; historical background; mathematical logic; foundations of mathematics | অসম্পূর্ণতা উপপাদ্য; ঐতিহাসিক পটভূমি; গাণিতিক যুক্তিবিদ্যা; গণিতের ভিত্তি | provisional-incompleteness-history-register | medium_definition_and_adjacent-canon_support | medium | 42 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T230` | theory; closure under entailment; true arithmetic; standard model | তত্ত্ব; অনুগমনের অধীনে আবদ্ধ; সত্য পাটিগণিতের; মানক মডেল | provisional-incompleteness-theory-register | medium_definition_and_adjacent-canon_support | medium | 405 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T230` | theory; closure under entailment; true arithmetic; standard model | তত্ত্ব; অনুগমনের অধীনে আবদ্ধ; সত্য পাটিগণিতের; মানক মডেল | provisional-incompleteness-theory-register | medium_definition_and_adjacent-canon_support | medium | 409 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T231` | Robinson Q; Peano arithmetic; induction schema; axiomatized theory | রবিনসনের; পেয়ানো পাটিগণিত; আরোহ-ছক; স্বতঃসিদ্ধায়িত | provisional-arithmetic-theory-register | medium_definition_and_adjacent-canon_support | medium | 46 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T232` | decidable; axiomatizable; computable procedure; undecidability | নির্ণেয়; স্বতঃসিদ্ধায়িত; গণনপদ্ধতি; অণির্ণেয়তা | provisional-decidability-register | medium_definition_and_adjacent-canon_support | medium | 103 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T233` | independent sentence; Gödel sentence; provability; representation | স্বাধীন; গ্যোডেল বাক্য; প্রমাণযোগ্যতা; উপস্থাপন | provisional-incompleteness-proof-register | medium_definition_and_adjacent-canon_support | medium | 203 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
@@ -253,10 +253,10 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T235` | formation sequence; Gödel number of a term; Gödel number of a formula | গঠন-অনুক্রম; পদের গ্যোডেল সংখ্যা; সূত্রের গ্যোডেল সংখ্যা | provisional-arithmetization-of-syntax-register | medium_definition_and_adjacent-canon_support | medium | 87 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T236` | primitive recursive relation; primitive recursive function; primitive recursive bound | আদিম পুনরাবৃত্ত সম্বন্ধ; আদিম পুনরাবৃত্ত অপেক্ষক; আদিম পুনরাবৃত্ত সীমা | provisional-arithmetization-of-syntax-register | medium_definition_and_adjacent-canon_support | medium | 80 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T237` | derivation code; end-sequent; end-formula; last rule | নিষ্পাদনের কোড; অন্তিম সিকোয়েন্ট; অন্তিম সূত্র; শেষ বিধি | provisional-arithmetized-proof-object-register | medium_definition_and_adjacent-canon_support | medium | 41 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T238` | axiom schema; justified line; modus ponens; quantifier rule | স্বতঃসিদ্ধ-ছক; সমর্থিত; মোডাস পোনেন্স; পরিমাণসূচক-বিধি | provisional-axiomatic-proof-coding-register | medium_definition_and_adjacent-canon_support | medium | 78 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T238` | axiom schema; justified line; modus ponens; quantifier rule | স্বতঃসিদ্ধ-ছক; সমর্থিত; মোডাস পোনেন্স; পরিমাণসূচক-বিধি | provisional-axiomatic-proof-coding-register | medium_definition_and_adjacent-canon_support | medium | 80 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T239` | open assumption; undischarged assumption; discharge label; eigenvariable condition | খোলা অনুমান; অনবমুক্ত অনুমান; অবমুক্তি-চিহ্ন; আইগেনচল-শর্ত | provisional-natural-deduction-coding-register | medium_definition_and_adjacent-canon_support | medium | 44 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T240` | subderivation; immediate subderivation; subtree sequence | উপনিষ্পাদন; অব্যবহিত উপনিষ্পাদন; উপবৃক্ষ-অনুক্রম | provisional-proof-tree-coding-register | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T241` | nested conditional; antecedent; consequent; deduction theorem | অন্তর্নিহিত শর্তাধীন সূত্র; পূর্বপক্ষ; অনুপক্ষ; নিঃসরণ উপপাদ্য | provisional-axiomatic-deduction-register | medium_definition_and_adjacent-canon_support | medium | 41 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T241` | nested conditional; antecedent; consequent; deduction theorem | অন্তর্নিহিত শর্তাধীন সূত্র; পূর্বপক্ষ; অনুপক্ষ; নিঃসরণ উপপাদ্য | provisional-axiomatic-deduction-register | medium_definition_and_adjacent-canon_support | medium | 55 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T242` | substitution; free occurrence; free for substitution | প্রতিস্থাপন; মুক্ত ঘটনা; প্রতিস্থাপনযোগ্য | provisional-arithmetized-substitution-register | medium_definition_and_adjacent-canon_support | medium | 91 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T243` | representability; representable function or relation; representing formula | উপস্থাপনযোগ্যতা; উপস্থাপনযোগ্য অপেক্ষক বা সম্বন্ধ; উপস্থাপক সূত্র | provisional-representability-register | medium_definition_and_adjacent-canon_support | medium | 4 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T244` | beta function; finite-sequence code; decoding a sequence entry | বিটা অপেক্ষক; সসীম অনুক্রমের কোড; অনুক্রমের উপাদান উদ্ধার | provisional-beta-sequence-coding-register | medium_definition_and_adjacent-canon_support | medium | 3 | BN-IN-P005, BN-IN-P009, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
@@ -274,7 +274,7 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T256` | First Incompleteness Theorem; complete consistent axiomatizable extension; independent sentence | প্রথম অসম্পূর্ণতা উপপাদ্য; সম্পূর্ণ সঙ্গতিপূর্ণ স্বতঃসিদ্ধায়িত প্রসারণ; স্বাধীন বাক্য | provisional-first-incompleteness-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T257` | computably inseparable; computable separator; provable and refutable sentence sets | গণনসাধ্যভাবে অবিচ্ছেদ্য; গণনসাধ্য পৃথকীকরণ; প্রমাণযোগ্য ও খণ্ডনযোগ্য বাক্যসমষ্টি | provisional-computable-inseparability-register | medium_definition_and_adjacent-canon_support | medium | 5 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T258` | consistent with Q; computable separation; first-order logic for arithmetic | Q-এর সঙ্গে সঙ্গতিপূর্ণ; গণনসাধ্য পৃথকীকরণ; পাটিগণিতের ভাষার প্রথম-ক্রমের যুক্তিবিদ্যা | provisional-relative-consistency-undecidability-register | medium_definition_and_adjacent-canon_support | medium | 2 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T259` | interpretation; interpretable theory; unary and binary symbols; Presburger arithmetic | ব্যাখ্যা; ব্যাখ্যাযোগ্য তত্ত্ব; এক-স্থানীয় ও দ্বি-স্থানীয় প্রতীক; প্রেসবুর্গার পাটিগণিত | provisional-interpretability-and-language-arity-register | medium_definition_and_adjacent-canon_support | medium | 184 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T259` | interpretation; interpretable theory; unary and binary symbols; Presburger arithmetic | ব্যাখ্যা; ব্যাখ্যাযোগ্য তত্ত্ব; এক-স্থানীয় ও দ্বি-স্থানীয় প্রতীক; প্রেসবুর্গার পাটিগণিত | provisional-interpretability-and-language-arity-register | medium_definition_and_adjacent-canon_support | medium | 186 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T260` | incompleteness and provability; fixed-point lemma; self-reference; diagonalization | অসম্পূর্ণতা ও প্রমাণযোগ্যতা; স্থির-বিন্দু লেমা; আত্মউল্লেখ; কর্ণীকরণ | provisional-incompleteness-fixed-point-register | medium_definition_and_adjacent-canon_support | medium | 31 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T261` | Gödel sentence; Gödel number; standard numeral; arithmetized self-reference | গ্যোডেল বাক্য; গ্যোডেল সংখ্যা; প্রমিত সংখ্যাপদ; পাটিগণিতায়িত আত্মউল্লেখ | provisional-godel-coding-register | medium_definition_and_adjacent-canon_support | medium | 131 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P018, BN-IN-P019, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T262` | First Incompleteness Theorem; omega-consistency; Gödel sentence; unprovable and unrefutable | প্রথম অসম্পূর্ণতা উপপাদ্য; ওমেগা-সঙ্গতি; গ্যোডেল বাক্য; অপ্রমাণযোগ্য ও অখণ্ডনযোগ্য | provisional-first-incompleteness-proof-register | medium_definition_and_adjacent-canon_support | medium | 13 | BN-IN-P005, BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P023, BN-IN-P025 | welcome/open to correction |
@@ -286,7 +286,7 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T268` | second-order syntax and semantics; object variable; relation variable; function variable; standard semantics | দ্বিতীয়-ক্রমীয় সংকেতবিন্যাস ও অর্থতত্ত্ব; বস্তু-চলরাশি; সম্পর্ক-চলরাশি; অপেক্ষক-চলরাশি; মানক অর্থতত্ত্ব | provisional-second-order-syntax-semantics-register | medium_definition_and_adjacent-canon_support | medium | 20 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019 | welcome/open to correction |
 | `BN-IN-T269` | second-order term; second-order formula; metavariable; arity | দ্বিতীয়-ক্রমীয় পদ; দ্বিতীয়-ক্রমীয় সূত্র; অধিচলরাশি; স্থানসংখ্যা | provisional-second-order-formation-register | medium_definition_and_adjacent-canon_support | medium | 32 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P018, BN-IN-P019 | welcome/open to correction |
 | `BN-IN-T270` | second-order variable assignment; x-variant; satisfaction | দ্বিতীয়-ক্রমীয় চলরাশি-আরোপ; x-বিকল্প; পরিতৃপ্তি | provisional-second-order-satisfaction-register | medium_definition_and_adjacent-canon_support | medium | 248 | BN-IN-P009, BN-IN-P010, BN-IN-P013, BN-IN-P018, BN-IN-P019 | welcome/open to correction |
-| `BN-IN-T271` | validity; entailment; satisfiability; unsatisfiable | বৈধতা; অনুসিদ্ধান্ত; পরিতৃপ্তিযোগ্যতা; অপরিতৃপ্তিযোগ্য | provisional-second-order-semantic-notions-register | medium_definition_and_adjacent-canon_support | medium | 112 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T271` | validity; entailment; satisfiability; unsatisfiable | বৈধতা; অনুসিদ্ধান্ত; পরিতৃপ্তিযোগ্যতা; অপরিতৃপ্তিযোগ্য | provisional-second-order-semantic-notions-register | medium_definition_and_adjacent-canon_support | medium | 117 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T272` | expressive power; definable relation; identity without equality; transitive closure | প্রকাশক্ষমতা; সংজ্ঞেয় সম্পর্ক; অভেদ সম্পর্ক; অভেদচিহ্ন ছাড়া সংজ্ঞা; পরিযায়ী আবরণ | provisional-second-order-expressiveness-register | medium_definition_and_adjacent-canon_support | medium | 13 | BN-IN-P001, BN-IN-P002, BN-IN-P007, BN-IN-P009, BN-IN-P010, BN-IN-P011, BN-IN-P013, BN-IN-P018, BN-IN-P023 | welcome/open to correction |
 | `BN-IN-T273` | Dedekind-infinite; infinite domain; finite domain | ডেডেকিন্ড-অসীম; সংজ্ঞাক্ষেত্র অসীম; সংজ্ঞাক্ষেত্র সসীম | provisional-second-order-domain-size-register | medium_definition_and_adjacent-canon_support | medium | 12 | BN-IN-P005, BN-IN-P006, BN-IN-P018, BN-IN-P023, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
 | `BN-IN-T274` | enumerable; denumerable; enumeration; generating element and function | তালিকায়নযোগ্য; অসীম তালিকায়নযোগ্য; তালিকায়ন; উৎপাদক উপাদান ও অপেক্ষক | provisional-second-order-enumerability-register | medium_definition_and_adjacent-canon_support | medium | 162 | BN-IN-P005, BN-IN-P018, BN-IN-P023, BN-IN-P027, BN-IN-P028 | welcome/open to correction |
@@ -339,14 +339,14 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T321` | truth at a world; truth in a model; valid in a class; vacuous truth | জগতে সত্যতা; মডেলে সত্যতা; শ্রেণিতে বৈধ; শূন্যতাবশে সত্য | provisional-definition-governed-modal-semantics-register | medium_definition_and_adjacent-canon_support | medium | 17 | BN-IN-P008, BN-IN-P009, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T322` | tautological instance; characteristic formula; schema validity; modal entailment | সর্বতঃসত্য সূত্রের প্রতিস্থাপনজাত উদাহরণ; চরিত্রসূচক সূত্র; স্কিমার বৈধতা; মোডাল অনুসিদ্ধান্ত | provisional-definition-governed-modal-proof-register | medium_definition_and_adjacent-canon_support | medium | 5 | BN-IN-P008, BN-IN-P009, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T323` | accessibility frame; frame definability; frame validity; based on a frame | অভিগম্যতা কাঠামো; কাঠামো-সংজ্ঞায়নযোগ্যতা; কাঠামোতে বৈধতা; কাঠামোর উপর প্রতিষ্ঠিত | provisional-definition-governed-modal-frame-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P008, BN-IN-P009, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T324` | serial; reflexive; symmetric; transitive; euclidean; partially functional; functional; weakly dense; weakly connected; weakly directed | সিরিয়াল; প্রতিবিম্বী; প্রতিসম; পরিযায়ী; ইউক্লিডীয়; আংশিক অপেক্ষকধর্মী; অপেক্ষকধর্মী; দুর্বলভাবে ঘন; দুর্বলভাবে সংযুক্ত; দুর্বলভাবে অভিমুখী | mixed-attested-relation-roots-and-provisional-frame-properties | medium_definition_and_adjacent-canon_support | medium | 221 | BN-IN-P008, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T324` | serial; reflexive; symmetric; transitive; euclidean; partially functional; functional; weakly dense; weakly connected; weakly directed | সিরিয়াল; প্রতিবিম্বী; প্রতিসম; পরিযায়ী; ইউক্লিডীয়; আংশিক অপেক্ষকধর্মী; অপেক্ষকধর্মী; দুর্বলভাবে ঘন; দুর্বলভাবে সংযুক্ত; দুর্বলভাবে অভিমুখী | mixed-attested-relation-roots-and-provisional-frame-properties | medium_definition_and_adjacent-canon_support | medium | 224 | BN-IN-P008, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T325` | first-order definable; second-order definable; monadic second-order quantification | প্রথম-ক্রমে সংজ্ঞায়নযোগ্য; দ্বিতীয়-ক্রমে সংজ্ঞায়নযোগ্য; একপদী দ্বিতীয়-ক্রমের পরিমাণায়ন | provisional-definition-governed-modal-definability-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P009, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T326` | standard translation; converse well-founded; Loeb formula; compactness argument | প্রমিত অনুবাদ; বিপরীতক্রমে সুপ্রতিষ্ঠিত; লোবের সূত্র; সংহতি-যুক্তি | provisional-definition-and-proof-governed-modal-register | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P008, BN-IN-P009, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T327` | equivalence relation; equivalence class; universal relation; S5 | তুল্যতা সম্পর্ক; তুল্যতা শ্রেণি; সর্বজনীন সম্পর্ক; S5 | attested-equivalence-root-and-provisional-modal-S5-register | medium_definition_and_adjacent-canon_support | medium | 96 | BN-IN-P009, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T328` | Hilbert-type axiomatic derivation; axiom instance; modus ponens; necessitation | হিলবার্ট-ধরনের স্বতঃসিদ্ধমূলক নিষ্পাদন; স্বতঃসিদ্ধের উদাহরণ; মোডাস পোনেন্স; আবশ্যকীকরণ | established-axiom-and-proof-roots-with-provisional-modal-rule-name | medium_definition_and_adjacent-canon_support | medium | 43 | BN-IN-P008, BN-IN-P009, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T327` | equivalence relation; equivalence class; universal relation; S5 | তুল্যতা সম্পর্ক; তুল্যতা শ্রেণি; সর্বজনীন সম্পর্ক; S5 | attested-equivalence-root-and-provisional-modal-S5-register | medium_definition_and_adjacent-canon_support | medium | 101 | BN-IN-P009, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T328` | Hilbert-type axiomatic derivation; axiom instance; modus ponens; necessitation | হিলবার্ট-ধরনের স্বতঃসিদ্ধমূলক নিষ্পাদন; স্বতঃসিদ্ধের উদাহরণ; মোডাস পোনেন্স; আবশ্যকীকরণ | established-axiom-and-proof-roots-with-provisional-modal-rule-name | medium_definition_and_adjacent-canon_support | medium | 45 | BN-IN-P008, BN-IN-P009, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T329` | normal modal logic; modal system; minimal system K; derived rules RK and PL; uniform substitution | স্বাভাবিক মোডাল যুক্তিবিদ্যা; মোডাল পদ্ধতি; ক্ষুদ্রতম পদ্ধতি K; নিষ্পন্ন বিধি RK ও PL; যুগপৎ প্রতিস্থাপন | provisional-definition-governed-modal-proof-register | medium_definition_and_adjacent-canon_support | medium | 40 | BN-IN-P008, BN-IN-P009, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T330` | soundness; completeness; validity in a model class; proof-length induction | বিশুদ্ধতা; পূর্ণতা; মডেল-শ্রেণিতে বৈধতা; প্রমাণের দৈর্ঘ্যে গাণিতিক আরোহ | established-metatheory-roots-with-provisional-modal-class-application | medium_definition_and_adjacent-canon_support | medium | 207 | BN-IN-P008, BN-IN-P009, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T331` | dual modal axiom; contraposition; equivalent S5 axiomatizations; serial and euclidean frame countermodel | দ্বৈত মোডাল স্বতঃসিদ্ধ; প্রতিবিপরীত রূপ; S5-এর সমতুল্য স্বতঃসিদ্ধায়ন; সিরিয়াল ইউক্লিডীয় কাঠামোর বিপরীত মডেল | mixed-attested-relation-roots-and-provisional-modal-axiom-register | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P008, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T331` | dual modal axiom; contraposition; equivalent S5 axiomatizations; serial and euclidean frame countermodel | দ্বৈত মোডাল স্বতঃসিদ্ধ; প্রতিবিপরীত রূপ; S5-এর সমতুল্য স্বতঃসিদ্ধায়ন; সিরিয়াল ইউক্লিডীয় কাঠামোর বিপরীত মডেল | mixed-attested-relation-roots-and-provisional-modal-axiom-register | medium_definition_and_adjacent-canon_support | medium | 3 | BN-IN-P008, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T332` | derivability from a set; deductive closure; deduction theorem; cut; consistency | সমষ্টি থেকে নিষ্পাদনযোগ্যতা; নিষ্পাদনগতভাবে বদ্ধতা; নিষ্পাদন উপপাদ্য; কাট; সঙ্গতি | established-proof-and-consistency-roots-with-provisional-modal-set-application | medium_definition_and_adjacent-canon_support | medium | 197 | BN-IN-P008, BN-IN-P009, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T333` | complete Sigma-consistent set; maximal consistency; deductive closure | পূর্ণ সিগমা-সঙ্গত সমষ্টি; সর্বাধিক সঙ্গতি; নিষ্পাদনের অধীনে বদ্ধতা | established-consistency-and-proof-roots-with-provisional-modal-set-compound | medium_definition_and_adjacent-canon_support | medium | 6 | BN-IN-P008, BN-IN-P009, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T334` | Lindenbaum's Lemma; canonical model; canonical world | লিন্ডেনবাউমের সহায়ক উপপাদ্য; প্রামাণিক মডেল; প্রামাণিক জগৎ | established-earlier-translation-with-provisional-specialist-modal-use | medium_definition_and_adjacent-canon_support | medium | 26 | BN-IN-P008, BN-IN-P009, BN-IN-P025 | welcome/open to correction |
@@ -380,7 +380,7 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T362` | Brouwer–Heyting–Kolmogorov interpretation; construction; excluded middle | ব্রাউয়ার--হাইটিং--কলমোগোরভ ব্যাখ্যা; নির্মাণ; বর্জিত-মধ্যম নীতি | definition-governed-provisional-BHK-terminology | medium_definition_and_adjacent-canon_support | medium | 259 | BN-IN-P008, BN-IN-P009, BN-IN-P010, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T363` | primitive connective; defined connective; syntax; falsity | মৌলিক সংযোজক; সংজ্ঞায়িত সংযোজক; বাক্যবিন্যাস; মিথ্যাতা | connective-root-attested-specialization-provisional | medium_definition_and_adjacent-canon_support | medium | 6 | BN-IN-P008, BN-IN-P009, BN-IN-P010 | welcome/open to correction |
 | `BN-IN-T364` | intuitionistic natural deduction; discharge; explosion from falsity | স্বাভাবিক অবরোহণ; অব্যাহতি না-পাওয়া অনুমান; অসংগতি | existing-proof-register-with-provisional-BHK-application | medium_definition_and_adjacent-canon_support | medium | 10 | BN-IN-P008, BN-IN-P009, BN-IN-P025 | welcome/open to correction |
-| `BN-IN-T365` | axiomatic derivation; modus ponens; theoremhood | স্বতঃসিদ্ধিক নিষ্পাদন; মোডাস পোনেন্স; উপপাদ্য হওয়া | proof-root-attested-system-terminology-provisional | medium_definition_and_adjacent-canon_support | medium | 39 | BN-IN-P008, BN-IN-P009, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T365` | axiomatic derivation; modus ponens; theoremhood | স্বতঃসিদ্ধিক নিষ্পাদন; মোডাস পোনেন্স; উপপাদ্য হওয়া | proof-root-attested-system-terminology-provisional | medium_definition_and_adjacent-canon_support | medium | 41 | BN-IN-P008, BN-IN-P009, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T366` | Kripke semantics; relational model; partial order; monotonic knowledge | ক্রিপকে-ভিত্তিক অর্থবিজ্ঞান; সম্পর্কভিত্তিক মডেল; আংশিক ক্রম; জ্ঞানের একঘেয়েমি | relation-root-attested-Kripke-specialization-provisional | medium_definition_and_adjacent-canon_support | medium | 38 | BN-IN-P008, BN-IN-P009, BN-IN-P013, BN-IN-P014 | welcome/open to correction |
 | `BN-IN-T367` | truth at a world; validity; semantic entailment; model restriction | জগতে সত্যতা; বৈধতা; নিহিতার্থ; মডেলের সীমায়ন | existing-logic-proof-register-with-provisional-intuitionistic-specialization | medium_definition_and_adjacent-canon_support | medium | 51 | BN-IN-P008, BN-IN-P009, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T368` | topology; topological space; open set; interior; arbitrary union; non-strict subset | টপোলজি; টপোলজিক্যাল স্থান; উন্মুক্ত সেট; অভ্যন্তর; নির্বিচার সংযোগ; উপসেট | set-operations-attested-topology-compounds-provisional | medium_definition_and_adjacent-canon_support | medium | 158 | BN-IN-P004, BN-IN-P006, BN-IN-P007, BN-IN-P008, BN-IN-P012 | welcome/open to correction |
@@ -390,6 +390,10 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 | `BN-IN-T372` | intuitionistic prefixed tableau; signed formula; closed branch | স্বজ্ঞাবাদী উপসর্গযুক্ত ট্যাবলো; চিহ্নিত সূত্র; বন্ধ শাখা | logic-tree-proof-roots-attested-specialist-tableau-compounds-provisional | medium_definition_and_adjacent-canon_support | medium | 8 | BN-IN-P008, BN-IN-P009, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
 | `BN-IN-T373` | used prefix; fresh prefix; accessible extension; prefix interpretation | ব্যবহৃত উপসর্গ; নতুন উপসর্গ; প্রবেশযোগ্য সম্প্রসারণ; উপসর্গের ব্যাখ্যা | set-relation-roots-attested-prefixed-model-specialization-provisional | medium_definition_and_adjacent-canon_support | medium | 2 | BN-IN-P007, BN-IN-P008, BN-IN-P013, BN-IN-P014 | welcome/open to correction |
 | `BN-IN-T374` | tableau soundness; satisfiable branch; countermodel | ট্যাবলোর বিশুদ্ধতা; সন্তোষযোগ্য শাখা; প্রতিবাদী মডেল | logic-relation-proof-roots-attested-specialist-soundness-compounds-provisional | medium_definition_and_adjacent-canon_support | medium | 7 | BN-IN-P008, BN-IN-P009, BN-IN-P013, BN-IN-P025 | welcome/open to correction |
+| `BN-IN-T375` | counterfactual conditional; indicative conditional; subjunctive conditional | প্রতিবাস্তব শর্তবচন; নির্দেশক শর্তবচন; সম্ভাবক-ভাবের শর্তবচন | provisional-source-contrast-governed-counterfactual-register | medium_definition_and_adjacent-canon_support | medium | 13 | BN-IN-P008, BN-IN-P009 | welcome/open to correction |
+| `BN-IN-T376` | material conditional; strict conditional; antecedent; consequent | বস্তুগত শর্তবচন; কঠোর শর্তবচন; পূর্বপক্ষ; অনুপক্ষ | attested-logic-roots-and-provisional-modal-compounds | medium_definition_and_adjacent-canon_support | medium | 62 | BN-IN-P008, BN-IN-P009 | welcome/open to correction |
+| `BN-IN-T377` | antecedent strengthening; agglomeration; contrapositive | পূর্বপক্ষ শক্তিশালীকরণ; অনুপক্ষ একত্রকরণ; প্রতিবিপরীত রূপ | formula-governed-provisional-inference-register | medium_definition_and_adjacent-canon_support | medium | 3 | BN-IN-P008, BN-IN-P009 | welcome/open to correction |
+| `BN-IN-T378` | closest possible world; ontic analysis; conditional probability; belief revision | নিকটতম সম্ভাব্য জগৎ; সত্তাতাত্ত্বিক বিশ্লেষণ; শর্তাধীন সম্ভাবনা; বিশ্বাস-সংশোধন | logic-relation-roots-attested-specialist-counterfactual-compounds-provisional | medium_definition_and_adjacent-canon_support | medium | 1 | BN-IN-P008, BN-IN-P009, BN-IN-P013 | welcome/open to correction |
 
 ## Detailed review entries
 
@@ -401,7 +405,7 @@ Numerals: Use Bengali digits for ordinary Bengali prose numerals when idiomatic;
 - Plausible alternatives: সমষ্টি is a plausible alternative for set; সেট follows the directly checked university and school sources and avoids conflating an arbitrary set with a sum or collection in ordinary prose.
 - Status: attested; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সেট’ express the OpenLogic sense(s) ‘set’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 1581 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 1582 occurrence(s). Representative locations:
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:18`; final reader page pending
   - `OLP-0487` `upstream/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:68-75` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:48`; final reader page pending
   - `OLP-0489` `upstream/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex:21-37` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex:20`; final reader page pending
@@ -683,7 +687,7 @@ only if both $A$ and $\Complement{A}$ are computably enumerable.
 - Plausible alternatives: উক্তি occurs in school material; বচন selected for the proposition sense from university philosophy.
 - Status: attested; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘বচন’ express the OpenLogic sense(s) ‘proposition (logic)’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 148 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 209 occurrence(s). Representative locations:
   - `OLP-0483` `upstream/content/applied-modal-logic/epistemic-logic/introduction.tex:13-13` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/introduction.tex:13`; final reader page pending
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:16`; final reader page pending
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:17`; final reader page pending
@@ -1073,7 +1077,7 @@ a ball" to ``Beezie will get a treat or Beezie will get a ball."
 - Plausible alternatives: অন্তঃসংযোগ is a directly witnessed regional alternative for conjunction; সংযোজন continues the edition-wide connective choice, while অপসারণ and শোষণ identify the formal rule and law.
 - Status: provisional-normalized; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সংযোজন; সংযোজন অপসারণ; শোষণ’ express the OpenLogic sense(s) ‘conjunction; conjunction elimination; absorption’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 60 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 61 occurrence(s). Representative locations:
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:22`; final reader page pending
   - `OLP-0489` `upstream/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex:21-37` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex:24`; final reader page pending
   - `OLP-0478` `upstream/content/applied-modal-logic/temporal-logic/temporal-logic-semantics.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic-semantics.tex:22`; final reader page pending
@@ -1109,7 +1113,7 @@ epistemic logic contains
 - Plausible alternatives: চিত্রণ is reserved for mapping/function use; সম্পর্ক is directly attested for relation.
 - Status: mixed-attested-and-provisional; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সম্পর্ক; দ্বিপদ সম্পর্ক; ক্রমসম্পর্ক; অভিন্নতার সম্পর্ক’ express the OpenLogic sense(s) ‘relation; binary relation; order relation; identity relation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 488 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 491 occurrence(s). Representative locations:
   - `OLP-0488` `upstream/content/applied-modal-logic/epistemic-logic/bisimulations.tex:13-22` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex:13`; final reader page pending
   - `OLP-0488` `upstream/content/applied-modal-logic/epistemic-logic/bisimulations.tex:24-27` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex:15`; final reader page pending
   - `OLP-0488` `upstream/content/applied-modal-logic/epistemic-logic/bisimulations.tex:29-34` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex:18`; final reader page pending
@@ -1396,7 +1400,7 @@ numbers as a complete ordered field containing the rationals.
 - Plausible alternatives: ট্রি, রুট, সাকসেসর, প্রিডেসেসর and well-order loans are plausible alternatives; বৃক্ষ, মূল, উত্তরসূরি, পূর্বসূরি, শাখা, শৃঙ্খল and সুক্রম provide a consistent Bengali family governed by the order definitions.
 - Status: provisional-descriptive; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘বৃক্ষ; মূল; উত্তরসূরি; পূর্বসূরি; শাখা; শৃঙ্খল; ক্ষুদ্রতম উপাদান; সুক্রম’ express the OpenLogic sense(s) ‘tree; root; successor; predecessor; branch; chain; least element; well-order’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 859 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 860 occurrence(s). Representative locations:
   - `OLP-0475` `upstream/content/applied-modal-logic/applied-modal-logic.tex:7-7` → `bn-Beng-IN/content/applied-modal-logic/applied-modal-logic.tex:7`; final reader page pending
   - `OLP-0475` `upstream/content/applied-modal-logic/applied-modal-logic.tex:9-12` → `bn-Beng-IN/content/applied-modal-logic/applied-modal-logic.tex:10`; final reader page pending
   - `OLP-0488` `upstream/content/applied-modal-logic/epistemic-logic/bisimulations.tex:13-22` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex:13`; final reader page pending
@@ -1465,7 +1469,7 @@ worlds?
 - Plausible alternatives: চলরাশি and অচল are plausible alternatives for variable and constant; চল and ধ্রুবক follow the checked school algebra page, while যোগফল, গুণফল and সমীকরণ are directly supported there.
 - Status: attested-in-school-algebra; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘চল; ধ্রুবক; যোগফল; গুণফল; সমীকরণ’ express the OpenLogic sense(s) ‘variable; constant; sum; arithmetic product; equation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 559 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 563 occurrence(s). Representative locations:
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:16`; final reader page pending
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:17`; final reader page pending
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:43-43` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:39`; final reader page pending
@@ -1501,7 +1505,7 @@ epistemic logic contains
 - Plausible alternatives: ফলন, মানচিত্রণ, ক্ষেত্র, সহক্ষেত্র, মানসমষ্টি and চিত্র are plausible alternatives; অপেক্ষক and চিত্রণ follow the checked university source, and the selected domain/range family keeps each set role explicit.
 - Status: attested-university; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘অপেক্ষক; চিত্রণ; সংজ্ঞাক্ষেত্র; সহসংজ্ঞাক্ষেত্র; বিস্তৃতি; প্রতিবিম্ব/মান’ express the OpenLogic sense(s) ‘function; mapping; domain; codomain; range; image/value’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 2561 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 2567 occurrence(s). Representative locations:
   - `OLP-0488` `upstream/content/applied-modal-logic/epistemic-logic/bisimulations.tex:13-22` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex:13`; final reader page pending
   - `OLP-0488` `upstream/content/applied-modal-logic/epistemic-logic/bisimulations.tex:55-60` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex:34`; final reader page pending
   - `OLP-0487` `upstream/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:31-50` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:26`; final reader page pending
@@ -1699,12 +1703,12 @@ as each other? It turns out that they are not.
 - Plausible alternatives: সিলিং অপেক্ষক, গাণিতিক আরোহন, পুনরাবৃত্ত সংজ্ঞা and ফলিত are plausible alternatives; the selected wording makes upward rounding and dependence on earlier stages explicit where direct term attestation is absent.
 - Status: provisional-descriptive; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘ঊর্ধ্ব পূর্ণাংশ অপেক্ষক; গাণিতিক আরোহ; পূর্ববর্তী মানের সাহায্যে ধাপে ধাপে সংজ্ঞা; অনুসিদ্ধান্ত’ express the OpenLogic sense(s) ‘ceiling function; induction; recursive definition; corollary’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 58 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 63 occurrence(s). Representative locations:
   - `OLP-0483` `upstream/content/applied-modal-logic/epistemic-logic/introduction.tex:13-13` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/introduction.tex:13`; final reader page pending
   - `OLP-0486` `upstream/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:91-94` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:74`; final reader page pending
   - `OLP-0242` `upstream/content/computability/computability-theory/complement-ce.tex:12-15` → `bn-Beng-IN/content/computability/computability-theory/complement-ce.tex:14`; final reader page pending
   - `OLP-0248` `upstream/content/computability/computability-theory/rice-theorem.tex:109-120` → `bn-Beng-IN/content/computability/computability-theory/rice-theorem.tex:104`; final reader page pending
-  - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:15-24` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:17`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:64-77` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:80`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
@@ -1719,7 +1723,7 @@ Just as modal logic deals with \emph{modal propositions} and the entailment rela
 - Plausible alternatives: জোড়া-লাগানো অপেক্ষক / pairing-function loan; যুগলায়ন selected as a concise provisional compound.
 - Status: provisional-descriptive; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘আঁকাবাঁকা পথের পদ্ধতি; যুগলায়ন অপেক্ষক; সংকেতায়ন/সংকেত/সংকেতোদ্ধার; ত্রিভুজসংখ্যা; সহসসীম; সত্যসারণি/সত্যমান-অপেক্ষক’ express the OpenLogic sense(s) ‘zig-zag method; pairing function; encode/code/decode; triangular number; cofinite; truth table/truth function’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 410 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 413 occurrence(s). Representative locations:
   - `OLP-0490` `upstream/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex:17-40` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex:15`; final reader page pending
   - `OLP-0486` `upstream/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:13-16` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:13`; final reader page pending
   - `OLP-0486` `upstream/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:18-40` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:16`; final reader page pending
@@ -2206,7 +2210,7 @@ In every model of computation, it is possible to do the following:
 - Plausible alternatives: বাক্যগঠন for syntax was considered; সংকেতবিন্যাস was selected because the chapter governs formal symbol strings rather than ordinary sentence grammar. একক অর্থোদ্ধার for unique readability was rejected because the theorem proves unique syntactic parsing before semantics is assigned.
 - Status: provisional-formally-governed; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সংকেতবিন্যাস; অর্থতত্ত্ব; অধিতত্ত্ব; আরোহী সংজ্ঞা; একক পাঠযোগ্যতা’ express the OpenLogic sense(s) ‘syntax; semantics; metatheory; inductive definition; unique readability’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 150 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 151 occurrence(s). Representative locations:
   - `OLP-0482` `upstream/content/applied-modal-logic/epistemic-logic/epistemic-logic.tex:10-12` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/epistemic-logic.tex:11`; final reader page pending
   - `OLP-0483` `upstream/content/applied-modal-logic/epistemic-logic/introduction.tex:15-21` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/introduction.tex:22`; final reader page pending
   - `OLP-0490` `upstream/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex:11-11` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex:11`; final reader page pending
@@ -2228,12 +2232,12 @@ In every model of computation, it is possible to do the following:
 - Plausible alternatives: বচনীয় চলরাশি and উক্তিচল were possible compounds; বচনচল continues the university বচন sense and remains provisional. সত্যমূল্য is a common loan-shaped alternative; সত্যমান aligns with the already chosen truth-function vocabulary.
 - Status: mixed-attested-roots-and-provisional; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘বচনচল; বচনসংযোজক/যৌক্তিক সংযোজক; সত্যমান; সত্যমান-অপেক্ষকধর্মী; বস্তুগত শর্তবচন’ express the OpenLogic sense(s) ‘propositional variable; propositional/logical connective; truth value; truth-functional; material conditional’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 163 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 186 occurrence(s). Representative locations:
   - `OLP-0490` `upstream/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex:43-55` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex:43`; final reader page pending
   - `OLP-0477` `upstream/content/applied-modal-logic/temporal-logic/introduction.tex:31-43` → `bn-Beng-IN/content/applied-modal-logic/temporal-logic/introduction.tex:17`; final reader page pending
-  - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:13-13` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:13`; final reader page pending
-  - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:15-34` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:16`; final reader page pending
-  - `OLP-0122` `upstream/content/first-order-logic/axiomatic-deduction/provability-propositional.tex:13-13` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability-propositional.tex:13`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:40-50` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:44`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:40-50` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:46`; final reader page pending
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:11-11` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:11`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
@@ -2260,7 +2264,7 @@ In every model of computation, it is possible to do the following:
 - Plausible alternatives: P008 prints না-ক্রিয়া and অন্তঃসংযোগ; নঞর্থকরণ and the prior T021 সংযোজন are normalized edition forms, while the witnessed variants remain recorded. সমতুল্যতা alone was not used for biconditional because it could collide with semantic or relation-theoretic equivalence.
 - Status: attested-variants-normalized; confidence: high_for_attested_scope; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘নঞর্থকরণ; সংযোজন; বিয়োজন; শর্তবচন/নিহিতকরণ; দ্বিশর্তবচন/বস্তুগত সমতুল্যতা’ express the OpenLogic sense(s) ‘negation; conjunction; disjunction; conditional/implication; biconditional/material equivalence’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 106 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 168 occurrence(s). Representative locations:
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:21`; final reader page pending
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:22`; final reader page pending
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:23`; final reader page pending
@@ -2360,25 +2364,22 @@ No proper initial segment of !!a{formula} is !!a{formula}.
 - Plausible alternatives: মূল্যায়ন alone was considered for valuation; সত্যমান-আরোপ distinguishes the initial variable assignment from the recursively extended মূল্যায়ন অপেক্ষক. সিদ্ধি/সন্তুষ্টি were possible satisfaction loans; পরিতৃপ্তি is retained as the explicit model-theoretic relation and remains provisional.
 - Status: mixed-contextual-and-provisional; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সত্যমান-আরোপ; মূল্যায়ন অপেক্ষক; পরিতৃপ্তি; স্থানীয় নির্ধারণ; সত্যসারণি’ express the OpenLogic sense(s) ‘valuation; evaluation function; satisfaction; local determination; truth table’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 277 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 278 occurrence(s). Representative locations:
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:21-27` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:23`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:15-24` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:17`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:15-24` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:20`; final reader page pending
   - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:15-32` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:26`; final reader page pending
   - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:41-52` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:45`; final reader page pending
-  - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:41-52` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:50`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{explain}
-Just as we've defined a number of important semantic notions
-(\iftag{FOL}{validity}{tautology}, entailment, satisfiability), we now
-define corresponding \emph{proof-theoretic notions}.  These are not
-defined by appeal to satisfaction of !!{sentence}s in !!{structure}s,
-but by appeal to the !!{derivability} or !!{nonderivability} of
-certain formulas.  It was an important discovery that these notions
-coincide.  That they do is the content of the \emph{soundness} and
-\emph{completeness theorems}.
-\end{explain}
+The connective $\lif$ is \emph{truth-functional}, i.e., the truth
+value---$\True$ or $\False$---of $!A \lif !B$ is determined by the truth
+values of $!A$ and~$!B$: $!A \lif !B$ is true iff $!A$~is false or
+$!B$~is true, and false otherwise. Relative to a truth value
+assignment~$\pAssign v$, we define $\pSat{v}{!A \lif !B}$ iff
+$\pSat/{v}{!A}$ or $\pSat{v}{!B}$. The connective $\lif$ with this
+semantics is called the \emph{material conditional}.
 ```
 
 ### BN-IN-T067
@@ -2389,12 +2390,12 @@ coincide.  That they do is the content of the \emph{soundness} and
 - Plausible alternatives: স্বতঃসত্য was considered for tautology but could suggest an axiom accepted without proof; সর্বতঃসত্য exposes truth under every valuation. অর্থগত ফলন was considered for entailment; অর্থগত অনুসিদ্ধান্ত better preserves the premise-to-conclusion relation.
 - Status: provisional-definition-governed; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘পরিতৃপ্তিযোগ্য/অপরিতৃপ্তিযোগ্য; সর্বতঃসত্য; আপতিক; অর্থগত অনুসিদ্ধান্ত; একঘেয়েতা; অর্থগত নিঃসরণ উপপাদ্য’ express the OpenLogic sense(s) ‘satisfiable/unsatisfiable; tautology; contingent; semantic entailment; monotonicity; semantic deduction theorem’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 297 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 300 occurrence(s). Representative locations:
   - `OLP-0477` `upstream/content/applied-modal-logic/temporal-logic/introduction.tex:31-43` → `bn-Beng-IN/content/applied-modal-logic/temporal-logic/introduction.tex:17`; final reader page pending
+  - `OLP-0519` `upstream/content/counterfactuals/introduction/paradoxes-material.tex:52-55` → `bn-Beng-IN/content/counterfactuals/introduction/paradoxes-material.tex:54`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:78-97` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:95`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:78-97` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:99`; final reader page pending
   - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:15-24` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:17`; final reader page pending
-  - `OLP-0118` `upstream/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:52-56` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex:52`; final reader page pending
-  - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:15-32` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:26`; final reader page pending
-  - `OLP-0124` `upstream/content/first-order-logic/axiomatic-deduction/soundness.tex:41-52` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/soundness.tex:50`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
@@ -2472,7 +2473,7 @@ worlds?
 - Plausible alternatives: স্বতঃসিদ্ধমূলক অবরোহ was considered, but নিষ্পাদন keeps the system aligned with the project derivation token. ন্যায়সংগত পংক্তি was considered for justified line; সমর্থিত পংক্তি more directly marks that a listed axiom, premise or rule warrants the step.
 - Status: provisional-formally-governed; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘স্বতঃসিদ্ধমূলক নিষ্পাদন; স্বতঃসিদ্ধ-ছক/পদ্ধতি; অনুমান-বিধি; সমর্থিত পংক্তি; মোডাস পোনেন্স’ express the OpenLogic sense(s) ‘axiomatic derivation; axiom schema/system; rule of inference; justified line; modus ponens’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 376 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 378 occurrence(s). Representative locations:
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:31-33` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:30`; final reader page pending
   - `OLP-0485` `upstream/content/applied-modal-logic/epistemic-logic/relational-models.tex:41-47` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/relational-models.tex:30`; final reader page pending
   - `OLP-0486` `upstream/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:52-57` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:41`; final reader page pending
@@ -2527,31 +2528,20 @@ $\lexists[x][!A(x)]$.
 - Plausible alternatives: অনুমান খারিজ করা and অনুমান নিরসন were considered for discharge; অবমুক্ত করা states that the assumption ceases to be a dependency without suggesting deletion of the printed leaf. প্রবেশ/বর্জন-বিধি were possible compact alternatives; প্রবর্তন/অপসারণ follows the direction of the connective rules more transparently.
 - Status: provisional-natural-deduction-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘প্রবর্তন/অপসারণ-বিধি; অনুমিতি/পূর্বধারণা; অনুমিতি অবমুক্ত করা/অনবমুক্ত অনুমিতি; প্রমাণতাত্ত্বিক অর্থতত্ত্ব’ express the OpenLogic sense(s) ‘introduction/elimination rule; assumption/hypothesis; discharge/undischarged assumption; proof-theoretic semantics’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 328 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 329 occurrence(s). Representative locations:
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:13-17` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:13`; final reader page pending
   - `OLP-0116` `upstream/content/first-order-logic/axiomatic-deduction/proving-things.tex:41-56` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/proving-things.tex:53`; final reader page pending
   - `OLP-0175` `upstream/content/first-order-logic/beyond/introduction.tex:23-44` → `bn-Beng-IN/content/first-order-logic/beyond/introduction.tex:35`; final reader page pending
   - `OLP-0181` `upstream/content/first-order-logic/beyond/other-logics.tex:22-36` → `bn-Beng-IN/content/first-order-logic/beyond/other-logics.tex:31`; final reader page pending
   - `OLP-0129` `upstream/content/first-order-logic/completeness/complete-consistent-sets.tex:84-98` → `bn-Beng-IN/content/first-order-logic/completeness/complete-consistent-sets.tex:92`; final reader page pending
-  - `OLP-0129` `upstream/content/first-order-logic/completeness/complete-consistent-sets.tex:165-180` → `bn-Beng-IN/content/first-order-logic/completeness/complete-consistent-sets.tex:161`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{ex}\ollabel{ex:identity}
-Let's try to find !!a{derivation} of $!D \lif !D$.  It is not an
-instance of an axiom, so we have to use \MP{} to !!{derive} it.
-\olref[prp]{ax:lif1} is an axiom of the form~$!A \lif !B$ to which we
-could apply~\MP. To be useful, of course, the $!B$ which \MP{} would
-justify as a correct step in this case would have to be~$!D \lif !D$,
-since this is what we want to !!{derive}. That means $!A$ would also
-have to be $!D$, i.e., we might look at this instance of
-\olref[prp]{ax:lif1}:
-\[
-!D \lif (!D \lif !D)
-\]
-In order to apply \MP, we would also need to justify the corresponding
-second premise, namely~$!A$. But in our case, that would be~$!D$, and
-we won't be able to !!{derive}~$!D$ by itself. So we need a different
-strategy.
+Lewis introduced the \emph{strict conditional}~$\strictif$ and argued
+that it, not the material conditional, corresponds to implication.  In
+alethic modal logic, $!A \strictif !B$ can be defined as $\Box(!A \lif
+!B)$. A strict conditional is thus true (at a world) iff the
+corresponding material conditional is necessary.
 ```
 
 ### BN-IN-T073
@@ -2840,7 +2830,7 @@ correct !!{derivation}.
 - Plausible alternatives: সিদ্ধতা was considered for provability, but প্রমাণযোগ্যতা avoids collision with semantic truth and remains paired with the existing নিষ্পাদনযোগ্য token rendering. সংহততা was considered for compactness; সংহতি is retained provisionally and is fixed by the finite-witness clauses rather than by topological usage.
 - Status: provisional-definition-governed; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘প্রমাণযোগ্যতা/নিষ্পাদনযোগ্যতা-সম্পর্ক; উপপাদ্য; প্রতিবিম্ব ধর্ম; একঘেয়েতা; পরিযায়িতা; সংহতি’ express the OpenLogic sense(s) ‘provability/derivability relation; theorem; reflexivity; monotonicity; transitivity; compactness’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 483 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 484 occurrence(s). Representative locations:
   - `OLP-0250` `upstream/content/computability/computability-theory/application-fixed-point.tex:9-10` → `bn-Beng-IN/content/computability/computability-theory/application-fixed-point.tex:10`; final reader page pending
   - `OLP-0250` `upstream/content/computability/computability-theory/application-fixed-point.tex:12-19` → `bn-Beng-IN/content/computability/computability-theory/application-fixed-point.tex:12`; final reader page pending
   - `OLP-0250` `upstream/content/computability/computability-theory/application-fixed-point.tex:12-19` → `bn-Beng-IN/content/computability/computability-theory/application-fixed-point.tex:18`; final reader page pending
@@ -2861,19 +2851,48 @@ correct !!{derivation}.
 - Plausible alternatives: সাধারণ প্রসঙ্গ was considered for shared context; অভিন্ন সিকোয়েন্ট-প্রসঙ্গ emphasizes literal equality of the two premise contexts. The modus-ponens loan is retained under T070 because no checked page directly attested a stable Bengali replacement.
 - Status: provisional-rule-governed; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘বচনসংযোজক-সংক্রান্ত প্রমাণযোগ্যতার তথ্য; মোডাস পোনেন্স; অভিন্ন সিকোয়েন্ট-প্রসঙ্গ’ express the OpenLogic sense(s) ‘propositional facts about provability; modus ponens; shared sequent context’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 39 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 41 occurrence(s). Representative locations:
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:29-61` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:47`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:26-48` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:40`; final reader page pending
   - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:36-39` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:36`; final reader page pending
   - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:41-41` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:41`; final reader page pending
   - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:27`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:38`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:44`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{defn}[Modus ponens]
-  If $!B$ and $!B \lif !A$ already occur in !!a{derivation}, then $!A$ is
-  a correct inference step.
-\end{defn}
+This definition results in a number of elementary logical facts. First
+of all, the deduction theorem holds for the material conditional:
+\begin{align}
+  \text{If } \Gamma, !A \Entails !B \text{ then } \Gamma \Entails !A \lif !B
+\end{align}
+It is truth-functional: $!A \lif !B$ and $\lnot !A \lor !B$ are equivalent:
+\begin{align}
+  !A \lif !B & \Entails \lnot !A \lor !B\\
+  \lnot !A \lor !B & \Entails !A \lif !B
+  \intertext{A material conditional is entailed by its consequent and
+    by the negation of its antecedent:}
+  !B & \Entails !A \lif !B\\
+  \lnot !A & \Entails !A \lif !B
+  \intertext{A false material conditional is equivalent to the
+    conjunction of its antecedent and the negation of its consequent:
+    if $!A \lif !B$ is false, $!A \land \lnot !B$ is true, and vice versa:}
+  \lnot(!A \lif !B) & \Entails !A \land \lnot !B\\
+  !A \land \lnot !B & \Entails \lnot(!A \lif !B)
+  \intertext{The material conditional supports modus ponens:}
+  !A, !A \lif !B & \Entails !B
+  \intertext{The material conditional agglomerates:}
+  !A \lif !B,  !A \lif !C & \Entails !A \lif (!B \land !C)
+  \intertext{We can always strengthen the antecedent, i.e., the
+    conditional is \emph{monotonic}:}
+  !A \lif !B & \Entails (!A \land !C) \lif !B
+  \intertext{The material conditional is transitive, i.e., the chain
+    rule is valid:}
+  !A \lif !B, !B \lif !C & \Entails !A \lif !C
+  \intertext{The material conditional is equivalent to its
+    contrapositive:}
+  !A \lif !B & \Entails \lnot !B \lif \lnot !A\\
+  \lnot !B \lif \lnot !A & \Entails !A \lif !B
+\end{align}
 ```
 
 ### BN-IN-T083
@@ -3178,16 +3197,48 @@ using discrete instants or as a continuum.
 - Plausible alternatives: অবরোহ উপপাদ্য and ডিডাকশন উপপাদ্য were considered; নিঃসরণ উপপাদ্য matches the movement of one premise into a conditional and remains explicitly provisional. অর্থগত নিঃসরণ উপপাদ্য is reserved under T067 for entailment; the unqualified form here is syntactic because both sides use Proves. নিষ্পাদন-সংযুক্তি was considered for concatenation; পরপর বসানো states the ordered-sequence operation directly and avoids collision with logical সংযোজন.
 - Status: provisional-axiomatic-metatheory-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘নিঃসরণ উপপাদ্য; অনুমিতি নিঃসরণ; স্বতঃসিদ্ধের রূপ; নিষ্পাদনগুলি পরপর বসানো’ express the OpenLogic sense(s) ‘syntactic deduction theorem; discharge an assumption; axiom instance; concatenate derivations’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 24 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 25 occurrence(s). Representative locations:
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:29-61` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:29`; final reader page pending
   - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:11-11` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:11`; final reader page pending
   - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:13-16` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:13`; final reader page pending
   - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:16-16` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:16`; final reader page pending
   - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:49-52` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:48`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:97-98` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:97`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\olsection{The Deduction Theorem with Quantifiers}
+This definition results in a number of elementary logical facts. First
+of all, the deduction theorem holds for the material conditional:
+\begin{align}
+  \text{If } \Gamma, !A \Entails !B \text{ then } \Gamma \Entails !A \lif !B
+\end{align}
+It is truth-functional: $!A \lif !B$ and $\lnot !A \lor !B$ are equivalent:
+\begin{align}
+  !A \lif !B & \Entails \lnot !A \lor !B\\
+  \lnot !A \lor !B & \Entails !A \lif !B
+  \intertext{A material conditional is entailed by its consequent and
+    by the negation of its antecedent:}
+  !B & \Entails !A \lif !B\\
+  \lnot !A & \Entails !A \lif !B
+  \intertext{A false material conditional is equivalent to the
+    conjunction of its antecedent and the negation of its consequent:
+    if $!A \lif !B$ is false, $!A \land \lnot !B$ is true, and vice versa:}
+  \lnot(!A \lif !B) & \Entails !A \land \lnot !B\\
+  !A \land \lnot !B & \Entails \lnot(!A \lif !B)
+  \intertext{The material conditional supports modus ponens:}
+  !A, !A \lif !B & \Entails !B
+  \intertext{The material conditional agglomerates:}
+  !A \lif !B,  !A \lif !C & \Entails !A \lif (!B \land !C)
+  \intertext{We can always strengthen the antecedent, i.e., the
+    conditional is \emph{monotonic}:}
+  !A \lif !B & \Entails (!A \land !C) \lif !B
+  \intertext{The material conditional is transitive, i.e., the chain
+    rule is valid:}
+  !A \lif !B, !B \lif !C & \Entails !A \lif !C
+  \intertext{The material conditional is equivalent to its
+    contrapositive:}
+  !A \lif !B & \Entails \lnot !B \lif \lnot !A\\
+  \lnot !B \lif \lnot !A & \Entails !A \lif !B
+\end{align}
 ```
 
 ### BN-IN-T091
@@ -3219,16 +3270,22 @@ Computable sets and relations are also called \emph{decidable}.
 - Plausible alternatives: পরিপূর্ণ সেট was considered for saturated set, but পূর্ণ is already reserved for completeness; সম্পৃক্ত distinguishes the witness property. প্রতিউদাহরণ was considered for counterexample; প্রতিদৃষ্টান্ত pairs transparently with the selected witness language in the quantified construction.
 - Status: provisional-henkin-construction-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘হেনকিন সম্প্রসারণ; সম্পৃক্ত সেট; সাক্ষী; প্রতিদৃষ্টান্ত’ express the OpenLogic sense(s) ‘Henkin expansion; saturated set; witness; counterexample’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 13 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 15 occurrence(s). Representative locations:
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:63-69` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:63`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:50-59` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:55`; final reader page pending
   - `OLP-0130` `upstream/content/first-order-logic/completeness/henkin-expansions.tex:11-11` → `bn-Beng-IN/content/first-order-logic/completeness/henkin-expansions.tex:11`; final reader page pending
   - `OLP-0130` `upstream/content/first-order-logic/completeness/henkin-expansions.tex:13-30` → `bn-Beng-IN/content/first-order-logic/completeness/henkin-expansions.tex:27`; final reader page pending
   - `OLP-0130` `upstream/content/first-order-logic/completeness/henkin-expansions.tex:13-30` → `bn-Beng-IN/content/first-order-logic/completeness/henkin-expansions.tex:28`; final reader page pending
-  - `OLP-0130` `upstream/content/first-order-logic/completeness/henkin-expansions.tex:39-47` → `bn-Beng-IN/content/first-order-logic/completeness/henkin-expansions.tex:39`; final reader page pending
-  - `OLP-0130` `upstream/content/first-order-logic/completeness/henkin-expansions.tex:149-158` → `bn-Beng-IN/content/first-order-logic/completeness/henkin-expansions.tex:153`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\olsection{Henkin Expansion}
+These are all useful and unproblematic inferences in mathematical
+reasoning. However, the philosophical and linguistic literature is
+replete with purported counterexamples to the equivalent inferences in
+non-mathematical contexts. These suggest that the material
+conditional~$\lif$ is not---or at least not always---the appropriate
+connective to use when symbolizing English ``if \dots then \dots''
+statements.
 ```
 
 ### BN-IN-T093
@@ -3360,7 +3417,7 @@ Java, the same idea (with a more involved implementation) still works.
 - Plausible alternatives: আণবিক সূত্র was considered for atomic formula; পরমাণু সূত্র continues the established logical atom vocabulary and remains definition-governed. বদ্ধ সূত্র was considered for sentence, but বাক্য follows the source category while the no-free-occurrence definition prevents ordinary-language ambiguity. উপস্থিতি and আবির্ভাব were considered for occurrence; সংঘটন marks a token at a particular syntactic position. সঙ্গত was considered for both matching and corresponding, but the edition reserves that root for consistency; সংশ্লিষ্ট পরিমাণসূচক and অনুরূপ সংঘটন keep the two syntactic relations distinct. ব্যাপ্তি was considered for scope; পরিসর stays distinct from the domain term সংজ্ঞাক্ষেত্র.
 - Status: mixed-attested-roots-and-definition-governed; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘পদ; পরমাণু সূত্র; বাক্য; মুক্ত/বদ্ধ চলরাশির সংঘটন; সংশ্লিষ্ট পরিমাণসূচক; অনুরূপ সংঘটন; পরিমাণসূচকের পরিসর’ express the OpenLogic sense(s) ‘term; atomic formula; sentence; free/bound variable occurrence; matching quantifier; corresponding occurrence; quantifier scope’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 1408 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 1415 occurrence(s). Representative locations:
   - `OLP-0488` `upstream/content/applied-modal-logic/epistemic-logic/bisimulations.tex:29-34` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex:18`; final reader page pending
   - `OLP-0482` `upstream/content/applied-modal-logic/epistemic-logic/epistemic-logic.tex:10-12` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/epistemic-logic.tex:11`; final reader page pending
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:31-33` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:30`; final reader page pending
@@ -3385,7 +3442,7 @@ we have:
 - Plausible alternatives: কাঠামো was considered for structure; গঠন is shorter and the formal Struct notation fixes the technical sense. পরিসর was considered for domain, but সংজ্ঞাক্ষেত্র avoids collision with quantifier scope and function codomain. সন্তুষ্টি was considered for satisfaction; পরিতৃপ্তি continues T066 and is fixed by the recursive truth clauses. মূল্যায়ন was considered for assignment; আরোপ distinguishes variable assignment from propositional valuation and from the structure’s interpretation function.
 - Status: mixed-attested-roots-and-provisional-semantics; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘গঠন; সংজ্ঞাক্ষেত্র; ব্যাখ্যা/নির্দেশিত মান; আরোপ-সাপেক্ষ পরিতৃপ্তি; পরিবর্তিত আরোপ’ express the OpenLogic sense(s) ‘structure; domain; interpretation/denotation; satisfaction relative to an assignment; modified assignment’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 574 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 577 occurrence(s). Representative locations:
   - `OLP-0488` `upstream/content/applied-modal-logic/epistemic-logic/bisimulations.tex:24-27` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex:15`; final reader page pending
   - `OLP-0488` `upstream/content/applied-modal-logic/epistemic-logic/bisimulations.tex:55-60` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex:34`; final reader page pending
   - `OLP-0482` `upstream/content/applied-modal-logic/epistemic-logic/epistemic-logic.tex:10-12` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/epistemic-logic.tex:11`; final reader page pending
@@ -3688,7 +3745,7 @@ extensionality.''
 - Plausible alternatives: অংশবিদ্যা was considered for mereology; অংশতত্ত্ব marks a formal theory of the parthood relation. প্রকৃত/অপ্রকৃত অংশ were considered; যথার্থ/অযথার্থ preserves the paired proper/improper distinction already used in the target. মিলন was considered for fusion but collides with set union; সংযোজন remains governed by the displayed least-upper-bound condition.
 - Status: provisional-definition-governed-mereology-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘অংশতত্ত্ব; অংশ-সম্পর্ক; অংশ-গঠন; যথার্থ/অযথার্থ অংশ; অংশতাত্ত্বিক যোগ; সংযোজন’ express the OpenLogic sense(s) ‘mereology; parthood; parthood structure; proper/improper part; mereological sum; fusion’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 81 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 83 occurrence(s). Representative locations:
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:22`; final reader page pending
   - `OLP-0489` `upstream/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex:21-37` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex:24`; final reader page pending
   - `OLP-0478` `upstream/content/applied-modal-logic/temporal-logic/temporal-logic-semantics.tex:13-29` → `bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic-semantics.tex:22`; final reader page pending
@@ -3874,7 +3931,7 @@ that is, higher-type functions that take functions to numbers.
 - Plausible alternatives: সম্পর্ক-পরিমাণায়ন ছক was considered for comprehension; ধর্মনির্দেশ-ছক continues T107 and T110 while the displayed biconditional fixes relation formation. অবিধেয়মূলক/বিধেয়মূলক were considered; অপ্রেডিকেটিভ/প্রেডিকেটিভ retain the internationally recognizable foundational distinction pending expert review. ক্যাটেগরিক্যাল বর্ণনা was considered; সমরূপতা-অবধি একক বর্ণনা states the exact model-theoretic sense rather than suggesting an ordinary category.
 - Status: mixed-attested-roots-and-provisional-second-order-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘দ্বিতীয়-ক্রমের যুক্তিবিদ্যা; সম্পর্ক-চলরাশি; ধর্মনির্দেশ-ছক; অপ্রেডিকেটিভ/প্রেডিকেটিভ ধর্মনির্দেশ; পূর্ণ/দুর্বল দ্বিতীয়-ক্রমীয় অর্থতত্ত্ব; সমরূপতা-অবধি একক বর্ণনা; কার্যকর প্রমাণ-ব্যবস্থা’ express the OpenLogic sense(s) ‘second-order logic; relation variable; comprehension schema; impredicative/predicative comprehension; full/weak second-order semantics; categorical description; effective proof system’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 805 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 807 occurrence(s). Representative locations:
   - `OLP-0485` `upstream/content/applied-modal-logic/epistemic-logic/relational-models.tex:41-47` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/relational-models.tex:30`; final reader page pending
   - `OLP-0486` `upstream/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:52-57` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:41`; final reader page pending
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:17`; final reader page pending
@@ -3965,7 +4022,7 @@ classical counterparts.
 - Plausible alternatives: প্রকারগত যুক্তিবিদ্যা was considered for modal logic; মোডাল যুক্তিবিদ্যা avoids collision with the type/sort vocabulary and is widely recognizable. সম্ভব-জগৎ was considered; সম্ভাব্য জগৎ keeps the counterfactual reading explicit. মনোগত/বহির্বিস্তারণমূলক were considered for intensional/extensional; অভিপ্রায়গত/ব্যাপ্তিগত aligns the latter with T105 while retaining the semantic contrast.
 - Status: mixed-attested-roots-and-provisional-modal-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘মোডাল যুক্তিবিদ্যা; আবশ্যিকতা/সম্ভাব্যতা; সম্ভাব্য জগৎ; অভিগম্যতা সম্পর্ক; অভিপ্রায়গত/ব্যাপ্তিগত যুক্তিবিদ্যা; প্রমাণযোগ্যতা/জ্ঞানতাত্ত্বিক/কালগত যুক্তিবিদ্যা; S4/S5’ express the OpenLogic sense(s) ‘modal logic; necessity/possibility; possible world; accessibility relation; intensional/extensional logic; provability/epistemic/temporal logic; S4/S5’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 198 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 204 occurrence(s). Representative locations:
   - `OLP-0475` `upstream/content/applied-modal-logic/applied-modal-logic.tex:7-7` → `bn-Beng-IN/content/applied-modal-logic/applied-modal-logic.tex:7`; final reader page pending
   - `OLP-0475` `upstream/content/applied-modal-logic/applied-modal-logic.tex:9-12` → `bn-Beng-IN/content/applied-modal-logic/applied-modal-logic.tex:10`; final reader page pending
   - `OLP-0488` `upstream/content/applied-modal-logic/epistemic-logic/bisimulations.tex:13-22` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex:13`; final reader page pending
@@ -6560,12 +6617,12 @@ begin by drawing a state diagram for the addition machine.
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: provisional-turing-configuration-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘কনফিগারেশন; আরম্ভিক কনফিগারেশন; চালন; এক ধাপে দেয়; হেডের অবস্থান’ express the OpenLogic sense(s) ‘configuration; initial configuration; run; yields in one step; head position’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 70 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 71 occurrence(s). Representative locations:
   - `OLP-0230` `upstream/content/computability/computability-theory/coding-computations.tex:12-31` → `bn-Beng-IN/content/computability/computability-theory/coding-computations.tex:18`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:27-38` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:35`; final reader page pending
   - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:40-93` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:92`; final reader page pending
   - `OLP-0178` `upstream/content/first-order-logic/beyond/higher-order-logic.tex:95-100` → `bn-Beng-IN/content/first-order-logic/beyond/higher-order-logic.tex:97`; final reader page pending
   - `OLP-0281` `upstream/content/incompleteness/arithmetization-syntax/introduction.tex:73-90` → `bn-Beng-IN/content/incompleteness/arithmetization-syntax/introduction.tex:72`; final reader page pending
-  - `OLP-0288` `upstream/content/incompleteness/arithmetization-syntax/proofs-in-ax.tex:43-53` → `bn-Beng-IN/content/incompleteness/arithmetization-syntax/proofs-in-ax.tex:45`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
@@ -7132,7 +7189,7 @@ as Positive and Negative Introspection are much more contested.
 - Plausible alternatives: প্রতিনিধিত্বের সত্যতা-পরীক্ষা was considered; উপস্থাপনের যাচাই follows the section heading and the two implication proofs. আবর্তনের উপর আরোহ was considered, but চালনার ধাপগুলির উপর আরোহ states the induction parameter directly. বিপরীত অভিমুখ was considered; বিপরীত দিক is idiomatic and fixed by the converse implication.
 - Status: provisional-machine-verification-proof-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘উপস্থাপনের যাচাই; আরোহ; চালনা; বিপরীত দিক’ express the OpenLogic sense(s) ‘verification of the representation; induction over computation steps; run; reverse direction’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 411 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 412 occurrence(s). Representative locations:
   - `OLP-0484` `upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:35-39` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex:33`; final reader page pending
   - `OLP-0489` `upstream/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex:39-40` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex:35`; final reader page pending
   - `OLP-0489` `upstream/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex:42-46` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex:38`; final reader page pending
@@ -7240,7 +7297,7 @@ other ways of understanding why it works.
 - Plausible alternatives: তত্ত্ব is retained for theory; মতবাদ was rejected because the passage fixes a deductive closure rather than a philosophical doctrine. সত্য পাটিগণিতের and মানক মডেল remain paired with the semantic definition.
 - Status: provisional-incompleteness-theory-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘তত্ত্ব; অনুগমনের অধীনে আবদ্ধ; সত্য পাটিগণিতের; মানক মডেল’ express the OpenLogic sense(s) ‘theory; closure under entailment; true arithmetic; standard model’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 405 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 409 occurrence(s). Representative locations:
   - `OLP-0482` `upstream/content/applied-modal-logic/epistemic-logic/epistemic-logic.tex:10-12` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/epistemic-logic.tex:11`; final reader page pending
   - `OLP-0483` `upstream/content/applied-modal-logic/epistemic-logic/introduction.tex:15-21` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/introduction.tex:22`; final reader page pending
   - `OLP-0490` `upstream/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex:11-11` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex:11`; final reader page pending
@@ -7456,19 +7513,48 @@ occur in~$!A$, this schema is inconsistent!)
 - Plausible alternatives: স্বতঃসিদ্ধ-প্রকল্প was considered; স্বতঃসিদ্ধ-ছক states an instance pattern without the planning sense of প্রকল্প. ন্যায়সংগত was considered for justified; সমর্থিত follows T070. পরিমাণায়ন-বিধি was possible; পরিমাণসূচক-বিধি names the syntactic operator involved.
 - Status: provisional-axiomatic-proof-coding-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘স্বতঃসিদ্ধ-ছক; সমর্থিত; মোডাস পোনেন্স; পরিমাণসূচক-বিধি’ express the OpenLogic sense(s) ‘axiom schema; justified line; modus ponens; quantifier rule’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 78 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 80 occurrence(s). Representative locations:
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:29-61` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:47`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:26-48` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:40`; final reader page pending
   - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:36-39` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:36`; final reader page pending
   - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:41-41` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:41`; final reader page pending
   - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:27`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:38`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:40`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{defn}[Modus ponens]
-  If $!B$ and $!B \lif !A$ already occur in !!a{derivation}, then $!A$ is
-  a correct inference step.
-\end{defn}
+This definition results in a number of elementary logical facts. First
+of all, the deduction theorem holds for the material conditional:
+\begin{align}
+  \text{If } \Gamma, !A \Entails !B \text{ then } \Gamma \Entails !A \lif !B
+\end{align}
+It is truth-functional: $!A \lif !B$ and $\lnot !A \lor !B$ are equivalent:
+\begin{align}
+  !A \lif !B & \Entails \lnot !A \lor !B\\
+  \lnot !A \lor !B & \Entails !A \lif !B
+  \intertext{A material conditional is entailed by its consequent and
+    by the negation of its antecedent:}
+  !B & \Entails !A \lif !B\\
+  \lnot !A & \Entails !A \lif !B
+  \intertext{A false material conditional is equivalent to the
+    conjunction of its antecedent and the negation of its consequent:
+    if $!A \lif !B$ is false, $!A \land \lnot !B$ is true, and vice versa:}
+  \lnot(!A \lif !B) & \Entails !A \land \lnot !B\\
+  !A \land \lnot !B & \Entails \lnot(!A \lif !B)
+  \intertext{The material conditional supports modus ponens:}
+  !A, !A \lif !B & \Entails !B
+  \intertext{The material conditional agglomerates:}
+  !A \lif !B,  !A \lif !C & \Entails !A \lif (!B \land !C)
+  \intertext{We can always strengthen the antecedent, i.e., the
+    conditional is \emph{monotonic}:}
+  !A \lif !B & \Entails (!A \land !C) \lif !B
+  \intertext{The material conditional is transitive, i.e., the chain
+    rule is valid:}
+  !A \lif !B, !B \lif !C & \Entails !A \lif !C
+  \intertext{The material conditional is equivalent to its
+    contrapositive:}
+  !A \lif !B & \Entails \lnot !B \lif \lnot !A\\
+  \lnot !B \lif \lnot !A & \Entails !A \lif !B
+\end{align}
 ```
 
 ### BN-IN-T239
@@ -7569,16 +7655,28 @@ rule is $\RightR\land$ (with number~$10$).''
 - Plausible alternatives: নেস্টেড শর্তাধীন and ক্রমশর্ত were considered; অন্তর্নিহিত শর্তাধীন সূত্র spells out the constructed formula. পূর্বাংশ/উত্তরাংশ were avoided here because the formulas play conditional antecedent/consequent roles; পূর্বপক্ষ/অনুপক্ষ makes that role explicit. নিঃসরণ উপপাদ্য continues T090.
 - Status: provisional-axiomatic-deduction-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘অন্তর্নিহিত শর্তাধীন সূত্র; পূর্বপক্ষ; অনুপক্ষ; নিঃসরণ উপপাদ্য’ express the OpenLogic sense(s) ‘nested conditional; antecedent; consequent; deduction theorem’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 41 occurrence(s). Representative locations:
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:11-11` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:11`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:13-16` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:13`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:16-16` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:16`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:49-52` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:48`; final reader page pending
-  - `OLP-0119` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:97-98` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex:97`; final reader page pending
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 55 occurrence(s). Representative locations:
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:13-25` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:16`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:40-50` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:49`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:40-50` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:50`; final reader page pending
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:29-61` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:29`; final reader page pending
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:29-61` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:38`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\olsection{The Deduction Theorem with Quantifiers}
+A very common and important form of ``if \dots then \dots''
+constructions in English are built using the past subjunctive form of
+\emph{to be}: ``if it were the case that \dots then it would be the
+case that \dots'' Because usually the antecedent of such a conditional
+is false, i.e., counter to fact, they are called \emph{counterfactual
+  conditionals} (and because they use the subjunctive form of \emph{to
+  be}, also \emph{subjunctive conditionals}. They are distinguished
+from \emph{indicative} conditionals which take the form of ``if it is
+the case that \dots then it is the case that \dots'' Counterfactual and
+indicative conditionals differ in truth conditions. Consider Adams's
+famous example:
+\begin{quote}
+  If Oswald didn't kill Kennedy, someone else did.
 ```
 
 ### BN-IN-T242
@@ -8022,7 +8120,7 @@ computable separation, which is the contradiction we were looking for.
 - Plausible alternatives: ব্যাখ্যাতব্য তত্ত্ব and মডেলায়ন were considered; ব্যাখ্যাযোগ্য তত্ত্ব keeps the explicit formula interpretation. প্রেসবার্গার is a transliteration alternative; প্রেসবুর্গার follows the selected chapter form.
 - Status: provisional-interpretability-and-language-arity-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘ব্যাখ্যা; ব্যাখ্যাযোগ্য তত্ত্ব; এক-স্থানীয় ও দ্বি-স্থানীয় প্রতীক; প্রেসবুর্গার পাটিগণিত’ express the OpenLogic sense(s) ‘interpretation; interpretable theory; unary and binary symbols; Presburger arithmetic’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 184 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 186 occurrence(s). Representative locations:
   - `OLP-0483` `upstream/content/applied-modal-logic/epistemic-logic/introduction.tex:13-13` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/introduction.tex:13`; final reader page pending
   - `OLP-0483` `upstream/content/applied-modal-logic/epistemic-logic/introduction.tex:15-21` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/introduction.tex:22`; final reader page pending
   - `OLP-0487` `upstream/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:13-18` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:13`; final reader page pending
@@ -8420,7 +8518,7 @@ coincide.  That they do is the content of the \emph{soundness} and
 - Plausible alternatives: সিদ্ধতা, নিহিতার্থ and সন্তোষণীয়তা were considered; বৈধতা, অনুসিদ্ধান্ত and পরিতৃপ্তিযোগ্যতা continue the edition-wide semantic vocabulary and keep truth in every structure distinct from preservation by premises.
 - Status: provisional-second-order-semantic-notions-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘বৈধতা; অনুসিদ্ধান্ত; পরিতৃপ্তিযোগ্যতা; অপরিতৃপ্তিযোগ্য’ express the OpenLogic sense(s) ‘validity; entailment; satisfiability; unsatisfiable’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 112 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 117 occurrence(s). Representative locations:
   - `OLP-0483` `upstream/content/applied-modal-logic/epistemic-logic/introduction.tex:13-13` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/introduction.tex:13`; final reader page pending
   - `OLP-0486` `upstream/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:91-94` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:74`; final reader page pending
   - `OLP-0477` `upstream/content/applied-modal-logic/temporal-logic/introduction.tex:21-29` → `bn-Beng-IN/content/applied-modal-logic/temporal-logic/introduction.tex:15`; final reader page pending
@@ -9793,7 +9891,7 @@ a priori \emph{synthetic} ones.
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: mixed-attested-relation-roots-and-provisional-frame-properties; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘সিরিয়াল; প্রতিবিম্বী; প্রতিসম; পরিযায়ী; ইউক্লিডীয়; আংশিক অপেক্ষকধর্মী; অপেক্ষকধর্মী; দুর্বলভাবে ঘন; দুর্বলভাবে সংযুক্ত; দুর্বলভাবে অভিমুখী’ express the OpenLogic sense(s) ‘serial; reflexive; symmetric; transitive; euclidean; partially functional; functional; weakly dense; weakly connected; weakly directed’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 221 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 224 occurrence(s). Representative locations:
   - `OLP-0488` `upstream/content/applied-modal-logic/epistemic-logic/bisimulations.tex:13-22` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex:13`; final reader page pending
   - `OLP-0487` `upstream/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:31-50` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:26`; final reader page pending
   - `OLP-0487` `upstream/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:31-50` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:29`; final reader page pending
@@ -9873,12 +9971,12 @@ such that $Rw_1w_2$, $Rw_2w_3$, \dots.
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: attested-equivalence-root-and-provisional-modal-S5-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘তুল্যতা সম্পর্ক; তুল্যতা শ্রেণি; সর্বজনীন সম্পর্ক; S5’ express the OpenLogic sense(s) ‘equivalence relation; equivalence class; universal relation; S5’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 96 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 101 occurrence(s). Representative locations:
   - `OLP-0487` `upstream/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:13-18` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex:13`; final reader page pending
   - `OLP-0486` `upstream/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:52-57` → `bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex:41`; final reader page pending
-  - `OLP-0180` `upstream/content/first-order-logic/beyond/modal-logics.tex:67-89` → `bn-Beng-IN/content/first-order-logic/beyond/modal-logics.tex:72`; final reader page pending
-  - `OLP-0180` `upstream/content/first-order-logic/beyond/modal-logics.tex:67-89` → `bn-Beng-IN/content/first-order-logic/beyond/modal-logics.tex:76`; final reader page pending
-  - `OLP-0180` `upstream/content/first-order-logic/beyond/modal-logics.tex:67-89` → `bn-Beng-IN/content/first-order-logic/beyond/modal-logics.tex:81`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:26-48` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:30`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:50-59` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:55`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:61-76` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:67`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
@@ -9898,19 +9996,48 @@ they correspond to various frame conditions.
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: established-axiom-and-proof-roots-with-provisional-modal-rule-name; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘হিলবার্ট-ধরনের স্বতঃসিদ্ধমূলক নিষ্পাদন; স্বতঃসিদ্ধের উদাহরণ; মোডাস পোনেন্স; আবশ্যকীকরণ’ express the OpenLogic sense(s) ‘Hilbert-type axiomatic derivation; axiom instance; modus ponens; necessitation’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 43 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 45 occurrence(s). Representative locations:
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:29-61` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:47`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:26-48` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:40`; final reader page pending
   - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:36-39` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:36`; final reader page pending
   - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:41-41` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:41`; final reader page pending
   - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:27`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:38`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:44`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{defn}[Modus ponens]
-  If $!B$ and $!B \lif !A$ already occur in !!a{derivation}, then $!A$ is
-  a correct inference step.
-\end{defn}
+This definition results in a number of elementary logical facts. First
+of all, the deduction theorem holds for the material conditional:
+\begin{align}
+  \text{If } \Gamma, !A \Entails !B \text{ then } \Gamma \Entails !A \lif !B
+\end{align}
+It is truth-functional: $!A \lif !B$ and $\lnot !A \lor !B$ are equivalent:
+\begin{align}
+  !A \lif !B & \Entails \lnot !A \lor !B\\
+  \lnot !A \lor !B & \Entails !A \lif !B
+  \intertext{A material conditional is entailed by its consequent and
+    by the negation of its antecedent:}
+  !B & \Entails !A \lif !B\\
+  \lnot !A & \Entails !A \lif !B
+  \intertext{A false material conditional is equivalent to the
+    conjunction of its antecedent and the negation of its consequent:
+    if $!A \lif !B$ is false, $!A \land \lnot !B$ is true, and vice versa:}
+  \lnot(!A \lif !B) & \Entails !A \land \lnot !B\\
+  !A \land \lnot !B & \Entails \lnot(!A \lif !B)
+  \intertext{The material conditional supports modus ponens:}
+  !A, !A \lif !B & \Entails !B
+  \intertext{The material conditional agglomerates:}
+  !A \lif !B,  !A \lif !C & \Entails !A \lif (!B \land !C)
+  \intertext{We can always strengthen the antecedent, i.e., the
+    conditional is \emph{monotonic}:}
+  !A \lif !B & \Entails (!A \land !C) \lif !B
+  \intertext{The material conditional is transitive, i.e., the chain
+    rule is valid:}
+  !A \lif !B, !B \lif !C & \Entails !A \lif !C
+  \intertext{The material conditional is equivalent to its
+    contrapositive:}
+  !A \lif !B & \Entails \lnot !B \lif \lnot !A\\
+  \lnot !B \lif \lnot !A & \Entails !A \lif !B
+\end{align}
 ```
 
 ### BN-IN-T329
@@ -9971,16 +10098,46 @@ other ways of understanding why it works.
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: mixed-attested-relation-roots-and-provisional-modal-axiom-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘দ্বৈত মোডাল স্বতঃসিদ্ধ; প্রতিবিপরীত রূপ; S5-এর সমতুল্য স্বতঃসিদ্ধায়ন; সিরিয়াল ইউক্লিডীয় কাঠামোর বিপরীত মডেল’ express the OpenLogic sense(s) ‘dual modal axiom; contraposition; equivalent S5 axiomatizations; serial and euclidean frame countermodel’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 1 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 3 occurrence(s). Representative locations:
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:29-61` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:56`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:26-48` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:48`; final reader page pending
   - `OLP-0434` `upstream/content/normal-modal-logic/axioms-systems/duals.tex:25-29` → `bn-Beng-IN/content/normal-modal-logic/axioms-systems/duals.tex:23`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-Each of the above dual !!{formula}s is obtained from the corresponding
-!!{formula} by substituting $\lnot p$ for $p$, contraposing, replacing
-$\lnot\Box\lnot$ by $\Diamond$, and replacing $\lnot\Diamond\lnot$
-by~$\Box$. \Ax{D}, i.e., $\Box!A \lif \Diamond!A$ is its own dual in
-that sense.
+This definition results in a number of elementary logical facts. First
+of all, the deduction theorem holds for the material conditional:
+\begin{align}
+  \text{If } \Gamma, !A \Entails !B \text{ then } \Gamma \Entails !A \lif !B
+\end{align}
+It is truth-functional: $!A \lif !B$ and $\lnot !A \lor !B$ are equivalent:
+\begin{align}
+  !A \lif !B & \Entails \lnot !A \lor !B\\
+  \lnot !A \lor !B & \Entails !A \lif !B
+  \intertext{A material conditional is entailed by its consequent and
+    by the negation of its antecedent:}
+  !B & \Entails !A \lif !B\\
+  \lnot !A & \Entails !A \lif !B
+  \intertext{A false material conditional is equivalent to the
+    conjunction of its antecedent and the negation of its consequent:
+    if $!A \lif !B$ is false, $!A \land \lnot !B$ is true, and vice versa:}
+  \lnot(!A \lif !B) & \Entails !A \land \lnot !B\\
+  !A \land \lnot !B & \Entails \lnot(!A \lif !B)
+  \intertext{The material conditional supports modus ponens:}
+  !A, !A \lif !B & \Entails !B
+  \intertext{The material conditional agglomerates:}
+  !A \lif !B,  !A \lif !C & \Entails !A \lif (!B \land !C)
+  \intertext{We can always strengthen the antecedent, i.e., the
+    conditional is \emph{monotonic}:}
+  !A \lif !B & \Entails (!A \land !C) \lif !B
+  \intertext{The material conditional is transitive, i.e., the chain
+    rule is valid:}
+  !A \lif !B, !B \lif !C & \Entails !A \lif !C
+  \intertext{The material conditional is equivalent to its
+    contrapositive:}
+  !A \lif !B & \Entails \lnot !B \lif \lnot !A\\
+  \lnot !B \lif \lnot !A & \Entails !A \lif !B
+\end{align}
 ```
 
 ### BN-IN-T332
@@ -10816,19 +10973,48 @@ for ``conjunction''.  Commonly used symbols for the ``conditional'' or
 - Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
 - Status: proof-root-attested-system-terminology-provisional; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
 - Review question: Please double-check: for India-standard university Bengali, does ‘স্বতঃসিদ্ধিক নিষ্পাদন; মোডাস পোনেন্স; উপপাদ্য হওয়া’ express the OpenLogic sense(s) ‘axiomatic derivation; modus ponens; theoremhood’ without collision with adjacent logical or mathematical concepts?
-- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 39 occurrence(s). Representative locations:
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 41 occurrence(s). Representative locations:
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:29-61` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:47`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:26-48` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:40`; final reader page pending
   - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:36-39` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:36`; final reader page pending
   - `OLP-0114` `upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:41-41` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex:41`; final reader page pending
   - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:27`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:38`; final reader page pending
-  - `OLP-0120` `upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:25-48` → `bn-Beng-IN/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex:44`; final reader page pending
 - Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
 
 ```tex
-\begin{defn}[Modus ponens]
-  If $!B$ and $!B \lif !A$ already occur in !!a{derivation}, then $!A$ is
-  a correct inference step.
-\end{defn}
+This definition results in a number of elementary logical facts. First
+of all, the deduction theorem holds for the material conditional:
+\begin{align}
+  \text{If } \Gamma, !A \Entails !B \text{ then } \Gamma \Entails !A \lif !B
+\end{align}
+It is truth-functional: $!A \lif !B$ and $\lnot !A \lor !B$ are equivalent:
+\begin{align}
+  !A \lif !B & \Entails \lnot !A \lor !B\\
+  \lnot !A \lor !B & \Entails !A \lif !B
+  \intertext{A material conditional is entailed by its consequent and
+    by the negation of its antecedent:}
+  !B & \Entails !A \lif !B\\
+  \lnot !A & \Entails !A \lif !B
+  \intertext{A false material conditional is equivalent to the
+    conjunction of its antecedent and the negation of its consequent:
+    if $!A \lif !B$ is false, $!A \land \lnot !B$ is true, and vice versa:}
+  \lnot(!A \lif !B) & \Entails !A \land \lnot !B\\
+  !A \land \lnot !B & \Entails \lnot(!A \lif !B)
+  \intertext{The material conditional supports modus ponens:}
+  !A, !A \lif !B & \Entails !B
+  \intertext{The material conditional agglomerates:}
+  !A \lif !B,  !A \lif !C & \Entails !A \lif (!B \land !C)
+  \intertext{We can always strengthen the antecedent, i.e., the
+    conditional is \emph{monotonic}:}
+  !A \lif !B & \Entails (!A \land !C) \lif !B
+  \intertext{The material conditional is transitive, i.e., the chain
+    rule is valid:}
+  !A \lif !B, !B \lif !C & \Entails !A \lif !C
+  \intertext{The material conditional is equivalent to its
+    contrapositive:}
+  !A \lif !B & \Entails \lnot !B \lif \lnot !A\\
+  \lnot !B \lif \lnot !A & \Entails !A \lif !B
+\end{align}
 ```
 
 ### BN-IN-T366
@@ -11080,4 +11266,135 @@ the same branch, with $\sigma.n$ a prefix new to the branch.
 ```tex
 From \olref{thm:decidability} it follows that there is an algorithm to
 decide whether~$\Entails !A$.
+```
+
+### BN-IN-T375
+
+- Source term or concept: counterfactual conditional; indicative conditional; subjunctive conditional
+- Chosen Bengali: প্রতিবাস্তব শর্তবচন; নির্দেশক শর্তবচন; সম্ভাবক-ভাবের শর্তবচন
+- Rationale: ত্রিপুরার যুক্তি-পৃষ্ঠা সত্য-মিথ্যা-নির্ণেয় উক্তি ও সংযোজক দেখায়; পশ্চিমবঙ্গের দর্শন-পৃষ্ঠা বচন/বাক্যের পার্থক্য দেখায়। প্রতিবাস্তব, নির্দেশক ও সম্ভাবক-ভাবের বিশেষ শর্তবচনের নাম সেখানে সরাসরি নেই। উৎসের অসওয়াল্ড উদাহরণে অতীত ঘটনা-সম্পর্কিত নির্দেশক দাবি এবং ভিন্ন ইতিহাসের প্রতিবাস্তব দাবি আলাদা; সেই পার্থক্য বোঝাতে পদগুলি অস্থায়ীভাবে নেওয়া হয়েছে। ‘বাস্তববিরুদ্ধ’ ও ‘সাবজাঙ্কটিভ’ বিকল্প বিশেষজ্ঞ-পর্যালোচনায় খোলা।
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: provisional-source-contrast-governed-counterfactual-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘প্রতিবাস্তব শর্তবচন; নির্দেশক শর্তবচন; সম্ভাবক-ভাবের শর্তবচন’ express the OpenLogic sense(s) ‘counterfactual conditional; indicative conditional; subjunctive conditional’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 13 occurrence(s). Representative locations:
+  - `OLP-0516` `upstream/content/counterfactuals/counterfactuals.tex:7-7` → `bn-Beng-IN/content/counterfactuals/counterfactuals.tex:7`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:11-11` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:11`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:13-25` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:17`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:13-25` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:19`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:27-38` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:29`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+\olpart{cnt}{Counter\-factuals}
+```
+
+### BN-IN-T376
+
+- Source term or concept: material conditional; strict conditional; antecedent; consequent
+- Chosen Bengali: বস্তুগত শর্তবচন; কঠোর শর্তবচন; পূর্বপক্ষ; অনুপক্ষ
+- Rationale: সংযোজক ও বচনের ভারতীয় সাক্ষ্য সাধারণ ভিত্তি দেয়; বস্তুগত শর্তবচন ও পূর্বপক্ষ/অনুপক্ষ আগের T061/T241-র সঙ্গে সামঞ্জস্যপূর্ণ। কঠোর শর্তবচন উৎসের □(A→B) সংজ্ঞা দ্বারা নিয়ন্ত্রিত, সাক্ষ্য-পৃষ্ঠায় সরাসরি প্রতিষ্ঠিত নয়। এটি কেবল সত্যমান-অপেক্ষক বস্তুগত →-এর সমার্থক নয়; BN-SRC-420–421-এ সেই পার্থক্য ও S5 সীমা রক্ষা করা হয়েছে।
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: attested-logic-roots-and-provisional-modal-compounds; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘বস্তুগত শর্তবচন; কঠোর শর্তবচন; পূর্বপক্ষ; অনুপক্ষ’ express the OpenLogic sense(s) ‘material conditional; strict conditional; antecedent; consequent’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 62 occurrence(s). Representative locations:
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:13-25` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:16`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:40-50` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:44`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:40-50` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:46`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:40-50` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:49`; final reader page pending
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:40-50` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:50`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+A very common and important form of ``if \dots then \dots''
+constructions in English are built using the past subjunctive form of
+\emph{to be}: ``if it were the case that \dots then it would be the
+case that \dots'' Because usually the antecedent of such a conditional
+is false, i.e., counter to fact, they are called \emph{counterfactual
+  conditionals} (and because they use the subjunctive form of \emph{to
+  be}, also \emph{subjunctive conditionals}. They are distinguished
+from \emph{indicative} conditionals which take the form of ``if it is
+the case that \dots then it is the case that \dots'' Counterfactual and
+indicative conditionals differ in truth conditions. Consider Adams's
+famous example:
+\begin{quote}
+  If Oswald didn't kill Kennedy, someone else did.
+```
+
+### BN-IN-T377
+
+- Source term or concept: antecedent strengthening; agglomeration; contrapositive
+- Chosen Bengali: পূর্বপক্ষ শক্তিশালীকরণ; অনুপক্ষ একত্রকরণ; প্রতিবিপরীত রূপ
+- Rationale: উক্তি ও সংযোজকের পাঠ গদ্যের রেজিস্টার দেয়, কিন্তু এই তিনটি বিধির বিশেষ বাংলা নাম সরাসরি নেই। প্রদর্শিত A→B থেকে (A∧C)→B, দুই একই পূর্বপক্ষের অনুপক্ষের সংযোজন এবং ¬B→¬A সূত্রগুলি অর্থ নিয়ন্ত্রণ করে। ‘প্রতিবিপরীত রূপ’ আগের T331 সিদ্ধান্তের সঙ্গে এক রাখা হয়েছে; ‘বিপরীত-বিরুদ্ধোক্তি’ বিকল্পটি এখানে নেওয়া হয়নি।
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: formula-governed-provisional-inference-register; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘পূর্বপক্ষ শক্তিশালীকরণ; অনুপক্ষ একত্রকরণ; প্রতিবিপরীত রূপ’ express the OpenLogic sense(s) ‘antecedent strengthening; agglomeration; contrapositive’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 3 occurrence(s). Representative locations:
+  - `OLP-0518` `upstream/content/counterfactuals/introduction/material-conditional.tex:29-61` → `bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex:56`; final reader page pending
+  - `OLP-0520` `upstream/content/counterfactuals/introduction/strict-conditional.tex:26-48` → `bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex:48`; final reader page pending
+  - `OLP-0434` `upstream/content/normal-modal-logic/axioms-systems/duals.tex:25-29` → `bn-Beng-IN/content/normal-modal-logic/axioms-systems/duals.tex:23`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+This definition results in a number of elementary logical facts. First
+of all, the deduction theorem holds for the material conditional:
+\begin{align}
+  \text{If } \Gamma, !A \Entails !B \text{ then } \Gamma \Entails !A \lif !B
+\end{align}
+It is truth-functional: $!A \lif !B$ and $\lnot !A \lor !B$ are equivalent:
+\begin{align}
+  !A \lif !B & \Entails \lnot !A \lor !B\\
+  \lnot !A \lor !B & \Entails !A \lif !B
+  \intertext{A material conditional is entailed by its consequent and
+    by the negation of its antecedent:}
+  !B & \Entails !A \lif !B\\
+  \lnot !A & \Entails !A \lif !B
+  \intertext{A false material conditional is equivalent to the
+    conjunction of its antecedent and the negation of its consequent:
+    if $!A \lif !B$ is false, $!A \land \lnot !B$ is true, and vice versa:}
+  \lnot(!A \lif !B) & \Entails !A \land \lnot !B\\
+  !A \land \lnot !B & \Entails \lnot(!A \lif !B)
+  \intertext{The material conditional supports modus ponens:}
+  !A, !A \lif !B & \Entails !B
+  \intertext{The material conditional agglomerates:}
+  !A \lif !B,  !A \lif !C & \Entails !A \lif (!B \land !C)
+  \intertext{We can always strengthen the antecedent, i.e., the
+    conditional is \emph{monotonic}:}
+  !A \lif !B & \Entails (!A \land !C) \lif !B
+  \intertext{The material conditional is transitive, i.e., the chain
+    rule is valid:}
+  !A \lif !B, !B \lif !C & \Entails !A \lif !C
+  \intertext{The material conditional is equivalent to its
+    contrapositive:}
+  !A \lif !B & \Entails \lnot !B \lif \lnot !A\\
+  \lnot !B \lif \lnot !A & \Entails !A \lif !B
+\end{align}
+```
+
+### BN-IN-T378
+
+- Source term or concept: closest possible world; ontic analysis; conditional probability; belief revision
+- Chosen Bengali: নিকটতম সম্ভাব্য জগৎ; সত্তাতাত্ত্বিক বিশ্লেষণ; শর্তাধীন সম্ভাবনা; বিশ্বাস-সংশোধন
+- Rationale: যুক্তি, বচন ও সম্পর্কের দেখা ভারতীয় পৃষ্ঠাগুলি সাধারণ ভিত্তি দেয়; নিকটতম জগৎ, সত্তাতাত্ত্বিক বিশ্লেষণ ও বিশ্বাস-সংশোধন সরাসরি সাক্ষ্যপ্রাপ্ত নয়। উৎসে বাস্তব জগতের সঙ্গে নৈকট্য এবং S সত্য এমন সম্ভাব্য জগতে T সত্য হওয়া প্রতিবাস্তব সত্যতার শর্ত; তা বস্তুগত শর্তবচনের সত্যমান-অপেক্ষক শর্ত থেকে পৃথক। বিকল্প ‘সবচেয়ে কাছের জগৎ’ গদ্যে ব্যাখ্যার জন্য খোলা।
+- Plausible alternatives: No distinct alternative was recorded contemporaneously; this retrospective backfill does not invent one.
+- Status: logic-relation-roots-attested-specialist-counterfactual-compounds-provisional; confidence: medium_definition_and_adjacent-canon_support; expert review welcome and open to correction: yes
+- Review question: Please double-check: for India-standard university Bengali, does ‘নিকটতম সম্ভাব্য জগৎ; সত্তাতাত্ত্বিক বিশ্লেষণ; শর্তাধীন সম্ভাবনা; বিশ্বাস-সংশোধন’ express the OpenLogic sense(s) ‘closest possible world; ontic analysis; conditional probability; belief revision’ without collision with adjacent logical or mathematical concepts?
+- Exact occurrence index: `TRANSLATION_DECISION_OCCURRENCES.csv` contains all 1 occurrence(s). Representative locations:
+  - `OLP-0521` `upstream/content/counterfactuals/introduction/counterfactuals.tex:64-77` → `bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex:75`; final reader page pending
+- Representative frozen-source wording (line-end whitespace omitted here; the machine indexes retain the exact text and block hash):
+
+```tex
+It is still debated What exactly the correct logic of counterfactuals
+is. An influential analysis of counterfactuals was given by Stalnaker
+and Lewis.  According to them, a counterfactual ``if it were the case
+that~$S$ then it would be the case that~$T$'' is true iff $T$ is true
+in the counterfactual situation (``possible world'') that is closest
+to the way the actual world is and where~$S$ is true. This is called
+an ``ontic'' analysis, since it makes reference to an ontology of
+possible worlds. Other analyses make use of conditional probabilities
+or theories of belief revision.  There is a proliferation of different
+proposed logics of counterfactuals. There isn't even a single
+Lewis--Stalnaker logic of counterfactuals: even though Stalnaker and
+Lewis proposed accounts along similar lines with reference to closest
+possible worlds, the assumptions they made result in different valid
+inferences.
 ```

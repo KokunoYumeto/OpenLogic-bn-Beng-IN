@@ -1,0 +1,112 @@
+% Part: counterfactuals
+% Chapter: introduction
+% Section: strict-conditional
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{int}{str}
+
+\olsection{কঠোর শর্তবচন}
+
+লুইস \emph{কঠোর শর্তবচন}~$\strictif$ প্রবর্তন করেন এবং
+যুক্তি দেন যে বস্তুগত শর্তবচন নয়, এটিই নিহিতকরণের
+অনুরূপ। সত্যতা-সংক্রান্ত মোডাল যুক্তিবিদ্যায়
+$!A \strictif !B$-কে $\Box(!A \lif !B)$ হিসেবে
+সংজ্ঞায়িত করা যায়। অতএব কোনো জগতে কঠোর শর্তবচনটি
+সত্য তখনই, যখন সংশ্লিষ্ট বস্তুগত শর্তবচনটি আবশ্যিকভাবে
+সত্য।
+
+বস্তুগত শর্তবচনের আপাত-বৈপরীত্যের নিরিখে কঠোর শর্তবচন
+কেমন কাজ করে? মিথ্যা পূর্বপক্ষযুক্ত কিংবা সত্য অনুপক্ষযুক্ত
+কঠোর শর্তবচন সত্যও হতে পারে, মিথ্যাও হতে পারে। উপরন্তু,
+$(!A \strictif !B) \lor (!B \strictif !A)$ বৈধ নয়।
+$!A \strictif !B$, $\lnot !A \lor !B$-এর সমতুল্যও
+নয়; তাই এটি সত্যমান-অপেক্ষকধর্মী নয়।
+
+% BN-SRC-420: the non-entailment requires negating the strict conditional.
+% BN-SRC-421: the displayed entailments and later necessity claims require S5.
+S5 মোডাল ব্যবস্থায় আমরা পাই:
+\begin{align}
+  !A \strictif !B & \Entails \lnot !A \lor !B
+  \text{ কিন্তু:}\\
+  \lnot !A \lor !B & \Entails/ !A \strictif !B\\
+  !B & \Entails/ !A \strictif !B\\
+  \lnot !A & \Entails/ !A \strictif !B\\
+  \lnot(!A \strictif !B) & \Entails/ !A \land \lnot !B
+  \text{ কিন্তু:}\\
+  !A \land \lnot !B & \Entails \lnot(!A \strictif !B)
+  \intertext{তবু কঠোর শর্তবচনের জন্য মোডাস পোনেন্স চলে:}
+  !A, !A \strictif !B & \Entails !B
+  \intertext{কঠোর শর্তবচনে দুটি অনুপক্ষ একত্র করা যায়:}
+  !A \strictif !B,  !A \strictif !C & \Entails !A \strictif (!B \land !C)
+  \intertext{কঠোর শর্তবচনের পূর্বপক্ষকে শক্তিশালী করা যায়:}
+  !A \strictif !B & \Entails (!A \land !C) \strictif !B
+  \intertext{কঠোর শর্তবচন সংক্রমণশীলও:}
+  !A \strictif !B, !B \strictif !C & \Entails !A \strictif !C
+  \intertext{শেষত, কঠোর শর্তবচন তার প্রতিবিপরীত রূপের সমতুল্য:}
+  !A \strictif !B & \Entails \lnot !B \strictif \lnot !A\\
+  \lnot !B \strictif \lnot !A & \Entails !A \strictif !B
+\end{align}
+
+\begin{prob}
+  কঠোর শর্তবচনের ক্ষেত্রে যেসব অনুগমন সত্য নয়, সেগুলির
+  জন্য \Log{S5}-এ প্রতিদৃষ্টান্ত দিন; অর্থাৎ নিচের দাবিগুলির
+  জন্য:
+  \begin{enumerate}
+  \item $\lnot p \Entails/ \Box(p \lif q)$
+  \item $q \Entails/ \Box(p \lif q)$
+  \item $\lnot\Box(p \lif q) \Entails/ p \land \lnot q$
+  \item $\Entails/ \Box(p \lif q) \lor \Box(q \lif p)$
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+  বৈধ অনুগমনগুলি যে কঠোর শর্তবচনের জন্য সত্য, তা
+  \Log{S5}-এ প্রমাণ দিয়ে দেখান:
+  \begin{enumerate}
+  \item $\Box(!A \lif !B) \Entails \lnot !A \lor !B$
+  \item $!A \land \lnot !B \Entails \lnot\Box(!A \lif !B)$
+  \item $!A, \Box(!A \lif !B) \Entails !B$
+  \item $\Box(!A \lif !B), \Box(!A \lif !C) \Entails \Box(!A \lif (!B
+    \land !C))$
+  \item $\Box(!A \lif !B) \Entails \Box((!A \land !C) \lif !B)$
+  \item $\Box(!A \lif !B), \Box(!B \lif !C) \Entails \Box(!A
+    \lif !C)$
+  \item $\Box(!A \lif !B) \Entails \Box(\lnot !B \lif \lnot !A)$
+  \item $\Box(\lnot !B \lif \lnot !A) \Entails \Box(!A \lif !B)$
+  \end{enumerate}
+\end{prob}
+
+তবে S5 ব্যবস্থায় কঠোর শর্তবচনেরও নিজস্ব ``আপাত-বৈপরীত্য'' আছে।
+মিথ্যা পূর্বপক্ষ বা সত্য অনুপক্ষযুক্ত বস্তুগত শর্তবচন
+যেমন সত্য হয়, তেমনই \emph{আবশ্যিকভাবে} মিথ্যা পূর্বপক্ষ
+অথবা আবশ্যিকভাবে সত্য অনুপক্ষযুক্ত কঠোর শর্তবচনও সত্য।
+এ ছাড়া, সত্য কঠোর শর্তবচন আবশ্যিকভাবে সত্য এবং মিথ্যা
+কঠোর শর্তবচন আবশ্যিকভাবে মিথ্যা। অন্য কথায়:
+\begin{align}
+  \Box \lnot !A & \Entails !A \strictif !B\\
+  \Box !B & \Entails !A \strictif !B\\
+  !A \strictif !B& \Entails \Box(!A \strictif !B)\\
+  \lnot(!A \strictif !B) & \Entails \Box\lnot(!A \strictif !B)
+\end{align}
+$\strictif$-কে ``নিহিত করে'' অর্থে নিলে এগুলি সমস্যা নয়।
+যৌক্তিক অনুগমন তো গাণিতিক সত্য; তাই তা আপতিক হতে পারে না।
+কিন্তু ইংরেজি ``if \dots then \dots''-এর অর্থ প্রকাশের
+সংযোজক হিসেবে $\strictif$ ব্যবহার করতে চাইলে, বিশেষত
+শেষের দুটি তথ্য সমস্যা তোলে। নিশ্চয়ই এমন শর্তবচন আছে
+যেগুলি আপতিকভাবে সত্য বা আপতিকভাবে মিথ্যা; বস্তুত,
+সাধারণত এগুলি আবশ্যিক সত্য কিংবা অসম্ভব—কোনোটিই নয়।
+
+\begin{prob}
+  \Log{S5}-এ নিচের দাবিগুলির প্রমাণ দিন:
+  \begin{enumerate}
+    \item $\Box \lnot !A \Entails !A \strictif !B$
+    \item $!A \strictif !B \Entails \Box(!A \strictif !B)$
+    \item $\lnot(!A \strictif !B)  \Entails \Box\lnot(!A \strictif !B)$
+  \end{enumerate}
+  প্রমাণে $\strictif$-এর সংজ্ঞা ব্যবহার করুন।
+\end{prob}
+
+\end{document}

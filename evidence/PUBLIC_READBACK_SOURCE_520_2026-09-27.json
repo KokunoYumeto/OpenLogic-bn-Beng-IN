@@ -1,0 +1,209 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T22:11:43.365770+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "a096d910910fa9056216c4ed0ddfef57150db816",
+  "parent": "daaedac89dd28ef72fbaa601af6c1cc0e1391a4d",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "30011323dd6397280a61cfe409c08f68ff139687",
+    "receipt": "PUBLIC_READBACK_SOURCE_514_2026-09-26.json",
+    "receipt_sha256": "4b8706eb1b5378d5b7e976c59143682cfe652d67caed0ae76a6e985543f2ff6e"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/a096d910910fa9056216c4ed0ddfef57150db816.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/a096d910910fa9056216c4ed0ddfef57150db816",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 14235683,
+  "archive_sha256": "9b52099cbf8a5a79710cdacc456c1c91758b97dbe63507402c147d454994e5a6",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/counterfactuals.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/counterfactuals.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/counterfactuals.tex",
+      "content_type": "text/plain",
+      "bytes": 304,
+      "sha256": "dd8e88b0259540f9117d7b1294d61e7bc41e9670bd8a5298cc5324883f766ced"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex",
+      "content_type": "text/plain",
+      "bytes": 8518,
+      "sha256": "825ff8003e45bcabb364f4ba68165aabe3c59176216e4716421710acf5cb442b"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/introduction/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/introduction/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/introduction/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 329,
+      "sha256": "7dc4dc518f1c17186a7e762c7b353c59c62b54a4d4f24c6b367b3e60c0594b9e"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex",
+      "content_type": "text/plain",
+      "bytes": 5348,
+      "sha256": "9afb8e710535f0964af6f0fd0f96b311a77cb477d7eafe51f9e68579869c9f9b"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/introduction/paradoxes-material.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/introduction/paradoxes-material.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/introduction/paradoxes-material.tex",
+      "content_type": "text/plain",
+      "bytes": 4520,
+      "sha256": "a5eecd6fc8439c29df6bca7f8a64fe9061500f4bd95af2fc76718501c0549432"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a096d910910fa9056216c4ed0ddfef57150db816/bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex",
+      "content_type": "text/plain",
+      "bytes": 7039,
+      "sha256": "d108aeca3687ba0c370757ed84e1389c5d3180582be9ae2aaa919d915583ffbb"
+    }
+  ],
+  "changed_files_verified": 20,
+  "translated_tex_files_in_commit": 6,
+  "evidence_files_in_commit": 12,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 520,
+  "draft_untranslated_total": 202,
+  "segments": 5753,
+  "translated_segments": 4862,
+  "new_batch_segments": 39,
+  "new_batch_translated_segments": 27,
+  "new_batch_unchanged_segments": 12,
+  "source_correction_records": 428,
+  "new_source_correction_records": 2,
+  "translation_decisions": 378,
+  "provisional_translation_decisions": 359,
+  "translation_decision_occurrences": 31849,
+  "decisions_with_exact_source_wording": 359,
+  "canon_locator_correction": {
+    "passage_id": "BN-IN-P009",
+    "pdf_page": 1,
+    "old_printed_page": "110–111",
+    "corrected_printed_page": "120–121"
+  },
+  "ai_assistance": {
+    "product": "OpenAI Codex",
+    "earlier_model": "GPT-5.6 Sol",
+    "earlier_effort": "Ultra",
+    "current_batch_model": "GPT-6 Sol",
+    "current_batch_effort": "Ultra",
+    "independent_human_review_claimed": false
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 520,
+    "blocks": 5753,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7489,
+      "sha256": "e0163e2bc8dddc983ea487fec6e780ff8ef7f4f08f1aad409990063f15110244"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/counterfactuals.tex",
+      "bytes": 304,
+      "sha256": "dd8e88b0259540f9117d7b1294d61e7bc41e9670bd8a5298cc5324883f766ced"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex",
+      "bytes": 8518,
+      "sha256": "825ff8003e45bcabb364f4ba68165aabe3c59176216e4716421710acf5cb442b"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/introduction/introduction.tex",
+      "bytes": 329,
+      "sha256": "7dc4dc518f1c17186a7e762c7b353c59c62b54a4d4f24c6b367b3e60c0594b9e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex",
+      "bytes": 5348,
+      "sha256": "9afb8e710535f0964af6f0fd0f96b311a77cb477d7eafe51f9e68579869c9f9b"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/introduction/paradoxes-material.tex",
+      "bytes": 4520,
+      "sha256": "a5eecd6fc8439c29df6bca7f8a64fe9061500f4bd95af2fc76718501c0549432"
+    },
+    {
+      "filename": "bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex",
+      "bytes": 7039,
+      "sha256": "d108aeca3687ba0c370757ed84e1389c5d3180582be9ae2aaa919d915583ffbb"
+    },
+    {
+      "filename": "evidence/CANON_PASSAGES.jsonl",
+      "bytes": 17924,
+      "sha256": "045e53da0252f80fa0f8486b45d287e249704bce5527bd48467b6c12474b412a"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 9314155,
+      "sha256": "2109b92bcdbd53bd804bb2bfd1185a78c796910e9d6c737681f363bae8687839"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 325178,
+      "sha256": "6b3c8337d88f81229d475961a5e7681fa734cf2e5d1c1882ea7613e2efbead65"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_COUNTERFACTUALS_INTRODUCTION.md",
+      "bytes": 9392,
+      "sha256": "536bc1c189cb7ab47f51600710c69c96f07168f462d5619dff3671aee142c13c"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "d6eecc42bdd9eaca4da429d7980b8690ea85f08c55e3e5e83e163cf1b805115c"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 832462,
+      "sha256": "a2172d21bb0995101c79c33212bd34b85e9c8f93c3a7d5a10b1d026e15ca2b66"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 349833,
+      "sha256": "32f2439a2c568b702548cbae0124feac0e4b29df5336f9653fffa1430d92900a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 19278534,
+      "sha256": "49b4fb6118b8ea42bd1817cc04c14ad0b16ca682f61835024a9e660ef4cab043"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 15084259,
+      "sha256": "d105757bdf45105eb8d04063e1a297f6c60b1850c9f3803d81ad6ee2a0f3dd3c"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1470426,
+      "sha256": "3720f585b2eaa11d2c6a2020008bee53030643cffec345d976f308ba42edec79"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 8736042,
+      "sha256": "bf6cfce8ccf19271176a0f651c16a7b693322371b393a2a4b6f939d5ec15f7db"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 275781,
+      "sha256": "2aa3a39fa74b0100eaba949ddb3034d56d9e9fbc4c62f954c9fd95740a383838"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 280680,
+      "sha256": "ab1a0fe1b375178029bebf7dede42398c368aaf72b7cc6c61f6a60df22b66306"
+    }
+  ]
+}

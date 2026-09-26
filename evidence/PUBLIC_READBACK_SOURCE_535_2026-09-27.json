@@ -1,0 +1,205 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T23:08:18.414161+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "3344b6c8ac800a9537470bb0f9c59ed46363a67d",
+  "parent": "7a0c9bcf2c7dfbebab05cd9733327698bc756284",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "22f202f6305cf4e88f552a7b892650b25839df3a",
+    "receipt": "PUBLIC_READBACK_SOURCE_527_2026-09-27.json",
+    "receipt_sha256": "2f04d358460853826361a23a535746b55ac1e044abd0dbe83a293fd631820f9d"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/3344b6c8ac800a9537470bb0f9c59ed46363a67d.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/3344b6c8ac800a9537470bb0f9c59ed46363a67d",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 14454591,
+  "archive_sha256": "c16dbfdea9e559effaa4c12d6fd63c7ed2ce2e2015cf8e88cd5cb12775a4794e",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/set-theory.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/set-theory.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/set-theory.tex",
+      "content_type": "text/plain",
+      "bytes": 428,
+      "sha256": "56663a1aaf8549f5bf7d4df3d594239956c503777c7de3796685dc8930b5533b"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/story/cumulative-approach.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/cumulative-approach.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/cumulative-approach.tex",
+      "content_type": "text/plain",
+      "bytes": 8147,
+      "sha256": "f5a7130ca9e9e0e7fb8dbde81dd1c9e4ff5fd8292805b539081e98b6f86fd869"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/story/extensionality.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/extensionality.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/extensionality.tex",
+      "content_type": "text/plain",
+      "bytes": 2471,
+      "sha256": "23b698e2385469b4cbe95e481fccaaf1400d4e0f9716cf8470e5d7da41dab519"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/story/grundgesetze.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/grundgesetze.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/grundgesetze.tex",
+      "content_type": "text/plain",
+      "bytes": 5317,
+      "sha256": "c12feebd13991a752e74156d1b4e7228247279f031af8cf4a2bb44285446dbca"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/story/predicativity.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/predicativity.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/predicativity.tex",
+      "content_type": "text/plain",
+      "bytes": 11372,
+      "sha256": "0ffef0d26c7eb1b7ed1320e1e6d5c52cce16d0b3e72abfa653b13ed5660bf00d"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/story/russells-paradox-again.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/russells-paradox-again.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/russells-paradox-again.tex",
+      "content_type": "text/plain",
+      "bytes": 6716,
+      "sha256": "0ce317a29ebde46bc73612bc176e84e12e0f2ddc998af336aee6004bca24cec0"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/story/story.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/story.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/story.tex",
+      "content_type": "text/plain",
+      "bytes": 434,
+      "sha256": "b6566a2257d66ca621e47fc515ce28c5e10a132e6a76113a7ebcd438055be450"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/story/urelements.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/urelements.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3344b6c8ac800a9537470bb0f9c59ed46363a67d/bn-Beng-IN/content/set-theory/story/urelements.tex",
+      "content_type": "text/plain",
+      "bytes": 6736,
+      "sha256": "5f070a0c9673ba513e188691e35af399b6d742d60376bda308253fb7479aeb85"
+    }
+  ],
+  "changed_files_verified": 19,
+  "translated_tex_files_in_commit": 8,
+  "evidence_files_in_commit": 10,
+  "draft_translated_total": 535,
+  "draft_untranslated_total": 187,
+  "segments": 5862,
+  "translated_segments": 4956,
+  "new_batch_segments": 59,
+  "new_batch_translated_segments": 55,
+  "new_batch_unchanged_segments": 4,
+  "source_correction_records": 438,
+  "new_source_correction_records": 2,
+  "translation_decisions": 385,
+  "provisional_translation_decisions": 364,
+  "translation_decision_occurrences": 32511,
+  "decisions_with_exact_source_wording": 366,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 535,
+    "blocks": 5862,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7297,
+      "sha256": "73715080843448986035304548945e1ec36202b86a806502266fb1939b20333d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/set-theory.tex",
+      "bytes": 428,
+      "sha256": "56663a1aaf8549f5bf7d4df3d594239956c503777c7de3796685dc8930b5533b"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/story/cumulative-approach.tex",
+      "bytes": 8147,
+      "sha256": "f5a7130ca9e9e0e7fb8dbde81dd1c9e4ff5fd8292805b539081e98b6f86fd869"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/story/extensionality.tex",
+      "bytes": 2471,
+      "sha256": "23b698e2385469b4cbe95e481fccaaf1400d4e0f9716cf8470e5d7da41dab519"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/story/grundgesetze.tex",
+      "bytes": 5317,
+      "sha256": "c12feebd13991a752e74156d1b4e7228247279f031af8cf4a2bb44285446dbca"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/story/predicativity.tex",
+      "bytes": 11372,
+      "sha256": "0ffef0d26c7eb1b7ed1320e1e6d5c52cce16d0b3e72abfa653b13ed5660bf00d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/story/russells-paradox-again.tex",
+      "bytes": 6716,
+      "sha256": "0ce317a29ebde46bc73612bc176e84e12e0f2ddc998af336aee6004bca24cec0"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/story/story.tex",
+      "bytes": 434,
+      "sha256": "b6566a2257d66ca621e47fc515ce28c5e10a132e6a76113a7ebcd438055be450"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/story/urelements.tex",
+      "bytes": 6736,
+      "sha256": "5f070a0c9673ba513e188691e35af399b6d742d60376bda308253fb7479aeb85"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 9510316,
+      "sha256": "8a4fb9496c60d828f7de77b471f09db499b4bcef9bbea81d5c5d9796ec12be7b"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 332704,
+      "sha256": "495496824a548357fbe82ba62c78d9f17bb9244c61df23a92ef9e3cec1f4d575"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SET_THEORY_STORY.md",
+      "bytes": 8230,
+      "sha256": "069f4268c8cd98a94da59841f8065f0ee87a65c918b4113df6483481e4e02aef"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 854372,
+      "sha256": "63cab2f63f62566aa6313ef8c53cae76acbaa82d8c7344df7f9eff4f79a17836"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 358084,
+      "sha256": "fe09075478def751e427d22d430b38ed800198da11527a1bdf3aafab1f0110df"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 19654625,
+      "sha256": "234708e725835c9f853f8a46c4963ffe21ecf3453269ee93e40a0b2a90fe29ba"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 15375619,
+      "sha256": "06432915a65bb7c974bf801e11153f3201b5fe2acd699d76d62793be1b4db17a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1501044,
+      "sha256": "7948b400ba7b53bf62137bb18149ff534d134852e240d475097408e5f039713e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 8915879,
+      "sha256": "13afd86f02b841f0d57b4f1d5dce2f1618d1b7bc8445126fea56e2de3523b85a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 279280,
+      "sha256": "eb7cdaa5aac896f1eea9c1d52cff7765781538d5a6c40a46f755753d59da1f8f"
+    }
+  ]
+}

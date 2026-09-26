@@ -1,0 +1,53 @@
+% Part: normal-modal-logic
+% Chapter: sequent-calculus
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{seq}{int}
+
+\olsection{ভূমিকা}
+
+বচনমূলক যুক্তিবিদ্যার সিকোয়েন্ট কলনে
+\iftag{prvBox}{$\Box$\iftag{prvDiamond}{ ও~}{}}{}%
+\iftag{prvDiamond}{$\Diamond$}{}
+নিয়ে কাজের বিধি যোগ করা যায়। যেমন,
+$\Log{K}$-এর জন্য \Log{LK}-র সঙ্গে পাই:
+\[
+  \iftag{prvBox}{\iftag{prvDiamond}{% <> and [] primitive
+    \Axiom$\Gamma \fCenter \Delta, !A$
+    \RightLabel{$\Box$}
+    \UnaryInf$\Box\Gamma \fCenter \Diamond\Delta, \Box!A$
+    \DisplayProof
+    \qquad
+    \Axiom$!A, \Gamma \fCenter \Delta$
+    \RightLabel{$\Diamond$}
+    \UnaryInf$\Diamond!A, \Box\Gamma \fCenter \Diamond\Delta$
+    \DisplayProof
+}{% only Box primitive
+\Axiom$\Gamma \fCenter !A$
+\RightLabel{$\Box$}
+\UnaryInf$\Box\Gamma \fCenter \Box!A$
+\DisplayProof
+}}{% only <> primitive
+  \Axiom$!A \fCenter \Delta$
+  \RightLabel{$\Diamond$}
+  \UnaryInf$\Diamond!A \fCenter \Diamond\Delta$
+  \DisplayProof
+}
+\]
+$\Log{K}$-এর বিস্তৃত পদ্ধতিগুলির জন্য
+আরও বিধি যোগ করতে হয়।
+
+প্রত্যেক মোডাল যুক্তির এমন সিকোয়েন্ট কলন
+আছে বলে জানা নেই। এমনকি অর্থতত্ত্বে সরল
+$\Log{S5}$-এরও—যাকে অভিগম্যতা-সম্পর্ক
+ছাড়াই সংজ্ঞায়িত করা যায়—$\Log{LK}$ থেকে
+পাওয়া, \Cut বিধি ছাড়া সম্পূর্ণ কোনো
+সিকোয়েন্ট কলন জানা নেই। তবে এর
+একটি কর্তনমুক্ত সম্পূর্ণ \emph{হাইপারসিকোয়েন্ট}
+কলন আছে।
+
+\end{document}

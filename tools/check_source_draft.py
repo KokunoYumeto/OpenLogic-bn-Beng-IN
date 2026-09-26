@@ -5368,6 +5368,23 @@ for row in rows:
             assert wrong in source and wrong not in checked_target
             assert checked_target.count(right) == source.count(right) + 1
         tex_command_check = {"modal_tableaux_rules_proofs_and_anchors_reviewed": True}
+    elif 470 <= unit_number <= 474:
+        assert set(documented) == (
+            {"BN-SRC-389"} if row["unit_id"] == "OLP-0473" else set()
+        )
+        modal_sequent_review_anchors = {
+            "OLP-0470": (r"\olchapter{nml}{seq}", r"\begin{editorial}", r"\olimport{more-rules}"),
+            "OLP-0471": (r"\olfileid{nml}{seq}{int}", r"\DisplayProof", r"\Cut"),
+            "OLP-0472": (r"\olfileid{nml}{seq}{rul}", r"\RightLabel{$\Box*$}", r"\RightLabel{$\Diamond*$}"),
+            "OLP-0473": (r"\olfileid{nml}{seq}{prk}", r"\Dual", r"BN-SRC-389"),
+            "OLP-0474": (r"\ollabel{tab:more-rules}", r"\ollabel{tab:logics-rules}", r"\RightLabel{\Cut}"),
+        }
+        assert all(anchor in checked_target for anchor in modal_sequent_review_anchors[row["unit_id"]])
+        if row["unit_id"] == "OLP-0473":
+            wrong = "\\Axiom$!A \\fCenter !A$\n    \\RightLabel{\\RightR{\\lnot}}\n    \\UnaryInf$\\lnot !A, !A \\fCenter $"
+            assert wrong in source and wrong not in checked_target
+            assert r"\RightLabel{\LeftR{\lnot}}" in checked_target
+        tex_command_check = {"modal_sequent_rules_proofs_and_anchors_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":

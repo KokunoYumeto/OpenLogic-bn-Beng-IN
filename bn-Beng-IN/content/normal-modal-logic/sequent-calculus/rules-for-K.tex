@@ -1,0 +1,136 @@
+% Part: normal-modal-logic
+% Chapter: sequent-calculus
+% Section: rules-for-K
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{seq}{rul}
+
+\olsection{\Log{K}-এর বিধি}
+
+সাধারণ বচনমূলক যোজকগুলির বিধি প্রচলিত
+সিকোয়েন্ট কলন~$\Log{LK}$-এর বিধিরই
+অনুরূপ। স্বতঃসিদ্ধও একই: $!A \Sequent !A$
+রূপের যেকোনো সিকোয়েন্ট স্বতঃসিদ্ধ।
+
+মোডাল অপারেটর\iftag{prvBox}{\iftag{prvDiamond}{~$\Box$
+ও}{~$\Box$}}{}\iftag{prvDiamond}{~$\Diamond$}{}-এর জন্য
+নিম্নলিখিত অতিরিক্ত \iftag{notprvBox,notprvDiamond}{বিধিটি}{বিধিগুলি}
+আছে:
+\[
+  \iftag{prvBox}{\iftag{prvDiamond}{% <> and [] primitive
+    \Axiom$\Gamma \fCenter \Delta, !A$
+    \RightLabel{$\Box$}
+    \UnaryInf$\Box\Gamma \fCenter \Diamond\Delta, \Box!A$
+    \DisplayProof
+    \qquad
+    \Axiom$!A, \Gamma \fCenter \Delta$
+    \RightLabel{$\Diamond$}
+    \UnaryInf$\Diamond!A, \Box\Gamma \fCenter \Diamond\Delta$
+    \DisplayProof
+}{% only Box primitive
+\Axiom$\Gamma \fCenter !A$
+\RightLabel{$\Box$}
+\UnaryInf$\Box\Gamma \fCenter \Box!A$
+\DisplayProof
+}}{% only <> primitive
+  \Axiom$!A \fCenter \Delta$
+  \RightLabel{$\Diamond$}
+  \UnaryInf$\Diamond!A \fCenter \Diamond\Delta$
+  \DisplayProof
+}
+\]
+এখানে \iftag{prvBox}{$\Box\Gamma$ হলো $\Gamma$-র
+প্রত্যেক !!{formula}-র আগে $\Box$ বসিয়ে
+$\Gamma$ থেকে পাওয়া
+!!{formula}s-এর ক্রম\iftag{prvDiamond}{; আর
+}{}}{}\iftag{prvDiamond}{$\Diamond\Delta$ হলো
+$\Delta$-র প্রত্যেক !!{formula}-র আগে $\Diamond$
+বসিয়ে $\Delta$ থেকে পাওয়া !!{formula}s-এর ক্রম}{}।
+\iftag{notprvDiamond}{$\Box$ বিধির পূর্বসূত্রের
+ডান দিকে সর্বাধিক একটি !!{formula}~$!A$ থাকতে পারে। }{}%
+\iftag{notprvBox}{$\Diamond$ বিধির পূর্বসূত্রের
+বাম দিকে সর্বাধিক একটি !!{formula}~$!A$ থাকতে পারে। }{}%
+\iftag{prvBox}{$\Gamma$\iftag{prvDiamond}{~ও~}{}}{}\iftag{prvDiamond}{$\Delta$}{}
+ফাঁকা হতে পারে; সেক্ষেত্রে উপসংহার সিকোয়েন্টের
+সংশ্লিষ্ট
+\iftag{prvBox}{$\Box\Gamma$\iftag{prvDiamond}{~ও~}{}}{}\iftag{prvDiamond}{$\Diamond\Delta$}{}
+অংশও ফাঁকা।
+
+\iftag{prvBox}{ডান দিকে $\Box$\iftag{prvDiamond}{ এবং
+}{}}{}\iftag{prvDiamond}{বাম দিকে $\Diamond$}{}
+মাত্র একটি !!{formula}~$!A$-র সঙ্গে যোগ করার
+শর্তটি জরুরি। যদি \iftag{prvBox}{ডান দিকের
+যেকোনোসংখ্যক !!{formula}s-এ $\Box$ যোগ
+\iftag{prvDiamond}{অথবা }{}}{}\iftag{prvDiamond}{বাম দিকের
+যেকোনোসংখ্যক !!{formula}s-এ $\Diamond$ যোগ}{}
+অনুমোদন করতাম, তবে নিচের সূত্রগুলি !!{derive} করতে পারতাম:
+  \[
+    \iftag{prvBox}{
+      \Axiom$!A \fCenter !A$
+      \RightLabel{\RightR{\lnot}}
+      \UnaryInf$\fCenter !A, \lnot !A$
+      \RightLabel{$\Box*$}
+      \UnaryInf$\fCenter \Box!A, \Box\lnot !A$
+      \doubleLine
+      \RightLabel{\RightR{\lor}}
+      \UnaryInf$\fCenter \Box!A \lor \Box \lnot !A$
+      \DisplayProof}{}
+    \iftag{notprvBox,notprvDiamond}{}{\qquad}
+    \iftag{prvDiamond}{
+      \Axiom$!A \fCenter !A$
+      \RightLabel{\LeftR{\lnot}}
+      \UnaryInf$\lnot !A, !A \fCenter$
+      \RightLabel{$\Diamond*$}
+      \UnaryInf$\Diamond\lnot !A,\Diamond!A \fCenter $
+      \RightLabel{\RightR{\lnot}}
+      \UnaryInf$\Diamond!A \fCenter \lnot\Diamond\lnot !A$
+      \RightLabel{\RightR{\lif}}
+      \UnaryInf$ \fCenter \Diamond!A \lif \lnot\Diamond\lnot !A$
+      \DisplayProof}{}
+  \]
+কিন্তু \iftag{prvBox}{$\Box!A \lor \Box \lnot !A$\iftag{prvDiamond}{ ও
+$\Diamond!A \lif \lnot\Diamond\lnot !A$}{}}{$\Diamond!A \lif
+\lnot\Diamond\lnot !A$} $\Log{K}$-এ বৈধ নয়।
+
+পূর্বসূত্রে $!A$-র পাশাপাশি অন্য সূত্র রাখার
+অনুমতি দিয়ে যদি \iftag{prvBox}{$\Box$ বিধিতে
+শুধু ডান দিকের~$!A$-তে $\Box$ যোগের
+\iftag{prvDiamond}{অথবা }{}}{}\iftag{prvDiamond}{$\Diamond$
+বিধিতে শুধু বাম দিকের~$!A$-তে $\Diamond$ যোগের}{}
+অনুমতি দিতাম, অথচ পাশের সূত্রগুলি অপরিবর্তিত
+রাখতাম, তবে !!{derive} করতে পারতাম:
+\[
+  \iftag{prvBox}{
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$\fCenter !A, \lnot !A$
+    \RightLabel{\RightR{\Exchange}}
+    \UnaryInf$\fCenter \lnot !A, !A$
+    \RightLabel{$\Box*$}
+    \UnaryInf$\fCenter \lnot!A, \Box !A$
+    \doubleLine
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$\fCenter \lnot!A \lor \Box !A$
+    \DisplayProof}{}
+  \iftag{notprvBox,notprvDiamond}{}{\qquad}
+  \iftag{prvDiamond}{
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\LeftR{\lnot}}
+    \UnaryInf$\lnot !A, !A \fCenter$
+    \RightLabel{$\Diamond*$}
+    \UnaryInf$\Diamond\lnot !A, !A \fCenter $
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$!A \fCenter \lnot\Diamond\lnot !A$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$ \fCenter !A \lif \lnot\Diamond\lnot !A$
+    \DisplayProof}{}
+\]
+কিন্তু \iftag{prvBox}{$\lnot!A \lor \Box !A$ (যা $!A
+\lif \Box!A$-এর সমতুল্য)\iftag{prvDiamond}{ ও
+$!A \lif \lnot\Diamond\lnot !A$}{}}{$!A \lif
+\lnot\Diamond\lnot !A$} $\Log{K}$-এ বৈধ নয়।
+
+\end{document}

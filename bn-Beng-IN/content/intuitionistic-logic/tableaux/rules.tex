@@ -1,0 +1,153 @@
+% Part: intuitionistic-logic
+% Chapter: tableaux
+% Section: rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{tab}{rul}
+
+\olsection{স্বজ্ঞাবাদী যুক্তিবিদ্যার বিধি}
+
+$\land$ ও $\lor$-এর বিধিগুলি সাধারণ বচনমূলক চিহ্নিত
+!!{tableau}s-এর বিধির মতোই, কেবল উপসর্গ যুক্ত হয়। প্রতিটি
+ক্ষেত্রে চিহ্নিত !!{formula}~$\sFmla{S}{!A}[\sigma]$-তে
+বিধি প্রয়োগ করলে নতুন !!{formula}s পাওয়া যায়, যেগুলির
+উপসর্গও~$\sigma$। এটি স্বজ্ঞাগতভাবেই স্পষ্ট: যেমন,
+$!A \land !B$ যদি~$\sigma$-নামক জগতে সত্য হয়, তবে
+$!A$ ও $!B$-ও~$\sigma$-তে সত্য।
+% BN-SRC-410: persistence does not rule out their truth at later worlds.
+এই বিধিতে একই জগৎ সম্পর্কে সিদ্ধান্ত টানা হয়; পরবর্তী জগতেও
+সত্যতা থাকতে পারে। $\land$ ও $\lor$-এর বিধিগুলি
+\olref{tab:prop-rules}-এ দেওয়া হয়েছে।
+
+\begin{table}
+  \[\def\arraystretch{3}\begin{array}{|c|c|}
+    \hline
+    \AxiomC{\sFmla{\True}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\land}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\True}{!B}[\sigma]}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\land}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\False}{!B}[\sigma]$}
+    \DisplayProof
+    \\[2ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lor}}
+    \UnaryInfC{$\sFmla{\True}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\True}{!B}[\sigma]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lor}}
+    \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma]}
+    \DisplayProof
+    \\[2ex]
+    \hline
+  \end{array}\]
+  \caption{উপসর্গযুক্ত !!{tableau}-তে $\land$ ও $\lor$-এর বিধি}
+  \ollabel{tab:prop-rules}
+\end{table}
+
+বন্ধ হওয়ার শর্তটি সাধারণ !!{tableau}s-এর মতো, তবে এখানে
+কেবল !!{formula}s নয়, উপসর্গও মিলতে হবে। আসলে শর্তটি
+আরও কিছুটা শিথিল করা যায়। স্বজ্ঞাবাদী মডেলে
+!!{formula}s একবার সত্য হলে সত্যই থাকে। তাই~$!A$
+$\sigma$-তে সত্য, অথচ প্রবেশযোগ্য উপসর্গ~$\sigma.{*}$-তে
+মিথ্যা হওয়া অসম্ভব। সুতরাং কোনো~$\sigma$ ও
+!!{formula}~$!A$-র জন্য একটি শাখায় উভয়ই থাকলে শাখাটি বন্ধ:
+\[
+\sFmla{\True}{!A}[\sigma] \quad\text{and}\quad \sFmla{\False}{!A}[\sigma.{*}]
+\]
+লক্ষ করুন, চিহ্নগুলি উল্টো হলে—অর্থাৎ শাখায়
+\[
+\sFmla{\False}{!A}[\sigma] \quad\text{and}\quad \sFmla{\True}{!A}[\sigma.{*}]
+\]
+থাকলে—শাখাটি কেবল $*$ শূন্য ক্রম হলে বন্ধ।
+
+এ ছাড়া, শাখায়~$\sFmla{\True}{\bot}[\sigma]$ থাকলেও সেটি বন্ধ।
+
+অনুমান স্থাপনের বিধিও সাধারণ !!{tableau}s-এর মতো;
+শুধু অনুমানগুলির উপসর্গ সব সময়~$1$। (কোন উপসর্গ নেওয়া
+হয়, তা গুরুত্বপূর্ণ নয়—সব অনুমানে একইটি হলেই চলে।)
+উদাহরণস্বরূপ,
+\[
+!B_1, \dots, !B_n \Proves !A
+\]
+তখনই বলি, যখন নিচের অনুমানগুলি দিয়ে একটি বন্ধ ট্যাবলো হয়:
+\[
+\sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1],
+\sFmla{\False}{!A}[1].
+\]
+
+শর্তসূচক~$\lif$-এর বিধি ধ্রুপদি ও মোডাল ক্ষেত্র থেকে আলাদা।
+% BN-SRC-411: true implication branches on false antecedent or true consequent; sign precedes connective in TRule.
+$\TRule{\True}{\lif}$ বিধি, $\sFmla{\True}{!A \lif !B}[\sigma]$
+থাকা শাখা থেকে দুটি পৃথক শাখা তৈরি করে: একটিতে
+$\sFmla{\False}{!A}[\sigma.{*}]$, অন্যটিতে
+$\sFmla{\True}{!B}[\sigma.{*}]$। বিধিটি কেবল সেই
+উপসর্গ~$\sigma.{*}$-র জন্য প্রয়োগ করা যায়, যা প্রয়োগের
+শাখায় \emph{আগেই} আছে। এমন উপসর্গকে ওই শাখায়
+``ব্যবহৃত'' বলব। ($\sigma.{*}$-র মধ্যে $\sigma$ নিজেও
+আছে; তাই পৃথক শাখায় উপসর্গযুক্ত চিহ্নিত সূত্র
+$\sFmla{\False}{!A}[\sigma]$ ও
+$\sFmla{\True}{!B}[\sigma]$ যোগ করে বিধিটি সব সময়
+প্রয়োগ করা যায়।)
+
+% BN-SRC-412: TRule takes the sign before the connective here as in the displayed rules.
+$\TRule{\False}{\lif}$ বিধি,
+$\sFmla{\False}{!A \lif !B}[\sigma]$ থাকা শাখায় একই সঙ্গে
+$\sFmla{\True}{!A}[\sigma.n]$ ও
+$\sFmla{\False}{!B}[\sigma.n]$ যোগ করে। এখানে
+$\sigma.n$ শাখাটিতে নতুন উপসর্গ।
+
+$\lnot$-এর বিধিগুলি একইভাবে সংজ্ঞায়িত হয়
+($\lnot !A$-কে $!A \lif \lfalse$ দিয়ে সংজ্ঞায়িত ধরে)।
+
+বিধিগুলি \olref{tab:rules-lif-lnot}-এ দেওয়া হলো।
+
+\begin{table}
+  \[\def\arraystretch{3}\begin{array}{|c|c|}
+    \hline
+    \AxiomC{\sFmla{\True}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\True}{\lnot}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma.{*}]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\False}{\lnot}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+    \DisplayProof
+    \\[1ex]
+    \text{$\sigma.{*}$ is used} & \text{$\sigma.n$ is new}\\
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lif}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma.{*}] \quad \mid \quad
+      \sFmla{\True}{!B}[\sigma.{*}]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lif}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma.n]}
+    \DisplayProof
+    \\[1ex]
+    \text{$\sigma.{*}$ is used} & \text{$\sigma.n$ is new}\\
+    \hline
+  \end{array}\]
+  \caption{উপসর্গযুক্ত !!{tableau}-তে $\lnot$ ও $\lif$-এর বিধি}
+  \ollabel{tab:rules-lif-lnot}
+\end{table}
+
+\end{document}

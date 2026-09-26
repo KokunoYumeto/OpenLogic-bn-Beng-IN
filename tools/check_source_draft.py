@@ -5494,6 +5494,26 @@ for row in rows:
         }
         assert all(anchor in target for anchor in soundness_completeness_anchors[row["unit_id"]])
         tex_command_check = {"intuitionistic_soundness_completeness_finite_model_anchors_reviewed": True}
+    elif 511 <= unit_number <= 515:
+        expected_fixes = {
+            "OLP-0512": {"BN-SRC-409"},
+            "OLP-0513": {"BN-SRC-410", "BN-SRC-411", "BN-SRC-412"},
+            "OLP-0514": {"BN-SRC-419"},
+            "OLP-0515": {"BN-SRC-413", "BN-SRC-414", "BN-SRC-415", "BN-SRC-416", "BN-SRC-417", "BN-SRC-418"},
+        }
+        assert set(documented) == expected_fixes.get(row["unit_id"], set())
+        intuitionistic_tableaux_anchors = {
+            "OLP-0511": (r"\olchapter{int}{tab}{", r"\olimport{soundness}", r"%\olimport{completeness}"),
+            "OLP-0512": (r"\olfileid{int}{tab}{int}", r"\sigma \in (\PosInt)^* \setminus \{\emptyseq\}", r"\sigma.*"),
+            "OLP-0513": (r"\olfileid{int}{tab}{rul}", r"\ollabel{tab:prop-rules}", r"\ollabel{tab:rules-lif-lnot}"),
+            "OLP-0514": (r"\olfileid{int}{tab}{prf}", r"\begin{oltableau}", r"\TRule{\False}{\land}[7]"),
+            "OLP-0515": (r"\olfileid{int}{tab}{sou}", r"\ollabel{thm:tableau-soundness}", r"\ollabel{cor:weak-soundness}"),
+        }
+        assert all(anchor in target for anchor in intuitionistic_tableaux_anchors[row["unit_id"]])
+        if row["unit_id"] == "OLP-0514":
+            assert source.count(r"just= {\TRule{\False}{\land}[4]}") == 2
+            assert target.count(r"just= {\TRule{\False}{\land}[7]}") == 2
+        tex_command_check = {"intuitionistic_tableaux_hierarchy_rules_and_soundness_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5593,6 +5613,48 @@ for row in rows:
         and r"\mSat{M'}{!B}[T(w)]" in target_math
         and source_math != target_math
     )
+    intuitionistic_tableaux_implication_rule_fix = (
+        row["unit_id"] == "OLP-0513"
+        and set(documented) == {"BN-SRC-410", "BN-SRC-411", "BN-SRC-412"}
+        and source_math - target_math == collections.Counter({
+            r"\TRule{\lif}{\True}": 1,
+            r"\sFmla{\True}{!A}[\sigma.{*}]": 1,
+            r"\sFmla{\False}{!B}[\sigma.{*}]": 1,
+            r"\sFmla{\True}{!A}[\sigma]": 1,
+            r"\sFmla{\False}{!B}[\sigma]": 1,
+            r"\TRule{\lif}{\False}": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\TRule{\True}{\lif}": 1,
+            r"\sFmla{\False}{!A}[\sigma.{*}]": 1,
+            r"\sFmla{\True}{!B}[\sigma.{*}]": 1,
+            r"\sFmla{\False}{!A}[\sigma]": 1,
+            r"\sFmla{\True}{!B}[\sigma]": 1,
+            r"\TRule{\False}{\lif}": 1,
+        })
+    )
+    intuitionistic_tableaux_soundness_proof_fix = (
+        row["unit_id"] == "OLP-0515"
+        and set(documented) == {f"BN-SRC-{n}" for n in range(413, 419)}
+        and source_math - target_math == collections.Counter({
+            r"\mSat{M}{!A}[w]": 1,
+            r"\mSat{M}{!A}[f(\sigma)]": 1,
+            r"\sFmla{\True}{\lfalse}": 1,
+            r"Rf(\sigma)(\sigma.{*})": 1,
+            r"\sFmla{\False}{!B\lor!C}\in\Gamma": 1,
+            r"\Gamma\cup\{\sFmla{\False}{!B\lif!C}[\sigma.n]\}": 2,
+            r"\Gamma\Proves!A": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\mSat/{M}{!A}[w]": 1,
+            r"Rf(\sigma)f(\sigma.{*})": 1,
+            r"\sFmla{\True}{\lfalse}[\sigma]": 1,
+            r"\mSat{M}{!A}[f(\sigma.{*})]": 1,
+            r"\sFmla{\False}{!B\lor!C}[\sigma]\in\Gamma": 1,
+            r"\Gamma\cup\{\sFmla{\True}{!B}[\sigma.n],\sFmla{\False}{!C}[\sigma.n]\}": 2,
+            r"\Gamma\Entails!A": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -5691,6 +5753,8 @@ for row in rows:
             intuitionistic_soundness_axiom_math_fix,
             intuitionistic_soundness_nd_math_fix,
             intuitionistic_finite_model_reconstruction,
+            intuitionistic_tableaux_implication_rule_fix,
+            intuitionistic_tableaux_soundness_proof_fix,
         )
     )
     controls_ok = (

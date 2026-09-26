@@ -1,0 +1,249 @@
+% Part: intuitionistic-logic
+% Chapter: tableaux
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{tab}{sou}
+
+\olsection{স্বজ্ঞাবাদী \usetoken{P}{tableau}-র বিশুদ্ধতা}
+
+\begin{explain}
+  স্বজ্ঞাবাদী !!{tableau}s বিশুদ্ধ দেখাতে হলে প্রমাণ করতে হবে:
+  \[
+  \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1], \sFmla{\False}{!A}[1]
+  \]
+  দিয়ে বন্ধ !!{tableau} থাকলে $!B_1, \dots, !B_n \Entails !A$।
+  এর বিপরীতার্থক রূপ প্রমাণ করা সহজ: কোনো মডেল~$\mModel{M}$
+  ও জগৎ~$w$-তে সব $i=1$, \dots,~$n$-এর জন্য
+  $\mSat{M}{!B_i}[w]$ হলে কিন্তু
+  % BN-SRC-413: a countermodel must falsify the conclusion.
+  $\mSat/{M}{!A}[w]$ হলে, কোনো !!{tableau} বন্ধ হতে পারে না।
+  এমন প্রতিবাদী মডেল দেখায় যে !!{tableau}-র প্রাথমিক
+  অনুমানগুলি সন্তোষযোগ্য। প্রমাণের কৌশল: !!a{tableau}-র
+  কোনো শাখার সব উপসর্গযুক্ত !!{formula}s সন্তোষযোগ্য হলে
+  যেকোনো বিধি প্রয়োগে অন্তত একটি প্রসারিত শাখা সন্তোষযোগ্য
+  থাকে। বন্ধ শাখা অসন্তোষযোগ্য; তাই সন্তোষযোগ্য উপসর্গযুক্ত
+  !!{formula}s-এর সেট দিয়ে শুরু করা যেকোনো !!{tableau}-তে
+  অন্তত একটি খোলা শাখা থাকবে।
+
+  % BN-SRC-414: the present soundness argument is intuitionistic, not modal.
+  স্বজ্ঞাবাদী ক্ষেত্রে এই কৌশল প্রয়োগ করতে
+  ``সন্তোষযোগ্য''-র সংজ্ঞা সম্পর্ক ও উপসর্গের জন্য প্রসারিত
+  করতে হবে। তা করলে বাকি প্রমাণ সরল।
+\end{explain}
+
+\begin{defn}
+  ধরি, $P$ কোনো উপসর্গের সেট; অর্থাৎ
+  $P \subseteq (\PosInt)^* \setminus \{\emptyseq\}$;
+  আর $\mModel{M}$ একটি মডেল। অপেক্ষক~$f\colon P \to W$-কে
+  $\mModel{M}$-এ~$P$-র \emph{ব্যাখ্যা} বলি, যদি
+  $\sigma$ ও $\sigma.n$ উভয়ই~$P$-তে থাকলে
+  $Rf(\sigma)f(\sigma.n)$ হয়।
+
+  উপসর্গ~$P$-র একটি ব্যাখ্যার সাপেক্ষে সংজ্ঞায়িত করি:
+  \begin{enumerate}
+  \item $\mModel{M}$, $\sFmla{\True}{!A}[\sigma]$
+    সন্তুষ্ট করে তখনই, যখন $\mSat{M}{!A}[f(\sigma)]$।
+  \item $\mModel{M}$, $\sFmla{\False}{!A}[\sigma]$
+    সন্তুষ্ট করে তখনই, যখন $\mSat/{M}{!A}[f(\sigma)]$।
+  \end{enumerate}
+\end{defn}
+
+লক্ষ করুন, $R$ প্রতিবিম্বী ও পরিযায়ী, আর $\sigma.{*}$
+বোঝায় $\sigma$, $\sigma.n_1$, $\sigma.n_1.n_2$, \dots।
+তাই $Rf(\sigma)f(\sigma.{*})$-ও হয়।
+
+\begin{defn}
+  $\Gamma$ উপসর্গযুক্ত !!{formula}s-এর সেট এবং
+  $P(\Gamma)$ এতে উপস্থিত উপসর্গগুলির সেট ধরি। $f$ যদি
+  $\mModel{M}$-এ~$P(\Gamma)$-র ব্যাখ্যা হয়, তবে
+  $\mModel{M}$, $\Gamma$-র প্রতিটি উপসর্গযুক্ত !!{formula}
+  $f$-এর সাপেক্ষে সন্তুষ্ট করলে বলি $\mModel{M}$,
+  $\Gamma$-কে $f$-এর সাপেক্ষে সন্তুষ্ট করে;
+  লিখি $\mSat{M}{\Gamma}[f]$। $\Gamma$ \emph{সন্তোষযোগ্য}
+  তখনই, যখন এমন মডেল~$\mModel{M}$ ও $P(\Gamma)$-র
+  ব্যাখ্যা~$f$ আছে, যাতে $\mSat{M}{\Gamma}[f]$।
+\end{defn}
+
+\begin{prop}
+  $\Gamma$-তে কোনো !!{formula}~$!A$ ও উপসর্গ~$\sigma$-র
+  জন্য $\sFmla{\True}{!A}[\sigma]$ এবং
+  $\sFmla{\False}{!A}[\sigma.{*}]$ উভয়ই থাকলে, অথবা
+  $\sFmla{\True}{\lfalse}[\sigma]$ থাকলে, $\Gamma$
+  অসন্তোষযোগ্য।
+\end{prop}
+
+\begin{proof}
+  সব সময় $\mSat/{M}{\lfalse}[f(\sigma)]$; তাই
+  % BN-SRC-415: restore the prefix and propagate truth to the accessible world.
+  $\sFmla{\True}{\lfalse}[\sigma]$-যুক্ত $\Gamma$
+  অসন্তোষযোগ্য।
+
+  অন্য ক্ষেত্রেও কোনো মডেল~$\mModel{M}$ এবং
+  $P(\Gamma)$-র ব্যাখ্যা~$f$ একসঙ্গে উভয় চিহ্নিত সূত্র
+  সন্তুষ্ট করতে পারে না। $\mSat{M}{!A}[f(\sigma)]$ হলে,
+  $Rf(\sigma)f(\sigma.{*})$ এবং
+  \olref[sem][rel]{prop:true-monotonic} অনুযায়ী
+  $\mSat{M}{!A}[f(\sigma.{*})]$। ফলে
+  $\mSat{M}{!A}[f(\sigma)]$ এবং
+  $\mSat/{M}{!A}[f(\sigma.{*})]$ একসঙ্গে সম্ভব নয়।
+\end{proof}
+
+\begin{thm}[বিশুদ্ধতা]
+  \ollabel{thm:tableau-soundness}
+  $\Gamma$-র একটি বন্ধ !!{tableau} থাকলে $\Gamma$
+  অসন্তোষযোগ্য।
+\end{thm}
+
+\begin{proof}
+!!a{tableau}-র কোনো শাখায় থাকা !!{signed formula}s-এর
+সেট সন্তোষযোগ্য হলে শাখাটিকে সন্তোষযোগ্য বলি। অন্তত একটি
+সন্তোষযোগ্য শাখা থাকলে !!a{tableau}-টিকে সন্তোষযোগ্য বলি।
+
+দেখাব: অনুমান-বিধির একটি প্রয়োগে সন্তোষযোগ্য
+!!{tableau} প্রসারিত করলেও সন্তোষযোগ্য !!{tableau} পাওয়া যায়।
+তাতেই উপপাদ্যটি প্রতিষ্ঠিত হবে। $\Gamma$-র অনুমানগুলি
+দিয়ে গঠিত !!{tableau}-তে বিধিগুলি প্রয়োগ করে যেকোনো বন্ধ
+!!{tableau} পাওয়া যায়। $\Gamma$ সন্তোষযোগ্য হলে তার
+প্রতিটি !!{tableau} সন্তোষযোগ্য হতো। কিন্তু বন্ধ
+!!{tableau} স্পষ্টতই সন্তোষযোগ্য নয়: তার সব শাখা বন্ধ,
+আর বন্ধ শাখা অসন্তোষযোগ্য।
+
+ধরি, আমাদের একটি সন্তোষযোগ্য !!{tableau} আছে; অর্থাৎ
+!!a{tableau}-তে অন্তত একটি সন্তোষযোগ্য শাখা আছে।
+অনুমান-বিধি প্রয়োগে কোনো শাখায় !!{signed formula}s
+যোগ হয় অথবা শাখাটি দুটি শাখায় বিভক্ত হয়। বিধি-প্রয়োগে
+প্রসারিত না-হওয়া কোনো সন্তোষযোগ্য শাখা থাকলে সেটি
+প্রসারিত !!{tableau}-তেও সন্তোষযোগ্য থাকে। এভাবে
+!!{tableau}-র সন্তোষযোগ্যতা রক্ষা হয়; তাই কেবল
+সন্তোষযোগ্য শাখায় বিধি প্রয়োগের ক্ষেত্র বিবেচনা করব।
+
+সেই শাখার !!{signed formula}s-এর সেট $\Gamma$ ধরি এবং
+যার ওপর বিধিটি প্রয়োগ করা হয় সেই !!{signed formula}-কে
+$\sFmla{S}{!A}[\sigma] \in \Gamma$ বলি। বিধিতে শাখা
+বিভক্ত না হলে, নতুন সিদ্ধান্তগুলি-সহ $\Gamma$ যে সন্তোষযোগ্য
+থাকে, তা দেখাতে হবে। শাখা বিভক্ত হলে দেখাতে হবে, ফলে
+পাওয়া দুটি শাখার অন্তত একটি সন্তোষযোগ্য।
+\begin{enumerate}
+\item $\sFmla{\True}{\lnot !B}[\sigma] \in \Gamma$-তে
+  $\TRule{\True}{\lnot}$ প্রয়োগে শাখা প্রসারিত হয়। প্রসারিত
+  শাখায় !!{signed formula}s-এর সেট
+  $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.{*}]\}$। ধরি
+  $\mSat{M}{\Gamma}[f]$। বিশেষত
+  $\mSat{M}{\lnot !B}[f(\sigma)]$। তাই $Rf(\sigma)w$-যুক্ত
+  যেকোনো $w$-র জন্য $\mSat/{M}{!B}[w]$; এর মধ্যে
+  $f(\sigma.{*})$-ও আছে। অতএব $\mModel{M}$,
+  $\sFmla{\False}{!B}[\sigma.{*}]$-কে $f$-এর সাপেক্ষে
+  সন্তুষ্ট করে।
+\item $\sFmla{\False}{\lnot !B}[\sigma] \in \Gamma$-তে
+  $\TRule{\False}{\lnot}$ প্রয়োগে শাখা প্রসারিত হলে:
+  অনুশীলন।
+\item $\sFmla{\True}{!B \land !C}[\sigma] \in \Gamma$-তে
+  $\TRule{\True}{\land}$ প্রয়োগে শাখায় দুটি নতুন
+  !!{signed formula}s যোগ হয়:
+  $\sFmla{\True}{!B}[\sigma]$ এবং
+  $\sFmla{\True}{!C}[\sigma]$। ধরি
+  $\mSat{M}{\Gamma}[f]$; বিশেষত
+  $\mSat{M}{!B \land !C}[f(\sigma)]$। তবে
+  $\mSat{M}{!B}[f(\sigma)]$ এবং
+  $\mSat{M}{!C}[f(\sigma)]$। অর্থাৎ $\mModel{M}$,
+  $\sFmla{\True}{!B}[\sigma]$ ও
+  $\sFmla{\True}{!C}[\sigma]$ উভয়কে $f$-এর সাপেক্ষে
+  সন্তুষ্ট করে।
+\item $\sFmla{\False}{!B \lor !C}[\sigma] \in \Gamma$-তে
+  % BN-SRC-417: the rule premise needs its world prefix.
+  $\TRule{\False}{\lor}$ প্রয়োগে শাখা প্রসারিত হলে:
+  অনুশীলন।
+\item $\sFmla{\False}{!B \lif !C}[\sigma] \in \Gamma$-তে
+  $\TRule{\False}{\lif}$ প্রয়োগে শাখায় দুটি নতুন
+  !!{signed formula}s যোগ হয়:
+  $\sFmla{\True}{!B}[\sigma.n]$ এবং
+  $\sFmla{\False}{!C}[\sigma.n]$। এখানে $\sigma.n$
+  শাখায় নতুন উপসর্গ, অর্থাৎ $\sigma.n \notin P(\Gamma)$।
+
+  $\Gamma$ সন্তোষযোগ্য বলে এমন মডেল~$\mModel{M}$ ও
+  $P(\Gamma)$-র ব্যাখ্যা~$f$ আছে, যাতে
+  $\mSat{M}{\Gamma}[f]$; বিশেষত
+  $\mSat/{M}{!B \lif !C}[f(\sigma)]$। দেখাতে হবে,
+  % BN-SRC-416: add the rule's two conclusions at the fresh prefix.
+  $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n],
+  \sFmla{\False}{!C}[\sigma.n]\}$ সন্তোষযোগ্য। এজন্য
+  $P(\Gamma) \cup \{\sigma.n\}$-র একটি ব্যাখ্যা সংজ্ঞায়িত করি।
+
+  $\mSat/{M}{!B \lif !C}[f(\sigma)]$ বলে এমন
+  $w \in W$ আছে যাতে $Rf(\sigma)w$,
+  $\mSat{M}{!B}[w]$ এবং $\mSat/{M}{!C}[w]$।
+  $f'$ অপেক্ষকটি $f$-এর মতোই নিই, শুধু
+  $f'(\sigma.n) = w$। যেহেতু
+  $f'(\sigma) = f(\sigma)$ এবং $Rf(\sigma)w$, তাই
+  $Rf'(\sigma)f'(\sigma.n)$; সুতরাং $f'$ হলো
+  $P(\Gamma) \cup \{\sigma.n\}$-র একটি ব্যাখ্যা। স্পষ্টতই
+  $\mSat{M}{!B}[f'(\sigma.n)]$ ও
+  $\mSat/{M}{!C}[f'(\sigma.n)]$। সব
+  $\sigma' \in P(\Gamma)$-র জন্য
+  $f(\sigma') = f'(\sigma')$ বলে $\mSat{M}{\Gamma}[f']$।
+  অতএব $\mModel{M}, f'$ নিচের সেট সন্তুষ্ট করে:
+  $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n],
+  \sFmla{\False}{!C}[\sigma.n]\}$।
+\end{enumerate}
+এবার দুটি শাখায় বিভক্ত হওয়ার বিধিগুলি দেখি।
+\begin{enumerate}
+\item $\sFmla{\False}{!B \land !C}[\sigma] \in \Gamma$-তে
+  $\TRule{\False}{\land}$ প্রয়োগ করলে দুটি শাখা হয়:
+  বাম শাখায় $\sFmla{\False}{!B}[\sigma]$ এবং ডান শাখায়
+  $\sFmla{\False}{!C}[\sigma]$। ধরি
+  $\mSat{M}{\Gamma}[f]$; বিশেষত
+  $\mSat/{M}{!B \land !C}[f(\sigma)]$। তখন
+  $\mSat/{M}{!B}[f(\sigma)]$ অথবা
+  $\mSat/{M}{!C}[f(\sigma)]$। প্রথম ক্ষেত্রে
+  $\mModel{M}, f$ চিহ্নিত সূত্র
+  $\sFmla{\False}{!B}[\sigma]$ সন্তুষ্ট করে, অর্থাৎ
+  বাম শাখা সন্তোষযোগ্য। দ্বিতীয় ক্ষেত্রে
+  $\mModel{M}, f$ চিহ্নিত সূত্র
+  $\sFmla{\False}{!C}[\sigma]$ সন্তুষ্ট করে, অর্থাৎ
+  ডান শাখা সন্তোষযোগ্য।
+\item $\sFmla{\True}{!B \lor !C}[\sigma] \in \Gamma$-তে
+  $\TRule{\True}{\lor}$ প্রয়োগে শাখা প্রসারিত হলে:
+  অনুশীলন।
+\item $\sFmla{\True}{!B \lif !C}[\sigma] \in \Gamma$-তে
+  $\TRule{\True}{\lif}$ প্রয়োগে শাখা প্রসারিত হলে:
+  অনুশীলন।
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+\olref[int][tab][sou]{thm:tableau-soundness}-এর প্রমাণ
+সম্পূর্ণ করুন।
+\end{prob}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+$\Gamma \Proves !A$ হলে $\Gamma \Entails !A$।
+\end{cor}
+
+\begin{proof}
+  $\Gamma \Proves !A$ হলে কোনো
+  $!B_1$, \dots, $!B_n \in \Gamma$-র জন্য
+  $\Delta = \{\sFmla{\False}{!A}[1], \sFmla{\True}{!B_1}[1],
+  \dots, \sFmla{\True}{!B_n}[1]\}$-র বন্ধ !!{tableau}
+  আছে। দেখাতে হবে $\Gamma \Entails !A$। অন্যথায় কোনো
+  মডেল~$\mModel{M}$ ও $w$-তে সব $i=1$, \dots,~$n$-এর
+  জন্য $\mSat{M}{!B_i}[w]$, অথচ
+  $\mSat/{M}{!A}[w]$। $f(1) = w$ ধরি। তাহলে $f$,
+  $\mModel{M}$-এ~$P(\Delta)$-র একটি ব্যাখ্যা, এবং
+  $\mModel{M}$, $\Delta$-কে $f$-এর সাপেক্ষে সন্তুষ্ট করে।
+  কিন্তু \olref{thm:tableau-soundness} অনুযায়ী
+  বন্ধ !!{tableau} থাকায় $\Delta$ অসন্তোষযোগ্য—বিরোধ।
+  % BN-SRC-418: the corollary concludes semantic entailment, not derivability.
+  তাই $\Gamma \Entails !A$।
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+$\Proves !A$ হলে $!A$ সব মডেলে সত্য।
+\end{cor}
+
+\end{document}

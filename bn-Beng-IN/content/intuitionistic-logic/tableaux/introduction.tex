@@ -1,0 +1,70 @@
+% Part: intuitionistic-logic
+% Chapter: tableaux
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{tab}{int}
+
+\olsection{ভূমিকা}
+
+!!^{tableau}s হলো !!{signed
+  formula}s দিয়ে গঠিত বিশেষ
+(নিচের দিকে শাখাবিভক্ত) বৃক্ষ। এর প্রতিটি সদস্য হলো
+সত্যতার চিহ্ন ($\True$ অথবা $\False$) এবং !!a{sentence}-এর জোড়া:
+\[
+\sFmla{\True}{!A} \text{ or } \sFmla{\False}{!A}.
+\]
+!!^a{tableau} শুরু হয় কয়েকটি \emph{অনুমান} দিয়ে। পরে প্রতিটি
+!!{signed formula} পাওয়া যায় কোনো অনুমান-বিধি প্রয়োগ করে।
+কিছু বিধি বৃক্ষের একটি প্রান্তে এক বা একাধিক !!{signed formula}s
+যোগ করে; অন্যগুলি দুটি নতুন প্রান্ত যোগ করে, ফলে দুটি শাখা হয়।
+একটি বিধি যে !!{signed formula}s দেয়, সেগুলির !!{formula}
+বিধি-প্রয়োগের লক্ষ্য !!{signed formula}-র সূত্রের চেয়ে
+কম জটিল। কোনো শাখায় $\sFmla{\True}{!A}$ এবং
+$\sFmla{\False}{!A}$ উভয়ই থাকলে শাখাটিকে \emph{বন্ধ} বলি।
+!!a{tableau}-র সব শাখা বন্ধ হলে পুরো !!{tableau} বন্ধ।
+একটি বন্ধ !!{tableau} হলো এমন !!a{derivation} যা দেখায়,
+!!{tableau} শুরুর !!{signed formula}s-এর সেটটি অসন্তোষযোগ্য।
+এর সাহায্যে $\Proves$ সম্পর্ক সংজ্ঞায়িত করা যায়:
+$\Gamma \Proves !A$ তখনই, যখন কোনো সসীম সেট
+$\Gamma_0 = \{!B_1, \dots, !B_n\} \subseteq \Gamma$ আছে,
+যার জন্য নিচের অনুমানগুলি দিয়ে একটি বন্ধ !!{tableau} হয়:
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}.
+\]
+
+স্বজ্ঞাবাদী যুক্তিবিদ্যার জন্য !!{signed formula}-র ধারণা
+প্রসারিত এবং সংযোজকগুলির বিধি সংশোধিত করতে হবে।
+% BN-SRC-409: this chapter concerns intuitionistic, not modal, tableaux.
+চিহ্নের ($\True$ অথবা $\False$) পাশাপাশি স্বজ্ঞাবাদী
+!!{tableau}s-এর !!{formula}s-তে \emph{উপসর্গ}~$\sigma$ থাকে।
+উপসর্গগুলি ধনাত্মক পূর্ণসংখ্যার অশূন্য সসীম ক্রম; অর্থাৎ
+$\sigma \in (\PosInt)^* \setminus \{\emptyseq\}$। এমন উপসর্গ
+লিখতে উপসর্গ~$\sigma$-র চারপাশের $\tuple{\ }$ বাদ দিয়ে পৃথক !!{element}s-এর
+মাঝে $,$-র বদলে~$.$ দিই। $\sigma$ উপসর্গ হলে
+$\sigma.n$ হলো $\sigma \concat \tuple{n}$; যেমন,
+$\sigma = 1.2.1$ হলে $\sigma.3$ হলো $1.2.1.3$।
+উদাহরণস্বরূপ,
+\[
+\sFmla{\True}{!A \lif (!B \lif !C)}[1.2]
+\]
+একটি \emph{উপসর্গযুক্ত !!{signed formula}}
+(সংক্ষেপে, \emph{উপসর্গযুক্ত !!{formula}})।
+
+স্বজ্ঞাগতভাবে, উপসর্গটি এমন একটি মডেলের জগতের নাম দেয় যা
+!!a{tableau}-র কোনো শাখার !!{formula}s সন্তুষ্ট করতে পারে।
+$\sigma$ কোনো জগতের নাম হলে $\sigma.n$ সেই জগৎ থেকে
+প্রবেশযোগ্য একটি জগতের নাম।
+
+স্বজ্ঞাবাদী মডেলে প্রবেশযোগ্যতা-সম্পর্ক প্রতিবিম্বী ও পরিযায়ী।
+উপসর্গের ভাষায়, $\sigma$ নিজে $\sigma$ থেকে প্রবেশযোগ্য;
+$\sigma$-র যেকোনো সম্প্রসারণ, অর্থাৎ
+$\sigma.n_1.\cdots.n_k$-রূপের উপসর্গও প্রবেশযোগ্য।
+$\sigma$ নিজে ও তার সমস্ত সম্প্রসারণ বোঝাতে $\sigma.*$
+লিখব। অন্যভাবে বললে, $\sigma.*$ উপসর্গগুলি ঠিক সেইগুলিই,
+যেগুলি $\sigma$ থেকে প্রবেশযোগ্য।
+
+\end{document}

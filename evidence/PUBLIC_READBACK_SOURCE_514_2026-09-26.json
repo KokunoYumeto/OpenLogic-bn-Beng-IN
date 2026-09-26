@@ -1,0 +1,185 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T21:04:57.600238+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "30011323dd6397280a61cfe409c08f68ff139687",
+  "parent": "b7bbda33d705ee88f227836488525abab58fbc32",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "d391cc1e66bc51f8d4ae969ff4a1d298240198fd",
+    "receipt": "PUBLIC_READBACK_SOURCE_509_2026-09-26.json",
+    "receipt_sha256": "4e794704672de2ff98af68babe94673b78a245980dee6d1e408e291a97a331b0"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/30011323dd6397280a61cfe409c08f68ff139687.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/30011323dd6397280a61cfe409c08f68ff139687",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 14116802,
+  "archive_sha256": "d9cc8917a333f3514154b2c53d19bab1e7678b9deb7f0c4deef57a6292aa1012",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/tableaux/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/30011323dd6397280a61cfe409c08f68ff139687/bn-Beng-IN/content/intuitionistic-logic/tableaux/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/30011323dd6397280a61cfe409c08f68ff139687/bn-Beng-IN/content/intuitionistic-logic/tableaux/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 5032,
+      "sha256": "776a08eb5c031e9b096e9eb2c2e654f0dd4bce06505cb4752bcfa19f92c917a4"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/tableaux/proofs.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/30011323dd6397280a61cfe409c08f68ff139687/bn-Beng-IN/content/intuitionistic-logic/tableaux/proofs.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/30011323dd6397280a61cfe409c08f68ff139687/bn-Beng-IN/content/intuitionistic-logic/tableaux/proofs.tex",
+      "content_type": "text/plain",
+      "bytes": 2090,
+      "sha256": "752f66ed3903f91537151a57d2d32b897dbc41d8f00f0cc6e5c141604788fef5"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/tableaux/rules.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/30011323dd6397280a61cfe409c08f68ff139687/bn-Beng-IN/content/intuitionistic-logic/tableaux/rules.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/30011323dd6397280a61cfe409c08f68ff139687/bn-Beng-IN/content/intuitionistic-logic/tableaux/rules.tex",
+      "content_type": "text/plain",
+      "bytes": 7582,
+      "sha256": "1373e6b0cc0cd162d401408524d42d8e211835b4f681e8c5357f36760b61e698"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/tableaux/soundness.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/30011323dd6397280a61cfe409c08f68ff139687/bn-Beng-IN/content/intuitionistic-logic/tableaux/soundness.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/30011323dd6397280a61cfe409c08f68ff139687/bn-Beng-IN/content/intuitionistic-logic/tableaux/soundness.tex",
+      "content_type": "text/plain",
+      "bytes": 15420,
+      "sha256": "04469f5082dcce494d57a988bfc654530ccae897beed7fdfc47819a52c969cb9"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/tableaux/tableaux.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/30011323dd6397280a61cfe409c08f68ff139687/bn-Beng-IN/content/intuitionistic-logic/tableaux/tableaux.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/30011323dd6397280a61cfe409c08f68ff139687/bn-Beng-IN/content/intuitionistic-logic/tableaux/tableaux.tex",
+      "content_type": "text/plain",
+      "bytes": 947,
+      "sha256": "316e2c3cddd10f08b141fc5e59aa70ea3f996a1a5fafbc2473b23176705312ae"
+    }
+  ],
+  "changed_files_verified": 18,
+  "translated_tex_files_in_commit": 5,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 514,
+  "draft_untranslated_total": 208,
+  "segments": 5714,
+  "translated_segments": 4835,
+  "new_batch_segments": 48,
+  "new_batch_translated_segments": 42,
+  "new_batch_unchanged_segments": 6,
+  "source_correction_records": 426,
+  "new_source_correction_records": 11,
+  "translation_decisions": 374,
+  "provisional_translation_decisions": 355,
+  "translation_decision_occurrences": 31523,
+  "decisions_with_exact_source_wording": 355,
+  "ai_assistance": {
+    "product": "OpenAI Codex",
+    "earlier_model": "GPT-5.6 Sol",
+    "earlier_effort": "Ultra",
+    "current_batch_model": "GPT-6 Sol",
+    "current_batch_effort": "Ultra",
+    "independent_human_review_claimed": false
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 514,
+    "blocks": 5714,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7381,
+      "sha256": "6adb961ec4c73ff7df9d9acee15ba5c55579e751eb1afd72e3d42841cc3e1f11"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/tableaux/introduction.tex",
+      "bytes": 5032,
+      "sha256": "776a08eb5c031e9b096e9eb2c2e654f0dd4bce06505cb4752bcfa19f92c917a4"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/tableaux/proofs.tex",
+      "bytes": 2090,
+      "sha256": "752f66ed3903f91537151a57d2d32b897dbc41d8f00f0cc6e5c141604788fef5"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/tableaux/rules.tex",
+      "bytes": 7582,
+      "sha256": "1373e6b0cc0cd162d401408524d42d8e211835b4f681e8c5357f36760b61e698"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/tableaux/soundness.tex",
+      "bytes": 15420,
+      "sha256": "04469f5082dcce494d57a988bfc654530ccae897beed7fdfc47819a52c969cb9"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/tableaux/tableaux.tex",
+      "bytes": 947,
+      "sha256": "316e2c3cddd10f08b141fc5e59aa70ea3f996a1a5fafbc2473b23176705312ae"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 9246280,
+      "sha256": "3c46473eca684ea878d3ffceec2c932362138f29755378c9a4e9cb66a946b2e8"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 321386,
+      "sha256": "f92e34c40f74611a79911d4cdc0054af038bdc4e56842db13c0f8b970bb581a9"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_INTUITIONISTIC_TABLEAUX.md",
+      "bytes": 4364,
+      "sha256": "b374e8df11dc8013cfdcb1e3dec9558ac20517fe3027a8c679e6d7afa8712954"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "47c080c9e0b53ce092f5106aa12aaea48409ea111c4f4dfce512e62c4658814a"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 827667,
+      "sha256": "31555b0512dbada5038556e437ac551a2f0020ff1f5017fa69b2992256abdbef"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 344431,
+      "sha256": "2a7cc3c4477ab01299e2a94bd118ad8415202a06ccace3cedaede2bfa19adb50"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 19060661,
+      "sha256": "af70540b019c30b86bc09376f254987dfd7011e114601e6de6550dfc6b4eaf9f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 14908000,
+      "sha256": "88fa191954bf9c0c131539596d8bc0edb24975369a7ff01a5a8c988851a62cd8"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1444793,
+      "sha256": "23f2ddd87587f4f4636e0be55487f940b6ac74af7df585d1872b675971299eba"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 8646087,
+      "sha256": "a9c0e1cd3dbd278756c0b10ec5da8b0d288c6e8ea8fa8bd186fa1f3c9bd06619"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 273040,
+      "sha256": "4d8828382626f1fcfb8a4bddf9278da1407f697d95aa0ece5dbd9e9bda2f2c2e"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 278740,
+      "sha256": "88529a6722d576e0a3d0ff1a8695103249ff56240563cca736b6a8c914b7925c"
+    }
+  ]
+}

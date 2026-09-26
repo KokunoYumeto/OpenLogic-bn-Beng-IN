@@ -1,0 +1,75 @@
+% Part: counterfactuals
+% Chapter: minimal-change-semantics
+% Section: antecedent-strengthening
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{min}{agg}
+
+\olsection{পূর্বপক্ষ শক্তিশালীকরণ}
+
+% BN-SRC-425: the frozen outer-space sentence says light; the context requires strike.
+``পূর্বপক্ষকে শক্তিশালী করা'' বলতে
+$!A \lif !C \Entails (!A \land !B) \lif !C$ অনুমিতিটি বোঝায়।
+বস্তুগত শর্তবচনের ক্ষেত্রে এটি বৈধ, কিন্তু প্রতিবাস্তব
+শর্তবচনের ক্ষেত্রে অবৈধ। ধরা যাক, এই দেশলাই-কাঠিটি
+ঘষলে জ্বলে উঠত—এটি সত্য। (অর্থাৎ কাঠিটিতে বা বাক্সের
+ঘষার পৃষ্ঠে কোনও খুঁত নেই, আমি কাঠিটি ভেঙে ফেলব না
+ইত্যাদি।) কিন্তু মহাশূন্যে এই কাঠিটি ঘষলে জ্বলে উঠত—এটি
+সত্য নয়। তাই নিচের অনুমিতি অবৈধ:
+\begin{quote}
+  দেশলাই-কাঠিটি ঘষা হলে জ্বলে উঠত।
+
+  অতএব, মহাশূন্যে দেশলাই-কাঠিটি ঘষা হলে জ্বলে উঠত।
+\end{quote}
+
+শর্তবচন সম্পর্কে লুইস--স্টালনেকারের ব্যাখ্যা এর কারণ দেখায়:
+মহাশূন্যে আমি দেশলাই-কাঠিটি ঘষি এমন নিকটতম জগৎটি,
+কেবল কাঠিটি ঘষি এমন নিকটতম জগৎটির তুলনায় বাস্তব জগৎ
+থেকে অনেক দূরের। তাই দ্বিতীয় জগতে কাঠিটি জ্বললেও
+প্রথম জগতে জ্বলে না। স্বজ্ঞাগত প্রত্যাশাও তা-ই।
+
+\begin{ex}
+  গোলক অর্থতত্ত্বে অনুমিতিটি অবৈধ, অর্থাৎ $p
+  \cif r \Entails/ (p \land q) \cif r$। ধরা যাক,
+  $\mModel{M} = \tuple{W, O, V}$ মডেলে
+  $W = \{w, w_1, w_2\}$,
+  $O_w = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$,
+  $V(p) = \{w_1, w_2\}$, $V(q) = \{w_2\}$
+  এবং $V(r) = \{w_1\}$। $p$-স্বীকারক গোলক
+  $S = \{w, w_1\}$-এর প্রতিটি জগতে $p \lif r$ সত্য;
+  তাই $\mSat{M}{p \cif r}[w]$। আবার $(p \land q)$-স্বীকারক
+  গোলক $S' = \{w, w_1, w_2\}$ আছে, কিন্তু
+  $\mSat/{M}{(p \land q) \lif r}[w_2]$; তাই
+  $\mSat/{M}{(p \land q) \cif r}[w]$
+  (দেখুন \olref{fig:antecedent-strengthening})।
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[layerwidth=1.5,scale=.6]\tiny
+  \spheresystem{3}
+  \propositionintersect{-10}{3}{30}{5}
+  \begin{scope}
+    \clip plot[smooth,tension=1] coordinates
+          {(0,4.5) (30:.95) (4.5,-3.5)} -- (4.5,4.5) ;
+    \spherefill{2}
+  \end{scope}
+  \draw[proposition] plot[dashed,smooth,tension=1] coordinates
+          {(0,4.5) (30:.95) (4.5,-3.5)} ;
+  \proposition{30}{2}{30}{5}
+  \path (0,0) node[world] {$w$};
+  \spherepos{30}{2}{node[world] {$w_1$}}
+  \spherepos{-10}{3}{node[world] {$w_2$}}
+  \spherepos{-10}{4}{node {$q$}}
+  \spherepos{30}{4}{node {$r$}}
+  \draw (1,4.5) node[below] {$p$};
+\end{tikzpicture}
+\caption{পূর্বপক্ষ শক্তিশালীকরণের প্রত্যুদাহরণ}
+\ollabel{fig:antecedent-strengthening}
+\end{center}
+\end{figure}
+\end{ex}
+
+\end{document}

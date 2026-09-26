@@ -1,0 +1,69 @@
+% Part: counterfactuals
+% Chapter: minimal-change-semantics
+% Section: contraposition
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{min}{cpo}
+
+\olsection{প্রতিবিপরীতকরণ}
+
+বস্তুগত ও কঠোর শর্তবচন তাদের প্রতিবিপরীত রূপের সমতুল্য।
+প্রতিবাস্তব শর্তবচনের ক্ষেত্রে তা নয়। ক্রাটজারের দেওয়া
+একটি উদাহরণ দেখা যাক:
+\begin{quote}
+  গ্যেটে যদি ১৮৩২ সালে না মারা যেতেন, তবু এখন তিনি মৃত থাকতেন।
+
+  গ্যেটে যদি এখন মৃত না হতেন, তবে তিনি ১৮৩২ সালে মারা যেতেন।
+\end{quote}
+প্রথম বাক্যটি সত্য: মানুষ শত শত বছর বাঁচে না। দ্বিতীয়টি
+স্পষ্টতই মিথ্যা: গ্যেটে এখন মৃত না হলে এখনও জীবিত
+থাকতেন; ফলে ১৮৩২ সালে তাঁর মৃত্যু ঘটে থাকতে পারত না।
+
+\begin{ex}\ollabel{ex:contraposition-counterex}
+  গোলক অর্থতত্ত্বে প্রতিবিপরীতকরণ অবৈধ, অর্থাৎ $p
+  \cif q \Entails/ \lnot q \cif \lnot p$। ধরা যাক, $p$ মানে
+  ``গ্যেটে ১৮৩২ সালে মারা যাননি'' এবং $q$ মানে ``গ্যেটে এখন মৃত''।
+  % BN-SRC-428: use the same model name as the satisfaction assertions below.
+  এটি $\mModel{M} = \tuple{W, O, V}$ মডেলে ধরা যায়, যেখানে
+  $W = \{w, w_1, w_2\}$,
+  % BN-SRC-427: specify the sphere system at w, not the whole O function.
+  $O_w = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$,
+  $V(p) = \{w_1, w_2\}$ এবং $V(q) = \{w, w_1\}$। অন্য দুই
+  জগতের গোলকব্যবস্থা সংজ্ঞার শর্ত মেনে যেকোনও ভাবে নেওয়া যায়। এখানে
+  $w$ বাস্তব জগৎ, যেখানে গ্যেটে ১৮৩২ সালে মারা গিয়েছেন এবং
+  আজও মৃত; $w_1$ নিকটবর্তী জগৎ, যেখানে তিনি ধরা যাক
+  ১৮৩৩ সালে মারা গিয়েছেন এবং আজও মৃত; আর $w_2$
+  দূরবর্তী জগৎ, যেখানে তিনি এখনও জীবিত।
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.6,layerwidth=1.5]\tiny
+  \spheresystem{3}
+  \begin{scope}
+    \clip \propositionplot{0}{.8}{50}{4.5} -- (4.5,-4.5) -- (-4.5,-4.5) -- (-4.5,4.5) -- (4.5,4.5);
+    \spherelayer{3}
+  \end{scope}
+  \propositionintersect{0}{2}{110}{5.5}
+  \proposition{0}{.8}{50}{4.5}
+  \path (0,0) node[world] {$w$};
+  \spherepos{0}{2}{node[world] {$w_1$}}
+  \spherepos{-50}{3}{node[world] {$w_2$}}
+  \spherepos{28}{3}{node {$q$}}
+  \spherepos{42}{3}{node {$\lnot q$}}
+  \spherepos{-55}{4}{node {$p$}}
+  \spherepos{-67}{4}{node {$\lnot p$}}
+\end{tikzpicture}
+\caption{প্রতিবিপরীতকরণ ব্যর্থ হওয়ার প্রত্যুদাহরণ}
+\ollabel{fig:contraposition}
+\end{center}
+\end{figure}
+$p$-স্বীকারক গোলক $S = \{w, w_1\}$-এর প্রতিটি জগতে
+$p \lif q$ সত্য; তাই $\mSat{M}{p \cif q}[w]$। কিন্তু
+$\lnot q$-স্বীকারক গোলক $\{w, w_1, w_2\}$-এ এমন একটি জগৎ
+আছে—$w_2$—যেখানে $q$ মিথ্যা ও $p$ সত্য; তাই
+$\mSat/{M}{\lnot q \lif \lnot p}[w_2]$।
+\end{ex}
+
+\end{document}

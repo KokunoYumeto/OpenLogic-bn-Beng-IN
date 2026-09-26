@@ -1,0 +1,114 @@
+% Part: counterfactuals
+% Chapter: minimal-change-semantics
+% Section: true-false
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{min}{tf} % BN-SRC-424: match the counterfactuals part identifier.
+
+\olsection{প্রতিবাস্তব শর্তবচনের সত্যতা ও মিথ্যাত্ব}
+
+\olref{fig:true}-এ দেখানো মতো নিকটতম $!A$-জগৎগুলির সবই
+$!B$-জগৎ হলে প্রতিবাস্তব শর্তবচন $!A \cif !B$
+(অশূন্যার্থে) সত্য।
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \propositionintersect{0}{4}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(1.6,-1)}]{90}{1}{30}{4}}
+  \path (1.5,3) node[below] {$\formula{B}$};
+  \path (3,0) node {$\formula{A}$};
+\end{tikzpicture}
+\caption{অশূন্যার্থে সত্য প্রতিবাস্তব শর্তবচন}
+\ollabel{fig:true}
+\end{center}
+\end{figure}
+আবার~$w$-কে ঘিরে গোলকব্যবস্থায় কোনও $!A$-স্বীকারক গোলকই
+না থাকলেও প্রতিবাস্তব শর্তবচনটি $w$-তে সত্য। সে ক্ষেত্রে
+এটি \emph{শূন্যার্থে} সত্য (দেখুন \olref{fig:vacuous})।
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \proposition{0}{6.5}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(1.2,-1)}]{90}{1}{30}{4}}
+  \path (1.5,3) node[below] {$\formula{B}$};
+  \spherepos{0}{7}{node {$\formula{A}$}}
+\end{tikzpicture}
+\caption{শূন্যার্থে সত্য প্রতিবাস্তব শর্তবচন}
+\ollabel{fig:vacuous}
+\end{center}
+\end{figure}
+
+দুই ভাবে প্রতিবাস্তব শর্তবচন মিথ্যা হতে পারে। একটি হল,
+নিকটতম $!A$-জগৎগুলির সবগুলি $!B$-জগৎ নয়, কিন্তু কয়েকটি
+তা-ই। এ ক্ষেত্রে $!A \cif \lnot !B$-ও মিথ্যা
+(দেখুন \olref{fig:false})।
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \propositionintersect{0}{4}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(1.6,0)}]{90}{1}{30}{3}}
+  \path (1.5,3) node[below] {$\formula{B}$};
+  \path (3,0) node {$\formula{A}$};
+\end{tikzpicture}
+\caption{মিথ্যা প্রতিবাস্তব শর্তবচন, বিপরীতটিও মিথ্যা}
+\ollabel{fig:false}
+\end{center}
+\end{figure}
+নিকটতম $!A$-জগৎগুলির সঙ্গে $!B$-জগৎগুলির কোনও মিল না
+থাকলে $!A \cif !B$ মিথ্যা। কিন্তু সে ক্ষেত্রে নিকটতম সব
+$!A$-জগৎই $\lnot !B$-জগৎ; ফলে $!A \cif \lnot !B$ সত্য
+(দেখুন \olref{fig:false-opposite})।
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \propositionintersect{0}{4}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(-1,0)}]{90}{1}{30}{3}}
+  \path (-1,3) node[below] {$\formula{B}$};
+  \path (3,0) node {$\formula{A}$};
+\end{tikzpicture}
+\caption{মিথ্যা প্রতিবাস্তব শর্তবচন, বিপরীতটি সত্য}
+\ollabel{fig:false-opposite}
+\end{center}
+\end{figure}
+
+কঠোর শর্তবচনের বিপরীতে প্রতিবাস্তব শর্তবচন আপতিক হতে পারে।
+\olref{fig:contingent}-এর গোলক মডেলটি দেখুন। $u$-এর নিকটতম
+$!A$-জগৎগুলির সবই $!B$-জগৎ; তাই $\mSat{M}{!A \cif
+  !B}[u]$। কিন্তু $v$-এর নিকটতম কিছু $!A$-জগৎ
+$!B$-জগৎ নয়; তাই $\mSat/{M}{!A \cif !B}[v]$।
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.6]\small
+  \spheresystem{7}
+  \spheresystem[shift={(0:3.1)},dashed]{4}
+  \propositionintersect{45}{4}{40}{4.5}
+  \begin{scope}
+    \clip \propositionplot{45}{4}{40}{4.5} ;
+    \spherelayer[shift={(0:3.1)}]{3}
+  \end{scope}
+  \proposition[shift={(1.4,-.5)}]{90}{1}{35}{5}
+  \path (0,0) node {$u$};
+  \path (0:3.1) node {$v$};
+  \spherepos{35}{9}{node {$\formula{A}$}}
+  \spherepos{80}{9}{node {$\formula{B}$}}
+\end{tikzpicture}
+\end{center}
+\caption{আপতিক প্রতিবাস্তব শর্তবচন}
+\ollabel{fig:contingent}
+\end{figure}
+\end{document}

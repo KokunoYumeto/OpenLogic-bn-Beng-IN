@@ -5680,6 +5680,24 @@ for row in rows:
                 old_fragment.count(old_formula) == 1
                 and old_fragment.replace(old_formula, new_formula, 1) == new_fragment
             )
+    minimal_change_transitivity_fix = (
+        row["unit_id"] == "OLP-0527"
+        and set(documented) == {"BN-SRC-426", "BN-SRC-429"}
+        and source_math - target_math == collections.Counter({r"\mSat/{M}{q\lifr}": 1})
+        and target_math - source_math == collections.Counter({r"\mSat{M}{q\lifr}": 1})
+    )
+    minimal_change_contraposition_fix = (
+        row["unit_id"] == "OLP-0528"
+        and set(documented) == {"BN-SRC-427", "BN-SRC-428"}
+        and source_math - target_math == collections.Counter({
+            r"\mModel{M_1}=\tuple{W,O,V}": 1,
+            r"O=\{\{w\},\{w,w_1\},\{w,w_1,w_2\}\}": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\mModel{M}=\tuple{W,O,V}": 1,
+            r"O_w=\{\{w\},\{w,w_1\},\{w,w_1,w_2\}\}": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -5781,7 +5799,20 @@ for row in rows:
             intuitionistic_tableaux_implication_rule_fix,
             intuitionistic_tableaux_soundness_proof_fix,
             strict_conditional_nonentailment_fix,
+            minimal_change_transitivity_fix,
+            minimal_change_contraposition_fix,
         )
+    )
+    minimal_change_fileid_fix = (
+        row["unit_id"] in {"OLP-0524", "OLP-0525"}
+        and ((row["unit_id"] == "OLP-0524" and set(documented) == {"BN-SRC-422", "BN-SRC-423"})
+             or (row["unit_id"] == "OLP-0525" and set(documented) == {"BN-SRC-424"}))
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\olfileid{con}{min}{sph}" if row["unit_id"] == "OLP-0524"
+                                else r"\olfileid{con}{min}{tf}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\olfileid{cnt}{min}{sph}" if row["unit_id"] == "OLP-0524"
+                                else r"\olfileid{cnt}{min}{tf}": 1})
     )
     controls_ok = (
         controls(source) == controls(checked_target)
@@ -5791,6 +5822,7 @@ for row in rows:
         or second_order_metatheory_control_fix
         or lambda_syntax_control_fix
         or modal_completeness_control_fix
+        or minimal_change_fileid_fix
     )
     checks = {
         "unit_id": row["unit_id"],

@@ -1,0 +1,180 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T20:08:18.530556+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "fabc63d1c4998021a0ecfe11b2a8e22df8804e8f",
+  "parent": "4fd0879a30a3bbbbe33dbc06c8ea74f631d4163e",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "b15f0250e661e2705ad48c7dd3ea83aa5176f2c4",
+    "receipt": "PUBLIC_READBACK_SOURCE_496_2026-09-26.json",
+    "receipt_sha256": "d3a62fd5047b2743f5002ecd6c9fbf8bf58ac84297b979c6fd131b1d4c4e3bcb"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 13877996,
+  "archive_sha256": "1747c0fa8d9c1cae6a6841bf7b646dc80f32965999b7ddce6de9e4aa083b04cb",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/semantics/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f/bn-Beng-IN/content/intuitionistic-logic/semantics/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f/bn-Beng-IN/content/intuitionistic-logic/semantics/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 7016,
+      "sha256": "1f06ca23e7ee80ea3fdfb29e6fdedc8d60c7c6ef29759a2cfab265f21352775f"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/semantics/relational-models.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f/bn-Beng-IN/content/intuitionistic-logic/semantics/relational-models.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f/bn-Beng-IN/content/intuitionistic-logic/semantics/relational-models.tex",
+      "content_type": "text/plain",
+      "bytes": 4282,
+      "sha256": "53553fbe7b61683f14653d26015f749b5f163e0f132eb05e3fe209e9931e67fa"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/semantics/semantic-notions.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f/bn-Beng-IN/content/intuitionistic-logic/semantics/semantic-notions.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f/bn-Beng-IN/content/intuitionistic-logic/semantics/semantic-notions.tex",
+      "content_type": "text/plain",
+      "bytes": 3392,
+      "sha256": "6de1d5ab2346d5c6dc063d0ecf44c83ed1f93e21fd78549c47a4f3e8746ab8b8"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/semantics/semantics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f/bn-Beng-IN/content/intuitionistic-logic/semantics/semantics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f/bn-Beng-IN/content/intuitionistic-logic/semantics/semantics.tex",
+      "content_type": "text/plain",
+      "bytes": 1073,
+      "sha256": "76d70f0d8236c71ae3b10de95d8bd214aa0e45a15873ef9356fc64220565e1c9"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/semantics/topological-semantics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f/bn-Beng-IN/content/intuitionistic-logic/semantics/topological-semantics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/fabc63d1c4998021a0ecfe11b2a8e22df8804e8f/bn-Beng-IN/content/intuitionistic-logic/semantics/topological-semantics.tex",
+      "content_type": "text/plain",
+      "bytes": 7438,
+      "sha256": "e9f1c5fc38b48f41fbc08076189bf9ce7785ef04552ad2d229e376c3b044cc90"
+    }
+  ],
+  "changed_files_verified": 17,
+  "translated_tex_files_in_commit": 5,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 501,
+  "draft_untranslated_total": 221,
+  "segments": 5591,
+  "translated_segments": 4727,
+  "new_batch_segments": 44,
+  "new_batch_translated_segments": 37,
+  "new_batch_unchanged_segments": 7,
+  "source_correction_records": 406,
+  "new_source_correction_records": 3,
+  "translation_decisions": 368,
+  "provisional_translation_decisions": 349,
+  "translation_decision_occurrences": 30798,
+  "decisions_with_exact_source_wording": 349,
+  "ai_assistance": {
+    "product": "OpenAI Codex",
+    "earlier_model": "GPT-5.6 Sol",
+    "earlier_effort": "Ultra",
+    "current_batch_model": "GPT-6 Sol",
+    "current_batch_effort": "Ultra",
+    "independent_human_review_claimed": false
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 501,
+    "blocks": 5591,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/semantics/introduction.tex",
+      "bytes": 7016,
+      "sha256": "1f06ca23e7ee80ea3fdfb29e6fdedc8d60c7c6ef29759a2cfab265f21352775f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/semantics/relational-models.tex",
+      "bytes": 4282,
+      "sha256": "53553fbe7b61683f14653d26015f749b5f163e0f132eb05e3fe209e9931e67fa"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/semantics/semantic-notions.tex",
+      "bytes": 3392,
+      "sha256": "6de1d5ab2346d5c6dc063d0ecf44c83ed1f93e21fd78549c47a4f3e8746ab8b8"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/semantics/semantics.tex",
+      "bytes": 1073,
+      "sha256": "76d70f0d8236c71ae3b10de95d8bd214aa0e45a15873ef9356fc64220565e1c9"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/semantics/topological-semantics.tex",
+      "bytes": 7438,
+      "sha256": "e9f1c5fc38b48f41fbc08076189bf9ce7785ef04552ad2d229e376c3b044cc90"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 9002588,
+      "sha256": "3c912e420e40488ebb7b4aadd7da4c7c4ecfc473ccb667bc4c781ecd2e922cd0"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 312819,
+      "sha256": "892d1da6ab93bf1fd61ef324e61820927456ba30643f59f025902c7f6efaf2ee"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_INTUITIONISTIC_SEMANTICS.md",
+      "bytes": 9738,
+      "sha256": "155554a0cadfb6fbfb97ea8b7e1e2de7532af41dcfca901f5b09b559b2068bce"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "c34af108f976646125718d95bfb9672e1fe2b0b73d0b14359e8ebab617aee8e3"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 786411,
+      "sha256": "85084167c337feb811791ba56ce25297f8a880df99055ac3b6215c2bc8a29eca"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 337362,
+      "sha256": "64b44858d08b4d5ffa07d7a9cec58098e1aad6f0706382026b06d5aaf7fee765"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 18663134,
+      "sha256": "0968f89e00022ef2de8d497356e984bfaeb63c4685046399ffef44e492765077"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 14600111,
+      "sha256": "118688b489e3d822ffeb28d4cbb5bc28fc43659b2e81e1c38ca8bb5e10c24cf3"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1421699,
+      "sha256": "4b589ddec2abcec2b573b610086e0732fa24755d0eb813544042000dc5f767bd"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 8449981,
+      "sha256": "7aec3d88e83a40f59acabcbaaa219c6be22d77df5ee4ce892f10937b884bae76"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 269167,
+      "sha256": "0d4c442c92aeec05d5989597cb6183da4e86bd8c412ba9dc1975e134cbc2d462"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 272127,
+      "sha256": "1933c5b004ec4b95fbec07a6809b9736b4d8e48cad822bdee0698446ea35637e"
+    }
+  ]
+}

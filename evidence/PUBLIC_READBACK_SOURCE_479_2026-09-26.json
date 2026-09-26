@@ -1,0 +1,189 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-26T03:49:31.251654+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "b9699b43d425a1def934a6b7818b6cf48a5d654f",
+  "parent": "4bcfbdf7857e3be414eb6b90d06601798b6d0f1c",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "555bad3106333875197403089be979e76c7cbd19",
+    "receipt": "PUBLIC_READBACK_SOURCE_473_2026-09-26.json",
+    "receipt_sha256": "5399b387e8df66e4e1d126a4893319d5e436b6fa8ea9d11a200f1e24a594aeab"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/b9699b43d425a1def934a6b7818b6cf48a5d654f.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/b9699b43d425a1def934a6b7818b6cf48a5d654f",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 13394387,
+  "archive_sha256": "1cf00d30deed39c6401d9f951b9e196e16ff4f5eca8abad7cb987f9930ef46c0",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/applied-modal-logic.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/applied-modal-logic.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/applied-modal-logic.tex",
+      "content_type": "text/plain",
+      "bytes": 700,
+      "sha256": "68b3945bbb747bdff0defb49cbe92da009fbf0dd7194a42ca8d888f352e9dae2"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/extra-temporal-operators.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/temporal-logic/extra-temporal-operators.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/temporal-logic/extra-temporal-operators.tex",
+      "content_type": "text/plain",
+      "bytes": 2639,
+      "sha256": "2517e9217de5bbde0233f5cb4f5cc1c1d4ca4de017eb0128a95902644c876161"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/temporal-logic/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/temporal-logic/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 5491,
+      "sha256": "5059f6e974648694d366cab94ae21574980605e439e7cc7a223f03682c8dd012"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/properties-accessibility.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/temporal-logic/properties-accessibility.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/temporal-logic/properties-accessibility.tex",
+      "content_type": "text/plain",
+      "bytes": 3455,
+      "sha256": "f2c10a0860824176af4a0f5a29b1eed433a3d7d691713c52d59c2fff2eea03ac"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic-semantics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic-semantics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic-semantics.tex",
+      "content_type": "text/plain",
+      "bytes": 8663,
+      "sha256": "0acb2f6eb1792aea35baca0abdbdcb7ae0fc16d7713d89247145386a920cec7f"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/b9699b43d425a1def934a6b7818b6cf48a5d654f/bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic.tex",
+      "content_type": "text/plain",
+      "bytes": 563,
+      "sha256": "fe7877e0a349a8b62b0e3bc9083949c0dc4979e6a6558a8974f3a1878ff2bd42"
+    }
+  ],
+  "changed_files_verified": 18,
+  "translated_tex_files_in_commit": 6,
+  "evidence_files_in_commit": 11,
+  "checker_files_in_commit": 1,
+  "draft_translated_total": 479,
+  "draft_untranslated_total": 243,
+  "segments": 5348,
+  "translated_segments": 4526,
+  "new_batch_segments": 48,
+  "new_batch_translated_segments": 39,
+  "new_batch_unchanged_segments": 9,
+  "source_correction_records": 397,
+  "new_source_correction_records": 1,
+  "source_normalization_records": 3,
+  "translation_decisions": 352,
+  "provisional_translation_decisions": 333,
+  "translation_decision_occurrences": 29487,
+  "decisions_with_exact_source_wording": 333,
+  "ai_assistance": {
+    "product": "OpenAI Codex"
+  },
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 479,
+    "blocks": 5348,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "bn-Beng-IN/content/applied-modal-logic/applied-modal-logic.tex",
+      "bytes": 700,
+      "sha256": "68b3945bbb747bdff0defb49cbe92da009fbf0dd7194a42ca8d888f352e9dae2"
+    },
+    {
+      "filename": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/extra-temporal-operators.tex",
+      "bytes": 2639,
+      "sha256": "2517e9217de5bbde0233f5cb4f5cc1c1d4ca4de017eb0128a95902644c876161"
+    },
+    {
+      "filename": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/introduction.tex",
+      "bytes": 5491,
+      "sha256": "5059f6e974648694d366cab94ae21574980605e439e7cc7a223f03682c8dd012"
+    },
+    {
+      "filename": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/properties-accessibility.tex",
+      "bytes": 3455,
+      "sha256": "f2c10a0860824176af4a0f5a29b1eed433a3d7d691713c52d59c2fff2eea03ac"
+    },
+    {
+      "filename": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic-semantics.tex",
+      "bytes": 8663,
+      "sha256": "0acb2f6eb1792aea35baca0abdbdcb7ae0fc16d7713d89247145386a920cec7f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic.tex",
+      "bytes": 563,
+      "sha256": "fe7877e0a349a8b62b0e3bc9083949c0dc4979e6a6558a8974f3a1878ff2bd42"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 8567211,
+      "sha256": "e1daa32a37fa802378938cfb285c547805e0fabaa9904a24f8090863d80f3842"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 298341,
+      "sha256": "218195814c8c9b93eed51aff0c46cc47bf22fc9ec29575592bcdc023a5713488"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_APPLIED_MODAL_TEMPORAL_I.md",
+      "bytes": 8689,
+      "sha256": "70b51b5ae05dbe53e546f6d52f240b400f02fb33f7806bc57ee4c9e9b4fb68b3"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "c63640b72a8f43788ff0cd29bf22692ce890f6b91e8d37c7e386c2fee9c0fb66"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 766104,
+      "sha256": "ec704af15513839ad71721ea102f0c8da635c88a78ceb94bbf15f0a842a80f5b"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 317155,
+      "sha256": "99ba5148e18a474bd498ed4f48516a8a9a6eb328f8399cdf25ffb5a503c2f3d8"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 17866654,
+      "sha256": "367548a39445b098d3dd124c77c1dabb958c153ac8973335cc66eafaea433ecf"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 13973523,
+      "sha256": "ecd2f76c7dc3391bd478451183dcf9868d1fc554fb3bc9b0d44b55956548a581"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1350691,
+      "sha256": "6959288b8c2da6d58a873728a624307e1ebd32e489028f93c9eebe0bcef39477"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 8089920,
+      "sha256": "70bf60acda197bf315ff8df9156668ce2f11eaa888c5a5c35d1058685bbc69f1"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 258226,
+      "sha256": "9a9cd1d93a9c1f0211fed474bc792ef4cf39868f2c13959e44f2c4d9f4310ee8"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 265546,
+      "sha256": "3bca9d04d744a52da57f821fac6802609517567b193f65c0f48245c75dfc7228"
+    }
+  ]
+}

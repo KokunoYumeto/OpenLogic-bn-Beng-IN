@@ -1,0 +1,156 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: modalities-ccs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{mod}
+
+\olsection{মোডাল অপারেটর ও পূর্ণ সঙ্গত সমষ্টি}
+
+\begin{explain}
+যখন আমরা স্বাভাবিক মোডাল যুক্তি~$\Sigma$-র পূর্ণ $\Sigma$-সঙ্গত সমষ্টি~$\Delta$-গুলিকে জগৎ ধরে একটি মডেল~$\mModel{M^\Sigma}$ গড়ি, তখন ওই ‘জগৎ’গুলির মধ্যে একটি অভিগম্যতা-সম্বন্ধ~$R^\Sigma$-ও সংজ্ঞায়িত করতে হয়। আমরা চাই, অভিগম্যতা-সম্বন্ধ (এবং মানায়ন $V^\Sigma$) এমনভাবে সংজ্ঞায়িত হোক যাতে $\mSat{M^\Sigma}{!A}[\Delta]$ তখনই এবং কেবল তখনই, যখন $!A \in
+\Delta$। কীভাবে তা করা যায়? % BN-SRC-356: frozen source includes the closing parenthesis inside the V^\Sigma math span.
+
+অভিগম্যতা-সম্বন্ধ সংজ্ঞায়িত হয়ে গেলে, কোনো জগতে সত্যতার সংজ্ঞা নিশ্চিত করে যে \iftag{prvBox}{$\mSat{M^\Sigma}{\Box!A}[\Delta]$ তখনই এবং কেবল তখনই, যখন $R^\Sigma\Delta\Delta'$ এমন সব $\Delta'$-তে $\mSat{M^\Sigma}{!A}[\Delta']$}{$\mSat{M^\Sigma}{\Diamond!A}[\Delta]$ তখনই এবং কেবল তখনই, যখন $R^\Sigma\Delta\Delta'$ এমন অন্তত একটি $\Delta'$-তে $\mSat{M^\Sigma}{!A}[\Delta']$}। $\mSat{M^\Sigma}{!A}[\Delta]$ তখনই এবং কেবল তখনই, যখন $!A \in \Delta$—এটি প্রমাণ করতে হলে বিশেষত মোডাল অপারেটর দিয়ে শুরু হওয়া !!{formula}s-এর জন্যও এটি সত্য হতে হবে; অর্থাৎ \iftag{prvBox}{$\mSat{M^\Sigma}{\Box!A}[\Delta]$ তখনই এবং কেবল তখনই, যখন $\Box !A
+  \in \Delta$}{$\mSat{M^\Sigma}{\Diamond!A}[\Delta]$ তখনই এবং কেবল তখনই, যখন $\Diamond !A
+  \in \Delta$}। এই দাবিকে \iftag{prvBox}{$\Box !A$}{$\Diamond !A$}-এর জন্য কোনো জগতে সত্যতার সংজ্ঞার সঙ্গে মেলালে পাই:
+\[
+\iftag{prvBox}{%
+  \Box!A \in \Delta \text{ তখনই এবং কেবল তখনই, যখন } !A \in \Delta' \text{
+    এমন সব $\Delta'$-এর জন্য, যেখানে } R^\Sigma\Delta\Delta'}{%
+  \Diamond!A \in \Delta \text{ তখনই এবং কেবল তখনই, যখন } !A \in \Delta' \text{ এমন
+    অন্তত একটি } \Delta' \text{-এর জন্য, যেখানে } R^\Sigma\Delta\Delta'}
+\]
+\iftag{prvBox}{বাম থেকে ডান দিকটি বিবেচনা করো: এতে বলা হচ্ছে, $\Box !A \in \Delta$ হলে যেকোনো $!A$ ও $R^\Sigma\Delta\Delta'$ এমন যেকোনো $\Delta'$-এর জন্য $!A \in \Delta'$। আমরা যদি স্থির করি, $R^\Sigma\Delta\Delta'$ তখনই এবং কেবল তখনই, যখন প্রতিটি $\Box!A \in \Delta$-র জন্য $!A \in \Delta'$, তাহলে এই দাবি সত্য হবে। ‘তখনই এবং কেবল তখনই’-এর ডান দিকের শর্তটি সংক্ষেপে লেখা যায়: $\Setabs{!A}{\Box!A \in \Delta}
+  \subseteq \Delta'$।}{ডান থেকে বাম দিকটি বিবেচনা করো: এতে বলা হচ্ছে, যেকোনো $!A$ এবং $R^\Sigma\Delta\Delta'$ এমন যেকোনো $\Delta'$-তে $!A \in \Delta'$ হলে $\Diamond!A \in \Delta$। আমরা যদি স্থির করি, প্রতিটি $!A \in \Delta'$-এর জন্য $\Diamond!A \in \Delta$ হলে $R^\Sigma\Delta\Delta'$ হবে, তাহলে এই দাবি সত্য হবে। ‘তখনই এবং কেবল তখনই’-এর ডান দিকের শর্তটি সংক্ষেপে লেখা যায়:
+  $\Setabs{\Diamond!A}{!A \in \Delta'} \subseteq \Delta$।}
+
+তাহলে প্রশ্ন: $R^\Sigma$-র এই সংজ্ঞা কি সত্যিই নিশ্চিত করে যে \iftag{prvBox}{$\Box !A \in \Delta$ তখনই এবং কেবল তখনই, যখন
+  $\mSat{M^\Sigma}{\Box !A}[\Delta]$? \iftag{prvDiamond}{এটি কি আরও নিশ্চিত করে যে }{}}{}\iftag{prvDiamond}{$\Diamond !A \in \Delta$
+  তখনই এবং কেবল তখনই, যখন $\mSat{M^\Sigma}{\Diamond !A}[\Delta]$?}{} পরের কয়েকটি ফল এটি প্রতিষ্ঠা করবে।
+\end{explain}
+
+\begin{defn}
+  $\Gamma$ যদি !!{formula}s-এর একটি সমষ্টি হয়, তবে ধরি
+  \begin{align*}
+    \Box\Gamma & = \Setabs{\Box !B}{!B \in \Gamma}\\
+    \Diamond\Gamma & = \Setabs{\Diamond !B}{!B \in \Gamma}\\
+    \intertext{এবং}
+    \Box^{-1}\Gamma & = \Setabs{!B}{\Box !B \in \Gamma}\\
+    \Diamond^{-1}\Gamma & = \Setabs{!B}{\Diamond !B \in \Gamma}\\
+  \end{align*}
+\end{defn}
+
+অন্যভাবে বললে, $\Box\Gamma$ হলো $\Gamma$-র প্রতিটি !!{formula}—অর্থাৎ~$\Gamma$-তে থাকা প্রতিটি সূত্র—এর আগে $\Box$ বসিয়ে পাওয়া সমষ্টি; আর $\Box^{-1}\Gamma$-তে আছে $\Gamma$-র $\Box$-দিয়ে শুরু হওয়া সব !!{formula}s, যেগুলির শুরুর $\Box$ সরানো হয়েছে। এই সংজ্ঞা নিজে খুব গুরুত্বপূর্ণ নয়, কিন্তু সংকেতকে অনেক সরল করবে।
+
+লক্ষ করো, $\Box\Box^{-1}\Gamma \subseteq \Gamma$:
+\[
+\Box\Box^{-1}\Gamma = \Setabs{\Box!B}{\Box!B \in \Gamma}
+\]
+অর্থাৎ এটি $\Gamma$-র কেবল সেই !!{formula}s-এর সমষ্টি যেগুলি~$\Box$ দিয়ে শুরু।
+
+\begin{lem}\ollabel{lem:box1}
+  $\Gamma \Proves[\Sigma] !A$ হলে $\Box\Gamma \Proves[\Sigma] \Box
+  !A$।
+\end{lem}
+
+\begin{proof}
+  $\Gamma \Proves[\Sigma] !A$ হলে এমন $!B_1$, \dots, $!B_k
+  \in \Gamma$ আছে যাতে $\Sigma \Proves !B_1 \lif (!B_2 \lif \cdots
+  (!B_k \lif !A)\cdots)$। $\Sigma$ স্বাভাবিক হওয়ায় নিয়ম \RK{} অনুসারে
+  $\Sigma \Proves \Box!B_1 \lif (\Box!B_2 \lif \cdots (\Box!B_k \lif
+  \Box!A)\cdots)$; এখানে অবশ্যই $\Box!B_1$, \dots, $\Box!B_k \in
+  \Box\Gamma$। তাই সংজ্ঞা অনুযায়ী $\Box\Gamma \Proves[\Sigma] \Box
+  !A$। % BN-SRC-357: frozen source uses B_n twice after naming the finite list B_1,...,B_k.
+\end{proof}
+
+\begin{lem}\ollabel{lem:box2}
+  $\Box^{-1} \Gamma \Proves[\Sigma] !A$ হলে $\Gamma
+  \Proves[\Sigma] \Box!A$।
+\end{lem}
+
+\begin{proof}
+  ধরা যাক $\Box^{-1}\Gamma \Proves[\Sigma] !A$; তাহলে
+  \olref{lem:box1} থেকে $\Box\Box^{-1}\Gamma \Proves[\Sigma] \Box!A$। কিন্তু
+  $\Box\Box^{-1}\Gamma \subseteq \Gamma$ হওয়ায় একঘেয়েতা থেকে $\Gamma \Proves[\Sigma]
+  \Box!A$। % BN-SRC-358: frozen source omits [\Sigma] in the middle derivability relation.
+\end{proof}
+
+\iftag{prvBox}{%
+% Box is primitive
+
+\begin{prop}\ollabel{prop:box}
+  $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হলে $\Box !A \in
+  \Gamma$ তখনই এবং কেবল তখনই, যখন $\Box^{-1} \Gamma \subseteq \Delta$ এমন প্রতিটি পূর্ণ $\Sigma$-সঙ্গত $\Delta$-র জন্য $!A \in \Delta$।
+\end{prop}
+
+\begin{proof}
+  ধরা যাক $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত। ‘কেবল তখনই’ দিকটি সহজ: $\Box !A \in \Gamma$ এবং $\Box^{-1}\Gamma \subseteq \Delta$ ধরি। $\Box!A \in \Gamma$ হওয়ায় $!A
+  \in \Box^{-1}\Gamma \subseteq \Delta$; তাই $!A \in \Delta$।
+
+  ‘যখন’ দিকটি বিপরীতক্রমে প্রমাণ করি: ধরা যাক $\Box!A \notin \Gamma$। $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হওয়ায় নিষ্পাদনের অধীনে বদ্ধ; তাই $\Gamma
+  \Proves/[\Sigma] \Box !A$। \olref{lem:box2} থেকে $\Box^{-1}\Gamma \Proves/[\Sigma] !A$। \olref[prf][con]{prop:consistencyfacts}\olref[prf][con]{prop:consistencyfacts-b} অনুযায়ী $\Box^{-1}\Gamma \cup \{ \lnot!A \}$ $\Sigma$-সঙ্গত। লিন্ডেনবাউমের সহায়ক উপপাদ্য থেকে এমন একটি পূর্ণ $\Sigma$-সঙ্গত সমষ্টি~$\Delta$ আছে যাতে $\Box^{-1}\Gamma \cup \{ \lnot!A \} \subseteq
+  \Delta$। সঙ্গতির কারণে $!A \notin \Delta$।
+\end{proof}
+}{%
+% Box is not primitive, only Diamond is
+
+\begin{prop}\ollabel{prop:diamond}
+  $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হলে $\Diamond !A \in
+  \Gamma$ তখনই এবং কেবল তখনই, যখন $\Diamond\Delta \subseteq
+  \Gamma$ এমন কোনো পূর্ণ $\Sigma$-সঙ্গত $\Delta$-র জন্য $!A \in \Delta$।
+\end{prop}
+
+\begin{proof}
+  ধরা যাক $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত। ডান থেকে বাম দিকটি সহজ: $\Delta$ পূর্ণ $\Sigma$-সঙ্গত, $\Diamond\Delta \subseteq \Gamma$, এবং $!A \in \Delta$ ধরি। তাহলে $\Diamond!A \in \Diamond\Delta \subseteq \Gamma$; অর্থাৎ $\Diamond!A \in \Gamma$।
+
+  বাম থেকে ডান দিকটির জন্য $\Diamond !A \in \Gamma$ ধরি। আমাদের দেখাতে হবে, এমন একটি পূর্ণ $\Sigma$-সঙ্গত $\Delta$ আছে যাতে $!A \in \Delta$ এবং $\Diamond\Delta \subseteq \Gamma$। $\Diamond !A \in \Gamma$ এবং $\Gamma$ $\Sigma$-সঙ্গত হওয়ায় $\Box\lnot !A \notin \Gamma$। $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হওয়ায় নিষ্পাদনের অধীনে বদ্ধ; তাই $\Gamma
+  \Proves/[\Sigma] \Box\lnot !A$। \olref{lem:box2} থেকে $\Box^{-1}\Gamma \Proves/[\Sigma] \lnot !A$। \olref[prf][con]{prop:consistencyfacts}\olref[prf][con]{prop:consistencyfacts-b} অনুযায়ী $\Box^{-1}\Gamma \cup \{ !A \}$ $\Sigma$-সঙ্গত। লিন্ডেনবাউমের সহায়ক উপপাদ্য থেকে এমন একটি পূর্ণ $\Sigma$-সঙ্গত সমষ্টি~$\Delta$ আছে যাতে $\Box^{-1}\Gamma \cup \{ !A \} \subseteq
+  \Delta$। স্পষ্টতই $!A \in \Delta$। $\Diamond\Delta
+  \subseteq \Gamma$ দেখাতে এর বিপরীতটি ধরি: কোনো $!B \in \Delta$-র জন্য $\Diamond !B \notin \Gamma$। তাহলে $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হওয়ায় $\Box\lnot !B \in \Gamma$। ফলে $\lnot
+  !B \in \Box^{-1}\Gamma \subseteq \Delta$-ও হবে, যা $\Delta$-কে অসঙ্গত করবে।
+\end{proof}
+}
+
+\begin{lem}\ollabel{lem:box-iff-diamond}
+  ধরা যাক $\Gamma$ ও $\Delta$ পূর্ণ $\Sigma$-সঙ্গত। তাহলে $\Box^{-1}\Gamma \subseteq \Delta$ তখনই এবং কেবল তখনই, যখন $\Diamond\Delta \subseteq \Gamma$।
+\end{lem}
+
+\begin{proof}
+  ‘কেবল তখনই’ দিক: $\Box^{-1}\Gamma \subseteq \Delta$ ধরি; আর $\Diamond!A \in \Diamond\Delta$ (অর্থাৎ $!A \in \Delta$) ধরি। $\Diamond!A \in \Gamma$ দেখাতে $\Box\lnot!A \notin \Gamma$ দেখালেই যথেষ্ট; কারণ তখন সর্বাধিকত্ব থেকে $\lnot\Box\lnot
+  !A \in \Gamma$। এখন, $\Box\lnot!A \in \Gamma$ হলে পূর্বধারণা থেকে $\lnot!A \in \Delta$; কিন্তু $!A \in \Delta$ হওয়ায় তা $\Delta$-র সঙ্গতির বিরুদ্ধে। অতএব প্রয়োজনমতো $\Box\lnot!A \notin \Gamma$।
+
+  ‘যখন’ দিক: $\Diamond\Delta
+  \subseteq \Gamma$ ধরি। বিপরীতক্রমে যুক্তি দিই: $!A
+  \notin \Delta$ ধরে $\Box!A \notin \Gamma$ দেখাব। $!A \notin \Delta$ হলে সর্বাধিকত্ব থেকে $\lnot!A \in \Delta$; তাই পূর্বধারণা থেকে $\Diamond\lnot!A \in \Gamma$। কিন্তু স্বাভাবিক মোডাল যুক্তিতে $\Diamond\lnot!A$ এবং $\lnot\Box !A$ সমতুল্য। শেষের সূত্রটি $\Gamma$-তে থাকলে সঙ্গতির কারণে প্রয়োজনমতো $\Box!A \notin\Gamma$।
+\end{proof}
+
+\iftag{prvBox}{%
+  \iftag{prvDiamond}{%
+% Box and Diamond are both primitive; prove prop:diamond using lem:box-iff-diamond
+
+\begin{prop}\ollabel{prop:diamond}
+  $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হলে $\Diamond !A \in
+  \Gamma$ তখনই এবং কেবল তখনই, যখন $\Diamond\Delta \subseteq
+  \Gamma$ এমন কোনো পূর্ণ $\Sigma$-সঙ্গত $\Delta$-র জন্য $!A \in \Delta$।
+\end{prop}
+
+\begin{proof}
+ধরা যাক $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত। \Dual{} ও বদ্ধতার কারণে $\Diamond!A \in
+\Gamma$ তখনই এবং কেবল তখনই, যখন $\lnot\Box\lnot !A \in \Gamma$। $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হওয়ায় \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lnot} থেকে $\lnot\Box\lnot !A \in \Gamma$ তখনই এবং কেবল তখনই, যখন $\Box\lnot !A \notin \Gamma$। \olref{prop:box} থেকে $\Box\lnot !A \notin \Gamma$ তখনই এবং কেবল তখনই, যখন $\Box^{-1}\Gamma \subseteq \Delta$ এমন কোনো পূর্ণ $\Sigma$-সঙ্গত $\Delta$-তে $\lnot!A \notin \Delta$। এমন যেকোনো~$\Delta$ বিবেচনা করি। \olref{lem:box-iff-diamond} থেকে $\Box^{-1}\Gamma \subseteq \Delta$ তখনই এবং কেবল তখনই, যখন $\Diamond\Delta \subseteq \Gamma$। আবার \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lnot} থেকে $\lnot !A \notin \Delta$ তখনই এবং কেবল তখনই, যখন $!A \in \Delta$। সুতরাং $\Diamond!A \in \Gamma$ তখনই এবং কেবল তখনই, যখন $\Diamond\Delta \subseteq \Gamma$ এমন কোনো পূর্ণ $\Sigma$-সঙ্গত $\Delta$-তে $!A \in \Delta$।
+\end{proof}
+
+}{}}{}
+
+\begin{prob}
+  দেখাও, $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হলে
+  \iftag{prvBox}{$\Diamond !A \in \Gamma$ তখনই এবং কেবল তখনই, যখন $\Box^{-1}\Gamma
+    \subseteq \Delta$ এবং $!A \in \Delta$ এমন একটি পূর্ণ $\Sigma$-সঙ্গত $\Delta$ আছে।}{$\Box !A \in
+    \Gamma$ তখনই এবং কেবল তখনই, যখন $\Box^{-1} \Gamma \subseteq \Delta$ এমন প্রতিটি পূর্ণ $\Sigma$-সঙ্গত $\Delta$-র জন্য $!A \in \Delta$।} \emph{এখানে
+    \olref[nml][com][mod]{lem:box-iff-diamond} ব্যবহার করবে না}।
+\end{prob}
+
+\end{document}

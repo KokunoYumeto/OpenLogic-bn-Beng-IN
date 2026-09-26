@@ -119,6 +119,14 @@ def mathparts_with_tarski_quotation(text):
     return mathparts(text.replace(quoted, "$T(\\text{})$")) + collections.Counter({"X": 1})
 
 
+def mathparts_with_modal_canonical_setbuilder(text):
+    """Handle the frozen nested-dollar Sigma in the canonical-world caption."""
+    nested = re.compile(r"\\text\{[^{}]*\$\\Sigma\$[^{}]*\}")
+    prepared, count = nested.subn(r"\text{}", text)
+    assert count <= 1
+    return mathparts(prepared) + collections.Counter({r"\Sigma": count})
+
+
 def controls(text):
     commands = re.findall(
         r"\\(?:ollabel|olref|oliflabeldef|olasset|olimport|cite|citep|citet|citeyear|"
@@ -165,6 +173,9 @@ for row in rows:
     elif row["unit_id"] == "OLP-0321":
         source_math = mathparts_with_tarski_quotation(source)
         target_math = mathparts_with_tarski_quotation(checked_target)
+    elif row["unit_id"] == "OLP-0446":
+        source_math = mathparts_with_modal_canonical_setbuilder(source)
+        target_math = mathparts_with_modal_canonical_setbuilder(checked_target)
     else:
         source_math = mathparts(source)
         target_math = mathparts(checked_target)
@@ -2587,6 +2598,57 @@ for row in rows:
             source_math - target_math == expected_removed
             and target_math - source_math == expected_added
         )
+    modal_completeness_math_fix = False
+    if 441 <= unit_number <= 449:
+        expected_modal_completeness_corrections = {
+            "OLP-0443": {"BN-SRC-354", "BN-SRC-355"},
+            "OLP-0445": {"BN-SRC-356", "BN-SRC-357", "BN-SRC-358"},
+            "OLP-0447": {"BN-SRC-359"},
+        }
+        assert set(documented) == expected_modal_completeness_corrections.get(
+            row["unit_id"], set()
+        )
+        expected_modal_completeness_delta = {
+            "OLP-0443": (
+                collections.Counter({
+                    r"!A\in\Gamma": 1,
+                    r"!A\lif!B\notin\Gamma": 1,
+                }),
+                collections.Counter({
+                    r"\lnot!A\in\Gamma": 1,
+                    r"!A\liff!B\notin\Gamma": 1,
+                }),
+            ),
+            "OLP-0445": (
+                collections.Counter({
+                    r"V^\Sigma)": 1,
+                    r"\Sigma\Proves!B_1\lif(!B_2\lif\cdots(!B_n\lif!A)\cdots)": 1,
+                    r"\Sigma\Proves\Box!B_1\lif(\Box!B_2\lif\cdots(\Box!B_n\lif\Box!A)\cdots)": 1,
+                    r"\Box\Box^{-1}\Gamma\Proves\Box!A": 1,
+                }),
+                collections.Counter({
+                    r"V^\Sigma": 1,
+                    r"\Sigma\Proves!B_1\lif(!B_2\lif\cdots(!B_k\lif!A)\cdots)": 1,
+                    r"\Sigma\Proves\Box!B_1\lif(\Box!B_2\lif\cdots(\Box!B_k\lif\Box!A)\cdots)": 1,
+                    r"\Box\Box^{-1}\Gamma\Proves[\Sigma]\Box!A": 1,
+                }),
+            ),
+        }
+        expected_removed, expected_added = expected_modal_completeness_delta.get(
+            row["unit_id"], (collections.Counter(), collections.Counter())
+        )
+        modal_completeness_math_fix = (
+            source_math - target_math == expected_removed
+            and target_math - source_math == expected_added
+        )
+    modal_completeness_control_fix = (
+        row["unit_id"] == "OLP-0447"
+        and "BN-SRC-359" in documented
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\olref[mod]{prop:diamond}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\olref[mod]{lem:box-iff-diamond}": 1})
+    )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -5102,6 +5164,26 @@ for row in rows:
         }
         assert all(anchor in checked_target for anchor in axioms_review_anchors[row["unit_id"]])
         tex_command_check = {"modal_axioms_systems_proofs_and_anchors_reviewed": True}
+    elif 441 <= unit_number <= 449:
+        assert modal_completeness_math_fix
+        if row["unit_id"] == "OLP-0447":
+            assert modal_completeness_control_fix
+        modal_completeness_review_anchors = {
+            "OLP-0441": (r"\olchapter{nml}{com}", r"\olimport{frame-completeness}"),
+            "OLP-0442": (r"\mSat/{M}{!A}", r"\Proves/[\Sigma] \lnot !A"),
+            "OLP-0443": (r"\ollabel{prop:ccs-properties}", r"\ollabel{prop:ccs-liff}"),
+            "OLP-0444": (r"\ollabel{thm:lindenbaum}", r"\ollabel{cor:provability-characterization}"),
+            "OLP-0445": (r"\ollabel{lem:box1}", r"\ollabel{lem:box-iff-diamond}", r"\iftag{prvBox}"),
+            "OLP-0446": (r"\mModel{M}^\Sigma", r"\Diamond\Delta' \subseteq \Delta"),
+            "OLP-0447": (r"\ollabel{prop:truthlemma}", r"\tagitem{prvDiamond}"),
+            "OLP-0448": (r"\ollabel{thm:determination}", r"\ollabel{cor:Kcomplete}"),
+            "OLP-0449": (r"\ollabel{thm:completeframeprops}", r"\ollabel{thm:generaldet}", r"\ollabel{prop:anotherfive-a}"),
+        }
+        assert all(
+            anchor in checked_target
+            for anchor in modal_completeness_review_anchors[row["unit_id"]]
+        )
+        tex_command_check = {"modal_completeness_proofs_and_anchors_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5216,6 +5298,7 @@ for row in rows:
             normal_modal_completion_math_fix,
             frame_definability_math_fix,
             axioms_systems_math_fix,
+            modal_completeness_math_fix,
             shared_audit_fix,
         )
     )
@@ -5226,6 +5309,7 @@ for row in rows:
         or representability_q_control_fix
         or second_order_metatheory_control_fix
         or lambda_syntax_control_fix
+        or modal_completeness_control_fix
     )
     checks = {
         "unit_id": row["unit_id"],

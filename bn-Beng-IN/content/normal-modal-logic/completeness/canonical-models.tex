@@ -1,0 +1,29 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: canonical-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{cmd}
+
+\olsection{প্রামাণিক মডেল}
+
+মোডাল পদ্ধতি~$\Sigma$-র \emph{প্রামাণিক মডেল} একটি নির্দিষ্ট মডেল~$\mModel{M^\Sigma}$, যার জগৎগুলি সব পূর্ণ $\Sigma$-সঙ্গত সমষ্টি। এর অভিগম্যতা-সম্বন্ধ~$R^\Sigma$ ও মানায়ন $V^\Sigma$ এমনভাবে সংজ্ঞায়িত হয় যাতে জগৎ~$\Delta$-তে সত্য !!{formula}s ঠিক $\Delta$-রই !!{formula}s হয়।
+
+\begin{defn}
+  ধরা যাক $\Sigma$ একটি স্বাভাবিক মোডাল যুক্তি। $\Sigma$-র \emph{প্রামাণিক মডেল} হলো $\mModel{M}^\Sigma = \tuple{W^\Sigma, R^\Sigma,
+    V^\Sigma}$, যেখানে:
+  \begin{enumerate}
+  \item $W^\Sigma = \Setabs{ \Delta }{\Delta \text{
+      পূর্ণ $\Sigma$-সঙ্গত} }$।
+  \item $R^\Sigma \Delta\Delta'$ তখনই এবং কেবল তখনই, যখন
+    \iftag{prvBox}{$\Box^{-1}\Delta \subseteq
+      \Delta'$}{$\Diamond\Delta' \subseteq \Delta$}।
+  \item $V^\Sigma(p) = \Setabs{\Delta}{p \in \Delta}$।
+  \end{enumerate}
+\end{defn}
+
+
+\end{document}

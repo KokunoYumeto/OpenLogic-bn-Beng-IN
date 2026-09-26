@@ -1,0 +1,47 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: completeness-K
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{cmk}
+
+\olsection{\Log{K}-এর নির্ধারণ ও পূর্ণতা}
+
+প্রামাণিক মডেল দিয়ে পূর্ণতা প্রতিষ্ঠার প্রস্তুতি এখন সম্পূর্ণ। $\Sigma$-র প্রামাণিক মডেলে সত্য !!{formula}s ঠিক $\Sigma$ থেকে !!{derivable} সূত্রগুলি—এই তথ্য থেকে পূর্ণতা অনুসৃত হয়। যে মডেলের এই ধর্ম আছে, সেটি $\Sigma$-কে \emph{নির্ধারণ করে} বলা হয়।
+
+\begin{defn}
+  কোনো মডেল $\mModel{M}$ একটি স্বাভাবিক মোডাল যুক্তি~$\Sigma$-কে তখনই \emph{নির্ধারণ করে}, যখন সব !!{formula}s~$!A$-এর জন্য $\mSat{M}{!A}$ তখনই এবং কেবল তখনই, যখন $\Sigma
+  \Proves !A$।
+\end{defn}
+
+\begin{thm}[নির্ধারণ]\ollabel{thm:determination}
+   $\mSat{M^\Sigma}{!A}$ তখনই এবং কেবল তখনই, যখন $\Sigma \Proves !A$।
+\end{thm}
+
+\begin{proof}
+  $\mSat{M^\Sigma}{!A}$ হলে প্রতিটি পূর্ণ $\Sigma$-সঙ্গত $\Delta$-র জন্য $\mSat{M^\Sigma}{!A}[\Delta]$। তাই সত্যতা-সহায়ক উপপাদ্য থেকে প্রতিটি পূর্ণ $\Sigma$-সঙ্গত $\Delta$-র জন্য $!A \in
+  \Delta$; সুতরাং \olref[lin]{cor:provability-characterization} অনুযায়ী ($\Gamma =
+  \emptyset$ রেখে) $\Sigma \Proves !A$।
+
+  বিপরীতক্রমে, $\Sigma \Proves !A$ হলে
+  \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-closed} অনুযায়ী প্রতিটি পূর্ণ $\Sigma$-সঙ্গত $\Delta$-তে~$!A$ আছে। তাই সত্যতা-সহায়ক উপপাদ্য থেকে প্রত্যেক~$\Delta \in
+  W^\Sigma$-র জন্য $\mSat{M^\Sigma}{!A}[\Delta]$; অর্থাৎ $\mSat{M^\Sigma}{!A}$।
+\end{proof}
+
+\Log{K}-এর প্রামাণিক মডেল~\Log{K}-কে নির্ধারণ করে। তাই অবিলম্বে অনুষঙ্গ হিসেবে~\Log{K}-এর পূর্ণতা পাই:
+
+\begin{cor}\ollabel{cor:Kcomplete}
+  মৌলিক মোডাল যুক্তি \Log{K} সব মডেলের শ্রেণির সাপেক্ষে পূর্ণ; অর্থাৎ $\Entails !A$ হলে $\Log{K}
+  \Proves !A$।
+\end{cor}
+
+\begin{proof}
+  বিপরীতক্রমে, $\Log{K} \Proves/ !A$ হলে নির্ধারণ উপপাদ্য থেকে $\mSat/{M^{\Log{K}}}{!A}$; ফলে $!A$ বৈধ নয়।
+\end{proof}
+
+মডেলের কোনো শ্রেণির সাপেক্ষে পদ্ধতি $\Sigma$-র পূর্ণতার সাধারণ ক্ষেত্রে—যেমন, সব প্রতিবিম্বী, প্রতিসম ও পরিযায়ী মডেলের শ্রেণির সাপেক্ষে \Log{KTB4}-এর ক্ষেত্রে—শুধু নির্ধারণ যথেষ্ট নয়। আরও দেখাতে হবে, $\Sigma$-র প্রামাণিক মডেলটি ওই শ্রেণির সদস্য। প্রামাণিক মডেলের নির্মাণ থেকে এটি স্পষ্টভাবে অনুসৃত হয় না; এমনকি সব সময় সত্যও নয়!
+
+\end{document}

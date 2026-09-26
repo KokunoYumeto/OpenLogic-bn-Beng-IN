@@ -1,0 +1,84 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: complete-consistent-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{ccs}
+
+\olsection{পূর্ণ $\Sigma$-সঙ্গত সমষ্টি}
+
+ধরা যাক $\Sigma$ মোডাল !!{formula}s-এর একটি সমষ্টি—এগুলিকে একটি স্বাভাবিক মোডাল যুক্তির স্বতঃসিদ্ধ বা সংজ্ঞায়ক নীতি ভাবতে পারো। সমষ্টি $\Gamma$ তখনই এবং কেবল তখনই $\Sigma$-সঙ্গত, যখন $\Gamma \Proves/[\Sigma] \lfalse$; অর্থাৎ $\Sigma$ থেকে~$!A_1 \lif (!A_2 \lif \cdots (!A_n \lif \lfalse)\dots)$-এর কোনো !!{derivation} নেই, যেখানে প্রতিটি $!A_i \in \Gamma$। আমরা এমন একটি ‘প্রামাণিক’ মডেল গড়ব যার প্রতিটি জগৎ বিশেষ ধরনের $\Sigma$-সঙ্গত সমষ্টি: শুধু $\Sigma$-সঙ্গতই নয়, বরং সর্বাধিক সঙ্গত—এই অর্থে যে প্রতিটি মোডাল !!{formula}-এর সত্যমান নির্ধারিত হয়: প্রত্যেক $!A$-এর জন্য হয় $!A \in \Gamma$, নয়তো $\lnot !A \in \Gamma$।
+
+\begin{defn}
+  সমষ্টি $\Gamma$ \emph{পূর্ণ $\Sigma$-সঙ্গত} তখনই এবং কেবল তখনই, যখন সেটি $\Sigma$-সঙ্গত এবং প্রত্যেক~$!A$-এর জন্য হয় $!A \in \Gamma$, নয়তো $\lnot !A \in \Gamma$।
+\end{defn}
+
+পূর্ণ $\Sigma$-সঙ্গত সমষ্টি $\Gamma$-র কয়েকটি কার্যকর ধর্ম আছে। প্রথমত, এটি নিষ্পাদনের অধীনে বদ্ধ: $\Gamma \Proves[\Sigma] !A$ হলে $!A \in \Gamma$। বিশেষত, !!a{formula}~$!A \in \Sigma$-র প্রতিটি উদাহরণও $\in \Gamma$। তা ছাড়া $\Gamma$-তে সদস্যপদ প্রতিজ্ঞামূলক যোজকগুলির সত্যতার শর্তকে প্রতিফলিত করে। ‘প্রামাণিক মডেল’ সংজ্ঞায়িত করার সময় এটি গুরুত্বপূর্ণ হবে।
+
+\begin{prop}\ollabel{prop:ccs-properties}
+  ধরা যাক $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত। তবে:
+  \begin{enumerate}
+  \item \ollabel{prop:ccs-closed}%
+    $\Gamma$ $\Sigma$-তে নিষ্পাদনের অধীনে বদ্ধ।
+  \item \ollabel{prop:ccs-sigma}%
+    $\Sigma \subseteq \Gamma$।
+  \tagitem{prvFalse}{\ollabel{prop:ccs-lfalse}%
+    $\lfalse \notin \Gamma$}{}
+  \tagitem{prvTrue}{\ollabel{prop:ccs-ltrue}%
+    $\ltrue \in \Gamma$}{}
+  \item \ollabel{prop:ccs-lnot}%
+    $\lnot!A \in \Gamma$ তখনই এবং কেবল তখনই, যখন $!A \notin
+    \Gamma$।
+  \tagitem{prvAnd}{\ollabel{prop:ccs-land}%
+    $!A \land !B \in \Gamma$ তখনই এবং কেবল তখনই, যখন $!A \in \Gamma$ এবং $!B \in \Gamma$}{}
+  \tagitem{prvOr}{\ollabel{prop:ccs-lor}%
+    $!A \lor !B \in \Gamma$ তখনই এবং কেবল তখনই, যখন $!A \in \Gamma$ অথবা $!B \in \Gamma$}{}
+  \tagitem{prvIf}{\ollabel{prop:ccs-lif}%
+    $!A \lif !B \in \Gamma$ তখনই এবং কেবল তখনই, যখন $!A \notin \Gamma$ অথবা $!B \in \Gamma$}{}
+  \tagitem{prvIff}{\ollabel{prop:ccs-liff}%
+    $!A \liff !B \in \Gamma$ তখনই এবং কেবল তখনই, যখন হয় $!A \in \Gamma$ এবং $!B \in \Gamma$, অথবা $!A \notin \Gamma$ এবং $!B \notin \Gamma$}{}
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item ধরা যাক $\Gamma \Proves[\Sigma] !A$, কিন্তু $!A \notin
+    \Gamma$। $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হওয়ায় $\lnot!A \in \Gamma$। তাহলে $\Gamma$ অসঙ্গত হবে, কারণ $!A, \lnot !A \Proves[\Sigma] \lfalse$।
+
+  \item $!A \in \Sigma$ হলে $\Gamma \Proves[\Sigma] !A$; নিষ্পাদনের অধীনে বদ্ধতার কারণে $!A \in \Gamma$; অর্থাৎ ঘটনা~\olref{prop:ccs-closed}।
+
+  \tagitem{prvFalse}{$\lfalse \in \Gamma$ হলে $\Gamma
+    \Proves[\Sigma] \lfalse$; তাহলে $\Gamma$ $\Sigma$-অসঙ্গত হবে।}{}
+
+  \tagitem{prvTrue}{$\Gamma \Proves[\Sigma] \ltrue$; তাই নিষ্পাদনের অধীনে বদ্ধতার কারণে, অর্থাৎ ঘটনা~\olref{prop:ccs-closed} থেকে, $\ltrue \in \Gamma$।}{}
+
+\item $\lnot!A \in \Gamma$ হলে সঙ্গতির কারণে $!A \notin
+    \Gamma$; আর $!A \notin \Gamma$ হলে $\lnot !A \in \Gamma$, যেহেতু $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত। % BN-SRC-354: frozen source repeats !A in this conclusion; its completeness argument requires the negation.
+
+  \tagitem{prvAnd}{\iftag{probAnd}{অনুশীলনী।}{ধরা যাক $!A \land !B \in
+      \Gamma$। যেহেতু $(!A \land !B) \lif !A$ একটি সর্বতঃসত্য সূত্রের উদাহরণ, নিষ্পাদনের অধীনে বদ্ধতা—অর্থাৎ ঘটনা~\olref{prop:ccs-closed}—থেকে $!A \in \Gamma$। একইভাবে $!B \in \Gamma$। অন্যদিকে, $!A \in \Gamma$ এবং $!B \in \Gamma$ উভয়ই ধরি। তাহলে নিষ্পাদনের অধীনে বদ্ধতা থেকে $(!A \land !B) \in \Gamma$; কারণ $!A \lif (!B \lif (!A \land !B))$ একটি সর্বতঃসত্য সূত্রের উদাহরণ।}}{}
+
+  \tagitem{prvOr}{\iftag{probOr}{অনুশীলনী।}{ধরা যাক $!A \lor !B \in
+      \Gamma$, অথচ $!A \notin \Gamma$ এবং $!B \notin \Gamma$। $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হওয়ায় $\lnot!A \in \Gamma$ এবং $\lnot !B \in \Gamma$। তাহলে $\lnot(!A \lor !B) \in \Gamma$; কারণ $\lnot !A \lif (\lnot !B \lif \lnot (!A \lor !B))$ একটি সর্বতঃসত্য সূত্রের উদাহরণ। এতে $\Gamma$ $\Sigma$-অসঙ্গত হবে—স্ববিরোধ।}}{}
+
+  \tagitem{prvIf}{\iftag{probIf}{অনুশীলনী।}{ধরা যাক $!A \lif !B \in
+      \Gamma$ এবং $!A \in \Gamma$; তাহলে $\Gamma \Proves[\Sigma] !B$, ফলে নিষ্পাদনের অধীনে বদ্ধতা থেকে $!B \in \Gamma$। বিপরীতক্রমে, $!A \lif !B \notin \Gamma$ হলে $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হওয়ায় $\lnot (!A \lif !B) \in \Gamma$। যেহেতু $\lnot(!A \lif !B) \lif !A$ একটি সর্বতঃসত্য সূত্রের উদাহরণ, নিষ্পাদনের অধীনে বদ্ধতা থেকে $!A \in \Gamma$। একইভাবে $\lnot(!A \lif !B) \lif \lnot !B$ একটি সর্বতঃসত্য সূত্রের উদাহরণ হওয়ায় $\lnot !B \in \Gamma$। তখন $\Gamma$ $\Sigma$-সঙ্গত হওয়ার কারণে $!B \notin \Gamma$।}}{}
+
+  \tagitem{prvIff}{\iftag{probIff}{অনুশীলনী।}{ধরা যাক $!A \liff !B \in
+      \Gamma$। $!A \in \Gamma$ হলে $!B \in \Gamma$; কারণ $(!A \liff !B) \lif (!A \lif !B)$ একটি সর্বতঃসত্য সূত্রের উদাহরণ। একইভাবে $!B \in \Gamma$ হলে $!A \in \Gamma$। অতএব হয় $!A \in \Gamma$ এবং $!B \in \Gamma$ উভয়ই, নয়তো $!A \in \Gamma$ এবং $!B \in \Gamma$—কোনোটিই নয়।
+
+      বিপরীতক্রমে, $!A \liff !B \notin \Gamma$ ধরি। % BN-SRC-355: frozen source says lif here, but the following negated liff and contrapositive require liff.
+      $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হওয়ায় $\lnot (!A \liff !B) \in
+      \Gamma$। যেহেতু $\lnot(!A \liff !B) \lif (!A \lif \lnot !B)$ একটি সর্বতঃসত্য সূত্রের উদাহরণ, $!A \in \Gamma$ হলে $\lnot !B \in \Gamma$; আর $\Gamma$ $\Sigma$-সঙ্গত হওয়ায় $!B \notin
+      \Gamma$। একইভাবে $!B \in \Gamma$ হলে $!A \notin \Gamma$। অতএব $!A \in \Gamma$ ও $!B \in \Gamma$ উভয়ই নয়, আবার $!A \notin \Gamma$ ও $!B \notin \Gamma$ উভয়ও নয়।}}{}
+  \end{enumerate}
+\end{proof}
+
+\begin{probtag}{probAnd,probOr,probIf,probIff}
+  \olref[nml][com][ccs]{prop:ccs-properties}-এর প্রমাণ সম্পূর্ণ করো।
+\end{probtag}
+
+\end{document}

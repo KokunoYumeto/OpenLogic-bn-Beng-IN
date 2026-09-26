@@ -1,6 +1,6 @@
 {
   "schema": "openlogic-bn-draft-status/1",
-  "as_of_date": "2026-09-25",
+  "as_of_date": "2026-09-26",
   "complete": false,
   "source": {
     "authority": "OpenLogicProject/OpenLogic",
@@ -450,13 +450,22 @@
       "OLP-0438",
       "OLP-0439",
       "OLP-0440",
+      "OLP-0441",
+      "OLP-0442",
+      "OLP-0443",
+      "OLP-0444",
+      "OLP-0445",
+      "OLP-0446",
+      "OLP-0447",
+      "OLP-0448",
+      "OLP-0449",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 439,
-    "untranslated_count": 283,
-    "chapter_state": "সেট, সম্পর্ক, অপেক্ষক, সমষ্টির আকার, পাটিগণিতীকরণ ও অসীম সমষ্টির উৎস-অধ্যায়গুলি; বচনমূলক যুক্তিবিদ্যার গঠন ও অর্থতত্ত্ব; প্রমাণপদ্ধতি, সিকোয়েন্ট ক্যালকুলাস, স্বাভাবিক অবরোহণ, ট্যাবলো, স্বতঃসিদ্ধিক অবরোহণ ও পূর্ণতা; প্রথম-ক্রমের যুক্তিবিদ্যা ও মডেল তত্ত্বের চিহ্নিত অধ্যায়গুলি; গণনযোগ্যতা, টিউরিং যন্ত্র, অসম্পূর্ণতা, দ্বিতীয়-ক্রমের যুক্তিবিদ্যা, ল্যাম্বডা ক্যালকুলাস ও বহুমানী যুক্তিবিদ্যার চিহ্নিত অধ্যায়গুলি; এবং স্বাভাবিক মোডাল যুক্তিবিদ্যার গঠন ও অর্থতত্ত্ব, কাঠামো-সংজ্ঞায়নযোগ্যতা ও স্বতঃসিদ্ধ-পদ্ধতি অধ্যায় অনূদিত। সমষ্টির আকারের দুটি সম্পাদকীয় বিকল্প পৃথক আছে। পরের মোডাল অধ্যায়গুলি এখনও অনূদিত নয়।",
-    "reader_state": "ঐতিহাসিক v0.2.0 পাঠকসংস্করণে ঠিক ১৮টি ইউনিট আছে। বর্তমান প্রকাশিত সমষ্টিগত HTML/EPUB পাঠকসংস্করণে ২৯৯টি ইউনিট আছে। যাচাইকৃত স্থানীয় খসড়া ও নামহীনভাবে পুনর্যাচাইকৃত প্রকাশ্য উৎস-চেকপয়েন্টে ৪৩৯টি ইউনিট; এর মধ্যে ১৪০টি এখনও সমষ্টিগত পাঠকসংস্করণে যুক্ত হয়নি। ২৮৩টি উৎস ফাইল অনূদিত হয়নি।"
+    "translated_count": 448,
+    "untranslated_count": 274,
+    "chapter_state": "সেট, সম্পর্ক, অপেক্ষক, সমষ্টির আকার, পাটিগণিতীকরণ ও অসীম সমষ্টির উৎস-অধ্যায়গুলি; বচনমূলক যুক্তিবিদ্যার গঠন ও অর্থতত্ত্ব; প্রমাণপদ্ধতি, সিকোয়েন্ট ক্যালকুলাস, স্বাভাবিক অবরোহণ, ট্যাবলো, স্বতঃসিদ্ধিক অবরোহণ ও পূর্ণতা; প্রথম-ক্রমের যুক্তিবিদ্যা ও মডেল তত্ত্বের চিহ্নিত অধ্যায়গুলি; গণনযোগ্যতা, টিউরিং যন্ত্র, অসম্পূর্ণতা, দ্বিতীয়-ক্রমের যুক্তিবিদ্যা, ল্যাম্বডা ক্যালকুলাস ও বহুমানী যুক্তিবিদ্যার চিহ্নিত অধ্যায়গুলি; এবং স্বাভাবিক মোডাল যুক্তিবিদ্যার গঠন ও অর্থতত্ত্ব, কাঠামো-সংজ্ঞায়নযোগ্যতা, স্বতঃসিদ্ধ-পদ্ধতি এবং পূর্ণতা ও প্রামাণিক মডেল অধ্যায় অনূদিত। সমষ্টির আকারের দুটি সম্পাদকীয় বিকল্প পৃথক আছে। পরের মোডাল অধ্যায়গুলি এখনও অনূদিত নয়।",
+    "reader_state": "ঐতিহাসিক v0.2.0 পাঠকসংস্করণে ঠিক ১৮টি ইউনিট আছে। বর্তমান প্রকাশিত সমষ্টিগত HTML/EPUB পাঠকসংস্করণে ২৯৯টি ইউনিট আছে। যাচাইকৃত স্থানীয় খসড়ায় ৪৪৮টি ইউনিট; এর মধ্যে ১৪৯টি এখনও সমষ্টিগত পাঠকসংস্করণে যুক্ত হয়নি। সর্বশেষ নামহীনভাবে পুনর্যাচাইকৃত প্রকাশ্য উৎস-চেকপয়েন্ট ৪৩৯ ইউনিটের। ২৭৪টি উৎস ফাইল অনূদিত হয়নি।"
   },
   "last_verified_public_release": {
     "version": "0.3.0",
@@ -7866,6 +7875,150 @@
         "target_sha256": "6d0972a941594c44c783b147749556f62de3c72b742b86b06295c59e44bc3b26"
       },
       {
+        "unit_id": "OLP-0441",
+        "source_blocks": 3,
+        "target_blocks": 3,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": {
+          "modal_completeness_proofs_and_anchors_reviewed": true
+        },
+        "target_sha256": "5ac910682f9cea30e60e920f4a91bd7edced491a5ad138944c74f319aeb3b8f4"
+      },
+      {
+        "unit_id": "OLP-0442",
+        "source_blocks": 7,
+        "target_blocks": 7,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": {
+          "modal_completeness_proofs_and_anchors_reviewed": true
+        },
+        "target_sha256": "b49da64abb459fb8ae550f1ae86456fa3b1c6467d7b6b0e1c36c4f836b9d5996"
+      },
+      {
+        "unit_id": "OLP-0443",
+        "source_blocks": 17,
+        "target_blocks": 17,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-354",
+          "BN-SRC-355"
+        ],
+        "tex_command_check": {
+          "modal_completeness_proofs_and_anchors_reviewed": true
+        },
+        "target_sha256": "93500911fc099716abde4c281377a2dc8c1dde64dfdcf01265546e409b86bf38"
+      },
+      {
+        "unit_id": "OLP-0444",
+        "source_blocks": 12,
+        "target_blocks": 12,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": {
+          "modal_completeness_proofs_and_anchors_reviewed": true
+        },
+        "target_sha256": "7cb4196a9500c8a99e51490ca4380783bdbd50269fd5799ec09a37f26aba4326"
+      },
+      {
+        "unit_id": "OLP-0445",
+        "source_blocks": 27,
+        "target_blocks": 27,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-356",
+          "BN-SRC-357",
+          "BN-SRC-358"
+        ],
+        "tex_command_check": {
+          "modal_completeness_proofs_and_anchors_reviewed": true
+        },
+        "target_sha256": "1fdb28b910e6c8f0fee11bbd5e0c7c63d231f36fd11783c5b3c03a491fd477af"
+      },
+      {
+        "unit_id": "OLP-0446",
+        "source_blocks": 4,
+        "target_blocks": 4,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": {
+          "modal_completeness_proofs_and_anchors_reviewed": true
+        },
+        "target_sha256": "643f57c8feb1beccfaf2c63ebb0520bc5779e6bb6ef4f878b8a5867ef3f6e62d"
+      },
+      {
+        "unit_id": "OLP-0447",
+        "source_blocks": 17,
+        "target_blocks": 17,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-359"
+        ],
+        "tex_command_check": {
+          "modal_completeness_proofs_and_anchors_reviewed": true
+        },
+        "target_sha256": "aaacc124ae7e1dcc1c142317b724c6144591338301c0655b7232875844678782"
+      },
+      {
+        "unit_id": "OLP-0448",
+        "source_blocks": 11,
+        "target_blocks": 11,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": {
+          "modal_completeness_proofs_and_anchors_reviewed": true
+        },
+        "target_sha256": "9b948963cb534f1ed100d23caf908b68efd6ee68086ce4add11ac35cd85f80e4"
+      },
+      {
+        "unit_id": "OLP-0449",
+        "source_blocks": 19,
+        "target_blocks": 19,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": {
+          "modal_completeness_proofs_and_anchors_reviewed": true
+        },
+        "target_sha256": "a3e88df5aa02d60ff697a332de09642885cf6a0edb29ca63a9d1b9b3f509e420"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -7894,12 +8047,12 @@
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "e25c27f18fc2224432ae129a729fa1ec358d1177cb3ccce311b66a16ea007409"
+      "sha256": "9fb2d6975589f1dd74c5a66a257246f82abc493c8ddf7ea992712c113540fa23"
     },
-    "segments": 4936,
-    "translated_segments": 4172,
+    "segments": 5053,
+    "translated_segments": 4277,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "a6572ec20201480a4807ea7a3a8518c47f126f829356aa17287e67cf71e355f1",
+    "segment_index_sha256": "04c108eee2a89122dbd12f4842269a3a89a910d4a1a507b73024e598f61ebfdd",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -8108,6 +8261,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_MODAL_AXIOMS_SYSTEMS.md",
         "sha256": "c170a7be8724b23635d9b16e204ef2684ba15f5c5c17c401c13d5a629be855fe"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_MODAL_COMPLETENESS.md",
+        "sha256": "80f8f991b04d8e7079770bbd54816bbbc75104a67ac261b875f87f779f26e080"
       }
     ],
     "shared_source_audit": {
@@ -8122,7 +8279,7 @@
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "4200c4a36485aec3dfc64b70d5b38d53fef10a4123429c16b6e90233e0c61bd9",
+      "reconciliation_sha256": "bab449f5bd90f89525fbcbb8d09dace4c31944b2885c445cd2e6eb1bb3f93565",
       "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
       "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
       "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
@@ -8140,9 +8297,9 @@
     }
   },
   "source_corrections": {
-    "count": 360,
+    "count": 366,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "1611b963ce3802622f90b315c3c39e42d2db45ef0e2f4c0e1d560d1b7fca6992",
+    "sha256": "919f59d123004c6b2a4cd1cfbdcfa49db6cac1bebc0d36f7b1650806cecafa0f",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -8503,7 +8660,13 @@
       "BN-SRC-350",
       "BN-SRC-351",
       "BN-SRC-352",
-      "BN-SRC-353"
+      "BN-SRC-353",
+      "BN-SRC-354",
+      "BN-SRC-355",
+      "BN-SRC-356",
+      "BN-SRC-357",
+      "BN-SRC-358",
+      "BN-SRC-359"
     ]
   },
   "source_normalizations": {
@@ -8523,15 +8686,15 @@
     "classification": "render-equivalent TikZ endpoint normalizations; no mathematical or rendered-machine correction"
   },
   "translation_decisions": {
-    "count": 332,
-    "provisional_open": 313,
+    "count": 337,
+    "provisional_open": 318,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "3afae4e9b8cbb98ffc222f34b01d1212bb9d862a65f33be382faed089c9bad14",
+    "sha256": "f85c4fd4a014f3bba414c4c8f14a7439008f97f9286279412cee26c7904ecd1e",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 27555,
+    "occurrence_count": 27936,
     "occurrence_schema": "openlogic-bn-translation-decision/3",
     "occurrence_join": "Join source_segment_id to evidence/DRAFT_SEGMENT_CANON_USE.jsonl for exact source and target paths, block spans and SHA-256; read the frozen source block and verify its hash for exact wording.",
     "layout_readback": {
@@ -8558,5 +8721,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "Historical Functions-era TeX candidate record: all three bounded mutex acquisitions timed out without launching TeX. The verified public semantic HTML/EPUB reader is recorded above; no TeX-built PDF is claimed."
   },
-  "remaining": "২৯৭টি উৎস ফাইলের অনুবাদ, পরের সমষ্টিগত পাঠকসংস্করণ, সম্পূর্ণ ৭২২-ইউনিট QA এবং চূড়ান্ত প্রকাশ্য যাচাই বাকি। স্থানীয় যাচাইকৃত খসড়া ও সর্বশেষ নামহীনভাবে যাচাইকৃত GitHub উৎস-চেকপয়েন্টে ৪২৫টি ইউনিট। GitHub ও Zenodo-তে যাচাইকৃত পাঠকসংস্করণ এখনও ২৯৯ ইউনিটের।"
+  "remaining": "২৭৪টি উৎস ফাইলের অনুবাদ, পরের সমষ্টিগত পাঠকসংস্করণ, সম্পূর্ণ ৭২২-ইউনিট QA এবং চূড়ান্ত প্রকাশ্য যাচাই বাকি। স্থানীয় যাচাইকৃত খসড়ায় ৪৪৮টি ইউনিট; সর্বশেষ নামহীনভাবে যাচাইকৃত GitHub উৎস-চেকপয়েন্টে ৪৩৯টি। GitHub ও Zenodo-তে যাচাইকৃত পাঠকসংস্করণ এখনও ২৯৯ ইউনিটের।"
 }

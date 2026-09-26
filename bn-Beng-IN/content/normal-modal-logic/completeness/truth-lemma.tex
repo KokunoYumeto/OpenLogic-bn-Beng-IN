@@ -1,0 +1,109 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: truth-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{tru}
+
+\olsection{সত্যতা-সহায়ক উপপাদ্য}
+
+প্রামাণিক মডেল~$\mModel{M^\Sigma}$ এমনভাবে সংজ্ঞায়িত যে $\mSat{M^\Sigma}{!A}[\Delta]$ তখনই এবং কেবল তখনই, যখন $!A \in \Delta$। !!{propositional
+variable}s-এর ক্ষেত্রে $V^\Sigma$-র সংজ্ঞা থেকেই এটি সরাসরি পাওয়া যায়। তবে সমতুল্যতাটি সব !!{formula}s-এর জন্যই সত্য, তা যাচাই করতে হবে। আমরা আবেশে তা করি। আবেশধাপে প্রতিজ্ঞামূলক যোজকযুক্ত !!{formula}s-এর জন্য সমতুল্যতাটি প্রমাণ করতে হয় (সেখানে \olref[ccs]{prop:ccs-properties} ব্যবহার করি), আর মোডাল অপারেটরযুক্ত সূত্রের জন্য \olref[mod]{sec}-এর ফলগুলি ব্যবহার করি।
+
+\begin{prop}[সত্যতা-সহায়ক উপপাদ্য]
+  \ollabel{prop:truthlemma}
+  প্রতিটি !!{formula}~$!A$-এর জন্য $\mSat{M^\Sigma}{!A}[\Delta]$ তখনই এবং কেবল তখনই, যখন $!A \in \Delta$।
+\end{prop}
+
+\begin{proof}
+  $!A$-এর ওপর আবেশ করি।
+  \begin{enumerate}
+    \tagitem{prvFalse}{\indcase{!A}{\lfalse}{\olref[syn][trw]{defn:mmodels} অনুযায়ী $\mSat/{M^\Sigma}{\lfalse}[\Delta]$,
+        এবং \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lfalse} অনুযায়ী $\lfalse \notin \Delta$।}}{}
+
+    \tagitem{prvTrue}{\indcase{!A}{\ltrue}{\olref[syn][trw]{defn:mmodels} অনুযায়ী $\mSat{M^\Sigma}{\ltrue}[\Delta]$,
+        এবং \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-ltrue} অনুযায়ী $\ltrue \in \Delta$।}}{}
+
+    \item \indcase{!A}{p}{\olref[syn][trw]{defn:mmodels} অনুযায়ী $\mSat{M^\Sigma}{p}[\Delta]$ তখনই এবং কেবল তখনই, যখন $\Delta \in
+      V^\Sigma(p)$। আবার~$V^\Sigma$-র সংজ্ঞা অনুযায়ী $\Delta
+      \in V^\Sigma(p)$ তখনই এবং কেবল তখনই, যখন $p \in \Delta$।}
+
+    \tagitem{prvNot}{\indcase{!A}{\lnot !B}{%
+        \iftag{probNot}{অনুশীলনী।}{$\mSat{M^\Sigma}{\lnot !B}[\Delta]$
+          তখনই এবং কেবল তখনই, যখন $\mSat/{M^\Sigma}{!B}[\Delta]$
+          (\olref[syn][trw]{defn:mmodels}); আবেশের পূর্বধারণা থেকে এটি তখনই এবং কেবল তখনই, যখন $!B \notin \Delta$; আর \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lnot} থেকে এটি তখনই এবং কেবল তখনই, যখন $\lnot !B \in \Delta$।}}}{}
+
+    \tagitem{prvAnd}{\indcase{!A}{!B \land !C}{%
+        \iftag{probAnd}{অনুশীলনী।}{$\mSat{M^\Sigma}{!B \land
+            !C}[\Delta]$ তখনই এবং কেবল তখনই, যখন $\mSat{M^\Sigma}{!B}[\Delta]$ এবং
+          $\mSat{M^\Sigma}{!C}[\Delta]$
+          (\olref[syn][trw]{defn:mmodels}); আবেশের পূর্বধারণা থেকে এটি তখনই এবং কেবল তখনই, যখন $!B \in \Delta$ এবং $!C
+          \in \Delta$; আর \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-land} থেকে এটি তখনই এবং কেবল তখনই, যখন $!B \land !C \in
+          \Delta$।}}}{}
+
+    \tagitem{prvOr}{\indcase{!A}{!B \lor !C}{%
+        \iftag{probOr}{অনুশীলনী।}{$\mSat{M^\Sigma}{!B \lor
+            !C}[\Delta]$ তখনই এবং কেবল তখনই, যখন $\mSat{M^\Sigma}{!B}[\Delta]$ অথবা
+          $\mSat{M^\Sigma}{!C}[\Delta]$
+          (\olref[syn][trw]{defn:mmodels}); আবেশের পূর্বধারণা থেকে এটি তখনই এবং কেবল তখনই, যখন $!B \in \Delta$ অথবা $!C
+          \in \Delta$; আর \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lor} থেকে এটি তখনই এবং কেবল তখনই, যখন $!B \lor !C \in
+          \Delta$।}}}{}
+
+    \tagitem{prvIf}{\indcase{!A}{!B \lif !C}{%
+        \iftag{probIf}{অনুশীলনী।}{$\mSat{M^\Sigma}{!B \lif
+            !C}[\Delta]$ তখনই এবং কেবল তখনই, যখন $\mSat/{M^\Sigma}{!B}[\Delta]$ অথবা
+          $\mSat{M^\Sigma}{!C}[\Delta]$
+          (\olref[syn][trw]{defn:mmodels}); আবেশের পূর্বধারণা থেকে এটি তখনই এবং কেবল তখনই, যখন $!B \notin \Delta$ অথবা $!C
+          \in \Delta$; আর \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lif} থেকে এটি তখনই এবং কেবল তখনই, যখন $!B \lif !C
+          \in \Delta$।}}}{}
+
+    \tagitem{prvIff}{\indcase{!A}{!B \liff !C}{%
+        \iftag{probIff}{অনুশীলনী।}{$\mSat{M^\Sigma}{!B \liff
+            !C}[\Delta]$ তখনই এবং কেবল তখনই, যখন হয় $\mSat{M^\Sigma}{!B}[\Delta]$ এবং
+          $\mSat{M^\Sigma}{!C}[\Delta]$ উভয়ই, অথবা
+          $\mSat/{M^\Sigma}{!B}[\Delta]$ এবং
+          $\mSat/{M^\Sigma}{!C}[\Delta]$ উভয়ই
+          (\olref[syn][trw]{defn:mmodels}); আবেশের পূর্বধারণা থেকে এটি তখনই এবং কেবল তখনই, যখন হয় $!B \in \Delta$
+          এবং $!C \in \Delta$ উভয়ই, অথবা $!B \notin \Delta$ এবং $!C \notin
+          \Delta$ উভয়ই; আর \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-liff} থেকে এটি তখনই এবং কেবল তখনই, যখন $!B \liff !C \in
+          \Delta$।}}}{}
+
+    \tagitem{prvBox}{\indcase{!A}{\Box !B}{%
+        \iftag{probBox}{অনুশীলনী।}{প্রথমে ধরি,
+          $\mSat{M^\Sigma}{\Box !B}[\Delta]$।
+          \olref[syn][trw]{defn:mmodels} অনুযায়ী, $R^\Sigma \Delta\Delta'$ এমন প্রতিটি $\Delta'$-তে
+          $\mSat{M^\Sigma}{!B}[\Delta']$। আবেশের পূর্বধারণা থেকে $R^\Sigma \Delta\Delta'$ এমন প্রতিটি $\Delta'$-তে $!B \in
+          \Delta'$। $R^\Sigma$-র সংজ্ঞা অনুযায়ী, $\Box^{-1} \Delta \subseteq \Delta'$ এমন প্রতিটি $\Delta'$-তে $!B \in
+          \Delta'$। তাই \olref[mod]{prop:box} থেকে $\Box !B \in
+          \Delta$।
+
+          এবার $\Box !B \in \Delta$ ধরি। $R^\Sigma \Delta\Delta'$, অর্থাৎ $\Box^{-1}\Delta
+          \subseteq \Delta'$, এমন যেকোনো $\Delta' \in W^\Sigma$ নিই। $\Box !B \in \Delta$ হওয়ায় $!B \in
+          \Box^{-1} \Delta$। ফলে $!B \in \Delta'$। আবেশের পূর্বধারণা থেকে $\mSat{M^\Sigma}{!B}[\Delta']$। $R^\Sigma \Delta\Delta'$ এমন $\Delta'$ যেকোনোটি হওয়ায় $R^\Sigma
+          \Delta\Delta'$ এমন সব $\Delta' \in W^\Sigma$-তে $\mSat{M^\Sigma}{!B}[\Delta']$। অতএব \olref[syn][trw]{defn:mmodels} থেকে $\mSat{M^\Sigma}{\Box
+            !B}[\Delta]$।}}}{}
+
+    \tagitem{prvDiamond}{\indcase{!A}{\Diamond !B}{%
+        \iftag{probDiamond}{অনুশীলনী।}{প্রথমে ধরি,
+          $\mSat{M^\Sigma}{\Diamond !B}[\Delta]$।
+          \olref[syn][trw]{defn:mmodels} অনুযায়ী, $R^\Sigma \Delta\Delta'$ এমন কোনো $\Delta'$-তে $\mSat{M^\Sigma}{!B}[\Delta']$। আবেশের পূর্বধারণা থেকে $R^\Sigma \Delta\Delta'$ এমন কোনো $\Delta'$-তে $!B \in \Delta'$। $R^\Sigma$-র সংজ্ঞা অনুযায়ী,\iftag{prvBox}{ $\Box^{-1} \Delta \subseteq \Delta'$ এমন কোনো $\Delta'$-তে $!B \in \Delta'$। \olref[mod]{lem:box-iff-diamond} থেকে,}{} $\Diamond \Delta' \subseteq \Delta$ এমন কোনো $\Delta'$-তে $!B \in
+          \Delta'$। যেহেতু $!B \in \Delta'$, সেহেতু $\Diamond !B \in \Diamond
+          \Delta'$; তাই $\Diamond !B \in \Delta$। % BN-SRC-359: the equivalence lemma, not prop:diamond, converts Box-inverse inclusion to Diamond inclusion.
+
+          এবার $\Diamond !B \in \Delta$ ধরি।
+          \olref[mod]{prop:diamond} অনুযায়ী, এমন একটি পূর্ণ $\Sigma$-সঙ্গত $\Delta' \in W^\Sigma$ আছে যাতে $\Diamond \Delta' \subseteq \Delta$ এবং $!B \in
+          \Delta'$।\iftag{prvBox}{ \olref[mod]{lem:box-iff-diamond} থেকে এমন একটি $\Delta' \in W^\Sigma$ আছে যাতে $\Box^{-1}
+            \Delta \subseteq \Delta'$ এবং $!B \in \Delta'$।}{} $R^\Sigma$-র সংজ্ঞা অনুযায়ী $R^\Sigma \Delta\Delta'$। অতএব এমন একটি $\Delta' \in W^\Sigma$ আছে যাতে $R^\Sigma
+          \Delta\Delta'$ এবং $!B \in \Delta'$। আবেশের পূর্বধারণা ও \olref[syn][trw]{defn:mmodels} থেকে $\mSat{M^\Sigma}{\Diamond
+            !B}[\Delta]$।}}}{}
+  \end{enumerate}
+\end{proof}
+
+\begin{probtag}{probFalse,probTrue,probNot,proband,probOr,probIf,probIff,probBox,probDiamond}
+  \olref[nml][com][tru]{prop:truthlemma}-এর প্রমাণ সম্পূর্ণ করো।
+\end{probtag}
+
+\end{document}

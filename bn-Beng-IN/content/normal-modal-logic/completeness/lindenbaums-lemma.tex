@@ -1,0 +1,50 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: lindenbaums-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{lin}
+
+\olsection{লিন্ডেনবাউমের সহায়ক উপপাদ্য}
+
+লিন্ডেনবাউমের সহায়ক উপপাদ্য বলছে, প্রতিটি $\Sigma$-সঙ্গত !!{formula}s-এর সমষ্টি অন্তত একটি \emph{পূর্ণ} $\Sigma$-সঙ্গত সমষ্টির অন্তর্ভুক্ত। প্রামাণিক মডেলের নির্মাণে আমরা দেখাব, প্রতিটি পূর্ণ $\Sigma$-সঙ্গত সমষ্টি~$\Delta$-র জন্য ওই মডেলে এমন একটি জগৎ আছে যেখানে $\Delta$-র !!{formula}s-গুলি, এবং কেবল সেগুলিই, সত্য। তাই লিন্ডেনবাউমের সহায়ক উপপাদ্য নিশ্চিত করে যে প্রতিটি $\Sigma$-সঙ্গত সমষ্টি প্রামাণিক মডেলের কোনো জগতে সত্য।
+
+\begin{thm}[লিন্ডেনবাউমের সহায়ক উপপাদ্য]\ollabel{thm:lindenbaum}
+  $\Gamma$ $\Sigma$-সঙ্গত হলে $\Gamma$-কে প্রসারিত করে এমন একটি পূর্ণ $\Sigma$-সঙ্গত সমষ্টি $\Delta$ আছে।
+\end{thm}
+
+\begin{proof}
+ভাষাটির সব সূত্রের একটি পূর্ণাঙ্গ তালিকা ধরি: $!A_0$, $!A_1$, \dots{} (পুনরাবৃত্তি থাকতে পারে)। যেমন, প্রথমে $\Obj p_0$ তালিকায় রাখি; তারপর প্রতিটি $n \ge 1$ ধাপে শুধু $\Obj p_0$, \dots,~$\Obj p_n$ চলক ব্যবহার করে দৈর্ঘ্য~$n$-এর সসীমসংখ্যক সূত্র তালিকাভুক্ত করি। $n$-এর ওপর আবেশে !!{formula}s-এর সমষ্টি $\Delta_n$ সংজ্ঞায়িত করি, তারপর $\Delta = \bigcup_n \Delta_n$ রাখি। প্রথমে $\Delta_0 = \Gamma$। $\Delta_n$ সংজ্ঞায়িত আছে ধরে $\Delta_{n+1}$ সংজ্ঞায়িত করি এভাবে:
+\[
+\Delta_{n+1} =
+\begin{cases}
+  \Delta_n \cup \{!A_n\}, & \text{যদি $\Delta_n \cup \{ !A_n\}$
+    $\Sigma$-সঙ্গত হয়;} \\
+  \Delta_n \cup \{ \lnot !A_n\}, & \text{অন্যথায়।}
+\end{cases}
+\]
+এবার $\Delta = \bigcup_{n=0}^\infty \Delta_n$ রাখি।
+
+দেখাতে হবে, এই সংজ্ঞা সত্যিই প্রয়োজনীয় ধর্মযুক্ত একটি $\Delta$ দেয়; অর্থাৎ $\Gamma \subseteq \Delta$ এবং $\Delta$ পূর্ণ $\Sigma$-সঙ্গত।
+
+নির্মাণ অনুসারে $\Delta_0 \subseteq \Delta$ এবং $\Delta_0 = \Gamma$; তাই $\Gamma \subseteq \Delta$ স্পষ্ট। বস্তুত, সব~$n$-এর জন্য $\Delta_n \subseteq \Delta$, কারণ $\Delta$ সব~$\Delta_n$-এর সংযোগ। (নির্মাণের প্রতিটি ধাপে আগের সমষ্টিতে !!a{formula} যোগ করি; তাই $\Delta_n \subseteq \Delta_{n+1}$। আবার $\subseteq$ সঞ্চারী হওয়ায় $n \le m$ হলে $\Delta_n \subseteq \Delta_{m}$।) প্রতিটি ধাপে আমরা হয় $!A_n$, নয়তো $\lnot !A_n$ যোগ করি; আর প্রত্যেক !!{formula} সব~$!A_n$-এর তালিকায় (অন্তত একবার) আছে। তাই প্রত্যেক $!A$-এর জন্য হয় $!A \in \Delta$, নয়তো $\lnot !A \in \Delta$; সুতরাং সংজ্ঞা অনুযায়ী $\Delta$ পূর্ণ।
+
+শেষে দেখাতে হবে $\Delta$ $\Sigma$-সঙ্গত। এজন্য দেখাব: (ক) $\Delta$ $\Sigma$-অসঙ্গত হলে কোনো একটি $\Delta_n$ $\Sigma$-অসঙ্গত হবে, এবং (খ) প্রতিটি $\Delta_n$ $\Sigma$-সঙ্গত।
+
+ধরা যাক $\Delta$ $\Sigma$-অসঙ্গত। তাহলে $\Delta \Proves[\Sigma] \lfalse$; অর্থাৎ এমন $!A_1$, \dots,~$!A_k \in \Delta$ আছে যাতে $\Sigma \Proves !A_1 \lif (!A_2 \lif \cdots (!A_k \lif \lfalse)\dots)$। যেহেতু $\Delta = \bigcup_{n=0}^\infty \Delta_n$, প্রত্যেক $!A_i \in \Delta_{n_i}$ কোনো না কোনো~$n_i$-এর জন্য। এগুলির মধ্যে বৃহত্তমটি $n$ ধরি। $n_i \le n$ হওয়ায় $\Delta_{n_i} \subseteq \Delta_n$। ফলে সব $!A_i$ কোনো একটি~$\Delta_n$-এ আছে। তাহলে $\Delta_n \Proves[\Sigma] \lfalse$; অর্থাৎ $\Delta_n$ $\Sigma$-অসঙ্গত।
+
+প্রতিটি $\Delta_n$ $\Sigma$-সঙ্গত দেখাতে $n$-এর ওপর সরল আবেশ করি। $\Delta_0 = \Gamma$, এবং আমরা $\Gamma$-কে $\Sigma$-সঙ্গত ধরেছি। তাই $n = 0$-এর জন্য দাবিটি সত্য। এবার $n$-এর জন্য সত্য ধরি; অর্থাৎ $\Delta_n$ $\Sigma$-সঙ্গত। $\Delta_n \cup \{!A_n\}$ $\Sigma$-সঙ্গত হলে $\Delta_{n+1}$ সেটিই, নইলে $\Delta_n \cup \{\lnot!A_n\}$। প্রথম ক্ষেত্রে $\Delta_{n+1}$ যে $\Sigma$-সঙ্গত, তা স্পষ্ট। আর \olref[prf][con]{prop:consistencyfacts}\olref[prf][con]{prop:consistencyfacts-c} অনুসারে $\Delta_n \cup \{!A_n\}$ অথবা $\Delta_n \cup \{\lnot!A_n\}$—অন্তত একটি সঙ্গত; তাই অন্য ক্ষেত্রেও $\Delta_{n+1}$ সঙ্গত।
+\end{proof}
+
+\begin{cor}\ollabel{cor:provability-characterization}
+  $\Gamma \Proves[\Sigma] !A$ তখনই এবং কেবল তখনই, যখন $\Gamma$-র প্রতিটি পূর্ণ $\Sigma$-সঙ্গত প্রসারণ $\Delta$-তে $!A \in \Delta$ (এমনকি $\Gamma = \emptyset$ হলেও; সে ক্ষেত্রে মোডাল পদ্ধতি $\Sigma$-র আরেকটি চরিত্রায়ন পাওয়া যায়)।
+\end{cor}
+
+\begin{proof}
+  ধরা যাক $\Gamma \Proves[\Sigma] !A$, আর $\Delta$ হলো $\Gamma$-র যেকোনো পূর্ণ $\Sigma$-সঙ্গত প্রসারণ। যদি $!A \notin \Delta$ হয়, তবে সর্বাধিকত্ব থেকে $\lnot!A \in \Delta$। তখন একদিকে একঘেয়েতা থেকে $\Delta \Proves[\Sigma] !A$, অন্যদিকে নিষ্পাদনযোগ্যতার প্রতিবিম্ব ধর্ম থেকে $\Delta \Proves[\Sigma] \lnot!A$; ফলে $\Delta$ অসঙ্গত। বিপরীতক্রমে, $\Gamma \Proves/[\Sigma] !A$ হলে $\Gamma \cup \{ \lnot!A\}$ $\Sigma$-সঙ্গত। লিন্ডেনবাউমের সহায়ক উপপাদ্য অনুযায়ী $\Gamma \cup \{ \lnot!A \}$-এর একটি পূর্ণ সঙ্গত প্রসারণ $\Delta$ আছে। সঙ্গতির কারণে $!A \notin \Delta$।
+\end{proof}
+
+\end{document}

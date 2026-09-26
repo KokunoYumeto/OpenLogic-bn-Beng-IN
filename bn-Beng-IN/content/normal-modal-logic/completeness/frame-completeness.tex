@@ -1,0 +1,162 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: frame-completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{fra}
+
+\olsection{কাঠামোর সাপেক্ষে পূর্ণতা}
+
+কোনো যুক্তির প্রামাণিক মডেলের সংশ্লিষ্ট কাঠামোগত ধর্ম আছে—এটি দেখাতে পারলে \Log{K}-এর পূর্ণতা উপপাদ্য অন্য মোডাল পদ্ধতিতেও প্রসারিত করা যায়।
+
+\begin{thm}\ollabel{thm:completeframeprops}
+  স্বাভাবিক মোডাল যুক্তি $\Sigma$-তে \olref{tab:correspondencetable}-এর বাম দিকের !!{formula}s-এর কোনো একটি থাকলে, $\Sigma$-র প্রামাণিক মডেলের ডান দিকের সংশ্লিষ্ট ধর্মটি আছে।
+\end{thm}
+
+\begin{table}[htp]
+  \centering
+    \begin{tabular}{| l || l |}
+      \hline
+      \emph{$\Sigma$-তে যদি থাকে \dots} & \emph{তবে $\Sigma$-র প্রামাণিক
+        মডেলটি:} \\
+      \hline \hline
+      \Ax{D}:\;\; $\Box!A \lif \Diamond !A$ & \quad সিরিয়াল; \\
+      \hline
+      \Ax{T}:\;\; $\Box!A \lif !A$ &\quad প্রতিবিম্বী;\\
+      \hline
+      \Ax{B}: \;\;$!A \lif \Box\Diamond!A$ &\quad প্রতিসম; \\
+      \hline
+      \Ax{4}: \;\; $\Box!A \lif \Box\Box!A$ & \quad পরিযায়ী; \\
+      \hline
+      \Ax{5}: \;\; $\Diamond !A \lif \Box\Diamond!A$& \quad ইউক্লিডীয়।\\
+      \hline
+    \end{tabular}
+    \caption{মৌলিক অনুরূপতার তথ্য।}
+    \ollabel{tab:correspondencetable}
+\end{table}
+
+\begin{proof}
+  প্রতিটি ক্ষেত্র পর্যায়ক্রমে বিবেচনা করি।
+
+  ধরা যাক $\Sigma$-তে \Ax{D} আছে, এবং $\Delta \in W^\Sigma$। দেখাতে হবে, এমন একটি $\Delta'$ আছে যাতে $R^\Sigma
+  \Delta\Delta'$। $\Box^{-1}\Delta$ যে $\Sigma$-সঙ্গত, সেটুকু দেখালেই যথেষ্ট। কারণ তাহলে লিন্ডেনবাউমের সহায়ক উপপাদ্য থেকে $\Delta' \supseteq
+  \Box^{-1}\Delta$ এমন একটি পূর্ণ $\Sigma$-সঙ্গত সমষ্টি পাওয়া যাবে; আর $R^\Sigma$-র সংজ্ঞা \iftag{prvBox}{}{ও \olref[mod]{lem:box-iff-diamond} }থেকে $R^\Sigma \Delta\Delta'$। তাই স্ববিরোধের জন্য ধরি, $\Box^{-1}\Delta$ $\Sigma$-সঙ্গত \emph{নয়}; অর্থাৎ $\Box^{-1}\Delta \Proves[\Sigma] \lfalse$। \olref[mod]{lem:box2} থেকে $\Delta \Proves[\Sigma] \Box\lfalse$; আর $\Sigma$-তে \Ax{D} থাকায় $\Delta \Proves[\Sigma] \Diamond\lfalse$-ও। কিন্তু $\Sigma$ স্বাভাবিক হওয়ায় $\Sigma \Proves \lnot\Diamond \lfalse$ (\olref[prf][nor]{prop:notDiamondBot}); ফলে $\Delta
+  \Proves[\Sigma] \lnot\Diamond \lfalse$-ও, যা~$\Delta$-র সঙ্গতির বিরুদ্ধে।
+
+  এবার $\Sigma$-তে \Ax{T} আছে এবং $\Delta \in W^\Sigma$ ধরি। দেখাতে চাই $R^\Sigma \Delta\Delta$; অর্থাৎ,\iftag{prvBox}{}{ \olref[mod]{lem:box-iff-diamond} অনুযায়ী,} $\Box^{-1}\Delta \subseteq \Delta$। কিন্তু $\Box!A \in \Delta$ হলে \Ax{T} থেকে $!A \in \Delta$-ও; এটাই প্রয়োজন।
+
+  এবার $\Sigma$-তে \Ax{B} আছে, এবং $\Delta$, $\Delta' \in W^\Sigma$-র জন্য $R^\Sigma
+  \Delta\Delta'$ ধরি। দেখাতে হবে $R^\Sigma \Delta'\Delta$; অর্থাৎ,\iftag{prvBox}{
+    $\Box^{-1}\Delta' \subseteq \Delta$। \olref[mod]{lem:box-iff-diamond} থেকে এটি সমতুল্য}{}
+  $\Diamond\Delta \subseteq \Delta'$। তাই $!A \in \Delta$ ধরি। \Ax{B} থেকে $\Box\Diamond!A \in \Delta$-ও। $R^\Sigma \Delta\Delta'$ পূর্বধারণা\iftag{prvBox}{}{ এবং \olref[mod]{lem:box-iff-diamond}} থেকে $\Box^{-1}\Delta
+  \subseteq \Delta'$; ফলে প্রয়োজনমতো $\Diamond!A \in \Delta'$।
+
+  এবার $\Sigma$-তে \Ax{4} আছে এবং $R^\Sigma
+  \Delta_1\Delta_2$ ও $R^\Sigma \Delta_2\Delta_3$ ধরি। দেখাতে হবে $R^\Sigma \Delta_1\Delta_3$। পূর্বধারণা\iftag{prvBox}{}{ ও \olref[mod]{lem:box-iff-diamond}} থেকে $\Box^{-1}\Delta_1
+  \subseteq \Delta_2$ এবং $\Box^{-1}\Delta_2 \subseteq \Delta_3$—উভয়ই পাই। $R^\Sigma \Delta_1\Delta_3$ দেখাতে $\Box^{-1}\Delta_1 \subseteq \Delta_3$ দেখালেই যথেষ্ট। তাই $!B \in
+  \Box^{-1}\Delta_1$, অর্থাৎ $\Box!B \in \Delta_1$, ধরি। \Ax{4} থেকে $\Box\Box!B \in \Delta_1$-ও। পূর্বধারণা থেকে প্রথমে $\Box!B \in \Delta_2$, তারপর $!B \in \Delta_3$; এটাই প্রয়োজন।
+
+  এবার $\Sigma$-তে \Ax{5} আছে, এবং $R^\Sigma
+  \Delta_1\Delta_2$ ও $R^\Sigma \Delta_1\Delta_3$ ধরি। দেখাতে হবে $R^\Sigma \Delta_2\Delta_3$। প্রথম পূর্বধারণা থেকে $\Box^{-1}\Delta_1 \subseteq \Delta_2$\iftag{prvBox}{}{; এটি \olref[mod]{lem:box-iff-diamond} থেকে আসে}। দ্বিতীয় পূর্বধারণা $\Diamond\Delta_3 \subseteq \Delta_1$-এর সমতুল্য\iftag{prvBox}{,
+    \olref[mod]{lem:box-iff-diamond} অনুযায়ী}{}। $R^\Sigma
+  \Delta_2\Delta_3$ দেখাতে\iftag{prvBox}{, \olref[mod]{lem:box-iff-diamond} অনুযায়ী, যথেষ্ট}{ আমাদের} $\Diamond\Delta_3 \subseteq \Delta_2$ দেখাতে হবে। তাই $\Diamond!A \in
+  \Diamond\Delta_3$, অর্থাৎ $!A \in \Delta_3$, ধরি। দ্বিতীয় পূর্বধারণা থেকে $\Diamond!A \in \Delta_1$; আর \Ax{5} থেকে $\Box\Diamond!A \in
+  \Delta_1$-ও। এবার প্রথম পূর্বধারণা থেকে প্রয়োজনমতো $\Diamond!A \in
+  \Delta_2$।
+  \end{proof}
+
+অনুষঙ্গ হিসেবে কয়েকটি পদ্ধতির পূর্ণতা পাই। যেমন, আমরা জানি $\Log{S5} = \Log{KT5} =
+\Log{KTB4}$ সব প্রতিবিম্বী ইউক্লিডীয় মডেলের শ্রেণির সাপেক্ষে পূর্ণ; এই শ্রেণিই সব প্রতিবিম্বী, প্রতিসম ও পরিযায়ী মডেলের শ্রেণি।
+
+\begin{thm}\ollabel{thm:generaldet}
+  ধরা যাক $\mClass{C}_\Ax{D}$, $\mClass{C}_\Ax{T}$,
+  $\mClass{C}_\Ax{B}$, $\mClass{C}_\Ax{4}$ ও
+  $\mClass{C}_\Ax{5}$ যথাক্রমে সব সিরিয়াল, প্রতিবিম্বী, প্রতিসম, পরিযায়ী ও ইউক্লিডীয় মডেলের শ্রেণি। তাহলে \Ax{D},
+  \Ax{T}, \Ax{B}, \Ax{4} ও \Ax{5}-এর মধ্যে যেকোনো স্কিমা $!A_1$, \dots, $!A_n$-এর জন্য পদ্ধতি
+  $\Log{K}!A_1 \dots !A_n$ মডেলের শ্রেণি $\mClass{C} = \mClass{C}_{!A_1} \cap \dots
+  \cap \mClass{C}_{!A_n}$ দ্বারা নির্ধারিত।
+\end{thm}
+
+\begin{prop}
+  ধরা যাক $\Sigma$ একটি স্বাভাবিক মোডাল যুক্তি। তাহলে:
+  \begin{enumerate}
+  \item\ollabel{prop:anotherfive-a}%
+    $\Sigma$-তে স্কিমা $\Diamond!A \lif \Box
+    !A$ থাকলে $\Sigma$-র প্রামাণিক মডেল আংশিক অপেক্ষকধর্মী।
+  \item $\Sigma$-তে স্কিমা $\Diamond!A \liff \Box
+    !A$ থাকলে $\Sigma$-র প্রামাণিক মডেল অপেক্ষকধর্মী।
+  \item $\Sigma$-তে স্কিমা $\Box\Box!A \lif \Box
+    !A$ থাকলে $\Sigma$-র প্রামাণিক মডেল দুর্বলভাবে ঘন।
+  \end{enumerate}
+(এই কাঠামোগত ধর্মগুলির সংজ্ঞার জন্য \olref[frd][acc]{tab:anotherfive} দেখো)।
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item ধরা যাক $\Sigma$-তে স্কিমা $\Diamond !A \lif
+    \Box !A$ আছে। $R^\Sigma$ আংশিক অপেক্ষকধর্মী দেখাতে প্রমাণ করতে হবে যে যেকোনো $\Delta_1$, $\Delta_2$, $\Delta_3 \in
+    W^\Sigma$-র জন্য $R^\Sigma \Delta_1\Delta_2$ এবং $R^\Sigma
+    \Delta_1\Delta_3$ হলে $\Delta_2=\Delta_3$। $R^\Sigma
+    \Delta_1\Delta_2$ থেকে $\Box^{-1}\Delta_1 \subseteq \Delta_2$ এবং $R^\Sigma \Delta_1\Delta_3$ থেকে $\Box^{-1}\Delta_1
+    \subseteq \Delta_3$\iftag{prvBox}{}{; উভয় ক্ষেত্রেই \olref[mod]{lem:box-iff-diamond} ব্যবহার করি}। $\Delta_2=\Delta_3$ পাওয়ার জন্য $\Delta_2 \subseteq \Delta_3$ এবং $\Delta_3 \subseteq
+    \Delta_2$—এই দুই অন্তর্ভুক্তি দেখালেই চলবে। প্রথমটির জন্য $!A \in \Delta_2$ ধরি; তাহলে $\Diamond!A \in \Delta_1$। স্কিমা এবং $\Delta_1$-এর নিষ্পাদনের অধীনে বদ্ধতা থেকে $\Box!A \in \Delta_1$-ও। ফলে $R^\Sigma \Delta_1\Delta_3$ পূর্বধারণা থেকে $!A \in \Delta_3$। দ্বিতীয় অন্তর্ভুক্তিও একইভাবে দেখানো যায়।
+
+  \item এটি অবিলম্বে অংশ~\olref{prop:anotherfive-a} এবং \olref{thm:completeframeprops}-এ সিরিয়াল ধর্মের প্রমাণ থেকে অনুসৃত হয়।
+
+  \item ধরা যাক $\Sigma$-তে স্কিমা $\Box\Box!A \lif \Box!A$ আছে। $R^\Sigma$ দুর্বলভাবে ঘন দেখাতে $R^\Sigma
+    \Delta_1\Delta_2$ ধরি। এমন একটি পূর্ণ $\Sigma$-সঙ্গত সমষ্টি $\Delta_3$ আছে দেখাতে হবে যাতে $R^\Sigma
+    \Delta_1\Delta_3$ এবং $R^\Sigma \Delta_3\Delta_2$। ধরি:
+    \[
+    \Gamma = \Box^{-1}\Delta_1 \cup \Diamond\Delta_2.
+    \]
+    $\Gamma$ যে $\Sigma$-সঙ্গত, সেটুকু দেখালেই যথেষ্ট। কারণ তাহলে লিন্ডেনবাউমের সহায়ক উপপাদ্য থেকে এটিকে এমন একটি পূর্ণ $\Sigma$-সঙ্গত সমষ্টি~$\Delta_3$-তে প্রসারিত করা যাবে যাতে $\Box^{-1}\Delta_1
+    \subseteq \Delta_3$ এবং $\Diamond\Delta_2 \subseteq \Delta_3$; অর্থাৎ $R^\Sigma \Delta_1\Delta_3$\iftag{prvBox}{}{ (\olref[mod]{lem:box-iff-diamond} থেকে)} এবং $R^\Sigma
+    \Delta_3\Delta_2$\iftag{prvBox}{ (\olref[mod]{lem:box-iff-diamond} থেকে)}{}।
+
+    স্ববিরোধের জন্য ধরা যাক $\Gamma$ সঙ্গত নয়। তাহলে এমন !!{formula}s $\Box!A_1$, \dots, $\Box!A_n \in \Delta_1$
+    এবং $!B_1$, \dots,~$!B_m \in \Delta_2$ আছে যাতে \[!A_1, \dots,
+    !A_n, \Diamond!B_1, \dots, \Diamond!B_m \Proves[\Sigma]
+    \lfalse.\] যেহেতু $\Diamond (!B_1 \land \dots \land !B_m) \to
+    (\Diamond!B_1 \land \dots \land \Diamond!B_m)$ প্রতিটি স্বাভাবিক মোডাল যুক্তিতে !!{derivable}, নিচের যুক্তিতে~$\Delta_2$-র সঙ্গতির সঙ্গে স্ববিরোধ পাই:
+    \begin{align*}
+      !A_1, \dots, !A_n, & \Diamond!B_1, \dots,
+      \Diamond!B_m \Proves[\Sigma] \lfalse \\
+      !A_1, \dots,!A_n & \Proves[\Sigma] (\Diamond!B_1 \land
+      \dots \land \Diamond!B_m) \lif \lfalse\\
+      & \qquad\text{নিষ্পাদন উপপাদ্য থেকে}\\
+      & \qquad\text{\olref[prf][prp]{prop:derivabilityfacts}\olref[prf][prp]{prop:derivabilityfacts-deduction}, ও \Taut} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \Diamond(!B_1 \land
+      \dots \land !B_m) \lif \lfalse\\
+      & \qquad \text{যেহেতু $\Sigma$ স্বাভাবিক} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \lnot\Diamond (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{\PL থেকে} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{$\lnot\Diamond$-এর বদলে $\Box\lnot$ লিখে} \\
+      \Box!A_1, \dots,\Box!A_n
+      & \Proves[\Sigma] \Box\Box \lnot (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{\olref[mod]{lem:box1} থেকে} \\
+      \Box!A_1, \dots,\Box!A_n
+      & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      &\qquad\text{স্কিমা $\Box\Box!A \lif \Box!A$ থেকে} \\
+      \Delta_1 & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      &\qquad\text{একঘেয়েতা থেকে, \olref[prf][prp]{prop:derivabilityfacts}\olref[prf][prp]{prop:derivabilityfacts-monotonicity}} \\
+      & \Box\lnot (!B_1 \land \dots \land !B_m) \in \Delta_1\\
+      &\qquad\text{নিষ্পাদনের অধীনে বদ্ধতা থেকে}; \\
+      & \lnot (!B_1 \land \dots \land !B_m) \in \Delta_2\\
+      &\qquad \text{যেহেতু }
+      R^\Sigma \Delta_1\Delta_2.
+    \end{align*}
+  \end{enumerate}
+\end{proof}
+
+এই উদাহরণগুলি দেখে মনে হতে পারে, প্রতিটি মোডাল যুক্তি-পদ্ধতি~$\Sigma$-ই \emph{পূর্ণ}, এই অর্থে যে $\Sigma$-র সব উপপাদ্য বৈধ এমন প্রত্যেক কাঠামোতে যে সূত্র বৈধ, পদ্ধতিটি সেই সূত্র প্রমাণ করে। কিন্তু দুর্ভাগ্যক্রমে এমন অনেক পদ্ধতি আছে যা এই অর্থে পূর্ণ নয়।
+
+\end{document}

@@ -1,0 +1,104 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: euclidean-filtrations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{euc}
+
+\olsection{ইউক্লিডীয় মডেলের ফিল্ট্রেশন}
+
+% BN-SRC-363: In the quotient diagram the required arrows join equivalence classes.
+\olref[acc]{sec}-এর পদ্ধতি কেবল ইউক্লিডীয়, অথবা সিরিয়াল ও ইউক্লিডীয় মডেলের ক্ষেত্রে কাজ করে না। \olref{fig:ser-eucl}-এর ওপরের মডেলটি দেখো; এটি ইউক্লিডীয় এবং সিরিয়াল উভয়ই। ধরা যাক $\Gamma = \{p, \Box p \}$। $\Gamma$-র মধ্য দিয়ে ফিল্ট্রেশন নিলে $[w_1] = [w_3]$, কারণ $w_1$ ও $w_3$-ই একমাত্র জগৎ যারা~$\Gamma$-তে একমত। যেকোনো ফিল্ট্রেশনেও $\mModel{M}$ থেকে উত্তরাধিকারসূত্রে পাওয়া তিরগুলি থাকবে, যেমন \olref{fig:ser-eucl2}-এ। ওই মডেল ইউক্লিডীয় নয়। তাছাড়া ওই মডেলে তির যোগ করেও তাকে ইউক্লিডীয় করা যায় না। $[w_2]$ ও $[w_4]$-এর মধ্যে উভমুখী তির যোগ করতে হতো, তারপর $[w_2]$ ও~$[w_5]$-এর মধ্যেও। কিন্তু~$w_2$-তে $\Box
+p$ সত্য থাকার কথা, অথচ~$w_5$-তে $p$ মিথ্যা।
+
+\begin{figure}[htpb]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w1)
+          [label={left: \mFalse{p}},
+            label={below: $\mSat{{}}{\Box p}$}] {$w_1$};
+    \node[world] (w2)
+          [label={right: \mTrue{p}},
+            label = {below: $\mSat{{}}{\Box p}$},
+            right=of w1] {$w_2$};
+    \draw[->] (w1) to (w2);
+    \node[world] (w3)
+          [label={left: \mFalse{p}},
+            label={below: $\mSat{{}}{\Box p}$},
+            below=of w1] {$w_3$};
+    \node[world] (w4)
+          [label={right:\mTrue{p}},
+            label={below: $\mSat/{{}}{\Box p}$},
+            right=of w3] {$w_4$};
+    \draw[->] (w3) to (w4);
+    \draw[reflexive above] (w4) to (w4);
+    \node[world] (w5)
+          [label={right: \mFalse{p}},
+            label=below:$\mSat/{{}}{\Box p}$,
+            right=of w4] {$w_5$};
+    \draw[->, bend left] (w4) to (w5);
+    \draw[->, bend left] (w5) to (w4);
+    \draw[reflexive above] (w5) to (w5);
+  \end{tikzpicture}
+  \caption{একটি সিরিয়াল ও ইউক্লিডীয় মডেল।}
+  \ollabel{fig:ser-eucl}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[modal,every text node part/.style={align=center}]
+    \node[world] (w1)
+          [label={left: \mFalse{p}},
+            label={right:$[w_1]=[w_3]$},
+            label={below: $\mSat{{}}{\Box p}$}] {$[w_1]$};
+    \node[world] (w2)
+         [label={right: \mTrue{p}},
+           label = {below: $\mSat{{}}{\Box p}$},
+           right=of w1, yshift=1.5cm] {$[w_2]$};
+    \draw[->] (w1) to (w2);
+    \node[world] (w4)
+         [label={right:\mTrue{p}},
+           label={below: $\mSat/{{}}{\Box p}$},
+           right=of w1,yshift=-1.5cm] {$[w_4]$};
+    \draw[->] (w1) to (w4);
+    \draw[reflexive above] (w4) to (w4);
+    \node[world] (w5)
+         [label={right: \mFalse{p}},
+             label=below:$\mSat/{{}}{\Box p}$,
+             right=of w4] {$[w_5]$};
+    \draw[->, bend left] (w4) to (w5);
+    \draw[->, bend left] (w5) to (w4);
+    \draw[reflexive above] (w5) to (w5);
+  \end{tikzpicture}
+  \caption{\olref{fig:ser-eucl}-এর মডেলের ফিল্ট্রেশন।}
+  \ollabel{fig:ser-eucl2}
+\end{figure}
+
+বিশেষত, ইউক্লিডীয় ফিল্ট্রেশন পেতে উপ-!!{formula}s-এর অধীনে বদ্ধ নির্বিচার $\Gamma$-র মধ্য দিয়ে ফিল্ট্রেশন নিলেই চলে না। বরং \emph{মোডালভাবে বদ্ধ} সমষ্টি $\Gamma$ নিতে হয় (\olref[pre]{defn:modallyclosed} দেখো)। এমন বাক্যসমষ্টি অসীম; তাই এগুলি থেকে সরাসরি সসীম মডেল ধর্ম বা সংশ্লিষ্ট পদ্ধতির সিদ্ধান্তযোগ্যতা পাওয়া যায় না।
+
+\begin{thm}\ollabel{thm:modal-closed-filt}
+  ধরা যাক $\Gamma$ মোডালভাবে বদ্ধ, $\mModel{M}=\tuple{W,R,V}$ এবং $\mModel{M^*} = \tuple{W^*,R^*,V^*}$ হলো $\mModel{M}$-এর সবচেয়ে স্থূল ফিল্ট্রেশন।
+  \begin{enumerate}
+  \item $\mModel{M}$ প্রতিসম হলে $\mModel{M^*}$-ও প্রতিসম।
+  \item $\mModel{M}$ পরিযায়ী হলে $\mModel{M^*}$-ও পরিযায়ী।
+  \item $\mModel{M}$ ইউক্লিডীয় হলে $\mModel{M^*}$-ও ইউক্লিডীয়।
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+% BN-SRC-364: Align proof cases with the theorem's symmetry, transitivity and euclideanity items.
+\begin{enumerate}
+  \item অনুশীলনী। সব প্রতিসম মডেলে \Ax{B} ও $\Ax{B_\Diamond}$ বৈধ, এই তথ্য ব্যবহার করো।
+  \item $\mModel{M^*}$ সবচেয়ে স্থূল ফিল্ট্রেশন হলে সংজ্ঞা অনুসারে $R^*[u][v]$ তখনই এবং কেবল তখনই, যখন $C_1(u,v)$। পরিযায়িতা প্রমাণে ধরি $C_1(u,v)$ ও $C_1(v,w)$; দেখাতে হবে $C_1(u,w)$। \iftag{prvBox}{ধরি $\mSat{M}{\Box !A}[u]$। সব পরিযায়ী মডেলে \Ax{4} বৈধ বলে $\mSat{M}{\Box\Box!A}[u]$; বদ্ধতার কারণে $\Box\Box!A \in \Gamma$, তাই $C_1(u,v)$ থেকে $\mSat{M}{\Box!A}[v]$ এবং $C_1(v,w)$ থেকে $\mSat{M}{!A}[w]$। }{}\iftag{prvDiamond}{ধরি $\mSat{M}{!A}[w]$। মোডাল বদ্ধতার কারণে $\Diamond !A \in \Gamma$, তাই $C_1(v,w)$ থেকে $\mSat{M}{\Diamond !A}[v]$। আবার মোডাল বদ্ধতায় $\Diamond\Diamond!A \in \Gamma$; $C_1(u,v)$ থেকে $\mSat{M}{\Diamond\Diamond !A}[u]$। সব পরিযায়ী মডেলে $\Ax{4}_\Diamond$ বৈধ বলে $\mSat{M}{\Diamond!A}[u]$।}{}
+  \item অনুশীলনী। সব ইউক্লিডীয় মডেলে \Ax{5} ও $\Ax{5_\Diamond}$ বৈধ, এই তথ্য ব্যবহার করো।
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+  \olref[nml][fil][euc]{thm:modal-closed-filt}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\end{document}

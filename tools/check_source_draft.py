@@ -2649,6 +2649,44 @@ for row in rows:
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\olref[mod]{lem:box-iff-diamond}": 1})
     )
+    filtrations_math_fix = False
+    if 450 <= unit_number <= 459:
+        expected_filtration_corrections = {
+            "OLP-0451": {"BN-SRC-360", "BN-SRC-361"},
+            "OLP-0456": {"BN-SRC-362"},
+            "OLP-0457": {"BN-SRC-365"},
+            "OLP-0459": {"BN-SRC-363", "BN-SRC-364"},
+        }
+        assert set(documented) == expected_filtration_corrections.get(
+            row["unit_id"], set()
+        )
+        expected_filtration_delta = {
+            "OLP-0451": (
+                collections.Counter({
+                    r"\mSat{M}{\Box!B}[v]": 1,
+                    r"[w]\inV^*": 1,
+                }),
+                collections.Counter({
+                    r"\mSat{M}{!B}[v]": 1,
+                    r"[w]\inV^*(p)": 1,
+                }),
+            ),
+            "OLP-0456": (
+                collections.Counter({r"\mSat{M^*}{!A}[w]": 1}),
+                collections.Counter({r"\mSat{M^*}{!A}[{[w]}]": 1}),
+            ),
+            "OLP-0459": (
+                collections.Counter({r"w_2": 1, r"w_5": 1}),
+                collections.Counter({r"[w_2]": 1, r"[w_5]": 1}),
+            ),
+        }
+        expected_removed, expected_added = expected_filtration_delta.get(
+            row["unit_id"], (collections.Counter(), collections.Counter())
+        )
+        filtrations_math_fix = (
+            source_math - target_math == expected_removed
+            and target_math - source_math == expected_added
+        )
     if 112 <= int(row["unit_id"].split("-")[1]) <= 125:
         expected_axd = {
             "OLP-0118": {"BN-SRC-058", "BN-SRC-059", "BN-SRC-070"},
@@ -5184,6 +5222,22 @@ for row in rows:
             for anchor in modal_completeness_review_anchors[row["unit_id"]]
         )
         tex_command_check = {"modal_completeness_proofs_and_anchors_reviewed": True}
+    elif 450 <= unit_number <= 459:
+        assert filtrations_math_fix
+        filtration_review_anchors = {
+            "OLP-0450": (r"\olchapter{nml}{fil}", r"\olimport{euclidean-filtrations}"),
+            "OLP-0451": (r"BN-SRC-360", r"BN-SRC-361", r"\mSat{M}{!B}[v]"),
+            "OLP-0452": (r"\ollabel{defn:modallyclosed}", r"[w] = \Setabs{v}{v \equiv w}"),
+            "OLP-0453": (r"\ollabel{thm:filtrations}", r"\tagitem{prvDiamond}", r"\begin{cor}"),
+            "OLP-0454": (r"\ollabel{prop:finest}", r"\ollabel{fig:ex-filtration}", r"\begin{tagenumerate}"),
+            "OLP-0455": (r"\ollabel{prop:filt-are-finite}", r"\card{W^*} \le \card{\Pow{\Gamma}}"),
+            "OLP-0456": (r"\ollabel{prop:K-fmp}", r"\ollabel{cor:S5fmp}", r"BN-SRC-362"),
+            "OLP-0457": (r"\olsection{\Log{S5} সিদ্ধান্তযোগ্য}", r"\olref[fmp]{cor:S5fmp}"),
+            "OLP-0458": (r"\ollabel{tab:Cn-filtrations}", r"\ollabel{thm:more-filtrations}", r"C_4(u,v)"),
+            "OLP-0459": (r"\ollabel{fig:ser-eucl2}", r"\ollabel{thm:modal-closed-filt}", r"BN-SRC-364"),
+        }
+        assert all(anchor in checked_target for anchor in filtration_review_anchors[row["unit_id"]])
+        tex_command_check = {"filtrations_definitions_diagrams_proofs_and_anchors_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5299,6 +5353,7 @@ for row in rows:
             frame_definability_math_fix,
             axioms_systems_math_fix,
             modal_completeness_math_fix,
+            filtrations_math_fix,
             shared_audit_fix,
         )
     )

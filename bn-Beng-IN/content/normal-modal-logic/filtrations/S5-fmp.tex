@@ -1,0 +1,52 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: S5-fmp
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{fmp}
+
+\olsection{\Log{K} ও \Log{S5}-এর সসীম মডেল ধর্ম আছে}
+
+\begin{defn}
+  মোডাল যুক্তির কোনো পদ্ধতি $\Sigma$-র \emph{সসীম মডেল ধর্ম} আছে বলা হয়, যদি $\Sigma$-র কোনো মডেলের কোনো জগতে !!a{formula}~$!A$ সত্য হলে, $\Sigma$-র একটি \emph{সসীম} মডেলের কোনো জগতেও $!A$ সত্য হয়।
+\end{defn}
+
+\begin{prop}\ollabel{prop:K-fmp}
+  \Log{K}-এর সসীম মডেল ধর্ম আছে।
+\end{prop}
+
+\begin{proof}
+  % BN-SRC-362: A filtration evaluates the formula at the class [w], not at w.
+  \Log{K} বৈধ !!{formula}s-এর সমষ্টি; অর্থাৎ, যেকোনো মডেলই \Log{K}-এর মডেল। \olref[fil]{thm:filtrations} অনুসারে, $\mSat{M}{!A}[w]$ হলে $!A$-র উপ-!!{formula}s-এর সমষ্টি $\Gamma$-র মধ্য দিয়ে $\mModel{M}$-এর যেকোনো ফিল্ট্রেশনের জন্য $\mSat{M^*}{!A}[{[w]}]$। যেকোনো !!{formula}-র উপ-!!{formula}s সসীম সংখ্যক, তাই $\Gamma$ সসীম। \olref[fin]{prop:filt-are-finite} অনুসারে, $\card{W^*} \le 2^n$, যেখানে $n$ হলো~$\Gamma$-তে !!{formula}s-এর সংখ্যা। আর \Log{K} মডেলের উপর কোনো বিধিনিষেধ দেয় না বলে $\mModel{M^*}$ একটি \Log{K}-মডেল।
+\end{proof}
+
+ফিল্ট্রেশন দিয়ে কোনো যুক্তি~\Log{L}-এর সসীম মডেল ধর্ম দেখাতে হলে জরুরি যে \Log{L}-মডেলের ফিল্ট্রেশনও \Log{L}-মডেল হয়। প্রায়ই এর জন্য যথেষ্ট কাজ দরকার হয়; যেকোনো ফিল্ট্রেশনই \Log{L}-মডেল দেয় না। তবে সর্বজনীন মডেলের ক্ষেত্রে এই ধর্ম বজায় থাকে।
+
+\begin{prop}\ollabel{prop:univ-fin}
+  ধরা যাক $\mClass{U}$ সর্বজনীন মডেলগুলির শ্রেণি (\olref[frd][es5]{prop:S5=univ} দেখো) এবং $\mClass{U}_\mathrm{Fin}$ সব সসীম সর্বজনীন মডেলের শ্রেণি। তবে যেকোনো !!{formula}~$!A$ $\mClass{U}$-তে বৈধ তখনই এবং কেবল তখনই, যখন তা $\mClass{U}_\mathrm{Fin}$-এ বৈধ।
+\end{prop}
+
+\begin{proof}
+  সসীম সর্বজনীন মডেলও সর্বজনীন মডেল, তাই বাম থেকে ডানের দিকটি সরাসরি। ডান থেকে বামের জন্য ধরি, সর্বজনীন মডেল $\mModel{M}$-এর কোনো জগৎ $w$-তে~$!A$ মিথ্যা। $\Gamma$-তে $!A$ ও তার সব উপসূত্র নিই; স্পষ্টত $\Gamma$ সসীম। $\mModel{M}$-এর একটি ফিল্ট্রেশন $\mModel{M^*}$ নিই। \olref[fin]{prop:filt-are-finite} অনুসারে $\mModel{M^*}$ সসীম, আর \olref[fil]{thm:filtrations} অনুসারে $\mModel{M^*}$-এর $[w]$-তে $!A$ মিথ্যা। $\mModel{M^*}$-ও যে সর্বজনীন, শুধু সেটি লক্ষ করা বাকি: যেকোনো $u$ ও $v$-র জন্য অনুমানক্রমে $Ruv$, এবং \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R} অনুসারে $R^*[u][v]$-ও।
+\end{proof}
+
+\begin{cor}\ollabel{cor:S5fmp}
+  \Log{S5}-এর সসীম মডেল ধর্ম আছে।
+\end{cor}
+
+\begin{proof}
+  \olref[frd][es5]{prop:S5=univ} অনুসারে, কোনো প্রতিবিম্বী ও ইউক্লিডীয় মডেলের একটি জগতে $!A$ সত্য হলে একটি সর্বজনীন মডেলের কোনো জগতেও তা সত্য। \olref{prop:univ-fin} অনুসারে, একটি সসীম সর্বজনীন মডেলের কোনো জগতেও এটি সত্য (যথা $!A$-র উপ-!!{formula}s-এর সমষ্টির মধ্য দিয়ে মডেলটির ফিল্ট্রেশনে)। প্রত্যেক সর্বজনীন মডেল প্রতিবিম্বী ও ইউক্লিডীয়ও; তাই একটি সসীম প্রতিবিম্বী ও ইউক্লিডীয় মডেলের কোনো জগতে $!A$ সত্য।
+\end{proof}
+
+\begin{prob}
+  দেখাও, সিরিয়াল বা প্রতিবিম্বী মডেলের যেকোনো ফিল্ট্রেশনও যথাক্রমে সিরিয়াল বা প্রতিবিম্বী।
+\end{prob}
+
+\begin{prob}
+  প্রতিসম (পরিযায়ী, ইউক্লিডীয়) মডেলের এমন একটি ফিল্ট্রেশন খোঁজো, যা প্রতিসম নয় (পরিযায়ী নয়, ইউক্লিডীয় নয়)।
+\end{prob}
+
+\end{document}

@@ -1,0 +1,97 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: filtrations-def
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{fil}
+
+\olsection{ফিল্ট্রেশন}
+
+$\Gamma$-র মধ্য দিয়ে $\mModel{M}$-এর “সেই” ফিল্ট্রেশন সংজ্ঞায়িত না করে, কোন মডেল~$\mModel{M^*}$-কে $\mModel{M}$-এর ফিল্ট্রেশন বলা যাবে তা সংজ্ঞায়িত করি। সব ফিল্ট্রেশনের জগৎসমষ্টি~$W^*$ এবং মানায়ন~$V^*$ একই। কিন্তু ভিন্ন ফিল্ট্রেশনে অভিগম্যতা-সম্বন্ধ~$R^*$ ভিন্ন হতে পারে। ফিল্ট্রেশন হতে হলে $R^*$-কে কয়েকটি শর্ত মানতে হবে। এগুলিই মূল ফলটি প্রমাণের জন্য দরকার: $!A \in \Gamma$ হলে $\mSat{M}{!A}[w]$ তখনই এবং কেবল তখনই, যখন $\mSat{M^*}{!A}[{[w]}]$।
+
+\begin{defn}\ollabel{defn:filtration}
+  ধরা যাক $\Gamma$ উপসূত্রের অধীনে বদ্ধ এবং $\mModel{M} = \tuple{W,
+    R, V}$। $\Gamma$-র মধ্য দিয়ে $\mModel{M}$-এর একটি \emph{ফিল্ট্রেশন} হলো যেকোনো মডেল $\mModel{M^*} = \tuple{W^*,R^*,V^*}$, যেখানে:
+  \begin{enumerate}
+  \item $W^* = \Setabs{[w]}{w \in W}$;
+  \item \ollabel{defn:filtration-R}%
+    যেকোনো $u,v \in W$-এর জন্য:
+    \begin{enumerate}
+    \item \ollabel{defn:filtration-R1}%
+      $Ruv$ হলে $R^*[u][v]$;
+    \tagitem{prvBox}{\ollabel{defn:filtration-R2}%
+      $R^*[u][v]$ হলে, যেকোনো $\Box !A \in \Gamma$-র ক্ষেত্রে,
+      $\mSat{M}{\Box!A}[u]$ থেকে $\mSat{M}{!A}[v]$ অনুসৃত হয়}{};
+    \tagitem{prvDiamond}{\ollabel{defn:filtration-R3}%
+      $R^*[u][v]$ হলে, যেকোনো $\Diamond !A \in \Gamma$-র ক্ষেত্রে,
+      $\mSat{M}{!A}[v]$ থেকে $\mSat{M}{\Diamond!A}[u]$ অনুসৃত হয়।}{}
+    \end{enumerate}
+  \item $V^*(p) = \Setabs{[u]}{u \in V(p)}$।
+  \end{enumerate}
+\end{defn}
+
+$V^*(p)$-র অর্থটি লক্ষ করা দরকার: $\mModel{M}$-এ $p$ সত্য, এমন সব জগৎ~$w$-এর সমতুল্যতা-শ্রেণি~$[w]$ নিয়ে এই সমষ্টি। একদিকে, $w \in V(p)$ হলে সংজ্ঞা অনুসারে $[w] \in V^*(p)$। কিন্তু $[w] \in V^*(p)$ থেকে সব সময় $w \in V(p)$ পাওয়া যায় না। $[w] \in V^*(p)$ হলে শুধু এটুকু নিশ্চিত যে \emph{কোনো}~$u \in V(p)$-র জন্য $[w] = [u]$। অবশ্য $[w] = [u]$ মানে $w \equiv u$। তাই $[w] \in V^*(p)$ হলে সিদ্ধান্ত করা যায় যে কোনো $u \in V(p)$-র সঙ্গে $w \equiv u$।
+
+\begin{thm}\ollabel{thm:filtrations}
+  $\mModel{M^*}$ যদি $\Gamma$-র মধ্য দিয়ে $\mModel{M}$-এর ফিল্ট্রেশন হয়, তবে প্রত্যেক $!A \in \Gamma$ এবং $w \in W$-এর জন্য $\mSat{M}{!A}[w]$ তখনই এবং কেবল তখনই, যখন $\mSat{M^*}{!A}[{[w]}]$।
+\end{thm}
+
+\begin{proof}
+  $\Gamma$ উপসূত্রের অধীনে বদ্ধ, এই তথ্য ব্যবহার করে $!A$-র গঠনের উপর আবেশ করি। $!A \in \Gamma$ এবং $\Gamma$ উপ-!!{formula}s-এর অধীনে বদ্ধ বলে~$!A$-র সব উপ-!!{formula}s-ও $\in
+  \Gamma$। তাই প্রতিটি আবেশী ধাপে $!A$-র উপ-!!{formula}s-এর জন্য আবেশী অনুমান প্রযোজ্য।
+  \begin{enumerate}
+    \tagitem{prvFalse}{\indcase{!A}{\lfalse}{না
+        $\mSat{M}{\indfrm}[w]$, না $\mSat{M^*}{\indfrm}[{[w]}]$।}}{}
+    \tagitem{prvTrue}{\indcase{!A}{\ltrue}{উভয়ই:
+        $\mSat{M}{\indfrm}[w]$ এবং $\mSat{M^*}{\indfrm}[{[w]}]$।}}{}
+    \item \indcase{!A}{p}{বাম থেকে ডানে যাওয়া সরাসরি: $\mSat{M}{\indfrm}[w]$ হলে $w \in V(p)$, ফলে $[w]
+      \in V^*(p)$; অর্থাৎ $\mSat{M^*}{\indfrm}[{[w]}]$। বিপরীত দিকে ধরি $\mSat{M^*}{\indfrm}[{[w]}]$, অর্থাৎ $[w] \in
+      V^*(p)$। তখন কোনো $v \in V(p)$-র জন্য $w \equiv v$। তাই $\mSat{M}{p}[v]$-ও। $w \equiv v$ বলে $w$ ও $v$-তে $\Gamma$-র একই !!{formula}s সত্য। অনুমান অনুসারে $p
+      \in \Gamma$ এবং $\mSat{M}{p}[v]$; সুতরাং $\mSat{M}{\indfrm}[w]$।}
+
+    \tagitem{prvNot}{\iftag{probNot}{অনুশীলনী।}{\indcase{!A}{\lnot
+          !B}{$\mSat{M}{\indfrm}[w]$ তখনই, যখন $\mSat/{M}{!B}[w]$। আবেশী অনুমানে $\mSat/{M}{!B}[w]$ তখনই, যখন $\mSat/{M^*}{!B}[{[w]}]$। অবশেষে $\mSat/{M^*}{!B}[{[w]}]$ তখনই, যখন $\mSat{M^*}{\indfrm}[{[w]}]$।}}}{}
+
+    \tagitem{prvAnd}{\iftag{probAnd}{অনুশীলনী।}{\indcase{!A}{(!B \land
+          !C)}{$\mSat{M}{\indfrm}[w]$ তখনই, যখন $\mSat{M}{!B}[w]$ এবং $\mSat{M}{!C}[w]$। আবেশী অনুমানে $\mSat{M}{!B}[w]$ তখনই, যখন $\mSat{M^*}{!B}[{[w]}]$, এবং $\mSat{M}{!C}[w]$ তখনই, যখন $\mSat{M^*}{!C}[{[w]}]$। আবার $\mSat{M^*}{\indfrm}[{[w]}]$ তখনই, যখন $\mSat{M^*}{!B}[{[w]}]$ এবং $\mSat{M^*}{!C}[{[w]}]$।}}}{}
+
+    \tagitem{prvOr}{\iftag{probOr}{অনুশীলনী।}{\indcase{!A}{(!B \lor
+          !C)}{$\mSat{M}{\indfrm}[w]$ তখনই, যখন $\mSat{M}{!B}[w]$ অথবা $\mSat{M}{!C}[w]$। আবেশী অনুমানে $\mSat{M}{!B}[w]$ তখনই, যখন $\mSat{M^*}{!B}[{[w]}]$, এবং $\mSat{M}{!C}[w]$ তখনই, যখন $\mSat{M^*}{!C}[{[w]}]$। আবার $\mSat{M^*}{\indfrm}[{[w]}]$ তখনই, যখন $\mSat{M^*}{!B}[{[w]}]$ অথবা $\mSat{M^*}{!C}[{[w]}]$।}}}{}
+
+    \tagitem{prvIf}{\iftag{probIf}{অনুশীলনী।}{\indcase{!A}{(!B \lif
+          !C)}{$\mSat{M}{\indfrm}[w]$ তখনই, যখন $\mSat/{M}{!B}[w]$ অথবা $\mSat{M}{!C}[w]$। আবেশী অনুমানে $\mSat{M}{!B}[w]$ তখনই, যখন $\mSat{M^*}{!B}[{[w]}]$, এবং $\mSat{M}{!C}[w]$ তখনই, যখন $\mSat{M^*}{!C}[{[w]}]$। আবার $\mSat{M^*}{\indfrm}[{[w]}]$ তখনই, যখন $\mSat/{M^*}{!B}[{[w]}]$ অথবা $\mSat{M^*}{!C}[{[w]}]$।}}}{}
+
+    \tagitem{prvIff}{\iftag{probIff}{অনুশীলনী।}{\indcase{!A}{(!B \liff
+          !C)}{$\mSat{M}{\indfrm}[w]$ তখনই, যখন $\mSat{M}{!B}[w]$ ও $\mSat{M}{!C}[w]$ উভয়ই, অথবা $\mSat/{M}{!B}[w]$ ও $\mSat/{M}{!C}[w]$ উভয়ই। আবেশী অনুমানে $\mSat{M}{!B}[w]$ তখনই, যখন $\mSat{M^*}{!B}[{[w]}]$, এবং $\mSat{M}{!C}[w]$ তখনই, যখন $\mSat{M^*}{!C}[{[w]}]$। আবার $\mSat{M^*}{\indfrm}[{[w]}]$ তখনই, যখন $\mSat{M^*}{!B}[{[w]}]$ ও $\mSat{M^*}{!C}[{[w]}]$ উভয়ই, অথবা $\mSat/{M^*}{!B}[{[w]}]$ ও $\mSat/{M^*}{!C}[{[w]}]$ উভয়ই।}}}{}
+
+    \tagitem{prvBox}{\iftag{probBox}{অনুশীলনী।}{\indcase{!A}{\Box
+          !B}{ধরি $\mSat{M}{\indfrm}[w]$। $\mSat{M^*}{\indfrm}[{[w]}]$ দেখাতে এমন যেকোনো $v$ নিই যার জন্য $R^*[w][v]$। \olref{defn:filtration}\olref{defn:filtration-R2} থেকে $\mSat{M}{!B}[v]$ এবং আবেশী অনুমান থেকে $\mSat{M^*}{!B}[{[v]}]$। $v$ নির্বিচার, তাই $\mSat{M^*}{\indfrm}[{[w]}]$।
+
+          বিপরীত দিকে ধরি $\mSat{M^*}{\indfrm}[{[w]}]$ এবং এমন যেকোনো $v$ নিই যার জন্য $Rwv$। \olref{defn:filtration}\olref{defn:filtration-R1} থেকে $R^*[w][v]$, ফলে $\mSat{M^*}{!B}[{[v]}]$। আবেশী অনুমান থেকে $\mSat{M}{!B}[v]$; $v$ নির্বিচার বলে $\mSat{M}{\indfrm}[w]$।}}}{}
+
+    \tagitem{prvDiamond}{\iftag{probDiamond}{অনুশীলনী।}{\indcase{!A}{\Diamond
+          !B}{ধরি $\mSat{M}{\indfrm}[w]$। তবে কোনো $v \in W$-র জন্য $Rwv$ এবং $\mSat{M}{!B}[v]$। আবেশী অনুমানে $\mSat{M^*}{!B}[{[v]}]$; আর \olref{defn:filtration}\olref{defn:filtration-R1} থেকে $R^*[w][v]$। তাই $\mSat{M^*}{\indfrm}[{[w]}]$।
+
+          এবার ধরি $\mSat{M^*}{\indfrm}[{[w]}]$। তবে কোনো $[v]
+          \in W^*$-র জন্য $R^*[w][v]$ এবং $\mSat{M^*}{!B}[{[v]}]$। আবেশী অনুমানে $\mSat{M}{!B}[v]$। \olref{defn:filtration}\olref{defn:filtration-R3} থেকে $\mSat{M}{\indfrm}[w]$।}}}{}
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  \olref[nml][fil][fil]{thm:filtrations}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+মডেলের জগতে সত্যতার জন্য যা প্রতিষ্ঠিত, তা মডেলে সত্যতা এবং মডেলশ্রেণিতে বৈধতার ক্ষেত্রেও প্রতিষ্ঠিত।
+
+\begin{cor}
+  ধরা যাক $\Gamma$ উপসূত্রের অধীনে বদ্ধ। তবে:
+  \begin{enumerate}
+  \item $\mModel{M^*}$ যদি $\Gamma$-র মধ্য দিয়ে $\mModel{M}$-এর ফিল্ট্রেশন হয়, তবে যেকোনো $!A \in \Gamma$-র জন্য $\mSat{M}{!A}$ তখনই এবং কেবল তখনই, যখন $\mSat{M^*}{!A}$।
+  \item $\mClass{C}$ মডেলগুলির একটি শ্রেণি এবং $\Gamma(\mClass{C})$ যদি $\mClass{C}$-র মডেলগুলির $\Gamma$-ফিল্ট্রেশনগুলির শ্রেণি হয়, তবে যেকোনো !!{formula}~$!A \in \Gamma$ $\mClass{C}$-তে বৈধ তখনই এবং কেবল তখনই, যখন তা $\Gamma(\mClass{C})$-তে বৈধ।
+  \end{enumerate}
+\end{cor}
+
+\end{document}

@@ -1,0 +1,102 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: more-filtrations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{acc}
+
+\olsection{ফিল্ট্রেশন ও অভিগম্যতার ধর্ম}
+
+যেমন দেখা গেছে, সর্বজনীন, সিরিয়াল ও প্রতিবিম্বী মডেলের ফিল্ট্রেশন যথাক্রমে সর্বজনীন, সিরিয়াল ও প্রতিবিম্বীই থাকে। কিন্তু প্রতিসম বা পরিযায়ী মডেলের সব ফিল্ট্রেশন যথাক্রমে প্রতিসম বা পরিযায়ী হয় না। কিছু ক্ষেত্রে অবশ্য এমন ফিল্ট্রেশন সংজ্ঞায়িত করা যায় যাতে ধর্মটি বজায় থাকে। তার জন্য সবচেয়ে স্থূল ফিল্ট্রেশনের সংজ্ঞার মতো এগোব, কিন্তু~$R^*$-এর সংজ্ঞায় আরও শর্ত যোগ করব। ধরা যাক $\Gamma$ উপ-!!{formula}s-এর অধীনে বদ্ধ। মডেল $\mModel{M} =\tuple{W, R, V}$-এর জগৎ $u$, $v$-র মধ্যে \olref{tab:Cn-filtrations}-এর সম্বন্ধগুলি~$C_i(u,v)$ বিবেচনা করি। এই শর্তগুলির সমন্বয়ে $R^*[u][v]$ সংজ্ঞায়িত করা যায়। যেমন $R^*[u][v]$ তখনই, যখন $C_1(u,v)$, ধরলে ঠিক সবচেয়ে স্থূল ফিল্ট্রেশন পাই। $R^*[u][v]$ তখনই, যখন $C_1(u,v)$ ও $C_2(u, v)$ উভয়ই, ধরলে ভিন্ন ফিল্ট্রেশন পাই। এটি সবচেয়ে স্থূলটির চেয়ে “সূক্ষ্ম”: শুধু $C_1(u,v)$-র তুলনায় উভয় শর্ত $C_1(u,v)$ ও $C_2(u,v)$ কম জগৎ-জোড়া পূরণ করে।
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|ll|}
+    \hline
+    \multirow{2}{*}{$C_1(u,v)$:}
+    \iftag{prvBox}{&
+      $\Box!A \in \Gamma$ ও $\mSat{M}{\Box!A}[u]$ হলে
+      $\mSat{M}{!A}[v]$;\iftag{prvDiamond}{ এবং}{}\\}{}
+    \iftag{prvDiamond}{&
+      $\Diamond!A \in \Gamma$  ও $\mSat{M}{!A}[v]$ হলে
+      $\mSat{M}{\Diamond!A}[u]$; \\}{}
+    \hline
+    \multirow{2}{*}{$C_2(u,v)$:}
+    \iftag{prvBox}{&
+      $\Box!A \in \Gamma$ ও $\mSat{M}{\Box!A}[v]$ হলে
+      $\mSat{M}{!A}[u]$;\iftag{prvDiamond}{ এবং}{}\\}{}
+    \iftag{prvDiamond}{&
+      $\Diamond!A \in \Gamma$ ও $\mSat{M}{!A}[u]$ হলে
+      $\mSat{M}{\Diamond!A}[v]$; \\}{}
+    \hline
+    \multirow{2}{*}{$C_3(u,v)$:}
+    \iftag{prvBox}{&
+      $\Box!A \in \Gamma$ ও $\mSat{M}{\Box!A}[u]$ হলে
+      $\mSat{M}{\Box!A}[v]$;\iftag{prvDiamond}{ এবং}{}\\}{}
+    \iftag{prvDiamond}{&
+      $\Diamond!A \in \Gamma$ ও $\mSat{M}{\Diamond!A}[v]$ হলে
+      $\mSat{M}{\Diamond!A}[u]$; \\}{}
+    \hline
+    \multirow{2}{*}{$C_4(u,v)$:}
+    \iftag{prvBox}{&
+      $\Box!A \in \Gamma$ ও $\mSat{M}{\Box!A}[v]$ হলে
+      $\mSat{M}{\Box!A}[u]$;\iftag{prvDiamond}{ এবং}{}\\}{}
+    \iftag{prvDiamond}{&
+      $\Diamond!A \in \Gamma$ ও $\mSat{M}{\Diamond!A}[u]$ হলে
+      $\mSat{M}{\Diamond!A}[v]$; \\}{}
+    \hline
+    \end{tabular}
+  \caption{ফিল্ট্রেশন সংজ্ঞায়নের জন্য সম্ভাব্য জগৎগুলির উপর শর্ত।}
+  \ollabel{tab:Cn-filtrations}
+\end{table}
+
+\begin{thm}\ollabel{thm:more-filtrations}
+  ধরা যাক $\mModel{M} =\tuple{W,R,V}$ একটি মডেল এবং $\Gamma$ উপ-!!{formula}s-এর অধীনে বদ্ধ। $W^*$ ও $V^*$ \olref[fil]{defn:filtration} অনুসারে সংজ্ঞায়িত। তবে:
+  \begin{enumerate}
+  \item ধরা যাক $R^*[u][v]$ তখনই, যখন $C_1(u, v) \land
+    C_2(u,v)$। তবে $R^*$ প্রতিসম; এবং $\mModel{M}$ প্রতিসম হলে $\mModel{M^*} =
+    \tuple{W^*,R^*,V^*}$ একটি ফিল্ট্রেশন।
+  \item ধরা যাক $R^*[u][v]$ তখনই, যখন $C_1(u, v)
+    \land C_3(u,v)$। তবে $R^*$ পরিযায়ী; এবং $\mModel{M}$ পরিযায়ী হলে $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ একটি ফিল্ট্রেশন।
+  \item ধরা যাক $R^*[u][v]$ তখনই, যখন $C_1(u, v) \land C_2(u,v)
+    \land C_3(u,v) \land C_4(u,v)$। তবে $R^*$ প্রতিসম ও পরিযায়ী; এবং $\mModel{M}$ প্রতিসম ও পরিযায়ী হলে $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ একটি ফিল্ট্রেশন।
+  \item ধরা যাক $R^*$ এভাবে সংজ্ঞায়িত: $R^*[u][v]$ তখনই, যখন $C_1(u,
+    v) \land C_3(u,v) \land C_4(u,v)$। তবে $R^*$ পরিযায়ী ও ইউক্লিডীয়; এবং $\mModel{M}$ পরিযায়ী ও ইউক্লিডীয় হলে $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ একটি ফিল্ট্রেশন।
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+    \item $R^*$ যে প্রতিসম, তা সরাসরি: $C_1(u,v)
+      \Leftrightarrow C_2(v,u)$ এবং $C_2(u,v) \Leftrightarrow
+      C_1(v,u)$। এখন দেখাতে হবে $\mModel{M}$ প্রতিসম হলে $\mModel{M^*}$ $\Gamma$-র মধ্য দিয়ে একটি ফিল্ট্রেশন। $C_1(u,v)$ শর্তটি নিশ্চিত করে যে
+      \iftag{prvBox}{%
+        \iftag{prvDiamond}{%
+          \olref[fil]{defn:filtration-R2} ও
+          \olref[fil]{defn:filtration-R3}, অর্থাৎ
+          \olref[fil]{defn:filtration}-এর শর্ত দুটি}{%
+          \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R2} শর্তটি}}{%
+        \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R3} শর্তটি}
+      পূরণ হয়। তাই শুধু \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R1} যাচাই করতে হবে; অর্থাৎ $Ruv$ থেকে $R^*[u][v]$।
+
+      ধরি $Ruv$। $R^*[u][v]$ দেখাতে $C_1(u,v)$ ও $C_2(u,v)$ প্রতিষ্ঠা করতে হবে। $C_1$-এর জন্য: \iftag{prvBox}{$\Box!A
+        \in\Gamma$ ও $\mSat{M}{\Box!A}[u]$ হলে $Ruv$ থেকে $\mSat{M}{!A}[v]$।\iftag{prvDiamond}{ একইভাবে,
+        }{}}{}\iftag{prvDiamond}{$\Diamond!A \in \Gamma$ ও
+        $\mSat{M}{!A}[v]$ হলে $Ruv$ থেকে $\mSat{M}{\Diamond!A}[u]$।}{} $C_2$-এর জন্য: \iftag{prvBox}{$\Box!A \in \Gamma$ ও
+        $\mSat{M}{\Box!A}[v]$ হলে প্রতিসাম্য থেকে $Ruv$ অনুযায়ী $Rvu$, ফলে $\mSat{M}{!A}[u]$।\iftag{prvDiamond}{ একইভাবে,
+        }{}}{}\iftag{prvDiamond}{$\Diamond!A \in\Gamma$ ও
+        $\mSat{M}{!A}[u]$ হলে $\mSat{M}{\Diamond!A}[v]$ (কারণ প্রতিসাম্যে $Rvu$)।}{}
+    \item অনুশীলনী।
+    \item অনুশীলনী।
+    \item অনুশীলনী।
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  \olref[nml][fil][acc]{thm:more-filtrations}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\end{document}

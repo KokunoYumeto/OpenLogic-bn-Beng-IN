@@ -1,0 +1,73 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: language-epistemic-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{pal}
+
+\olsection{প্রকাশ্য ঘোষণা-যুক্তিবিদ্যা}
+
+গতিশীল জ্ঞানতাত্ত্বিক যুক্তিবিদ্যায় কর্তার জ্ঞান সময়ের সঙ্গে, অথবা নতুন তথ্য পাওয়ার ফলে, কীভাবে বদলায় তা প্রকাশ করা যায়। এই ধরনের অনেক যুক্তিবিদ্যায় তথ্যসংক্রান্ত \emph{ঘটনা} বা \emph{হালনাগাদ}-এর সাহায্যে জ্ঞানের পরিবর্তন দেখানো হয়। সবচেয়ে মৌলিক হালনাগাদ হলো প্রকাশ্য ঘোষণা: কোনো সূত্র সত্যভাবে ঘোষণা করা হয় এবং সব কর্তা একসঙ্গে সেই ঘটনা প্রত্যক্ষ করে। এটি প্রকাশ করতে ভাষা নিম্নরূপে প্রসারিত করি।
+
+\begin{defn}
+ধরা যাক, $G$ কর্তা-চিহ্নগুলির একটি সমষ্টি। প্রকাশ্য ঘোষণাসহ বহু-কর্তা জ্ঞানতাত্ত্বিক যুক্তিবিদ্যার মৌলিক ভাষায় থাকে
+\begin{enumerate}
+  \tagitem{prvFalse}{!!{falsity} বোঝানো বচনমূলক ধ্রুবক~$\lfalse$।}{}
+  \tagitem{prvTrue}{!!{truth} বোঝানো বচনমূলক ধ্রুবক~$\ltrue$।}{}
+  \item !!{propositional variable}s-এর একটি !!{denumerable}s সেট: $\Obj
+    p_0$, $\Obj p_1$, $\Obj p_2$, \dots
+  \item বচনমূলক সংযোজকগুলি: \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (নঞর্থকরণ)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (সংযোজন)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (বিয়োজন)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  % BN-SRC-392 TARGET-CORRECTION-BEGIN: the induction below includes the biconditional.
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}।
+  % BN-SRC-392 TARGET-CORRECTION-END
+  \item জ্ঞান-অপারেটর $\Knows_a$, যেখানে $a \in G$।
+  \item প্রকাশ্য ঘোষণা-অপারেটর $[!B]$, যেখানে $!B$ !!a{formula}।
+\end{enumerate}
+\end{defn}
+
+প্রকাশ্য ঘোষণা-অপারেটরটি একটি বাক্স-অপারেটরের মতো কাজ করে। সেই অনুযায়ী ভাষার আরোহ সংজ্ঞাটি হলো:
+
+\begin{defn}
+  জ্ঞানতাত্ত্বিক ভাষার \emph{!!^{formula}s} নিম্নরূপে আরোহভাবে সংজ্ঞায়িত:
+  \begin{enumerate}
+  \tagitem{prvFalse}{$\lfalse$ একটি পারমাণবিক !!{formula}।}{}
+
+  \tagitem{prvTrue}{$\ltrue$ একটি পারমাণবিক !!{formula}।}{}
+
+  \item প্রত্যেক বচনমূলক চলক $\Obj p_i$ একটি (পারমাণবিক) !!{formula}।
+
+  \tagitem{prvNot}{$!A$ !!a{formula} হলে $\lnot !A$-ও
+  !!a{formula}।}{}
+
+  \tagitem{prvAnd}{$!A$ ও $!B$ !!{formula}s হলে $(!A \land
+  !B)$ একটি !!a{formula}।}{}
+
+  \tagitem{prvOr}{$!A$ ও $!B$ !!{formula}s হলে $(!A \lor !B)$
+  একটি !!a{formula}।}{}
+
+  \tagitem{prvIf}{$!A$ ও $!B$ !!{formula}s হলে $(!A \lif !B)$
+  একটি !!a{formula}।}{}
+
+  \tagitem{prvIff}{$!A$ ও $!B$ !!{formula}s হলে $(!A \liff !B)$
+  একটি !!a{formula}।}{}
+
+  \item $!A$ !!a{formula} এবং $a \in G$ হলে $\Knows_a !A$
+  একটি !!a{formula}।
+
+  \item $!A$ ও $!B$ !!{formula}s হলে $[!A] !B$ একটি !!a{formula}।
+
+  \tagitem{limitClause}{অন্য কিছুই !!a{formula} নয়।}{}
+\end{enumerate}
+\end{defn}
+
+!!{formula}~$[!A] !B$-এর অভিপ্রেত পাঠ হলো: ``$!A$ সত্যভাবে ঘোষিত হওয়ার পরে $!B$ সত্য।'' প্রকাশ্য ঘোষণার প্রেক্ষিতে সর্বস্তরে পারস্পরিক জ্ঞান নিয়েও কখনো আলোচনা দরকার হয়; তাই ভাষায় সর্বস্তরে পারস্পরিক জ্ঞানের অপারেটর~$\CKnows_G
+!A$-ও থাকতে পারে।
+
+\end{document}

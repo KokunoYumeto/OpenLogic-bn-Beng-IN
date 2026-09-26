@@ -1,0 +1,69 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: bisimulations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{bsd}
+
+\olsection{দ্বি-অনুকৃতি}
+
+জ্ঞানতাত্ত্বিক ভাষার প্রকাশক্ষমতা সম্পর্কে আরেকটি প্রশ্ন হলো, মডেলগুলির সঙ্গে তাদের মধ্যে সত্য সূত্রগুলির সম্পর্ক কেমন। ফ্রেম-সঙ্গতির ফল থেকে দেখেছি, কোনো ফ্রেমে কিছু সূত্র বৈধ হলে সেই ফ্রেমগুলি নির্দিষ্ট কিছু ধর্মও পূরণ করে। কিন্তু আমাদের মোডাল ভাষা কি এমন একটি জগৎ, যেখানে নিজের দিকে ফিরে একটি প্রতিবিম্বী তীর আছে, আর এমন একটি অসীম জগৎশৃঙ্খলের মধ্যে পার্থক্য করতে পারে, যেখানে প্রত্যেক জগৎ পরের জগতে যায়? অর্থাৎ, এই দুই জগতের মাত্র একটিতে সত্য হতে পারে, এমন কোনো সূত্র~$A$ আছে কি?
+
+সম্পর্কভিত্তিক মডেলগুলির মধ্যে \emph{দ্বি-অনুকৃতি} নামে একটি সম্পর্ক সংজ্ঞায়িত করা যায়, যা বলে তাদের গঠন কার্যত একই রকম। আমরা দেখব, জ্ঞানতাত্ত্বিক ভাষায় প্রকাশ করা যায় এমন এক ধরনের মডেল-সমতুল্যতা এই সম্পর্ক ধরে।
+
+\begin{defn}[দ্বি-অনুকৃতি]
+ধরা যাক, $M_1 = \tuple{W_1, R_1, V_1}$ এবং $M_2 = \tuple{W_2, R_2, V_2}$ দুটি সম্পর্কভিত্তিক মডেল। আর $\mathcal{R} \subseteq W_1 \times W_2$ একটি দ্বিপদী সম্পর্ক। প্রত্যেক $\tuple{w_1, w_2} \in \mathcal{R}$-এর জন্য নিচের শর্তগুলি পূরণ হলে $\mathcal{R}$-কে একটি \emph{দ্বি-অনুকৃতি} বলি:
+
+\begin{enumerate}
+  \item সব !!{propositional variable}s~$p$-এর জন্য $w_1 \in V_1(p)$ তখনই এবং কেবল তখনই, যখন $w_2 \in V_2(p)$।
+  \item প্রত্যেক কর্তা $a \in A$ এবং জগৎ $v_1 \in W_1$-এর জন্য, যদি $R_{1_a} w_1 v_1$ হয়, তবে এমন কোনো $v_2 \in W_2$ আছে যাতে $R_{2_a} w_2 v_2$ এবং $\tuple{v_1, v_2} \in
+  \mathcal{R}$।
+  \item প্রত্যেক কর্তা $a \in A$ এবং জগৎ $v_2 \in W_2$-এর জন্য, যদি
+   $R_{2_a} w_2 v_2$ হয়, তবে এমন কোনো $v_1 \in W_1$ আছে যাতে
+   $R_{1_a} w_1 v_1$ এবং $\tuple{v_1, v_2} \in
+   \mathcal{R}$।
+\end{enumerate}
+
+$M_1$ ও $M_2$-এর মধ্যে এমন একটি দ্বি-অনুকৃতি থাকলে, যা জগৎ~$w_1$ ও $w_2$-কে যুক্ত করে, আমরা $\tuple{M_1, w_1} \leftrightarroweq
+\tuple{M_2, w_2}$-ও লিখতে পারি এবং $\tuple{M_1, w_1}$ ও $\tuple{M_2, w_2}$-কে \emph{দ্বি-অনুকৃতিসম} বলি।
+\end{defn}
+
+দ্বি-অনুকৃতি সম্পর্কের বিভিন্ন শর্ত বিভিন্ন বিষয় নিশ্চিত করে। প্রথম শর্ত অনুযায়ী সব !!{propositional variable}s-এর মান মেলে; তাই দ্বি-অনুকৃতিসম জগৎগুলিতে একই মোডাল-অপারেটরবিহীন সূত্র সত্য হবে। পরের দুই শর্তকে যথাক্রমে কখনো ``সামনে'' ও ``পিছনে'' শর্ত বলা হয়; এগুলি নিশ্চিত করে যে অভিগম্যতা-সম্পর্কগুলির গঠন মিলে যায়।
+
+\begin{thm}
+$\tuple{M_1, w_1} \leftrightarroweq \tuple{M_2, w_2}$ হলে প্রত্যেক !!{formula}~$!A$-এর জন্য $\mSat{M_1}{!A}[w_1]$ তখনই এবং কেবল তখনই, যখন $\mSat{M_2}{!A}[w_2]$।
+\end{thm}
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) {$w_1$};
+      \node[world] (w2) [above left=of w1]{$w_2$};
+      \node[world] (w3) [above right=of w1] {$w_3$};
+      \draw[<->] (w1) to node {$a$} (w2);
+      \draw[->,loop below] (w1) to node {$a$} (w1);
+      \draw[<->] (w1) to [swap] node {$a$} (w3);
+      \draw[->,loop above] (w2) to node {$a$} (w2) ;
+      \draw[->,loop above] (w3) to node {$a$} (w3) ;
+
+      \node[world](v1)[right of=w1, xshift=1.5in]{$v_1$};
+      \node[world](v2)[above of=v1]{$v_2$};
+      \draw[<->] (v1) to node {$a$} (v2);
+      \draw[->,loop below] (v1) to node {$a$} (v1);
+      \draw[->,loop above] (v2) to node {$a$} (v2) ;
+
+      \draw[-,dotted] (w1) to (v1) ;
+      \draw[-,dotted,bend left=45] (w2) to (v2) ;
+      \draw[-,dotted,bend left=30] (w3) to (v2) ;
+    \end{tikzpicture}
+  \end{center}
+  \caption{দুটি দ্বি-অনুকৃতিসম মডেল।}
+  \ollabel{fig:bisimilar}
+\end{figure}
+
+\olref{fig:bisimilar}-এ আঁকা দুটি মডেল পুরোপুরি একই রকম না হলেও, জগৎ~$w_1$ ও~$v_1$-কে যুক্ত করে এমন একটি দ্বি-অনুকৃতি আছে। এই দ্বি-অনুকৃতি $w_2$ ও $w_3$—উভয়কেই~$v_2$-র সঙ্গে যুক্ত করে। কারণ আমাদের মোডাল ভাষায় প্রকাশ করা যায় এমন কিছু দিয়ে এদের মধ্যে প্রকৃত পার্থক্য করা যায় না। তবে $w_2$ ও~$w_3$-তে ভিন্ন ভিন্ন !!{propositional variable}s সত্য হলে পরিস্থিতি আলাদা হতো।
+
+\end{document}

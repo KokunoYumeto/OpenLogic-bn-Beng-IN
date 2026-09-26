@@ -5424,6 +5424,24 @@ for row in rows:
             assert "Jaako Hintikka" not in checked_target
             assert checked_target.count("Jaakko Hintikka") == 1
         tex_command_check = {"temporal_histories_and_epistemic_opening_reviewed": True}
+    elif 486 <= unit_number <= 490:
+        assert set(documented) == (
+            {"BN-SRC-392"} if row["unit_id"] == "OLP-0489" else set()
+        )
+        epistemic_completion_anchors = {
+            "OLP-0486": (r"\olfileid{aml}{el}{trw}", r"\ollabel{defn:sub:mmodels-box}", r"\CKnows_{G'} !A"),
+            "OLP-0487": (r"\olfileid{aml}{el}{acc}", r"\ollabel{tab:four}", r"\Knows \neg \Knows p"),
+            "OLP-0488": (r"\olfileid{aml}{el}{bsd}", r"\leftrightarroweq", r"\ollabel{fig:bisimilar}"),
+            "OLP-0489": (r"\olfileid{aml}{el}{pal}", r"\iftag{prvIff}", r"\tagitem{limitClause}"),
+            "OLP-0490": (r"\olfileid{aml}{el}{psm}", r"\ollabel{defn:sub:mmodels-pal}", r"\ollabel{fig:announcement-example}"),
+        }
+        assert all(anchor in target for anchor in epistemic_completion_anchors[row["unit_id"]])
+        if row["unit_id"] == "OLP-0489":
+            assert r"\iftag{prvIff}" not in source
+            assert r"\iftag{prvIff}" not in checked_target
+            assert target.count(r"\iftag{prvIff}") == 1
+            assert r"\tagitem{prvIff}" in source and r"\tagitem{prvIff}" in target
+        tex_command_check = {"epistemic_truth_frames_bisimulation_and_announcements_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":

@@ -1,0 +1,90 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: truth-at-w
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{trw}
+
+\olsection{কোনো জগতে সত্যতা}
+
+স্বাভাবিক মোডাল যুক্তিবিদ্যার মতোই, প্রতিটি জ্ঞানতাত্ত্বিক মডেল নির্ধারণ করে তার কোন জগতে কোন !!{formula}s সত্য বলে গণ্য হবে। সম্পর্কভিত্তিক অর্থতত্ত্বের মৌলিক ধারণাটির জন্য একই সংকেত ব্যবহার করি: ``মডেল~$\mModel{M}$ জগৎ~$w$-তে !!{formula}~$!A$-কে সত্য করে''। সম্পর্কটি আরোহভাবে সংজ্ঞায়িত; মোডাল অপারেটরবিহীন সব অপারেটরের ক্ষেত্রে সংজ্ঞা স্বাভাবিক মোডাল যুক্তিবিদ্যার মতোই।
+
+\begin{defn}\ollabel{defn:mmodels}
+  $\mModel M$-এ $w$-তে !!a{formula}~$!A$-এর \emph{সত্যতা}, সংকেতে
+  $\mSat{M}{!A}[w]$, নিম্নরূপে আরোহভাবে সংজ্ঞায়িত:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat{M}{\lfalse}[w]$ কখনোই নয়।}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[w]$ সর্বদাই।}}{}
+  \item $\mSat{M}{p}[w]$ তখনই এবং কেবল তখনই, যখন $w \in V(p)$।
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat/{M}{!B}[w]$।}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[w]$ এবং $\mSat{M}{!C}[w]$।}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[w]$ অথবা $\mSat{M}{!C}[w]$} (উভয়ই হতে পারে)।}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat/{M}{!B}[w]$ অথবা $\mSat{M}{!C}[w]$।}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[w]$ ও $\mSat{M}{!C}[w]$ উভয়ই সত্য,
+    অথবা $\mSat{M}{!B}[w]$ ও $\mSat{M}{!C}[w]$ কোনোটিই সত্য নয়।}}{}
+  \item\ollabel{defn:sub:mmodels-box}
+    \indcase{!A}{\Knows_a !B}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $R_a ww'$-যুক্ত প্রত্যেক $w' \in W$-তে $\mSat{M}{!B}[w']$।}
+  \end{enumerate}
+\end{defn}
+
+এখানেই আমাদের অভিগম্যতা-সম্পর্কের ওপর বিধিনিষেধ নিয়ে ভাবতে হয়। কারণ \olref{defn:sub:mmodels-box} অনুসারে $R_a ww'$-যুক্ত কোনো~$w'$ না থাকলেও !!a{formula}~$\Knows_a !B$ জগৎ~$w$-তে সত্য। স্বাভাবিক মোডাল যুক্তিবিদ্যাতেও একই শর্ত: কোনো জগতের পরবর্তী অভিগম্য জগৎ না থাকলে সব $\Box$-সূত্র সেখানে শূন্যতাবশে সত্য। কিন্তু $\Knows$-কে \emph{জ্ঞান} হিসেবে ধরলে এটি অত্যন্ত অস্বাভাবিক মনে হয়। বস্তুত, আমরা সাধারণত মনে করি না যে কোনো পরিস্থিতিতে একজন কর্তা একই সঙ্গে $!A$ এবং $\lnot !A$—উভয়ই জানতে পারে।
+
+এর একটি সমাধান হলো জ্ঞানতাত্ত্বিক যুক্তিবিদ্যায় অভিগম্যতা-সম্পর্ককে সব সময় \emph{প্রতিবিম্বী} রাখা। মোটামুটিভাবে এর অর্থ, প্রকৃত জগৎ কর্তার তথ্যের সঙ্গে সঙ্গতিপূর্ণ। বাস্তবে জ্ঞানতাত্ত্বিক যুক্তিবিদ্যায় প্রায়ই S5 ব্যবহার করা হয়; তবে $\Knows_a$ সম্পর্ক দিয়ে ঠিক কী বোঝাতে চাই, তার ওপর নির্ভর করে দুর্বলতর পদ্ধতিও ব্যবহৃত হতে পারে।
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]right:\mTrue{p}\\ \mFalse{q}}]{$w_1$};
+      \node[world] (w2) [label={[align=right]right:\mTrue{p}\\ \mTrue{q}},
+        above right=of w1]{$w_2$};
+      \node[world] (w3) [label={[align=right]right:\mFalse{p}\\ \mFalse{q}},
+        below right=of w1] {$w_3$};
+      \draw[<->] (w1) to node {$a$} (w2);
+      \draw[->,loop left] (w1) to node {$a,b$} (w1);
+      \draw[<->] (w1) to [swap] node {$b$} (w3);
+      \draw[->,loop above] (w2) to node {$a,b$} (w2) ;
+      \draw[->,loop below] (w3) to node {$a,b$} (w3) ;
+    \end{tikzpicture}
+  \end{center}
+  \caption{একটি সরল জ্ঞানতাত্ত্বিক মডেল।}
+  \ollabel{fig:simple}
+\end{figure}
+
+\begin{prob}
+  \olref[aml][el][trw]{fig:simple}-এ নিচের কোনগুলি সত্য, বিবেচনা করুন:
+  \begin{enumerate}
+    \item $\mSat{M}{\lnot q}[w_1]$;
+    \item $\mSat{M}{\Knows_a \lnot q}[w_1]$;
+    \item $\mSat{M}{\Knows_b \lnot q}[w_1]$;
+    \item $\mSat{M}{\Knows_b q \lor \Knows_b \lnot q}[w_2]$;
+    \item $\mSat{M}{\Knows_a( \Knows_b q \lor \Knows_b \lnot q)}[w_2]$;
+    \item $\mSat{M}{\EKnows_{\{a,b\}} \lnot q}[w_3]$;
+    \end{enumerate}
+\end{prob}
+
+কোনো জগতে সত্যতার মৌলিক সংজ্ঞা দেওয়া হলো। এখন স্বাভাবিক মোডাল যুক্তিবিদ্যার মোডাল বৈধতা ও অনুসিদ্ধান্তের মতো অন্য অর্থতাত্ত্বিক ধারণাগুলিও মোডাল অপারেটরগুলির এই নতুন ব্যাখ্যায় সরাসরি প্রযোজ্য।
+
+এবার সর্বস্তরে পারস্পরিক জ্ঞানের অপারেটর~$\CKnows_G$-এর সত্যতার শর্তও দিতে পারি। \olref[sfr][rel][ops]{sec} থেকে স্মরণ করুন, সম্পর্ক~$R$-এর \emph{পরিযায়ী আবরণ}~$R^+$ সংজ্ঞায়িত হয় এভাবে:
+\begin{align*}
+  R^+ &= \bigcup_{ n \in \mathbb{N}} R^n,
+\intertext{যেখানে}
+  R^0 & = R \text{ এবং}\\
+  R^{n+1} & = \Setabs{\tuple{x, z}}{\exists y (R^n xy \land Ryz)}.
+\end{align*}
+তাহলে $G$ যদি কর্তাদের একটি গোষ্ঠী হয়, সব কর্তার অভিগম্যতা-সম্পর্কের সংযুক্তির পরিযায়ী আবরণ হিসেবে $R_G = ( \bigcup_{b
+\in G} R_b )^+$ সংজ্ঞায়িত করি।
+
+\begin{defn}
+$G' \subseteq G$ হলে $\mSat{M}{\CKnows_{G'} !A}[ w]$ তখনই এবং কেবল তখনই, যখন $R_{G'} w w'$ হয় এমন প্রত্যেক $w'$-তে $\mSat{M}{!A}[w']$।
+\end{defn}
+
+\end{document}

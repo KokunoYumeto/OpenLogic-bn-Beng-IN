@@ -1,0 +1,93 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: public-announcement-logic-semantics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{psm}
+
+\olsection{প্রকাশ্য ঘোষণা-যুক্তিবিদ্যার অর্থতত্ত্ব}
+
+প্রকাশ্য ঘোষণা-যুক্তিবিদ্যার সম্পর্কভিত্তিক মডেলগুলি জ্ঞানতাত্ত্বিক যুক্তিবিদ্যার মডেলের মতোই। তবে প্রকাশ্য ঘোষণা-অপারেটরের অর্থতত্ত্বে নতুন একটি বিষয় আছে।
+
+\begin{defn}\ollabel{defn:mmodels} $\mModel M = \tuple{W, R, V}$-এ $w$-তে !!a{formula}~$!A$-এর \emph{সত্যতা}, সংকেতে
+  $\mSat{M}{!A}[w]$, নিম্নরূপে আরোহভাবে সংজ্ঞায়িত:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat{M}{\lfalse}[w]$ কখনোই নয়।}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[w]$ সর্বদাই।}}{}
+  \item $\mSat{M}{p}[w]$ তখনই এবং কেবল তখনই, যখন $w \in V(p)$।
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat/{M}{!B}[w]$।}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[w]$ এবং $\mSat{M}{!C}[w]$।}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[w]$ অথবা $\mSat{M}{!C}[w]$} (উভয়ই হতে পারে)।}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat/{M}{!B}[w]$ অথবা $\mSat{M}{!C}[w]$।}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[w]$ ও $\mSat{M}{!C}[w]$ উভয়ই সত্য,
+    অথবা $\mSat{M}{!B}[w]$ ও $\mSat{M}{!C}[w]$ কোনোটিই সত্য নয়।}}{}
+  \item\ollabel{defn:sub:mmodels-box}
+    \indcase{!A}{\Knows_a !B}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $R_a ww'$-যুক্ত প্রত্যেক $w' \in W$-তে $\mSat{M}{!B}[w']$।}
+  \item\ollabel{defn:sub:mmodels-pal}
+    \indcase{!A}{[!B] !C}{$\mSat{M}{\indfrm}[w]$ তখনই এবং কেবল তখনই, যখন
+    $\mSat{M}{!B}[w]$ থেকে $\mSat{M \mid !B}{!C}[w]$ অনুসৃত হয়।}
+
+  যেখানে $\mModel M \mid !B = \tuple{W', R', V'}$ নিম্নরূপে সংজ্ঞায়িত:
+  \begin{enumerate}
+    \item $W' = \Setabs{ u \in W}{\mSat{M}{!B}[u]}$। অতএব $\mModel M \mid !B$-এর জগৎগুলি হলো~$\mModel M$-এর সেই জগৎগুলি, যেখানে $!B$ সত্য।
+    \item $R'_a = R_a \cap (W' \times W')$। প্রত্যেক কর্তার অভিগম্যতা-সম্পর্ককে কেবল~$W'$-এ অবশিষ্ট জগৎগুলির মধ্যে সীমিত রাখা হয়।
+    \item $V'(p) = \Setabs{ u \in W'}{u \in V(p) }$। একইভাবে, জগৎগুলিতে বচনমূলক চলকগুলির নির্ধারিত সত্যমান অপরিবর্তিত থাকে। অর্থাৎ তথ্যসংক্রান্ত ঘটনা বচনমূলক চলকের সত্যমান বদলায় না।
+  \end{enumerate}
+
+  \end{enumerate}
+\end{defn}
+
+তাই প্রকাশ্য ঘোষণা-যুক্তিবিদ্যার বিশেষত্ব হলো, কখনো~$\mModel M$-এ কোনো !!a{formula}-র সত্যতা নির্ধারণ করতে $\mModel M$ ছাড়া অন্য একটি মডেলও দেখতে হয়।
+
+আরও লক্ষ করুন, আমাদের অর্থতত্ত্বে ঘোষণা-অপারেটরটি $\Box$~অপারেটরের মতো। ফলে কোনো জগতে !!a{formula}~$!A$ সত্যভাবে ঘোষণা করা না গেলে, সেখানে $[!A]B$ শূন্যতাবশে সত্য হবে—যেমন কোনো শেষবিন্দুতে সব $\Box$~!!{formula}s সত্য হয়।
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={below left:$p, \lnot q$}]{$w_1$};
+      \node[world] (w2) [left=of w1, label={left:$\lnot p, \lnot q$}]{$w_2$};
+      \node[world] (w3) [above=of w1, label={right:$p, q$}] {$w_3$};
+      \draw[<->] (w1) to [swap] node {$b$} (w2);
+      \draw[->,loop below] (w1) to node {$a, b$} (w1);
+      \draw[<->] (w1) to [swap] node {$a$} (w3);
+      \draw[->,loop above] (w2) to node {$a, b$} (w2) ;
+      \draw[->,loop above] (w3) to node {$a, b$} (w3) ;
+
+      \node[world](v1)[right of=w1, xshift=1.25in, label={right:$p, \lnot q$}]{$w'_1$};
+      \node[world](v3)[above of=v1,label={right:$p,q$}]{$w'_3$};
+      \draw[<->] (v1) to node {$a$} (v3);
+      \draw[->,loop below] (v1) to node {$a,b$} (v1);
+      \draw[->,loop above] (v3) to node {$a,b$} (v3) ;
+
+      \node(m)[below=of w1]{$\mModel M$};
+      \node(m')[below=of v1]{$\mModel M \mid p$};
+
+      \draw[-,dotted] (w1) to node {\footnotesize $p$-এর ঘোষণা}(v1) ;
+
+    \end{tikzpicture}
+  \end{center}
+  \caption{$p$-এর প্রকাশ্য ঘোষণার আগে ও পরে।}
+  \ollabel{fig:announcement-example}
+\end{figure}
+
+কোনো !!a{formula}-র প্রকাশ্য ঘোষণাকে মডেলটি সংকুচিত করা, অর্থাৎ যে জগৎগুলিতে !!{formula}টি সত্য ছিল মডেলকে শুধু সেগুলিতে সীমিত করা, হিসেবে দেখতে পারি। \olref{fig:announcement-example}-এ~$p$ প্রকাশ্যে ঘোষিত হলে কী হয় তার উদাহরণ আছে। এখানে লক্ষণীয়, ঘোষণার ফলে কর্তা~$b$ জানতে পারে যে~$p$; কিন্তু কর্তা~$a$ নতুন করে তা জানতে পারে না, কারণ $a$ আগেই জানত যে~$p$ সত্য।
+
+আরও আনুষ্ঠানিকভাবে, $\mSat{M}{\lnot \Knows_b p}[w_1]$, কিন্তু $\mSat{M
+\mid p}{\Knows_b p}[w'_1]$। তা থেকে $\mSat{M}{[p] \Knows_b
+p}[w_1]$ পাই। ঘোষণার ফল সম্পর্কে আরও শক্তিশালী দাবিও করা যায়। বস্তুত,
+$\mSat{M}{[p]\CKnows_{\{a,b\}} p}[w_1]$। অর্থাৎ $p$ ঘোষণার পরে সেটি \emph{সর্বস্তরে পারস্পরিক জ্ঞান} হয়ে যায়।
+
+কিন্তু এটি কি সব ক্ষেত্রে ঘটে? $!A$ সত্যভাবে ঘোষণা করলেই কি $!A$ \emph{সব সময়} সর্বস্তরে পারস্পরিক জ্ঞাত হয়? আশ্চর্য মনে হলেও উত্তর না। এমন !!{formula}s সত্যভাবে ঘোষণা করা যায়, যেগুলি ঘোষণার পরে আর সত্য থাকে না। যেমন, \olref{fig:announcement-example}-এর~$w_1$-তে $p \land \lnot \Knows_b p$ ঘোষণা করলে কী হয়, বিবেচনা করুন। বস্তুত $\mModel M \mid p$ এবং $\mModel M \mid (p \land \lnot \Knows_b p)$ একই মডেল। কিন্তু আগেই দেখেছি, $\mSat{M \mid p}{\Knows_b
+p}[w'_1]$। অতএব $\mSat{M \mid (p \land \lnot \Knows_b p)}{\lnot
+(p \land \lnot \Knows_b p)}[w'_1]$। সুতরাং এটি এমন একটি !!a{formula}, যা ঘোষিত হওয়ার পরে মিথ্যা হয়ে যায়।
+
+\end{document}

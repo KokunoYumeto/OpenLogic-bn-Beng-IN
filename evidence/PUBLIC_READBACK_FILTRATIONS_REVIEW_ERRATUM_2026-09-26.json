@@ -1,0 +1,29 @@
+{
+  "schema": "openlogic-bn-public-evidence-erratum-readback/1",
+  "verified_utc": "2026-09-26T02:22:50.306535+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "ff169dd658bd77e359812f66605552957856134b",
+  "parent": "d650125610c65021ac0e9567b3c42511b4bf1cc8",
+  "reason": "The Filtrations semantic review now states six audited source corrections, matching BN-SRC-360 through BN-SRC-365.",
+  "underlying_source_checkpoint": "90eba078ed57e496d093a3460805dfdf932d4236",
+  "underlying_source_receipt": "PUBLIC_READBACK_SOURCE_458_2026-09-26.json",
+  "archive_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/ff169dd658bd77e359812f66605552957856134b.zip",
+  "archive_bytes": 13082570,
+  "archive_sha256": "1635bb619a22ec29cd4e068caa5350403850cd52b649f784d91aee2b18b5adcc",
+  "anonymous_raw_and_archive_files_verified": [
+    {
+      "path": "evidence/DRAFT_STATUS.json",
+      "bytes": 284939,
+      "sha256": "7d577beeb4ea515e629f23a3c6b433c7ce71ad04eaee8992554c4da71abc27ca",
+      "raw_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/ff169dd658bd77e359812f66605552957856134b/evidence/DRAFT_STATUS.json"
+    },
+    {
+      "path": "evidence/SEMANTIC_REVIEW_FILTRATIONS.md",
+      "bytes": 4363,
+      "sha256": "a8eb97d4fbfaf96e5fbaba0f77fbe0ecb99ea1356dc5591c5106bf84035d278e",
+      "raw_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/ff169dd658bd77e359812f66605552957856134b/evidence/SEMANTIC_REVIEW_FILTRATIONS.md"
+    }
+  ],
+  "source_translation_files_changed": 0,
+  "reader_release_changed": false
+}

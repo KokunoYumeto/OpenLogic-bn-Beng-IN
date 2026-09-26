@@ -2688,13 +2688,21 @@ for row in rows:
             and target_math - source_math == expected_added
         )
     modal_tableaux_math_fix = False
-    if 460 <= unit_number <= 464:
+    if 460 <= unit_number <= 469:
         expected_modal_tableaux_corrections = {
             "OLP-0462": {"BN-SRC-371"},
             "OLP-0464": {
                 "BN-SRC-366", "BN-SRC-367", "BN-SRC-368",
                 "BN-SRC-369", "BN-SRC-370", "BN-SRC-372",
             },
+            "OLP-0465": {"BN-SRC-373"},
+            "OLP-0466": {"BN-SRC-374", "BN-SRC-375", "BN-SRC-376"},
+            "OLP-0468": {
+                "BN-SRC-377", "BN-SRC-378", "BN-SRC-379",
+                "BN-SRC-380", "BN-SRC-381", "BN-SRC-382",
+                "BN-SRC-383", "BN-SRC-384",
+            },
+            "OLP-0469": {"BN-SRC-385", "BN-SRC-386", "BN-SRC-387", "BN-SRC-388"},
         }
         assert set(documented) == expected_modal_tableaux_corrections.get(
             row["unit_id"], set()
@@ -2718,6 +2726,62 @@ for row in rows:
                     r"\mSat{M}{\Gamma}[f]": 2,
                     r"\sFmla{\True}{!B}[\sigma.n]": 1,
                     r"\Gamma\Entails!A": 1,
+                }),
+            ),
+            "OLP-0465": (
+                collections.Counter({r"\Log{S5}\Proves\Ax{5}": 1}),
+                collections.Counter({r"\Log{S5}\Proves\Box!A\lif\Box\Diamond!A": 1}),
+            ),
+            "OLP-0466": (
+                collections.Counter({
+                    r"\sFmla{\True}{\Box!B}[\sigma]": 1,
+                    r"\mSat{M}{\Box!B}[f(\sigma).n]": 1,
+                    r"\mSat/{M}{\Diamond!B}[f(\sigma).n]": 1,
+                }),
+                collections.Counter({
+                    r"\sFmla{\False}{\Diamond!B}[\sigma]": 1,
+                    r"\mSat{M}{\Box!B}[f(\sigma.n)]": 1,
+                    r"\mSat/{M}{\Diamond!B}[f(\sigma.n)]": 1,
+                }),
+            ),
+            "OLP-0468": (
+                collections.Counter({
+                    r"\sFmla{\True}{!B\land!C}": 1,
+                    r"\sFmla{\False}{!B}[\sigma]": 1,
+                    r"\sFmla{\False}{\Box}[\sigma]": 1,
+                    r"\sFmla{\True}{\Diamond}[\sigma]": 1,
+                    r"\sFmla{\False}{\Box}[\sigma.n]": 1,
+                    r"\sFmla{\True}{\Diamond}[\sigma.n]": 1,
+                    r"\sFmla{\True}{\Box}[\sigma]": 1,
+                    r"\sFmla{\False}{\Diamond}[\sigma]": 1,
+                    r"\sFmla{\True}{\Box}[\sigma.n]": 1,
+                    r"\sFmla{\False}{\Diamond}[\sigma.n]": 1,
+                    r"\mSat/{M(\Delta)}{!B}[\sigma]": 3,
+                }),
+                collections.Counter({
+                    r"\sFmla{\True}{!B\land!C}[\sigma]": 1,
+                    r"\sFmla{\True}{!B}[\sigma]": 1,
+                    r"\sFmla{\False}{\Box!B}[\sigma]": 1,
+                    r"\sFmla{\True}{\Diamond!B}[\sigma]": 1,
+                    r"\sFmla{\False}{!B}[\sigma.n]": 2,
+                    r"\sFmla{\True}{!B}[\sigma.n]": 2,
+                    r"\sFmla{\True}{\Box!B}[\sigma]": 1,
+                    r"\sFmla{\False}{\Diamond!B}[\sigma]": 1,
+                    r"\mSat/{M(\Delta)}{!C}[\sigma]": 3,
+                }),
+            ),
+            "OLP-0469": (
+                collections.Counter({
+                    r"\Entails/A": 1,
+                    r"\TRule{\True}{\Diamond}": 1,
+                    r"\sFmla{\True}{q}[1.1]": 1,
+                    r"\sFmla{\True}{\Diamond(p\landq)}[1]": 1,
+                }),
+                collections.Counter({
+                    r"\Entails/!A": 1,
+                    r"\TRule{\False}{\Diamond}": 1,
+                    r"\sFmla{\True}{q}[1.2]": 1,
+                    r"\sFmla{\False}{\Diamond(p\landq)}[1]": 1,
                 }),
             ),
         }
@@ -5279,7 +5343,7 @@ for row in rows:
         }
         assert all(anchor in checked_target for anchor in filtration_review_anchors[row["unit_id"]])
         tex_command_check = {"filtrations_definitions_diagrams_proofs_and_anchors_reviewed": True}
-    elif 460 <= unit_number <= 464:
+    elif 460 <= unit_number <= 469:
         assert modal_tableaux_math_fix
         modal_tableaux_review_anchors = {
             "OLP-0460": (r"\olchapter{nml}{tab}", r"\olimport{countermodels}"),
@@ -5287,12 +5351,22 @@ for row in rows:
             "OLP-0462": (r"\ollabel{tab:prop-rules}", r"\ollabel{tab:rules-K}", r"BN-SRC-371"),
             "OLP-0463": (r"\olfileid{nml}{tab}{prk}", r"\begin{oltableau}", r"\begin{prob}"),
             "OLP-0464": (r"\ollabel{thm:tableau-soundness}", r"\ollabel{cor:entailment-soundness}", r"BN-SRC-372"),
+            "OLP-0465": (r"\ollabel{tab:logics-rules}", r"\Log{S5} \Proves \Box!A \lif \Box\Diamond!A", r"BN-SRC-373"),
+            "OLP-0466": (r"\ollabel{prop:soundness-4r}", r"\ollabel{cor:soundness-logics}", r"BN-SRC-376"),
+            "OLP-0467": (r"\olfileid{nml}{tab}{s5}", r"\begin{oltableau}", r"\Ax{5}"),
+            "OLP-0468": (r"\ollabel{thm:tableau-completeness}", r"BN-SRC-377", r"BN-SRC-384"),
+            "OLP-0469": (r"\ollabel{fig:counter-Box}", r"\ollabel{fig:counter-Diamond}", r"BN-SRC-388"),
         }
         assert all(anchor in checked_target for anchor in modal_tableaux_review_anchors[row["unit_id"]])
         if row["unit_id"] == "OLP-0462":
             wrong = r"[\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[2]}"
             right = r"[\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\False}{\Box}[2]}"
             assert wrong in source and wrong not in checked_target and right in checked_target
+        if row["unit_id"] == "OLP-0469":
+            wrong = r"[\pFmla{\False}{\Diamond(p \land q) \lif (\Diamond p \land \Diamond q)}{1}"
+            right = r"[\pFmla{\False}{(\Diamond p \land \Diamond q) \lif \Diamond(p \land q)}{1}"
+            assert wrong in source and wrong not in checked_target
+            assert checked_target.count(right) == source.count(right) + 1
         tex_command_check = {"modal_tableaux_rules_proofs_and_anchors_reviewed": True}
     audited_source = source
     shared_description = None

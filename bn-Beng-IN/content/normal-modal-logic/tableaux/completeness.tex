@@ -1,0 +1,247 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{cpl}
+
+\olsection{\Log{K}-এর সম্পূর্ণতা}
+
+\begin{explain}
+  !!{tableau}s পদ্ধতির সম্পূর্ণতা দেখাতে প্রমাণ করতে হবে:
+  $\Gamma \Proves !A$ প্রতিষ্ঠার জন্য কোনো বন্ধ !!{tableau} না
+  থাকলে $\Gamma \Entails/ !A$, অর্থাৎ একটি প্রতিমডেল আছে।
+  কিন্তু ``কোনো বন্ধ !!{tableau} নেই'' মানে, তা নির্মাণের
+  প্রত্যেক প্রচেষ্টাতেই অন্তত একটি শাখা খোলা থাকবে।
+  মূল কৌশল হলো: একটি নির্দিষ্ট, \emph{পদ্ধতিগত ও পূর্ণাঙ্গ}
+  নির্মাণেও এমন শাখা খোলা থাকবে; বন্ধ !!{tableau} থাকলে এই
+  নির্মাণই তা পেত। এর খোলা শাখায় প্রতিমডেল নির্ধারণের
+  সব তথ্য থাকবে। শাখায় ব্যবহৃত সব পূর্বসূচিই প্রতিমডেলের
+  জগৎ হবে; আর !!a{propositional
+    variable}~$p$,
+  $\sigma$-তে সত্য হবে যদি এবং কেবল যদি
+  $\sFmla{\True}{p}[\sigma]$ শাখায় থাকে।
+\end{explain}
+
+\begin{defn}
+  !!a{tableau}-র একটি শাখাকে সম্পূর্ণ বলি, যদি প্রযোজ্য বিধির
+  পূর্বসূচিযুক্ত !!{formula} $\sFmla{S}{!A}[\sigma]$
+  শাখায় থাকলে
+  নিম্নলিখিত সূত্রগুলিও শাখায় থাকে:
+  \begin{enumerate}
+    \item প্রস্তাবনামূলক স্তূপীকরণ-বিধির ক্ষেত্রে সংশ্লিষ্ট
+      উপসংহারের সব পূর্বসূচিযুক্ত !!{formula}s;
+    \item প্রস্তাবনামূলক শাখা-বিভাজন বিধির ক্ষেত্রে সংশ্লিষ্ট
+      উপসংহারগুলির অন্তত একটি !!{formula}s;
+    \item নতুন পূর্বসূচি-প্রয়োজনীয় মোডাল বিধির ক্ষেত্রে অন্তত
+      একটি সম্ভাব্য উপসংহার;
+    \item ব্যবহৃত পূর্বসূচি-প্রয়োজনীয় মোডাল বিধির ক্ষেত্রে
+      শাখায় উপস্থিত প্রত্যেক প্রাসঙ্গিক পূর্বসূচির জন্য
+      সংশ্লিষ্ট উপসংহার।
+  \end{enumerate}
+\end{defn}
+
+\begin{explain}
+যেমন, সম্পূর্ণ শাখায় $\sFmla{\True}{!B \land !C}[\sigma]$
+থাকলে $\sFmla{\True}{!B}[\sigma]$ ও
+$\sFmla{\True}{!C}[\sigma]$-ও থাকে।
+% BN-SRC-377: source omits the prefix in the true-conjunction premise.
+$\sFmla{\True}{!B \lor !C}[\sigma]$ থাকলে
+$\sFmla{\True}{!B}[\sigma]$ অথবা
+$\sFmla{\True}{!C}[\sigma]$ অন্তত একটি থাকে।
+% BN-SRC-378: source incorrectly gives a false left disjunct.
+আর \iftag{prvBox}
+{$\sFmla{\False}{\Box !B}[\sigma]$}
+{$\sFmla{\True}{\Diamond !B}[\sigma]$}
+থাকলে অন্তত একটি~$n$-এর জন্য \iftag{prvBox}
+{$\sFmla{\False}{!B}[\sigma.n]$}
+{$\sFmla{\True}{!B}[\sigma.n]$}-ও থাকে।
+% BN-SRC-379: source omits modal operands and propagates the modal formula itself.
+অন্যদিকে \iftag{prvBox}
+{$\sFmla{\True}{\Box !B}[\sigma]$}
+{$\sFmla{\False}{\Diamond !B}[\sigma]$}
+থাকলে শাখায় ব্যবহৃত প্রত্যেক $\sigma.n$-এর জন্য,
+অর্থাৎ প্রাসঙ্গিক প্রত্যেক~$n$-এর জন্য,
+\iftag{prvBox}{$\sFmla{\True}{!B}[\sigma.n]$}
+{$\sFmla{\False}{!B}[\sigma.n]$}-ও থাকে।
+% BN-SRC-380: used-prefix conclusions must be the operand at the successor.
+\end{explain}
+
+\begin{prop}\ollabel{prop:complete-tableau}
+  প্রত্যেক সসীম $\Gamma$-র এমন একটি !!a{tableau} আছে যার
+  প্রত্যেক শাখা সম্পূর্ণ।
+\end{prop}
+
+\begin{proof}
+  $\Gamma$-র !!a{tableau}-র একটি খোলা শাখা নিই।
+  ওই পর্যায়ে শাখার সসীমসংখ্যক পূর্বসূচিযুক্ত !!{formula}s-এ
+  বিধি প্রয়োগ সম্ভব। একটি স্থির ক্রমে, ধরা যাক উপর থেকে
+  নিচে, যেসব !!{formula}s-এ (1)--(4) শর্ত এখনও পূরণ হয়নি সেগুলিতে
+  প্রযোজ্য বিধি প্রয়োগ করে শাখা বাড়াই। কোনো বিধিতে
+  শাখা বিভক্ত হলে উৎপন্ন প্রতিটি শাখায় অবশিষ্ট !!{formula}s-এর
+  জন্য একই কাজ করি। বর্তমান শাখার !!{formula}s ও ব্যবহৃত পূর্বসূচি
+  উভয়ের সংখ্যাই সসীম, তাই এই পর্যায়ের কাজ শেষ হয়।
+  তারপর উৎপন্ন শাখাগুলিতে একই প্রক্রিয়া পুনরাবৃত্তি করি,
+  যাতে প্রত্যেক প্রযোজ্য বিধি শেষ পর্যন্ত বিবেচিত হয়।
+  এভাবে নির্মিত !!{tableau}-র প্রত্যেক শাখা সম্পূর্ণ।
+  % BN-SRC-381: source says "closed", contradicting the proposition.
+\end{proof}
+
+\begin{thm}[সম্পূর্ণতা]
+  \ollabel{thm:tableau-completeness}
+  $\Gamma$-র কোনো বন্ধ !!{tableau} না থাকলে
+  $\Gamma$ পরিতৃপ্তিযোগ্য।
+\end{thm}
+
+\begin{proof}
+প্রস্তাবনা অনুযায়ী, $\Gamma$-র এমন একটি !!a{tableau} আছে যার
+প্রত্যেক শাখা সম্পূর্ণ। এর কোনো বন্ধ !!a{tableau}
+নেই বলে এতে অন্তত একটি শাখা খোলা ও সম্পূর্ণ।
+সেই শাখার পূর্বসূচিযুক্ত !!{formula}s-এর সেট $\Delta$,
+আর তাতে উপস্থিত পূর্বসূচিগুলির সেট $P(\Delta)$ ধরি।
+
+$\mModel{M(\Delta)} = \tuple{P(\Delta), R, V}$ মডেলটি
+নির্ধারণ করি। এর জগৎগুলি $\Delta$-তে উপস্থিত পূর্বসূচি;
+অভিগম্যতা-সম্পর্কটি:
+\[
+R\sigma\sigma' \quad \text{যদি এবং কেবল যদি} \quad
+\sigma'=\sigma.n \quad \text{কোনো~$n$-এর জন্য}
+\]
+এবং
+\[
+V(p) = \Setabs{\sigma}{\sFmla{\True}{p}[\sigma] \in \Delta}.
+\]
+$!A$-এর গঠনের উপর আরোহের সাহায্যে দেখাব,
+$\sFmla{\True}{!A}[\sigma] \in \Delta$ হলে
+$\mSat{M(\Delta)}{!A}[\sigma]$, আর
+$\sFmla{\False}{!A}[\sigma] \in \Delta$ হলে
+$\mSat/{M(\Delta)}{!A}[\sigma]$।
+
+\begin{enumerate}
+  \item \indcase{!A}{p}{$\sFmla{\True}{\indfrm}[\sigma] \in \Delta$
+    হলে $V$-এর সংজ্ঞা অনুসারে $\sigma \in V(p)$; তাই
+    $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+    $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$ হলে
+    $\sFmla{\True}{\indfrm}[\sigma] \notin \Delta$,
+    নইলে শাখাটি বন্ধ হতো। অতএব $\sigma \notin V(p)$ এবং
+    $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}
+  \item \indcase{!A}{\lnot !B}{\iftag{probNot}{অনুশীলন।}{
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে $\sFmla{\False}{!B}[\sigma] \in \Delta$।
+      আরোহ অনুমানে $\mSat/{M(\Delta)}{!B}[\sigma]$; তাই
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে $\sFmla{\True}{!B}[\sigma] \in \Delta$।
+      আরোহ অনুমানে $\mSat{M(\Delta)}{!B}[\sigma]$; তাই
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{!B \land !C}{\iftag{probAnd}{অনুশীলন।}{
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে $\sFmla{\True}{!B}[\sigma] \in \Delta$
+      এবং $\sFmla{\True}{!C}[\sigma] \in \Delta$।
+      আরোহ অনুমানে
+      $\mSat{M(\Delta)}{!B}[\sigma]$ এবং
+      $\mSat{M(\Delta)}{!C}[\sigma]$। তাই
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে
+      $\sFmla{\False}{!B}[\sigma] \in \Delta$ অথবা
+      $\sFmla{\False}{!C}[\sigma] \in \Delta$। আরোহ অনুমানে
+      $\mSat/{M(\Delta)}{!B}[\sigma]$ অথবা
+      % BN-SRC-382: second false conjunct must be !C.
+      $\mSat/{M(\Delta)}{!C}[\sigma]$। তাই
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{!B \lor !C}{\iftag{probOr}{অনুশীলন।}{
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে $\sFmla{\True}{!B}[\sigma] \in \Delta$
+      অথবা $\sFmla{\True}{!C}[\sigma] \in \Delta$।
+      আরোহ অনুমানে $\mSat{M(\Delta)}{!B}[\sigma]$
+      অথবা $\mSat{M(\Delta)}{!C}[\sigma]$। তাই
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে $\sFmla{\False}{!B}[\sigma] \in \Delta$
+      এবং $\sFmla{\False}{!C}[\sigma] \in \Delta$।
+      আরোহ অনুমানে $\mSat/{M(\Delta)}{!B}[\sigma]$
+      এবং
+      % BN-SRC-383: second false disjunct must be !C.
+      $\mSat/{M(\Delta)}{!C}[\sigma]$। তাই
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{!B \lif !C}{\iftag{probIf}{অনুশীলন।}{
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে $\sFmla{\False}{!B}[\sigma] \in \Delta$
+      অথবা $\sFmla{\True}{!C}[\sigma] \in \Delta$।
+      আরোহ অনুমানে $\mSat/{M(\Delta)}{!B}[\sigma]$
+      অথবা $\mSat{M(\Delta)}{!C}[\sigma]$। তাই
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে $\sFmla{\True}{!B}[\sigma] \in \Delta$
+      এবং $\sFmla{\False}{!C}[\sigma] \in \Delta$।
+      আরোহ অনুমানে $\mSat{M(\Delta)}{!B}[\sigma]$
+      এবং
+      % BN-SRC-384: false implication consequent must be !C.
+      $\mSat/{M(\Delta)}{!C}[\sigma]$। তাই
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{\Box !B}{\iftag{probBox}{অনুশীলন।}{
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে শাখায় ব্যবহৃত প্রত্যেক $\sigma.n$-এর
+      জন্য $\sFmla{\True}{!B}[\sigma.n] \in \Delta$।
+      অর্থাৎ, $R\sigma\sigma'$ মেনে চলা প্রত্যেক
+      $\sigma' \in P(\Delta)$-র জন্যও তাই।
+      আরোহ অনুমানে $R\sigma\sigma'$ মেনে চলা প্রত্যেক $\sigma'$-তে
+      $\mSat{M(\Delta)}{!B}[\sigma']$। অতএব
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে কোনো $\sigma.n$-এর জন্য
+      $\sFmla{\False}{!B}[\sigma.n] \in \Delta$।
+      আরোহ অনুমানে $\mSat/{M(\Delta)}{!B}[\sigma.n]$।
+      যেহেতু $R\sigma(\sigma.n)$, এমন একটি
+      $\sigma'$ আছে যার জন্য
+      $\mSat/{M(\Delta)}{!B}[\sigma']$। তাই
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{\Diamond !B}{\iftag{probDiamond}{অনুশীলন।}{
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে কোনো $\sigma.n$-এর জন্য
+      $\sFmla{\True}{!B}[\sigma.n] \in \Delta$।
+      আরোহ অনুমানে $\mSat{M(\Delta)}{!B}[\sigma.n]$।
+      যেহেতু $R\sigma(\sigma.n)$, এমন একটি
+      $\sigma'$ আছে যার জন্য
+      $\mSat{M(\Delta)}{!B}[\sigma']$। তাই
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$ হলে
+      শাখা সম্পূর্ণ বলে শাখায় ব্যবহৃত প্রত্যেক $\sigma.n$-এর
+      জন্য $\sFmla{\False}{!B}[\sigma.n] \in \Delta$।
+      অর্থাৎ, $R\sigma\sigma'$ মেনে চলা প্রত্যেক
+      $\sigma' \in P(\Delta)$-র জন্যও তাই।
+      আরোহ অনুমানে $R\sigma\sigma'$ মেনে চলা প্রত্যেক $\sigma'$-তে
+      $\mSat/{M(\Delta)}{!B}[\sigma']$। অতএব
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+\end{enumerate}
+যেহেতু $\Gamma \subseteq \Delta$,
+$\mSat{M(\Delta)}{\Gamma}$।
+\end{proof}
+
+\begin{prob}
+\olref[nml][tab][cpl]{thm:tableau-completeness}-এর
+প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{cor}
+\ollabel{cor:entailment-completeness}
+$\Gamma \Entails !A$ হলে $\Gamma \Proves !A$।
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:weak-completeness}
+$!A$ সব মডেলে সত্য হলে $\Proves !A$।
+\end{cor}
+
+\end{document}

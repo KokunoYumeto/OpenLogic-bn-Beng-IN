@@ -1,0 +1,89 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: simple-S5
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{s5}
+
+\olsection{\Log{S5}-এর সরল \usetoken{P}{tableau}}
+
+\Log{S5} সার্বিক মডেলগুলির শ্রেণি সাপেক্ষে বিশুদ্ধ ও পূর্ণ; অর্থাৎ
+সেই মডেলগুলিতে প্রতিটি জগৎ থেকে প্রতিটি জগৎ অভিগম্য। এমন মডেলে
+অভিগম্যতা-সম্বন্ধ আলাদা করে বিবেচনা করতে হয় না: ‘এমন একটি জগৎ~$w$
+আছে যেখানে $\mSat{M}{!A}[w]$’ তখনই সত্য, যখন~$u$ থেকে অভিগম্য
+এমন একটি~$w$ আছে। তাই \Log{S5}-এ মডেলকে শুধু জগৎসমষ্টি ও
+মাননির্ধারণ~$V$ দিয়ে সংজ্ঞায়িত করা যায়। এতে ইঙ্গিত মেলে যে
+!!{tableau}-র বিধিগুলিও সরল করা যাবে। সাধারণ ক্ষেত্রে
+পূর্বসূচি হিসেবে ধনাত্মক পূর্ণসংখ্যার অনুক্রম নিই, যাতে কোন
+পূর্বসূচির নামাঙ্কিত জগৎ কোনটি থেকে অভিগম্য, তা জানা যায়:
+$\sigma.n$, $\sigma$ থেকে অভিগম্য জগতের নাম দেয়। কিন্তু
+\Log{S5}-এ যেকোনো জগৎ অন্য যেকোনো জগৎ থেকে অভিগম্য; তাই
+এই হিসাব রাখার দরকার নেই। তার বদলে ধনাত্মক পূর্ণসংখ্যাকেই
+পূর্বসূচি হিসেবে ব্যবহার করি। সরলীকৃত বিধিগুলি
+\olref{tab:rules-S5}-এ দেওয়া হয়েছে।
+
+\begin{table}
+  \begin{center}
+    \def\arraystretch{3}\def\fCenter{}
+    \begin{tabular}{|c|c|}
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[n]}
+      \RightLabel{\TRule{\True}{\Box}}
+      \UnaryInfC{\sFmla{\True}{!A}[m]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Box !A}[n]}
+      \RightLabel{\TRule{\False}{\Box}}
+      \UnaryInfC{\sFmla{\False}{!A}[m]}
+      \DisplayProof\\
+      $m$ ব্যবহৃত & $m$ নতুন
+      \\[1ex]
+      \hline}{}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\True}{\Diamond !A}[n]}
+      \RightLabel{\TRule{\True}{\Diamond}}
+      \UnaryInfC{\sFmla{\True}{!A}[m]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Diamond !A}[n]}
+      \RightLabel{\TRule{\False}{\Diamond}}
+      \UnaryInfC{\sFmla{\False}{!A}[m]}
+      \DisplayProof\\
+      $m$ নতুন & $m$ ব্যবহৃত
+      \\[1ex]
+      \hline}{}
+    \end{tabular}
+  \end{center}
+  \caption{\Log{S5}-এর সরলীকৃত বিধি।}
+  \ollabel{tab:rules-S5}
+\end{table}
+
+\begin{ex}
+  $\Log{S5} \Proves \Ax{5}$, অর্থাৎ
+  $\Diamond!A \lif \Box\Diamond!A$, দেখায় এমন একটি
+  সরলীকৃত বদ্ধ ট্যাবলো দিচ্ছি।
+  \begin{oltableau}
+    [\pFmla{\False}{\Diamond\formula{A} \lif \Box\Diamond \formula{A}}{1},
+      just = \TAss
+      [\pFmla{\True}{\Diamond \formula{A}}{1}, just = {\TRule{\False}{\lif}[1]}
+        [\pFmla{\False}{\Box\Diamond \formula{A}}{1},
+          just = {\TRule{\False}{\lif}[1]}
+          [\pFmla{\False}{\Diamond \formula{A}}{2},
+            just = {\TRule{\False}{\Box}[3]}
+            [\pFmla{\True}{\formula{A}}{3},
+              just = {\TRule{\True}{\Diamond}[2]}
+                [\pFmla{\False}{\formula{A}}{3},
+                  just = {\TRule{\False}{\Diamond}[4]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+\end{ex}
+
+\end{document}

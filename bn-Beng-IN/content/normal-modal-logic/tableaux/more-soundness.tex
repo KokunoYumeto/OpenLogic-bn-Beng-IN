@@ -1,0 +1,254 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: more-soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{msn}
+
+\olsection{অতিরিক্ত বিধিগুলির বিশুদ্ধতা}
+
+কোনো মডেল-শ্রেণির জন্য একটি বিধিকে বিশুদ্ধ বলি, যদি !!a{tableau}-র
+কোনো শাখা ওই শ্রেণির একটি মডেলে পরিতৃপ্তিযোগ্য হলে, বিধি প্রয়োগে
+পাওয়া শাখাটিও ওই শ্রেণির একটি মডেলে পরিতৃপ্তিযোগ্য হয়।
+
+\begin{prop}
+  \ollabel{prop:soundness-T}
+  \iftag{prvBox}{\Ax{T}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ ও }%
+  \iftag{prvDiamond}{\Ax{T}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{বিধিটি}{বিধিগুলি}
+  প্রতিবিম্বী মডেলের জন্য বিশুদ্ধ।
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{$\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$-তে
+  T$\Box$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  \iftag{probBox}{অনুশীলন।}{শাখায় নতুন !!{signed
+      formula}~$\sFmla{\True}{!B}[\sigma]$ পাওয়া যায়। ধরি
+    $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat{M}{\Box !B}[f(\sigma)]$। $R$ প্রতিবিম্বী হওয়ায়
+    $Rf(\sigma)f(\sigma)$। তাই
+    $\mSat{M}{!B}[f(\sigma)]$; অর্থাৎ
+    $\mModel{M}, f$, $\sFmla{\True}{!B}[\sigma]$
+    পরিতৃপ্ত করে।}}{}
+\tagitem{prvDiamond}{$\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$-তে
+  T$\Diamond$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  \iftag{probDiamond}{অনুশীলন।}{শাখায় নতুন !!{signed
+      formula}~$\sFmla{\False}{!B}[\sigma]$ পাওয়া যায়। ধরি
+    $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$। $R$ প্রতিবিম্বী হওয়ায়
+    $Rf(\sigma)f(\sigma)$। তাই
+    $\mSat/{M}{!B}[f(\sigma)]$; অর্থাৎ
+    $\mModel{M}, f$, $\sFmla{\False}{!B}[\sigma]$
+    পরিতৃপ্ত করে।}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  \olref[nml][tab][msn]{prop:soundness-T}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-D}
+  \iftag{prvBox}{\Ax{D}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ ও }%
+  \iftag{prvDiamond}{\Ax{D}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{বিধিটি}{বিধিগুলি}
+  সিরিয়াল মডেলের জন্য বিশুদ্ধ।
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{$\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$-তে
+  D$\Box$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  \iftag{probBox}{অনুশীলন।}{শাখায় নতুন !!{signed
+      formula}~$\sFmla{\True}{\Diamond !B}[\sigma]$
+    পাওয়া যায়। ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat{M}{\Box !B}[f(\sigma)]$। $R$ সিরিয়াল হওয়ায়
+    এমন $w \in W$ আছে যে $Rf(\sigma)w$। তখন
+    $\mSat{M}{!B}[w]$ এবং তাই
+    $\mSat{M}{\Diamond !B}[f(\sigma)]$। অতএব
+    $\mModel{M}, f$, $\sFmla{\True}{\Diamond!B}[\sigma]$
+    পরিতৃপ্ত করে।}}{}
+\tagitem{prvDiamond}{$\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$-তে
+  D$\Diamond$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  \iftag{probDiamond}{অনুশীলন।}{শাখায় নতুন !!{signed
+      formula}~$\sFmla{\False}{\Box !B}[\sigma]$
+    পাওয়া যায়। ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$। $R$ সিরিয়াল হওয়ায়
+    এমন $w \in W$ আছে যে $Rf(\sigma)w$। তখন
+    $\mSat/{M}{!B}[w]$ এবং তাই
+    $\mSat/{M}{\Box !B}[f(\sigma)]$। অতএব
+    $\mModel{M}, f$, $\sFmla{\False}{\Box!B}[\sigma]$
+    পরিতৃপ্ত করে।}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  \olref[nml][tab][msn]{prop:soundness-D}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-B}
+  \iftag{prvBox}{\Ax{B}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ ও }%
+  \iftag{prvDiamond}{\Ax{B}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{বিধিটি}{বিধিগুলি}
+  প্রতিসম মডেলের জন্য বিশুদ্ধ।
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{$\sFmla{\True}{\Box !B}[\sigma.n] \in \Gamma$-তে
+  B$\Box$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  \iftag{probBox}{অনুশীলন।}{শাখায় নতুন !!{signed
+      formula}~$\sFmla{\True}{!B}[\sigma]$ পাওয়া যায়।
+    ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat{M}{\Box !B}[f(\sigma.n)]$। $f$ শাখার
+    পূর্বসূচিগুলির $\mModel{M}$-এ ব্যাখ্যা হওয়ায়
+    $Rf(\sigma)f(\sigma.n)$। $R$ প্রতিসম, তাই
+    $Rf(\sigma.n)f(\sigma)$। যেহেতু
+    $\mSat{M}{\Box !B}[f(\sigma.n)]$,
+    তাই $\mSat{M}{!B}[f(\sigma)]$। অতএব
+    $\mModel{M}, f$, $\sFmla{\True}{!B}[\sigma]$
+    পরিতৃপ্ত করে।}}{}
+\tagitem{prvDiamond}{$\sFmla{\False}{\Diamond !B}[\sigma.n] \in \Gamma$-তে
+  B$\Diamond$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  \iftag{probDiamond}{অনুশীলন।}{শাখায় নতুন !!{signed
+      formula}~$\sFmla{\False}{!B}[\sigma]$ পাওয়া যায়।
+    ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$। $f$ শাখার
+    পূর্বসূচিগুলির $\mModel{M}$-এ ব্যাখ্যা হওয়ায়
+    $Rf(\sigma)f(\sigma.n)$। $R$ প্রতিসম, তাই
+    $Rf(\sigma.n)f(\sigma)$। যেহেতু
+    $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$,
+    তাই $\mSat/{M}{!B}[f(\sigma)]$। অতএব
+    $\mModel{M}, f$, $\sFmla{\False}{!B}[\sigma]$
+    পরিতৃপ্ত করে।}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  \olref[nml][tab][msn]{prop:soundness-B}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-4}
+  \iftag{prvBox}{\Ax{4}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ ও }%
+  \iftag{prvDiamond}{\Ax{4}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{বিধিটি}{বিধিগুলি}
+  পরিযায়ী মডেলের জন্য বিশুদ্ধ।
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{$\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$-তে
+  4$\Box$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  \iftag{probBox}{অনুশীলন।}{শাখায় নতুন !!{signed
+      formula}~$\sFmla{\True}{\Box!B}[\sigma.n]$ পাওয়া যায়।
+    ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat{M}{\Box !B}[f(\sigma)]$। $f$ শাখার
+    পূর্বসূচিগুলির $\mModel{M}$-এ ব্যাখ্যা এবং $\sigma.n$
+    ব্যবহৃত, তাই $Rf(\sigma)f(\sigma.n)$। এখন এমন যেকোনো
+    জগৎ $w$ নিই যার জন্য $Rf(\sigma.n)w$।
+    $R$ পরিযায়ী হওয়ায় $Rf(\sigma)w$।
+    $\mSat{M}{\Box !B}[f(\sigma)]$ থেকে
+    $\mSat{M}{!B}[w]$। সুতরাং
+    $\mSat{M}{\Box !B}[f(\sigma.n)]$; অর্থাৎ
+    $\mModel{M}, f$, $\sFmla{\True}{\Box !B}[\sigma.n]$
+    পরিতৃপ্ত করে।}}{}
+\tagitem{prvDiamond}{$\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$-তে
+  4$\Diamond$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  \iftag{probDiamond}{অনুশীলন।}{শাখায় নতুন !!{signed
+      formula}~$\sFmla{\False}{\Diamond!B}[\sigma.n]$ পাওয়া যায়।
+    ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$। $f$ শাখার
+    পূর্বসূচিগুলির $\mModel{M}$-এ ব্যাখ্যা এবং $\sigma.n$
+    ব্যবহৃত, তাই $Rf(\sigma)f(\sigma.n)$। এখন এমন যেকোনো
+    জগৎ $w$ নিই যার জন্য $Rf(\sigma.n)w$।
+    $R$ পরিযায়ী হওয়ায় $Rf(\sigma)w$।
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$ থেকে
+    $\mSat/{M}{!B}[w]$। সুতরাং
+    $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$; অর্থাৎ
+    $\mModel{M}, f$, $\sFmla{\False}{\Diamond !B}[\sigma.n]$
+    পরিতৃপ্ত করে।}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  \olref[nml][tab][msn]{prop:soundness-4}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-4r}
+  \iftag{prvBox}{\Ax{4r}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ ও }%
+  \iftag{prvDiamond}{\Ax{4r}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{বিধিটি}{বিধিগুলি}
+  ইউক্লিডীয় মডেলের জন্য বিশুদ্ধ।
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{$\sFmla{\True}{\Box !B}[\sigma.n] \in \Gamma$-তে
+  4r$\Box$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  \iftag{probBox}{অনুশীলন।}{শাখায় নতুন !!{signed
+      formula}~$\sFmla{\True}{\Box!B}[\sigma]$ পাওয়া যায়।
+    ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat{M}{\Box !B}[f(\sigma.n)]$। $f$ শাখার
+    পূর্বসূচিগুলির $\mModel{M}$-এ ব্যাখ্যা, তাই
+    $Rf(\sigma)f(\sigma.n)$। এখন এমন যেকোনো
+    জগৎ $w$ নিই যার জন্য $Rf(\sigma)w$।
+    $R$ ইউক্লিডীয় হওয়ায় $Rf(\sigma.n)w$।
+    % BN-SRC-374: the source indexes f(\sigma).n instead of f(\sigma.n).
+    $\mSat{M}{\Box !B}[f(\sigma.n)]$ থেকে
+    $\mSat{M}{!B}[w]$। সুতরাং
+    $\mSat{M}{\Box !B}[f(\sigma)]$; অর্থাৎ
+    $\mModel{M}, f$, $\sFmla{\True}{\Box !B}[\sigma]$
+    পরিতৃপ্ত করে।}}{}
+\tagitem{prvDiamond}{$\sFmla{\False}{\Diamond !B}[\sigma.n] \in \Gamma$-তে
+  4r$\Diamond$ প্রয়োগে শাখাটি প্রসারিত হয়:
+  % BN-SRC-375: a false diamond premise propagates a false diamond conclusion.
+  \iftag{probDiamond}{অনুশীলন।}{শাখায় নতুন !!{signed
+      formula}~$\sFmla{\False}{\Diamond!B}[\sigma]$ পাওয়া যায়।
+    ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
+    $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$। $f$ শাখার
+    পূর্বসূচিগুলির $\mModel{M}$-এ ব্যাখ্যা, তাই
+    $Rf(\sigma)f(\sigma.n)$। এখন এমন যেকোনো
+    জগৎ $w$ নিই যার জন্য $Rf(\sigma)w$।
+    $R$ ইউক্লিডীয় হওয়ায় $Rf(\sigma.n)w$।
+    % BN-SRC-376: the source indexes f(\sigma).n instead of f(\sigma.n).
+    $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$ থেকে
+    $\mSat/{M}{!B}[w]$। সুতরাং
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$; অর্থাৎ
+    $\mModel{M}, f$, $\sFmla{\False}{\Diamond !B}[\sigma]$
+    পরিতৃপ্ত করে।}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  \olref[nml][tab][msn]{prop:soundness-4r}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:soundness-logics}
+\olref[mru]{tab:logics-rules}-এ দেওয়া !!{tableau} পদ্ধতিগুলি
+সংশ্লিষ্ট মডেল-শ্রেণিগুলির জন্য বিশুদ্ধ।
+\end{cor}
+
+\end{document}

@@ -1,0 +1,34 @@
+% Part: set-theory
+% Chapter: z
+% Section: union
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{z}{union}
+\olsection{সংযোগ}
+
+\olref[sth][z][sep]{prop:intersectionsexist}-এ আমরা
+ছেদ পাওয়ার কথা দেখেছি। কিন্তু নির্বিচার সংযোগের
+অস্তিত্ব চাইলে আরেকটি স্বতঃসিদ্ধ স্থির করতে হবে:
+
+\begin{axiom}[সংযোগ] যেকোনো সেট~$A$-এর জন্য
+$\bigcup A = \Setabs{x}{(\exists b \in A) x \in b}$
+সেটটি আছে।
+\[
+  \forall A \exists U \forall x(x \in U \liff (\exists b \in A)x \in b)
+\]
+\end{axiom}
+
+সঞ্চয়ী-পর্যায়ক্রমিক ধারণা এই স্বতঃসিদ্ধটিকেও
+সমর্থন করে। $A$ একটি সেট ধরি; তাহলে $A$ কোনো
+পর্যায়~$S$-এ গঠিত (\stageshier{} অনুযায়ী)।
+$A$-এর প্রত্যেক সদস্য~$S$-এর \emph{আগে} গঠিত
+(\stagesacc{} অনুযায়ী); তাই একইভাবে যুক্তি করে
+$A$-এর প্রত্যেক সদস্যের প্রত্যেক সদস্যও $S$-এর
+আগে গঠিত। অতএব \emph{সেই} সেটগুলি সবই $S$-এর
+আগে উপলব্ধ, এবং $S$-এ সেগুলিকে একটি সেটে
+গঠন করা যায়। সেই সেটটিই $\bigcup A$।
+
+\end{document}

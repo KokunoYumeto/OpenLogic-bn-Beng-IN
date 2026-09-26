@@ -1,0 +1,84 @@
+% Part: set-theory
+% Chapter: z
+% Section: pairs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{z}{pairs}
+\olsection{যুগল}
+
+পরের স্বতঃসিদ্ধটি এই:
+
+\begin{axiom}[যুগল]
+যেকোনো সেট $a, b$-এর জন্য $\{a, b\}$ সেটটি আছে।
+\[
+  \forall a \forall b \exists P \forall x (x \in P \liff (x = a \lor x = b))
+\]
+\end{axiom}
+
+পর্যায়ক্রমিক ধারণা দিয়ে এই স্বতঃসিদ্ধটির যথার্থতা
+এভাবে বোঝা যায়। ধরি, $a$ পর্যায়~$S$-এ এবং $b$
+পর্যায়~$T$-এ উপলব্ধ। $S$ ও~$T$-এর মধ্যে যে পর্যায়টি
+পরে আসে, সেটিকে~$M$ বলি। তাহলে $a$ ও~$b$ উভয়ই
+পর্যায়~$M$-এ উপলব্ধ; তাই $M$-এর পরের যেকোনো
+পর্যায়ে $\{a,b\}$ একটি গঠনযোগ্য সংগ্রহ।
+
+কিন্তু একটু থামো!{} $M$-এর পরে আদৌ কোনো পর্যায়
+\emph{আছে} বলে ধরব কেন? না থাকলে আমাদের যুক্তি
+ব্যর্থ হবে। তাই যুগলের স্বতঃসিদ্ধকে সমর্থন করতে
+\olref[sth][z][story]{sec}-এর কাহিনিতে আরেকটি নীতি
+যোগ করতে হবে:
+\begin{enumerate}
+  \item[] \stagessucc. কোনো শেষ পর্যায় নেই।
+\end{enumerate}
+এই নীতির ভিত্তি কী? শোয়েনফিল্ডের বিবরণে
+\emph{স্পষ্টভাবে} বলা হয়নি যে শেষ পর্যায় নেই।
+কঠোর অর্থে এটি কাহিনিতে একটি অতিরিক্ত সংযোজন
+হলেও পর্যায়ে পর্যায়ে সেট গঠনের মৌলিক ধারণার
+সঙ্গে ভালোভাবেই মেলে। পরের আলোচনায় নীতিটি
+আমরা গ্রহণ করব। তাই যুগলের স্বতঃসিদ্ধও গ্রহণ করব।
+
+নতুন স্বতঃসিদ্ধটি হাতে থাকলে আরও অনেক সেটের
+অস্তিত্ব প্রমাণ করা যায়। যেমন:
+
+\begin{prop}\ollabel{prop:pairsconsequences}
+যেকোনো সেট $a$ ও~$b$-এর জন্য নিচের সেটগুলি আছে:
+  \begin{enumerate}
+    \item\ollabel{singleton} $\{a\}$
+    \item\ollabel{binunion} $a \cup b$
+    \item\ollabel{tuples} $\tuple{a, b}$
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+\olref{singleton}. যুগলের স্বতঃসিদ্ধে $\{a, a\}$ আছে;
+সদস্যভিত্তিক সমতা অনুযায়ী সেটিই~$\{a\}$।
+
+\olref{binunion}. যুগলের স্বতঃসিদ্ধে $\{a, b\}$
+আছে। এবার সংযোগের স্বতঃসিদ্ধে
+$a \cup b = \bigcup \{a, b\}$ আছে।
+
+\olref{tuples}. \olref{singleton} অনুযায়ী $\{a\}$
+আছে। যুগলের স্বতঃসিদ্ধে $\{a, b\}$ আছে। এবার
+আবার যুগলের স্বতঃসিদ্ধে
+$\{\{a\}, \{a, b\}\} = \tuple{a, b}$ আছে।
+\end{proof}
+
+\begin{prob}
+দেখাও যে, যেকোনো সেট $a, b, c$-এর জন্য
+$\{a, b, c\}$ সেটটি আছে।
+\end{prob}
+
+\begin{prob}
+দেখাও যে, যেকোনো সেট $a_1, \ldots, a_n$-এর
+জন্য $\{a_1, \ldots, a_n\}$ সেটটি আছে।
+\end{prob}
+
+%\begin{proof} By two applications of Pairs, $\{\{a_1, a_2\}, \{a_1,
+%   a_3\}\}$ exists. By Union and Extensionality, $\bigcup \{\{a_1,
+%   a_2\}, \{a_1, a_3\}\} = \{a_1, a_2, a_3\}$ exists. Repeat this
+%   trick as often as necessary. \end{proof}
+
+\end{document}

@@ -1,0 +1,94 @@
+% Part: set-theory
+% Chapter: story
+% Section: cumulative-approach
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{story}{approach}
+\olsection{সঞ্চয়ী-পর্যায়ক্রমিক পদ্ধতি}
+
+সেটগুলিকে কীভাবে বিভিন্ন পর্যায়ে বিন্যস্ত করব, তার একটু
+বিস্তারিত বিবরণ এই:
+\begin{quote}
+  সেটগুলি বিভিন্ন \emph{পর্যায়ে} গঠিত হয়। প্রত্যেক পর্যায়~$S$-এর
+  ক্ষেত্রে কিছু পর্যায় $S$-এর \emph{আগে} থাকে। পর্যায়~$S$-এ, $S$-এর আগের
+  পর্যায়গুলিতে গঠিত সেটগুলি দিয়ে তৈরি প্রত্যেক সংগ্রহকে একটি
+  সেট হিসেবে গঠন করা হয়। পর্যায়গুলিতে গঠিত সেট ছাড়া আর
+  কোনো সেট নেই। \citep[p.~323]{Shoenfield:AST}
+\end{quote}
+এটি \emph{সেটের সঞ্চয়ী-পর্যায়ক্রমিক ধারণা}-র একটি রূপরেখা।
+\olref[sth][][]{part}-এ যে আনুষ্ঠানিক সেটতত্ত্ব দেব, তার
+ভিত্তি হবে এই ধারণা।
+
+বিষয়টি আরেকটু খুঁটিয়ে দেখা যাক। শোয়েনফিল্ডের বর্ণনা
+অনুযায়ী, প্রত্যেক পর্যায়ে আগের পর্যায়গুলি থেকে পাওয়া
+সেট দিয়ে আমরা নতুন সেট গঠন করি। তাই প্রথম পর্যায়, অর্থাৎ
+পর্যায়~$0$-এ, কোনো \emph{আগের} পর্যায় নেই; সুতরাং আগের
+পর্যায় থেকে পাওয়া সেটও তো নেইই।\footnote{একটি প্রথম পর্যায়
+\emph{আছে} বলে কেন ধরব? \olref[z][story]{sec}-এ
+\stagesord{}-এর পাদটীকা দেখো।} ফলে আমরা কেবল একটি সেট
+গঠন করি: !!{element}s-বিহীন সেট~$\emptyset$। পর্যায়~$1$-এ
+আগের পর্যায় থেকে ঠিক একটি সেট পাওয়া যায়, তাই একমাত্র নতুন
+সেটটি~$\{\emptyset\}$। পর্যায়~$2$-এ আগের পর্যায়গুলি থেকে
+দুটি সেট পাওয়া যায়, আর আমরা দুটি নতুন সেট
+$\{\{\emptyset\}\}$ এবং $\{\emptyset, \{\emptyset\}\}$
+গঠন করি। পর্যায়~$3$-এ আগের পর্যায়গুলি থেকে চারটি সেট
+পাওয়া যায়, তাই আমরা বারোটি নতুন সেট গঠন করি\ldots।
+এভাবে সেটের সঞ্চয়ী-পর্যায়ক্রমিক ছবিটি কিছুটা নিচের মতো
+দেখাবে (সংখ্যাগুলি পর্যায় বোঝায়):
+\begin{center}
+  \begin{tikzpicture}[scale=0.6]
+  \tikzset{cut_here/.style={densely dotted}}
+  \draw (-4,6) -- (-1, 0)-- (2,6);
+  \draw[cut_here] (-5,8)--(-4,6);
+  \draw[cut_here] (2,6)--(3,8);
+  \draw(-1.5, 1)--(-0.5, 1);
+  \draw(-2, 2)--(0, 2);
+  \draw(-2.5, 3)--(0.5,3);
+  \draw(-3, 4)--(1, 4);
+  \draw(-3.5, 5)--(1.5, 5);
+  \draw(-4, 6)--(2, 6);
+  \node[label] at (0, 0) {\small 0};
+  \node[label] at (0.5, 1) {\small 1};
+  \node[label] at (1, 2) {\small 2};
+  \node[label] at (1.5, 3) {\small 3};
+  \node[label] at (2, 4) {\small 4};
+  \node[label] at (2.5, 5) {\small 5};
+  \node[label] at (3, 6) {\small 6};
+  \end{tikzpicture}
+\end{center}
+তাহলে এই কাহিনি গ্রহণ করব কেন?
+
+একটি কারণ, কাহিনিটি সহজবোধ্য এবং তা নিয়ে কাজ করা যায়।
+সবচেয়ে আপাত ধারণা, অর্থাৎ অনানুষ্ঠানিক ধর্মনির্দেশে
+সেট-গঠন ব্যর্থ হওয়ার পরে, এমন একটি ভালো বিকল্প আমাদের দরকার।
+
+কিন্তু কাহিনিটি \emph{শুধু} সহজবোধ্য নয়। এই কাহিনির উপর
+ভিত্তি করে তৈরি সেটতত্ত্ব \emph{সঙ্গত} হবে বলে বিশ্বাস করার
+ভালো কারণও আছে। কারণটি এই।
+
+সেটের সঞ্চয়ী-পর্যায়ক্রমিক ধারণা অনুযায়ী আমরা বিভিন্ন
+পর্যায়ে সেট গঠন করি; আর তাদের !!{element}s হতে হবে
+\emph{ইতিমধ্যেই} উপলব্ধ বস্তু। তাই যেকোনো পর্যায়~$S$-এর
+জন্য সেটটি গঠন করতে পারি:
+\[
+  R_S = \Setabs{x}{x \notin x \text{ এবং $x$ $S$-এর আগে উপলব্ধ ছিল}}
+\]
+এখন রাসেলের কূটাভাসের প্রমাণের যুক্তি দেখায়, $R_S$ নিজে
+পর্যায়~$S$-এর আগে উপলব্ধ ছিল না। এতে কোনো স্ববিরোধ নেই।
+তার উপর, সেটের সঞ্চয়ী-পর্যায়ক্রমিক ধারণা গ্রহণ করলে
+রাসেলের সেটটি গঠন করা যাবে—এমন \emph{প্রত্যাশাই} আমাদের
+থাকা উচিত নয়। কারণ সেটি হবে এমন সব অ-স্বসদস্য সেটের
+সেট, যেগুলি ``কখনো-না-কখনো উপলব্ধ হবে''। সংক্ষেপে,
+এই ধারণা অনুযায়ী রাসেলের সেট গঠন করা যায় না—এটি
+\emph{বিস্ময়কর} নয়; বরং আমরা \emph{এই ফলই আশা করব}।
+
+%In one sense, then, the cumulative-iterative conception of set yields a response to Russell's Paradox which is rather like the \emph{predicativist}'s response. After all, the predicativist said that the collection of all non-self-membered sets$_n$ is a set$_{n+1}$, and this set$_n$ will not be self-membered. (Indeed, most predicativists will treat it as \emph{ungrammatical} to try to ask whether a set is self-membered.)
+%
+%But there is an important difference between the cumulative-iterative approach and the predicativist approach: the cumulative-iterative approach treats all of our entities as being \emph{of the same kind}. The predicativist will presumably have an empty set$_0$ (i.e., a set$_0$ with no !!{element}s), and an empty set$_1$ (i.e., a set$_1$ with no !!{element}s), and these will be \emph{different entities}. But on the cumulative-iterative approach, there is just one empty set, $\emptyset$, and it will be available at every stage of the hierarchy.
+
+%Indeed, the Axiom of Extensionality, stated at the start of this chapter, will hold true of the elements in this hierarchy (so that there can be \emph{only one} ``empty'' set). But I do not intend to use the cumulative-iterative conception to justify Extensionality (see \cite{Boolos1971}). Again: I suggest that we should accept Extensionality, just because we are interested in extensional collections.
+
+\end{document}

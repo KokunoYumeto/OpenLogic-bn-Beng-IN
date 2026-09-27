@@ -6151,6 +6151,17 @@ for row in rows:
             r"\LangL(\Gamma)=\LangL(\Gamma_1)\cap\LangL(\Gamma_2)": 1,
         })
     )
+    legacy_cut_intro_label_fix = False
+    if row["unit_id"] == "OLP-0659":
+        old_label = r"\RightLabel{\Cut}"
+        new_label = r"\RightLabel{\CutCS}"
+        assert source.count(old_label) == 2
+        pos = source.rfind(old_label)
+        audited_intro = source[:pos] + new_label + source[pos + len(old_label):]
+        legacy_cut_intro_label_fix = (
+            set(documented) == {"BN-SRC-529", "BN-SRC-530"}
+            and mathparts(audited_intro) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6283,6 +6294,7 @@ for row in rows:
             legacy_cut_largest_formula_repair,
             legacy_cut_topmost_formula_repairs,
             legacy_interpolation_language_repairs,
+            legacy_cut_intro_label_fix,
         )
     )
     minimal_change_fileid_fix = (
@@ -6362,6 +6374,14 @@ for row in rows:
         or ordinal_exponentiation_citation_localization
         or legacy_cut_largest_reference_repairs
     )
+    legacy_cut_intro_split_token_fix = (
+        row["unit_id"] == "OLP-0659"
+        and set(documented) == {"BN-SRC-529", "BN-SRC-530"}
+        and source.count("!!\na{proof}") == 1
+        and semantic_tokens(source) - semantic_tokens(checked_target) == collections.Counter()
+        and semantic_tokens(checked_target) - semantic_tokens(source)
+        == collections.Counter({"!!a{proof}": 1})
+    )
     checks = {
         "unit_id": row["unit_id"],
         "source_blocks": len(source_blocks),
@@ -6377,6 +6397,7 @@ for row in rows:
             or incompleteness_provability_token_fix
             or second_order_syntax_semantics_token_fix
             or second_order_metatheory_token_fix
+            or legacy_cut_intro_split_token_fix
         ),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),
         "documented_source_corrections": documented,

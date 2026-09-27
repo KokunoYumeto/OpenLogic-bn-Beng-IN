@@ -1,0 +1,234 @@
+% Part: proof-theory
+% Chapter: proof-search
+% Section: tableaux
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{ps}{tab}
+
+\olsection{ট্যাবলো}
+
+ট্যাবলো পদ্ধতিগুলি সিকোয়েন্ট কলনের ঘনিষ্ঠ !!{proof} পদ্ধতি;
+হাতে বা সফটওয়্যারে প্রমাণ-অন্বেষণের পক্ষে এগুলি বিশেষ উপযোগী।
+সিকোয়েন্টের বৃক্ষের বদলে ট্যাবলোতে !!a{proof} হলো
+!!{formula}s-এর বৃক্ষ। তবে স্বাভাবিক নিষ্পাদনের বিপরীতে
+এর বিধিগুলি সিকোয়েন্ট কলনের বিধির প্রতিরূপ। ট্যাবলো
+!!{proof} মূলত মডেল খোঁজার একটি স্পষ্ট অনুসন্ধান। তাই একে
+কখনো \emph{অর্থতাত্ত্বিক} ট্যাবলো, কখনো \emph{সত্য-বৃক্ষ} বলে।
+
+একটি \emph{চিহ্নিত} ট্যাবলো হলো চিহ্নিত !!{formula}s-এর
+বৃক্ষ; চিহ্নিত সূত্র $\sFmla{\True}{!A}$ বা
+$\sFmla{\False}{!A}$ আকারের হয়। বৃক্ষ নিচের দিকে বাড়ে।
+শুরুতে থাকে কী !!{prove} করতে চাই তা নির্দিষ্ট করা
+!!{formula}s। যেমন, $!A, !B \Sequent !C, !D$
+সিকোয়েন্টটি !!{prove} করতে শুরুতে লিখি
+$\sFmla{\True}{!A}, \sFmla{\True}{!B},
+\sFmla{\False}{!C}, \sFmla{\False}{!D}$।
+$!A$ ও $!B$ সত্য, $!C$ ও $!D$ মিথ্যা করে এমন
+!!^a{structure} হলো $!A, !B \Sequent !C, !D$ অবৈধ
+দেখানো !!a{structure}।
+% BN-SRC-602 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-602):} ডান পাশের $!D$-কে মিথ্যা দেখানোর জন্য শুরুর চিহ্ন $\False$; উৎসে ভুল করে $\True$ ছিল।}
+% BN-SRC-602 TARGET-CORRECTION-END
+
+ট্যাবলোর পাতার (সবচেয়ে নিচের) গিঁট শাখা-প্রসারণ বিধি
+দিয়ে বাড়ানো যায়। বিধি একই শাখায় আরও গিঁট যোগ করতে
+পারে, কিংবা নিচে দুটি সহোদর গিঁট যোগ করে শাখাটিকে
+দুই শাখায় ভাগ করতে পারে। সেই শাখায় পাতার উপরে থাকা
+যেকোনো চিহ্নিত !!{formula}-য় বিধি প্রয়োগ করা যায়।
+ধ্রুপদি ট্যাবলো পদ্ধতি \Log{Tc}-র শাখা-প্রসারণ বিধি
+\olref{tab:Tc}-এ দেওয়া আছে।
+
+\subfile{rules-Tc}
+
+দেখা যায়, বিধিগুলি \Log{G3c}-র বিধি উল্টো দিকে
+প্রয়োগেরই রূপ। $\True$ ও $\False$ চিহ্ন যথাক্রমে
+সিকোয়েন্টের বাঁ ও ডান দিকে কোন !!a{formula} প্রধান,
+তা বোঝায়।
+
+ট্যাবলোর একটি শাখায় $\sFmla{\True}{!A}$ ও
+$\sFmla{\False}{!A}$ দুটিই থাকলে শাখাটি
+\emph{বদ্ধ}। প্রতিটি শাখা বদ্ধ হলে গোটা ট্যাবলো
+বদ্ধ। যেমন,
+$!A \lor (!B \land !C) \Sequent (!A \lor !B) \land
+(!A \lor !C)$-র একটি বদ্ধ ট্যাবলো নিচে আছে।
+এর শুরুতে $\sFmla{\True}{!A \lor (!B \land
+!C)}$ ও $\sFmla{\False}{(!A \lor !B) \land (!A \lor !C)}$:
+% BN-SRC-603 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-603):} উদাহরণটির সব শাখা বদ্ধ এবং ঠিক আগেই বদ্ধ ট্যাবলো সংজ্ঞায়িত; উৎসের “clause tableau” এখানে “closed tableau” অর্থে পড়া হয়েছে।}
+% BN-SRC-603 TARGET-CORRECTION-END
+\begin{oltableau}
+  [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
+    just=\TAss, checked
+    [\sFmla{\False}{(\formula{A} \lor \formula{B}) \land
+        (\formula{A} \lor \formula{C})}, just=\TAss, checked
+      [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\lor}[1]}
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{B}},
+              just={\TRule{\False}{\lor}[4]}, close]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{C}},
+              just={\TRule{\False}{\lor}[4]}, close]
+          ]
+        ]
+      ]
+      [\sFmla{\True}{\formula{B} \land \formula{C}},
+        just={\TRule{\True}{\lor}[1]}, checked
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\True}{\formula{B}},
+            just={\TRule{\True}{\land}[3]}, move by=2
+            [\sFmla{\True}{\formula{C}},
+              just={\TRule{\True}{\land}[3]}
+              [\sFmla{\False}{\formula{A}},
+                just={\TRule{\False}{\lor}[4]}
+                [\sFmla{\False}{\formula{B}},
+                  just={\TRule{\False}{\lor}[4]},close
+                ]
+              ]
+            ]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\True}{\formula{B}},
+            just={\TRule{\True}{\land}[3]}, move by=2
+              [\sFmla{\True}{\formula{C}},
+                just={\TRule{\True}{\land}[3]}
+                [\sFmla{\False}{\formula{A}},
+                  just={\TRule{\False}{\lor}[4]}
+                  [\sFmla{\False}{\formula{C}},
+                  just={\TRule{\False}{\lor}[4]},close
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+
+টিকচিহ্ন বোঝায় যে নিচের সব শাখায় সংশ্লিষ্ট
+!!a{formula}-য় বিধিটি প্রয়োগ করা হয়েছে। $\otimes$
+চিহ্নটি শাখা বদ্ধ হওয়া বোঝায়। বিধির পরে থাকা
+লাইন-সংখ্যা নির্দেশ করে, কোন চিহ্নিত !!{formula}s-এ
+বিধিটি প্রয়োগ হয়েছে—অর্থাৎ দেখানো লাইনে একই
+শাখায় থাকা !!{formula}-য়।
+
+ট্যাবলোতে প্রমাণ-অন্বেষণ সহজ। পর্যায়ক্রমে ট্যাবলো
+তৈরি করি। $0$-তম পর্যায়ে শুরুর !!{formula}s উপরে
+লিখি। $n+1$-তম পর্যায়ে প্রতিটি পাতার গিঁটে
+এখনও টিকচিহ্ন না দেওয়া প্রথম (সবচেয়ে উপরের)
+চিহ্নিত সূত্রটি খুঁজি। সেটিতে শাখা-প্রসারণ বিধি
+প্রয়োগ করি। আলোচ্য চিহ্নিত সূত্রটি থাকা প্রতিটি
+শাখায় বিধি প্রয়োগ হয়ে গেলে তাতে টিকচিহ্ন দিই।
+(উপরের উদাহরণটি এই অ্যালগরিদমে তৈরি।)
+
+$\sFmla{\True}{\lforall}$ ও
+$\sFmla{\False}{\lexists}$ আকারের চিহ্নিত
+!!{formula}s-এ কখনো টিকচিহ্ন দেওয়া হয় না;
+তাই এগুলিকে বিশেষভাবে সামলাতে হয়। এগুলি
+থাকলে নিশ্চিত করতে হবে, সব প্রযোজ্য পদের জন্য
+$\TRule{\True}{\forall}$ ও
+$\TRule{\False}{\lexists}$ বিধি একসময় প্রয়োগ
+হচ্ছে। যেমন, প্রতি পর্যায়ে প্রতিটি শাখার
+এমন সব সূত্রে বিধি প্রয়োগ করলেই চলে (এই
+আকারের নয় এমন সর্বোচ্চ চিহ্নিত !!{formula}
+সামলানোর পরে)। ব্যবহারের পদ~$t$ হলো
+শাখায় ইতিমধ্যে থাকা !!{constant}s (কোনো
+!!{constant} না থাকলে~$\Obj c_0$)
+ও শুরুর !!{formula}s-এ থাকা !!{function}s
+দিয়ে গড়া প্রথম পদ~$t$, যার সংশ্লিষ্ট চিহ্নিত
+!!{formula} $\sFmla{\True}{!B(t)}$
+বা~$\sFmla{\False}{!B(t)}$ ওই শাখায়
+এখনও নেই।
+
+এই প্রমাণ-অন্বেষণে বদ্ধ ট্যাবলো না মিললে,
+হয় সব অ-পারমাণবিক !!{formula}s-এ টিকচিহ্ন
+পড়েছে এমন একটি সসীম খোলা শাখা থাকে,
+নয় অনুসন্ধানে একটি অনন্ত, সসীম-শাখাবিশিষ্ট
+বৃক্ষ তৈরি হয়; তাতে অবশ্যই অনন্ত শাখা আছে।
+\olref[cpl]{sec}-এর মতোই এমন
+!!a{structure}~$\Struct{M}$ সংজ্ঞায়িত
+করা যায় যাতে শাখায় $\sFmla{\True}{!A}$
+থাকলে $\Sat{M}{!A}$ এবং
+$\sFmla{\False}{!A}$ থাকলে
+$\Sat/{M}{!A}$। (ধরি, $\Theta =
+\Setabs{!A}{\sFmla{\True}{!A} \text{ শাখায় আছে}}$ এবং $\Xi =
+\Setabs{!A}{\sFmla{\False}{!A} \text{ শাখায় আছে}}$।)
+% BN-NORM-175 TARGET-NORMALIZATION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{ভাষাগত স্বাভাবিকীকরণ (BN-NORM-175):} সেট-সংজ্ঞার ভেতরে উৎসের “on the branch” কথাটি দুই স্থানে “শাখায় আছে” করা হয়েছে; সূত্রের সেট ও সত্য-শর্ত অপরিবর্তিত।}
+% BN-NORM-175 TARGET-NORMALIZATION-END
+
+এই প্রমাণ-অন্বেষণে তৈরি ট্যাবলোর প্রতিটি
+গিঁটে একটি সিকোয়েন্ট বসিয়ে সহজেই
+\Log{G3c} প্রমাণে অনুবাদ করা যায়।
+শুরুর সূত্রগুলি $\Gamma \Sequent
+\Delta$ সিকোয়েন্টের হলে, প্রতিটি শুরুর
+সূত্রে $\Gamma \Sequent
+\Delta$ লেবেল দিই। চিহ্নিত
+!!{formula} $\sFmla{\True}{!A}$-তে
+শাখা-প্রসারণ বিধি প্রয়োগ করে শাখা বাড়ালে
+পাতার লেবেল $!A, \Pi \Sequent \Lambda$;
+চিহ্নিত !!{formula}
+$\sFmla{\False}{!A}$-তে প্রয়োগ করলে
+পাতার লেবেল $\Pi \Sequent
+\Lambda, !A$। ট্যাবলোতে
+\TRule{\True}{\star} বিধি প্রয়োগের
+স্থানে সিকোয়েন্টে \LeftR{\star}
+বিধি প্রয়োগ করি (প্রধান সূত্র~$!A$);
+\TRule{\False}{\star}-র স্থানে
+\RightR{\star} প্রয়োগ করি।
+বিধির পূর্বধারণাগুলি হলো ট্যাবলোতে
+যোগ হওয়া সংশ্লিষ্ট গিঁটগুলির
+লেবেল-সিকোয়েন্ট। কোনো ট্যাবলো
+$\sFmla{\True}{!A}$ ও
+$\sFmla{\False}{!A}$ দিয়ে বদ্ধ হলে
+শেষ পাতার লেবেল
+$!A, \Pi \Sequent \Lambda,
+!A$ আকারের সিকোয়েন্ট।
+ট্যাবলোর পরপর কয়েকটি গিঁটে
+একই সিকোয়েন্ট বসতে পারে;
+পুনরাবৃত্তগুলি বাদ দিই।
+যেমন, উপরের ট্যাবলো নিচের
+!!{proof}-এ অনূদিত হয়:
+\[\small
+\Axiom$!A \fCenter !A, !B$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!A \fCenter !A \lor !B$
+\Axiom$!A \fCenter !A, !C$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!A \fCenter !A \lor !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!A \fCenter (!A \lor !B) \land (!A \lor !C)$
+\Axiom$!B, !C \fCenter !A, !B$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!B, !C \fCenter !A \lor !B$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!B \land !C \fCenter !A \lor !B$
+\Axiom$!B, !C \fCenter !A, !C$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!B, !C \fCenter !A \lor !C$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!B \land !C \fCenter !A \lor !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!B \land !C \fCenter (!A \lor !B) \land
+(!A \lor !C)$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$!A \lor (!B \land !C) \fCenter (!A \lor !B) \land
+(!A \lor !C)$
+\DisplayProof
+\]
+
+\end{document}

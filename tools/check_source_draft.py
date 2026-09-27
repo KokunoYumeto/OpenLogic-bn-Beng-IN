@@ -6556,6 +6556,19 @@ for row in rows:
             set(documented) == {"BN-SRC-600", "BN-SRC-601"}
             and mathparts(audited_algorithm) == target_math
         )
+    legacy_search_tableaux_repairs = (
+        row["unit_id"] == "OLP-0684"
+        and set(documented) == {"BN-SRC-602", "BN-SRC-603"}
+        and set(normalizations) == {"BN-NORM-175"}
+        and source_math - target_math
+        == collections.Counter({
+            r"\sFmla{\True}{!A},\sFmla{\True}{!B},\sFmla{\False}{!C},\sFmla{\True}{!D}": 1,
+        })
+        and target_math - source_math
+        == collections.Counter({
+            r"\sFmla{\True}{!A},\sFmla{\True}{!B},\sFmla{\False}{!C},\sFmla{\False}{!D}": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6706,6 +6719,7 @@ for row in rows:
             legacy_normal_translation_repairs,
             legacy_search_completeness_repairs,
             legacy_search_algorithm_repairs,
+            legacy_search_tableaux_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -6862,6 +6876,17 @@ for row in rows:
         tex_command_check = {
             "documented_source_corrections": ["BN-SRC-600", "BN-SRC-601"],
             "fresh_indices_and_right_existential_label": True,
+        }
+    if row["unit_id"] == "OLP-0684":
+        assert legacy_search_tableaux_repairs
+        assert source.count(r"\text{ on the branch}") == 2
+        assert checked_target.count(r"\text{ শাখায় আছে}") == 2
+        assert source.count("clause tableau") == 1
+        assert checked_target.count("clause tableau") == 0
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-602", "BN-SRC-603"],
+            "documented_language_normalization": "BN-NORM-175",
+            "signed_succedent_false": True,
         }
     checks = {
         "unit_id": row["unit_id"],

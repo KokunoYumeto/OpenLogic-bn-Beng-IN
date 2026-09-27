@@ -6354,6 +6354,52 @@ for row in rows:
             set(documented) == {f"BN-SRC-{n}" for n in range(559, 568)}
             and mathparts(audited_g2i) == target_math
         )
+    legacy_n2_to_g2_math_repairs = False
+    if row["unit_id"] == "OLP-0671":
+        old_classical_tree = norm(r"""
+          \Axiom$!A \fCenter !A$
+          \RightLabel{\RightR{\lnot}}
+          \UnaryInf$\fCenter !A, \lnot !A$
+          \AxiomC{}
+          \RightLabel{$\pi_1$}
+          \Deduce$x: \lnot !A, \Gamma' \fCenter $
+          \RightLabel{\Cut}
+          \BinaryInf$\Gamma' \fCenter !A$
+          \DisplayProof
+        """)
+        new_classical_tree = norm(r"""
+          \Axiom$!A \fCenter !A$
+          \RightLabel{\RightR{\lnot}}
+          \UnaryInf$\fCenter !A, \lnot !A$
+          \AxiomC{}
+          \RightLabel{$\pi_1$}
+          \Deduce$\lnot !A, \Gamma' \fCenter $
+          \RightLabel{\Cut}
+          \BinaryInf$\Gamma' \fCenter !A$
+          \DisplayProof
+        """)
+        legacy_n2_to_g2_math_repairs = (
+            set(documented) == {f"BN-SRC-{n}" for n in range(568, 574)}
+            and source_math - target_math == collections.Counter({
+                norm(r"\Log{G2c}\ (\Log{N2i}) + \Cut \Proves \Gamma' \Sequent \Delta"): 1,
+                "!A": 1,
+                r"\delta_2": 1,
+                norm(r"\Gamma_2' \Sequent \ "): 1,
+                old_classical_tree: 1,
+            })
+            and target_math - source_math == collections.Counter({
+                norm(r"\Log{G2c}\ (\Log{G2i}) + \Cut \Proves \Gamma' \Sequent \Delta"): 1,
+                r"\lfalse": 2,
+                norm(r"!A \ident \lfalse"): 1,
+                norm(r"\lfalse \Sequent \ "): 2,
+                "!C": 2,
+                "!B": 1,
+                norm(r"!B \ident \lfalse"): 1,
+                norm(r"\Gamma_1', \Gamma_2' \Sequent \lfalse"): 1,
+                norm(r"\Gamma_1', \Gamma_2' \Sequent \ "): 1,
+                new_classical_tree: 1,
+            })
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6496,6 +6542,7 @@ for row in rows:
             legacy_nd_rules_proofs_math_repairs,
             legacy_nd_sequents_math_repairs,
             legacy_g2i_translation_math_repairs,
+            legacy_n2_to_g2_math_repairs,
         )
     )
     minimal_change_fileid_fix = (

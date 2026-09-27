@@ -6073,6 +6073,22 @@ for row in rows:
             r"\mSat{M}{!A}[w]": 1,
         })
     )
+    legacy_nonstandard_arithmetic_repairs = (
+        row["unit_id"] == "OLP-0653"
+        and set(documented) == {f"BN-SRC-{n}" for n in range(507, 513)}
+        and source_math - target_math == collections.Counter({
+            r"\Lang{L}": 1,
+            r"{\prec}=\Assign{<}{M}\subseteqM^2": 1,
+            r"x\precy": 1,
+            r"\Sat{N}{\lforall[y][\lforall[x][(y=x+x\lory=x+x+\Obj{0}')]]}": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\Lang{L_N}": 1,
+            r"{\prec}=\Assign{<}{M}\subseteq\Domain{M}^2": 1,
+            r"x^*\precy": 1,
+            r"\Sat{N}{\lforall[y][\lexists[x][(y=x+x\lory=x+x+\Obj{0}')]]}": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6201,6 +6217,7 @@ for row in rows:
             legacy_provability_line_repairs,
             legacy_c_representability_composition_fix,
             legacy_propositions_notation_fixes,
+            legacy_nonstandard_arithmetic_repairs,
         )
     )
     minimal_change_fileid_fix = (

@@ -1,0 +1,201 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T05:50:06.232586+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4",
+  "parent": "c516519b4f20f5e46324fc4e85fb7547bbfc3bef",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "4751d1b99aa9fca3e202401419368293da8bc1fa",
+    "receipt": "PUBLIC_READBACK_SOURCE_611_2026-09-27.json",
+    "receipt_sha256": "ca302969cc33061a815be6195382c220b85aedf3c34f443390637b37a84a05a1"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 16309577,
+  "archive_sha256": "aa820b72fa80669431eecffea607576623b6083c4eacc62639a44ad239e8356e",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/methods/induction/induction-on-N.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/induction-on-N.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/induction-on-N.tex",
+      "content_type": "text/plain",
+      "bytes": 10876,
+      "sha256": "df4be6b967bdfb489561dfe679ebd8e683ac95734cda82513fcd46a4a7f55a44"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/induction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/induction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/induction.tex",
+      "content_type": "text/plain",
+      "bytes": 359,
+      "sha256": "c75f9a5a90fadb2b48d01d09913171818afbdaa00454eebc3863d85bff9522dd"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/inductive-definitions.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/inductive-definitions.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/inductive-definitions.tex",
+      "content_type": "text/plain",
+      "bytes": 12100,
+      "sha256": "1e2e664e72176c288dac157af33097562e992d999f3ba3287d1839a3f9806e0b"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 4626,
+      "sha256": "debae0fdb3d3c824bbde7830ddb9a9676648ddb7bbefcd00ed7bc8bd23635900"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/relations.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/relations.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/relations.tex",
+      "content_type": "text/plain",
+      "bytes": 11448,
+      "sha256": "6835584849cb0915fb5c6753f24d4e4c011d1d6a4a80889222a02e2d85844eda"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/strong-induction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/strong-induction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/strong-induction.tex",
+      "content_type": "text/plain",
+      "bytes": 4547,
+      "sha256": "7b71be180c489d8860b137e4e1cafa003f9b97207a056bf8dae9e507e2f63e74"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/structural-induction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/structural-induction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/684bf9fd9e2341bbb8a9b7324c9138c1e8f67eb4/bn-Beng-IN/content/methods/induction/structural-induction.tex",
+      "content_type": "text/plain",
+      "bytes": 8006,
+      "sha256": "ebc2a5fdcbfa289a0ecf1f71837b7184a5194a9dfa8fba637215ffa35011e3ed"
+    }
+  ],
+  "changed_files_verified": 20,
+  "translated_tex_files_in_commit": 7,
+  "draft_translated_total": 618,
+  "draft_untranslated_total": 104,
+  "segments": 6779,
+  "translated_segments": 5827,
+  "new_batch_segments": 78,
+  "new_batch_translated_segments": 65,
+  "new_batch_unchanged_segments": 13,
+  "source_correction_records": 492,
+  "new_source_correction_records": 3,
+  "translation_decisions": 425,
+  "provisional_translation_decisions": 403,
+  "translation_decision_occurrences": 38316,
+  "decisions_with_exact_source_wording": 405,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 618,
+    "blocks": 6779,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 8076,
+      "sha256": "ad8abe01e2a745eb67b978b44bb8211968733a4e70cc0bd0bb9a973209f5d697"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/induction/induction-on-N.tex",
+      "bytes": 10876,
+      "sha256": "df4be6b967bdfb489561dfe679ebd8e683ac95734cda82513fcd46a4a7f55a44"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/induction/induction.tex",
+      "bytes": 359,
+      "sha256": "c75f9a5a90fadb2b48d01d09913171818afbdaa00454eebc3863d85bff9522dd"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/induction/inductive-definitions.tex",
+      "bytes": 12100,
+      "sha256": "1e2e664e72176c288dac157af33097562e992d999f3ba3287d1839a3f9806e0b"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/induction/introduction.tex",
+      "bytes": 4626,
+      "sha256": "debae0fdb3d3c824bbde7830ddb9a9676648ddb7bbefcd00ed7bc8bd23635900"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/induction/relations.tex",
+      "bytes": 11448,
+      "sha256": "6835584849cb0915fb5c6753f24d4e4c011d1d6a4a80889222a02e2d85844eda"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/induction/strong-induction.tex",
+      "bytes": 4547,
+      "sha256": "7b71be180c489d8860b137e4e1cafa003f9b97207a056bf8dae9e507e2f63e74"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/induction/structural-induction.tex",
+      "bytes": 8006,
+      "sha256": "ebc2a5fdcbfa289a0ecf1f71837b7184a5194a9dfa8fba637215ffa35011e3ed"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 11639358,
+      "sha256": "cba123fe538e6965db6dd50a837dfca86b1b534dcd2c4c0ae8110c2444627dd6"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 370811,
+      "sha256": "25e26370b944849f129d2ec36dbc217db7ea9ae29eab8b6b77b4f197da0030a3"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_METHODS_INDUCTION.md",
+      "bytes": 4042,
+      "sha256": "3eb38aa72ea0fbb87e1206b430bbbc7e8137cd6b9fe8de6b34e63cbed9e73a71"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "d3139e9854cb57685f7b5b01308d0f75295e4af00ab78997361763542bd0c694"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 961731,
+      "sha256": "3a14907fba26b6ccb5a4cc19807dd323f3f65af082ee487897d899d7f50f9e19"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 402698,
+      "sha256": "be901ea732850b03b69ecf806ff8ddc86fc036c7b2bb677863d8e717c428c1ac"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 22786153,
+      "sha256": "6d5bfdaf0616449fc488f652b0cd2f8925b9d1c233c79ae88a3fe07244f97471"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 17794567,
+      "sha256": "53e38a61fffc908d9dd726e9f8999edfb152292d27e4edc53ec26da752e33a5a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1651071,
+      "sha256": "526a349a09fd3e9147bffff066e1b41ff88dbd2b29d3668b5753bbbf6619c75b"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 10505666,
+      "sha256": "9898c6e7342a919bbbc7fe4063693547cc14ed6ecbb2f2a0f79c822770e5f44d"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 303735,
+      "sha256": "bc2721d8e2132e9913cd1325293ea94f7ac102392b765d50976b1882d5a75573"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 297302,
+      "sha256": "198e4e9bd49cfd9dd5c374bff6fb8e0aad9fda6386fd192157e5ec81e31f2e5d"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: rules-N1
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\begin{table}
+\begin{center}
+\begin{tabular}[t]{@{}cc@{}}
+\bottomAlignProof
+\AxiomC{$\Discharge{!A}{x}$}
+\shortDeduce
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\DisplayProof
+&
+\bottomAlignProof
+\AxiomC{$!A \lif !B$}
+\AxiomC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\\[4ex]
+\bottomAlignProof
+\AxiomC{$!A$}
+\AxiomC{$!B$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!A \land !B$}
+\DisplayProof
+&
+\begin{tabular}[b]{@{}l@{}}
+\AxiomC{$!A \land !B$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!A$}
+\DisplayProof
+\\[3ex]
+\bottomAlignProof
+\AxiomC{$!A \land !B$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!B$}
+\DisplayProof
+\end{tabular}
+\\[4ex]
+\begin{tabular}{@{}l@{}}
+\AxiomC{$!A$}
+\RightLabel{\Intro{\lor}[1]}
+\UnaryInfC{$!A \lor !B$}
+\DisplayProof
+\\[3ex]
+\AxiomC{$!B$}
+\RightLabel{\Intro{\lor}[2]}
+\UnaryInfC{$!A \lor !B$}
+\DisplayProof
+\end{tabular}
+&
+\AxiomC{$!A \lor !B$}
+\AxiomC{$\Discharge{!A}{x}$}
+\shortDeduce
+\DeduceC{$!C$}
+\AxiomC{$\Discharge{!B}{y}$}
+\shortDeduce
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!C$}
+\DisplayProof
+\bottomAlignProof
+\\[6ex]
+\bottomAlignProof
+\AxiomC{$\Discharge{!A}{x}$}
+\shortDeduce
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{x}
+\UnaryInfC{$\lnot !A$}
+\DisplayProof
+&
+\bottomAlignProof
+\AxiomC{$\lnot !A$}
+\AxiomC{$!A$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\DisplayProof
+\\[4ex]
+\bottomAlignProof
+\AxiomC{$!A(a)$}
+\RightLabel{\Intro{\lforall}}
+\UnaryInfC{$\lforall[x][!A(x)]$}
+\DisplayProof
+&
+\bottomAlignProof
+\AxiomC{$\lforall[x][!A(x)]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!A(t)$}
+\DisplayProof
+\\[4ex]
+\bottomAlignProof
+\AxiomC{$!A(t)$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!A(x)]$}
+\DisplayProof
+&
+\bottomAlignProof
+\AxiomC{$\lexists[x][!A(x)]$}
+\AxiomC{$\Discharge{!A(a)}{x}$}
+\shortDeduce
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lexists}}{x}
+\BinaryInfC{$!C$}
+\DisplayProof
+\\[4ex]
+\bottomAlignProof
+\AxiomC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!A$}
+\DisplayProof
+&
+\bottomAlignProof
+\AxiomC{$\Discharge{\lnot!A}{x}$}
+\shortDeduce
+\DeduceC{$\lfalse$}
+\DischargeRule{\FalseCl}{x}
+\UnaryInfC{$!A$}
+\DisplayProof
+\end{tabular}
+\end{center}
+\caption{\Log{N1i} ও \Log{N1c}-র বিধি। $\Intro{\lforall}$-এ
+!!{constant}~$a$ সিদ্ধান্ত বা কোনো খোলা অনুমানে ঘটে না।
+$\Elim{\lexists}$-এ $a$ প্রধান অস্তিত্বসূচক পূর্বধারণা,
+শেষ সিদ্ধান্ত, কিংবা ওই বিধির বিশেষ অব্যাহতি-পাওয়া
+অনুমান ছাড়া অন্য কোনো খোলা অনুমানে ঘটে না।
+\Log{N1i}-তে \FalseCl নেই।}
+% BN-SRC-547 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-547):} অস্তিত্ব-নিষ্কাশনে আইগেনচলটি বিশেষ অব্যাহতি-পাওয়া গৌণ অনুমানে থাকতেই পারে; উৎসের ``কোনো পূর্বধারণায় নয়'' বক্তব্যের বদলে প্রধান অস্তিত্বসূচক পূর্বধারণা ও অন্য খোলা অনুমানগুলি থেকে অনুপস্থিতি বলা হয়েছে।}
+% BN-SRC-547 TARGET-CORRECTION-END
+\ollabel{tab:N1}
+\end{table}
+
+\end{document}

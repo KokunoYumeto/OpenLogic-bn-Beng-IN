@@ -6264,6 +6264,17 @@ for row in rows:
                 proper_exists_tree: 1,
             })
         )
+    legacy_n2_caption_rule_names = False
+    if row["unit_id"] == "OLP-0667":
+        audited_n2 = source
+        for old, new in ((r"$\Intro{\forall}$", r"$\Intro{\lforall}$"),
+                         (r"$\Elim{\exists}$", r"$\Elim{\lexists}$")):
+            assert audited_n2.count(old) == 1
+            audited_n2 = audited_n2.replace(old, new, 1)
+        legacy_n2_caption_rule_names = (
+            set(documented) == {"BN-SRC-548", "BN-SRC-549"}
+            and mathparts(audited_n2) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6402,6 +6413,7 @@ for row in rows:
             legacy_grafting_repairs,
             legacy_natural_deduction_intro_repairs,
             legacy_quantifier_substitution_repairs,
+            legacy_n2_caption_rule_names,
         )
     )
     minimal_change_fileid_fix = (

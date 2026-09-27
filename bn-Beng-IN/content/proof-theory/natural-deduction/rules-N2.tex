@@ -1,0 +1,118 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: rules-N2
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\begin{table}
+\begin{tabular}{@{}c@{}c@{}}
+\Axiom$x: !A, \Gamma \fCenter !B$
+\RightLabel{\Intro{\lif}}
+\UnaryInf$\Gamma \fCenter !A \lif !B $
+\DisplayProof
+&
+\Axiom$\Gamma_1 \fCenter !A \lif !B$
+\Axiom$\Gamma_2 \fCenter !A$
+\RightLabel{\Elim{\lif}}
+\BinaryInf$\Gamma_1, \Gamma_2 \fCenter !B$
+\DisplayProof
+\\[4ex]
+\Axiom$\Gamma_1 \fCenter !A$
+\Axiom$\Gamma_2 \fCenter !B$
+\RightLabel{\Intro{\land}}
+\BinaryInf$\Gamma_1, \Gamma_2 \fCenter !A \land !B $
+\DisplayProof
+&
+\begin{tabular}[b]{@{}l@{}}
+\Axiom$\Gamma \fCenter !A \land !B$
+\RightLabel{\Elim{\land}[1]}
+\UnaryInf$\Gamma \fCenter !A$
+\DisplayProof
+\\[3ex]
+\Axiom$\Gamma \fCenter !A \land !B$
+\RightLabel{\Elim{\land}[2]}
+\UnaryInf$\Gamma \fCenter !B$
+\DisplayProof\\[3ex]
+\end{tabular}
+\\[4ex]
+\Axiom$\Gamma \fCenter !A$
+\RightLabel{\Intro{\lor}[1]}
+\UnaryInf$\Gamma \fCenter !A \lor !B$
+\DisplayProof
+&
+\Axiom$ \Gamma \fCenter !B$
+\RightLabel{\Intro{\lor}[2]}
+\UnaryInf$\Gamma \fCenter !A \lor !B$
+\DisplayProof\\[3ex]
+\multicolumn{2}{c}{
+\begin{tabular}[b]{@{}l@{}}
+\Axiom$\Gamma_1 \fCenter !A \lor !B$
+\Axiom$x:!A, \Gamma_2 \fCenter !C$
+\Axiom$y:!B, \Gamma_3 \fCenter !C$
+\RightLabel{\Elim{\lor}}
+\TrinaryInf$\Gamma_1, \Gamma_2, \Gamma_3 \fCenter !C$
+\DisplayProof
+\end{tabular}
+}
+\\[4ex]
+\Axiom$x:!A, \Gamma \fCenter \lfalse$
+\RightLabel{\Intro{\lnot}}
+\UnaryInf$ \Gamma \fCenter \lnot !A $
+\DisplayProof
+&
+\Axiom$\Gamma_1 \fCenter \lnot !A $
+\Axiom$\Gamma_2 \fCenter !A $
+\RightLabel{\Elim{\lnot}}
+\BinaryInf$\Gamma_1, \Gamma_2 \fCenter \lfalse$
+\DisplayProof
+\\[4ex]
+\Axiom$\Gamma \fCenter !A(a) $
+\RightLabel{\Intro{\lforall}}
+\UnaryInf$\Gamma \fCenter \lforall[x][!A(x)]$
+\DisplayProof
+&
+\Axiom$\Gamma \fCenter \lforall[x][!A(x)]$
+\RightLabel{\Elim{\lforall}}
+\UnaryInf$\Gamma \fCenter !A(t)$
+\DisplayProof
+\\[4ex]
+\Axiom$\Gamma \fCenter !A(t) $
+\RightLabel{\Intro{\lexists}}
+\UnaryInf$\Gamma \fCenter \lexists[x][!A(x)]$
+\DisplayProof
+&
+\Axiom$\Gamma_1 \fCenter  \lexists[x][!A(x)]$
+\Axiom$x: !A(a), \Gamma_2 \fCenter !C$
+\RightLabel{\Elim{\lexists}}
+\BinaryInf$\Gamma_1, \Gamma_2 \fCenter !C$
+\DisplayProof
+\\[4ex]
+\Axiom$\Gamma \fCenter \lfalse$
+\RightLabel{\FalseInt}
+\UnaryInf$\Gamma \fCenter !A$
+\DisplayProof
+&
+\Axiom$x: \lnot !A, \Gamma \fCenter \lfalse$
+\RightLabel{\FalseCl}
+\UnaryInf$\Gamma \fCenter !A$
+\DisplayProof
+\end{tabular}
+\caption{\Log{N2c} ও \Log{N2i}-র বিধি। $\Intro{\lforall}$ ও
+$\Elim{\lexists}$-এ !!{constant}~$a$ সিদ্ধান্ত-সিকোয়েন্টে
+ঘটে না। $\Gamma_i$ হলো লেবেলযুক্ত !!{formula}s~$x :
+!A$-র সেট। \Intro{\lforall} ও \Elim{\lexists}-এর
+আইগেনচল-শর্তে $a$ সিদ্ধান্ত-সিকোয়েন্টে থাকে না;
+\Elim{\lexists}-এ প্রধান অস্তিত্বসূচক পূর্বধারণাতেও থাকে না।
+\Log{N2i}-তে \FalseCl নেই।}
+% BN-SRC-548 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-548):} প্রথম ক্যাপশনে সাধারণ forall/exists নির্দেশের বদলে এই অধ্যায়ে সংজ্ঞায়িত lforall/lexists বিধি-চিহ্ন বসানো হয়েছে।}
+% BN-SRC-548 TARGET-CORRECTION-END
+% BN-SRC-549 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-549):} N2 অস্তিত্ব-নিষ্কাশনে সিদ্ধান্ত-সিকোয়েন্টের পাশাপাশি আইগেনচল প্রধান অস্তিত্বসূচক পূর্বধারণাতেও না-থাকার শর্তটি স্পষ্ট করা হয়েছে।}
+% BN-SRC-549 TARGET-CORRECTION-END
+\ollabel{tab:N2}
+\end{table}
+
+\end{document}

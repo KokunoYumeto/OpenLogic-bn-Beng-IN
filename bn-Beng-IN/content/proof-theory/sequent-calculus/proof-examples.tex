@@ -1,0 +1,479 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: proof-examples
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{ex}
+
+\olsection{প্রমাণের উদাহরণ}
+
+সিকোয়েন্টের !!{proof}s নির্মাণে সাধারণত অন্তিম
+সিকোয়েন্ট থেকে ওপরের দিকে এগোনো সুবিধাজনক:
+সেখানে !!a{formula} সক্রিয় !!{formula} হিসেবে
+বেছে নিয়ে সিকোয়েন্টটির ওপরে সংশ্লিষ্ট বিধির
+পূর্বধারণা লিখি; স্বতঃসিদ্ধে পৌঁছানো পর্যন্ত
+প্রক্রিয়াটি পুনরাবৃত্তি করি। যেমন, ধরি আমরা
+নিচের সিকোয়েন্টটি প্রমাণ করতে চাই:
+\[(!C \land !D) \lif !E \Sequent !C \lif (!D \lif !E)\]
+$!C \lif (!D \lif !E)$ দেখি: এটি $!A \lif !B$
+রূপের এবং সিকোয়েন্টের ডান দিকে আছে।
+সম্পূর্ণ সিকোয়েন্টটি \Log{G1c}-র
+$\RightR{\lif}$ বিধির সঙ্গে মেলাই:
+\[\Axiom$ !A, \Gamma \fCenter \Delta, !B$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A \lif !B $
+\DisplayProof\]
+তাহলে $\Gamma = \{(!C \land !D) \lif !E\}$,
+$\Delta = \emptyset$, $!A \ident !C$ এবং
+$!B \ident !D \lif !E$ নিতে হবে।
+সুতরাং প্রমাণের শেষ অনুমানটি এমন হতে পারে:
+\[\Axiom$ !C, (!C \land !D) \lif !E \fCenter !D \lif !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$(!C \land !D) \lif !E \fCenter !C \lif (!D \lif !E)$
+\DisplayProof\]
+একই পদ্ধতি আবার প্রয়োগ করে
+$!D \lif !E$-কে সক্রিয় সূত্র ধরলে পাই:
+\[\Axiom$ !D, !C, (!C \land !D) \lif !E \fCenter !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$!C, (!C \land !D) \lif !E \fCenter !D \lif !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$(!C \land !D) \lif !E \fCenter !C \lif (!D \lif !E)$
+\DisplayProof\]
+এবার $(!C \land !D) \lif !E$-র ওপর
+মনোযোগ দিয়ে \Log{G1c}-র $\LeftR{\lif}$
+বিধি প্রয়োগ করতে হবে:
+\[\Axiom$ \Gamma \fCenter \Delta, !A$
+\Axiom$ !B, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$ !A \lif !B, \Gamma \fCenter \Delta$
+\DisplayProof\]
+এতে পাই:
+\[\Axiom$!D, !C \fCenter !E, !C \land !D$
+\Axiom$!D, !C, !E \fCenter !E$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$ !D, !C, (!C \land !D) \lif !E \fCenter !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$!C, (!C \land !D) \lif !E \fCenter !D \lif !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$(!C \land !D) \lif !E \fCenter !C \lif (!D \lif !E)$
+\DisplayProof\]
+বাঁ দিকের শীর্ষ সিকোয়েন্টে
+$!C \land !D$ !!{formula}টিকে
+মুখ্য ধরে $\RightR{\land}$ বিধি
+প্রয়োগ করলে পাই:
+\[
+\Axiom$!D, !C \fCenter !E, !C$
+\Axiom$!D, !C \fCenter !E, !D$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!D, !C \fCenter !E, !C \land !D$
+\Axiom$!D, !C, !E \fCenter !E$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$ !D, !C, (!C \land !D) \lif !E \fCenter !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$!C, (!C \land !D) \lif !E \fCenter !D \lif !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$(!C \land !D) \lif !E \fCenter !C \lif (!D \lif !E)$
+\DisplayProof
+\]
+এ পর্যন্ত পদ্ধতিটি \Log{G3c}-তেও চলে:
+এখানে ব্যবহৃত বিধিগুলি \Log{G1c}
+ও~\Log{G3c}-তে একই। এখন
+!!a{proof}-এর এমন একটি খণ্ড
+পেয়েছি, যার প্রতিটি শীর্ষ
+সিকোয়েন্টে বাঁ ও ডান দিকে
+একই !!{formula} আছে। তবে
+এগুলি এখনও ঠিক স্বতঃসিদ্ধ নয়।
+% BN-SRC-636 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-636):} প্রথম \(\RightR{\lif}\) মিলনে উৎসের \(\Gamma\) ভুল করে ডান পাশের লক্ষ্যসূত্র। সিদ্ধান্তের বাঁ পাশে থাকা একমাত্র সূত্র \((C\land D)\lif E\) দিয়ে \(\Gamma\) মেলানো হয়েছে।}
+% BN-SRC-636 TARGET-CORRECTION-END
+% BN-SRC-637 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-637):} প্রসারিত বৃক্ষের দুই পূর্বধারণাযুক্ত \(\lif\)-বাঁ ধাপটি উৎসে \(\RightR{\lif}\) লেখা; G1c/G3c সারণি ও আগের বৃক্ষ অনুযায়ী \(\LeftR{\lif}\) করা হয়েছে।}
+% BN-SRC-637 TARGET-CORRECTION-END
+
+\Log{G1c}-তে শীর্ষ সিকোয়েন্টগুলির
+!!{proof}s $!A \Sequent !A$
+রূপের স্বতঃসিদ্ধ থেকে দিতে হবে।
+দুর্বলীকরণ-বিধি দিয়ে তা সহজেই
+করা যায়। যেমন, একেবারে বাঁ দিকের
+শীর্ষ সিকোয়েন্ট $!D, !C \Sequent
+!E, !C$ এভাবে !!{prove} করা যায়:
+\[
+\Axiom$!C \fCenter !C$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !C$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !E, !C$
+\]
+সব মিলিয়ে \Log{G1c}-তে
+নিচের !!a{proof} পাই:
+\[
+\Axiom$!C \fCenter !C$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !C$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !E, !C$
+\Axiom$!D \fCenter !D$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !D$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !E, !D$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!D, !C \fCenter !E, !C \land !D$
+\Axiom$!E \fCenter !E$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!C, !E \fCenter !E$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!D, !C, !E \fCenter !E$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$ !D, !C, (!C \land !D) \lif !E \fCenter !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$!C, (!C \land !D) \lif !E \fCenter !D \lif !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$(!C \land !D) \lif !E \fCenter !C \lif (!D \lif !E)$
+\DisplayProof
+\]
+এই প্রমাণের গঠন, বিশেষত তার
+উচ্চতা, $!C$, $!D$ ও~$!E$
+!!{formula}s ঠিক কী তার ওপর
+নির্ভর করে না। ওপরের
+!!{proof}-এ এই চিহ্নগুলির
+জায়গায় যেকোনো !!{formula}s
+বসালেও ফলটি \Log{G1c}-র
+!!{proof} থাকবে। তাই
+\Log{G1c}-র প্রমাণটি
+\emph{ছকভিত্তিক}।
+% BN-SRC-638 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-638):} পূর্ণ G1c বৃক্ষের \(E\Sequent E\) থেকে বাঁ-দুর্বলীকরণে উৎসে ভুল \(C,E\Sequent C\) এসেছে; সিদ্ধান্তসূত্র অক্ষত রেখে \(C,E\Sequent E\) করা হয়েছে।}
+% BN-SRC-638 TARGET-CORRECTION-END
+
+\Log{G3c}-তে স্বতঃসিদ্ধগুলি
+$!A, \Gamma \Sequent \Delta, !A$
+রূপের সিকোয়েন্ট, যেখানে
+$!A$ অবশ্যই আণবিক। তাই
+$!D, !C \Sequent !E, !C$
+\Log{G3c}-র স্বতঃসিদ্ধের
+মতো দেখালেও ($\Gamma = \{!D\}$;
+$\Delta = \{!E\}$), $!C$
+আণবিক হলেই কেবল এটি
+\emph{সত্যিই} স্বতঃসিদ্ধ।
+আমাদের প্রমাণখণ্ডটি \Log{G3c}-তে
+পূর্ণ প্রমাণ হবে কেবল যদি
+$!C$, $!D$ ও $!E$
+আণবিক !!{formula}s হয়।
+
+কঠোর অর্থে আমরা এখনও দেখাইনি যে
+\[\Log{G3c} \Proves (!C \land !D) \lif !E \fCenter !C \lif (!D \lif
+!E),\]
+তবু বাস্তবে এটুকুই করা প্রয়োজন
+(এবং এটুকুই করা যায়)। কারণ
+$!A$ নিজে আণবিক না হলেও
+$!A, \Gamma \Sequent \Delta, !A$
+রূপের প্রতিটি সিকোয়েন্ট
+\Log{G3c}-তে প্রমাণযোগ্য।
+$!A$-র গভীরতা~$\depth{!A}$-র
+ওপর আরোহ করে এটি দেখাতে পারি।
+% BN-SRC-639 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-639):} আগের অনুচ্ছেদে G1c-র পূর্ণ প্রমাণ ইতিমধ্যে দেখানো হয়েছে; আণবিক নয় এমন শীর্ষসূত্রের জন্য অসম্পূর্ণ খণ্ডটি G3c-র। অতএব পরের প্রদর্শিত প্রমাণযোগ্যতার দাবিতে উৎসের G1c-র বদলে G3c।}
+% BN-SRC-639 TARGET-CORRECTION-END
+
+\begin{defn}\ollabel{defn:depth}
+!!a{formula}-র \emph{গভীরতা}~$\depth{!A}$
+নিচের মতো সংজ্ঞায়িত:
+\begin{enumerate}
+  \item $!A$ আণবিক হলে $\depth{!A} = 0$।
+  \item $!A \ident \lnot !B$, $!A \ident \lforall[x][!B(x)]$,
+  অথবা $!A \ident \lexists[x][!B(x)]$ হলে
+  $\depth{!A} = \depth{!B} + 1$।
+  \item $!A \ident (!B \land !C)$, $(!B \lor !C)$, অথবা $(!B \lif
+  !C)$ হলে $\depth{!A} = \max(\depth{!B},\depth{!C}) + 1$।
+\end{enumerate}
+\end{defn}
+% BN-SRC-640 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-640):} গভীরতার সংজ্ঞা, G1c-র পরিমাণসূচক-আরোহ ও দুই অনুশীলনে উৎসের অনির্দিষ্ট \(A\), \(A(x)\), \(B(x)\) ও \(B(c)\) লেখা নিয়মসারণি ও প্রদর্শিত বৃক্ষের সঙ্গে মিলিয়ে \(!B(x)\), \(!B(c)\) করা হয়েছে। পরিমাণসূচকের ভেতরের সূত্রের গভীরতাই এক কম।}
+% BN-SRC-640 TARGET-CORRECTION-END
+
+যেকোনো পদ~$t$-এর জন্য
+$\depth{A(x)} = \depth{A(t)}$
+প্রমাণ করা কঠিন নয়। আমাদের
+জন্য গুরুত্বপূর্ণ হলো, প্রতিটি
+বিধিতে মুখ্য !!{formula}-র
+গভীরতা সক্রিয় !!{formula}s-এর
+গভীরতার চেয়ে বেশি। যেমন:
+\begin{align*}
+\depth{P(x)} = \depth{P(a)} & = 0,\\
+\depth{\lforall[x][P(x)]} & = 1,\\
+\depth{(\lforall[x][P(x)] \lif P(a))} & = \max(1,0) + 1 = 2.
+\end{align*}
+এই ধর্ম ব্যবহার করে
+$\depth{!A}$-র ওপর
+আরোহে নানা ফল প্রমাণ
+করতে পারি; যেমন:
+
+\begin{prop}\ollabel{prop:G1c-axioms}
+যেকোনো~$!A$-র জন্য
+$!A \Sequent !A$-র
+$\Log{G1c}$-তে এমন !!a{proof}
+আছে, যার সব স্বতঃসিদ্ধ আণবিক।
+\end{prop}
+
+\begin{proof}
+  $\depth{!A}$-র ওপর আরোহ করি।
+  $\depth{!A} = 0$ হলে $!A$
+  আণবিক, আর $!A \Sequent !A$
+  নিজেই চাওয়া রূপের
+  \Log{G1c}-!!{proof}।
+  $\depth{!A} > 0$ হলে
+  $!A$ কম গভীরতার
+  !!{formula}s থেকে গঠিত;
+  যেমন $!A \ident \lnot !B$,
+  $!A \ident (!B \land !C)$,
+  অথবা $!A \ident \lforall[x][!B(x)]$।
+  আরোহের অনুমান: $\depth{!D} <
+  \depth{!A}$ এমন প্রতিটি $!D$-র
+  জন্য আণবিক স্বতঃসিদ্ধ থেকে
+  $\Log{G1c} \Proves !D \Sequent !D$।
+
+  $!A \ident \lnot !B$ হলে
+  $\depth{!B} < \depth{!A}$।
+  আরোহের অনুমানে আণবিক
+  স্বতঃসিদ্ধ থেকে $!B \Sequent !B$-র
+  \Log{G1c}-!!a{proof}~$\pi_1$
+  আছে। এটিকে নিচের মতো
+  $\lnot !B \Sequent \lnot !B$-র
+  !!a{proof} পর্যন্ত বাড়াই:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!B \fCenter !B$
+  \RightLabel{\LeftR{\lnot}}
+  \UnaryInf$\lnot !B, !B \fCenter $
+  \RightLabel{\RightR{\lnot}}
+  \UnaryInf$\lnot !B \fCenter \lnot !B$
+  \DisplayProof
+\]
+
+  $!A \ident (!B \land !C)$ হলে
+  $\depth{!B} < \depth{!A}$
+  এবং $\depth{!C} < \depth{!A}$।
+  আরোহের অনুমানে আণবিক
+  স্বতঃসিদ্ধ থেকে $!B
+  \Sequent !B$ ও
+  $!C \Sequent !C$-র
+  \Log{G1c}-!!{proof}s~$\pi_1$
+  ও~$\pi_2$ আছে।
+  এগুলিকে নিচের মতো
+  $!B \land !C \Sequent
+  !B \land !C$-র
+  !!a{proof} পর্যন্ত বাড়াই:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!B \fCenter !B$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C \fCenter !B$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!C \fCenter !C$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C \fCenter !C$
+  \RightLabel{\RightR{\land}}
+  \BinaryInf$!B \land !C \fCenter !B \land !C$
+  \DisplayProof
+  \]
+% BN-SRC-641 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-641):} G1c-র \(\land\)-পরিচয় প্রমাণের উৎসবৃক্ষে প্রথম \(\pi_1\) সিদ্ধান্তে বাড়তি কমা, বাঁ-প্রসঙ্গে অযৌক্তিক পুনরাবৃত্তি এবং শেষে ভুল \(B\land C\Sequent B\) ছিল। G1c-র দুটি বিকল্প \(\LeftR{\land}\) ও একটি \(\RightR{\land}\) দিয়ে একই দুই আরোহী প্রমাণ থেকে বৈধ \(B\land C\Sequent B\land C\) বৃক্ষ দেওয়া হয়েছে।}
+% BN-SRC-641 TARGET-CORRECTION-END
+
+  এবার ধরি $!A \ident \lforall[x][!B(x)]$।
+  $\lforall[x][!B(x)]$-এ নেই এমন
+  !!a{constant}~$c$ নিই।
+  তাহলে $\depth{!B(c)} =
+  \depth{!B(x)} < \depth{!A}$।
+  আরোহের অনুমানে আণবিক
+  স্বতঃসিদ্ধ থেকে $!B(c)
+  \Sequent !B(c)$-র
+  \Log{G1c}-!!a{proof}~$\pi_1$
+  আছে। এটিকে নিচের মতো
+  $\lforall[x][!B(x)] \Sequent
+  \lforall[x][!B(x)]$-র
+  !!a{proof} পর্যন্ত বাড়াই:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!B(c) \fCenter !B(c)$
+  \RightLabel{\LeftR{\lforall}}
+  \UnaryInf$\lforall[x][!B(x)] \fCenter !B(c)$
+  \RightLabel{\RightR{\lforall}}
+  \UnaryInf$\lforall[x][!B(x)] \fCenter \lforall[x][!B(x)]$
+  \DisplayProof
+\]
+
+  বাকি ক্ষেত্রগুলি অনুশীলন
+  হিসেবে থাক।
+\end{proof}
+
+\begin{prob}
+  $!A \ident (!B \lor !C)$,
+  $!A \ident (!B \lif !C)$
+  এবং $!A \ident \lexists[x][!B(x)]$
+  ক্ষেত্রগুলি দেখিয়ে
+  \olref{prop:G1c-axioms}-এর
+  প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+আমাদের উদ্দেশ্যে নিচের
+!!{proof}টিও ব্যবহার
+করতে পারতাম:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!B \fCenter !B$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\fCenter !B, \lnot !B$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !B \fCenter \lnot !B$
+\DisplayProof
+\]
+$!A \ident \lnot !B$
+ক্ষেত্রে। কিন্তু এমন সিকোয়েন্ট
+ব্যবস্থা আছে যেখানে এটি চলত না।
+স্বজ্ঞাবাদী সিকোয়েন্ট কলন
+\Log{G1i}, \Log{G1c}-র মতোই;
+পার্থক্য হলো, প্রতিটি সিকোয়েন্টের
+ডান দিকে সর্বাধিক একটি
+!!{formula} থাকতে পারে।
+$\Delta = \emptyset$ হলে
+প্রথম !!{proof}টি
+\Log{G1i}-তেও !!a{proof}
+হতো, কিন্তু দ্বিতীয়টি নয়:
+তার একটি সিকোয়েন্টের
+ডান দিকে $!B$ ও
+$\lnot !B$ দুটিই আছে।
+
+লক্ষ করো, $!A \ident
+\lforall[x][!B(x)]$ ক্ষেত্রেও
+\Log{G1c}-তে বিধিগুলির
+অন্য ক্রম নিতে পারতাম না।
+নিচেরটি \emph{!!a{proof} নয়}:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!B(c) \fCenter !B(c)$
+  \RightLabel{\RightR{\lforall}}
+  \UnaryInf$!B(c) \fCenter \lforall[x][!B(x)]$
+  \RightLabel{\LeftR{\lforall}}
+  \UnaryInf$\lforall[x][!B(x)] \fCenter \lforall[x][!B(x)]$
+  \DisplayProof
+\]
+কারণ এতে $\RightR{\lforall}$-এর
+আইগেনচল-শর্ত লঙ্ঘিত হয়েছে।
+
+\begin{prop}\ollabel{prop:G3c-axioms}
+$!A, \Gamma \Sequent \Delta, !A$
+রূপের যেকোনো সিকোয়েন্ট
+\Log{G3c}-তে প্রমাণযোগ্য;
+এখানে $!A$ \emph{আবশ্যিকভাবে}
+আণবিক হতে হবে না।
+\end{prop}
+
+\begin{proof}
+\olref{prop:G1c-axioms}-এর
+প্রমাণের সঙ্গে এই প্রমাণের
+অনেক মিল, তবে আরোহের
+অনুমানটি সাবধানে নিতে হবে।
+$n = \depth{!A} = 0$
+ক্ষেত্রটি আবার সহজ।
+$n=0$ হলে $!A$ আণবিক,
+আর $!A, \Gamma \Sequent
+\Delta, !A$ \Log{G3c}-র
+স্বতঃসিদ্ধ।
+
+এবার ধরি $n>0$।
+আবার ক্ষেত্রভাগ করি।
+আরোহের অনুমান: $\depth{!D}
+< n$ এমন সব $!D$ এবং
+যেকোনো $\Pi$ ও
+$\Lambda$-র জন্য
+$\Log{G3c} \Proves
+!D, \Pi \Sequent
+\Lambda, !D$।
+$!A \ident (!B \land !C)$
+ক্ষেত্রটি দেখি।
+আরোহের অনুমান দুবার
+প্রয়োগ করি। প্রথমে
+$!D = !B$,
+$\Pi = !C, \Gamma$ ও
+$\Lambda = \Delta$
+নিয়ে $!B, !C, \Gamma
+\Sequent \Delta, !B$-র
+!!a{proof}~$\pi_1$ পাই।
+তারপর $!D = !C$,
+$\Pi = !B, \Gamma$ ও
+$\Lambda = \Delta$
+নিয়ে $!B, !C, \Gamma
+\Sequent \Delta, !C$-র
+!!a{proof}~$\pi_2$ পাই।
+$!B \land !C, \Gamma
+\Sequent \Delta,
+!B \land !C$-র
+!!{proof}টি হলো:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!B, !C, \Gamma \fCenter \Delta, !B$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!B \land !C, \Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!B, !C, \Gamma \fCenter \Delta, !C$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!B \land !C, \Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!B \land !C, \Gamma \fCenter \Delta, !B \land !C$
+\DisplayProof
+\]
+% BN-SRC-642 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-642):} G3c-র আরোহের অনুমানে উৎসের উল্টো \(D!\) সূত্রলিখন \(!D\) করা হয়েছে। \(\pi_2\)-র জন্য উৎসের \(\Pi=B,\Lambda\) ভুল প্রসঙ্গ; বৃক্ষের \(\Pi=B,\Gamma\) বসানো হয়েছে।}
+% BN-SRC-642 TARGET-CORRECTION-END
+
+$!A \ident \lforall[x][!B(x)]$
+হলে $\lforall[x][!B(x)]$,
+$\Gamma$ কিংবা~$\Delta$-তে
+নেই এমন !!a{constant}
+বেছে নিই। আরোহের অনুমানে
+$!D = !B(c)$,
+$\Pi = \lforall[x][!B(x)], \Gamma$
+ও $\Lambda = \Delta$
+নিই। এতে $!B(c),
+\lforall[x][!B(x)], \Gamma
+\Sequent \Delta, !B(c)$-র
+!!a{proof}~$\pi_1$
+পাই; সেখান থেকে:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!B(c), \lforall[x][!B(x)], \Gamma \fCenter \Delta, !B(c)$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$\lforall[x][!B(x)], \Gamma \fCenter \Delta, !B(c)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\lforall[x][!B(x)], \Gamma \fCenter \Delta, \lforall[x][!B(x)]$
+\DisplayProof
+\]
+$c$ যেভাবে বেছে নিয়েছি,
+তাতে $\RightR{\lforall}$-এর
+আইগেনচল-শর্ত পূরণ হয়।
+\end{proof}
+
+\begin{prob}
+  $!A \ident (!B \lif !C)$
+  এবং $!A \ident
+  \lexists[x][!B(x)]$
+  ক্ষেত্রগুলি দেখিয়ে
+  \olref{prop:G3c-axioms}-এর
+  প্রমাণ এগিয়ে নাও।
+\end{prob}
+
+\end{document}

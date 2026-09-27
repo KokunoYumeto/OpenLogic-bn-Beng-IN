@@ -6768,6 +6768,79 @@ for row in rows:
             and semantic_tokens(checked_target) - semantic_tokens(source)
             == collections.Counter({"!!a{proof}": 1})
         )
+    legacy_proof_examples_repairs = False
+    if row["unit_id"] == "OLP-0702":
+        audited_examples = source
+        fixes = (
+            (r"\Gamma = \{!C \lif (!D \lif !E)\}",
+             r"\Gamma = \{(!C \land !D) \lif !E\}", 1),
+            (r"\Axiom$!D, !C, !E \fCenter !E$" + "\n"
+             + r"\RightLabel{\RightR{\lif}}",
+             r"\Axiom$!D, !C, !E \fCenter !E$" + "\n"
+             + r"\RightLabel{\LeftR{\lif}}", 1),
+            (r"\UnaryInf$!C, !E \fCenter !C$",
+             r"\UnaryInf$!C, !E \fCenter !E$", 1),
+            (r"\Log{G1c} \Proves (!C \land !D)",
+             r"\Log{G3c} \Proves (!C \land !D)", 1),
+            (r"\lforall[x][A]", r"\lforall[x][!B(x)]", 1),
+            (r"\lexists[x][A]", r"\lexists[x][!B(x)]", 1),
+            (r"\lforall[x][A(x)]", r"\lforall[x][!B(x)]", 1),
+            (r"\lforall[x][B(x)]", r"\lforall[x][!B(x)]", 4),
+            (r"\lexists[x][B(x)]", r"\lexists[x][!B(x)]", 2),
+            (r"\depth{B(c)}", r"\depth{!B(c)}", 1),
+            ("$D!$", "$!D$", 1),
+            (r"$\Pi = !B, \Lambda$", r"$\Pi = !B, \Gamma$", 1),
+        )
+        for old, new, expected_count in fixes:
+            assert audited_examples.count(old) == expected_count, old
+            audited_examples = audited_examples.replace(old, new)
+        old_tree = r"""  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!B, \fCenter !B$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!B, !C, \fCenter !B$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C, !C\fCenter !B$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C, !B \land !C \fCenter !B$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!C, \fCenter !C$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!B, !C, \fCenter !C$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C, !C \fCenter !C$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C, !B \land !C \fCenter !C$
+  \RightLabel{\RightR{\land}}
+  \BinaryInf$!B \land !C \fCenter !B \land !C$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$!B \land !C \fCenter !B$
+  \DisplayProof
+  \]"""
+        new_tree = r"""  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!B \fCenter !B$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C \fCenter !B$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!C \fCenter !C$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C \fCenter !C$
+  \RightLabel{\RightR{\land}}
+  \BinaryInf$!B \land !C \fCenter !B \land !C$
+  \DisplayProof
+  \]"""
+        assert audited_examples.count(old_tree) == 1
+        audited_examples = audited_examples.replace(old_tree, new_tree, 1)
+        legacy_proof_examples_repairs = (
+            set(documented) == {f"BN-SRC-{n}" for n in range(636, 643)}
+            and not normalizations
+            and mathparts(audited_examples) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6927,6 +7000,7 @@ for row in rows:
             legacy_admissible_derivable_repairs,
             legacy_interpretation_xor_label_fix,
             legacy_invertibility_repairs,
+            legacy_proof_examples_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7229,6 +7303,15 @@ for row in rows:
             "documented_source_corrections": [f"BN-SRC-{n}" for n in range(629, 636)],
             "documented_language_normalization": "BN-NORM-181",
             "invertibility_notation_axioms_context_freshness_quantifier_rules": True,
+        }
+    if row["unit_id"] == "OLP-0702":
+        assert legacy_proof_examples_repairs
+        assert checked_target.count(r"\RightLabel{\LeftR{\lif}}") == 4
+        assert checked_target.count(r"\UnaryInf$!C, !E \fCenter !E$") == 1
+        assert checked_target.count(r"\Log{G3c} \Proves (!C \land !D)") == 1
+        tex_command_check = {
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(636, 643)],
+            "G1c_G3c_backward_search_and_identity_tree_repairs": True,
         }
     checks = {
         "unit_id": row["unit_id"],

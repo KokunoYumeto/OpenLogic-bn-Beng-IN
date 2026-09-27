@@ -1,0 +1,188 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T03:09:33.965932+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "1e6f5cbad173424b02e0d4b4ef1e686c0f413834",
+  "parent": "6d1f618d28f49ddc46e3ba76f6369051abb8d760",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "6d1f618d28f49ddc46e3ba76f6369051abb8d760",
+    "receipt": "PUBLIC_READBACK_SOURCE_584_2026-09-27.json",
+    "receipt_sha256": "04cff3d74eea15945c8918a5847ded46b4f99483c797a8faea506b98a2dc78bd"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/1e6f5cbad173424b02e0d4b4ef1e686c0f413834.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/1e6f5cbad173424b02e0d4b4ef1e686c0f413834",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 15738267,
+  "archive_sha256": "a6d3e9196d578f8e28c5dd368d2e6bbc49bd8c6bfc70d33556354c4ce48d8a42",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/card-arithmetic.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/card-arithmetic.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/card-arithmetic.tex",
+      "content_type": "text/plain",
+      "bytes": 352,
+      "sha256": "37e120055465570445c0d79dfae508fad8adb52daaa60783c2a0f9cacce5fba4"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/ch.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/ch.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/ch.tex",
+      "content_type": "text/plain",
+      "bytes": 11920,
+      "sha256": "d3036dee04ca20028dc467bcd2ec9c5f8ea029f9825ec67060b19fc37eceff89"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/expotough.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/expotough.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/expotough.tex",
+      "content_type": "text/plain",
+      "bytes": 6353,
+      "sha256": "299da41aabc12f9156672ae23b12ce8976df9ac9860bed14c6016fb28a23462e"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/fix.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/fix.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/fix.tex",
+      "content_type": "text/plain",
+      "bytes": 11169,
+      "sha256": "ac62137bd28c213fcea88c3641374b7be7336291bccc7993bb23d8473ea0b9d0"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/opps.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/opps.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/opps.tex",
+      "content_type": "text/plain",
+      "bytes": 8405,
+      "sha256": "b022b47a6bbaa056220f1186cf70fea6874650a45ae343e9d379dd4551a0ee20"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/simp.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/simp.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/1e6f5cbad173424b02e0d4b4ef1e686c0f413834/bn-Beng-IN/content/set-theory/card-arithmetic/simp.tex",
+      "content_type": "text/plain",
+      "bytes": 8364,
+      "sha256": "8fa01ba9ce21cdd8086ee291cb244883f49c9478f1eeda96501e88ebcb5b3937"
+    }
+  ],
+  "changed_files_verified": 19,
+  "translated_tex_files_in_commit": 6,
+  "draft_translated_total": 590,
+  "draft_untranslated_total": 132,
+  "segments": 6445,
+  "translated_segments": 5523,
+  "new_batch_segments": 94,
+  "new_batch_translated_segments": 92,
+  "new_batch_unchanged_segments": 2,
+  "source_correction_records": 469,
+  "new_source_correction_records": 8,
+  "translation_decisions": 415,
+  "provisional_translation_decisions": 393,
+  "translation_decision_occurrences": 36618,
+  "decisions_with_exact_source_wording": 395,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 590,
+    "blocks": 6445,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 8061,
+      "sha256": "e345990419462090de814dd7138c0d011937a825a7a5be746140a7dec7de049a"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/card-arithmetic/card-arithmetic.tex",
+      "bytes": 352,
+      "sha256": "37e120055465570445c0d79dfae508fad8adb52daaa60783c2a0f9cacce5fba4"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/card-arithmetic/ch.tex",
+      "bytes": 11920,
+      "sha256": "d3036dee04ca20028dc467bcd2ec9c5f8ea029f9825ec67060b19fc37eceff89"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/card-arithmetic/expotough.tex",
+      "bytes": 6353,
+      "sha256": "299da41aabc12f9156672ae23b12ce8976df9ac9860bed14c6016fb28a23462e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/card-arithmetic/fix.tex",
+      "bytes": 11169,
+      "sha256": "ac62137bd28c213fcea88c3641374b7be7336291bccc7993bb23d8473ea0b9d0"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/card-arithmetic/opps.tex",
+      "bytes": 8405,
+      "sha256": "b022b47a6bbaa056220f1186cf70fea6874650a45ae343e9d379dd4551a0ee20"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/card-arithmetic/simp.tex",
+      "bytes": 8364,
+      "sha256": "8fa01ba9ce21cdd8086ee291cb244883f49c9478f1eeda96501e88ebcb5b3937"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 10719486,
+      "sha256": "5323568778342a1092c5216167d02ad1dad0357f7493e03173acdec1084c7e97"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 356732,
+      "sha256": "47a0c065996ec09bed45152d2b586ac839afbba8da4a11f983608861ac86237f"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SET_THEORY_CARD_ARITHMETIC.md",
+      "bytes": 8811,
+      "sha256": "0176e49253d8469cf35de835339a4550fb152bca724eb472bb9baa390b669089"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "0fa571aa201c5979b5cbb5f5e5cfa4af87d140c32ed277cdaef3101914ba3c4e"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 917995,
+      "sha256": "9fabec2ac782633b43a94c42eafd4401f93ab4c1ffbf8a45192ba4ea42bb2222"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 390678,
+      "sha256": "36fadaab8d2556cfa76409a979d8ff38d9e347467d95187e32349c72c789446b"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 21874387,
+      "sha256": "39c7e2aeec5fdf77d672bacd3c911f19d66437ba6ca1fcd3a84951942e8a9b8b"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 17090881,
+      "sha256": "802889cfca07ca1d759c2b398814b53dd8b769adb0bb50c1b3ee9e41c6ec3eee"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1613524,
+      "sha256": "0be6a0579b34bdeeca70314502a28f313534ec8a94862fc50cec415f9620a449"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 10037600,
+      "sha256": "5e45c0ed1599db4d363e9beef13db2a96fa9121eb1bd939b1820f8629d18cddc"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 297781,
+      "sha256": "29db6fcd1d9155dc75807f389dfd5c9f47ee17c3eb1ffdbd1afa72a6161abdad"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 290668,
+      "sha256": "4bbe70fe2d9a2b044f9a2feb931718c2ef09a83eb99a28c2c38567574177e65b"
+    }
+  ]
+}

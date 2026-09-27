@@ -1,0 +1,276 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: midsequent
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{mid}
+
+\olsection{মধ্যবর্তী সিকোয়েন্ট উপপাদ্য ও Herbrand-এর উপপাদ্য}
+
+কর্তন-বর্জন উপপাদ্যের একটি গুরুত্বপূর্ণ ফল হলো মধ্যবর্তী
+সিকোয়েন্ট উপপাদ্য। এটি বলে: $\Gamma \Sequent \Delta$-র
+এমন !!a{proof}~$\pi$ থাকলে, যাতে প্রতিটি !!{formula}
+অগ্র-পরিমাণসূচক রূপে আছে, এমন !!a{proof}~$\pi'$-ও আছে যাতে
+$S \ident \Pi \Sequent \Lambda$ নামে একটি সিকোয়েন্ট
+(\emph{মধ্যবর্তী সিকোয়েন্ট}) থাকে; $\pi'$-তে~$S$-এর উপরের
+সব অনুমান বচনীয়, আর $S$-এর নীচের সব অনুমান পরিমাণসূচক-সংক্রান্ত।
+(!!^a{formula}~$!A$ \emph{অগ্র-পরিমাণসূচক} বা
+\emph{অগ্র-পরিমাণসূচক রূপে} থাকে যদি তার রূপ
+\[\mathsf{Q}_1x_1\dots\mathsf{Q}_nx_n\,!B(x_1,\dots,x_n)\] হয়,
+যেখানে প্রত্যেক $\mathsf{Q}_i$ হয় $\lforall$, নয়তো~$\lexists$।)
+মধ্যবর্তী সিকোয়েন্ট উপপাদ্য থেকে Herbrand-এর উপপাদ্যও
+অনুসৃত হয়। এর সাধারণ ক্ষেত্রটি বর্ণনা করা কিছুটা কঠিন;
+মোটামুটি ফলটির রূপ এমন: প্রথম-ক্রম যুক্তির প্রতিটি
+!!{provable} !!{sentence}~$!A$-র জন্য এমন একটি বচনীয়
+সর্বতঃসত্য সূত্র~$!A'$ আছে, যা থেকে $!A$ !!{prove} করা যায়।
+এখানে $\lexists[x][!B(x)]$ রূপের !!{sentence}s-এর
+ক্ষেত্রটি দিই, যেখানে $!B$ পরিমাণসূচকবিহীন:
+
+\begin{thm}[Herbrand-এর উপপাদ্য]
+ধরি, $!B(x)$ পরিমাণসূচকবিহীন এবং $\Proves
+\lexists[x][!B(x)]$। তাহলে এমন পদ~$t_1$, \dots, $t_n$
+আছে যাতে $\Proves !B(t_1) \lor \dots \lor !B(t_n)$।
+\end{thm}
+
+!!{formula}~$!B(t_1) \lor \dots \lor !B(t_n)$-কে
+$\lexists[x][!B(x)]$-এর \emph{Herbrand-বিচ্ছেদ} বলে।
+$!B$ পরিমাণসূচকবিহীন বলে এই বিচ্ছেদও তাই। সুতরাং এটি
+!!{provable} হলে কর্তনমুক্ত প্রমাণে !!{provable}, ফলে
+শুধু বচনীয় অনুমান-ব্যবহারকারী !!a{proof}-ও আছে।
+অতএব এটি সর্বতঃসত্য।
+
+Herbrand-এর উপপাদ্যের কঠিন অংশ হলো, প্রতিটি !!{provable}
+!!{formula}~$\lexists[x][!B(x)]$-এর জন্য একটি
+Herbrand-বিচ্ছেদের অস্তিত্ব দেখানো। বিপরীতটি সহজ:
+$\lexists[x][!B(x)]$-এর Herbrand-বিচ্ছেদ থাকলে সূত্রটি
+প্রমাণযোগ্য। আসলে, বিচ্ছেদটি থেকে $\lexists[x][!B(x)]$
+অনুসৃত হয়। যেমন, $n=2$ হলে $\Log{G3c}$-তে এই !!a{proof}:
+\[
+\Axiom$!B(t_1) \fCenter \lexists[x][!B(x)], !B(t_1), !B(t_2)$
+\Axiom$!B(t_2) \fCenter \lexists[x][!B(x)], !B(t_1), !B(t_2)$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$!B(t_1) \lor !B(t_2) \fCenter \lexists[x][!B(x)], !B(t_1), !B(t_2)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$!B(t_1) \lor !B(t_2) \fCenter \lexists[x][!B(x)], !B(t_2)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$!B(t_1) \lor !B(t_2) \fCenter \lexists[x][!B(x)]$
+\DisplayProof
+\]
+
+$\Sequent \lexists[x][!B(x)]$-র !!a{proof}~$\pi$
+থেকে Herbrand-বিচ্ছেদ বের করতে প্রথমে এমন ক্ষেত্র ধরি,
+যেখানে কর্তনমুক্ত !!{proof}~$\pi$-র সব
+$\RightR{\lexists}$ অনুমান শেষে আছে:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$ \fCenter \lexists[x][!B(x)], !B(t_1), \dots, !B(t_n)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$ \fCenter \lexists[x][!B(x)], !B(t_2), \dots, !B(t_n)$
+\RightLabel{$(n-1) \times \RightR{\lexists}$}
+\Deduce$ \fCenter \lexists[x][!B(x)]$
+\DisplayProof
+\]
+$\pi$-তে $\lexists[x][!B(x)]$ সক্রিয় এমন সব
+$\RightR{\lexists}$ অনুমান এগুলিই হলে উপপ্রমাণ~$\pi_1$-তে
+আর কোনো পরিমাণসূচক অনুমান নেই: $!B(x)$-তে অন্য
+পরিমাণসূচক নেই এবং অন্তিম সিকোয়েন্টের বাম পাশে কোনো
+!!{formula}s নেই। অন্য কথায়,
+$ \fCenter \lexists[x][!B(x)], !B(t_1), \dots, !B(t_n)$
+হলো~$\pi$-র মধ্যবর্তী সিকোয়েন্ট। তার উপরে পরিমাণসূচক
+অনুমান না থাকায় উপরের সব সিকোয়েন্টে
+$\lexists[x][!B(x)]$ থাকলেও তা সক্রিয় বা প্রধান নয়।
+তাই !!{proof}~$\pi_1$ থেকে ওই সূত্র বাদ দিয়ে
+$\fCenter !B(t_1), \dots, !B(t_n)$-র !!a{proof} পাই;
+তারপর $\RightR{\lor}$-এর $n-1$টি প্রয়োগে
+Herbrand-বিচ্ছেদ~$\Sequent !B(t_1) \lor \dots \lor !B(t_n)$-র
+!!a{proof} পাই।
+% BN-SRC-536 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-536):} প্রদর্শিত উপপ্রমাণটির নাম $\pi_1$; উৎসের পরের গদ্যে অনির্ধারিত $\pi_1'$-এর বদলে সেই নাম ব্যবহার করা হয়েছে।}
+% BN-SRC-536 TARGET-CORRECTION-END
+
+সমস্যা হলো, $\Sequent \lexists[x][!B(x)]$-র
+কর্তনমুক্ত !!{proof}-এও সব \RightR{\lexists} অনুমান
+শেষে একসঙ্গে থাকে—এমন ধরে নিতে পারি না। এই $\RightR{\lexists}$ অনুমানগুলির মাঝখানে
+কোনো $!B(t_i)$ প্রধান এমন অনুমান থাকতে পারে। এই কারণেই
+মধ্যবর্তী সিকোয়েন্ট উপপাদ্য দরকার।
+
+\begin{thm}[মধ্যবর্তী সিকোয়েন্ট উপপাদ্য]\ollabel{thm:midsequent}
+$\Gamma \Sequent \Delta$-র এমন \Log{G3c}-!!{proof}~$\pi$
+থাকলে, যাতে $\Gamma$ ও $\Delta$-র সব !!{formula}s
+অগ্র-পরিমাণসূচক রূপে, এমন !!a{proof}~$\pi'$ আছে যাতে
+একটি $\Pi \Sequent \Lambda$ সিকোয়েন্ট থাকে। তার
+নীচের সব অনুমান পরিমাণসূচক-সংক্রান্ত, উপরের সব অনুমান
+বচনীয়।
+\end{thm}
+
+\begin{proof}
+  $\pi$-র কোনো পরিমাণসূচক অনুমানের \emph{ক্রম} বলতে তার নীচে
+  থাকা বচনীয় অনুমানের সংখ্যা বোঝাই; $\pi$-র ক্রম~$o(\pi)$
+  হলো এর সব পরিমাণসূচক অনুমানের ক্রমের যোগফল।
+  $o(\pi) = 0$ হলে কোনো পরিমাণসূচক অনুমানের নীচে বচনীয়
+  অনুমান নেই, তাই কাজ শেষ। পরিমাণসূচক অনুমান একটিও না
+  থাকলে অন্তিম সিকোয়েন্টটিই মধ্যবর্তী সিকোয়েন্ট। অন্যথায়
+  সব পরিমাণসূচক অনুমান এক-পূর্বধারণাবিশিষ্ট বলে একটি
+  সর্বোচ্চে-থাকা পরিমাণসূচক অনুমান থাকে; তার পূর্বধারণা
+  মধ্যবর্তী সিকোয়েন্ট।
+  % BN-SRC-537 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-537):} ক্রম শূন্য হলেও পরিমাণসূচক অনুমান একটিও না-থাকতে পারে; সেই ভিত্তিক্ষেত্রে অন্তিম সিকোয়েন্টকেই মধ্যবর্তী ধরা হয়েছে।}
+  % BN-SRC-537 TARGET-CORRECTION-END
+
+  $o(\pi) > 0$ হলে ক্রম~$>0$ এমন সর্বনিম্নে-থাকা
+  পরিমাণসূচক অনুমান বাছি। তার ক্রম $>0$, তাই নীচে
+  অবশ্যই বচনীয় অনুমান আছে। সর্বনিম্ন এমনটি বাছায়
+  তার সিদ্ধান্ত অন্য কোনো পরিমাণসূচক অনুমানের পূর্বধারণা
+  হতে পারে না: নইলে নীচের সেই পরিমাণসূচক অনুমানেরও
+  নীচে বচনীয় অনুমান থাকত। কোন পরিমাণসূচক ও কোন
+  পরবর্তী বচনীয় বিধি ব্যবহৃত, তা অনুযায়ী অনেকগুলি ক্ষেত্র।
+  অন্তিম সিকোয়েন্টে শুধু অগ্র-পরিমাণসূচক সূত্র থাকায়
+  পরিমাণসূচক অনুমানের প্রধান সূত্রটি পরের বচনীয় অনুমানে
+  সক্রিয় হতে পারে না। হলে ওই বচনীয় অনুমানের প্রধান
+  সূত্রে কোনো বচনীয় সংযোজকের পরিসরের ভিতরে পরিমাণসূচক
+  থাকত। উপ-!!{formula} ধর্ম অনুযায়ী সেটি অন্তিম সিকোয়েন্টের
+  কোনো !!a{formula}-র উপ-!!{formula} হতে হতো। তাই
+  পরিমাণসূচক অনুমানের প্রধান !!{formula} নীচের বচনীয়
+  অনুমানের প্রসঙ্গের !!a{element}।
+
+  দুটি উদাহরণ দেখি:
+
+প্রথমে ধরি, $\LeftR{\lif}$-এর ডান পূর্বধারণায়
+$\RightR{\lforall}$ শেষ হয়। তাহলে $\pi$-র প্রাসঙ্গিক
+উপ-!!{proof}~$\pi_1$-এর শেষাংশ:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma' \fCenter \Delta', \lforall[x][!A(x)], !B$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!C, \Gamma' \fCenter \Delta', !A(c)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$!C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)]$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)]$
+\DisplayProof
+\]
+$\pi$ নিয়মিত ধরি। তাই ঈজেনচলক~$c$ $\pi_3$-র বাইরে
+ঘটে না; বিশেষত $!B \lif !C$ বা $\pi_2$-তে নেই।
+এবার !!{proof}~$\pi_1'$ দেখি:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma' \fCenter \Delta', \lforall[x][!A(x)], !A(c), !B$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)], !A(c)$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)], !A(c)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$!B \lif !C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)], \lforall[x][!A(x)]$
+\DisplayProof
+\]
+এখানে $\pi_2$-র ডান পাশে $!A(c)$ যোগ করে দুর্বলীকরণে
+$\pi_2'$ পাওয়া যায়। (এতে নতুন অনুমান যোগ হয় না; বিশেষত
+ক্রম পাল্টাতে পারে এমন পরিমাণসূচক অনুমানও নয়।
+$\pi_2$-তে ঈজেনচলকের শর্তও ভাঙে না, কারণ $!A(c)$-এর
+কোনো ধ্রুবক $\pi_2$-তে ঈজেনচলক হিসেবে ব্যবহৃত নয়।)
+\RightR{\lforall}-এর ঈজেনচলক-শর্ত এখনও পূরণ হয়, কারণ
+$!B \lif !C$-তে~$c$ নেই।
+
+সংকোচনের গ্রহণযোগ্যতা প্রয়োগে $!B \lif !C, \Gamma'
+\fCenter \Delta', \lforall[x][!A(x)]$-র
+!!a{proof}~$\pi_1''$ পাই। $\lforall[x][!A(x)]$-এর
+জন্য $\RightR{\Contraction}$-এর গ্রহণযোগ্যতার প্রমাণে,
+এবং সেখানে ব্যবহৃত $\RightR{\lforall}$-এর উল্টনযোগ্যতার
+প্রমাণে, কোনো অনুমানের ক্রম বদলায়নি: বড়জোর অনুমান
+বাদ পড়েছে। তাই $\pi_1''$-তে $\pi_1$-এর চেয়ে বেশি
+পরিমাণসূচক অনুমান নেই; আর $\pi_1''$-এর প্রতিটির নীচে
+বচনীয় অনুমানের সংখ্যা $\pi_1$-এ সংশ্লিষ্ট অনুমানের
+নীচের সংখ্যার সমান—শেষ \RightR{\lforall} ব্যতিক্রম।
+$\pi$-তে তার নীচে একটি \LeftR{\lif} ছিল, যা এখন
+$\pi_1''$-তে তার উপরে সরানো হয়েছে। $\pi$-তে $\pi_1$
+বদলে $\pi_1''$ বসাই। নতুন !!{proof}-এর ক্রম কম,
+কারণ অন্তত ওই $\RightR{\lforall}$ অনুমানের ক্রম
+(অন্তত)~$1$ কমেছে। এবার আরোহের অনুমান প্রয়োগ করি।
+
+পরিমাণসূচক অনুমান \RightR{\lexists} হলে ক্ষেত্রগুলি আরও
+সহজ: সংকোচন লাগে না, ঈজেনচলকের শর্তও ভাবতে হয় না।
+যেমন, ধরি \RightR{\lexists}-এর পরে $\RightR{\land}$
+আসে (এবার বাম পূর্বধারণায়)। প্রাসঙ্গিক উপ-!!{proof} হলো~$\pi_1$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !A(t), !B$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !B$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !B \land !C$
+\DisplayProof
+\]
+% BN-SRC-538 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-538):} এই প্রমাণবৃক্ষের মধ্যবর্তী পূর্বপক্ষে অতিরিক্ত বিস্ময়চিহ্ন ছিল; অন্য তিনটি সিকোয়েন্টের সঙ্গে মিলিয়ে সেটি বাদ দেওয়া হয়েছে।}
+% BN-SRC-538 TARGET-CORRECTION-END
+$\pi$-তে $\pi_1$-এর বদলে $\pi_1'$ বসাই:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !A(t), !B$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !A(t), !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !A(t), !B \land !C$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !B \land !C$
+\DisplayProof
+\]
+এখানে $\pi_3$-র ডান পাশে $!A(t)$ যোগ করে দুর্বলীকরণে
+$\pi_3'$ পাই। শুধু $\pi_3$-র প্রত্যেক সিকোয়েন্টের ডান
+পাশে $!A(t)$ যোগ হয়; তাই কোনো পরিমাণসূচক অনুমানের
+ক্রম বদলায় না। স্থানবিনিময়-করা \RightR{\lexists}
+অনুমানটির ক্রম~$1$ কমে, আর $\pi'$-তে বাকি অনুমানগুলির ক্রম
+$\pi$-র মতোই থাকে। আরোহের অনুমান প্রযোজ্য।
+\end{proof}
+
+\begin{prob}
+\olref{thm:midsequent}-এর প্রমাণে \LeftR{\lexists}
+যখন \RightR{\lif}-এর পূর্বধারণায় শেষ হয়, এবং
+\LeftR{\lforall} যখন \LeftR{\lor}-এর বাম পূর্বধারণায়
+শেষ হয়—এই ক্ষেত্রগুলি বর্ণনা করুন।
+\end{prob}
+
+\begin{proof}[Herbrand-এর উপপাদ্যের প্রমাণ]
+ধরি, $\pi$-র অন্তিম সিকোয়েন্ট $\Sequent \lexists[x][!A(x)]$।
+\olref{thm:midsequent} অনুযায়ী $\pi$-কে এমন
+!!a{proof}~$\pi'$-তে বদলাই যার একটি মধ্যবর্তী
+সিকোয়েন্ট~$S$ আছে। তার রূপ অবশ্যই
+\[\Sequent \lexists[x][!A(x)], !A(t_1), \dots, !A(t_n).\]
+$S$-এর উপরের সব অনুমান বচনীয় বলে
+$\lexists[x][!A(x)]$ $S$-এর উপরের কোনো অনুমানের প্রধান
+সূত্র হতে পারে না। এটি পরমাণবিক নয়, তাই স্বতঃসিদ্ধেও
+প্রধান হতে পারে না। $!A(t_1)$-এর প্রকৃত উপসূত্রও
+$\lexists[x][!A(x)]$ হতে পারে না (মনে রাখি,
+$!A(x)$ পরিমাণসূচকবিহীন); তাই $S$-এর উপরেও এটি
+সক্রিয় হতে পারে না। ফলে~$S$-তে শেষ হওয়া
+উপ-!!{proof} থেকে $\lexists[x][!A(x)]$ বাদ দিলে
+$\Sequent !A(t_1), \dots, !A(t_n)$-র সঠিক
+!!{proof} পাই। সেখান থেকে $n-1$টি
+$\RightR{\lor}$ অনুমানে
+$\Sequent !A(t_1) \lor \dots \lor !A(t_n)$-র
+!!a{proof} পাওয়া যায়।
+\end{proof}
+
+% \begin{prob}
+% $\lexists[x][\lforall[y][(!A(x) \lif
+% !A(y))]]$-এর একটি Herbrand-বিচ্ছেদ নির্ণয় করুন: $\Sequent
+% \lexists[x][\lforall[y][(!A(x) \lif !A(y))]]$-র
+% কর্তনমুক্ত !!{proof} খুঁজে এবং \olref{thm:midsequent}-এর
+% রূপান্তরে প্রয়োজনে মধ্যবর্তী সিকোয়েন্ট বের করুন।
+% \end{prob}
+
+\end{document}

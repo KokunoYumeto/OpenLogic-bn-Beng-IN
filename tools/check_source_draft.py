@@ -6193,6 +6193,21 @@ for row in rows:
             set(documented) == {f"BN-SRC-{n}" for n in range(531, 536)}
             and mathparts(audited_fragment) == target_math
         )
+    legacy_midsequent_repairs = False
+    if row["unit_id"] == "OLP-0661":
+        audited_midsequent = source
+        old = r"in~$\pi_1'$"
+        assert audited_midsequent.count(old) == 1
+        audited_midsequent = audited_midsequent.replace(old, r"in~$\pi_1$", 1)
+        old = r"\UnaryInf$!\Gamma' \fCenter"
+        assert audited_midsequent.count(old) == 1
+        audited_midsequent = audited_midsequent.replace(
+            old, r"\UnaryInf$\Gamma' \fCenter", 1
+        )
+        legacy_midsequent_repairs = (
+            set(documented) == {"BN-SRC-536", "BN-SRC-537", "BN-SRC-538"}
+            and mathparts(audited_midsequent) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6327,6 +6342,7 @@ for row in rows:
             legacy_interpolation_language_repairs,
             legacy_cut_intro_label_fix,
             legacy_cut_fragment_repairs,
+            legacy_midsequent_repairs,
         )
     )
     minimal_change_fileid_fix = (

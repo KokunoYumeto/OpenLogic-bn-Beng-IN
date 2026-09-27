@@ -6026,6 +6026,30 @@ for row in rows:
             "h_n(t)": 1,
         })
     )
+    legacy_provability_line_repairs = (
+        row["unit_id"] == "OLP-0643"
+        and set(documented) == {f"BN-SRC-{n}" for n in range(494, 501)}
+        and source_math - target_math == collections.Counter({
+            r"\Gamma_0\cup\Gamma_1\subseteq\Gamma": 1,
+            r"\Gamma_0\cup\{\lnot!A\}\Proves\lfalse": 2,
+            r"\Gamma_0\Proves\lnot!A\lif\lfalse": 1,
+            r"\Gamma_0\Proves(\lnot!A\lif\lfalse)\lif!A": 1,
+            r"\Gamma_0\Proves!A\lor!B": 1,
+            "!A": 1,
+            r"\Subst{!A}{y}{x}": 1,
+            r"\lforall[x][\Subst{!A}{x}{c}\lif\Subst{!A}{x}{c}\Subst{}{y}{x}]": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\Gamma_0\subseteq\Gamma": 1,
+            r"\Gamma_0\cup\{!A\}\Proves\lfalse": 2,
+            r"\Gamma_0\Proves!A\lif\lfalse": 1,
+            r"\Gamma_0\Proves(!A\lif\lfalse)\lif\lnot!A": 1,
+            r"\Gamma_0\Proves\lnot!A": 1,
+            "!A_i": 1,
+            r"\Subst{!A}{y}{c}": 1,
+            r"\lforall[x][\Subst{!A}{x}{c}]\lif\Subst{!A}{x}{c}\Subst{}{y}{x}": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6151,6 +6175,7 @@ for row in rows:
             history_limit_definition_and_quotient_fixes,
             history_cantor_binary_expansion_fixes,
             history_hilbert_limit_and_continuity_fixes,
+            legacy_provability_line_repairs,
         )
     )
     minimal_change_fileid_fix = (

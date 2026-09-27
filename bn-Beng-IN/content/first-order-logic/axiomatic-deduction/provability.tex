@@ -1,0 +1,330 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability
+
+% পূর্ণতা অধ্যায়ে সর্বাধিক সঙ্গত সেটের জন্য প্রয়োজনীয় প্রমাণযোগ্যতার ধর্ম।
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{prv}}
+      {\olfileid{pl}{axd}{prv}}
+
+\olsection{\usetoken{S}{derivability}-র ধর্ম}
+
+\begin{prop}[একঘেয়েতা] $\Gamma \subseteq \Delta$ এবং $\Gamma \Proves !A$
+হলে $\Delta \Proves !A$-ও হয়। \end{prop}
+
+\begin{proof} যেকোনো সসীম $\Gamma_0 \subseteq \Gamma$, $\Delta$-রও
+একটি সসীম উপসেট। তাই $\Gamma_0 \Proves !A$-এর !!a{derivation},
+$\Delta \Proves !A$-ও দেখায়। \end{proof}
+
+\begin{prop}\ollabel{prop:provability} $\Gamma \Proves !A$ যদি এবং কেবল যদি
+$\Gamma\cup \{\lnot!A \}$ অসঙ্গত হয়। \end{prop}
+
+\begin{prop} \begin{enumerate}
+\item \ollabel{prop:provability-contr} $\Gamma \Proves !A$ এবং $\Gamma
+\cup \{ !A\} \Proves \lfalse$ হলে $\Gamma$ অসঙ্গত।
+
+\item \ollabel{prop:provability-lnot} $\Gamma \cup \{!A\}
+\Proves \lfalse$ হলে $\Gamma \Proves \lnot !A$।
+
+\item \ollabel{prop:provability-exhaustive} $\Gamma \cup \{!A\}
+\Proves \lfalse$ এবং $\Gamma \cup \{\lnot !A\} \Proves
+\lfalse$ হলে $\Gamma \Proves \lfalse$।
+
+\tagitem{prvOr}{\ollabel{prop:provability-lor-left} $\Gamma \cup \{!A\}
+\Proves \lfalse$ এবং $\Gamma \cup \{!B\} \Proves
+\lfalse$ হলে $\Gamma \cup \{!A \lor !B\} \Proves \lfalse$।}{}
+
+\tagitem{prvOr}{\ollabel{prop:provability-lor-right} $\Gamma
+\Proves !A$ অথবা $\Gamma \Proves !B$ হলে $\Gamma
+\Proves !A \lor !B$।}{}
+
+\tagitem{prvAnd}{\ollabel{prop:provability-land-left} $\Gamma
+\Proves !A \land !B$ হলে $\Gamma \Proves !A$ এবং
+$\Gamma \Proves !B$।}{}
+
+\tagitem{prvAnd}{\ollabel{prop:provability-land-right} $\Gamma
+\Proves !A$ এবং $\Gamma \Proves !B$ হলে $\Gamma
+\Proves !A \land !B$।}{}
+
+\tagitem{prvIf}{\ollabel{prop:provability-mp} $\Gamma \Proves
+!A$ এবং $\Gamma \Proves !A \lif !B$ হলে $\Gamma
+\Proves !B$।}{}
+
+\tagitem{prvIf}{\ollabel{prop:provability-lif} $\Gamma \Proves
+\lnot !A$ অথবা $\Gamma \Proves !B$ হলে $\Gamma \Proves
+!A \lif !B$।}{} \end{enumerate} \end{prop}
+
+\begin{proof}
+\begin{enumerate}
+\item ধরি, $\Gamma_0 \cup \{!A\} \Proves \lfalse$।
+
+\begin{derivation}
+1. & $\Gamma_0 \cup \{!A\} \Proves \lfalse$ & অনুমান \\
+2. & $\Gamma_1 \Proves !A$ & অনুমান \\
+3. & $\Gamma_0 \cup \Gamma_1 \Proves \lfalse$ & কাট \\
+\end{derivation}
+
+যেহেতু $\Gamma_0 \subseteq \Gamma$ এবং $\Gamma_1 \subseteq \Gamma$,
+তাই $\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$; ফলে $\Gamma \Proves \lfalse$।
+
+\item ধরি, $\Gamma_0 \cup\{!A\} \Proves \lfalse$।
+
+\begin{derivation}
+1. & $\Gamma_0 \cup\{!A\} \Proves \lfalse$ & অনুমান \\
+2. & $\Gamma_0 \Proves !A \lif \lfalse$ & নিঃসরণ উপপাদ্য \\
+3. & $\Gamma_0 \Proves (!A \lif \lfalse) \lif \lnot !A$ & Ax0 \\
+4. & $\Gamma_0 \Proves \lnot !A$ & MP 2, 3 \\
+\end{derivation}
+% BN-SRC-494 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-494):} মূল দ্বিতীয় প্রমাণে অনুমানটি ভুল করে $\lnot !A$ থেকে অসঙ্গতি ধরে, তারপর $!A$ সিদ্ধান্ত করে; সেটি এখানে উল্লিখিত $\lnot !A$-প্রমাণ নয়। বাংলা সারণিতে বক্তব্যের সঙ্গে মেলে এমন $!A$-অনুমান ও নিঃসরণ-ধাপ পুনরুদ্ধার করা হয়েছে।}
+% BN-SRC-494 TARGET-CORRECTION-END
+
+\item ধরি, $\Gamma \cup \{ !A \} \Proves \lfalse$ এবং
+$\Gamma_1 \cup \{\lnot !A \} \Proves \lfalse$।
+
+\begin{derivation}
+1. & $\Gamma_0 \cup\{!A\} \Proves \lfalse$ & অনুমান \\
+2. & $\Gamma_0 \Proves !A \lif \lfalse$ & নিঃসরণ উপপাদ্য \\
+3. & $\Gamma_1 \cup \{\lnot !A \} \Proves \lfalse$ & অনুমান \\
+4. & $\Gamma_0 \Proves (!A \lif \lfalse) \lif \lnot !A$ & Ax0 \\
+5. & $\Gamma_0 \Proves \lnot !A$ & MP 2, 4 \\
+6. & $\Gamma_0 \cup \Gamma_1 \Proves \lfalse$ & কাট 3, 5 \\
+\end{derivation}
+
+যেহেতু $\Gamma_0 \subseteq \Gamma$ এবং $\Gamma_1 \subseteq \Gamma$,
+তাই $\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$। সুতরাং $\Gamma \Proves \lfalse$।
+
+% prop:provability-lor-left
+\tagitem{defOr}{}{
+\iftag{probOr}{অনুশীলনী।}{অনুশীলনী।}}
+
+% prop:provability-lor-right
+\tagitem{defOr}{}{ \iftag{probOr}{অনুশীলনী।}{
+ধরি, $\Gamma_0 \Proves !A$।
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves !A$ & অনুমান \\
+2. & $\Gamma_0 \Proves !A \lif (!A \lor !B)$ & Ax0 \\
+3. & $\Gamma_0 \Proves !A \lor !B$ & MP 1, 2 \\
+\end{derivation}
+
+তাই $\Gamma \Proves !A \lor !B$। $\Gamma \Proves
+!B$ হলে প্রমাণটি অনুরূপ।}}
+
+% prop:provability-land-left
+\tagitem{defAnd}{}{ \iftag{probAnd}{অনুশীলনী।}{
+ধরি, $\Gamma_0 \Proves !A \land !B$।
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves !A \land !B$ & অনুমান \\
+2. & $\Gamma_0 \Proves (!A\land !B) \lif !A $ & Ax0 \\
+3. & $\Gamma_0 \Proves !A$ & MP 1, 2 \\
+\end{derivation}
+% BN-SRC-495 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-495):} মূল সারণির তৃতীয় পংক্তিতে $!A \lor !B$ লেখা, অথচ প্রথম দুই পংক্তি থেকে মোডাস পোনেন্সে $!A$ মেলে। বাংলা পংক্তিতে সেই সিদ্ধান্ত লেখা হয়েছে।}
+% BN-SRC-495 TARGET-CORRECTION-END
+
+অতএব $\Gamma \Proves !A$। অনুরূপ !!{derivation} থেকে
+$\Gamma \Proves !B$ পাওয়া যায়।}}
+
+% prop:provability-land-right
+\tagitem{defAnd}{}{\iftag{probAnd}{অনুশীলনী।}{অনুশীলনী।}}
+
+% prop:provability-mp
+\tagitem{defIf}{}{ \iftag{probIf}{অনুশীলনী।}{আমরা
+$\Gamma_0 \Proves !A$ এবং $\Gamma_0 \Proves !A \lif !B $—উভয়ই ধরি।
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves !A$ & অনুমান \\
+2. & $\Gamma_0 \Proves !A \lif !B $ & অনুমান \\
+3. & $\Gamma_0 \Proves !B$ & MP 1, 2 \\
+\end{derivation}
+
+যেহেতু $\Gamma_0 \subseteq \Gamma$, তাই $\Gamma
+\Proves !B$।}}
+% BN-SRC-496 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-496):} মূল মোডাস-পোনেন্স প্রমাণের শেষে অনির্ধারিত $\Gamma_1$-সহ অন্তর্ভুক্তি লেখা হয়। একই সসীম $\Gamma_0$-এ উভয় পূর্বধারণা নেওয়ার পরে প্রয়োজন কেবল $\Gamma_0\subseteq\Gamma$।}
+% BN-SRC-496 TARGET-CORRECTION-END
+
+% prop:provability-lif
+\tagitem{defIf}{}{\iftag{probIf}{অনুশীলনী।}{প্রথমে
+ধরি, $\Gamma \Proves \lnot !A$।
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves \lnot !A$ & অনুমান \\
+2. & $\Gamma_0 \Proves \lnot !A \lif (!A \lif !B) $ & Ax0 \\
+3. & $\Gamma_0 \Proves !A \lif !B$ & MP 1,
+2 \\ \end{derivation}
+
+$\Gamma \Proves !B$ হলে প্রমাণটি একই রকম:
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves !B$ & অনুমান \\
+2. & $\Gamma_0 \Proves !B \lif (!A \lif !B) $ & Ax0 \\
+3. & $\Gamma_0 \Proves !A \lif !B$ & MP 1, 2 \\
+\end{derivation}}}
+
+\end{enumerate}
+\end{proof}
+
+\begin{probtag}{probOr,probAnd,probIf} \olref[fol][axd][prv]{prop:provability}-র
+প্রমাণ সম্পূর্ণ করো।
+\end{probtag}
+
+\begin{thm}[সাধারণীকরণ] \ollabel{thm:Generalization} $\Gamma \Proves
+!A$ এবং $\Gamma$-র কোনো !!{formula}-তে $x$ মুক্ত না হলে $\Gamma
+\Proves \lforall[x][!A]$।
+\end{thm}
+
+\begin{proof} $\mathsf{Thm}_\Gamma$-র ওপর আরোহ করি। $!A$ স্বতঃসিদ্ধ হলে
+$\lforall[x][!A]$-ও স্বতঃসিদ্ধ। $!A\in \Gamma$ হলে $!A$-তে $x$ মুক্ত নয়,
+তাই $!A \lif \lforall[x][!A]$ স্বতঃসিদ্ধ (\textbf{Ax3}); তখন MP থেকে
+$\Gamma \Proves \lforall[x][!A]$। এবার ধরি, $\Gamma \Proves !B$
+ও $\Gamma \Proves !B \lif !A$ বলে MP থেকে $!A$ পাওয়া গেছে। আরোহের
+অনুমান অনুসারে $\Gamma \Proves \lforall[x][!B]$ এবং $\Gamma \Proves
+\lforall[x][( !B \lif !A)]$। আবার \textbf{Ax2} অনুসারে \[ \Gamma \Proves
+\lforall[x][( !B \lif !A)] \lif (\lforall[x][ !B] \lif \lforall[x][!A]), \]
+এবং MP দুবার প্রয়োগ করে কাঙ্ক্ষিত $\Gamma \Proves \lforall[x][!A]$ পাই।
+\end{proof}
+
+\begin{thm}\ollabel{thm:WeakGen} (\emph{ধ্রুবকের ওপর দুর্বল সাধারণীকরণ})
+$\Gamma \Proves !A$ এবং $\Gamma$-তে আসে না এমন !!a{constant}~$c$ থাকলে
+এমন একটি চলক $x$ আছে যা $!A$-তে আসে না, অথচ $\Gamma
+\Proves \lforall[x][\Subst{!A}{x}{c}]$; এই প্রমাণে $c$ আসে না।
+\end{thm}
+
+\begin{proof} $\Gamma$ থেকে $!A$-এর প্রমাণ ধরি $!A_1,\ldots,!A_n$,
+যেখানে $!A=!A_n$। $!A_1,\ldots,!A_n$-এ আসে না এমন একটি চলক $x$ বেছে নিই
+এবং নতুন অনুক্রমটি বিবেচনা করি:
+$\Subst{!A_1}{x}{c},\ldots,\Subst{!A_n}{x}{c}.$
+এটি $\Gamma$ থেকে $\Subst{!A}{x}{c}$-এর একটি প্রমাণ। বস্তুত,
+প্রত্যেক $i=1,\ldots,n$-এর জন্য:
+\begin{itemize} \item $!A_i$ স্বতঃসিদ্ধ হলে $\Subst{!A_i}{x}{c}$-ও
+স্বতঃসিদ্ধ; \item $!A_i \in \Gamma$ হলে $c$, $\Gamma$-তে আসে না বলে
+$\Subst{!A_i}{x}{c} = !A_i \in \Gamma$; \item $!A_i$, $!A_j$
+ও $!A_j \lif !A_i$ থেকে পাওয়া গেলে $\Subst{!A_i}{x}{c}$
+পাওয়া যায় $\Subst{!A_j}{x}{c}$ এবং $\Subst{(!A_j \lif !A_i)}{x}{c}
+= \Subst{!A_j}{x}{c} \lif \Subst{!A_i}{x}{c}$ থেকে MP প্রয়োগে।
+\end{itemize} স্পষ্টতই নতুন অনুক্রমে !!{constant}~$c$ আর নেই। এখন
+$\Gamma'$-তে $\Gamma$-র সেই !!{formula}s নিই যেগুলি
+$\Subst{!A}{x}{c}$-এর !!{derivation}-এ ব্যবহৃত হয়েছে। তাহলে
+$\Gamma'$-র কোনো !!{formula}-তে $x$ মুক্ত নয় এবং
+$\Gamma' \Proves \Subst{!A}{x}{c}$। সাধারণীকরণ
+(\olref{thm:Generalization}) থেকে $\Gamma'
+\Proves \lforall[x][\Subst{!A}{x}{c}]$; একঘেয়েতা থেকে অতএব কাঙ্ক্ষিত
+$\Gamma \Proves \lforall[x][\Subst{!A}{x}{c}]$।
+% BN-SRC-497 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-497):} মূল প্রমাণে প্রতিটি $i$-এর ক্ষেত্রে প্রথম শর্তে শেষ সূত্র $!A$ স্বতঃসিদ্ধ কিনা দেখা হয়; দরকার সংশ্লিষ্ট $!A_i$ স্বতঃসিদ্ধ কিনা। বাংলা তালিকায় স্থানীয় সূচকটি পুনরুদ্ধার করা হয়েছে।}
+% BN-SRC-497 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{explain}
+\olref{thm:WeakGen}-এ $x$ একেবারেই $!A$-তে আসবে না—এই শর্তের বদলে
+দুটি অপেক্ষাকৃত দুর্বল শর্ত আনতে চাই: $!A$-তে $x$ মুক্ত নয় এবং
+$!A$-তে $c$-র জন্য তা !!{free for}। আবদ্ধ !!{variable} বদলালেই
+এটি করা যায়; তাই প্রথমে সেই বদলটি প্রমাণ করব।
+\end{explain}
+
+\begin{lem}
+\ollabel{lem:free-for}
+$!A$-তে $c$-র জন্য $x$ মুক্তভাবে প্রতিস্থাপনযোগ্য এবং $!A$-তে $y$ মুক্ত
+না হলে $\Subst{!A}{y}{c}$-এ $y$-র জন্য $x$ !!{free for}।
+\end{lem}
+
+\begin{proof} ধরি, $\Subst{!A}{y}{c}$-এ $y$-র জন্য $x$
+!!{free for} নয়। তাহলে $\Subst{!A}{y}{c}$-এ $y$-এর কোনো মুক্ত
+আবির্ভাব $\lforall[x]$-এর আওতায় পড়ে। কিন্তু অনুমান অনুসারে $!A$-তে
+$y$ মুক্ত নয়; তাই এমন সব আবির্ভাব এসেছে $\Subst{}{y}{c}$ প্রতিস্থাপন
+থেকে। অর্থাৎ $c$-র কোনো আবির্ভাব $\lforall[x]$-এর আওতায় পড়ে,
+তাই $!A$-তে $c$-র জন্য $x$ !!{free for} নয়।
+% BN-SRC-498 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-498):} মূল প্রমাণের প্রথম বাক্যে পরীক্ষাধীন সূত্র $\Subst{!A}{y}{x}$ লেখা, কিন্তু উপপাদ্যের বক্তব্য ও পরের বাক্যে সেটি $\Subst{!A}{y}{c}$। বাংলা প্রমাণে একই সূত্র রাখা হয়েছে।}
+% BN-SRC-498 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{lem}[আবদ্ধ চলক পরিবর্তন]
+\ollabel{lem:ChangeBdVar}
+$!A$-তে $x$ ও $y$ মুক্ত নয় এবং দুটিই $!A$-তে $c$-র জন্য !!{free for} হলে
+$\Proves \lforall[x][\Subst{!A}{x}{c}] \equiv
+\lforall[y][\Subst{!A}{y}{c}]$ (এবং প্রমাণে $c$ আসে না)।
+\end{lem}
+
+\begin{proof}
+অনুমান অনুসারে $!A$-তে $c$-র জন্য $y$ !!{free for} এবং
+$!A$-তে $x$ মুক্ত নয়। তাই আগের \olref{lem:free-for} অনুসারে
+$\Subst{!A}{x}{c}$-এ $x$-এর জন্য $y$ !!{free for}।
+ফলে নিচেরটি স্বতঃসিদ্ধের একটি দৃষ্টান্ত (\textbf{Ax1}):
+$\lforall[x][\Subst{!A}{x}{c}] \lif \Subst{!A}{x}{c} \Subst{}{y}{x}$।
+% BN-SRC-499 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-499):} মূল পাঠে সার্বিক পরিমাণসূচকটি সম্পূর্ণ অনুসিদ্ধান্তের ওপর বসানো হয়েছে; তা সার্বিক-বিশেষায়ন স্বতঃসিদ্ধ নয় এবং পরের প্রদর্শিত সূত্রটিও দেয় না। এখানে শুধু পূর্বপক্ষকে পরিমাণায়িত করে স্বতঃসিদ্ধের উদ্দিষ্ট রূপ রাখা হয়েছে।}
+% BN-SRC-499 TARGET-CORRECTION-END
+$!A$-তে $x$ মুক্ত নয় বলে
+$\Subst{!A}{x}{c} \Subst{}{y}{x} = \Subst{!A}{y}{c}$; অতএব
+\[
+\Proves \lforall[x][\Subst{!A}{x}{c}] \lif \Subst{!A}{y}{c},
+\]
+এবং নিঃসরণ উপপাদ্য অনুসারে $\lforall[x][\Subst{!A}{x}{c}] \Proves
+\Subst{!A}{y}{c}$। যেহেতু $!A$-তে $y$ মুক্ত নয়, তাই
+$\lforall[x][\Subst{!A}{x}{c}]$-এও তা মুক্ত নয়। সাধারণীকরণ থেকে
+$\lforall[x][\Subst{!A}{x}{c}] \Proves \lforall[y][\Subst{!A}{y}{c}]$,
+আর নিঃসরণ উপপাদ্য আবার প্রয়োগ করে $\Proves
+\lforall[x][\Subst{!A}{x}{c}] \lif \lforall[y][\Subst{!A}{y}{c}]$।
+$\Proves \lforall[y][\Subst{!A}{y}{c}] \lif \lforall[x]
+[\Subst{!A}{x}{c}]$-এর প্রমাণ পুরোপুরি প্রতিসম; তাই Taut থেকে সিদ্ধান্তটি
+পাই।
+\end{proof}
+
+\begin{thm}[ধ্রুবকের ওপর প্রবল সাধারণীকরণ]
+\ollabel{thm:StrongGen}
+$\Gamma \Proves !A$, !!{constant}~$c$ $\Gamma$-তে আসে না, এবং
+$!A$-তে $x$ মুক্ত নয় কিন্তু $!A$-তে $c$-র জন্য !!{free for} হলে
+$\Gamma \Proves \lforall[x][\Subst{!A}{x}{c}]$।
+\end{thm}
+
+\begin{proof}
+$\Gamma \Proves !A$ এবং $c$, $\Gamma$-তে আসে না বলে দুর্বল
+সাধারণীকরণ থেকে $!A$-তে আসে না এমন !!a{variable}~$y$ পাই যেন
+$\Gamma \Proves \lforall[y][\Subst{!A}{y}{c}]$। যেহেতু $y$
+$!A$-তে একেবারেই আসে না, তাই $!A$-তে তা মুক্তও নয় এবং $!A$-তে $c$-র জন্য
+!!{free for}। অনুমান অনুসারে $x$-ও $!A$-তে মুক্ত নয় এবং $!A$-তে $c$-র জন্য
+!!{free for}; ফলে আবদ্ধ !!{variable} পরিবর্তনের সব শর্ত পূরণ হয়। তাই
+$\Proves \lforall[x][\Subst{!A}{x}{c}] \equiv
+\lforall[y][\Subst{!A}{y}{c}]$, এবং সেখান থেকে
+$\Gamma \Proves \lforall[x][\Subst{!A}{x}{c}]$।
+\end{proof}
+
+\begin{thm}
+\ollabel{thm:provability-quantifiers}
+নিচের প্রতিটি বক্তব্যে দেখানো পদটি বদ্ধ:
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\Gamma \Proves !A(t)$ হলে $\Gamma \Proves
+  \lexists[x][!A(x)]$।}{}
+\tagitem{prvAll}{$\Gamma \Proves \lforall[x][!A(x)]$ হলে $\Gamma
+  \Proves !A(t)$।}{}
+\end{tagenumerate}
+% BN-SRC-500 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-500):} মূল বক্তব্যে $t$-এর কোনো পরিসর দেওয়া নেই; এই অধ্যায়ের পরিমাণসূচক-স্বতঃসিদ্ধ \olref[qua]{ax:q1} ও~\olref[qua]{ax:q2} বদ্ধ পদের জন্য ঘোষিত। বাংলা বক্তব্যে সেই সীমা স্পষ্ট করা হয়েছে।}
+% BN-SRC-500 TARGET-CORRECTION-END
+\end{thm}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+%% অস্তিত্বসূচকের জন্য স্বতঃসিদ্ধ প্রয়োজন।
+\tagitem{prvEx}{অনুশীলনী।}{}
+\tagitem{prvAll} {ধরি, $\Gamma_0 \Proves \lforall[x][!A(x)]$।
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves \lforall[x][!A(x)]$ & অনুমান \\
+2. & $\Gamma_0 \Proves \lforall[x][!A(x)] \lif \Subst{!A}{t}{x}$ & Ax1 \\
+3. & $\Gamma_0 \Proves \Subst{!A}{t}{x}$ & MP 1, 2 \\
+\end{derivation}}{}
+
+\end{tagenumerate}
+\end{proof}
+
+\end{document}

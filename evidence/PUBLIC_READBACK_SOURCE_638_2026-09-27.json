@@ -1,0 +1,195 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T06:57:37.411149+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "545e953f059a17cb2a0181fa6bfc26b870ed8c26",
+  "parent": "9d1240fb217b91d4611ff805a2b93962faf416ba",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "496c8693f79ee0a8c0e29d9c9c2146d90dd05fc6",
+    "receipt": "PUBLIC_READBACK_SOURCE_631_2026-09-27.json",
+    "receipt_sha256": "f037c7a55dc082a8d84a48285b3411b41bcd6b1bc0cb469d69e2c221ce003bb8"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/545e953f059a17cb2a0181fa6bfc26b870ed8c26.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/545e953f059a17cb2a0181fa6bfc26b870ed8c26",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 16564880,
+  "archive_sha256": "1c829a04d257212ac4e77b65e6dcad97c609cfca0b2b07aef467d4f7639bcac1",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/history/set-theory/cantor-plane.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/cantor-plane.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/cantor-plane.tex",
+      "content_type": "text/plain",
+      "bytes": 7333,
+      "sha256": "44b434b99ae95a4c78ff527e01922a5295fc99deff23628963e32e4342ed7cfd"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/set-theory/hilbert-curve.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/hilbert-curve.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/hilbert-curve.tex",
+      "content_type": "text/plain",
+      "bytes": 13978,
+      "sha256": "9a2879cd8f57fd84744f065a9fb4d6a504ab99c19641b71684725b966cb1a6ab"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/set-theory/infinitesimals.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/infinitesimals.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/infinitesimals.tex",
+      "content_type": "text/plain",
+      "bytes": 7591,
+      "sha256": "d813764a481c4c572886cca1964dd7d51afe8565ede9a9f2e8248b646bb2c6d2"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/set-theory/limits.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/limits.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/limits.tex",
+      "content_type": "text/plain",
+      "bytes": 7082,
+      "sha256": "e1079cdf8dd9e414d2bf2de4e600e6a002d6dcff01ece7a5cf3af51f77692a80"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/set-theory/mythology.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/mythology.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/mythology.tex",
+      "content_type": "text/plain",
+      "bytes": 4723,
+      "sha256": "17411e924e5a2b6d95b063cc43e6bc4dd89018a706df4f03a55d7b345f66fdd1"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/set-theory/pathologies.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/pathologies.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/pathologies.tex",
+      "content_type": "text/plain",
+      "bytes": 10195,
+      "sha256": "74f8e1f1de906d0d1e8a8ebfb312bc3b498ac43004b7f1620147616ac6328c0d"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/set-theory/set-theory.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/set-theory.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/545e953f059a17cb2a0181fa6bfc26b870ed8c26/bn-Beng-IN/content/history/set-theory/set-theory.tex",
+      "content_type": "text/plain",
+      "bytes": 611,
+      "sha256": "29f1077e22fdd48cc828d75cd18e49b860a2292c127df58116685024fbebee4e"
+    }
+  ],
+  "changed_files_verified": 19,
+  "translated_tex_files_in_scope": 7,
+  "draft_translated_total": 638,
+  "draft_untranslated_total": 84,
+  "segments": 6949,
+  "translated_segments": 5931,
+  "new_batch_segments": 59,
+  "new_batch_translated_segments": 51,
+  "new_batch_unchanged_segments": 8,
+  "source_correction_records": 500,
+  "new_source_correction_records": 8,
+  "translation_decisions": 429,
+  "provisional_translation_decisions": 407,
+  "translation_decision_occurrences": 38911,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 638,
+    "blocks": 6949,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 8538,
+      "sha256": "bbaea479ef93b25626704c9fd8e72b865f8bdab90f4431c5b322ca1857300b6e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/history/set-theory/cantor-plane.tex",
+      "bytes": 7333,
+      "sha256": "44b434b99ae95a4c78ff527e01922a5295fc99deff23628963e32e4342ed7cfd"
+    },
+    {
+      "filename": "bn-Beng-IN/content/history/set-theory/hilbert-curve.tex",
+      "bytes": 13978,
+      "sha256": "9a2879cd8f57fd84744f065a9fb4d6a504ab99c19641b71684725b966cb1a6ab"
+    },
+    {
+      "filename": "bn-Beng-IN/content/history/set-theory/infinitesimals.tex",
+      "bytes": 7591,
+      "sha256": "d813764a481c4c572886cca1964dd7d51afe8565ede9a9f2e8248b646bb2c6d2"
+    },
+    {
+      "filename": "bn-Beng-IN/content/history/set-theory/limits.tex",
+      "bytes": 7082,
+      "sha256": "e1079cdf8dd9e414d2bf2de4e600e6a002d6dcff01ece7a5cf3af51f77692a80"
+    },
+    {
+      "filename": "bn-Beng-IN/content/history/set-theory/mythology.tex",
+      "bytes": 4723,
+      "sha256": "17411e924e5a2b6d95b063cc43e6bc4dd89018a706df4f03a55d7b345f66fdd1"
+    },
+    {
+      "filename": "bn-Beng-IN/content/history/set-theory/pathologies.tex",
+      "bytes": 10195,
+      "sha256": "74f8e1f1de906d0d1e8a8ebfb312bc3b498ac43004b7f1620147616ac6328c0d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/history/set-theory/set-theory.tex",
+      "bytes": 611,
+      "sha256": "29f1077e22fdd48cc828d75cd18e49b860a2292c127df58116685024fbebee4e"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 12080991,
+      "sha256": "846da8cd9e655f6a84aeb5ac80194ae321cf0d18d8a7480c77dc1f9304316619"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 380191,
+      "sha256": "32899eee33f73a55d6cbb59f8ea967c78ebebc84dad368e26030a2d37e5a1b57"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_HISTORY_SET_THEORY.md",
+      "bytes": 5338,
+      "sha256": "ba8d67f26412018ddb1c3e13ab11b70cb0d2b7a3ce4b89c682ce40fcc7d16c9e"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 960013,
+      "sha256": "ca76c80d619257d91600096207b78c8b52065117dc22093635ae5ce8e0514bf8"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 408870,
+      "sha256": "8e152335b3936dd08b70286a62270b9706eb0370d0ead5bec2e091f677ce85ad"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 23104993,
+      "sha256": "140fdcda61a6ad9e55331ed20a6ad1963fb1681e7307624f770780e5b559dc0d"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 18042131,
+      "sha256": "50fac7f1282252b24e46e0f5254e02ed0666ce97bb727f773f27fd3d7264264a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1668546,
+      "sha256": "25e35590f3d7e187ea5b62dfe6bae9305c859c09b797b9a7b1941c03e624a52f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 10665097,
+      "sha256": "f1a3331b8ece623476d663743a8b0b3acbe709ec59e9cbe75a3c167b50cce72f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 306903,
+      "sha256": "9d23e2ab5d173dcb3e18ee5de4afec9489106700393b49c70a9f7aae81e169f1"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 301149,
+      "sha256": "492fc2dd1531f50fb80970e4b667f34f230efa6e23ff303e70700d57f8907381"
+    }
+  ]
+}

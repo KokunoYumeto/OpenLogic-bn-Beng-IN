@@ -1,0 +1,188 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T02:44:57.572537+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "2a96cf64d787fd5c918fe5092c7ae3f11a674e11",
+  "parent": "61b4dc10f25dc73feaa933341a59b4b77196649a",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "09dbb997c2d13a03eb9c48479e479e892e4e9ee8",
+    "receipt": "PUBLIC_READBACK_SOURCE_578_2026-09-27.json",
+    "receipt_sha256": "96fada81b53bb715b060869c4969ebf868e90eac7a6ecbc6310517af2f43e6d0"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/2a96cf64d787fd5c918fe5092c7ae3f11a674e11.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/2a96cf64d787fd5c918fe5092c7ae3f11a674e11",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 15542737,
+  "archive_sha256": "5bd554f5d7226dcde715039a343d50060fba9cd275ff8ceef54811cb65a9e10b",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/cardinals.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/cardinals.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/cardinals.tex",
+      "content_type": "text/plain",
+      "bytes": 322,
+      "sha256": "b1d47bff9b57726cb2d787b4b263e0fd0975f434db8cf3951da835aed48addb2"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/cardsasords.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/cardsasords.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/cardsasords.tex",
+      "content_type": "text/plain",
+      "bytes": 10132,
+      "sha256": "1ea5728872e1252e2a0a4eb817a4ce25689e3ddab337cbf7ce0620faeeea97d0"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/classing.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/classing.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/classing.tex",
+      "content_type": "text/plain",
+      "bytes": 11184,
+      "sha256": "78fe25c651a29bd1ed34747c72712fbdaa41ad89238ea39a29d0f5b24dad86aa"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/cp.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/cp.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/cp.tex",
+      "content_type": "text/plain",
+      "bytes": 3516,
+      "sha256": "518215b72dbf284c38bd15bc6149bb49f8c2e987a7bba5b2dcda265eb95bb0e8"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/hp.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/hp.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/hp.tex",
+      "content_type": "text/plain",
+      "bytes": 8811,
+      "sha256": "41bd9723c2d515111b74bc0b041ebb84c43a2c3f5b35ad02a1142f7c04c445e1"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/milestone.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/milestone.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/2a96cf64d787fd5c918fe5092c7ae3f11a674e11/bn-Beng-IN/content/set-theory/cardinals/milestone.tex",
+      "content_type": "text/plain",
+      "bytes": 2121,
+      "sha256": "d798d88598c24aa04c557809a73bd38d4b508ca1fcaf7fe49ed55720ad62c6aa"
+    }
+  ],
+  "changed_files_verified": 19,
+  "translated_tex_files_in_commit": 6,
+  "draft_translated_total": 584,
+  "draft_untranslated_total": 138,
+  "segments": 6351,
+  "translated_segments": 5431,
+  "new_batch_segments": 59,
+  "new_batch_translated_segments": 57,
+  "new_batch_unchanged_segments": 2,
+  "source_correction_records": 461,
+  "new_source_correction_records": 3,
+  "translation_decisions": 411,
+  "provisional_translation_decisions": 389,
+  "translation_decision_occurrences": 36044,
+  "decisions_with_exact_source_wording": 391,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 584,
+    "blocks": 6351,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 8000,
+      "sha256": "71802a65bb70032f6de4f5cb6aa44bfc528a21b4cd217217fb0201fbc73f8efc"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/cardinals/cardinals.tex",
+      "bytes": 322,
+      "sha256": "b1d47bff9b57726cb2d787b4b263e0fd0975f434db8cf3951da835aed48addb2"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/cardinals/cardsasords.tex",
+      "bytes": 10132,
+      "sha256": "1ea5728872e1252e2a0a4eb817a4ce25689e3ddab337cbf7ce0620faeeea97d0"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/cardinals/classing.tex",
+      "bytes": 11184,
+      "sha256": "78fe25c651a29bd1ed34747c72712fbdaa41ad89238ea39a29d0f5b24dad86aa"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/cardinals/cp.tex",
+      "bytes": 3516,
+      "sha256": "518215b72dbf284c38bd15bc6149bb49f8c2e987a7bba5b2dcda265eb95bb0e8"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/cardinals/hp.tex",
+      "bytes": 8811,
+      "sha256": "41bd9723c2d515111b74bc0b041ebb84c43a2c3f5b35ad02a1142f7c04c445e1"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/cardinals/milestone.tex",
+      "bytes": 2121,
+      "sha256": "d798d88598c24aa04c557809a73bd38d4b508ca1fcaf7fe49ed55720ad62c6aa"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 10531890,
+      "sha256": "16a5791d6e4321bdd6d3bb90b45058702d6fa4e056c3e0fe488df84a139e854c"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 353522,
+      "sha256": "ad812d32f74052c48e1eb09f287ffc3ecb480513ee3346a3491cd5c412e33206"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SET_THEORY_CARDINALS.md",
+      "bytes": 9345,
+      "sha256": "d26b7689dfcb0273de4f13f51b7788592816488825dc8de40237117340bc9eb5"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "c97ea5677c6f3f2f52b77b570855677d081a8f05cd3e5b456d2ed2fcf5d6ddaf"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 902919,
+      "sha256": "1496f3ef4b00895ef5e91e11c9fcb9f8d79a8f2eaaf69432ad0e6195d88dee25"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 387000,
+      "sha256": "9f1b51d6797a1546d555bdda3b3f5230c8bb626f5150f7bb6369cd3c282fd867"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 21567793,
+      "sha256": "6293fe17a4522ffd34831f7383ccb21713260e7e6f390e67aed343a3e8cf4a05"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 16854441,
+      "sha256": "d080b764177e9a4966ba0cab8c6d2b88a214cac04eabd8a317145201f2082294"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1597055,
+      "sha256": "fe1f5522211216b60b6bc2cbf59fa805ed8b0332ab8a6439881de1321d6aeaea"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 9881694,
+      "sha256": "fea72e2c3b4ad5ad502a7ed2c31577c7a9b07f1e5e28cf3395f9a24623a32a48"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 295074,
+      "sha256": "d91b0c5625dc4039840c1d05a5116218d888ab555084919100ec82c20c9ccce7"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 288995,
+      "sha256": "feb6bf8d1aef600868f26a09d5867eb046285fbef41ca4cdcf8db90a82bf7d61"
+    }
+  ]
+}

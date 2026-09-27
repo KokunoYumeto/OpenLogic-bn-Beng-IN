@@ -6016,6 +6016,14 @@ for row in rows:
         == collections.Counter({r"\olfileid{cnt}{min}{sph}" if row["unit_id"] == "OLP-0524"
                                 else r"\olfileid{cnt}{min}{tf}": 1})
     )
+    methods_definition_fileid_fix = (
+        row["unit_id"] == "OLP-0605"
+        and set(documented) == {"BN-SRC-476"}
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\olfileid{mod}{prf}{def}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\olfileid{mth}{prf}{def}": 1})
+    )
     replacement_reflection_citation_localization = (
         row["unit_id"] == "OLP-0572"
         and controls(source) - controls(checked_target)
@@ -6056,6 +6064,7 @@ for row in rows:
         or lambda_syntax_control_fix
         or modal_completeness_control_fix
         or minimal_change_fileid_fix
+        or methods_definition_fileid_fix
         or replacement_reflection_citation_localization
         or ordinal_rank_reference_fix
         or cardinal_predecessor_reference_fix

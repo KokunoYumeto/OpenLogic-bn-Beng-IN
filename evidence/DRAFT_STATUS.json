@@ -858,11 +858,11 @@
     "anonymous_public_readback": "All six GitHub and Zenodo assets matched byte-for-byte."
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "a4dbd680d80ec66195b846aa577d6357a53b2d77",
-    "translated_units": 654,
-    "receipt": "PUBLIC_READBACK_SOURCE_654_2026-09-27.json",
-    "receipt_sha256": "63124368a25c1e5eb2480694a12d619bcb8dda933e03c9c89d3070c215ad59f9",
-    "status": "আগের প্রকাশ্য উৎস-চেকপয়েন্ট 654 ইউনিটে যাচাইকৃত; বর্তমান 722-ইউনিট স্থানীয় উৎস-খসড়া পরবর্তী প্রকাশ্য যাচাইয়ের জন্য প্রস্তুত।"
+    "commit": "b0b7de3cae0105c065d21e22f142e66bb084dcf9",
+    "translated_units": 722,
+    "receipt": "PUBLIC_READBACK_SOURCE_722_2026-09-28.json",
+    "receipt_sha256": "9bdaca25df5fc2fb3a97529f6341329d008daab4010de78db88fba3b739c77c5",
+    "status": "সব ৭২২টি উৎস-অনুবাদ নামহীন প্রকাশ্য আর্কাইভে যাচাইকৃত; বর্তমান প্রকাশিত পাঠক ২৯৯ ইউনিট। পূর্ণ পাঠক ও PDF-এর কাজ চলছে।"
   },
   "current_checks": {
     "unit_checks": [

@@ -759,13 +759,14 @@
       "OLP-0674",
       "OLP-0675",
       "OLP-0676",
+      "OLP-0677",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 675,
-    "untranslated_count": 47,
-    "chapter_state": "হ্রাস-রূপান্তর: অর্থপর্যালোচনা (OLP-0676): স্থানীয় অনুবাদ ও উৎস-তুলনা পরীক্ষিত। এই পর্বে 1টি উৎস ইউনিট যোগ হয়েছে; নতুন উৎস-মেরামত BN-SRC-578, BN-SRC-579, BN-SRC-580, BN-SRC-581। বিস্তারিত অর্থপর্যালোচনা SEMANTIC_REVIEW_NORMALIZATION_REDUCTIONS.md-এ। আরও 47টি উৎস ইউনিট বাকি।",
-    "reader_state": "প্রকাশিত HTML/EPUB পাঠকসংস্করণে 299টি ইউনিট আছে। বর্তমান পরীক্ষিত উৎস-খসড়ায় 675টি; অতিরিক্ত 376টি এখনও সেই পাঠকে যুক্ত হয়নি। নতুন পাঠকসংস্করণ বা PDF দাবি করা হচ্ছে না।"
+    "translated_count": 676,
+    "untranslated_count": 46,
+    "chapter_state": "খণ্ড ও কর্তন: অর্থপর্যালোচনা (OLP-0677): স্থানীয় অনুবাদ ও উৎস-তুলনা পরীক্ষিত। এই পর্বে 1টি উৎস ইউনিট যোগ হয়েছে; নতুন উৎস-মেরামত BN-SRC-582, BN-SRC-583। বিস্তারিত অর্থপর্যালোচনা SEMANTIC_REVIEW_NORMALIZATION_SEGMENTS.md-এ। আরও 46টি উৎস ইউনিট বাকি।",
+    "reader_state": "প্রকাশিত HTML/EPUB পাঠকসংস্করণে 299টি ইউনিট আছে। বর্তমান পরীক্ষিত উৎস-খসড়ায় 676টি; অতিরিক্ত 377টি এখনও সেই পাঠকে যুক্ত হয়নি। নতুন পাঠকসংস্করণ বা PDF দাবি করা হচ্ছে না।"
   },
   "last_verified_public_release": {
     "version": "0.3.0",
@@ -815,7 +816,7 @@
     "translated_units": 654,
     "receipt": "PUBLIC_READBACK_SOURCE_654_2026-09-27.json",
     "receipt_sha256": "63124368a25c1e5eb2480694a12d619bcb8dda933e03c9c89d3070c215ad59f9",
-    "status": "আগের প্রকাশ্য উৎস-চেকপয়েন্ট 654 ইউনিটে যাচাইকৃত; বর্তমান 675-ইউনিট স্থানীয় উৎস-খসড়া পরবর্তী প্রকাশ্য যাচাইয়ের জন্য প্রস্তুত।"
+    "status": "আগের প্রকাশ্য উৎস-চেকপয়েন্ট 654 ইউনিটে যাচাইকৃত; বর্তমান 676-ইউনিট স্থানীয় উৎস-খসড়া পরবর্তী প্রকাশ্য যাচাইয়ের জন্য প্রস্তুত।"
   },
   "current_checks": {
     "unit_checks": [
@@ -11749,6 +11750,29 @@
         ]
       },
       {
+        "unit_id": "OLP-0677",
+        "source_blocks": 8,
+        "target_blocks": 8,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-582",
+          "BN-SRC-583"
+        ],
+        "tex_command_check": {
+          "documented_source_corrections": [
+            "BN-SRC-582",
+            "BN-SRC-583"
+          ],
+          "segment_formula_prefix_restored": 1,
+          "length_one_falsity_case_restated": true
+        },
+        "target_sha256": "cc660729c1b7bff506ef50f46e19cd6b691e9dcc5431cf3e671739cf127e00a4"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -11777,12 +11801,12 @@
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "b14cf3e66fe5c9b401381aebac328568386cf2959f36b9fbd1ca29cfc3811837"
+      "sha256": "33bb2cd833e9fb8eaf0d9ea3a82cf9cc13ba2460fbbab409fa9e25f4d45efad4"
     },
-    "segments": 7384,
-    "translated_segments": 6315,
+    "segments": 7392,
+    "translated_segments": 6322,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "e2c4f7575513928bfc7e710b6605d69054c495af7b9426a313f3ccf460065014",
+    "segment_index_sha256": "d18b55554c028f397327cc64f9c39ad1c7d60cefac2424382b642902053f6ada",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -12219,6 +12243,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_NORMALIZATION_REDUCTIONS.md",
         "sha256": "645a9399a1b9cd58320248c0139dc2c3f246323f66cdbef4526d81037bcee273"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_NORMALIZATION_SEGMENTS.md",
+        "sha256": "cc71af2e59a599975fd0c0caaa4b2242f6513bf1c2a551cbbd9022459d68303f"
       }
     ],
     "shared_source_audit": {
@@ -12251,9 +12279,9 @@
     }
   },
   "source_corrections": {
-    "count": 588,
+    "count": 590,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "41bbf4d5b772b0daef779a4310e8c3e0d55ce157378326d3be12a86610011047",
+    "sha256": "c18d591d7e80da0e5ead837de075454d0f726ea4ffda171f578225124956ac78",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -12842,7 +12870,9 @@
       "BN-SRC-578",
       "BN-SRC-579",
       "BN-SRC-580",
-      "BN-SRC-581"
+      "BN-SRC-581",
+      "BN-SRC-582",
+      "BN-SRC-583"
     ]
   },
   "source_normalizations": {
@@ -12866,12 +12896,12 @@
     "count": 440,
     "provisional_open": 418,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "7c8f3c56917b09e468863e4c28e2be18bc24578ffccd912f63cc2c3e4ff8cb05",
+    "sha256": "a5a4912255ac38db31652c31b91f65645a7c1e138804bf498d84647beab343bd",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 41781,
+    "occurrence_count": 41817,
     "occurrence_schema": "openlogic-bn-translation-decision/3",
     "occurrence_join": "Join source_segment_id to evidence/DRAFT_SEGMENT_CANON_USE.jsonl for exact source and target paths, block spans and SHA-256; read the frozen source block and verify its hash for exact wording.",
     "layout_readback": {
@@ -12898,5 +12928,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "Historical Functions-era TeX candidate record: all three bounded mutex acquisitions timed out without launching TeX. The verified public semantic HTML/EPUB reader is recorded above; no TeX-built PDF is claimed."
   },
-  "remaining": "47টি উৎস ফাইলের অনুবাদ, সমষ্টিগত পাঠকসংস্করণ, সম্পূর্ণ ৭২২-ইউনিট QA এবং চূড়ান্ত প্রকাশ্য যাচাই বাকি। বর্তমান পরীক্ষিত উৎস-খসড়া 675টি; আগের যাচাইকৃত প্রকাশ্য উৎস-চেকপয়েন্ট 654টি। প্রকাশিত পাঠকসংস্করণ 299 ইউনিটের।"
+  "remaining": "46টি উৎস ফাইলের অনুবাদ, সমষ্টিগত পাঠকসংস্করণ, সম্পূর্ণ ৭২২-ইউনিট QA এবং চূড়ান্ত প্রকাশ্য যাচাই বাকি। বর্তমান পরীক্ষিত উৎস-খসড়া 676টি; আগের যাচাইকৃত প্রকাশ্য উৎস-চেকপয়েন্ট 654টি। প্রকাশিত পাঠকসংস্করণ 299 ইউনিটের।"
 }

@@ -6469,6 +6469,12 @@ for row in rows:
             and set(normalizations) == {"BN-NORM-173"}
             and mathparts(audited_reductions) == target_math
         )
+    legacy_segment_formula_prefix_fix = (
+        row["unit_id"] == "OLP-0677"
+        and set(documented) == {"BN-SRC-582", "BN-SRC-583"}
+        and source_math - target_math == collections.Counter({"A_{i+1}": 1})
+        and target_math - source_math == collections.Counter({"!A_{i+1}": 1})
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6615,6 +6621,7 @@ for row in rows:
             legacy_normalization_intro_math_repair,
             legacy_permutation_cut_formula_fix,
             legacy_reduction_tree_repairs,
+            legacy_segment_formula_prefix_fix,
         )
     )
     minimal_change_fileid_fix = (
@@ -6726,6 +6733,17 @@ for row in rows:
             "documented_source_corrections": [f"BN-SRC-{n}" for n in range(578, 582)],
             "documented_language_normalization": "BN-NORM-173",
             "bengali_math_text_labels": 3,
+        }
+    if row["unit_id"] == "OLP-0677":
+        assert legacy_segment_formula_prefix_fix
+        assert source.count("$A_{i+1}$ is the conclusion") == 1
+        assert checked_target.count("$!A_{i+1}$") == 1
+        assert source.count("of~\\FalseInt, or~$n>1$") == 1
+        assert "মিথ্যা-ভূমিকা বিধির সিদ্ধান্তও হতে হবে" in checked_target
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-582", "BN-SRC-583"],
+            "segment_formula_prefix_restored": 1,
+            "length_one_falsity_case_restated": True,
         }
     checks = {
         "unit_id": row["unit_id"],

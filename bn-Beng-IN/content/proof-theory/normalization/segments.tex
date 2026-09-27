@@ -1,0 +1,130 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{seg}
+
+\olsection{খণ্ড ও কর্তন}
+
+!!^a{introduction} বিধির পরে !!a{elimination} বিধি এলে
+তা !!a{proof}-এর একটি ঘুরপথ;
+!!a{proof} স্বাভাবিকীকরণ মানে এমন ঘুরপথগুলি দূর করা।
+কিন্তু \Elim{\lor} ও \Elim{\lexists}-এর জন্য
+``যে ঘুরপথ দূর করতে চাই'' তার সংজ্ঞাই কিছুটা জটিল।
+কারণ, ঘুরপথে !!{elimination} বিধি যে
+!!{introduction} বিধির \emph{ঠিক পরেই} থাকবে,
+তা নিশ্চিত নয়। মাঝখানে \Elim{\lor} বা
+\Elim{\lexists} থাকতে পারে, যেমন:
+\[
+\AxiomC{}
+\DeduceC{$\lexists[x][!C(x)]$}
+\AxiomC{$\Discharge{!A}{x}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\DischargeRule{\Elim{\lexists}}{y}
+\BinaryInfC{$!A \lif !B$}
+\AxiomC{}
+\DeduceC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\]
+বস্তুত, যেকোনো সংখ্যক \Elim{\lor} বা
+\Elim{\lexists} \Intro{\lif} ও \Elim{\lif}-কে
+পৃথক করতে পারে, যেমন:
+\[
+\AxiomC{}
+\DeduceC{$\lexists[x][!C(x)]$}
+\AxiomC{}
+\DeduceC{$!D \lor !E$}
+\AxiomC{$\Discharge{!A}{x}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\AxiomC{$\Discharge{!A}{x}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\RightLabel{\Elim{\lor}}
+\TrinaryInfC{$!A \lif !B$}
+\DischargeRule{\Elim{\lexists}}{y}
+\BinaryInfC{$!A \lif !B$}
+\AxiomC{}
+\DeduceC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\]
+এই উদাহরণে একই \Elim{\lif} একাধিক ঘুরপথে
+থাকতে পারে: এর আগে একাধিক~\Intro{\lif} আছে।
+সব সম্ভাবনা ধরতে \Log{N1i}-প্রমাণে
+!!{formula}-সংঘটনের বিশেষ ধরনের অনুক্রম
+দিয়ে ঘুরপথ সংজ্ঞায়িত করি; এগুলিকে
+\emph{খণ্ড} বলি। এখানে $!A \lif !B$-এর
+এমন সংঘটনগুলির অনুক্রম নেওয়া হয়,
+যেখানে $\Elim{\lor}$ বা $\Elim{\lexists}$-এর
+কোনো গৌণ পূর্বধারণার পরে ওই বিধির সিদ্ধান্ত আসে।
+উদাহরণে এমন দুটি খণ্ড আছে; প্রতিটিতে
+$!A \lif !B$-এর তিনটি সংঘটন।
+আনুষ্ঠানিক সংজ্ঞাটি এই:
+
+\begin{defn}
+\Log{N1i} !!{proof}~$\delta$-তে
+\emph{খণ্ড} হলো ওই~$\delta$-তে একই !!{formula}~$!A$-এর
+সংঘটন $!A_1$, \dots, $!A_n$-এর
+এমন অনুক্রম, যেখানে
+\begin{enumerate}
+  \item $!A_1$ \Elim{\lor} বা \Elim{\lexists}-এর
+  সিদ্ধান্ত নয়;
+  \item $!A_n$ \Elim{\lor} বা \Elim{\lexists}-এর
+  গৌণ পূর্বধারণা নয়;
+  \item $i = 1$, \dots,~$n-1$ হলে,
+  $!A_i$ \Elim{\lor} বা \Elim{\lexists}-এর
+  একটি গৌণ পূর্বধারণা এবং $!A_{i+1}$
+  ওই প্রয়োগের সিদ্ধান্ত।
+\end{enumerate}
+খণ্ডটির \emph{দৈর্ঘ্য} হলো~$n$।
+\end{defn}
+% BN-SRC-582 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-582):} খণ্ডের সংজ্ঞায় একই $!A$-সূত্রের পরবর্তী সংঘটন উৎসের $A_{i+1}$ নয়, $!A_{i+1}$; বাদ পড়া সূত্রচিহ্ন ফিরেছে।}
+% BN-SRC-582 TARGET-CORRECTION-END
+
+সব খণ্ডই দূর করার মতো ঘুরপথ নয়।
+যেগুলি ঘুরপথ, সেগুলিকে \emph{কর্তন} বলি।
+
+\begin{defn}
+\emph{কর্তন} হলো এমন খণ্ড, যাতে $!A_n$
+কোনো !!a{elimination} প্রয়োগের প্রধান পূর্বধারণা
+এবং হয় $n=1$ ও $!A_1 = !A_n$ কোনো
+!!a{introduction} প্রয়োগের বা~\FalseInt-এর
+সিদ্ধান্ত, নয়তো~$n>1$।
+\end{defn}
+
+লক্ষ করুন, কর্তন-খণ্ডের শুরুতে
+!!a{introduction} বিধির সিদ্ধান্ত থাকতেই হবে না।
+খণ্ডটির শেষে !!a{elimination} বিধির
+প্রধান পূর্বধারণা থাকলেই এই শর্ত পূরণ হয়।
+তবে দৈর্ঘ্য~$1$-এর খণ্ড কর্তন হতে হলে
+সেটি !!{introduction} বিধি অথবা
+মিথ্যা-ভূমিকা বিধির সিদ্ধান্তও হতে হবে।
+% BN-SRC-583 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-583):} ঠিক আগের কর্তন-সংজ্ঞায় দৈর্ঘ্য একের ক্ষেত্রে \FalseInt-এর সিদ্ধান্তও অনুমোদিত; উৎসের শেষ ব্যাখ্যাবাক্যে ওই বিকল্পটি বাদ ছিল।}
+% BN-SRC-583 TARGET-CORRECTION-END
+
+\begin{defn}
+কর্তনের \emph{মাত্রা} হলো~$\depth{!A}$।
+!!a{proof}~$\delta$-র \emph{কর্তনমাত্রা}
+~$\cutrank{\delta}$ হলো $\delta$-তে
+কর্তনগুলির মধ্যে সর্বোচ্চ মাত্রা।
+কোনো কর্তনের মাত্রা $\cutrank{\delta}$
+হলে সেটি $\delta$-তে \emph{সর্বাধিক}
+কর্তন। $\delta$-র \emph{কর্তনদৈর্ঘ্য}
+হলো তার সব সর্বাধিক কর্তনের দৈর্ঘ্যের যোগফল।
+\end{defn}
+
+\end{document}

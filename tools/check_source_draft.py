@@ -5922,6 +5922,14 @@ for row in rows:
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\olref{exrankpow}": 1})
     )
+    cardinal_predecessor_reference_fix = (
+        row["unit_id"] == "OLP-0584"
+        and set(documented) == {"BN-SRC-453", "BN-SRC-454"}
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\olref{finitecardisoequal}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter()
+    )
     ordinal_exponentiation_citation_localization = (
         row["unit_id"] == "OLP-0579"
         and set(documented) == {"BN-SRC-451"}
@@ -5941,6 +5949,7 @@ for row in rows:
         or minimal_change_fileid_fix
         or replacement_reflection_citation_localization
         or ordinal_rank_reference_fix
+        or cardinal_predecessor_reference_fix
         or ordinal_exponentiation_citation_localization
     )
     checks = {

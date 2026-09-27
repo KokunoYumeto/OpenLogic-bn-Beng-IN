@@ -1,0 +1,135 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{cardinals}{cardsasords}
+\olsection{ক্রমসংখ্যা হিসেবে অঙ্কবাচক সংখ্যা}
+
+অঙ্কবাচক সংখ্যার তত্ত্ব গড়তে আমরা ক্রমসংখ্যার তত্ত্বই
+সরাসরি কাজে লাগাব। অর্থাৎ নির্দিষ্ট কিছু ক্রমসংখ্যাকেই
+অঙ্কবাচক সংখ্যা হিসেবে সংজ্ঞায়িত করব। নির্দিষ্টভাবে:
+
+\begin{defn}\ollabel{defcardinalasordinal}
+$A$-কে সুক্রমবিন্যস্ত করা গেলে, $\card{A}$ হলো এমন ক্ষুদ্রতম
+ক্রমসংখ্যা $\gamma$ যার জন্য $\cardeq{A}{\gamma}$। যেকোনো
+ক্রমসংখ্যা $\gamma$-কে \emph{অঙ্কবাচক সংখ্যা} বলব তখনই, যখন
+$\gamma$-র জন্য
+$\gamma = \card{\gamma}$।
+\end{defn}
+
+এইমাত্র ``$A$-কে সুক্রমবিন্যস্ত করা গেলে'' বললাম। গণিতে
+প্রায় সব ক্ষেত্রেই এমন সম্ভাবনাসূচক কথা আসলে একটি অস্তিত্বের
+দাবির সংক্ষিপ্ত রূপ: এর মানে, ``$A$-কে সুক্রমবিন্যস্ত করে
+এমন একটি সম্বন্ধ আছে''।
+
+তবে \olref{defcardinalasordinal}-এ একটি সমস্যা আছে। আমরা চাই
+\emph{প্রত্যেক} সেটের আকার থাকুক, অর্থাৎ প্রত্যেক $A$-র জন্য
+$\card{A}$ থাকুক। কিন্তু এই সংজ্ঞার শুরুতেই শর্ত আছে:
+``$A$-কে সুক্রমবিন্যস্ত করা \emph{গেলে}\ldots''। কোনো
+সেট $A$-কে সুক্রমবিন্যস্ত করা না গেলে সংজ্ঞাটি
+$\card{A}$ নামে কোনো বস্তুকেই নির্দিষ্ট করবে না।
+
+তাই \olref{defcardinalasordinal} ব্যবহার করতে হলে প্রত্যেক
+সেটকে সুক্রমবিন্যস্ত করা যায়, এমন নিশ্চয়তা দরকার। কিন্তু
+$\ZF$-এ এই নিশ্চয়তা পাওয়া যায় না। সুতরাং \olref{defcardinalasordinal}
+ব্যবহার করতে চাইলে নতুন একটি স্বতঃসিদ্ধ যোগ করতে হবে, যেমন:
+\begin{axiom}[সুক্রমবিন্যাস]
+প্রত্যেক সেটকে সুক্রমবিন্যস্ত করা যায়।
+\end{axiom}
+সুক্রমবিন্যাসের স্বতঃসিদ্ধ গ্রহণযোগ্য কি না, তা
+\olref[choice][]{chap}-এ আলোচনা করব। আপাতত সেটি মেনে নিচ্ছি।
+তাহলে \olref{defcardinalasordinal}-এ সংজ্ঞায়িত অঙ্কবাচক
+সংখ্যাগুলি যে আছে এবং প্রত্যাশামতো কাজ করে, তা সহজেই প্রমাণ করা যায়:
+
+\begin{lem}\ollabel{lem:CardinalsExist}
+প্রত্যেক সেট $A$-র জন্য:
+\begin{enumerate}
+	\item\ollabel{cardaexists} $\card{A}$ আছে এবং অদ্বিতীয়;
+	\item\ollabel{cardaapprox} $\cardeq{\card{A}}{A}$;
+	\item\ollabel{cardaidem} $\card{A}$ একটি অঙ্কবাচক সংখ্যা,
+	অর্থাৎ $\card{A} = \card{\card{A}}$।
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+$A$ স্থির করি। সুক্রমবিন্যাসের স্বতঃসিদ্ধে $\tuple{A,R}$
+একটি সুক্রমবিন্যাস আছে। \olref[ordinals][ordtype]{thmOrdinalRepresentation}
+অনুযায়ী $\tuple{A,R}$ একটি অদ্বিতীয় ক্রমসংখ্যা $\beta$-র
+সমরূপ। তাই $\cardeq{A}{\beta}$। সেই ক্রমসংখ্যা পর্যন্ত
+% BN-SRC-452: use the least element of a nonempty bounded ordinal set.
+যে ক্রমসংখ্যাগুলি $A$-র সমসংখ্যক, তাদের সেটটি অশূন্য;
+ক্রমসংখ্যার সুক্রমবিন্যাসে তার একটি অদ্বিতীয় ক্ষুদ্রতম
+সদস্য $\gamma$ আছে, যার জন্য $\cardeq{A}{\gamma}$।
+তাই $\card{A}=\gamma$; এতে
+\olref{cardaexists} এবং \olref{cardaapprox} প্রতিষ্ঠিত হয়।
+\olref{cardaidem}-এর জন্য লক্ষ করো, $\delta\in\gamma$ হলে
+$\gamma$-র নির্বাচন অনুযায়ী $\cardless{\delta}{A}$;
+আর সমসংখ্যক হওয়া একটি সমতুল্যতা সম্বন্ধ বলে
+(\olref[sfr][siz][equ]{equinumerosityisequi})
+$\cardless{\delta}{\gamma}$-ও হয়। অতএব
+$\gamma=\card{\gamma}$।
+%So, for reductio, suppose that there is some ordinal $\delta \in \gamma$ such that $\cardeq{\gamma}{\delta}$. Then, $\cardeq{\cardeq{A}{\gamma}}{\delta}$ so that $\cardeq{A}{\delta}$ by \olref[sfr][set][equ]{equinumerosityisequi}, which contradicts the choice of $\gamma$ as the least ordinal such that $\cardeq{A}{\gamma}$.
+\end{proof}
+
+পরের ফলটি কান্টরের নীতি এবং তার চেয়েও বেশি কিছু নিশ্চিত করে।
+(মনে রেখো, অঙ্কবাচক সংখ্যার ক্রমটি তারা ক্রমসংখ্যা হিসেবে
+যে ক্রমে আছে, সেই ক্রমই: $\cardfont{a}<\cardfont{b}$
+তখনই, যখন $\cardfont{a}\in\cardfont{b}$। নিচের ফলে
+যে বস্তুগুলিকে অঙ্কবাচক সংখ্যা বলে জানি, তাদের জন্য
+ফ্রাকটুর হরফ ব্যবহার করব। এটি প্রচলিত রীতি। আরেকটি
+চলতি রীতি হলো, অঙ্কবাচক সংখ্যা ক্রমসংখ্যাই বলে গ্রিক
+বর্ণমালার মাঝের অক্ষর, যেমন $\kappa,\lambda$, ব্যবহার করা।)
+\begin{lem}\ollabel{lem:CardinalsBehaveRight}
+যেকোনো সেট $A$ ও $B$-র জন্য:
+\begin{align*}
+	\cardeq{A}{B} &\text{ iff } \card{A} = \card{B}\\
+	\cardle{A}{B} &\text{ iff } \card{A} \leq \card{B}\\
+	\cardless{A}{B}&\text{ iff } \card{A} < \card{B}
+\end{align*}
+\end{lem}
+
+\begin{proof}
+দ্বিতীয় দাবির বাম থেকে ডান দিকটি প্রমাণ করব;
+অন্য ক্ষেত্রগুলি একই রকম, অনুশীলন হিসেবে রইল।
+নিচের চিত্রটি দেখো:
+\begin{center}
+	\begin{tikzpicture}
+	\node (nodea) {$A$};
+	\node[right = 6em of nodea] (nodeb) {$B$};
+	\node[below = 2em of nodea] (nodecarda) {$\card{A}$};
+	\node[below = 2em of nodeb] (nodecardb) {$\card{B}$};
+	\draw[->] (nodea)--(nodeb);
+	\draw[<->] (nodea)--(nodecarda);
+	\draw[<->] (nodeb)--(nodecardb);
+	\draw[->, dashed] (nodecarda)--(nodecardb);
+\end{tikzpicture}
+\end{center}
+দুই মাথাওয়ালা তিরগুলি !!{bijection}s বোঝায়; তাদের অস্তিত্ব
+\olref{lem:CardinalsExist} নিশ্চিত করে। $\cardle{A}{B}$
+ধরলে একটি !!a{injection} $A\to B$ আছে। এখন তির ধরে
+$\card{A}$ থেকে $A$, তারপর $B$, তারপর $\card{B}$-তে
+গেলে একটি !!a{injection} $\card{A}\to\card{B}$ পাই
+(ভাঙা রেখার তিরটি)।
+\end{proof}\noindent \olref{lem:CardinalsBehaveRight} ব্যবহার করে
+শ্র্যোডার--বার্নস্টাইন উপপাদ্য আবারও প্রমাণ করা যায়।
+দাবিটি হলো, $\cardle{A}{B}$ এবং $\cardle{B}{A}$ হলে
+$\cardeq{A}{B}$। \olref[sfr][siz][sb]{thm:schroder-bernstein}-এ
+দাবিটি দিয়েছিলাম, তবে প্রথম প্রমাণটি কিছু পরিশ্রমে
+\olref[sfr][infinite][card-sb]{sec}-এ করেছি। এবার দেখো:
+
+\begin{proof}[শ্র্যোডার--বার্নস্টাইনের পুনঃপ্রমাণ]
+$\cardle{A}{B}$ এবং $\cardle{B}{A}$ হলে
+\olref{lem:CardinalsBehaveRight} থেকে
+$\card{A}\leq\card{B}$ এবং $\card{B}\leq\card{A}$।
+তাই ত্রিবিভাজন এবং \olref{lem:CardinalsBehaveRight} অনুযায়ী
+$\card{A}=\card{B}$, অতএব $\cardeq{A}{B}$।
+\end{proof}
+\noindent
+প্রমাণটি খুব সহজ হলেও নেপথ্যে প্রতিস্থাপন
+(\olref[ordinals][ordtype]{thmOrdinalRepresentation} নিশ্চিত করতে)
+এবং সুক্রমবিন্যাস
+(\olref{lem:CardinalsBehaveRight} নিশ্চিত করতে), দুটোই
+লাগে। তুলনায় \olref[sfr][infinite][card-sb]{sec}-এর
+প্রমাণ অনেক বেশি স্বনির্ভর; সেটি এমনকি $\Zminus$-এও করা যায়।
+
+\end{document}

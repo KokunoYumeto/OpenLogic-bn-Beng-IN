@@ -1,0 +1,207 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{cardinals}{classing}
+\olsection{সসীম, \usetoken{S}{enumerable}, \usetoken{S}{nonenumerable}}
+
+অঙ্কবাচক সংখ্যার পরিচয় পাওয়ার পরে তাদের বিভিন্ন ধরন
+নিয়ে একটু আলোচনা করা দরকার। বিশেষ করে সসীম,
+!!{enumerable} ও !!{nonenumerable} অঙ্কবাচক সংখ্যা।
+
+প্রথম দুটি ফলে দেখা যাবে, সসীম অঙ্কবাচক সংখ্যাগুলি
+ঠিক সসীম ক্রমসংখ্যাই। \olref[z][infinity-again]{defnomega}-এ
+এগুলিকেই আমাদের \emph{স্বাভাবিক সংখ্যা} হিসেবে সংজ্ঞায়িত করেছিলাম:
+
+\begin{prop}\ollabel{finitecardisoequal}
+$n,m\in\omega$ হোক। তবে $n=m$ তখনই, যখন $\cardeq{n}{m}$।
+\end{prop}
+
+\begin{proof}
+\emph{বাম থেকে ডান} দিকটি সরল। \emph{ডান থেকে বাম}
+প্রমাণ করতে ধরি, $n\neq m$ হলেও $\cardeq{n}{m}$।
+ত্রিবিভাজনে $n\in m$ অথবা $m\in n$; সাধারণত্ব না হারিয়ে
+$n\in m$ ধরি। তাহলে $n\subsetneq m$ এবং
+একটি !!a{bijection} $f\colon m\to n$ আছে। এতে $m$
+দেদেকিন্ড-অসীম হয়, যা
+\olref[z][infinity-again]{naturalnumbersarentinfinite}-এর
+বিরোধী।
+\end{proof}
+
+\begin{cor}\ollabel{naturalsarecardinals}
+$n\in\omega$ হলে $n$ একটি অঙ্কবাচক সংখ্যা।
+\end{cor}
+
+\begin{proof}
+তাৎক্ষণিক।
+\end{proof}
+\noindent
+এ থেকে অঙ্কবাচক সংখ্যাকে ``সসীম'' বা ``অসীম''
+বলার কয়েকটি স্বাভাবিক অর্থ যে একই, তাও পাওয়া যায়:
+\begin{thm}\ollabel{generalinfinitycharacter}যেকোনো সেট $A$-র জন্য নিচের দাবিগুলি সমতুল্য:
+\begin{enumerate}
+	% BN-SRC-453: the cardinality, not A itself, is outside omega.
+	\item\ollabel{card:notinomega} $\card{A}\notin\omega$,
+	অর্থাৎ $A$-র অঙ্কবাচকতা স্বাভাবিক সংখ্যা নয়;
+	\item\ollabel{card:omegaplus} $\omega\leq\card{A}$;
+	\item\ollabel{card:infinite} $A$ দেদেকিন্ড-অসীম।
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\olref[ord-arithmetic][using-addition]{ordinfinitycharacter},
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}
+এবং \olref{naturalsarecardinals} থেকে।
+\end{proof}
+
+এর ভিত্তিতে \olref[sfr][][]{part}-এ অপেক্ষাকৃত
+অনানুষ্ঠানিকভাবে ব্যবহার করা কিছু ধারণা এবার
+\emph{সংজ্ঞায়িত} করতে পারি:
+
+\begin{defn}\ollabel{defnfinite}
+$\card{A}$ স্বাভাবিক সংখ্যা, অর্থাৎ $\card{A}\in\omega$,
+হলেই $A$-কে \emph{সসীম} বলব। অন্যথায় $A$-কে
+\emph{অসীম} বলব।
+\end{defn}
+\noindent
+তবে মনে রেখো, সংজ্ঞাটি $\ZFC$-র প্রেক্ষাপটে দেওয়া।
+প্রত্যেক সেটের অঙ্কবাচকতা আছে, এটি নিশ্চিত করতে
+আমাদের সুক্রমবিন্যাস লেগেছে। সুক্রমবিন্যাস ছাড়া এমন
+সেট থাকতে পারে, যা সসীমও নয়, দেদেকিন্ড-অসীমও নয়।
+\olref[choice][]{chap}-এ বিষয়টি আবার দেখব। আপাতত
+সুক্রমবিন্যাস ব্যবহার করেই চলি।
+
+এবার সসীম থেকে অসীম অঙ্কবাচক সংখ্যায় আসি।
+প্রথমে দুটি সহজ কথা:
+
+\begin{cor}\ollabel{omegaisacardinal}
+$\omega$ ক্ষুদ্রতম অসীম অঙ্কবাচক সংখ্যা।
+\end{cor}
+
+\begin{proof}
+$\omega$ একটি অঙ্কবাচক সংখ্যা। কারণ $\omega$
+দেদেকিন্ড-অসীম; কোনো $n\in\omega$-র সঙ্গে
+$\cardeq{\omega}{n}$ হলে $n$-ও দেদেকিন্ড-অসীম হতো,
+যা \olref[z][infinity-again]{naturalnumbersarentinfinite}-এর
+বিরোধী। এখন সংজ্ঞা অনুযায়ী $\omega$ ক্ষুদ্রতম
+অসীম অঙ্কবাচক সংখ্যা।
+\end{proof}
+
+\begin{cor}
+প্রত্যেক অসীম অঙ্কবাচক সংখ্যা একটি সীমা-ক্রমসংখ্যা।
+\end{cor}
+
+\begin{proof}
+$\alpha$ একটি অসীম উত্তরসূরি ক্রমসংখ্যা হোক, অর্থাৎ
+কোনো $\beta$-র জন্য $\alpha=\beta\ordplus 1$।
+% BN-SRC-454: a finite predecessor would have a finite successor;
+% finitecardisoequal does not establish the cited implication.
+এই পূর্বসূরি সসীম হলে তার উত্তরসূরিও সসীম হতো;
+অতএব $\beta$ অসীম। তাই
+\olref[ord-arithmetic][using-addition]{ordinfinitycharacter}
+অনুযায়ী $\cardeq{\beta}{\beta\ordplus 1}$। এখন
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight} থেকে
+$\card{\beta}=\card{\beta\ordplus 1}=\card{\alpha}$;
+সুতরাং $\alpha\neq\card{\alpha}$।
+\end{proof}
+
+\olref[sfr][siz][enm-alt]{defn:enumerable}-এই বলেছিলাম,
+অসীম সেটের মধ্যে !!{enumerable} ও !!{nonenumerable}
+আলাদা করা যায়। সেই সংজ্ঞা থেকে স্বাভাবিকভাবেই পাই:
+
+\begin{prop}
+$A$ !!{enumerable} তখনই, যখন $\card{A}\leq\omega$;
+আর $A$ !!{nonenumerable} তখনই, যখন $\omega<\card{A}$।
+\end{prop}
+
+\begin{proof}
+ত্রিবিভাজনে দুটি দাবি সমতুল্য, তাই $A$ !!{enumerable}
+তখনই, যখন $\card{A}\leq\omega$, শুধু এটিই দেখালেই চলে।
+\emph{ডান থেকে বাম}: $\card{A}\leq\omega$ হলে
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}
+ও \olref{omegaisacardinal} থেকে $\cardle{A}{\omega}$।
+\emph{বাম থেকে ডান}: $A$ !!{enumerable} ধরি।
+\olref[sfr][siz][enm-alt]{defn:enumerable} অনুযায়ী
+তিনটি ক্ষেত্র সম্ভব:
+\begin{enumerate}
+	\item $A=\emptyset$ হলে
+	\olref{naturalsarecardinals} ও
+	\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}
+	থেকে $\card{A}=0\in\omega$।
+	\item $\cardeq{n}{A}$ হলে
+	\olref{naturalsarecardinals} এবং
+	\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight} থেকে
+	$\card{A}=n\in\omega$।
+	\item $\cardeq{\omega}{A}$ হলে
+	\olref{omegaisacardinal} থেকে $\card{A}=\omega$।
+\end{enumerate}
+অতএব সব ক্ষেত্রেই $\card{A}\leq\omega$।
+\end{proof}
+\noindent
+এখানে $\omega$-র বিশেষ স্থান আছে। গণনীয় ক্রমসংখ্যা
+অনেক থাকলেও:
+
+\begin{cor}
+$\omega$-ই একমাত্র !!{enumerable} অসীম অঙ্কবাচক সংখ্যা।
+\end{cor}
+
+\begin{proof}
+$\cardfont{a}$ একটি !!a{enumerable} অসীম অঙ্কবাচক
+সংখ্যা হোক। $\cardfont{a}$ অসীম বলে $\omega\leq\cardfont{a}$।
+আবার $\cardfont{a}$ !!a{enumerable} অঙ্কবাচক সংখ্যা বলে
+$\cardfont{a}=\card{\cardfont{a}}\leq\omega$।
+তাই ত্রিবিভাজনে $\cardfont{a}=\omega$।
+\end{proof}
+
+অঙ্কবাচক সংখ্যা অবশ্যই অসীমসংখ্যক। তাই প্রশ্ন হতে পারে:
+\emph{কতগুলি অঙ্কবাচক সংখ্যা আছে?} নিচের ফলগুলি
+দেখায়, প্রশ্নটিই হয়তো নতুন করে ভাবা দরকার।
+
+\begin{prop}\ollabel{unioncardinalscardinal}
+$X$-এর প্রত্যেক সদস্য অঙ্কবাচক সংখ্যা হলে
+$\bigcup X$-ও অঙ্কবাচক সংখ্যা।
+\end{prop}
+
+\begin{proof}
+$\bigcup X$ যে ক্রমসংখ্যা, তা সহজেই যাচাই করা যায়।
+$\alpha\in\bigcup X$ একটি ক্রমসংখ্যা হোক। তখন কোনো
+অঙ্কবাচক সংখ্যা $\cardfont{b}$-র জন্য
+$\alpha\in\cardfont{b}\in X$। $\cardfont{b}$ অঙ্কবাচক সংখ্যা
+বলে $\cardless{\alpha}{\cardfont{b}}$। আবার
+$\cardfont{b}\subseteq\bigcup X$ বলে
+$\cardle{\cardfont{b}}{\bigcup X}$; সুতরাং
+$\cardneq{\alpha}{\bigcup X}$। সাধারণভাবে,
+$\bigcup X$ একটি অঙ্কবাচক সংখ্যা।
+\end{proof}
+
+\begin{thm}\ollabel{lem:NoLargestCardinal}
+বৃহত্তম অঙ্কবাচক সংখ্যা নেই।
+\end{thm}
+
+\begin{proof}
+যেকোনো অঙ্কবাচক সংখ্যা $\cardfont{a}$-র জন্য
+কান্টরের উপপাদ্য (\olref[sfr][siz][car]{thm:cantor})
+ও \olref[cardinals][cardsasords]{lem:CardinalsExist} থেকে
+$\cardfont{a}<\card{\Pow{\cardfont{a}}}$।
+\end{proof}
+
+\begin{thm}
+সব অঙ্কবাচক সংখ্যার সেট নেই।
+\end{thm}
+
+\begin{proof}
+বিরোধ প্রতিষ্ঠার জন্য ধরি,
+$C=\Setabs{\cardfont{a}}{\cardfont{a}\text{ is a cardinal}}$।
+\olref{unioncardinalscardinal} অনুযায়ী $\bigcup C$
+একটি অঙ্কবাচক সংখ্যা। তাই
+\olref{lem:NoLargestCardinal} থেকে
+এই সংখ্যার চেয়ে বড় একটি অঙ্কবাচক সংখ্যা
+$\cardfont{b}>\bigcup C$ আছে। সংজ্ঞা অনুযায়ী $\cardfont{b}\in C$;
+ফলে $\cardfont{b}\subseteq\bigcup{C}$, অর্থাৎ
+$\cardfont{b}\leq\bigcup C$। এটি বিরোধ।
+\end{proof}
+
+রাসেলের কূটাভাস এবং বুরালি--ফোর্তির কূটাভাস,
+দুটির সঙ্গেই এই ফলটির তুলনা করো।
+
+\end{document}

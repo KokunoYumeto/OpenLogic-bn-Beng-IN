@@ -6400,6 +6400,36 @@ for row in rows:
                 new_classical_tree: 1,
             })
         )
+    legacy_normalization_intro_math_repair = False
+    if row["unit_id"] == "OLP-0672":
+        old_intro_tree = norm(r"""
+          \AxiomC{$\Discharge{!A}{x}$}
+          \RightLabel{$\delta_2$}
+          \DeduceC{$!B$}
+          \DischargeRule{\Intro{\lif}}{x}
+          \UnaryInfC{$!A \lif !B$}
+          \AxiomC{}
+          \RightLabel{$\delta_2$}
+          \DeduceC{$!A$}
+          \RightLabel{\Elim{\lif}}
+          \BinaryInfC{$!B$}
+          \DisplayProof
+        """)
+        new_intro_tree = old_intro_tree.replace(
+            r"\AxiomC{}\RightLabel{$\delta_2$}\DeduceC{$!A$}",
+            r"\AxiomC{}\RightLabel{$\delta_1$}\DeduceC{$!A$}",
+        )
+        assert old_intro_tree != new_intro_tree
+        legacy_normalization_intro_math_repair = (
+            set(documented) == {"BN-SRC-574", "BN-SRC-575"}
+            and source_math - target_math == collections.Counter({
+                r"\delta_1": 1,
+                old_intro_tree: 1,
+            })
+            and target_math - source_math == collections.Counter({
+                new_intro_tree: 1,
+            })
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6543,6 +6573,7 @@ for row in rows:
             legacy_nd_sequents_math_repairs,
             legacy_g2i_translation_math_repairs,
             legacy_n2_to_g2_math_repairs,
+            legacy_normalization_intro_math_repair,
         )
     )
     minimal_change_fileid_fix = (

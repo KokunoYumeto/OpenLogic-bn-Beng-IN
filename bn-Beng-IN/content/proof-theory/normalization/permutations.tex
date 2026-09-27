@@ -1,0 +1,486 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: permutations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{per}
+
+\olsection{বিন্যাস-রূপান্তর}
+
+\Log{N1i}-তে কর্তন হলো এমন খণ্ড
+যার শেষ সূত্রসংঘটনটি
+!!a{elimination} বিধির প্রধান
+পূর্বধারণা। স্বাভাবিকীকরণের প্রমাণে
+একটি ক্ষেত্র হলো সর্বাধিক কর্তনগুলির
+দৈর্ঘ্য কমানো; তাতে !!{proof}-এর
+কর্তনদৈর্ঘ্যও কমে। দৈর্ঘ্য~$>1$-এর
+কর্তন নানাভাবে শেষ হতে পারে: কর্তনে
+$!A$-এর শেষ !!{formula}-সংঘটনটি
+\Elim{\lor} বা \Elim{\lexists}-এর
+সিদ্ধান্ত কি না এবং সেটি কোন
+!!{elimination} বিধির প্রধান
+পূর্বধারণা, তার উপর তা নির্ভর করে।
+
+যেমন, সংশ্লিষ্ট বিধি যদি \Elim{\lor}
+ও \Elim{\land} হয়, $!A \ident !B \land !C$
+হয় এবং একটি উপ-!!{proof}~$\delta_1$
+নিচের মতো শেষ হয়:
+\[
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B \land !C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\RightLabel{$\delta_4$}
+\DeduceC{$!B \land !C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\DisplayProof
+\]
+% BN-SRC-577 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-577):} উদাহরণের কর্তনসূত্র উৎসগদ্যে $!A\ident !B\lor !C$ হলেও প্রদর্শিত \Elim{\lor}-সিদ্ধান্ত ও পরের \Elim{\land}-এর প্রধান পূর্বধারণা $!B\land !C$। তাই এই ক্ষেত্রের $!A$-কে $!B\land !C$ করা হয়েছে।}
+% BN-SRC-577 TARGET-CORRECTION-END
+কর্তনে শেষ !!{formula}-সংঘটন~$!A_n$
+হলো \Elim{\lor}-এর সিদ্ধান্ত—নিচের
+$!B \land !C$। শেষের আগের
+!!{formula}-সংঘটন~$!A_{n-1}$ হলো
+\Elim{\lor}-এর গৌণ পূর্বধারণাগুলির
+একটি।
+
+এই কর্তনের দৈর্ঘ্য কমাতে
+\Elim{\lor} ও \Elim{\land}
+বিধির ক্রম বদলাতে, অর্থাৎ
+বিন্যাস করতে পারি। তখন
+$\delta$-তে উপপ্রমাণ~$\delta_1$-র
+জায়গায় নিচেরটি বসাই:
+\[
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\AxiomC{$\Discharge{!E}{y}$}
+\RightLabel{$\delta_4$}
+\DeduceC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B$}
+\DisplayProof
+\]
+\Elim{\lor}-এর নিচে \Elim{\land}-এর
+পূর্বধারণায় যে কর্তনগুলি শেষ হতো,
+এখন সেগুলি \Elim{\lor}-এর গৌণ
+পূর্বধারণাগুলির উপরে থাকা
+\Elim{\land} বিধিগুলির কোনো একটির
+পূর্বধারণায় শেষ হয়। অর্থাৎ
+প্রতিটির দৈর্ঘ্য~$1$ কমেছে।
+
+উপরন্তু, $\delta_2$, $\delta_3$
+বা $\delta_4$-র সম্পূর্ণ ভিতরে,
+অথবা $\delta$-তে $\delta_1$-র
+সম্পূর্ণ বাইরে থাকা কর্তন
+অপরিবর্তিত: তাতে আগের একই
+!!{formula}s ও একই বিধি থাকে।
+তাই $\delta$-র সংশ্লিষ্ট কর্তনের
+মাত্রা ও দৈর্ঘ্যও একই থাকে।
+সুতরাং নতুন !!{proof}-এর
+কর্তনমাত্রা বাড়েনি এবং
+নতুন !!{proof}-এর
+কর্তনদৈর্ঘ্য পুরোনো
+!!{proof}-এর চেয়ে কমেছে।
+
+\begin{prob}
+বিন্যাস-রূপান্তরের পরে অন্তত একটি
+কর্তনের দৈর্ঘ্য~$1$ কমে।
+\Elim{\land}-কে \Elim{\lor}-এর
+উপরে সরালে আসলে দুটি কর্তনখণ্ডের
+দৈর্ঘ্য কমে; তাই এ ক্ষেত্রে
+!!{proof}-এর কর্তনদৈর্ঘ্য অন্তত~$2$
+কমে। এমন একটি বিন্যাসেই
+!!a{proof}-এর কর্তনদৈর্ঘ্য
+$2$-এর বেশি কমতে পারে কি?
+কর্তনের \emph{মাত্রা} কমতে পারে কি?
+\end{prob}
+
+\Elim{\lor} বা \Elim{\lexists}
+বিধির উপরে !!a{elimination}
+বিধি সরানোর প্রক্রিয়াকে
+\emph{বিন্যাস-রূপান্তর} বলে।
+কয়েকটি বিধিজোড়ার ছক
+\olref{tab:permutation-conversions}-এ
+আছে। (অন্যগুলি অনুশীলনের জন্য
+রাখা হয়েছে।)
+
+% \begin{table}
+% \begin{multline*}
+% \shoveleft{\AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \land !C$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \land !C$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!B \land !C$}
+% \RightLabel{\Elim{\land}[1]}
+% \UnaryInfC{$!B$}
+% \DisplayProof}\\
+% \shoveright{\longrightarrow\ 
+% \AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \land !C$}
+% \RightLabel{\Elim{\land}[1]}
+% \UnaryInfC{$!B$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \land !C$}
+% \RightLabel{\Elim{\land}[1]}
+% \UnaryInfC{$!B$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!B$}
+% \DisplayProof}
+% \\
+% \shoveleft{\AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \DisplayProof}\\
+% \shoveright{\longrightarrow\ 
+% \AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!C$}
+% \DisplayProof}
+% \\
+% \shoveleft{\AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \DisplayProof}\\
+% \shoveright{\longrightarrow\ 
+% \AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!C$}
+% \DisplayProof}
+% \\
+% \shoveleft{\AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$\lforall[x][!B(x)]$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$\lforall[x][!B(x)]$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$\lforall[x][!B(x)]$}
+% \RightLabel{\Elim{\lforall}}
+% \UnaryInfC{$!B(t)$}
+% \DisplayProof}\\
+% \shoveright{\longrightarrow\ 
+% \AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$\lforall[x][!B(x)]$}
+% \RightLabel{\Elim{\lforall}}
+% \UnaryInfC{$!B(t)$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$\lforall[x][!B(x)]$}
+% \RightLabel{\Elim{\lforall}}
+% \UnaryInfC{$!B(t)$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!B(t)$}
+% \DisplayProof}
+% \end{multline*}
+% \caption{\Log{N1i}-এর কয়েকটি বিন্যাস-রূপান্তর।}
+% \ollabel{tab:permutation-conversions}
+% \end{table}
+
+{\small
+\begin{longtable}{@{}l@{}}
+\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$!B \land !C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$!B \land !C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\DisplayProof
+$\longrightarrow$\\[6ex]
+\quad\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B$}
+\DisplayProof
+\\[10ex]
+\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B \lif !C$}
+\AxiomC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+$\longrightarrow$\\[6ex]
+\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\AxiomC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\AxiomC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!C$}
+\DisplayProof
+\\[10ex]
+\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B \lif !C$}
+\AxiomC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+$\longrightarrow$\\[6ex]
+\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\AxiomC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\AxiomC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!C$}
+\DisplayProof
+\\[10ex]
+\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$\lforall[x][!B(x)]$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$\lforall[x][!B(x)]$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$\lforall[x][!B(x)]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(t)$}
+\DisplayProof
+\quad$\longrightarrow$\\[8ex]
+\quad\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$\lforall[x][!B(x)]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(t)$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$\lforall[x][!B(x)]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(t)$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B(t)$}
+\DisplayProof
+\\
+\caption{\Log{N1i}-এর কয়েকটি বিন্যাস-রূপান্তর।}
+\ollabel{tab:permutation-conversions}
+\end{longtable}
+}
+
+\begin{prob}
+\Elim{\lor}-এর পরে \Elim{\lor}
+বা \Elim{\lnot} থাকলে সংশ্লিষ্ট
+বিন্যাস-রূপান্তরগুলি দিন।
+\end{prob}
+
+\begin{prob}
+\Elim{\lexists}-এর পরে
+\Elim{\lexists} থাকলে
+বিন্যাস-রূপান্তরগুলি দিন।
+এই শেষ ক্ষেত্রে কেন কোনো
+আইগেনচল-শর্ত লঙ্ঘিত হয় না,
+ব্যাখ্যা করুন।
+\end{prob}
+
+বিন্যাস-রূপান্তর প্রয়োগে
+আইগেনচল-শর্ত ভাঙছে না,
+তা নিশ্চিত হওয়া দরকার।
+ধরা যাক,
+\[
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\RightLabel{$\delta_3$}
+\DeduceC{$\lexists[x][!B(x)]$}
+\AxiomC{$\Discharge{!E}{y}$}
+\RightLabel{$\delta_4$}
+\DeduceC{$\lexists[x][!B(x)]$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$\lexists[x][!B(x)]$}
+\AxiomC{$\Discharge{!B(c)}{z}$}
+\RightLabel{$\delta_5$}
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lexists}}{z}
+\BinaryInfC{$!C$}
+\DisplayProof
+\]
+এর বদলে নিচেরটি বসালে
+\[
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\RightLabel{$\delta_3$}
+\DeduceC{$\lexists[x][!B(x)]$}
+\AxiomC{$\Discharge{!B(c)}{z}$}
+\RightLabel{$\delta_5$}
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lexists}}{z}
+\BinaryInfC{$!C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\RightLabel{$\delta_4$}
+\DeduceC{$\lexists[x][!B(x)]$}
+\AxiomC{$\Discharge{!B(c)}{z}$}
+\RightLabel{$\delta_5$}
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lexists}}{z}
+\BinaryInfC{$!C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!C$}
+\DisplayProof
+\]
+আশঙ্কা হতে পারে, আইগেনচল~$c$
+হয়তো~$!D$-তেই আছে। কারণ মূল
+$\Elim{\lexists}$-এর উপরে
+অনুমান~$!D$ অবমুক্ত হয়; তাই
+মূল !!{proof}-এ
+\Elim{\lexists} বিধির প্রধান
+পূর্বধারণার উপরে খোলা কোনো
+অনুমানে আইগেনচলটি ঘটে না,
+এবং সেখানে আইগেনচল-শর্ত
+পূরণ হয়। কিন্তু নতুন
+!!{proof}-এ \Elim{\lexists}
+বিধিগুলির পর পর্যন্ত~$!D$
+অবমুক্ত হয় না; তাই শর্তটি
+ভাঙার কথা। তবে মনে রাখি,
+আমরা !!{proof}s-কে নিয়মিত
+ধরেছি: প্রত্যেক আইগেনচল
+মাত্র একটি বিধির আইগেনচল
+এবং !!{proof}-এ কেবল
+\Elim{\lexists}-এর গৌণ
+পূর্বধারণার উপরে ঘটে।
+বিশেষত~$c$, $\delta_3$
+বা~$\delta_4$-তে ঘটতে পারে না।
+% BN-SRC-576 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-576):} এই N1i অধ্যায়ে অস্তিত্বসূচক নিষ্কাশনের বিধি \Elim{\lexists}; উৎসের অনুশীলন ও আইগেনচল-যুক্তিতে দুটি স্থানে সাধারণ \Elim{\exists} নির্দেশ আছে। প্রদর্শিত বৃক্ষ ও N1i বিধি-সারণির সঙ্গে মিলিয়ে দুটিই \Elim{\lexists} করা হয়েছে।}
+% BN-SRC-576 TARGET-CORRECTION-END
+
+এই উদাহরণে আরও একটি বিষয়
+দেখা যায়: নতুন !!{proof}-এ
+$\delta_5$-এর দুটি অনুলিপি
+আছে। $\delta_5$-এ সর্বাধিক
+কর্তন থাকলে তার মানে
+কর্তনদৈর্ঘ্য আমরা
+\emph{কমাইনি}! তাই
+$\delta_5$-এ সর্বাধিক কর্তন
+নেই জেনেই বিন্যাস-রূপান্তর
+প্রয়োগ করতে হবে। এ জন্য
+সব সময় \emph{সবচেয়ে উপরের}
+সর্বাধিক কর্তন বেছে নিই:
+অর্থাৎ যার উপ-!!{proof}-এ
+(এখানে~$\delta_1$)
+ওই উপ-!!{proof}-এর শেষ
+বিধির উপরে শেষ হয়
+এমন অন্য সর্বাধিক কর্তন
+নেই। ফলে~$\delta_5$-এ
+(এমনকি $\delta_2$, $\delta_3$
+বা~$\delta_4$-তেও) অন্য
+সর্বাধিক কর্তন থাকার
+সম্ভাবনা বাদ যায়।
+
+\end{document}

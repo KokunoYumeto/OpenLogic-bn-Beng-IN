@@ -6430,6 +6430,14 @@ for row in rows:
                 new_intro_tree: 1,
             })
         )
+    legacy_permutation_cut_formula_fix = (
+        row["unit_id"] == "OLP-0675"
+        and set(documented) == {"BN-SRC-576", "BN-SRC-577"}
+        and source_math - target_math
+        == collections.Counter({r"!A\ident!B\lor!C": 1})
+        and target_math - source_math
+        == collections.Counter({r"!A\ident!B\land!C": 1})
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6574,6 +6582,7 @@ for row in rows:
             legacy_g2i_translation_math_repairs,
             legacy_n2_to_g2_math_repairs,
             legacy_normalization_intro_math_repair,
+            legacy_permutation_cut_formula_fix,
         )
     )
     minimal_change_fileid_fix = (
@@ -6661,6 +6670,18 @@ for row in rows:
         and semantic_tokens(checked_target) - semantic_tokens(source)
         == collections.Counter({"!!a{proof}": 1})
     )
+    if row["unit_id"] == "OLP-0675":
+        assert legacy_permutation_cut_formula_fix
+        assert source.count(r"\Elim{\exists}") == 2
+        assert checked_target.count(r"\Elim{\exists}") == 0
+        assert (
+            checked_target.count(r"\Elim{\lexists}")
+            == source.count(r"\Elim{\lexists}") + 2
+        )
+        tex_command_check = {
+            "documented_correction": "BN-SRC-576",
+            "n1i_existential_elimination_commands_localized": 2,
+        }
     checks = {
         "unit_id": row["unit_id"],
         "source_blocks": len(source_blocks),

@@ -6866,6 +6866,15 @@ for row in rows:
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\olref{lem:max-cut-red-G3c}": 3})
     )
+    legacy_tn3_table_label_fix = (
+        row["unit_id"] == "OLP-0693"
+        and set(documented) == {"BN-SRC-618"}
+        and set(normalizations) == {"BN-NORM-179"}
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\ollabel{tab:tN2ip}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\ollabel{tab:tN3ip}": 1})
+    )
     controls_ok = (
         controls(source) == controls(checked_target)
         or axd_control_fix
@@ -6881,6 +6890,7 @@ for row in rows:
         or cardinal_predecessor_reference_fix
         or ordinal_exponentiation_citation_localization
         or legacy_cut_largest_reference_repairs
+        or legacy_tn3_table_label_fix
     )
     legacy_cut_intro_split_token_fix = (
         row["unit_id"] == "OLP-0659"
@@ -7015,6 +7025,19 @@ for row in rows:
         tex_command_check = {
             "documented_source_corrections": ["BN-SRC-615", "BN-SRC-616", "BN-SRC-617"],
             "product_sum_and_sequence": True,
+        }
+    if row["unit_id"] == "OLP-0692":
+        assert documented == [] and normalizations == ["BN-NORM-178"]
+        assert source.count(r"\textbf{Axioms:}") == checked_target.count(r"\textbf{স্বতঃসিদ্ধসমূহ:}") == 1
+        assert source.count(r"\textbf{Inference Rules:}") == checked_target.count(r"\textbf{অনুমানবিধি:}") == 1
+        tex_command_check = {"documented_language_normalization": "BN-NORM-178", "rule_trees_unchanged": True}
+    if row["unit_id"] == "OLP-0693":
+        assert legacy_tn3_table_label_fix
+        assert source.count(" if $x:!A") == checked_target.count(" যদি $x:!A") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-618"],
+            "documented_language_normalization": "BN-NORM-179",
+            "unique_tn3_table_label": True,
         }
     checks = {
         "unit_id": row["unit_id"],

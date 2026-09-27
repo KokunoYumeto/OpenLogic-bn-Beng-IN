@@ -1,0 +1,79 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: rules-N2
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\begin{table}
+\begin{tabular}{@{}c@{}c@{}}
+\multicolumn{2}{l}{\textbf{স্বতঃসিদ্ধসমূহ:}}\\
+\multicolumn{2}{c}{$\Gamma \Sequent x:!A$ যদি $x:!A \in \Gamma$}\\[3ex]
+\multicolumn{2}{l}{\textbf{অনুমানবিধি:}}\\[3ex]
+\multicolumn{2}{c}{\Axiom$x: !A, \Gamma \fCenter N:!B$
+\RightLabel{\Intro{\lif}}
+\UnaryInf$\Gamma \fCenter \lambd[\typeof{x}{!A}][N] : !A \lif !B $
+\DisplayProof}
+\\[4ex]
+\multicolumn{2}{c}{\Axiom$\Gamma \fCenter N:!A \lif !B$
+\Axiom$\Gamma \fCenter M:!A$
+\RightLabel{\Elim{\lif}}
+\BinaryInf$\Gamma \fCenter (NM) : !B$
+\DisplayProof}
+\\[4ex]
+\multicolumn{2}{c}{\Axiom$\Gamma \fCenter N_1 : !A$
+\Axiom$\Gamma \fCenter N_2 : !B$
+\RightLabel{\Intro{\land}}
+\BinaryInf$\Gamma \fCenter \pair{N_1}{N_2} : !A \land !B $
+\DisplayProof}
+\\[4ex]
+\Axiom$\Gamma \fCenter N: !A \land !B$
+\RightLabel{\Elim{\land}[1]}
+\UnaryInf$\Gamma \fCenter \proj{1}{N} : !A$
+\DisplayProof
+&
+\Axiom$\Gamma \fCenter N:!A \land !B$
+\RightLabel{\Elim{\land}[2]}
+\UnaryInf$\Gamma \fCenter \proj{2}{N} : !B$
+\DisplayProof\\[3ex]
+\\[4ex]
+\Axiom$\Gamma \fCenter N: !A$
+\RightLabel{\Intro{\lor}[1]}
+\UnaryInf$\Gamma \fCenter \inj[!B]{1}{N} : !A \lor !B$
+\DisplayProof
+&
+\Axiom$ \Gamma \fCenter N : !A$
+\RightLabel{\Intro{\lor}[2]}
+\UnaryInf$\Gamma \fCenter \inj[!B]{2}{N} : !B \lor !A$
+\DisplayProof\\[3ex]
+\multicolumn{2}{c}{
+\begin{tabular}[b]{@{}l@{}}
+\Axiom$\Gamma \fCenter M : !A \lor !B$
+\Axiom$x:!A, \Gamma \fCenter N_1 : !C$
+\Axiom$y:!B, \Gamma \fCenter N_2: !C$
+\RightLabel{\Elim{\lor}}
+\TrinaryInf$\Gamma \fCenter
+\dcase{M}{x}{N_1}{y}{N_2} : !C$
+\DisplayProof
+\end{tabular}
+}
+\\[4ex]
+\multicolumn{2}{c}{\Axiom$\Gamma \fCenter N: \lfalse$
+\RightLabel{\FalseInt}
+\UnaryInf$\Gamma \fCenter \abort{!A}{N} : !A$
+\DisplayProof}
+\end{tabular}
+\caption{টাইপ-নির্ধারণ ব্যবস্থা হিসেবে ব্যবহৃত পদ-লেবেলযুক্ত
+বচনীয় স্বজ্ঞাবাদী স্বাভাবিক নিষ্পাদন
+ব্যবস্থা \Log{tN3ip}-এর বিধিসমূহ।}
+\ollabel{tab:tN3ip}
+\end{table}
+% BN-SRC-618 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-618):} tN3ip বিধি-সারণিতে উৎসের \texttt{tab:tN2ip} লেবেলটি tN2ip-এর নিজস্ব সারণির লেবেল নকল করেছে; স্বতন্ত্র \texttt{tab:tN3ip} করা হয়েছে।}
+% BN-SRC-618 TARGET-CORRECTION-END
+% BN-NORM-179 TARGET-NORMALIZATION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{ভাষাগত স্বাভাবিকীকরণ (BN-NORM-179):} দুটি ইংরেজি শিরোনাম, স্বতঃসিদ্ধের “if” এবং ক্যাপশন বাংলা করা হয়েছে; টাইপ-বিধি ও বৃক্ষ অপরিবর্তিত।}
+% BN-NORM-179 TARGET-NORMALIZATION-END
+
+\end{document}

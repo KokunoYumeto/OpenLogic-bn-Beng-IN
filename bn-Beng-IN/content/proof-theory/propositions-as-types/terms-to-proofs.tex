@@ -1,0 +1,105 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: terms-to-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{tp}
+
+\olsection{প্রমাণপদ থেকে \usetoken{P}{derivation} পুনর্গঠন}
+
+এবার উলটো দিকটি দেখি: একটি প্রমাণপদ~$N$ থেকে
+\Log{N2i}-তে !!a{proof} পুনর্গঠন করি। সাধারণভাবে,
+দেওয়া প্রমাণপদে মুক্তভাবে ঘটা প্রত্যেক
+চলরাশি~$x$-এর জন্য $x : !A$ যুগল আছে এমন
+প্রসঙ্গের সাপেক্ষেই এটি সম্ভব। তবে প্রথমে
+মুক্ত চলরাশিহীন একটি উদাহরণ নিই, এই পদটি:
+\[
+\lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}]
+\]
+এটি $\lambd[\typeof{x}{!A \land !B}][N_1]$
+রূপের। \Log{tN2i}-এর বিধিগুলির মধ্যে কেবল
+\Intro{\lif}-ই এই রূপের পদ দেয়। তাই $N$-এ
+সংকেতায়িত !!{proof}-এর শেষ বিধি
+\Intro{\lif}; অর্থাৎ এর শেষাংশ
+  \[
+  \Axiom$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} :
+    !C$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif !C$
+  \DisplayProof
+  \]
+$!C$ কী, তা এখনও জানি না; কিন্তু পূর্বপক্ষ
+$!A \land !B$ এবং পূর্বধারণার প্রসঙ্গে
+$x:!A \land !B$ থাকতে হবে, তা জানি।
+
+এবার পূর্বধারণার প্রমাণপদটি নির্ধারিত:
+$\pair{\proj{2}{x}}{\proj{1}{x}}$।
+\emph{এই পদটি} যে !!{proof} সংকেতায়িত করে,
+তার শেষ বিধি \Intro{\land}। $!C$ এখনও
+অজানা, কিন্তু \Intro{\land}-এর সিদ্ধান্ত
+হওয়ায় এটি একটি যৌগ হতে হবে, অর্থাৎ
+$!C \ident (!C_1 \land !C_2)$।
+পুনর্গঠন চালিয়ে পাই:
+  \[
+  \Axiom$x : !A\land !B \fCenter \proj{2}{x} : !C_1$
+  \Axiom$x : !A\land !B \fCenter \proj{1}{x} : !C_2$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} :
+    !C_1 \land !C_2$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!C_1 \land !C_2)$
+  \DisplayProof
+  \]
+প্রমাণপদ $\pi_2(x)$ দেখায়, বাঁ দিকের উপরের
+সিকোয়েন্টটি \Elim{\land}[2] দিয়ে পাওয়া;
+অর্থাৎ তার পূর্বধারণা $!D \land !C_1$
+রূপের। ডান দিকে $!C_2$-তে পৌঁছানো অনুমানটি
+\Elim{\land}[1] হতে হবে, আর তার পূর্বধারণা
+$!C_2 \land !E$ রূপের।
+  \[
+  \Axiom$x : !A\land !B \fCenter x: !D\land !C_1$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{2}{x} : !C_1$
+  \Axiom$x : !A\land !B \fCenter x: !C_2\land !E$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{1}{x} : !C_2$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} :
+    !C_1 \land !C_2$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!C_1 \land !C_2)$
+  \DisplayProof
+  \]
+উপরের দুই সিকোয়েন্টের প্রমাণপদ এখন
+চলরাশি; তাই সেগুলি স্বতঃসিদ্ধ হতে হবে।
+এতে $!C_1$, $!C_2$, $!D$ ও $!E$ নির্ধারিত
+হয়: $!D \ident !A$ এবং $!C_1 \ident !B$,
+নইলে বাঁ সিকোয়েন্ট স্বতঃসিদ্ধ নয়; আর
+$!C_2 \ident !A$ এবং $!E \ident !B$,
+নইলে ডান সিকোয়েন্ট স্বতঃসিদ্ধ নয়।
+এবার সম্পূর্ণ প্রমাণটি ফিরে পেলাম:
+  \[
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{2}{x} : !B$
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{1}{x} : !A$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} :
+    !B \land !A$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!B \land !A)$
+  \DisplayProof
+  \]
+
+
+\end{document}

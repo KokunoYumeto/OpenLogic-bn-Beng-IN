@@ -1,0 +1,226 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T08:43:09.106655+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "6da079c5a408c8b4c21b4062088708f7b0347e2f",
+  "parent": "0590df66211bef85316f6eccecfc00650136ddc0",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "a4aead0ea307e6a808d7e171b6d1b89e975be4a3",
+    "receipt": "PUBLIC_READBACK_SOURCE_650_2026-09-27.json",
+    "receipt_sha256": "6fce6c43ca1206796d37db294b1d9fde7a8fb415d9dd7331591eb80d66400911"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/6da079c5a408c8b4c21b4062088708f7b0347e2f.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/6da079c5a408c8b4c21b4062088708f7b0347e2f",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 16924520,
+  "archive_sha256": "6e991b7e38f5578a22c207e6e8d89dc270b21f08ee2d603d753651864b7c341d",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/proof-theoretic-notions.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/bn-Beng-IN/content/many-valued-logic/sequent-calculus/proof-theoretic-notions.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/bn-Beng-IN/content/many-valued-logic/sequent-calculus/proof-theoretic-notions.tex",
+      "content_type": "text/plain",
+      "bytes": 8497,
+      "sha256": "0d5d49ebf94311c70e0747b8584ce8655dc66c7bd0e16af1d234e85f5eb8c22b"
+    },
+    {
+      "path": "bn-Beng-IN/content/model-theory/basics/nonstandard-arithmetic.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/bn-Beng-IN/content/model-theory/basics/nonstandard-arithmetic.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/bn-Beng-IN/content/model-theory/basics/nonstandard-arithmetic.tex",
+      "content_type": "text/plain",
+      "bytes": 22295,
+      "sha256": "0f0c6b80f8d775d0efa9585750d0711a0c7bbf575de5a8e759142197f5a88e28"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/normal-modal-logics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/normal-modal-logics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/normal-modal-logics.tex",
+      "content_type": "text/plain",
+      "bytes": 4824,
+      "sha256": "e50860052373a495e23981506d5a033a271cf7033393b1f696c0830a5273c729"
+    },
+    {
+      "path": "bn-Beng-IN/content/proof-theory/cut-elimination/ce-largest.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/bn-Beng-IN/content/proof-theory/cut-elimination/ce-largest.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/bn-Beng-IN/content/proof-theory/cut-elimination/ce-largest.tex",
+      "content_type": "text/plain",
+      "bytes": 25564,
+      "sha256": "5c36aa6bc315f77bbc069205035d6ac7b485658f1a7a7fc729f342b0172af4f5"
+    }
+  ],
+  "raw_evidence_files": [
+    {
+      "path": "README.md",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/README.md",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/README.md",
+      "content_type": "text/plain",
+      "bytes": 9201,
+      "sha256": "31a115a72e0068b24f5efce24897ddb33c506039f2a5f94921e364363ee46b76"
+    },
+    {
+      "path": "evidence/DRAFT_STATUS.json",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/evidence/DRAFT_STATUS.json",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/evidence/DRAFT_STATUS.json",
+      "content_type": "text/plain",
+      "bytes": 390835,
+      "sha256": "18ad7a74d0caaf77826d76b8586353bc23e81a44f9bd65ec7d172bd787e13eed"
+    },
+    {
+      "path": "evidence/SEMANTIC_REVIEW_MVL_LEGACY_PROOF_NOTIONS.md",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/evidence/SEMANTIC_REVIEW_MVL_LEGACY_PROOF_NOTIONS.md",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/evidence/SEMANTIC_REVIEW_MVL_LEGACY_PROOF_NOTIONS.md",
+      "content_type": "text/plain",
+      "bytes": 1590,
+      "sha256": "095c256bca7257eccf840a864b8456df400855794a4fd8d42f8264fa02c02c5b"
+    },
+    {
+      "path": "evidence/SEMANTIC_REVIEW_LEGACY_NONSTANDARD_ARITHMETIC.md",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/evidence/SEMANTIC_REVIEW_LEGACY_NONSTANDARD_ARITHMETIC.md",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/evidence/SEMANTIC_REVIEW_LEGACY_NONSTANDARD_ARITHMETIC.md",
+      "content_type": "text/plain",
+      "bytes": 7137,
+      "sha256": "8f039a39920b3954b0bad140f71f6bf1b4b040a63ef796ccf0ce122a169cea3a"
+    },
+    {
+      "path": "evidence/SEMANTIC_REVIEW_LEGACY_NORMAL_MODAL_LOGICS.md",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/evidence/SEMANTIC_REVIEW_LEGACY_NORMAL_MODAL_LOGICS.md",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/evidence/SEMANTIC_REVIEW_LEGACY_NORMAL_MODAL_LOGICS.md",
+      "content_type": "text/plain",
+      "bytes": 4181,
+      "sha256": "f357f534a5e03a569508285ef46d5a869017dbab191e793f883909fccf640113"
+    },
+    {
+      "path": "evidence/SEMANTIC_REVIEW_LEGACY_LARGEST_CUTS.md",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/evidence/SEMANTIC_REVIEW_LEGACY_LARGEST_CUTS.md",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/6da079c5a408c8b4c21b4062088708f7b0347e2f/evidence/SEMANTIC_REVIEW_LEGACY_LARGEST_CUTS.md",
+      "content_type": "text/plain",
+      "bytes": 7105,
+      "sha256": "220b05de85d41b612f3f0c8b1c5dbed6d9fa1552b7806a68de065b7d421a2a63"
+    }
+  ],
+  "changed_files_verified": 20,
+  "translated_tex_files_in_scope": 4,
+  "draft_translated_total": 654,
+  "draft_untranslated_total": 68,
+  "segments": 7159,
+  "translated_segments": 6113,
+  "new_batch_segments": 61,
+  "new_batch_translated_segments": 58,
+  "new_batch_unchanged_segments": 3,
+  "source_correction_records": 523,
+  "new_source_correction_records": 10,
+  "translation_decisions": 432,
+  "provisional_translation_decisions": 410,
+  "translation_decision_occurrences": 39995,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 654,
+    "blocks": 7159,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 9201,
+      "sha256": "31a115a72e0068b24f5efce24897ddb33c506039f2a5f94921e364363ee46b76"
+    },
+    {
+      "filename": "bn-Beng-IN/content/many-valued-logic/sequent-calculus/proof-theoretic-notions.tex",
+      "bytes": 8497,
+      "sha256": "0d5d49ebf94311c70e0747b8584ce8655dc66c7bd0e16af1d234e85f5eb8c22b"
+    },
+    {
+      "filename": "bn-Beng-IN/content/model-theory/basics/nonstandard-arithmetic.tex",
+      "bytes": 22295,
+      "sha256": "0f0c6b80f8d775d0efa9585750d0711a0c7bbf575de5a8e759142197f5a88e28"
+    },
+    {
+      "filename": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/normal-modal-logics.tex",
+      "bytes": 4824,
+      "sha256": "e50860052373a495e23981506d5a033a271cf7033393b1f696c0830a5273c729"
+    },
+    {
+      "filename": "bn-Beng-IN/content/proof-theory/cut-elimination/ce-largest.tex",
+      "bytes": 25564,
+      "sha256": "5c36aa6bc315f77bbc069205035d6ac7b485658f1a7a7fc729f342b0172af4f5"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 12655101,
+      "sha256": "4c520b62da2ab557a4a5702c1508bcc22cc64a3e29a1d6708b10042254746ced"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 390835,
+      "sha256": "18ad7a74d0caaf77826d76b8586353bc23e81a44f9bd65ec7d172bd787e13eed"
+    },
+    {
+      "filename": "evidence/PUBLIC_READBACK_SOURCE_650_2026-09-27.json",
+      "bytes": 15774,
+      "sha256": "6fce6c43ca1206796d37db294b1d9fde7a8fb415d9dd7331591eb80d66400911"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LEGACY_LARGEST_CUTS.md",
+      "bytes": 7105,
+      "sha256": "220b05de85d41b612f3f0c8b1c5dbed6d9fa1552b7806a68de065b7d421a2a63"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LEGACY_NONSTANDARD_ARITHMETIC.md",
+      "bytes": 7137,
+      "sha256": "8f039a39920b3954b0bad140f71f6bf1b4b040a63ef796ccf0ce122a169cea3a"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LEGACY_NORMAL_MODAL_LOGICS.md",
+      "bytes": 4181,
+      "sha256": "f357f534a5e03a569508285ef46d5a869017dbab191e793f883909fccf640113"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_MVL_LEGACY_PROOF_NOTIONS.md",
+      "bytes": 1590,
+      "sha256": "095c256bca7257eccf840a864b8456df400855794a4fd8d42f8264fa02c02c5b"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 1013877,
+      "sha256": "34a385f82dd36162003b2e0ce6e5880295571744d45d765b304298bed7505e7b"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 413513,
+      "sha256": "d8d9262323e42e1a371978d1987cb38cb70f3386cae0048d1e78c42cf9b4f1d2"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 23676070,
+      "sha256": "3f9e30da02d24e525b4424aaa25f3993bf00f20afb6c088806073ff9cdaa3bf6"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 18486973,
+      "sha256": "d521c6ac6df26e8b176c172f94b6ee84a69e3dc96e5b582a64e538037fa33516"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1718320,
+      "sha256": "264880f08e8c4a56cb48855c03711c4c03309ac7e6be7ebd7c8630c62178a059"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 10959451,
+      "sha256": "5d2145fed60181ce6d8090645549ab7344888b22d2bbe81f7324a1ca9709395f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 309036,
+      "sha256": "1f9a901f2329fa26c2cfeffc6d84639db61b46811376f20399dfb60fd0f6d356"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 305267,
+      "sha256": "5c523093d3f1692da9263c66484bf3f8271a509d18f3c5a9e475ebff71d5509e"
+    }
+  ]
+}

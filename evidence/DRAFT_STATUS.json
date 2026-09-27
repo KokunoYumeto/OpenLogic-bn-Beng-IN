@@ -683,11 +683,11 @@
     "anonymous_public_readback": "All six GitHub and Zenodo assets matched byte-for-byte."
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "6d1f618d28f49ddc46e3ba76f6369051abb8d760",
-    "translated_units": 584,
-    "receipt": "PUBLIC_READBACK_SOURCE_584_2026-09-27.json",
-    "receipt_sha256": "04cff3d74eea15945c8918a5847ded46b4f99483c797a8faea506b98a2dc78bd",
-    "status": "নামহীন অপরিবর্তনীয় আর্কাইভ-পুনর্পাঠে ১৯টি পরিবর্তিত বস্তু, ছয়টি কাঁচা অনুবাদ URL, ৫৮৪ ইউনিট ও ৬,৩৫১ ব্লকের কঠোর পরীক্ষা মিলেছে। অঙ্কবাচক সংখ্যা অধ্যায়ের পাঁচটি বিভাগ অনূদিত; BN-SRC-452–454-এ তিনটি উৎস-সংশোধন নথিবদ্ধ। প্রকাশিত পাঠকসংস্করণ ২৯৯ ইউনিটের; নতুন পাঠকসংস্করণের দাবি নেই।"
+    "commit": "1e6f5cbad173424b02e0d4b4ef1e686c0f413834",
+    "translated_units": 590,
+    "receipt": "PUBLIC_READBACK_SOURCE_590_2026-09-27.json",
+    "receipt_sha256": "4ec8ad6887957a58134001c7ac550a1dcac844b8ab0a24f8169c6aa8659d87d7",
+    "status": "নামহীন অপরিবর্তনীয় আর্কাইভ-পুনর্পাঠে ১৯টি পরিবর্তিত বস্তু, ছয়টি কাঁচা অনুবাদ URL, ৫৯০ ইউনিট ও ৬,৪৪৫ ব্লকের কঠোর পরীক্ষা মিলেছে। অঙ্কবাচক সংখ্যার পাটিগণিত অধ্যায়ের পাঁচটি বিভাগ অনূদিত; BN-SRC-455–462-এ আটটি উৎস-সংশোধন নথিবদ্ধ। প্রকাশিত পাঠকসংস্করণ ২৯৯ ইউনিটের; নতুন পাঠকসংস্করণের দাবি নেই।"
   },
   "current_checks": {
     "unit_checks": [

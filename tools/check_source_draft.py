@@ -5549,6 +5549,21 @@ for row in rows:
         assert r"\foreach \x/\xtext in {-2/-2, -1,1, 1/1, 2/2}" in source
         assert r"\foreach \x/\xtext in {-2/-2, -1/-1, 1/1, 2/2}" in target
         tex_command_check = {"punctured_limit_and_absolute_value_tick_labels_reviewed": True}
+    if row["unit_id"] == "OLP-0638":
+        assert set(documented) == {"BN-SRC-489", "BN-SRC-490"}
+        assert r"0.\dot{1}\dot{0} =" in source and r"1.000\ldots" in source
+        assert r"0.00\dot{1}\dot{0} = 0.0010101010\ldots" in target
+        assert r"0.011111\ldots = \frac{1}{2}" in target
+        assert r"$0.1000\ldots$" in target
+        tex_command_check = {"canonical_binary_endpoint_and_non_surjectivity_witness_reviewed": True}
+    if row["unit_id"] == "OLP-0639":
+        assert set(documented) == {"BN-SRC-491", "BN-SRC-492", "BN-SRC-493"}
+        assert r"$x \in \unitsquare$" in source
+        assert r"$x \in \unitline$" in target
+        assert "maximum distance of any" in source and "অভিন্ন অভিসৃতি" in target
+        assert r"point $p$ in $\unitsquare$" in source
+        assert r"$t \in I$" in target and r"$h(t)$" in target
+        tex_command_check = {"hilbert_domain_limit_and_continuity_quantifiers_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5957,6 +5972,60 @@ for row in rows:
             r"(\forall\epsilon>0)(\exists\delta>0)\forallx\left(0<|x-c|<\delta\lif|g(x)-\ell|<\epsilon\right).": 1,
         })
     )
+    history_cantor_binary_expansion_fixes = (
+        row["unit_id"] == "OLP-0638"
+        and set(documented) == {"BN-SRC-489", "BN-SRC-490"}
+        and source_math - target_math == collections.Counter({
+            r"f(a,b)=0.\dot{1}\dot{0}": 2,
+            "a": 2,
+            "0": 1,
+            "1": 1,
+            "f": 1,
+            r"0.\dot{1}\dot{0}=0.1010101010\ldots": 1,
+            r"a&=0.\dot{1}\dot{1}=0.111111\ldots\\b&=0": 1,
+            r"a=0.\dot{1}\dot{1}=1": 1,
+            "b": 1,
+            r"1.000\ldots": 1,
+            r"\tuple{a,b}": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"0.00\dot{1}\dot{0}=0.0010101010\ldots": 1,
+            "f(a,b)": 1,
+            r"a&=0.011111\ldots=\frac{1}{2}\\b&=0": 1,
+            r"0.1000\ldots": 1,
+            r"0.011111\ldots": 1,
+        })
+    )
+    history_hilbert_limit_and_continuity_fixes = (
+        row["unit_id"] == "OLP-0639"
+        and set(documented) == {"BN-SRC-491", "BN-SRC-492", "BN-SRC-493"}
+        and source_math - target_math == collections.Counter({
+            r"\unitsquare": 6,
+            "p": 5,
+            r"2^n\times2^n": 3,
+            r"\unitline": 2,
+            r"\epsilon": 2,
+            "m>n": 2,
+            r"x\in\unitsquare": 1,
+            "n": 1,
+            "(a,b)": 1,
+            r"x\inI": 1,
+            "h_m(x)": 1,
+            "h_m": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            "h": 3,
+            "h_n": 3,
+            "x": 3,
+            r"x\in\unitline": 2,
+            r"t\inI": 2,
+            "h(t)": 2,
+            r"\epsilon/3": 2,
+            "h_n(x)": 2,
+            "I": 1,
+            "h_n(t)": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6080,6 +6149,8 @@ for row in rows:
             methods_induction_step_variable_fix,
             methods_strong_induction_vacuity_fix,
             history_limit_definition_and_quotient_fixes,
+            history_cantor_binary_expansion_fixes,
+            history_hilbert_limit_and_continuity_fixes,
         )
     )
     minimal_change_fileid_fix = (

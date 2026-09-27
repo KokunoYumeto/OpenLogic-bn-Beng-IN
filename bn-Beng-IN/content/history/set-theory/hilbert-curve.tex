@@ -1,0 +1,191 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{his}{set}{hilbertcurve}
+
+\olsection{পরিশিষ্ট: হিলবার্টের স্থানপূরণকারী বক্ররেখা}
+
+\olref[pathology]{sec}-এ আমরা বলেছিলাম,
+রেখাখণ্ড ও বর্গক্ষেত্রে ঠিক সমসংখ্যক বিন্দু আছে—কান্টরের
+এই প্রমাণটি (\olref[his][set][cantorplane]{thm:cantorplane})
+পিয়ানোকে প্রশ্ন করতে উদ্বুদ্ধ করে: গোটা স্থান জুড়ে যায়,
+এমন কোনো \emph{বক্ররেখা} কি আছে? ১৮৯০ সালে তিনি
+ইতিবাচক উত্তর পান। এখানে আমরা হিলবার্টের
+স্থানপূরণকারী বক্ররেখার নির্মাণটি সামান্য বদলে
+অনানুষ্ঠানিকভাবে ব্যাখ্যা করব।\footnote{আরও কঠোর
+আলোচনার জন্য \cite{Rose2010} দেখো। ছোট বদলটি
+হলো নিচের বক্ররেখাগুলির লাল অংশও রাখা; এতে
+বক্ররেখাটির অবিচ্ছিন্নতা যাচাই করা একটু সহজ হয়।}
+
+আমাদের $h$ অপেক্ষকটিকে $h_1$, $h_2$, $h_3$, \dots\@
+অপেক্ষকদের ধারার সীমা হিসেবে সংজ্ঞায়িত করতে হবে।
+প্রথমে নির্মাণটি বর্ণনা করব; তারপর দেখব কেন এটি
+স্থানপূরণ করে এবং কেন এটি একটি বক্ররেখা।
+
+আমরা $h$-এর মানগুলি একক বর্গক্ষেত্র $\unitsquare$-এ
+নেব। $h$-এর প্রথম নিকটায়ন, অর্থাৎ $h_1$, নিচে দেখানো হলো:
+\begin{center}
+	\begin{tikzpicture}
+	\draw[gray] (0pt, 0pt) rectangle (80pt, 80pt);
+	\draw[step = 40pt, gray, very thin] (0pt, 0pt) grid (80pt, 80pt);
+	\draw[oldiagcolorC, thick] (20pt, 0)--(20pt, 20pt);
+	\draw[oldiagcolorC, thick] (60pt, 0)--(60pt, 20pt);
+	\begin{scope}[xshift=20pt, yshift=20pt]
+	\draw [black, thick, l-system={Hilbert curve, step=40pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\end{tikzpicture}
+\end{center}
+নির্মাণটি বোঝার সুবিধায় বর্গক্ষেত্রটিকে
+$2 \times 2$ ছকে ভাগ করেছি। মনে করতে পারো,
+বক্ররেখাটি নিচের বাঁ কোষে শুরু হয়ে উপরের বাঁ কোষ,
+তারপর উপরের ডান কোষ ঘুরে শেষে নিচের ডান কোষে
+পৌঁছায়। নির্মাণের দ্বিতীয় ধাপ, অর্থাৎ $h_2$, এমন:
+\begin{center}
+	\begin{tikzpicture}
+	\draw[gray] (0pt, 0pt) rectangle (80pt, 80pt);
+	\draw[step = 20pt, gray, very thin] (0pt, 0pt) grid (80pt, 80pt);
+	\draw[oldiagcolorC, thick] (0pt, 10pt)--(10pt, 10pt);
+	\draw[oldiagcolorC, thick] (70pt, 10pt)--(80pt, 10pt);
+	\draw[thick, oldiagcolorE] (10pt, 30pt)--(10pt, 50pt);
+	\draw[thick, oldiagcolorE] (30pt, 50pt)--(50pt, 50pt);
+	\draw[thick, oldiagcolorE] (70pt, 50pt)--(70pt, 30pt); \begin{scope}[xshift=10pt, yshift=30pt]
+	\draw [thick, rotate=270,black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=10pt, yshift=50pt]
+	\draw [thick, black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=50pt, yshift=50pt]
+	\draw [thick, black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=70pt, yshift=10pt]
+	\draw [thick, rotate=90,black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\end{tikzpicture}
+\end{center}
+আলাদা রংগুলি $h_2$ কীভাবে তৈরি হলো, তা বুঝতে
+সাহায্য করবে। প্রথমে $h_1$-এর অ-!!{colorC}
+অংশটির ছোট চারটি অনুলিপি বর্গক্ষেত্রের নিচের বাঁ,
+উপরের বাঁ, উপরের ডান ও নিচের ডান অংশে বসাই
+(কালো রেখায় দেখানো)। তারপর চারটি অনুলিপি
+!!{colorE} রেখাংশ দিয়ে জুড়ি। সব শেষে চিত্রটিকে
+!!{colorC} রেখাংশ দিয়ে বর্গক্ষেত্রের সীমানায় যুক্ত করি।
+
+এবার $h_3$। যেমন $h_1$-এর লাল নয় এমন অংশের
+চারটি ছোট, সংযুক্ত অনুলিপি দিয়ে $h_2$ তৈরি
+হয়েছিল, তেমনি $h_2$-এর লাল নয় এমন অংশের
+চারটি ছোট অনুলিপি (কালো রেখায় দেখানো)
+!!{colorE} রেখাংশে জুড়ে এবং শেষে !!{colorC}
+রেখাংশে বর্গক্ষেত্রের সীমানায় মিলিয়ে $h_3$ তৈরি করি।
+\begin{center}
+	\begin{tikzpicture}
+	\draw[gray] (0pt, 0pt) rectangle (80pt, 80pt);
+	\draw[step = 10pt, gray, very thin] (0pt, 0pt) grid (80pt, 80pt);
+	\draw[thick, oldiagcolorC](5pt, 0pt)--(5pt, 5pt);
+	\draw[thick, oldiagcolorC] (75pt, 0pt)--(75pt, 5pt);
+	\draw[thick, oldiagcolorE] (75pt, 45pt)--(75pt, 35pt);
+	\draw[thick, oldiagcolorE] (5pt, 35pt)--(5pt, 45pt);
+	\draw[thick, oldiagcolorE] (35pt, 45pt)--(45pt, 45pt);
+	\draw[thick, oldiagcolorE] (75pt, 45pt)--(75pt, 35pt); \begin{scope}[xshift=5pt, yshift=35pt]
+	\draw [rotate=270, thick, black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=5pt, yshift=45pt]
+	\draw [thick, black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=45pt, yshift=45pt]
+	\draw [thick, black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=75pt, yshift=5pt]
+	\draw [thick, rotate=90,black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\end{tikzpicture}
+\end{center}
+এখন $h_n$ থেকে $h_{n+1}$ তৈরির সাধারণ ধরনটি
+দেখা যাচ্ছে। সব শেষে $h_1$, $h_2$, \dots\@
+অপেক্ষকদের বিন্দুতে বিন্দুতে সীমা নিয়ে
+\emph{মূল} বক্ররেখা $h$-কে সংজ্ঞায়িত করি। অর্থাৎ,
+% BN-SRC-491: h_n and h have the unit interval, not the square, as domain.
+প্রতিটি $x \in \unitline$-এর জন্য:
+\begin{align*}
+	h(x) &= \lim_{n \rightarrow \infty} h_n(x)
+\end{align*}
+এবার দেখি, বক্ররেখাটি কেন স্থানপূরণ করে।
+$h_n$ আঁকার সময় $\unitsquare$-কে
+$2^n \times 2^n$ ছকে ভাগ করি। পিথাগোরাসের
+উপপাদ্য অনুযায়ী প্রতিটি কোষের কর্ণের দৈর্ঘ্য:
+\[
+\sqrt{\left(\nicefrac{1}{2^{n}}\right)^2+\left(\nicefrac{1}{2^{n}}\right)^2} = 2^{(\frac{1}{2}-n)}
+\]
+স্পষ্টত, $h_n$ প্রতিটি কোষের মধ্য দিয়ে যায়। তাই
+$\unitsquare$-এর প্রতিটি বিন্দু থেকে $h_n$-এর
+কোনো বিন্দুর দূরত্ব \emph{সর্বাধিক}
+$2^{(\frac{1}{2}-n)}$। আর $h$ হলো
+$h_1$, $h_2$, $h_3$, \dots\@
+অপেক্ষকদের সীমা। কোষগুলির ব্যাসের এই ঊর্ধ্বসীমা
+শূন্যের দিকে যায়:
+\[
+\lim_{n \rightarrow \infty} 2^{(\frac{1}{2}-n)} = 0.
+\]
+% BN-SRC-492: finite-stage proximity alone does not imply the limit image is surjective;
+% compatible parametrization, uniform convergence and closedness supply the missing steps.
+তবে শুধু এই হিসাব থেকে প্রতিটি বিন্দু $h$-এর
+ছবিতে আছে, তা বলা যায় না। নির্মাণে পর্যায়গুলিকে
+সঙ্গতভাবে প্যারামিটার দিয়ে নিলে প্রতিটি $h_n$
+অবিচ্ছিন্ন থাকে এবং পরপর দুই ধাপের সর্বোচ্চ
+পরিবর্তন ক্রমশ ছোট কোষের ব্যাস দিয়ে বাঁধা থাকে।
+ফলে $h_n$-এর
+$h$-তে অভিন্ন অভিসৃতি পাওয়া যায়। এই তথ্যের সঙ্গে
+ওপরের দূরত্বের হিসাব মিলিয়ে $\unitsquare$-এর
+প্রতিটি বিন্দু থেকে $h$-এর ছবির দূরত্ব $0$
+হয়। নিচের অবিচ্ছিন্নতার ফলে একক রেখাখণ্ডের
+উপর $h$-এর ছবি কম্প্যাক্ট, তাই বদ্ধও। অতএব
+দূরত্ব শূন্য হওয়া প্রতিটি বিন্দুই ছবির \emph{উপর}
+আছে: $h$ স্থানপূরণ করে!{}
+
+এখন দেখাতে হবে, $h$ সত্যিই একটি \emph{বক্ররেখা}।
+তার জন্য আগে ধারণাটির সংজ্ঞা দরকার। আধুনিক
+সংজ্ঞাটি ১৮৮৭ সালে জর্ডানের দেওয়া একটি সংজ্ঞার
+উপর ভিত্তি করে তৈরি (অর্থাৎ প্রথম স্থানপূরণকারী
+বক্ররেখা পাওয়ার মাত্র কয়েক বছর আগে):
+
+\begin{defn}
+বক্ররেখা হলো $\unitline$ থেকে $\Real^2$-এ
+একটি অবিচ্ছিন্ন চিত্রণ।
+\end{defn}
+
+স্বজ্ঞায় বক্ররেখা হলো রেখাখণ্ডের বিন্দুগুলিকে
+তল $\Real^2$-এর বিন্দুতে অবিচ্ছিন্নভাবে নিয়ে
+যাওয়ার একটি উপায়। আমাদের $h$ আসলেই
+$\unitline$ থেকে $\Real^2$-এ চিত্রণ; তাই
+তার অবিচ্ছিন্নতা দেখালেই চলবে। \olref[limits]{sec}-এ
+$\epsilon$/$\delta$ দিয়ে অবিচ্ছিন্নতার অর্থ
+ব্যাখ্যা করেছি। এখানে কথায় কথায় শর্তটি হলো:
+% BN-SRC-493: continuity fixes a domain point x and requires an interval around x;
+% the frozen p-centered existence statement does not establish continuity.
+\emph{যেকোনো $x \in \unitline$ এবং যত ছোটই হোক
+$\epsilon$ স্থির করলে $x$-কে ধারণ করে এমন
+একটি খোলা অংশ $I$ পাওয়া যায়, যাতে
+$t \in I$ হলেই $h(t)$ ও $h(x)$-এর দূরত্ব
+$\epsilon$-এর কম।}
+
+তাই $x$ ও $\epsilon$ স্থির করো। সঙ্গতভাবে
+প্যারামিটার দেওয়া নির্মাণে $h_n$ অপেক্ষকগুলি
+$h$-তে অভিন্নভাবে অভিসারী। ফলে এমন $n$
+পাওয়া যায়, যাতে প্রতিটি প্রাচলে $h_n$ ও $h$-এর
+মানের দূরত্ব $\epsilon/3$-এর কম। প্রতিটি $h_n$
+অবিচ্ছিন্ন; তাই $x$-এর চারদিকে এমন একটি
+খোলা অংশ আছে, যেখানে $h_n$-এর মানগুলি
+$h_n(x)$ থেকে $\epsilon/3$-এর কম দূরে থাকে।
+
+ওই অংশটিকে $I$ বলো। তাহলে যেকোনো $t \in I$-এর
+জন্য $h(t)$ থেকে $h_n(t)$, সেখান থেকে
+$h_n(x)$, এবং শেষে $h(x)$ পর্যন্ত দূরত্ব
+ত্রিভুজ অসমতা দিয়ে যোগ করলে $\epsilon$-এর
+কম হয়। এটিই $x$-এ অবিচ্ছিন্নতা। ছকটি
+এর স্বজ্ঞা দেখায়: প্রতিটি ধাপে একই প্রাচল-অংশকে
+আগের চেয়ে ছোট কোষের মধ্যে আরও আঁকাবাঁকা
+ভাবে আঁকা হয়। তবে সীমা ও অভিন্ন অভিসৃতির
+কঠোর প্রমাণের জন্য চিত্রের সঙ্গে সঙ্গত
+প্যারামিটারায়নের বিশদও প্রয়োজন।
+
+\end{document}

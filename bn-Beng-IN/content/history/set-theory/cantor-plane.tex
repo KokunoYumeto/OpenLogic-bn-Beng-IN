@@ -1,0 +1,109 @@
+% Part: history
+% Chapter: set-theory
+% Section: cantor-plane
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{his}{set}{cantorplane}
+\olsection{রেখা ও তল নিয়ে কান্টর}
+
+শ্র্যোডার--বার্নস্টাইন উপপাদ্যের প্রমাণকে ঘিরে কিছু ঘটনা
+\olref[his][set][pathology]{sec}-এ আলোচিত ইতিহাসের সঙ্গে
+জড়িত। মনে করো, ১৮৭৭ সালে কান্টর প্রমাণ করেছিলেন যে
+একটি বর্গক্ষেত্রে যত বিন্দু আছে, তার একটি বাহুতেও ঠিক তত
+বিন্দু আছে। এখানে তাঁর প্রথম প্রমাণচেষ্টাটি দেখব।
+
+$\unitline$ বলতে একক রেখাখণ্ড, অর্থাৎ $[0,1]$-এর
+বিন্দুগুলির সেট বোঝাই। আর $\unitsquare$ বলতে একক
+বর্গক্ষেত্র, অর্থাৎ $\unitline \times \unitline$-এর
+বিন্দুগুলির সেট বোঝাই। এই ভাষায় কান্টর প্রমাণ করেছিলেন,
+$\cardeq{\unitline}{\unitsquare}$। ডেডেকিন্ডকে লেখা তাঁর
+একটি চিঠিতে মূলত নিচের যুক্তিটি ছিল।
+
+\begin{thm}\ollabel{thm:cantorplane}
+$\cardeq{\unitline}{\unitsquare}$
+\end{thm}
+
+\begin{proof}[প্রমাণ: প্রথম অংশ]
+যেকোনো $a, b \in \unitline$ স্থির করো। তাদের দ্বিমিক
+বিস্তারের অঙ্কগুলি যথাক্রমে $a_1$, $a_2$, \dots,
+এবং $b_1$, $b_2$, \dots।
+% BN-SRC-489: specify a canonical binary representation, including the endpoint 1;
+% the frozen witness 0.1010... is f(1,0) under this valid convention.
+এখানে একের চেয়ে ছোট সংখ্যার জন্য শেষ পর্যন্ত শুধু
+এক চলতে থাকে না, এমন বিস্তারটি বেছে নিই; তাই দুটি
+বিস্তার থাকলে শূন্যে শেষ হওয়া রূপটি নিই। একের জন্য
+নিই সব অঙ্ক একযুক্ত বিস্তার। তাহলে:
+\begin{align*}
+a &= 0.a_1a_2a_3a_4\dots\\
+b &= 0.b_1b_2b_3b_4\dots
+\intertext{এবার $f \colon \unitsquare \to \unitline$ অপেক্ষকটি নিই, যেখানে}
+f(a, b) & = 0.a_1b_1a_2b_2a_3b_3a_4b_4\dots
+\end{align*}
+এটি একটি !!a{injection}। প্রকৃতপক্ষে, এভাবে পাওয়া
+অঙ্কের ধারা শেষ পর্যন্ত শুধু এক হতে পারে কেবল দুই
+ইনপুটই এক হলে; তখন ফলও এক। অন্য সব ক্ষেত্রে,
+ফলের আরেকটি দ্বিমিক বিস্তার থাকলেও তা নির্বাচিত
+ইনপুটের অঙ্কগুলি আন্তঃবুনে পাওয়া যায় না। অতএব
+$f(a, b) = f(c,d)$ হলে সব
+$n \in \Nat$-এর জন্য $a_n = c_n$ এবং $b_n = d_n$;
+সুতরাং $a = c$ ও $b = d$।
+\end{proof}
+
+কিন্তু ডেডেকিন্ড কান্টরকে দেখিয়েছিলেন, এতটুকুতে
+মূল প্রশ্নের উত্তর মেলে না। উদাহরণ হিসেবে
+% BN-SRC-489: valid non-surjectivity witness for the canonical convention.
+$0.00\dot{1}\dot{0} = 0.0010101010\ldots$
+বিবেচনা করো। এটি $f(a,b)$ হলে অঙ্কগুলি আলাদা
+করে পড়ে পেতে হয়:
+\begin{align*}
+a&= 0.011111\ldots = \frac{1}{2}\\
+b&= 0
+\end{align*}
+কিন্তু নির্ধারিত নিয়মে অর্ধেকের দ্বিমিক বিস্তার
+$0.1000\ldots$; $0.011111\ldots$ রূপটি আমরা
+ইনপুটের জন্য নিইনি। আর বিবেচিত ফলটির নিজের
+বিকল্প দ্বিমিক বিস্তার নেই। তাই এই বিন্দুটি
+$f$-এর কোনো ইনপুট থেকে পাওয়া যায় না।
+
+% BN-SRC-490: the frozen source calls these recurring *decimal* expansions,
+% although the construction and dual-representation issue are binary.
+সারকথা, কিছু সংখ্যার দ্বিমিক বিস্তারের দুটি রূপ
+থাকার কারণে কান্টরের $f$ অপেক্ষকটি
+!!a{injection}, কিন্তু !!a{surjection} নয়।
+সুতরাং তিনি এতক্ষণে শুধু
+$\cardle{\unitsquare}{\unitline}$ দেখিয়েছেন,
+$\cardeq{\unitsquare}{\unitline}$ দেখাননি।
+
+কান্টর প্রায় সঙ্গে সঙ্গেই ডেডেকিন্ডকে উত্তর দেন।
+মূলত তিনি নিচের মতো করে প্রমাণটি সম্পূর্ণ
+করার ইঙ্গিত দেন:
+
+\begin{proof}[প্রমাণ: সমাপ্ত অংশ]
+আমরা দেখিয়েছি,
+$\cardle{\unitsquare}{\unitline}$।
+অন্যদিকে $\unitline$ থেকে $\unitsquare$-এ
+একটি !!a{injection} স্পষ্টই আছে:
+রেখাখণ্ডটিকে বর্গক্ষেত্রের একটি বাহু বরাবর
+বসালেই হয়। তাই
+$\cardle{\unitline}{\unitsquare}$ এবং
+$\cardle{\unitsquare}{\unitline}$।
+শ্র্যোডার--বার্নস্টাইন উপপাদ্য
+(\olref[sfr][siz][sb]{thm:schroder-bernstein})
+থেকে $\cardeq{\unitline}{\unitsquare}$।
+\end{proof}
+
+অবশ্য কান্টর নিজে শেষ পঙ্‌ক্তিটি এই ভাষায়
+লিখে প্রমাণ শেষ করতে পারতেন না: তখনও
+শ্র্যোডার--বার্নস্টাইন উপপাদ্য প্রমাণিত হয়নি।
+পরে কান্টর এই বক্তব্যকে সাধারণ অনুমান
+হিসেবে প্রকাশ করলেও ১৮৯৭ সালের আগে
+তার সন্তোষজনক প্রমাণ পাওয়া যায়নি।
+(তাই ১৮৭৭ সালের পরের দিকে কান্টর
+\olref{thm:cantorplane}-এর অন্য একটি
+প্রমাণ দিয়েছিলেন, যাতে শ্র্যোডার--বার্নস্টাইন
+উপপাদ্য ব্যবহার করা হয়নি।)
+
+\end{document}

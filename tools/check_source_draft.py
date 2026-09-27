@@ -6475,6 +6475,28 @@ for row in rows:
         and source_math - target_math == collections.Counter({"A_{i+1}": 1})
         and target_math - source_math == collections.Counter({"!A_{i+1}": 1})
     )
+    legacy_normal_translation_repairs = (
+        row["unit_id"] == "OLP-0678"
+        and set(documented) == {f"BN-SRC-{n}" for n in range(584, 591)}
+        and set(normalizations) == {"BN-NORM-174"}
+        and source_math - target_math
+        == collections.Counter({
+            r"\delta'": 1,
+            r"x:!D,\Gamma_1\Sequent!A": 1,
+            r"\Gamma_1\Sequent!D": 1,
+            r"!E,\Gamma_1'\Sequent!A": 1,
+        })
+        and target_math - source_math
+        == collections.Counter({
+            r"\Delta": 1,
+            r"!C\ident\lfalse": 1,
+            r"\Delta=\{!C\}": 1,
+            r"\delta_1": 1,
+            r"!D,\Gamma_1'\Sequent!A": 1,
+            r"\Gamma_1'\Sequent!D": 1,
+            r"!E,\Gamma_2'\Sequent!A": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6622,6 +6644,7 @@ for row in rows:
             legacy_permutation_cut_formula_fix,
             legacy_reduction_tree_repairs,
             legacy_segment_formula_prefix_fix,
+            legacy_normal_translation_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -6744,6 +6767,18 @@ for row in rows:
             "documented_source_corrections": ["BN-SRC-582", "BN-SRC-583"],
             "segment_formula_prefix_restored": 1,
             "length_one_falsity_case_restated": True,
+        }
+    if row["unit_id"] == "OLP-0678":
+        assert legacy_normal_translation_repairs
+        assert source.count(r"\Log{2i}") == 1
+        assert checked_target.count(r"\Log{2i}") == 0
+        assert source.count(r"\text{ into }") == 2
+        assert checked_target.count(r"\text{এর বদলে}") == 2
+        assert "অবমুক্ত না হওয়া অনুমানের" in checked_target
+        tex_command_check = {
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(584, 591)],
+            "documented_language_normalization": "BN-NORM-174",
+            "bengali_conversion_labels": 2,
         }
     checks = {
         "unit_id": row["unit_id"],

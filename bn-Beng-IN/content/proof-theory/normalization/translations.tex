@@ -1,0 +1,490 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: translations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{tr}
+
+\olsection{স্বাভাবিক \Log{N2i}-\usetoken{P}{proof} ও \Log{G2i}-এর মধ্যে অনুবাদ}
+
+\Log{N2i}-র !!^{proof}s-কে \Log{G2i}-র
+!!{proof}s-এ অনুবাদ করা যায়, এবং উল্টোটিও যায়।
+প্রথমে লক্ষ করি, কর্তনহীন \Log{G2i}
+!!{proof}s-এর অনুবাদে স্বাভাবিক
+\Log{N2i}-!!{proof}s পাওয়া যায়।
+% BN-SRC-584 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-584):} প্রথম অনুচ্ছেদে উৎসের \Log{2i} কোনো নির্দিষ্ট প্রমাণপদ্ধতি নয়; শিরোনাম ও পরের প্রস্তাবনা অনুযায়ী কর্তনহীন \Log{G2i} বোঝানো হয়েছে।}
+% BN-SRC-584 TARGET-CORRECTION-END
+
+ফলটি বলতে \Log{N2i} ও \Log{G2i}-এর
+সিকোয়েন্টের বাঁ অংশের সম্পর্ক বোঝাতে
+একটু পরিভাষা দরকার। চিহ্নযুক্ত
+!!{formula}s-এর সেট~$\Gamma'$ অচিহ্নিত
+!!{formula}s-এর বহুসেট~$\Gamma$-র
+\emph{সঙ্গত} হবে যদি প্রতিটি
+!!{formula}~$!A$-এর জন্য
+$\Gamma'$-তে $x : !A$ রূপের
+!!{element}s-এর সংখ্যা
+$\Gamma$-তে~$!A$-এর পুনরাবৃত্তি-সংখ্যার
+বেশি না হয়।
+
+\begin{cor}
+যদি $\Log{G2i} \Proves \Gamma \Sequent \Delta$,
+তাহলে $\Gamma' \Sequent !C$-এর
+একটি স্বাভাবিক \Log{N2i}-!!{proof}~$\delta$
+আছে। এখানে $\Delta$ ফাঁকা হলে
+$!C \ident \lfalse$, অন্যথায়
+$\Delta=\{!C\}$; আর চিহ্নযুক্ত
+!!{formula}s-এর সেট~$\Gamma'$
+বহুসেট~$\Gamma$-র সঙ্গত।
+অর্থাৎ প্রত্যেক !!{formula}~$!A$-এর
+জন্য $\Gamma'$-তে $x : !A$ রূপের
+!!{element}s-এর সংখ্যা
+$\Gamma$-তে~$!A$-এর পুনরাবৃত্তি-সংখ্যার
+(অর্থাৎ~$!A$-এর অনুলিপির সংখ্যার)
+বেশি নয়।
+% BN-SRC-585 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-585):} করোলারিতে উৎসের N2c নামটি N2i করা হয়েছে; লক্ষ্যসূত্র !C-কে ভিত্তি-প্রস্তাবনা অনুযায়ী ফাঁকা বা এক-সূত্রের $\Delta$-র সঙ্গে যুক্ত করা হয়েছে।}
+% BN-SRC-585 TARGET-CORRECTION-END
+\end{cor}
+
+\begin{proof}
+\olref[nat][tgi]{prop:G2i-to-N2i}-এর
+প্রমাণ দেখলেই ফলটি মেলে:
+!!{introduction} বিধি !!{proof}s-এর শেষে
+এবং !!{elimination} বিধি কেবল
+!!{proof}s-এর শুরুতে যোগ করি; তাই কোনো
+!!a{elimination} বিধির উপরে
+!!{introduction} বিধি আসে না।
+\end{proof}
+
+তবে \olref[nat][tgi]{prop:G2i-to-N2i}-এ
+\Cut{} বিধির অনুবাদে \Log{N2i}-!!{proof}~$\delta$-তে
+কর্তন তৈরি হতে পারে। কোনো \Log{G2i}
+!!{proof} যদি~\Cut{} দিয়ে শেষ হয়,
+আর তার অব্যবহিত উপ-!!{proof}s
+$\pi_1$ ও $\pi_2$ যথাক্রমে
+$\Gamma_1 \Sequent !A$ এবং
+$!A, \Gamma_2 \Sequent \Delta_2$-র হয়,
+তাহলে~$\pi_2$-র অনুবাদ~$\delta_2$-তে
+যত $x:!A \Sequent !A$ স্বতঃসিদ্ধ
+আছে, সেগুলিতে~$\pi_1$-এর অনুবাদ
+$\delta_1$ কলম করে বসাই।
+যদি~$\delta_1$-র শেষ বিধি
+প্রধান !!{formula}~$!A$-সহ
+!!a{introduction} হয় এবং~$\delta_2$-তে
+$x:!A \Sequent !A$ স্বতঃসিদ্ধটি
+!!a{elimination} বিধির প্রধান পূর্বধারণা
+হয়, তবে~$\delta$-তে কর্তন তৈরি হবে।
+
+\Log{N2i}-র !!{proof}s-কে~\Log{G2i}-র
+!!{proof}s-এও অনুবাদ করা যায়।
+\olref[nat][tni]{prop:N2-to-G2}-এর
+প্রমাণে \Elim{\land}, \Elim{\lif},
+\Elim{\lnot}, \Elim{\lforall}-এর
+অনুবাদে ফলের \Log{G2i} !!{proof}-এ
+\Cut{} প্রয়োগ আসে। তবে শুরুতে
+\Log{N2i}-!!{proof}-টি স্বাভাবিক হলে
+এটি এড়ানো যায়।
+% BN-SRC-586 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-586):} উৎসের অসম্পূর্ণ শর্তবাক্যে স্বাভাবিক হওয়ার পূর্বশর্ত নেই; পরের প্রস্তাবনার শর্ত অনুযায়ী সেটি স্পষ্ট করা হয়েছে।}
+% BN-SRC-586 TARGET-CORRECTION-END
+
+\Log{N2i}-!!{proof}~$\delta$-তে
+সিকোয়েন্ট-সংঘটনের তালিকা $S_1$,
+\dots,~$S_n$-কে \emph{শাখা} বলব,
+যদি $S_1$ স্বতঃসিদ্ধ হয় এবং
+যখনই $S_i$ কোনো প্রয়োগের
+প্রধান পূর্বধারণা হয়,
+$S_{i+1}$ হয় তার সিদ্ধান্ত।
+অর্থাৎ, শাখা~$\delta$-তে স্বতঃসিদ্ধ থেকে
+নিচে সিকোয়েন্ট অনুসরণ করে,
+কিন্তু !!{elimination} বিধির
+গৌণ পূর্বধারণায় থেমে যায়।
+$S_n$ যদি শেষ-সিকোয়েন্ট হয়,
+তবে শাখাটি~$\delta$-র
+\emph{প্রধান শাখা}। প্রতিটি
+!!{proof}~$\delta$-তে অন্তত একটি
+প্রধান শাখা থাকে, কারণ প্রতিটি
+বিধির অন্তত একটি প্রধান পূর্বধারণা
+আছে (শুধু \Intro{\land}-এর দুটি)।
+
+
+\begin{prop}\ollabel{prop:normal-N2i-to-G2i}
+$\delta$ যদি~$\Gamma \Sequent !A$-এর
+স্বাভাবিক $\Log{N2c}$ অথবা
+$\Log{N2i}$-!!{proof} হয়,
+তাহলে $\Gamma' \Sequent \Delta$-র
+একটি কর্তনহীন $\Log{G2c}$-!!{proof}
+(যথাক্রমে $\Log{G2i}$-!!{proof})~$\pi$
+আছে। এখানে $\Gamma$ থেকে চিহ্নগুলি
+সরিয়ে পাওয়া !!{formula}s-এর বহুসেট
+হলো~$\Gamma'$; $!A$ যদি~$\lfalse$ না হয়
+তবে $\Delta = \{!A\}$, আর তা হলে
+$\Delta = \emptyset$।
+\end{prop}
+
+\begin{proof}
+এবার~$\Gamma \Sequent !A$-এর
+!!{proof}~$\delta$-তে বিধিপ্রয়োগের
+সংখ্যার উপর আরোহ করি।
+$\delta$-তে কোনো প্রয়োগ না থাকলে
+সেটি $x:!A \Sequent !A$ স্বতঃসিদ্ধ;
+তখন~$\pi$ সংশ্লিষ্ট
+$!A \Sequent !A$ স্বতঃসিদ্ধ,
+অথবা $!A \ident \lfalse$ হলে
+$\lfalse \Sequent \ $ স্বতঃসিদ্ধ।
+
+$\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
+ক্ষেত্রভেদ করি:
+\begin{enumerate}
+  \item $R$ যদি !!a{introduction}
+  বিধি বা~\FalseInt হয়,
+  \olref[nat][tni]{prop:N2-to-G2}-এর
+  প্রমাণের মতোই অনুবাদ হয়;
+  \Cut{} লাগে না।
+
+  $\delta$-র শেষ বিধি~$R$
+  যদি !!a{elimination} হয়,
+  নিচের বিষয়গুলি লক্ষ করি:
+  \begin{enumerate}
+    \item $\delta$-র প্রধান শাখায়
+    কোনো !!{introduction} বিধি নেই।
+    থাকলে সেই শাখায়
+    !!a{introduction} বিধি বা~\FalseInt{}-এর
+    পরে !!a{elimination} বিধি থাকত,
+    ফলে $\delta$ স্বাভাবিক হতো না।
+    \item $\delta$-র প্রধান শাখায়
+    !!{introduction} বিধি নেই বলে
+    প্রধান শাখা একটিই।
+    (শুধু \Intro{\land}-এর দুটি
+    প্রধান পূর্বধারণা; একাধিক প্রধান
+    শাখা হলে ওই বিধির পূর্বধারণা
+    দিয়ে যেতে হতো।)
+    \item প্রধান শাখায়
+    \Elim{\lor} বা \Elim{\lexists}-এর
+    প্রধান পূর্বধারণা থাকলে
+    এমন বিধি মাত্র একটি এবং
+    সেটিই শেষ বিধি~$R$।
+    (অন্যথায় প্রধান শাখায়
+    ওই বিধির সিদ্ধান্ত পরের
+    !!a{elimination} বিধির
+    প্রধান পূর্বধারণা হতো;
+    বিন্যাস-রূপান্তর সম্ভব বলে
+    প্রমাণটি স্বাভাবিক থাকত না।)
+  \item \Elim{\lor} ও
+  \Elim{\lexists} ছাড়া অন্য
+  !!{elimination} বিধি অনুমান
+  অবমুক্ত করে না, অর্থাৎ
+  সিকোয়েন্টের বাঁ প্রসঙ্গ বদলায় না।
+  ওই দুই বিধিও কেবল গৌণ
+  পূর্বধারণার উপরের অনুমান
+  অবমুক্ত করে; তাই শুধু ওই
+  পূর্বধারণার বাঁ প্রসঙ্গ বদলায়।
+  অর্থাৎ, $\delta$-র প্রধান শাখায়
+  $S_i$-র প্রসঙ্গ~$\Gamma_1$ হলে,
+  যে প্রয়োগে $S_i$ প্রধান পূর্বধারণা
+  তার সিদ্ধান্ত~$S_{i+1}$-এর প্রসঙ্গ
+  $\Gamma_1' \supseteq \Gamma_1$।
+  \item সুতরাং প্রধান শাখার
+  সর্বোচ্চ সিকোয়েন্ট~$S_1$
+  যদি $x: !C \Sequent !C$ হয়,
+  তবে $x:!C \in \Gamma$।
+  \end{enumerate}
+  এবার~$!C$-এর গঠন অনুযায়ী
+  ক্ষেত্রভেদ করি। প্রধান শাখার
+  পরবর্তী প্রতিটি ধাপে $S_i$
+  !!a{elimination} বিধির প্রধান
+  পূর্বধারণা; তাই $x:!C \Sequent !C$-এর
+  ক্ষেত্রেও তা সত্য।
+
+  \item $!C \ident !D \land !E$।
+  তখন $\delta$-র রূপ নিচেরটি:
+  \[
+  \Axiom$x:!D \land !E \fCenter !D \land !E$
+  \RightLabel{\Elim{\land}[1]}
+  \UnaryInf$x:!D \land !E \fCenter !D$
+  \Deduce$x:!D \land !E, \Gamma_1 \fCenter !A$
+  \DisplayProof
+  \]
+  প্রধান শাখায়
+  $x:!D \land !E \Sequent !D$ আছে;
+  সেখানে \Intro{\lif} বা
+  \Intro{\lnot}-এর প্রধান পূর্বধারণা,
+  কিংবা \Elim{\lor} বা
+  \Elim{\lexists}-এর গৌণ পূর্বধারণা
+  নেই। তাই $x:!D \land !E$-এর
+  প্রসঙ্গ-!!{formula}s প্রধান শাখা
+  ধরে অপরিবর্তিত থাকে। এই জন্যই
+  শেষ-সিকোয়েন্টের প্রসঙ্গে
+  $x:!D \land !E$ থাকতে হবে।
+  আরও, \Elim{\land}-এ শেষ হওয়া
+  উপ-!!{proof}-এর বদলে
+  $x:!D \Sequent !D$ বসিয়ে
+  এবং প্রধান শাখার প্রতিটি
+  সিকোয়েন্টের প্রসঙ্গে
+  $x:!D \land !E$-র জায়গায়
+  $x:!D$ বসিয়ে !!{proof}~$\delta$-কে
+  !!{proof}~$\delta_1$-এ
+  রূপ দিতে পারি; অর্থাৎ
+  \[
+  \bottomAlignProof
+  \Axiom$x:!D \land !E \fCenter !D \land !E$
+  \RightLabel{\Elim{\land}[1]}
+  \UnaryInf$x:!D \land !E \fCenter !D$
+  \Deduce$x:!D \land !E, \Gamma_1 \fCenter !A$
+  \DisplayProof
+  \quad\text{এর বদলে}\quad
+  \bottomAlignProof
+  \Axiom$x:!D \fCenter !D$
+  \Deduce$x:!D, \Gamma_1 \fCenter !A$
+  \DisplayProof
+  \]
+  $\delta_1$-এ আরোহ-অনুমান
+  প্রযোজ্য, কারণ $\delta$-তে
+  বিধিপ্রয়োগের সংখ্যা
+  $\delta_1$-এর চেয়ে~$1$ বেশি।
+  % BN-SRC-587 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-587):} আরোহে নির্মিত উপপ্রমাণটি $\delta_1$; উৎসের পরের গণনাবাক্যে অনির্ধারিত $\delta'$ ছিল।}
+  % BN-SRC-587 TARGET-CORRECTION-END
+
+  আরোহ-অনুমান থেকে
+  $!D, \Gamma_1' \Sequent !A$-র
+  একটি \Log{G2i}-!!{proof}~$\pi_1$
+  পাই। \LeftR{\land} প্রয়োগ করে
+  !!{proof}~$\pi$ পাই:
+  % BN-SRC-588 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-588):} উৎসগদ্যে $\pi_1$-এর G2i পূর্বধারণায় x-চিহ্ন ও অবদলিত $\Gamma_1$ আছে; প্রদর্শিত G2i বৃক্ষ অনুযায়ী চিহ্নহীন $\Gamma_1'$ নেওয়া হয়েছে।}
+  % BN-SRC-588 TARGET-CORRECTION-END
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!D, \Gamma_1' \fCenter !A$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!D \land !E, \Gamma_1' \fCenter !A$
+  \DisplayProof
+  \]
+  $!A \ident \lfalse$ হলে
+  একটি \RightR{\Weakening}
+  বসাই, যেমন:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!D, \Gamma_1' \fCenter $
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!D \land !E, \Gamma_1' \fCenter $
+  \RightLabel{\RightR{\Weakening}}
+  \UnaryInf$!D \land !E, \Gamma_1' \fCenter !A$
+  \DisplayProof
+  \]
+  \item $!C \ident !D \lor !E$ হলে
+  সেটি \Elim{\lor}-এর প্রধান
+  পূর্বধারণা হতে হবে, এবং এই
+  প্রয়োগটিই প্রধান শাখার
+  শেষ প্রয়োগ~$R$। অর্থাৎ,
+  $\delta$-র রূপ নিচেরটি:
+  \[
+  \Axiom$x:!D \lor !E \fCenter !D \lor !E$
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$y:!D, \Gamma_1 \fCenter!A$
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \Deduce$z:!E, \Gamma_2 \fCenter !A$
+  \RightLabel{\Elim{\lor}}
+  \TrinaryInf$x:!D \lor !E, \Gamma_1, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \]
+  !!{proof}s $\delta_1$ ও
+  $\delta_2$-তে আরোহ-অনুমান
+  প্রয়োগ করে যথাক্রমে
+  $!D, \Gamma_1' \Sequent !A$
+  ও $!E, \Gamma_2' \Sequent !A$-র
+  \Log{G2i}-!!{proof}s
+  $\pi_1$ ও $\pi_2$ পাই।
+  $\LeftR{\lor}$ প্রয়োগে~$\pi$ পাই:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!D, \Gamma_1' \fCenter !A$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!E, \Gamma_2' \fCenter !A$
+  \RightLabel{\LeftR{\lor}}
+  \BinaryInf$!D \lor !E, \Gamma_1', \Gamma_2' \fCenter !A$
+  \DisplayProof
+  \]
+  $\Elim{\lor}$ যদি
+  $y: !D$ বা $z: !E$ অবমুক্ত না করে
+  (অর্থাৎ সেগুলি গৌণ
+  পূর্বধারণাগুলির প্রসঙ্গে
+  না থাকে), অথবা~$!A$
+  যদি $\lfalse$ হয়, তবে
+  কয়েকটি \LeftR{\Weakening}
+  ও \RightR{\Weakening}
+  যোগ করতে হয়। যেমন:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma_1' \fCenter $
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!D, \Gamma_1' \fCenter $
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$\Gamma_2' \fCenter $
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!E, \Gamma_2' \fCenter $
+  \RightLabel{\LeftR{\lor}}
+  \BinaryInf$!D \lor !E, \Gamma_1', \Gamma_2' \fCenter $
+  \RightLabel{\RightR{\Weakening}}
+  \UnaryInf$!D \lor !E, \Gamma_1', \Gamma_2' \fCenter !A$
+  \DisplayProof
+  \]
+
+  \item $!C \ident !D \lif !E$।
+  তখন $\delta$-র রূপ নিচেরটি:
+  \[
+  \Axiom$x:!D \lif !E \fCenter !D \lif !E$
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$\Gamma_1 \fCenter!D$
+  \RightLabel{\Elim{\lif}}
+  \BinaryInf$x:!D \lif !E, \Gamma_1 \fCenter !E$
+  \RightLabel{$\delta_2$}
+  \Deduce$x:!D \lif !E, \Gamma_1, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \]
+  লক্ষ করুন, প্রধান শাখায়
+  $x:!D \lif !E, \Gamma_1 \Sequent !E$
+  থাকলেও তাতে \Intro{\lif}
+  বা \Intro{\lnot}-এর
+  প্রধান পূর্বধারণা কিংবা
+  \Elim{\lor} বা \Elim{\lexists}-এর
+  গৌণ পূর্বধারণা নেই।
+  তাই $x:!D \lif !E, \Gamma_1$-এর
+  প্রসঙ্গ-!!{formula}s প্রধান শাখায়
+  অপরিবর্তিত থাকে। এই জন্য
+  শেষ-সিকোয়েন্টের প্রসঙ্গে
+  $x:!D \lif !E, \Gamma_1$
+  থাকতে হবে। আরও,
+  \Elim{\lif}-এ শেষ হওয়া
+  উপ-!!{proof}-এর বদলে
+  $x:!E \Sequent !E$ বসিয়ে,
+  এবং প্রধান শাখার প্রতিটি
+  সিকোয়েন্টের প্রসঙ্গে
+  $x:!D \lif !E, \Gamma_1$-র
+  জায়গায় $x:!E$ বসিয়ে
+  !!{proof}-খণ্ড~$\delta_2$-কে
+  সঠিক !!{proof}~$\delta_2'$-তে
+  রূপ দিতে পারি; অর্থাৎ
+  \[
+  \bottomAlignProof
+  \Axiom$x:!D \lif !E, \Gamma_1 \fCenter !E$
+  \RightLabel{$\delta_2$}
+  \Deduce$x:!D \lif !E, \Gamma_1, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \quad\text{এর বদলে}\quad
+  \bottomAlignProof
+  \Axiom$x:!E \fCenter !E$
+  \RightLabel{$\delta_2'$}
+  \Deduce$x:!E, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \]
+  $\delta_1$ ও $\delta_2'$-তে
+  আরোহ-অনুমান প্রযোজ্য:
+  $\delta$-তে বিধিপ্রয়োগের সংখ্যা
+  $\delta_1$ ও~$\delta_2$-তে
+  প্রয়োগের মোট সংখ্যার
+  চেয়ে~$1$ বেশি; এই অতিরিক্তটি
+  প্রধান শাখার শুরুতে থাকা
+  \Elim{\lif} প্রয়োগ।
+  (ওই প্রয়োগই $\delta$-র
+  শেষ প্রয়োগ~$R$ হলে
+  $\delta_1$-তে $0$টি
+  প্রয়োগ থাকে।)
+
+  আরোহ-অনুমান থেকে
+  $\Gamma_1' \Sequent !D$
+  ও $!E, \Gamma_2' \Sequent !A$-র
+  \Log{G2i}-!!{proof}s
+  যথাক্রমে $\pi_1$ ও $\pi_2$ পাই।
+  \LeftR{\lif} প্রয়োগে
+  !!{proof}~$\pi$ পাই:
+  % BN-SRC-589 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-589):} উৎসগদ্যে G2i পূর্বধারণাদুটির প্রসঙ্গ যথাক্রমে $\Gamma_1$ ও $\Gamma_1'$; প্রদর্শিত বিধিবৃক্ষ এবং চিহ্ন-অপসারণ অনুযায়ী সেগুলি $\Gamma_1'$ ও $\Gamma_2'$।}
+  % BN-SRC-589 TARGET-CORRECTION-END
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma_1' \fCenter !D$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!E, \Gamma_2' \fCenter !A$
+  \RightLabel{\LeftR{\lif}}
+  \BinaryInf$!D \lif !E, \Gamma_1', \Gamma_2' \fCenter !A$
+  \DisplayProof
+  \]
+  $!D$ এবং/অথবা
+  $!A \ident \lfalse$ হলে
+  একটি বা দুটি
+  \RightR{\Weakening}
+  বসাই, যেমন:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma_1' \fCenter $
+  \RightLabel{\RightR{\Weakening}}
+  \UnaryInf$\Gamma_1' \fCenter !D$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!E, \Gamma_2' \fCenter $
+  \RightLabel{\RightR{\Weakening}}
+  \UnaryInf$!E, \Gamma_2' \fCenter !A$
+  \RightLabel{\LeftR{\lif}}
+  \BinaryInf$!D \lif !E, \Gamma_1', \Gamma_2' \fCenter !A$
+  \DisplayProof
+  \]
+
+\end{enumerate}
+অবশিষ্ট ক্ষেত্রগুলিও একইভাবে
+বিচার করতে হয়; সেগুলি
+অনুশীলন হিসেবে রাখা হলো।
+\end{proof}
+
+\begin{cor}
+স্বাভাবিক \Log{N1i} অথবা
+\Log{N2i}-!!{proof}-এ থাকা
+প্রতিটি !!{formula} হলো
+শেষ-!!{formula} বা
+শেষ-সিকোয়েন্টে থাকা কোনো
+সূত্রের উপ-!!{formula};
+\Log{N1i}-র ক্ষেত্রে
+অবমুক্ত না হওয়া অনুমানের
+সূত্রগুলির উপসূত্রও হতে পারে।
+% BN-SRC-590 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-590):} N1i-র খোলা অনুমানের সূত্রও স্বাভাবিক প্রমাণে থাকতে পারে; শুধু শেষসূত্রের উপসূত্র বললে সেই ক্ষেত্র বাদ যায়। আগের উৎস-সংশোধনের একই পূর্বধারণা-সহ উপসূত্র-ধর্ম এখানে স্পষ্ট হয়েছে।}
+% BN-SRC-590 TARGET-CORRECTION-END
+\end{cor}
+
+\begin{proof}
+  \olref{prop:normal-N2i-to-G2i}
+  অনুযায়ী প্রতিটি স্বাভাবিক
+  \Log{N2i}-!!{proof}-কে
+  \Log{G2i}-!!{proof}-এ
+  অনুবাদ করা যায়। প্রমাণটি
+  দেখলে বোঝা যায়,
+  \Log{N2i}-!!{proof}-এ থাকা
+  প্রতিটি !!{formula}
+  \Log{G2i}-!!{proof}-এও
+  থাকে। \Log{G2i}-তে
+  \Cut{} বিধি নেই; তাই
+  তার উপ-!!{formula}-ধর্ম আছে।
+\end{proof}
+% BN-NORM-174 TARGET-NORMALIZATION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{ভাষা-স্বাভাবিকীকরণ (BN-NORM-174):} দুটি প্রদর্শিত রূপান্তরের মাঝের ইংরেজি into সংযোগপদ বাংলা এর বদলে হয়েছে; সূত্র, বিধি ও শাখা অপরিবর্তিত।}
+% BN-NORM-174 TARGET-NORMALIZATION-END
+
+\end{document}

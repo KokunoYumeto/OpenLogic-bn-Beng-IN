@@ -6499,7 +6499,7 @@ for row in rows:
     )
     legacy_search_completeness_repairs = (
         row["unit_id"] == "OLP-0679"
-        and set(documented) == {f"BN-SRC-{n}" for n in range(591, 598)}
+        and set(documented) == {f"BN-SRC-{n}" for n in range(591, 600)}
         and source_math - target_math
         == collections.Counter({
             r"!\in\Delta": 1,
@@ -6509,8 +6509,12 @@ for row in rows:
             r"\Assign{R}{M}=\Setabs{\tuple{t_1,\dots,t_m}\in\Domain{M}^n}{R(t_1,\dots,t_n)\in\Theta}": 1,
             r"\Sat{M}{R(t_1,\dots,t_n)}": 1,
             r"R(t_1,\dots,t_n)\in\Theta": 1,
+            r"\Pi_{n+1}=\Pi_n',!B^k,!C^{k+1}": 1,
             r"\Lambda_n=\Lambda_n',!B\land!C": 1,
             r"\Pi_n\Sequent\Lambda'_n,!B\land!C": 1,
+            r"\Lambda_{n+1}=\Lambda_n',!B^k": 1,
+            r"\Lambda_{n+1}=\Lambda_n',!C^k": 1,
+            r"\Pi_{n+1}=\Pi_n',!B(c)^k": 1,
         })
         and target_math - source_math
         == collections.Counter({
@@ -6520,10 +6524,38 @@ for row in rows:
             r"\Assign{R}{M}=\Setabs{\tuple{t_1,\dots,t_m}\in\Domain{M}^m}{R(t_1,\dots,t_m)\in\Theta}": 1,
             r"\Sat{M}{R(t_1,\dots,t_m)}": 1,
             r"R(t_1,\dots,t_m)\in\Theta": 1,
+            r"\Pi_{n+1}=\Pi_n',!B^{k+1},!C^{k+2}": 1,
             r"\Lambda_n=\Lambda_n',(!B\land!C)^i": 1,
             r"\Pi_n\Sequent\Lambda'_n,(!B\land!C)^i": 1,
+            r"\Lambda_{n+1}=\Lambda_n',!B^{k+1}": 1,
+            r"\Lambda_{n+1}=\Lambda_n',!C^{k+1}": 1,
+            r"\Pi_{n+1}=\Pi_n',!B(c)^{k+1}": 1,
         })
     )
+    legacy_search_algorithm_repairs = False
+    if row["unit_id"] == "OLP-0683":
+        audited_algorithm = source
+        fixes = (
+            (r"\Axiom$!B^k, !C^{k+1}, \Pi", r"\Axiom$!B^{k+1}, !C^{k+2}, \Pi"),
+            (r"\Axiom$\Pi \fCenter \Lambda, !B^k$", r"\Axiom$\Pi \fCenter \Lambda, !B^{k+1}$"),
+            (r"\Axiom$\Pi \fCenter \Lambda, !C^k$", r"\Axiom$\Pi \fCenter \Lambda, !C^{k+1}$"),
+            (r"\Axiom$!B(c)^k, \Pi", r"\Axiom$!B(c)^{k+1}, \Pi"),
+            (r"above $\Pi \Sequent \Lambda, \lexists[x][!B(x)]$:",
+             r"above $\Pi \Sequent \Lambda, \lexists[x][!B(x)]^i$:"),
+            (r"\Axiom$\Pi \fCenter \Lambda, \lexists[x][!B(x)]^k, !B(t)^{k+1}",
+             r"\Axiom$\Pi \fCenter \Lambda, \lexists[x][!B(x)]^{k+1}, !B(t)^{k+2}"),
+            (r"\Axiom$\Pi \fCenter \Lambda, \lexists[x][!B(x)]^{k+1}, !B(t)^{k+2}$"
+             "\n" r"  \RightLabel{\LeftR{\lexists}}",
+             r"\Axiom$\Pi \fCenter \Lambda, \lexists[x][!B(x)]^{k+1}, !B(t)^{k+2}$"
+             "\n" r"  \RightLabel{\RightR{\lexists}}"),
+        )
+        for old, new in fixes:
+            assert audited_algorithm.count(old) == 1, old
+            audited_algorithm = audited_algorithm.replace(old, new, 1)
+        legacy_search_algorithm_repairs = (
+            set(documented) == {"BN-SRC-600", "BN-SRC-601"}
+            and mathparts(audited_algorithm) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6673,6 +6705,7 @@ for row in rows:
             legacy_segment_formula_prefix_fix,
             legacy_normal_translation_repairs,
             legacy_search_completeness_repairs,
+            legacy_search_algorithm_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -6816,9 +6849,19 @@ for row in rows:
         assert checked_target.count(r"\Domain{M}^n") == 0
         assert "প্রতিটি চলমান~$n$-এ" in checked_target
         tex_command_check = {
-            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(591, 598)],
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(591, 600)],
             "term_model_arity_repairs": True,
             "finite_failure_branch_condition": True,
+            "fair_non_atomic_indexing": True,
+        }
+    if row["unit_id"] == "OLP-0683":
+        assert legacy_search_algorithm_repairs
+        assert source.count(r"\RightLabel{\LeftR{\lexists}}") == 2
+        assert checked_target.count(r"\RightLabel{\LeftR{\lexists}}") == 1
+        assert checked_target.count(r"\RightLabel{\RightR{\lexists}}") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-600", "BN-SRC-601"],
+            "fresh_indices_and_right_existential_label": True,
         }
     checks = {
         "unit_id": row["unit_id"],

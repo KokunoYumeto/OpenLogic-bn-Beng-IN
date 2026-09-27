@@ -5875,6 +5875,18 @@ for row in rows:
         and source_math - target_math == collections.Counter({r"\tan(\pi(r-\nicefrac{1}{2})))": 1})
         and target_math - source_math == collections.Counter({r"\tan(\pi(r-\nicefrac{1}{2}))": 1})
     )
+    vitali_rotation_domain_fixes = (
+        row["unit_id"] == "OLP-0600"
+        and set(documented) == {"BN-SRC-472", "BN-SRC-473", "BN-SRC-474", "BN-SRC-475"}
+        and source_math - target_math == collections.Counter({
+            r"\rho\inR_1": 1,
+            r"\rho\inC": 2,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\rho\in\rotationsgroup_1": 1,
+            r"\rho\in\rotationsgroup": 2,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -5990,6 +6002,7 @@ for row in rows:
             choice_wellordering_stopping_fixes,
             countable_choice_union_index_fix,
             banach_tangent_parenthesis_fix,
+            vitali_rotation_domain_fixes,
         )
     )
     minimal_change_fileid_fix = (

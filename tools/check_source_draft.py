@@ -6911,6 +6911,21 @@ for row in rows:
             and not normalizations
             and mathparts(audited_g2c) == target_math
         )
+    legacy_g3c_rule_table_repairs = False
+    if row["unit_id"] == "OLP-0707":
+        audited_g3c = source
+        for old, new in (
+            (r"\lforall[x][!A(x)]\Gamma", r"\lforall[x][!A(x)], \Gamma"),
+            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
+            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
+        ):
+            assert audited_g3c.count(old) == 1, old
+            audited_g3c = audited_g3c.replace(old, new, 1)
+        legacy_g3c_rule_table_repairs = (
+            set(documented) == {"BN-SRC-654", "BN-SRC-655"}
+            and not normalizations
+            and mathparts(audited_g3c) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -7075,6 +7090,7 @@ for row in rows:
             legacy_g1c_caption_quantifier_fix,
             legacy_g1i_rule_table_repairs,
             legacy_g2c_rule_table_repairs,
+            legacy_g3c_rule_table_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7431,6 +7447,14 @@ for row in rows:
         tex_command_check = {
             "documented_source_corrections": ["BN-SRC-652", "BN-SRC-653"],
             "g2c_metadata_and_quantifier_caption": True,
+        }
+    if row["unit_id"] == "OLP-0707":
+        assert legacy_g3c_rule_table_repairs
+        assert checked_target.count(r"\Axiom$ !A(t), \lforall[x][!A(x)], \Gamma \fCenter \Delta$") == 1
+        assert checked_target.count(r"\ollabel{tab:G3c}") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-654", "BN-SRC-655"],
+            "g3c_universal_left_multiset_and_caption": True,
         }
     checks = {
         "unit_id": row["unit_id"],

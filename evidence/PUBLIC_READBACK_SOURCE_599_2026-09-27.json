@@ -1,0 +1,227 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T03:54:02.406754+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "25355c957cdafb7268060937fa738acd6508cd19",
+  "parent": "71f40d8f64c8eba18116b4d40d0d49ea3cad7d7a",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "1e6f5cbad173424b02e0d4b4ef1e686c0f413834",
+    "receipt": "PUBLIC_READBACK_SOURCE_590_2026-09-27.json",
+    "receipt_sha256": "4ec8ad6887957a58134001c7ac550a1dcac844b8ab0a24f8169c6aa8659d87d7"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/25355c957cdafb7268060937fa738acd6508cd19.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/25355c957cdafb7268060937fa738acd6508cd19",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 16020291,
+  "archive_sha256": "150439c55466b48ae4e731f6234212917af18e20cf5d686afebffc32f09d67e2",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/banach.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/banach.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/banach.tex",
+      "content_type": "text/plain",
+      "bytes": 7114,
+      "sha256": "f305df1df9ab6ccb5d3e0ddc982d4e669e78ce8f96f6daece94fd40238dab701"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/choice.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/choice.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/choice.tex",
+      "content_type": "text/plain",
+      "bytes": 379,
+      "sha256": "fcf7f8d396ec117ebc9e8ef63715b1fa70d69d753ab90402a55270f0dba67a8f"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/countablechoice.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/countablechoice.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/countablechoice.tex",
+      "content_type": "text/plain",
+      "bytes": 12934,
+      "sha256": "f7091c24adbe1290425e6fd081a2505faf45bbb4945868a0346fb4324b20e481"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/hartogs.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/hartogs.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/hartogs.tex",
+      "content_type": "text/plain",
+      "bytes": 5602,
+      "sha256": "2a339ce3c73879e72d84838208f9594e168a4349293a90d286c2a29e53dd361f"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 1134,
+      "sha256": "47d92b546e99441b4a0b70c22404e261abca20ab09f2d79f8deff8ffda2389a5"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/justifications.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/justifications.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/justifications.tex",
+      "content_type": "text/plain",
+      "bytes": 4586,
+      "sha256": "bf42f37cea858f8b893e3fbe8e379c7013a8a1b40258fe25951b2137021351bd"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/tarskiscott.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/tarskiscott.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/tarskiscott.tex",
+      "content_type": "text/plain",
+      "bytes": 5738,
+      "sha256": "0f57347dbe97e996a7f781c2a93941854cf32af09fb9ccec8621f1d212861dd9"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/vitali.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/vitali.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/vitali.tex",
+      "content_type": "text/plain",
+      "bytes": 21376,
+      "sha256": "bd8bd90d7364580df70ceb61726bcd356ee69667710ce455509391f0caadb570"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/wellorderingproblem.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/wellorderingproblem.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/25355c957cdafb7268060937fa738acd6508cd19/bn-Beng-IN/content/set-theory/choice/wellorderingproblem.tex",
+      "content_type": "text/plain",
+      "bytes": 7183,
+      "sha256": "c77220a27ac9f996a36aee2dd563dc4d5af876f37093035948c50638812041f2"
+    }
+  ],
+  "changed_files_verified": 22,
+  "translated_tex_files_in_commit": 9,
+  "draft_translated_total": 599,
+  "draft_untranslated_total": 123,
+  "segments": 6558,
+  "translated_segments": 5633,
+  "new_batch_segments": 113,
+  "new_batch_translated_segments": 110,
+  "new_batch_unchanged_segments": 3,
+  "source_correction_records": 482,
+  "new_source_correction_records": 13,
+  "translation_decisions": 422,
+  "provisional_translation_decisions": 400,
+  "translation_decision_occurrences": 37492,
+  "decisions_with_exact_source_wording": 402,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 599,
+    "blocks": 6558,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 8116,
+      "sha256": "f87806a1ed95115a8915c64030eaa882e73e8c3c7e6272a0ba053e9f7707aba3"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/choice/banach.tex",
+      "bytes": 7114,
+      "sha256": "f305df1df9ab6ccb5d3e0ddc982d4e669e78ce8f96f6daece94fd40238dab701"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/choice/choice.tex",
+      "bytes": 379,
+      "sha256": "fcf7f8d396ec117ebc9e8ef63715b1fa70d69d753ab90402a55270f0dba67a8f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/choice/countablechoice.tex",
+      "bytes": 12934,
+      "sha256": "f7091c24adbe1290425e6fd081a2505faf45bbb4945868a0346fb4324b20e481"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/choice/hartogs.tex",
+      "bytes": 5602,
+      "sha256": "2a339ce3c73879e72d84838208f9594e168a4349293a90d286c2a29e53dd361f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/choice/introduction.tex",
+      "bytes": 1134,
+      "sha256": "47d92b546e99441b4a0b70c22404e261abca20ab09f2d79f8deff8ffda2389a5"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/choice/justifications.tex",
+      "bytes": 4586,
+      "sha256": "bf42f37cea858f8b893e3fbe8e379c7013a8a1b40258fe25951b2137021351bd"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/choice/tarskiscott.tex",
+      "bytes": 5738,
+      "sha256": "0f57347dbe97e996a7f781c2a93941854cf32af09fb9ccec8621f1d212861dd9"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/choice/vitali.tex",
+      "bytes": 21376,
+      "sha256": "bd8bd90d7364580df70ceb61726bcd356ee69667710ce455509391f0caadb570"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/choice/wellorderingproblem.tex",
+      "bytes": 7183,
+      "sha256": "c77220a27ac9f996a36aee2dd563dc4d5af876f37093035948c50638812041f2"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 11025422,
+      "sha256": "888e981ee618494ce26a843e4f0418cac9909b7d11083ec0e37b298e61b957cd"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 361533,
+      "sha256": "9e2da557cef725618217bed83b1edfbdc256e353e9f3422d92c4f664ab665758"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SET_THEORY_CHOICE.md",
+      "bytes": 11049,
+      "sha256": "455b8f55714c2706841d395fad26889817e08e4b6a3904747db3ee01ee8ecbf9"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "fd0d9fb7a6569ff9a3a9baa518719e8ab2a5372e77d5695073d319ef00e38fb2"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 941375,
+      "sha256": "82911f57609fb37d7b128f111e7e1ff815f5f10926221033056288d115949286"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 396960,
+      "sha256": "dd0a83aa3550736b1b1df24b5f04757d4666d114d361b7acf6053998b3e44a20"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 22364029,
+      "sha256": "ef41fef2d30fc78dc9d38fbbd71b5d214d30d70712f0c86bd9b6a0a09e380b15"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 17470432,
+      "sha256": "6488b1a246eca377895b783582ab785a0d8738a9e58f3500858bcec55bdb963c"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1637117,
+      "sha256": "b3ca6145d026aecaa0fc697064b00dc255e8c608949cc3d9b2af736562ec8c5d"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 10284348,
+      "sha256": "d038ce38400c61ff05ff8c5e49c7a0283d771d7622a5d572c0a63cb95b8bd7c8"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 301854,
+      "sha256": "aabb978c9d57ed383c00a7e62c8a24d63f62ec10b615bd52e6d997dd0b4429de"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 294332,
+      "sha256": "267592d2e65cd36d61f9c1c83b10a9dcae339e8806cd27cff04134d3f32b1c97"
+    }
+  ]
+}

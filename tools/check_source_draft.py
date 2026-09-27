@@ -7021,6 +7021,27 @@ for row in rows:
             and not normalizations
             and mathparts(audited_translations) == target_math
         )
+    final_induction_repairs = False
+    if row["unit_id"] == "OLP-0718":
+        audited_induction = source
+        assert audited_induction.count("!!^a") == 16
+        audited_induction = audited_induction.replace("!!^a", "!A")
+        for old, new in (
+            (r"2k + k + 2k +2", r"k^2 + k + 2k +2"),
+            (r"\tag{Assumption}", r"\tag{\text{অনুমান}}"),
+            (r"\tag{Add $k+1$ to both sides}", r"\tag{\text{উভয় পক্ষে }k+1\text{ যোগ করি}}"),
+        ):
+            assert audited_induction.count(old) == 1, old
+            audited_induction = audited_induction.replace(old, new, 1)
+        final_induction_repairs = (
+            set(documented) == {f"BN-SRC-{n}" for n in range(678, 683)}
+            and set(normalizations) == {"BN-NORM-182"}
+            and mathparts(audited_induction) == target_math
+            and r"\documentclass[../../../include/open-logic-section]{subfiles}" in checked_target
+            and "সব আর্গুমেন্টের" in checked_target
+            and "শূন্য থেকে" in checked_target
+            and "!!^a" not in checked_target
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -7191,6 +7212,7 @@ for row in rows:
             legacy_mg3i_rule_table_repairs,
             legacy_sequent_rules_proofs_repairs,
             legacy_sequent_translation_repairs,
+            final_induction_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7312,6 +7334,37 @@ for row in rows:
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\olref{tab:tN3ip}": 1})
     )
+    final_propositional_reference_repairs = False
+    if row["unit_id"] == "OLP-0714":
+        assert source.count(r"\olref[axd]{prop:phi}") == 2
+        assert source.count(r"\olref[axd]{prop:prov-incons}") == 1
+        audited_references = source.replace(
+            r"\olref[axd]{prop:phi}",
+            r"\olref[pl][axd][prv]{prop:provability-exhaustive}",
+        ).replace(
+            r"\olref[axd]{prop:prov-incons}",
+            r"\olref[pl][axd][prv]{prop:prov-incons}",
+        )
+        final_propositional_reference_repairs = (
+            set(documented) == {"BN-SRC-674", "BN-SRC-675"}
+            and not normalizations
+            and source_math == target_math
+            and controls(audited_references) == controls(checked_target)
+        )
+    elif row["unit_id"] == "OLP-0715":
+        assert source.count(r"\olref[sem]{prop:semanticalfacts}") == 1
+        audited_references = source.replace(
+            r"\olref[sem]{prop:semanticalfacts}",
+            r"\olref[pl][syn][sem]{prop:semanticalfacts}",
+        )
+        final_propositional_reference_repairs = (
+            set(documented) == {"BN-SRC-676", "BN-SRC-677"}
+            and not normalizations
+            and source_math == target_math
+            and controls(audited_references) == controls(checked_target)
+            and "দ্বিতীয় দফা" in checked_target
+            and "প্রমাণের গঠনের উপর আরোহ" in checked_target
+        )
     controls_ok = (
         controls(source) == controls(checked_target)
         or axd_control_fix
@@ -7334,6 +7387,7 @@ for row in rows:
         or legacy_mg3i_table_label_fix
         or legacy_sequent_translation_reference_fix
         or legacy_tn3_table_reference_fix
+        or final_propositional_reference_repairs
     )
     legacy_cut_intro_split_token_fix = (
         row["unit_id"] == "OLP-0659"

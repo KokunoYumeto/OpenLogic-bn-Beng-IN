@@ -1,0 +1,131 @@
+% Part: propositional-logic
+% Chapter: propositional-logic
+% Section: completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{prp}{com}
+
+\olsection{বচনীয় যুক্তিবিদ্যার পূর্ণতা}
+
+\begin{defn}
+\ollabel{def:MaxCon}
+!!{formula}s-এর একটি সেট $\Gamma$ \emph{সর্বাধিক সঙ্গত}, যদি সেটি
+সঙ্গত হয় এবং কোনো সঙ্গত সেট $\Delta$-র জন্য $\Gamma
+\subseteq \Delta$ হলে $\Gamma = \Delta$ হয়।
+\end{defn}
+
+\begin{lem}[সত্যতার সহায়ক উপপাদ্য]
+  \ollabel{lem:truth}
+ধরা যাক $\Gamma$ সর্বাধিক সঙ্গত। তাহলে:
+\begin{enumerate}
+\item \ollabel{lem:truth-1} $!A \in \Gamma$ যদি এবং কেবল যদি $\lnot !A
+  \notin \Gamma$;
+\item \ollabel{lem:truth-2} $\Gamma \Proves !A$ যদি এবং কেবল যদি $!A \in \Gamma$;
+\item \ollabel{lem:truth-3} $!A \lif !B \in \Gamma$ যদি এবং কেবল যদি
+  হয় $!A \notin \Gamma$, অথবা $!B \in \Gamma$।
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+\begin{enumerate}
+\item ধরা যাক $!A \in \Gamma$। যদি $\lnot !A \in \Gamma$-ও হয়,
+  তবে $\Gamma$ অসঙ্গত। আবার $!A$ ও $\lnot!A$ কোনোটিই
+  $\Gamma$-তে না থাকলে \olref[pl][axd][prv]{prop:provability-exhaustive}
+  অনুসারে $\Gamma\cup\{!A\}$ ও $\Gamma \cup \{\lnot !A\}$-র
+  অন্তত একটি সঙ্গত। তখন $\Gamma$ সর্বাধিক হতে পারে না।
+  বিপরীত দিকও একইভাবে প্রমাণিত হয়।
+\item $!A \in \Gamma$ হলে অবশ্যই $\Gamma \Proves !A$।
+  অন্যদিকে, ধরা যাক $\Gamma \Proves !A$। $!A \notin \Gamma$ হলে
+  \olref{lem:truth-1} অনুসারে $\lnot !A \in \Gamma$।
+  তখন $\Gamma \Proves !A$ ও $\Gamma \Proves \lnot !A$ উভয়ই হয়,
+  যা সঙ্গতির বিরোধী।
+\item অনুশীলন।
+\end{enumerate}
+\end{proof}
+
+\olref{lem:truth}\olref{lem:truth-2}-এর বাঁ-থেকে-ডান দিকটি দেখায় যে
+$\Gamma$ \emph{নিষ্পাদনগতভাবে বদ্ধ}; অর্থাৎ, প্রত্যেক~$!A$-র জন্য
+$\Gamma \Proves !A$ হলে $!A \in \Gamma$।
+
+\begin{prob}
+  \olref{lem:truth}-এর প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\begin{thm}[পূর্ণতা]
+\ollabel{thm:completeness}
+$\Gamma$ সঙ্গত হলে $\Gamma$ পরিতৃপ্তিযোগ্য।
+\end{thm}
+
+\begin{proof}
+ভাষার সব !!{formula}s-এর একটি সম্পূর্ণ তালিকা
+$!A_0$, $!A_1$,~\dots ধরি। নিচের সংজ্ঞায় !!{formula}s-এর সেটের
+একটি বর্ধমান অনুক্রম $\Gamma_0$, $\Gamma_1$,~\dots পুনরাবৃত্তভাবে
+গঠন করি:
+\begin{align*}
+\Gamma_0 & = \Gamma\\
+\Gamma_{n+1} &  =
+\begin{cases}
+  \Gamma_n \cup \{!A_n\} & \text{যদি $\Gamma_n \cup \{!A_n\}$ সঙ্গত হয়;}\\
+  \Gamma_n \cup \{\lnot !A_n\} & \text{অন্যথায়}.
+\end{cases}
+\end{align*}
+তারপর সংজ্ঞা দিই:
+\[
+\Gamma^* = \bigcup_{0\le n}\Gamma_n.
+\]
+প্রমাণের পরবর্তী অংশে পর্যায়ক্রমে নিচের তথ্যগুলি প্রতিষ্ঠা করা হয়:
+\begin{enumerate}
+\item প্রত্যেক $n$-এর জন্য $\Gamma_n$ সঙ্গত
+  ($n$-এর উপর আরোহ এবং
+  \olref[pl][axd][prv]{prop:provability-exhaustive} ব্যবহার করে);
+\item $\Gamma^*$ সঙ্গত;
+\item $\Gamma^*$ সর্বাধিক।
+\end{enumerate}
+এরপর একটি সত্যমান-আরোপ $v$ সংজ্ঞায়িত করি, যেখানে
+$v(p_i) = \True$ যদি এবং কেবল যদি $p_i \in \Gamma^*$।
+$!A$-র উপর আরোহে দেখানো হয় যে আরও জটিল !!{sentence}s-এর ক্ষেত্রেও
+$\Gamma^*$-তে সদস্য হওয়া ও $v$ অনুসারে সত্য হওয়া মিলে যায়:
+$\overline{v}(!A) = \True$ যদি এবং কেবল যদি $!A \in \Gamma^*$।
+বিশেষত, $v$ সেট $\Gamma^*$-কে পরিতৃপ্ত করে। আবার
+$\Gamma \subseteq \Gamma^*$ বলে $\Gamma$-ও পরিতৃপ্তিযোগ্য,
+যা প্রমাণ করা প্রয়োজন ছিল।
+\end{proof}
+
+\begin{cor}
+$\Gamma \Entails !A$ হলে $\Gamma \Proves !A$।
+\end{cor}
+
+\begin{proof}
+$\Gamma\Proves/ !A$ হলে
+\olref[pl][axd][prv]{prop:prov-incons} অনুসারে
+$\Gamma \cup \{\lnot !A\}$ সঙ্গত।
+তাই পূর্ণতা উপপাদ্য অনুসারে $\Gamma \cup \{\lnot !A\}$
+পরিতৃপ্তিযোগ্য; ফলে $\Gamma \Entails/ !A$।
+\end{proof}
+
+\begin{prop}[সংহতি উপপাদ্য]
+\ollabel{prop:compactness}
+$\Gamma$ পরিতৃপ্তিযোগ্য যদি এবং কেবল যদি $\Gamma$-র প্রত্যেক
+\emph{সসীম} উপসেট $\Gamma_0$ পরিতৃপ্তিযোগ্য হয়।
+\end{prop}
+
+\begin{proof}
+$\Gamma$ অপরিতৃপ্তিযোগ্য যদি এবং কেবল যদি সেটি অসঙ্গত হয়,
+যদি এবং কেবল যদি $\Gamma$-র কোনো সসীম উপসেট $\Gamma_0$
+অসঙ্গত হয়, যদি এবং কেবল যদি $\Gamma$-র কোনো সসীম উপসেট
+$\Gamma_0$ অপরিতৃপ্তিযোগ্য হয়।
+\end{proof}
+
+\begin{cor}
+$\Gamma \Entails !A$ যদি এবং কেবল যদি $\Gamma$-র কোনো সসীম উপসেট
+$\Gamma_0$-র জন্য $\Gamma_0 \Entails !A$ হয়।
+\end{cor}
+% BN-SRC-674 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-674):} উৎসের দুই prop:phi নির্দেশ হিমায়িত স্বতঃসিদ্ধভিত্তিক অধ্যায়ে নেই। সংশ্লিষ্ট ফল prop:provability-exhaustive; তার পূর্ণ অংশ/অধ্যায়/বিভাগ-নির্দেশ বসানো হয়েছে।} % BN-SRC-674 TARGET-CORRECTION-END
+% BN-SRC-675 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-675):} প্রমাণযোগ্যতা ও অসঙ্গতির prop:prov-incons ফলের নির্দেশে সঠিক অংশ, অধ্যায় ও বিভাগ বসানো হয়েছে। উৎসের একমাত্র axd বিকল্পটি বিভাগ হিসেবে পড়ে ভুল ঠিকানা দিত।} % BN-SRC-675 TARGET-CORRECTION-END
+
+\end{document}

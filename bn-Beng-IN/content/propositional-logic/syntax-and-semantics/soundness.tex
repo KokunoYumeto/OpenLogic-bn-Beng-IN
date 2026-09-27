@@ -1,0 +1,39 @@
+% Part: propositional-logic
+% Chapter: propositional-logic
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{prp}{snd}
+
+\olsection{বচনীয় যুক্তিবিদ্যার বিশুদ্ধতা}
+
+\begin{thm}[বিশুদ্ধতা]
+\ollabel{thm:soundness}
+$\Gamma\Proves!A$ হলে
+$\Gamma \Entails !A$।
+\end{thm}
+
+\begin{proof}
+পূর্বধারণাসমেত প্রমাণের গঠনের উপর আরোহ করি।
+$!A$ স্বতঃসিদ্ধ হলে $\Entails !A$; সুতরাং $\Gamma \Entails!A$-ও হয়।
+একইভাবে, $!A \in \Gamma$ হলে $\Gamma \Entails!A$।
+আরোহী ধাপে ধরা যাক $!C$ ও $!C\lif!A$ থেকে
+\emph{মোডাস পোনেন্স} দ্বারা $!A$ পাওয়া যায়। আরোহের অনুমান অনুসারে
+$!C\lif !A$ ও $!C$-র জন্য উপপাদ্যটি সিদ্ধ।
+\olref[pl][syn][sem]{prop:semanticalfacts}-এর দ্বিতীয় দফা থেকে
+প্রয়োজনীয় ফল পাওয়া যায়।
+\end{proof}
+
+\begin{cor}
+$\Gamma$ পরিতৃপ্তিযোগ্য হলে $\Gamma$ সঙ্গত।
+তাই বচনীয় যুক্তিবিদ্যা সঙ্গত।
+\end{cor}
+% BN-SRC-676 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-676):} উপপাদ্যটি পূর্বধারণা থেকে প্রমাণের জন্য; তাই উৎসের “উপপাদ্যের উপর আরোহ” কথাটি প্রমাণের গঠনের উপর আরোহ হিসেবে স্পষ্ট করা হয়েছে।} % BN-SRC-676 TARGET-CORRECTION-END
+% BN-SRC-677 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-677):} অর্থগত মোডাস পোনেন্স সংশ্লিষ্ট প্রস্তাবের দ্বিতীয় দফা, তৃতীয়টি নয়। নির্দেশে সঠিক অংশ/অধ্যায়/বিভাগও বসানো হয়েছে।} % BN-SRC-677 TARGET-CORRECTION-END
+
+\end{document}

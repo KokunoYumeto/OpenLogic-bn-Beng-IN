@@ -6692,6 +6692,32 @@ for row in rows:
             and set(normalizations) == {"BN-NORM-180"}
             and mathparts(audited_types) == target_math
         )
+    legacy_admissible_derivable_repairs = False
+    legacy_admissible_end_sequent_token_fix = False
+    if row["unit_id"] == "OLP-0698":
+        audited_rules = source
+        fixes = (
+            (r"\UnaryInf$!A \land !B \Gamma \fCenter \Delta$",
+             r"\UnaryInf$!A \land !B, \Gamma \fCenter \Delta$", 1),
+            (r"\BinaryInf$\Gamma \fCenter \Delta, !A \liff !B$",
+             r"\BinaryInf$\Gamma, !A \liff !B \fCenter \Delta$", 2),
+        )
+        for old, new, expected_count in fixes:
+            assert audited_rules.count(old) == expected_count, old
+            audited_rules = audited_rules.replace(old, new, 1)
+        legacy_admissible_derivable_repairs = (
+            set(documented) == {"BN-SRC-624", "BN-SRC-625", "BN-SRC-626"}
+            and not normalizations
+            and mathparts(audited_rules) == target_math
+        )
+        legacy_admissible_end_sequent_token_fix = (
+            legacy_admissible_derivable_repairs
+            and source.count("The end-!!{formula} of the new !!{proof}") == 1
+            and semantic_tokens(source) - semantic_tokens(checked_target)
+            == collections.Counter({"!!{formula}": 1})
+            and semantic_tokens(checked_target) - semantic_tokens(source)
+            == collections.Counter()
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6848,6 +6874,7 @@ for row in rows:
             legacy_proof_term_reduction_repairs,
             legacy_sequent_nd_example_repairs,
             legacy_types_constructor_repairs,
+            legacy_admissible_derivable_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7112,6 +7139,17 @@ for row in rows:
             "documented_language_normalization": "BN-NORM-180",
             "typed_constructors_and_tn3_reference": True,
         }
+    if row["unit_id"] == "OLP-0698":
+        assert legacy_admissible_derivable_repairs
+        assert legacy_admissible_end_sequent_token_fix
+        assert checked_target.count(r"\UnaryInf$!A \land !B, \Gamma \fCenter \Delta$") == 2
+        assert checked_target.count(r"\UnaryInf$!A \land !B \Gamma \fCenter \Delta$") == 0
+        assert checked_target.count(r"\BinaryInf$\Gamma, !A \liff !B \fCenter \Delta$") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-624", "BN-SRC-625", "BN-SRC-626"],
+            "contraction_conclusion_and_biconditional_side": True,
+            "end_sequent_named_correctly": True,
+        }
     checks = {
         "unit_id": row["unit_id"],
         "source_blocks": len(source_blocks),
@@ -7128,6 +7166,7 @@ for row in rows:
             or second_order_syntax_semantics_token_fix
             or second_order_metatheory_token_fix
             or legacy_cut_intro_split_token_fix
+            or legacy_admissible_end_sequent_token_fix
         ),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),
         "documented_source_corrections": documented,

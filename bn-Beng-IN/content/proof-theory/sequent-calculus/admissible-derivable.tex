@@ -1,0 +1,373 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: admissible-derivable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{adm}
+
+\olsection{অনুমোদনযোগ্য ও নিষ্পাদনযোগ্য বিধি}
+
+প্রমাণতত্ত্বের অনেক ফল এই প্রশ্ন নিয়ে,
+অথবা এই প্রশ্নের ফল ব্যবহার করে:
+কোনো নির্দিষ্ট বিধি দিয়ে যা কিছু
+!!{prove}d করা যায়, সেই বিধি ছাড়াও
+কি তা !!{prove}d করা যায়? সবচেয়ে
+পরিচিত উদাহরণ কর্তন-বর্জন উপপাদ্য।
+এতে দেখা যায়, \Cut{}-সহ কোনো
+সিকোয়েন্ট ব্যবস্থায় !!{prove}d
+করা যায় এমন যেকোনো সিকোয়েন্ট
+\Cut ছাড়াও !!{prove}d করা যায়।
+এই ধর্ম এত গুরুত্বপূর্ণ যে এর
+একটি নাম আছে।
+
+\begin{defn}
+সিকোয়েন্ট ব্যবস্থায় বিধি~$R$
+\emph{অনুমোদনযোগ্য} যদি সেই ব্যবস্থা
+ও $R$ একসঙ্গে ব্যবহার করে প্রমাণযোগ্য
+প্রত্যেক সিকোয়েন্ট $R$ ছাড়াও
+প্রমাণযোগ্য হয়।
+\end{defn}
+
+\begin{ex}\ollabel{ex:land-deriv}
+$\LeftR{\land}$ বিধি \Log{G1c} ও
+\Log{G3c}-তে ভিন্ন রূপে আছে।
+\Log{G1c}-তে দুটি রূপ: একটির
+পূর্বধারণায় প্রধান !!{formula}~$!A \land !B$-এর
+বাঁ যৌগাংশ~$!A$, অন্যটির
+পূর্বধারণায় ডান যৌগাংশ~$!B$:
+\[
+\Axiom$ !A, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_1$}
+\UnaryInf$ !A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\qquad
+\Axiom$!B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_2$}
+\UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+অন্যদিকে \Log{G3c}-তে একটিই বিধি:
+\[
+\Axiom$ !A, !B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_3$}
+\UnaryInf$ !A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+এবার প্রশ্ন: \Log{G3c}-র
+$\LeftR{\land}_3$ বিধি কি
+\Log{G1c}-তে অনুমোদনযোগ্য?
+হ্যাঁ। $\LeftR{\land}_3$-এর
+যেকোনো অনুমানকে শুধু \Log{G1c}-র
+বিধি দিয়ে সরাসরি অনুকরণ করা যায়।
+$\LeftR{\land}_1$ ও
+$\LeftR{\land}_2$-এর সঙ্গে
+গঠনগত বিধি~$\LeftR{\Contraction}$-ও লাগবে:
+\[
+\Axiom$!A, !B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_1$}
+\UnaryInf$!A \land !B, !B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_2$}
+\UnaryInf$!A \land !B, !A \land !B, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\Contraction}}
+\UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+% BN-SRC-624 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-624):} ∧-বাঁ বিধির অনুকরণের শেষ সিকোয়েন্টে উৎসে \( !A\land !B \Gamma \) লেখা; প্রধান সূত্র ও অবশিষ্ট প্রসঙ্গ আলাদা করতে \( !A\land !B,\Gamma \) করা হয়েছে।}
+% BN-SRC-624 TARGET-CORRECTION-END
+\end{ex}
+
+অন্য বিধি দিয়ে কোনো বিধির অনুমান
+অনুকরণ করা তার অনুমোদনযোগ্যতা
+দেখানোর একটি উপায়। তবে একমাত্র
+উপায় নয়: কিছু বিধি অনুমোদনযোগ্য,
+কিন্তু এভাবে অনুকরণযোগ্য নয়।
+যেগুলি অনুকরণযোগ্য, সেগুলিকে
+\emph{নিষ্পাদনযোগ্য} বলে।
+
+\begin{defn}
+বিধি~$R$,
+\[
+\AxiomC{$S_1$}
+\AxiomC{$\dots$}
+\AxiomC{$S_n$}
+\RightLabel{$R$}
+\TrinaryInfC{$S$}
+\DisplayProof
+\]
+ব্যবস্থাটিতে \emph{নিষ্পাদনযোগ্য}
+যদি ব্যবস্থার বিধি ও স্বতঃসিদ্ধের
+সঙ্গে $S_1$, \dots,~$S_n$ রূপের
+অতিরিক্ত প্রারম্ভিক সিকোয়েন্ট
+ব্যবহার করে সিদ্ধান্ত-সিকোয়েন্ট~$S$-এর
+একটি ছকভিত্তিক !!{proof} থাকে।
+\end{defn}
+
+\olref{ex:land-deriv}-এর !!{proof}
+দেখায় যে $\LeftR{\land}_3$ হলো
+\Log{G1c}-তে নিষ্পাদনযোগ্য বিধি।
+এই !!{proof}-টি
+$\LeftR{\land}_3$-এর
+পূর্বধারণাগুলিকে প্রারম্ভিক
+সিকোয়েন্ট ধরে, কেবল \Log{G1c}-র
+বিধি দিয়ে, $\LeftR{\land}_3$-এর
+সিদ্ধান্তের একটি
+ছকভিত্তিক !!{proof}। (\Log{G1c}-র
+কোনো স্বতঃসিদ্ধ ব্যবহার হয়নি।)
+
+\begin{prop}\ollabel{prop:lor-G3-adm}
+\Log{G3c}-র $\LeftR{\land}$
+ও $\RightR{\lor}$ বিধি \Log{G1c}-তে
+নিষ্পাদনযোগ্য।
+\end{prop}
+
+\begin{proof}
+  $\LeftR{\land}$-এর প্রমাণ
+  \olref{ex:land-deriv}-এ আছে।
+  $\RightR{\lor}$-এর প্রমাণ
+  অনুশীলন হিসেবে রইল।
+\end{proof}
+
+\begin{prob}
+\Log{G3c}-র $\RightR{\lor}$
+বিধি \Log{G1c}-তে নিষ্পাদনযোগ্য,
+দেখাও।
+\end{prob}
+
+\begin{prob}
+ধরি, $\liff$ একটি সংজ্ঞায়িত
+!!{operator}: $!A \liff !B$ হলো
+$(!A \lif !B) \land (!B \lif !A)$-এর
+সংক্ষিপ্ত রূপ। দেখাও, এই বিধিগুলি
+\begin{enumerate}
+\item \Axiom$\Gamma, !A, !B \fCenter \Delta$
+\Axiom$\Gamma \fCenter \Delta, !A, !B$
+\RightLabel{\LeftR{\liff}}
+\BinaryInf$\Gamma, !A \liff !B \fCenter \Delta$
+\DisplayProof
+\item
+\Axiom$!A, \Gamma \fCenter \Delta, !B$
+\Axiom$!B, \Gamma \fCenter \Delta, !A$
+\RightLabel{\RightR{\liff}}
+\BinaryInf$\Gamma \fCenter \Delta, !A \liff !B$
+\DisplayProof
+\end{enumerate}
+(ক)~\Log{G1c} ও (খ)~\Log{G3c}-তে
+নিষ্পাদনযোগ্য।
+\end{prob}
+% BN-SRC-625 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-625):} প্রথম দ্বিশর্তক বিধি \(\LeftR{\liff}\), অথচ উৎসের সিদ্ধান্তে \( !A\liff !B \) ডান দিকে ছিল। দুটি পূর্বধারণা দ্বিশর্তক সত্য হলে বাম-ব্যবহারের ক্ষেত্র; সিদ্ধান্তে \( \Gamma,!A\liff !B\Sequent\Delta \) করা হয়েছে। দ্বিতীয় \(\RightR{\liff}\) বিধি অপরিবর্তিত।}
+% BN-SRC-625 TARGET-CORRECTION-END
+
+
+\begin{ex}\ollabel{ex:weak-adm}
+\Log{G1c}-র $\RightR{\Weakening}$
+বিধি,
+\[
+\Axiom$ \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A$
+\DisplayProof
+\]
+\Log{G3c}-তে অনুমোদনযোগ্য।
+প্রমাণের ধারণা সহজ: ধরি,
+\Log{G3c}-তে পূর্বধারণা
+$\Gamma \Sequent \Delta$-র
+!!a{proof}~$\pi$ আছে।
+$\pi$-র প্রত্যেক সিকোয়েন্টের
+ডান দিকে !!{formula}~$!A$ যোগ করি।
+স্বতঃসিদ্ধগুলি স্বতঃসিদ্ধই থাকে,
+সঠিক অনুমানগুলিও সঠিক থাকে।
+নতুন !!{proof}-এর অন্তিম
+সিকোয়েন্ট হলো $\Gamma \Sequent
+\Delta, !A$।
+% BN-SRC-626 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-626):} উৎসে নতুন প্রমাণের অন্তিম বস্তুটিকে end-formula বলা হয়েছে, কিন্তু প্রদর্শিত \(\Gamma\Sequent\Delta,!A\) একটি সিকোয়েন্ট; অন্তিম সিকোয়েন্ট বলা হয়েছে।}
+% BN-SRC-626 TARGET-CORRECTION-END
+
+তবে $\RightR{\Weakening}$
+\Log{G3c}-তে নিষ্পাদনযোগ্য নয়।
+ধরি উলটোটি সত্য: \Log{G3c}-র
+স্বতঃসিদ্ধ ও বিধির সঙ্গে অতিরিক্ত
+প্রারম্ভিক সিকোয়েন্ট~$\Gamma \Sequent \Delta$
+নিয়ে $\Gamma \Sequent
+\Delta, !A$-এর !!a{proof} পাওয়া যায়।
+$\RightR{\Weakening}$ নিষ্পাদনযোগ্য
+হতে হলে এই !!{proof} সম্পূর্ণ
+ছকভিত্তিক হতে হবে। তখন $\Gamma$
+ও~$\Delta$ বাদ দিয়ে সেটি
+$\Sequent !A$-এর !!a{proof}-এ
+পরিণত করা যেত। অতিরিক্ত প্রারম্ভিক
+সিকোয়েন্ট~$\Gamma \Sequent \Delta$
+তখন শূন্য সিকোয়েন্ট~$\quad \Sequent \quad$
+হত। শূন্য সিকোয়েন্টে কোনো
+!!{formula}s নেই, অথচ
+\Log{G3c}-র প্রতিটি বিধির
+পূর্বধারণায় অন্তত একটি সক্রিয়
+!!{formula} লাগে। তাই এই
+ছকভিত্তিক !!{proof}-এ শূন্য
+সিকোয়েন্ট কোনো অনুমানের
+পূর্বধারণা হতে পারে না। ফলে
+অতিরিক্ত $\Gamma \Sequent \Delta$
+প্রারম্ভিক সিকোয়েন্টটি ব্যবহার
+না করলেই কেবল !!{proof}-টি ছকভিত্তিক
+হতে পারে। অন্য কথায়, কেবল
+\Log{G3c}-র স্বতঃসিদ্ধ ও বিধিতে
+$\Gamma \Sequent \Delta, !A$-এর
+ছকভিত্তিক নিষ্পাদন থাকত; এই রূপের
+প্রত্যেক সিকোয়েন্ট \Log{G3c}-তে
+!!a{proof} পেত। কিন্তু
+\Log{G3c} বিশুদ্ধ:
+সব !!{structure}-তে সত্য
+সিকোয়েন্টই কেবল !!{prove}
+করতে পারে। $\Gamma = \Delta
+= \emptyset$ এবং
+$!A \ident \lfalse$ নিলে
+\Log{G3c}-কে যেমন
+$\quad \Sequent \lfalse$
+!!{prove} করতে হত; বাস্তবে
+তা পারে না।
+\end{ex}
+
+\Log{G3c}-তে শিথিলীকরণ যে
+অনুমোদনযোগ্য, তার একটি আরোহী
+প্রমাণ এবার দিই। স্বজ্ঞাত যুক্তিটি
+আসলে সামান্য শক্তিশালী ফল দেখায়:
+$\pi$-র প্রত্যেক সিকোয়েন্টের
+ডান দিকে $!A$ যোগ করলেও
+!!{proof}-এর গঠন বদলায় না,
+বিশেষত উচ্চতা বাড়ে না। এটি
+গুরুত্বপূর্ণ বলে আলাদা সংজ্ঞা দিই।
+
+\begin{defn}
+বিধি~$R$,
+\[
+\AxiomC{$S_1$}
+\AxiomC{$\dots$}
+\AxiomC{$S_n$}
+\RightLabel{$R$}
+\TrinaryInfC{$S$}
+\DisplayProof
+\]
+ব্যবস্থাটিতে \emph{!!{height}-সংরক্ষণকারী
+অনুমোদনযোগ্য} (বা
+\emph{!!{hp}-অনুমোদনযোগ্য}) যদি
+$i = 1$, \dots,~$n$-এর প্রত্যেকটির
+জন্য $\Proves[h_i] S_i$ হলে
+$m = \max(h_1, \dots, h_n)$ রেখে
+$\Proves_m S$ হয়।
+\end{defn}
+
+খেয়াল করো, কোনো বিধি
+!!{height}-সংরক্ষণকারী
+অনুমোদনযোগ্য হতে এটুকুই যথেষ্ট:
+পূর্বধারণা~$S_i$-গুলির
+!!{proof}s~$\pi_i$-র
+!!{height}~$h_i = \pheight{\pi_i}$
+হলে সিদ্ধান্তের এমন
+!!a{proof}~$\pi$ থাকবে যার
+!!{height}~$\pheight{\pi}$
+ওই~$h_i$-গুলির সর্বাধিক মানের
+বেশি নয়। বিশেষত একটিমাত্র
+পূর্বধারণা~$S_1$ থাকলে
+$\pheight{\pi} \le \pheight{\pi_1}$
+হলেই চলে। $\RightR{\Weakening}$
+ও $\LeftR{\Weakening}$-এর
+ক্ষেত্রে আসলে $\pheight{\pi}
+= \pheight{\pi_1}$, কিন্তু
+সমতা আবশ্যক নয়।
+
+\begin{prop}\ollabel{prop:weak-G3c-adm}
+\Log{G1c}-র $\RightR{\Weakening}$
+ও $\LeftR{\Weakening}$ বিধি
+\Log{G3c}-তে !!{height}-সংরক্ষণকারী
+অনুমোদনযোগ্য।
+\end{prop}
+
+\begin{proof}
+  দেখাতে হবে, $\Log{G3c} \Proves
+  \Gamma \Sequent \Delta$-এর
+  !!{proof}~$\pi$-র !!{height}
+  $\pheight{\pi} = n$ হলে
+  $\Gamma \Sequent \Delta, !A$-এর
+  \Log{G3c}-!!{proof}~$\pi'$
+  আছে, যার $\pheight{\pi'} = n$।
+  $n$-এর উপর আরোহ করি।
+  $n=0$ হলে $\pi$ কেবল
+  $\Gamma \Sequent \Delta$
+  স্বতঃসিদ্ধ—অর্থাৎ কোনো
+  আণবিক $!C$ একই সঙ্গে
+  $\Gamma$ ও~$\Delta$-তে আছে।
+  তাই $\Gamma \Sequent \Delta, !A$-ও
+  স্বতঃসিদ্ধ। $n = \pheight{\pi} >0$
+  হলে !!{proof}~$\pi$-র
+  একটি শেষ অনুমান আছে। শেষ
+  বিধি অনুযায়ী ক্ষেত্র ভাগ করি;
+  এখানে একটিই উদাহরণ দিই।
+  ধরি, শেষ বিধি $\RightR{\land}$।
+  তখন $\Delta = \Delta', !B \land !C$;
+  শেষ অনুমানের অব্যবহিত
+  উপ-!!{proof}s $\pi_1$ ও~$\pi_2$-এর
+  অন্তিম সিকোয়েন্ট যথাক্রমে
+  $\Gamma \Sequent \Delta', !B$
+  ও $\Gamma \Sequent \Delta', !C$।
+  অর্থাৎ $\pi$-র রূপ:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma \fCenter \Delta', !B$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$\Gamma \fCenter \Delta', !C$
+  \RightLabel{\RightR{\land}}
+  \BinaryInf$\Gamma \fCenter \Delta', !B \land !C$
+  \DisplayProof
+  \]
+  আরও, $n =
+  \max(\pheight{\pi_1}, \pheight{\pi_2}) + 1$।
+  তাই $\pheight{\pi_1} < n$
+  ও $\pheight{\pi_2} < n$;
+  আরোহের অনুমান প্রযোজ্য।
+  $\Gamma \Sequent
+  \Delta', !B, !A$ এবং
+  $\Gamma \Sequent \Delta', !C, !A$-এর
+  !!{proof}s $\pi_1'$ ও~$\pi_2'$
+  আছে। $\RightR{\land}$ প্রয়োগে
+  $\Gamma \Sequent \Delta',
+  !B \land !C, !A$-এর
+  !!a{proof}~$\pi'$ পাই:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$\Gamma \fCenter \Delta', !B, !A$
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$\Gamma \fCenter \Delta', !C, !A$
+  \RightLabel{\RightR{\land}}
+  \BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !A$
+  \DisplayProof
+  \]
+  এখানে $\pheight{\pi'} =
+  \max(\pheight{\pi_1'}, \pheight{\pi_2'}) + 1 = \max(\pheight{\pi_1},
+  \pheight{\pi_2}) + 1 = \pheight{\pi}$।
+\end{proof}
+
+\olref{prop:weak-G3c-adm} খুব
+কাজে লাগে। তার পুনঃপ্রয়োগের
+জন্য একটি লিখনরীতি নিই:
+$\pi$ যদি $\Gamma \Sequent \Delta$-র
+!!a{proof} হয়, তাহলে বাঁ দিকে
+$\Pi$-র সব !!{formula}s যোগে
+শিথিলীকরণের অনুমোদনযোগ্যতা
+এবং ডান দিকে $\Lambda$-র সব
+!!{formula}s যোগে একই ধর্ম
+প্রয়োগের ফলকে
+$\pi[\Pi \Sequent \Lambda]$
+লিখি। এটি $\Gamma, \Pi
+\Sequent \Delta, \Lambda$-র
+!!a{proof}।
+
+\end{document}

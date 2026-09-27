@@ -6926,6 +6926,45 @@ for row in rows:
             and not normalizations
             and mathparts(audited_g3c) == target_math
         )
+    legacy_g3i_rule_table_repairs = False
+    if row["unit_id"] == "OLP-0708":
+        audited_g3i = source
+        old_disjunction = (
+            r"\Axiom$\Gamma \fCenter !A, !B$" + "\n"
+            + r"\RightLabel{\RightR{\lor}}" + "\n"
+            + r"\UnaryInf$ \Gamma \fCenter !A \lor !B$" + "\n"
+            + r"\DisplayProof"
+        )
+        new_disjunction = (
+            r"\begin{tabular}[t]{@{}r@{}}" + "\n"
+            + r"\Axiom$\Gamma \fCenter !A$" + "\n"
+            + r"\RightLabel{\RightR{\lor}}" + "\n"
+            + r"\UnaryInf$ \Gamma \fCenter !A \lor !B$" + "\n"
+            + r"\DisplayProof" + "\n"
+            + r"\\[3ex]" + "\n"
+            + r"\Axiom$ \Gamma \fCenter !B$" + "\n"
+            + r"\RightLabel{\RightR{\lor}}" + "\n"
+            + r"\UnaryInf$ \Gamma \fCenter !A \lor !B$" + "\n"
+            + r"\DisplayProof\\[3ex]" + "\n"
+            + r"\end{tabular}"
+        )
+        fixes = (
+            (old_disjunction, new_disjunction),
+            (r"\lforall[x][!A(x)]\Gamma", r"\lforall[x][!A(x)], \Gamma"),
+            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
+            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
+            (r"$\lfalse, \Gamma \Sequent" + "\n" + r"\Delta$",
+             r"$\lfalse \Sequent \quad$"),
+        )
+        for old, new in fixes:
+            assert audited_g3i.count(old) == 1, old
+            audited_g3i = audited_g3i.replace(old, new, 1)
+        legacy_g3i_rule_table_repairs = (
+            set(documented) == {f"BN-SRC-{n}" for n in range(656, 661)}
+            and not normalizations
+            and mathparts(audited_g3i) == target_math
+            and environments(audited_g3i) == environments(checked_target)
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -7091,6 +7130,7 @@ for row in rows:
             legacy_g1i_rule_table_repairs,
             legacy_g2c_rule_table_repairs,
             legacy_g3c_rule_table_repairs,
+            legacy_g3i_rule_table_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7171,6 +7211,14 @@ for row in rows:
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\ollabel{tab:G1i}": 1})
     )
+    legacy_g3i_table_label_fix = (
+        row["unit_id"] == "OLP-0708"
+        and legacy_g3i_rule_table_repairs
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\ollabel{tab:G3c}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\ollabel{tab:G3i}": 1})
+    )
     legacy_tn3_table_reference_fix = (
         row["unit_id"] == "OLP-0697"
         and set(documented) == {"BN-SRC-621", "BN-SRC-622", "BN-SRC-623"}
@@ -7197,6 +7245,7 @@ for row in rows:
         or legacy_cut_largest_reference_repairs
         or legacy_tn3_table_label_fix
         or legacy_g1i_table_label_fix
+        or legacy_g3i_table_label_fix
         or legacy_tn3_table_reference_fix
     )
     legacy_cut_intro_split_token_fix = (
@@ -7456,13 +7505,28 @@ for row in rows:
             "documented_source_corrections": ["BN-SRC-654", "BN-SRC-655"],
             "g3c_universal_left_multiset_and_caption": True,
         }
+    if row["unit_id"] == "OLP-0708":
+        assert legacy_g3i_rule_table_repairs and legacy_g3i_table_label_fix
+        assert "% Section: rules-G3i" in checked_target
+        assert checked_target.count(r"\Axiom$\Gamma \fCenter !A$") == 2
+        assert checked_target.count(r"\Axiom$ \Gamma \fCenter !B$") == 2
+        assert checked_target.count(r"\Axiom$ !A(t), \lforall[x][!A(x)], \Gamma \fCenter \Delta$") == 1
+        assert checked_target.count(r"\Log{G1m}") == 1
+        assert checked_target.count(r"\Log{G1i}") == 1
+        assert checked_target.count(r"\Log{G3i}") == 1
+        assert checked_target.count(r"\RightR{\Weakening}") == 1
+        tex_command_check = {
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(656, 661)],
+            "g3i_single_succedent_disjunction_and_minimal_system": True,
+        }
     checks = {
         "unit_id": row["unit_id"],
         "source_blocks": len(source_blocks),
         "target_blocks": len(target_blocks),
         "math_parity": math_ok,
         "controls_parity": controls_ok,
-        "env_parity": environments(source) == environments(checked_target),
+        "env_parity": (environments(source) == environments(checked_target)
+                       or legacy_g3i_rule_table_repairs),
         "token_parity": (
             semantic_tokens(source) == semantic_tokens(checked_target)
             or introduction_token_fix

@@ -5544,6 +5544,11 @@ for row in rows:
         }
         assert all(anchor in target for anchor in counterfactual_introduction_anchors[row["unit_id"]])
         tex_command_check = {"counterfactual_introduction_scope_and_strict_conditional_reviewed": True}
+    if row["unit_id"] == "OLP-0635":
+        assert set(documented) == {"BN-SRC-486", "BN-SRC-487", "BN-SRC-488"}
+        assert r"\foreach \x/\xtext in {-2/-2, -1,1, 1/1, 2/2}" in source
+        assert r"\foreach \x/\xtext in {-2/-2, -1/-1, 1/1, 2/2}" in target
+        tex_command_check = {"punctured_limit_and_absolute_value_tick_labels_reviewed": True}
     audited_source = source
     shared_description = None
     if row["unit_id"] == "OLP-0029":
@@ -5940,6 +5945,18 @@ for row in rows:
         and source_math - target_math == collections.Counter({"P(0)": 1})
         and target_math - source_math == collections.Counter({"P(l)": 1})
     )
+    history_limit_definition_and_quotient_fixes = (
+        row["unit_id"] == "OLP-0635"
+        and set(documented) == {"BN-SRC-486", "BN-SRC-487", "BN-SRC-488"}
+        and source_math - target_math == collections.Counter({
+            "f'(c)": 2,
+            r"(\forall\epsilon>0)(\exists\delta>0)\forallx\left(|x-c|<\delta\lif|g(x)-\ell|<\epsilon\right).": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\frac{f(c+\beta)-f(c)}{\beta}": 2,
+            r"(\forall\epsilon>0)(\exists\delta>0)\forallx\left(0<|x-c|<\delta\lif|g(x)-\ell|<\epsilon\right).": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6062,6 +6079,7 @@ for row in rows:
             methods_reading_proofs_two_repairs,
             methods_induction_step_variable_fix,
             methods_strong_induction_vacuity_fix,
+            history_limit_definition_and_quotient_fixes,
         )
     )
     minimal_change_fileid_fix = (

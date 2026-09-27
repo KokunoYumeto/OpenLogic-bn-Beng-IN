@@ -6569,6 +6569,54 @@ for row in rows:
             r"\sFmla{\True}{!A},\sFmla{\True}{!B},\sFmla{\False}{!C},\sFmla{\False}{!D}": 1,
         })
     )
+    legacy_propositions_normalization_repairs = False
+    if row["unit_id"] == "OLP-0687":
+        old_rank = next(
+            fragment for fragment in source_math
+            if fragment.startswith(r"\cutrank{(\lambd[")
+        )
+        old_rank_tail = r"\len{!A}+\len{!B}+1"
+        assert old_rank.endswith(old_rank_tail)
+        new_rank = old_rank[:-len(old_rank_tail)] + r"\len{!A_1}+\len{!A_2}+1"
+        # Only the last (disjunction) rank is changed.
+        assert new_rank.count(r"\len{!A_1}+\len{!A_2}+1") == 1
+        old_math = collections.Counter({
+            old_rank: 1,
+            r"\cutrank{\Subst{M}{N}{x}}=\len{!A})": 1,
+            r"\cutrank{x}": 1,
+            r"\red": 2,
+            "O_2": 1,
+            "N_1'=N_1''": 1,
+            r"N_1'\neqN_1''": 1,
+            r"N_1'\redN'''": 1,
+            r"N_1''\redN'''": 1,
+            r"N'''\neqN'": 1,
+            r"N'''\neqN''": 1,
+            "N_1'": 1,
+            "N_1''": 1,
+        })
+        new_math = collections.Counter({
+            new_rank: 1,
+            r"\cutrank{\Subst{M}{N}{x}}=\len{!A}": 1,
+            r"\redone": 3,
+            "O_1'": 1,
+            "N_2'=N_2''": 1,
+            r"N_2'\neqN_2''": 1,
+            "N'''": 1,
+            r"N_2'\redN'''": 1,
+            r"N_2''\redN'''": 1,
+            "Q": 1,
+            r"Q\neqN'": 1,
+            r"Q\neqN''": 1,
+            "N_2'": 1,
+            "N_2''": 1,
+        })
+        legacy_propositions_normalization_repairs = (
+            set(documented) == {f"BN-SRC-{n}" for n in range(604, 612)}
+            and set(normalizations) == {"BN-NORM-177"}
+            and source_math - target_math == old_math
+            and target_math - source_math == new_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6720,6 +6768,7 @@ for row in rows:
             legacy_search_completeness_repairs,
             legacy_search_algorithm_repairs,
             legacy_search_tableaux_repairs,
+            legacy_propositions_normalization_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -6901,6 +6950,21 @@ for row in rows:
             "documented_language_normalization": "BN-NORM-176",
             "localized_proof_connectors": 2,
             "localized_correspondence_table": True,
+        }
+    if row["unit_id"] == "OLP-0687":
+        assert legacy_propositions_normalization_repairs, (
+            documented, normalizations, source_math - target_math,
+            target_math - source_math, old_math, new_math,
+        )
+        assert source.count(r"\text{ is a sub term of }") == 1
+        assert checked_target.count(r"\text{ হলো }") == 1
+        assert checked_target.count(r"\text{-এর উপপদ ও রিডেক্স}") == 1
+        assert source.count("every\ncomputation in the typed") == 1
+        assert checked_target.count("প্রত্যেক পদের জন্য অন্তত একটি গণনাপথ") == 1
+        tex_command_check = {
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(604, 612)],
+            "documented_language_normalization": "BN-NORM-177",
+            "disjunction_rank_and_newman_argument": True,
         }
     checks = {
         "unit_id": row["unit_id"],

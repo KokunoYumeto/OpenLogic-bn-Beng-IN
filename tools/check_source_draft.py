@@ -6051,6 +6051,28 @@ for row in rows:
             r"\lforall[x][\Subst{!A}{x}{c}]\lif\Subst{!A}{x}{c}\Subst{}{y}{x}": 1,
         })
     )
+    legacy_c_representability_composition_fix = (
+        row["unit_id"] == "OLP-0647"
+        and set(documented) == {"BN-SRC-503", "BN-SRC-504"}
+        and source_math - target_math == collections.Counter({
+            r"\lexists[z_0\dots][\lexists[z_{k-1}][(!A_{g_0}(x_0,\dots,x_{l-1},z_0)\land\dots\land!A_{g_{k-1}}(x_0,\dots,x_{l-1},z_{k-1})\land]]\\!A_f(z_0,\dots,z_{k-1},y)).": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\lexists[z_0][\dots\lexists[z_{k-1}][(!A_{g_0}(x_0,\dots,x_{l-1},z_0)\land\dots\land{}\\!A_{g_{k-1}}(x_0,\dots,x_{l-1},z_{k-1})\land!A_f(z_0,\dots,z_{k-1},y))]]": 1,
+        })
+    )
+    legacy_propositions_notation_fixes = (
+        row["unit_id"] == "OLP-0649"
+        and set(documented) == {"BN-SRC-505", "BN-SRC-506"}
+        and source_math - target_math == collections.Counter({
+            r"\Prop{M}{!A}\colon\Frm\to\Pow{W}": 1,
+            r"\mModel{M}{!A}[w]": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\Prop{M}{\cdot}\colon\Frm\to\Pow{W}": 1,
+            r"\mSat{M}{!A}[w]": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6177,6 +6199,8 @@ for row in rows:
             history_cantor_binary_expansion_fixes,
             history_hilbert_limit_and_continuity_fixes,
             legacy_provability_line_repairs,
+            legacy_c_representability_composition_fix,
+            legacy_propositions_notation_fixes,
         )
     )
     minimal_change_fileid_fix = (

@@ -1,0 +1,12 @@
+# Detached short sections: semantic review (OLP-0648–0651)
+
+The frozen source is OpenLogic commit `9620cc73f9c8e0ad003c514a5d3748f29611c4c0`. These four sections are outside the current reader imports. Each Bengali target follows the corresponding frozen file; this review does not claim reader integration or a new PDF.
+
+| Unit | Source and target comparison | Boundary or correction |
+|---|---|---|
+| OLP-0648, `c.tex` | Three aligned blocks preserve the generators of (C), closure under composition and regular unbounded search, the totality restriction on (mu), and the stated aim of eliminating primitive recursion. Formula and control tokens match exactly. | No source correction. The paragraph announces an argument; it does not itself prove elimination. |
+| OLP-0649, `propositions.tex` | Seven aligned blocks preserve the proposition as a set of worlds, the six inductive clauses, the satisfaction equivalence, and the exercise. Negation and implication still quantify over every accessible successor. | `BN-SRC-505` changes the function type from a fixed value `\Prop{M}{!A}` to `\Prop{M}{\cdot}`. `BN-SRC-506` changes the left side of the equivalence from malformed `\mModel{M}{!A}[w]` to the satisfaction notation `\mSat{M}{!A}[w]` defined in frozen `relational-models.tex`. Only these two exact mathematical deltas are admitted by the checker. |
+| OLP-0650, `lists.tex` | Seven aligned blocks preserve the right-fold list encoding, the two `Sum` and `Len` lambda terms, the sum explanation, and both exercises. Formal lambda terms match the source exactly. | No source correction. `Len` is left as an exercise, with no answer inserted. |
+| OLP-0651, `conversion.tex` | Three aligned blocks preserve the opening distinction between conversion and reduction and the alpha-renaming example. Mathematical tokens match exactly. | The frozen source ends after “formalize this idea as follows” and supplies no subsequent definition. The Bengali section ends at the same boundary; it is not a completed formal account of conversion. |
+
+The source/target structural checker passed for all four units: identical aligned-block counts, mathematical parity (including the two bounded OLP-0649 corrections), control and environment parity, protected-token parity, and NFC. The terms for proposition, set, number, variable, and function follow previously inspected India-standard Bengali canon passages; the specialized Kripke and lambda definitions are controlled by the frozen OpenLogic source and its neighboring formal sections, not attributed to those canon pages.

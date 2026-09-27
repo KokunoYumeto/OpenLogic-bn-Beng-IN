@@ -1,0 +1,57 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: propositions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{pro}
+
+\olsection{বচন}
+
+কখনো কখনো !!a{relational model}~$\mModel{M}$-এ যে জগৎগুলিতে
+!!a{formula}~$!A$ সত্য, তাদের সেটটির একটি নাম দেওয়া সুবিধাজনক।
+এটিকে~$!A$ দ্বারা নির্ধারিত \emph{বচন} বলি এবং $\Prop{M}{!A}$ লিখি।
+
+\begin{defn}
+  $V$ অপেক্ষককে প্রসারিত করে $\Prop{M}{\cdot} \colon \Frm
+  \to \Pow{W}$ অপেক্ষকটি নিচের মতো আরোহীভাবে সংজ্ঞায়িত করি:
+% BN-SRC-505 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-505):} হিমায়িত সংজ্ঞায় একটি নির্দিষ্ট সূত্রের বচনকে পুরো সূত্রসমষ্টির উপর অপেক্ষক হিসেবে দেখানো হয়েছে। অপেক্ষকটির আর্গুমেন্টের স্থানে বিন্দু রেখে টাইপটি সংশোধন করা হয়েছে।}
+% BN-SRC-505 TARGET-CORRECTION-END
+  \begin{enumerate}
+  \item $\Prop{M}{\lfalse} = \emptyset$
+  \item $\Prop{M}{p} = V(p)$
+  \item $\Prop{M}{\lnot !B} = {}$
+    \[
+      \Setabs{w \in W}{\text{প্রত্যেক $w'$-এর জন্য, যদি $Rww'$ হয়, তবে $w'
+          \notin \Prop{M}{!B}$}}.
+    \]
+  \item $\Prop{M}{!B \land !C} = \Prop{M}{!B} \cap \Prop{M}{!C}$।
+  \item $\Prop{M}{!B \lor !C} = \Prop{M}{!B} \cup \Prop{M}{!C}$।
+  \item $\Prop{M}{!B \lif !C} = {}$
+    \[
+      \Setabs{w \in W}{\text{প্রত্যেক $w'$-এর জন্য, যদি $Rww'$ এবং $w'
+          \in \Prop{M}{!B}$ হয়, তবে $w' \in \Prop{M}{!C}$}}.
+    \]
+  \end{enumerate}
+\end{defn}
+
+\begin{prop}
+  \ollabel{prop:propositions-true}
+  $\mSat{M}{!A}[w]$ যদি এবং কেবল যদি $w \in \Prop{M}{!A}$।
+% BN-SRC-506 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-506):} হিমায়িত উক্তিতে মডেল-নির্দেশক সংকেতকে সত্যতা-সম্পর্কের মতো ব্যবহার করা হয়েছে। সম্পর্কীয় অর্থবিজ্ঞানের সংজ্ঞার সঙ্গে মিলিয়ে এখানে সত্যতা-সংকেত পুনরুদ্ধার করা হয়েছে।}
+% BN-SRC-506 TARGET-CORRECTION-END
+\end{prop}
+
+\begin{proof}
+  অনুশীলন।
+\end{proof}
+
+\begin{prob}
+  \olref[int][sem][pro]{prop:propositions-true} প্রমাণ করো।
+\end{prob}
+
+\end{document}

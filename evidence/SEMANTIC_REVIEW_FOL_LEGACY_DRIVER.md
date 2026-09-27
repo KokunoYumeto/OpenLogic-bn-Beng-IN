@@ -1,0 +1,5 @@
+# Detached first-order syntax and semantics driver (OLP-0646)
+
+The frozen 633-byte chapter driver has SHA-256 `380792883e147d6bd35236c0ab68243f087e068d8d12ddc189fca9f33d633cb8`; its Bengali target has SHA-256 `5b201a1a29e558765e73cb8e4aea6eabcd9efb502b216c1543b1414458f64a79`. All 17 body blocks align. The combined chapter heading is translated, and every one of the fifteen source `\olimport` calls plus `\OLEndChapterHook` remains in order and unchanged. The strict checker passes formula, control, environment, semantic-token and NFC checks.
+
+The current reader splits this material into separate syntax and semantics chapters. The legacy driver retains the `fol/syn` chapter identity and is not reader-reachable. Importing it alongside the current syntax driver would duplicate that identity and content; this local source translation makes no such integration claim. Previously visually read Indian Bengali logic and proof passages BN-IN-P008, P009 and P025 inform the combined heading, but none establishes a separate technical theorem. No source correction or TeX build is claimed for this driver.

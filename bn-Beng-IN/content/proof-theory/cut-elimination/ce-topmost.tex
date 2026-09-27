@@ -1,0 +1,682 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: ce-topmost
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{top}
+
+\olsection{সর্বোচ্চে থাকা কর্তন অপসারণ}
+
+\begin{defn}
+ধরি, !!a{proof}~$\pi$-এর শেষ বিধি \CutCS{}:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+এতে আর কোনো \CutCS{} অনুমান নেই। $\pi$-এর \emph{কর্তন-উচ্চতা} হলো
+$\cheight{\pi} = \pheight{\pi_1} + \pheight{\pi_2}$।
+$\pi$-এর \emph{কর্তনমাত্রা} হলো $\cutrank{\pi} = \depth{!A}$।
+\end{defn}
+
+\begin{lem}\ollabel{lem:cut-adm-G3c}
+\Log{G3c}-তে \CutCS{} বিধি গ্রহণযোগ্য। অর্থাৎ $\pi$ যদি এমন !!a{proof} হয়,
+যার শেষে একটি মাত্র~\CutCS{} আছে এবং অন্যত্র শুধু $\Log{G3c}$-এর
+বিধিগুলি ব্যবহৃত হয়েছে, তবে একই অন্তিম সিকোয়েন্টের
+\Log{G3c}-!!a{proof}~$\pi'$ আছে।
+\end{lem}
+
+\begin{proof}
+কর্তন-!!{height} ও কর্তনমাত্রার উপর দ্বৈত আরোহে প্রমাণ করি।
+!!{proof}~$\pi$-এর শেষাংশ:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+
+আরোহের প্রাথমিক ক্ষেত্র: $\cheight{\pi} = 0$ এবং
+$\cutrank{\pi} = 0$। যেহেতু
+$\cheight{\pi} = \pheight{\pi_1} + \pheight{\pi_2} = 0$,
+$\Gamma \Sequent \Delta, !A$ ও $!A, \Gamma \Sequent \Delta$—দুটিই
+স্বতঃসিদ্ধ। দুটি সম্ভাবনা: (a)~এর কোনো একটিতে $!A$ প্রধান নয়, অথবা
+(b)~দুটিতেই $!A$ প্রধান। নীচে দুই ক্ষেত্রেই আরোহের অনুমান ছাড়া
+$\Gamma \Sequent \Delta$ যে স্বতঃসিদ্ধ, তা দেখাব।
+
+$\pi_1$ ও $\pi_2$ স্বতঃসিদ্ধ কি না, নইলে কোন অনুমানে শেষ হয়েছে,
+আর সেই অনুমানে $!A$ প্রধান কি না—এই অনুসারে ক্ষেত্রগুলি ভাগ করি।
+A ও~B ক্ষেত্র আরোহের প্রাথমিক ধাপ ধরে। আরোহের ধাপে ধরি,
+$\cheight{\pi} > 0$ অথবা $\cutrank{\pi} > 0$ (কিংবা দুটিই)।
+আরোহের অনুমান অনুযায়ী, একটি মাত্র~\CutCS{} দিয়ে শেষ হওয়া
+যে-কোনো !!{proof} থেকে শেষ কর্তনটি সরানো যায়, যদি তার
+কর্তনমাত্রা $= \cutrank{\pi}$ ও কর্তন-!!{height} $< \cheight{\pi}$ হয়,
+অথবা কর্তনমাত্রা $< \cutrank{\pi}$ হয়।
+$\cheight{\pi}=0$ হলে (উভয় পূর্বধারণা স্বতঃসিদ্ধ) A ও~B ক্ষেত্র
+প্রযোজ্য; $\cheight{\pi}>0$ হলে C--E ক্ষেত্র প্রযোজ্য।
+% BN-SRC-517 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-517):} হিমায়িত পাঠে পরের ক্ষেত্রগুলি C--D বলা হলেও সেখানে E ক্ষেত্রও আছে; এখানে সম্পূর্ণ ক্ষেত্রক্রম দেখানো হয়েছে।}
+% BN-SRC-517 TARGET-CORRECTION-END
+
+\paragraph{ক্ষেত্র A:}
+কোনো $!B$ একই সঙ্গে $\Gamma$ ও~$\Delta$-তে আছে।
+তাহলে $!B$ পরমাণবিক হলে $\Gamma \Sequent \Delta$ স্বতঃসিদ্ধ;
+নইলে \olref[seq][ex]{prop:G3c-axioms} অনুযায়ী এর
+\CutCS{}-বিহীন \Log{G3c}-!!a{proof}~$\pi'$ আছে। এতে প্রাথমিক
+ধাপের (a)~ক্ষেত্রটি মেটে: $\Gamma \Sequent \Delta, !A$ বা
+$!A, \Gamma \Sequent \Delta$ স্বতঃসিদ্ধ হলে এবং তাতে $!A$ প্রধান
+না হলে, অন্য কোনো পরমাণবিক~$!B$ অবশ্যই $\Gamma$ ও~$\Delta$-তে
+থাকে। আরোহের ধাপেও কোনো পূর্বধারণা $!A$ প্রধান নয় এমন
+স্বতঃসিদ্ধ হলে এই যুক্তি
+প্রযোজ্য, অন্য পূর্বধারণাটি বিধির সিদ্ধান্ত হলেও।
+
+\paragraph{ক্ষেত্র B:} উভয় পূর্বধারণা স্বতঃসিদ্ধ এবং $!A$ প্রধান,
+তাই পরমাণবিক। বাম পূর্বধারণা $\Gamma \Sequent \Delta, !A$ দেখি।
+$!A$ প্রধান বলে তা $\Gamma$-তেও থাকতে হবে; নইলে
+$\Gamma \Sequent \Delta, !A$
+স্বতঃসিদ্ধ হতো না। একইভাবে $!A$ অবশ্যই $\Delta$-তে আছে;
+নইলে $!A, \Gamma \Sequent \Delta$ স্বতঃসিদ্ধ হতো না। অতএব
+পরমাণবিক $!A$ $\Gamma$ ও $\Delta$—উভয় পাশেই আছে, অর্থাৎ
+$\Gamma \Sequent \Delta$
+স্বতঃসিদ্ধ। এতে প্রাথমিক ধাপের (b)~ক্ষেত্রটি মেটে।
+
+\begin{center}
+বিকল্প ক্ষেত্র A ও B
+\end{center}
+
+\paragraph{ক্ষেত্র A:} কর্তনের একটি পূর্বধারণা
+$!C, \Gamma' \Sequent \Delta', !C$ আকারের স্বতঃসিদ্ধ, যেখানে
+$!C$ পরমাণবিক। $!C$ যদি কর্তন-!!{formula}~$!A$ না হয়, তবে
+$!C$ একই সঙ্গে $\Gamma$ ও~$\Delta$-তে আছে। সেক্ষেত্রে
+$\Gamma \Sequent \Delta$ নিজেই স্বতঃসিদ্ধ; একেই~$\pi'$ নিই।
+আর $!C \ident !A$ কর্তন-!!{formula} হলে, বাম পূর্বধারণাটি স্বতঃসিদ্ধ হলে
+$!A \in \Gamma$ ও $\Gamma = \Gamma', !A$; ডান পূর্বধারণাটি
+স্বতঃসিদ্ধ হলে $!A \in \Delta$ ও $\Delta = \Delta', !A$।
+প্রথম ক্ষেত্রে $\pi_2$ হলো
+$!A, !A, \Gamma' \Sequent \Delta$-র !!a{proof};
+\LeftR{\Contraction}-এর গ্রহণযোগ্যতা
+(\olref[seq][inv]{prop:G3c-cont-adm}) দিয়ে
+$\Gamma \Sequent \Delta$-র !!a{proof} পাওয়া যায়। দ্বিতীয়
+ক্ষেত্রে $\pi_1$ হলো
+$\Gamma \Sequent \Delta', !A, !A$-র !!a{proof};
+\RightR{\Contraction}-এর গ্রহণযোগ্যতা দিয়ে
+$\Gamma \Sequent \Delta$-র !!a{proof} পাই।
+% BN-SRC-518 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-518):} ডান পূর্বধারণা স্বতঃসিদ্ধ হলে ডানে সূত্রের দুটি অনুলিপি-যুক্ত প্রমাণটি বাম উপপ্রমাণ থেকে আসে; তাই দ্বিতীয় ক্ষেত্রে উৎসের ভুল উপপ্রমাণ-সূচক সংশোধিত।}
+% BN-SRC-518 TARGET-CORRECTION-END
+
+\paragraph{ক্ষেত্র B:} কোনো একটি পূর্বধারণা
+$\lfalse, \Gamma' \Sequent \Delta'$ আকারের স্বতঃসিদ্ধ। বাম
+পূর্বধারণাটি এমন হলে $\lfalse \in \Gamma$, তাই
+$\Gamma \Sequent \Delta$-ও স্বতঃসিদ্ধ। ডান পূর্বধারণাটি এমন
+হলে হয় $\lfalse \in \Gamma$ (তখন আবারও
+$\Gamma \Sequent \Delta$ স্বতঃসিদ্ধ), নয়তো
+$!A \ident \lfalse$। শেষোক্ত ক্ষেত্রে $\pi_1$ হলো
+$\Gamma \Sequent \Delta, \lfalse$-র !!a{proof}। $\pi_1$-এর
+প্রতিটি সিকোয়েন্টের উত্তরপক্ষ থেকে $\lfalse$-এর একটি অনুলিপি
+বাদ দিয়ে একে $\Gamma \Sequent \Delta$-র !!a{proof}-এ
+রূপান্তর করা যায়। (অনুশীলন: $\pheight{\pi_1}$-এর উপর আরোহ
+করে এটি যাচাই করুন।)
+
+এবার ধরি, A বা~B কোনো ক্ষেত্রই প্রযোজ্য নয়। বাকি ক্ষেত্রগুলিতে
+$\cheight{\pi} > 0$; অর্থাৎ অন্তত একটি পূর্বধারণা কোনো
+অনুমানের সিদ্ধান্ত।
+
+\paragraph{ক্ষেত্র C ও D: কর্তনের স্থানবিনিময়।}
+C ও~D ক্ষেত্রগুলির একটি সাধারণ ছক আছে। প্রথমে এমন !!a{proof}
+ধরি, যার শেষে~\CutCS{}, এবং যার একটি পূর্বধারণা $R$ বিধি দিয়ে
+পাওয়া; $R$-এ কর্তন-!!{formula}~$!A$ প্রধান নয় (অন্য
+!!{formula}~$!D$ প্রধান)। এই !!{proof}-এ $R$-এর পরে
+\CutCS{} আছে; ছকটি এ রকম:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !D, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, \Gamma, \Pi \fCenter \Delta', \Lambda$
+\RightLabel{$R$}
+\UnaryInf$!A, \Gamma \fCenter \Delta', !D$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !D$
+\DisplayProof
+\]
+এখানে শুধু সেই ক্ষেত্রটি দেখানো হয়েছে, যেখানে $R$ এক-পূর্বধারণার
+ডান বিধি, $A$ তার প্রধান !!{formula} নয়, আর যে !!{formula}~$!D$
+\emph{প্রধান}, সেটি \CutCS-এর ডান পূর্বধারণার উত্তরপক্ষে আছে।
+$!D$ পূর্বপক্ষে থাকলে (অর্থাৎ $R$ বাম বিধি হলে), অথবা
+\CutCS-এর বাম পূর্বধারণায় থাকলে ছকটি ভিন্ন হবে। $\Pi$ ও~$\Lambda$-র
+!!{formula}s $R$ বিধির সক্রিয় !!{formula}s নির্দেশ করে।
+
+এবার ক্রমটি উল্টে, \CutCS-এর পরে $R$ আছে এমন !!a{proof} দেখি:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma, \Pi \fCenter \Delta', !D, \Lambda, !A$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$!A, \Gamma, \Pi \fCenter \Delta', !D, \Lambda$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma, \Pi \fCenter \Delta', !D, \Lambda$
+\RightLabel{$R$}
+\UnaryInf$\Gamma \fCenter \Delta', !D, !D$
+\DisplayProof
+\]
+% BN-SRC-519 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-519):} রূপান্তরিত ছকের শেষ সিকোয়েন্টে পূর্বপক্ষের শেষে ঝুলে থাকা কমা বাদ দেওয়া হয়েছে।}
+% BN-SRC-519 TARGET-CORRECTION-END
+!!{height} অক্ষুণ্ণ রেখে দুর্বলীকরণের মাধ্যমে যথাক্রমে
+$\pi_1$ ও $\pi_3$ থেকে $\pi_1'$ ও $\pi_3'$ পাই।
+
+\CutCS{} ও~$R$-এর ক্রম বদলানোকে ``$R$ পেরিয়ে কর্তনকে উপরে
+সরানো'' বলে। এতে \CutCS-এর ডান পূর্বধারণায় শেষ হওয়া
+!!{proof}-এর উচ্চতা এবং তাই কর্তন-!!{height} কমে। আরও নির্দিষ্টভাবে,
+নতুন \CutCS-এর দুই উপ-!!{proof}s-এর !!{height} যথাক্রমে
+$\pi_1$ ও $\pi_3$-র চেয়ে বেশি নয়; ডান দিকে একটি অনুমান
+বাদ যাওয়ায় কর্তন-!!{height} কমেছে। এখন আরোহের অনুমান প্রয়োগ
+করে \CutCS{} বাদ দিই। শেষে $\RightR{\Contraction}$-এর
+গ্রহণযোগ্যতা দিয়ে অতিরিক্ত~$!D$ সরাই।
+
+\paragraph{ক্ষেত্র C:}
+$\pi_1$ বা $\pi_2$-র অন্তত একটির শেষ বিধি এক-পূর্বধারণার~$R$,
+যাতে $!A$ প্রধান নয়। \CutCS-এর বাম না ডান পূর্বধারণায় $!A$
+প্রধান নয় এবং নয়টি এক-পূর্বধারণার বিধির কোনটি~$R$
+(\LeftR{\lnot}, \RightR{\lnot}, \RightR{\lor}, \LeftR{\land},
+\RightR{\lif} ও চারটি পরিমাণসূচক-বিধি)—এই অনুসারে মোট ১৮টি
+ক্ষেত্র। শুধু দুটি উদাহরণ দেখাই: $\pi_2$-র শেষ অনুমানে $!A$
+প্রধান নয়, এবং অনুমানটি~$\RightR{\lif}$ অথবা
+\LeftR{\lexists}। বাকি ক্ষেত্রগুলি একই রকম; অনুশীলন হিসেবে
+থাকল।
+
+ধরি, $\pi$-এর শেষাংশ:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !B \lif !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, !B, \Gamma \fCenter \Delta', !C$
+\RightLabel{$\RightR{\lif}$}
+\UnaryInf$!A, \Gamma \fCenter \Delta', !B \lif !C$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !B \lif !C$
+\DisplayProof
+\]
+যেখানে $\Delta = \Delta', !B \lif !C$। $\pi_1$-এ !!{height}
+অক্ষুণ্ণ রাখা দুর্বলীকরণ
+(\olref[seq][adm]{prop:weak-G3c-adm}) প্রয়োগ করে
+$!B, \Gamma \fCenter \Delta', !B \lif !C, !C, !A$-র
+!!a{proof}~$\pi_1'$ পাই (বামে $!B$ ও ডানে $!C$ যোগ করি)।
+একইভাবে \olref[seq][adm]{prop:weak-G3c-adm} প্রয়োগ করে
+$\pi_3$ থেকে $!A, !B, \Gamma \fCenter
+\Delta', !B \lif !C, !C$-র !!a{proof}~$\pi_3'$ পাই
+(ডানে $!B \lif !C$ যোগ করে)। আরোহের অনুমান প্রযোজ্য
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta', !B \lif !C, !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$!A, !B, \Gamma \fCenter \Delta', !B \lif !C, !C$
+\RightLabel{\CutCS}
+\BinaryInf$!B, \Gamma \fCenter \Delta', !B \lif !C, !C$
+\DisplayProof
+\]
+এই $!A$ কর্তন-!!{formula}-যুক্ত !!{proof}-এর কর্তনমাত্রা
+$\pi$-এর সমান, কিন্তু কর্তন-!!{height} কম। ফলে
+$!B, \Gamma \fCenter \Delta', !B \lif !C, !C$-র
+\CutCS{}-বিহীন \Log{G3c}-!!a{proof}~$\pi_4$ পাই।
+$\RightR{\lif}$ প্রয়োগ করে
+$\Gamma \fCenter \Delta', !B \lif !C, !B \lif !C$-র
+!!a{proof} হয়:
+\[
+\AxiomC{}
+\RightLabel{$\pi_4$}
+\Deduce$!B, \Gamma \fCenter \Delta', !B \lif !C, !C$
+\RightLabel{$\RightR{\lif}$}
+\UnaryInf$\Gamma \fCenter \Delta', !B \lif !C, !B \lif !C$
+\DisplayProof
+\]
+$\Gamma \Sequent \Delta$, অর্থাৎ
+$\Gamma \fCenter \Delta', !B \lif !C$-র
+!!a{proof}~$\pi'$ পেতে সংকোচনের গ্রহণযোগ্যতা
+\olref[seq][inv]{prop:G3c-cont-adm} প্রয়োগ করি।
+
+এবার ধরি, $\pi$-এর শেষাংশ:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\lexists[x][!B(x)], \Gamma' \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, !B(c), \Gamma' \fCenter \Delta$
+\RightLabel{$\LeftR{\lexists}$}
+\UnaryInf$!A, \lexists[x][!B(x)], \Gamma' \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\lexists[x][!B(x)], \Gamma' \fCenter \Delta$
+\DisplayProof
+\]
+% BN-SRC-520 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-520):} অস্তিত্বসূচক বাম বিধির উদাহরণে কর্তনের সিদ্ধান্তে পূর্বপক্ষের প্রধান অস্তিত্বসূচক সূত্রটি উৎসে বাদ পড়েছিল; বিধির দুই পূর্বধারণার সঙ্গে মিলিয়ে ফিরিয়ে আনা হয়েছে।}
+% BN-SRC-520 TARGET-CORRECTION-END
+আবার আরোহের অনুমান প্রয়োগ করি
+\[
+\AxiomC{}
+\RightLabel{$\pi_1[!B(c) \Sequent {}]$}
+\Deduce$\lexists[x][!B(x)], !B(c), \Gamma' \fCenter \Delta, !A$
+\AxiomC{}
+\LeftLabel{$\pi_3[\lexists[x][!B(x)] \Sequent {}]$}
+\Deduce$!A, \lexists[x][!B(x)], !B(c), \Gamma' \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\lexists[x][!B(x)], !B(c), \Gamma' \fCenter \Delta$
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$\lexists[x][!B(x)], \lexists[x][!B(x)], \Gamma' \fCenter \Delta$
+\DisplayProof
+\]
+লক্ষ করুন, ঈজেনচলকের শর্ত পূরণ হয়। কারণ $\pi_2$-তে
+\LeftR{\lexists}-এর ঈজেনচলক-শর্ত অনুযায়ী
+$\lexists[x][!B(x)]$, $\Gamma'$ বা~$\Delta$-তে $c$ নেই।
+শেষে \olref[seq][inv]{prop:G3c-cont-adm} প্রয়োগ করি।
+
+
+\paragraph{ক্ষেত্র D:}
+$\pi_1$ বা $\pi_2$-র অন্তত একটির শেষ বিধি দুই-পূর্বধারণার~$R$,
+যাতে $!A$ প্রধান নয়। এমন ছয়টি ক্ষেত্র আছে। $\pi_2$-র
+শেষ অনুমানে $!A$ প্রধান নয় এবং অনুমানটি~$\RightR{\land}$—
+এই ক্ষেত্রটি দেখি; অন্যগুলি একই রকম।
+
+ধরি, $\pi$-এর শেষাংশ:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, \Gamma \fCenter \Delta', !B$
+\AxiomC{}
+\RightLabel{$\pi_4$}
+\Deduce$!A, \Gamma \fCenter \Delta', !C$
+\RightLabel{$\RightR{\land}$}
+\BinaryInf$!A, \Gamma \fCenter \Delta', !B \land !C$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+আরোহের অনুমান প্রযোজ্য এই !!{proof}s-এর ক্ষেত্রে:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !B, !A$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$!A, \Gamma \fCenter \Delta', !B \land !C, !B$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !B$
+\DisplayProof
+\]
+এবং
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_4'$}
+\Deduce$!A, \Gamma \fCenter \Delta', !B \land !C, !C$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !C$
+\DisplayProof
+\]
+% BN-SRC-521 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-521):} দ্বিশাখী সংযোজনী উদাহরণে দুটি প্রমাণবৃক্ষের উত্তরপক্ষের অবশিষ্ট অংশ একই রাখতে উৎসের দুটি স্থানে সম্পূর্ণ উত্তরপক্ষের বদলে তার অবশিষ্ট অংশ বসানো হয়েছে।}
+% BN-SRC-521 TARGET-CORRECTION-END
+এখানে \Log{G3c}-!!{proof}s $\pi_1'$ ও $\pi_1''$ পাওয়া যায়
+$\pi_1$-এ !!{height} অক্ষুণ্ণ রাখা দুর্বলীকরণ
+(\olref[seq][adm]{prop:weak-G3c-adm}) করে—একবার ডানে $!B$,
+আরেকবার $!C$ যোগ করে। একইভাবে যথাক্রমে $\pi_3$ ও~$\pi_4$-তে
+ডানে $!B \land !C$ যোগ করে $\pi_3'$ ও~$\pi_4'$ পাই।
+এই দুটি মূল !!{proof}s $\pi_3$ ও~$\pi_4$-এর !!{height} বদলায় না।
+
+আরোহের অনুমানে \Log{G3c}-তে
+$\Gamma \fCenter \Delta', !B \land !C, !B$ ও
+$\Gamma \fCenter \Delta', !B \land !C, !C$-র
+!!{proof}s~$\pi_5$ ও~$\pi_6$ পাই। বিধি~$\RightR{\land}$
+দিয়ে এগুলি মিলিয়ে
+$\Gamma \Sequent \Delta', !B \land !C, !B \land !C$-র
+!!a{proof} গড়ি:
+\[
+\AxiomC{}
+\RightLabel{$\pi_5$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !B$
+\AxiomC{}
+\RightLabel{$\pi_6$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !B \land !C$
+\DisplayProof
+\]
+$\Gamma \Sequent \Delta$, অর্থাৎ
+$\Gamma \fCenter \Delta', !B \land !C$-র !!a{proof}
+পেতে সংকোচনের গ্রহণযোগ্যতা
+\olref[seq][inv]{prop:G3c-cont-adm} প্রয়োগ করি।
+
+\paragraph{ক্ষেত্র E: কর্তনের হ্রাস।}
+শেষ ক্ষেত্রটিতে $\pi_1$ ও $\pi_2$—দুটিরই শেষ অনুমানে $!A$
+প্রধান। $!A$-র সম্ভাব্য ছয়টি !!{main operator} অনুযায়ী
+ছয়টি ক্ষেত্র।
+
+প্রতিটি ক্ষেত্রে কর্তন-!!{formula}~$!A$-যুক্ত একটি
+\CutCS{}-কে $!A$-র উপ-!!{formula}s-এর উপর এক বা একাধিক
+কর্তনে রূপান্তর করি। এগুলিই সেই অনুমানগুলির সক্রিয়
+!!{formula}s, যেগুলিতে $!A$ প্রধান !!{formula}। তাই এগুলিকে
+কর্তন-অনুমানের ``হ্রাস'' বা ``রূপান্তর'' বলা হয়।
+
+\begin{enumerate}
+\item $!A \ident \lnot !B$ হলে $\pi$-এর শেষাংশ
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\Gamma \fCenter \Delta, \lnot !B$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !B, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+আরোহের অনুমান অনুযায়ী, এখান থেকে \CutCS{} বাদ দেওয়া যায়:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+
+\item
+$!A \ident (!B \lor !C)$ হলে $\pi$-এর শেষাংশ
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta, !B, !C$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lor !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$!B \lor !C, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+\CutCS{} দিয়ে শেষ হওয়া এই !!{proof} দেখি:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta, !B, !C$
+\AxiomC{}
+\RightLabel{$\pi_2'''$}
+\Deduce$!C, \Gamma \fCenter \Delta, !B$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta, !B$
+\DisplayProof
+\]
+এখানে $\pi_2''$-তে !!{height} অক্ষুণ্ণ রাখা দুর্বলীকরণ করে
+$\pi_2'''$ পাওয়া গেছে। যেহেতু
+$\depth{!C} < \depth{!B \lor !C}$, এর কর্তনমাত্রা
+$< \cutrank{\pi}$। অতএব আরোহের অনুমান থেকে
+$\Gamma \fCenter \Delta, !B$-র
+\Log{G3c}-!!a{proof}~$\pi_1''$ পাই।
+% BN-SRC-522 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-522):} হিমায়িত পাঠের অনির্ধারিত কর্তনমাত্রা-নির্দেশের বদলে এই পর্বে সংজ্ঞায়িত নির্দেশ ব্যবহার করা হয়েছে।}
+% BN-SRC-522 TARGET-CORRECTION-END
+এবার \CutCS{} দিয়ে
+শেষ হওয়া !!{proof}টি দেখি:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+এর কর্তনমাত্রা $= \depth{!B} < \depth{!B \lor !C}$;
+তাই আরোহের অনুমান আবার প্রয়োগ করে
+$\Gamma \fCenter \Delta$-র !!a{proof}~$\pi'$ পাই।
+
+\item $!A \ident (!B \land !C)$। অনুশীলন।
+
+\item $!A \ident (!B \lif !C)$ হলে $\pi$-এর শেষাংশ
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lif !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+\CutCS{} দিয়ে শেষ হওয়া !!{proof}টি
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+এর কর্তনমাত্রা $\pi$-এর চেয়ে কম। আরোহের অনুমানে
+$!B, \Gamma \fCenter \Delta$-র !!a{proof}~$\pi_1''$ পাই।
+এবার \CutCS{} দিয়ে শেষ হওয়া !!{proof}টি দেখি:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+এর কর্তনমাত্রাও $\pi$-এর কর্তনমাত্রার চেয়ে কম। তাই আরোহের
+অনুমান থেকে $\Gamma \fCenter \Delta$-র
+\Log{G3c}-!!{proof}~$\pi'$ পাই।
+\item $!A \ident \lforall[x][!B(x)]$ হলে $\pi$-এর শেষাংশ
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta, !B(c)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!B(x)]$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B(t), \lforall[x][!B(x)], \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$\lforall[x][!B(x)], \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+আরোহের অনুমান অনুযায়ী, এখান থেকে \CutCS{} বাদ দেওয়া যায়:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$!B(t), \Gamma \fCenter \Delta, \lforall[x][!B(x)]$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B(t), \lforall[x][!B(x)], \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B(t), \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+এখানে $\pi_1''$ পাওয়া যায় $\pi_1$ থেকে ($\pi_1'$ থেকে নয়!)
+!!{height} অক্ষুণ্ণ রাখা দুর্বলীকরণে। (এই !!{proof}-এর
+কর্তনমাত্রা সমান, কিন্তু কর্তন-!!{height} কম।) ফলে
+$!B(t), \Gamma \fCenter \Delta$-র !!a{proof}~$\pi_2''$ পাই।
+
+!!{proof}~$\pi_1'$-এর অন্তিম সিকোয়েন্ট
+$\Gamma \Sequent \Delta, !B(c)$, যেখানে $c$ হলো
+$\RightR{\lforall}$ অনুমানের ঈজেনচলক। তাই $!B(x)$,
+$\Gamma$ বা~$\Delta$-তে $c$ নেই। ধরি, !!{proof}~$\pi$
+নিয়মিত; ফলে $c$ শুধু পরবর্তী~$\RightR{\lforall}$ অনুমানেরই
+ঈজেনচলক এবং শুধু তার উপরে, অর্থাৎ $\pi_1'$-এ আছে;
+$\pi_1'$-এর কোনো অনুমানের ঈজেনচলক নয়। $\pi_2$-তে
+$c$ নেই বলে $t$-তেও নেই।
+\olref[seq][qua]{lem:subst-regular} অনুযায়ী
+!!{proof}~$\Subst{\pi_1'}{t}{c}$ হলো
+$\Gamma \Sequent \Delta, !B(t)$-র !!a{proof}। এবার এই
+!!{proof}-এ আরোহের অনুমান প্রয়োগ করি:
+\[
+\AxiomC{}
+\RightLabel{$\Subst{\pi_1'}{t}{c}$}
+\Deduce$\Gamma \fCenter \Delta, !B(t)$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!B(t), \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+(এখানে কর্তন-!!{formula}~$!B(t)$ হওয়ায় !!{proof}-টির
+কর্তনমাত্রা $\pi$-এর চেয়ে কম; তাই আরোহের অনুমান প্রযোজ্য।)
+\item $!A \ident \lexists[x][!B(x)]$ ক্ষেত্রটি অনুশীলন হিসেবে থাকল।
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+\olref{lem:cut-adm-G3c}-এর প্রমাণের D ক্ষেত্রের সেই উপক্ষেত্রটি
+যাচাই করুন, যেখানে $\pi_1$-এর শেষ অনুমানে $!A$ প্রধান নয়
+এবং অনুমানটি~$\LeftR{\lif}$। (লক্ষ করুন: এই অনুশীলনের
+একটি অংশ হলো ঠিক কী প্রমাণ করতে হবে, অর্থাৎ এই ক্ষেত্রে
+$\pi$-এর রূপ কী, তা স্পষ্ট করে বলা।)
+\end{prob}
+
+\begin{prob}
+\olref{lem:cut-adm-G3c}-এর প্রমাণের D ক্ষেত্রের সেই উপক্ষেত্রটি
+যাচাই করুন, যেখানে $\pi_1$-এর শেষ অনুমানে $!A$ প্রধান নয়
+এবং অনুমানটি~$\LeftR{\lforall}$।
+\end{prob}
+
+\begin{prob}
+\olref{lem:cut-adm-G3c}-এর প্রমাণের E ক্ষেত্রের সেই উপক্ষেত্রটি
+যাচাই করুন, যেখানে $\pi_1$ ও $\pi_2$—দুটির শেষ অনুমানেই
+$!A$ প্রধান এবং $!A \ident (!B \land !C)$।
+\end{prob}
+
+\begin{prob}
+\olref{lem:cut-adm-G3c}-এর প্রমাণের E ক্ষেত্রের সেই উপক্ষেত্রটি
+যাচাই করুন, যেখানে $\pi_1$ ও $\pi_2$—দুটির শেষ অনুমানেই
+$!A$ প্রধান এবং $!A \ident \lexists[x][!B(x)]$।
+\end{prob}
+
+লক্ষ করুন, E ক্ষেত্রে যে \CutCS{}-সমাপ্ত !!{proof}-এ আরোহের
+অনুমান প্রয়োগ করি, তার কর্তন-!!{height} মূল প্রমাণের
+কর্তন-!!{height}-এর চেয়ে বেশি হতে পারে। যেমন,
+$!A \ident (!B \lif !C)$ হলে $\pi$-কে দুটি \CutCS{}
+অনুমান-যুক্ত !!a{proof}-এ রূপান্তর করেছি:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_1''$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+% BN-SRC-523 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-523):} অন্তর্নিহিত দুই কর্তনের নীচের সিদ্ধান্ত থেকে কর্তনসূত্রের অতিরিক্ত অনুলিপি বাদ দেওয়া হয়েছে; উপরের সিদ্ধান্ত অক্ষত।}
+% BN-SRC-523 TARGET-CORRECTION-END
+$\pi_1'$ ও $\pi_2''$-র মধ্যবর্তী উপরের \CutCS{}-টির
+কর্তনমাত্রা ও কর্তন-!!{height}—দুটিই $\pi$-এর চেয়ে কম।
+কিন্তু আরোহের অনুমান প্রয়োগে পাওয়া
+!!{proof}~$\pi_1''$-এর কর্তন-!!{height} আর $\pi$-এর চেয়ে
+কম নাও হতে পারে। তবে নীচের \CutCS{}-টির কর্তন-!!{formula}
+$!B$; তাই তার কর্তন\emph{মাত্রা} $\pi$-এর
+কর্তনমাত্রার চেয়ে কম।
+
+\olref{lem:cut-adm-G3c} প্রতিষ্ঠা করে যে !!a{proof} থেকে
+সর্বোচ্চে থাকা একটি \CutCS{} অনুমান বাদ দেওয়া যায়।
+সর্বোচ্চে থাকা \CutCS{}-সমাপ্ত উপ-!!{proof}s-এ
+এটি একে একে প্রয়োগ করে দেখানো যায় যে !!a{proof}
+থেকে যতগুলি \CutCS{} অনুমানই থাকুক, সব বাদ দেওয়া যায়।
+
+\begin{thm}\ollabel{thm:cut-elim-G3c-topmost}
+$\Log{G3c} + \CutCS$-এর যে-কোনো !!{proof}~$\pi$-কে
+\Log{G3c}-এর !!a{proof}-এ রূপান্তর করা যায়।
+\end{thm}
+
+\begin{proof}
+  $\pi$-তে \CutCS{} অনুমানের সংখ্যা~$n$-এর উপর আরোহ করি।
+  $n=0$ হলে কিছু করতে হয় না: $\pi$ আগেই
+  \Log{G3c}-এর !!a{proof}। অন্যথায় সর্বোচ্চে থাকা
+  \CutCS{} অনুমানে শেষ হওয়া উপ-!!{proof}~$\pi'$ নিই।
+  এর শেষ অনুমানেই একমাত্র \CutCS{} আছে।
+  \olref{lem:cut-adm-G3c} প্রয়োগ করে একে
+  \CutCS{}-বিহীন প্রমাণ~$\pi''$-এ রূপান্তর করি
+  এবং উপ-!!{proof}~$\pi'$-র জায়গায়~$\pi''$ বসাই।
+  ফলে $n-1$টি \CutCS{} অনুমান-যুক্ত !!a{proof} পাই;
+  তাতে আরোহের অনুমান প্রযোজ্য।
+\end{proof}
+
+\end{document}

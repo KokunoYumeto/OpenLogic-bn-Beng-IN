@@ -6099,6 +6099,44 @@ for row in rows:
             r"\Delta=\Delta',!A": 1,
         })
     )
+    legacy_cut_topmost_formula_repairs = False
+    if row["unit_id"] == "OLP-0656":
+        assert set(documented) == {f"BN-SRC-{n}" for n in range(517, 524)}
+        audited_topmost = source
+
+        def replace_topmost_once(old, new):
+            global audited_topmost
+            assert audited_topmost.count(old) == 1, old
+            audited_topmost = audited_topmost.replace(old, new, 1)
+
+        replace_topmost_once(
+            r"In the second case, $\pi_2$ is",
+            r"In the second case, $\pi_1$ is",
+        )
+        replace_topmost_once(
+            r"\UnaryInf$\Gamma, \fCenter \Delta', !D, !D$",
+            r"\UnaryInf$\Gamma \fCenter \Delta', !D, !D$",
+        )
+        replace_topmost_once(
+            r"\BinaryInf$\Gamma' \fCenter \Delta$",
+            r"\BinaryInf$\lexists[x][!B(x)], \Gamma' \fCenter \Delta$",
+        )
+        replace_topmost_once(
+            r"\Deduce$\Gamma \fCenter \Delta, !B \land !C, !C, !A$",
+            r"\Deduce$\Gamma \fCenter \Delta', !B \land !C, !C, !A$",
+        )
+        replace_topmost_once(
+            r"\BinaryInf$\Gamma \fCenter \Delta, !B \land !C, !B \land !C$",
+            r"\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !B \land !C$",
+        )
+        replace_topmost_once(r"\cutr{\pi}", r"\cutrank{\pi}")
+        replace_topmost_once(
+            "\\RightSubproofLabel{$\\pi_1''$}\n\\RightLabel{\\CutCS}\n"
+            "\\BinaryInf$!B, \\Gamma \\fCenter \\Delta$",
+            "\\RightSubproofLabel{$\\pi_1''$}\n\\RightLabel{\\CutCS}\n"
+            "\\BinaryInf$\\Gamma \\fCenter \\Delta$",
+        )
+        legacy_cut_topmost_formula_repairs = mathparts(audited_topmost) == target_math
     math_ok = any(
         (
             source_math == target_math,
@@ -6229,6 +6267,7 @@ for row in rows:
             legacy_propositions_notation_fixes,
             legacy_nonstandard_arithmetic_repairs,
             legacy_cut_largest_formula_repair,
+            legacy_cut_topmost_formula_repairs,
         )
     )
     minimal_change_fileid_fix = (

@@ -1,0 +1,387 @@
+% Part: proof-theory
+% Chapter: proof-search
+% Section: completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{ps}{cpl}
+
+\olsection{সম্পূর্ণতা}
+
+এবার দেখাই, প্রমাণ-অন্বেষণ
+অ্যালগরিদমটি নির্ভরযোগ্য:
+সেটি ব্যর্থ হয়ে থেমে গেলে
+বা কখনো না থামলে শুরুর
+সিকোয়েন্ট~$\Gamma \Sequent \Delta$-র
+কোনো !!{proof} নেই। এ জন্য
+!!a{structure}~$\Struct M$ গড়ি,
+যাতে প্রতিটি $!A \in \Gamma$-র জন্য
+$\Sat{M}{!A}$ এবং প্রতিটি
+$!A \in \Delta$-র জন্য
+$\Sat/{M}{!A}$।
+অর্থাৎ~$\Struct M$-এ
+$\Gamma$-র সব !!{formula}s সত্য,
+$\Delta$-র সব !!{formula}s মিথ্যা;
+তাই $\Gamma \Sequent \Delta$
+বৈধ নয়। \Log{G3c} যথার্থ
+বলে $\Gamma \Sequent \Delta$-র
+কোনো !!{proof} নেই।
+% BN-SRC-591 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-591):} মিথ্যা উত্তরাংশের শর্তে উৎসের $! \in \Delta$ অসম্পূর্ণ সূত্র; পরের $\Sat/{M}{!A}$-এর সঙ্গে মিলিয়ে $!A \in \Delta$ করা হয়েছে।}
+% BN-SRC-591 TARGET-CORRECTION-END
+
+!!{formula}s-এর জোড়া
+$\Theta, \Xi$ এবং
+!!{constant}s-এর সেট~$C$ থেকে
+$\Struct{M}$ সংজ্ঞায়িত করি।
+এই $\Theta, \Xi$ ও~$C$
+প্রমাণ-অন্বেষণের
+ব্যর্থ (থেমে যাওয়া বা অনন্তকাল চলা)
+প্রক্রিয়ার একটি
+\emph{ব্যর্থতা-শাখা} থেকে পাই।
+এমন শাখায় সিকোয়েন্টের অনুক্রম
+$\Pi_n \Sequent \Lambda_n$ ও
+!!{constant}s-এর সেট~$C_n$ থাকে।
+এখানে $\Pi_0 \Sequent \Lambda_0$
+হলো শুরুর সিকোয়েন্ট
+$\Gamma \Sequent \Delta$;
+আর শাখার পরবর্তী ধাপ থাকলে
+$\Pi_{n+1} \Sequent \Lambda_{n+1}$
+হলো $n+1$-তম পর্যায়ে তৈরি
+$\Pi_n \Sequent \Lambda_n$-এর
+এমন পূর্বধারণা, যার !!a{proof}
+অ্যালগরিদম পায় না। শাখার
+প্রতিটি চলমান~$n$-এ
+এমন পূর্বধারণা থাকতেই হবে;
+নইলে অ্যালগরিদম !!a{proof} পেত।
+$C_n$ হলো
+$\Pi_n \Sequent \Lambda_n$-র
+সঙ্গে যুক্ত !!{constant}s-এর সেট।
+% BN-SRC-592 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-592):} শেষ বাক্যের সিকোয়েন্টে উৎসের $\Delta_n$ চিহ্নটি এই শাখায় সংজ্ঞায়িত নয়; শাখার ডান অংশ $\Lambda_n$ নেওয়া হয়েছে।}
+% BN-SRC-592 TARGET-CORRECTION-END
+% BN-SRC-596 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-596):} উৎসে প্রতিটি $n$-এ পরবর্তী ব্যর্থ পূর্বধারণা দাবি করার পরেই থেমে-যাওয়া সসীম শাখাকেও ব্যর্থতা-শাখা বলা হয়েছে। তাই পরবর্তী-ধাপের শর্ত চলমান পর্যায়গুলিতে সীমিত করা হয়েছে।}
+% BN-SRC-596 TARGET-CORRECTION-END
+
+অ্যালগরিদম যদি কেবল
+পারমাণবিক !!{formula}s-যুক্ত
+একটি সর্বোচ্চ সিকোয়েন্টে
+থেমে যায়, সেখানে শেষ হওয়া
+শাখাটি ব্যর্থতা-শাখা।
+আর অ্যালগরিদম কখনো না থামলে
+ক্রমে বড় বড় বৃক্ষ তৈরি করে।
+এগুলিকে একটি অনন্ত বৃক্ষের
+বৃদ্ধিশীল পর্যায় ভাবতে পারি
+(অসীম সংখ্যক ধাপ শেষে
+যে বৃক্ষ পাওয়া যেত)।
+বৃক্ষটি অনন্ত হলেও
+সসীম-শাখাবিশিষ্ট: প্রতিটি
+নোডের অব্যবহিত উপরে
+একটি বা দুটি সন্তান-সিকোয়েন্ট।
+K\H{o}nig-এর লেমা অনুযায়ী
+প্রতিটি অনন্ত সসীম-শাখাবিশিষ্ট
+বৃক্ষের অনন্ত শাখা আছে।
+অন্বেষণ অনন্তকাল চললে
+এমন অনন্ত শাখাই ব্যর্থতা-শাখা।
+
+$\Pi_n \Sequent \Lambda_n$
+ও $C_n$-এর অনুক্রম
+ব্যর্থতা-শাখা হলে ধরি
+$\Theta = \bigcup_n \Pi_n$,
+$\Xi = \bigcup_n \Lambda_n$
+(!!{formula}s-এর সূচক
+ও একাধিক সংঘটন সরিয়ে)
+এবং $C = \bigcup_n C_n$।
+
+এবার~$\Struct{M}$ সংজ্ঞায়িত করতে পারি।
+\begin{enumerate}
+\item $\Domain{M}$ হলো~$C$-র
+ধ্রুবক ও
+$\Gamma \Sequent \Delta$-তে থাকা
+!!{function}s দিয়ে গড়া,
+কিন্তু কোনো !!{variable}s না-থাকা
+পদগুলির সেট।
+\item $c \in C$ হলে
+$\Assign{c}{M} = c$।
+% BN-SRC-595 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-595):} ধ্রুবকের ব্যাখ্যায় $c$-কে উৎসে সমগ্র পদ-ডোমেনের সদস্য ধরা হয়েছে; $\Assign{c}{M}$ কেবল ধ্রুবক-চিহ্নের জন্য, তাই $c \in C$ করা হয়েছে।}
+% BN-SRC-595 TARGET-CORRECTION-END
+\item $f$ যদি
+$\Gamma \Sequent \Delta$-তে
+$m$-স্থানীয় !!{function} হয়
+এবং $t_1$, \dots,
+$t_m \in \Domain{M}$,
+তবে $\Assign{f}{M}(t_1, \dots, t_m) =
+f(t_1, \dots, t_m)$।
+% BN-SRC-593 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-593):} $m$-স্থানীয় ফাংশনের ফলপদে উৎসের শেষ যুক্তি $t_n$; আগের যুক্তিতালিকা অনুযায়ী $t_m$ করা হয়েছে।}
+% BN-SRC-593 TARGET-CORRECTION-END
+\item $R$ যদি
+$\Gamma \Sequent \Delta$-তে
+$m$-স্থানীয় !!{predicate} হয়,
+তবে $\Assign{R}{M} =
+\Setabs{\tuple{t_1, \dots, t_m} \in
+\Domain{M}^m}{R(t_1, \dots, t_m) \in \Theta}$।
+% BN-SRC-594 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-594):} $m$-স্থানীয় বিধেয়ের ব্যাখ্যায় উৎসের ডোমেন-ঘাত ও শেষ যুক্তি $n$ হলেও বাঁ টিউপল $m$-দৈর্ঘ্যের; সংজ্ঞা ও পরের ব্যাখ্যায় সর্বত্র $m$ নেওয়া হয়েছে।}
+% BN-SRC-594 TARGET-CORRECTION-END
+\end{enumerate}
+$\Struct{M}$ একটি
+\emph{পদ-মডেল}: তার ডোমেন
+পদের সেট, আর !!{constant}s
+ও !!{function}s-এর ব্যাখ্যা
+এমন যে $\Value{t}{M} = t$।
+$\Theta$-র পারমাণবিক
+!!{formula}s দিয়ে
+$\Assign{R}{M}$ এমনভাবে
+সংজ্ঞায়িত যে
+$\Sat{M}{R(t_1, \dots, t_m)}$
+তখনই এবং কেবল তখনই,
+যখন $R(t_1, \dots, t_m)
+\in \Theta$।
+
+\begin{lem}\ollabel{lem:truth}
+প্রতিটি $!A \in \Theta \cup \Xi$-র জন্য:
+\begin{enumerate}
+  \item $!A \in \Theta$ হলে $\Sat{M}{!A}$।
+  \item $!A \in \Xi$ হলে $\Sat/{M}{!A}$।
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+  $\depth{!A}$-র উপর আরোহ করি।
+
+প্রথমে ধরি $!A$ পারমাণবিক,
+অর্থাৎ $!A \ident \lfalse$ অথবা
+$!A \ident R(t_1, \dots, t_m)$।
+
+যেহেতু $\Pi_n \Sequent \Lambda_n$
+ব্যর্থতা-শাখায় আছে,
+কোনো $\Pi_n$-তে
+$\lfalse$ থাকতে পারে না
+(থাকলে $\Pi_n \Sequent \Lambda_n$
+স্বতঃসিদ্ধ হতো)।
+$\Struct{M}$-এর সংজ্ঞা থেকে
+$\Sat{M}{R(t_1, \dots, t_m)}$
+তখনই এবং কেবল তখনই,
+যখন $R(t_1, \dots, t_m) \in
+\Theta$। ফলে $!A \in
+\Theta$ হলে $\Sat{M}{!A}$।
+
+$!A$ পারমাণবিক হলে,
+$!A \in \Pi_n$ থেকে
+$!A \in \Pi_{n+1}$,
+আর $!A \in \Lambda_n$ থেকে
+$!A \in \Lambda_{n+1}$ হয়।
+(অন্বেষণ-অ্যালগরিদমের
+উত্তরসূরি সিকোয়েন্ট তৈরির
+পদ্ধতি থেকে এটি মেলে।)
+তাই $!A \in \Theta \cap \Xi$
+হলে কোনো~$n$-এর জন্য
+$!A \in \Pi_n \cap
+\Lambda_n$ হতো। তখন
+$\Pi_n \Sequent \Lambda_n$
+স্বতঃসিদ্ধ হতো; কিন্তু
+ব্যর্থতা-শাখায় স্বতঃসিদ্ধ
+থাকতে পারে না।
+অতএব পারমাণবিক~$!A$-এর
+জন্য $!A \notin \Theta
+\cap \Xi$। ফলে
+$!A \in \Xi$ হলে
+$!A \notin \Theta$;
+$\Struct{M}$-এর সংজ্ঞা থেকে
+$!A \in \Xi$ হলে
+$\Sat/{M}{!A}$।
+
+আরোহী ধাপে ধরি,
+$!A$-র চেয়ে কম
+!!{depth}-এর সব
+!!{formula}s-এর জন্য
+(1) ও (2) সত্য।
+ক্ষেত্রভেদ করে $!A$-র
+জন্যও (1) ও (2) দেখাই।
+
+প্রথমে লক্ষ করি,
+$\Pi_n \Sequent \Lambda_n$-তে
+$!A^i$ থাকলে, $i$
+সেখানকার ক্ষুদ্রতম সূচক না হওয়া
+পর্যন্ত $!A^i$ পরের
+$\Pi_{n+1} \Sequent \Lambda_{n+1}$-এও
+থাকে। প্রতি পর্যায়ে যোগ হওয়া
+সর্বোচ্চ সিকোয়েন্টে ক্ষুদ্রতম
+সূচক বাড়ে; তাই অবশেষে
+এমন $\Pi_n \Sequent \Lambda_n$
+পাই যেখানে $!A^i$ আছে
+এবং $i$ ক্ষুদ্রতম।
+$n+1$-তম পর্যায়ে অ্যালগরিদম
+$!A^i$ হ্রাস করে।
+অর্থাৎ, $!A \in \Theta$
+হলে কোনো $n$-এ
+$\Pi_n = \Pi_n', !A^i$
+এবং $i$ ক্ষুদ্রতম সূচক।
+একইভাবে, $!A \in \Xi$
+হলে কোনো $n$-এ
+$\Lambda_n = \Lambda_n', !A^i$
+এবং $i$ ক্ষুদ্রতম সূচক।
+
+\begin{enumerate}
+  \item $!A \in \Theta$
+  এবং $!A \ident !B \land !C$।
+  তখন কোনো $n$-এর জন্য
+  $\Pi_n = \Pi_n', (!B \land !C)^i$।
+  $\Pi_{n+1} \Sequent
+  \Lambda_{n+1}$ হলো
+  \LeftR{\land}-এর সংশ্লিষ্ট
+  পূর্বধারণা, অর্থাৎ
+  $\Pi_{n+1} = \Pi_n', !B^k, !C^{k+1}$।
+  ফলে $!B, !C \in
+  \Theta$। আরোহ-অনুমান থেকে
+  $\Sat{M}{!B}$ ও $\Sat{M}{!C}$।
+  $\Sat{M}{}$-এর সংজ্ঞা থেকে
+  $\Sat{M}{!B \land !C}$।
+
+  \item $!A \in \Xi$
+  এবং $!A \ident !B \land !C$।
+  তখন কোনো $n$-এর জন্য
+  $\Lambda_n = \Lambda_n', (!B \land !C)^i$।
+  $\Pi_{n+1} \Sequent
+  \Lambda_{n+1}$ হলো
+  \RightR{\land}-এর
+  দুটি পূর্বধারণার একটি;
+  সিদ্ধান্ত
+  $\Pi_n \Sequent \Lambda'_n, (!B \land !C)^i$।
+  অর্থাৎ, $\Lambda_{n+1} =
+  \Lambda_n', !B^k$
+  অথবা $\Lambda_{n+1} =
+  \Lambda_n', !C^k$।
+  ফলে $!B \in \Xi$
+  অথবা $!C \in \Xi$।
+  আরোহ-অনুমান থেকে
+  $\Sat/{M}{!B}$ অথবা
+  $\Sat/{M}{!C}$;
+  $\Sat{M}{}$-এর সংজ্ঞা থেকে
+  $\Sat/{M}{!B \land !C}$।
+  % BN-SRC-597 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-597):} ডান-∧ ক্ষেত্রের দুই সিকোয়েন্টে হ্রাসযোগ্য সূত্রের $i$ সূচক উৎসে বাদ ছিল; অ্যালগরিদম ও বাম-∧ ক্ষেত্র অনুযায়ী $(!B\land!C)^i$ ফিরেছে।}
+  % BN-SRC-597 TARGET-CORRECTION-END
+
+  \item $!A \ident \lnot !B$,
+  $!A \ident !B \lor !C$
+  ও $!A \ident !B \lif !C$
+  ক্ষেত্রগুলি একইরকম;
+  অনুশীলনে রাখা হলো।
+
+  \item $!A \in \Theta$
+  এবং $!A \ident \lexists[x][!B(x)]$।
+  তখন কোনো $n$-এ
+  $\Pi_n = \Pi_n', \lexists[x][!B(x)]^i$।
+  $\Pi_{n+1}
+  \Sequent \Lambda_{n+1}$
+  হলো \LeftR{\lexists}-এর
+  সংশ্লিষ্ট পূর্বধারণা,
+  অর্থাৎ কোনো~$c$-এর জন্য
+  $\Pi_{n+1} = \Pi_n', !B(c)^k$।
+  ফলে $!B(c) \in \Theta$
+  এবং~$c \in C$।
+  আরোহ-অনুমান থেকে
+  $\Sat{M}{!B(c)}$;
+  $\Sat{M}{}$-এর সংজ্ঞা থেকে
+  $\Sat{M}{\lexists[x][!B(x)]}$।
+
+  \item $!A \in \Xi$
+  এবং $!A \ident \lexists[x][!B(x)]$।
+  তখন কোনো $n$-এ
+  $\Lambda_n = \Lambda_n', \lexists[x][!B(x)]^i$।
+  প্রতিবার $\lexists[x][!B(x)]$
+  হ্রাসের পরে পূর্বধারণার
+  ডান দিকে $\lexists[x][!B(x)]$
+  নতুন সূচকসহ
+  থেকে যায়। তাই ব্যর্থতা-শাখার
+  ডানে থাকলে
+  $\lexists[x][!B(x)]$
+  অসীমবার হ্রাস পায়।
+  প্রতিটি $t \in
+  \Domain{M}$ একসময়
+  ``$C_n$-র ধ্রুবকগুলি
+  দিয়ে গড়া এবং
+  ডানে $\lexists[x][!B(x)]$
+  হ্রাসে এখনও ব্যবহৃত নয়
+  এমন প্রথম পদ'' হয়।
+  তাই প্রতিটি $t \in \Domain{M}$-র
+  জন্য কোনো~$n$-এ
+  $!B(t) \in \Lambda_n$,
+  এবং ফলে $!B(t) \in \Xi$।
+  আরোহ-অনুমান থেকে
+  সব $t \in \Domain{M}$-র
+  জন্য $\Sat/{M}{!B(t)}$;
+  $\Sat{M}{}$-এর সংজ্ঞা থেকে
+  $\Sat/{M}{\lexists[x][!B(x)]}$।
+
+  \item $!A \ident \lforall[x][!B(x)]$
+  ক্ষেত্রগুলি একইরকম;
+  অনুশীলনে রাখা হলো।
+\end{enumerate}
+\end{proof}
+
+\begin{cor}\ollabel{cor:complete}
+\Log{G3c}-র প্রমাণ-অন্বেষণ
+অ্যালগরিদম সম্পূর্ণ:
+সেটি ব্যর্থ হয়ে থেমে গেলে
+বা কখনো না থামলে শুরুর
+সিকোয়েন্ট~$\Gamma \Sequent \Delta$
+বৈধ নয়, তাই তার কোনো
+!!{proof} নেই।
+\end{cor}
+
+\begin{proof}
+  অ্যালগরিদম ব্যর্থ হয়ে
+  থেমে গেলে বা কখনো
+  না থামলে একটি
+  ব্যর্থতা-শাখা আছে,
+  যা থেকে $\Struct{M}$
+  সংজ্ঞায়িত করা যায়।
+  \olref{lem:truth} থেকে
+  সব $!A \in \Gamma$-র
+  জন্য $\Sat{M}{!A}$
+  এবং সব $!A \in \Delta$-র
+  জন্য $\Sat/{M}{!A}$।
+  (মনে রাখি,
+  $\Pi_0 = \Gamma$ ও
+  $\Lambda_0 =
+  \Delta$; তাই
+  $\Gamma \subseteq \Theta$
+  এবং $\Delta \subseteq \Xi$।)
+  অতএব $\Gamma \Sequent \Delta$
+  বৈধ নয়। \Log{G3c}-র
+  যথার্থতা থেকে
+  $\Gamma \Sequent \Delta$-র
+  কোনো !!{proof} নেই।
+\end{proof}
+
+\begin{cor}
+\Log{G3c} সম্পূর্ণ:
+$\Gamma \Sequent \Delta$
+বৈধ হলে
+$\Log{G3c} \Proves
+\Gamma \Sequent \Delta$।
+\end{cor}
+
+\begin{proof}
+  বিপরীতার্থক রূপ প্রমাণ করি।
+  ধরি, $\Log{G3c} \Proves/
+  \Gamma \Sequent \Delta$।
+  খুঁজে পাওয়ার মতো
+  কোনো !!{proof} নেই;
+  তাই প্রমাণ-অন্বেষণ
+  অ্যালগরিদম ব্যর্থ হয়ে
+  থামবে অথবা কখনো থামবে না।
+  \olref{cor:complete} থেকে
+  $\Gamma \Sequent \Delta$
+  বৈধ নয়।
+\end{proof}
+
+
+\end{document}

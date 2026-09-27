@@ -6497,6 +6497,33 @@ for row in rows:
             r"!E,\Gamma_2'\Sequent!A": 1,
         })
     )
+    legacy_search_completeness_repairs = (
+        row["unit_id"] == "OLP-0679"
+        and set(documented) == {f"BN-SRC-{n}" for n in range(591, 598)}
+        and source_math - target_math
+        == collections.Counter({
+            r"!\in\Delta": 1,
+            r"\Pi_n\Sequent\Delta_n": 1,
+            r"c\in\Domain{M}": 1,
+            r"\Assign{f}{M}(t_1,\dots,t_m)=f(t_1,\dots,t_n)": 1,
+            r"\Assign{R}{M}=\Setabs{\tuple{t_1,\dots,t_m}\in\Domain{M}^n}{R(t_1,\dots,t_n)\in\Theta}": 1,
+            r"\Sat{M}{R(t_1,\dots,t_n)}": 1,
+            r"R(t_1,\dots,t_n)\in\Theta": 1,
+            r"\Lambda_n=\Lambda_n',!B\land!C": 1,
+            r"\Pi_n\Sequent\Lambda'_n,!B\land!C": 1,
+        })
+        and target_math - source_math
+        == collections.Counter({
+            r"!A\in\Delta": 1,
+            r"c\inC": 1,
+            r"\Assign{f}{M}(t_1,\dots,t_m)=f(t_1,\dots,t_m)": 1,
+            r"\Assign{R}{M}=\Setabs{\tuple{t_1,\dots,t_m}\in\Domain{M}^m}{R(t_1,\dots,t_m)\in\Theta}": 1,
+            r"\Sat{M}{R(t_1,\dots,t_m)}": 1,
+            r"R(t_1,\dots,t_m)\in\Theta": 1,
+            r"\Lambda_n=\Lambda_n',(!B\land!C)^i": 1,
+            r"\Pi_n\Sequent\Lambda'_n,(!B\land!C)^i": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6645,6 +6672,7 @@ for row in rows:
             legacy_reduction_tree_repairs,
             legacy_segment_formula_prefix_fix,
             legacy_normal_translation_repairs,
+            legacy_search_completeness_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -6779,6 +6807,18 @@ for row in rows:
             "documented_source_corrections": [f"BN-SRC-{n}" for n in range(584, 591)],
             "documented_language_normalization": "BN-NORM-174",
             "bengali_conversion_labels": 2,
+        }
+    if row["unit_id"] == "OLP-0679":
+        assert legacy_search_completeness_repairs
+        assert source.count("$! \\in \\Delta$") == 1
+        assert checked_target.count("$!A \\in \\Delta$") >= 1
+        assert source.count(r"\Domain{M}^n") == 1
+        assert checked_target.count(r"\Domain{M}^n") == 0
+        assert "প্রতিটি চলমান~$n$-এ" in checked_target
+        tex_command_check = {
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(591, 598)],
+            "term_model_arity_repairs": True,
+            "finite_failure_branch_condition": True,
         }
     checks = {
         "unit_id": row["unit_id"],

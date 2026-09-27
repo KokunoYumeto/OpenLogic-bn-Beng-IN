@@ -5887,6 +5887,47 @@ for row in rows:
             r"\rho\in\rotationsgroup": 2,
         })
     )
+    methods_inference_subject_and_nonempty_fixes = (
+        row["unit_id"] == "OLP-0606"
+        and set(documented) == {"BN-SRC-477", "BN-SRC-478"}
+        and source_math - target_math == collections.Counter({
+            r"\inD": 1, r"\inE": 1, r"\inA": 1,
+            r"\in\emptyset": 2, r"\notin\emptyset": 1,
+            r"\notinA": 1, r"x\neq\emptyset": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"x\inD": 1, r"x\inE": 1, r"x\inA": 1,
+            r"x\in\emptyset": 2, r"x\notin\emptyset": 1,
+            r"x\notinA": 1, r"A\neq\emptyset": 1,
+        })
+    )
+    methods_example_two_parenthesis_fix = (
+        row["unit_id"] == "OLP-0608"
+        and set(documented) == {"BN-SRC-479"}
+        and source_math - target_math == collections.Counter({
+            r"C\subseteq(A\cup(C\setminusA)": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"C\subseteq(A\cup(C\setminusA))": 1,
+        })
+    )
+    methods_contradiction_wrong_set_fix = (
+        row["unit_id"] == "OLP-0609"
+        and set(documented) == {"BN-SRC-480"}
+        and source_math - target_math == collections.Counter({r"\notinC": 1})
+        and target_math - source_math == collections.Counter({r"x\notinA\cupB": 1})
+    )
+    methods_reading_proofs_two_repairs = (
+        row["unit_id"] == "OLP-0610"
+        and set(documented) == {"BN-SRC-481", "BN-SRC-482"}
+        and source_math - target_math == collections.Counter({
+            r"A\cap(A\cupB)\subseteqA": 1,
+            r"z\inA\cupB)": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"A\subseteqA\cap(A\cupB)": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6003,6 +6044,10 @@ for row in rows:
             countable_choice_union_index_fix,
             banach_tangent_parenthesis_fix,
             vitali_rotation_domain_fixes,
+            methods_inference_subject_and_nonempty_fixes,
+            methods_example_two_parenthesis_fix,
+            methods_contradiction_wrong_set_fix,
+            methods_reading_proofs_two_repairs,
         )
     )
     minimal_change_fileid_fix = (

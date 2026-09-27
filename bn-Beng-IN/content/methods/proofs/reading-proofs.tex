@@ -1,0 +1,125 @@
+% Part: methods
+% Chapter: proofs
+% Section: reading-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{prf}{rea}
+\olsection{প্রমাণ পড়া}
+
+পাঠ্যবই বা প্রবন্ধের প্রমাণে আমাদের উদাহরণগুলির মতো
+সব খুঁটিনাটি সচরাচর লেখা থাকে না। লেখক কখন
+ক্ষেত্রবিচার করছেন, কখন পরোক্ষ প্রমাণ দিচ্ছেন,
+অথবা কোনো সংজ্ঞা ব্যবহার করছেন—অনেক সময় তা
+আলাদা করে বলেন না। তাই পাঠ্যবইয়ের প্রমাণ বুঝতে
+সেই ধাপগুলি নিজেকেই পূরণ করতে হয়। এতে প্রমাণ
+লেখার নানা কৌশল চেনার অনুশীলনও হয়। একটি উদাহরণ দেখি।
+
+\begin{prop}[শোষণ]
+সব সেট $A$, $B$-র জন্য,
+\[
+A \cap (A \cup B) = A
+\]
+\end{prop}
+
+\begin{proof}
+$z \in A \cap (A \cup B)$ হলে $z \in A$;
+তাই $A \cap (A \cup B) \subseteq A$। এবার
+$z \in A$ ধরি। তাহলে $z \in A \cup B$-ও,
+আর তাই $z \in A \cap (A \cup B)$-ও।
+\end{proof}
+
+শোষণ-সূত্রের উপরের প্রমাণটি খুব সংক্ষিপ্ত। কোন
+সংজ্ঞা ব্যবহার হয়েছে বা আগে ``দেখাতে হবে''
+কী, তা বলা নেই। এবার বিস্তারিত খুলে দেখি।
+প্রমাণিত প্রস্তাবটি যেকোনো সেট $A$, $B$ নিয়ে
+সার্বিক দাবি; প্রমাণে $A$ বা $B$ হলো যেকোনো
+সেটের চলক। যে সার্বিক দাবিগুলি প্রতিষ্ঠিত হয়,
+সেগুলিই সেটের অভেদ প্রমাণে দরকার: সমতার বাম
+দিকের প্রত্যেক !!{element} ডান দিকেরও
+!!a{element}, এবং উল্টোটিও।
+
+\begin{quote}
+``$z \in A \cap (A \cup B)$ হলে $z \in A$;
+তাই $A \cap (A \cup B) \subseteq A$।''
+\end{quote}
+
+এটি অভেদের প্রমাণের প্রথমার্ধ: বাম দিকের
+!!a{element} যেকোনো~$z$ ডান দিকেরও
+!!a{element}, অর্থাৎ
+$A \cap (A \cup B) \subseteq A$। ধরো,
+$z \in A \cap (A \cup B)$। $z$ দুটি সেটের ছেদের
+!!{element} হওয়া মানে উভয়েরই !!{element}
+হওয়া। তাই $z \in A$ এবং $z \in A \cup B$।
+বিশেষত $z \in A$—এটিই দেখাতে চেয়েছিলাম।
+প্রথমার্ধে আর কিছু বাকি নেই; সুতরাং বাকি প্রমাণে
+দ্বিতীয়ার্ধ, অর্থাৎ $A \subseteq A \cap
+(A \cup B)$, দেখানো হবে।
+
+\begin{quote}
+``এবার $z \in A$ ধরি। তাহলে $z \in A \cup B$-ও,
+আর তাই $z \in A \cap (A \cup B)$-ও।''
+\end{quote}
+
+প্রথমে $z \in A$ ধরি, কারণ প্রত্যেক~$z$-এর
+জন্য $z \in A$ হলে $z \in A \cap (A \cup B)$
+দেখাচ্ছি। $z \in A \cap (A \cup B)$ দেখাতে
+``$\cap$''-র সংজ্ঞা অনুযায়ী (i) $z \in A$
+এবং (ii) $z \in A \cup B$ দেখাতে হবে। (i)
+আমাদের পূর্বধারণাই, তাই আবার প্রমাণ বা উল্লেখ
+করতে হয়নি। (ii)-এর জন্য মনে করো, $z$ সংযোগের
+!!a{element} তখনই, যখন সেটদুটির অন্তত একটির
+!!{element}। $z \in A$, আর $A \cup B$ হলো
+$A$ ও $B$-র সংযোগ; তাই এখানে শর্তটি পূরণ
+হয়। ফলে $z \in A \cup B$। (i) ও (ii)
+দুটিই দেখিয়েছি; অতএব ``$\cap$''-র সংজ্ঞায়
+$z \in A \cap (A \cup B)$। সংক্ষিপ্ত প্রমাণে
+সংজ্ঞাগুলির কথা লেখা নেই; ধরে নেওয়া হয়েছে
+পাঠকের জানা। জানা না থাকলে আবার দেখে নিতে
+হবে। তারপর চিনতে হবে, $z \in A$ থেকে কেন
+$z \in A \cup B$, আর $z \in A$ এবং
+$z \in A \cup B$ থেকে কেন
+$z \in A \cap (A \cup B)$ আসে।
+
+সব ধাপ স্পষ্ট করে উপরের প্রমাণের আরেকটি রূপ:
+\begin{proof}{}
+[সেটের $=$-র সংজ্ঞায় $A \cap (A \cup B) = A$
+  দেখাতে (a) $A \cap (A \cup B) \subseteq A$
+  % BN-SRC-481: the second inclusion must run from A into the intersection.
+  এবং (b) $A \subseteq A \cap (A \cup B)$
+  দেখাতে হবে। (a): $\subseteq$-র সংজ্ঞায়
+  $z \in A \cap (A \cup B)$ হলে $z \in A$
+  দেখাতে হবে।] $z \in A \cap (A \cup B)$ হলে
+  $z \in A$ [$\cap$-র সংজ্ঞায়
+  $z \in A \cap (A \cup B)$ তখনই, যখন
+  $z \in A$ এবং $z \in A \cup B$]; তাই
+  $A \cap (A \cup B) \subseteq A$।
+  [(b): $\subseteq$-র সংজ্ঞায় $z \in A$ হলে
+  $z \in A \cap (A \cup B)$ দেখাতে হবে।]
+  এবার [(1)] $z \in A$ ধরি। তাহলে
+  [(2)] $z \in A \cup B$-ও [$z \in A$ অর্থাৎ
+  (1) থেকে $z \in A$ অথবা $z \in B$;
+  $\cup$-র সংজ্ঞায় এর অর্থ $z \in A \cup B$]।
+  অতএব $z \in A \cap (A \cup B)$
+  [$\cap$-র সংজ্ঞায় $z \in A$, অর্থাৎ (1),
+  % BN-SRC-482: remove the unmatched closing parenthesis in the source.
+  এবং $z \in A \cup B$, অর্থাৎ (2), দরকার]।
+\end{proof}
+
+\begin{prob}
+নিচের $A \cup (A \cap B) = A$ প্রমাণটি বিস্তারিত
+করো। কোন কোন অনুমানের রীতি ব্যবহৃত হয়েছে,
+প্রতিটি ধাপ কোন পূর্বধারণা বা আগের প্রতিষ্ঠিত
+বক্তব্য থেকে এসেছে, এবং কোথায় কোন সংজ্ঞা
+লাগছে—সব উল্লেখ করো।
+\begin{proof}
+  $z \in A \cup (A \cap B)$ হলে $z \in A$
+  অথবা $z \in A \cap B$। $z \in A \cap B$
+  হলে $z \in A$। যেকোনো $z \in A$-র জন্য
+  $\in A \cup (A \cap B)$-ও।
+\end{proof}
+\end{prob}
+
+\end{document}

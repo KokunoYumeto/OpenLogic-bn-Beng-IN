@@ -1,0 +1,116 @@
+% Part: methods
+% Chapter: proofs
+% Section: example-2
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{prf}{ex2}
+
+\olsection{আরেকটি উদাহরণ}
+
+\begin{prop}
+$A \subseteq C$ হলে $A \cup (C \setminus A) = C$।
+\end{prop}
+
+\begin{proof}
+  $A \subseteq C$ ধরি। দেখাতে চাই
+  $A \cup (C \setminus A) = C$।
+  \begin{quote}
+    প্রথমে লক্ষ করি, এটি শর্তাধীন বক্তব্য। এর
+    সার্বিক পরিমাণায়ন প্রচ্ছন্ন: প্রস্তাবটি সব সেট
+    $A$ ও $C$-র জন্য সত্য। তাই $A$ ও $C$
+    যেকোনো সেটের চলক। এমন বক্তব্য প্রমাণে
+    পূর্বপক্ষ ধরে উত্তরপক্ষ প্রমাণ করতে হয়।
+
+    এবার $A \subseteq C$ পূর্বধারণাটি ব্যবহার করি।
+    $\subseteq$-র সংজ্ঞা খুললে পাই: $A$-র সব
+    !!{element}s, $C$-রও !!{element}s।
+    এটি প্রমাণের সর্বত্র কাজে লাগবে; তাই লিখে রাখি।
+  \end{quote}
+  $\subseteq$-র সংজ্ঞায়, $A \subseteq C$ বলে
+  প্রত্যেক $z$-এর জন্য $z \in A$ হলে $z \in C$।
+  \begin{quote}
+    পূর্বধারণায় দেওয়া সব সংজ্ঞা খুলেছি। এবার
+    সিদ্ধান্তে আসি। $A \cup (C \setminus A) = C$
+    দেখাতে হবে; আগের উদাহরণের মতো প্রমাণ
+    সাজাই: $A \cup (C \setminus A)$-র প্রত্যেক
+    !!{element} $C$-রও !!a{element}, আর
+    উল্টোদিকে $C$-র প্রত্যেক !!{element}
+    $A \cup (C \setminus A)$-রও !!a{element}
+    দেখাই। সংক্ষেপে: $A \cup (C \setminus A)
+    \subseteq C$ এবং $C \subseteq A \cup (C
+    \setminus A)$। (এখানে সংজ্ঞা খোলার উল্টো
+    কাজ করছি, কিন্তু তাতে প্রমাণটি পড়া সহজ।)
+    এটি সংযোজন বলে দুটি অংশই প্রমাণ করতে হবে।
+    প্রথমটি, অর্থাৎ $A \cup (C \setminus A)$-র
+    প্রত্যেক !!{element} $C$-রও !!a{element},
+    দেখাতে যেকোনো~$z$-এর জন্য
+    $z \in A \cup (C \setminus A)$ ধরে
+    $z \in C$ প্রমাণ করি। $\cup$-র সংজ্ঞা অনুযায়ী
+    $z \in A \cup (C \setminus A)$ থেকে
+    $z \in A$ অথবা $z \in C \setminus A$ পাই।
+    এ রীতি এখন নিশ্চয়ই পরিচিত লাগছে।
+  \end{quote}
+  % BN-SRC-479: balance the second subset expression in the frozen source.
+  $A \cup (C \setminus A) = C$ তখনই, যখন
+  $A \cup (C \setminus A) \subseteq C$ এবং
+  $C \subseteq (A \cup (C \setminus A))$। প্রথমে
+  $A \cup (C \setminus A) \subseteq C$ প্রমাণ করি।
+  $z \in A \cup (C \setminus A)$ ধরি। তাই হয়
+  $z \in A$, নয় $z \in (C \setminus A)$।
+  \begin{quote}
+    একটি বিযোজন পেয়েছি; তা থেকে $z \in C$
+    প্রমাণ করতে হবে। ক্ষেত্রবিচার করি।
+  \end{quote}
+  ক্ষেত্র 1: $z \in A$। প্রত্যেক $z$-এর জন্য
+  $z \in A$ হলে $z \in C$ বলে এখানেও
+  $z \in C$।
+  \begin{quote}
+    উপরে লেখা তথ্যটি ব্যবহার করেছি; সেটি প্রস্তাবের
+    $A \subseteq C$ পূর্বধারণা থেকে এসেছিল।
+    প্রথম ক্ষেত্র শেষ। এবার দ্বিতীয় ক্ষেত্র:
+    $z \in (C \setminus A)$। মনে করো,
+    $C \setminus A$ হলো দুটি সেটের \emph{অন্তর}:
+    $C$-র যে !!{element}s, $A$-র !!{element}s
+    নয়, তাদের সেট। $C$-র $A$-বহির্ভূত যেকোনো
+    !!{element}, $C$-রই !!a{element}।
+  \end{quote}
+  ক্ষেত্র 2: $z \in (C \setminus A)$। এর অর্থ
+  $z \in C$ এবং $z \notin A$। বিশেষত $z \in C$।
+  \begin{quote}
+    প্রথম দিকটি প্রমাণিত। এবার দ্বিতীয় দিক:
+    $C \subseteq A \cup (C \setminus A)$।
+    তাই $z \in C$ ধরে প্রমাণ করব
+    $z \in A \cup (C \setminus A)$।
+  \end{quote}
+  এবার $z \in C$ ধরি। দেখাতে চাই, $z \in A$
+  অথবা $z \in C \setminus A$।
+  \begin{quote}
+    $A$-র সব !!{element}s, $C$-রও
+    !!{element}s; আর $C \setminus A$ হলো
+    $C$-র যেসব !!{element}s, $A$-র নয়,
+    তাদের সেট। তাই $z$ হয় $A$-তে, নয়
+    $C \setminus A$-তে। সিদ্ধান্তটি কেন সত্য
+    আগে থেকে না জানলে এ যুক্তি অস্পষ্ট লাগতে
+    পারে। ধাপে ধাপে প্রমাণ করাই ভালো। একটি
+    সরল তথ্য বিনা প্রমাণে ব্যবহার করি:
+    $z \in A$ অথবা $z \notin A$। একে বলে
+    ``বর্জিত-মধ্যম নীতি'': যেকোনো বক্তব্য~$p$-র
+    জন্য হয় $p$ সত্য, নয় তার নঞর্থকতা সত্য।
+    (এখানে $p$ হলো $z \in A$ বক্তব্যটি।)
+    এটি বিযোজন; তাই আবার ক্ষেত্রবিচার করতে পারি।
+  \end{quote}
+  হয় $z \in A$, নয় $z \notin A$। প্রথম
+  ক্ষেত্রে $z \in A \cup (C \setminus A)$।
+  দ্বিতীয় ক্ষেত্রে $z \in C$ এবং $z \notin A$;
+  তাই $z \in C \setminus A$। ফলে
+  $z \in A \cup (C \setminus A)$।
+  \begin{quote}
+    প্রমাণ শেষ: $A \cup (C \setminus A) = C$
+    দেখিয়েছি।
+  \end{quote}
+\end{proof}
+
+\end{document}

@@ -1,0 +1,114 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: proofs-to-terms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{pt}
+
+\olsection{\usetoken{P}{derivation} থেকে প্রমাণপদে রূপান্তর}
+
+স্বাভাবিক নিষ্পাদনের !!{proof}s-কে প্রমাণপদে
+রূপান্তর করা, অর্থাৎ \Log{N2i}-র !!{proof}s-কে
+\Log{tN2i}-র !!{proof}s-এ অনুবাদ করা,
+অত্যন্ত সরল। !!{derivation}-এর প্রতিটি
+সিকোয়েন্টের ডান দিকের !!{formula}-র
+বাঁয়ে একটি প্রমাণপদ লিখলেই হয়। ফলে
+সিকোয়েন্টের রূপ হয় $\Gamma \Sequent M :
+!A$। তখন বলি, প্রসঙ্গ~$\Gamma$-তে
+$M$ হলো~$!A$-এর \emph{সাক্ষী}।
+কোন প্রমাণপদ লিখতে হবে, তা
+\Log{tN2i}-র বিধিগুলিই সম্পূর্ণ
+নির্ধারণ করে।
+
+\begin{prop}
+\Log{N2i}-তে $\Gamma \Sequent !A$-এর
+প্রত্যেক !!{proof}~$\delta$-র অনুরূপ
+\Log{tN2i}-তে $\Gamma \Sequent N : !A$-এর
+!!a{proof}~$\delta'$ আছে। প্রমাণপদ~$N$
+পদটি~$\delta$ দ্বারা এককভাবে নির্ধারিত।
+\end{prop}
+
+\begin{proof}
+$\delta$-র উচ্চতার উপর আরোহ করি।
+$\delta$ যদি $x:!A \Sequent !A$
+স্বতঃসিদ্ধ হয়, তবে $\delta'$ হলো
+$x:!A \Sequent x:!A$ স্বতঃসিদ্ধ।
+$\delta$ কোনো অনুমানবিধিতে শেষ হলে
+আরোহ-অনুমানে প্রতিটি পূর্বধারণার
+জন্য একটি প্রমাণপদ এবং সেই প্রমাণপদসহ
+সিকোয়েন্টের \Log{tN2i}-!!{proof}s
+পাই। \Log{tN2i}-র অনুরূপ বিধি
+প্রয়োগ করি; সংশ্লিষ্ট প্রমাণপদটি
+সেই অনুমানবিধি নির্ধারণ করে।
+\end{proof}
+
+\begin{ex}
+  \Log{N1i}-তে $(!A \land !B)
+  \lif (!B \land !A)$-এর
+  অতি সরল !!{proof}টি দেখি:
+  \[
+  \AxiomC{$\Discharge{!A\land !B}{x}$}
+  \RightLabel{\Elim\land[2]}
+  \UnaryInfC{$!B$}
+  \AxiomC{$\Discharge{!A\land !B}{x}$}
+  \RightLabel{\Elim\land[1]}
+  \UnaryInfC{$!A$}
+  \RightLabel{\Intro\land}
+  \BinaryInfC{$!B \land !A$}
+  \DischargeRule{\Intro\lif}{x}
+  \UnaryInfC{$(!A \land !B) \lif (!B \land !A)$}
+  \DisplayProof
+  \]
+  \Log{N2i}-তে এর রূপ:
+  \[
+  \Axiom$x : !A\land !B \fCenter !A\land !B$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter !B$
+  \Axiom$x : !A\land !B \fCenter !A\land !B$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter !A$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter !B \land !A$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter (!A \land !B) \lif (!B \land !A)$
+  \DisplayProof
+  \]
+  উপর থেকে নিচে প্রমাণপদগুলি দিই।
+  স্বতঃসিদ্ধের প্রমাণপদ প্রসঙ্গের
+  চলরাশিটিই, অর্থাৎ~$x$।
+  $\Elim\land[i]$-এর সংশ্লিষ্ট
+  প্রমাণপদ যথাক্রমে
+  $\proj{2}{x}$ ও~$\proj{1}{x}$।
+  \Intro{\land} প্রয়োগে পদদুটি
+  একত্র করি:
+  $\pair{\proj{2}{x}}{\proj{1}{x}}$।
+  সব শেষে \Intro{\lif} বিধিতে
+  $\lambd$-বিমূর্তন প্রয়োগ করি।
+  এতে $x$ বদ্ধ হয় এবং $x$
+  যে~$!A \land !B$ অনুমানের
+  চিহ্ন ছিল, তা নথিবদ্ধ হয়:
+  $\lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}]$।
+  তখন \Log{tN2i}-র !!{proof}টি:
+  \[
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{2}{x} : !B$
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{1}{x} : !A$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} :
+    !B \land !A$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!B \land !A)$
+  \DisplayProof
+  \]
+\end{ex}
+
+
+\end{document}

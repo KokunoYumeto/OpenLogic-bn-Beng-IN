@@ -6649,6 +6649,33 @@ for row in rows:
             and not normalizations
             and mathparts(audited_reduction) == target_math
         )
+    legacy_sequent_nd_example_repairs = (
+        row["unit_id"] == "OLP-0694"
+        and set(documented) == {"BN-SRC-619", "BN-SRC-620"}
+        and not normalizations
+        and source_math - target_math == collections.Counter({
+            r"\Gamma\Sequent!A\land!A": 1,
+            r"!A\land!A": 1,
+            r"!A,!B\lif\fCenter\lfalse": 1,
+            r"(!B\fCenter!A\lif\lfalse": 1,
+            r"(!B\fCenter!A\lor(!A\lif\lfalse)": 1,
+            r"(!B\fCenter!B": 1,
+            r"(!B\fCenter\lfalse": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\Gamma\Sequent!A\land!B": 1,
+            r"!A\land!B": 1,
+            r"\Intro{\lif}": 2,
+            r"\Intro{\lor}_1": 1,
+            r"\Intro{\lor}_2": 1,
+            r"\Elim{\lif}": 2,
+            r"!B\fCenter!B": 1,
+            r"!A,!B\fCenter\lfalse": 1,
+            r"!B\fCenter!A\lif\lfalse": 1,
+            r"!B\fCenter!A\lor(!A\lif\lfalse)": 1,
+            r"!B\fCenter\lfalse": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6803,6 +6830,7 @@ for row in rows:
             legacy_propositions_normalization_repairs,
             legacy_proof_term_constructor_repairs,
             legacy_proof_term_reduction_repairs,
+            legacy_sequent_nd_example_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7038,6 +7066,14 @@ for row in rows:
             "documented_source_corrections": ["BN-SRC-618"],
             "documented_language_normalization": "BN-NORM-179",
             "unique_tn3_table_label": True,
+        }
+    if row["unit_id"] == "OLP-0694":
+        assert legacy_sequent_nd_example_repairs
+        assert checked_target.count(r"\UnaryInf$\fCenter !B \lif \lfalse$") == 1
+        assert checked_target.count(r"\BinaryInf$!B \fCenter \lfalse$") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-619", "BN-SRC-620"],
+            "closing_double_negation_tree": True,
         }
     checks = {
         "unit_id": row["unit_id"],

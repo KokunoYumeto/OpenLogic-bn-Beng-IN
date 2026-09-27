@@ -1,0 +1,148 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: sequent-natural-deduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{snd}
+
+\olsection{সিকোয়েন্টে স্বাভাবিক নিষ্পাদন}
+
+$\Gamma \Sequent !A$ লিখি যদি এমন একটি স্বাভাবিক
+নিষ্পাদনের !!{derivation} থাকে যার !!{undischarged}
+অনুমানগুলির সমষ্টি $\Gamma$ এবং সিদ্ধান্ত $!A$;
+$\Gamma$ ফাঁকা হলে লিখি $\Sequent !A$।
+
+$\Gamma \cup \{!A_1, \dots, !A_n\}$-কে
+$\Gamma, !A_1, \dots, !A_n$ লিখি; আর
+$\Gamma \cup \Delta$-কে লিখি $\Gamma, \Delta$।
+
+ধরি, $\Gamma \Sequent !A \land !B$ আছে, অর্থাৎ
+$\Gamma$-কে !!{undischarged} অনুমানের সমষ্টি এবং
+$!A \land !B$-কে অন্তিম-!!{formula} রেখে
+!!a{derivation} আছে। তার শেষে $\Elim{\land}$
+প্রয়োগ করলে একই !!{undischarged} অনুমান থেকে
+$!A$ সিদ্ধান্তযুক্ত !!a{derivation} পাই। অন্য
+কথায়, $\Gamma \Sequent !A \land !B$ থেকে
+$\Gamma \Sequent !A$ পাওয়া যায়।
+\begin{prooftree}
+  \Axiom$\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}$}
+  \UnaryInf$\Gamma \fCenter !A$
+  \DisplayProof\qquad\bottomAlignProof
+  \Axiom$\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}$}
+  \UnaryInf$\Gamma \fCenter !B$
+\end{prooftree}
+% BN-SRC-619 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-619):} এই অনুচ্ছেদের প্রথম যৌগে উৎসে \( !A\land !A \) লেখা, অথচ পরের সিকোয়েন্ট ও দুই নিষ্কাশন-বৃক্ষে \( !A\land !B \) আছে; সেটিই রাখা হয়েছে।}
+% BN-SRC-619 TARGET-CORRECTION-END
+$\Elim{\land}$ লেবেলটি স্বাভাবিক নিষ্পাদনের
+একই নামের বিধির সঙ্গে এই বিধির সম্পর্ক দেখায়।
+
+একইভাবে, ধরি $\Gamma, !A \Sequent !B$ আছে;
+অর্থাৎ $\Gamma, !A$ হলো !!{undischarged}
+অনুমানের সমষ্টি এবং $!B$ হলো অন্তিম-!!{formula}
+এমন !!a{derivation} আছে। $\Intro{\lif}$ বিধি
+প্রয়োগ করলে $\Gamma$-কে !!{undischarged} অনুমান
+এবং $!A \lif !B$-কে অন্তিম-!!{formula} রেখে
+!!a{derivation} পাই, অর্থাৎ $\Gamma \Sequent
+!A \lif !B$। এই লিখনরীতিতে অনুমানের
+!!{discharge} আরও স্পষ্ট হয়েছে।
+\begin{prooftree}
+  \Axiom $\Gamma, !A \fCenter !B$
+  \RightLabel{$\Intro{\lif}$}
+  \UnaryInf $\Gamma \fCenter !A \lif !B$
+\end{prooftree}
+
+অন্য বিধি থেকেও একইভাবে সিদ্ধান্ত পাওয়া যায়;
+সবগুলি নিচে দেখানো হলো:
+\begin{gather*}
+  \Axiom $\Gamma \fCenter !A$
+  \Axiom $\Delta \fCenter !B$
+  \RightLabel{$\Intro{\land}$}
+  \BinaryInf $\Gamma,\Delta \fCenter !A \land !B$
+  \DisplayProof\\
+  \Axiom $\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}_1$}
+  \UnaryInf $\Gamma \fCenter !A$
+  \DisplayProof
+  \qquad
+  \Axiom $\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}_2$}
+  \UnaryInf $\Gamma \fCenter !B$
+  \DisplayProof
+  \\
+  \Axiom $\Gamma \fCenter !A$
+  \RightLabel{$\Intro{\lor}_1$}
+  \UnaryInf $\Gamma \fCenter !A \lor !B$
+  \DisplayProof\qquad
+  \Axiom $\Gamma \fCenter !B$
+  \RightLabel{$\Intro{\lor}_2$}
+  \UnaryInf $\Gamma \fCenter !A \lor !B$
+  \DisplayProof\\
+  \Axiom $\Gamma \fCenter !A \lor !B$
+  \Axiom $\Delta, !A \fCenter !C$
+  \Axiom $\Delta', !B \fCenter !C$
+  \RightLabel{$\Elim{\lor}$}
+  \TrinaryInf $\Gamma, \Delta, \Delta' \fCenter !C$
+  \DisplayProof
+  \\
+  \Axiom $\Gamma, !A \fCenter !B$
+  \RightLabel{$\Intro{\lif}$}
+  \UnaryInf $\Gamma \fCenter !A \lif !B$
+  \DisplayProof
+  \qquad
+  \Axiom $\Delta \fCenter !A \lif !B$
+  \Axiom $\Gamma \fCenter !A$
+  \RightLabel{$\Elim{\lif}$}
+  \BinaryInf $\Gamma, \Delta \fCenter !B$
+  \DisplayProof
+  \\
+  \Axiom $\Gamma \fCenter \lfalse$
+  \RightLabel{$\FalseInt$}
+  \UnaryInf $\Gamma \fCenter !A$
+  \DisplayProof
+\end{gather*}
+
+যেকোনো অনুমান নিজেই $!A$ থেকে $!A$-এর
+!!a{derivation}; তাই সব সময় $!A \Sequent !A$।
+
+\begin{prooftree}
+  \AxiomC{$ $}
+  \UnaryInfC{$!A \fCenter !A$}
+\end{prooftree}
+
+বিধিগুলিকে একত্রে কোন কোন স্বাভাবিক নিষ্পাদনের
+!!{derivation}s আছে তার একটি কলন হিসেবে ধরা
+যায়। এগুলি স্বাভাবিক নিষ্পাদনেরই বিকল্প
+লিখনরীতি: প্রতিটি ধাপে কেবল যে
+!!{formula} !!{derive}d হয়েছে সেটিই নয়, যে !!{undischarged} অনুমানগুলি
+থেকে সেটি !!{derive} করা হয়েছে, সেগুলিও লেখা
+থাকে।
+
+\begin{prooftree}
+  \Axiom$!A \fCenter !A$
+  \RightLabel{$\Intro{\lor}_1$}
+  \UnaryInf $!A \fCenter !A \lor (!A \lif \lfalse)$
+  \Axiom $!B \fCenter !B$
+  \RightLabel{$\Elim{\lif}$}
+  \BinaryInf$!A, !B \fCenter \lfalse$
+  \RightLabel{$\Intro{\lif}$}
+  \UnaryInf$!B \fCenter !A \lif \lfalse$
+  \RightLabel{$\Intro{\lor}_2$}
+  \UnaryInf$!B \fCenter !A \lor (!A \lif \lfalse)$
+  \Axiom$!B \fCenter !B$
+  \RightLabel{$\Elim{\lif}$}
+  \BinaryInf$!B \fCenter \lfalse$
+  \RightLabel{$\Intro{\lif}$}
+  \UnaryInf$\fCenter !B \lif \lfalse$
+\end{prooftree}
+% BN-SRC-620 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-620):} শেষ প্রমাণবৃক্ষে উৎসের অসম্পূর্ণ বন্ধনী, ভুল প্রসঙ্গ \( !B\lif \), এবং অনুপস্থিত বিধি-ধাপগুলি সংশোধন করা হয়েছে। \( !B=( !A\lor(!A\lif\lfalse))\lif\lfalse \) ধরে প্রথমে \( !A,!B\Sequent\lfalse \), তারপর \( !B\Sequent !A\lif\lfalse \), পরে \( !B\Sequent !A\lor(!A\lif\lfalse) \), শেষে \( \Sequent !B\lif\lfalse \) পাওয়া যায়।}
+% BN-SRC-620 TARGET-CORRECTION-END
+এখানে $!B$ হলো $(!A \lor (!A \lif \lfalse))\lif \lfalse$-এর সংক্ষিপ্ত রূপ।
+
+\end{document}

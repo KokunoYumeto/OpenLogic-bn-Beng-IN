@@ -46,6 +46,9 @@ def without_documented_corrections(text):
 
 
 def body(text):
+    if "\\begin{document}" not in text:
+        assert "\\end{document}" not in text
+        return text
     return text.split("\\begin{document}", 1)[1].rsplit("\\end{document}", 1)[0]
 
 
@@ -6162,6 +6165,34 @@ for row in rows:
             set(documented) == {"BN-SRC-529", "BN-SRC-530"}
             and mathparts(audited_intro) == target_math
         )
+    legacy_cut_fragment_repairs = False
+    if row["unit_id"] == "OLP-0660":
+        audited_fragment = source
+        old = r"\Deduce$B!, \Gamma"
+        assert audited_fragment.count(old) == 1
+        audited_fragment = audited_fragment.replace(old, r"\Deduce$!B, \Gamma", 1)
+        old = r"\BinaryInf$!B, \Gamma, \Pi \fCenter \Delta, \Lambda$"
+        assert audited_fragment.count(old) == 2
+        pos = audited_fragment.rfind(old)
+        audited_fragment = (
+            audited_fragment[:pos]
+            + r"\BinaryInf$\Gamma, \Gamma, \Pi, \Pi, \Pi \fCenter \Delta, \Delta, \Lambda, \Lambda, \Lambda$"
+            + audited_fragment[pos + len(old):]
+        )
+        old = r"\cutr{\pi}"
+        assert audited_fragment.count(old) == 1
+        audited_fragment = audited_fragment.replace(old, r"\cutrank{\pi}", 1)
+        old = r"\Gamma, \Pi, \Pi, \Pi \fCenter \Delta, \Lambda, \Lambda, \Lambda$."
+        assert audited_fragment.count(old) == 1
+        audited_fragment = audited_fragment.replace(
+            old,
+            r"\Gamma, \Pi, \Pi, \Pi \fCenter \Delta, \Delta, \Lambda, \Lambda, \Lambda$.",
+            1,
+        )
+        legacy_cut_fragment_repairs = (
+            set(documented) == {f"BN-SRC-{n}" for n in range(531, 536)}
+            and mathparts(audited_fragment) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6295,6 +6326,7 @@ for row in rows:
             legacy_cut_topmost_formula_repairs,
             legacy_interpolation_language_repairs,
             legacy_cut_intro_label_fix,
+            legacy_cut_fragment_repairs,
         )
     )
     minimal_change_fileid_fix = (

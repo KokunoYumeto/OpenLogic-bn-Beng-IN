@@ -1,0 +1,92 @@
+$!A \ident (!B \lif !C)$ হলে $\pi$-র শেষাংশ
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lif !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B \lif !C, \Pi \fCenter \Lambda, !B$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Pi \fCenter \Lambda$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Pi \fCenter \Lambda$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\Cut}
+\BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
+\DisplayProof
+\]
+নীচের \Cut{}-এ শেষ হওয়া !!{proof}টি দেখি:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lif !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B \lif !C, \Pi \fCenter \Lambda, !B$
+\RightLabel{\Cut}
+\BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda, !B$
+\DisplayProof
+\]
+এর কর্তন-!!{height} $\pi$-র চেয়ে কম। তাই আরোহের অনুমান
+$\Gamma, \Pi \fCenter \Delta, \Lambda, !B$-র
+!!a{proof}~$\pi_1''$ দেয়। এবার এই \Cut{}-এ শেষ হওয়া
+!!{proof}টি দেখি:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Pi \fCenter \Lambda$
+\RightLabel{\Cut}
+\BinaryInf$!B, \Gamma, \Pi \fCenter \Delta, \Lambda$
+\DisplayProof
+\]
+% BN-SRC-531 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-531):} এই প্রমাণবৃক্ষের বাম পূর্বধারণায় উল্টানো `B!`-এর বদলে আগের বিধির `!B` বসানো হয়েছে।}
+% BN-SRC-531 TARGET-CORRECTION-END
+এর কর্তনমাত্রা ও কর্তন-!!{height} দুটিই $\pi$-র সংশ্লিষ্ট
+কর্তনমাত্রা ও !!{height}-র চেয়ে কম। তাই আরোহের অনুমানে এর অন্তিম
+সিকোয়েন্টের একটি \Log{G3c}-প্রমাণ পাই; পরে দুর্বলীকরণের
+গ্রহণযোগ্যতায় অতিরিক্ত প্রসঙ্গ যোগ করে
+$!B, \Gamma, \Pi, \Pi \fCenter \Delta, \Lambda, \Lambda$-র
+\Log{G3c}-!!{proof}~$\pi_2'''$ পাই।
+% BN-SRC-532 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-532):} আরোহের অনুমান সরাসরি দ্বিতীয় কর্তনের অন্তিম সিকোয়েন্টের প্রমাণ দেয়; এখানে দেখানো অতিরিক্ত প্রসঙ্গ পেতে দুর্বলীকরণের মধ্যবর্তী ধাপটি উল্লেখ করা হয়েছে।}
+% BN-SRC-532 TARGET-CORRECTION-END
+এবার নীচের \Cut{}-এ শেষ হওয়া !!{proof}টিতে আরোহের
+অনুমান প্রয়োগ করি:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma, \Pi \fCenter \Delta, \Lambda, !B$
+\AxiomC{}
+\RightLabel{$\pi_2'''$}
+\Deduce$!B, \Gamma, \Pi, \Pi \fCenter \Delta, \Lambda,
+\Lambda$
+\RightLabel{\Cut}
+\BinaryInf$\Gamma, \Gamma, \Pi, \Pi, \Pi \fCenter \Delta, \Delta, \Lambda, \Lambda, \Lambda$
+\DisplayProof
+\]
+% BN-SRC-533 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-533):} শেষ কর্তনের সিদ্ধান্তে দুই পূর্বধারণার অবশিষ্ট প্রসঙ্গগুলি মিলিয়ে লেখা হয়েছে; কর্তনসূত্র সিদ্ধান্তে রাখা হয়নি।}
+% BN-SRC-533 TARGET-CORRECTION-END
+(এর কর্তনমাত্রা $< \cutrank{\pi}$।) ফলে
+$\Gamma, \Gamma, \Pi, \Pi, \Pi \fCenter \Delta, \Delta, \Lambda, \Lambda, \Lambda$-র
+!!a{proof} পাই।
+% BN-SRC-534 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-534):} শেষ সিদ্ধান্তের সঙ্গে মিলিয়ে গদ্যের উত্তরপক্ষে দ্বিতীয় `\Delta` ফিরিয়ে আনা হয়েছে।}
+% BN-SRC-534 TARGET-CORRECTION-END
+% BN-SRC-535 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-535):} অনির্ধারিত কর্তনমাত্রা-নির্দেশের বদলে সংজ্ঞায়িত নির্দেশ বসানো হয়েছে।}
+% BN-SRC-535 TARGET-CORRECTION-END
+\olref[seq][inv]{prop:G3c-cont-adm} প্রয়োগ করে
+$\Gamma, \Pi \fCenter \Delta, \Lambda$-র !!{proof}~$\pi'$
+পাই।

@@ -2847,6 +2847,7 @@ for row in rows:
         assert set(documented) == expected_syntax.get(row["unit_id"], set())
     if 159 <= int(row["unit_id"].split("-")[1]) <= 166:
         expected_semantics = {
+            "OLP-0160": {"BN-SRC-502"},
             "OLP-0163": {
                 "BN-SRC-093",
                 "BN-SRC-094",

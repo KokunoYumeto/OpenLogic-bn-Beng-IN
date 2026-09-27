@@ -1,0 +1,166 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: maximally-consistent-sets
+
+% সর্বাধিক সঙ্গত সেটের সংজ্ঞা। পূর্ণতার জন্য প্রয়োজনীয় ধর্মগুলি ব্যবহৃত
+% প্রমাণপদ্ধতির অধ্যায়ে আলোচনা করা হয়েছে।
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{com}{mcs}
+\olsection{সর্বাধিক সঙ্গত \usetoken{P}{sentence}-সেট}
+
+\begin{defn}[সর্বাধিক সঙ্গত সেট]
+\ollabel{mcs}
+!!{sentence}s-এর কোনো সেট~$\Gamma$ ঠিক তখনই \emph{সর্বাধিক সঙ্গত}, যখন
+\begin{enumerate}
+\item $\Gamma$ সঙ্গত, এবং
+\item $\Gamma \subsetneq \Gamma'$ হলে $\Gamma'$ অসঙ্গত।
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+উপরের সংজ্ঞার সমতুল্য আরেকটি সংজ্ঞা হলো: বাক্যের কোনো সেট~$\Gamma$
+ঠিক তখনই \emph{সর্বাধিক সঙ্গত}, যখন
+\begin{enumerate}
+\item $\Gamma$ সঙ্গত, এবং
+\item $\Gamma \cup \{ !A \}$ সঙ্গত হলে $!A \in \Gamma$।
+\end{enumerate}
+অর্থাৎ, সর্বাধিক সঙ্গত সেট~$\Gamma$-তে আগে থেকে নেই এমন
+!!{sentence}s সেই~$\Gamma$-তে যোগ করলে বড় সেটটি অসঙ্গত হয়ে যায়।
+\end{explain}
+
+\begin{explain}
+পূর্ণতা-প্রমাণে সর্বাধিক সঙ্গত সেট গুরুত্বপূর্ণ। কারণ নিশ্চয়তা দেওয়া যায়,
+!!{sentence}s-এর প্রত্যেক সঙ্গত সেট~$\Gamma$ কোনো সর্বাধিক সঙ্গত
+সেট~$\Gamma^*$-এর অন্তর্ভুক্ত। আবার সর্বাধিক সঙ্গত সেটে প্রত্যেক
+!!{sentence}~$!A$-এর জন্য $!A$ অথবা তার নঞর্থকরণ~$\lnot !A$ থাকে।
+বিশেষত পরমাণু !!{sentence}s-এর ক্ষেত্রেও এটি সত্য। তাই যথাযথভাবে
+!!{constant}s যোগ করে প্রসারিত ভাষায় কোনো সর্বাধিক সঙ্গত সেট থেকে
+আমরা এমন একটি !!a{structure} নির্মাণ করতে পারি, যার
+!!{predicate}s-এর ব্যাখ্যা নির্ধারিত হয়~$\Gamma^*$-এ কোন পরমাণু
+!!{sentence}s আছে তার ভিত্তিতে। এরপর দেখানো যায়, ওই !!{structure}
+$\Gamma^*$-এর সব !!{sentence}s-কে (এবং তাই $\Gamma$-র সবগুলিকেও)
+সত্য করে। শেষের দাবিটি প্রমাণ করতে দরকার: $\lnot !A \in
+\Gamma^*$ যদি এবং কেবল যদি $!A \notin \Gamma^*$; $(!A \lor !B) \in
+\Gamma^*$ যদি এবং কেবল যদি $!A \in \Gamma^*$ অথবা $!B \in
+\Gamma^*$; ইত্যাদি।
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:mcs}
+ধরা যাক $\Gamma$ সর্বাধিক সঙ্গত; নিচে সূত্রচলকগুলি বাক্য নির্দেশ করে। তাহলে:
+\begin{enumerate}
+\item \ollabel{prop:mcs-prov-in} $\Gamma \Proves !A$ হলে $!A \in
+  \Gamma$।
+
+\item \ollabel{prop:mcs-either-or} যেকোনো $!A$-এর জন্য $!A \in
+  \Gamma$ অথবা $\lnot !A \in \Gamma$।
+
+\tagitem{prvAnd}{\ollabel{prop:mcs-and} $(!A \land !B) \in \Gamma$
+  যদি এবং কেবল যদি $!A \in \Gamma$ এবং $!B \in \Gamma$ উভয়ই সত্য।}{}
+
+\tagitem{prvOr}{\ollabel{prop:mcs-or} $(!A \lor !B) \in \Gamma$ যদি
+  এবং কেবল যদি $!A \in \Gamma$ অথবা $!B \in \Gamma$।}{}
+
+\tagitem{prvIf}{\ollabel{prop:mcs-if} $(!A \lif !B) \in \Gamma$ যদি
+  এবং কেবল যদি $!A \notin \Gamma$ অথবা $!B \in \Gamma$।}{}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+নিচের প্রতিটি ক্ষেত্রে ধরে নিই যে $\Gamma$ সর্বাধিক সঙ্গত।
+\begin{enumerate}
+\item $\Gamma \Proves !A$ হলে $!A \in \Gamma$।
+
+ধরা যাক $\Gamma \Proves !A$। বিপরীতভাবে ধরি $!A
+\notin \Gamma$। $\Gamma$ সর্বাধিক সঙ্গত বলে $\Gamma
+\cup \{!A\}$ অসঙ্গত; অর্থাৎ $\Gamma \cup \{!A\} \Proves
+\lfalse$।
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-contr},prfND/{fol:ntd:prv:prop:provability-contr}}
+অনুসারে $\Gamma$ অসঙ্গত। এটি $\Gamma$-র সঙ্গতির পূর্বধারণার বিরোধী।
+অতএব $!A \notin \Gamma$ হতে পারে না; তাই $!A \in \Gamma$।
+
+\item যেকোনো $!A$-এর জন্য $!A \in \Gamma$ অথবা $\lnot !A \in \Gamma$।
+
+বিপরীতভাবে ধরি, কোনো~$!A$-এর জন্য $!A \notin \Gamma$ এবং
+$\lnot !A \notin \Gamma$ দুটিই সত্য। $\Gamma$ সর্বাধিক সঙ্গত বলে
+$\Gamma \cup \{!A\}$ এবং $\Gamma \cup \{\lnot !A\}$ উভয়ই
+অসঙ্গত। ফলে $\Gamma \cup \{!A\} \Proves \lfalse$ এবং $\Gamma \cup
+\{\lnot !A\} \Proves \lfalse$।
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-exhaustive},prfND/{fol:ntd:prv:prop:provability-exhaustive}}
+অনুসারে $\Gamma$ অসঙ্গত—এটি স্ববিরোধ। তাই এমন কোনো
+!!a{sentence}~$!A$ হতে পারে না; প্রত্যেক $!A$-এর জন্য $!A \in
+\Gamma$ অথবা $\lnot !A \in \Gamma$।
+
+\tagitem{defAnd}{}{%
+\iftag{probAnd}{অনুশীলনী।}{%
+$(!A \land !B) \in \Gamma$ যদি এবং কেবল যদি $!A \in \Gamma$ ও
+$!B \in \Gamma$ উভয়ই সত্য:
+
+সামনের অভিমুখে ধরি $(!A \land !B) \in \Gamma$। তাহলে
+$\Gamma \Proves !A \land !B$।
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-land-left},prfND/{fol:ntd:prv:prop:provability-land-left}}
+অনুসারে $\Gamma \Proves !A$ এবং $\Gamma \Proves !B$।
+\olref{prop:mcs-prov-in} অনুসারে $!A \in \Gamma$ এবং $!B \in
+\Gamma$, যা প্রয়োজন ছিল।
+
+উল্টো অভিমুখে ধরি $!A \in \Gamma$ এবং $!B \in
+\Gamma$। তাহলে $\Gamma \Proves !A$ এবং $\Gamma \Proves !B$।
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-land-right},prfND/{fol:ntd:prv:prop:provability-land-right}}
+অনুসারে $\Gamma \Proves !A \land !B$। \olref{prop:mcs-prov-in}
+অনুসারে $(!A \land !B) \in \Gamma$।}}
+
+\tagitem{defOr}{}{%
+\iftag{probOr}{অনুশীলনী।}{%
+$(!A \lor !B) \in \Gamma$ যদি এবং কেবল যদি $!A \in \Gamma$ অথবা
+$!B \in \Gamma$।
+
+সামনের অভিমুখের বিপরীত-প্রতিজ্ঞাপনের জন্য ধরি, $!A
+\notin \Gamma$ এবং $!B \notin \Gamma$। দেখাতে চাই $(!A \lor
+!B) \notin \Gamma$। $\Gamma$ সর্বাধিক সঙ্গত বলে $\Gamma
+\cup \{!A\} \Proves \lfalse$ এবং $\Gamma \cup \{!B\} \Proves \lfalse$।
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lor-left},prfND/{fol:ntd:prv:prop:provability-lor-left}}
+অনুসারে $\Gamma \cup \{(!A \lor !B)\}$ অসঙ্গত। অতএব প্রয়োজনমতো
+$(!A \lor !B) \notin \Gamma$।
+
+উল্টো অভিমুখে ধরি $!A \in \Gamma$ অথবা $!B \in
+\Gamma$। তাহলে $\Gamma \Proves !A$ অথবা $\Gamma \Proves !B$।
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lor-right},prfND/{fol:ntd:prv:prop:provability-lor-right}}
+অনুসারে $\Gamma \Proves !A \lor !B$। \olref{prop:mcs-prov-in}
+অনুসারে $(!A \lor !B) \in \Gamma$, যা প্রয়োজন ছিল।}}
+
+\tagitem{defIf}{}{%
+\iftag{probIf}{অনুশীলনী।}{%
+$(!A \lif !B) \in \Gamma$ যদি এবং কেবল যদি $!A \notin \Gamma$
+অথবা $!B \in \Gamma$:
+
+সামনের অভিমুখে ধরি $(!A \lif !B) \in \Gamma$; আর বিপরীতভাবে
+ধরি $!A \in \Gamma$ এবং $!B \notin \Gamma$। এই অনুমানগুলি থেকে
+$\Gamma \Proves !A \lif !B$ এবং $\Gamma \Proves !A$।
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-mp},prfND/{fol:ntd:prv:prop:provability-mp}}
+অনুসারে $\Gamma \Proves !B$। কিন্তু \olref{prop:mcs-prov-in}
+অনুসারে $!B \in \Gamma$, যা $!B \notin \Gamma$-র বিরোধী।
+
+উল্টো অভিমুখে প্রথমে $!A \notin \Gamma$ ক্ষেত্রটি বিবেচনা করি।
+\olref{prop:mcs-either-or} অনুসারে $\lnot !A \in \Gamma$ এবং
+তাই $\Gamma \Proves \lnot !A$।
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lif},prfND/{fol:ntd:prv:prop:provability-lif}}
+অনুসারে $\Gamma \Proves !A \lif !B$। আবার \olref{prop:mcs-prov-in}
+অনুসারে প্রয়োজনমতো $(!A \lif !B) \in \Gamma$ পাই।
+
+এবার $!B \in \Gamma$ ক্ষেত্রটি বিবেচনা করি। তাহলে $\Gamma \Proves !B$
+এবং
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lif},prfND/{fol:ntd:prv:prop:provability-lif}}
+অনুসারে $\Gamma \Proves !A \lif !B$। \olref{prop:mcs-prov-in}
+অনুসারে $(!A \lif !B) \in \Gamma$।}}
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+\olref[fol][com][mcs]{prop:mcs}-র প্রমাণ সম্পূর্ণ করো।
+\end{prob}
+
+\end{document}

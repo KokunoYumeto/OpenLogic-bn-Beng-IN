@@ -1,0 +1,136 @@
+% Part: set-theory
+% Chapter: spine
+% Section: stagesbasics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{Valphabasic}
+\olsection{পর্যায়ের মৌলিক ধর্ম}
+
+$V_\alpha$-গুলির সংজ্ঞা কেন ভিত্তিতত্ত্বের পক্ষে
+গুরুত্বপূর্ণ, তা বোঝাতে কয়েকটি মৌলিক ফল দেখি।
+প্রথমে একটি সংজ্ঞা:\footnote{``potent''-এর কোনো
+প্রচলিত পরিভাষা নেই; \citet{ButtonLT1} এই নামটি
+ব্যবহার করেছেন। এখানে ধর্মটি বোঝাতে
+``উপসেট-অধোবদ্ধ'' বলছি।}
+\begin{defn}
+সেট $A$ \emph{উপসেট-অধোবদ্ধ} যদি এবং কেবল যদি
+$\forall x((\exists y \in A)x \subseteq y \lif x \in A)$।
+\end{defn}
+\begin{lem}\ollabel{Valphabasicprops}
+প্রত্যেক ক্রমসংখ্যা $\alpha$-এর জন্য:
+\begin{enumerate}
+	\item\ollabel{Valphatrans} প্রত্যেক $V_\alpha$ পরিযায়ী।
+	\item\ollabel{Valphapotent} প্রত্যেক $V_\alpha$ উপসেট-অধোবদ্ধ।
+	\item\ollabel{Valphacum} যদি $\gamma \in \alpha$ হয়, তবে $V_\gamma
+	\in V_\alpha$ (আর তাই
+	\olref{Valphatrans} অনুযায়ী
+	$V_\gamma \subseteq V_\alpha$-ও)।
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+একসঙ্গে ট্রান্সফাইনাইট আবেশে ফলগুলি প্রমাণ
+করি। আবেশের জন্য ধরি,
+\olref{Valphatrans}--\olref{Valphacum} প্রত্যেক
+$\beta < \alpha$ ক্রমসংখ্যার জন্য সত্য।
+
+$\alpha = \emptyset$ ক্ষেত্রটি সরাসরি।
+
+ধরি, $\alpha = \ordsucc{\beta}$।
+\olref{Valphacum} দেখাতে $\gamma \in \alpha$
+হলে আবেশ-অনুমান থেকে
+$V_\gamma \subseteq V_\beta$; তাই
+$V_\gamma \in \Pow{V_\beta} = V_\alpha$।
+\olref{Valphapotent} দেখাতে ধরি,
+$A \subseteq B \in V_\alpha$; অর্থাৎ
+$A \subseteq B \subseteq V_\beta$। ফলে
+$A \subseteq V_\beta$, তাই $A \in
+V_\alpha$। \olref{Valphatrans} দেখাতে
+লক্ষ করি, $x \in A \in V_\alpha$ হলে
+$A \subseteq V_\beta$; তাই $x \in V_\beta$।
+আবেশ-অনুমানে $V_\beta$ পরিযায়ী বলে
+$x \subseteq V_\beta$; অতএব $x \in V_\alpha$।
+
+এবার ধরি, $\alpha$ একটি সীমা ক্রমসংখ্যা।
+\olref{Valphacum} দেখাতে $\gamma \in \alpha$
+হলে $\gamma \in \ordsucc{\gamma} \in \alpha$।
+আবেশ-অনুমানে $V_\gamma \in
+V_{\ordsucc{\gamma}}$; তাই
+$V_\gamma \in \bigcup_{\beta \in \alpha} V_\beta = V_\alpha$।
+\olref{Valphatrans} ও \olref{Valphapotent}
+দেখাতে শুধু লক্ষ করলেই চলে: পরিযায়ী
+সেটগুলির সংযোগ পরিযায়ী, আর
+উপসেট-অধোবদ্ধ সেটগুলির সংযোগও
+উপসেট-অধোবদ্ধ।
+\end{proof}
+
+\begin{lem}\ollabel{Valphanotref}
+প্রত্যেক ক্রমসংখ্যা $\alpha$-এর জন্য
+$V_\alpha \notin V_\alpha$।
+\end{lem}
+
+\begin{proof}
+ট্রান্সফাইনাইট আবেশে প্রমাণ করি। স্পষ্টতই
+$V_\emptyset \notin V_\emptyset$।
+
+যদি $V_{\ordsucc{\alpha}} \in V_{\ordsucc{\alpha}} = \Pow{V_\alpha}$
+হয়, তবে $V_{\ordsucc{\alpha}} \subseteq V_\alpha$।
+আবার \olref{Valphabasicprops} অনুযায়ী
+$V_\alpha \in V_{\ordsucc{\alpha}}$; তাই
+$V_\alpha \in V_\alpha$। বিপরীতকথনে,
+$V_\alpha \notin V_\alpha$ হলে
+$V_{\ordsucc{\alpha}} \notin V_{\ordsucc{\alpha}}$।
+
+$\alpha$ সীমা হলে এবং $V_\alpha \in V_\alpha = \bigcup_{\beta \in
+\alpha}V_\beta$ হলে কোনো $\beta \in
+\alpha$-এর জন্য $V_\alpha \in V_\beta$।
+কিন্তু \olref{Valphabasicprops} দুবার
+প্রয়োগে $V_\beta \in V_\alpha$-ও; ফলে
+$V_\beta \in V_\beta$। বিপরীতকথনে,
+প্রত্যেক $\beta \in \alpha$-এর জন্য
+$V_\beta \notin V_\beta$ হলে
+$V_\alpha \notin
+V_\alpha$।
+\end{proof}
+
+\begin{cor}
+যেকোনো ক্রমসংখ্যা $\alpha, \beta$-র জন্য:
+$\alpha \in \beta$ যদি এবং কেবল যদি
+$V_\alpha \in V_\beta$।
+\end{cor}
+
+\begin{proof}
+এক দিক \Olref{Valphabasicprops} থেকে পাই।
+বিপরীত দিকে ধরি, $V_\alpha \in V_\beta$।
+\olref{Valphanotref} অনুযায়ী
+$\alpha \neq \beta$। আর $\beta \notin \alpha$;
+নতুবা $V_\beta \in V_\alpha$ হতো এবং
+\olref{Valphabasicprops} দুবার প্রয়োগে
+$V_\beta \in V_\beta$ পেতাম,
+যা \olref{Valphanotref}-এর বিরোধী।
+তাই ত্রিবিভাজন থেকে $\alpha \in \beta$।
+\end{proof}
+\noindent
+এগুলি থেকে প্রত্যেক $V_\alpha$-কে স্তরক্রমের
+$\alpha$-তম পর্যায় হিসেবে ভাবা যায়। কারণটি দেখি।
+
+$V_\alpha$-গুলি যে একটি \emph{পর্যায়ক্রমিক}
+প্রক্রিয়ায় গঠিত, তা ভাবা যায়: ক্রমসংখ্যার
+ব্যবহার পুনরাবৃত্তির ধারণার সঙ্গে মেলে। আবার
+এক পর্যায় অন্যটির আগে গঠিত হলে, অর্থাৎ
+$V_\beta \in V_\alpha$, অর্থাৎ $\beta \in \alpha$
+হলে, প্রক্রিয়াটি \emph{সঞ্চয়ী}; কারণ
+$V_\beta \subseteq V_\alpha$। সবশেষে, আগের
+যেকোনো পর্যায়ে পাওয়া সেটগুলির \emph{সমস্ত}
+সম্ভব সমষ্টিও আমরা গঠন করছি: উত্তরসূরি পর্যায়
+$V_{\ordsucc{\alpha}}$ হলো পূর্ববর্তী
+$V_\alpha$-র ঘাতসেট।
+
+সারকথা, $\ZFminus$ দিয়ে সেটের সঞ্চয়ী-পর্যায়ক্রমিক
+স্তরক্রমের ধারণা প্রকাশের কাজ \emph{প্রায়}
+শেষ। তবে প্রতিস্থাপনের ন্যায্যতা এখনও দিতে হবে।
+
+\end{document}

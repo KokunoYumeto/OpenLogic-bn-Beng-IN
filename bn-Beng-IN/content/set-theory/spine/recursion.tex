@@ -1,0 +1,178 @@
+% Part: set-theory
+% Chapter: spine
+% Section: recursion
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{recursion}
+\olsection{ট্রান্সফাইনাইট পুনরাবৃত্তির উপপাদ্যগুলি}
+
+প্রথমে নিশ্চিত করতে হবে যে
+\olref[valpha]{defValphas} সত্যিই একটি সফল সংজ্ঞা।
+% BN-SRC-438: source's “offer a transfinite by (transfinite) recursion” is syntactically broken.
+আরও সাধারণভাবে, ট্রান্সফাইনাইট পুনরাবৃত্তি দিয়ে
+যেকোনো সংজ্ঞা দেওয়ার চেষ্টা সফল হয়—এটি প্রমাণ
+করতে হবে। এই বিভাগের লক্ষ্য সেটিই।
+
+\emph{সতর্কতা: বিষয়টি জটিল}। তবে সামগ্রিক শিক্ষা
+সহজ: ট্রান্সফাইনাইট আবেশ এবং প্রতিস্থাপন মিলে
+ট্রান্সফাইনাইট পুনরাবৃত্তির (বিভিন্ন রূপের) বৈধতা
+নিশ্চিত করে।\footnote{মনে করিয়ে দিই: অন্য কথা
+স্পষ্টভাবে না বললে সব সূত্র ও পদে পরামিতি থাকতে
+পারে।}
+
+\begin{defn}
+ধরি, $\tau(x)$ একটি পদ, $f$ একটি ফাংশন এবং
+$\alpha$ একটি ক্রমসংখ্যা। $f$-কে $\tau$-র জন্য
+একটি \emph{$\alpha$-সন্নিকটায়ন} বলব যদি
+$\dom{f} = \alpha$ এবং $(\forall \beta \in \alpha)f(\beta) = \tau(\funrestrictionto{f}{\beta})$
+উভয়ই সত্য হয়।
+\end{defn}
+
+\begin{lem}[সীমাবদ্ধ পুনরাবৃত্তি]\ollabel{transrecursionfun}
+যেকোনো পদ $\tau(x)$ ও ক্রমসংখ্যা $\alpha$-এর
+জন্য $\tau$-র একটি অনন্য $\alpha$-সন্নিকটায়ন
+আছে।
+\end{lem}
+\begin{proof}
+দেখাব, যেকোনো $\gamma \leq \alpha$-এর জন্য
+একটি অনন্য $\gamma$-সন্নিকটায়ন আছে।
+
+প্রথমে অনন্যতা প্রতিষ্ঠা করি। ধরি, যথাক্রমে
+$g$ ও $h$ হলো $\gamma$- এবং
+$\delta$-সন্নিকটায়ন। তাদের যুক্তির উপর
+ট্রান্সফাইনাইট আবেশে দেখা যায়,
+যেকোনো $\beta \in \dom{g} \cap \dom{h} =
+\gamma \cap \delta = \min(\gamma, \delta)$-এর
+জন্য $g(\beta) = h(\beta)$। তাই সন্নিকটায়ন
+বিদ্যমান থাকলে অনন্য এবং সাধারণ যুক্তিগুলিতে
+তাদের মান একই।
+
+অস্তিত্ব প্রতিষ্ঠার জন্য এবার
+\olref[ordinals][opps]{simpletransrecursion}-এর
+সরল ট্রান্সফাইনাইট আবেশ $\delta \leq \alpha$
+ক্রমসংখ্যাগুলিতে প্রয়োগ করি।
+
+শূন্য ফাংশনটি স্বভাবতই একটি
+$\emptyset$-সন্নিকটায়ন।
+
+$g$ যদি $\gamma$-সন্নিকটায়ন হয়, তবে $g \cup
+\{\tuple{\gamma, \tau(g)}\}$ একটি
+$\ordsucc{\gamma}$-সন্নিকটায়ন।
+
+$\gamma$ সীমা ক্রমসংখ্যা হলে এবং প্রত্যেক
+$\delta < \gamma$-এর জন্য $g_\delta$ একটি
+$\delta$-সন্নিকটায়ন হলে, ধরি
+$g = \bigcup_{\delta \in \gamma} g_\delta$।
+বিভিন্ন $g_\delta$ সাধারণ যুক্তিতে একই মান দেয়
+বলে এটি একটি ফাংশন। আর $\delta \in \gamma$
+হলে $g(\delta) = g_{\ordsucc{\delta}}(\delta) =
+\tau(\funrestrictionto{g_{\ordsucc{\delta}}}{\delta}) =
+\tau(\funrestrictionto{g}{\delta})$।
+
+এতে ট্রান্সফাইনাইট আবেশের প্রমাণ শেষ।
+\end{proof}
+
+ফাংশনের বদলে একটি \emph{পদ} সংজ্ঞায়িত করতে
+দিলে আগের ফল থেকে $\alpha$ সীমাটি সরাতে
+পারি। পরের ফল ও প্রমাণে $\sigma$ পদ হলে
+$\funrestrictionto{\sigma}{\alpha} = \Setabs{\tuple{\beta,
+\sigma(\beta)}}{\beta \in \alpha}$ নিই।
+
+\begin{thm}[সাধারণ পুনরাবৃত্তি]\ollabel{transrecursionschema}
+যেকোনো পদ $\tau(x)$-এর জন্য এমন একটি পদ
+$\sigma(x)$ স্পষ্টভাবে সংজ্ঞায়িত করা যায় যে
+যেকোনো ক্রমসংখ্যা~$\alpha$-এর জন্য
+$\sigma(\alpha) = \tau(\funrestrictionto{\sigma}{\alpha})$।
+\end{thm}
+
+\begin{proof}
+প্রত্যেক $\alpha$-এর জন্য
+\olref{transrecursionfun} অনুযায়ী $\tau$-র
+একটি অনন্য $\alpha$-সন্নিকটায়ন $f_\alpha$
+আছে। $\sigma(\alpha)$-কে
+$f_{\ordsucc{\alpha}}(\alpha)$ হিসেবে সংজ্ঞায়িত
+করি। তাহলে:
+	\begin{align*}
+		\sigma(\alpha) &=
+		f_{\ordsucc{\alpha}}(\alpha) \\&=
+		\tau(\funrestrictionto{f_{\ordsucc{\alpha}}}{\alpha}) \\&=
+		\tau(\Setabs{\tuple{\beta, f_{\ordsucc{\alpha}}(\beta)}}{\beta \in \alpha}) \\&=
+		\tau(\Setabs{\tuple{\beta, f_{\ordsucc{\beta}}(\beta)}}{\beta \in \alpha})\\&=
+		\tau(\funrestrictionto{\sigma}{\alpha})
+	\end{align*}
+শেষ সমতায় \olref{transrecursionfun}-এর মতো
+প্রত্যেক $\beta < \alpha$-এর জন্য
+$f_{\ordsucc{\beta}}(\beta) = f_{\ordsucc{\alpha}}(\beta)$
+ব্যবহার করেছি।
+\end{proof}
+\noindent
+লক্ষ করো, \olref{transrecursionschema} একটি
+\emph{ছক}। $\sigma$ দিয়ে একটি ফাংশন—অর্থাৎ
+বিশেষ একটি \emph{সেট}—সংজ্ঞায়িত হবে এমন
+আশা করা যায় না। তা হলে $\dom{\sigma}$
+সব ক্রমসংখ্যার সেট হতো, যা বুরালি-ফোর্তির
+কূটাভাসের
+(\olref[ordinals][basic]{buraliforti}) বিরোধী।
+
+তবে এখনও দেখানো বাকি যে
+\olref{transrecursionschema} আমাদের
+$V_\alpha$-গুলির সংজ্ঞাকে বৈধতা দেয়। এটি
+এখনই স্পষ্ট না হলেও ট্রান্সফাইনাইট
+পুনরাবৃত্তির আরেকটি শেষ, সহজ রূপে স্পষ্ট হবে।
+
+\begin{thm}[সরল পুনরাবৃত্তি]\ollabel{simplerecursionschema}
+যেকোনো পদ $\tau(x)$ ও $\theta(x)$ এবং
+যেকোনো সেট $A$-এর জন্য এমন একটি পদ
+$\sigma(x)$ স্পষ্টভাবে সংজ্ঞায়িত করা যায় যে:
+\begin{align*}
+	\sigma(\emptyset) &= A\\
+	\sigma(\ordsucc{\alpha}) &= \tau(\sigma(\alpha)) &&
+		\text{যেকোনো ক্রমসংখ্যা }\alpha\text{-এর জন্য}\\
+	\sigma(\alpha) &= \theta(\ran{\funrestrictionto{\sigma}{\alpha}})&&
+	\text{যখন }\alpha\text{ সীমা ক্রমসংখ্যা}
+\end{align*}
+\end{thm}
+
+\begin{proof}
+প্রথমে নিচের মতো একটি পদ $\xi(x)$ সংজ্ঞায়িত
+করি:
+%t $\xi(x) = A$ যদি $x$ ক্রমসংখ্যা-সংজ্ঞাক্ষেত্রবিশিষ্ট ফাংশন না হয়;
+%অন্যথায় নিই:
+\[
+	\xi(x) =
+	\begin{cases}
+			A &\text{যদি $x$ ফাংশন না হয় অথবা তার}\\
+			&\hspace{1em}\text{সংজ্ঞাক্ষেত্র শূন্য বা অক্রমসংখ্যা হয়; অন্যথায়:}\\
+			\tau(x(\alpha)) & \text{যদি $\dom{x} = \ordsucc{\alpha}$}\\
+			\theta(\ran{x}) & \text{যদি $\dom{x}$ সীমা ক্রমসংখ্যা হয়}
+	\end{cases}
+\]
+% BN-SRC-439: the source's default branch excludes the empty function although the proof needs xi(empty)=A.
+\olref{transrecursionschema} অনুযায়ী এমন
+একটি পদ $\sigma(x)$ আছে যে প্রত্যেক
+ক্রমসংখ্যা $\alpha$-এর জন্য
+$\sigma(\alpha) = \xi(\funrestrictionto{\sigma}{\alpha})$;
+তদুপরি $\funrestrictionto{\sigma}{\alpha}$
+হলো $\alpha$ সংজ্ঞাক্ষেত্রবিশিষ্ট একটি ফাংশন।
+\olref[ordinals][opps]{simpletransrecursion}-এর
+সরল ট্রান্সফাইনাইট আবেশে দেখাই, $\sigma$-র
+চাওয়া ধর্মগুলি আছে।
+
+প্রথমত, $\sigma(\emptyset) = \xi(\emptyset) = A$।
+
+এরপর, $\sigma(\ordsucc{\alpha}) = \xi(\funrestrictionto{\sigma}{\ordsucc{\alpha}}) = \tau(\funrestrictionto{\sigma}{\ordsucc{\alpha}}(\alpha)) = \tau(\sigma(\alpha))$।
+
+সবশেষে, $\alpha$ সীমা হলে
+$\sigma(\alpha) = \xi(\funrestrictionto{\sigma}{\alpha}) = \theta(\ran{\funrestrictionto{\sigma}{\alpha}})$।
+\end{proof}
+\noindent
+এখন \olref[valpha]{defValphas}-কে বৈধতা দিতে
+শুধু $A
+= \emptyset$, $\tau(x) = \Pow{x}$ এবং
+$\theta(x) = \bigcup x$ নিলেই চলে। অবশেষে
+$V_\alpha$-গুলির সংজ্ঞার ভিত্তি প্রতিষ্ঠিত হলো!{}
+
+\end{document}

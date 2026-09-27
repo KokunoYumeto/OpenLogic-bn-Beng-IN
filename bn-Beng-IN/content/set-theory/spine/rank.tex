@@ -1,0 +1,178 @@
+% Part: set-theory
+% Chapter: spine
+% Section: rank
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{rank}
+\olsection{স্তরাঙ্ক}
+
+পর্যায়গুলিকে $V_\alpha$-রূপে সংজ্ঞায়িত করেছি;
+এখন জানি, প্রত্যেক সেট কোনো পর্যায়ের উপসেট।
+তাই একটি সেটের \emph{স্তরাঙ্ক} সংজ্ঞায়িত করতে
+পারি। স্বজ্ঞায়, $A$-র স্তরাঙ্ক হলো প্রথম যে
+মুহূর্তে $A$ গঠিত হয়। আরও নির্দিষ্টভাবে:
+
+\begin{defn}\ollabel{defnsetrank}
+প্রত্যেক সেট $A$-এর জন্য $\setrank{A}$ হলো
+এমন ক্ষুদ্রতম ক্রমসংখ্যা $\alpha$ যাতে
+$A
+\subseteq V_\alpha$।
+\end{defn}
+\begin{prop}\ollabel{ranksexist}
+	যেকোনো $A$-এর জন্য $\setrank{A}$ বিদ্যমান।
+\end{prop}
+\begin{proof}
+	প্রমাণটি অনুশীলন হিসেবে রাখা হলো।
+\end{proof}
+\begin{prob}
+	\olref[sth][spine][rank]{ranksexist} প্রমাণ করো।
+\end{prob}
+\noindent
+স্তরাঙ্কগুলির সুক্রমের সাহায্যে কয়েকটি
+গুরুত্বপূর্ণ ফল প্রমাণ করা যায়:
+\begin{prop}\ollabel{valphalowerrank}
+যেকোনো ক্রমসংখ্যা $\alpha$-এর জন্য
+$V_\alpha = \Setabs{x}{\setrank{x} \in \alpha}$।
+\end{prop}
+
+\begin{proof}
+$\setrank{x} \in \alpha$ হলে
+$x \subseteq V_{\setrank{x}} \in
+V_\alpha$। $V_\alpha$ উপসেট-অধোবদ্ধ
+বলে $x \in V_\alpha$; এখানে
+\olref[Valphabasic]{Valphabasicprops}
+একাধিকবার ব্যবহৃত হয়েছে। বিপরীতে,
+$x \in V_\alpha$ হলে $x \subseteq V_\alpha$,
+তাই $\setrank{x} \leq \alpha$।
+% BN-SRC-441: source concludes the contradictory “x not in V_alpha”; the needed conclusion is rank(x) < alpha.
+কিন্তু এই অসমতাটি আসলে কঠোর।
+ট্রান্সফাইনাইট আবেশে: শূন্য পর্যায়ে
+বিবেচ্য সদস্য নেই; উত্তরসূরি পর্যায়ে
+সদস্যটি আগের পর্যায়ের উপসেট, আর সীমা
+পর্যায়ে তা আগের কোনো একটি পর্যায়ে থাকে।
+অতএব $\setrank{x} \in \alpha$।
+\end{proof}
+\begin{prob}
+	\olref[sth][spine][rank]{valphalowerrank}-এ
+	উল্লিখিত সরল ট্রান্সফাইনাইট আবেশটি সম্পূর্ণ
+	করো।
+\end{prob}
+
+\begin{prop}\ollabel{rankmemberslower}
+$B \in A$ হলে $\setrank{B} \in \setrank{A}$।
+\end{prop}
+
+\begin{proof}
+\olref{valphalowerrank} অনুযায়ী
+$A \subseteq V_{\setrank{A}} = \Setabs{x}{\setrank{x} \in
+\setrank{A}}$।
+\end{proof}
+\noindent
+এই ফল থেকে এমন একটি উপপাদ্য পাব, যার
+সাহায্যে আবেশের এক রূপে \emph{সব সেট}
+সম্পর্কে বক্তব্য প্রমাণ করা যায়:
+
+\begin{thm}[$\in$-আবেশ ছক]
+যেকোনো সূত্র $\phi$-এর জন্য:
+\[
+	\forall A((\forall x \in A)\phi(x) \lif \phi(A)) \lif \forall A \phi(A).
+\]
+\end{thm}
+
+\begin{proof}
+বিপরীতকথন প্রমাণ করি। তাই ধরি,
+$\lnot \forall A
+\phi(A)$। ট্রান্সফাইনাইট আবেশে
+(\olref[ordinals][basic]{ordinductionschema})
+এমন একটি সর্বনিম্ন-সম্ভব স্তরাঙ্কের
+অ-$\phi$ সেট আছে। অর্থাৎ এমন একটি $A$
+আছে যে $\lnot \phi(A)$ এবং
+$\forall x(\setrank{x} \in \setrank{A}
+\lif \phi(x))$। এবার $x \in A$ হলে
+\olref{rankmemberslower} অনুযায়ী
+$\setrank{x} \in
+\setrank{A}$; তাই $\phi(x)$। অর্থাৎ
+$(\forall x \in
+A)\phi(x) \land \lnot \phi(A)$।
+\end{proof}\noindent
+এই শক্তিশালী ফলটির অনানুষ্ঠানিক পাঠও
+দিতে পারি। $\phi$-কে \emph{বংশগত} বলি যদি
+কোনো সেটের প্রত্যেক !!{element} $\phi$
+হলে সেটটিও $\phi$ হয়। তখন $\in$-আবেশ
+বলে: $\phi$ বংশগত হলে প্রত্যেক সেটই $\phi$।
+
+স্তরাঙ্কের আলোচনা আপাতত শেষ করতে আগে
+ইঙ্গিত দেওয়া কয়েকটি দাবি প্রমাণ করি।
+
+\begin{prop}\ollabel{ranksupstrict}
+$\setrank{A} = \supstrict_{x \in A}\setrank{x}$।
+\end{prop}
+
+\begin{proof}
+ধরি, $\alpha = \supstrict_{x \in A}\setrank{x}$।
+\olref{rankmemberslower} অনুযায়ী
+$\alpha \leq \setrank{A}$। আবার
+$x \in A$ হলে $\setrank{x} \in \alpha$;
+তাই \olref{valphalowerrank} থেকে
+$x \in V_\alpha$। ফলে $A
+\subseteq V_\alpha$, অর্থাৎ
+$\setrank{A} \leq \alpha$। অতএব
+$\setrank{A} = \alpha$।
+\end{proof}
+
+\begin{cor}\ollabel{ordsetrankalpha}
+যেকোনো ক্রমসংখ্যা $\alpha$-এর জন্য
+$\setrank{\alpha} = \alpha$।
+\end{cor}
+
+\begin{proof}
+ট্রান্সফাইনাইট আবেশের জন্য ধরি,
+প্রত্যেক $\beta \in \alpha$-তে
+$\setrank{\beta} = \beta$। তাহলে
+\olref{ranksupstrict} অনুযায়ী
+$\setrank{\alpha} = \supstrict_{\beta \in
+\alpha}\setrank{\beta} = \supstrict_{\beta \in \alpha}\beta = \alpha$।
+% প্রথমে লক্ষ করো, কোনো $\beta \in
+% \alpha$-র জন্য $\setrank{\alpha} \neq \beta$।
+% নতুবা \olref{rankmemberslower} অনুযায়ী
+% $\beta = \setrank{\beta} \in
+% \setrank{\alpha} = \beta$; অর্থাৎ
+% $\beta \in \beta$, যা বিরোধ।
+%
+% এবার লক্ষ করো, $\alpha \subseteq V_\alpha$। কারণ
+% \olref[sfr][ordinals][basic]{ordissetofsmallerord}
+% অনুযায়ী $\alpha =
+% \Setabs{\beta}{\beta \in \alpha}$। আর
+% $\beta \in \alpha$ হলে $\beta \subseteq V_{\setrank{\beta}} =
+% V_\beta \in V_\alpha$; ফলে
+% \olref[sfr][spine][Valphabasic]{Valphabasicprops}
+% দুবার প্রয়োগে $\beta \in V_\alpha$।
+\end{proof}
+
+সবশেষে \olref[foundation]{sec}-এর শেষে
+প্রতিশ্রুত ফলটি দ্রুত প্রমাণ করি: $\ZFminus$
+থেকে শর্তবাক্য
+$\emph{নিয়মিততা} \Rightarrow \emph{ভিত্তি}$
+অনুসৃত। এই প্রমাণে ``স্তরাঙ্ক'' ও
+\olref{rankmemberslower} ব্যবহার করা যায়,
+কারণ বিভাগের শুরুতে যেমন বলেছি, এগুলিকে
+$\ZFminus + \text{নিয়মিততা}$-র মধ্যেও
+দেওয়া যায়।
+
+\begin{prop}[$\ZFminus + \text{নিয়মিততা}$-এ কাজ করছি]\ollabel{zfminusregularityfoundation}
+ভিত্তি সত্য।
+\end{prop}
+
+\begin{proof}
+$A \neq \emptyset$ ধরি এবং ওই সেটের মধ্যে
+সর্বনিম্ন-সম্ভব স্তরাঙ্কের একটি $B \in A$
+নিই। $c \in B$ হলে
+\olref{rankmemberslower} অনুযায়ী
+$\setrank{c} \in \setrank{B}$; তাই $B$-র
+নির্বাচন অনুসারে $c \notin A$।
+\end{proof}
+
+\end{document}

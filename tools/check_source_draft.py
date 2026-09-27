@@ -5698,6 +5698,22 @@ for row in rows:
             r"O_w=\{\{w\},\{w,w_1\},\{w,w_1,w_2\}\}": 1,
         })
     )
+    spine_foundation_bound_variable_fix = (
+        row["unit_id"] == "OLP-0562"
+        and set(documented) == {"BN-SRC-440"}
+        and source_math - target_math == collections.Counter({
+            r"\beta=\supstrict\Setabs{\delta}{(\existsx\inb)(x\subseteqV_\delta\land(\forall\gamma<\delta)x\nsubseteqV_\gamma)}.": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\beta=\supstrict\Setabs{\delta}{(\existsx\inB)(x\subseteqV_\delta\land(\forall\gamma<\delta)x\nsubseteqV_\gamma)}.": 1,
+        })
+    )
+    spine_rank_proof_conclusion_fix = (
+        row["unit_id"] == "OLP-0564"
+        and set(documented) == {"BN-SRC-441"}
+        and source_math - target_math == collections.Counter({r"x\notinV_\alpha": 1})
+        and target_math - source_math == collections.Counter({r"\setrank{x}\in\alpha": 1})
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -5801,6 +5817,8 @@ for row in rows:
             strict_conditional_nonentailment_fix,
             minimal_change_transitivity_fix,
             minimal_change_contraposition_fix,
+            spine_foundation_bound_variable_fix,
+            spine_rank_proof_conclusion_fix,
         )
     )
     minimal_change_fileid_fix = (

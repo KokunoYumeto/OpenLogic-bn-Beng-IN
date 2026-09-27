@@ -1,0 +1,141 @@
+% Part: set-theory
+% Chapter: spine
+% Section: foundation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{foundation}
+
+\olsection{ভিত্তি}
+
+আমাদের কাজ \emph{প্রায়} শেষ, কিন্তু \emph{পুরোপুরি}
+নয়: $\ZFminus$-এর কোনো কিছু থেকেই নিশ্চিত হয়
+না যে \emph{প্রত্যেক} সেট কোনো $V_\alpha$-র
+সদস্য, অর্থাৎ প্রত্যেক সেট কোনো পর্যায়ে গঠিত।
+
+স্তরক্রমের বাইরে সেট আছে কি না, সে বিষয়ে
+একটি সরল (গাণিতিক) অর্থে আমাদের \emph{মাথা
+ঘামাতে} হয় না: এমন সেট থাকলে সেগুলিকে উপেক্ষা
+করতে পারি। কিন্তু সেটের \emph{ধারণাটি} আমরা
+সমর্থন করেছি এই ভেবে যে প্রত্যেক সেট কোনো
+পর্যায়ে গঠিত হয় (\olref[z][story]{sec}-এর
+\stageshier{} দেখো)। তাই স্তরক্রমের বাইরে সেট
+থাকার সম্ভাবনা বাদ দিতে চাই। সে জন্য এমন একটি
+নতুন স্বতঃসিদ্ধ যোগ করতে হবে, যা প্রত্যেক সেটের
+স্তরক্রমে কোথাও অবস্থান নিশ্চিত করে।
+
+$V_\alpha$-গুলিই আমাদের পর্যায়; তাই নিচের
+বক্তব্যটিকে সরাসরি স্বতঃসিদ্ধ করার কথা ভাবতে
+পারি:
+
+\begin{defish}
+\emph{নিয়মিততা।} $\forall A \exists \alpha\, A \subseteq V_\alpha$
+\end{defish}
+
+এটি যথার্থ একটি পথ। তবে পরের বিভাগে আলোচিত
+কারণে আমরা এর বদলে অন্য একটি স্বতঃসিদ্ধ গ্রহণ
+করব:
+
+\begin{axiom}[ভিত্তি]
+$(\forall A \neq \emptyset)(\exists B \in A)A \cap B = \emptyset$।
+\end{axiom}
+
+কিছু পরিশ্রমে দেখানো যায় যে $\ZFminus$-এ
+ভিত্তি থেকে নিয়মিততা অনুসৃত হয়:
+\begin{defn}
+প্রত্যেক সেট $A$-এর জন্য ধরি:
+\begin{align*}
+	\text{cl}_0(A) &= A,\\
+	\text{cl}_{n+1}(A) &= \bigcup \text{cl}_n(A),\\
+	\text{trcl}(A) &= \bigcup_{n < \omega} \text{cl}_{n}(A).
+\end{align*}
+$\text{trcl}(A)$-কে $A$-এর \emph{পরিযায়ী আবরণ}
+বলি।
+\end{defn}
+\noindent
+``পরিযায়ী আবরণ'' নামটি যথার্থ:
+\begin{prop}\ollabel{subsetoftrcl}
+$A \subseteq \trcl{A}$ এবং $\trcl{A}$ একটি
+পরিযায়ী সেট।
+\end{prop}
+
+\begin{proof}
+স্পষ্টতই $A = \text{cl}_0(A) \subseteq \text{trcl}(A)$।
+আর $x
+\in b \in \trcl{A}$ হলে কোনো $n$-এর জন্য
+$b \in \text{cl}_n(A)$; তাই $x
+\in \text{cl}_{n+1}(A) \subseteq \text{trcl}(A)$।
+\end{proof}
+
+\begin{lem}\ollabel{lem:TransitiveWellFounded}
+$A$ পরিযায়ী সেট হলে এমন একটি $\alpha$ আছে
+যে $A
+\subseteq V_\alpha$।
+\end{lem}
+
+\begin{proof}
+\olref[ordinals][opps]{defsupstrict}-এ
+``$\supstrict(X)$''-এর সংজ্ঞা মনে রেখে দুটি
+সেট সংজ্ঞায়িত করি:
+\begin{align*}
+	D  &= \Setabs{x \in A}{\forall \delta\ x \nsubseteq V_\delta}\\
+	\alpha &= \supstrict\Setabs{\delta}{(\exists x \in A)
+	(x \subseteq V_\delta \land (\forall \gamma \in \delta)x \nsubseteq V_\gamma)}
+\end{align*}
+ধরি, $D = \emptyset$। তাহলে $x \in A$ হলে
+এমন একটি $\delta$ আছে যে $x \subseteq V_\delta$;
+ক্রমসংখ্যাগুলির সুক্রমের কারণে সেই ক্রমসংখ্যাটি
+ক্ষুদ্রতম নেওয়া যায়, অর্থাৎ
+$(\forall \gamma \in \delta)x \nsubseteq V_\gamma$।
+তাই $\delta \in \alpha$ এবং
+\olref[spine][Valphabasic]{Valphabasicprops}
+অনুযায়ী $x \in V_\alpha$। সুতরাং চাওয়া মতো
+$A \subseteq
+V_{\alpha}$।
+
+অতএব $D = \emptyset$ দেখালেই যথেষ্ট। বিরোধের
+উদ্দেশ্যে অন্যথা ধরি। ভিত্তি-স্বতঃসিদ্ধে
+এমন একটি $B \in D \subseteq A$ আছে যে
+$D \cap B
+= \emptyset$। $x \in B$ হলে $A$-র পরিযায়িতায়
+$x \in A$; আর $x \notin D$ বলে
+$\exists \delta\ x \subseteq
+V_\delta$। তাই এবার ধরি
+% BN-SRC-440: the source has unbound lower-case b; Foundation selected B.
+\[
+	\beta = \supstrict\Setabs{\delta}{(\exists x \in B)(x \subseteq V_\delta \land (\forall \gamma < \delta)x \nsubseteq V_\gamma)}.
+\]
+আগের মতো $B \subseteq V_\beta$ পাই, যা
+$B \in
+D$-র বিরোধী।
+\end{proof}
+
+\begin{thm}\ollabel{zfentailsregularity}
+নিয়মিততা সত্য।
+\end{thm}
+
+\begin{proof}
+যেকোনো $A$ নিই। \olref{subsetoftrcl}
+অনুযায়ী $A \subseteq \trcl{A}$ এবং
+এই আবরণ পরিযায়ী। তাই
+\olref{lem:TransitiveWellFounded} থেকে
+এমন একটি $\alpha$ আছে যে
+$A \subseteq \trcl{A} \subseteq V_\alpha$।
+\end{proof}
+
+এই ফলগুলি দেখায়, $\ZFminus$-এ
+$\emph{ভিত্তি}\Rightarrow\emph{নিয়মিততা}$
+প্রমাণ করা যায়।
+\olref[spine][rank]{zfminusregularityfoundation}-এ
+দেখাব, $\ZFminus$-এ
+$\emph{নিয়মিততা}\Rightarrow\emph{ভিত্তি}$-ও
+প্রমাণ করা যায়। তাই $\ZFminus$-এর সাপেক্ষে
+ভিত্তি ও নিয়মিততা \emph{সমতুল্য}। অর্থাৎ
+$\ZFminus$ ধরে নিয়মিততার সঙ্গে সমতুল্য বলেই
+ভিত্তির ন্যায্যতা দিতে পারি; আর
+\stageshier{} থেকে নিয়মিততাকে সরাসরি
+ন্যায্যতা দিতে পারি।
+
+\end{document}

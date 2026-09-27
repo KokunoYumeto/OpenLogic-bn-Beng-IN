@@ -1,0 +1,337 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: rules-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{rp}
+
+\olsection{বিধি ও \usetoken{P}{proof}}
+
+প্রথমে কয়েকটি সংজ্ঞা দিই এবং পরিভাষা স্থির করি।
+
+\Log{N1c} ও~\Log{N1i}-এর যে দুটি বিধিতে $!A
+\lif !B$ আছে, সেগুলি দেখি।
+\[
+\bottomAlignProof
+\AxiomC{$\Discharge{!A}{x}$}
+\shortDeduce
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\DisplayProof
+\qquad
+\bottomAlignProof
+\AxiomC{$!A \lif !B$}
+\AxiomC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\]
+\Elim{\lif} বিধিটি সহজ। রেখার উপরের !!{formula}s-কে
+\emph{পূর্বধারণা} বলে। বাম দিকের !!{formula}~$!A \lif !B$
+হলো \emph{প্রধান} !!{formula}। প্রত্যেক !!{elimination}
+বিধিতে এমন একটি পূর্বধারণা থাকে, সর্বদা একেবারে বাঁ দিকে।
+অনুমানবিধিটির সেটি \emph{প্রধান} পূর্বধারণা। অন্য পূর্বধারণা
+থাকলে, যেমন এখানে আছে, তাদের \emph{গৌণ} পূর্বধারণা বলে।
+!!{introduction} বিধিগুলির পূর্বধারণাও প্রধান পূর্বধারণা
+নামে পরিচিত। রেখার নিচের !!{formula}টি \emph{সিদ্ধান্ত}।
+
+\Intro{\lif} বিধিতে মাত্র একটি পূর্বধারণা আছে; এখানে
+সিদ্ধান্তই প্রধান সূত্র~$!A \lif !B$। সব !!{introduction}
+বিধিতেও সিদ্ধান্ত প্রধান সূত্র; তার মুখ্য সংযোজকই
+“প্রবর্তিত” হচ্ছে।
+
+$\Discharge{!A}{x}$ চিহ্নটির অর্থ এবার দেখি। কোনো
+!!a{proof}-এ \Intro{\lif} অনুমানবিধি পূর্বধারণা
+হিসেবে !!a{formula}~$!B$-তে প্রয়োগ করা হয়।
+$!B$-তে শেষ হওয়া উপ-!!{proof}-এর শুরুতে কয়েকটি
+!!{formula}s থাকে। এগুলিকে \emph{অনুমান} বলে। $!A$
+রূপের এক বা একাধিক অনুমান থেকে $!B$-এর !!a{proof}
+হলো এমন !!^a{proof}, যা দেখায় $!A$ থেকে $!B$
+অনুসৃত হয়। \Intro{\lif}
+বিধি প্রয়োগে আমরা $!A \lif !B$ সিদ্ধান্তে পৌঁছাই;
+এই সিদ্ধান্ত আর $!A$ অনুমানের উপর নির্ভর করে না।
+এটি বোঝাতে, \Intro{\lif} অনুমানবিধিসহ প্রমাণে
+$!A$ রূপের অনুমানগুলিকে \emph{অবমুক্ত} বা
+\emph{বন্ধ} করা হয়। কোন অনুমানগুলি অবমুক্ত করা যায়,
+বিধিটি তা জানায়। $!A \lif !B$ সিদ্ধান্তবিশিষ্ট
+\Intro{\lif}-এর ক্ষেত্রে সেগুলি $!A$ রূপের অনুমান,
+অর্থাৎ শর্তবাক্যের পূর্বাংশের সঙ্গে মিলে যায়।
+কখন কোন বিধিতে অনুমান অবমুক্ত হয়, তা কখনো
+দেখানো জরুরি; অবমুক্তি-চিহ্ন~$x$ সেই কাজ করে।
+লক্ষ করুন, অনুমান অবমুক্তকারী বিধিতে উপযুক্ত রূপের
+\emph{সব} অনুমান, এমনকি \emph{কোনো} অনুমানই,
+অবশ্য অবমুক্ত করতে হবে এমন নয়। যেমন, নিচের
+প্রমাণটি সঠিক, যদিও প্রথম \Intro{\lif} কোনো অনুমান
+অবমুক্ত করে না:
+\[
+\AxiomC{$\Discharge{!A}{y}$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !A$}
+\DischargeRule{\Intro{\lif}}{y}
+\UnaryInfC{$!A \lif (!B \lif !A)$}
+\DisplayProof
+\]
+কোনো বিধিতে অনুমান অবমুক্ত না হলে অবমুক্তি-চিহ্ন
+বাদ দেওয়া যায়। উপরের চিত্রে প্রথম বিধির পাশে
+x লেখা থাকলেও x-চিহ্নিত কোনো অনুমান নেই;
+অতএব ওই বিধি কোনো অনুমান অবমুক্ত করে না।
+% BN-SRC-550 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-550):} প্রথম ভূমিকা-বিধির পাশে উৎসচিত্রে $x$ আছে, যদিও উৎসের পরের বাক্যে বলা হয়েছে “এখানে” অবমুক্তি-চিহ্ন বাদ; চিত্র অক্ষত রেখে শূন্য-অবমুক্তি ও ঐচ্ছিক চিহ্নের পার্থক্য স্পষ্ট করা হয়েছে।}
+% BN-SRC-550 TARGET-CORRECTION-END
+
+নিচের !!{proof}-এ
+\[
+\AxiomC{$\Discharge{!A}{x}$}
+\AxiomC{$\Discharge{!A}{y}$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!A \land !A$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!A$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !A$}
+\DischargeRule{\Intro{\lif}}{y}
+\UnaryInfC{$!A \lif (!A \lif !A)$}
+\DisplayProof
+\]
+প্রথম \Intro{\lif} অনুমানবিধি বাঁ দিকের
+$!A^x$ অনুমানটি, দ্বিতীয়টি ডান দিকের~$!A^y$
+অনুমানটি অবমুক্ত করে। অর্থাৎ, $x$-চিহ্নিত সব
+অনুমান $x$-চিহ্নিত \Intro{\lif} বিধিতে এবং
+$y$-চিহ্নিত সব অনুমান $y$-চিহ্নিত বিধিতে
+অবমুক্ত হয়। এই রীতি কার্যকর রাখতে একই চিহ্নের
+সব অনুমানকে একই !!{formula} হতে হবে।
+
+পরিমাণসূচকের বিধিগুলি একটু বেশি জটিল। যেমন,
+\Log{N1i}-তে $\lexists$-এর বিধিগুলি:
+\[
+\bottomAlignProof
+\AxiomC{$!A(t)$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!A(x)]$}
+\DisplayProof
+\qquad
+\bottomAlignProof
+\AxiomC{$\lexists[x][!A(x)]$}
+\AxiomC{$\Discharge{!A(c)}{x}$}
+\shortDeduce
+\DeduceC{$!B$}
+\DischargeRule{\Elim{\lexists}}{x}
+\BinaryInfC{$!B$} \DisplayProof
+\bottomAlignProof
+\]
+\Intro{\lexists} বিধিতে পূর্বধারণা~$!A(t)$, যেখানে
+$t$ একটি বদ্ধ পদ, অর্থাৎ চলকহীন পদ। এই অনুমানবিধির
+প্রয়োগ সঠিক—অর্থাৎ \Intro{\lexists}-এর ছকবদ্ধ
+বিধির সঙ্গে মেলে—যদি এমন কোনো !!{formula}~$!A$,
+চলক~$x$ ও বদ্ধ পদ~$t$ থাকে যাতে সিদ্ধান্ত
+$\lexists[x][!A]$ এবং পূর্বধারণা~$\Subst{!A}{t}{x}$।
+\Elim{\lexists} বিধিতে $!A(c)$ রূপের অনুমান
+অবমুক্ত করা যায়: অর্থাৎ প্রতিটি প্রয়োগের জন্য
+কোনো !!{constant}~$c$ থাকে, এবং
+$\Subst{!A}{c}{x}$ রূপের অনুমানগুলি অবমুক্ত হতে
+পারে। একটি প্রয়োগে অবমুক্ত সব অনুমানে একই~$c$
+থাকতে হবে। এই ধ্রুবককে \Elim{\lexists}
+অনুমানবিধির \emph{আইগেনচল} বলে। প্রয়োগটি তখনই
+সঠিক, যখন অবমুক্ত $!A(c)$-গুলি ছাড়া অন্য কোনো
+খোলা অনুমানে, $!B$-তে কিংবা $!A$-তে $c$ ঘটে না।
+এটি \emph{আইগেনচল-শর্ত}।
+
+\Log{N1c} ও~\Log{N1i}-এর !!^{proof}s হলো
+অনুমান থেকে বিধি প্রয়োগ করে আরোহক্রমে গঠিত
+!!{formula}-র সসীম বৃক্ষ। প্রতিটি পাতা একটি অনুমান,
+যার অবমুক্তি-চিহ্ন থাকতেও পারে; অন্য প্রতিটি
+!!{formula} তার অব্যবহিত উপরের !!{formula}s
+থেকে পদ্ধতির কোনো অনুমানবিধিতে আসে। বৃক্ষে
+কোনো অনুমান হিসেবে থাকা !!{formula}-র একটি
+সংঘটন যদি তার নিচের বিবেচিত অনুমানবিধি পর্যন্ত
+অবমুক্ত না হয়ে থাকে, তবে সেই অনুমানবিধিতে
+সেটিকে \emph{খোলা} বলে।
+% BN-SRC-551 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-551):} N1 প্রমাণকে উৎসের একটি বাক্যে ভুল করে সিকোয়েন্টের বৃক্ষ বলা হয়েছে; পরের আনুষ্ঠানিক সংজ্ঞা ও N1 বিধি অনুসারে এখানে সূত্রের বৃক্ষ বলা হয়েছে।}
+% BN-SRC-551 TARGET-CORRECTION-END
+
+\begin{defn}\ollabel{defn:proof}
+\Log{N1c} ও~\Log{N1i}-তে \emph{!!^{proof}s}
+নিচের আরোহসংজ্ঞা অনুযায়ী !!{formula}s-এর সসীম বৃক্ষ:
+\begin{enumerate}
+  \item\ollabel{defn:prf:assumption} $x$ বা $y$-এর
+  মতো অবমুক্তি-চিহ্নযুক্ত প্রত্যেক !!{formula}
+  একাই !!a{proof}। একটি মাত্র !!{formula} নিয়ে
+  গঠিত !!{proof}-এ সূত্রটি খোলা অনুমান।
+  \item\ollabel{defn:prf:one-prem} $R$ যদি এক,
+  দুই বা তিন পূর্বধারণা $!A_1$, $!A_2$, $!A_3$
+  এবং সিদ্ধান্ত~$!A$-এর বিধি হয়, আর
+  $\delta_1$, $\delta_2$, $\delta_3$ যথাক্রমে
+  $!A_1$, $!A_2$, $!A_3$-তে শেষ হওয়া
+  !!{proof}s হয়, তাহলে যথাক্রমে
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \RightLabel{$R$}
+  \UnaryInfC{$!A$}
+  \DisplayProof
+\qquad
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A_2$}
+  \RightLabel{$R$}
+  \BinaryInfC{$!A$}
+  \DisplayProof
+\qquad
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A_2$}
+  \AxiomC{}
+  \RightLabel{$\delta_3$}
+  \DeduceC{$!A_3$}
+  \RightLabel{$R$}
+  \TrinaryInfC{$!A$}
+  \DisplayProof
+  \]
+  !!a{proof}, যদি ওই প্রমাণগুলির অনুমান-চিহ্নগুলি
+  পরস্পর সঙ্গতিপূর্ণ হয় (দুটি ভিন্ন !!{formula}-র
+  একই অবমুক্তি-চিহ্ন নেই) এবং অনুমানবিধিগুলি
+  $R$-এর সঠিক প্রয়োগ হয়।
+  % BN-SRC-552 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-552):} তিন-পূর্বধারণার চিত্রে তৃতীয় উপপ্রমাণ $\delta_3$-র শেষ সূত্র উৎসে ভুলে $!A_2$; সংজ্ঞায় ঘোষিত $!A_3$ বসানো হয়েছে।}
+  % BN-SRC-552 TARGET-CORRECTION-END
+  \item নতুন !!{proof}-এর সর্বোচ্চে থাকা
+  !!{formula}s-এর সংঘটনগুলি ওই উপ-!!{proof}s
+  $\delta_1$, $\delta_2$ বা~$\delta_3$-তে খোলা অনুমান হলে এখানেও
+  \emph{খোলা অনুমান}; তবে বিধিতে অবমুক্ত
+  সংঘটনগুলি বাদ যাবে। বিধির চিহ্ন~$x$ (বা
+  $x\, y$) হলে \Intro{\lif} ও~\Intro{\lnot}-এর
+  জন্য সেটি $\delta_1$-এর $x$-চিহ্নিত সব খোলা
+  অনুমান; \Elim{\lexists}-এর জন্য $\delta_2$-এর
+  $x$-চিহ্নিত সব খোলা অনুমান; আর \Elim{\lor}-এর
+  জন্য $\delta_2$-এর $x$-চিহ্নিত ও
+  $\delta_3$-এর $y$-চিহ্নিত সব খোলা অনুমান।
+\end{enumerate}
+\end{defn}
+
+!!a{proof} আরোহে গড়তে যে !!{proof}s লাগে,
+তাদের তার \emph{উপ-!!{proof}s} বলে। এই
+!!{proof}s-এর মধ্যে কোনো
+অনুমানবিধির পূর্বধারণায় শেষ হওয়া উপ-!!{proof}s
+হলো সেই বিধির \emph{অব্যবহিত উপ-!!{proof}s}।
+\Log{N1c} ও~\Log{N1i}-এর বিধিগুলি
+\olref{tab:N1}-তে দেওয়া আছে।
+% BN-SRC-553 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-553):} উৎসবাক্যে N2c/N2i লেখা হলেও আমদানিকৃত সারণি \texttt{rules-N1} এবং তার লেবেল \texttt{tab:N1}; এখানে N1c/N1i করা হয়েছে।}
+% BN-SRC-553 TARGET-CORRECTION-END
+
+\subfile{rules-N1}
+
+\begin{defn}
+!!a{proof}~$\delta$-র \emph{!!{height}}~$\pheight{\delta}$
+আরোহক্রমে নিচের মতো নির্ধারিত হয়।
+\begin{enumerate}
+  \item $\delta$ শুধু একটি অনুমান হলে,
+  $\pheight{\delta} = 0$।
+  \item $\delta$-র শেষে একটি পূর্বধারণার বিধি
+  এবং অব্যবহিত উপ-!!{proof}~$\delta_1$ থাকলে,
+  $\pheight{\delta} = \pheight{\delta_1} + 1$।
+  \item $\delta$-র শেষে দুটি পূর্বধারণার বিধি
+  এবং অব্যবহিত উপ-!!{proof}s~$\delta_1$ ও~$\delta_2$
+  থাকলে, $\pheight{\delta} =
+  \max(\pheight{\delta_1}, \pheight{\delta_2}) + 1$।
+  \item $\delta$-র শেষে \Elim{\lor} এবং অব্যবহিত
+  উপ-!!{proof}s~$\delta_1$, $\delta_2$ ও~$\delta_3$
+  থাকলে, $\pheight{\delta} =
+  \max(\pheight{\delta_1}, \pheight{\delta_2},
+  \pheight{\delta_3}) + 1$।
+\end{enumerate}
+কোনো সিকোয়েন্ট~$S$-এর উচ্চতা $\le n$-এর
+!!a{proof} থাকলে লিখি $\Proves[n] S$।
+\end{defn}
+
+\begin{ex}
+\Log{N1i}-তে যেকোনো !!{formula} নিজেকে খোলা
+অনুমান ধরে !!a{proof}। তাই
+\[
+!A \land !B^x
+\]
+একটি !!a{proof}~$\delta_1$। এর উচ্চতা~$0$।
+$\delta_1$ থেকে \Elim{\land}-এর দুটি রূপের
+যেকোনো একটি করে প্রয়োগে দুটি !!{proof}s
+$\delta_2$ ও~$\delta_3$ পাই:
+\[
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!B$}
+\DisplayProof
+\qquad
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!A$}
+\DisplayProof
+\]
+$\delta_2$ ও~$\delta_3$-এর শেষ অনুমানবিধির
+অব্যবহিত উপ-!!{proof} একই: $!A \land !B$।
+উভয় !!{proof}s-এ $!A\land !B$-এর সংঘটন
+খোলা অনুমান। অতএব
+$\pheight{\delta_2} = \pheight{\delta_3} = 1$।
+% BN-SRC-554 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-554):} উৎসের শেষ সমীকরণে $\delta_1$ ও $\delta_2$ উভয়ের উচ্চতা $1$ বলা হয়েছে, অথচ ঠিক আগেই $\delta_1$-এর উচ্চতা $0$; এখানে দুই এক-ধাপ প্রমাণ $\delta_2$ ও $\delta_3$-এর উচ্চতা $1$ লেখা।}
+% BN-SRC-554 TARGET-CORRECTION-END
+
+\Intro{\land} বিধিতে $!B \land !A$ রূপের
+সিদ্ধান্ত পেতে $!B$ ও $!A$ রূপের দুটি
+পূর্বধারণা লাগে। ফলে নিচেরটি !!a{proof}~$\delta_4$:
+\[
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!B$}
+\LeftSubproofLabel{$\delta_2$}
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!A$}
+\RightSubproofLabel{$\delta_3$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !A$}
+\DisplayProof
+\]
+এর উচ্চতা $\pheight{\delta_4} =
+\max(\pheight{\delta_2}, \pheight{\delta_3})+1
+= \max(1,1) + 1 = 2$। অনুমান হিসেবে এতে
+$!A \land !B$-এর দুটি সংঘটন আছে; উভয়ই খোলা।
+
+শেষে \Intro{\lif} প্রয়োগে !!a{proof}~$\delta_5$ পাই:
+\[
+\AxiomC{$\Discharge{!A \land !B}{x}$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!B$}
+\LeftSubproofLabel{$\delta_2$}
+\AxiomC{$\Discharge{!A \land !B}{x}$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!A$}
+\RightSubproofLabel{$\delta_3$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !A$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$(!A \land !B) \lif (!B \land !A)$}
+\DisplayProof
+\]
+এর উচ্চতা $\pheight{\delta_4} + 1 = 3$।
+\Intro{\lif} অনুমানবিধিতে $x$-চিহ্নিত
+$!A \land !B$ রূপের সব অনুমান, অর্থাৎ
+অব্যবহিত উপপ্রমাণে আগে খোলা থাকা দুটি অনুমানই,
+অবমুক্ত হয়। $\delta_5$-এর অনুমান বলতে
+ওই দুটিই ছিল; ফলে আর কোনো খোলা অনুমান নেই।
+সুতরাং এটি তার অন্তিম-!!{formula}
+$(!A \land !B) \lif (!B \land !A)$-এরই
+\emph{!!a{proof}}।
+\end{ex}
+
+\end{document}

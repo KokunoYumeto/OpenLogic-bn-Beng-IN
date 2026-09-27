@@ -6275,6 +6275,26 @@ for row in rows:
             set(documented) == {"BN-SRC-548", "BN-SRC-549"}
             and mathparts(audited_n2) == target_math
         )
+    legacy_nd_rules_proofs_math_repairs = False
+    if row["unit_id"] == "OLP-0668":
+        audited_proofs = source
+        fixes = (
+            (
+                "\\RightLabel{$\\delta_3$}\n  \\DeduceC{$!A_2$}",
+                "\\RightLabel{$\\delta_3$}\n  \\DeduceC{$!A_3$}",
+            ),
+            (
+                "$\\pheight{\\delta_1} = \\pheight{\\delta_2} = 1$",
+                "$\\pheight{\\delta_2} = \\pheight{\\delta_3} = 1$",
+            ),
+        )
+        for old, new in fixes:
+            assert audited_proofs.count(old) == 1
+            audited_proofs = audited_proofs.replace(old, new, 1)
+        legacy_nd_rules_proofs_math_repairs = (
+            set(documented) == {f"BN-SRC-{n}" for n in range(550, 555)}
+            and mathparts(audited_proofs) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6414,6 +6434,7 @@ for row in rows:
             legacy_natural_deduction_intro_repairs,
             legacy_quantifier_substitution_repairs,
             legacy_n2_caption_rule_names,
+            legacy_nd_rules_proofs_math_repairs,
         )
     )
     minimal_change_fileid_fix = (

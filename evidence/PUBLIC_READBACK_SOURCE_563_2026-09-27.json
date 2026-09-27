@@ -1,0 +1,202 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T00:58:29.583991+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "0e5441117a8d1c3cf8898d5fdb642f59b8da8202",
+  "parent": "b5a6677526b9c537004137cc1d63e12cbc56a454",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "509f83936759afc96d3e62a214676909f452cb72",
+    "receipt": "PUBLIC_READBACK_SOURCE_556_2026-09-27.json",
+    "receipt_sha256": "ed72ec6d78e0c33ab0e7e164fcd35be9fc9206139411931a0f9b4458785a6465"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/0e5441117a8d1c3cf8898d5fdb642f59b8da8202.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/0e5441117a8d1c3cf8898d5fdb642f59b8da8202",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 14954053,
+  "archive_sha256": "48cad5a216eea2b2478c5c68f88387bb48f91e98c647e4393e39e18b5328efdd",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/foundation.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/foundation.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/foundation.tex",
+      "content_type": "text/plain",
+      "bytes": 6775,
+      "sha256": "f3d8b3ddd9b6c1b0791bcad7e5b2652ea9a712d0705acc5024a9176f8f585e32"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/idea.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/idea.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/idea.tex",
+      "content_type": "text/plain",
+      "bytes": 3370,
+      "sha256": "788b1867a522a97df87d15b32018c208d68413e857ee583611b8847c5f13e305"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/rank.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/rank.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/rank.tex",
+      "content_type": "text/plain",
+      "bytes": 8160,
+      "sha256": "539a3c95f10a745905c2737d74865d466b8048ededf76d130cca1b5ade275771"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/recursion.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/recursion.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/recursion.tex",
+      "content_type": "text/plain",
+      "bytes": 10230,
+      "sha256": "5924ec3e02151be35dfa1657473dfbeb206e5df07a6c7945b6f2fff962cdf27d"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/spine.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/spine.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/spine.tex",
+      "content_type": "text/plain",
+      "bytes": 342,
+      "sha256": "f232da6eb1386f5d7a87b1daab44663e84cb40ad81660cee6aa6f4fe33f50e21"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/stagesbasics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/stagesbasics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/stagesbasics.tex",
+      "content_type": "text/plain",
+      "bytes": 7021,
+      "sha256": "37f387ca3be4ab9538149d3167aef325e780222b7190de7971bd1053133cb2ad"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/zf.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/zf.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/0e5441117a8d1c3cf8898d5fdb642f59b8da8202/bn-Beng-IN/content/set-theory/spine/zf.tex",
+      "content_type": "text/plain",
+      "bytes": 3743,
+      "sha256": "e44a5977c9347a058765504d89c22b7fd05dffcf3afcaf6f54c526dc3ef299ca"
+    }
+  ],
+  "changed_files_verified": 20,
+  "translated_tex_files_in_commit": 7,
+  "evidence_files_in_commit": 11,
+  "draft_translated_total": 563,
+  "draft_untranslated_total": 159,
+  "segments": 6150,
+  "translated_segments": 5237,
+  "new_batch_segments": 82,
+  "new_batch_translated_segments": 80,
+  "new_batch_unchanged_segments": 2,
+  "source_correction_records": 448,
+  "new_source_correction_records": 4,
+  "translation_decisions": 398,
+  "provisional_translation_decisions": 376,
+  "translation_decision_occurrences": 34026,
+  "decisions_with_exact_source_wording": 378,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 563,
+    "blocks": 6150,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7448,
+      "sha256": "7fe18ccef4e5b5703a0a8294d1dca503d90aaac55be36ebc0c1a7f91d2198e12"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/spine/foundation.tex",
+      "bytes": 6775,
+      "sha256": "f3d8b3ddd9b6c1b0791bcad7e5b2652ea9a712d0705acc5024a9176f8f585e32"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/spine/idea.tex",
+      "bytes": 3370,
+      "sha256": "788b1867a522a97df87d15b32018c208d68413e857ee583611b8847c5f13e305"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/spine/rank.tex",
+      "bytes": 8160,
+      "sha256": "539a3c95f10a745905c2737d74865d466b8048ededf76d130cca1b5ade275771"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/spine/recursion.tex",
+      "bytes": 10230,
+      "sha256": "5924ec3e02151be35dfa1657473dfbeb206e5df07a6c7945b6f2fff962cdf27d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/spine/spine.tex",
+      "bytes": 342,
+      "sha256": "f232da6eb1386f5d7a87b1daab44663e84cb40ad81660cee6aa6f4fe33f50e21"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/spine/stagesbasics.tex",
+      "bytes": 7021,
+      "sha256": "37f387ca3be4ab9538149d3167aef325e780222b7190de7971bd1053133cb2ad"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/spine/zf.tex",
+      "bytes": 3743,
+      "sha256": "e44a5977c9347a058765504d89c22b7fd05dffcf3afcaf6f54c526dc3ef299ca"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 10206398,
+      "sha256": "daed5b57e3826794f7e49b07a8e7d362cf70482b674767657ec56dab75d5b7e0"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 342974,
+      "sha256": "d865e836746b4dd16c0503592f0d332d8af85fe165903e9f1380cfaa4b6eb97c"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SET_THEORY_SPINE.md",
+      "bytes": 7928,
+      "sha256": "6b545808be98253b9658248a4a27292e4491aeca954292d99db6ebfdc58af6f2"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "725d7a0b2128313e78998924ff9482fa7c1d0d377a1dd123c38a9df0044b536c"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 875460,
+      "sha256": "50adaebca94c35b82eb4398af8c98b265a6be2274ddb103466e3931587e1187a"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 372063,
+      "sha256": "8500b5666d8f0b5988901216ff2924f617ec7f4917efd745f2cc9e1291728301"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 20483389,
+      "sha256": "06d57825631ae25fb85cac2cbb4bec634064d33bf0c40cfe6c28b87a508ba49e"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 16016040,
+      "sha256": "4cf5b2997d03a7f512474123436ba89ff4d22bbc3e189c254ea17296d2e57baa"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1545898,
+      "sha256": "1b93163f18fe448df3fbc70fc9d883dbc67b8ccd894154aa9d09e00dbc7cf320"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 9328294,
+      "sha256": "091ddb6fe61dc82f9c0ca2b39a62cb2f297d195ca8f3c22d72376112bd1362aa"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 286976,
+      "sha256": "a9a3a340e415913d9d5fdf396c8d82e3d9d8225e19192871a5efd6642d020526"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 283278,
+      "sha256": "b1e79fd338bbbf0f43c8a39961f7854130f18e21c64de8d68cdb5216f51c349b"
+    }
+  ]
+}

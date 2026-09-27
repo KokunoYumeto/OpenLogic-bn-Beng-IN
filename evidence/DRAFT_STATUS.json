@@ -29,12 +29,16 @@
       "effort": "Ultra"
     },
     "independent_human_review_claimed": false,
-    "reader_facing_notice_bn_Beng_IN": "অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনায় OpenAI Codex—GPT-5.6 Sol (Ultra) এবং GPT-6 Sol (Ultra) ব্যবহৃত হয়েছে। বর্তমান OLP-0640–0651 পর্ব GPT-6 Sol (Ultra)-এ করা। স্বাধীন মানব-পর্যালোচনা দাবি করা হচ্ছে না।",
+    "reader_facing_notice_bn_Beng_IN": "অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনায় OpenAI Codex—GPT-5.6 Sol (Ultra) এবং GPT-6 Sol (Ultra) ব্যবহৃত হয়েছে। বর্তমান OLP-0652–0655 উৎস-পর্ব GPT-6 Sol (Ultra)-এ করা। স্বাধীন মানব-পর্যালোচনা দাবি করা হচ্ছে না।",
     "current_batch_OLP_0633_0639": {
       "model": "GPT-6 Sol",
       "effort": "Ultra"
     },
     "current_batch_OLP_0640_0651": {
+      "model": "GPT-6 Sol",
+      "effort": "Ultra"
+    },
+    "current_batch_OLP_0652_0655": {
       "model": "GPT-6 Sol",
       "effort": "Ultra"
     }
@@ -698,13 +702,17 @@
       "OLP-0649",
       "OLP-0650",
       "OLP-0651",
+      "OLP-0652",
+      "OLP-0653",
+      "OLP-0654",
+      "OLP-0655",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 650,
-    "untranslated_count": 72,
-    "chapter_state": "সহায়িকা ও বিচ্ছিন্ন উত্তরাধিকার যুক্তি/গণনাতত্ত্ব/ল্যাম্বডা অংশের OLP-0640–0651 পরীক্ষিত উৎস-অনুবাদে যুক্ত হয়েছে। পূর্বের পাঠক-অধ্যায়গুলির দ্বিত্ব করা হয়নি; অবশিষ্ট ৭২টি উৎস ফাইল ও পূর্ণ পাঠকসংস্করণ বাকি।",
-    "reader_state": "প্রকাশিত সমষ্টিগত HTML/EPUB পাঠকসংস্করণে ২৯৯টি ইউনিট আছে। বর্তমান পরীক্ষিত উৎস-খসড়ায় ৬৫০টি; অতিরিক্ত ৩৫১টি এখনো সেই পাঠকে যুক্ত হয়নি। নতুন পাঠকসংস্করণ বা PDF দাবি করা হচ্ছে না।"
+    "translated_count": 654,
+    "untranslated_count": 68,
+    "chapter_state": "OLP-0652–0655-এর চারটি বিচ্ছিন্ন উত্তরাধিকার-উৎসাংশ—অনেক-মানী পথের পুরোনো LK পাঠ, পাটিগণিতের অমানক মডেল, স্বাভাবিক মোডাল যুক্তিবিদ্যা ও সর্বোচ্চ-মাত্রার কর্তন—অনূদিত ও পরীক্ষিত। এগুলি বর্তমান পাঠক-অধ্যায়ের দ্বিত্ব নয়। কর্তন-প্রমাণের সংযোজনী ও অস্তিত্বসূচক ক্ষেত্র উৎসে অনুলিখিত; পূর্ণ আনুষ্ঠানিক প্রমাণ যাচাইয়ের দাবি নেই। আরও ৬৮টি উৎস ইউনিট বাকি।",
+    "reader_state": "প্রকাশিত সমষ্টিগত HTML/EPUB পাঠকসংস্করণে ২৯৯টি ইউনিট আছে। বর্তমান পরীক্ষিত উৎস-খসড়ায় ৬৫৪টি; অতিরিক্ত ৩৫৫টি এখনও সেই পাঠকে যুক্ত হয়নি। নতুন পাঠকসংস্করণ বা PDF দাবি করা হচ্ছে না।"
   },
   "last_verified_public_release": {
     "version": "0.3.0",
@@ -750,11 +758,11 @@
     "anonymous_public_readback": "All six GitHub and Zenodo assets matched byte-for-byte."
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "545e953f059a17cb2a0181fa6bfc26b870ed8c26",
-    "translated_units": 638,
-    "receipt": "PUBLIC_READBACK_SOURCE_638_2026-09-27.json",
-    "receipt_sha256": "0d7995b6e925b653e9446af0113577c10ce6c1a5b47fdbbb714d8ac6c90f098e",
-    "status": "নামহীন GitHub আর্কাইভ ও কাঁচা অনুবাদ-পুনর্পাঠে ৬৩৮ ইউনিট যাচাইকৃত; বর্তমান ৬৫০-ইউনিট উৎস-খসড়া পরবর্তী যাচাইয়ের জন্য প্রস্তুত।"
+    "commit": "a4aead0ea307e6a808d7e171b6d1b89e975be4a3",
+    "translated_units": 650,
+    "receipt": "PUBLIC_READBACK_SOURCE_650_2026-09-27.json",
+    "receipt_sha256": "6fce6c43ca1206796d37db294b1d9fde7a8fb415d9dd7331591eb80d66400911",
+    "status": "নামহীন GitHub আর্কাইভ ও কাঁচা ফাইল-পুনর্পাঠে ৬৫০ ইউনিট যাচাইকৃত; বর্তমান ৬৫৪-ইউনিট উৎস-খসড়া পরবর্তী যাচাইয়ের জন্য প্রস্তুত।"
   },
   "current_checks": {
     "unit_checks": [
@@ -11254,6 +11262,70 @@
         "target_sha256": "02d45eb1095d6cf50c08c2fe8ff9a4d105cd19cb3583cc7ea35a821775ac4aba"
       },
       {
+        "unit_id": "OLP-0652",
+        "source_blocks": 19,
+        "target_blocks": 19,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "0d5d49ebf94311c70e0747b8584ce8655dc66c7bd0e16af1d234e85f5eb8c22b"
+      },
+      {
+        "unit_id": "OLP-0653",
+        "source_blocks": 14,
+        "target_blocks": 14,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-507",
+          "BN-SRC-508",
+          "BN-SRC-509",
+          "BN-SRC-510",
+          "BN-SRC-511",
+          "BN-SRC-512"
+        ],
+        "tex_command_check": null,
+        "target_sha256": "0f0c6b80f8d775d0efa9585750d0711a0c7bbf575de5a8e759142197f5a88e28"
+      },
+      {
+        "unit_id": "OLP-0654",
+        "source_blocks": 7,
+        "target_blocks": 7,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "e50860052373a495e23981506d5a033a271cf7033393b1f696c0830a5273c729"
+      },
+      {
+        "unit_id": "OLP-0655",
+        "source_blocks": 21,
+        "target_blocks": 21,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-513",
+          "BN-SRC-514",
+          "BN-SRC-515",
+          "BN-SRC-516"
+        ],
+        "tex_command_check": null,
+        "target_sha256": "5c36aa6bc315f77bbc069205035d6ac7b485658f1a7a7fc729f342b0172af4f5"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -11282,12 +11354,12 @@
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "571a70482ce397d42a3e983d4745a86a2d1a00d7188cf68de71beaaf0dd99e22"
+      "sha256": "5c523093d3f1692da9263c66484bf3f8271a509d18f3c5a9e475ebff71d5509e"
     },
-    "segments": 7098,
-    "translated_segments": 6055,
+    "segments": 7159,
+    "translated_segments": 6113,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "7cfb4b6c0fe641e4df75c34f63ce016c74d918e3539a1a4f2227574f6949a8f7",
+    "segment_index_sha256": "4c520b62da2ab557a4a5702c1508bcc22cc64a3e29a1d6708b10042254746ced",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -11636,6 +11708,22 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_LEGACY_SHORT_SECTIONS.md",
         "sha256": "190ae3e917aa530fc80e0da9c62b69f246bba6895c39584f074203ab3d001ef4"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_MVL_LEGACY_PROOF_NOTIONS.md",
+        "sha256": "095c256bca7257eccf840a864b8456df400855794a4fd8d42f8264fa02c02c5b"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_LEGACY_NONSTANDARD_ARITHMETIC.md",
+        "sha256": "8f039a39920b3954b0bad140f71f6bf1b4b040a63ef796ccf0ce122a169cea3a"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_LEGACY_NORMAL_MODAL_LOGICS.md",
+        "sha256": "f357f534a5e03a569508285ef46d5a869017dbab191e793f883909fccf640113"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_LEGACY_LARGEST_CUTS.md",
+        "sha256": "220b05de85d41b612f3f0c8b1c5dbed6d9fa1552b7806a68de065b7d421a2a63"
       }
     ],
     "shared_source_audit": {
@@ -11668,9 +11756,9 @@
     }
   },
   "source_corrections": {
-    "count": 513,
+    "count": 523,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "5fcbe0ac39d4e81ee77bdc954653706ab1cb446db415012c0b529fa52ef40369",
+    "sha256": "34a385f82dd36162003b2e0ce6e5880295571744d45d765b304298bed7505e7b",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -12184,7 +12272,17 @@
       "BN-SRC-503",
       "BN-SRC-504",
       "BN-SRC-505",
-      "BN-SRC-506"
+      "BN-SRC-506",
+      "BN-SRC-507",
+      "BN-SRC-508",
+      "BN-SRC-509",
+      "BN-SRC-510",
+      "BN-SRC-511",
+      "BN-SRC-512",
+      "BN-SRC-513",
+      "BN-SRC-514",
+      "BN-SRC-515",
+      "BN-SRC-516"
     ]
   },
   "source_normalizations": {
@@ -12204,15 +12302,15 @@
     "classification": "render-equivalent TikZ endpoint normalizations; no mathematical or rendered-machine correction"
   },
   "translation_decisions": {
-    "count": 431,
-    "provisional_open": 409,
+    "count": 432,
+    "provisional_open": 410,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "91c228d0aa844f6fa00a6a06011eef584ce141effcaf00148a7c639d0fbb421a",
+    "sha256": "d521c6ac6df26e8b176c172f94b6ee84a69e3dc96e5b582a64e538037fa33516",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 39430,
+    "occurrence_count": 39995,
     "occurrence_schema": "openlogic-bn-translation-decision/3",
     "occurrence_join": "Join source_segment_id to evidence/DRAFT_SEGMENT_CANON_USE.jsonl for exact source and target paths, block spans and SHA-256; read the frozen source block and verify its hash for exact wording.",
     "layout_readback": {
@@ -12239,5 +12337,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "Historical Functions-era TeX candidate record: all three bounded mutex acquisitions timed out without launching TeX. The verified public semantic HTML/EPUB reader is recorded above; no TeX-built PDF is claimed."
   },
-  "remaining": "৭২টি উৎস ফাইলের অনুবাদ, পরের সমষ্টিগত পাঠকসংস্করণ, সম্পূর্ণ ৭২২-ইউনিট QA এবং চূড়ান্ত প্রকাশ্য যাচাই বাকি। বর্তমান পরীক্ষিত উৎস-খসড়া ৬৫০টি; আগের যাচাইকৃত প্রকাশ্য উৎস-চেকপয়েন্ট ৬৩৮টি ইউনিটের। প্রকাশিত পাঠকসংস্করণ ২৯৯ ইউনিটের।"
+  "remaining": "৬৮টি উৎস ফাইলের অনুবাদ, পরের সমষ্টিগত পাঠকসংস্করণ, সম্পূর্ণ ৭২২-ইউনিট QA এবং চূড়ান্ত প্রকাশ্য যাচাই বাকি। বর্তমান পরীক্ষিত উৎস-খসড়া ৬৫৪টি; আগের যাচাইকৃত প্রকাশ্য উৎস-চেকপয়েন্ট ৬৫০টি। প্রকাশিত পাঠকসংস্করণ ২৯৯ ইউনিটের।"
 }

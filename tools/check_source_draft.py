@@ -6230,6 +6230,40 @@ for row in rows:
             set(documented) == {"BN-SRC-542", "BN-SRC-543"}
             and mathparts(audited_nd_intro) == target_math
         )
+    legacy_quantifier_substitution_repairs = False
+    if row["unit_id"] == "OLP-0665":
+        copied_forall_tree = norm(r"""
+            \AxiomC{}
+            \RightLabel{$\Subst{\delta'}{t}{c}$}
+            \DeduceC{$!A(a,t)$}
+            \RightLabel{\Intro{\lforall}}
+            \UnaryInfC{$\lforall[x][!A(x,t)]$}
+            \DisplayProof
+        """)
+        proper_exists_tree = norm(r"""
+            \AxiomC{}
+            \RightLabel{$\Subst{\delta_1'}{t}{c}$}
+            \DeduceC{$\lexists[x][!A(x,t)]$}
+            \AxiomC{$\Discharge{!A(a,t)}{x}$}
+            \RightLabel{$\Subst{\delta_2'}{t}{c}$}
+            \DeduceC{$\Subst{!C}{t}{c}$}
+            \DischargeRule{\Elim{\lexists}}{x}
+            \BinaryInfC{$\Subst{!C}{t}{c}$}
+            \DisplayProof
+        """)
+        legacy_quantifier_substitution_repairs = (
+            set(documented) == {"BN-SRC-544", "BN-SRC-545", "BN-SRC-546"}
+            and source_math - target_math == collections.Counter({
+                "!C": 2,
+                r"\lexists[x][!A(x,c)]": 1,
+                copied_forall_tree: 1,
+            })
+            and target_math - source_math == collections.Counter({
+                r"\Subst{!C}{t}{c}": 2,
+                r"\lexists[x][!A(x,t)]": 1,
+                proper_exists_tree: 1,
+            })
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6367,6 +6401,7 @@ for row in rows:
             legacy_midsequent_repairs,
             legacy_grafting_repairs,
             legacy_natural_deduction_intro_repairs,
+            legacy_quantifier_substitution_repairs,
         )
     )
     minimal_change_fileid_fix = (

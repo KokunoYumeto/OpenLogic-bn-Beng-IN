@@ -1,0 +1,210 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{qua}
+
+\olsection{নিয়মিত \usetoken{P}{proof} ও প্রতিস্থাপন}
+
+\Elim{\lexists} ও~\Intro{\lforall} বিধিতে আইগেনচলের শর্ত
+থাকায় পরিমাণসূচকের বিধিগুলি কিছু জটিলতা আনে। এই
+অনুমানগুলিতে !!{constant}~$c$ আর কোথাও ব্যবহার না করলে
+বেশির ভাগ জটিলতা সামলানো যায়। তাই একটি সংজ্ঞা দিই।
+
+\begin{defn}
+স্বাভাবিক নিষ্পাদনের !!{proof}~$\delta$-কে \emph{নিয়মিত}
+বলব যদি
+\begin{enumerate}
+  \item কোনো আইগেনচল~$a$ একাধিক \Elim{\lexists} বা~\Intro{\lforall}
+  অনুমানের আইগেনচল হিসেবে ব্যবহৃত না হয়; এবং
+  \item $a$ যদি কোনো \Elim{\lexists} বা~\Intro{\lforall}
+  অনুমানের আইগেনচল হয়, তাহলে যথাক্রমে গৌণ পূর্বধারণা
+  বা একমাত্র পূর্বধারণায় পৌঁছানো অব্যবহিত উপ-!!{proof}-এর
+  ভিতরেই শুধু সেটি ঘটে।
+\end{enumerate}
+\end{defn}
+
+\begin{lem}\ollabel{lem:subst-regular} ধরি, $\delta$ নিয়মিত এবং
+তার অন্তিম সূত্র~$!C$; !!a{constant}~$c$ প্রমাণ~$\delta$-তে
+আইগেনচল হিসেবে ব্যবহৃত নয়; আর পদ~$t$-তে $\delta$-র
+কোনো আইগেনচল নেই। তাহলে $\delta$-তে $c$-র প্রতিটি
+সংঘটন $t$ দিয়ে বদলে পাওয়া $\Subst{\delta}{t}{c}$-ও
+নিয়মিত !!{proof}। $\Subst{\delta}{t}{c}$-র অন্তিম-!!{formula} হলো
+$\Subst{!C}{t}{c}$। $!A^x$ যদি $\delta$-র খোলা অনুমান হয়,
+তাহলে $\Subst{!A}{t}{c}^x$ হলো
+$\Subst{\delta}{t}{c}$-র খোলা অনুমান।
+\end{lem}
+
+\begin{proof}
+  $\pheight{\delta}$-র উপর আরোহ করি।
+  $\pheight{\delta} = 0$ হলে প্রমাণটি শুধু
+  অনুমান~$!A^x$; তখন $\Subst{\delta}{t}{c}$ হলো
+  $\Subst{!A}{t}{c}^x$।
+
+  $\pheight{\delta} > 0$ হলে $\delta$-র শেষ অনুমানবিধি
+  অনুযায়ী ক্ষেত্রগুলি আলাদা করি। বচনীয় সংযোজকের
+  বিধিক্ষেত্রগুলি সহজ; অনুশীলন হিসেবে থাক। এখানে
+  $\delta$ পরিমাণসূচকের বিধিতে শেষ হয় এমন ক্ষেত্র দেখি।
+  \begin{enumerate}
+    \item শেষ বিধি $\Intro{\lforall}$ হলে $\delta$-র রূপ
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta'$}
+    \DeduceC{$!A(a,c)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x,c)]$}
+    \DisplayProof
+    \]
+    আরোহের অনুমানে $\Subst{\delta'}{t}{c}$ হলো
+    $!A(a,t)$-র নিয়মিত !!{proof}। $a$ প্রমাণ~$\delta$-র
+    আইগেনচল বলে পদ~$t$-তে $a$ ঘটে না। অতএব
+    $\Subst{\delta}{t}{c}$-র শেষ অনুমানবিধি,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta'}{t}{c}$}
+    \DeduceC{$!A(a,t)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x,t)]$}
+    \DisplayProof
+    \]
+    সঠিক: $t$-তে $a$ না থাকায় সিদ্ধান্ত বা কোনো
+    খোলা অনুমানেও $a$ নেই।
+    \item শেষ বিধি $\Elim{\lforall}$ হলে
+    $\delta$-র রূপ
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta'$}
+    \DeduceC{$\lforall[x][!A(x,c)]$}
+    \RightLabel{\Elim{\lforall}}
+    \UnaryInfC{$!A(s(c),c)$}
+    \DisplayProof
+    \]
+    আরোহের অনুমানে $\Subst{\delta'}{t}{c}$ হলো
+    $\lforall[x][!A(x,t)]$-র নিয়মিত !!{proof}।
+    (সিদ্ধান্তের পদ~$s(c)$-তে $c$ থাকতেও পারে,
+    না-ও পারে।) $\Subst{\delta}{t}{c}$-র শেষ অনুমানবিধি,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta'}{t}{c}$}
+    \DeduceC{$\lforall[x][!A(x,t)]$}
+    \RightLabel{\Elim{\lforall}}
+    \UnaryInfC{$!A(s(t),t)$}
+    \DisplayProof
+    \]
+    সঠিক, এবং $!A(s(t),t) \ident \Subst{!A(s(c),c)}{t}{c}$।
+    \Intro{\lexists}-এর ক্ষেত্রও অনুরূপ।
+  \item শেষ বিধি $\Elim{\lexists}$ হলে $\delta$-র রূপ
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta_1'$}
+    \DeduceC{$\lexists[x][!A(x,c)]$}
+    \AxiomC{$\Discharge{!A(a,c)}{x}$}
+    \RightLabel{$\delta_2'$}
+    \DeduceC{$!C$}
+    \DischargeRule{\Elim{\lexists}}{x}
+    \BinaryInfC{$!C$}
+    \DisplayProof
+    \]
+    আরোহের অনুমানে $\Subst{\delta_1'}{t}{c}$ ও
+    $\Subst{\delta_2'}{t}{c}$ নিয়মিত !!{proof}s:
+    প্রথমটির সিদ্ধান্ত $\lexists[x][!A(x,t)]$;
+    দ্বিতীয়টির সিদ্ধান্ত $\Subst{!C}{t}{c}$,
+    খোলা অনুমান~$!A(a,t)$ থেকে। $a$ প্রমাণ~$\delta$-র
+    আইগেনচল বলে পদ~$t$-তে $a$ নেই। অতএব
+    $\Subst{\delta}{t}{c}$-র শেষ অনুমানবিধি,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta_1'}{t}{c}$}
+    \DeduceC{$\lexists[x][!A(x,t)]$}
+    \AxiomC{$\Discharge{!A(a,t)}{x}$}
+    \RightLabel{$\Subst{\delta_2'}{t}{c}$}
+    \DeduceC{$\Subst{!C}{t}{c}$}
+    \DischargeRule{\Elim{\lexists}}{x}
+    \BinaryInfC{$\Subst{!C}{t}{c}$}
+    \DisplayProof
+    \]
+    সঠিক: $\Subst{!A(x,t)}{a}{x} \ident \Subst{!A(a,c)}{t}{c}$;
+    সিদ্ধান্ত~$\Subst{!C}{t}{c}$ বা অন্য কোনো খোলা
+    অনুমানে $a$ নেই।
+    % BN-SRC-544 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-544):} অস্তিত্ব-নিষ্কাশনের আরোহফলে $c$-র স্থলে $t$ বসায় প্রধান পূর্বধারণা ও সিদ্ধান্তে সেই প্রতিস্থাপিত রূপ দেখানো হয়েছে।}
+    % BN-SRC-544 TARGET-CORRECTION-END
+    % BN-SRC-545 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-545):} উৎসে এই ক্ষেত্রের দ্বিতীয় প্রমাণবৃক্ষ ভুলে সার্বিক-ভূমিকার পুনরাবৃত্তি; এখানে অস্তিত্ব-নিষ্কাশনের দুই পূর্বধারণা ও অব্যাহতি-চিহ্ন দেখানো হয়েছে।}
+    % BN-SRC-545 TARGET-CORRECTION-END
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:regular}
+$\delta$ যদি \Log{N1c} বা \Log{N1i}-তে !!a{proof} হয়,
+তাহলে একই গঠনবিশিষ্ট (বিশেষত, একই !!{height}-এর)
+নিয়মিত !!{proof}~$\delta'$ আছে, যা $\delta$ থেকে
+শুধু আইগেনচলগুলি প্রতিস্থাপন করায় আলাদা।
+\end{prop}
+
+\begin{proof}
+শুধু এই প্রমাণের জন্য, $\delta$-র কোনো আইগেনচল-বিধিকে
+\emph{পরিচ্ছন্ন} বলি যদি তার আইগেনচল অন্য কোনো অনুমানবিধির
+আইগেনচল না হয় এবং ওই বিধির অব্যবহিত উপ-!!{proof}-র
+বাইরে $\delta$-তে কোথাও না ঘটে; অন্যথায় তাকে
+\emph{অপরিচ্ছন্ন} বলি। $\delta$-তে অপরিচ্ছন্ন আইগেনচল-বিধির
+সংখ্যা~$n$ ধরি। $n$-র উপর আরোহে দেখাই, $\delta$-কে
+প্রয়োজনীয় নিয়মিত !!{proof}~$\delta'$-তে বদলানো যায়।
+$n=0$ হলে $\delta$-র সব আইগেনচল-বিধিই পরিচ্ছন্ন; তাই $\delta$
+নিয়মিত এবং আর কিছু প্রমাণের নেই। অন্যথায় সর্বোচ্চে
+থাকা কোনো অপরিচ্ছন্ন আইগেনচল-বিধি বাছি, ধরি
+\Intro{\lforall}। তাতে শেষ হওয়া $\delta$-র
+উপ-!!{proof}~$\delta_1$-এর রূপ
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta_2$}
+    \DeduceC{$!A(c)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x)]$}
+    \DisplayProof
+    \]
+$c$ আইগেনচল বলে $\lforall[x][!A(x)]$ বা কোনো
+খোলা অনুমানে সেটি ঘটে না। উপপ্রমাণ~$\delta_2$
+নিয়মিত: তার উপরের সব আইগেনচল-বিধি পরিচ্ছন্ন,
+যদিও সেখানে এমন বিধি থাকতেই পারে। প্রমাণ~$\delta$-তে
+ঘটে না এমন একটি !!a{constant}~$a$ নিই।
+\olref{lem:subst-regular} অনুযায়ী
+$\Subst{\delta_2}{a}{c}$ হলো $!A(a)$-র নিয়মিত প্রমাণ।
+আইগেনচল-শর্তে $\delta_2$-র কোনো খোলা অনুমানে $c$
+থাকে না; অতএব $\Subst{\delta_2}{a}{c}$-র কোনো খোলা
+অনুমানেও $a$ নেই। ফলে~$\Intro{\lforall}$ প্রয়োগ করি।
+$\delta$-তে $\delta_1$-র বদলে প্রমাণ~$\delta_1'$ বসালে,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta_2}{a}{c}$}
+    \DeduceC{$!A(a)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x)]$}
+    \DisplayProof
+    \]
+একটি অপরিচ্ছন্ন আইগেনচল-বিধি পরিচ্ছন্ন বিধিতে বদলেছে;
+শুধু আইগেনচল~$c$-র জায়গায়~$a$ এসেছে। ফলিত
+প্রমাণে অপরিচ্ছন্ন বিধি $n-1$টি; আরোহের অনুমানে ফল মেলে।
+% BN-SRC-546 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-546):} আরোহে একটি অপরিচ্ছন্ন বিধিই বেছে নেওয়া দরকার; তার উপরে পরিচ্ছন্ন আইগেনচল-বিধি থাকতে পারে, কিন্তু উপপ্রমাণ তবু নিয়মিত। উৎসের ``সর্বোচ্চ আইগেনচল-বিধি'' ও ``উপরে কোনো আইগেনচল-বিধি নেই'' বক্তব্য সেই নিশ্চয়তা দেয় না।}
+% BN-SRC-546 TARGET-CORRECTION-END
+\end{proof}
+
+\begin{prob}
+\olref{prop:regular}-এর প্রমাণে সর্বোচ্চ আইগেনচল-বিধি
+যখন~\Elim{\lexists}, সেই ক্ষেত্রটি বর্ণনা করুন।
+\end{prob}
+
+এইমাত্র প্রমাণিত প্রস্তাবনা আমরা আলাদা করে আর প্রয়োগ
+করব না; বিবেচিত সব !!{proof}s-কে নিয়মিত ধরব—তা না
+হলে আইগেনচল বদলে নিয়মিত করা যায়।
+
+\Olref{lem:subst-regular} ও \olref{prop:regular}
+\Log{N2c} এবং~\Log{N2i}-তেও প্রযোজ্য। প্রমাণগুলি
+অনুশীলন হিসেবে থাক।
+
+\end{document}

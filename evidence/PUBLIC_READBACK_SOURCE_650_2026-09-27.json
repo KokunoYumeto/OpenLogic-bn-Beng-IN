@@ -1,0 +1,300 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T07:51:31.908618+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "a4aead0ea307e6a808d7e171b6d1b89e975be4a3",
+  "parent": "766d1ce15d6675bb4c1b07d867373dbbffc6ff25",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "545e953f059a17cb2a0181fa6bfc26b870ed8c26",
+    "receipt": "PUBLIC_READBACK_SOURCE_638_2026-09-27.json",
+    "receipt_sha256": "0d7995b6e925b653e9446af0113577c10ce6c1a5b47fdbbb714d8ac6c90f098e"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/a4aead0ea307e6a808d7e171b6d1b89e975be4a3.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/a4aead0ea307e6a808d7e171b6d1b89e975be4a3",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 16745093,
+  "archive_sha256": "caa01585cb7ce0dcaf66a566b5f2ec6eedc66d68e3ee8e6ef8a563641ccb7e60",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability.tex",
+      "content_type": "text/plain",
+      "bytes": 19935,
+      "sha256": "1b557d29f7c8429e3b0b4d254178499f2c2f5abc2f38410940bbcc43dd3c7848"
+    },
+    {
+      "path": "bn-Beng-IN/content/first-order-logic/completeness/maximally-consistent-sets.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/first-order-logic/completeness/maximally-consistent-sets.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/first-order-logic/completeness/maximally-consistent-sets.tex",
+      "content_type": "text/plain",
+      "bytes": 10333,
+      "sha256": "c3a2f220b281d53efb425badd3cad7b0803d50dd0a82b9726c76d0ce1cb97955"
+    },
+    {
+      "path": "bn-Beng-IN/content/first-order-logic/syntax-and-semantics/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/first-order-logic/syntax-and-semantics/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/first-order-logic/syntax-and-semantics/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 8272,
+      "sha256": "74d9eee34c41b0950f03553cb92c143395bc6eb274c58eb6a5059c6a9bfdd0e3"
+    },
+    {
+      "path": "bn-Beng-IN/content/first-order-logic/syntax-and-semantics/syntax-and-semantics.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/first-order-logic/syntax-and-semantics/syntax-and-semantics.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/first-order-logic/syntax-and-semantics/syntax-and-semantics.tex",
+      "content_type": "text/plain",
+      "bytes": 684,
+      "sha256": "5b201a1a29e558765e73cb8e4aea6eabcd9efb502b216c1543b1414458f64a79"
+    },
+    {
+      "path": "bn-Beng-IN/content/incompleteness/representability-in-q/c-representable.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/incompleteness/representability-in-q/c-representable.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/incompleteness/representability-in-q/c-representable.tex",
+      "content_type": "text/plain",
+      "bytes": 15998,
+      "sha256": "89709066089446fda3f2cbfc339a94967f37fd446ef4512ea39113fc559064c1"
+    },
+    {
+      "path": "bn-Beng-IN/content/incompleteness/representability-in-q/c.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/incompleteness/representability-in-q/c.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/incompleteness/representability-in-q/c.tex",
+      "content_type": "text/plain",
+      "bytes": 1926,
+      "sha256": "a6b6a6d3c9c03f57e81d7926ec672d0dc76671ef9a63970dd6e1c1d6c016c7e2"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/semantics/propositions.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/intuitionistic-logic/semantics/propositions.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/intuitionistic-logic/semantics/propositions.tex",
+      "content_type": "text/plain",
+      "bytes": 3105,
+      "sha256": "6ea6caa7394a125c60abe61ec493c50ca8ea0f4049611c5df8352d934c833f29"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/lambda-definability/lists.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/lambda-calculus/lambda-definability/lists.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/lambda-calculus/lambda-definability/lists.tex",
+      "content_type": "text/plain",
+      "bytes": 3068,
+      "sha256": "7fbe42b2c7faca822a9c92ab7eb6c6136d0fc5d56d4f68e5de71a99d39fb143b"
+    },
+    {
+      "path": "bn-Beng-IN/content/lambda-calculus/syntax/conversion.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/lambda-calculus/syntax/conversion.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/lambda-calculus/syntax/conversion.tex",
+      "content_type": "text/plain",
+      "bytes": 998,
+      "sha256": "02d45eb1095d6cf50c08c2fe8ff9a4d105cd19cb3583cc7ea35a821775ac4aba"
+    },
+    {
+      "path": "bn-Beng-IN/content/reference/fraktur-alphabet/fraktur-alphabet.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/reference/fraktur-alphabet/fraktur-alphabet.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/reference/fraktur-alphabet/fraktur-alphabet.tex",
+      "content_type": "text/plain",
+      "bytes": 1519,
+      "sha256": "98f688f72cfba2aed9bc05aed03d1762262e9a4a4fefcf97be1603f135bcf4e4"
+    },
+    {
+      "path": "bn-Beng-IN/content/reference/greek-alphabet/greek-alphabet.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/reference/greek-alphabet/greek-alphabet.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/reference/greek-alphabet/greek-alphabet.tex",
+      "content_type": "text/plain",
+      "bytes": 1208,
+      "sha256": "332d516cef65082c18e67a1e9eb4a850a914b0cf4fe245f375b7fc48be5c0c66"
+    },
+    {
+      "path": "bn-Beng-IN/content/reference/reference.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/reference/reference.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/a4aead0ea307e6a808d7e171b6d1b89e975be4a3/bn-Beng-IN/content/reference/reference.tex",
+      "content_type": "text/plain",
+      "bytes": 635,
+      "sha256": "1354fd250b2e50ffd50fb168e4dabbe662114bf05bdb2a775fb6bd88615629df"
+    }
+  ],
+  "changed_files_verified": 32,
+  "translated_tex_files_in_scope": 12,
+  "draft_translated_total": 650,
+  "draft_untranslated_total": 72,
+  "segments": 7098,
+  "translated_segments": 6055,
+  "new_batch_segments": 149,
+  "new_batch_translated_segments": 124,
+  "new_batch_unchanged_segments": 25,
+  "source_correction_records": 513,
+  "new_source_correction_records": 13,
+  "translation_decisions": 431,
+  "provisional_translation_decisions": 409,
+  "translation_decision_occurrences": 39430,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 650,
+    "blocks": 7098,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 8680,
+      "sha256": "f2e8ac8c9c9d36dd642b8bbbd428539e0da4a12a051bf0fe1ee17f05a921f69f"
+    },
+    {
+      "filename": "bn-Beng-IN/content/first-order-logic/axiomatic-deduction/provability.tex",
+      "bytes": 19935,
+      "sha256": "1b557d29f7c8429e3b0b4d254178499f2c2f5abc2f38410940bbcc43dd3c7848"
+    },
+    {
+      "filename": "bn-Beng-IN/content/first-order-logic/completeness/maximally-consistent-sets.tex",
+      "bytes": 10333,
+      "sha256": "c3a2f220b281d53efb425badd3cad7b0803d50dd0a82b9726c76d0ce1cb97955"
+    },
+    {
+      "filename": "bn-Beng-IN/content/first-order-logic/syntax-and-semantics/intro-semantics.tex",
+      "bytes": 5524,
+      "sha256": "a6b0d687d83ea92a2676326bc6519a066ff056f07d7cbed1fee941615bbc1812"
+    },
+    {
+      "filename": "bn-Beng-IN/content/first-order-logic/syntax-and-semantics/introduction.tex",
+      "bytes": 8272,
+      "sha256": "74d9eee34c41b0950f03553cb92c143395bc6eb274c58eb6a5059c6a9bfdd0e3"
+    },
+    {
+      "filename": "bn-Beng-IN/content/first-order-logic/syntax-and-semantics/syntax-and-semantics.tex",
+      "bytes": 684,
+      "sha256": "5b201a1a29e558765e73cb8e4aea6eabcd9efb502b216c1543b1414458f64a79"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/representability-in-q/c-representable.tex",
+      "bytes": 15998,
+      "sha256": "89709066089446fda3f2cbfc339a94967f37fd446ef4512ea39113fc559064c1"
+    },
+    {
+      "filename": "bn-Beng-IN/content/incompleteness/representability-in-q/c.tex",
+      "bytes": 1926,
+      "sha256": "a6b6a6d3c9c03f57e81d7926ec672d0dc76671ef9a63970dd6e1c1d6c016c7e2"
+    },
+    {
+      "filename": "bn-Beng-IN/content/intuitionistic-logic/semantics/propositions.tex",
+      "bytes": 3105,
+      "sha256": "6ea6caa7394a125c60abe61ec493c50ca8ea0f4049611c5df8352d934c833f29"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/lambda-definability/lists.tex",
+      "bytes": 3068,
+      "sha256": "7fbe42b2c7faca822a9c92ab7eb6c6136d0fc5d56d4f68e5de71a99d39fb143b"
+    },
+    {
+      "filename": "bn-Beng-IN/content/lambda-calculus/syntax/conversion.tex",
+      "bytes": 998,
+      "sha256": "02d45eb1095d6cf50c08c2fe8ff9a4d105cd19cb3583cc7ea35a821775ac4aba"
+    },
+    {
+      "filename": "bn-Beng-IN/content/reference/fraktur-alphabet/fraktur-alphabet.tex",
+      "bytes": 1519,
+      "sha256": "98f688f72cfba2aed9bc05aed03d1762262e9a4a4fefcf97be1603f135bcf4e4"
+    },
+    {
+      "filename": "bn-Beng-IN/content/reference/greek-alphabet/greek-alphabet.tex",
+      "bytes": 1208,
+      "sha256": "332d516cef65082c18e67a1e9eb4a850a914b0cf4fe245f375b7fc48be5c0c66"
+    },
+    {
+      "filename": "bn-Beng-IN/content/reference/reference.tex",
+      "bytes": 635,
+      "sha256": "1354fd250b2e50ffd50fb168e4dabbe662114bf05bdb2a775fb6bd88615629df"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 12461344,
+      "sha256": "7cfb4b6c0fe641e4df75c34f63ce016c74d918e3539a1a4f2227574f6949a8f7"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 387450,
+      "sha256": "3de04066d2a5e7c68c9035719ac531f4b1ef415902985dadc397eb2955af1c0f"
+    },
+    {
+      "filename": "evidence/PUBLIC_READBACK_SOURCE_638_2026-09-27.json",
+      "bytes": 9626,
+      "sha256": "0d7995b6e925b653e9446af0113577c10ce6c1a5b47fdbbb714d8ac6c90f098e"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_FOL_LEGACY_DRIVER.md",
+      "bytes": 1106,
+      "sha256": "895dcbb24a71dd1d82cd6f71f82eeacecc664388ee6db2ac379f4ff1e1568953"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_FOL_LEGACY_INTRODUCTION.md",
+      "bytes": 2481,
+      "sha256": "1363e16bbed449b260d324881c9490ac34a47987166f1bedd2c4a37225902f3e"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LEGACY_C_REPRESENTABILITY.md",
+      "bytes": 2714,
+      "sha256": "b88a8f9f4b0ae8929d3712837960674498d581febbde9e58c5c013345dc88a27"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LEGACY_MAXIMALLY_CONSISTENT.md",
+      "bytes": 2662,
+      "sha256": "6acb8b284c59c2bb426f8a83c2858835642e420e7175ec7b6a00d39b860b1ea2"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LEGACY_PROVABILITY.md",
+      "bytes": 4057,
+      "sha256": "355debc08ae279f1ed2e41379e57099031d03ff9a3d3183ceb6fc29523bf986c"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_LEGACY_SHORT_SECTIONS.md",
+      "bytes": 2574,
+      "sha256": "190ae3e917aa530fc80e0da9c62b69f246bba6895c39584f074203ab3d001ef4"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_REFERENCE.md",
+      "bytes": 1934,
+      "sha256": "20711266cef4d145cef3d09c0d118bef84e57e5ebfafc0d48f0907fb37bdeedd"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 991383,
+      "sha256": "5fcbe0ac39d4e81ee77bdc954653706ab1cb446db415012c0b529fa52ef40369"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 411993,
+      "sha256": "7341e24ee752b0b90eb2c4792bdfec1319de4566bf4f9da4c82d02783586f458"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 23361003,
+      "sha256": "ef6ddf68248ca9722b38e4b2cd0e20e4108677e88521af1e4159f4bbbe2204a6"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 18237079,
+      "sha256": "91c228d0aa844f6fa00a6a06011eef584ce141effcaf00148a7c639d0fbb421a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1677662,
+      "sha256": "a3a65da5097c2b93cc82d18e1bfc23a3ec02766eba446cea17516ec7c0c9e54b"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 10806366,
+      "sha256": "2f2912a00f45d398506f1ac177f43c088da327e8d9c0f2795afcf82afd49128d"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 308439,
+      "sha256": "611c56404da7dfda661477319cd9bd4879285ac31621e2aede79474bb53a8506"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 303570,
+      "sha256": "571a70482ce397d42a3e983d4745a86a2d1a00d7188cf68de71beaaf0dd99e22"
+    }
+  ]
+}

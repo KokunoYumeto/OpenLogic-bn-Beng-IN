@@ -6880,6 +6880,37 @@ for row in rows:
             and not normalizations
             and mathparts(audited_g1c) == target_math
         )
+    legacy_g1i_rule_table_repairs = False
+    if row["unit_id"] == "OLP-0705":
+        audited_g1i = source
+        fixes = (
+            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
+            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
+            (r"$\lfalse," + "\n" + r"\Gamma \Sequent \Delta$",
+             r"$\lfalse \Sequent \quad$"),
+        )
+        for old, new in fixes:
+            assert audited_g1i.count(old) == 1, old
+            audited_g1i = audited_g1i.replace(old, new, 1)
+        legacy_g1i_rule_table_repairs = (
+            set(documented) == {"BN-SRC-649", "BN-SRC-650", "BN-SRC-651"}
+            and not normalizations
+            and mathparts(audited_g1i) == target_math
+        )
+    legacy_g2c_rule_table_repairs = False
+    if row["unit_id"] == "OLP-0706":
+        audited_g2c = source
+        for old, new in (
+            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
+            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
+        ):
+            assert audited_g2c.count(old) == 1, old
+            audited_g2c = audited_g2c.replace(old, new, 1)
+        legacy_g2c_rule_table_repairs = (
+            set(documented) == {"BN-SRC-652", "BN-SRC-653"}
+            and not normalizations
+            and mathparts(audited_g2c) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -7042,6 +7073,8 @@ for row in rows:
             legacy_proof_examples_repairs,
             legacy_sequent_quantifier_repairs,
             legacy_g1c_caption_quantifier_fix,
+            legacy_g1i_rule_table_repairs,
+            legacy_g2c_rule_table_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7114,6 +7147,14 @@ for row in rows:
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\ollabel{tab:tN3ip}": 1})
     )
+    legacy_g1i_table_label_fix = (
+        row["unit_id"] == "OLP-0705"
+        and legacy_g1i_rule_table_repairs
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\ollabel{tab:G1c}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\ollabel{tab:G1i}": 1})
+    )
     legacy_tn3_table_reference_fix = (
         row["unit_id"] == "OLP-0697"
         and set(documented) == {"BN-SRC-621", "BN-SRC-622", "BN-SRC-623"}
@@ -7139,6 +7180,7 @@ for row in rows:
         or ordinal_exponentiation_citation_localization
         or legacy_cut_largest_reference_repairs
         or legacy_tn3_table_label_fix
+        or legacy_g1i_table_label_fix
         or legacy_tn3_table_reference_fix
     )
     legacy_cut_intro_split_token_fix = (
@@ -7372,6 +7414,23 @@ for row in rows:
         tex_command_check = {
             "documented_source_corrections": ["BN-SRC-647"],
             "g1c_quantifier_caption_matches_rule_table": True,
+        }
+    if row["unit_id"] == "OLP-0705":
+        assert legacy_g1i_rule_table_repairs and legacy_g1i_table_label_fix
+        assert "% Section: rules-G1i" in checked_target
+        assert checked_target.count(r"\ollabel{tab:G1i}") == 1
+        assert checked_target.count(r"\RightR{\Contraction}") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-649", "BN-SRC-650", "BN-SRC-651"],
+            "g1i_label_freshness_and_minimal_axiom": True,
+        }
+    if row["unit_id"] == "OLP-0706":
+        assert legacy_g2c_rule_table_repairs
+        assert "% Section: rules-G2c" in checked_target
+        assert checked_target.count(r"\ollabel{tab:G2c}") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-652", "BN-SRC-653"],
+            "g2c_metadata_and_quantifier_caption": True,
         }
     checks = {
         "unit_id": row["unit_id"],

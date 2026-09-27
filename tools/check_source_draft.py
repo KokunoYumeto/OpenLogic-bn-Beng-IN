@@ -6965,6 +6965,21 @@ for row in rows:
             and mathparts(audited_g3i) == target_math
             and environments(audited_g3i) == environments(checked_target)
         )
+    legacy_lk_caption_repairs = False
+    if row["unit_id"] == "OLP-0709":
+        audited_lk = source
+        for old, new in (
+            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
+            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
+            (r"and~$\Pi$ are", r"and~$\Pi$ and $\Lambda$ are"),
+        ):
+            assert audited_lk.count(old) == 1, old
+            audited_lk = audited_lk.replace(old, new, 1)
+        legacy_lk_caption_repairs = (
+            set(documented) == {"BN-SRC-661", "BN-SRC-662", "BN-SRC-663"}
+            and not normalizations
+            and mathparts(audited_lk) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -7131,6 +7146,7 @@ for row in rows:
             legacy_g2c_rule_table_repairs,
             legacy_g3c_rule_table_repairs,
             legacy_g3i_rule_table_repairs,
+            legacy_lk_caption_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7219,6 +7235,14 @@ for row in rows:
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\ollabel{tab:G3i}": 1})
     )
+    legacy_lk_table_label_fix = (
+        row["unit_id"] == "OLP-0709"
+        and legacy_lk_caption_repairs
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\ollabel{tab:G1c}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\ollabel{tab:LK}": 1})
+    )
     legacy_tn3_table_reference_fix = (
         row["unit_id"] == "OLP-0697"
         and set(documented) == {"BN-SRC-621", "BN-SRC-622", "BN-SRC-623"}
@@ -7246,6 +7270,7 @@ for row in rows:
         or legacy_tn3_table_label_fix
         or legacy_g1i_table_label_fix
         or legacy_g3i_table_label_fix
+        or legacy_lk_table_label_fix
         or legacy_tn3_table_reference_fix
     )
     legacy_cut_intro_split_token_fix = (
@@ -7518,6 +7543,16 @@ for row in rows:
         tex_command_check = {
             "documented_source_corrections": [f"BN-SRC-{n}" for n in range(656, 661)],
             "g3i_single_succedent_disjunction_and_minimal_system": True,
+        }
+    if row["unit_id"] == "OLP-0709":
+        assert legacy_lk_caption_repairs and legacy_lk_table_label_fix
+        assert checked_target.count(r"\ollabel{tab:LK}") == 1
+        assert checked_target.count(r"$\Lambda$") == 1
+        assert checked_target.count(r"\RightLabel{\LeftR{\Exchange}}") == 1
+        assert checked_target.count(r"\RightLabel{\RightR{\Exchange}}") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-661", "BN-SRC-662", "BN-SRC-663"],
+            "lk_unique_label_eigenconstant_and_sequence_contexts": True,
         }
     checks = {
         "unit_id": row["unit_id"],

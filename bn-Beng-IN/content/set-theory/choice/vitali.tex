@@ -1,0 +1,364 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{choice}{vitali}
+\olsection{পরিশিষ্ট: ভিতালির কূটাভাস}
+
+বানাখ--তার্স্কি নির্মাণ গ্রহণযোগ্য কি না
+সত্যিই বুঝতে হলে তার \emph{প্রমাণ} দেখা উচিত।
+দুর্ভাগ্য, তাতে এখানে যতটা দেওয়া সম্ভব,
+তার চেয়ে অনেক বেশি বীজগণিত লাগবে। তবে
+নিচের ফলটিতে মন দিয়ে বানাখ--তার্স্কির
+প্রমাণের ধারণা বোঝাতে কয়েকটি কথা বলা যায়।\footnote{
+আরও পূর্ণ আলোচনার জন্য দেখো \cite{Weston2003}
+বা \cite{Wagon2016}।}
+
+\begin{thm}[ভিতালির কূটাভাস ($\ZFC$-এ)]\ollabel{vitaliparadox}
+যেকোনো বৃত্তকে তালিকায়নযোগ্য সংখ্যক খণ্ডে
+ভাগ করে, সেগুলি ঘুরিয়ে ও স্থানান্তর করে
+আবার সাজালে সেই বৃত্তের দুটি প্রতিলিপি
+গঠন করা যায়।
+\end{thm}
+
+ভিতালির কূটাভাসের প্রমাণ বানাখ--তার্স্কির
+প্রমাণের চেয়ে অনেক সহজ। একে ``ভিতালির
+কূটাভাস'' বলেছি, কারণ ভিতালির
+\citeyear{Vitali1905}-এর অপরিমাপযোগ্য
+সেট-নির্মাণ থেকে এটি মেলে। তবে দুটি
+প্রমাণের সেটতাত্ত্বিক অংশ খুব কাছাকাছি।
+মূল পার্থক্য, বানাখ--তার্স্কিতে \emph{সসীম}
+বিভাজন, ভিতালির কূটাভাসে \emph{তালিকায়নযোগ্য
+অসীম} বিভাজন। \citet{Weston2003}-এর
+কথায়, ভিতালির কূটাভাস ``বানাখ--তার্স্কির
+মতো অতটা চমকপ্রদ নয়, কিন্তু এটি দেখায় যে
+`সরল' অবস্থাতেও জ্যামিতিক কূটাভাস ঘটতে পারে।''
+
+ভিতালির কূটাভাস দ্বিমাত্রিক একটি চিত্র,
+বৃত্ত নিয়ে। তাই সমতল $\Real^2$-এ কাজ করব।
+% BN-SRC-472: rational multiples of a full turn, not rational radian
+% values, are closed under composition and inversion modulo a full turn.
+$\rotationsgroup$ হলো মূলবিন্দুকে কেন্দ্র করে
+বিন্দুগুলিকে $[0,2\pi)$-এর মধ্যে পূর্ণ আবর্তনের
+\emph{মূলদ ভগ্নাংশের} সমান কোণে ঘড়ির কাঁটার
+দিকে ঘোরানোর সমষ্টি। $\rotationsgroup$ সম্বন্ধে
+কিছু বীজগাণিতিক তথ্য দেখি (বক্তব্যটি না বুঝলে
+প্রমাণে তার অর্থ স্পষ্ট হবে):
+
+\begin{lem}\ollabel{rotationsgroupabelian}
+অপেক্ষকের সংযোজন ক্রিয়ায়
+$\rotationsgroup$ একটি আবেলীয় {দল}।
+\end{lem}
+
+\begin{proof}
+$0_{\rotationsgroup}$ দিয়ে $0$ রেডিয়ানের
+ঘূর্ণন বোঝাই। এটি $\rotationsgroup$-এর
+অভেদ সদস্য, কারণ যেকোনো
+$\rho\in\rotationsgroup$-র জন্য
+$\comp{0_{\rotationsgroup}}{\rho}=
+\comp{\rho}{0_{\rotationsgroup}}=\rho$।
+
+প্রত্যেক সদস্যের বিপরীত আছে।
+$\rho\in\rotationsgroup$ যদি $r$ রেডিয়ান
+ঘোরায়, তবে অশূন্য ঘূর্ণনের বিপরীত
+$\rho^{-1}\in\rotationsgroup$
+$2\pi-r$ রেডিয়ান ঘোরায়; শূন্য ঘূর্ণনের
+বিপরীত সেটি নিজেই। ফলে
+$\rho\circ\rho^{-1}=0_\rotationsgroup$।
+
+সংযোজন সম্বন্ধীয়: যেকোনো
+$\rho,\sigma,\tau\in\rotationsgroup$-র
+জন্য $\comp{\rho}{(\comp{\sigma}{\tau})}=
+\comp{(\comp{\rho}{\sigma})}{\tau}$।
+
+সংযোজন বিনিময়ী: যেকোনো
+$\rho,\sigma\in\rotationsgroup$-র জন্য
+$\comp{\rho}{\sigma}=\comp{\sigma}{\rho}$।
+\end{proof}
+
+বস্তুত $\rotationsgroup$-কে দুই ভাগে
+ভাগ করেও প্রত্যেক ভাগ দিয়ে পুরো দলটি
+উদ্ধার করা যায়:
+
+\begin{lem}\ollabel{disjointgroup}
+$\rotationsgroup$-এর দুটি বিযুক্ত ভাগ
+$\rotationsgroup_{1}$ ও
+$\rotationsgroup_{2}$ আছে; প্রত্যেক ভাগই
+উপযুক্ত সংযোজনে পুরো
+$\rotationsgroup$-কে উৎপন্ন করে।
+\end{lem}
+
+\begin{proof}
+$\rotationsgroup_{1}$-এ $[0,\pi)$-এর
+সেই ঘূর্ণনগুলি নিই, যাদের কোণ পূর্ণ আবর্তনের
+মূলদ ভগ্নাংশ; আর
+$\rotationsgroup_{2}=\rotationsgroup
+\setminus\rotationsgroup_1$। প্রাথমিক
+বীজগণিত থেকে
+$\Setabs{\comp{\rho}{\rho}}{\rho\in
+\rotationsgroup_1}=\rotationsgroup$।
+$\rotationsgroup_2$-এর ক্ষেত্রেও একই ফল।
+\end{proof}
+
+দলের এই তথ্য দিয়ে \olref{vitaliparadox}
+প্রতিষ্ঠা করব। $\onesphere$ হলো একক বৃত্ত:
+সমতলের মূলবিন্দু থেকে ঠিক~$1$ একক দূরের
+বিন্দুগুলির সেট,
+$\Setabs{\tuple{r,s}\in\Real^2}{\sqrt{r^2+s^2}=1}$।
+এর উপর নিচের সম্পর্ক ধরে বৃত্তটিকে ভাগ করব:
+\[
+	r \sim s \emph{ iff }(\exists \rho \in \rotationsgroup)\rho(r) = s.
+\]
+অর্থাৎ মূলবিন্দুকে কেন্দ্র করে উপরের মূলদ-ভগ্নাংশ
+ঘূর্ণনে এক বিন্দু থেকে অন্যটিতে যাওয়া যায়
+তখনই $\onesphere$-র বিন্দুদুটি সম্পর্কে যুক্ত।
+সহজেই দেখা যায়:
+
+\begin{lem}
+$\sim$ একটি তুল্যতা-সম্পর্ক।
+\end{lem}
+
+\begin{proof}
+\olref{rotationsgroupabelian} থেকে সরাসরি।
+\end{proof}
+
+এবার চয়ন ব্যবহার করে $\onesphere$-র
+$\sim$-তুল্যতা শ্রেণিগুলির প্রত্যেকটি থেকে
+ঠিক একজন সদস্য নিয়ে একটি সেট $C$ নিই।
+অর্থাৎ তুল্যতা শ্রেণিগুলির সেটে একটি
+চয়ন-অপেক্ষক $f$ নিই,\footnote{
+$\rotationsgroup$ !!{enumerable} বলে
+$E$-র প্রত্যেক !!{element} !!{enumerable}।
+$\onesphere$ !!{nonenumerable} বলে
+\olref{vitalicover} এবং
+\olref[card-arithmetic][simp]{kappaunionkappasize}
+থেকে $E$-ও !!{nonenumerable}। তাই এখানে
+\emph{অতালিকায়নযোগ্য} চয়ন ব্যবহৃত।}
+\[
+	E = \Setabs{\equivrep{r}{\sim}}{r \in \onesphere},
+\]
+এবং $C=\ran{f}$ ধরি। প্রত্যেক
+$\rho\in\rotationsgroup$-র জন্য
+$\funimage{\rho}{C}$ হলো $C$-র সব
+বিন্দুকে $\rho$ ঘূর্ণনে পাঠিয়ে পাওয়া সেট।
+পরের দুটি ফল বলবে, এই সেটগুলি বৃত্তটিকে
+সম্পূর্ণ এবং পুনরাবৃত্তি ছাড়া ঢেকে ফেলে:
+
+\begin{lem}\ollabel{vitalicover}
+$\onesphere=\bigcup_{\rho\in\rotationsgroup}
+\funimage{\rho}{C}$।
+\end{lem}
+
+\begin{proof}
+$s\in\onesphere$ স্থির করি। কোনো
+$r\in C$ আছে যে $r\in\equivrep{s}{\sim}$;
+অর্থাৎ $r\sim s$, অর্থাৎ কোনো
+$\rho\in\rotationsgroup$-র জন্য
+$\rho(r)=s$।
+\end{proof}
+
+\begin{lem}\ollabel{vitalinooverlap}
+$\rho_1\neq\rho_2$ হলে
+$\funimage{\rho_1}{C}\cap
+\funimage{\rho_2}{C}=\emptyset$।
+\end{lem}
+
+\begin{proof}
+$s\in\funimage{\rho_1}{C}\cap
+\funimage{\rho_2}{C}$ ধরি। তাহলে কোনো
+$r_1,r_2\in C$-র জন্য
+$s=\rho_1(r_1)=\rho_2(r_2)$। তাই
+$\rho^{-1}_2(\rho_1(r_1))=r_2$ এবং
+$\comp{\rho_1}{\rho^{-1}_2}
+\in\rotationsgroup$; সুতরাং
+$r_1\sim r_2$। কিন্তু $C$ প্রত্যেক
+$\sim$-শ্রেণি থেকে ঠিক একজন সদস্য বেছে
+নিয়েছে। তাই $r_1=r_2$। ফলে
+$s=\rho_1(r_1)=\rho_2(r_1)$,
+এবং তাই $\rho_1=\rho_2$।
+\end{proof}
+
+এবার বৃত্তে দলের আগের তথ্য প্রয়োগ করি:
+
+\begin{lem}\ollabel{pseudobanachtarski}
+$\onesphere$-র দুটি বিযুক্ত ভাগ
+$D_1$ ও $D_2$ আছে। $D_1$-কে
+তালিকায়নযোগ্য সংখ্যক সেটে ভাগ করে
+ঘুরিয়ে $\onesphere$-র একটি প্রতিলিপি
+গড়া যায়; $D_2$-র ক্ষেত্রেও তাই।
+\end{lem}
+
+\begin{proof}
+\olref{disjointgroup}-এর
+$\rotationsgroup_1$ ও
+$\rotationsgroup_2$ ব্যবহার করে নিই:
+\begin{align*}
+	D_{1} &= \bigcup_{\rho \in \rotationsgroup_1} \funimage{\rho}{C} &
+	D_{2} &= \bigcup_{\rho \in \rotationsgroup_2} \funimage{\rho}{C}
+\end{align*}
+\olref{vitalicover} অনুযায়ী এটি
+$\onesphere$-র বিভাজন; আর
+\olref{vitalinooverlap} অনুযায়ী
+$D_1$ ও $D_2$ বিযুক্ত। নির্মাণ থেকেই
+$D_1$-কে প্রত্যেক
+% BN-SRC-474: the source's R_1 is the defined rotationsgroup_1.
+$\rho\in\rotationsgroup_1$-এর জন্য
+$\funimage{\rho}{C}$-তে ভাগ করা যায়।
+এগুলি ঘুরিয়ে পুরো $\onesphere$ পাওয়া যায়,
+কারণ \olref{disjointgroup} ও
+\olref{vitalicover} থেকে
+$\onesphere=\bigcup_{\rho\in
+\rotationsgroup}\funimage{\rho}{C}=
+\bigcup_{\rho\in\rotationsgroup_1}
+\funimage{(\comp{\rho}{\rho})}{C}$।
+$D_2$-র ক্ষেত্রেও একই যুক্তি।
+\end{proof}\noindent
+এ থেকেই ভিতালির কূটাভাস মেলে।
+$\onesphere$-কে তালিকায়নযোগ্য সংখ্যক
+খণ্ডে (বিভিন্ন $\funimage{\rho}{C}$-তে)
+ভাগ করে অনমনীয় গতিতে সাজালেই
+$\onesphere$-র \emph{দুটি} প্রতিলিপি
+পাওয়া যায়: $D_1$-এর খণ্ডগুলি শুধু
+ঘোরাই; $D_2$-এর খণ্ডগুলি প্রথমে
+স্থানান্তর, তারপর ঘোরাই।
+
+প্রমাণপদ্ধতি আবার দেখি। সমতলের ঘূর্ণন-দল
+সম্বন্ধে কিছু বীজগাণিতিক তথ্য দিয়ে শুরু করেছি।
+এই দল দিয়ে $\onesphere$-কে তুল্যতা
+শ্রেণিতে ভাগ করেছি। তারপর প্রত্যেক শ্রেণি
+থেকে সদস্য নিতে চয়ন ব্যবহার করে
+``কূটাভাস'' পেয়েছি।
+
+বানাখ--তার্স্কিতেও ঠিক একই পদ্ধতি লাগে।
+মূল পার্থক্য, তার জন্য প্রয়োজনীয়
+বীজগাণিতিক তথ্যগুলি ভিতালির কূটাভাসের
+চেয়ে অনেক জটিল। কিন্তু ওই তথ্যগুলির সঙ্গে
+চয়নের সম্পর্ক নেই। দ্রুত সেগুলি সংক্ষেপ করি।
+
+বানাখ--তার্স্কি প্রমাণে প্রথমে
+\olref{disjointgroup}-এর অনুরূপ একটি
+ফল প্রতিষ্ঠা করি: কমপক্ষে দুই উৎপাদকযুক্ত
+% BN-SRC-473: not every free group is paradoxically decomposable;
+% the nonabelian rank-at-least-two case is intended.
+অ-আবেলীয় \emph{মুক্ত দল} চার ভাগে
+ভাগ করা যায়; স্বজ্ঞায় ভাগগুলি ``সরিয়ে''
+পুরো দলের দুটি প্রতিলিপি উদ্ধার করা যায়।\footnote{
+\emph{চারটি} ভাগে কাজ হওয়ার ফলটি
+\cite{Robinson1947}-এর। নতুন প্রমাণের জন্য
+দেখো \citet[Theorem 5.2]{Wagon2016}।
+দলের খণ্ডগুলি ``সরানো'' বলার রীতিতে আমরা
+\citet[p.~3]{Weston2003}-কে অনুসরণ করছি।}
+তারপর দেখাই, $\Real^3$-এর মূলবিন্দুকে
+কেন্দ্র করে দুটি নির্দিষ্ট ঘূর্ণন দিয়ে
+ঘূর্ণনের একটি মুক্ত দল $F$ উৎপন্ন হয়।\footnote{
+দেখো \citet[Theorem 2.1]{Wagon2016}।}
+(এখনও চয়ন লাগেনি।) গোলকের পৃষ্ঠের দুটি
+বিন্দু তখনই ``একই ধরনের'', যখন $F$-এর
+কোনো ঘূর্ণনে একটিকে অন্যটিতে নেওয়া যায়।
+এরপর \emph{চয়ন ব্যবহার করে} প্রত্যেক
+``একই ধরনের'' শ্রেণি থেকে ঠিক একটি
+বিন্দু নিই। $F$-এর চার ভাগ গোলকের
+পৃষ্ঠে \olref{pseudobanachtarski}-এর
+মতো প্রয়োগ করে পৃষ্ঠটিকে চার ভাগে
+ভাগ করি, যেগুলি ``সরিয়ে'' পৃষ্ঠের
+দুটি প্রতিলিপি পাই। এভাবেই
+\citep{Hausdorff1914} প্রতিষ্ঠিত হয়:
+
+\begin{thm}[হাউসডর্ফের কূটাভাস ($\ZFC$-এ)]
+যেকোনো গোলকের পৃষ্ঠকে সসীমসংখ্যক খণ্ডে
+ভাগ করে, সেগুলি ঘুরিয়ে ও স্থানান্তর করে
+আবার সাজালে সেই গোলকের দুটি পৃথক
+প্রতিলিপি গঠন করা যায়।
+\end{thm}
+
+পূর্ণ বানাখ--তার্স্কি উপপাদ্য পেতে
+আরও কয়েকটি বীজগাণিতিক কৌশল লাগে:
+সেখানে শুধু গোলকের পৃষ্ঠ নয়, ভেতরটিও
+আছে। তবে এগুলি বীজগণিতের পিঠার
+উপর সাজসজ্জার মতো। তাই ওয়েস্টন লেখেন:
+\begin{quote}
+  [\ldots] মুক্ত দল নিয়ে ফলটিই
+  বানাখ--তার্স্কি কূটাভাসের প্রমাণের
+  \emph{মূল ধাপ}। এই দিক থেকে কূটাভাসটি
+  $\Real^3$ নিয়ে যতটা, তার চেয়ে বেশি
+  [$\Real^3$-এর স্থানান্তর ও ঘূর্ণনের]
+  দলের জটিলতা নিয়ে। \cite[p.~16]{Weston2003}
+\end{quote}
+অর্থাৎ \emph{সসীম} বিভাজন (বানাখ--তার্স্কি)
+নাকি \emph{তালিকায়নযোগ্য অসীম} বিভাজন
+(ভিতালি)—কোনটি সম্ভব, তা দ্বিমাত্রা বা
+ত্রিমাত্রায় কাজের দলতাত্ত্বিক তথ্যের উপর নির্ভর করে।
+
+স্বীকার করি, শেষ পর্যবেক্ষণটি
+\olref[banach]{sec}-এর শেষের রসিকতা
+একটু নষ্ট করে। ``Banach-Tarski''
+দ্বিমাত্রিক বলে একে
+``Banach-Tarski Banach-Tarski'' করতে
+\emph{তালিকায়নযোগ্য অসীমসংখ্যক} খণ্ডে
+ভাগ করতে হবে। রসিকতাটি ঠিক করতে
+ত্রিমাত্রায় লিখতে হবে। পাঠকের অনুশীলন রইল।
+
+শেষ মন্তব্য। \olref[banach]{sec}-এ
+বলেছিলাম, গোলকের ``খণ্ডগুলি''
+\emph{পরিমাপযোগ্য} হতে পারে না;
+তারা ছবি আঁকা যায় না এমন ``অসীমভাবে
+ছড়ানো'' সমাবেশ। \olref{pseudobanachtarski}
+পেতে চয়নের যে ব্যবহার, সেখানেও তাই।
+কথাটি ব্যাখ্যা করা উচিত।
+
+আবার কিছু পটভূমি সংক্ষেপে বলি (এটি
+\emph{শুধুই} রূপরেখা; \emph{পরিমাপ}
+নিয়ে পাঠ্যবই দেখতে পারো)। $X$-এর
+কোনো সেটের পরিমাপ দিতে হলে $X$-এর
+কোনো ``$\sigma$-বীজগণিত''-এর প্রত্যেক
+$E$-র জন্য $\mu(E)\in\Real$ মান দিতে
+হয়। বিশদ এখানে জরুরি নয়; শুধু $\mu$-কে
+তালিকায়নযোগ্য যোগধর্ম মানতে হবে:
+বিযুক্ত সেটগুলির তালিকায়নযোগ্য সংযোগের
+পরিমাপ তাদের পৃথক পরিমাপের যোগফল। অর্থাৎ
+$X_n$-গুলি বিযুক্ত হলে
+$\mu(\bigcup_{n<\omega}X_n)=
+\sum_{n<\omega}\mu(X_n)$। কোনো সেট
+``অপরিমাপযোগ্য'' মানে, উপযুক্তভাবে তার
+পরিমাপ নির্ধারণ করা যায় না। আগের
+$\rotationsgroup$ নিয়ে এখন:
+
+\begin{cor}[ভিতালি]
+$\mu$ এমন পরিমাপ হোক যে
+$\mu(\onesphere)=1$ এবং $X$ ও $Y$
+সর্বসম হলে $\mu(X)=\mu(Y)$।
+তাহলে প্রত্যেক $\rho\in\rotationsgroup$-র
+জন্য $\funimage{\rho}{C}$ অপরিমাপযোগ্য।
+\end{cor}
+
+\begin{proof}
+বিরোধের জন্য অন্যথা ধরি। অর্থাৎ কোনো
+$\sigma\in\rotationsgroup$ ও
+$r\in\Real$-র জন্য
+$\mu(\funimage{\sigma}{C})=r$ ধরি।
+% BN-SRC-475: rotations are indexed by rotationsgroup, not by C.
+প্রত্যেক $\rho\in\rotationsgroup$-র জন্য
+$\funimage{\rho}{C}$ ও
+$\funimage{\sigma}{C}$ সর্বসম; তাই
+প্রত্যেক $\rho\in\rotationsgroup$-র
+জন্য $\mu(\funimage{\rho}{C})=r$।
+\olref{vitalicover} ও
+\olref{vitalinooverlap} অনুযায়ী
+$\onesphere=\bigcup_{\rho\in\rotationsgroup}
+\funimage{\rho}{C}$ জোড়ায় জোড়ায়
+বিযুক্ত সেটের তালিকায়নযোগ্য সংযোগ।
+তাই তালিকায়নযোগ্য যোগধর্মে
+$\mu(\onesphere)=1$ হলো প্রত্যেক
+$\funimage{\rho}{C}$-র পরিমাপের যোগফল:
+\[
+	1 = \mu(\onesphere) = \sum_{\rho \in \rotationsgroup}\mu(\funimage{\rho}{C}) = \sum_{\rho \in \rotationsgroup}r
+\]
+কিন্তু $r=0$ হলে
+$\sum_{\rho\in\rotationsgroup}r=0$,
+আর $r>0$ হলে
+$\sum_{\rho\in\rotationsgroup}r=\infty$।
+পরিমাপ ঋণাত্মক নয়; তাই উভয় ক্ষেত্রেই
+$1$-এর সঙ্গে বিরোধ।
+\end{proof}
+
+\end{document}

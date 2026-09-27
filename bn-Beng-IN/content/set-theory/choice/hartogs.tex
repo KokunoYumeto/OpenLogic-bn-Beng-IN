@@ -1,0 +1,116 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{choice}{hartogs}
+\olsection{তুলনীয়তা ও হার্টগসের লেমা}
+
+এটি সুবিধার দিক। অসুবিধাও আছে: চয়ন না ধরলে
+বিষয়টি \emph{জটিল} হয়ে পড়ে। কেন, তা বোঝাতে
+\cite{Hartogs1915}-এর একটি ফল দেখি:
+
+\begin{lem}[\emph{$\ZF$-এ}]\ollabel{HartogsLemma}
+যেকোনো সেট $A$-র জন্য এমন একটি ক্রমসংখ্যা
+$\alpha$ আছে যে $\cardnless{\alpha}{A}$।
+\end{lem}
+
+\begin{proof}
+$B \subseteq A$ এবং $R \subseteq B^2$ হলে
+\olref[ord-arithmetic][using-addition]{rankcomputation}
+অনুযায়ী $\tuple{B, R} \subseteq
+V_{\setrank{A}+4}$। তাই পৃথকীকরণ দিয়ে নিই:
+\[
+	C = \Setabs{\tuple{B, R} \in V_{\setrank{A}+5}}{B\subseteq A
+	\text{ and $\tuple{B, R}$ is a well-ordering}}
+\]
+প্রতিস্থাপন এবং
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}
+ব্যবহার করে সেটটি গড়ি:
+\[
+	\alpha = \Setabs{\ordtype{B, R}}{\tuple{B, R} \in C}.
+\]
+\olref[ordinals][basic]{corordtransitiveord}
+অনুযায়ী $\alpha$ একটি ক্রমসংখ্যা, কারণ এটি
+ক্রমসংখ্যার পরিযায়ী সেট। সত্যিই,
+$\gamma \in \beta \in \alpha$ হলে কোনো
+% BN-SRC-463: B is a subset of A, not of the relation R.
+$B \subseteq A$-র জন্য
+$\beta = \ordtype{B, R}$। তখন
+\olref[ordinals][iso]{wellordinitialsegment}
+অনুযায়ী কোনো $b\in B$-র জন্য
+$\gamma = \ordtype{B_b, R_b}$; সুতরাং
+$\gamma \in \alpha$।
+
+বিরোধের জন্য ধরি,
+$f \colon \alpha \to A$ একটি !!a{injection}।
+তাহলে নিই:
+% BN-SRC-464: bind two elements of the ordinal domain, not the ordinal itself.
+\begin{align*}
+	B &= \ran{f}\\
+	R &= \Setabs{\tuple{f(\xi), f(\eta)} \in A \times A}{\xi,\eta\in\alpha\text{ and }\xi\in\eta}.
+\end{align*}
+স্পষ্টত $\alpha = \ordtype{B, R}$ এবং
+$\tuple{B, R} \in C$। ফলে $\alpha\in\alpha$,
+যা বিরোধ।
+\end{proof}
+
+এ থেকে একটি গভীর ফল পাওয়া যায়:
+
+\begin{thm}[\emph{$\ZF$-এ}]
+নিচের দাবিদুটি সমতুল্য:
+\begin{enumerate}
+	\item\ollabel{equivwo} সুক্রমবিন্যাসের স্বতঃসিদ্ধ
+	\item\ollabel{equivcompare} যেকোনো সেট $A$ ও
+	$B$-র জন্য হয় $\cardle{A}{B}$, নয়
+	$\cardle{B}{A}$
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\emph{\olref{equivwo} $\Rightarrow$
+\olref{equivcompare}।} $A$ ও $B$ স্থির করি।
+\olref{equivwo} অনুযায়ী $\tuple{A, R}$ ও
+$\tuple{B, S}$-র সুক্রমবিন্যাস আছে।
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}
+থেকে ক্রমসমরূপতা নিই
+% BN-SRC-465: isomorphisms map ordinals to the carrier sets A and B.
+$f \colon \alpha \to A$ এবং
+$g \colon \beta \to B$।
+\olref[sth][ordinals][basic]{ordinalsaresubsets}
+অনুযায়ী হয় $\alpha \subseteq \beta$,
+নয় $\beta \subseteq \alpha$।
+$\alpha\subseteq\beta$ হলে
+$\comp{f^{-1}}{g} \colon A \to B$
+একটি !!a{injection}, তাই
+$\cardle{A}{B}$; $\beta\subseteq\alpha$ হলে একইভাবে
+$\cardle{B}{A}$।
+
+\emph{\olref{equivcompare} $\Rightarrow$
+\olref{equivwo}।} $A$ স্থির করি।
+\olref{HartogsLemma} অনুযায়ী এমন ক্রমসংখ্যা
+$\beta$ আছে যে $\cardnless{\beta}{A}$।
+\olref{equivcompare} থেকে
+$\cardle{A}{\beta}$। ফলে একটি !!{injection}
+$f \colon A \to \beta$ আছে। এর সাহায্যে
+$A$-র সদস্যগুলিকে সুক্রমবিন্যস্ত করতে
+$\Setabs{\tuple{a, b} \in A \times A}{f(a)
+\in f(b)}$ সম্পর্কটি নিই।
+\end{proof}
+\noindent
+অতএব সুক্রমবিন্যাস ব্যর্থ হলে কিছু সেটের
+আকার \emph{আক্ষরিক অর্থেই অতুলনীয়}। তখন
+ট্রান্সফাইনাইট অঙ্কবাচক পাটিগণিতও জটিল হবে।
+যেমন, অসীম $A$ ও $B$-র জন্য বিযুক্ত যোগফল
+ও কার্তেসীয় গুণফল উভয়ই তাদের মধ্যে বৃহত্তর
+$M$-এর সমসংখ্যক—আগের এই ধারণা
+(দেখো \olref[card-arithmetic][simp]{cardplustimesmax})
+সার্বিকভাবে বলা যাবে না।
+% BN-SRC-466: the source's nested cardeq expression is ill-typed;
+% spell out the two intended size comparisons separately.
+$\cardeq{A \disjointsum B}{M}$ এবং
+$\cardeq{A \times B}{M}$ বলতেই আগে
+$A$ ও $B$-র আকার তুলনা করে কোনটি বৃহত্তর,
+তা স্থির করা চাই। তুলনাই অসম্ভব হলে
+``কোনটি বড়'' প্রশ্নটির অর্থ নেই।
+
+\end{document}

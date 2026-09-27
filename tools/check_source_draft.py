@@ -127,6 +127,15 @@ def mathparts_with_modal_canonical_setbuilder(text):
     return mathparts(prepared) + collections.Counter({r"\Sigma": count})
 
 
+def mathparts_with_choice_least_caption(text, source=False):
+    """Normalize one frozen nested-dollar caption before math extraction."""
+    if source:
+        old = "$f(x) = \\text{the $<$-least\nmember of }x$"
+        assert text.count(old) == 1
+        text = text.replace(old, "$f(x) = \\text{the <-least member of }x$")
+    return mathparts(text)
+
+
 def controls(text):
     commands = re.findall(
         r"\\(?:ollabel|olref|oliflabeldef|olasset|olimport|cite|citep|citet|citeyear|"
@@ -182,6 +191,9 @@ for row in rows:
     elif row["unit_id"] == "OLP-0446":
         source_math = mathparts_with_modal_canonical_setbuilder(source)
         target_math = mathparts_with_modal_canonical_setbuilder(checked_target)
+    elif row["unit_id"] == "OLP-0596":
+        source_math = mathparts_with_choice_least_caption(source, source=True)
+        target_math = mathparts_with_choice_least_caption(checked_target)
     else:
         source_math = mathparts(source)
         target_math = mathparts(checked_target)
@@ -5810,6 +5822,59 @@ for row in rows:
             r"\gamma=\bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}\gamma_\cardfont{b}": 1,
         })
     )
+    hartogs_carrier_and_size_formula_fixes = (
+        row["unit_id"] == "OLP-0595"
+        and set(documented) == {"BN-SRC-463", "BN-SRC-464", "BN-SRC-465", "BN-SRC-466"}
+        and source_math - target_math == collections.Counter({
+            r"A": 1,
+            r"B": 1,
+            r"B\subseteqR": 1,
+            r"B&=\ran{f}\\R&=\Setabs{\tuple{f(\alpha),f(\beta)}\inA\timesA}{\alpha\in\beta}.": 1,
+            r"f\colon\alpha\to\tuple{A,R}": 1,
+            r"g\colon\beta\to\tuple{B,S}": 1,
+            r"\cardeq{\cardeq{A\disjointsumB}{A\timesB}}{M}": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"B\subseteqA": 1,
+            r"f\colon\alpha\toA": 1,
+            r"B&=\ran{f}\\R&=\Setabs{\tuple{f(\xi),f(\eta)}\inA\timesA}{\xi,\eta\in\alpha\xi\in\eta}.": 1,
+            r"g\colon\beta\toB": 1,
+            r"\cardeq{A\disjointsumB}{M}": 1,
+            r"\cardeq{A\timesB}{M}": 1,
+        })
+    )
+    choice_wellordering_stopping_fixes = (
+        row["unit_id"] == "OLP-0596"
+        and set(documented) == {"BN-SRC-467", "BN-SRC-468", "BN-SRC-469"}
+        and source_math - target_math == collections.Counter({
+            r"\delta\leq\alpha": 1,
+            r"\cardless{\alpha}{\Pow{A}\setminus\{\emptyset\}}": 1,
+            r"\ran{g}=A": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"A": 3,
+            r"A=\emptyset": 1,
+            r"\delta\geq\alpha": 1,
+            r"\cardle{\alpha}{A}": 1,
+        })
+    )
+    countable_choice_union_index_fix = (
+        row["unit_id"] == "OLP-0597"
+        and set(documented) == {"BN-SRC-470"}
+        and source_math - target_math == collections.Counter({
+            r"\card{\bigcup_{i<n}A_n}&\leq\card{A_0}+\card{A_1}+\ldots+\card{A_{n-1}}\\&=1+2+\ldots+2^{n-1}\\&=2^n-1\\&<2^n=\card{A_n}": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"A": 1,
+            r"\card{\bigcup_{i<n}A_i}&\leq\card{A_0}+\card{A_1}+\ldots+\card{A_{n-1}}\\&=1+2+\ldots+2^{n-1}\\&=2^n-1\\&<2^n=\card{A_n}": 1,
+        })
+    )
+    banach_tangent_parenthesis_fix = (
+        row["unit_id"] == "OLP-0599"
+        and set(documented) == {"BN-SRC-471"}
+        and source_math - target_math == collections.Counter({r"\tan(\pi(r-\nicefrac{1}{2})))": 1})
+        and target_math - source_math == collections.Counter({r"\tan(\pi(r-\nicefrac{1}{2}))": 1})
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -5921,6 +5986,10 @@ for row in rows:
             ordinal_exponentiation_math_fix,
             cardinal_exponentiation_function_type_fix,
             cardinal_aleph_predecessor_domain_fix,
+            hartogs_carrier_and_size_formula_fixes,
+            choice_wellordering_stopping_fixes,
+            countable_choice_union_index_fix,
+            banach_tangent_parenthesis_fix,
         )
     )
     minimal_change_fileid_fix = (

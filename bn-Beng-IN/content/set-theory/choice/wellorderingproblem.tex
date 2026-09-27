@@ -1,0 +1,116 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{choice}{woproblem}
+\olsection{সুক্রমবিন্যাসের সমস্যা}
+
+সুক্রমবিন্যাস গ্রহণ করি কি না, তার উপর অনেক কিছু
+নির্ভর করছে। কিন্তু এই নীতি নিয়ে আলোচনা প্রধানত
+সমতুল্য আরেক নীতি—চয়নের স্বতঃসিদ্ধ—নিয়ে হয়েছে।
+তাই এবার সেদিকে মন দিই এবং সমতুল্যতাটিও প্রমাণ করি।
+
+\citeyear{Cantor1883}-এ কান্টর সুক্রমবিন্যাসের
+স্বতঃসিদ্ধের সমর্থনে একে ``আমার কাছে মৌলিক, ফলে
+সমৃদ্ধ, এবং বিশেষত সার্বিক প্রযোজ্যতায় লক্ষণীয় এক
+চিন্তার নিয়ম'' বলেছিলেন (\citeauthor{Potter2004}
+\citeyear[p.~243]{Potter2004}-এ উদ্ধৃত)। কিন্তু
+শেষ পর্যন্ত কান্টর নিজেই বুঝেছিলেন, এই ``স্বতঃসিদ্ধ''
+প্রমাণের দাবি রাখে। গণিতসমাজেরও তাই মনে হয়েছিল।
+
+\citeyear{Zermelo1904}-এ জার্মেলো সমস্যাটির
+``সমাধান'' করেন। তাঁর সমাধান বুঝতে কয়েকটি সংজ্ঞা দরকার।
+
+\begin{defn}
+একটি অপেক্ষক $f$ \emph{চয়ন-অপেক্ষক} তখনই, যখন
+প্রত্যেক $x \in \dom{f}$-র জন্য $f(x) \in x$।
+$f$-কে \emph{$A$-র চয়ন-অপেক্ষক} বলি তখনই,
+যখন $f$ চয়ন-অপেক্ষক এবং
+$\dom{f} = A \setminus \{\emptyset\}$।
+\end{defn}
+
+স্বজ্ঞায়, $A$-র প্রত্যেক অশূন্য সদস্য-সেট
+$x \in A$ থেকে একটি নির্দিষ্ট সদস্য $f(x)$
+\emph{বেছে নেয়} $A$-র চয়ন-অপেক্ষক,
+সেই $x$ থেকেই।
+তাহলে চয়নের স্বতঃসিদ্ধ:
+
+\begin{axiom}[চয়ন]
+	প্রত্যেক সেটের একটি চয়ন-অপেক্ষক আছে।
+\end{axiom}
+
+জার্মেলো দেখিয়েছিলেন, চয়ন থেকে সুক্রমবিন্যাস
+পাওয়া যায়, আবার উল্টোটিও:
+
+\begin{thm}[$\ZF$-এ]\ollabel{thmwochoice}
+সুক্রমবিন্যাস ও চয়ন সমতুল্য।
+\end{thm}
+
+\begin{proof}
+\emph{বাঁ দিক থেকে ডান দিকে।} $A$ সেটের একটি
+সেট হোক। সংযোগের স্বতঃসিদ্ধে $\bigcup A$ আছে।
+সুক্রমবিন্যাস ধরে $\bigcup A$-র উপর একটি সুক্রম $<$ নিই।
+এবার $f(x) = \text{< ক্রমে }x\text{-এর ক্ষুদ্রতম সদস্য}$
+নিই। এটি $A$-র চয়ন-অপেক্ষক।
+
+\emph{ডান দিক থেকে বাঁ দিকে।} $A$ স্থির করি।
+% BN-SRC-467: the source initial value f(A) is undefined when A is empty.
+$A=\emptyset$ হলে সুক্রমবিন্যাস স্পষ্ট। তাই
+$A$ অশূন্য ধরি। চয়ন অনুযায়ী
+$\Pow{A} \setminus \{\emptyset\}$-র একটি
+চয়ন-অপেক্ষক $f$ আছে। ট্রান্সফাইনাইট পুনরাবৃত্তি
+দিয়ে সংজ্ঞায়িত করি:
+\begin{align*}
+	g(0) &= f(A)\\
+	g(\alpha) &=
+		\begin{cases}
+			\text{stop!{}} &\text{if }A = \funimage{g}{\alpha}\\
+			f(A \setminus \funimage{g}{\alpha}) & \text{otherwise}\\	
+		\end{cases}
+\end{align*}
+``থামো!'' প্রকৃত সংজ্ঞার সংক্ষিপ্ত রূপ।
+% BN-SRC-468: the sentinel is assigned from the first stop onward,
+% not retroactively at all earlier stages; injectivity concerns the pre-stop segment.
+প্রথমবার $A=\funimage{g}{\alpha}$ হলে সেই
+পর্যায় থেকে পরের সব $\delta\geq\alpha$-তে
+$g(\delta)=A$
+ধরি; আগের মানগুলি অক্ষত থাকে। প্রথমে এতে
+শুধু একটি \emph{পদ} সংজ্ঞায়িত হয়েছে বলা যায়
+(দেখো \olref[sth][spine][recursion]{transrecursionschema}-এর
+পরের মন্তব্য); কিন্তু থামার আগের অংশটি যে
+অপেক্ষক, তা দেখাব।
+
+$f$ চয়ন-অপেক্ষক বলে, থামার আগের প্রত্যেক
+$\alpha$-র জন্য
+$g(\alpha) = f(A \setminus \funimage{g}{\alpha})
+\in A \setminus \funimage{g}{\alpha}$;
+অতএব $g(\alpha) \notin \funimage{g}{\alpha}$।
+এই অংশে $g(\alpha)=g(\beta)$ হলে
+$g(\beta)\notin\funimage{g}{\alpha}$,
+তাই $\beta\notin\alpha$; একইভাবে
+$\alpha\notin\beta$। ক্রমসংখ্যার ত্রিবিভাজনে
+$\alpha=\beta$। অতএব থামার আগের অংশে
+$g$ !!{injective}।
+
+এবার দেখাই, কোনো ক্ষুদ্রতম ক্রমসংখ্যা $\alpha$-তে
+সত্যিই থামতে হয়, অর্থাৎ
+$A=g[\alpha]$। নইলে $g$ সর্বত্র
+!!{injective} হতো; আগের
+যুক্তিতে প্রত্যেক ক্রমসংখ্যা $\alpha$-র জন্য
+% BN-SRC-469: an injection is into A, not Pow(A) minus the empty set;
+% Hartogs contradicts non-strict embeddability for every ordinal.
+$\cardle{\alpha}{A}$ হতো, যা
+\olref[hartogs]{HartogsLemma}-এর বিরোধ।
+থামার আগের অংশের বিস্তার ঠিক $A$।
+
+সব মিলিয়ে, $g$-র সেই প্রারম্ভিক অংশটি
+কোনো ক্রমসংখ্যা থেকে $A$-তে একটি
+!!a{bijection}। $g$-র এই অংশ দিয়ে $A$
+সুক্রমবিন্যস্ত করা যায়।
+\end{proof}
+
+অতএব সুক্রমবিন্যাস ও চয়ন একসঙ্গে প্রতিষ্ঠিত হয়,
+অথবা একসঙ্গে ব্যর্থ হয়। কিন্তু প্রশ্ন রয়ে যায়:
+এরা প্রতিষ্ঠিত হয়, না ব্যর্থ?
+
+\end{document}

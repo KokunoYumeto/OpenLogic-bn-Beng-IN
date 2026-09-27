@@ -1,0 +1,441 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: reductions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{red}
+
+\olsection{হ্রাস-রূপান্তর}
+
+\Log{N1i}-র !!a{proof}-এ কোনো
+কর্তনের দৈর্ঘ্য~$1$ হলে সেই খণ্ডে
+মাত্র একটি !!{formula}-সংঘটন থাকে।
+ওই !!{formula} একই সঙ্গে
+!!a{introduction} বিধির সিদ্ধান্ত
+এবং !!a{elimination} বিধির প্রধান
+পূর্বধারণা। স্বাভাবিকীকরণের প্রমাণে
+এমন কর্তন \emph{হ্রাস} করতে ওই
+!!{introduction}/!!{elimination}
+জোড়ায় শেষ হওয়া উপ-!!{proof}-এর
+জায়গায় নতুন !!{proof} বসাই,
+যেখানে বিধিজোড়াটি বাদ গেছে।
+এতে নতুন কর্তন তৈরি হতে পারে;
+তবে তাদের মাত্রা হ্রাসকৃত
+কর্তনের মাত্রার চেয়ে কম।
+ফলে নতুন !!{proof}-এর
+কর্তনদৈর্ঘ্য কমে (দৈর্ঘ্য~$1$-এর
+সর্বাধিক কর্তনটি বাদ গেছে)
+অথবা !!{proof}-এর
+কর্তনমাত্রা কমে (যদি সেটিই
+একমাত্র সর্বাধিক কর্তন হয়ে থাকে)।
+
+যেমন, সংশ্লিষ্ট বিধি
+\Intro{\lif} ও \Elim{\lif}
+হলে, $!A \ident !B \lif !C$
+হলে এবং উপ-!!{proof}~$\delta_1$
+নিচের মতো শেষ হলে:
+\[
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_2$}
+\DeduceC{$!C$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !C$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+\]
+এই কর্তন সরাতে $\delta$-র
+উপপ্রমাণ~$\delta_1$-র
+জায়গায় নিচেরটি বসাই:
+\[
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B$}
+\RightLabel{$\Subst{\delta_2}{\delta_3}{!B^x}$}
+\DeduceC{$!C$}
+\DisplayProof
+\]
+$\Subst{\delta_2}{\delta_3}{!B^x}$
+বলতে সেই !!{proof} বোঝাই,
+যা~$\delta_2$-তে
+$x$-চিহ্নযুক্ত প্রতিটি
+অনুমান~$!B$-র জায়গায়
+পুরো !!{proof}~$\delta_3$
+বসিয়ে পাওয়া যায়।
+এই !!{proof}-এ আর
+$x$-চিহ্নযুক্ত $!B$-রূপের
+খোলা অনুমান থাকে না।
+অন্য কোনো অনুমানও~$x$-চিহ্নযুক্ত
+নয়, কারণ যথারীতি একই চিহ্নে
+দুটি ভিন্ন !!{formula}s
+অনুমান হিসেবে আসে না।
+তাই নতুন !!{proof}-এর খোলা
+অনুমানগুলি~$\delta_1$-র মতোই;
+$\delta_2$-র যে বিধিগুলি
+অনুমান অবমুক্ত করে, তারা
+$\Subst{\delta_2}{\delta_3}{!B^x}$-এও
+একই অনুমান অবমুক্ত করে;
+আর $\delta_3$-র অবমুক্তিকারী
+বিধিগুলির একাধিক অনুলিপি
+হতে পারে, যেগুলি
+$\Subst{\delta_2}{\delta_3}{!B^x}$-এ
+সংশ্লিষ্ট অনুমান অবমুক্ত করে।
+
+$\delta_2$ বা $\delta_3$-র সম্পূর্ণ
+ভিতরে, অথবা $\delta$-তে
+$\delta_1$-র সম্পূর্ণ বাইরে থাকা
+কর্তন অপরিবর্তিত: তাতে একই
+!!{formula}s ও একই বিধি থাকে।
+তাই $\delta$-র সংশ্লিষ্ট কর্তনের
+মাত্রা ও দৈর্ঘ্যও একই থাকে।
+দৈর্ঘ্য~$1$-এর একটি সর্বাধিক
+কর্তন সরিয়েছি; ফলে হয়
+কর্তনদৈর্ঘ্য কমেছে, নয়
+কর্তনমাত্রা কমেছে (যদি
+$\delta$-র কর্তনদৈর্ঘ্য~$1$
+ছিল এবং এটিই একমাত্র
+সর্বাধিক কর্তন ছিল)।
+% BN-SRC-578 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-578):} এই →-হ্রাস উদাহরণে উপপ্রমাণ কেবল $\delta_2$ ও $\delta_3$; উৎসের অপরিবর্তিত-কর্তনের তালিকায় অনির্ধারিত $\delta_4$ বাদ দেওয়া হয়েছে।}
+% BN-SRC-578 TARGET-CORRECTION-END
+
+তবে দুটি ঘটনা ঘটতে পারে:
+\begin{enumerate}
+  \item সব $!B^x$ অনুমানের জায়গায়
+  $\delta_3$ বসালে
+  $\delta_3$-র সব কর্তনের
+  অনুলিপি বেড়ে যায়। তাদের
+  কোনোটি সর্বাধিক কর্তন হলে
+  নতুন !!{proof}-এর
+  কর্তনদৈর্ঘ্য পুরোনো
+  !!{proof}-এর চেয়ে বাড়তে পারে।
+  তা না ঘটার নিশ্চয়তা দরকার।
+  তাই শুধু \emph{সবচেয়ে ডানের}
+  সর্বাধিক কর্তনে হ্রাস-রূপান্তর
+  প্রয়োগ করি: যে কর্তনের
+  ডান দিকে~$\delta$-র কোনো
+  শাখায় আর সর্বাধিক কর্তন
+  নেই। $\delta_3$-তে কর্তন
+  থাকলে তা এখানে হ্রাসকৃত
+  কর্তনের ডান দিকে পড়ত;
+  তখন আমরা সবচেয়ে ডানের
+  কর্তন নিয়ে কাজ করতাম না।
+  সব সময় সবচেয়ে ডানের
+  কর্তন নিলে হয় !!{proof}-এর
+  কর্তনদৈর্ঘ্য কমে, নয়
+  কর্তনমাত্রাই কমে।
+  \item $\delta_2$-র কোনো
+  অনুমান~$!B^x$ যদি
+  !!a{elimination} বিধির
+  প্রধান পূর্বধারণা হয়,
+  আর $\delta_3$-র শেষ বিধি
+  \Elim{\lor}, \Elim{\lexists}
+  বা !!a{introduction} হয়,
+  তাহলে ওই অনুমানে
+  $\delta_3$-কে $\delta_2$-তে
+  কলম-স্থাপন করে নতুন
+  কর্তন তৈরি করি।
+  $\delta_2$-তে যা শুধু
+  অনুমান ছিল, এখন তা
+  দৈর্ঘ্য~$1$-এর কর্তন
+  (একটি !!a{introduction}
+  বিধির সিদ্ধান্ত এবং
+  !!a{elimination} বিধির
+  প্রধান পূর্বধারণা),
+  অথবা কর্তনখণ্ডের শেষ
+  !!{formula}-সংঘটন
+  (!!a{elimination} বিধির
+  প্রধান পূর্বধারণা এবং
+  \Elim{\lor} বা
+  \Elim{\lexists}-এর সিদ্ধান্ত)।
+  $!B^x$ যদি \Elim{\lor}
+  বা \Elim{\lexists}-এর
+  গৌণ পূর্বধারণা হয়ে থাকে,
+  তবে তা আগে থেকেই একটি
+  খণ্ডের প্রথম !!{formula}-সংঘটন,
+  সম্ভবত কর্তনখণ্ডেরও।
+  নতুন !!{proof}-এ খণ্ডটি
+  আরও দীর্ঘ হতে পারে।
+  কিন্তু নতুন কর্তন বা পুরোনো
+  কর্তনখণ্ড গড়া !!{formula}
+  হলো~$!B$, এবং
+  $\depth{!B} < \depth{!B \lif !C}$।
+  অতএব কর্তন যোগ হওয়া বা
+  দৈর্ঘ্য বাড়ার সম্ভাবনা
+  থাকলেও এগুলির কোনোটিই
+  সর্বাধিক কর্তন নয়।
+  ফলে হয় কর্তনমাত্রা কমেছে,
+  নয় একই মাত্রার কর্তন
+  থেকে গেলে কর্তনদৈর্ঘ্য কমেছে।
+  % BN-SRC-579 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-579):} এই একই অনুমান আগে $!B^x$ হলেও গৌণ-পূর্বধারণার বাক্যে উৎসে ভুলে $B^x$ লেখা; সূত্রচিহ্নসহ $!B^x$ রাখা হয়েছে।}
+  % BN-SRC-579 TARGET-CORRECTION-END
+\end{enumerate}
+
+দৈর্ঘ্য~$1$-এর কর্তন হ্রাসের
+প্রক্রিয়াকে \emph{হ্রাস-রূপান্তর}
+(বা \emph{ঘুরপথ-রূপান্তর}) বলে।
+কয়েকটি বিধিজোড়ার ছক
+\olref{tab:reduction-conversions}-এ
+দেওয়া হয়েছে। (অন্যগুলি
+অনুশীলনের জন্য রাখা।)
+
+\begin{table}
+\begin{multline*}
+\bottomAlignProof
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!C$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !C$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+\quad \longrightarrow\quad
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{$\Subst{\delta_2}{\delta_3}{!B^x}$}
+\shortDeduce
+\DeduceC{$!C$}
+\DisplayProof}
+\\[4ex]
+\shoveleft{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!C$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\DisplayProof}\qquad
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!C$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !C$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!C$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!C$}
+\DisplayProof}
+\\[4ex]
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{\Intro{\lor}[1]}
+\UnaryInfC{$!B \lor !C$}
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!D$}
+\AxiomC{$\Discharge{!C}{y}$}
+\RightLabel{$\delta_4$}
+\shortDeduce
+\DeduceC{$!D$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!D$}
+\DisplayProof
+\quad \longrightarrow\quad
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{$\Subst{\delta_3}{\delta_2}{!B^x}$}
+\shortDeduce
+\DeduceC{$!D$}
+\DisplayProof}
+\\[2ex]
+\shoveleft{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B(c)$}
+\RightLabel{\Intro{\lforall}}
+\UnaryInfC{$\lforall[x][!B(x)]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(t)$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\Subst{\delta_2}{t}{c}$}
+\shortDeduce
+\DeduceC{$!B(t)$}
+\DisplayProof}
+\\[4ex]
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B(t)$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!B(x)]$}
+\AxiomC{$\Discharge{!B(c)}{x}$}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!D$}
+\DischargeRule{\Elim{\lexists}}{x}
+\BinaryInfC{$!D$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B(t)$}
+\RightLabel{$\Subst{\Subst{\delta_3}{t}{c}}{\delta_2}{!B(t)^x}$}
+\shortDeduce
+\DeduceC{$!D$}
+\DisplayProof}
+\end{multline*}
+\caption{\Log{N1i}-এর কয়েকটি হ্রাস-রূপান্তর।}
+\ollabel{tab:reduction-conversions}
+\end{table}
+
+\begin{prob}
+\Intro{\lnot}-এর পরে
+\Elim{\lnot} থাকলে
+হ্রাস-রূপান্তরটি দিন।
+\end{prob}
+
+আরও একটি ক্ষেত্র বিচার করতে হবে।
+কর্তনের সংজ্ঞায় দৈর্ঘ্য~$1$-এর
+এমন ক্ষেত্রও আছে, যেখানে
+$!A$ একদিকে \FalseInt{}-এর
+সিদ্ধান্ত, অন্যদিকে
+!!a{elimination} বিধির
+প্রধান পূর্বধারণা।
+$!A$ যখন !!a{introduction}
+বিধির সিদ্ধান্ত, তার মতোই
+এ ক্ষেত্র সামলাই। যেমন,
+নিচেরটি বদলে
+\[
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!B \lif !C$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+\quad\text{এর বদলে}\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!C$}
+\DisplayProof
+\]
+% BN-SRC-580 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-580):} প্রথম মিথ্যা-ভূমিকা উদাহরণের দুটি ⊥ থেকে সূত্রে ওঠা ধাপে উৎসবৃক্ষ বিধিলেবেল বাদ দিয়েছে; উভয় ধাপে \FalseInt স্পষ্ট করা হয়েছে।}
+% BN-SRC-580 TARGET-CORRECTION-END
+$!A \ident (!B \lor !C)$
+অথবা $!A \ident \lexists[x][!B(x)]$
+হলে একটু সতর্ক থাকতে হয়।
+যেমন, নিচেরটি বদলে
+\[
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!B \lor !C$}
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_3$}
+\DeduceC{$!D$}
+\AxiomC{$\Discharge{!C}{y}$}
+\RightLabel{$\delta_4$}
+\DeduceC{$!D$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!D$}
+\DisplayProof
+\quad\text{এর বদলে}\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!D$}
+\DisplayProof
+\]
+% BN-SRC-581 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-581):} ∨-নিষ্কাশনের দুই ভিন্ন অনুমান উৎসে একই $x$ চিহ্ন পেয়েছে; N1i-র পৃথক-চিহ্ন শর্ত অনুযায়ী $!C$-শাখায় $y$ এবং নিষ্কাশনবিধিতে $x,y$ অবমুক্তি স্পষ্ট করা হয়েছে।}
+% BN-SRC-581 TARGET-CORRECTION-END
+তাহলে কর্তন-!!{formula}~$!D$-যুক্ত
+নতুন কর্তন তৈরি হতে পারে;
+কিন্তু $\depth{!D} < \depth{!B \lor !C}$
+হবেই, এমন নিশ্চয়তা নেই!{}
+তাই \Intro{\lor}/\Elim{\lor}
+হ্রাসের মতোই এখানে নিচেরটি
+বসাতে হবে:
+\[
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!B$}
+\RightLabel{$\delta_3$}
+\DeduceC{$!D$}
+\DisplayProof
+\quad\text{অথবা}\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!C$}
+\RightLabel{$\delta_4$}
+\DeduceC{$!D$}
+\DisplayProof
+\]
+% BN-NORM-173 TARGET-NORMALIZATION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{ভাষা-স্বাভাবিকীকরণ (BN-NORM-173):} প্রমাণবৃক্ষের ভিতরের ইংরেজি by ও or সংযোগপদ কেবল বাংলা পাঠ্যলেবেল করা হয়েছে; সূত্র, বিধি ও প্রমাণের শাখা অপরিবর্তিত।}
+% BN-NORM-173 TARGET-NORMALIZATION-END
+
+\end{document}

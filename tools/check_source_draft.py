@@ -6438,6 +6438,37 @@ for row in rows:
         and target_math - source_math
         == collections.Counter({r"!A\ident!B\land!C": 1})
     )
+    legacy_reduction_tree_repairs = False
+    if row["unit_id"] == "OLP-0676":
+        audited_reductions = source
+        fixes = (
+            (
+                "$\\delta_3$, or\n$\\delta_4$, or entirely outside",
+                "$\\delta_3$, or entirely outside",
+            ),
+            (r"$B^x$", r"$!B^x$"),
+            (
+                "\\DeduceC{$\\lfalse$}\n\\UnaryInfC{$!B \\lif !C$}",
+                "\\DeduceC{$\\lfalse$}\n\\RightLabel{\\FalseInt}\n\\UnaryInfC{$!B \\lif !C$}",
+            ),
+            (
+                "\\DeduceC{$\\lfalse$}\n\\UnaryInfC{$!C$}",
+                "\\DeduceC{$\\lfalse$}\n\\RightLabel{\\FalseInt}\n\\UnaryInfC{$!C$}",
+            ),
+            (r"\AxiomC{$\Discharge{!C}{x}$}", r"\AxiomC{$\Discharge{!C}{y}$}"),
+            (
+                "\\RightLabel{\\Elim{\\lor}}\n\\TrinaryInfC{$!D$}",
+                "\\DischargeRule{\\Elim{\\lor}}{x\\,y}\n\\TrinaryInfC{$!D$}",
+            ),
+        )
+        for old, new in fixes:
+            assert audited_reductions.count(old) == 1, old
+            audited_reductions = audited_reductions.replace(old, new, 1)
+        legacy_reduction_tree_repairs = (
+            set(documented) == {f"BN-SRC-{n}" for n in range(578, 582)}
+            and set(normalizations) == {"BN-NORM-173"}
+            and mathparts(audited_reductions) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6583,6 +6614,7 @@ for row in rows:
             legacy_n2_to_g2_math_repairs,
             legacy_normalization_intro_math_repair,
             legacy_permutation_cut_formula_fix,
+            legacy_reduction_tree_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -6681,6 +6713,19 @@ for row in rows:
         tex_command_check = {
             "documented_correction": "BN-SRC-576",
             "n1i_existential_elimination_commands_localized": 2,
+        }
+    if row["unit_id"] == "OLP-0676":
+        assert legacy_reduction_tree_repairs
+        assert source.count(r"\text{by}") == 2
+        assert source.count(r"\text{or}") == 1
+        assert checked_target.count(r"\text{by}") == 0
+        assert checked_target.count(r"\text{or}") == 0
+        assert checked_target.count(r"\text{এর বদলে}") == 2
+        assert checked_target.count(r"\text{অথবা}") == 1
+        tex_command_check = {
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(578, 582)],
+            "documented_language_normalization": "BN-NORM-173",
+            "bengali_math_text_labels": 3,
         }
     checks = {
         "unit_id": row["unit_id"],

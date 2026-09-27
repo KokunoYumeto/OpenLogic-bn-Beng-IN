@@ -1,0 +1,159 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{replacement}{finiteaxiomatizability}
+\olsection{পরিশিষ্ট: সসীম স্বতঃসিদ্ধায়ন}
+প্রতিস্থাপন থেকে কয়েকটি ফল নিয়ে এই
+অধ্যায় শেষ করি। প্রথম ফলটি
+\citet{Montague1961}-এর। লক্ষ করো,
+এটি $\ZF$-এর \emph{ভিতরে} প্রমাণ নয়;
+$\ZF$ \emph{সম্পর্কে} প্রমাণ:
+\begin{thm}\ollabel{zfnotfinitely}
+	$\ZF$ সসীমভাবে স্বতঃসিদ্ধায়িত করা
+	যায় না। আরও সাধারণভাবে: $\Th{T}$
+	সসীম এবং $\Th{T} \Proves \ZF$ হলে
+	$\Th{T}$ অসংগতিপূর্ণ।
+
+	(এখানে আমরা নীরবে কেবল সেই
+	প্রথম-ক্রমের বাক্যগুলি বিবেচনা করি,
+	যাদের একমাত্র অযৌক্তিক আদিম চিহ্ন
+	$\in$। আর $\Th{T} \Proves \ZF$
+	দিয়ে বোঝাই: প্রত্যেক $\phi \in \ZF$-এর
+	জন্য $\Th{T} \Proves \phi$।)
+\end{thm}
+\begin{proof}
+	এমন একটি সসীম $\Th{T}$ নিই যাতে
+	$\Th{T} \Proves \ZF$। তাই $\Th{T}$
+	প্রতিফলন প্রমাণ করে, অর্থাৎ
+	\olref[sth][replacement][ref]{reflectionschema}।
+	$\Th{T}$ সসীম বলে এর স্বতঃসিদ্ধগুলি
+	একটি সংযোজন $\theta$ হিসেবে লেখা যায়।
+	এই সূত্রে প্রতিফলন প্রয়োগে
+	$\Th{T} \Proves \exists \beta(\theta \liff \theta^{V_\beta})$।
+	স্পষ্টতই $\Th{T} \Proves \theta$;
+	ফলে $\Th{T} \Proves \exists \beta\ \theta^{V_\beta}$।
+
+	এবার $\psi(X)$ দিয়ে সংক্ষেপে বোঝাই:
+	\[
+		\theta^X \land X\text{ পরিযায়ী} \land (\forall Y \in X)(Y\text{ পরিযায়ী}\lif \lnot \theta^{Y})
+	\]
+	মোটামুটি এটি বলে: $X$ হলো
+	$\theta$-র একটি পরিযায়ী মডেল এবং
+	এই ধর্মে $\in$-ক্ষুদ্রতম।
+	$\Th{T} \Proves \exists \beta\ \theta^{V_\beta}$
+	মনে রেখে, $\ZF$-এ এবং তাই
+	$\Th{T}$-তে স্তরাঙ্কের মৌলিক তথ্য
+	ব্যবহার করে পাই:
+	\begin{equation}
+		\Th{T} \Proves \exists M \psi(M). \tag{*}\label{Mpsi}
+	\end{equation}
+	$\psi(X)$-র প্রথম সংযোজক ব্যবহার
+	করে, $\Th{T} \Proves \sigma$ হলে
+	$\Th{T} \Proves \forall X(\psi(X) \lif \sigma^X)$।
+	তাই \eqref{Mpsi} অনুযায়ী:
+	\begin{align*}
+		\Th{T} &\Proves \forall X(\psi(X) \lif (\exists N \psi(N))^X)\\
+	\intertext{এটি এবং আবার \eqref{Mpsi} ব্যবহার করে:}
+		\Th{T} &\Proves \exists M(\psi(M) \land (\exists N \psi(N))^M)
+	\intertext{বিশেষত:}
+		\Th{T} &\Proves \exists M(\psi(M) \land (\exists N \in M)((N\text{ পরিযায়ী})^N \land (\theta^N)^M))
+	\intertext{পরিযায়িতা-সংক্রান্ত প্রাথমিক যুক্তিতে:}
+		\Th{T} &\Proves \exists M(\psi(M) \land (\exists N \in M)(N\text{ পরিযায়ী} \land \theta^N))
+	\end{align*}
+	অতএব $\Th{T}$ অসংগতিপূর্ণ।\footnote{এই
+	``প্রাথমিক যুক্তি''তে পরিযায়ী সেটের
+	জন্য কয়েকটি ``নিরপেক্ষতা-তথ্য'' প্রমাণ
+	করতে হয়।}
+\end{proof}
+
+অনুরূপ একটি ফল \citet[223]{Potter2004}
+উল্লেখ করেছেন:
+
+\begin{prop}\ollabel{finiteextensionofZ}
+	$\Th{T}$-তে $\Z$-এর সঙ্গে সসীম
+	সংখ্যক নতুন স্বতঃসিদ্ধ যোগ করা হোক।
+	$\Th{T} \Proves \ZF$ হলে
+	$\Th{T}$ অসংগতিপূর্ণ। (এখানে
+	\olref{zfnotfinitely}-এর মতোই
+	নীরব বিধিনিষেধ প্রযোজ্য।)
+\end{prop}
+\begin{proof}
+	পৃথকীকরণ ছকের (অসীম সংখ্যক)
+	দৃষ্টান্ত ছাড়া $\Th{T}$-র অন্য
+	সব স্বতঃসিদ্ধের সংযোজনকে
+	$\theta$ বলি। \olref{zfnotfinitely}-এর
+	মতো $\theta$ থেকে $\psi$ সংজ্ঞায়িত
+	করে দেখানো যায়,
+	$\Th{T} \Proves \exists M \psi(M)$।
+
+	\olref{zfnotfinitely}-এর মতোই
+	এমন ছক প্রতিষ্ঠা করা যায় বলে
+	উৎসে দাবি করা হয়েছে: যখনই
+	$\Th{T} \Proves \sigma$, তখনই
+	$\Th{T} \Proves \forall X(\psi(X) \lif \sigma^X)$।
+	এরপর ঠিক \olref{zfnotfinitely}-এর
+	মতো প্রমাণ শেষ হবে।
+
+	কিন্তু এই ছক প্রতিষ্ঠায়
+	\olref{zfnotfinitely}-এর তুলনায়
+	আরও কাজ দরকার। কারণ পৃথকীকরণ
+	ছকের দৃষ্টান্তগুলি $\Th{T}$-তে
+	আছে, কিন্তু $\theta$-র সংযোজক নয়।
+	উৎসে বলা হয়েছে, প্রতিটি
+	পৃথকীকরণ-দৃষ্টান্ত $\sigma$-র জন্য
+	$\Th{T} \Proves \forall X(X\text{ পরিযায়ী} \lif \sigma^X)$
+	প্রমাণ করে বাধাটি কাটানো যায়।
+	এটি পাঠকের জন্য রাখা হয়েছে।
+	% BN-SRC-446: transitivity alone does not imply relativized Separation; the proposed exercise has a finite counterexample.
+	\emph{সম্পাদকীয় সতর্কতা: শেষ দাবিটি
+	উৎসে যেভাবে লেখা, সেভাবে সত্য নয়।
+	শুধু পরিযায়িতা থেকে কোনো সেটের
+	সকল উপসেট ওই সেটে থাকবে, তা
+	অনুসৃত হয় না; তাই নিচের অনুশীলন
+	এবং এই প্রমাণ-ধাপ অসম্পূর্ণ।}
+\end{proof}
+\begin{prob}
+	প্রত্যেক পৃথকীকরণ-দৃষ্টান্ত
+	$\sigma$-র জন্য
+	$\Z \Proves \forall X(X\text{ পরিযায়ী} \lif \sigma^X)$
+	দেখাও। (এই ছক
+	\olref[sth][replacement][finiteaxiomatizability]{finiteextensionofZ}-এ
+	ব্যবহার করেছি।) সম্পাদকীয় সতর্কতাটি
+	মনে রেখো: এই রূপে দাবিটির
+	একটি প্রতিউদাহরণ আছে।
+\end{prob}
+\begin{prob}
+	প্রত্যেক $\phi \in \Z$-এর জন্য
+	$\ZF \Proves \phi^{V_{\omega+\omega}}$
+	দেখাও।
+\end{prob}
+\begin{prob}
+	\olref[sth][replacement][finiteaxiomatizability]{zfnotfinitely}
+	ও \olref[sth][replacement][finiteaxiomatizability]{finiteextensionofZ}-এর
+	প্রমাণে ব্যবহৃত বাকি ছকগুলি
+	যাচাই করো।
+\end{prob}
+
+\olref[sth][replacement][absinf]{sec}-এ
+যেমন বলেছি, এটি দেখায় যে প্রতিস্থাপন
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}-এর
+চেয়ে কঠোরভাবে শক্তিশালী। আরও
+সুনির্দিষ্টভাবে: $\Z$ + ``প্রত্যেক
+সুক্রমবিন্যাস একটি অনন্য ক্রমসংখ্যার
+সমরূপ'' সঙ্গতিপূর্ণ হলে,
+এ থেকে প্রতিস্থাপনের কোনো একটি
+দৃষ্টান্ত প্রমাণ করা যায় না।
+
+
+	%	By assumption, $\psi^{V_\alpha}$ has the form:
+	%	\[
+	%		(\forall A \in V_\alpha)(\exists S \in V_\alpha)(\forall x \in V_\alpha)(x \in S \liff (\phi^{V_\alpha}(x) \land x \in A))
+	%	\]
+	%	To establish this holds, fix $A \in V_\alpha$. Using Separation, obtain:
+	%	\[
+	%		S = \Setabs{x \in A}{\phi^{V_\alpha}(x)}
+	%	\]
+	%	Now $S \in V_\alpha$, since $S \subseteq A \in V_\alpha$, and clearly $(\forall x \in V_\alpha)(x \in S \liff (\phi^{V_\alpha}(x) \land x \in A)$.
+
+\end{document}

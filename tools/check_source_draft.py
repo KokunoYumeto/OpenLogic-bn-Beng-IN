@@ -5714,6 +5714,28 @@ for row in rows:
         and source_math - target_math == collections.Counter({r"x\notinV_\alpha": 1})
         and target_math - source_math == collections.Counter({r"\setrank{x}\in\alpha": 1})
     )
+    replacement_reflection_proofs_math_fix = False
+    if row["unit_id"] == "OLP-0572" and set(documented) == {
+        "BN-SRC-442", "BN-SRC-443", "BN-SRC-444", "BN-SRC-445"
+    }:
+        old_conditional = r"\existsx\phi_i(\overline{a}_i,x)\rightarrow(\existsx\inV)\phi_i(\overline{a}_i,x))"
+        new_conditional = old_conditional[:-1]
+        old_recurrence = (
+            r"S_0&=V_{\alpha+1}\\S_{n+1}&=S_n\cup\bigcup"
+            r"\Setabs{\mu(\overline{a}_1,\ldots,\overline{a}_k)}"
+            r"{\overline{a}_1,\ldots,\overline{a}_k\inS_n}\\S&=\bigcup_{m<\omega}S_n."
+        )
+        new_recurrence = old_recurrence[:-4] + "S_m."
+        old_image = r"\Setabs{y}{(\existsx\inA)\phi(x,y}"
+        new_image = r"\Setabs{y}{(\existsx\inA)\phi(x,y)}"
+        replacement_reflection_proofs_math_fix = (
+            source_math - target_math == collections.Counter({
+                old_conditional: 1, old_recurrence: 1, old_image: 1,
+            })
+            and target_math - source_math == collections.Counter({
+                new_conditional: 1, new_recurrence: 1, new_image: 1,
+            })
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -5819,6 +5841,7 @@ for row in rows:
             minimal_change_contraposition_fix,
             spine_foundation_bound_variable_fix,
             spine_rank_proof_conclusion_fix,
+            replacement_reflection_proofs_math_fix,
         )
     )
     minimal_change_fileid_fix = (
@@ -5832,6 +5855,13 @@ for row in rows:
         == collections.Counter({r"\olfileid{cnt}{min}{sph}" if row["unit_id"] == "OLP-0524"
                                 else r"\olfileid{cnt}{min}{tf}": 1})
     )
+    replacement_reflection_citation_localization = (
+        row["unit_id"] == "OLP-0572"
+        and controls(source) - controls(checked_target)
+        == collections.Counter({"\\citet[first\npart of Theorem 2]{Levy1960}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\citet[উপপাদ্য ২-এর প্রথম অংশ]{Levy1960}": 1})
+    )
     controls_ok = (
         controls(source) == controls(checked_target)
         or axd_control_fix
@@ -5841,6 +5871,7 @@ for row in rows:
         or lambda_syntax_control_fix
         or modal_completeness_control_fix
         or minimal_change_fileid_fix
+        or replacement_reflection_citation_localization
     )
     checks = {
         "unit_id": row["unit_id"],

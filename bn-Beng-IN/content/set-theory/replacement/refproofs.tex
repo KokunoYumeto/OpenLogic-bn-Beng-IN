@@ -1,0 +1,239 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{replacement}{refproofs}
+\olsection{পরিশিষ্ট: প্রতিস্থাপন-সংক্রান্ত ফল}
+
+এই বিভাগে $\ZF$-এর মধ্যে প্রতিফলন প্রমাণ করব।
+প্রতিফলন কোন অর্থে প্রতিস্থাপনের সমতুল্য,
+তাও দেখাব। শেষে প্রতিফলন/প্রতিস্থাপনের
+শক্তি সম্পর্কে একটি আকর্ষণীয় ফল প্রমাণ করব।
+\emph{সতর্কতা: এই পাঠ্যবইয়ের সবচেয়ে
+উন্নত গণিত এটাই।}
+
+প্রথমে একটি সহায়ক ফল। সংক্ষেপের জন্য
+এতে চলক বা বস্তুর অনুক্রম বোঝাতে
+\emph{উপরি-রেখা} ব্যবহার করব। অর্থাৎ
+``$\overline{a}_k$'' হলো
+``$a_{k_1}$, \dots, $a_{k_n}$''-এর
+সংক্ষিপ্ত রূপ; $n$ প্রসঙ্গ থেকে নির্ধারিত।
+
+\begin{lem}\ollabel{lemreflection}
+প্রত্যেক $1 \leq i \leq k$-এর জন্য
+$\phi_i(\overline{v}_i, x)$ একটি সূত্র
+হোক। তাহলে প্রত্যেক $\alpha$-র জন্য
+এমন একটি $\beta > \alpha$ আছে যে
+যেকোনো $\overline{a}_1,
+\ldots, \overline{a}_k \in V_\beta$
+ও প্রত্যেক $1 \leq i \leq k$-তে:
+\[
+	\exists x\phi_i(\overline{a}_i, x) \rightarrow (\exists x \in V_\beta) \phi_i(\overline{a}_i, x)
+\]
+\end{lem}
+
+\begin{proof}
+একটি পদ $\mu$ এইভাবে সংজ্ঞায়িত করি:
+$\mu(\overline{a}_1, \ldots,
+\overline{a}_k)$ হলো ক্ষুদ্রতম পর্যায়
+$V$, যা প্রত্যেক $1 \leq i \leq k$-তে
+নিচের শর্তবাক্যগুলি পূরণ করে:
+% BN-SRC-442: source has one unmatched trailing right parenthesis.
+\[
+\exists x\phi_i(\overline{a}_i, x) \rightarrow (\exists x \in V) \phi_i(\overline{a}_i, x)
+\]
+যেকোনো $\overline{a}_1, \ldots,
+\overline{a}_k$-র জন্য
+$\mu(\overline{a}_1, \ldots, \overline{a}_k)$
+বিদ্যমান, তা সহজেই নিশ্চিত করা যায়।
+এবার প্রতিস্থাপন ও আমাদের পুনরাবৃত্তির
+উপপাদ্য ব্যবহার করে সংজ্ঞায়িত করি:
+% BN-SRC-443: the union index is m, so the summand must be S_m.
+\begin{align*}
+	S_0 & = V_{\alpha+1}\\
+	S_{n+1} & = S_n \cup \bigcup
+	\Setabs{\mu(\overline{a}_1, \ldots, \overline{a}_k)}
+	{\overline{a}_1, \ldots, \overline{a}_k \in S_n} \\
+	S &= \bigcup_{m < \omega} S_m.
+\end{align*}
+প্রত্যেক $S_n$, এবং তাই $S$-ও,
+$V_\alpha$-র পরের একটি পর্যায়।
+এবার $\overline{a}_1$, \dots,~$\overline{a}_k
+\in S$ নিই; তাহলে কোনো $n < \omega$-তে
+$\overline{a}_1$, \dots, $\overline{a}_k
+\in S_n$। একটি $1 \leq i \leq k$
+নিয়ে ধরি $\exists x
+\phi_i(\overline{a}_i,x)$। সংজ্ঞা অনুযায়ী
+$(\exists x \in \mu(\overline{a}_1,
+\ldots, \overline{a}_k))\phi_i(\overline{a}_i, x)$;
+তাই $(\exists x \in S_{n+1})\phi_i(\overline{a}_i, x)$,
+ফলে $(\exists x \in S)\phi_i(\overline{a}_i, x)$।
+অতএব এই $S$-ই চাওয়া $V_\beta$।
+\end{proof}
+\noindent
+এখন \olref[sth][replacement][ref]{reflectionschema}
+বেশ সরাসরি প্রমাণ করা যায়:
+
+\begin{proof}[প্রমাণ]
+$\alpha$ নিই। সাধারণতার ক্ষতি ছাড়া
+ধরতে পারি, $\phi$-র একমাত্র যৌক্তিক
+ক্রিয়াগুলি $\exists$, $\lnot$ ও $\land$;
+কারণ এগুলি দিয়ে সব সূত্র প্রকাশ করা যায়।
+$\phi$-র উপসূত্রগুলিকে জটিলতা অনুসারে
+$\psi_1, \ldots, \psi_k$ হিসেবে
+তালিকাভুক্ত করি, যেখানে $\psi_k = \phi$।
+\olref{lemreflection} অনুযায়ী এমন একটি
+$\beta > \alpha$ আছে যে যেকোনো
+$\overline{a}_i \in V_\beta$ ও
+প্রত্যেক $1 \leq i \leq k$-তে:
+\begin{align}\label{reflectionnicelybehaved}
+	\exists x\psi_i(\overline{a}_i, x) \rightarrow
+	(\exists x \in V_\beta) \psi_i(\overline{a}_i, x)\tag{*}
+\end{align}
+$\psi_i$-র জটিলতার উপর আবেশে দেখাব,
+যেকোনো $\overline{a}_i \in V_\beta$-র জন্য
+$\psi_i(\overline{a}_i) \leftrightarrow
+\psi_i^{V_\beta}(\overline{a}_i)$।
+$\psi_i$ পরমাণু সূত্র হলে কথাটি সরাসরি।
+এই দ্বিশর্ত থেকেই বোঝা যায়,
+$\psi_i$ এ ধর্মবিশিষ্ট উপসূত্রের নঞর্থকতা বা
+সংযোজন হলে $\psi_i$-ও ধর্মটি পায়।
+অতএব একমাত্র গুরুত্বপূর্ণ ক্ষেত্র
+পরিমাণায়ন। $\overline{a}_i \in V_\beta$
+নিই; তাহলে:
+\begin{align*}
+	(\exists x \psi_i(\overline{a}_i, x))^{V_\beta}
+	&\text{ যদি ও কেবল যদি }
+	(\exists x \in V_\beta)\psi_i^{V_\beta}(\overline{a}_i, x)
+	&&\text{সংজ্ঞা অনুযায়ী}\\
+	&\text{ যদি ও কেবল যদি }
+	(\exists x \in V_\beta)\psi_i(\overline{a}_i,  x)
+	&&\text{আবেশ-অনুমানে}\\
+	&\text{ যদি ও কেবল যদি }
+	\exists x \psi_i(\overline{a}_i, x)
+	&&\text{\eqref{reflectionnicelybehaved} অনুযায়ী}
+\end{align*}
+এতে আবেশ শেষ; $\psi_k = \phi$ বলে
+ফলটি অনুসৃত।
+\end{proof}
+
+$\ZF$-এ প্রতিফলন প্রমাণ করেছি।
+আমাদের প্রমাণ মূলত \citet{Montague1961}-এর
+পথ অনুসরণ করে। এবার $\Z$-এ
+প্রতিফলন থেকে প্রতিস্থাপন প্রমাণ করতে
+চাই। প্রমাণটি সরলীকরণসহ
+\citet{Levy1960}-এর পথ অনুসরণ করে।
+
+$\Z$-এ কাজ করছি বলে প্রতিফলনকে
+উপরের ঠিক একই রূপে বলা যায় না:
+উপরের রূপে ``$V_\alpha$'' সংকেত আছে,
+কিন্তু $\Z$-এ এটি সংজ্ঞায়িত করা যায় না
+(দেখো \olref[sth][spine][zf]{sec})।
+তাই প্রতিফলনের আপাতদৃষ্টিতে দুর্বলতর
+একটি রূপ নিই:
+% BN-SRC-444: source says “formulation of Replacement” here; the displayed principle is Weak-Reflection.
+
+\begin{defish}
+\emph{দুর্বল প্রতিফলন।} যেকোনো সূত্র
+$\phi$-র জন্য এমন একটি পরিযায়ী সেট
+$S$ আছে যাতে $0$, $1$ এবং
+$\phi$-র যেকোনো পরামিতি $S$-এর
+!!{element}s; আর
+$(\forall \overline{x} \in S)(\phi \liff
+\phi^S)$।
+\end{defish}
+
+এটি ব্যবহার করে প্রতিস্থাপন প্রমাণের
+জন্য প্রথমে \citet[উপপাদ্য ২-এর প্রথম অংশ]{Levy1960}
+অনুসরণ করে দেখাই, একই সঙ্গে দুটি
+সূত্র ``প্রতিফলিত'' করা যায়:
+
+\begin{lem}[$\Z + \text{দুর্বল প্রতিফলন}$-এ]\ollabel{lem:reflect}
+যেকোনো সূত্র $\psi, \chi$-র জন্য এমন
+একটি পরিযায়ী সেট $S$ আছে যাতে
+$0$ ও $1$ (এবং সূত্রগুলির যেকোনো
+পরামিতি) $S$-এর !!{element}s;
+আর $(\forall \overline{x} \in S)((\psi \liff
+\psi^S) \land (\chi \liff \chi^S))$।
+\end{lem}
+
+\begin{proof}
+$\phi$ হিসেবে $(z = 0 \land \psi) \lor (z = 1 \land \chi)$
+সূত্রটি নিই।
+
+এখানে সংক্ষিপ্ত সংকেত ব্যবহার করেছি:
+``$z = 0$''-কে ``$\forall t\, t \notin z$''
+আর ``$z =1$''-কে ``$\forall s(s \in z
+\liff \forall t\, t \notin s)$'' হিসেবে
+পূর্ণ করে লেখা উচিত। কিন্তু $0, 1 \in S$
+এবং $S$ পরিযায়ী বলে সূত্রগুলি
+$S$-এর জন্য \emph{নিরপেক্ষ}:
+পরিমাণায়কগুলি $S$-এ সীমাবদ্ধ করলেও
+একই বস্তুতে এদের প্রয়োগ সত্য হয়।\footnote{আরও
+আনুষ্ঠানিকভাবে, $\xi$-কে এই দুই
+সূত্রের যেকোনো একটি ধরলে
+$\xi(z) \liff \xi^S(z)$।}
+
+দুর্বল প্রতিফলন অনুযায়ী উপযুক্ত
+একটি $S$ পাই যাতে:
+\begin{align*}
+	(\forall z, \overline{x} \in S)(&\phi \liff \phi^S)\\
+	\text{অর্থাৎ }(\forall z, \overline{x} \in S)(&((z = 0 \land \psi) \lor (z = 1 \land \chi)) \liff {}\\
+	&\phantom{(}((z = 0 \land \psi) \lor (z = 1 \land \chi))^S)\\
+	\text{অর্থাৎ }(\forall z, \overline{x} \in S)(&((z = 0 \land \psi) \lor (z = 1 \land \chi))\liff {}\\
+	&\phantom{(}((z = 0 \land \psi^S) \lor (z = 1 \land \chi^S)))\\
+	\text{অর্থাৎ }(\forall \overline{x} \in S)(&(\psi \liff \psi^S) \land (\chi \liff \chi^S))
+\end{align*}
+``$z = 0$'' ও ``$z=1$'' যে
+$S$-এর জন্য নিরপেক্ষ, তার ফলে
+দ্বিতীয় দাবি থেকে তৃতীয়টি আসে;
+$0 \neq 1$ বলে চতুর্থ দাবি অনুসৃত।
+\end{proof}\noindent
+এখন \citet[Theorem 6]{Levy1960}-এর
+পদ্ধতি অনুসরণ ও সরলীকরণে
+প্রতিস্থাপন পাওয়া যায়:
+
+\begin{thm}[$\Z$ + দুর্বল প্রতিফলন-এ]\label{thm:replacement}
+যেকোনো সূত্র $\phi(v,w)$ ও যেকোনো
+$A$-র জন্য, যদি
+$(\forall x \in A)\lexists![y][\phi(x,y)]$,
+তবে
+% BN-SRC-445: source omits the closing parenthesis in the set-builder predicate.
+$\Setabs{y}{(\exists x \in A)\phi(x,y)}$
+বিদ্যমান।
+\end{thm}
+
+\begin{proof}
+এমন একটি $A$ নিই যাতে
+$(\forall x \in A)\lexists![y][\phi(x,y)]$;
+সূত্র দুটি সংজ্ঞায়িত করি:
+\begin{align*}
+	\psi &\text{ হলো } (\phi(x, z) \land A = A)\\
+	\chi &\text{ হলো } \lexists[y][\phi(x, y)]
+\end{align*}
+\olref{lem:reflect} ব্যবহার করি।
+$A$ যেহেতু $\psi$-র একটি পরামিতি,
+তাই এমন একটি পরিযায়ী~$S$ আছে
+যাতে $0, 1, A \in S$ (অন্য
+পরামিতিগুলিও আছে), আর:
+\[
+	(\forall x,z \in S)((\psi \liff \psi^S) \land (\chi \liff \chi^S))
+\]
+ফলে বিশেষত:
+\begin{align*}
+	(\forall  x, z \in S)(&\phi(x, z) \liff \phi^S(x, z))\\
+	(\forall x \in S)(&\exists y\phi(x, y) \liff (\exists y \in S)\phi^S(x, y))
+\end{align*}
+এই দুটি মেলাই; $A \in S$ এবং
+$S$ পরিযায়ী বলে $A \subseteq S$-ও:
+\begin{align*}
+	(\forall x \in A)(&\exists y\phi(x, y) \liff (\exists y \in S)\phi(x, y))
+\end{align*}
+এখন $(\forall x \in A)(\lexists![y \in S])\phi(x, y)$,
+কারণ $(\forall x \in A)\lexists![y][\phi(x, y)]$।
+পৃথকীকরণ থেকে পাই
+$\Setabs{y \in S}{(\exists x \in A) \phi(x, y)} = \Setabs{y}{(\exists
+x \in A) \phi(x, y)}$।
+\end{proof}
+
+\end{document}

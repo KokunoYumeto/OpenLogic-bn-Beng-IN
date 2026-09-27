@@ -6208,6 +6208,19 @@ for row in rows:
             set(documented) == {"BN-SRC-536", "BN-SRC-537", "BN-SRC-538"}
             and mathparts(audited_midsequent) == target_math
         )
+    legacy_grafting_repairs = False
+    if row["unit_id"] == "OLP-0662":
+        audited_grafting = source
+        old = r"\UnaryInfC{$!B \lif !C$}"
+        assert audited_grafting.count(old) == 1
+        audited_grafting = audited_grafting.replace(old, r"\UnaryInfC{$!B \lif !A$}", 1)
+        old = r"\pheight{\delta}"
+        assert audited_grafting.count(old) == 1
+        audited_grafting = audited_grafting.replace(old, r"\pheight{\delta_1}", 1)
+        legacy_grafting_repairs = (
+            set(documented) == {"BN-SRC-539", "BN-SRC-540", "BN-SRC-541"}
+            and mathparts(audited_grafting) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6343,6 +6356,7 @@ for row in rows:
             legacy_cut_intro_label_fix,
             legacy_cut_fragment_repairs,
             legacy_midsequent_repairs,
+            legacy_grafting_repairs,
         )
     )
     minimal_change_fileid_fix = (

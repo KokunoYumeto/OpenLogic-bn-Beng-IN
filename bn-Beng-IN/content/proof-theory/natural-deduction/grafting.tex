@@ -1,0 +1,98 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: grafting
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{gra}
+
+\olsection{প্রমাণ কলম-স্থাপন \usetoken{P}{proof}}
+
+\Log{N1c} ও~\Log{N1i}-তে !!^{proof}s হলো অনুমান~$!B$ থেকে
+!!{formula}s~$!A$-র !!{proof}s। ধরি, $!B$-র নিজস্ব !!a{proof}
+আছে। তাহলে $!B$ থেকে $!A$-র !!{proof}-এর সঙ্গে $!B$-র
+!!{proof} মিলিয়ে কীভাবে $!A$-র এমন !!a{proof} পাব, যাতে
+অনুমান~$!B$ ব্যবহার করা হয় না?
+
+একটি উপায় হলো, $!A$-র !!{proof} থেকে অনুমান~$!B$ বাদ দিতে
+\Intro{\lif} প্রয়োগ করা। তারপর $!B \lif !A$-র ফলিত
+!!{proof}-এর সঙ্গে $!B$-র !!{proof} মেলালে পাই
+\[
+\AxiomC{$\Discharge{!B}{x}$}
+\DeduceC{$!A$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !A$}
+\AxiomC{}
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!A$}
+\DisplayProof
+\]
+এটি সরল, কিন্তু খানিক বেখাপ্পা: সঙ্গে সঙ্গে বাদ দেওয়ার জন্য
+$\lif$ প্রথমে আনব কেন? $!B \lif !A$ ঘুরে এই অপ্রয়োজনীয়
+পথটি এড়ানো সম্ভব হওয়ার কথা। (সব ক্ষেত্রেই এমন পথ
+এড়ানো যায়—এটিই প্রকৃতপক্ষে স্বাভাবিকীকরণ উপপাদ্যের বক্তব্য।)
+% BN-SRC-539 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-539):} প্রদর্শিত ভূমিকা ও শেষ সিদ্ধান্তে $!A$ থাকায় মধ্যবর্তী নিষ্পাদনে উৎসের $!B\lif !C$-র বদলে $!B\lif !A$ রাখা হয়েছে।}
+% BN-SRC-539 TARGET-CORRECTION-END
+
+\Log{N1c} ও~\Log{N1i}-তে এই ক্ষেত্রে পথটি সহজেই এড়ানো যায়:
+অনুমান~$!B^x$-এর জায়গায় $!B$-র গোটা !!{proof}
+বসাই। অন্য প্রমাণের অনুমানে এভাবে !!{proof}s
+কলম-স্থাপন করা কাজে লাগে; তাই এর সংজ্ঞা দিই।
+
+\begin{defn}
+ধরি, $\delta_1$ হলো খোলা অনুমান~$!B^x$ থেকে
+$!A$-র \Log{N1c}-!!{proof} (অথবা \Log{N1i}-!!{proof}),
+আর $\delta_2$ হলো $!B$-র \Log{N1c}-!!{proof}
+(\Log{N1i}-!!{proof})। তাহলে $\delta_1$-তে অব্যাহতি
+না-পাওয়া~$!B^x$-র প্রতিটি সংঘটন $\delta_2$ দিয়ে
+প্রতিস্থাপন করলে যে প্রমাণ মেলে, সেটিই
+$\Subst{\delta_1}{\delta_2}{!B^x}$।
+\end{defn}
+
+যদি $\delta_1$ ও $\delta_2$-তে একই লেবেলযুক্ত ভিন্ন
+অনুমান-!!{formula}s না থাকে, এবং $\delta_2$-র কোনো খোলা
+অনুমানে $\delta_1$-এর কোনো ঈজেনচলক না ঘটে, তাহলে
+ফলিত $\Subst{\delta_1}{\delta_2}{!B^x}$ সঠিক !!{proof};
+এর খোলা অনুমানগুলি $\delta_1$ ও $\delta_2$-র খোলা
+অনুমান একত্রে। !!{proof}s কলম-স্থাপনের সময় সাধারণত
+এই শর্তগুলি পূরণ হয়। $\delta_1$ ও $\delta_2$ যদি
+বৃহত্তর কোনো !!{proof}-এর উপপ্রমাণ হয়, প্রথম শর্তটি
+পূরণ হয়। দ্বিতীয়টি না হলে $\delta_1$-এর ঈজেনচলকগুলির
+নাম বদলে তা পূরণ করা যায়।
+
+\Log{N2c} ও~\Log{N2i}-র জন্য অনুরূপ সংজ্ঞা প্রযোজ্য।
+
+\begin{defn}
+ধরি, $\delta_1$ হলো $x:!B, \Gamma_1 \Sequent !A$-র
+\Log{N2c}-!!{proof} (অথবা \Log{N2i}-!!{proof}), আর
+$\delta_2$ হলো $\Gamma_2 \Sequent !B$-র
+\Log{N2c}-!!{proof} (\Log{N2i}-!!{proof})। তাহলে
+$\delta_1$-এ $x:!B \Sequent !B$ রূপের প্রত্যেক স্বতঃসিদ্ধ
+$\delta_2$ দিয়ে প্রতিস্থাপন করে এবং ওই স্বতঃসিদ্ধগুলির
+নীচের প্রতিটি সিকোয়েন্টের প্রসঙ্গে $\Gamma_2$ যোগ করে
+যা পাওয়া যায়, সেটিই $\Subst{\delta_1}{\delta_2}{x:!B}$।
+\end{defn}
+% BN-SRC-540 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-540):} দ্বিতীয় সংজ্ঞায় সিকোয়েন্ট-প্রমাণের $\delta_2$-কে উৎসে N1c/N1i বলা হয়েছে; এখানে N2c/N2i করা হয়েছে।}
+% BN-SRC-540 TARGET-CORRECTION-END
+
+\begin{prop}
+যদি $\delta_1 \Proves x:!B, \Gamma_1 \Sequent
+!A$ এবং $\delta_2 \Proves \Gamma_2 \Sequent !B$ হয়,
+তাহলে $\delta_1$-এর কোনো ঈজেনচলক $\Gamma_2$-তে না
+ঘটলে $\Subst{\delta_1}{\delta_2}{x:!B} \Proves \Gamma_1, \Gamma_2 \Sequent
+!A$।
+\end{prop}
+
+\begin{proof}
+  $\pheight{\delta_1}$-এর উপর আরোহে প্রমাণ।
+\end{proof}
+% BN-SRC-541 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-541):} প্রস্তাবনায় $\delta_1,\delta_2$ সংজ্ঞায়িত, কিন্তু উৎসের এক-লাইনের প্রমাণে অনির্ধারিত $\delta$ আছে; আরোহের পরামিতি $\delta_1$ করা হয়েছে।}
+% BN-SRC-541 TARGET-CORRECTION-END
+
+\end{document}

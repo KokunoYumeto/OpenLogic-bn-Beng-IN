@@ -6320,6 +6320,40 @@ for row in rows:
             set(documented) == {f"BN-SRC-{n}" for n in range(555, 559)}
             and mathparts(audited_sequents) == target_math
         )
+    legacy_g2i_translation_math_repairs = False
+    if row["unit_id"] == "OLP-0670":
+        assert source.count(r"\Log{G2ci}") == 1
+        assert source.count(r"\Log{N2c}") == 1
+        audited_g2i = source
+        fixes = (
+            (
+                r"\RightLabel{\RightR{\Weakening}}" + "\n    "
+                + r"\UnaryInf$!A, \Gamma \fCenter \Delta$",
+                r"\RightLabel{\LeftR{\Weakening}}" + "\n    "
+                + r"\UnaryInf$!A, \Gamma \fCenter \Delta$",
+            ),
+            (r"in~$\pi_1$ by $x:!A$", r"in~$\delta_1$ by $x:!A$"),
+            (r"end-sequent of~$\pi_1$ we", r"end-sequent of~$\delta_1$ we"),
+            (r"in~$\pi_1$ discharges", r"in~$\delta_1$ discharges"),
+            (r"in~$\pi_1$ is", r"in~$\delta_1$ is"),
+            (r"in~$\pi_1$ to ensure", r"in~$\delta_1$ to ensure"),
+            (r"in~$\pi_2$ we can", r"in~$\delta_2$ we can"),
+            (
+                r"$\delta_2$ of $\Gamma_2' \Sequent !A$",
+                r"$\delta_2$ of $\Gamma_2' \Sequent !B$",
+            ),
+            (
+                r"\BinaryInf$x: !A \lif !B \fCenter !B$",
+                r"\BinaryInf$x: !A \lif !B, \Gamma_1' \fCenter !B$",
+            ),
+        )
+        for old, new in fixes:
+            assert audited_g2i.count(old) == 1, old
+            audited_g2i = audited_g2i.replace(old, new, 1)
+        legacy_g2i_translation_math_repairs = (
+            set(documented) == {f"BN-SRC-{n}" for n in range(559, 568)}
+            and mathparts(audited_g2i) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6461,6 +6495,7 @@ for row in rows:
             legacy_n2_caption_rule_names,
             legacy_nd_rules_proofs_math_repairs,
             legacy_nd_sequents_math_repairs,
+            legacy_g2i_translation_math_repairs,
         )
     )
     minimal_change_fileid_fix = (

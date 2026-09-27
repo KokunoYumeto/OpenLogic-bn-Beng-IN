@@ -1,0 +1,290 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: translation-G2i
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{tgi}
+
+\olsection{\Log{G2i} থেকে \Log{N2i}-তে অনুবাদ}
+
+\Log{G2i}-এর সিকোয়েন্টের বাঁ অংশ হলো
+!!{formula}s-এর বহুসেট~$\Gamma$; কিন্তু
+\Log{N2i}-এর সিকোয়েন্টের বাঁ অংশ হলো
+চিহ্নযুক্ত সূত্রের সেট~$\Gamma'$, যেখানে
+প্রতিটি চিহ্ন মাত্র একবার ঘটে। চিহ্নযুক্ত
+!!{formula}s-এর সেট~$\Gamma'$-কে বহুসেট~$\Gamma$-র
+\emph{সঙ্গত} বলব যদি প্রত্যেক !!{formula}~$!A$-এর
+জন্য $\Gamma'$-তে $x : !A$ রূপের !!{element}s-এর
+সংখ্যা $\Gamma$-তে~$!A$-এর পুনরাবৃত্তি-সংখ্যার
+(অর্থাৎ~$!A$-এর অনুলিপির সংখ্যার) বেশি না হয়।
+
+\begin{prop}\ollabel{prop:G2i-to-N2i}
+যদি $\Log{G2i} + \Cut \Proves \Gamma \Sequent \Delta$,
+তাহলে $\Log{N2i} \Proves \Gamma' \Sequent !C$,
+যেখানে $\Delta$ ফাঁকা হলে $!C \ident \lfalse$,
+অন্যথায় $\Delta = \{!A\}$; এবং $\Gamma'$
+হলো~$\Gamma$-র সঙ্গত।
+\end{prop}
+
+\begin{proof}
+  দেখাই, $\pi$ যদি \Log{G2i}-তে
+  $\Gamma \Sequent \Delta$-র !!a{proof} হয়,
+  তাহলে $\Gamma$-র সঙ্গত কোনো~$\Gamma'$ এবং
+  \Log{N2i}-তে $\Gamma' \Sequent !C$-এর
+  !!a{proof}~$\delta$ আছে। $n = \pheight{\pi}$-র
+  উপর আরোহ করি।
+  % BN-SRC-559 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-559):} প্রমাণের শুরুতে উৎসে অনির্দিষ্ট G2ci লেখা; প্রস্তাবনা ও সারা অধ্যায় অনুযায়ী G2i নেওয়া হয়েছে।}
+  % BN-SRC-559 TARGET-CORRECTION-END
+
+  $n = 0$ হলে $\pi$ একটি স্বতঃসিদ্ধ। সেটি
+  $\lfalse \Sequent \quad$ স্বতঃসিদ্ধ হলে
+  $\delta$ হলো $x:\lfalse \Sequent \lfalse$
+  স্বতঃসিদ্ধ; অর্থাৎ $\Gamma' = \{x:\lfalse\}$
+  এবং $!C \ident \lfalse$। $\pi$ যদি
+  $!A \Sequent !A$ রূপের স্বতঃসিদ্ধ হয়,
+  তাহলে $\delta$ হলো $x: !A \Sequent !A$।
+
+  $n>0$ হলে $\pi$-র শেষে কোনো বিধি~$R$ আছে।
+  আরোহের অনুমানে তার পূর্বধারণাগুলির
+  অনুরূপ সিকোয়েন্টের !!{proof}s \Log{N2i}-তে
+  আছে। দরকারে চিহ্ন বদলে ধরে নিতে পারি,
+  ওই প্রমাণগুলিতে সব অবমুক্তি-চিহ্ন আলাদা;
+  কোনো চিহ্ন~$x$ যদি অবমুক্ত হয়, তবে যে
+  অনুমানবিধি তাকে অবমুক্ত করে তার উপরের
+  অংশেই সেটি ঘটে। এবার দেখাই, ওই !!{proof}s
+  মিলিয়ে উপযুক্ত $\Gamma' \Sequent !C$-এর
+  প্রমাণ পাওয়া যায়। $R$ অনুযায়ী ক্ষেত্রগুলি:
+  % BN-SRC-560 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-560):} এই আরোহবাক্যে উৎসে N2c লেখা, যদিও প্রস্তাবনা ও সব ক্ষেত্র N2i-র; এখানে N2i করা হয়েছে।}
+  % BN-SRC-560 TARGET-CORRECTION-END
+
+  \begin{enumerate}
+    \item $R$ যদি \RightR{\Weakening} হয়, $\pi$-র শেষাংশ
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma \fCenter$
+    \RightLabel{\RightR{\Weakening}}
+    \UnaryInf$\Gamma \fCenter !A$
+    \DisplayProof
+    \]
+    $\pi_1$-এ আরোহের অনুমান প্রয়োগে
+    $\Gamma' \Sequent \lfalse$-এর !!a{proof}
+    পাই। তাতে $\FalseInt$ প্রয়োগে
+    $\Gamma' \Sequent !A$-এর !!a{proof} পাই।
+    \item $R$ যদি \LeftR{\Weakening} হয়,
+    $\pi$-র শেষাংশ
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\Weakening}}
+    \UnaryInf$!A, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \]
+    $\pi_1$-এ আরোহের অনুমান প্রয়োগে
+    $\Gamma' \Sequent !C$-এর !!a{proof}
+    পাই; সেটিই $\delta$ নিই। কারণ
+    $\Gamma'$ যদি $\Gamma$-র সঙ্গত হয়,
+    তবে $!A,\Gamma$-রও সঙ্গত: $\Gamma'$-তে
+    $x : !A$-এর সংখ্যা $\Gamma$-তে~$!A$-এর
+    অনুলিপির সংখ্যার বেশি নয়, তাই
+    $\Gamma \cup \{!A\}$-তে~$!A$-এর
+    অনুলিপির সংখ্যারও বেশি নয়।
+    % BN-SRC-561 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-561):} উৎসচিত্রে বাঁ-দুর্বলীকরণের বিধি ডান-দুর্বলীকরণ নামে চিহ্নিত; প্রদর্শিত বাম অংশে !A যোগের সঙ্গে মিলিয়ে \LeftR{\Weakening} করা হয়েছে।}
+    % BN-SRC-561 TARGET-CORRECTION-END
+    \item $R$ যদি \LeftR{\Contraction} হয়,
+    $\pi$-র শেষাংশ
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$!A, !A, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\Contraction}}
+    \UnaryInf$!A, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \]
+    $\pi_1$-এ আরোহের অনুমান প্রয়োগে
+    $\Pi, \Gamma' \Sequent !C$-এর
+    !!a{proof} পাই, যেখানে
+    $\Pi \subseteq \{x : !A, y:!A\}$।
+    $\Pi = \{x : !A, y:!A\}$ হলে,
+    ওই N2 উপপ্রমাণ~$\delta_1$-এ
+    $y:!A$ রূপের সব চিহ্নযুক্ত
+    !!{formula}s-কে $x:!A$ দিয়ে বদলাই।
+    $x$ উপপ্রমাণ~$\delta_1$-এর অন্তিম
+    সিকোয়েন্টের প্রসঙ্গে থাকে বলে
+    ধরে নিতে পারি, $\delta_1$-এর কোনো
+    অনুমানবিধি $x:!B$ রূপের !!a{formula}
+    অবমুক্ত করে না; অর্থাৎ $\delta_1$-এর
+    কোনো সিকোয়েন্টের বাঁ দিকে $x:!B$
+    সক্রিয় নয়। অতএব ফলটিও \Log{N2i}-তে
+    !!a{proof}।
+    % BN-SRC-562 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-562):} সংকোচনের চিহ্ন-বদল ও অবমুক্তি-পরীক্ষা উৎসে G2 উপপ্রমাণ $\pi_1$-তে করা হয়েছে; চিহ্নযুক্ত সিকোয়েন্টগুলি আসলে আরোহফলে পাওয়া N2 উপপ্রমাণ $\delta_1$-তে, তাই তিন স্থানে সেটিই নেওয়া।}
+    % BN-SRC-562 TARGET-CORRECTION-END
+    \item $R$ যদি $\RightR{\lif}$ হয়,
+    $\pi$-র শেষাংশ
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$!A, \Gamma \fCenter !B$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\Gamma \fCenter !A \lif !B$
+    \DisplayProof
+    \]
+    আরোহের অনুমানে $\Gamma$-র সঙ্গত
+    $\Gamma'$-র জন্য $x: !A, \Gamma'
+    \Sequent !B$ অথবা $\Gamma' \Sequent !B$-এর
+    !!a{proof}~$\delta_1$ আছে। $\delta_1$-এর
+    পরে \Intro{\lif} প্রয়োগ করে
+    $\delta$ পাই।
+    % BN-SRC-563 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-563):} উৎসের শেষ বাক্যে নির্মাণের দিক উল্টো: $\delta_1$-কে $\delta$ থেকে নয়, $\delta_1$-এর পরে →-ভূমিকা দিয়ে $\delta$ গড়া হয়।}
+    % BN-SRC-563 TARGET-CORRECTION-END
+    \item $R$ যদি \LeftR{\lif} হয়,
+    $\pi$-র শেষাংশ
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma_1 \fCenter !A$
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$!B, \Gamma_2 \fCenter \Delta$
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$!A \lif !B, \Gamma_1, \Gamma_2 \fCenter \Delta$
+    \DisplayProof
+    \]
+    আরোহের অনুমানে $\Gamma_1' \Sequent !A$-এর
+    !!{proof}s~$\delta_1$ এবং
+    $x: !B, \Gamma_2' \Sequent !C$ অথবা
+    $\Gamma_2' \Sequent !C$-এর
+    $\delta_2$ পাই। $\delta_2$ দ্বিতীয় রূপের
+    হলে $\delta_2$-ই $\delta$ হতে পারে। নইলে
+    N2 উপপ্রমাণ~$\delta_1$-এর সব সূত্রচিহ্ন
+    ও অবমুক্তি-চিহ্ন দরকারে বদলে নিই,
+    যাতে $\delta_1$ ও~$\delta_2$-তে
+    কোনো অভিন্ন চিহ্ন না থাকে। তখন
+    $\Gamma_1' \cup \Gamma_2'$ হলো
+    $\Gamma_1 \cup \Gamma_2$-র সঙ্গত।
+    $x:!B$ যেহেতু~$\delta_2$-এর অন্তিম
+    সিকোয়েন্টে আছে, তাই~$\delta_2$-তে
+    $x$ অবমুক্তি-চিহ্নের কোনো অনুমানবিধিতে
+    $x:!B$ সক্রিয় হতে পারে না। $\delta_2$-র
+    প্রতিটি $x:!B \Sequent !B$ স্বতঃসিদ্ধের
+    স্থলে !!{proof}~$\delta_3$ বসাই:
+    \[
+    \Axiom$x: !A \lif !B \fCenter !A \lif !B$
+    \AxiomC{}
+    \RightLabel{$\delta_1$}
+    \Deduce$\Gamma_1' \fCenter !A$
+    \RightLabel{\Elim{\lif}}
+    \BinaryInf$x: !A \lif !B, \Gamma_1' \fCenter !B$
+    \DisplayProof
+    \]
+    আর $\delta_2$-তে $x:!B$-এর প্রতিটি
+    সংঘটন $x:!A \lif !B$ দিয়ে বদলাই।
+    ফল $\Subst{\delta_2}{\delta_3}{x:!B}$
+    হলো $x:!A \lif !B, \Gamma_1',
+    \Gamma_2' \Sequent !C$-এর !!a{proof}।
+    % BN-SRC-564 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-564):} বাঁ → ক্ষেত্রের চিহ্ন-বদল উৎসে G2 উপপ্রমাণ $\pi_1$-তে নির্দেশিত; N2 চিহ্নযুক্ত উপপ্রমাণ $\delta_1$-তেই তা প্রযোজ্য।}
+    % BN-SRC-564 TARGET-CORRECTION-END
+    % BN-SRC-565 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-565):} উৎসের $\delta_3$ বৃক্ষের সিদ্ধান্তে $\Gamma_1'$ বাদ পড়ে, যদিও দ্বিতীয় শাখা $\Gamma_1' \Sequent !A$-এর উপর নির্ভর করে; N2 →-নিষ্কাশনে ওই প্রসঙ্গও সিদ্ধান্তে রাখা হয়েছে।}
+    % BN-SRC-565 TARGET-CORRECTION-END
+    \item $R$ যদি \RightR{\land} হয়,
+    $\pi$-র শেষাংশ
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma_1 \fCenter !A$
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$\Gamma_2 \fCenter !B$
+    \RightLabel{\RightR{\land}}
+    \BinaryInf$\Gamma_1, \Gamma_2 \fCenter !A \land !B$
+    \DisplayProof
+    \]
+    আরোহের অনুমানে $\Gamma_1' \Sequent !A$-এর
+    প্রমাণ~$\delta_1$ এবং
+    $\Gamma_2' \Sequent !B$-এর
+    $\delta_2$ পাই। N2 উপপ্রমাণ~$\delta_2$-র
+    সব সূত্রচিহ্ন ও অবমুক্তি-চিহ্ন বদলে
+    $\delta_1$ ও~$\delta_2$-র চিহ্নগুলি
+    পৃথক রাখা যায়। তখন
+    $\Gamma_1' \cup \Gamma_2'$ হলো
+    $\Gamma_1 \cup \Gamma_2$-র সঙ্গত।
+    $\delta_1$ ও~$\delta_2$-র অন্তিম
+    সিকোয়েন্টে $\Intro{\land}$ প্রয়োগে
+    !!a{proof}~$\delta$ পাই।
+    % BN-SRC-566 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-566):} ডান ∧ ক্ষেত্রের দ্বিতীয় আরোহফল উৎসে ভুলে $\Gamma_2' \Sequent !A$; প্রদর্শিত দ্বিতীয় পূর্বধারণা অনুযায়ী $!B$। চিহ্ন-বদলও G2 উপপ্রমাণ $\pi_2$ নয়, N2 উপপ্রমাণ $\delta_2$-তে করা হয়েছে।}
+    % BN-SRC-566 TARGET-CORRECTION-END
+    \item $R$ যদি $\LeftR{\land}$ হয়,
+    যেমন, $\pi$-র শেষাংশ
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$!A, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \]
+    আরোহের অনুমানে $\Gamma$-র সঙ্গত
+    $\Gamma'$-র জন্য $x: !A, \Gamma'
+    \Sequent !C$ অথবা $\Gamma' \Sequent !C$-এর
+    !!a{proof}~$\delta_1$ আছে। দ্বিতীয়
+    রূপে $\delta$ হিসেবেই $\delta_1$ নিই।
+    প্রথম রূপে লক্ষ করি, $x:!A$ অন্তিম
+    সিকোয়েন্টে থাকায় $\delta_1$-এর
+    $x$ অবমুক্তি-চিহ্নের কোনো বিধিতে
+    $x:!A$ সক্রিয় নয়। প্রতিটি
+    $x:!A \Sequent !A$ স্বতঃসিদ্ধের
+    স্থলে !!{proof}~$\delta_2$ বসাই:
+    \[
+    \Axiom$x: !A \land !B \fCenter !A \land !B$
+    \RightLabel{\Elim{\land}}
+    \UnaryInf$x: !A \land !B \fCenter !A$
+    \DisplayProof
+    \]
+    এবং $x:!A$-এর প্রতিটি সংঘটন
+    $x:!A \land !B$ দিয়ে বদলাই; অর্থাৎ
+    $\Subst{\delta_1}{\delta_2}{x:!A}$ নিই।
+    এটি $x:!A \land !B, \Gamma'
+    \Sequent !C$-এর !!a{proof}।
+    % BN-SRC-567 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-567):} দ্বিতীয় রূপে উৎসে $\delta_1$-কে $\delta$ থেকে পাওয়া বলা হয়েছে; এখানে ইতিমধ্যে পাওয়া $\delta_1$-কেই চাওয়া $\delta$ নেওয়া হয়েছে।}
+    % BN-SRC-567 TARGET-CORRECTION-END
+    \item $R$ যদি \Cut হয়, $\pi$-র শেষাংশ
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma_1 \fCenter !A$
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$!A, \Gamma_2 \fCenter \Delta$
+    \RightLabel{\Cut}
+    \BinaryInf$\Gamma_1, \Gamma_2 \fCenter \Delta$
+    \DisplayProof
+    \]
+    আরোহের অনুমানে $\Gamma_1' \Sequent !A$-এর
+    প্রমাণ~$\delta_1$ এবং
+    $x:!A, \Gamma_2' \Sequent !C$ অথবা
+    $\Gamma_2' \Sequent !C$-এর
+    $\delta_2$ পাই। দ্বিতীয় রূপে
+    $\delta$ হিসেবে~$\delta_2$ নিই।
+    অন্যথায় $\delta_2$-র প্রতিটি
+    $x:!A \Sequent !A$ স্বতঃসিদ্ধের
+    স্থলে $\delta_1$ বসিয়ে
+    $\Gamma_1', \Gamma_2' \Sequent !C$-এর
+    !!{proof}~$\Subst{\delta_2}{\delta_1}{x:!A}$
+    অর্থাৎ~$\delta$ পাই।
+  \end{enumerate}
+\end{proof}
+
+\end{document}

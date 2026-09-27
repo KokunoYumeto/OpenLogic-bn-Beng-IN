@@ -6676,6 +6676,22 @@ for row in rows:
             r"!B\fCenter\lfalse": 1,
         })
     )
+    legacy_types_constructor_repairs = False
+    if row["unit_id"] == "OLP-0697":
+        audited_types = source
+        fixes = (
+            (r"\inj[!B]{i}{!M}", r"\inj[!B]{i}{N}"),
+            (r"\dcase{M}{x_1}{N_1}{x_2}{N_2}",
+             r"\dcase{M}{x}{N_1}{y}{N_2}"),
+        )
+        for old, new in fixes:
+            assert audited_types.count(old) == 1, old
+            audited_types = audited_types.replace(old, new, 1)
+        legacy_types_constructor_repairs = (
+            set(documented) == {"BN-SRC-621", "BN-SRC-622", "BN-SRC-623"}
+            and set(normalizations) == {"BN-NORM-180"}
+            and mathparts(audited_types) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6831,6 +6847,7 @@ for row in rows:
             legacy_proof_term_constructor_repairs,
             legacy_proof_term_reduction_repairs,
             legacy_sequent_nd_example_repairs,
+            legacy_types_constructor_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -6903,6 +6920,15 @@ for row in rows:
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\ollabel{tab:tN3ip}": 1})
     )
+    legacy_tn3_table_reference_fix = (
+        row["unit_id"] == "OLP-0697"
+        and set(documented) == {"BN-SRC-621", "BN-SRC-622", "BN-SRC-623"}
+        and set(normalizations) == {"BN-NORM-180"}
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\olref{tab:tN2ip}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\olref{tab:tN3ip}": 1})
+    )
     controls_ok = (
         controls(source) == controls(checked_target)
         or axd_control_fix
@@ -6919,6 +6945,7 @@ for row in rows:
         or ordinal_exponentiation_citation_localization
         or legacy_cut_largest_reference_repairs
         or legacy_tn3_table_label_fix
+        or legacy_tn3_table_reference_fix
     )
     legacy_cut_intro_split_token_fix = (
         row["unit_id"] == "OLP-0659"
@@ -7074,6 +7101,16 @@ for row in rows:
         tex_command_check = {
             "documented_source_corrections": ["BN-SRC-619", "BN-SRC-620"],
             "closing_double_negation_tree": True,
+        }
+    if row["unit_id"] == "OLP-0697":
+        assert legacy_types_constructor_repairs and legacy_tn3_table_reference_fix
+        assert source.count(r"\text{ or }") == checked_target.count(r"\text{ বা }") == 1
+        assert source.count(r"\text{ if") == checked_target.count(r"\text{ যদি") == 2
+        assert checked_target.count(r"\subfile{rules-tN3}") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-621", "BN-SRC-622", "BN-SRC-623"],
+            "documented_language_normalization": "BN-NORM-180",
+            "typed_constructors_and_tn3_reference": True,
         }
     checks = {
         "unit_id": row["unit_id"],

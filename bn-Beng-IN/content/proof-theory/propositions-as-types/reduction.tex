@@ -1,0 +1,236 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: reduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{red}
+
+\olsection{হ্রাস}
+
+স্বাভাবিক নিষ্পাদনের !!{derivation}s-এ
+!!a{introduction} বিধির পরেই !!a{elimination}
+বিধি এলে একটি ঘুরপথ হয়, যা “হ্রাস” করা যায়।
+যেমন, $\Intro{\land}$-এর পরে $\Elim{\land}$
+এলে বিধিদুটি “বাতিল” হয়: $\Elim{\land}$-এর
+সিদ্ধান্ত হলো \Intro{\land}-এ গড়া সংযোজনটির
+দুটি সংযোজ্যের একটি, আর $\Intro{\land}$-এর
+পূর্বধারণাগুলিই সেই দুটি সংযোজ্য।
+তাই কোনো সংযোজ্যের !!a{derivation} দরকার
+হলে সংযোজনটির ভূমিকা ও পরে নিষ্কাশন
+না করেই সংশ্লিষ্ট !!{derivation} ব্যবহার করি:
+\begin{gather*}
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A_2$}
+  \RightLabel{$\Intro{\land}$}
+  \BinaryInfC{$!A_1 \land !A_2$}
+  \RightLabel{$\Elim{\land}_i$}
+  \UnaryInfC{$!A_i$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \quad
+  \AxiomC{}
+  \RightLabel{$\delta_i$}
+  \DeduceC{$!A_i$}
+  \DisplayProof
+\end{gather*}
+
+এই সরলীকরণ থেকে সংশ্লিষ্ট প্রমাণপদগুলির
+জন্যও অনুরূপ হ্রাস-সম্বন্ধ ভাবতে পারি।
+$N_1$ যদি~$\delta_1$-এর প্রমাণপদ
+এবং $N_2$ যদি~$\delta_2$-এর হয়,
+তবে বাঁয়ের প্রমাণের প্রমাণপদ এক ধাপে
+ডানের প্রমাণের প্রমাণপদে হ্রাস পায়:
+\[
+  \proj{i}{\pair{N_1}{N_2}} \redone N_i
+\]
+% BN-SRC-615 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-615):} উৎসে যুগল-নির্মাতার দুটি যুক্তি একটি বন্ধনীর ভিতরে কমা দিয়ে লেখা; \(\pair{N_1}{N_2}\)-তে বিধি ও পূর্বধারণা অনুযায়ী দুটি স্বতন্ত্র যুক্তি দেওয়া হয়েছে।}
+% BN-SRC-615 TARGET-CORRECTION-END
+টাইপযুক্ত ল্যাম্বডা ক্যালকুলাসে এটিই
+গুণন-টাইপের \emph{বিটা-হ্রাস} বিধি।
+
+স্বাভাবিক নিষ্পাদনে \Intro{\land}-এর
+পরে \Elim{\land}-এর মতো যে বিধিযুগল
+হ্রাস করা যায়, তাকে \emph{কর্তন}
+বলে। টাইপযুক্ত ল্যাম্বডা ক্যালকুলাসে
+$\redone$-এর বাঁয়ের পদটিকে
+\emph{রিডেক্স} এবং ডানের পদটিকে
+\emph{সংকুচিত রূপ} বলে। টাইপবিহীন
+ল্যাম্বডা ক্যালকুলাসে শুধু
+$(\lambd[x][N])Q$-কেই রিডেক্স ধরা হয়;
+টাইপযুক্ত ল্যাম্বডা ক্যালকুলাসে
+$\pair{N}{M}$, $\proj{i}{N}$,
+$\inj[!A]{i}{N}$,
+$\dcase{N}{x_1}{M_1}{x_2}{M_2}$
+ও $\abort{!A}{N}$-যুক্ত পদ
+যোগ হওয়ায় সংশ্লিষ্ট রিডেক্সও আছে।
+% BN-SRC-616 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-616):} অন্তর্ভুক্তি-নির্মাতার উৎসরূপ \(\inj{i}{!A}{N}\) পাশের tN2i বিধির ঐচ্ছিক টাইপ-যুক্তির রীতি মানে না; এখানে \(\inj[!A]{i}{N}\) করা হয়েছে।}
+% BN-SRC-616 TARGET-CORRECTION-END
+
+অনুরূপভাবে বিযোজনের হ্রাস:
+\begin{gather*}
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\Intro{\lor}$}
+  \UnaryInfC{$!A_1 \lor !A_2$}
+  \AxiomC{$\Discharge{!A_1}{x_1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C$}
+  \AxiomC{$\Discharge{!A_2}{x_2}$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!C$}
+  \DischargeRule{$\Elim{\lor}$}{x_1,x_2}
+  \TrinaryInfC{$!C$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \quad
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\delta_i$}
+  \DeduceC{$!C$}
+  \DisplayProof
+\end{gather*}
+এর অনুরূপ প্রমাণপদের হ্রাস:
+\begin{gather*}
+  \dcase{\inj[!A_i]{i}{M}}{x_1}{N_1}{x_2}{N_2} \redone \Subst{N_i}{M}{x_i}
+\end{gather*}
+এখানে $M$ হলো~$\delta$-র প্রমাণপদ,
+আর $N_i$ হলো~$\delta_i$-র প্রমাণপদ।
+সমষ্টি-টাইপের বিটা-হ্রাস বিধি এটিই।
+এখানে $\Subst{M}{N_i}{x}$ মানে
+$M$-এ চলরাশি~$x$-এর সব মুক্ত
+আবির্ভাবের জায়গায়~$N_i$ বসানো।
+
+অপেক্ষক-টাইপের হ্রাস $\Intro\lif$-এর
+পরে $\Elim\lif$-এর ঘুরপথ সরানোর
+অনুরূপ:
+\begin{gather*}
+  \bottomAlignProof
+  \AxiomC{$\Discharge{!A}{x}$}
+  \RightLabel{$\delta$}
+  \DeduceC{$!B$}
+  \DischargeRule{$\Intro{\lif}$}{x}
+  \UnaryInfC{$!A \lif !B$}
+  \AxiomC{}
+  \RightLabel{$\delta'$}
+  \DeduceC{$!A$}
+  \RightLabel{$\Elim{\lif}$}
+  \BinaryInfC{$!B$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \quad
+  \AxiomC{}
+  \RightLabel{$\delta'$}
+  \DeduceC{$!A$}
+  \RightLabel{$\delta$}
+  \DeduceC{$!B$}
+  \DisplayProof
+\end{gather*}
+প্রমাণপদে এটি সাধারণ বিটা-হ্রাস:
+\begin{gather*}
+  (\lambd[\typeof{x}{!A}][N]M)
+  \redone \Subst{N}{M}{x}
+\end{gather*}
+
+!!{proof}s-এর হ্রাস-রূপান্তরের
+পাশাপাশি বিন্যাস-রূপান্তরও
+বিবেচনা করি। কোনো (উপ-)!!{proof}s
+যদি \Elim{\lor}-এর পরে আরেকটি
+!!{elimination} বিধিতে শেষ হয়,
+তাতে এই রূপান্তর প্রযোজ্য; যেমন:
+\begin{multline*}
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\Intro{\lor}$}
+  \UnaryInfC{$!A_1 \lor !A_2$}
+  \AxiomC{$\Discharge{!A_1}{x_1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \AxiomC{$\Discharge{!A_2}{x_2}$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \DischargeRule{$\Elim{\lor}$}{x_1,x_2}
+  \TrinaryInfC{$!C_1 \land !C_2$}
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInfC{$!C_i$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \\
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\Intro{\lor}$}
+  \UnaryInfC{$!A_1 \lor !A_2$}
+  \AxiomC{$\Discharge{!A_1}{x_1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInfC{$!C_i$}
+  \AxiomC{$\Discharge{!A_2}{x_2}$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInfC{$!C_i$}
+  \DischargeRule{$\Elim{\lor}$}{x_1,x_2}
+  \TrinaryInfC{$!C_i$}
+  \DisplayProof
+\end{multline*}
+$\delta$, $\delta_1$ ও $\delta_2$-র
+প্রমাণপদ যথাক্রমে $M$, $N_1$ ও
+$N_2$ হলে প্রমাণপদ, অর্থাৎ
+$\lambd$-পদের অনুরূপ হ্রাসবিধি:
+\[
+  \proj{i}{\dcase{M}{x_1}{N_1}{x_2}{N_2}} \redone
+\dcase{M}{x_1}{\proj{i}{N_1}}{x_2}{\proj{i}{N_2}}
+\]
+
+!!{proof}s-এর শুধু শেষেই নয়,
+!!{proof}s-এর ভিতরেও ঘুরপথ সরানো যায়:
+ঘুরপথে শেষ হওয়া কোনো উপ-!!{proof}-এ
+হ্রাস-রূপান্তর প্রয়োগ করি।
+অনুরূপভাবে $\lambd$-পদের
+উপপদেও $\beta$-হ্রাস প্রযোজ্য।
+$N$ যদি $M$-এর উপপদ হয় এবং
+$N \redone N'$ হয়, তবে
+$M$-এ উপপদ~$N$-এর জায়গায়
+$N'$ বসিয়ে $M'$ পাই। তখন
+$M \redone M'$-ও লিখি।
+$M = M_1 \redone M_2
+\redone M_3 \redone \dots
+\redone M_k = M'$ রূপের
+অনুক্রম থাকলে (এমনকি $k=1$,
+অর্থাৎ $M=M'$ হলেও)
+$M \red M'$ লিখি।
+% BN-SRC-617 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-617):} হ্রাস-অনুক্রমে উৎসের \(M_2\) পরপর দুবার ছিল; তৃতীয় পদটি \(M_3\) করা হয়েছে। শূন্য-ধাপের \(k=1\) ক্ষেত্র অক্ষত।}
+% BN-SRC-617 TARGET-CORRECTION-END
+
+যে !!{proof}-এর কোনো
+উপ-!!{proof}-এ কোনো রূপান্তর
+প্রয়োগ করা যায় না, তাকে
+\emph{স্বাভাবিক} বলে।
+অনুরূপভাবে যে $\lambd$-পদের
+কোনো উপপদে রূপান্তর প্রযোজ্য
+নয়, সেটিও \emph{স্বাভাবিক}।
+স্বাভাবিক $\lambd$-পদকে
+\emph{স্বাভাবিক রূপ}-ও বলে।
+
+\end{document}

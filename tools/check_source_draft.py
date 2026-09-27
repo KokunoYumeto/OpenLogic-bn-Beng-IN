@@ -6633,6 +6633,22 @@ for row in rows:
             and not normalizations
             and mathparts(audited_terms) == target_math
         )
+    legacy_proof_term_reduction_repairs = False
+    if row["unit_id"] == "OLP-0691":
+        audited_reduction = source
+        fixes = (
+            (r"\pair{N_1, N_2}", r"\pair{N_1}{N_2}"),
+            (r"\inj{i}{!A}{N}", r"\inj[!A]{i}{N}"),
+            (r"\redone M_2 \redone M_2", r"\redone M_2 \redone M_3"),
+        )
+        for old, new in fixes:
+            assert audited_reduction.count(old) == 1, old
+            audited_reduction = audited_reduction.replace(old, new, 1)
+        legacy_proof_term_reduction_repairs = (
+            set(documented) == {"BN-SRC-615", "BN-SRC-616", "BN-SRC-617"}
+            and not normalizations
+            and mathparts(audited_reduction) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6786,6 +6802,7 @@ for row in rows:
             legacy_search_tableaux_repairs,
             legacy_propositions_normalization_repairs,
             legacy_proof_term_constructor_repairs,
+            legacy_proof_term_reduction_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -6989,6 +7006,15 @@ for row in rows:
         tex_command_check = {
             "documented_source_corrections": ["BN-SRC-612", "BN-SRC-613", "BN-SRC-614"],
             "constructor_arguments_and_injection_term": True,
+        }
+    if row["unit_id"] == "OLP-0691":
+        assert legacy_proof_term_reduction_repairs
+        assert checked_target.count(r"\Subst{N_i}{M}{x_i}") == 1
+        assert checked_target.count(r"\Subst{M}{N_i}{x}") == 1
+        assert checked_target.count(r"\pair{N_1}{N_2}") >= 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-615", "BN-SRC-616", "BN-SRC-617"],
+            "product_sum_and_sequence": True,
         }
     checks = {
         "unit_id": row["unit_id"],

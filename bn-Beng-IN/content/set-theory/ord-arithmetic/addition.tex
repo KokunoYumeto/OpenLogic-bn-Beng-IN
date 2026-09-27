@@ -1,0 +1,234 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{add}
+\olsection{ক্রমসংখ্যার যোগ}
+
+ধরি, আমরা $\alpha$ ও $\beta$ যোগ করতে চাই।
+$\alpha$-র একটি {অনুলিপির} ঠিক পরে $\beta$-র একটি
+অনুলিপি বসালেই হয়। (অনুলিপি নিতে হয়, কারণ
+\olref[ordinals][basic]{ordinalsaresubsets} থেকে জানি,
+$\alpha \subseteq \beta$ অথবা $\beta \subseteq \alpha$।)
+স্বজ্ঞাগতভাবে এতে প্রথমে $\alpha$-দীর্ঘ একটি ধাপক্রম,
+\emph{তার পরে} $\beta$-দীর্ঘ আরেকটি ধাপক্রম পাওয়া যায়।
+ফলের ক্রমটি সুক্রমবিন্যস্ত; তাই
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}
+অনুযায়ী এটি একটি (অনন্য) ক্রমসংখ্যার সঙ্গে সমরূপ।
+সেই ক্রমসংখ্যাকে $\alpha$ ও $\beta$-র \emph{যোগফল}
+ধরা যায়।
+
+ক্রমসংখ্যার যোগের পেছনে এই স্বজ্ঞাই কাজ করে।
+কঠোর সংজ্ঞা দিতে প্রথমে সেটের \emph{অনুলিপি} নেওয়ার
+ধারণা ব্যবহার করি। কোন বস্তুটি কোথা থেকে এসেছে তা
+চিহ্নিত রাখতে এখানে যথেচ্ছ চিহ্ন $0$ ও $1$ নিই:
+
+\begin{defn}\ollabel{defdissum}
+$A$ ও $B$-র \emph{বিযুক্ত যোগফল} হলো $A \disjointsum B =
+(A\times \{0\}) \cup (B \times \{1\})$।
+\end{defn}
+
+এবার ক্রমসংখ্যার জোড়গুলির উপর একটি ক্রম সংজ্ঞায়িত করি:
+
+\begin{defn}
+যেকোনো ক্রমসংখ্যা $\alpha_1, \alpha_2, \beta_1, \beta_2$-এর জন্য ধরি:
+\begin{align*}
+	\tuple{\alpha_1, \alpha_2} \rlexless \tuple{\beta_1, \beta_2}\text{ যদি এবং কেবল যদি }&
+	\text{হয় $\alpha_2 \in \beta_2$}\\
+	& \text{নয়তো $\alpha_2 = \beta_2$ এবং $\alpha_1 \in \beta_1$}
+\end{align*}
+\end{defn}
+
+এটি \emph{বিপরীত অভিধানিক} ক্রম: আগে দ্বিতীয়
+স্থানাঙ্ক, তার পরে প্রথম স্থানাঙ্ক দিয়ে তুলনা করা হয়।
+আমাদের উদ্দেশ্য ছিল, $\alpha$-র একটি অনুলিপির পরে
+$\beta$-র একটি অনুলিপি বসিয়ে যে ক্রম পাওয়া যায়,
+তার ক্রমপ্রকারকে $\alpha \ordplus \beta$ বলা। তাই ধরি:
+
+\begin{defn}\ollabel{defordplus}
+যেকোনো ক্রমসংখ্যা $\alpha$, $\beta$-র যোগফল
+$\alpha \ordplus \beta = \ordtype{\alpha \disjointsum \beta,
+\rlexless}$।
+\end{defn}
+\noindent
+এখানে আমরা সংকেতের সামান্য শিথিল ব্যবহার করেছি;
+কঠোরভাবে ``$\rlexless$''-এর বদলে
+``$\Setabs{\tuple{x,y}\in \alpha\disjointsum\beta}{x \rlexless y}$''
+লেখা উচিত। সংক্ষিপ্ততার জন্য পরেও এভাবে সংকেত ব্যবহার করব।
+
+নিচের ফলটি ও
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}
+মিলে আমাদের সংজ্ঞাটি সুগঠিত বলে নিশ্চিত করে:
+
+\begin{lem}\ollabel{ordsumlessiswo}
+যেকোনো ক্রমসংখ্যা $\alpha$ ও $\beta$-র জন্য
+$\tuple{\alpha \disjointsum \beta, \rlexless}$
+একটি সুক্রমবিন্যাস।
+\end{lem}
+
+\begin{proof}
+$\alpha \disjointsum \beta$-তে $\rlexless$-এর অধীনে
+যেকোনো দুটি ভিন্ন উপাদান তুলনাযোগ্য। এটি সুভিত্তিক
+দেখাতে একটি অশূন্য $X \subseteq \alpha \disjointsum \beta$
+নিই। $X$-এর যে উপসেটে দ্বিতীয় স্থানাঙ্কটি সম্ভাব্য
+ক্ষুদ্রতম, সেটি $Y$ হোক; অর্থাৎ
+$Y = \Setabs{\tuple{\gamma, i} \in X}{(\forall
+\tuple{\delta, j} \in X)i \leq j}$। এবার $Y$ থেকে
+ক্ষুদ্রতম প্রথম স্থানাঙ্কের উপাদানটি নিই।
+\end{proof}
+\noindent
+অতএব ক্রমসংখ্যার যোগের একটি সুস্পষ্ট, সরাসরি সংজ্ঞা
+পেলাম। এবার একটি প্রত্যাশিত ফল (\olref[z][infinity-again]{defnomega}
+অনুযায়ী $1 = \{0\}$):
+\begin{prop}
+যেকোনো ক্রমসংখ্যা $\alpha$-র জন্য
+$\alpha \ordplus 1 = \ordsucc{\alpha}$।
+\end{prop}
+
+\begin{proof}
+% BN-SRC-447: the tagged copies are united once, not subjected to another disjoint sum.
+$\ordsucc{\alpha} = \alpha \cup \{\alpha\}$ থেকে
+$\alpha\disjointsum1 = (\alpha \times \{0\})
+\cup (\{0\} \times \{1\})$-তে সমরূপতা $f$ নিই,
+যেখানে $\gamma \in \alpha$ হলে $f(\gamma) =
+\tuple{\gamma, 0}$ এবং $f(\alpha) = \tuple{0, 1}$।
+\end{proof}
+\noindent
+এ ছাড়া দেখানো সহজ, যোগ কয়েকটি পুনরাবৃত্তিমূলক
+শর্ত মেনে চলে:
+
+\begin{lem}\ollabel{ordadditionrecursion}
+যেকোনো ক্রমসংখ্যা $\alpha, \beta$-র জন্য:
+\begin{align*}
+	\alpha\ordplus 0 &= \alpha\\
+	\alpha \ordplus (\beta\ordplus 1) &= (\alpha \ordplus \beta) \ordplus 1\\
+	\alpha \ordplus \beta &= \supstrict_{\delta < \beta}(\alpha \ordplus \delta)
+	&& \text{যদি $\beta$ সীমা ক্রমসংখ্যা হয়}
+\end{align*}
+\end{lem}
+
+\begin{proof}
+প্রতিটি ক্ষেত্র আলাদা করে যাচাই করি। প্রথমে:
+% BN-SRC-448: 0 x {1} is empty, not the singleton {0}.
+\begin{align*}
+	\alpha \ordplus 0
+	&= \ordtype{(\alpha \times \{0\}) \cup (0 \times \{1\}), \rlexless} \\
+	&= \ordtype{(\alpha \times \{0\}) \cup \emptyset, \rlexless}\\
+	&= \alpha\\
+	\alpha \ordplus (\beta \ordplus 1)
+	%&= \ordtype{(\alpha\times \{0\}) \cup (\ordtype{\beta \ordplus 1}\times \{1\}), \rlexless} \\
+	&= \ordtype{(\alpha\times \{0\}) \cup (\ordsucc{\beta}\times \{1\}), \rlexless} \\
+	&= \ordtype{(\alpha\times \{0\}) \cup (\beta \times \{1\}), \rlexless} \ordplus 1\\
+	&= (\alpha \ordplus \beta) \ordplus 1
+\end{align*}
+এবার $\beta \neq \emptyset$ একটি সীমা ক্রমসংখ্যা
+হোক। $\delta < \beta$ হলে $\delta\ordplus 1 < \beta$-ও
+হয়; তাই $\alpha \ordplus \delta$ হলো $\alpha
+\ordplus \beta$-র যথার্থ প্রারম্ভিক খণ্ড। অতএব
+$\alpha \ordplus \beta$ হলো
+$X = \Setabs{\alpha \ordplus \delta}{\delta < \beta}$-র
+একটি যথার্থ ঊর্ধ্বসীমা। আবার $\alpha \leq \gamma <
+\alpha \ordplus \beta$ হলে কোনো $\delta < \beta$-র
+জন্য $\gamma = \alpha \ordplus \delta$। সুতরাং
+$\alpha \ordplus \beta = \supstrict_{\delta < \beta}
+(\alpha\ordplus \delta)$।
+\end{proof}
+
+কিন্তু এখানে একটি লক্ষণীয় ব্যাপার আছে। ক্রমসংখ্যার যোগ
+সংজ্ঞায়িত করতে আমরা \emph{বিকল্পভাবে} শুধু
+ট্রান্সফাইনাইট পুনরাবৃত্তি-উপপাদ্য ব্যবহার করতে পারতাম:
+\olref{ordadditionrecursion}-এর শর্তগুলিকেই পুনরাবৃত্তি-সমীকরণ
+হিসেবে দিতাম (যদিও ``$\beta \ordplus 1$''-এর বদলে
+``$\ordsucc{\beta}$'' লিখতাম)।
+
+অতএব ক্রমসংখ্যার উপর ক্রিয়া সংজ্ঞায়িত করার দুটি পথ আছে।
+সুস্পষ্ট একটি সুক্রমবিন্যস্ত সেট নির্মাণ করে তার ক্রমপ্রকার
+নিলে পাই \emph{সংশ্লেষমূলক} সংজ্ঞা। শুধু
+পুনরাবৃত্তি-সমীকরণ দিলেও পাই \emph{পুনরাবৃত্তিমূলক}
+সংজ্ঞা। ঠিকভাবে করলে দুটি পথেই একই ফল আসে। কারণ
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}
+নিশ্চিত করে, এই পুনরাবৃত্তি-সমীকরণগুলি \emph{অনন্য}
+ক্রমসংখ্যা নির্ধারণ করে।
+
+অনেক দিক থেকে ক্রমসংখ্যার যোগ স্বাভাবিক সংখ্যার যোগের
+মতোই। যেমন, আমরা প্রমাণ করতে পারি:
+
+\begin{lem}\ollabel{ordinaladditionisnice}
+$\alpha, \beta, \gamma$ ক্রমসংখ্যা হলে:
+\begin{enumerate}
+	\item\ollabel{ordaddition1} $\beta < \gamma$ হলে $\alpha
+	\ordplus \beta < \alpha \ordplus \gamma$;
+	\item\ollabel{ordaddition2} $\alpha \ordplus \beta =
+	\alpha\ordplus \gamma$ হলে $\beta = \gamma$;
+	\item\ollabel{ordaddition3} $\alpha \ordplus (\beta \ordplus
+	\gamma) = (\alpha \ordplus \beta) \ordplus \gamma$;
+	অর্থাৎ যোগ সম্বন্ধীয়;
+	\item\ollabel{ordaddition4} $\alpha \leq \beta$ হলে $\alpha
+	\ordplus \gamma \leq \beta \ordplus \gamma$।
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+\olref{ordaddition3} প্রমাণ করি; বাকিগুলি অনুশীলনের জন্য
+রাখছি। $\gamma$-র উপর সরল ট্রান্সফাইনাইট আবেশে,
+\olref{ordadditionrecursion} ব্যবহার করে প্রমাণটি হবে।
+$\gamma = 0$ হলে:
+\[
+(\alpha \ordplus \beta) \ordplus 0 = \alpha \ordplus \beta
+= \alpha \ordplus (\beta \ordplus 0)
+\]
+$\gamma = \delta\ordplus 1$ হলে আবেশ-অনুমান ধরি:
+$(\alpha \ordplus \beta) \ordplus \delta = \alpha
+\ordplus (\beta \ordplus \delta)$। এবার
+\olref{ordadditionrecursion} তিনবার প্রয়োগ করে পাই:
+\begin{align*}
+	(\alpha \ordplus \beta) \ordplus (\delta \ordplus 1)
+	&= ((\alpha \ordplus \beta) \ordplus \delta)\ordplus 1\\
+	&= (\alpha \ordplus (\beta \ordplus \delta)) \ordplus 1\\
+	&= \alpha \ordplus ((\beta \ordplus \delta)\ordplus 1)\\
+	&= \alpha \ordplus (\beta \ordplus (\delta\ordplus 1))
+\end{align*}
+$\gamma$ সীমা ক্রমসংখ্যা হলে আবেশ-অনুমান ধরি:
+$\delta \in \gamma$ হলেই $(\alpha \ordplus \beta)
+\ordplus \delta = \alpha \ordplus (\beta \ordplus
+\delta)$। তখন:
+\begin{align*}
+	(\alpha \ordplus \beta) \ordplus \gamma
+	&= \supstrict_{\delta < \gamma}((\alpha \ordplus \beta) \ordplus \delta) \\
+	&= \supstrict_{\delta < \gamma}(\alpha \ordplus (\beta \ordplus \delta))\\
+	&= \alpha \ordplus \supstrict_{\delta < \gamma}(\beta \ordplus \delta)\\
+	&= \alpha \ordplus (\beta \ordplus \gamma)
+\end{align*}
+\end{proof}
+
+\begin{prob}
+\olref[sth][ord-arithmetic][add]{ordinaladditionisnice}-এর
+অবশিষ্ট দাবিগুলি প্রমাণ করুন।
+\end{prob}
+
+এই সব দিক থেকে ক্রমসংখ্যার যোগ বেশ পরিচিত মনে হবে।
+কিন্তু একটি গুরুত্বপূর্ণ দিক থেকে তা স্বাভাবিক সংখ্যার যোগের
+\emph{মতো নয়}।
+
+\begin{prop}\ollabel{ordsumnotcommute}
+ক্রমসংখ্যার যোগ {বিনিময়ী নয়};
+$1 \ordplus \omega = \omega < \omega \ordplus 1$।
+\end{prop}
+
+\begin{proof}
+লক্ষ করুন, $1 \ordplus \omega = \supstrict_{n < \omega}
+(1 \ordplus n) = \omega \in \omega \cup \{\omega\} =
+\ordsucc{\omega} = \omega \ordplus 1$।
+\end{proof}
+\noindent
+প্রথমে এতে অবাক লাগতে পারে, কিন্তু \emph{লাগার কথা নয়}।
+একদিকে, $1 \ordplus \omega$-তে সব স্বাভাবিক সংখ্যার
+\emph{আগে} একটি বাড়তি উপাদান বসানো হচ্ছে।
+\olref[sfr][infinite][hilbert]{sec}-এ হিলবার্টের হোটেল
+নিয়ে যেভাবে যুক্তি করেছি, তাতে স্বজ্ঞাগতভাবে এই প্রথম
+উপাদানটি সামগ্রিক ক্রমপ্রকার বদলায় না। অন্যদিকে,
+$\omega \ordplus 1$-তে সব স্বাভাবিক সংখ্যার
+\emph{পরে} একটি বাড়তি উপাদান বসানো হচ্ছে।
+সেটি সম্পূর্ণ ভিন্ন ব্যাপার!
+
+\end{document}

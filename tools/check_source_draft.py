@@ -166,7 +166,13 @@ for row in rows:
     source_blocks = re.split(r"\n\s*\n", body(source).strip())
     target_blocks = re.split(r"\n\s*\n", body(target).strip())
     checked_target = without_documented_corrections(target)
-    if row["unit_id"] in {"OLP-0248", "OLP-0310"}:
+    if row["unit_id"] == "OLP-0577":
+        # The frozen source has an unmatched dollar sign in a commented-out line.
+        stray_comment = r"%\alpha \approx \alpha \ordplus 1$"
+        assert source.count(stray_comment) == checked_target.count(stray_comment) == 1
+        source_math = mathparts(source.replace(stray_comment, ""))
+        target_math = mathparts(checked_target.replace(stray_comment, ""))
+    elif row["unit_id"] in {"OLP-0248", "OLP-0310"}:
         binder = "x" if row["unit_id"] == "OLP-0248" else "!A"
         source_math = mathparts_with_setbuilder_text_math(source, binder=binder)
         target_math = mathparts_with_setbuilder_text_math(checked_target, binder=binder)
@@ -5736,6 +5742,49 @@ for row in rows:
                 new_conditional: 1, new_recurrence: 1, new_image: 1,
             })
         )
+    ordinal_addition_math_fixes = False
+    if row["unit_id"] == "OLP-0576" and set(documented) == {"BN-SRC-447", "BN-SRC-448"}:
+        old_pair = r"\alpha\disjointsum1=(\alpha\times\{0\})\disjointsum(\{0\}\times\{1\})"
+        new_pair = r"\alpha\disjointsum1=(\alpha\times\{0\})\cup(\{0\}\times\{1\})"
+        old_align = next((fragment for fragment in source_math - target_math
+                          if fragment.startswith(r"\alpha\ordplus0&=")), None)
+        ordinal_addition_math_fixes = (
+            old_align is not None and old_align.count(r"\cup\{0\}") == 1
+            and source_math - target_math == collections.Counter({old_pair: 1, old_align: 1})
+            and target_math - source_math == collections.Counter({
+                new_pair: 1, old_align.replace(r"\cup\{0\}", r"\cup\emptyset", 1): 1,
+            })
+        )
+    ordinal_rank_exercise_math_fix = (
+        row["unit_id"] == "OLP-0577"
+        and set(documented) == {"BN-SRC-449", "BN-SRC-450"}
+        and source_math - target_math == collections.Counter({
+            r"\setrank{A\timesB}\max(\setrank{A},\setrank{B})\ordplus2": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\setrank{A\timesB}=\max(\setrank{A},\setrank{B})\ordplus2": 1,
+        })
+    )
+    ordinal_exponentiation_math_fix = (
+        row["unit_id"] == "OLP-0579" and set(documented) == {"BN-SRC-451"}
+        and source_math - target_math == collections.Counter({
+            r"(\alpha,\beta)": 2,
+            r"f\colon\alpha\to\beta": 1,
+            r"\Setabs{\gamma\in\alpha}{f(\gamma)\neq0}": 1,
+            r"\gamma_0=\Setabs{\gamma\in\alpha}{f(\gamma)\neqg(\gamma)}": 1,
+            r"\ordtype{(\alpha,\beta),\sqsubset}": 1,
+            r"\ordexpo{\alpha}{\beta}=\ordtype{(\alpha,\beta),\sqsubset}": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\alpha\neq0": 2,
+            r"(\beta,\alpha)": 2,
+            r"f\colon\beta\to\alpha": 1,
+            r"\Setabs{\gamma\in\beta}{f(\gamma)\neq0}": 1,
+            r"\gamma_0=\Setabs{\gamma\in\beta}{f(\gamma)\neqg(\gamma)}": 1,
+            r"\ordtype{(\beta,\alpha),\sqsubset}": 1,
+            r"\ordexpo{\alpha}{\beta}=\ordtype{(\beta,\alpha),\sqsubset}": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -5842,6 +5891,9 @@ for row in rows:
             spine_foundation_bound_variable_fix,
             spine_rank_proof_conclusion_fix,
             replacement_reflection_proofs_math_fix,
+            ordinal_addition_math_fixes,
+            ordinal_rank_exercise_math_fix,
+            ordinal_exponentiation_math_fix,
         )
     )
     minimal_change_fileid_fix = (
@@ -5862,6 +5914,22 @@ for row in rows:
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\citet[উপপাদ্য ২-এর প্রথম অংশ]{Levy1960}": 1})
     )
+    ordinal_rank_reference_fix = (
+        row["unit_id"] == "OLP-0577"
+        and set(documented) == {"BN-SRC-449", "BN-SRC-450"}
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\olref{exranktuple}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\olref{exrankpow}": 1})
+    )
+    ordinal_exponentiation_citation_localization = (
+        row["unit_id"] == "OLP-0579"
+        and set(documented) == {"BN-SRC-451"}
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\citep[p.~199]{Potter2004}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\citep[পৃ.~১৯৯]{Potter2004}": 1})
+    )
     controls_ok = (
         controls(source) == controls(checked_target)
         or axd_control_fix
@@ -5872,6 +5940,8 @@ for row in rows:
         or modal_completeness_control_fix
         or minimal_change_fileid_fix
         or replacement_reflection_citation_localization
+        or ordinal_rank_reference_fix
+        or ordinal_exponentiation_citation_localization
     )
     checks = {
         "unit_id": row["unit_id"],

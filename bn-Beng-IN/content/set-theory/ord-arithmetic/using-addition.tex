@@ -1,0 +1,138 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{using-addition}
+\olsection{ক্রমসংখ্যার যোগের প্রয়োগ}
+
+ক্রমসংখ্যার যোগ ব্যবহার করে বিভিন্ন সেটের স্তরাঙ্ক
+সরাসরি হিসাব করা যায়;
+এখানে স্তরাঙ্ক \olref[spine][rank]{defnsetrank}-এর অর্থে:
+
+\begin{lem}\ollabel{rankcomputation}
+$\setrank{A} = \alpha$ এবং $\setrank{B} = \beta$ হলে:
+\begin{enumerate}
+	\item\ollabel{exrankpow} $\setrank{\Pow{A}} = \alpha\ordplus 1$;
+	\item\ollabel{exrankpair} $\setrank{\{A, B\}} = \max(\alpha,
+	\beta) \ordplus 1$;
+	\item\ollabel{exrankcup} $\setrank{A \cup B} = \max(\alpha,
+	\beta)$;
+	\item\ollabel{exranktuple} $\setrank{\tuple{A,B}} = \max(\alpha,
+	\beta) \ordplus 2$;
+	\item\ollabel{exranktimes} $\setrank{A \times B} \leq \max(\alpha,
+	\beta) \ordplus 2$;
+	\item\ollabel{exrankunion} $\alpha$ শূন্য অথবা সীমা ক্রমসংখ্যা হলে
+	$\setrank{\bigcup A} = \alpha$; $\alpha = \gamma\ordplus 1$
+	হলে $\setrank{\bigcup A} = \gamma$।
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+সব ক্ষেত্রেই \olref[spine][rank]{ranksupstrict} বারবার
+ব্যবহার করব।
+
+\emph{\olref{exrankpow}।} $x \subseteq A$ হলে
+$\setrank{x} \leq \setrank{A}$। তাই
+$\setrank{\Pow{A}} \leq \alpha \ordplus 1$। বিশেষত
+$A \in \Pow{A}$ হওয়ায় $\setrank{\Pow{A}} =
+\alpha \ordplus 1$।
+
+\emph{\olref{exrankpair}।} \olref[spine][rank]{ranksupstrict}
+থেকে।
+
+\emph{\olref{exrankcup}।} \olref[spine][rank]{ranksupstrict}
+থেকে।
+
+\emph{\olref{exranktuple}।} \olref{exrankpair} দুবার
+প্রয়োগ করে।
+
+% BN-SRC-449: the displayed double power-set bound uses exrankpow twice, not exranktuple.
+\emph{\olref{exranktimes}।} লক্ষ করুন,
+$A \times B \subseteq \Pow{\Pow{A \cup B}}$;
+এবার \olref{exrankpow} দুবার প্রয়োগ করুন।
+
+\emph{\olref{exrankunion}।} $\alpha = \gamma\ordplus 1$
+হলে কোনো $c \in A$ আছে, যার
+$\setrank{c} = \gamma$; আর $A$-র কোনো !!{element}-এর
+স্তরাঙ্ক এর চেয়ে বেশি নয়। তাই
+$\setrank{\bigcup A} = \gamma$। $\alpha$ সীমা
+ক্রমসংখ্যা হলে $A$-তে এমন !!{element}s আছে, যাদের
+স্তরাঙ্ক $\alpha$-র যথেচ্ছ কাছে যায় কিন্তু তার চেয়ে
+কম থাকে। ফলে $\bigcup A$-তেও একইভাবে
+!!{element}s-এর স্তরাঙ্ক $\alpha$-র যথেচ্ছ কাছে
+যায় কিন্তু তার চেয়ে কম থাকে; তাই
+$\setrank{\bigcup A} = \alpha$।
+\end{proof}
+\noindent
+\olref{exranktimes}-এ সমতার বদলে কেন \emph{অসমতা}
+আছে, তা দেখার কাজটি অনুশীলনের জন্য রইল।
+
+\begin{prob}
+% BN-SRC-450: the source exercise omits the equality sign before the upper bound.
+এমন সেট $A$ ও $B$ দিন, যাতে $\setrank{A \times B} =
+\max(\setrank{A}, \setrank{B})$। আবার এমন সেট
+$A$ ও $B$ দিন, যাতে
+$\setrank{A \times B}=\max(\setrank{A}, \setrank{B})
+\ordplus 2$। অন্য কোনো স্তরাঙ্ক কি সম্ভব?
+\end{prob}
+
+এখন ``সসীম'' ও ``অসীম'' ক্রমসংখ্যা বলতে কী বোঝায়,
+তার কয়েকটি স্বাভাবিক সংজ্ঞার সমতুল্যতাও দেখাতে পারি:
+
+\begin{lem}\ollabel{ordinfinitycharacter}
+যেকোনো ক্রমসংখ্যা $\alpha$-র জন্য নিচের দাবিগুলি সমতুল্য:
+\begin{enumerate}
+	\item\ollabel{ord:notinomega} $\alpha\notin \omega$,
+	অর্থাৎ $\alpha$ স্বাভাবিক সংখ্যা নয়;
+	\item\ollabel{ord:omegaplus} $\omega \leq \alpha$;
+	\item\ollabel{ord:oneplus} $1 \ordplus \alpha = \alpha$;
+	%\alpha \approx \alpha \ordplus 1$
+	\item\ollabel{ord:plusone} $\alpha \approx \alpha\ordplus 1$,
+	অর্থাৎ $\alpha$ ও $\alpha\ordplus 1$-এর উপাদানসংখ্যা সমান;
+	\item\ollabel{ord:infinite} $\alpha$ দেদেকিন্ড-অসীম।
+\end{enumerate}
+\end{lem}
+\noindent
+অতএব একটি ক্রমসংখ্যার (অ)সসীম হওয়ার পাঁচটি
+প্রমাণযোগ্যভাবে সমতুল্য ব্যাখ্যা পেলাম।
+
+\begin{proof}
+\emph{\olref{ord:notinomega} $\Rightarrow$
+\olref{ord:omegaplus}।} ত্রিবিকল্প নীতি থেকে।
+
+\emph{\olref{ord:omegaplus} $\Rightarrow$
+\olref{ord:oneplus}।} $\alpha \geq \omega$ ধরি।
+ট্রান্সফাইনাইট আবেশে দেখা যায়, এমন একটি ক্ষুদ্রতম
+ক্রমসংখ্যা $\gamma$ (সম্ভবত $0$) আছে, যাতে কোনো
+সীমা ক্রমসংখ্যা $\beta$-র জন্য
+$\alpha = \beta \ordplus \gamma$। এবার:
+\[
+	1 \ordplus \alpha =
+	1 \ordplus (\beta \ordplus \gamma) =
+	(1 \ordplus \beta) \ordplus \gamma =
+	\supstrict_{\delta < \beta} (1 \ordplus \delta) \ordplus \gamma =
+	\beta \ordplus \gamma =
+	\alpha.
+\]
+\emph{\olref{ord:oneplus} $\Rightarrow$
+\olref{ord:plusone}।} স্পষ্টতই
+$f \colon (\alpha \disjointsum 1) \to
+(1 \disjointsum \alpha)$ একটি !!a{bijection}।
+$1 \ordplus \alpha = \alpha$ হলে
+$g \colon (1 \disjointsum \alpha) \to \alpha$
+একটি সমরূপতা আছে। এবার $\comp{f}{g}$ বিবেচনা করুন।
+
+\emph{\olref{ord:plusone} $\Rightarrow$
+\olref{ord:infinite}।} $\alpha \approx \alpha \ordplus 1$
+হলে $f \colon (\alpha \disjointsum 1) \to \alpha$
+একটি !!a{bijection} আছে। প্রত্যেক $\gamma < \alpha$-র
+জন্য $g(\gamma) = f(\gamma, 0)$ নিই। এই
+!!{injection} দেখায় $\alpha$ দেদেকিন্ড-অসীম,
+কারণ $f(0,1) \in \alpha \setminus \ran{g}$।
+
+\emph{\olref{ord:infinite} $\Rightarrow$
+\olref{ord:notinomega}।} এটি
+\olref[z][infinity-again]{naturalnumbersarentinfinite}।
+\end{proof}
+
+\end{document}

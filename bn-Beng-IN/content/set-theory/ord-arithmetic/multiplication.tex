@@ -1,0 +1,120 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{mult}
+
+\olsection{ক্রমসংখ্যার গুণ}
+
+এবার ক্রমসংখ্যার গুণের আলোচনা করি। এর পদ্ধতি যোগের
+অনুরূপ। ধরি, $\alpha$-কে $\beta$ দিয়ে গুণ করতে চাই।
+প্রস্থ $\alpha$ ও উচ্চতা $\beta$—এমন একটি আয়তাকার
+ঘরবিন্যাস কল্পনা করুন। এক সারি বরাবর এগিয়ে, তার
+পরে পরের সারিতে গিয়ে এভাবে পুরো বিন্যাসটি পার হলে
+যে ক্রম মেলে, সেটিই $\alpha$ ও $\beta$-র গুণফল।
+অন্যভাবে বললে, $\beta$-র \emph{প্রত্যেক} উপাদানের
+জায়গায় $\alpha$-র একটি অনুলিপি বসিয়ে
+$\alpha$ ও $\beta$-র গুণফল পাওয়া যায়।
+
+এটি কঠোরভাবে প্রকাশ করতে $\alpha$ ও $\beta$-র
+কার্তেসীয় গুণফলের উপর বিপরীত অভিধানিক ক্রম ব্যবহার করি:
+
+\begin{defn}
+যেকোনো ক্রমসংখ্যা $\alpha, \beta$-র গুণফল
+$\alpha \ordtimes \beta = \ordtype{\alpha \times \beta,
+\rlexless}$।
+\end{defn}
+\noindent
+আবারও সংজ্ঞাটি সুগঠিত কি না নিশ্চিত করতে হবে:
+
+\begin{lem}\ollabel{ordtimeslessiswo}
+যেকোনো ক্রমসংখ্যা $\alpha$ ও $\beta$-র জন্য
+$\tuple{\alpha \times \beta, \rlexless}$
+একটি সুক্রমবিন্যাস।
+\end{lem}
+
+\begin{proof}
+\olref[add]{ordsumlessiswo}-এর মতোই প্রমাণ।
+\end{proof}
+\noindent
+গুণের নিচের পুনরাবৃত্তিমূলক ধর্মগুলিও প্রমাণ করা কঠিন নয়:
+
+\begin{lem}\ollabel{ordtimesrecursion}
+যেকোনো ক্রমসংখ্যা $\alpha, \beta$-র জন্য:
+\begin{align*}
+	\alpha \ordtimes 0 &= 0\\
+	\alpha \ordtimes (\beta \ordplus 1) &=
+		(\alpha \ordtimes \beta) \ordplus \alpha\\
+	\alpha \ordtimes \beta &=
+		\supstrict_{\delta < \beta}(\alpha \ordtimes \delta) &&
+		\text{যখন $\beta$ সীমা ক্রমসংখ্যা}.
+\end{align*}
+\end{lem}
+
+\begin{proof}
+অনুশীলনের জন্য রাখা হলো।
+\end{proof}
+
+বস্তুত যোগের মতো এখানেও সরাসরি সংজ্ঞা না দিয়ে
+এই পুনরাবৃত্তি-সমীকরণগুলি দিয়েই ক্রমসংখ্যার গুণ
+সংজ্ঞায়িত করতে পারতাম। যোগের মতোই গুণের কয়েকটি
+আচরণও পরিচিত:
+
+\begin{lem}\ollabel{ordinalmultiplicationisnice}
+$\alpha, \beta, \gamma$ ক্রমসংখ্যা হলে:
+\begin{enumerate}
+	\item\ollabel{ordtimes1} $\alpha \neq 0$ এবং
+	$\beta < \gamma$ হলে $\alpha \ordtimes \beta
+	< \alpha \ordtimes \gamma$;
+	\item\ollabel{ordtimes2} $\alpha \neq 0$ এবং
+	$\alpha \ordtimes \beta = \alpha\ordtimes\gamma$
+	হলে $\beta = \gamma$;
+	\item\ollabel{ordtimes3} $\alpha \ordtimes (\beta \ordtimes
+	\gamma) = (\alpha \ordtimes \beta) \ordtimes \gamma$;
+	\item\ollabel{ordtimes4} $\alpha \leq \beta$ হলে
+	$\alpha \ordtimes \gamma \leq \beta \ordtimes \gamma$;
+	\item\ollabel{ordtimes5} $\alpha \ordtimes (\beta \ordplus
+	\gamma) = (\alpha \ordtimes \beta)\ordplus
+	(\alpha\ordtimes \gamma)$।
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+অনুশীলনের জন্য রাখা হলো।
+\end{proof}
+
+ইচ্ছেমতো আরও ফল প্রমাণ করতে বা খুঁজে দেখতে পারেন।
+তবে \olref[ord-arithmetic][add]{ordsumnotcommute}
+দেখে নিচের ফলে অবাক হওয়ার কথা নয়:
+
+\begin{prop}
+ক্রমসংখ্যার গুণ বিনিময়ী নয়:
+$2 \ordtimes \omega = \omega < \omega \ordtimes 2$।
+\end{prop}
+
+\begin{proof}
+$2 \ordtimes \omega = \supstrict_{n < \omega}
+(2\ordtimes n) = \omega \in
+\supstrict_{n < \omega}(\omega \ordplus n)
+= \omega \ordplus \omega = \omega \ordtimes 2$।
+\end{proof}
+\noindent
+এখানেও স্বজ্ঞাগত কারণটি সরল। $2 \ordtimes \omega$
+হিসাব করতে প্রত্যেক স্বাভাবিক সংখ্যার জায়গায় দুটি
+বস্তু বসান। স্বাভাবিক সংখ্যাগুলির ফাঁকে সব ``অর্ধেক''
+সংখ্যা ঢুকিয়ে দিলে, অর্থাৎ
+$\Setabs{\nicefrac{n}{2}}{n \in \omega}$-র
+স্বাভাবিক ক্রম নিলেও একই ক্রমপ্রকার পাওয়া যাবে।
+এভাবে দেখলে ক্রমপ্রকারটি যে $\omega$-রই সমান,
+তা স্পষ্ট। কিন্তু $\omega \ordtimes 2$ হিসাব করতে
+$\omega$-র দুটি অনুলিপি একটির পরে আরেকটি বসাতে হয়।
+
+\begin{prob}
+\olref[sth][ord-arithmetic][mult]{ordtimeslessiswo},
+\olref[sth][ord-arithmetic][mult]{ordtimesrecursion}
+এবং
+\olref[sth][ord-arithmetic][mult]{ordinalmultiplicationisnice}
+প্রমাণ করুন।
+\end{prob}
+
+\end{document}

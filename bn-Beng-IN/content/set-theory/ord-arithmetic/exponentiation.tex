@@ -1,0 +1,82 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{expo}
+\olsection{ক্রমসংখ্যার ঘাত}
+
+এবার ক্রমসংখ্যার ঘাতের আলোচনা করি। দুর্ভাগ্যক্রমে
+এর কোনো \emph{সহজ} সংশ্লেষমূলক সংজ্ঞা নেই।
+
+অবশ্য সুস্পষ্ট সংশ্লেষমূলক সংজ্ঞা \emph{আছে}।
+একটি উদাহরণ দিই। $\alpha \neq 0$ হলে
+$\text{finfun}(\beta,\alpha)$ বলতে সেই সব ফাংশন
+$f \colon \beta \to \alpha$-র সেট বোঝাই, যাদের জন্য
+$\Setabs{\gamma \in \beta}{f(\gamma) \neq 0}$
+কোনো স্বাভাবিক সংখ্যার সঙ্গে সমসংখ্যক।
+$\text{finfun}(\beta,\alpha)$-তে $f \sqsubset g$
+যদি এবং কেবল যদি $f \neq g$ এবং
+$f(\gamma_0) < g(\gamma_0)$, যেখানে
+$\gamma_0 = \text{max}\Setabs{\gamma \in \beta}{f(\gamma)
+\neq g(\gamma)}$—এই শর্তে একটি সুক্রম সংজ্ঞায়িত করি।
+তখন $\ordexpo{\alpha}{\beta}$-কে
+$\ordtype{\text{finfun}(\beta, \alpha), \sqsubset}$
+বলা যায়। পটার এই সুস্পষ্ট সংজ্ঞাটি ব্যবহার করেছেন,
+তার পরেই ব্যাখ্যা করেছেন:
+\begin{quote}
+	এই ক্রমটি বেছে নেওয়ার একমাত্র কারণ, আমরা এমনভাবে
+	ক্রমসংখ্যার ঘাত সংজ্ঞায়িত করতে চাই, যাতে যথাযথ
+	পুনরাবৃত্তিমূলক শর্তটি মানা হয়\ldots; আর ক্রমযুক্ত
+	যোগফল বা গুণফলের তুলনায় এটিকে কল্পনা করা অনেক কঠিন।
+	\citep[পৃ.~১৯৯]{Potter2004}
+\end{quote}
+ঠিক তাই। যোগকে ব্যাখ্যা করেছি ``$\alpha$-র একটি
+অনুলিপির পরে $\beta$-র একটি অনুলিপি'' হিসেবে; গুণকে
+``$\alpha$-র অনুলিপিগুলির একটি $\beta$-ক্রম'' হিসেবে।
+কিন্তু $\text{finfun}(\alpha, \gamma)$ নিয়ে তেমন
+সংক্ষিপ্ত ব্যাখ্যা দেওয়া কঠিন। তাই ক্রমসংখ্যার ঘাতকে
+সরাসরি \emph{ট্রান্সফাইনাইট পুনরাবৃত্তি দিয়ে}
+সংজ্ঞায়িত করব, অর্থাৎ:
+
+\begin{defn}\ollabel{ordexporecursion}
+\begin{align*}
+	\ordexpo{\alpha}{0} &= 1\\
+	\ordexpo{\alpha}{\beta\ordplus 1} &=
+	\ordexpo{\alpha}{\beta} \ordtimes \alpha\\
+	\ordexpo{\alpha}{\beta} &=
+	\bigcup_{\delta < \beta}\ordexpo{\alpha}{\delta}& &
+	\text{যখন $\beta$ সীমা ক্রমসংখ্যা}
+\end{align*}
+\end{defn}
+% BN-SRC-451 TARGET-CORRECTION-BEGIN
+\noindent\textbf{সম্পাদকীয় নোট।} মূল পাঠের
+সংশ্লেষমূলক উদাহরণে $\text{finfun}(\alpha,\beta)$-এর
+ফাংশনগুলির দিক উল্টো দেওয়া হয়েছে; $\beta \neq 0$
+হলে সেটি $\ordexpo{\beta}{\alpha}$-র ক্রমপ্রকার দেয়। উপরে
+$\alpha \neq 0$ শর্তে দিকটি সংশোধন করা হয়েছে।
+শূন্য ভিত্তির সীমা ঘাত এই সংশ্লেষমূলক সংজ্ঞার আওতায়
+পড়ে না; তার ক্ষেত্রে প্রদর্শিত পুনরাবৃত্তিমূলক সংজ্ঞাই
+এখানে নির্ধারক।
+% BN-SRC-451 TARGET-CORRECTION-END
+
+সেটতাত্ত্বিক হিসেবেই কাজ করলে ক্রমসংখ্যার ঘাতের আরও
+ধর্ম অনুসন্ধান করতে চাইতে পারি। কিন্তু আর বেশি কিছু
+যোগ করার নেই, শুধু এই প্রত্যাশিত বিষয়টি লক্ষ করি:
+ক্রমসংখ্যার ঘাত বিনিময়ী নয়। বস্তুত
+$\ordexpo{2}{\omega} =
+\bigcup_{\delta < \omega}\ordexpo{2}{\delta} = \omega$,
+কিন্তু $\ordexpo{\omega}{2} = \omega \ordtimes \omega$।
+ঘাত বিনিময়ী হবে এমন আশা করাও উচিত নয়, কারণ
+স্বাভাবিক সংখ্যার ক্ষেত্রেও তা বিনিময়ী নয়:
+$\ordexpo{2}{3} = 8 < 9 = \ordexpo{3}{2}$।
+
+\begin{prob}
+ট্রান্সফাইনাইট আবেশ ব্যবহার করে প্রমাণ করুন,
+$\alpha \neq 0$ হলে
+$\ordexpo{\alpha}{\beta} =
+\ordtype{\text{finfun}(\beta, \alpha), \sqsubset}$
+সংজ্ঞা নিলে \olref[sth][ord-arithmetic][expo]{ordexporecursion}-এর
+পুনরাবৃত্তি-সমীকরণগুলি পাওয়া যায়।
+\end{prob}
+
+\end{document}

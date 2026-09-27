@@ -1,0 +1,233 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: interpretation-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{irl}
+
+\olsection{বিধিগুলির ব্যাখ্যা}
+
+সিকোয়েন্টের ব্যাখ্যা মনে করি:
+$\Gamma \Sequent \Delta$
+!!a{structure}~$\Struct{M}$-তে
+সত্য যদি হয় পূর্বপক্ষের
+অন্তত একটি $!A \in \Gamma$ মিথ্যা,
+নয়তো উত্তরপক্ষের
+অন্তত একটি~$!A \in \Delta$ সত্য।
+\Log{G3c}-র যৌক্তিক বিধিগুলি
+তাদের প্রধান !!{formula}s-এর
+সত্যশর্ত সংকেতায়িত করে।
+\RightR{\lif} দেখি। এর প্রধান
+!!{formula} $!A \lif !B$ সত্য
+যদি $!A$ মিথ্যা অথবা~$!B$
+সত্য হয়। তাই $\ \Sequent !A \lif !B$
+তখনই সত্য, যখন $!A \Sequent !B$
+সত্য। এই সিকোয়েন্টগুলির
+পূর্বপক্ষ ও উত্তরপক্ষে প্রসঙ্গের
+!!{formula}s~$\Gamma$, $\Delta$
+যোগ করলে ঠিক \RightR{\lif}-এর
+সিদ্ধান্ত ও পূর্বধারণা পাই।
+\LeftR{\lif}-এর ক্ষেত্রেও
+অনুরূপ। $!A \lif !B$ মিথ্যা
+যদি $!A$~সত্য ও $!B$~মিথ্যা
+হয়। তাই $!A \lif !B
+\Sequent \ $ তখনই সত্য, যখন
+$\ \Sequent !A$ এবং $!B \Sequent \ $
+উভয়ই সত্য। \LeftR{\lif}-এর
+সিদ্ধান্ত তার পূর্বধারণাগুলির
+যৌগের সমতুল্য। এই ধরন
+\Log{G3c}-র বিধিগুলির বিশুদ্ধতা
+নিশ্চিত করে: সব পূর্বধারণা
+সত্য হলে সিদ্ধান্তও সত্য।
+এগুলি পূর্ণতাও নিশ্চিত করে।
+
+আসলে যেকোনো সত্যমান-অপেক্ষকধর্মী
+সংযোজকের সত্যশর্ত এভাবে কয়েকটি
+সিকোয়েন্টে বলা যায়। কারণ
+চিরায়ত যুক্তিবিদ্যার প্রতিটি
+সত্যমান-অপেক্ষককে যৌগীয়
+স্বাভাবিক রূপের !!a{formula}
+দিয়ে প্রকাশ করা যায়: আণবিক
+ও নঞর্থিত আণবিক !!{formula}s-এর
+বিযোজনগুলির যৌগ। যেমন,
+$!A \oplus !B$ তখনই সত্য ধরি,
+যখন $!A$ ও $!B$-এর ঠিক একটি
+সত্য—“বর্জনমূলক অথবা”।
+তাহলে $!A \oplus !B$ তখনই
+সত্য, যখন $(!A \lor !B) \land
+(\lnot !A \lor \lnot !B)$ সত্য;
+আর $(\lnot !A \lor !B)
+\land (!A \lor \lnot !B)$
+সত্য হলে সেটি মিথ্যা। তাই
+$\oplus$-এর সিকোয়েন্ট-কলনের
+বিধি দেওয়া যায় এভাবে:
+\begin{align*}
+&
+\Axiom$\Gamma \fCenter \Delta, !A, !B$
+\Axiom$!A, !B, \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\oplus}}
+\BinaryInf$\Gamma \fCenter \Delta, !A \oplus !B$
+\DisplayProof
+\\
+& \Axiom$!A, \Gamma \fCenter \Delta, !B$
+\Axiom$!B, \Gamma \fCenter \Delta, !A$
+\RightLabel{\LeftR{\oplus}}
+\BinaryInf$!A \oplus !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\end{align*}
+এই বিধিগুলিও বিশুদ্ধ ও পূর্ণ
+হবে। প্রতিটির সিদ্ধান্ত তখনই
+সত্য, যখন তার সব পূর্বধারণা সত্য।
+% BN-SRC-627 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-627):} XOR-এর দ্বিতীয় বিধির সিদ্ধান্তে \( !A\oplus !B \) বাম দিকে, কিন্তু উৎসে লেবেল \(\RightR{\oplus}\) পুনরাবৃত্ত। বিধিটির লেবেল \(\LeftR{\oplus}\) করা হয়েছে; দুই পূর্বধারণা ও সিদ্ধান্ত অপরিবর্তিত।}
+% BN-SRC-627 TARGET-CORRECTION-END
+
+\begin{prob}
+ধরি, $!A \downarrow !B$ তখনই
+সত্য, যখন $!A$ বা~$!B$ কোনোটিই
+সত্য নয় (NOR)। \Log{G3c}-তে
+এর বিধিগুলি কী হবে? (এমন দুটি
+সিকোয়েন্ট বের করো, যারা একসঙ্গে
+তখনই সত্য, যখন $!A \downarrow !B$
+সত্য। তাতে \RightR{\downarrow}
+বিধি পাবে। তারপর এমন একটি
+সিকোয়েন্ট বের করো, যা তখনই
+সত্য, যখন $!A \downarrow !B$
+মিথ্যা। তাতে \LeftR{\downarrow}
+বিধি পাবে।)
+\end{prob}
+
+\Log{G3c}-তে প্রত্যেক
+সংযোজক ও পরিমাণসূচকের ঠিক দুটি
+বিধি: একটি বাঁ, একটি ডান।
+কিন্তু \Log{G1c}-তে
+\LeftR{\land}-এর দুটি এবং
+\RightR{\lor}-এর দুটি বিধি।
+কারণ \Log{G1c}-র আদর্শ
+জেন্টজেনের মূল ব্যবস্থা~\Log{LK}-র
+একটি প্রকরণ~\Log{LJ} ছিল
+গুরুত্বপূর্ণ অচিরায়ত স্বজ্ঞাবাদী
+যুক্তির জন্য। স্বজ্ঞাবাদী
+যুক্তির বিশুদ্ধ ও পূর্ণ ব্যবস্থা
+পেতে \Log{LJ}-র প্রতিটি
+সিকোয়েন্টের উত্তরপক্ষে সর্বাধিক
+একটি !!{formula} রাখা হয়।
+তাই \Log{G3c}-র
+\RightR{\lor} বিধি ব্যবহার
+করা যায় না: তার পূর্বধারণার
+উত্তরপক্ষে $!A$ ও~$!B$
+উভয়ই আছে। জেন্টজেন তাই
+\Log{LJ}-তে \RightR{\lor}-এর
+দুটি বিধি ব্যবহার করেন এবং
+\Log{LK}-তেও সেগুলি রাখেন।
+একইভাবে স্বজ্ঞাবাদী
+প্রকরণ~\Log{G1i} হলো
+\Log{G1c}, যেখানে প্রত্যেক
+উত্তরপক্ষে সর্বাধিক একটি
+!!{formula} রাখা হয়।
+(\Log{G3c}-রও স্বজ্ঞাবাদী
+প্রকরণ আছে, তবে তার কিছু
+বিধি \Log{G3c}-র সংশ্লিষ্ট
+বিধির থেকে আলাদা। যেমন,
+সেখানেও \RightR{\lor}-এর
+দুটি বিধি।)
+
+\Log{G1c}-র গঠনগত
+বিধিগুলির বিশুদ্ধতা সহজে
+বোঝা যায়। যেমন,
+$\Gamma \Sequent \Delta$-র
+বাঁ দিকে মিথ্যা !!{formula}
+অথবা ডান দিকে সত্য !!{formula}
+থাকলে $\Gamma \Sequent
+\Delta, !A$-তেও সেই
+একই সাক্ষ্য থাকে; $!A$
+সত্য না মিথ্যা, তাতে
+কিছু যায় আসে না।
+তাই \RightR{\Weakening}-এর
+পূর্বধারণা সত্য হলে সিদ্ধান্তও
+সত্য। এখানে বিপরীতটি সত্য
+নয়: $!A$ সত্য হওয়ার
+কারণেই সিদ্ধান্ত সত্য হতে
+পারে, অথচ পূর্বধারণা সত্য
+নাও হতে পারে।
+% BN-SRC-628 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-628):} সিকোয়েন্টের শুরুর সত্যশর্ত অনুযায়ী বাঁ দিকে মিথ্যা অথবা ডান দিকে সত্য সূত্র থাকলে সিকোয়েন্ট সত্য। উৎসের গঠনগত-বিধি অনুচ্ছেদে এই দুই পাশ উলটো লেখা ছিল; সত্যতার সাক্ষ্য সঠিক পাশে রাখা হয়েছে।}
+% BN-SRC-628 TARGET-CORRECTION-END
+
+তাহলে গঠনগত বিধিগুলি আদৌ কেন দরকার? উদাহরণস্বরূপ,
+$\ \Sequent !A \lor \lnot !A$ !!{prove} করতে
+সংকোচন (\RightR{\Contraction}, \LeftR{\Contraction})
+দরকার। $!A \Sequent !A$ থেকে শুরু করলে
+প্রথমে \RightR{\lnot} প্রয়োগ করে
+$\Sequent !A, \lnot !A$ পাওয়া যায়। তারপর
+\RightR{\lor}-এর দুই রূপ পরপর প্রয়োগ করা যায়:
+একবার $\lnot !A$ থেকে $!A \lor \lnot !A$
+পেতে, আর একবার $!A$ থেকে $!A \lor \lnot !A$
+পেতে। এতে পাওয়া যায়
+$\ \Sequent !A \lor \lnot !A, !A \lor \lnot !A$।
+অতএব \Log{G1c}-তে $\Sequent !A \lor \lnot !A$
+পেতে হলে !!a{proof}-এ একই !!{formula}-র
+দুটি উপস্থিতিকে একটি উপস্থিতিতে ``সংকুচিত''
+করতে পারতে হবে:
+\[
+\Axiom$!A \fCenter !A$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\fCenter !A, \lnot !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$\fCenter !A, !A \lor \lnot !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$\fCenter !A \lor \lnot !A, !A \lor \lnot !A$
+\RightLabel{\RightR{\Contraction}}
+\UnaryInf$\fCenter !A \lor \lnot !A$
+\DisplayProof
+\]
+বস্তুত এমন বৈধ সিকোয়েন্ট আছে, যেগুলি
+দুর্বলীকরণ বা সংকোচন ছাড়া \Log{G1c}-তে
+!!{prove} করা যায় না। যেমন,
+$!A \Sequent !B \lif !A$ সিকোয়েন্টের
+!!a{proof} \Log{G1c}-তে
+\RightR{\lif} দিয়ে শেষ হতে হবে
+(কারণ কেবল $!B \lif !A$-ই
+মুখ্য হতে পারে)। এর জন্য
+$!B, !A \Sequent !A$ পূর্বধারণা
+দরকার। সেটি আবার $!A \Sequent !A$
+স্বতঃসিদ্ধ থেকে পেতে
+\LeftR{\Weakening} প্রয়োজন:
+\[
+\Axiom$!A \fCenter !A$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!B, !A \fCenter !A$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$!A \fCenter !B \lif !A$
+\DisplayProof
+\]
+
+\Log{G3c}-তে সংকোচন ও দুর্বলীকরণের
+কোনো বিধিই দরকার হয় না। দুর্বলীকরণ
+স্বতঃসিদ্ধগুলির মধ্যেই অন্তর্নিহিত।
+দুই পূর্বধারণাবিশিষ্ট বিধিতে
+$\Gamma$, $\Delta$ প্রসঙ্গের
+দুটি অনুলিপি একটিতে মিলিয়ে
+সংকোচন অধিকাংশ ক্ষেত্রে এড়ানো যায়।
+\Log{G1c} ও \Log{G3c} উভয়
+পদ্ধতিতেই এ ধরনের ``একই প্রসঙ্গ
+ভাগ করে নেওয়া'' বিধি আছে।
+এক পূর্বধারণাবিশিষ্ট বিধিগুলির মধ্যে
+সংকোচন কেবল \RightR{\lor},
+\LeftR{\land}, \RightR{\lexists}
+ও~\LeftR{\lforall}-এর জন্য দরকার।
+\Log{G3c}-তে এই বিধিগুলির রূপ
+সংকোচনকে সম্পূর্ণ অপ্রয়োজনীয় করে।
+\Log{G2c} নামে আরেকটি পদ্ধতি
+আছে (\olref{tab:G2c} দেখুন),
+যার দুই পূর্বধারণাবিশিষ্ট বিধিগুলিতে
+প্রসঙ্গ দুটি স্বাধীন। \Log{G2c}-তে
+সংকোচন \Log{G1c}-র চেয়েও বেশি
+গুরুত্বপূর্ণ।
+
+\subfile{rules-G2c}
+
+\end{document}

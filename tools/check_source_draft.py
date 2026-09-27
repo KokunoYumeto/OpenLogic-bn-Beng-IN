@@ -6718,6 +6718,18 @@ for row in rows:
             and semantic_tokens(checked_target) - semantic_tokens(source)
             == collections.Counter()
         )
+    legacy_interpretation_xor_label_fix = False
+    if row["unit_id"] == "OLP-0699":
+        old_label = r"\RightLabel{\RightR{\oplus}}"
+        new_label = r"\RightLabel{\LeftR{\oplus}}"
+        assert source.count(old_label) == 2
+        before, _, after = source.rpartition(old_label)
+        audited_rules = before + new_label + after
+        legacy_interpretation_xor_label_fix = (
+            set(documented) == {"BN-SRC-627", "BN-SRC-628"}
+            and not normalizations
+            and mathparts(audited_rules) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6875,6 +6887,7 @@ for row in rows:
             legacy_sequent_nd_example_repairs,
             legacy_types_constructor_repairs,
             legacy_admissible_derivable_repairs,
+            legacy_interpretation_xor_label_fix,
         )
     )
     minimal_change_fileid_fix = (
@@ -7149,6 +7162,21 @@ for row in rows:
             "documented_source_corrections": ["BN-SRC-624", "BN-SRC-625", "BN-SRC-626"],
             "contraction_conclusion_and_biconditional_side": True,
             "end_sequent_named_correctly": True,
+        }
+    if row["unit_id"] == "OLP-0699":
+        assert legacy_interpretation_xor_label_fix
+        assert checked_target.count(r"\RightLabel{\RightR{\oplus}}") == 1
+        assert checked_target.count(r"\RightLabel{\LeftR{\oplus}}") == 1
+        assert re.search(
+            r"false !!\{formula\} on\s+the right or a true !!\{formula\} on the left",
+            source,
+        )
+        assert "বাঁ দিকে মিথ্যা !!{formula}" in checked_target
+        assert "ডান দিকে সত্য !!{formula}" in checked_target
+        assert checked_target.count(r"\subfile{rules-G2c}") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-627", "BN-SRC-628"],
+            "xor_left_rule_label_and_sequent_truth_witness": True,
         }
     checks = {
         "unit_id": row["unit_id"],

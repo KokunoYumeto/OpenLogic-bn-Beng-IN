@@ -1,0 +1,196 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T05:24:15.529197+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "4751d1b99aa9fca3e202401419368293da8bc1fa",
+  "parent": "f77d3fbc4cdbe4754b211a5216f690642ebd1fa8",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "3b73732683aa0bb5983f48ef16c3766a1458dc67",
+    "receipt": "PUBLIC_READBACK_SOURCE_604_2026-09-27.json",
+    "receipt_sha256": "a72613da3fbb66165ca158d1e459d4af7e341077359d93d3355eae1ea674572f"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/4751d1b99aa9fca3e202401419368293da8bc1fa.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/4751d1b99aa9fca3e202401419368293da8bc1fa",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 16164607,
+  "archive_sha256": "012c0840570208fa38d44a7d5a887fab65131a8163373565b2e9711021998fb3",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/cant-do-it.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/cant-do-it.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/cant-do-it.tex",
+      "content_type": "text/plain",
+      "bytes": 5610,
+      "sha256": "cc28e7318f3098ddf471e904fe5508d468da44b2741dff099868c7f52bc4f4ea"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/example-1.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/example-1.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/example-1.tex",
+      "content_type": "text/plain",
+      "bytes": 11482,
+      "sha256": "80569ffd995ffeb4c1a5c42b05ce6e2179ca7d6986a7c7c0478e44d03d73b8ed"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/example-2.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/example-2.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/example-2.tex",
+      "content_type": "text/plain",
+      "bytes": 6711,
+      "sha256": "ecadc3ae4adaea1b7fb0204b7799673b531468d85c508e0a84994d7c36e6d4c3"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/inference-patterns.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/inference-patterns.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/inference-patterns.tex",
+      "content_type": "text/plain",
+      "bytes": 28166,
+      "sha256": "4755a46d9d676125f62b7fcdfe1e24fa6a4ff42b4b283abee061e61afb9f49ac"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/proof-by-contradiction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/proof-by-contradiction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/proof-by-contradiction.tex",
+      "content_type": "text/plain",
+      "bytes": 15112,
+      "sha256": "ed2b9503e1d22697024060a1cbc126e7a45ab6a9c3254184ccdc36d08f08a31d"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/reading-proofs.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/reading-proofs.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/reading-proofs.tex",
+      "content_type": "text/plain",
+      "bytes": 7192,
+      "sha256": "cd27d48833feae305e0ebe42539ecb5d98caf221b69cf8c744845cfb08b04fbb"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/resources.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/resources.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/4751d1b99aa9fca3e202401419368293da8bc1fa/bn-Beng-IN/content/methods/proofs/resources.tex",
+      "content_type": "text/plain",
+      "bytes": 2163,
+      "sha256": "74a475990dda8a956140a5858897530c72fcf4c90b5c2613d1247923488ab769"
+    }
+  ],
+  "changed_files_verified": 19,
+  "translated_tex_files_in_commit": 7,
+  "draft_translated_total": 611,
+  "draft_untranslated_total": 111,
+  "segments": 6701,
+  "translated_segments": 5762,
+  "new_batch_segments": 100,
+  "new_batch_translated_segments": 100,
+  "new_batch_unchanged_segments": 0,
+  "source_correction_records": 489,
+  "new_source_correction_records": 6,
+  "translation_decisions": 423,
+  "provisional_translation_decisions": 401,
+  "translation_decision_occurrences": 37843,
+  "decisions_with_exact_source_wording": 403,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 611,
+    "blocks": 6701,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7981,
+      "sha256": "feab4bf8f071fbd87a8c7a202247d8dac39531cf0962569ab9e39f22e90b4f07"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/proofs/cant-do-it.tex",
+      "bytes": 5610,
+      "sha256": "cc28e7318f3098ddf471e904fe5508d468da44b2741dff099868c7f52bc4f4ea"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/proofs/example-1.tex",
+      "bytes": 11482,
+      "sha256": "80569ffd995ffeb4c1a5c42b05ce6e2179ca7d6986a7c7c0478e44d03d73b8ed"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/proofs/example-2.tex",
+      "bytes": 6711,
+      "sha256": "ecadc3ae4adaea1b7fb0204b7799673b531468d85c508e0a84994d7c36e6d4c3"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/proofs/inference-patterns.tex",
+      "bytes": 28166,
+      "sha256": "4755a46d9d676125f62b7fcdfe1e24fa6a4ff42b4b283abee061e61afb9f49ac"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/proofs/proof-by-contradiction.tex",
+      "bytes": 15112,
+      "sha256": "ed2b9503e1d22697024060a1cbc126e7a45ab6a9c3254184ccdc36d08f08a31d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/proofs/reading-proofs.tex",
+      "bytes": 7192,
+      "sha256": "cd27d48833feae305e0ebe42539ecb5d98caf221b69cf8c744845cfb08b04fbb"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/proofs/resources.tex",
+      "bytes": 2163,
+      "sha256": "74a475990dda8a956140a5858897530c72fcf4c90b5c2613d1247923488ab769"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 11433348,
+      "sha256": "0e4a0cbed72b29d68e8c25aeaec4545c94eaa8af4e19d34dba946b49ce76b7f4"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 367333,
+      "sha256": "204917b33514660d443c5a920dce72a08c50584209a0d9244b54c5acdd45ce0b"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_METHODS_PROOFS_COMPLETION.md",
+      "bytes": 3628,
+      "sha256": "23a8fcba179ca7aaa97804bdf2e223044c6f506241feca1484d513829d801fe6"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "bdd4fc73ea63d7bdefaca9d241062760b861ef0d94effdb9a35c38c2069b0b0d"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 954643,
+      "sha256": "039266f6295396a6fb0790588c81fc388bf73658f7e54be6b134ef31820ef6fd"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 22536164,
+      "sha256": "ca680e07cd36db9bdae43f31bf768b582206c6db969fb27620ccecbbea0d2782"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 17601802,
+      "sha256": "3706e9faa3eb4ce8dcdf8df24055fbbadcc83cc26c5659b5fdebad42f6b54d95"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1640990,
+      "sha256": "7fbb045a0579868090a06d34146a1329aeffa2e72399a63a4190ef6e7d71c805"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 10377857,
+      "sha256": "ceb57d0e8ce9d0e6e14144e39fb3d7ea4a394da2c607084815c914a26a373c71"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 302264,
+      "sha256": "09a5b4739ca7d695f9eadda73d91b6e1b18a6f98107753f004a7b304091e17a4"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 296646,
+      "sha256": "c0bc9a939f8e3a7e08b66a0bf73d790b08211775b5e699000d0862b978419262"
+    }
+  ]
+}

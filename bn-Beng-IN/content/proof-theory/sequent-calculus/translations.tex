@@ -1,0 +1,149 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: translations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{tr}
+
+\olsection{\Log{G1c} ও \Log{G3c}-র মধ্যে প্রমাণ-রূপান্তর}
+
+আগে বলেছি, \Log{G1c} ও \Log{G3c}
+উভয়ই ধ্রুপদি যুক্তির জন্য বিশুদ্ধ ও পূর্ণ: প্রত্যেকে
+ঠিক সেই সিকোয়েন্টগুলিই প্রমাণ করে, যেগুলি প্রতিটি
+!!{structure}-এ সত্য। বিশেষত, দুই ব্যবস্থায় একই
+সিকোয়েন্ট প্রমাণযোগ্য। এখন বিশুদ্ধতা ও পূর্ণতার
+উপপাদ্য ঘুরে না গিয়ে, শুধু প্রমাণতাত্ত্বিক পদ্ধতিতে
+এই তথ্য দেখাতে পারি। এ ধরনের প্রমাণে
+\Log{G1c}-র !!{proof}s থেকে
+\Log{G3c}-র !!{proof}s-এ
+\emph{রূপান্তর} এবং উল্টো রূপান্তর পাওয়া যায়।
+
+\begin{prop}
+$\Log{G1c} \Proves S$ হলে $\Log{G3c} \Proves S$।
+\end{prop}
+
+\begin{proof}
+  দেখাব, $\pi$ যদি \Log{G1c}-তে !!a{proof} হয়,
+  তবে \Log{G3c}-তে $S$-এর !!a{proof}~$\pi'$
+  আছে। $n = \pheight{\pi}$-এর উপর আরোহ করি।
+
+  $n = 0$ হলে $\pi$ একটি স্বতঃসিদ্ধ।
+  $\lfalse \Sequent \quad$-ও
+  \Log{G3c}-র স্বতঃসিদ্ধ ($\Gamma, \Delta$
+  প্রসঙ্গ ফাঁকা নিই)। \Log{G1c}-তে
+  $!A \Sequent !A$ যেকোনো $!A$-র জন্য
+  স্বতঃসিদ্ধ; \Log{G3c}-তে সরাসরি
+  পরিচয়-স্বতঃসিদ্ধে সূত্রটি পরমাণবিক হতে হয়।
+  তবে \olref[ex]{prop:G3c-axioms}-এ
+  দেখিয়েছি যে এমন সব সিকোয়েন্ট
+  \Log{G3c}-তে !!{provable}।
+
+  $n>0$ হলে $\pi$-র শেষ বিধি~$R$।
+  আরোহের অনুমানে ওই বিধির পূর্বধারণাগুলির
+  \Log{G3c}-তে !!{proof}s আছে, অর্থাৎ
+  অব্যবহিত উপ-!!{proof}s-এর রূপান্তর আছে।
+  $R$ যদি \Log{G3c}-তেও একই বিধি হয়,
+  রূপান্তরিত পূর্বধারণার !!{proof}s-এ
+  সেটি প্রয়োগ করি। $R$ যদি
+  $\LeftR{\land}$ বা $\RightR{\lor}$
+  হয়, \olref[adm]{prop:weak-G3c-adm}
+  দিয়ে যথাক্রমে বাঁয়ে অনুপস্থিত সংযোজিত
+  সূত্র বা ডানে অনুপস্থিত বিযোজিত সূত্র
+  যোগ করে \Log{G3c}-র সংশ্লিষ্ট বিধি
+  প্রয়োগ করি। একইভাবে
+  \LeftR{\lforall} বা \RightR{\lexists}
+  হলে পূর্বধারণায় পুনরাবৃত্ত প্রধান
+  সূত্রটি যথাযথ পাশে দুর্বলীকরণে যোগ
+  করে \Log{G3c}-র বিধি প্রয়োগ করি।
+  শেষ বিধি দুর্বলীকরণ হলে
+  \olref[adm]{prop:weak-G3c-adm}
+  এবং সংকোচন হলে
+  \olref[inv]{prop:G3c-cont-adm}
+  ব্যবহার করি।
+\end{proof}
+
+\begin{prop}
+$\Log{G3c} \Proves S$ হলে $\Log{G1c} \Proves S$।
+\end{prop}
+
+\begin{proof}
+  এবার $S$-এর !!a{proof}~$\pi$-র
+  !!{height}-এর উপর আরোহ করি।
+  \Log{G3c}-র প্রতিটি স্বতঃসিদ্ধ
+  \Log{G1c}-র একটি স্বতঃসিদ্ধ এবং
+  কয়েকটি \LeftR{\Weakening} ও
+  \RightR{\Weakening} প্রয়োগ করে
+  !!{prove}d করা যায়:
+  \[
+    \Axiom$!C \fCenter !C$
+    \RightLabel{\LeftR{\Weakening}}
+    \Deduce$!C, \Gamma \fCenter !C$
+    \RightLabel{\RightR{\Weakening}}
+    \Deduce$!C, \Gamma \fCenter \Delta, !C$
+    \DisplayProof
+  \qquad
+    \Axiom$\lfalse \fCenter$
+    \RightLabel{\LeftR{\Weakening}}
+    \Deduce$\lfalse, \Gamma \fCenter$
+    \RightLabel{\RightR{\Weakening}}
+    \Deduce$\lfalse, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \]
+  $\pi$-র শেষ বিধি~$R$ হলে আরোহের অনুমান
+  পূর্বধারণাগুলির \Log{G1c}-তে
+  !!{proof}s দেয়। দুই ব্যবস্থায়
+  একই $R$ থাকলে সেই !!{proof}s-এ
+  তা প্রয়োগ করি। ব্যতিক্রম হলো
+  \LeftR{\land}, \RightR{\lor},
+  \LeftR{\lforall} ও
+  \RightR{\lexists}: এগুলির
+  \Log{G3c}-র রূপ \Log{G1c}-তে
+  সরাসরি অভিন্ন নয়। প্রথম দুটি
+  \Log{G1c}-তে এইভাবে নিষ্পাদনযোগ্য:
+  \[
+    \Axiom$!A, !B, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B, !B, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B, !A \land !B, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\Contraction}}
+    \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+      \DisplayProof
+  \qquad
+    \Axiom$\Gamma \fCenter \Delta, !A, !B$
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B, !B$
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B, !A \lor !B$
+    \RightLabel{\RightR{\Contraction}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B$
+      \DisplayProof
+    \]
+  \LeftR{\lforall}-এর পূর্বধারণায়
+  পুনরাবৃত্ত সর্বসূচক সূত্রটিকে
+  \Log{G1c}-র প্রসঙ্গের অংশ ধরে
+  বিধিটি প্রয়োগ করলে সিদ্ধান্তে
+  তার দুটি প্রতিলিপি হয়; বাঁ সংকোচনে
+  কাঙ্ক্ষিত সিদ্ধান্ত পাই।
+  \RightR{\lexists}-এও পুনরাবৃত্ত
+  অস্তিত্বসূচক সূত্রটিকে ডান প্রসঙ্গে
+  রেখে বিধি প্রয়োগ করি, তারপর
+  ডান সংকোচন করি।
+\end{proof}
+% BN-SRC-670 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-670):} প্রথম ভিত্তিক্ষেত্রে উৎসে G3c-তে ইচ্ছামতো সূত্রের পরিচয়-স্বতঃসিদ্ধ দাবি করা হয়েছে; সেটি G1c-র স্বতঃসিদ্ধ। G3c-তে সরাসরি পরিচয়-স্বতঃসিদ্ধ পরমাণবিক, অন্যগুলি নির্দেশিত প্রস্তাবে প্রমাণিত।}
+% BN-SRC-670 TARGET-CORRECTION-END
+% BN-SRC-671 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-671):} প্রথম আরোহধাপে উৎসের বিপরীত-দিকের G3c-বিধি থেকে G1c-নিষ্পাদনযোগ্যতার নির্দেশ বাদ দিয়ে G3c-তে দুর্বলীকরণে অনুপস্থিত যৌগাংশ বা পুনরাবৃত্ত পরিমাণসূচক-সূত্র যোগ করার সঠিক অনুকরণ লেখা হয়েছে।}
+% BN-SRC-671 TARGET-CORRECTION-END
+% BN-SRC-672 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-672):} G3c-র বিযোজন-ডান বিধির G1c-অনুকরণের দ্বিতীয় সিদ্ধান্তে উৎসের জোড়া কমা \(\Delta, ,\) থেকে অতিরিক্ত কমাটি সরানো হয়েছে।}
+% BN-SRC-672 TARGET-CORRECTION-END
+% BN-SRC-673 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-673):} দ্বিতীয় আরোহধাপে G3c-র সর্বসূচক-বাঁ ও অস্তিত্বসূচক-ডান বিধি G1c-র সঙ্গে অভিন্ন বলা যায় না; পুনরাবৃত্ত প্রধান সূত্রকে প্রসঙ্গে রেখে G1c-বিধি এবং পরে সংশ্লিষ্ট পাশের সংকোচনে অনুকরণটি সম্পূর্ণ করা হয়েছে।}
+% BN-SRC-673 TARGET-CORRECTION-END
+
+\end{document}

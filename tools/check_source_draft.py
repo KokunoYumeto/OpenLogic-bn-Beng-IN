@@ -7009,6 +7009,18 @@ for row in rows:
             and not normalizations
             and mathparts(audited_rules_proofs) == target_math
         )
+    legacy_sequent_translation_repairs = False
+    if row["unit_id"] == "OLP-0713":
+        audited_translations = source
+        old = r"\Delta, , !A \lor !B"
+        new = r"\Delta, !A \lor !B"
+        assert audited_translations.count(old) == 1
+        audited_translations = audited_translations.replace(old, new, 1)
+        legacy_sequent_translation_repairs = (
+            set(documented) == {"BN-SRC-670", "BN-SRC-671", "BN-SRC-672", "BN-SRC-673"}
+            and not normalizations
+            and mathparts(audited_translations) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -7178,6 +7190,7 @@ for row in rows:
             legacy_lk_caption_repairs,
             legacy_mg3i_rule_table_repairs,
             legacy_sequent_rules_proofs_repairs,
+            legacy_sequent_translation_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7282,6 +7295,14 @@ for row in rows:
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\ollabel{tab:mG3i}": 1})
     )
+    legacy_sequent_translation_reference_fix = (
+        row["unit_id"] == "OLP-0713"
+        and legacy_sequent_translation_repairs
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\olref[adm]{prop:lor-G3-adm}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\olref[adm]{prop:weak-G3c-adm}": 1})
+    )
     legacy_tn3_table_reference_fix = (
         row["unit_id"] == "OLP-0697"
         and set(documented) == {"BN-SRC-621", "BN-SRC-622", "BN-SRC-623"}
@@ -7311,6 +7332,7 @@ for row in rows:
         or legacy_g3i_table_label_fix
         or legacy_lk_table_label_fix
         or legacy_mg3i_table_label_fix
+        or legacy_sequent_translation_reference_fix
         or legacy_tn3_table_reference_fix
     )
     legacy_cut_intro_split_token_fix = (
@@ -7614,6 +7636,17 @@ for row in rows:
         tex_command_check = {
             "documented_source_corrections": ["BN-SRC-667", "BN-SRC-668", "BN-SRC-669"],
             "multiset_identity_and_proof_height_example": True,
+        }
+    if row["unit_id"] == "OLP-0713":
+        assert legacy_sequent_translation_repairs and legacy_sequent_translation_reference_fix
+        assert checked_target.count(r"\olref[adm]{prop:weak-G3c-adm}") == 2
+        assert checked_target.count(r"\olref[adm]{prop:lor-G3-adm}") == 0
+        assert checked_target.count(r"\Delta, !A \lor !B, !A \lor !B$") == 1
+        assert checked_target.count(r"\LeftR{\lforall}") >= 2
+        assert checked_target.count(r"\RightR{\lexists}") >= 2
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-670", "BN-SRC-671", "BN-SRC-672", "BN-SRC-673"],
+            "bidirectional_G1c_G3c_rule_simulations": True,
         }
     checks = {
         "unit_id": row["unit_id"],

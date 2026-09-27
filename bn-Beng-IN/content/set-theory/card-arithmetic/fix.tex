@@ -1,0 +1,185 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{card-arithmetic}{fix}
+\olsection{$\aleph$-স্থিরবিন্দু}
+
+\olref[spine][]{chap}-এ বলেছিলাম, প্রতিস্থাপনের
+ন্যায্যতা দরকার: এই স্বতঃসিদ্ধে সেটের স্তরক্রম
+বেশ উঁচু হয়। কিছু অঙ্কবাচক পাটিগণিত জানার পরে
+স্তরক্রমের উচ্চতা একটু বোঝানো যায়।
+
+স্পষ্টত $0<\aleph_0$, $1<\aleph_1$,
+$2<\aleph_2$\ldots; এবং প্রতি ধাপে আকারের
+পার্থক্য আরও \emph{বাড়ে}। তাই অনুমান করতে
+ইচ্ছে হয়, প্রত্যেক ক্রমসংখ্যা $\kappa$-র জন্য
+$\kappa<\aleph_\kappa$।
+
+কিন্তু $\ZFC$-এ এই অনুমান \emph{ভুল}। বরং
+\emph{$\aleph$-স্থিরবিন্দু} আছে, অর্থাৎ এমন
+অঙ্কবাচক সংখ্যা $\kappa$, যার জন্য
+$\kappa=\aleph_\kappa$।
+
+\begin{prop}\ollabel{alephfixed}
+একটি $\aleph$-স্থিরবিন্দু আছে।
+\end{prop}
+
+\begin{proof}
+পুনরাবৃত্তি ব্যবহার করে সংজ্ঞায়িত করি:
+\begin{align*}
+	\kappa_0 &= 0\\
+	\kappa_{n+1} &= \aleph_{\kappa_n}\\
+	\kappa&= \bigcup_{n < \omega}\kappa_n
+\end{align*}
+\olref[cardinals][classing]{unioncardinalscardinal}
+অনুযায়ী $\kappa$ একটি অঙ্কবাচক সংখ্যা। এখন:
+\[
+	\kappa= \bigcup_{n < \omega} \kappa_{n+1} =
+	\bigcup_{n < \omega}\aleph_{\kappa_n} =
+	\bigcup_{\alpha < \kappa}\aleph_\alpha = \aleph_\kappa
+\]
+%	By construction, $\kappa$ is the least cardinal greater than each
+%	$\kappa_n$. So $\aleph_\kappa$ is the least cardinal greater than
+%	each $\aleph_{\kappa_n}$, and hence greater than each
+%	$\kappa_{n+1}$. But equally $\kappa$ is the least cardinal greater
+%	than each $\kappa_{n+1} = \aleph_{\kappa_n}$. So $\kappa=
+%	\aleph_\kappa$.
+\end{proof}
+
+বুলস একবার ঠিক এই নির্মিত $\aleph$-স্থিরবিন্দু
+নিয়ে একটি প্রবন্ধ লিখেছিলেন। প্রবন্ধের শুরুতে
+$\kappa$-র অস্তিত্বের কথা বলার পর তিনি লেখেন:
+\begin{quote}
+	[সেটতত্ত্বের সঙ্গে আগে পরিচয় না থাকলে $\kappa$]
+	একটি \emph{বেশ বড়} সংখ্যা বলে মনে হবে। আমার
+	মনে হয়, এতই বড় যে, অন্তত $\kappa$-সংখ্যক বস্তু
+	আছে বলে দাবি করে এমন যেকোনো তত্ত্বের সত্যতা
+	নিয়েই প্রশ্ন ওঠে।
+	\citep[p.~257]{Boolos2000}
+\end{quote}
+প্রবন্ধের শেষে তিনি প্রশ্ন করেন:
+\begin{quote}
+	[আমাদের কি] সন্দেহ হয় যে গল্পের শুরুতে যা-ই
+	থাকুক, এত দূর এসে চাকা কেবল ঘুরছে, আর বাস্তবে
+	যা ঘটে তার কোনো বিবরণ আমরা শুনছি না?
+	\citep[p.~268]{Boolos2000}
+\end{quote}
+আমরা যদি সত্যিই ``বাস্তবে যা ঘটে'' তার সীমা
+ছাড়িয়ে যাই, তবে দোষ সরাসরি প্রতিস্থাপনের।
+এই স্বতঃসিদ্ধেই আমাদের প্রমাণটি কাজ করে।
+সেক্ষেত্রে বুলসকে কয়েক দশক আগে করা তাঁর
+``কোনো অবাঞ্ছিত'' ফল নেই—এই প্রতিস্থাপন-সংক্রান্ত
+দাবি আবার ভেবে দেখতে হতো
+(দেখো \olref[replacement][extrinsic]{sec})।
+
+কিন্তু $\kappa$-র অস্তিত্ব কি এত খারাপ? এখানে
+রাসেলের \emph{ট্রিস্ট্রাম শ্যান্ডির কূটাভাস}
+ভাবলে সুবিধা হতে পারে। ট্রিস্ট্রাম শ্যান্ডি
+দিনলিপিতে নিজের জীবন লিখে রাখে, কিন্তু একটি
+দিনের কথা লিখতে তার এক বছর লাগে। প্রতি বছর
+সে আরও পিছিয়ে পড়ে: এক বছর পরে একটি দিনের
+কথা লেখা হয়েছে, অথচ ৩৬৪ দিনের কথা লেখা
+হয়নি; দুই বছর পরে দুটি দিনের কথা লেখা হয়েছে,
+৭২৮ দিনের কথা লেখা হয়নি; তিন বছর পরে
+তিনটি দিনের কথা লেখা হয়েছে, ১০৯২ দিনের
+কথা লেখা হয়নি\dots\footnote{অধিবর্ষ উপেক্ষা করছি।}
+তবু ট্রিস্ট্রাম যদি \emph{অমর} হয়, তবে শেষ পর্যন্ত
+প্রত্যেক দিনের কথাই লিখবে: জীবনের $n$-তম বছরের
+মধ্যে $n$-তম দিনের কথা লিখবে। ফলে ``সময়ের শেষে''
+তার দিনলিপি সম্পূর্ণ হবে।
+
+তাহলে এই ভাবনার সঙ্গে কতটা তফাত যে $\kappa$
+পর্যন্ত $\alpha$ সর্বদা $\aleph_\alpha$-র চেয়ে ছোট,
+এমনকি ক্রমশ আরও অনেক ছোট; অথচ সেই বিন্দুতে এসে
+দুই পক্ষ সমান হয় এবং $\kappa=\aleph_\kappa$?
+
+এটি সরিয়ে রেখে, এবং $\ZFC$ মেনে নিয়ে,
+স্থিরবিন্দু-নির্মাণের আরও কয়েকটি মজার ফল দিয়ে
+শেষ করি। পরের তিনটি ফল স্বজ্ঞায় দেখায়:
+স্তরক্রমের কোনো একটি অ-তুচ্ছ পর্যায়ে তার
+প্রস্থ ও উচ্চতা সমান হয়।
+
+\begin{prop}\ollabel{bethfixed}
+একটি $\beth$-স্থিরবিন্দু আছে, অর্থাৎ এমন
+$\kappa$ আছে যার জন্য $\kappa=\beth_\kappa$।
+\end{prop}
+
+\begin{proof}
+\olref{alephfixed}-এর মতোই; সেখানে ``$\aleph$''-এর
+বদলে ``$\beth$'' ব্যবহার করো।
+\end{proof}
+
+\begin{prop}\ollabel{stagesize}
+$\card{V_{\omega+\alpha}}=\beth_{\alpha}$।
+$\omega\ordtimes\omega\leq\alpha$ হলে
+$\card{V_\alpha}=\beth_\alpha$।
+\end{prop}
+
+\begin{proof}
+প্রথম দাবিটি সহজ ট্রান্সফাইনাইট আবেশে পাওয়া যায়।
+দ্বিতীয় দাবি আসে, কারণ
+$\omega\ordtimes\omega\leq\alpha$ হলে
+$\omega+\alpha=\alpha$। এটি দেখাতে
+\olref[ord-arithmetic][]{chap}-এর ক্রমসংখ্যার
+পাটিগণিতের তথ্য ব্যবহার করি। প্রথমে লক্ষ করো,
+$\omega\ordtimes\omega=
+\omega\ordtimes(1\ordplus\omega)=
+(\omega\ordtimes 1)\ordplus(\omega\ordtimes\omega)=
+\omega\ordplus(\omega\ordtimes\omega)$।
+এখন $\omega\ordtimes\omega\leq\alpha$,
+অর্থাৎ কোনো $\beta$-র জন্য
+$\alpha=(\omega\ordtimes\omega)\ordplus\beta$ হলে
+$\omega\ordplus\alpha=
+\omega\ordplus((\omega\ordtimes\omega)\ordplus\beta)=
+(\omega\ordplus(\omega\ordtimes\omega))\ordplus\beta=
+(\omega\ordtimes\omega)\ordplus\beta=\alpha$।
+\end{proof}
+
+\begin{cor}
+কোনো $\kappa$-র জন্য $\card{V_\kappa}=\kappa$।
+\end{cor}
+
+\begin{proof}
+\olref{bethfixed} অনুযায়ী একটি $\beth$-স্থিরবিন্দু
+$\kappa$ নিই। স্পষ্টত $\omega\ordtimes\omega<\kappa$।
+তাই \olref{stagesize} থেকে
+$\card{V_\kappa}=\beth_\kappa=\kappa$।
+\end{proof}
+
+$V_\kappa$-র নিচে যতগুলি পর্যায়,
+$V_\kappa$-তে ততগুলি !!{element}s আছে।
+অতএব স্বজ্ঞায় $V_\kappa$ যত চওড়া, ততই উঁচু।
+এটি ট্রিস্ট্রাম শ্যান্ডির অবস্থার মতো: এক পর্যায়
+থেকে পরের পর্যায়ে যেতে \emph{ঘাতসেট} নিই,
+তাই প্রতিবার স্তরক্রম \emph{অনেক} বড় হয়।
+কিন্তু ``শেষে'', অর্থাৎ $\kappa$ পর্যায়ে,
+প্রস্থ উচ্চতার নাগাল পায়।
+
+প্রশ্ন উঠতে পারে: \emph{স্তরক্রমের প্রস্থ ও উচ্চতা
+কতবার সমান হয়?} উত্তর: \emph{যতগুলি ক্রমসংখ্যা আছে,
+ততবার।} তবে একটু ব্যাখ্যা দরকার।
+
+নিচের মতো একটি পদ $\tau$ সংজ্ঞায়িত করি।
+যেকোনো $A$-র জন্য:
+\begin{align*}
+	\tau_0(A) & \defis \card{A}\\
+	\tau_{n+1}(A) & \defis \beth_{\tau_n(A)}\\
+	\tau(A) & \defis \bigcup_{n < \omega}\tau_n(A)
+\intertext{\olref{bethfixed}-এর মতোই, যেকোনো $A$-র জন্য
+$\tau(A)$ একটি $\beth$-স্থিরবিন্দু; আর স্পষ্টত
+$\card{A}<\tau(A)$। এবার এই পুনরাবৃত্তিমূলক
+সংজ্ঞাটি দেখি:}
+	W_0 &\defis 0\\
+	W_{\alpha + 1} & \defis \tau(W_\alpha)\\
+	W_\alpha & \defis \bigcup_{\beta < \alpha} W_\beta
+	\text{, when $\alpha$ is a limit}
+\end{align*}
+নির্মাণটি সব ক্রমসংখ্যার জন্য সংজ্ঞায়িত।
+% BN-SRC-462: W_0=0 is not a beth fixed point; positive indices are.
+স্বজ্ঞায় $W$ ধনাত্মক ক্রমসংখ্যাগুলি থেকে
+$\beth$-স্থিরবিন্দুগুলিতে একটি ``!!a{injection}''।
+আগের মতোই যেকোনো $\alpha$-র জন্য
+$V_{W_\alpha}$ যত চওড়া, তত উঁচু।
+
+\end{document}

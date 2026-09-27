@@ -1,0 +1,168 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+\olfileid{sth}{card-arithmetic}{simp}
+
+\olsection{যোগ ও গুণের সরলীকরণ}
+
+দেখা যাবে, ট্রান্সফাইনাইট অঙ্কবাচক সংখ্যার যোগ ও গুণ
+\emph{অত্যন্ত} সহজ। কারণ অঙ্কবাচক সংখ্যাগুলি বিশেষ
+কিছু ক্রমসংখ্যা; তাই তারা সুক্রমবিন্যস্ত, এবং সেই
+কাঠামো কাজে লাগানো যায়। অবশ্য এটি দেখানো
+ততটা সহজ নয়। শুরুতে একটি কৌশলী সংজ্ঞা দরকার:
+
+\begin{defn}
+ক্রমসংখ্যার যুগলের উপর একটি \emph{মানক ক্রম}
+$\canonord$ সংজ্ঞায়িত করি।
+$\tuple{\alpha_1,\alpha_2}\canonord
+\tuple{\beta_1,\beta_2}$ তখনই, যখন নিচের
+যেকোনো একটি শর্ত পূরণ হয়:
+\begin{enumerate}
+	\item $\max(\alpha_1, \alpha_2) < \max(\beta_1, \beta_2)$; অথবা
+	\item $\max(\alpha_1, \alpha_2) = \max(\beta_1, \beta_2)$ এবং
+	$\alpha_1 < \beta_1$; অথবা
+	\item $\max(\alpha_1, \alpha_2) = \max(\beta_1, \beta_2)$ এবং
+	$\alpha_1 = \beta_1$ এবং $\alpha_2 < \beta_2$।
+\end{enumerate}
+\end{defn}
+
+\begin{lem}
+যেকোনো ক্রমসংখ্যা $\alpha$-র জন্য
+$\tuple{\alpha\times\alpha,\canonord}$ একটি সুক্রমবিন্যাস।
+\end{lem}
+
+\begin{proof}
+$\alpha\times\alpha$-র যেকোনো দুটি ভিন্ন যুগল
+$\canonord$-এ তুলনাযোগ্য। কারণ
+$\tuple{\alpha_1,\alpha_2}$ ও
+$\tuple{\beta_1,\beta_2}$-এর কোনোটিই অন্যটির
+চেয়ে $\canonord$-এ ছোট না হলে
+$\max(\alpha_1,\alpha_2)=\max(\beta_1,\beta_2)$,
+$\alpha_1=\beta_1$ এবং $\alpha_2=\beta_2$।
+অতএব $\tuple{\alpha_1,\alpha_2}=
+\tuple{\beta_1,\beta_2}$।
+
+সুক্রমবিন্যাস দেখাতে অশূন্য $X\subseteq\alpha\times\alpha$
+ধরি। $\alpha$ ক্রমসংখ্যা বলে
+$\Setabs{\max(\gamma_1,\gamma_2)}{\tuple{\gamma_1,
+\gamma_2}\in X}$-এর ক্ষুদ্রতম সদস্য কোনো
+$\delta$। এবার
+$\Setabs{\tuple{\gamma_1,\gamma_2}\in X}{\max(\gamma_1,\gamma_2)=
+\delta}$ থেকে ক্ষুদ্রতম প্রথম স্থানাঙ্ক নেই এমন
+যুগলগুলি বাদ দিই। অবশিষ্টগুলির মধ্যে ক্ষুদ্রতম
+দ্বিতীয় স্থানাঙ্কবিশিষ্ট যুগলটি $X$-এর
+$\canonord$-ক্ষুদ্রতম সদস্য।
+\end{proof}
+\noindent
+এবার একটি খুব ছোট, সহজ পর্যবেক্ষণ:
+
+\begin{prop}\ollabel{simplecardproduct}
+$\cardeq{\alpha}{\beta}$ হলে
+$\cardeq{\alpha\times\alpha}{\beta\times\beta}$।
+\end{prop}
+
+\begin{proof}
+$f\colon\alpha\to\beta$ থেকে
+$\tuple{\gamma_1,\gamma_2}\mapsto
+\tuple{f(\gamma_1),f(\gamma_2)}$ চিত্রণটি পাওয়া যায়।
+\end{proof}
+\noindent
+এগুলি কাজে লাগিয়ে একটি গুরুত্বপূর্ণ লেমা প্রমাণ করব:
+\begin{lem}\ollabel{alphatimesalpha}
+যেকোনো অসীম ক্রমসংখ্যা $\alpha$-র জন্য
+$\cardeq{\alpha}{\alpha\times\alpha}$।
+\end{lem}
+
+\begin{proof}
+বিরোধের জন্য ধরি, ফলটি সত্য নয় এমন ক্ষুদ্রতম
+অসীম ক্রমসংখ্যা $\alpha$ আছে।
+\olref[sfr][siz][zigzag]{natsquaredenumerable}
+অনুযায়ী $\cardeq{\omega}{\omega\times\omega}$,
+তাই $\omega\in\alpha$। তদুপরি $\alpha$ একটি
+অঙ্কবাচক সংখ্যা। তা না হলে $\card{\alpha}\in\alpha$;
+তাই ন্যূনতমত্বের অনুমানে
+$\cardeq{\card{\alpha}}{\card{\alpha}\times\card{\alpha}}$।
+আবার সংজ্ঞা অনুযায়ী $\cardeq{\card{\alpha}}{\alpha}$;
+ফলে \olref{simplecardproduct} থেকে
+$\cardeq{\alpha}{\alpha\times\alpha}$,
+যা বিরোধ।
+
+এবার প্রত্যেক
+$\tuple{\gamma_1,\gamma_2}\in\alpha\times\alpha$-র
+জন্য নিচের প্রারম্ভিক খণ্ডটি ভাবো:
+\begin{align*}
+	\text{Seg}(\gamma_1, \gamma_2) &= \Setabs{\tuple{\delta_1, \delta_2} \in \alpha \times \alpha}{\tuple{\delta_1, \delta_2} \canonord \tuple{\gamma_1, \gamma_2}}
+\end{align*}
+$\gamma=\max(\gamma_1,\gamma_2)$ নিলে
+$\tuple{\gamma_1,\gamma_2}\canonord
+\tuple{\gamma+1,\gamma+1}$। তাই $\gamma$
+অসীম হলে:
+\begin{align*}
+	\text{Seg}(\gamma_1, \gamma_2) &
+	\precsim ((\gamma \ordplus 1)\ordtimes (\gamma \ordplus 1))\\
+	&\approx (\gamma \ordtimes \gamma)
+	\text{, by \olref[ord-arithmetic][using-addition]{ordinfinitycharacter} and
+	\olref{simplecardproduct}}\\
+	&\approx \gamma \text{, by the induction hypothesis}\\
+	& \prec \alpha\text{, since $\alpha$ is a cardinal}
+\end{align*}
+% BN-SRC-455: finite gamma is a separate omitted case in the source proof.
+সর্বোচ্চ স্থানাঙ্কটি সসীম হলে খণ্ডটিও সসীম,
+তাই সেক্ষেত্রেও মূল অসীম ক্রমসংখ্যার চেয়ে ছোট। অতএব
+$\ordtype{\alpha\times\alpha,\canonord}\leq\alpha$,
+ফলে $\cardle{\alpha\times\alpha}{\alpha}$। অবশ্যই
+$\cardle{\alpha}{\alpha\times\alpha}$;
+শ্র্যোডার--বার্নস্টাইন থেকে ফলটি মেলে।
+\end{proof}
+
+শেষ পর্যন্ত সরলীকরণের ফলটি পাই:
+
+\begin{thm}\ollabel{cardplustimesmax}
+$\cardfont{a},\cardfont{b}$ অসীম অঙ্কবাচক সংখ্যা হলে:
+\[
+	\cardfont{a}
+\cardtimes \cardfont{b} = \cardfont{a} \cardplus \cardfont{b} =
+\text{max}(\cardfont{a}, \cardfont{b}).
+\]
+\end{thm}
+
+\begin{proof}
+সাধারণত্ব না হারিয়ে
+$\cardfont{a}=\max(\cardfont{a},\cardfont{b})$
+ধরি। \olref{alphatimesalpha} প্রয়োগ করলে
+$\cardfont{a}\cardtimes\cardfont{a}=\cardfont{a}\leq
+\cardfont{a}\cardplus\cardfont{b}\leq
+\cardfont{a}\cardplus\cardfont{a}\leq
+\cardfont{a}\cardtimes\cardfont{a}$।
+\end{proof}\noindent একইভাবে $\cardfont{a}$ অসীম হলে,
+প্রতিটি সেটের আকার $\leq\cardfont{a}$ এমন
+$\cardfont{a}$-সংখ্যক সেটের সংযোগের আকারও
+$\leq\cardfont{a}$:
+
+\begin{prop}\ollabel{kappaunionkappasize}
+$\cardfont{a}$ একটি অসীম অঙ্কবাচক সংখ্যা হোক।
+প্রত্যেক ক্রমসংখ্যা $\beta\in\cardfont{a}$-র জন্য
+$X_\beta$ এমন সেট হোক, যার
+$\card{X_\beta}\leq\cardfont{a}$। তাহলে
+$\card{\bigcup_{\beta\in\cardfont{a}}X_\beta}
+\leq\cardfont{a}$।
+\end{prop}
+
+\begin{proof}
+প্রত্যেক $\beta\in\cardfont{a}$-র জন্য একটি
+!!a{injection} $f_\beta\colon X_\beta\to\cardfont{a}$
+স্থির করি।\footnote{এগুলি কীভাবে ``স্থির'' করা যায়?
+দেখো \olref[sth][choice][countablechoice]{sec}।}
+$g\colon\bigcup_{\beta\in\cardfont{a}}X_\beta\to
+\cardfont{a}\times\cardfont{a}$ এভাবে সংজ্ঞায়িত
+করি: $v\in X_\beta$ এবং সব
+$\gamma\in\beta$-র জন্য $v\notin X_\gamma$
+হলে $g(v)=\tuple{\beta,f_\beta(v)}$। এই চিত্রণটি
+একটি !!a{injection}। এখন
+$\bigcup_{\beta\in\cardfont{a}}X_\beta
+\preceq\cardfont{a}\times\cardfont{a}
+\approx\cardfont{a}$,
+\olref{cardplustimesmax} অনুযায়ী।
+\end{proof}
+
+\end{document}

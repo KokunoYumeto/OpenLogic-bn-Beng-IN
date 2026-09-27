@@ -1,0 +1,172 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{card-arithmetic}{ch}
+
+\olsection{কন্টিনিউয়াম অনুমান}
+
+আগের ফল থেকে ইঙ্গিত মেলে—এবং ইঙ্গিতটি ঠিক—যে অসীম
+অঙ্কবাচক সংখ্যাগুলি $2$-এর ঘাতের সঙ্গে, অর্থাৎ
+\olref[opps]{lem:SizePowerset2Exp} অনুযায়ী ঘাতসেট
+নেওয়ার সঙ্গে, সরলভাবে সম্পর্কিত হলে অঙ্কবাচক সংখ্যার
+ঘাত হিসাব \emph{সহজ} হতো। কিন্তু তারা যে সত্যিই
+ঘাতসেটের সঙ্গে এমন সরলভাবে সম্পর্কিত, তা ধরে নিতে পারি না।
+
+বিষয়টি খুলতে প্রথমে কিছু সুবিধাজনক সংকেত আনি।
+
+\begin{defn}
+$\cardsucc{\cardfont{a}}$ হলো $\cardfont{a}$-র চেয়ে
+কঠোরভাবে বড় ক্ষুদ্রতম অঙ্কবাচক সংখ্যা। এর সাহায্যে
+দুটি অসীম অনুক্রম সংজ্ঞায়িত করি:
+\begin{align*}
+	\aleph_{0} &\defis \omega &
+	\beth_{0} &\defis \omega\\
+	\aleph_{\alpha \ordplus 1} &\defis \cardsucc{(\aleph_{\alpha})} &
+	\beth_{\alpha+1} &\defis \cardexpo{2}{\beth_{\alpha}}\\
+	\aleph_{\alpha} &\defis \bigcup_{\beta< \alpha} \aleph_{\beta} &
+	\beth_{\alpha} &\defis \bigcup_{\beta < \alpha}\beth_{\beta} & \text{when $\alpha$ is a limit ordinal}.
+	\end{align*}
+\end{defn}
+
+$\cardsucc{\cardfont{a}}$-র সংজ্ঞাটি সার্থক। কারণ
+\olref[cardinals][classing]{lem:NoLargestCardinal}
+অনুযায়ী প্রত্যেক $\cardfont{a}$-র চেয়ে বড়
+অঙ্কবাচক সংখ্যা আছে।
+% BN-SRC-459: least greater cardinal follows from ordinal well-ordering,
+% not directly from transfinite induction; recursion defines the sequences.
+তাদের মধ্যে ক্ষুদ্রতমটি ক্রমসংখ্যার সুক্রমবিন্যাসে
+পাওয়া যায়। অনুক্রমদুটির বাকি অংশ ট্রান্সফাইনাইট
+পুনরাবৃত্তিতে সংজ্ঞায়িত হয়।
+
+কান্টর ``$\aleph$'' সংকেতটি এনেছিলেন। এটি
+\emph{আলেফ}: হিব্রু বর্ণমালার প্রথম অক্ষর, এবং
+``অসীম'' অর্থের হিব্রু শব্দেরও প্রথম অক্ষর।
+পিয়ার্স ``$\beth$'' সংকেতটি এনেছিলেন; \emph{বেথ}
+হিব্রু বর্ণমালার দ্বিতীয় অক্ষর।\footnote{১৯০০ সালের
+ডিসেম্বরে কান্টরকে লেখা একটি চিঠিতে পিয়ার্স এই সংকেত
+ব্যবহার করেছিলেন। দুর্ভাগ্যবশত, সেখানে তিনি
+$\alpha\geq\omega$ হলে $\beth_\alpha$ নেই—এমন
+একটি ভুল যুক্তিও দিয়েছিলেন।}
+এই সংকেতগুলি আমাদের অসীম অঙ্কবাচক সংখ্যা দেয়।
+
+\begin{prop}
+প্রত্যেক ক্রমসংখ্যা $\alpha$-র জন্য
+$\aleph_\alpha$ ও $\beth_\alpha$ অঙ্কবাচক সংখ্যা।
+\end{prop}
+
+\begin{proof}
+দুটি ফলই সহজ ট্রান্সফাইনাইট আবেশে পাওয়া যায়।
+$\aleph_0=\beth_0=\omega$ একটি অঙ্কবাচক সংখ্যা,
+\olref[cardinals][classing]{omegaisacardinal} অনুযায়ী।
+$\aleph_\alpha$ ও $\beth_\alpha$ দুটিই অঙ্কবাচক সংখ্যা
+ধরলে, $\aleph_{\alpha+1}$ ও $\beth_{\alpha+1}$-ও
+সংজ্ঞাতেই অঙ্কবাচক সংখ্যা। আর
+\olref[cardinals][classing]{unioncardinalscardinal}
+অনুযায়ী অঙ্কবাচক সংখ্যার সেটের সংযোগও অঙ্কবাচক সংখ্যা।
+\end{proof}
+\noindent
+উপরন্তু প্রত্যেক অসীম অঙ্কবাচক সংখ্যা কোনো না কোনো
+$\aleph$:
+
+\begin{prop}
+$\cardfont{a}$ অসীম অঙ্কবাচক সংখ্যা হলে অদ্বিতীয়
+কোনো $\gamma$-র জন্য
+$\cardfont{a}=\aleph_\gamma$।
+\end{prop}
+
+\begin{proof}
+অসীম অঙ্কবাচক সংখ্যার উপর ট্রান্সফাইনাইট আবেশ করি।
+প্রথম ক্ষেত্রটি আগের প্রস্তাবেই প্রতিষ্ঠিত। আবেশে ধরি,
+% BN-SRC-460: the predecessor induction domain excludes finite cardinals.
+অসীম $\cardfont{b}<\cardfont{a}$ হলে
+$\cardfont{b}=\aleph_{\gamma_\cardfont{b}}$।
+কোনো অসীম $\cardfont{b}$-র জন্য
+$\cardfont{a}=\cardsucc{\cardfont{b}}$ হলে
+$\cardfont{a}=\cardsucc{(\aleph_{\gamma_\cardfont{b}})}=
+\aleph_{\gamma_\cardfont{b}+1}$।
+আর $\cardfont{a}$ কোনো অঙ্কবাচক সংখ্যার উত্তরসূরি
+না হলে, অঙ্কবাচক সংখ্যাগুলি ক্রমসংখ্যা বলে
+$\cardfont{a}=\bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}\cardfont{b}=
+\bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}{\aleph_{\gamma_\cardfont{b}}}$।
+তাই $\gamma=
+\bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}\gamma_\cardfont{b}$
+নিলে $\cardfont{a}=\aleph_\gamma$।
+\end{proof}
+
+প্রত্যেক অসীম অঙ্কবাচক সংখ্যা কোনো $\aleph$ বলে
+প্রশ্ন আসে: প্রত্যেকটি কি কোনো $\beth$-ও? যদি
+\emph{তাই} হতো, তবে অসীম অঙ্কবাচক সংখ্যাগুলি
+ঘাতসেট নেওয়ার সঙ্গে সরলভাবে সম্পর্কিত থাকত।
+বিশেষত নিচের কথাটি পেতাম:
+
+\begin{defish}
+\emph{সাধারণীকৃত কন্টিনিউয়াম অনুমান} (GCH)।
+প্রত্যেক $\alpha$-র জন্য $\aleph_\alpha=\beth_\alpha$।
+\end{defish}
+
+GCH সত্য হলে অঙ্কবাচক সংখ্যার ঘাতে বেশ কিছু
+সরলীকরণও করা যেত। বিশেষত অসীম $\cardfont{a}$ এবং
+% BN-SRC-461: exponent zero is excluded from the claimed lower bound.
+অশূন্য $\cardfont{b}<\cardfont{a}$-র জন্য
+$\cardexpo{\cardfont{a}}{\cardfont{b}}$-র মান
+$\cardfont{a}\leq\cardexpo{\cardfont{a}}{\cardfont{b}}
+\leq\cardsucc{\cardfont{a}}$-এর মধ্যে থাকত।
+তারপর কোন শর্তে দুটি সম্ভাবনার কোনটি ঘটে,
+অর্থাৎ $\cardfont{a}=\cardexpo{\cardfont{a}}{\cardfont{b}}$
+নাকি $\cardexpo{\cardfont{a}}{\cardfont{b}}=
+\cardsucc{\cardfont{a}}$, তাও নির্দিষ্টভাবে বলা যেত।
+\footnote{শর্তটি \emph{সহশেষতা} দিয়ে নির্ধারিত হয়।}
+
+কিন্তু GCH একটি \emph{অনুমান}, \emph{উপপাদ্য} নয়।
+\citet{Godel1938} প্রমাণ করেন, $\ZFC$ সংগতি-সম্মত
+হলে $\ZFC+\text{GCH}$-ও সংগতি-সম্মত। পরে জানা যায়,
+$\ZFC$-র সঙ্গে $\lnot$GCH-ও যোগ করা যায়।
+GCH-এর সবচেয়ে সরল অ-তুচ্ছ \emph{দৃষ্টান্তটি} ধরো:
+
+\begin{defish}
+\emph{কন্টিনিউয়াম অনুমান} (CH)। $\aleph_1=\beth_1$।
+\end{defish}
+
+\citet{Cohen1963} প্রমাণ করেন, $\ZFC$ সংগতি-সম্মত
+হলে $\ZFC+\lnot\text{CH}$-ও সংগতি-সম্মত।
+অতএব কন্টিনিউয়াম অনুমান $\ZFC$ থেকে স্বতন্ত্র।
+
+``কন্টিনিউয়াম'' বাস্তব সংখ্যারেখা $\Real$-এর
+আরেক নাম বলেই অনুমানটির এই নাম।
+\olref[opps]{continuumis2aleph0} অনুযায়ী
+$\card{\Real}=\beth_1$। তাই কন্টিনিউয়াম অনুমান
+বলে, স্বাভাবিক সংখ্যার অঙ্কবাচকতা
+$\aleph_0=\beth_0$ এবং কন্টিনিউয়ামের অঙ্কবাচকতা
+$\beth_1$-এর মাঝখানে আর কোনো অঙ্কবাচক সংখ্যা নেই।
+
+$\ZFC$ থেকে (G)CH-এর \emph{স্বতন্ত্রতা} জানা গেলে
+তাদের \emph{সত্যতা} সম্পর্কে কী বলব? এ নিয়ে
+অনেক কথাই বলা যায়; সেটতত্ত্বে সাম্প্রতিক বহু
+ফলপ্রসূ গবেষণা এই প্রশ্নগুলির দিকে গেছে। তবে
+দুটি সংক্ষিপ্ত কথা বিশেষভাবে মনে রাখা দরকার।
+
+প্রথমত, আনুষ্ঠানিক স্বতন্ত্রতার ফল থেকে (G)CH বা
+CH-এর সত্যমান \emph{অনির্ধারিত}, এমন সিদ্ধান্ত
+\emph{সঙ্গে সঙ্গে} আসে না। হয়তো আমাদের কাছে
+স্বাভাবিক মনে হবে এমন আরও কিছু স্বতঃসিদ্ধ যোগ
+করতে হবে, এবং সেগুলি প্রশ্নটির একদিকে বা অন্যদিকে
+মীমাংসা করবে। গ্যোডেল নিজে এই উত্তরই যথার্থ
+বলে মনে করেছিলেন।
+
+দ্বিতীয়ত, $\ZFC$ থেকে CH-এর স্বতন্ত্রতা অবশ্যই
+\emph{চমকপ্রদ}, কিন্তু আক্ষরিক অর্থে \emph{অবিশ্বাস্য}
+নয়। মূল কথা হলো, $\ZFC$ যতটুকু বলে, তাতে
+অঙ্কবাচক সংখ্যা থেকে তার উত্তরসূরিতে পৌঁছানোর
+পথ ঘাতসেট নেওয়ার মতো মোটাদাগের ক্রিয়ার চেয়ে
+সূক্ষ্ম হতে পারে।
+ %The operation of taking powersets moves us from one stage of the
+ %hierarchy to its successor stage (from $V_{\alpha}$ to
+ %$V_{\alpha+1}$).
+
+এই দুটি পর্যবেক্ষণের পরে আরও জানতে চাইলে,
+এই বিতর্কে অংশ নেওয়া দার্শনিক ও গণিতবিদদের
+লেখার দিকেই যেতে হবে।\footnote{শুরুতে
+\citet[\S15.6]{Potter2004} পড়তে পারো।}
+
+\end{document}

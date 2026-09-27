@@ -5785,6 +5785,31 @@ for row in rows:
             r"\ordexpo{\alpha}{\beta}=\ordtype{(\beta,\alpha),\sqsubset}": 1,
         })
     )
+    cardinal_exponentiation_function_type_fix = (
+        row["unit_id"] == "OLP-0589"
+        and set(documented) == {"BN-SRC-456", "BN-SRC-457", "BN-SRC-458"}
+        and source_math - target_math == collections.Counter({
+            r"f\mapsto(f_{\cardfont{b}}\timesf_\cardfont{c})": 1,
+            r"\funfromto{\cardfont{c}}{(\funfromto{\cardfont{b}}{\cardfont{a}})}\to\funfromto{\cardfont{b}\cardtimes\cardfont{c}}{\cardfont{a}}": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"f\mapsto\tuple{f_\cardfont{b},f_\cardfont{c}}": 1,
+            r"\funfromto{\cardfont{c}}{(\funfromto{\cardfont{b}}{\cardfont{a}})}\to\funfromto{\cardfont{b}\times\cardfont{c}}{\cardfont{a}}": 1,
+        })
+    )
+    cardinal_aleph_predecessor_domain_fix = (
+        row["unit_id"] == "OLP-0590"
+        and set(documented) == {"BN-SRC-459", "BN-SRC-460", "BN-SRC-461"}
+        and source_math - target_math == collections.Counter({
+            r"\cardfont{a}": 2,
+            r"\cardfont{a}=\bigcup_{\cardfont{b}<\cardfont{a}}\cardfont{b}=\bigcup_{\cardfont{b}<\cardfont{a}}{\aleph_{\gamma_\cardfont{b}}}": 1,
+            r"\gamma=\bigcup_{\cardfont{b}<\cardfont{a}}\gamma_\cardfont{b}": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\cardfont{a}=\bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}\cardfont{b}=\bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}{\aleph_{\gamma_\cardfont{b}}}": 1,
+            r"\gamma=\bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}\gamma_\cardfont{b}": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -5894,6 +5919,8 @@ for row in rows:
             ordinal_addition_math_fixes,
             ordinal_rank_exercise_math_fix,
             ordinal_exponentiation_math_fix,
+            cardinal_exponentiation_function_type_fix,
+            cardinal_aleph_predecessor_domain_fix,
         )
     )
     minimal_change_fileid_fix = (

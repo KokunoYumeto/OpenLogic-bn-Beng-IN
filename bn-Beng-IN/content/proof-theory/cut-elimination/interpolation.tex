@@ -1,0 +1,632 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: interpolation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{itp}
+
+\olsection{মায়েহারার লেমা ও ক্রেগের ইন্টারপোলেশন উপপাদ্য}
+
+উইলিয়াম ক্রেগের ইন্টারপোলেশন উপপাদ্য বলে: $!A
+\Entails !B$ হলে এমন !!a{sentence}~$!C$ (\emph{ইন্টারপোল্যান্ট})
+আছে যাতে $!A \Entails !C$ এবং $!C \Entails !B$। বিশেষ কথা,
+ইন্টারপোল্যান্ট~$!C$ এমনভাবে নেওয়া যায় যাতে~$!C$-তে থাকা
+সমস্ত !!{constant}s ও !!{predicate}s একই সঙ্গে~$!A$ ও~$!B$-তেও
+থাকে। (ধরা হচ্ছে, এখানে কোনো !!{function}s নেই।) এই
+সীমা না থাকলে $!A$ বা $!B$-কেই তুচ্ছভাবে ইন্টারপোল্যান্ট নেওয়া যেত।
+
+ইন্টারপোলেশন উপপাদ্য ধ্রুপদি প্রথম-ক্রম যুক্তিবিদ্যায় সত্য।
+একে আবিষ্কৃত প্রথম-ক্রম যুক্তিবিদ্যার ``শেষ গুরুত্বপূর্ণ ধর্ম''ও
+বলা হয়েছে। মডেলতত্ত্ব ও স্বয়ংক্রিয় যুক্তিপ্রয়োগে এর
+গুরুত্বপূর্ণ ব্যবহার আছে। বিজ্ঞানের দর্শনে এর প্রথম প্রেরণা ও
+প্রয়োগ: একটি তত্ত্ব কোন প্রাথমিক ধারণা দিয়ে স্বতঃসিদ্ধায়িত
+হতে পারে বা পারে না, তা বিশ্লেষণ করা যায়। এ থেকে বেথের
+সংজ্ঞায়ন উপপাদ্যও অনুসৃত হয়—কোনো তত্ত্ব একটি ধারণাকে
+অন্তর্নিহিতভাবে সংজ্ঞায়িত করতে পারলে তা প্রকাশ্যভাবেও পারে।
+
+গাণিতিক যুক্তিবিদ্যার অনেক ফলের মতো ইন্টারপোলেশন উপপাদ্যও
+মডেলতত্ত্ব ও প্রমাণতত্ত্ব—উভয়ের পদ্ধতিতে প্রমাণ করা যায়।
+প্রমাণতাত্ত্বিক পদ্ধতির সুবিধা হলো, তা শুধু ইন্টারপোল্যান্টের
+অস্তিত্ব দেখায় না; $!A \Entails !B$-এর !!a{proof} থেকে
+ইন্টারপোল্যান্ট গণনার অ্যালগরিদমও দেয়। যেমন,
+$!A \Sequent !B$-র \Log{G3c}-!!a{proof} থেকে তা পাওয়া যায়।
+
+$\Lang L(!A)$ দ্বারা $!A$-তে থাকা !!{constant}s ও
+!!{predicate}s-এর সমষ্টি বোঝাই; আর
+$\Lang L(\Gamma) = \bigcup \Setabs{\Lang L(!A)}{!A \in
+\Gamma}$। এই পুরো অংশে !!{function}s-বিহীন
+!!{formula}s নিয়ে কাজ করছি।
+
+\begin{thm}[ক্রেগের ইন্টারপোলেশন উপপাদ্য]\ollabel{thm:interpolation}
+$!A$-র !!{language}~$\Lang L(!A)$ এবং $!B$-র
+ভাষা~$\Lang L(!B)$ ধরি। যদি
+$\Log{G3c} \Proves !A \Sequent !B$ হয়, তবে
+!!a{formula}~$!C$ আছে, যার !!{language}~$\Lang L(!C) \subseteq \Lang
+L(!A) \cap \Lang L(!B)$, এবং যাতে
+$\Log{G3c} \Proves !A \Sequent !C$ ও
+$\Log{G3c} \Proves !C \Sequent !B$।
+\end{thm}
+
+\Log{G3c}-তে !!{proof}s-এর গঠন কাজে লাগাতে ইন্টারপোলেশন
+উপপাদ্যের একটি সাধারণীকরণ প্রমাণ করি। সেজন্য প্রতিটি
+সিকোয়েন্টের পূর্বপক্ষ ও উত্তরপক্ষ—প্রত্যেকটিকে দুটি ভাগে
+বিভক্ত ভাবি। $\maeh{\Gamma_1}{\Gamma_2} \Sequent
+\maeh{\Delta_1}{\Delta_2}$ লিখে বোঝাই যে $\Gamma_1$ ও $\Delta_1$
+প্রথম ভাগে, $\Gamma_2$ ও $\Delta_2$ দ্বিতীয় ভাগে।
+তাহলে নীচের লেমা থেকেই ইন্টারপোলেশন উপপাদ্য সরাসরি পাওয়া যায়।
+
+\begin{lem}[মায়েহারার লেমা]\ollabel{lem:maehara} যদি $\Log{G3c}
+\Proves \maeh{\Gamma_1}{\Gamma_2} \Sequent \maeh{\Delta_1}{\Delta_2}$
+হয়, তবে !!a{formula}~$!C$ আছে, যার !!{language}~$\Lang L(!C)
+\subseteq \Lang L(\Gamma_1,
+\Delta_1) \cap \Lang L(\Gamma_2, \Delta_2)$, এবং যাতে $\Log{G3c}
+\Proves \Gamma_1 \Sequent \Delta_1, !C$ ও $\Log{G3c} \Proves !C,
+\Gamma_2 \Sequent \Delta_2$।
+\end{lem}
+
+\begin{proof}
+  ধরি, $\pi \Proves \maeh{\Gamma_1}{\Gamma_2} \Sequent
+  \maeh{\Delta_1}{\Delta_2}$। $n=\pheight{\pi}$-এর উপর
+  আরোহ করে দাবিটি প্রমাণ করি।
+
+  $n=0$ হলে $\maeh{\Gamma_1}{\Gamma_2} \Sequent
+  \maeh{\Delta_1}{\Delta_2}$ স্বতঃসিদ্ধ, এবং কোনো পরমাণবিক
+  !!{formula}~$!A$ একই সঙ্গে $\Gamma_1, \Gamma_2$ ও $\Delta_1,
+  \Delta_2$-তে আছে। বাম দিকে $!A$ প্রথম না দ্বিতীয় ভাগে,
+  আর ডান দিকে প্রথম না দ্বিতীয় ভাগে—এই অনুসারে চারটি ক্ষেত্র।
+  \begin{enumerate}
+    \item $!A \in \Gamma_1$ এবং $!A \in \Delta_1$। এমন~$!C$ চাই যাতে
+    $\Gamma_1 \Sequent \Delta_1, !C$ ও $!C, \Gamma_2
+    \Sequent \Delta_2$—দুটিই !!{provable} হয়। $!C$ যেভাবেই বাছি,
+    প্রথমটি আগেই স্বতঃসিদ্ধ, কারণ $!A$ বাম ও ডান—উভয় পাশে আছে।
+    $!C, \Gamma_2 \Sequent \Delta_2$ যে !!{provable}, তা নিশ্চিত
+    করতে এখানে $!C \ident \lfalse$-ই বেছে নিই।
+    \item $!A \in \Gamma_1$ এবং $!A \in \Delta_2$। তখন $\Gamma_1
+    \Sequent \Delta_1, !A$ ও $!A, \Gamma_2 \Sequent \Delta_2$
+    দুটিই স্বতঃসিদ্ধ; তাই $!C \ident !A$ নিই।
+    \item $!A \in \Gamma_2$ এবং $!A \in \Delta_1$। তাহলে $!A, \Gamma_1
+    \Sequent \Delta_1$ ও $\Gamma_2 \Sequent \Delta_2, !A$
+    স্বতঃসিদ্ধ হতো, কিন্তু সেখানে~$!A$ ভুল পাশে আছে। তাই $!A$
+    ইন্টারপোল্যান্ট নয়। তবে $\RightR{\lnot}$ ও $\LeftR{\lnot}$
+    ব্যবহার করে $\Gamma_1 \Sequent \Delta_1, \lnot!A$ এবং
+    $\lnot !A, \Gamma_2 \Sequent \Delta_2$ !!{prove} করা যায়।
+    \item $!A \in \Gamma_2$ এবং $!A \in \Delta_2$। অনুশীলন।
+  \end{enumerate}
+  $\lfalse \in \Gamma_1$ বা $\lfalse \in \Gamma_2$-র কারণে
+  $\maeh{\Gamma_1}{\Gamma_2} \Sequent
+  \maeh{\Delta_1}{\Delta_2}$ স্বতঃসিদ্ধ হলে সেই ক্ষেত্রগুলিও
+  অনুশীলন হিসেবে থাকল।
+
+  $n>0$ হলে $\pi$ কোনো যৌক্তিক অনুমানে শেষ হয়। কোন বিধি
+  ব্যবহৃত হয়েছে এবং প্রধান সূত্রটি কোন ভাগে পড়ে, সেই
+  অনুসারে ক্ষেত্রগুলি আলাদা করি। প্রতিটি ক্ষেত্রে আরোহের
+  অনুমান ব্যবহার করতে পারি: $\pheight{\pi_1} < n$ এমন
+  প্রত্যেক !!{proof}s~$\pi_1$-এর জন্য, উপপ্রমাণ~$\pi_1$-এর অন্তিম সিকোয়েন্ট
+  দু-ভাগে যেভাবেই ভাগ করা হোক, লেমাটি সত্য। কয়েকটি
+  নির্দিষ্ট ক্ষেত্র দেখি।
+  \begin{enumerate}
+    \item $\pi$-এর শেষ বিধি $\RightR{\lnot}$, যার প্রধান সূত্র~$\lnot
+    !A$। $\lnot !A$ প্রথম না দ্বিতীয় ভাগে পড়ে—এই
+    অনুসারে দুটি ক্ষেত্র। $\pi$-এর শেষাংশ হয়
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{!A, \Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2}$
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, \lnot !A}{\Delta_2}$
+    \DisplayProof
+    \]
+    অথবা
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{!A, \Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2}$
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2, \lnot !A}$
+    \DisplayProof
+    \]
+    লক্ষ করুন, প্রধান !!{formula}~$\lnot !A$ প্রথম ভাগে থাকলে
+    পূর্বধারণার সক্রিয় !!{formula}~$!A$-কেও প্রথম ভাগে
+    রেখেছি। এই ভাগ বেছে নেওয়া আমাদের হাতে। সক্রিয় সূত্রটি
+    অন্য ভাগে রাখলেও আরোহের অনুমান প্রযোজ্য হতো, কিন্তু তখন
+    ইন্টারপোল্যান্ট খুঁজে পেতাম না (অনুশীলন: চেষ্টা করুন)।
+
+    প্রথমে $\lnot !A$ প্রথম ভাগে থাকার ক্ষেত্রটি দেখি।
+    আরোহের অনুমানে $\pi_1$-এর অন্তিম সিকোয়েন্টের একটি
+    ইন্টারপোল্যান্ট, অর্থাৎ এমন !!a{formula}~$!C_1$ আছে যাতে
+    \begin{align*}
+    !A, \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{এবং} &
+    !C_1, \Gamma_2 & \Sequent \Delta_2
+    \intertext{দুটিই প্রমাণযোগ্য। এখন এমন !!a{formula}~$!C$ চাই যাতে
+    নীচের দুটিও !!{provable} হয়:}
+    \Gamma_1 & \Sequent \Delta_1, \lnot !A, !C &&\text{এবং} &
+    !C, \Gamma_2 & \Sequent \Delta_2
+    \end{align*}
+    স্পষ্টত $!C \ident !C_1$ নেওয়া যায়: ডান দিকের সিকোয়েন্ট
+    আরোহের অনুমানেই !!{provable}, আর বাঁ দিকেরটি সেখান থেকে
+    পাওয়া সিকোয়েন্টে~$\RightR{\lnot}$ প্রয়োগে মেলে।
+    আরোহের অনুমান আরও বলে,
+    $\Lang L(!C_1) \subseteq \Lang L(!A, \Gamma_1,
+    \Delta_1) \cap \Lang L(\Gamma_2, \Delta_2)$। যেহেতু
+    $\Lang L(\lnot !A) = \Lang L(!A)$ ও
+    $\Lang L(!C) = \Lang L(!C_1)$, তাই
+    $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1, \lnot !A) \cap \Lang
+    L(\Gamma_2, \Delta_2)$।
+
+    দ্বিতীয় ক্ষেত্রে $\lnot !A$ দ্বিতীয় ভাগে থাকায়
+    পরিস্থিতি কিছুটা আলাদা। পূর্বধারণার সক্রিয় !!{formula}-ও
+    দ্বিতীয় ভাগে রেখে আরোহের অনুমান প্রয়োগ করি:
+    \begin{align*}
+    \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{এবং} &
+    !C_1, !A, \Gamma_2 & \Sequent \Delta_2
+    \intertext{দুটিই প্রমাণযোগ্য। দ্বিতীয়টিতে আবার \RightR{\lnot} প্রয়োগে এই !!{proof}s পাই:}
+    \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{এবং} &
+    !C_1, \Gamma_2 & \Sequent \Delta_2, \lnot !A
+    \end{align*}
+    $!C_1$ ইন্টারপোল্যান্ট হলে ঠিক এই সিকোয়েন্টদুটিরই
+    !!{provable} হওয়া দরকার। তাই আবার $!C \ident !C_1$ নিই।
+    আগের মতোই $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1)
+    \cap \Lang L(\Gamma_2, \Delta_2, \lnot !A)$।
+    \item $\pi$-এর শেষ বিধি $\RightR{\lif}$, যার প্রধান
+    !!{formula}~$!A \lif !B$। $!A \lif !B$ প্রথম না দ্বিতীয়
+    ভাগে পড়ে—এই অনুসারে আবার দুটি ক্ষেত্র। !!{proof}~$\pi$-এর
+    শেষাংশ হয়
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{!A, \Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, !B}{\Delta_2}$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, !A \lif !B}{\Delta_2}$
+    \DisplayProof
+    \]
+    অথবা
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{!A, \Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2, !B}$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2, !A \lif !B}$
+    \DisplayProof
+    \]
+    এখানেও পূর্বধারণার সক্রিয় !!{formula}s-কে সিদ্ধান্তের
+    প্রধান !!{formula}-র একই ভাগে রেখেছি। প্রথম ক্ষেত্রে
+    আরোহের অনুমান প্রয়োগে এই !!{proof}s পাই:
+    \begin{align*}
+    !A, \Gamma_1 & \Sequent \Delta_1, !B, !C_1 &&\text{এবং} & !C_1, \Gamma_2 & \Sequent \Delta_2
+    \intertext{বাঁ দিকের সিকোয়েন্টটি \RightR{\lif}-এর উপযুক্ত পূর্বধারণা। তাই নীচের সিকোয়েন্টগুলি !!{provable}:}
+    \Gamma_1 & \Sequent \Delta_1, !A \lif !B, !C_1 &&\text{এবং} & !C_1, \Gamma_2 & \Sequent \Delta_2
+    \end{align*}
+    তাই $!C_1$ হলো $\pi$-এর অন্তিম সিকোয়েন্টেরও
+    ইন্টারপোল্যান্ট; আবার $!C \ident !C_1$ নেওয়া যায়।
+
+    অন্য ক্ষেত্রটিও একইভাবে মেটে।
+    \item $\pi$-এর শেষ বিধি $\LeftR{\lif}$, যার প্রধান
+    !!{formula}~$!A \lif !B$। $!A \lif !B$ প্রথম ভাগে থাকলে
+    !!{proof}~$\pi$-এর শেষাংশ
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, !A}{\Delta_2}$
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$\maeh{!B, \Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2}$
+    \BinaryInf$\maeh{!A \lif !B, \Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2}$
+    \DisplayProof
+    \]
+    আরোহের অনুমান থেকে চারটি !!{provable} সিকোয়েন্ট পাই:
+    দুটি বাম পূর্বধারণার ইন্টারপোল্যান্ট $!C_1$-এর জন্য,
+    দুটি দ্বিতীয় পূর্বধারণার ইন্টারপোল্যান্ট $!C_2$-এর জন্য:
+    \begin{align*}
+    \Gamma_1 & \Sequent \Delta_1, !A, !C_1 &&\text{(1)} &
+    !C_1, \Gamma_2 & \Sequent \Delta_2 && \text{(2)}\\
+    !B, \Gamma_1 & \Sequent \Delta_1, !C_2 &&\text{(3)} &
+    !C_2, \Gamma_2 & \Sequent \Delta_2 && \text{(4)}
+    \end{align*}
+    দুর্বলীকরণ করে (1)-এর ডানে $!C_2$ এবং (3)-এর ডানে
+    $!C_1$ যোগ করলে (1) ও (3)~\LeftR{\lif}-এর
+    পূর্বধারণা হতে পারে:
+    \[
+    \AxiomC{}
+    \Deduce$\Gamma_1 \fCenter \Delta_1, !A, !C_1, !C_2$
+    \AxiomC{}
+    \Deduce$!B, \Gamma_1 \fCenter \Delta_1, !C_1, !C_2$
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$!A \lif !B, \Gamma_1 \fCenter \Delta_1, !C_1, !C_2$
+    \DisplayProof
+    \]
+$\RightR{\lor}$ প্রয়োগে পাই
+    \[
+    !A \lif !B, \Gamma_1 \fCenter \Delta_1, !C_1 \lor !C_2
+    \]
+    তাই এই ক্ষেত্রে $!C_1 \lor !C_2$ ইন্টারপোল্যান্ট হতে
+    পারে। সত্যিই, বাকি (2) ও~(4) থেকে অন্য প্রয়োজনীয়
+    সিকোয়েন্টটি !!{prove} করা যায়:
+    \[
+    \AxiomC{}
+    \Deduce$!C_1, \Gamma_2 \fCenter \Delta_2$
+    \AxiomC{}
+    \Deduce$!C_2, \Gamma_2 \fCenter \Delta_2$
+    \RightLabel{\LeftR{\lor}}
+    \BinaryInf$!C_1 \lor !C_2, \Gamma_2 \fCenter \Delta_2$
+    \DisplayProof
+    \]
+    $!C_1 \lor !C_2$ যথাযথ ভাষায় আছে কি না, তা যাচাই বাকি।
+    আরোহের অনুমান থেকে পাই
+    \begin{align*}
+    \Lang L(!C_1) & \subseteq
+    \Lang L(\Gamma_1, \Delta_1, !A) \cap \Lang L(\Gamma_2, \Delta_2) &\text{এবং}\\
+    \Lang L(!C_2) & \subseteq
+    \Lang L(!B, \Gamma_1, \Delta_1) \cap \Lang L(\Gamma_2, \Delta_2)
+    \intertext{যেহেতু}
+    \Lang L(!A) & \subseteq \Lang L(!A \lif !B) &\text{এবং}\\
+    \Lang L(!B) & \subseteq \Lang L(!A \lif !B)
+    \intertext{দুটিই পাই:}
+    \Lang L(!C_1) & \subseteq
+    \Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap \Lang L(\Gamma_2, \Delta_2) &\text{এবং}\\
+    \Lang L(!C_2) & \subseteq
+    \Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap \Lang L(\Gamma_2, \Delta_2)
+    \intertext{ফলে $\Lang L (!C_1 \lor !C_2) = {}$ হওয়ায়}
+    \Lang L(!C_1) \cup \Lang L(!C_2) & \subseteq
+    \Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap \Lang L(\Gamma_2, \Delta_2),
+    \end{align*}
+    এটাই প্রয়োজনীয় শর্ত।
+
+    $!A \lif !B$ দ্বিতীয় ভাগে থাকলে পরিস্থিতি আলাদা,
+    কিন্তু একই রকম যুক্তিতে মেটে। আরোহের অনুমানে আবার
+    চারটি !!{provable} সিকোয়েন্ট পাই:
+    \begin{align*}
+    \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{(1)} &
+    !C_1, \Gamma_2 & \Sequent \Delta_2, !A && \text{(2)}\\
+    \Gamma_1 & \Sequent \Delta_1, !C_2 &&\text{(3)} &
+    !C_2, !B, \Gamma_2 & \Sequent \Delta_2 && \text{(4)}
+    \end{align*}
+    এখন (2) ও (4)—দুর্বলীকরণে কয়েকটি !!{formula}s যোগ করে—
+    \LeftR{\lif}-এর পূর্বধারণা হয়:
+    \[
+    \AxiomC{}
+    \Deduce$!C_1, !C_2, \Gamma_2 \fCenter \Delta_2, !A$
+    \AxiomC{}
+    \Deduce$!B, !C_1, !C_2, \Gamma_2 \fCenter \Delta_2$
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$!A \lif !B, !C_1, !C_2, \Gamma_2 \fCenter \Delta_2$
+    \DisplayProof
+    \]
+    আবার $!C_1$ ও $!C_2$ থেকে গড়া একটি !!{formula} নিয়ে
+    সিকোয়েন্ট চাই; এবার সেটি পূর্বপক্ষে চাই, কারণ আমরা
+    দ্বিতীয় ভাগ নিয়ে কাজ করছি। $\LeftR{\land}$ প্রয়োগ করলেই
+    হয়; ইন্টারপোল্যান্ট হিসেবে $!C \ident (!C_1 \land !C_2)$
+    নিই। বাকি (1) ও (3) দিয়ে অন্য ভাগের সংশ্লিষ্ট
+    সিকোয়েন্টও !!{prove} করতে পারি:
+    \[
+    \AxiomC{}
+    \Deduce$\Gamma_1 \fCenter \Delta_1, !C_1$
+    \AxiomC{}
+    \Deduce$\Gamma_1 \fCenter \Delta_1, !C_2$
+    \RightLabel{\RightR{\land}}
+    \BinaryInf$\Gamma_1 \fCenter \Delta_1, !C_1 \land !C_2$
+    \DisplayProof
+    \]
+    আগের মতোই $\Lang L(!C_1 \land !C_2) \subseteq \Lang
+    L(\Gamma_1, \Delta_1) \cap \Lang L(\Gamma_2, \Delta_2, !A \lif
+    !B)$।
+
+    \item $\pi$-এর শেষ বিধি $\RightR{\lforall}$, যার প্রধান !!{formula}~$\lforall[x][!A(x)]$:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+    \maeh{\Delta_1, !A(c)}{\Delta_2}$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, \lforall[x][!A(x)]}{\Delta_2}$
+    \DisplayProof
+    \]
+    অথবা
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2, !A(c)}$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2, \lforall[x][!A(x)]}$
+    \DisplayProof
+    \]
+    প্রথম ক্ষেত্রে আরোহের অনুমানে
+    $\Gamma_1 \Sequent \Delta_1, !A(c), !C_1$ ও
+    $!C_1, \Gamma_2 \Sequent \Delta_2$-র !!{proof}s পাই।
+    প্রথমটিতে $\RightR{\lforall}$ প্রয়োগ করে
+    $\Gamma_1 \Sequent \Delta_1, \lforall[x][!A(x)], !C_1$ পাই।
+    (ঈজেনচলকের শর্ত পূরণ হয়; $\pi$-এর শেষের
+    \RightR{\lforall} বিধিতেও তা পূরণ হয়েছিল।) তাই
+    $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1,
+    \lforall[x][!A(x)]) \cap \Lang L(\Gamma_2, \Delta_2)$
+    হলে $!C_1$ ইন্টারপোল্যান্ট হবে। আরোহের অনুমান থেকে
+    $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1,
+    \Delta_1, !A(c)) \cap \Lang L(\Gamma_2, \Delta_2)$।
+    এখন $c$ নিয়ে প্রশ্ন, $!C_1$-এ $c$ থাকতে পারে কি?
+    পারে না। যদি $c$ সত্যিই $!C_1$-এ থাকত, তবে একদিকে
+    $c \in \Lang L(\Gamma_1, \Delta_1,
+    !A(c))$ (এটি সত্য), অন্যদিকে $c \in \Lang L(\Gamma_2,
+    \Delta_2)$ হতো। কিন্তু তাহলে $\pi$-তে
+    $\RightR{\lforall}$-এর সিদ্ধান্তে $c$ থাকত, যা
+    ঈজেনচলকের শর্ত ভঙ্গ করে।
+
+    অন্য ক্ষেত্রটি একই রকম।
+
+    \item $\pi$-এর শেষ বিধি $\RightR{\lexists}$, যার প্রধান
+    !!{formula}~$\lexists[x][!A(x)]$। আবার দুটি ক্ষেত্র।
+    $\lexists[x][!A(x)]$ প্রথম ভাগে থাকার ক্ষেত্রটি দেখি;
+    অন্যটি অনুশীলন হিসেবে থাকল।
+
+    প্রথম ক্ষেত্রে $\pi$-এর শেষাংশ
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, \lexists[x][!A(x)], !A(t)}{\Delta_2}$
+    \RightLabel{\RightR{\lexists}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, \lexists[x][!A(x)]}{\Delta_2}$
+    \DisplayProof
+    \]
+    আরোহের অনুমানে
+    $\Gamma_1 \Sequent \Delta_1, \lexists[x][!A(x)], !A(t), !C_1$
+    ও $!C_1, \Gamma_2 \Sequent \Delta_2$-র !!{proof}s পাই।
+    প্রথমটিতে $\RightR{\lexists}$ প্রয়োগ করে
+    $\Gamma_1 \Sequent \Delta_1, \lexists[x][!A(x)], !C_1$
+    পাই। তাই
+    $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1,
+    \lexists[x][!A(x)]) \cap \Lang L(\Gamma_2, \Delta_2)$
+    হলে আবার $!C_1$ ইন্টারপোল্যান্ট। কিন্তু আরোহের অনুমান
+    শুধু $\Lang L(!C_1)
+    \subseteq \Lang L(\Gamma_1, \Delta_1, \lexists[x][!A(x)], !A(t))
+    \cap \Lang L(\Gamma_2, \Delta_2)$ দেয়। ধরা হয়েছে,
+    কোনো !!{function}s নেই। পদটি চলক হলে ভাষায় নতুন
+    সংকেত যোগ করে না; এই ক্ষেত্রেই ইন্টারপোল্যান্ট পাওয়া যায়।
+    % BN-SRC-524 TARGET-CORRECTION-BEGIN
+    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-524):} অপেক্ষকচিহ্ন না থাকলেও পদটি চলক হতে পারে। এই শাখায় চলক নতুন ভাষাচিহ্ন যোগ করে না; ধ্রুবকের ক্ষেত্রটি আলাদা করা হয়েছে।}
+    % BN-SRC-524 TARGET-CORRECTION-END
+    $t$ বদ্ধ পদ হলে তা !!a{constant}; ধরি $t \ident b$।
+    যদি $b \notin \Lang L(!C_1)$ হয়, অথবা
+    $b \in \Lang L(\Gamma_1, \Delta_1, \lexists[x][!A(x)]) \cap
+    \Lang L(\Gamma_2, \Delta_2)$ হয়, তবে সমস্যা নেই:
+    $!C_1$-কেই ইন্টারপোল্যান্ট নিই। কিন্তু
+    $b \in \Lang L(!C_1)$ অথচ
+    $b \notin \Lang L(\Gamma_1, \Delta_1,
+    \lexists[x][!A(x)]) \cap \Lang L(\Gamma_2, \Delta_2)$ হলে?
+    প্রথমে $!C_1$-এ $b$-র সব জায়গায় !!a{variable}~$y$
+    বসিয়ে $!C_1 \ident \Subst{!C_1'}{b}{y}$ লিখি,
+    যেখানে $!C_1'$-এ~$b$ নেই। তা ছাড়া, হয় $b \notin
+    \Lang L(\Gamma_1, \Delta_1, \lexists[x][!A(x)])$,
+    নয়তো $b \notin \Lang L(\Gamma_2, \Delta_2)$।
+    সেই অনুযায়ী $!C \ident \lforall[y][!C_1'(y)]$
+    বা $!C \ident \lexists[y][!C_1'(y)]$ নিই।
+    প্রথম ক্ষেত্রে পাই:
+    \[
+    \AxiomC{}
+    \Deduce$\Gamma_1 \fCenter
+      \Delta_1, \lexists[x][!A(x)], !A(b), !C_1'(b)$
+    \RightLabel{\RightR{\lexists}}
+    \UnaryInf$\Gamma_1 \fCenter \Delta_1, \lexists[x][!A(x)], !C_1'(b)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma_1 \fCenter
+      \Delta_1, \lexists[x][!A(x)], \lforall[y][!C_1'(y)]$
+    \DisplayProof
+    \]
+    এবং
+    \[
+    \AxiomC{}
+    \Deduce$!C_1'(b), \lforall[y][!C_1'(y)], \Gamma_2 \fCenter \Delta_2$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[y][!C_1'(y)], \Gamma_2 \fCenter \Delta_2$
+    \DisplayProof
+    \]
+    উপরের সিকোয়েন্টগুলির !!{proof}s আরোহের অনুমান থেকে আসে
+    (দ্বিতীয়টিতে পূর্বপক্ষে $\lforall[y][!C_1'(y)]$ যোগ করতে
+    দুর্বলীকরণের গ্রহণযোগ্যতা প্রয়োগ করি)। প্রথম !!{proof}-এ
+    \RightR{\lforall}-এর ঈজেনচলক-শর্ত পূরণ হয়, কারণ
+    $b \notin \Lang L(\Gamma_1, \Delta_1,
+    \lexists[x][!A(x)])$ এবং সংজ্ঞামতে $!C_1'$-এ~$b$ নেই।
+
+    দ্বিতীয় ক্ষেত্রে আরোহের অনুমান এবং
+    $\lexists[y][!C_1'(y)]$ যোগ করে দুর্বলীকরণের
+    গ্রহণযোগ্যতা থেকে পাই:
+    \[
+    \AxiomC{}
+    \Deduce$\Gamma_1 \fCenter
+      \Delta_1, \lexists[x][!A(x)], !A(b), \lexists[y][!C_1'(y)], !C_1'(b)$
+    \RightLabel{\RightR{\lexists}}
+    \UnaryInf$\Gamma_1 \fCenter
+      \Delta_1, \lexists[x][!A(x)], \lexists[y][!C_1'(y)], !C_1'(b)$
+    \RightLabel{\RightR{\lexists}}
+    \UnaryInf$\Gamma_1 \fCenter
+      \Delta_1, \lexists[x][!A(x)], \lexists[y][!C_1'(y)]$
+    \DisplayProof
+    \]
+    এবং
+    \[
+    \AxiomC{}
+    \Deduce$!C_1'(b), \Gamma_2 \fCenter \Delta_2$
+    \RightLabel{\LeftR{\lexists}}
+    \UnaryInf$\lexists[y][!C_1'(y)], \Gamma_2 \fCenter \Delta_2$
+    \DisplayProof
+    \]
+    দ্বিতীয় !!{proof}-এ \LeftR{\lexists}-এর
+    ঈজেনচলক-শর্ত পূরণ হয়, কারণ
+    $b \notin \Lang L(\Gamma_2, \Delta_2)$ এবং সংজ্ঞামতে
+    $!C_1'$-এ~$b$ নেই।
+  \end{enumerate}
+  বাকি ক্ষেত্রগুলি একই রকম; অনুশীলন হিসেবে থাকল।
+\end{proof}
+
+\begin{prob}
+ধরি, $\lnand$ সংযোজকটির বিধি এমন:
+\[
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$\Gamma \fCenter \Delta, !B$
+\RightLabel{\LeftR{\lnand}}
+\BinaryInf$!A \lnand !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\quad
+\Axiom$!A, !B, \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\lnand}}
+\UnaryInf$\Gamma \fCenter \Delta, !A \lnand !B$
+\DisplayProof
+\]
+\olref{lem:maehara}-এর প্রমাণে $\pi$-র শেষ বিধি এগুলির
+কোনো একটি হলে সংশ্লিষ্ট ক্ষেত্রগুলি সম্পন্ন করে দেখান যে
+মায়েহারার লেমা তখনও সত্য।
+\end{prob}
+
+মায়েহারার লেমা প্রতিষ্ঠিত হওয়ায় তা দিয়ে ক্রেগের
+ইন্টারপোলেশন উপপাদ্য প্রমাণ করতে পারি।
+
+\begin{proof}[\olref{thm:interpolation}-এর প্রমাণ]
+  ধরি, $!A \Sequent !B$ !!{provable}।
+  $\maeh{!A}{\ } \Sequent \maeh{\ }{!B}$-তে
+  \olref{lem:maehara} প্রয়োগ করে ইন্টারপোল্যান্ট~$!C$
+  পাই। তখন $\Proves !A \Sequent !C$ এবং
+  $\Proves !C \Sequent !B$।
+\end{proof}
+
+ধরি, $\Gamma$ হলো !!a{language}~$\Lang L$-এর একটি তত্ত্ব
+(!!{sentence}s-এর সমষ্টি), যাতে $n$-স্থানবিশিষ্ট প্রেডিকেট~$R$
+আছে। $\Gamma$~$R$-কে \emph{অন্তর্নিহিতভাবে সংজ্ঞায়িত করে}
+বলব, যদি এবং কেবল যদি
+\begin{align*}
+\Gamma, \Gamma'
+& \Entails \lforall[x_1][\dots\lforall[x_n][(R(x_1,\dots,x_n) \liff
+R'(x_1, \dots, x_n))]],
+\intertext{যেখানে $\Gamma'$ হলো $\Gamma$-তে~$R$-এর সব উপস্থিতির
+জায়গায় $R' \notin \Lang L$ বসিয়ে পাওয়া তত্ত্ব। $\Gamma$
+প্রেডিকেট~$R$-কে \emph{প্রকাশ্যভাবে সংজ্ঞায়িত করে}
+যদি এবং কেবল যদি $R$-বিহীন কোনো~$!A(x_1, \dots, x_n)$ থাকে যাতে}
+\Gamma &\Entails
+\lforall[x_1][\dots\lforall[x_n][(R(x_1,\dots,x_n) \liff !A(x_1,
+\dots, x_n))]].
+\end{align*}
+স্পষ্টত, $\Gamma$ যদি $R$-কে প্রকাশ্যভাবে সংজ্ঞায়িত করে,
+তবে $R$-কে অন্তর্নিহিতভাবেও করে। বিপরীত দিকটি স্পষ্ট নয়, কিন্তু সত্য:
+
+\begin{lem}[বেথের সংজ্ঞায়ন উপপাদ্য]
+  $\Gamma$ যদি~$R$-কে অন্তর্নিহিতভাবে সংজ্ঞায়িত করে,
+  তবে প্রকাশ্যভাবেও করে।
+\end{lem}
+
+\begin{proof}
+  ধরি, $\Gamma$~$R$-কে অন্তর্নিহিতভাবে সংজ্ঞায়িত করে। আগের
+  $R'$ ও $\Gamma'$ নিই, এবং
+  $\Lang L' = \Lang L(\Gamma') \subseteq
+  (\Lang L(\Gamma) \setminus \{R\}) \cup \{R'\}$।
+  % BN-SRC-525 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-525):} উৎসে তত্ত্বে ব্যবহৃত চিহ্নের ভাষাকে সম্পূর্ণ ঘোষিত ভাষার সঙ্গে সমান ধরা হয়েছে; সংজ্ঞামতে ব্যবহৃত চিহ্নগুলির জন্য এখানে অন্তর্ভুক্তিই নিশ্চিত, কারণ তত্ত্বে $R$ না-ও থাকতে পারে।}
+  % BN-SRC-525 TARGET-CORRECTION-END
+  অনুমান থেকে পাই
+  \begin{align*}
+    \Gamma, \Gamma' &
+    \Sequent \lforall[x_1][\dots\lforall[x_n][(R(x_1,\dots,x_n)
+    \liff R'(x_1, \dots, x_n))]]
+  \intertext{ধরি, $c_1$, \dots,~$c_n$ হলো $\Gamma$-তে না-থাকা !!{constant}s। উল্টনযোগ্যতার লেমায় পাই}
+    \Gamma, \Gamma', R(c_1,\dots,c_n) & \Sequent  R'(c_1, \dots, c_n)
+  \intertext{এখানে মায়েহারার লেমা প্রয়োগ করি:}
+    \maeh{\Gamma, R(c_1,\dots,c_n)}{\Gamma'} & \Sequent
+      \maeh{\ }{R'(c_1, \dots, c_n)}
+  \intertext{তাহলে এমন~$!A \ident !A(x_1, \dots, x_n)$ পাই যাতে}
+    \Gamma, R(c_1,\dots,c_n) & \Sequent !A(c_1, \dots, c_n) \\
+    !A(c_1, \dots, c_n), \Gamma' & \Sequent R'(c_1, \dots, c_n)
+  \intertext{দুটিরই !!{proof}s আছে। মায়েহারার লেমায় ইন্টারপোল্যান্টের
+  ভাষা দুটি ভাগের ভাষার ছেদের উপসমষ্টি; নতুন ধ্রুবকগুলিকে চলক দিয়ে
+  প্রতিস্থাপন করলে $\Lang L(!A) \subseteq \Lang L(\Gamma) \setminus \{R\}$।
+  তাই $!A$-তে~$R$ থাকে না। দ্বিতীয় সিকোয়েন্টের
+  !!{proof}-এ সব জায়গায় $R'$-এর বদলে~$R$ বসিয়ে এর !!a{proof} পাই:}
+    !A(c_1, \dots, c_n), \Gamma & \Sequent R(c_1, \dots, c_n)
+  \end{align*}
+  % BN-SRC-526 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-526):} মায়েহারার লেমা ভাষার সমতা নয়, অন্তর্ভুক্তি দেয়; নতুন ধ্রুবকগুলি চলকে বদলানোর পরে তবেই সূত্রের ভাষা থেকে সেগুলি বাদ যায়।}
+  % BN-SRC-526 TARGET-CORRECTION-END
+  দুই অভিমুখের জন্য \RightR{\lif} ও সংশ্লিষ্ট সংযোজক-বিধি,
+  পরে \RightR{\lforall} প্রয়োগ করে এর !!a{proof} পাই:
+  \[
+    \Gamma \Sequent \lforall[x_1][\dots\lforall[x_n][(R(x_1,\dots,x_n) \liff !A(x_1, \dots, x_n))]].
+  \]
+  % BN-SRC-527 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-527):} দ্বিশর্তীয় সিদ্ধান্তের জন্য দুই অভিমুখ ও সংযোজক-বিধি দরকার; উৎসের শুধু অন্তর্নিহিত-বিধি ও সার্বিকীকরণের উল্লেখ যথেষ্ট ধাপের নাম দেয় না।}
+  % BN-SRC-527 TARGET-CORRECTION-END
+  তাই $!A(x_1, \dots, x_n)$ তত্ত্ব~$\Gamma$-তে $!R$-কে
+  প্রকাশ্যভাবে সংজ্ঞায়িত করে।
+\end{proof}
+
+ইন্টারপোলেশনের সমতুল্য তৃতীয় একটি ফল (এটিও মায়েহারার
+লেমা দিয়ে প্রমাণ করা যায়) হলো: দুটি সঙ্গত তত্ত্ব~$\Gamma_1$,
+$\Gamma_2$ যদি এমন পূর্ণ তত্ত্ব~$\Gamma$ ধারণ করে যার
+ভাষা~$\Lang L(\Gamma) = \Lang L(\Gamma_1)
+\cap \Lang L(\Gamma_2)$, তবে $\Gamma_1 \cup \Gamma_2$
+সঙ্গত।
+% BN-SRC-528 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-528):} পরের পূর্ণতা-যুক্তিতে যৌথ ভাষার যেকোনো বাক্যের জন্য $\Gamma$-র পূর্ণতা প্রয়োগ করা হয়েছে। তাই এখানে শুধু ভাষার অন্তর্ভুক্তি নয়, যৌথ ভাষার সঙ্গে সমতা দরকার; নইলে দুই সম্প্রসারণ নতুন অভিন্ন সংকেত নিয়ে বিপরীত দাবি করতে পারে।}
+% BN-SRC-528 TARGET-CORRECTION-END
+
+মনে রাখি, পূর্ণ তত্ত্বে তার ভাষার প্রতিটি
+!!{sentence}~$!A$-র জন্য হয় $\Gamma \Proves !A$, নয়তো
+$\Gamma \Proves \lnot !A$। $\Gamma_1$ ও~$\Gamma_2$
+যেহেতু $\Gamma$-র সঙ্গত সম্প্রসারণ, তাই $\Gamma$-ও
+সঙ্গত। অতএব $!A$ যদি $\Lang L(\Gamma_1) \cap \Lang
+L(\Gamma_2)$ ভাষার !!a{sentence} হয়, তবে
+$\Gamma_1 \Entails !A$ এবং $\Gamma_2 \Entails \lnot !A$
+একসঙ্গে হতে পারে না। বিপরীত ধরে এমন~$!A$ নিই।
+$\Gamma_1 \Entails !A$ হলে অবশ্যই $\Gamma \Entails !A$:
+নইলে $\Gamma$-র পূর্ণতার কারণে $\Gamma \Entails \lnot !A$,
+আর $\Gamma \subseteq \Gamma_1$ বলে
+$\Gamma_1 \Entails \lnot !A$ হতো; তাতে $\Gamma_1$
+অসঙ্গত। সুতরাং $\Gamma \Entails !A$; আবার
+$\Gamma \subseteq \Gamma_2$ হওয়ায় $\Gamma_2 \Entails !A$।
+ফলে $\Gamma \Entails/ \lnot !A$; অন্যথায় $\Gamma_2$
+অসঙ্গত হতো।
+
+যৌথ !!{language}~$\Lang L(\Gamma_1) \cap \Lang L(\Gamma_2)$-এ
+এমন !!a{sentence}~$!A$ না থাকা, যাতে
+$\Gamma_1 \Entails !A$ ও $\Gamma_2 \Entails \lnot !A$,
+প্রমাণের জন্য যথেষ্ট। এবার মায়েহারার লেমা দিয়ে তার
+প্রমাণতাত্ত্বিক প্রমাণ দিই।
+
+\begin{thm}[রবিনসনের যৌথ সঙ্গতি উপপাদ্য]
+ধরি, $\Gamma_1$ ও $\Gamma_2$ সঙ্গত তত্ত্ব এবং
+!!{language}~$\Lang L(\Gamma_1) \cap \Lang L(\Gamma_2)$-এর
+কোনো~$!A$-র জন্যই একসঙ্গে
+$\Gamma_1 \Entails !A$ ও $\Gamma_2 \Entails \lnot !A$
+হয় না। তাহলে $\Gamma_1 \cup \Gamma_2$ সঙ্গত।
+\end{thm}
+
+\begin{proof}
+  বিপরীত ধরে $\Gamma_1 \cup \Gamma_2$ অসঙ্গত নিই। তাহলে
+  $\Gamma_1, \Gamma_2 \Sequent \ $ সিকোয়েন্টের !!a{proof}
+  আছে। $\maeh{\Gamma_1}{\Gamma_2}
+  \Sequent \maeh{\ }{\ }$-তে মায়েহারার লেমা প্রয়োগ করে
+  !!{language}~$\Lang L(\Gamma_1) \cap \Lang L(\Gamma_2)$-এর
+  !!a{sentence}~$!A$ পাই যাতে
+  $\Proves \Gamma_1 \Sequent !A$ ও
+  $\Proves !A, \Gamma_2 \Sequent \quad$। দ্বিতীয়টি থেকে
+  $\Proves \Gamma_2 \Sequent \lnot !A$ পাই। কিন্তু এমন
+  !!{sentence} নেই বলে ধরা হয়েছে।
+\end{proof}
+
+উপরে প্রচ্ছন্নভাবে তত্ত্বগুলি $\Gamma$, $\Gamma_1$,
+$\Gamma_2$ সসীম ধরা হয়েছে। সংহতি অনুযায়ী ফলগুলি
+অসীম তত্ত্বের ক্ষেত্রেও সত্য।
+
+\end{document}

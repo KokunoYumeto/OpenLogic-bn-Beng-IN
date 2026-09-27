@@ -6137,6 +6137,20 @@ for row in rows:
             "\\BinaryInf$\\Gamma \\fCenter \\Delta$",
         )
         legacy_cut_topmost_formula_repairs = mathparts(audited_topmost) == target_math
+    legacy_interpolation_language_repairs = (
+        row["unit_id"] == "OLP-0658"
+        and set(documented) == {f"BN-SRC-{n}" for n in range(524, 529)}
+        and source_math - target_math == collections.Counter({
+            r"\LangL'=\LangL(\Gamma')=\LangL\setminus\{R\}\cup\{R'\}": 1,
+            r"\LangL(!A)=\LangL_1\cap\LangL_2=\LangL(\Gamma)\setminus\{R\}": 1,
+            r"\LangL(\Gamma)\subseteq\LangL(\Gamma_1)\cap\LangL(\Gamma_2)": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\LangL'=\LangL(\Gamma')\subseteq(\LangL(\Gamma)\setminus\{R\})\cup\{R'\}": 1,
+            r"\LangL(!A)\subseteq\LangL(\Gamma)\setminus\{R\}": 1,
+            r"\LangL(\Gamma)=\LangL(\Gamma_1)\cap\LangL(\Gamma_2)": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6268,6 +6282,7 @@ for row in rows:
             legacy_nonstandard_arithmetic_repairs,
             legacy_cut_largest_formula_repair,
             legacy_cut_topmost_formula_repairs,
+            legacy_interpolation_language_repairs,
         )
     )
     minimal_change_fileid_fix = (

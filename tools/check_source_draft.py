@@ -6221,6 +6221,15 @@ for row in rows:
             set(documented) == {"BN-SRC-539", "BN-SRC-540", "BN-SRC-541"}
             and mathparts(audited_grafting) == target_math
         )
+    legacy_natural_deduction_intro_repairs = False
+    if row["unit_id"] == "OLP-0663":
+        old = r"$\Gamma \Entails !B$"
+        assert source.count(old) == 1
+        audited_nd_intro = source.replace(old, r"$\Gamma \Entails !A \lif !B$", 1)
+        legacy_natural_deduction_intro_repairs = (
+            set(documented) == {"BN-SRC-542", "BN-SRC-543"}
+            and mathparts(audited_nd_intro) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6357,6 +6366,7 @@ for row in rows:
             legacy_cut_fragment_repairs,
             legacy_midsequent_repairs,
             legacy_grafting_repairs,
+            legacy_natural_deduction_intro_repairs,
         )
     )
     minimal_change_fileid_fix = (

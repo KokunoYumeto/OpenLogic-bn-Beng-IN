@@ -1,0 +1,661 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: invertibility
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{inv}
+
+\olsection{বিধির উল্টানোযোগ্যতা}
+
+\begin{defn}
+কোনো বিধি~$R$,
+\[
+\AxiomC{$S_1$}
+\AxiomC{$\dots$}
+\AxiomC{$S_n$}
+\RightLabel{$R$}
+\TrinaryInfC{$S$}
+\DisplayProof
+\]
+কোনো ব্যবস্থায় \emph{উল্টানোযোগ্য}, যদি
+$\Proves S$ হলেই $\Proves S_i$ হয়,
+$i = 1$, \dots,~$n$-এর প্রত্যেকটির
+জন্য। বিধিটি \emph{!!{height}-সংরক্ষণকারী
+উল্টানোযোগ্য} (বা \emph{!!{hp}-উল্টানোযোগ্য}),
+যদি $\Proves[n] S$ হলেই
+$\Proves[n] S_i$ হয়,
+$i = 1$, \dots,~$n$-এর প্রত্যেকটির
+জন্য।
+\end{defn}
+% BN-SRC-629 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-629):} সাধারণ উল্টানোযোগ্যতার সংজ্ঞায় উৎসের অনির্ধারিত \(h_i\) উচ্চতা বাদ দিয়ে পূর্বধারণার সাধারণ প্রমাণযোগ্যতা রাখা হয়েছে। উচ্চতা-সংরক্ষণকারী সংজ্ঞার উপপক্ষে উৎসের \(\Proves_n S\) বদলে পাশের বিধিবদ্ধ লিখন \(\Proves[n] S\) করা হয়েছে।}
+% BN-SRC-629 TARGET-CORRECTION-END
+
+\begin{lem}\ollabel{lem:G3c-invert}
+\Log{G3c}-তে $\lnot$, $\land$, $\lor$
+ও $\lif$-এর বিধিগুলি
+!!{height}-সংরক্ষণকারী উল্টানোযোগ্য;
+অর্থাৎ:
+\begin{enumerate}
+  \item \RightR{\lnot}: যদি $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, \lnot !A$ হয়, তবে $\Log{G3c} \Proves[n] !A, \Gamma \Sequent
+  \Delta$.
+  \item \LeftR{\lnot}: যদি $\Log{G3c} \Proves[n] \Gamma, \lnot !A
+  \Sequent \Delta$ হয়, তবে $\Log{G3c} \Proves[n] \Gamma \Sequent \Delta,
+  !A$.
+  \item \RightR{\land}: যদি $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A \land !B$ হয়, তবে $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A$ এবং $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !B$.
+  \item \LeftR{\land}: যদি $\Log{G3c} \Proves[n] \Gamma, !A \land !B
+  \Sequent \Delta$ হয়, তবে $\Log{G3c} \Proves[n] !A, !B, \Gamma \Sequent
+  \Delta$.
+  \item \RightR{\lor}: যদি $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A \lor !B$ হয়, তবে $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A, !B$.
+  \item \LeftR{\lor}: যদি $\Log{G3c} \Proves[n] !A \lor !B, \Gamma \Sequent
+  \Delta$ হয়, তবে $\Log{G3c} \Proves[n] !A, \Gamma \Sequent
+  \Delta$ এবং $\Log{G3c} \Proves[n] !B, \Gamma \Sequent
+  \Delta$.
+  \item \RightR{\lif}: যদি $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A \lif !B$ হয়, তবে $\Log{G3c} \Proves[n] !A, \Gamma \Sequent
+  \Delta, !B$.
+  \item \LeftR{\lif}: যদি $\Log{G3c} \Proves[n] !A \lif !B, \Gamma
+  \Sequent \Delta$ হয়, তবে $\Log{G3c} \Proves[n] \Gamma \Sequent \Delta,
+  !A$ এবং $\Log{G3c} \Proves[n] !B, \Gamma \Sequent \Delta$।
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+\Log{G3c}-র যেকোনো বিধি~$R$-এর
+জন্য দেখাতে হবে: $R$-এর সিদ্ধান্ত~$S$-এর
+!!a{proof}~$\pi$ থাকলে বিধি~$R$-এর পূর্বধারণা
+$S_i$-গুলিরও !!{proof}s~$\pi_i$
+থাকে, যেখানে $\pheight{\pi_i}
+\le \pheight{\pi}$। \LeftR{\land}
+বিধি বিবেচনা করি। ধরি,
+$!A \land !B, \Gamma
+\Sequent \Delta$ রূপের অন্তিম
+সিকোয়েন্টযুক্ত !!a{proof}~$\pi$
+আছে। দেখাতে হবে,
+$!A, !B, \Gamma \Sequent \Delta$-র
+!!a{proof} $\pi'$ আছে, যাতে
+$\pheight{\pi'} \le
+\pheight{\pi}$। আমরা
+$n = \pheight{\pi}$-এর ওপর
+আরোহ করে এটি দেখাই।
+
+$n = 0$ হলে $\pi$ কেবল একটি
+স্বতঃসিদ্ধ: $!A \land !B, \Gamma
+\Sequent \Delta$। \Log{G3c}-র
+স্বতঃসিদ্ধ হয় আণবিক $!C$-সহ
+$!C, \Gamma
+\Sequent \Delta, !C$ রূপের,
+নয়তো বাঁ দিকে অসংগতি-সূত্রসহ
+সিকোয়েন্ট। $!A \land !B$
+আণবিক নয়, তাই পরিচয়-স্বতঃসিদ্ধে
+এটি $!C$ হতে পারে না।
+$!A \land !B, \Gamma \Sequent
+\Delta$ পরিচয়-স্বতঃসিদ্ধ হলে
+কোনো আণবিক $!C$ অবশ্যই
+$\Gamma$ ও~$\Delta$ উভয়ের
+!!a{element}। আর মিথ্যা-স্বতঃসিদ্ধ
+হলে অসংগতি-সূত্রটি প্রসঙ্গে থাকে।
+দুই ক্ষেত্রেই $!A, !B, \Gamma
+\Sequent \Delta$ স্বতঃসিদ্ধ;
+তাই চাওয়া !!{proof}~$\pi'$
+পাওয়া যায় (এর
+!!{height}ও~$0$)।
+% BN-SRC-630 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-630):} G3c-র প্রদর্শিত বিধি-সারণিতে আণবিক পরিচয়-স্বতঃসিদ্ধের পাশাপাশি বাঁদিকে \(\lfalse\)-সহ স্বতঃসিদ্ধও আছে। শূন্য-উচ্চতার আরোহী ক্ষেত্রে এই দ্বিতীয় স্বতঃসিদ্ধও পরীক্ষা করা হয়েছে; ফল একই থাকে।}
+% BN-SRC-630 TARGET-CORRECTION-END
+
+$n>0$ হলে প্রমাণটির শেষে
+কোনো অনুমান-ধাপ আছে।
+$n$-এর জন্য দাবিটি প্রমাণ করতে হবে,
+তবে ভিন্ন প্রসঙ্গ হলেও
+উচ্চতা~$<n$-এর যেকোনো
+!!{proof}-এর জন্য এটি সত্য
+ধরতে পারি। অর্থাৎ যেকোনো
+$k<n$ এবং যেকোনো
+$\Pi$, $\Lambda$-র ক্ষেত্রে,
+$!A \land !B, \Pi \Sequent
+\Lambda$-র !!{height}~$k$-এর
+!!a{proof} থাকলে
+$!A, !B, \Pi \Sequent \Lambda$-র
+!!{height}~$\le k$-এর
+!!a{proof} আছে।
+
+দুটি ক্ষেত্র: বাঁ দিকের
+$!A \land !B$ মুখ্য,
+অথবা মুখ্য নয়। মুখ্য হলে
+শেষ অনুমান \LeftR{\land},
+আর অব্যবহিত
+উপ-!!{proof}~$\pi_1$-এর
+অন্তিম সিকোয়েন্ট
+$!A, !B, \Gamma \Sequent
+\Delta$। এখানে
+$\pheight{\pi_1} <
+\pheight{\pi}$ বলে
+দাবিটি প্রতিষ্ঠিত।
+
+$!A \land !B$ মুখ্য না হলে
+অন্য কোনো !!{formula} মুখ্য,
+আর $!A \land !B$ শেষ
+অনুমানের প্রসঙ্গে থাকে।
+তখন শেষ বিধি~$R$-এর
+অব্যবহিত উপ-!!{proof}s-এর
+ওপর আরোহের অনুমান প্রয়োগ করি।
+এতে $\pi_1'$ নামে
+!!a{proof} অথবা
+$\pi_1'$ ও~$\pi_2'$ নামে
+দুটি !!{proof}s পাওয়া যায়;
+তাদের !!{height}
+$\pi$-র সংশ্লিষ্ট অব্যবহিত
+উপ-!!{proof}s-এর উচ্চতার
+বেশি নয়। $\pi_1'$ ও
+$\pi_2'$-এর অন্তিম
+সিকোয়েন্টগুলিতে বাঁ দিকের
+প্রসঙ্গে $!A \land !B$-এর
+জায়গায় $!A, !B$ থাকে।
+তারপর বিধি~$R$ প্রয়োগ
+করে প্রমাণ~$\pi'$ পাই।
+যেমন, ধরি $\pi$-র
+শেষে~\LeftR{\lif} আছে:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!A \land !B, \Gamma' \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A \land !B, \Gamma', !D \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!A \land !B, \Gamma', !C \lif !D \fCenter \Delta$
+\DisplayProof
+\]
+এখানে বাঁ দিকের
+$!C \lif !D$ মুখ্য,
+আর বাঁ দিকের প্রসঙ্গ
+$!A \land !B, \Gamma'$
+(অর্থাৎ $\Gamma = \Gamma',
+!C \lif !D$)। আরোহের
+অনুমানে যথাক্রমে
+$!A, !B, \Gamma' \Sequent
+\Delta, !C$ এবং
+$!A, !B, \Gamma', !D
+\Sequent \Delta$-র
+!!{proof}s $\pi_1'$ ও
+$\pi_2'$ পাওয়া যায়।
+এই দুটি সিকোয়েন্টকে
+\LeftR{\lif}-এর পূর্বধারণা
+করে~$\pi'$ পাওয়া যায়:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!A, !B, \Gamma' \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!A, !B, \Gamma', !D \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!A, !B, \Gamma', !C \lif !D \fCenter \Delta$
+\DisplayProof
+\]
+এখন,
+\begin{align*}
+\pheight{\pi} & = \max(\pheight{\pi_1}, \pheight{\pi_2}) + 1\\
+\pheight{\pi'} & = \max(\pheight{\pi_1'}, \pheight{\pi_2'}) + 1
+\intertext{সংজ্ঞা অনুসারে, আর}
+\pheight{\pi_1'} & \le \pheight{\pi_1}\\
+\pheight{\pi_2'} & \le \pheight{\pi_2}
+\intertext{আরোহের অনুমান অনুসারে। অতএব,}
+\pheight{\pi'} & \le \pheight{\pi}.
+\end{align*}
+\end{proof}
+% BN-SRC-631 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-631):} \(\LeftR{\lif}\) উদাহরণে আরোহের অনুমান থেকে পাওয়া \(\pi'_1,\pi'_2\)-র অন্তিম সিকোয়েন্টে \(A\land B\)-এর বদলে \(A,B\) থাকা চাই। উৎসের গদ্যে পুরোনো প্রসঙ্গই পুনরাবৃত্ত, অথচ পরের প্রদর্শিত বৃক্ষে সঠিক \(A,B\) আছে; গদ্যটি বৃক্ষের সঙ্গে মেলানো হয়েছে।}
+% BN-SRC-631 TARGET-CORRECTION-END
+% BN-NORM-181 TARGET-NORMALIZATION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{ভাষাগত স্বাভাবিকীকরণ (BN-NORM-181):} উচ্চতা-সমীকরণের মধ্যবর্তী দুটি ইংরেজি বাক্য বাংলা করা হয়েছে; সব সমীকরণ ও তুলনাচিহ্ন অপরিবর্তিত।}
+% BN-NORM-181 TARGET-NORMALIZATION-END
+
+\begin{prob}
+\RightR{\lif}-এর ক্ষেত্রে
+\olref{lem:G3c-invert}-এর
+প্রমাণ দাও।
+\end{prob}
+
+\begin{lem}\ollabel{lem:invert-quant}
+\RightR{\lforall} ও
+\LeftR{\lexists} বিধি
+নিচের অর্থে
+!!{height}-সংরক্ষণকারী উল্টানোযোগ্য:
+\begin{enumerate}
+  \item যদি $\Log{G3c} \Proves[n] \Gamma \Sequent \Delta,
+  \lforall[x][!A(x)]$ হয়, তবে $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A(c)$; এবং
+  \item যদি $\Log{G3c} \Proves[n] \lexists[x][!A(x)], \Gamma \Sequent
+  \Delta$ হয়, তবে $\Log{G3c} \Proves[n] !A(c), \Gamma \Sequent \Delta$,
+\end{enumerate}
+যেকোনো $c$-র জন্য,
+যা যথাক্রমে $\Gamma$,
+$\Delta$ এবং
+$\lforall[x][!A(x)]$
+অথবা $\lexists[x][!A(x)]$-এ
+উপস্থিত নয়।
+\end{lem}
+
+\begin{proof}
+  (১) প্রমাণ করি; (২)
+  অনুশীলন হিসেবে থাক।
+  যুক্তিটি \olref{lem:G3c-invert}-এর
+  প্রমাণের মতো। আরোহী ধাপে
+  আবার দুটি ক্ষেত্র আছে।
+  $\lforall[x][!A(x)]$
+  মুখ্য হলে কাজটি সংক্ষিপ্ত:
+  শেষ $\RightR{\lforall}$
+  অনুমানের পূর্বধারণা চাওয়া
+  $\Gamma \Sequent \Delta, !A(a)$
+  রূপের, আর সেখানে শেষ হওয়া
+  অব্যবহিত উপ-!!{proof}~$\pi_1$-এর
+  $\pheight{\pi_1} <
+  \pheight{\pi}$। অধিকন্তু
+  আইগেনচলের শর্তে $a$,
+  $\Gamma$, $\Delta$ কিংবা
+  $\lforall[x][!A(x)]$-এ
+  উপস্থিত নয়। $\pi_1$
+  নিয়মিত ধরা যায়; তাই
+  \olref[qua]{lem:subst-regular}
+  অনুসারে $\Subst{\pi_1}{c}{a}$
+  একই !!{height}-এর
+  $\Gamma \Sequent \Delta, !A(c)$-র
+  !!a{proof}।
+
+  দ্বিতীয় ক্ষেত্রে
+  $\lforall[x][!A(x)]$
+  শেষ অনুমানে মুখ্য নয়;
+  অন্য কোনো সূত্র মুখ্য।
+  আবার একটি উদাহরণ দেখি।
+  ধরি, শেষ অনুমান
+  \RightR{\land}।
+  $\Delta$-র কোনো
+  !!{formula}~$!B \land !C$
+  রূপের এবং মুখ্য।
+  !!{proof}~$\pi$-র শেষ অংশ:
+  \[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', \lforall[x][!A(x)], !B$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma \fCenter \Delta', \lforall[x][!A(x)], !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', \lforall[x][!A(x)], !B \land !C$
+\DisplayProof
+\]
+এখানে $\Delta = \Delta',
+!B \land !C$। উপপাদ্যের
+সম্পূর্ণ সতেজতা-শর্ত
+মেনে $c$ এমন
+!!a{constant}, যা
+$\Delta$-তে নেই।
+বিশেষত এটি
+$\Delta', !B$ বা
+$\Delta', !C$-তেও
+নেই। তাই $\pi_1$
+ও~$\pi_2$-তে আরোহের
+অনুমান প্রযোজ্য;
+!!{proof}s~$\pi_1'$ ও
+$\pi_2'$ পাওয়া যায়,
+যেখানে $\pheight{\pi_1'}
+\le \pheight{\pi_1}$
+এবং $\pheight{\pi_2'}
+\le \pheight{\pi_2}$।
+$\Gamma \Sequent
+\Delta, !A(c)$-র
+চাওয়া !!{proof}~$\pi'$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta', !A(c), !B$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta', !A(c), !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !A(c), !B \land !C$
+\DisplayProof
+\]
+এখানে $\pheight{\pi'} = \max(\pheight{\pi_1'}, \pheight{\pi_2'})+1 \le \pheight{\pi}$।
+\end{proof}
+% BN-SRC-632 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-632):} অমুখ্য \(\RightR{\land}\) ক্ষেত্রে উৎস কেবল \(\Delta\)-তে \(c\) অনুপস্থিত বলে; পরিমাণসূচক-বিধির দাবির জন্য \(c\) অবশ্যই \(\Gamma\), \(\Delta\) ও \(\lforall[x][!A(x)]\) থেকে নতুন হতে হবে। উদাহরণেও পূর্ণ সতেজতা-শর্ত স্পষ্ট করা হয়েছে।}
+% BN-SRC-632 TARGET-CORRECTION-END
+
+\Olref{lem:G3c-invert}
+কর্তন-বর্জন উপপাদ্যের
+প্রমাণে গুরুত্বপূর্ণ।
+এটি দিয়ে নিচের
+ফলটিও দেখানো যায়:
+
+\begin{prop}\ollabel{prop:G3c-cont-adm}
+\Log{G1c}-র
+\LeftR{\Contraction}
+ও \RightR{\Contraction}
+সংকোচন-বিধি \Log{G3c}-তে
+!!{height}-সংরক্ষণকারী
+অনুমোদনযোগ্য।
+\end{prop}
+
+\begin{proof}
+\RightR{\Contraction}
+ও \LeftR{\Contraction}-এর
+যুক্তি একসঙ্গে দিই।
+ধরি, \Log{G3c}-তে
+$\Gamma \Sequent \Delta, !A, !A$
+অথবা $!A, !A, \Gamma
+\Sequent \Delta$-র
+!!a{proof} হলো $\pi$।
+দেখাতে হবে,
+যথাক্রমে $\Gamma
+\Sequent \Delta, !A$
+অথবা $!A, \Gamma
+\Sequent \Delta$-রও
+\Log{G3c}-!!{proof}~$\pi'$
+আছে, যেখানে
+$\pheight{\pi'} \le
+\pheight{\pi}$।
+$n = \pheight{\pi}$-এর
+ওপর আরোহ করি।
+
+$n=0$ হলে $\pi$
+কেবল একটি স্বতঃসিদ্ধ।
+$\Gamma \Sequent \Delta, !A,
+!A$ যদি \Log{G3c}-র
+স্বতঃসিদ্ধ হয়, তবে
+$\Gamma \Sequent \Delta, !A$-ও
+স্বতঃসিদ্ধ। কারণ হয় কোনো
+আণবিক~$!C$, $\Gamma$
+ও~$\Delta$ উভয়ের
+!!a{element}; নয়তো
+$!A$ আণবিক এবং
+$\Gamma$-র !!a{element}।
+এছাড়া বাঁ প্রসঙ্গে
+অসংগতি-সূত্র থাকলেও
+দুটি সিকোয়েন্টই
+স্বতঃসিদ্ধ। অন্তিম
+সিকোয়েন্ট $!A, !A,
+\Gamma \Sequent \Delta$
+হলেও একই যুক্তি চলে।
+% BN-SRC-633 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-633):} সংকোচনের \(n=0\) ক্ষেত্রে G3c-র আণবিক পরিচয়-স্বতঃসিদ্ধ ছাড়াও বাঁদিকে \(\lfalse\)-সহ স্বতঃসিদ্ধ আছে। সংকুচিত সিকোয়েন্টে সেই কারণও অক্ষত থাকে; উৎসে অনুলিখিত ক্ষেত্রটি যোগ করা হয়েছে।}
+% BN-SRC-633 TARGET-CORRECTION-END
+
+$n>0$ হলে $\pi$-র
+শেষে কোনো বিধি~$R$
+আছে। এই শেষ অনুমানে
+$!A$ মুখ্য না হলে
+\olref{lem:G3c-invert}-এর
+প্রমাণের মতো $\pi$-র
+অব্যবহিত উপ-!!{proof}s-এ
+আরোহের অনুমান প্রয়োগ
+করে, তার ফলের
+!!{proof}(s)-এ একই
+বিধি~$R$ প্রয়োগ করি।
+এতে !!a{proof}~$\pi'$
+পাই। আরোহের অনুমান
+হলো: $\Pi \Sequent
+\Lambda, !D, !D$
+অথবা $!D, !D, \Pi
+\Sequent \Lambda$-র
+!!{height}~$k<n$-এর
+!!a{proof} থাকলে
+যথাক্রমে $\Pi
+\Sequent \Lambda, !D$
+অথবা $!D, \Pi
+\Sequent \Lambda$-র
+!!{height}~$\le k$-এর
+!!a{proof} আছে।
+(প্রসঙ্গ বা সংকুচিত
+!!{formula}, $\Gamma$,
+$\Delta$ বা~$!A$
+থেকে আলাদা হলেও
+আরোহের অনুমান প্রযোজ্য।)
+
+যেমন, ধরি $R$ হলো
+$\RightR{\land}$ এবং
+$\pi$-র শেষ অংশ:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !B, !A, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma \fCenter \Delta', !C, !A, !A$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !A, !A$
+\DisplayProof
+\]
+এখানে $\Delta = \Delta',
+!B \land !C$। আরোহের
+অনুমানে যথাক্রমে
+$\Gamma \fCenter
+\Delta', !B, !A$
+ও $\Gamma \fCenter
+\Delta', !C, !A$-র
+!!{proof}s $\pi_1'$
+ও $\pi_2'$ পাওয়া যায়;
+$\pheight{\pi_1'} \le
+\pheight{\pi_1}$
+এবং $\pheight{\pi_2'}
+\le \pheight{\pi_2}$।
+চাওয়া !!{proof}~$\pi'$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta', !B, !A$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta', !C, !A$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !A$
+\DisplayProof
+\]
+
+শেষ অনুমানে $!A$
+মুখ্য হলে $\pi$-র
+অব্যবহিত উপ-!!{proof}s-এ
+প্রথমে উল্টানোযোগ্যতার
+সহায়ক উপপাদ্য
+(\olref{lem:G3c-invert}),
+তারপর আরোহের অনুমান,
+শেষে আবার বিধি~$R$
+প্রয়োগ করি। যেমন,
+ধরি $\pi$-র সিদ্ধান্ত
+$\Gamma \Sequent
+\Delta, !A, !A$,
+$!A \ident (!B \land !C)$,
+এবং শেষ অনুমানে সূত্রটি
+মুখ্য। তাহলে $\pi$-র
+রূপ:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !B \land !C, !B$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma \fCenter \Delta, !B \land !C, !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta, !B \land !C, !B \land !C$
+\DisplayProof
+\]
+\olref{lem:G3c-invert}
+$\pi_1$-এ প্রয়োগ করলে
+$\Gamma \Sequent
+\Delta, !B, !B$-র
+!!a{proof}~$\pi_1'$
+পাই। (এতে $\Gamma
+\Sequent \Delta,
+!C, !B$-রও
+!!a{proof} মেলে,
+কিন্তু সেটি লাগবে না।)
+একইভাবে $\pi_2$-এ
+\olref{lem:G3c-invert}
+প্রয়োগ করে $\Gamma
+\Sequent \Delta,
+!C, !C$-র
+!!a{proof}~$\pi_2'$
+পাই। \RightR{\land}
+উল্টানো !!{height}-সংরক্ষণকারী
+বলে $\pheight{\pi_1'}
+\le \pheight{\pi_1}
+< \pheight{\pi}$ এবং
+$\pheight{\pi_2'}
+\le \pheight{\pi_2}
+< \pheight{\pi}$।
+তাই $\pi_1'$ ও
+$\pi_2'$-এ আরোহের
+অনুমান প্রযোজ্য:
+যথাক্রমে $\Gamma
+\Sequent \Delta, !B$
+ও $\Gamma \Sequent
+\Delta, !C$-র
+!!{proof}s~$\pi_1''$
+ও $\pi_2''$ আছে,
+যেখানে $\pheight{\pi_1''}
+\le \pheight{\pi_1'}
+\le \pheight{\pi_1}$
+এবং $\pheight{\pi_2''}
+\le \pheight{\pi_2'}
+\le \pheight{\pi_2}$।
+তখন !!{proof}~$\pi'$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$\Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta, !B \land !C$
+\DisplayProof
+\]
+এতে $\pheight{\pi'}
+\le \pheight{\pi}$।
+
+!!{formula} মুখ্য হলে
+পরিমাণসূচক-বিধিগুলির
+ক্ষেত্রে বিশেষ যত্ন দরকার।
+
+ধরি, ডান দিকে
+$!A \ident \lforall[x][!B(x)]$
+মুখ্য। তাহলে
+$\pi$-র শেষ অংশ:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, \lforall[x][!B(x)], !B(a)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!B(x)], \lforall[x][!B(x)]$
+\DisplayProof
+\]
+\olref{lem:invert-quant}
+অনুসারে $\Gamma \fCenter
+\Delta, !B(c), !B(a)$-র
+!!a{proof}~$\pi_1'$
+আছে, যার
+!!{height} $\le
+\pheight{\pi_1}$।
+এটি সেই যেকোনো~$c$-র
+জন্য, যা $\Gamma
+\fCenter \Delta,
+\lforall[x][!B(x)], !B(a)$-তে
+উপস্থিত নয়। $\pi_1'$
+নিয়মিত ধরা যায়;
+তাই \olref[qua]{lem:subst-regular}
+অনুসারে !!{proof}
+$\Subst{\pi_1'}{a}{c}$
+হলো $\Gamma \fCenter
+\Delta, !B(a), !B(a)$-র
+!!a{proof}, যার
+!!{height}ও $\le
+\pheight{\pi_1}$।
+এখন আরোহের অনুমান
+থেকে $\Gamma
+\fCenter \Delta, !B(a)$-র
+!!a{proof}~$\pi_1''$
+পাই। \RightR{\lforall}
+প্রয়োগ করে~$\pi'$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta, !B(a)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!B(x)]$
+\DisplayProof
+\]
+এখানে $\pheight{\pi'}
+\le \pheight{\pi}$।
+% BN-SRC-634 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-634):} \(\lforall\)-ডান মুখ্য সংকোচনের প্রথম বৃক্ষে উৎসে ভুল করে \(\RightR{\lexists}\) লেবেল আছে। পূর্বধারণা, সিদ্ধান্ত এবং পরের প্রয়োগ অনুযায়ী লেবেল \(\RightR{\lforall}\) করা হয়েছে।}
+% BN-SRC-634 TARGET-CORRECTION-END
+
+এবার ধরি, $!A \ident
+\lexists[x][!B(x)]$
+ডান দিকে মুখ্য।
+তাহলে $\pi$-র রূপ:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, \lexists[x][!B(x)], \lexists[x][!B(x)], !B(t)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!B(x)], \lexists[x][!B(x)]$
+\DisplayProof
+\]
+$\pi_1$-এ আরোহের অনুমান
+প্রযোজ্য। ফলে $\Gamma
+\Sequent \Delta,
+\lexists[x][!B(x)], !B(t)$-র
+!!a{proof}~$\pi_1'$ আছে।
+(এখানে উল্টানোযোগ্যতার
+সহায়ক উপপাদ্য লাগে না।)
+তখন !!{proof}~$\pi'$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta,  \lexists[x][!B(x)], !B(t)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!B(x)]$
+\DisplayProof
+\]
+এতে $\pheight{\pi'} \le
+\pheight{\pi}$।
+\end{proof}
+% BN-SRC-635 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-635):} \(\lexists\)-ডান মুখ্য সংকোচনে উৎসের শেষ গদ্য ও প্রমাণবৃক্ষে সাক্ষী-পদ \(t\) বাদ পড়ে \(B\) লেখা। আগের পূর্বধারণার সঙ্গে মিলিয়ে \(B(t)\) রাখা হয়েছে। একবচন \(\pi'_1\)-এর জন্য উৎসের ভুল বহুবচন proof-token-ও একবচন করা হয়েছে।}
+% BN-SRC-635 TARGET-CORRECTION-END
+
+\begin{prob}
+\LeftR{\Contraction}-এর
+ক্ষেত্রে \olref{prop:G3c-cont-adm}-এর
+প্রমাণের রূপরেখা দাও।
+$!A \ident (!B \land !C)$
+এবং $!A \ident (!B
+\lif !C)$ ক্ষেত্রগুলি
+বর্ণনা করো।
+\end{prob}
+
+\begin{prob}
+অবশিষ্ট পরিমাণসূচক-ক্ষেত্রগুলিতে
+\LeftR{\Contraction}-এর
+জন্য \olref{prop:G3c-cont-adm}-এর
+প্রমাণের রূপরেখা দাও;
+অর্থাৎ $!A \ident
+\lforall[x][!B(x)]$ এবং
+$!A \ident \lexists[x][!B(x)]$
+ক্ষেত্রে।
+\end{prob}
+
+
+\end{document}

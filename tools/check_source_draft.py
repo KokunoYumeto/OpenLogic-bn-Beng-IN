@@ -6730,6 +6730,44 @@ for row in rows:
             and not normalizations
             and mathparts(audited_rules) == target_math
         )
+    legacy_invertibility_repairs = False
+    legacy_invertibility_singular_proof_token_fix = False
+    if row["unit_id"] == "OLP-0701":
+        audited_inversion = source
+        fixes = (
+            (r"\Proves[h_i] S_i", r"\Proves S_i", 1),
+            (r"\Proves_n S", r"\Proves[n] S", 1),
+            (r"!A \land !B, \Gamma' \Sequent \Delta, !C",
+             r"!A, !B, \Gamma' \Sequent \Delta, !C", 1),
+            (r"!A \land !B, \Gamma',\n!D \Sequent \Delta",
+             r"!A, !B, \Gamma', !D \Sequent \Delta", 1),
+            (r"\RightLabel{\RightR{\lexists}}",
+             r"\RightLabel{\RightR{\lforall}}", 3),
+            (r"\Gamma \Sequent \Delta, \lexists[x][!B(x)],\n!B$",
+             r"\Gamma \Sequent \Delta, \lexists[x][!B(x)],\n!B(t)$", 1),
+            (r"\Deduce$\Gamma \fCenter \Delta,  \lexists[x][!B(x)], !B$",
+             r"\Deduce$\Gamma \fCenter \Delta,  \lexists[x][!B(x)], !B(t)$", 1),
+        )
+        for old, new, expected_count in fixes:
+            old = old.replace(r"\n", "\n")
+            new = new.replace(r"\n", "\n")
+            assert audited_inversion.count(old) == expected_count, old
+            audited_inversion = audited_inversion.replace(old, new, 1)
+        legacy_invertibility_repairs = (
+            set(documented) == {
+                "BN-SRC-629", "BN-SRC-630", "BN-SRC-631", "BN-SRC-632",
+                "BN-SRC-633", "BN-SRC-634", "BN-SRC-635",
+            }
+            and set(normalizations) == {"BN-NORM-181"}
+            and mathparts(audited_inversion) == target_math
+        )
+        legacy_invertibility_singular_proof_token_fix = (
+            legacy_invertibility_repairs
+            and semantic_tokens(source) - semantic_tokens(checked_target)
+            == collections.Counter({"!!a{proof}s": 1})
+            and semantic_tokens(checked_target) - semantic_tokens(source)
+            == collections.Counter({"!!a{proof}": 1})
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6888,6 +6926,7 @@ for row in rows:
             legacy_types_constructor_repairs,
             legacy_admissible_derivable_repairs,
             legacy_interpretation_xor_label_fix,
+            legacy_invertibility_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7178,6 +7217,19 @@ for row in rows:
             "documented_source_corrections": ["BN-SRC-627", "BN-SRC-628"],
             "xor_left_rule_label_and_sequent_truth_witness": True,
         }
+    if row["unit_id"] == "OLP-0701":
+        assert legacy_invertibility_repairs
+        assert legacy_invertibility_singular_proof_token_fix
+        assert source.count(r"\RightLabel{\RightR{\lexists}}") == 3
+        assert checked_target.count(r"\RightLabel{\RightR{\lexists}}") == 2
+        assert checked_target.count(r"\RightLabel{\RightR{\lforall}}") == 2
+        assert checked_target.count(r"\intertext{সংজ্ঞা অনুসারে, আর}") == 1
+        assert checked_target.count(r"\intertext{আরোহের অনুমান অনুসারে। অতএব,}") == 1
+        tex_command_check = {
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(629, 636)],
+            "documented_language_normalization": "BN-NORM-181",
+            "invertibility_notation_axioms_context_freshness_quantifier_rules": True,
+        }
     checks = {
         "unit_id": row["unit_id"],
         "source_blocks": len(source_blocks),
@@ -7195,6 +7247,7 @@ for row in rows:
             or second_order_metatheory_token_fix
             or legacy_cut_intro_split_token_fix
             or legacy_admissible_end_sequent_token_fix
+            or legacy_invertibility_singular_proof_token_fix
         ),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),
         "documented_source_corrections": documented,

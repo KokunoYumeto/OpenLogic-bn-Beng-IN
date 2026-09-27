@@ -1,0 +1,227 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T01:59:02.947883+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "bbf68418f1f8fcf9c9a79a1445939f119c798927",
+  "parent": "fc872ff442133fe64a7b20327c925504c528281d",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "fc872ff442133fe64a7b20327c925504c528281d",
+    "receipt": "PUBLIC_READBACK_SOURCE_563_2026-09-27.json",
+    "receipt_sha256": "12d51f5d6c504515ec3dadbe44ec57a3935408d1ab7e3e38a0a75e3ad1af839b"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/bbf68418f1f8fcf9c9a79a1445939f119c798927.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/bbf68418f1f8fcf9c9a79a1445939f119c798927",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 15145360,
+  "archive_sha256": "234bea3aa20f6a685fed18d8830da5a6973d2ff08e285f902c8b845131624a0f",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/absinf.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/absinf.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/absinf.tex",
+      "content_type": "text/plain",
+      "bytes": 10785,
+      "sha256": "f0dd6a7211cd8751402f26bcbf55d65d8e879d9ce24d56f24cac0adb251c1363"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/extrinsic.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/extrinsic.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/extrinsic.tex",
+      "content_type": "text/plain",
+      "bytes": 11646,
+      "sha256": "26eaa543b297224da13c8caa2251048ff1bb145c2a4f5ddee03d570f2855e90e"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/finiteaxiomatizability.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/finiteaxiomatizability.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/finiteaxiomatizability.tex",
+      "content_type": "text/plain",
+      "bytes": 8779,
+      "sha256": "da68fc60790ee37159db9db434db8a8d9f730e3ad439ecb7cb4044dcba694ed8"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 2375,
+      "sha256": "c6927a79a9b6023b718a8cda373c641238f61e9471da0fc33a56db56afa24270"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/limofsize.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/limofsize.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/limofsize.tex",
+      "content_type": "text/plain",
+      "bytes": 5897,
+      "sha256": "5c028e6d41e5ee7ad4d12b1696eafa23cbf25a2bb098913e6a89ec55d8b3eba3"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/ref.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/ref.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/ref.tex",
+      "content_type": "text/plain",
+      "bytes": 3699,
+      "sha256": "27064a51543c91fb46461c297962c4999aab072cc57d85330735da15c334e7e3"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/refproofs.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/refproofs.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/refproofs.tex",
+      "content_type": "text/plain",
+      "bytes": 12442,
+      "sha256": "4525b7699aeaa96652c312f37a418e1df6307d0a044bca678741033a6747a2ba"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/replacement.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/replacement.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/replacement.tex",
+      "content_type": "text/plain",
+      "bytes": 398,
+      "sha256": "8ecf8aeb46c1fa690154e7830433988915e0773b13aa28103f661ba9c88898d5"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/strength.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/strength.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/bbf68418f1f8fcf9c9a79a1445939f119c798927/bn-Beng-IN/content/set-theory/replacement/strength.tex",
+      "content_type": "text/plain",
+      "bytes": 4851,
+      "sha256": "c0c55ff6528f64258e1eaa2dc34e8c9cf5880582c380d9120e11d34ac5319425"
+    }
+  ],
+  "changed_files_verified": 22,
+  "translated_tex_files_in_commit": 9,
+  "draft_translated_total": 572,
+  "draft_untranslated_total": 150,
+  "segments": 6223,
+  "translated_segments": 5308,
+  "new_batch_segments": 73,
+  "new_batch_translated_segments": 71,
+  "new_batch_unchanged_segments": 2,
+  "source_correction_records": 453,
+  "new_source_correction_records": 5,
+  "translation_decisions": 403,
+  "provisional_translation_decisions": 381,
+  "translation_decision_occurrences": 34661,
+  "decisions_with_exact_source_wording": 383,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 572,
+    "blocks": 6223,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7760,
+      "sha256": "af02d784ef45b41bf6ee09812b5371bbbf6fb3b246b577f7b877ff4c0acd2627"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/replacement/absinf.tex",
+      "bytes": 10785,
+      "sha256": "f0dd6a7211cd8751402f26bcbf55d65d8e879d9ce24d56f24cac0adb251c1363"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/replacement/extrinsic.tex",
+      "bytes": 11646,
+      "sha256": "26eaa543b297224da13c8caa2251048ff1bb145c2a4f5ddee03d570f2855e90e"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/replacement/finiteaxiomatizability.tex",
+      "bytes": 8779,
+      "sha256": "da68fc60790ee37159db9db434db8a8d9f730e3ad439ecb7cb4044dcba694ed8"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/replacement/introduction.tex",
+      "bytes": 2375,
+      "sha256": "c6927a79a9b6023b718a8cda373c641238f61e9471da0fc33a56db56afa24270"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/replacement/limofsize.tex",
+      "bytes": 5897,
+      "sha256": "5c028e6d41e5ee7ad4d12b1696eafa23cbf25a2bb098913e6a89ec55d8b3eba3"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/replacement/ref.tex",
+      "bytes": 3699,
+      "sha256": "27064a51543c91fb46461c297962c4999aab072cc57d85330735da15c334e7e3"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/replacement/refproofs.tex",
+      "bytes": 12442,
+      "sha256": "4525b7699aeaa96652c312f37a418e1df6307d0a044bca678741033a6747a2ba"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/replacement/replacement.tex",
+      "bytes": 398,
+      "sha256": "8ecf8aeb46c1fa690154e7830433988915e0773b13aa28103f661ba9c88898d5"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/replacement/strength.tex",
+      "bytes": 4851,
+      "sha256": "c0c55ff6528f64258e1eaa2dc34e8c9cf5880582c380d9120e11d34ac5319425"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 10313706,
+      "sha256": "b4c4d990ccd31bedca1cb1ae5816ae5292f287d51c675e32d006fa9cd576d995"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 347251,
+      "sha256": "ff0da8221a14399617e38d41cd3f133f307e7a9b2d2cff066301926a09430769"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SET_THEORY_REPLACEMENT.md",
+      "bytes": 9853,
+      "sha256": "5b68e0366d29fe09cd74c3954b0fcf58df016e5ddb83cc717291e41728929a67"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "bae16656581266d3558c708607f13793af5270ba16ced11e3323f06ecc14034a"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 885433,
+      "sha256": "2322576faaf53bc30dfa81d7d3d97b57324acdd51d9bc21ce0f4a9ae5b70bbb1"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 377930,
+      "sha256": "d1f8bd723c780bc27bac7b4ee427f2bddfdc32f03441d451e31485239060e1b8"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 20827354,
+      "sha256": "59405c7c3ba5236b1ff088a890aa95c321112bfd763f55d83dffad1ca7154bf1"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 16283044,
+      "sha256": "32967555e4d02fa35bee12dcbafe3fce2dbfd6d729a7617e7fd514ec07e12c4a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1565063,
+      "sha256": "fad797c3caaeb21e3cfe7937eea089c12312923d8930316fc01b76e68532e2ce"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 9502474,
+      "sha256": "200397dc780366e23f47bdbe0489d3b938efe71861fff452a26143cc7bf60d39"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 290037,
+      "sha256": "82c7c7de177c59c2a94f373a21156c4d92cccd20c0ab4ba9b3f63c1350bf14e9"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 284913,
+      "sha256": "875dffbb5f060f7fa11f7ef0e9e10ca87e08eb07f8a2f2baaec9f5939f34bc2e"
+    }
+  ]
+}

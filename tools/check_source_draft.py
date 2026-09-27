@@ -6295,6 +6295,31 @@ for row in rows:
             set(documented) == {f"BN-SRC-{n}" for n in range(550, 555)}
             and mathparts(audited_proofs) == target_math
         )
+    legacy_nd_sequents_math_repairs = False
+    if row["unit_id"] == "OLP-0669":
+        assert source.count(r"\Log{G1c} or \Log{G1i}") == 1
+        audited_sequents = source
+        old_premise = r"\Deduce$x:B, \Gamma \fCenter !C$"
+        new_premise = r"\Deduce$x:!B, \Gamma \fCenter !C$"
+        assert audited_sequents.count(old_premise) == 1
+        audited_sequents = audited_sequents.replace(old_premise, new_premise, 1)
+        old_open = "assumption of~$\\delta'$; in the second case"
+        new_open = "assumption of~$\\delta_1'$; in the second case"
+        assert audited_sequents.count(old_open) == 1
+        audited_sequents = audited_sequents.replace(old_open, new_open, 1)
+        marker = "  the !!{proof}~$\\delta'$ to be"
+        assert audited_sequents.count(marker) == 1
+        head, marker, final_trees = audited_sequents.partition(marker)
+        old_label = r"\RightLabel{$\delta_1$}"
+        new_label = r"\RightLabel{$\delta_1'$}"
+        assert final_trees.count(old_label) == 2
+        audited_sequents = head + marker + final_trees.replace(
+            old_label, new_label, 2
+        )
+        legacy_nd_sequents_math_repairs = (
+            set(documented) == {f"BN-SRC-{n}" for n in range(555, 559)}
+            and mathparts(audited_sequents) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6435,6 +6460,7 @@ for row in rows:
             legacy_quantifier_substitution_repairs,
             legacy_n2_caption_rule_names,
             legacy_nd_rules_proofs_math_repairs,
+            legacy_nd_sequents_math_repairs,
         )
     )
     minimal_change_fileid_fix = (

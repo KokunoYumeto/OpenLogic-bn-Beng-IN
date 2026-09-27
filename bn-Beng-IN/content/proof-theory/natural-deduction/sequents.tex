@@ -1,0 +1,195 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: sequents
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{seq}
+
+\olsection{সিকোয়েন্টে স্বাভাবিক নিষ্পাদন: \Log{N2c} ও~\Log{N2i}}
+
+\Log{N1c} বা \Log{N1i}-তে !!^a{proof}~$\delta$
+দেখায়, তার অন্তিম-!!{formula}~$!A$ খোলা অনুমানগুলি
+থেকে অনুসৃত হয়। $\Gamma$ যদি সেই !!{formula}s~$!B$-এর
+সমষ্টি হয়, যাদের $!B^x$ প্রমাণ~$\delta$-তে খোলা
+অনুমান হিসেবে ঘটে, তাহলে লিখতে পারি
+$\delta \Proves \Gamma \Sequent !A$। এ থেকে
+বোঝা যায়, সিকোয়েন্টের জন্যও একটি স্বাভাবিক
+নিষ্পাদন-পদ্ধতি গড়া যায়। তাতে প্রতিটি সিকোয়েন্ট
+ডান দিকের !!{formula}টি কোন খোলা অনুমানগুলির উপর
+নির্ভর করে, অর্থাৎ ওই সিকোয়েন্টে শেষ হওয়া
+উপ-!!{proof}-এ কোনগুলি খোলা, সেই তথ্য বহন করে।
+এটিই সিকোয়েন্টে, বা “সিকোয়েন্ট-রীতিতে”,
+স্বাভাবিক নিষ্পাদন; ফলিত পদ্ধতিদুটির নাম
+\Log{N2c} ও~\Log{N2i}।
+% BN-SRC-555 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-555):} এই অনুচ্ছেদের শুরুতে উৎসে G1c/G1i লেখা; আলোচিত সূত্রবৃক্ষ ও পাশের N1/N2 তুলনা অনুযায়ী N1c/N1i করা হয়েছে।}
+% BN-SRC-555 TARGET-CORRECTION-END
+
+\Log{N1} ও \Log{N2}-এর মিল আরও স্পষ্ট করতে,
+বাঁ দিকের সমষ্টি~$\Gamma$-তে $x:!B$ রূপের
+চিহ্নযুক্ত !!{formula}s রাখি। \Log{N1}-এর
+বিধিগুলি কেবল পূর্বধারণার !!{formula}s-এ,
+অর্থাৎ অব্যবহিত উপ-!!{proof}s-এর অন্তিম
+!!{formula}s-এ কাজ করে। তাই \Log{N2}-এর
+বিধিগুলিও শুধু সিকোয়েন্টের ডান দিকে কাজ করে।
+সিকোয়েন্টের বাঁ দিকের চিহ্নযুক্ত সূত্রগুলিকে
+সংক্ষেপে \emph{প্রসঙ্গ} বলতে পারি।
+
+\Log{N2}-এর প্রমাণে অনুমানের বদলে সর্বোচ্চে
+থাকে এই রূপের স্বতঃসিদ্ধ-সিকোয়েন্ট:
+\[x:!A \Sequent !A.\]
+বিধিগুলি \Log{N1}-এর বিধিগুলির সঙ্গে হুবহু
+মেলে এবং \olref{tab:N2}-তে দেওয়া আছে।
+
+\subfile{rules-N2}
+
+\Log{N1c} ও \Log{N1i}-এর মতো এখানেও
+\Intro{\lif}, \Intro{\lnot}, \Elim{\lor}
+ও \Elim{\lexists} বিধিতে অনুমান অবমুক্ত করা
+যেতেও পারে, নাও পারে। তাই \Log{N2c}
+ও~\Log{N2i}-তে সংশ্লিষ্ট বিধির সঠিক প্রয়োগ
+তখনও অনুমোদিত, যখন অব্যবহিত পূর্বধারণার
+প্রসঙ্গে সংশ্লিষ্ট !!{formula}s $!A$, $!B$
+ও $!A(a)$ অনুপস্থিত।
+
+\begin{prop}
+$\delta$ যদি \Log{N1c} বা \Log{N1i}-তে
+$!A$-এর !!a{proof} হয়, তাহলে \Log{N2c}
+(\Log{N2i})-তে $\Gamma \Sequent !A$-এর
+!!a{proof}~$\delta'$ আছে, যেখানে $\Gamma$
+হলো এমন সব~$x:!B$-এর সমষ্টি, যাদের জন্য
+$!B^x$ হলো~$\delta$-র খোলা অনুমান।
+\end{prop}
+
+\begin{proof}
+  $n=\pheight{\delta}$-র উপর আরোহ করি।
+  $n=0$ হলে $\delta$ কেবল একটি খোলা
+  অনুমান~$!A^x$। তখন $\Gamma = \{x:!A\}$
+  এবং $\Gamma \Sequent !A$ হলো
+  \Log{N2c} বা~\Log{N2i}-এর স্বতঃসিদ্ধ।
+
+  $n>0$ হলে $\delta$-র শেষ অনুমানবিধি অনুযায়ী
+  ক্ষেত্র আলাদা করি। এখানে শুধু একটি ক্ষেত্র
+  আলোচনা করি; বাকিগুলি অনুশীলন।
+
+  ধরি, শেষ বিধি $\Intro{\lif}$। তাহলে
+  $\delta$-র শেষাংশ
+  \[
+  \AxiomC{$\Discharge{!B}{x}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C$}
+  \DischargeRule{\Intro{\lif}}{x}
+  \UnaryInfC{$!B \lif !C$}
+  \DisplayProof
+  \]
+  আরোহের অনুমানে \Log{N2c} (\Log{N2i})-তে
+  $\Gamma' \Sequent !C$-এর !!a{proof}~$\delta_1'$
+  আছে, যেখানে $\Gamma'$ হলো~$\delta_1$-এ
+  খোলা থাকা চিহ্নযুক্ত অনুমানগুলির সমষ্টি।
+  $!B^x$ যদি $\delta_1$-এর খোলা অনুমান হয়,
+  তাহলে \Intro{\lif} বিধিতে সেটি অবমুক্ত
+  হয়; ফলে~$\delta$-র খোলা অনুমানের সমষ্টি
+  $\Gamma = \Gamma' \setminus \{x:!B\}$।
+  অন্য কথায়, $\delta_1'$ হলো
+  $x:!B, \Gamma \Sequent !C$-এর !!a{proof};
+  তাই $\delta'$ নেওয়া যায়
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1'$}
+  \Deduce$x:!B, \Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+  % BN-SRC-556 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-556):} এই N2 প্রমাণবৃক্ষের পূর্বধারণায় উৎসে x:B লেখা, অথচ প্রসঙ্গের সূত্রটি সর্বত্র !B; x:!B করা হয়েছে।}
+  % BN-SRC-556 TARGET-CORRECTION-END
+  $!B^x$ যদি~$\delta_1$-এর খোলা অনুমান না হয়,
+  তাহলে \Intro{\lif} কোনো অনুমান অবমুক্ত
+  করে না; $\delta$ ও $\delta_1$-এর খোলা
+  অনুমান একই। \Log{N2c} ও~\Log{N2i}-তে
+  \Intro{\lif}-এর পূর্বধারণায় প্রসঙ্গসূত্র
+  $x:!B$ থাকা বাধ্যতামূলক নয়; তাই
+  $\delta'$ নেওয়া যায়
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1'$}
+  \Deduce$\Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+
+  $\delta$-র শেষে অন্য বিধি থাকলে
+  ক্ষেত্রগুলি অনুরূপ।
+\end{proof}
+
+\begin{prop}
+$\delta$ যদি \Log{N2c} বা \Log{N2i}-তে
+$\Gamma \Sequent !A$-এর !!a{proof} হয়,
+তাহলে \Log{N1c} (\Log{N1i})-তে
+অন্তিম-!!{formula}~$!A$-এর !!a{proof}~$\delta'$
+আছে, যার খোলা অনুমান $!B^x$—প্রতিটি
+$x:!B \in \Gamma$-র জন্য।
+\end{prop}
+
+\begin{proof}
+  আবার~$\delta$-র !!{height}~$n$-এর উপর
+  আরোহ করি। $n=0$ হলে $\delta$ একটি
+  স্বতঃসিদ্ধ, $x:!A \Sequent !A$।
+  !!{proof}~$\delta'$ তখন অনুমান~$!A^x$।
+
+  $n>0$ হলে $\delta$-র শেষ অনুমানবিধি
+  অনুযায়ী ক্ষেত্র আলাদা করি। যেমন, সেটি
+  $\Intro{\lif}$ হলে $\delta$-র শেষাংশ
+  \[
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$x:!B, \Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \quad\text{ or }\quad
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$\Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+  আরোহের অনুমানে \Log{N1c} (\Log{N1i})-তে
+  $!C$-এর !!a{proof} আছে; সেটিকে δ₁′ বলি।
+  প্রথম ক্ষেত্রে $!B^x$ হলো~$\delta_1'$-র
+  খোলা অনুমান; দ্বিতীয় ক্ষেত্রে নয়।
+  % BN-SRC-558 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-558):} উৎসের বিপরীত আরোহে প্রথম ক্ষেত্রে $!B^x$-কে অন্তিম $\delta'$-র খোলা অনুমান বলা হয়েছে; →-ভূমিকায় সেটি অবমুক্ত হয়, তাই খোলা থাকে উপপ্রমাণ $\delta_1'$-তে।}
+  % BN-SRC-558 TARGET-CORRECTION-END
+  তাই !!{proof}~$\delta'$ যথাক্রমে নেওয়া যায়
+  \[
+  \bottomAlignProof
+  \AxiomC{$\Discharge{!B}{x}$}
+  \RightLabel{$\delta_1'$}
+  \DeduceC{$!C$}
+  \DischargeRule{\Intro{\lif}}{x}
+  \UnaryInfC{$!B \lif !C$}
+  \DisplayProof
+  \quad\text{ or }\quad
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1'$}
+  \DeduceC{$!C$}
+  \RightLabel{\Intro{\lif}}
+  \UnaryInfC{$!B \lif !C$}
+  \DisplayProof
+  \]
+  % BN-SRC-557 TARGET-CORRECTION-BEGIN
+  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-557):} বিপরীত আরোহে N1-এর উপপ্রমাণটি $\delta_1'$; উৎসের শেষ দুই বৃক্ষে ভুলে N2 উপপ্রমাণ $\delta_1$-র লেবেল আছে। এখানে দুই লেবেলেই $\delta_1'$।}
+  % BN-SRC-557 TARGET-CORRECTION-END
+\end{proof}
+
+\end{document}

@@ -6617,6 +6617,22 @@ for row in rows:
             and source_math - target_math == old_math
             and target_math - source_math == new_math
         )
+    legacy_proof_term_constructor_repairs = False
+    if row["unit_id"] == "OLP-0688":
+        audited_terms = source
+        fixes = (
+            (r"c^\land(N, m) : !A \land !B", r"c^\land(N, M) : !A \land !B"),
+            (r"c^{\lor{!B}}_1:!A \lor !B", r"c^{\lor{!B}}_1(N):!A \lor !B"),
+            (r"\inj[!A]{i}{!M}", r"\inj[!A]{i}{N}"),
+        )
+        for old, new in fixes:
+            assert audited_terms.count(old) == 1, old
+            audited_terms = audited_terms.replace(old, new, 1)
+        legacy_proof_term_constructor_repairs = (
+            set(documented) == {"BN-SRC-612", "BN-SRC-613", "BN-SRC-614"}
+            and not normalizations
+            and mathparts(audited_terms) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -6769,6 +6785,7 @@ for row in rows:
             legacy_search_algorithm_repairs,
             legacy_search_tableaux_repairs,
             legacy_propositions_normalization_repairs,
+            legacy_proof_term_constructor_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -6965,6 +6982,13 @@ for row in rows:
             "documented_source_corrections": [f"BN-SRC-{n}" for n in range(604, 612)],
             "documented_language_normalization": "BN-NORM-177",
             "disjunction_rank_and_newman_argument": True,
+        }
+    if row["unit_id"] == "OLP-0688":
+        assert legacy_proof_term_constructor_repairs
+        assert source.count(r"\subfile{rules-tN2}") == checked_target.count(r"\subfile{rules-tN2}") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-612", "BN-SRC-613", "BN-SRC-614"],
+            "constructor_arguments_and_injection_term": True,
         }
     checks = {
         "unit_id": row["unit_id"],

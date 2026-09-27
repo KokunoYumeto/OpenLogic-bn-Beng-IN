@@ -6252,7 +6252,8 @@ for row in rows:
             \DisplayProof
         """)
         legacy_quantifier_substitution_repairs = (
-            set(documented) == {"BN-SRC-544", "BN-SRC-545", "BN-SRC-546"}
+            set(documented) == {"BN-SRC-544", "BN-SRC-545", "BN-SRC-546", "BN-SRC-648"}
+            and "অপরিচ্ছন্ন বিধি সর্বাধিক $n-1$টি" in checked_target
             and source_math - target_math == collections.Counter({
                 "!C": 2,
                 r"\lexists[x][!A(x,c)]": 1,
@@ -6865,6 +6866,20 @@ for row in rows:
             and not normalizations
             and mathparts(audited_quantifiers) == target_math
         )
+    legacy_g1c_caption_quantifier_fix = False
+    if row["unit_id"] == "OLP-0704":
+        audited_g1c = source
+        for old, new in (
+            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
+            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
+        ):
+            assert audited_g1c.count(old) == 1, old
+            audited_g1c = audited_g1c.replace(old, new, 1)
+        legacy_g1c_caption_quantifier_fix = (
+            set(documented) == {"BN-SRC-647"}
+            and not normalizations
+            and mathparts(audited_g1c) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -7026,6 +7041,7 @@ for row in rows:
             legacy_invertibility_repairs,
             legacy_proof_examples_repairs,
             legacy_sequent_quantifier_repairs,
+            legacy_g1c_caption_quantifier_fix,
         )
     )
     minimal_change_fileid_fix = (
@@ -7347,6 +7363,15 @@ for row in rows:
         tex_command_check = {
             "documented_source_corrections": [f"BN-SRC-{n}" for n in range(643, 647)],
             "multiset_substitution_universal_left_and_regularization_induction": True,
+        }
+    if row["unit_id"] == "OLP-0704":
+        assert legacy_g1c_caption_quantifier_fix
+        assert checked_target.count(r"\multicolumn{2}{@{}c@{}}{স্বতঃসিদ্ধ}") == 1
+        assert checked_target.count(r"\multicolumn{2}{@{}c@{}}{গঠনগত বিধি}") == 1
+        assert checked_target.count(r"\multicolumn{2}{@{}c@{}}{যৌক্তিক বিধি}") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-647"],
+            "g1c_quantifier_caption_matches_rule_table": True,
         }
     checks = {
         "unit_id": row["unit_id"],

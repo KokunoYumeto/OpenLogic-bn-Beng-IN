@@ -1,0 +1,256 @@
+% Part: set-theory
+% Chapter: ordinals
+% Section: basic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{basic}
+\olsection{ক্রমসংখ্যার মৌলিক ধর্ম}
+
+আমরা দেখেছি, প্রথম কয়েকটি ক্রমসংখ্যাই স্বাভাবিক
+সংখ্যা। ক্রমসংখ্যার তত্ত্ব গড়ার প্রধান কারণ হলো
+স্বাভাবিক সংখ্যার আবেশনীতি আরও বিস্তৃত করা।
+কয়েকটি প্রাথমিক ফলের মধ্য দিয়ে সেখানে পৌঁছোব।
+
+\begin{lem}\ollabel{ordmemberord}
+ক্রমসংখ্যার প্রত্যেক !!{element} একটি ক্রমসংখ্যা।
+\end{lem}
+
+\begin{proof}
+ধরি, $\alpha$ একটি ক্রমসংখ্যা এবং $b \in \alpha$।
+$\alpha$ পরিযায়ী বলে $b \subseteq \alpha$।
+তাই $\in$ যেমন $\alpha$-কে সুক্রমে বিন্যস্ত করে,
+তেমনি $b$-কেও $\in$ সুক্রমে বিন্যস্ত করে।
+
+$b$ যে পরিযায়ী, তা দেখতে ধরি $x \in c \in b$।
+$b \subseteq \alpha$ বলে $c \in \alpha$। আবার
+$\alpha$ পরিযায়ী বলে $c \subseteq \alpha$;
+তাই $x \in \alpha$। অতএব $x, c, b \in \alpha$।
+কিন্তু $\in$ $\alpha$-কে সুক্রমে বিন্যস্ত করে;
+তাই \olref[sth][ordinals][wo]{wo:strictorder} অনুযায়ী
+$\in$ হলো $\alpha$-এর উপর একটি পরিযায়ী সম্পর্ক।
+সুতরাং $x \in c \in b$ থেকে $x \in b$।
+সার্বিকভাবে, $c \subseteq b$।
+\end{proof}
+
+\begin{cor}\ollabel{ordissetofsmallerord}
+যেকোনো ক্রমসংখ্যা~$\alpha$-এর জন্য
+$\alpha = \Setabs{\beta \in \alpha}{\beta \text{ একটি ক্রমসংখ্যা}}$।
+\end{cor}
+
+\begin{proof}
+\olref{ordmemberord} থেকে সরাসরি।
+\end{proof}
+
+পরের দুটি প্রধান ফল,
+\olref{ordinductionschema} এবং \olref{ordtrichotomy},
+মোটামুটি বলে যে সদস্যতা সম্পর্কে ক্রমসংখ্যাগুলি
+নিজেরাই সুক্রমিত:
+
+\begin{thm}[ট্রান্সফাইনাইট আবেশ]\ollabel{ordinductionschema}
+যেকোনো সূত্র $\phi(x)$-এর জন্য:
+\[
+	\text{যদি }\exists \alpha \phi(\alpha)\text{, তবে }\exists \alpha(\phi(\alpha)
+	\land  (\forall \beta \in \alpha) \lnot \phi(\beta))
+\]
+এখানে প্রদর্শিত পরিমাণসূচকগুলি অপ্রকাশিতভাবে
+ক্রমসংখ্যায় সীমাবদ্ধ।
+\end{thm}
+
+\begin{proof}
+%\olref{ordinductionschema1}.
+ধরি, কোনো ক্রমসংখ্যা $\alpha$-এর জন্য
+$\phi(\alpha)$ সত্য। যদি $ (\forall \beta
+\in \alpha) \lnot \phi(\beta)$ হয়, কাজ শেষ।
+নতুবা $\alpha$ ক্রমসংখ্যা বলে তার মধ্যে
+% BN-SRC-436: source says a least element “which is phi”; the intended condition is phi(beta).
+$\phi$-সত্য এমন সদস্যদের একটি $\in$-ক্ষুদ্রতম
+!!{element} আছে; \olref{ordmemberord} অনুযায়ী সেটিও
+ক্রমসংখ্যা।
+%	\olref{ordinductionschema2}। ধরি কোনো ক্রমসংখ্যা
+%	$\gamma$ আছে যাতে $\lnot\phi(\gamma)$। তাহলে
+%	\olref{ordinductionschema1} থেকে এমন একটি $\in$-ন্যূনতম
+%	$\alpha$ আছে যাতে $\lnot\phi(\alpha)$। তাই $(\forall \beta <
+%	\alpha) \phi(\beta)$; ফলে শর্তবাক্যের পূর্বপক্ষ
+%	false.
+\end{proof}
+\noindent
+লক্ষ করো, \olref{ordinductionschema}-কে সমানভাবে
+নিচের ছক দিয়েও প্রকাশ করা যায়:
+\[
+\text{যদি }\forall \alpha((\forall \beta \in \alpha)\phi(\beta) \lif
+\phi(\alpha))\text{, তবে }\forall \alpha\phi(\alpha)
+\]
+\olref{ordinductionschema}-এ $\lnot\phi(\alpha)$
+বসিয়ে তারপর প্রাথমিক যৌক্তিক রূপান্তর করলেই এটি
+পাওয়া যায়।
+
+\begin{thm}[ত্রিবিভাজন]\ollabel{ordtrichotomy}
+যেকোনো ক্রমসংখ্যা $\alpha$ ও $\beta$-এর জন্য
+$\alpha \in \beta \lor \alpha = \beta \lor \beta \in \alpha$।
+\end{thm}
+
+\begin{proof}
+প্রমাণে দ্বিস্তর আবেশ, অর্থাৎ
+\olref{ordinductionschema} দুবার ব্যবহার করব।
+$x$-কে $y$-এর সঙ্গে \emph{তুলনীয়} বলব যদি
+$x \in y \lor x = y \lor y \in x$।
+
+আবেশের জন্য ধরি, $\alpha$-এর প্রতিটি ক্রমসংখ্যা
+\emph{প্রত্যেক} ক্রমসংখ্যার সঙ্গে তুলনীয়। আরও একবার
+আবেশের জন্য ধরি, $\alpha$ হলো $\beta$-এর প্রতিটি
+ক্রমসংখ্যার সঙ্গে তুলনীয়। আমরা দেখাব $\alpha$
+ও $\beta$ তুলনীয়। তাহলে $\beta$-র উপর আবেশে
+পাব, $\alpha$ প্রত্যেক ক্রমসংখ্যার সঙ্গে তুলনীয়;
+তারপর $\alpha$-র উপর আবেশে পাব, \emph{প্রত্যেক}
+ক্রমসংখ্যা \emph{প্রত্যেক} ক্রমসংখ্যার সঙ্গে তুলনীয়।
+এটাই চাওয়া ফল। এখন $\alpha \notin \beta$ ও
+$\beta \notin \alpha$ ধরে $\alpha = \beta$ দেখালেই
+যথেষ্ট।
+
+$\alpha \subseteq \beta$ দেখাতে একটি
+$\gamma \in \alpha$ নিই। \olref{ordmemberord}
+অনুযায়ী এটিও ক্রমসংখ্যা। তাই প্রথম আবেশ-অনুমানে
+$\gamma$ ও $\beta$ তুলনীয়। কিন্তু $\gamma
+= \beta$ অথবা $\beta \in \gamma$ হলে
+$\beta \in \alpha$ (দরকারে $\alpha$-র
+পরিযায়িতা ব্যবহার করে)—যা আমাদের অনুমানের
+বিরোধী। তাই $\gamma \in \beta$। সার্বিকভাবে,
+$\alpha \subseteq \beta$।
+
+দ্বিতীয় আবেশ-অনুমান ব্যবহার করে একেবারে
+অনুরূপ যুক্তিতে $\beta \subseteq \alpha$ পাই।
+তাই $\alpha = \beta$।
+\end{proof}\noindent
+এই জন্য কখনো $\alpha \in \beta$-র বদলে
+$\alpha <\beta$ লিখব, কারণ এখানে $\in$ ক্রমসম্পর্কের
+মতো কাজ করছে। এতে কোনো গভীর কারণ নেই; সংকেতটি
+পরিচিত, আর $\alpha \in \beta \lor \alpha = \beta$-র
+চেয়ে $\alpha \leq \beta$ লেখা সহজ।\footnote{চাইলে
+$\alpha \mathrel{\underline{\in}} \beta$ লিখতে
+পারতাম; কিন্তু তা একেবারেই অপ্রচলিত।}
+
+এই ফলগুলির দ্রুত পাওয়া দুটি পরিণাম দেখি;
+প্রথমটিতে নতুন সংকেতলিপিটি কাজে লাগবে:
+
+\begin{cor}\ollabel{ordordered}
+যদি $\exists \alpha\phi(\alpha)$ হয়, তবে
+$\exists \alpha(\phi(\alpha)
+\land \forall \beta(\phi(\beta) \lif \alpha \leq \beta))$।
+আর যেকোনো ক্রমসংখ্যা $\alpha, \beta, \gamma$-এর
+জন্য $\alpha \notin \alpha$ এবং
+$\alpha \in \beta \in \gamma \lif \alpha \in \gamma$
+উভয়ই সত্য।
+\end{cor}
+
+\begin{proof}
+\olref[wo]{wo:strictorder}-এর মতোই।
+\end{proof}
+
+\begin{prob}
+\olref[sth][ordinals][basic]{ordtrichotomy}-এর প্রমাণে
+``একেবারে অনুরূপ যুক্তি'' অংশটি সম্পূর্ণ করো।
+\end{prob}
+
+\begin{cor}\ollabel{corordtransitiveord}
+$A$ একটি ক্রমসংখ্যা যদি এবং কেবল যদি $A$
+ক্রমসংখ্যাগুলির একটি পরিযায়ী সেট।
+\end{cor}
+
+\begin{proof}
+\emph{বাঁ থেকে ডানে।} \olref{ordmemberord}
+অনুযায়ী। \emph{ডান থেকে বাঁয়ে।} $A$ যদি
+ক্রমসংখ্যাগুলির একটি পরিযায়ী সেট হয়, তবে
+\olref{ordinductionschema} এবং
+\olref{ordtrichotomy} অনুযায়ী $\in$ $A$-কে
+সুক্রমে বিন্যস্ত করে।
+\end{proof}
+
+আমরা \olref{ordinductionschema} ও
+\olref{ordtrichotomy}-এর সারমর্ম বলেছি:
+$\in$ ক্রমসংখ্যাগুলিকে সুক্রমে বিন্যস্ত করে।
+কিন্তু নিচের ফলের জন্য এ রকম কথা বলার সময়
+\emph{বিশেষ সতর্ক} থাকতে হবে:
+
+\begin{thm}[বুরালি-ফোর্তির কূটাভাস]\ollabel{buraliforti}
+সব ক্রমসংখ্যার কোনো সেট নেই।
+\end{thm}
+
+\begin{proof}
+বিরোধের উদ্দেশ্যে ধরি, $O$ সব ক্রমসংখ্যার সেট।
+যদি $\alpha \in \beta \in O$ হয়, তবে
+\olref{ordmemberord} অনুযায়ী $\alpha$ একটি
+ক্রমসংখ্যা; তাই $\alpha \in O$। অতএব $O$
+পরিযায়ী; তাই \olref{corordtransitiveord} অনুযায়ী
+$O$ একটি ক্রমসংখ্যা। ফলে $O \in O$,
+যা \olref{ordordered}-এর বিরোধী।
+\end{proof}
+\noindent
+ফলটি \citeauthor{Burali-Forti1897}-র নামে।
+কিন্তু ১৮৯৯ সালে ডেডেকিন্ডকে লেখা একটি চিঠিতে
+কান্টরই প্রথম সব ক্রমসংখ্যার সেট ধরে নেওয়ার
+\emph{বিরোধটি} স্পষ্টভাবে দেখেন। ফন হেইয়েনুর্টের
+ব্যাখ্যায়:
+\begin{quote}
+  বুরালি-ফোর্তি নিজে মনে করেছিলেন,
+  \emph{অসঙ্গতি দেখিয়ে} এই সিদ্ধান্ত প্রতিষ্ঠিত হয় যে
+  ক্রমসংখ্যাগুলির স্বাভাবিক ক্রম কেবল একটি আংশিক ক্রম।
+  \citep[p.~105]{Heijenoort1967}
+\end{quote}
+বুরালি-ফোর্তির ভুলটি সরিয়ে রেখে আগের আলোচনা
+সংক্ষেপে বলি: প্রত্যেক ক্রমসংখ্যা একটি সেট, যা
+সদস্যতা সম্পর্কে নিজে সুক্রমিত; ক্রমসংখ্যাগুলি
+সমষ্টিগতভাবেও সদস্যতা সম্পর্কে সুক্রমিত, কিন্তু
+সব মিলে কোনো সেট গঠন করে না।
+
+সবশেষে \olref{ordinductionschema} ও
+\olref{ordtrichotomy} থেকে ক্রমসংখ্যার আরও
+কয়েকটি মৌলিক ধর্ম দেখি।
+
+\begin{prop}
+ক্রমসংখ্যাগুলির যেকোনো কঠোরভাবে নিম্নগামী
+অনুক্রম সসীম।
+\end{prop}
+
+\begin{proof}
+ক্রমসংখ্যাগুলির কোনো অসীম কঠোরভাবে নিম্নগামী
+অনুক্রম $\alpha_0 > \alpha_1 > \alpha_2 > \ldots$-এর
+কোনো $<$-ন্যূনতম সদস্য নেই; এটি
+\olref{ordinductionschema}-এর বিরোধী।
+\end{proof}
+
+\begin{prop}\ollabel{ordinalsaresubsets}
+যেকোনো ক্রমসংখ্যা $\alpha, \beta$-র জন্য
+$\alpha \subseteq \beta \lor \beta \subseteq \alpha$।
+\end{prop}
+
+\begin{proof}
+যদি $\alpha \in \beta$ হয়, তবে $\beta$
+পরিযায়ী বলে $\alpha \subseteq \beta$।
+একইভাবে, $\beta \in \alpha$ হলে
+$\beta \subseteq \alpha$। আর $\alpha = \beta$
+হলে $\alpha \subseteq \beta$ ও
+$\beta \subseteq \alpha$। তাই
+\olref{ordtrichotomy} থেকে ফলটি পাই।
+\end{proof}
+
+\begin{prop}\ollabel{ordisoidentity}
+যেকোনো ক্রমসংখ্যা $\alpha, \beta$-র জন্য
+$\alpha = \beta$ যদি এবং কেবল যদি
+$\ordeq{\alpha}{\beta}$।
+\end{prop}
+
+\begin{proof}
+ক্রমসংখ্যাগুলি সুক্রমবিন্যাস; তাই
+ত্রিবিভাজন (\olref[basic]{ordtrichotomy}) এবং
+\olref[iso]{wellordnotinitial} থেকে সরাসরি।
+\end{proof}
+
+\begin{prob}\ollabel{probunionordinalsordinal}
+প্রমাণ করো: $X$-এর প্রত্যেক সদস্য ক্রমসংখ্যা
+হলে $\bigcup X$-ও ক্রমসংখ্যা।
+\end{prob}
+
+\end{document}

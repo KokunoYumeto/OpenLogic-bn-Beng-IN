@@ -1,0 +1,95 @@
+% Part: set-theory
+% Chapter: ordinals
+% Section: ordtype
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{ordtype}
+\olsection{ক্রমপ্রকার হিসেবে ক্রমসংখ্যা}
+
+প্রতিস্থাপন পাওয়ায় আমরা এখন $\ZFminus$-এ কাজ করছি।
+অবশেষে আমাদের অভীষ্ট ফলটি প্রমাণ করতে পারি:
+
+\begin{thm}\ollabel{thmOrdinalRepresentation}
+প্রত্যেক সুক্রমবিন্যাস একটি অনন্য ক্রমসংখ্যার সঙ্গে সমরূপ।
+\end{thm}
+
+\begin{proof}
+ধরি, $\tuple{A, <}$ একটি সুক্রমবিন্যাস।
+\olref[basic]{ordisoidentity} অনুযায়ী এটি সর্বাধিক একটি
+ক্রমসংখ্যার সঙ্গে সমরূপ হতে পারে। এবার বিরোধের উদ্দেশ্যে
+ধরি, $\tuple{A, <}$ \emph{কোনো} ক্রমসংখ্যার সঙ্গেই
+সমরূপ নয়। প্রথমে আমরা ``$\tuple{A, <}$-কে যতটা সম্ভব
+ছোট'' করব। বিস্তারিতভাবে, যদি কোনো যথার্থ প্রারম্ভিক
+খণ্ড $\tuple{A_a, <_a}$ কোনো ক্রমসংখ্যার সঙ্গে সমরূপ
+না হয়, তবে এমন ধর্মযুক্ত একটি ক্ষুদ্রতম $a \in A$
+আছে; তখন $B = A_a$ এবং $\mathord{\lessdot} =
+\mathord{<_a}$ নিই। তা না হলে $B = A$ এবং
+$\mathord{\lessdot} = \mathord{<}$ নিই।
+
+সংজ্ঞা অনুযায়ী, $B$-এর প্রত্যেক যথার্থ প্রারম্ভিক
+খণ্ড কোনো ক্রমসংখ্যার সঙ্গে সমরূপ; উপরের যুক্তিতে
+সেই ক্রমসংখ্যাটি অনন্য। তাই প্রতিস্থাপন অনুযায়ী
+নিচের সেটটি বিদ্যমান এবং এটি একটি ফাংশন:
+\[
+	f = \Setabs{\tuple{\beta, b}}{b \in B\text{ এবং }\ordeq{\beta}{\tuple{B_b, \lessdot_b}}}
+\]
+বিরোধের প্রমাণ সম্পূর্ণ করতে দেখাব, কোনো ক্রমসংখ্যা
+$\alpha$-এর জন্য $f$ হলো $\alpha \to B$-এর
+একটি সমরূপতা।
+
+স্পষ্টতই $\ran{f}
+= B$। আর \olref[iso]{lemordsegments} অনুযায়ী
+$f$ ক্রম অক্ষুণ্ণ রাখে, অর্থাৎ $\gamma \in \beta$
+যদি এবং কেবল যদি $f(\gamma) \lessdot f(\beta)$।
+$\dom{f}$ ক্রমসংখ্যা দেখাতে
+\olref[basic]{corordtransitiveord} অনুযায়ী
+$\dom{f}$ পরিযায়ী দেখালেই যথেষ্ট। তাই একটি
+$\beta \in \dom{f}$ নিই; অর্থাৎ কোনো $b$-এর
+জন্য $\ordeq{\beta}{\tuple{B_b, \lessdot_b}}$।
+যদি $\gamma \in
+\beta$ হয়, তবে \olref[iso]{wellordinitialsegment}
+অনুযায়ী $\gamma \in \dom{f}$। সাধারণভাবে,
+$\beta \subseteq
+\dom{f}$।
+\end{proof}
+
+এই ফলের ভিত্তিতে \olref[vn]{sec} থেকে কাঙ্ক্ষিত
+সংজ্ঞাটি এবার দিতে পারি:
+
+\begin{defn}
+$\tuple{A, <}$ একটি সুক্রমবিন্যাস হলে তার ক্রমপ্রকার
+$\ordtype{A, <}$ হলো সেই অনন্য ক্রমসংখ্যা $\alpha$,
+যার জন্য $\ordeq{\tuple{A, < }}{\alpha}$।
+\end{defn}
+
+এই সংজ্ঞা থেকে আরও দুটি উপকারী নীতি পাই:
+
+\begin{cor}\ollabel{ordtypesworklikeyouwant}
+ধরি, $\tuple{A, <}$ ও $\tuple{B, \lessdot}$ দুটি
+সুক্রমবিন্যাস। তাহলে:
+\begin{align*}
+	\ordtype{A, <} = \ordtype{B, \lessdot}&\text{ যদি এবং কেবল যদি }\ordeq{\tuple{A, <}}{\tuple{B, \lessdot}}\\
+	\ordtype{A, <} \in \ordtype{B, \lessdot}&\text{ যদি এবং কেবল যদি }\ordeq{\tuple{A, <}}{\tuple{B_b, \lessdot_b}}\text{ কোনো }b \in B\text{-এর জন্য}
+\end{align*}
+\end{cor}
+
+\begin{proof}
+প্রথম সমতাটি \olref[basic]{ordisoidentity} থেকে
+পাওয়া যায়। দ্বিতীয় দাবি প্রমাণে ধরি,
+$\ordtype{A, <} = \alpha$ এবং $\ordtype{B,
+\lessdot} = \beta$; আর $f \colon \beta \to \tuple {B, \lessdot}$
+হলো আমাদের সমরূপতা। তাহলে:
+\begin{align*}
+	\alpha \in \beta&\text{ যদি এবং কেবল যদি }\funrestrictionto{f}{\alpha} \colon \alpha \to B_{f(\alpha)}\text{ একটি সমরূপতা হয়}\\
+	&\text{ যদি এবং কেবল যদি }\ordeq{\tuple{A, <}}{\tuple{B_{f(\alpha)}, \lessdot_{f(\alpha)}}}\\
+	&\text{ যদি এবং কেবল যদি }\ordeq{\tuple{A, <}}{\tuple{B_b, \lessdot_b}}\text{ কোনো $b \in B$-এর জন্য}
+\end{align*}
+এখানে \olref[iso]{ordisounique},
+\olref[iso]{wellordinitialsegment} এবং
+\olref[basic]{ordissetofsmallerord} ব্যবহার করেছি।
+\end{proof}
+
+\end{document}

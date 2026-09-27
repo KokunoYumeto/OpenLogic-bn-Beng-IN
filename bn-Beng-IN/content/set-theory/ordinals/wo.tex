@@ -1,0 +1,83 @@
+% Part: set-theory
+% Chapter: ordinals
+% Section: wo
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{wo}
+\olsection{সুক্রমবিন্যাস}
+
+মৌলিক ধারণাটি এই:
+
+\begin{defn}
+$<$ সম্পর্কটি $A$-কে \emph{সুক্রমে বিন্যস্ত করে}
+যদি এবং কেবল যদি নিচের দুটি শর্ত পূরণ হয়:
+\begin{enumerate}
+	\item $<$ সংযুক্ত; অর্থাৎ, সব $a, b \in A$-এর জন্য
+	হয় $a < b$, নয় $a = b$, নয় $b < a$;
+	\item $A$-এর প্রত্যেক অশূন্য উপসেটের একটি
+	$<$-ন্যূনতম !!{element} আছে; অর্থাৎ,
+	$\emptyset \neq X \subseteq A$ হলে $(\exists m \in
+	X)(\forall z \in X)z \nless m$।
+\end{enumerate}
+\end{defn}
+
+এইমাত্র দেখা তিনটি দৃষ্টান্তই যে সুক্রমবিন্যাস,
+তা সহজে যাচাই করা যায়।
+
+\begin{prob}
+\Olref[sth][ordinals][idea]{sec}-এ স্বাভাবিক সংখ্যার
+উপর তিনটি ক্রম দেখানো হয়েছে। যাচাই করো, প্রত্যেকটি
+সুক্রমবিন্যাস।
+\end{prob}
+
+সুক্রমবিন্যাস সম্পর্কে কয়েকটি প্রাথমিক কিন্তু
+অত্যন্ত গুরুত্বপূর্ণ কথা লক্ষ করি।
+
+\begin{prop}\ollabel{wo:strictorder}
+$<$ যদি $A$-কে সুক্রমে বিন্যস্ত করে, তবে $A$-এর
+প্রত্যেক অশূন্য উপসেটের একটি একমাত্র $<$-ক্ষুদ্রতম
+সদস্য আছে; আর $<$ আত্মসম্পর্কহীন, একমুখী ও পরিযায়ী।
+\end{prop}
+
+\begin{proof}
+$X$ যদি $A$-এর অশূন্য উপসেট হয়, তবে এর একটি
+$<$-ন্যূনতম !!{element} $m$ আছে; অর্থাৎ,
+$(\forall z \in X)z \nless m$। যেহেতু $<$ সংযুক্ত,
+তাই $(\forall z \in X)m \leq z$। অতএব $m$ হলো
+$X$-এর $<$-ক্ষুদ্রতম !!{element}।
+
+আত্মসম্পর্কহীনতা দেখাতে একটি $a \in A$ নিই।
+$\{a\}$-এর $<$-ক্ষুদ্রতম !!{element} হলো $a$;
+তাই $a \nless a$। পরিযায়িতা দেখাতে ধরি,
+$a < b < c$। যেহেতু $\{a, b, c\}$-এর একটি
+$<$-ক্ষুদ্রতম !!{element} আছে, তাই $a < c$।
+আত্মসম্পর্কহীনতা ও পরিযায়িতা থেকে একমুখিতা পাওয়া যায়।
+\end{proof}
+
+\begin{prop}\ollabel{propwoinduction}
+$<$ যদি $A$-কে সুক্রমে বিন্যস্ত করে, তবে যেকোনো
+সূত্র $\phi(x)$-এর জন্য:
+\[
+	\text{যদি }(\forall a \in A)((\forall b < a)\phi(b) \lif
+		\phi(a))\text{, তবে }(\forall a \in A)\phi(a).
+\]
+\end{prop}
+
+\begin{proof}
+আমরা বিপরীতার্থক দাবিটি প্রমাণ করব। ধরি,
+$\lnot(\forall a \in A)\phi(a)$; অর্থাৎ,
+$X = \Setabs{x \in A}{\lnot\phi(x)} \neq \emptyset$।
+তাহলে $X$-এর একটি $<$-ন্যূনতম !!{element} $a$ আছে।
+অতএব $(\forall b < a)\phi(b)$, কিন্তু $\lnot \phi(a)$।
+\end{proof}\noindent এই শেষ ধর্মটি স্বাভাবিক সংখ্যার উপর
+শক্তিশালী আবেশের নীতির কথা মনে করায়। অর্থাৎ:
+$(\forall n \in \omega)((\forall m < n)\phi(m)
+\lif \phi(n))$ হলে $(\forall n \in \omega)\phi(n)$।
+এই ধর্ম সুক্রমবিন্যাসকে খুবই \emph{শক্তিশালী}
+ধারণা করে তোলে।\footnote{মনে রেখো: আলাদা করে না
+বললে সব সূত্রেই পরামিতি থাকতে পারে।}
+
+\end{document}

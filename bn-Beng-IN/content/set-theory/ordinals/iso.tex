@@ -1,0 +1,212 @@
+% Part: set-theory
+% Chapter: ordinals
+% Section: iso
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{iso}
+\olsection{ক্রমসমরূপতা}
+
+সুক্রমবিন্যাস কতটা \emph{শক্তিশালী} ধারণা, তা
+বোঝাতে প্রথমে সুক্রমবিন্যাসগুলির তুলনার একটি
+পদ্ধতি দিই।
+
+\begin{defn}
+একটি \emph{সুক্রমবিন্যাস} হলো এমন একটি যুগল
+$\tuple{A, <}$, যাতে $<$ সম্পর্কটি $A$-কে সুক্রমে
+বিন্যস্ত করে। দুটি সুক্রমবিন্যাস $\tuple{A, <}$ এবং
+$\tuple{B, \lessdot}$ \emph{ক্রমসমরূপ} {যদি এবং কেবল যদি}
+এমন একটি !!a{bijection} $f \colon A \to B$ থাকে, যাতে
+$x < y$ যদি এবং কেবল যদি $f(x) \lessdot  f(y)$।
+এ ক্ষেত্রে আমরা $\ordeq{\tuple{A, <}}{\tuple{B, \lessdot}}$
+লিখি এবং $f$-কে একটি \emph{ক্রমসমরূপ চিত্রণ} বলি।
+\end{defn}
+\noindent
+এর পর সংক্ষেপে আমরা ``ক্রমসমরূপ চিত্রণ''-এর বদলে
+``সমরূপ চিত্রণ'' বলব। স্বজ্ঞাতভাবে, সমরূপ চিত্রণ হলো
+গঠন অক্ষত রাখা !!{bijection}s। সমরূপ চিত্রণ সম্পর্কে
+কয়েকটি সহজ তথ্য দেখি।
+
+\begin{lem}\ollabel{isoscompose}
+সমরূপ চিত্রণগুলির মিশ্রণও সমরূপ চিত্রণ। অর্থাৎ,
+$f \colon A \to B$ এবং $g \colon B \to C$ সমরূপ
+চিত্রণ হলে $(g \circ f) \colon A \to C$-ও সমরূপ
+চিত্রণ।
+\end{lem}
+\begin{prob}
+	\olref[sth][ordinals][iso]{isoscompose} প্রমাণ করো।
+\end{prob}
+\begin{proof}
+অনুশীলনের জন্য রাখা হলো।
+\end{proof}
+\begin{cor}\ollabel{ordisoisequiv}
+	$\ordeq{X}{Y}$ একটি সমতুল্যতা সম্পর্ক।
+\end{cor}
+\begin{prop}\ollabel{ordisounique}
+$\tuple{A, <}$ ও $\tuple{B, \lessdot}$ যদি
+ক্রমসমরূপ সুক্রমবিন্যাস হয়, তবে তাদের মধ্যকার
+সমরূপ চিত্রণটি একমাত্র।
+\end{prop}
+
+\begin{proof}
+ধরি, $f$ ও $g$ দুটি সমরূপ চিত্রণ $A \to B$।
+\olref[wo]{propwoinduction} অনুযায়ী আবেশ ব্যবহার
+করে ফলটি প্রমাণ করব। একটি $a\in A$ নিই এবং
+(আবেশের অনুমান হিসেবে) ধরি
+$(\forall b < a)f(b) = g(b)$। এবার একটি $x \in B$ নিই।
+
+যদি $x \lessdot f(a)$ হয়, তবে
+$f^{-1}(x) < a$। তাই $f$ ও $g$ সমরূপ চিত্রণ
+হওয়ায় $g(f^{-1}(x)) \lessdot g(a)$। কিন্তু
+$f^{-1}(x) < a$ বলে আমাদের অনুমান থেকে
+$x =f(f^{-1}(x)) = g(f^{-1}(x))$। সুতরাং
+$x \lessdot g(a)$। একইভাবে, যদি $x \lessdot g(a)$,
+তবে $x \lessdot f(a)$।
+
+সার্বিকভাবে, $(\forall x \in B)(x \lessdot f(a) \liff x \lessdot
+g(a))$। অতএব
+\olref[sfr][rel][ord]{prop:extensionality-strictlinearorders}
+অনুযায়ী $f(a) = g(a)$। তাই
+\olref[wo]{propwoinduction} থেকে $(\forall
+a \in A)f(a) = g(a)$।
+\end{proof}\noindent
+এ থেকে সুক্রমবিন্যাসের শক্তিমত্তা কিছুটা বোঝা যায়।
+বিষয়টি আরও বুঝতে আরেকটু সংকেতলিপি দরকার।
+
+\begin{defn}
+$\tuple{A, <}$ একটি সুক্রমবিন্যাস এবং $a \in A$
+হলে ধরি, $A_a = \Setabs{x \in A}{x < a}$।
+$A_a$-কে $A$-এর যথার্থ \emph{প্রারম্ভিক খণ্ড}
+বলি (এবং $A$-কেই $A$-এর অযথার্থ প্রারম্ভিক
+খণ্ড হিসেবে মানি)। প্রারম্ভিক খণ্ডে $<$-এর সীমাবদ্ধন,
+অর্থাৎ $\funrestrictionto{\mathord{<}}{A_a^2}$,
+লিখি $<_a$।
+\end{defn}
+\noindent
+এই সংকেতলিপিতে বলা ও প্রমাণ করা যায় যে,
+কোনো সুক্রমবিন্যাস তার নিজের কোনো যথার্থ
+প্রারম্ভিক খণ্ডের সঙ্গে সমরূপ নয়।
+
+\begin{lem}\ollabel{wellordnotinitial}
+$\tuple{A, <}$ সুক্রমবিন্যাস এবং $a \in A$ হলে
+$\ordneq{\tuple{A, <}}{\tuple{A_a, <_a}}$।
+\end{lem}
+
+\begin{proof}
+বিরোধের উদ্দেশ্যে ধরি, $f \colon A \to A_a$
+একটি সমরূপ চিত্রণ। $f$ একটি একৈক সমাপতন এবং
+$A_a \subsetneq A$ বলে,
+\olref[wo]{wo:strictorder} ব্যবহার করে $A$-তে
+$b \neq f(b)$ ধর্মবিশিষ্ট $<$-ক্ষুদ্রতম !!{element}
+$b \in A$ নিই। আমরা দেখাব,
+$(\forall x \in A)(x<b \liff x < f(b))$।
+তাহলে
+\olref[sfr][rel][ord]{prop:extensionality-strictlinearorders}
+থেকে $b = f(b)$ পাওয়া যাবে; এটাই বিরোধ।
+
+ধরি, $x < b$। $b$-এর নির্বাচনের জন্য $x = f(x)$।
+আর $f$ সমরূপ চিত্রণ বলে $f(x) < f(b)$।
+তাই $x < f(b)$।
+
+ধরি, $x < f(b)$। $f$ সমরূপ চিত্রণ বলে
+$f^{-1}(x) < b$; তাই $b$-এর নির্বাচনের জন্য
+$f^{-1}(x) = x$। অতএব $x < b$।
+\end{proof}
+
+পরের ফলটি মোটামুটি বলে, সমরূপ চিত্রণের একটি
+``প্রারম্ভিক খণ্ড''ও সমরূপ চিত্রণ:
+
+\begin{lem}\ollabel{wellordinitialsegment}
+ধরি, $\tuple{A, <}$ এবং $\tuple{B, \lessdot}$
+সুক্রমবিন্যাস। যদি $f \colon A \to B$ সমরূপ
+চিত্রণ এবং $a \in A$ হয়, তবে
+$\funrestrictionto{f}{A_{a}} : A_a \to B_{f(a)}$
+একটি সমরূপ চিত্রণ।
+\end{lem}
+
+\begin{proof}
+$f$ সমরূপ চিত্রণ বলে:
+	%$f$ সমরূপ চিত্রণ বলে $b < a$ যদি এবং কেবল যদি $f(b) \lessdot f(a)$; তাই
+\begin{align*}
+	\funimage{f}{A_a} &= \funimage{f}{\Setabs{x \in A}{x < a}}\\
+	&= \funimage{f}{\Setabs{f^{-1}(y) \in A}{f^{-1}(y) < a}} \\
+	&= \Setabs{y \in B}{y \lessdot f(a)} \\
+	&=B_{f(a)}
+\end{align*}
+আর $\funrestrictionto{f}{A_a}$ ক্রম অক্ষত রাখে,
+কারণ $f$-ও তা রাখে।
+\end{proof}
+
+পরের দুটি ফল থেকে জানা যাবে যে সুক্রমবিন্যাসগুলি
+সব সময় তুলনীয়:
+
+\begin{lem}\ollabel{lemordsegments}
+ধরি, $\tuple{A, <}$ ও $\tuple{B, \lessdot}$
+সুক্রমবিন্যাস। যদি
+$\ordeq{\tuple{A_{a_1}, <_{a_1}}}{\tuple{B_{b_1}, \lessdot_{b_1}}}$
+এবং
+$\ordeq{\tuple{A_{{a_2}}, <_{a_2}}}{\tuple{B_{{b_2}},
+\lessdot_{b_2}}}$ হয়, তবে ${a_1}  < {a_2} \text{ যদি এবং কেবল যদি }{b_1} \lessdot
+{b_2}$।
+\end{lem}
+
+\begin{proof}
+আমরা \emph{বাঁ থেকে ডানে} প্রমাণ করব; উল্টো দিকও
+একই রকম। ধরি,
+$\ordeq{\tuple{A_{a_1}, <_{a_1}}}{\tuple{B_{b_1},
+\lessdot_{b_1}}}$ এবং
+$\ordeq{\tuple{A_{{a_2}},
+<_{a_2}}}{\tuple{B_{{b_2}}, \lessdot_{b_2}}}$
+উভয়ই সত্য; এদের দ্বিতীয় সমরূপ চিত্রণটি
+$f \colon A_{{a_2}} \to B_{{b_2}}$। ধরি,
+${a_1} < {a_2}$। তাহলে
+\olref{wellordinitialsegment} অনুযায়ী
+$\ordeq{\tuple{A_{a_1}, <_{a_1}}}{\tuple{B_{f({a_1})},
+\lessdot_{f({a_1})}}}$। সুতরাং
+$\ordeq{\tuple{B_{b_1}, \lessdot_{b_1}}}{\tuple{B_{f({a_1})},
+\lessdot_{f({a_1})}}}$। তাই
+\olref{wellordnotinitial} থেকে
+${b_1} = f({a_1})$। এখন
+% BN-SRC-435: source calls B_{b_2} the domain of f; it is the range.
+${b_1} \lessdot {b_2}$, কারণ f-এর বিস্তৃতি
+$B_{{b_2}}$।
+\end{proof}
+
+\begin{thm}\ollabel{thm:woalwayscomparable}
+যেকোনো দুটি সুক্রমবিন্যাসের একটি অন্যটির
+কোনো একটি প্রারম্ভিক খণ্ডের সঙ্গে সমরূপ
+(খণ্ডটি যথার্থ হওয়া জরুরি নয়)।
+\end{thm}
+
+\begin{proof}
+ধরি, $\tuple{A, <}$ ও $\tuple{B, \lessdot}$
+সুক্রমবিন্যাস। পৃথকীকরণ ব্যবহার করে ধরি,
+\[
+	f = \Setabs{\tuple{a, b} \in A \times B}{
+		\ordeq{\tuple{A_a, <_a}}{\tuple{B_b, \lessdot_b}}}.
+\]
+\olref{lemordsegments} অনুযায়ী $f$-এর যেকোনো
+$\tuple{a_1, b_1}, \tuple{a_2, b_2} \in f$-এর
+জন্য $a_1 < a_2$ যদি এবং কেবল যদি
+$b_1 \lessdot b_2$। তাই
+$f \colon \dom{f} \to \ran{f}$ একটি সমরূপ
+চিত্রণ।
+
+যদি $a_2 \in \dom{f}$ এবং $a_1 < a_2$, তবে
+\olref{wellordinitialsegment} অনুযায়ী
+$a_1 \in \dom{f}$। অতএব $\dom{f}$ হলো
+$A$-এর একটি প্রারম্ভিক খণ্ড। একইভাবে,
+$\ran{f}$ হলো $B$-এর একটি প্রারম্ভিক খণ্ড।
+বিরোধের উদ্দেশ্যে ধরি, উভয় খণ্ডই
+\emph{যথার্থ}। তাহলে $A \setminus \dom{f}$-এর
+$<$-ক্ষুদ্রতম !!{element} $a$ নিই; ফলে
+$\dom{f} = A_a$। আর $B \setminus \ran{f}$-এর
+$\lessdot$-ক্ষুদ্রতম !!{element} $b$ নিই; ফলে
+$\ran{f} = B_b$। তাই $f \colon A_a \to B_b$
+একটি সমরূপ চিত্রণ; সুতরাং
+$\tuple{a, b} \in f$—বিরোধ।
+\end{proof}
+
+\end{document}

@@ -1,0 +1,120 @@
+% Part: set-theory
+% Chapter: ordinals
+% Section: opps
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{opps}
+\olsection{উত্তরসূরি ও সীমা ক্রমসংখ্যা}
+
+পরের কয়েকটি অধ্যায়ে আমরা ক্রমসংখ্যা বহুবার ব্যবহার
+করব। তাই কয়েকটি সহজ ধারণা আগে প্রবর্তন করে নেওয়া
+উপকারী।
+
+\begin{defn}
+যেকোনো ক্রমসংখ্যা $\alpha$-এর \emph{উত্তরসূরি} হলো $\ordsucc{\alpha}
+=\alpha \cup \{\alpha\}$। যদি কোনো ক্রমসংখ্যা~$\beta$-র
+জন্য $\ordsucc{\beta} = \alpha$ হয়, তবে $\alpha$-কে
+একটি \emph{উত্তরসূরি} ক্রমসংখ্যা বলি। $\alpha$-কে
+একটি \emph{সীমা} ক্রমসংখ্যা বলি যদি এবং কেবল যদি
+$\alpha$ শূন্যও নয়, উত্তরসূরি ক্রমসংখ্যাও নয়।
+\end{defn}
+\noindent
+নিচের ফলটি দেখায়, এটাই \emph{উত্তরসূরি}-র উপযুক্ত ধারণা:
+
+\begin{prop}
+যেকোনো ক্রমসংখ্যা $\alpha$-এর জন্য:
+\begin{enumerate}
+	\item $\alpha \in \ordsucc{\alpha}$;
+	\item $\ordsucc{\alpha}$ একটি ক্রমসংখ্যা;
+	\item $\alpha \in \beta \in
+	\ordsucc{\alpha}$ এমন কোনো ক্রমসংখ্যা $\beta$ নেই।
+	\end{enumerate}
+\end{prop}
+
+\begin{proof}
+স্পষ্টতই $\alpha \in \alpha \cup \{\alpha\} = \ordsucc{\alpha}$।
+একইভাবে, $\ordsucc{\alpha}$ ক্রমসংখ্যাগুলির একটি
+পরিযায়ী সেট; তাই \olref[basic]{corordtransitiveord}
+অনুযায়ী এটিও ক্রমসংখ্যা। আবার $\alpha \in \beta
+\in \ordsucc{\alpha}$ অসম্ভব, কারণ তা হলে হয়
+$\beta \in \alpha$, নয় $\beta = \alpha$;
+উভয় ক্ষেত্রেই \olref[basic]{ordordered}-এর বিরোধ হয়।
+\end{proof}
+\noindent
+এটি ট্রান্সফাইনাইট আবেশে প্রমাণের একটি ভিন্ন রূপও দেয়:
+
+\begin{thm}[সরল ট্রান্সফাইনাইট আবেশ]\ollabel{simpletransrecursion}
+ধরি, $\phi(x)$ এমন একটি সূত্র, যার জন্য:
+\begin{enumerate}
+	\item $\phi(\emptyset)$ সত্য; এবং
+	\item যেকোনো ক্রমসংখ্যা $\alpha$-এর জন্য, $\phi(\alpha)$
+	থেকে $\phi(\ordsucc{\alpha})$ অনুসৃত হয়; এবং
+	\item $\alpha$ সীমা ক্রমসংখ্যা হলে $(\forall \beta \in
+	\alpha)\phi(\beta)$ থেকে $\phi(\alpha)$ অনুসৃত হয়।
+\end{enumerate}
+তাহলে $\forall \alpha \phi(\alpha)$।
+\end{thm}
+
+\begin{proof}
+বিপরীতকথন প্রমাণ করি। তাই ধরি, কোনো ক্রমসংখ্যার
+জন্য $\lnot\phi$ সত্য; তাদের মধ্যে ক্ষুদ্রতমটি
+$\gamma$। তখন হয় $\gamma = \emptyset$; নয়
+কোনো $\alpha$-এর জন্য $\gamma = \ordsucc{\alpha}$,
+যেখানে $\phi(\alpha)$ সত্য; নয়তো $\gamma$ একটি
+সীমা ক্রমসংখ্যা এবং $(\forall
+\beta \in \gamma)\phi(\beta)$। প্রতিটি ক্ষেত্রেই
+অনুমানগুলির বিরোধ হয়।
+\end{proof}
+\noindent
+আরেকটি সংকেতলিপি পরে কাজে লাগবে:
+
+\begin{defn}\ollabel{defsupstrict}
+$X$ ক্রমসংখ্যাগুলির একটি সেট হলে $\supstrict(X) = \bigcup_{\alpha
+\in X} \ordsucc{\alpha}$।
+\end{defn}
+\noindent
+এখানে ``lsub'' বলতে ``ক্ষুদ্রতম কঠোর ঊর্ধ্বসীমা'' বোঝায়।\footnote{কিছু
+বইয়ে এর জন্য ``$\text{sup}(X)$'' লেখা হয়। কিন্তু অন্য
+বইয়ে ``$\text{sup}(X)$'' লেখা হয় ক্ষুদ্রতম
+\emph{অকঠোর} ঊর্ধ্বসীমার জন্য, যা কেবল $\bigcup X$।
+$X$-এর বৃহত্তম সদস্য $\alpha$ থাকলে এই দুটি ধারণা
+আলাদা: ক্ষুদ্রতম \emph{কঠোর} ঊর্ধ্বসীমা
+$\ordsucc{\alpha}$, আর ক্ষুদ্রতম \emph{অকঠোর}
+ঊর্ধ্বসীমা শুধু $\alpha$।} নিচের ফলটি এই
+সংকেতলিপির তাৎপর্য ব্যাখ্যা করে:
+
+\begin{prop}
+$X$ ক্রমসংখ্যাগুলির একটি সেট হলে $\supstrict(X)$
+হলো $X$-এর প্রত্যেক ক্রমসংখ্যার চেয়ে বড় এমন
+ক্ষুদ্রতম ক্রমসংখ্যা।
+\end{prop}
+
+\begin{proof}
+ধরি, $Y = \Setabs{\ordsucc{\alpha}}{\alpha \in X}$;
+তাহলে $\supstrict(X) = \bigcup Y$। ক্রমসংখ্যাগুলি
+পরিযায়ী এবং ক্রমসংখ্যার প্রত্যেক সদস্যও ক্রমসংখ্যা।
+তাই $\supstrict(X)$ ক্রমসংখ্যাগুলির একটি পরিযায়ী
+সেট; \olref[basic]{corordtransitiveord} অনুযায়ী
+এটি ক্রমসংখ্যা।
+
+যদি $\alpha \in X$ হয়, তবে $\ordsucc{\alpha} \in Y$।
+তাই $\ordsucc{\alpha}
+\subseteq \bigcup Y = \supstrict(X)$, এবং সুতরাং
+$\alpha \in
+\supstrict(X)$। অতএব $\supstrict(X)$, $X$-এর
+প্রত্যেক ক্রমসংখ্যার চেয়ে কঠোরভাবে বড়।
+
+অন্যদিকে, $\alpha \in \supstrict(X)$ হলে
+কোনো $\beta \in X$-এর জন্য $\alpha \in
+\ordsucc{\beta} \in Y$; তাই $\alpha \leq
+\beta \in X$। অতএব যেকোনো কঠোর
+ঊর্ধ্বসীমায় সেই সদস্যও থাকবে। যেহেতু
+সদস্যটি ছিল বিবেচ্য সেটের নির্বিচার সদস্য,
+$\supstrict(X)$-ই $X$-এর \emph{ক্ষুদ্রতম} কঠোর
+ঊর্ধ্বসীমা।
+\end{proof}
+
+\end{document}

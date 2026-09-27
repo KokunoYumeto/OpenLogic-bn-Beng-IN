@@ -1,0 +1,188 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T02:24:06.615192+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "09dbb997c2d13a03eb9c48479e479e892e4e9ee8",
+  "parent": "80cc0c4bfdeb10fca54fecedf5ce3622a2de6bb2",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "bbf68418f1f8fcf9c9a79a1445939f119c798927",
+    "receipt": "PUBLIC_READBACK_SOURCE_572_2026-09-27.json",
+    "receipt_sha256": "2b2a6279d4771590f97c0550b9721c81ac9a60e4b8e7cc16a36adf7085dfa837"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/09dbb997c2d13a03eb9c48479e479e892e4e9ee8.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/09dbb997c2d13a03eb9c48479e479e892e4e9ee8",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 15271790,
+  "archive_sha256": "e2c04e75a1fe7dd289d0bd8eeac3e97c4dc0e3cce1b46a43833cb3131ebc35a3",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/addition.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/addition.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/addition.tex",
+      "content_type": "text/plain",
+      "bytes": 13903,
+      "sha256": "a1288087a9fca0c87fba3ef6683f7136cc896ea5210e2eab1f8ac8a37e89b46a"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/exponentiation.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/exponentiation.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/exponentiation.tex",
+      "content_type": "text/plain",
+      "bytes": 5563,
+      "sha256": "2c89d0ee0ebed3f372389695614c1d679265c8e7a8d7c449a7e6279c513fb712"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 1633,
+      "sha256": "7e77ba8f5492691cc7c6aefdb4404c8c5b77f7e44a444b509cef189263ca6b6d"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/multiplication.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/multiplication.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/multiplication.tex",
+      "content_type": "text/plain",
+      "bytes": 5917,
+      "sha256": "b1ed64f5c1bc8a1760980b78ed81055e7bf1cda84043f22cad736e26d77b7ceb"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/ord-arithmetic.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/ord-arithmetic.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/ord-arithmetic.tex",
+      "content_type": "text/plain",
+      "bytes": 377,
+      "sha256": "ce9018ec62136785718ceb823fa6650db1d8f73cf12994af4560defb4c8ba92d"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/using-addition.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/using-addition.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/09dbb997c2d13a03eb9c48479e479e892e4e9ee8/bn-Beng-IN/content/set-theory/ord-arithmetic/using-addition.tex",
+      "content_type": "text/plain",
+      "bytes": 6762,
+      "sha256": "770baceb97371db0ef709bf842ae1e5d4856e6491375aa6451f25108275eadd7"
+    }
+  ],
+  "changed_files_verified": 19,
+  "translated_tex_files_in_commit": 6,
+  "draft_translated_total": 578,
+  "draft_untranslated_total": 144,
+  "segments": 6292,
+  "translated_segments": 5374,
+  "new_batch_segments": 69,
+  "new_batch_translated_segments": 66,
+  "new_batch_unchanged_segments": 3,
+  "source_correction_records": 458,
+  "new_source_correction_records": 5,
+  "translation_decisions": 407,
+  "provisional_translation_decisions": 385,
+  "translation_decision_occurrences": 34964,
+  "decisions_with_exact_source_wording": 387,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 578,
+    "blocks": 6292,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7945,
+      "sha256": "824ae26a12e6194fb67a0b806e620ead0a44202217e8616b2ea6d9caa3a55b02"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ord-arithmetic/addition.tex",
+      "bytes": 13903,
+      "sha256": "a1288087a9fca0c87fba3ef6683f7136cc896ea5210e2eab1f8ac8a37e89b46a"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ord-arithmetic/exponentiation.tex",
+      "bytes": 5563,
+      "sha256": "2c89d0ee0ebed3f372389695614c1d679265c8e7a8d7c449a7e6279c513fb712"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ord-arithmetic/introduction.tex",
+      "bytes": 1633,
+      "sha256": "7e77ba8f5492691cc7c6aefdb4404c8c5b77f7e44a444b509cef189263ca6b6d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ord-arithmetic/multiplication.tex",
+      "bytes": 5917,
+      "sha256": "b1ed64f5c1bc8a1760980b78ed81055e7bf1cda84043f22cad736e26d77b7ceb"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ord-arithmetic/ord-arithmetic.tex",
+      "bytes": 377,
+      "sha256": "ce9018ec62136785718ceb823fa6650db1d8f73cf12994af4560defb4c8ba92d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ord-arithmetic/using-addition.tex",
+      "bytes": 6762,
+      "sha256": "770baceb97371db0ef709bf842ae1e5d4856e6491375aa6451f25108275eadd7"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 10417782,
+      "sha256": "9c6e06b582cbd680c4e472c7b42fed8562d45bc1fefdddf15c8068f2bf4b97f8"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 350339,
+      "sha256": "38768fcea35c7d11b3ecc995e87ea19efbbf77cb28cf74aa57e75859d06cd8f4"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SET_THEORY_ORD_ARITHMETIC.md",
+      "bytes": 10543,
+      "sha256": "424ec39be93ab5fa2f7bb4f695d9b8e300e488401373ad728016d1c170f99c78"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "69693fd0cd6576deb615030a486db1b04a779e4ef45b1290365b19f844436d4d"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 895935,
+      "sha256": "eac50eb8b46181f11c96e9a81651943eea7fd223201e242aa00c8bdc588bb384"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 382838,
+      "sha256": "a75c63603a88a41b88ffd0e79c80938495915da9627ffbc1b97a540430883ba0"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 21019223,
+      "sha256": "686c168d039c5559939f0ebdd4a1579608c9d0cc02dc0b57b4477ebc8457a826"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 16434599,
+      "sha256": "789ae8888ecae6ce9c36dfc76caa244c96e9c1c8002b74468a85817b418af9e4"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1580441,
+      "sha256": "e4d3f7c742b3c18056330a1fa7aa72fde88394c102b5147cf048e752f10691ed"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 9586906,
+      "sha256": "e5dc28343ca95750406f52f8c64c703b5c86a8dcdbcfb44de72ee1de53660c0d"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 292520,
+      "sha256": "5177524c685b0b123b0dfb70133902c92f7d85b9558058191179ce18b26d5863"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 288591,
+      "sha256": "86d8c0ad1e527f357336359e4016080226856268375070f53940966527c857a8"
+    }
+  ]
+}

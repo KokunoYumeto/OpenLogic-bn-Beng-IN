@@ -1,0 +1,369 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: ce-largest
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{inv}
+
+\olsection{সর্বোচ্চ মাত্রার কর্তন অপসারণ}
+
+\olref[seq][inv]{lem:G3c-invert}-এর প্রমাণে দেখা গেছে, \Log{G3c}
+কোনো যৌক্তিক বিধির (\RightR{\lexists} এবং \LeftR{\lforall} ছাড়া)
+সিদ্ধান্ত !!{prove}s করলে, প্রমাণের !!{height} না বাড়িয়েই বিধিটির
+প্রতিটি পূর্বধারণাও !!{prove}s করে। আরও এগিয়ে আমরা দেখাতে পারি যে
+$\Log{G3c} + \CutCS$-এর ক্ষেত্রেও এটি সত্য।
+
+আগের মতোই, কোনো \CutCS{} অনুমানের \emph{কর্তনমাত্রা} বলতে তার কর্তন
+!!{formula}-র গভীরতা বুঝব।
+
+\begin{lem}\ollabel{lem:inv-G3c-cut}
+$\Log{G3c} + \CutCS$-তে !!a{proof}~$\pi$ দিয়ে
+\RightR{\lexists} ও \LeftR{\lforall} ছাড়া অন্য কোনো যৌক্তিক
+বিধি~$R$-এর সিদ্ধান্ত !!{prove}s করা গেলে, তার প্রতিটি পূর্বধারণাও
+!!{prove}s করা যায়—একটি পূর্বধারণা থাকলে !!{proof}~$\pi'$ দিয়ে, আর
+দুটি থাকলে !!{proof}s~$\pi'$ ও~$\pi''$ দিয়ে। উপরন্তু,
+(a)~$\pheight{\pi'}\le\pheight{\pi}$ (এবং
+$\pheight{\pi''}\le\pheight{\pi}$), আর (b)~$\pi'$ (এবং
+$\pi''$)-তে \CutCS{} অনুমানের সংখ্যা মূল প্রমাণের চেয়ে বেশি নয় এবং
+তাদের মাত্রাগুলি $\pi$-তে থাকা মাত্রাগুলির মধ্যেই পড়ে।
+% BN-SRC-513 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-513):} হিমায়িত লেমায় প্রতিটি উল্টিত শাখায় মূল প্রমাণের সমান সংখ্যক ও একই মাত্রার কর্তন দাবি করা হয়েছে। শাখা বেছে নিলে কর্তন কমতে পারে; এখানে সংখ্যা না বাড়া এবং পুরোনো মাত্রাগুলির মধ্যেই থাকা—এই যথার্থ শর্ত বলা হয়েছে।}
+% BN-SRC-513 TARGET-CORRECTION-END
+\end{lem}
+
+\begin{proof}
+\cref{pt:seq:inv:lem:G3c-invert,pt:seq:inv:lem:invert-quant}-এর
+প্রমাণগুলি দেখি। সেখানে $\pheight{\pi}$-এর উপর আরোহ করা হয়েছিল।
+প্রাথমিক ক্ষেত্রে একটি স্বতঃসিদ্ধের বদলে আরেকটি স্বতঃসিদ্ধ বসানো হয়;
+তাই (a) ও~(b) সরাসরি পূরণ হয়। $\pi$-এর শেষ বিধি~$R$ হলে তার অব্যবহিত
+উপ-!!{proof}s-ই চাওয়া !!{proof}s~$\pi_i$; এখানেও (a) ও~(b) পূরণ হয়।
+অন্য ক্ষেত্রে $\pi$-এর শেষ অনুমান~$R$-এর পূর্বধারণায় পৌঁছানো
+অব্যবহিত উপ-!!{proof}s-এর উপর আরোহের অনুমান প্রয়োগ করে,
+পাওয়া ফলগুলিতে একই বিধি~$R$ প্রয়োগ করি। নতুন
+প্রমাণের উপ-!!{proof}s-এ (a) ও~(b) পূরণ হওয়ায় সম্পূর্ণ প্রমাণেও
+সেগুলি পূরণ হয়। শেষ অনুমানটি \CutCS{} হলে তা যাচাই করা বাকি।
+আবার শুধু একটি উদাহরণ দিই: ধরি, $\pi$ হলো
+\LeftR{\land}-এর সিদ্ধান্ত $!B \land !C, \Gamma \Sequent
+\Delta$-র !!a{proof}, যার শেষে \CutCS{} আছে:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!B \land !C, \Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, !B \land !C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B \land !C, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+আরোহের অনুমান $\pi_1$ ও~$\pi_2$-তে প্রয়োগ করা যায় (এরাও
+$\LeftR{\land}$-এর সিদ্ধান্তের উদাহরণের !!{proof}s)। ফলে যথাক্রমে
+$!B, !C, \Gamma \fCenter \Delta, !A$ এবং
+$!A, !B, !C, \Gamma \fCenter \Delta$-র !!{proof}s~$\pi_1'$ ও~$\pi_2'$
+পাই। এগুলি \CutCS{} দিয়ে মিলিয়ে~$\pi'$ পাই:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, !C, \Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!A, !B, !C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B, !C, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+স্পষ্টতই, (a) ও~(b) পূরণ হয়।
+\end{proof}
+
+লক্ষ করুন, \CutCS-এর বদলে \Cut{} ব্যবহার করলে যুক্তিটি চলত না।
+সেক্ষেত্রে শেষ !!{proof}-এর সিদ্ধান্তের পূর্বপক্ষে
+$!B, !C, \Gamma$-র দুটি অনুলিপি এবং উত্তরপক্ষে $\Delta$-র দুটি
+অনুলিপি থাকত। তখন সংকোচন-বিধির গ্রহণযোগ্যতার সাহায্য নিতে হতো;
+কিন্তু \olref[seq][inv]{prop:G3c-cont-adm}-এর প্রমাণেই এই
+উল্টনযোগ্যতার লেমা ব্যবহৃত হয়। ফলে যুক্তিটি চক্রাকার হতো।
+
+\cref{pt:cut:inv:lem:inv-G3c-cut} ব্যবহার করে কর্তন-বর্জনের একটি
+বিকল্প প্রমাণ দেওয়া যায়। এই প্রমাণে \CutCS{} অনুমানের সর্বোচ্চে
+থাকা উদাহরণগুলি একে একে না সরিয়ে সর্বোচ্চ মাত্রার উদাহরণগুলি সরাই।
+অর্থাৎ $\Log{G3c} + \CutCS$-তে !!a{proof}~$\pi$ থেকে শুরু করে তার
+যেকোনো জায়গার একটি কর্তন সরাই (প্রয়োজনে কম মাত্রার কর্তন বসিয়ে);
+তারপর কোনো কর্তন না থাকা পর্যন্ত একই কাজ করি। একমাত্র শর্ত হলো,
+যে কর্তনটি সরাচ্ছি তার উপরে সমান বা বেশি মাত্রার কোনো কর্তন থাকবে না।
+
+\begin{lem}\ollabel{lem:max-cut-red-G3c} $\Log{G3c}+\CutCS$-তে
+!!a{proof}~$\pi$-এর শেষ অনুমানটি যদি মাত্রা~$n$-এর \CutCS{} হয়
+এবং তার অন্য অনুমানগুলি শুধু $\Log{G3c}$-এর বিধি ও $<n$ মাত্রার
+\CutCS{} হয়, তবে $\Log{G3c}+\CutCS$-তে একই অন্তিম সিকোয়েন্টের
+এমন প্রমাণ~$\pi'$ আছে, যার প্রতিটি \CutCS{} অনুমানের মাত্রা~$<n$।
+\end{lem}
+
+\begin{proof}
+!!{proof}~$\pi$-এর শেষাংশ:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+$!A$-এর রূপ অনুযায়ী ক্ষেত্রগুলি আলাদা করি।
+
+$!A$ পরমাণবিক ধরি। $\pi_1$ ও~$\pi_2$-র সমস্ত \CutCS{} অনুমানের
+মাত্রা $<\depth{!A}=0$ হওয়ার শর্ত থেকে বোঝা যায়,
+$\pi_1$ বা~$\pi_2$-র কোনোটিতেই
+\CutCS{} অনুমান নেই। $\pheight{\pi_2}$-এর উপর আরোহ করে দেখাই যে
+$\Gamma \Sequent \Delta$-র কর্তনমুক্ত প্রমাণ আছে।
+$\pheight{\pi_2}=0$ হলে $!A,\Gamma\Sequent\Delta$ স্বতঃসিদ্ধ।
+$!A$ প্রধান সূত্র না হলে কোনো পরমাণবিক $!C$ একই সঙ্গে
+$\Gamma$ ও~$\Delta$-র !!a{element}; তাই $\Gamma\Sequent\Delta$
+নিজেই স্বতঃসিদ্ধ। $!A$ প্রধান হলে
+$\Delta=\Delta',!A$। সেক্ষেত্রে $\pi_1$-এর শেষে
+$\Gamma\Sequent\Delta',!A,!A$ থাকে। সংকোচন-বিধির গ্রহণযোগ্যতা
+\olref[seq][inv]{prop:G3c-cont-adm} প্রয়োগ করে
+$\Gamma\Sequent\Delta',!A$-র কর্তনমুক্ত প্রমাণ পাই।
+% BN-SRC-514 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-514):} হিমায়িত প্রমাণের স্বতঃসিদ্ধ ক্ষেত্রে উত্তরপক্ষকে নিজের সঙ্গে অতিরিক্ত সূত্রসহ সমান লেখা হয়েছে। এখানে উত্তরপক্ষের অবশিষ্ট অংশের পৃথক নাম দিয়ে সঠিক বিভাজন লেখা হয়েছে।}
+% BN-SRC-514 TARGET-CORRECTION-END
+$\pheight{\pi_2}>0$ হলে এর শেষ বিধি~$R$। সেই বিধির একটি
+পূর্বধারণা নিই: তার রূপ $!A,\Gamma',\Pi\Sequent\Delta',\Lambda$,
+যেখানে $\Pi$ ও~$\Lambda$ হলো~$R$-এর সক্রিয় !!{formula}s।
+$\pi_1$ ও~$\pi_2$-তে \olref[seq][adm]{prop:weak-G3c-adm} প্রয়োগে
+$\Gamma,\Gamma',\Pi\Sequent\Delta,\Delta',\Lambda,!A$ এবং
+$!A,\Gamma,\Gamma',\Pi\Sequent\Delta,\Delta',\Lambda$-র
+!!{proof}s পাই; এদের উপর আরোহের অনুমান প্রয়োগ করা যায়। ফলে
+~$R$-এর প্রতিটি পূর্বধারণার জন্য
+$\Gamma,\Gamma',\Pi\Sequent\Delta,\Delta',\Lambda$-র
+!!a{proof} পাই। $R$ প্রয়োগে
+$\Gamma,\Gamma\Sequent\Delta,\Delta$ পাই; শেষে
+\olref[seq][inv]{prop:G3c-cont-adm} থেকে
+$\Gamma\Sequent\Delta$-র কর্তনমুক্ত প্রমাণ মেলে।
+
+$!A$ পরমাণবিক না হলে এই $!A$-এর !!{main
+operator} অনুযায়ী ক্ষেত্র
+ভাগ করি। প্রতিটি ক্ষেত্রে \olref{lem:inv-G3c-cut} প্রয়োগ করে,
+$!A$ প্রধান সূত্র এমন বাম ও ডান বিধির পূর্বধারণাগুলির !!{proof}s
+পাই। তারপর \olref[top]{lem:cut-adm-G3c}-এর প্রমাণের ক্ষেত্র~E-এর
+মতো এগোই।
+\begin{enumerate}
+  \item $!A \ident \lnot !B$। !!{proof}s~$\pi_1$ ও~$\pi_2$-র
+  শেষে যথাক্রমে $\Gamma \Sequent \Delta, \lnot !B$ এবং
+  $\lnot !B, \Gamma \Sequent \Delta$ থাকে।
+  \olref{lem:inv-G3c-cut} থেকে যথাক্রমে
+  $!B,\Gamma\Sequent\Delta$ ও~$\Gamma\Sequent\Delta,!B$-র
+  !!{proof}s~$\pi_1'$ ও~$\pi_2'$ পাই। !!{proof}~$\pi'$ হলো:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$\Gamma \fCenter \Delta, !B$
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$!B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta$
+  \DisplayProof
+  \]
+  \item $!A \ident (!B \lor !C)$। !!{proof}s~$\pi_1$ ও~$\pi_2$-র
+  শেষে যথাক্রমে $\Gamma\Sequent\Delta,!B\lor !C$ এবং
+  $!B\lor !C,\Gamma\Sequent\Delta$ থাকে।
+  $\pi_1$-তে \RightR{\lor}-এর উল্টনযোগ্যতার জন্য
+  \olref{lem:inv-G3c-cut} প্রয়োগে
+  $\Gamma\Sequent\Delta,!B,!C$-র !!a{proof}~$\pi_1'$ পাই।
+  $\pi_2$-তে \LeftR{\lor}-এর উল্টনযোগ্যতার জন্য একই
+  \olref{lem:inv-G3c-cut} প্রয়োগে
+  $!B,\Gamma\Sequent\Delta$-র !!a{proof}~$\pi_2'$ এবং
+  $!C,\Gamma\Sequent\Delta$-র !!a{proof}~$\pi_2''$ পাই।
+  $\pi_2''$-তে \olref[seq][adm]{prop:weak-G3c-adm} প্রয়োগে
+  $!C,\Gamma\Sequent\Delta,!B$-র !!a{proof}~$\pi_2'''$-ও
+  পাই। !!{proof}~$\pi'$ হলো:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$\Gamma \fCenter \Delta, !B, !C$
+  \AxiomC{}
+  \RightLabel{$\pi_2'''$}
+  \Deduce$!C, \Gamma \fCenter \Delta, !B$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta, !B$
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$!B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta$
+  \DisplayProof
+  \]
+  \item $!A \ident (!B \land !C)$। অনুশীলন।
+  \item $!A \ident (!B \lif !C)$। !!{proof}s~$\pi_1$ ও~$\pi_2$-র
+  শেষে যথাক্রমে $\Gamma\Sequent\Delta,!B\lif !C$ এবং
+  $!B\lif !C,\Gamma\Sequent\Delta$ থাকে।
+  $\pi_1$-তে \RightR{\lif}-এর উল্টনযোগ্যতা
+  \olref{lem:inv-G3c-cut} প্রয়োগে
+  $!B,\Gamma\Sequent\Delta,!C$-র !!a{proof}~$\pi_1'$ দেয়।
+  $\pi_2$-তে \LeftR{\lif}-এর উল্টনযোগ্যতা
+  \olref{lem:inv-G3c-cut} প্রয়োগে
+  $\Gamma\Sequent\Delta,!B$-র !!a{proof}~$\pi_2'$ এবং
+  $!C,\Gamma\Sequent\Delta$-র !!a{proof}~$\pi_2''$ দেয়।
+  $\pi_2''$-তে \olref[seq][adm]{prop:weak-G3c-adm} প্রয়োগে
+  $!C,!B,\Gamma\Sequent\Delta$-র !!a{proof}~$\pi_2'''$-ও পাই।
+  !!{proof}~$\pi'$ হলো:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$\Gamma \fCenter \Delta, !B$
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$!B, \Gamma \fCenter \Delta, !C$
+  \AxiomC{}
+  \RightLabel{$\pi_2'''$}
+  \Deduce$!C, !B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$!B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta$
+  \DisplayProof
+  \]
+  \item $!A \ident \lforall[x][!B(x)]$। !!{proof}s~$\pi_1$ ও~$\pi_2$-র
+  শেষে যথাক্রমে $\Gamma \Sequent \Delta, \lforall[x][!B(x)]$ এবং
+  $\lforall[x][!B(x)], \Gamma \Sequent \Delta$ থাকে।
+  \olref{lem:inv-G3c-cut} থেকে
+  $\Gamma\Sequent\Delta,!B(c)$-র !!a{proof}~$\pi_1'$ পাই।
+
+  এবার !!{proof}~$\pi_2$ বিবেচনা করি। এই $\pi_2$-র শেষে
+  $\lforall[x][!B(x)],\Gamma\Sequent\Delta$ থাকে।
+  $\pi_2$-র অন্তিম সিকোয়েন্ট থেকে উপরদিকে যেতে যেতে, প্রত্যেক
+  সিকোয়েন্টের বাম পাশে $\lforall[x][!B(x)]$-এর সেইসব উদাহরণ
+  চিহ্নিত করি যেগুলি অন্তিম সিকোয়েন্টে
+  $\lforall[x][!B(x)]$-এর উদাহরণটির দিকে
+  ``পৌঁছায়''। অর্থাৎ (a)~$\pi_2$-র অন্তিম সিকোয়েন্টে
+  $\lforall[x][!B(x)]$ চিহ্নিত করি। (b)~কোনো বিধির সিদ্ধান্তে
+  $\lforall[x][!B(x)]$ প্রসঙ্গে থেকে চিহ্নিত হলে তার
+  পূর্বধারণায় বা পূর্বধারণাগুলিতে সংশ্লিষ্ট উদাহরণ চিহ্নিত করি।
+  (c)~\LeftR{\lforall} বিধির সিদ্ধান্তে
+  $\lforall[x][!B(x)]$ প্রধান ও চিহ্নিত হলে, পূর্বধারণায়
+  $\lforall[x][!B(x)]$ এবং~$!B(t)$-এর সংশ্লিষ্ট সক্রিয় উদাহরণগুলি
+  চিহ্নিত করি।
+
+  এবার $\lforall[x][!B(x)]$-এর চিহ্নিত উদাহরণগুলি দেখি।
+  \LeftR{\lforall} ছাড়া অন্য কোনো বিধিতে এগুলি সক্রিয় নয়
+  (শুধু \LeftR{\lforall}-এর সক্রিয় !!{formula}s-ই চিহ্নিত হয়)।
+  $\pi_2$ থেকে $\lforall[x][!B(x)]$-এর সব চিহ্নিত উদাহরণ মুছে
+  ফেলি। পাওয়া বস্তুটি যদি সঠিক !!{proof} হয়, তবে
+  $\lforall[x][!B(x)]$-এর চিহ্নিত উদাহরণগুলি কখনো সক্রিয় ছিল না;
+  সবগুলি সরাসরি স্বতঃসিদ্ধ থেকে
+  এসেছিল। ওই !!{proof}-এর শেষে~$\Gamma\Sequent\Delta$ থাকে,
+  তাই $\pi$-র বদলে সেটি বসাতে পারি। এতে সর্বোচ্চ মাত্রার একটি
+  কর্তন অপসারিত হলো।
+
+  অন্যথায় পাওয়া বস্তুটি সঠিক প্রমাণ নয়, কারণ কোনো কোনো
+  \LeftR{\lforall} অনুমানে সক্রিয়
+  !!{formula}s~$\lforall[x][!B(x)]$ মুছে ফেলেছি। ফলে ওই
+  অনুমানগুলি নিচের রূপের ``অনুমান'' হয়েছে:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_t$}
+  \Deduce$!B(t), \Pi \fCenter \Lambda$
+  \RightLabel{\LeftR{\lforall}}
+  \UnaryInf$\Pi \fCenter \Lambda$
+  \DisplayProof
+  \]
+  এমন সর্বোচ্চে থাকা প্রতিটি ``অনুমান''-এর বদলে বসাই
+  \[
+  \AxiomC{}
+  \RightLabel{$\Subst{\pi_1'}{t}{c}[\Pi \Sequent \Lambda]$}
+  \Deduce$\Gamma, \Pi \fCenter \Delta, \Lambda, !B(t)$
+  \AxiomC{}
+  \RightLabel{$\pi_t[\Gamma \Sequent \Delta]$}
+  \Deduce$!B(t), \Gamma, \Pi \fCenter \Delta, \Lambda$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
+  \DisplayProof
+  \]
+  এবং এর নিচের প্রত্যেক সিকোয়েন্টের বামে $\Gamma$ ও ডানে
+  $\Delta$ যোগ করি। পূর্বধারণায় চিহ্নিত~$!B(t)$ আছে, এমন
+  সব \LeftR{\lforall} ``অনুমান'' কোনো~$!B(t)$-এর উপর
+  \CutCS{} অনুমান দিয়ে প্রতিস্থাপিত না হওয়া পর্যন্ত কাজটি
+  চালাই। পাওয়া !!{proof}-এর অন্তিম সিকোয়েন্ট
+  $\Gamma,\dots,\Gamma\Sequent\Delta,\dots,\Delta$ রূপের
+  (এবার এটি সত্যিই সঠিক !!{proof})। সংকোচন-বিধির গ্রহণযোগ্যতা
+  প্রয়োগ করে একে~$\Gamma\Sequent\Delta$-র !!a{proof}
+  বানিয়ে $\pi$-র বদলে বসাই। এতে
+  $\lforall[x][!B(x)]$-এর উপর একটি কর্তনের বদলে
+  $!B(t)$-এর উপর এক বা একাধিক কর্তন বসেছে, কিন্তু সবগুলির
+  মাত্রা কম। $\pi_1$ বা~$\pi_2$-তে আগে থেকে থাকা
+  কর্তনগুলিও রয়ে যায়, আর সেগুলির মাত্রাও কম।
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+\olref{lem:max-cut-red-G3c}-এর প্রমাণে
+$!A \ident (!B \land !C)$ ক্ষেত্রটি যাচাই করুন।
+অর্থাৎ দেখান, নিচের রূপে শেষ হয় এমন !!a{proof}~$\pi$ থাকলে
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !B \land !C$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!B \land !C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+$\pi_1$ ও~$\pi_2$-তে শুধু $<\depth{!B\land !C}$ মাত্রার
+কর্তন থাকে; তখন $\Gamma\Sequent\Delta$-র এমন !!a{proof}~$\pi'$
+আছে, যাতে শুধু $<\depth{!B\land !C}$ মাত্রার কর্তন থাকে।
+\end{prob}
+% BN-SRC-515 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-515):} অনুশীলনের বিষয় সর্বোচ্চ মাত্রার কর্তন হ্রাসের লেমা, কিন্তু হিমায়িত উল্লেখটি উল্টনযোগ্যতার লেমায় নির্দেশ করে। এখানে অনুশীলন ও মন্তব্যের উল্লেখ সংশ্লিষ্ট লেমায় ফেরানো হয়েছে।}
+% BN-SRC-515 TARGET-CORRECTION-END
+
+% \begin{prob}
+% \olref{lem:max-cut-red-G3c}-এর প্রমাণে
+% $!A \ident \lexists[x][!B(x)]$ ক্ষেত্রটি যাচাই করুন।
+% \end{prob}
+
+
+\olref{lem:max-cut-red-G3c} দেখায় যে !!a{proof}-এ
+সর্বোচ্চ মাত্রার একটি \CutCS{} অনুমানের বদলে কম মাত্রার
+\CutCS{} অনুমান বসানো যায়। এই লেমা বারবার প্রয়োগ করে
+আরও দেখানো যায়, সর্বোচ্চ মাত্রার \CutCS{}-তে শেষ হওয়া
+সর্বোচ্চ উপ-!!{proof}s থেকে শুরু করে !!a{proof}-এর
+যেকোনো সংখ্যক \CutCS{} অনুমান অপসারণ করা যায়।
+% BN-SRC-516 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-516):} হিমায়িত সংযোগবাক্যটি এক-কর্তন গ্রহণযোগ্যতার পুরোনো লেমা উল্লেখ করে; এই পর্বের কম মাত্রার কর্তন দিয়ে প্রতিস্থাপনটি আসলে এখানকার সর্বোচ্চ-কর্তন হ্রাসের লেমায় প্রতিষ্ঠিত।}
+% BN-SRC-516 TARGET-CORRECTION-END
+
+\begin{thm}\ollabel{thm:cut-elim-G3c-largest}
+$\Log{G3c}+\CutCS$-এর যেকোনো !!{proof}~$\pi$-কে
+\Log{G3c}-এর প্রমাণে রূপান্তর করা যায়।
+\end{thm}
+
+\begin{proof}
+  প্রথমে দেখাই, $\pi$-র সর্বোচ্চ মাত্রার সব কর্তন অপসারণ
+  করা যায়। $\pi$-তে কর্তনের সর্বোচ্চ মাত্রা~$d$ এবং
+  $d$ মাত্রার কর্তনের সংখ্যা~$n$ ধরি। $n$-এর উপর আরোহ
+  করি। $n=0$ হলে প্রমাণ করার কিছু নেই। $n>0$ হলে
+  $d$ মাত্রার একটি সর্বোচ্চে থাকা কর্তন নিই এবং সেখানে
+  শেষ হওয়া উপ-!!{proof}-কে $\pi_1$ বলি।
+  \olref{lem:max-cut-red-G3c} অনুযায়ী একই অন্তিম
+  সিকোয়েন্টের এমন !!a{proof}~$\pi_1'$ আছে যার সব
+  কর্তনের মাত্রা $<d$। $\pi$-তে $\pi_1$-এর বদলে
+  $\pi_1'$ বসালে $d$ মাত্রার $n-1$টি কর্তনবিশিষ্ট
+  !!a{proof} পাই; তাতে আরোহের অনুমান প্রযোজ্য।
+
+  এবার $d$-এর উপর আরোহে ফলটি পাই। $d=0$ হলে সব
+  কর্তন পরমাণবিক; আগের ফল দিয়ে সবগুলি সরানো যায়।
+  $d>0$ হলে আগের ফল এমন প্রমাণ দেয়, যাতে
+  $d$ মাত্রার সব কর্তনের বদলে $<d$ মাত্রার কর্তন
+  আছে। যেহেতু $\pi$-তে $d$-ই ছিল কর্তনের সর্বোচ্চ
+  মাত্রা, নতুন প্রমাণে সর্বোচ্চ মাত্রা $<d$; ফলে
+  আরোহের অনুমান প্রযোজ্য।
+\end{proof}
+
+\end{document}

@@ -6089,6 +6089,16 @@ for row in rows:
             r"\Sat{N}{\lforall[y][\lexists[x][(y=x+x\lory=x+x+\Obj{0}')]]}": 1,
         })
     )
+    legacy_cut_largest_formula_repair = (
+        row["unit_id"] == "OLP-0655"
+        and set(documented) == {f"BN-SRC-{n}" for n in range(513, 517)}
+        and source_math - target_math == collections.Counter({
+            r"\Delta=\Delta,!A": 1,
+        })
+        and target_math - source_math == collections.Counter({
+            r"\Delta=\Delta',!A": 1,
+        })
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6218,6 +6228,7 @@ for row in rows:
             legacy_c_representability_composition_fix,
             legacy_propositions_notation_fixes,
             legacy_nonstandard_arithmetic_repairs,
+            legacy_cut_largest_formula_repair,
         )
     )
     minimal_change_fileid_fix = (
@@ -6270,6 +6281,17 @@ for row in rows:
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\citep[পৃ.~১৯৯]{Potter2004}": 1})
     )
+    legacy_cut_largest_reference_repairs = (
+        row["unit_id"] == "OLP-0655"
+        and set(documented) == {f"BN-SRC-{n}" for n in range(513, 517)}
+        and controls(source) - controls(checked_target)
+        == collections.Counter({
+            r"\olref{lem:inv-G3c-cut}": 2,
+            r"\olref[top]{lem:cut-adm-G3c}": 1,
+        })
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\olref{lem:max-cut-red-G3c}": 3})
+    )
     controls_ok = (
         controls(source) == controls(checked_target)
         or axd_control_fix
@@ -6284,6 +6306,7 @@ for row in rows:
         or ordinal_rank_reference_fix
         or cardinal_predecessor_reference_fix
         or ordinal_exponentiation_citation_localization
+        or legacy_cut_largest_reference_repairs
     )
     checks = {
         "unit_id": row["unit_id"],

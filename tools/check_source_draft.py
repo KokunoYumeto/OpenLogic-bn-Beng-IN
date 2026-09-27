@@ -6888,6 +6888,20 @@ for row in rows:
             "documented_language_normalization": "BN-NORM-175",
             "signed_succedent_false": True,
         }
+    if row["unit_id"] == "OLP-0686":
+        assert documented == []
+        assert normalizations == ["BN-NORM-176"]
+        assert source.count(r"\text{corresponds to}") == 2
+        assert checked_target.count(r"\text{অনুরূপ}") == 2
+        assert source.count("logic & program") == 1
+        assert checked_target.count("যুক্তি & প্রোগ্রাম") == 1
+        assert checked_target.count("প্রস্তাবনা/!!{formula} & টাইপ") == 1
+        assert checked_target.count("অবমুক্ত নয় এমন অনুমান & মুক্ত চলরাশি") == 1
+        tex_command_check = {
+            "documented_language_normalization": "BN-NORM-176",
+            "localized_proof_connectors": 2,
+            "localized_correspondence_table": True,
+        }
     checks = {
         "unit_id": row["unit_id"],
         "source_blocks": len(source_blocks),

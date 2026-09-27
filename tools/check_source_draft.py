@@ -6841,6 +6841,30 @@ for row in rows:
             and not normalizations
             and mathparts(audited_examples) == target_math
         )
+    legacy_sequent_quantifier_repairs = False
+    if row["unit_id"] == "OLP-0703":
+        audited_quantifiers = source
+        fixes = (
+            (r"\Subst{\Gamma}{t}{c} =" + "\n"
+             + r"\Setabs{!A(t)}{!A(c) \in \Gamma}",
+             r"\Subst{\Gamma}{t}{c}", 1),
+            (r"\Deduce$!A(s(c),c), \lforall[x][!A(x,c)], \Gamma(c) \fCenter \Delta'(c)$"
+             + "\n    " + r"\RightLabel{\RightR{\lforall}}",
+             r"\Deduce$!A(s(c),c), \lforall[x][!A(x,c)], \Gamma(c) \fCenter \Delta'(c)$"
+             + "\n    " + r"\RightLabel{\LeftR{\lforall}}", 1),
+            (r"\Deduce$!A(s(t),t), \lforall[x][!A(x,t)], \Gamma(t) \fCenter \Delta'(t)$"
+             + "\n    " + r"\RightLabel{\RightR{\lforall}}",
+             r"\Deduce$!A(s(t),t), \lforall[x][!A(x,t)], \Gamma(t) \fCenter \Delta'(t)$"
+             + "\n    " + r"\RightLabel{\LeftR{\lforall}}", 1),
+        )
+        for old, new, expected_count in fixes:
+            assert audited_quantifiers.count(old) == expected_count, old
+            audited_quantifiers = audited_quantifiers.replace(old, new, 1)
+        legacy_sequent_quantifier_repairs = (
+            set(documented) == {f"BN-SRC-{n}" for n in range(643, 647)}
+            and not normalizations
+            and mathparts(audited_quantifiers) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -7001,6 +7025,7 @@ for row in rows:
             legacy_interpretation_xor_label_fix,
             legacy_invertibility_repairs,
             legacy_proof_examples_repairs,
+            legacy_sequent_quantifier_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7312,6 +7337,16 @@ for row in rows:
         tex_command_check = {
             "documented_source_corrections": [f"BN-SRC-{n}" for n in range(636, 643)],
             "G1c_G3c_backward_search_and_identity_tree_repairs": True,
+        }
+    if row["unit_id"] == "OLP-0703":
+        assert legacy_sequent_quantifier_repairs
+        assert checked_target.count(r"\RightLabel{\LeftR{\lforall}}") == 2
+        assert "সর্বোচ্চে থাকা কোনো\n\\emph{অপরিচ্ছন্ন}" in checked_target
+        assert "অনুমান সর্বাধিক\n$n-1$টি" in checked_target
+        assert "পুনরাবৃত্তি-সংখ্যা\nঅক্ষত থাকে" in checked_target
+        tex_command_check = {
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(643, 647)],
+            "multiset_substitution_universal_left_and_regularization_induction": True,
         }
     checks = {
         "unit_id": row["unit_id"],

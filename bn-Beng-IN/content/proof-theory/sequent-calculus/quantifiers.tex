@@ -1,0 +1,305 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{qua}
+
+\olsection{নিয়মিত প্রমাণ ও প্রতিস্থাপন}
+
+\LeftR{\lexists} ও~\RightR{\lforall}
+বিধিতে আইগেনচল-শর্ত থাকায়
+পরিমাণসূচকের বিধিগুলি কিছু
+জটিলতা আনে। এই অনুমানগুলিতে
+!!{constant}~$a$ আর কোথাও
+ব্যবহার না করলে বেশির ভাগ
+জটিলতা সামলানো যায়।
+তাই একটি সংজ্ঞা দিই।
+
+\begin{defn}
+\Log{G1c} বা \Log{G3c}-র
+!!^a{proof}~$\pi$ \emph{নিয়মিত},
+যদি
+\begin{enumerate}
+  \item কোনো আইগেনচল~$a$
+  একাধিক \LeftR{\lexists}
+  বা~\RightR{\lforall}
+  অনুমানের আইগেনচল
+  হিসেবে ব্যবহৃত না হয়; এবং
+  \item $a$ যদি কোনো
+  \LeftR{\lexists}
+  বা~\RightR{\lforall}
+  অনুমানের আইগেনচল হয়,
+  তবে~$\pi$-তে শুধু সেই
+  অনুমানের অব্যবহিত
+  উপপ্রমাণের ভিতরেই ঘটে।
+\end{enumerate}
+\end{defn}
+
+\begin{lem}\ollabel{lem:subst-regular}
+ধরি, $\pi$ নিয়মিত,
+তার অন্তিম সিকোয়েন্ট
+$\Gamma \Sequent \Delta$;
+!!a{constant}~$c$ প্রমাণ~$\pi$-তে
+আইগেনচল হিসেবে ব্যবহৃত নয়;
+আর পদ~$t$-তে $\pi$-র
+কোনো আইগেনচল নেই।
+তাহলে $\pi$-তে $c$-র
+প্রতিটি সংঘটন~$t$ দিয়ে
+বদলে পাওয়া
+$\Subst{\pi}{t}{c}$
+নিয়মিত !!{proof}।
+$\Subst{\pi}{t}{c}$-র
+অন্তিম সিকোয়েন্ট
+$\Subst{\Gamma}{t}{c}
+\Sequent \Subst{\Delta}{t}{c}$।
+এখানে $\Subst{\Gamma}{t}{c}$
+হলো মূল বাঁ-প্রসঙ্গের প্রতিটি
+সূত্রে ওই প্রতিস্থাপন করে
+পাওয়া বহুসেট; প্রতিটি
+সূত্রের পুনরাবৃত্তি-সংখ্যা
+অক্ষত থাকে।
+\end{lem}
+% BN-SRC-643 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-643):} উৎসে \(\Gamma\)-র প্রতিস্থাপনকে সেট-গঠন দিয়ে লেখা, কিন্তু G1c/G3c-র প্রসঙ্গ বহুসেট; একই সূত্রের পুনরাবৃত্তি হারানো যায় না। সমতাটি সরিয়ে প্রতিটি সংঘটনে প্রতিস্থাপন ও পুনরাবৃত্তি-সংখ্যা সংরক্ষণ স্পষ্ট করা হয়েছে।}
+% BN-SRC-643 TARGET-CORRECTION-END
+
+\begin{proof}
+  $\pheight{\pi}$-র ওপর
+  আরোহ করি। $\pheight{\pi} = 0$
+  হলে প্রমাণটি কেবল একটি
+  স্বতঃসিদ্ধ। তখন
+  $\Subst{\pi}{t}{c}$-ও
+  স্বতঃসিদ্ধ: তাতে
+  !!{formula}~$!A(c)$
+  থাকলে তা $!A(t)$ হয়।
+  পরিচয়-স্বতঃসিদ্ধের
+  দুই পাশেই একই প্রতিস্থাপন
+  হয়; বাঁদিকে অসংগতি-সূত্র
+  থাকার স্বতঃসিদ্ধও
+  অক্ষত থাকে।
+
+  $\pheight{\pi} > 0$ হলে
+  $\pi$-র শেষ অনুমানবিধি
+  অনুযায়ী ক্ষেত্রভাগ করি।
+  \Log{G1c}-র গঠনগত
+  বিধি ও বচনীয় সংযোজকের
+  যৌক্তিক বিধিগুলির ক্ষেত্র
+  সহজ; অনুশীলন হিসেবে থাক।
+  এখানে পরিমাণসূচকের
+  বিধিতে শেষ হওয়া
+  $\pi$-র ক্ষেত্রগুলি দেখি।
+  \begin{enumerate}
+    \item শেষ অনুমান
+    $\RightR{\lforall}$
+    হলে $\pi$-র রূপ:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi'$}
+    \Deduce$\Gamma(c) \fCenter \Delta'(c), !A(a,c)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma(c) \fCenter \Delta'(c), \lforall[x][!A(x,c)]$
+    \DisplayProof
+    \]
+    আরোহের অনুমানে
+    $\Subst{\pi'}{t}{c}$
+    হলো $\Gamma(t) \fCenter
+    \Delta'(t), !A(a,t)$-র
+    নিয়মিত !!{proof}।
+    $a$ প্রমাণ~$\pi$-র
+    আইগেনচল বলে $a$
+    পদ~$t$-তে ঘটে না।
+    অতএব $\Subst{\pi}{t}{c}$-র
+    শেষ অনুমানটি,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\pi'}{t}{c}$}
+    \Deduce$\Gamma(t) \fCenter \Delta'(t), !A(a,t)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma(t) \fCenter \Delta'(t), \lforall[x][!A(x,t)]$
+    \DisplayProof
+    \]
+    সঠিক: সিদ্ধান্তে~$a$
+    ঘটে না।
+    \item \Log{G3c}-তে
+    শেষ অনুমান
+    $\LeftR{\lforall}$
+    হলে $\pi$-র রূপ:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi'$}
+    \Deduce$!A(s(c),c), \lforall[x][!A(x,c)], \Gamma(c) \fCenter \Delta'(c)$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[x][!A(x,c)], \Gamma(c) \fCenter \Delta'(c)$
+    \DisplayProof
+    \]
+    আরোহের অনুমানে
+    $\Subst{\pi'}{t}{c}$
+    হলো $!A(s(t),t),
+    \lforall[x][!A(x,t)],
+    \Gamma(t) \fCenter
+    \Delta'(t)$-র নিয়মিত
+    !!{proof}।
+    $\Subst{\pi}{t}{c}$-র
+    শেষ অনুমানটি,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\pi'}{t}{c}$}
+    \Deduce$!A(s(t),t), \lforall[x][!A(x,t)], \Gamma(t) \fCenter \Delta'(t)$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[x][!A(x,t)], \Gamma(t) \fCenter \Delta'(t)$
+    \DisplayProof
+    \]
+    সঠিক। \Log{G1c}-তে
+    \LeftR{\lforall}-এর
+    ক্ষেত্রও অনুরূপ,
+    তবে কিছুটা সরল।
+    \item শেষ অনুমান
+    \RightR{\lexists}
+    বা \LeftR{\lexists}
+    হলে: অনুশীলন।
+  \end{enumerate}
+  প্রতিটি ক্ষেত্রে নিয়মিত
+  !!{proof}-এর শেষে
+  (দুই পূর্বধারণার বিধিতে
+  দুটি নিয়মিত !!{proof}s-এর
+  শেষে) একটি সিকোয়েন্ট
+  যোগ করেছি। নতুন অন্তিম
+  সিকোয়েন্টে $\pi$-র
+  অন্তিম সিকোয়েন্ট থেকে
+  শুধু $c$-র স্থলে পদ~$t$
+  বসেছে। $t$-তে $\pi$-র
+  কোনো আইগেনচল নেই;
+  তাই $\pi$ ও
+  $\Subst{\pi}{t}{c}$-র
+  আইগেনচলগুলি একই থাকে।
+  নিয়মিত মূল প্রমাণের অন্তিম
+  সিকোয়েন্টে সেগুলি
+  ঘটে না, আর
+  $\Subst{\pi}{t}{c}$-তেও
+  নতুন করে আসে না।
+  ফলে $\Subst{\pi}{t}{c}$
+  নিয়মিত।
+\end{proof}
+% BN-SRC-644 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-644):} G3c-র সার্বিক-বাঁ প্রতিস্থাপনের দুটি বৃক্ষেই উৎসে ভুল \(\RightR{\lforall}\) লেবেল; পূর্বধারণা ও সিদ্ধান্ত অনুযায়ী উভয়টি \(\LeftR{\lforall}\) করা হয়েছে।}
+% BN-SRC-644 TARGET-CORRECTION-END
+% BN-SRC-645 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-645):} সহায়ক উপপাদ্যের শেষ ইংরেজি বাক্যে “and Since” দিয়ে দুটি অসম্পূর্ণ খণ্ড জুড়েছে। পূর্বধারণা অনুযায়ী \(t\)-তে পুরোনো আইগেনচল নেই, তাই প্রতিস্থাপিত প্রমাণের আইগেনচল-সমষ্টি একই ও অন্তিম সিকোয়েন্টে তারা অনুপস্থিত—এই সম্পূর্ণ যুক্তি লেখা হয়েছে।}
+% BN-SRC-645 TARGET-CORRECTION-END
+
+\begin{prop}
+$\pi$ যদি \Log{G1c}
+বা \Log{G3c}-তে
+!!a{proof} হয়,
+তাহলে একই গঠনবিশিষ্ট
+(বিশেষত, একই !!{height}-এর)
+নিয়মিত !!{proof}~$\pi'$
+আছে, যা $\pi$ থেকে
+শুধু আইগেনচলগুলি
+প্রতিস্থাপন করায় আলাদা।
+\end{prop}
+
+\begin{proof}
+শুধু এই প্রমাণের জন্য
+$\pi$-র কোনো আইগেনচল-অনুমানকে
+\emph{পরিচ্ছন্ন} বলি, যদি
+তার আইগেনচল অন্য কোনো
+অনুমানের আইগেনচল না হয়
+এবং ওই অনুমানের অব্যবহিত
+উপ-!!{proof}-র বাইরে
+$\pi$-তে কোথাও না ঘটে;
+অন্যথায় তাকে
+\emph{অপরিচ্ছন্ন} বলি।
+$\pi$-তে অপরিচ্ছন্ন
+আইগেনচল-অনুমানের সংখ্যা~$n$।
+$n$-র ওপর আরোহে
+দেখাই, $\pi$-কে চাওয়া
+নিয়মিত !!{proof}~$\pi'$-তে
+বদলানো যায়।
+$n=0$ হলে সব আইগেনচল-অনুমান
+পরিচ্ছন্ন; তাই $\pi$
+নিয়মিত এবং আর কিছু
+প্রমাণের নেই। অন্যথায়
+সর্বোচ্চে থাকা কোনো
+\emph{অপরিচ্ছন্ন}
+আইগেনচল-অনুমান বাছি,
+ধরি \RightR{\lforall}।
+তাতে শেষ হওয়া
+$\pi$-র উপ-!!{proof}~$\pi_1$-এর
+রূপ:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$\Gamma \fCenter \Delta, !A(c)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+    \DisplayProof
+    \]
+$c$ আইগেনচল বলে
+$\Gamma$, $\Delta$ কিংবা
+$\lforall[x][!A(x)]$-এ
+ঘটে না। নির্বাচিত অনুমানের
+ওপরে থাকা আইগেনচল-অনুমানগুলি
+পরিচ্ছন্ন; তাই
+উপপ্রমাণ~$\pi_2$
+নিয়মিত, যদিও তাতে
+আইগেনচল-অনুমান থাকতে
+পারে। উপরন্তু ওই
+আইগেনচল সেখানে অন্য কোনো
+অনুমানের আইগেনচল নয়:
+তা হলে সেটিও অপরিচ্ছন্ন
+হতো। $\pi$-তে
+ঘটে না এমন
+!!a{constant}~$a$ নিই।
+\olref{lem:subst-regular}
+অনুসারে
+$\Subst{\pi_2}{a}{c}$
+হলো $\Gamma \fCenter
+\Delta, !A(a)$-র
+নিয়মিত প্রমাণ; এতে
+$\RightR{\lforall}$
+প্রয়োগ করা যায়।
+$\pi$-তে $\pi_1$-র
+বদলে প্রমাণ~$\pi_1'$
+বসালে,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\pi_2}{a}{c}$}
+    \Deduce$\Gamma \fCenter \Delta, !A(a)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+    \DisplayProof
+    \]
+একটি অপরিচ্ছন্ন
+আইগেনচল-অনুমান
+পরিচ্ছন্ন অনুমানে
+বদলেছে; স্থানীয়
+উপপ্রমাণে শুধু
+আইগেনচল $c$-র
+জায়গায়~$a$ এসেছে।
+মূল $\pi$-র অন্য কোনো
+অনুমান নতুন করে অপরিচ্ছন্ন
+হয় না। ফলে নতুন
+প্রমাণে অপরিচ্ছন্ন
+অনুমান সর্বাধিক
+$n-1$টি; আরোহের
+অনুমানে ফল মেলে।
+\end{proof}
+% BN-SRC-646 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-646):} \(n>0\) হলে উৎস যেকোনো সর্বোচ্চ আইগেনচল-অনুমান বেছে নেয়; সেটি পরিচ্ছন্নও হতে পারে। সর্বোচ্চ অপরিচ্ছন্ন অনুমান বেছে তার ওপরের সব অনুমান পরিচ্ছন্ন বলে \(\pi_2\) নিয়মিত দেখানো হয়েছে। একটি নাম বদলালে অন্য অপরিচ্ছন্ন অনুমানও পরিচ্ছন্ন হতে পারে, তাই নতুন সংখ্যা ঠিক \(n-1\) নয়, সর্বাধিক \(n-1\)।}
+% BN-SRC-646 TARGET-CORRECTION-END
+
+এইমাত্র প্রমাণিত প্রস্তাবটি
+আমরা আলাদা করে আর
+প্রয়োগ করব না; কিন্তু
+বিবেচিত সব !!{proof}s-কে
+নিয়মিত ধরব। নিয়মিত
+না হলে আইগেনচল বদলে
+সেগুলিকে নিয়মিত
+করা যায়।
+
+\end{document}

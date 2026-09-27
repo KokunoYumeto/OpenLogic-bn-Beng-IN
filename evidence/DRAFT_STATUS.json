@@ -636,11 +636,11 @@
     "anonymous_public_readback": "All six GitHub and Zenodo assets matched byte-for-byte."
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "c56f3277cc27e05b61e5f8e41fb753a1c21c970c",
-    "translated_units": 545,
-    "receipt": "PUBLIC_READBACK_SOURCE_545_2026-09-27.json",
-    "receipt_sha256": "2cdad91445e60ee145e27f045e39b0bf51a5b4ada1e356045ce6f7a32b752e4e",
-    "status": "নামহীন অপরিবর্তনীয় আর্কাইভ-পুনর্পাঠে ২১টি পরিবর্তিত বস্তু, দশটি কাঁচা অনুবাদ URL, ৫৪৫ ইউনিট ও ৫,৯৫২ ব্লকের কঠোর পরীক্ষা মিলেছে। জার্মেলোর সেটতত্ত্ব অধ্যায়ের নয়টি বিভাগ অনূদিত; BN-SRC-432–434-এ তিনটি গদ্যগত উৎস-সংশোধন নথিবদ্ধ। বর্তমান প্রকাশিত পাঠকসংস্করণ ২৯৯ ইউনিটের; নতুন পাঠকসংস্করণের দাবি নেই।"
+    "commit": "509f83936759afc96d3e62a214676909f452cb72",
+    "translated_units": 556,
+    "receipt": "PUBLIC_READBACK_SOURCE_556_2026-09-27.json",
+    "receipt_sha256": "ed72ec6d78e0c33ab0e7e164fcd35be9fc9206139411931a0f9b4458785a6465",
+    "status": "নামহীন অপরিবর্তনীয় আর্কাইভ-পুনর্পাঠে ২২টি পরিবর্তিত বস্তু, এগারোটি কাঁচা অনুবাদ URL, ৫৫৬ ইউনিট ও ৬,০৬৮ ব্লকের কঠোর পরীক্ষা মিলেছে। ক্রমসংখ্যা অধ্যায়ের দশটি বিভাগ অনূদিত; BN-SRC-435–437-এ তিনটি গদ্যগত উৎস-সংশোধন নথিবদ্ধ। বর্তমান প্রকাশিত পাঠকসংস্করণ ২৯৯ ইউনিটের; নতুন পাঠকসংস্করণের দাবি নেই।"
   },
   "current_checks": {
     "unit_checks": [

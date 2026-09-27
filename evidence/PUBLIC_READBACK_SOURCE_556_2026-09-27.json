@@ -1,0 +1,244 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T00:17:32.222000+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "509f83936759afc96d3e62a214676909f452cb72",
+  "parent": "8750c7c879840a1433524c4fc18b480d47cc5860",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "c56f3277cc27e05b61e5f8e41fb753a1c21c970c",
+    "receipt": "PUBLIC_READBACK_SOURCE_545_2026-09-27.json",
+    "receipt_sha256": "2cdad91445e60ee145e27f045e39b0bf51a5b4ada1e356045ce6f7a32b752e4e"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/509f83936759afc96d3e62a214676909f452cb72.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/509f83936759afc96d3e62a214676909f452cb72",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 14812227,
+  "archive_sha256": "3ba8422cea747cf105a4433569e0716420ee30474e1a40fbbc8e01510354603c",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/basic.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/basic.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/basic.tex",
+      "content_type": "text/plain",
+      "bytes": 14191,
+      "sha256": "c8cfd3b94afd7557d3c3156834be6accc21ed251dbf93566113160da91fec5d7"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/idea.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/idea.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/idea.tex",
+      "content_type": "text/plain",
+      "bytes": 3507,
+      "sha256": "531e72e367c253d2007149b08d602780b95072b509fee76ac40c24758e774842"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 2077,
+      "sha256": "346f190bd675f92a2538fc07f526997b319851b7f9f3c8942172eaf1d1fa5ad2"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/iso.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/iso.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/iso.tex",
+      "content_type": "text/plain",
+      "bytes": 10817,
+      "sha256": "1dac062acb83ae699657addb612f4ef71a1aa7f102b46a4a1adb1f90e7450bb9"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/milestone.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/milestone.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/milestone.tex",
+      "content_type": "text/plain",
+      "bytes": 2120,
+      "sha256": "51a5b101cb0d8e74c283798a0482fcf38c9f936674f6fd70e689b6c61d82e855"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/opps.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/opps.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/opps.tex",
+      "content_type": "text/plain",
+      "bytes": 6924,
+      "sha256": "c5acac1f962c99799ae603aa5b3b7ec32964995d73c9d456f337e4ef9db9b802"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/ordinals.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/ordinals.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/ordinals.tex",
+      "content_type": "text/plain",
+      "bytes": 394,
+      "sha256": "b43ccf6ba5ec04d0c6348dcad71f03ff4c66f2ce8f765d5e04f5083e1ea00f8c"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/ordtype.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/ordtype.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/ordtype.tex",
+      "content_type": "text/plain",
+      "bytes": 5700,
+      "sha256": "9cb173642436322906302fa343b07ce8152dafe515f2bc9fa3b8458d6c9863ca"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/replacement.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/replacement.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/replacement.tex",
+      "content_type": "text/plain",
+      "bytes": 6370,
+      "sha256": "7330ae092e871d7140c019f1b09d1f993614c50a65e129623321845e84c75eb8"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/vn.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/vn.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/vn.tex",
+      "content_type": "text/plain",
+      "bytes": 4885,
+      "sha256": "ac2d3d140393917cb188dcf9474cc60edb9a4e6f1b52d28d0f775aa0bef0221d"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/wo.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/wo.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/509f83936759afc96d3e62a214676909f452cb72/bn-Beng-IN/content/set-theory/ordinals/wo.tex",
+      "content_type": "text/plain",
+      "bytes": 4474,
+      "sha256": "f7333a896fd1f94a9ccd8a5143b1451cfe97d45cc7e407097c67657c273aa624"
+    }
+  ],
+  "changed_files_verified": 22,
+  "translated_tex_files_in_commit": 11,
+  "evidence_files_in_commit": 10,
+  "draft_translated_total": 556,
+  "draft_untranslated_total": 166,
+  "segments": 6068,
+  "translated_segments": 5157,
+  "new_batch_segments": 116,
+  "new_batch_translated_segments": 113,
+  "new_batch_unchanged_segments": 3,
+  "source_correction_records": 444,
+  "new_source_correction_records": 3,
+  "translation_decisions": 394,
+  "provisional_translation_decisions": 372,
+  "translation_decision_occurrences": 33592,
+  "decisions_with_exact_source_wording": 374,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 556,
+    "blocks": 6068,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7400,
+      "sha256": "11c5875117d36f6c38b5f5ae01e72af789fcb6a7e9b12bebdec2a7cd596f9500"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ordinals/basic.tex",
+      "bytes": 14191,
+      "sha256": "c8cfd3b94afd7557d3c3156834be6accc21ed251dbf93566113160da91fec5d7"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ordinals/idea.tex",
+      "bytes": 3507,
+      "sha256": "531e72e367c253d2007149b08d602780b95072b509fee76ac40c24758e774842"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ordinals/introduction.tex",
+      "bytes": 2077,
+      "sha256": "346f190bd675f92a2538fc07f526997b319851b7f9f3c8942172eaf1d1fa5ad2"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ordinals/iso.tex",
+      "bytes": 10817,
+      "sha256": "1dac062acb83ae699657addb612f4ef71a1aa7f102b46a4a1adb1f90e7450bb9"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ordinals/milestone.tex",
+      "bytes": 2120,
+      "sha256": "51a5b101cb0d8e74c283798a0482fcf38c9f936674f6fd70e689b6c61d82e855"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ordinals/opps.tex",
+      "bytes": 6924,
+      "sha256": "c5acac1f962c99799ae603aa5b3b7ec32964995d73c9d456f337e4ef9db9b802"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ordinals/ordinals.tex",
+      "bytes": 394,
+      "sha256": "b43ccf6ba5ec04d0c6348dcad71f03ff4c66f2ce8f765d5e04f5083e1ea00f8c"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ordinals/ordtype.tex",
+      "bytes": 5700,
+      "sha256": "9cb173642436322906302fa343b07ce8152dafe515f2bc9fa3b8458d6c9863ca"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ordinals/replacement.tex",
+      "bytes": 6370,
+      "sha256": "7330ae092e871d7140c019f1b09d1f993614c50a65e129623321845e84c75eb8"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ordinals/vn.tex",
+      "bytes": 4885,
+      "sha256": "ac2d3d140393917cb188dcf9474cc60edb9a4e6f1b52d28d0f775aa0bef0221d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/set-theory/ordinals/wo.tex",
+      "bytes": 4474,
+      "sha256": "f7333a896fd1f94a9ccd8a5143b1451cfe97d45cc7e407097c67657c273aa624"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 10085802,
+      "sha256": "f9ccd54ff7039dd08c52f1e388052a2435cbfd8969a1e9bb2071fb48725fa45a"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 342841,
+      "sha256": "28667246a245766c62a7b243a8f6d48a886274aed161335b3b7aa753e9db6929"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SET_THEORY_ORDINALS.md",
+      "bytes": 9533,
+      "sha256": "fd891e8e67f058c33d167d03cb79f04a12ca7d4001de0e11080133af5cc5906c"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 866405,
+      "sha256": "15b7b2ce6c3f1a306b0160bd0078b186c08129ff809d5378f27595a6d327c029"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 368162,
+      "sha256": "b97d5eb088a5170fd7a9e21c0d249b114a635a484e6c809197bc1a364c3d44b2"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 20238999,
+      "sha256": "30eaf773475417b049e1181d48be8bb9360c864818071b73ec4efba7ed12dadc"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 15826736,
+      "sha256": "899c952a26bd1c5a9f19abcb4b1bdfeb79f7cc327432b1ff0390ba5bf94e048f"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1531167,
+      "sha256": "19eec3c340e5e6e5d0fe76bf19cfec299fc965daee2869602c27a97cd1bfd325"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 9210138,
+      "sha256": "dc0ee9a01bbfaa6467efdf2c35e658c8a33415bd4d5a07329bba11435c8b0cb8"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 284739,
+      "sha256": "b42470ef87796aa29a764e5f13ab97ebf6d5ca79b6fd91fa28b3f54f18055a84"
+    }
+  ]
+}

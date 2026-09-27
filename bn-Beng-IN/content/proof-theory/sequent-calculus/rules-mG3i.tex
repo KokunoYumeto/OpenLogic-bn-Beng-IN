@@ -1,0 +1,102 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: rules-mG3i
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\begin{table}
+\begin{tabular}{@{}c@{}c@{}}
+\multicolumn{2}{@{}c@{}}{স্বতঃসিদ্ধ}\\[2ex]
+$!C, \Gamma \Sequent \Delta, !C$ & $\lfalse, \Gamma \Sequent \Delta$
+\\[2ex]
+\multicolumn{2}{@{}c@{}}{যৌক্তিক বিধি}\\[2ex]
+\Axiom$\lnot !A, \Gamma \fCenter \Delta, !A $
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !A, \Gamma \fCenter \Delta$
+\DisplayProof
+&
+\Axiom$!A, \Gamma \fCenter$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$ \Gamma \fCenter \Delta, \lnot !A $
+\DisplayProof
+\\[4ex]
+\Axiom$ !A, !B, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$ !A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+&
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$ \Gamma \fCenter \Delta, !B$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ \Gamma \fCenter \Delta, !A \land !B $
+\DisplayProof
+\\[4ex]\Axiom$!A, \Gamma \fCenter \Delta$
+\Axiom$!B, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$!A \lor !B, \Gamma \fCenter \Delta$
+\DisplayProof
+&
+\Axiom$\Gamma \fCenter \Delta, !A, !B$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A \lor !B$
+\DisplayProof
+\\[4ex]
+\Axiom$!A \lif !B, \Gamma \fCenter \Delta, !A$
+\Axiom$ !B, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!A \lif !B, \Gamma \fCenter \Delta$
+\DisplayProof
+&
+\Axiom$ !A, \Gamma \fCenter !B$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A \lif !B $
+\DisplayProof
+\\[4ex]
+\Axiom$ !A(t), \lforall[x][!A(x)], \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$ \lforall[x][!A(x)],\Gamma \fCenter \Delta$
+\DisplayProof
+&
+\Axiom$ \Gamma \fCenter !A(a) $
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$ \Gamma \fCenter \lforall[x][!A(x)]$
+\DisplayProof
+\\[4ex]
+\Axiom$ !A(a), \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$ \lexists[x][!A(x)], \Gamma \fCenter \Delta$
+\DisplayProof
+&
+\Axiom$ \Gamma \fCenter \Delta, \lexists[x][!A(x)], !A(t) $
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$ \Gamma \fCenter \Delta, \lexists[x][!A(x)]$
+\DisplayProof
+\end{tabular}
+\caption{স্বজ্ঞাবাদী যুক্তির বহু-উত্তরপক্ষবিশিষ্ট
+\Log{mG3i}-র বিধি।
+$\RightR{\lforall}$ ও $\LeftR{\lexists}$-এ
+!!{constant}~$a$
+সিদ্ধান্ত-সিকোয়েন্টে থাকতে পারবে না।
+$\Gamma$ ও $\Delta$
+হলো !!{formula}s-এর বহুসেট।
+স্বতঃসিদ্ধে !!{formula}~$!C$
+পরমাণবিক হতে হবে।
+\Log{mG1m} হলো
+$\lfalse, \Gamma \Sequent \Delta$
+স্বতঃসিদ্ধ বাদ দেওয়া
+\Log{mG1i}।}
+\ollabel{tab:mG3i}
+\end{table}
+% BN-SRC-664 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-664):} mG3i ফাইলের পরিচয়-মন্তব্য ও সারণি-লেবেলে উৎসে G3c লেখা; নিজস্ব mG3i ক্যাপশনের সঙ্গে মেলানো হয়েছে।}
+% BN-SRC-664 TARGET-CORRECTION-END
+% BN-SRC-665 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-665):} সর্বসূচক-বাঁ বিধির পূর্বধারণায় সর্বসূচক সূত্র ও \(\Gamma\)-র মাঝখানে বাদ-পড়া কমা ফিরিয়ে বহুসেটের সদস্য পৃথক করা হয়েছে।}
+% BN-SRC-665 TARGET-CORRECTION-END
+% BN-SRC-666 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-666):} ক্যাপশনের \(\forall,\exists\) কমান্ড সারণির \(\lforall,\lexists\) বিধিনামের সঙ্গে মেলানো হয়েছে; সতেজতা-শর্ত একই।}
+% BN-SRC-666 TARGET-CORRECTION-END
+
+\end{document}

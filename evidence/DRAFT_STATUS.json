@@ -20,8 +20,12 @@
       "model": "GPT-6 Sol",
       "effort": "Ultra"
     },
+    "current_batch_OLP_0613_0619": {
+      "model": "GPT-6 Sol",
+      "effort": "Ultra"
+    },
     "independent_human_review_claimed": false,
-    "reader_facing_notice_bn_Beng_IN": "অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনায় OpenAI Codex—GPT-5.6 Sol (Ultra) এবং GPT-6 Sol (Ultra) ব্যবহৃত হয়েছে। বর্তমান OLP-0606–0612 পর্ব GPT-6 Sol (Ultra)-এ করা। স্বাধীন মানব-পর্যালোচনা দাবি করা হচ্ছে না।"
+    "reader_facing_notice_bn_Beng_IN": "অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনায় OpenAI Codex—GPT-5.6 Sol (Ultra) এবং GPT-6 Sol (Ultra) ব্যবহৃত হয়েছে। বর্তমান OLP-0613–0619 পর্ব GPT-6 Sol (Ultra)-এ করা। স্বাধীন মানব-পর্যালোচনা দাবি করা হচ্ছে না।"
   },
   "source": {
     "authority": "OpenLogicProject/OpenLogic",
@@ -643,11 +647,18 @@
       "OLP-0610",
       "OLP-0611",
       "OLP-0612",
+      "OLP-0613",
+      "OLP-0614",
+      "OLP-0615",
+      "OLP-0616",
+      "OLP-0617",
+      "OLP-0618",
+      "OLP-0619",
       "OLP-0719",
       "OLP-0721"
     ],
-    "translated_count": 611,
-    "untranslated_count": 111,
+    "translated_count": 618,
+    "untranslated_count": 104,
     "chapter_state": "আগের পরীক্ষিত যুক্তিবিদ্যা, গণনযোগ্যতা ও সেটতত্ত্বের অধ্যায়গুলির সঙ্গে পদ্ধতি অংশের চালক এবং প্রমাণ অধ্যায়ের দশটি বিভাগ অনূদিত। অনুমানের রীতি, দুটি বিস্তৃত সেট-প্রমাণ, বিরোধাভাস, সংক্ষিপ্ত প্রমাণ পাঠ, শিক্ষার্থী-পরামর্শ ও অতিরিক্ত পাঠসামগ্রীর অর্থপর্যালোচনা হয়েছে। BN-SRC-477–482-এ ছয়টি উৎস-ত্রুটি সংশোধিত। আরও ১১১টি উৎস ইউনিট অনূদিত নয়।",
     "reader_state": "প্রকাশিত সমষ্টিগত HTML/EPUB পাঠকসংস্করণে ২৯৯টি ইউনিট আছে। বর্তমান পরীক্ষিত উৎস-খসড়ায় ৬১১টি, যার ৩১২টি ওই পাঠকে এখনো যুক্ত হয়নি। সর্বশেষ নামহীনভাবে যাচাইকৃত প্রকাশ্য উৎস-চেকপয়েন্ট ৬০৪টি ইউনিটের।"
   },
@@ -695,11 +706,11 @@
     "anonymous_public_readback": "All six GitHub and Zenodo assets matched byte-for-byte."
   },
   "last_verified_public_source_checkpoint": {
-    "commit": "3b73732683aa0bb5983f48ef16c3766a1458dc67",
-    "translated_units": 604,
-    "receipt": "PUBLIC_READBACK_SOURCE_604_2026-09-27.json",
-    "receipt_sha256": "a72613da3fbb66165ca158d1e459d4af7e341077359d93d3355eae1ea674572f",
-    "status": "নামহীন অপরিবর্তনীয় আর্কাইভ-পুনর্পাঠে ১৯টি পরিবর্তিত বস্তু, পাঁচটি কাঁচা অনুবাদ URL, ৬০৪ ইউনিট ও ৬,৬০১ ব্লকের কঠোর পরীক্ষা মিলেছে। পদ্ধতি/প্রমাণের প্রারম্ভিক পাঁচটি ফাইল প্রকাশিত; পাঠকসংস্করণ ২৯৯ ইউনিটেরই আছে।"
+    "commit": "4751d1b99aa9fca3e202401419368293da8bc1fa",
+    "translated_units": 611,
+    "receipt": "PUBLIC_READBACK_SOURCE_611_2026-09-27.json",
+    "receipt_sha256": "ca302969cc33061a815be6195382c220b85aedf3c34f443390637b37a84a05a1",
+    "status": "নামহীন অপরিবর্তনীয় আর্কাইভ-পুনর্পাঠে ১৯টি পরিবর্তিত বস্তু, সাতটি কাঁচা অনুবাদ URL, ৬১১ ইউনিট ও ৬,৭০১ ব্লকের কঠোর পরীক্ষা মিলেছে। পদ্ধতি/প্রমাণ অধ্যায় সম্পূর্ণ; পাঠকসংস্করণ ২৯৯ ইউনিটেরই আছে।"
   },
   "current_checks": {
     "unit_checks": [
@@ -10651,6 +10662,103 @@
         "target_sha256": "74a475990dda8a956140a5858897530c72fcf4c90b5c2613d1247923488ab769"
       },
       {
+        "unit_id": "OLP-0613",
+        "source_blocks": 8,
+        "target_blocks": 8,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "c75f9a5a90fadb2b48d01d09913171818afbdaa00454eebc3863d85bff9522dd"
+      },
+      {
+        "unit_id": "OLP-0614",
+        "source_blocks": 6,
+        "target_blocks": 6,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "debae0fdb3d3c824bbde7830ddb9a9676648ddb7bbefcd00ed7bc8bd23635900"
+      },
+      {
+        "unit_id": "OLP-0615",
+        "source_blocks": 14,
+        "target_blocks": 14,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-483"
+        ],
+        "tex_command_check": null,
+        "target_sha256": "df4be6b967bdfb489561dfe679ebd8e683ac95734cda82513fcd46a4a7f55a44"
+      },
+      {
+        "unit_id": "OLP-0616",
+        "source_blocks": 6,
+        "target_blocks": 6,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-484"
+        ],
+        "tex_command_check": null,
+        "target_sha256": "7b71be180c489d8860b137e4e1cafa003f9b97207a056bf8dae9e507e2f63e74"
+      },
+      {
+        "unit_id": "OLP-0617",
+        "source_blocks": 14,
+        "target_blocks": 14,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "1e2e664e72176c288dac157af33097562e992d999f3ba3287d1839a3f9806e0b"
+      },
+      {
+        "unit_id": "OLP-0618",
+        "source_blocks": 11,
+        "target_blocks": 11,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [
+          "BN-SRC-485"
+        ],
+        "tex_command_check": null,
+        "target_sha256": "ebc2a5fdcbfa289a0ecf1f71837b7184a5194a9dfa8fba637215ffa35011e3ed"
+      },
+      {
+        "unit_id": "OLP-0619",
+        "source_blocks": 19,
+        "target_blocks": 19,
+        "math_parity": true,
+        "controls_parity": true,
+        "env_parity": true,
+        "token_parity": true,
+        "unicode_nfc": true,
+        "documented_source_corrections": [],
+        "tex_command_check": null,
+        "target_sha256": "6835584849cb0915fb5c6753f24d4e4c011d1d6a4a80889222a02e2d85844eda"
+      },
+      {
         "unit_id": "OLP-0719",
         "source_blocks": 9,
         "target_blocks": 9,
@@ -10679,12 +10787,12 @@
     ],
     "validator": {
       "path": "tools/check_source_draft.py",
-      "sha256": "c0bc9a939f8e3a7e08b66a0bf73d790b08211775b5e699000d0862b978419262"
+      "sha256": "198e4e9bd49cfd9dd5c374bff6fb8e0aad9fda6386fd192157e5ec81e31f2e5d"
     },
-    "segments": 6701,
-    "translated_segments": 5762,
+    "segments": 6779,
+    "translated_segments": 5827,
     "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "0e4a0cbed72b29d68e8c25aeaec4545c94eaa8af4e19d34dba946b49ce76b7f4",
+    "segment_index_sha256": "cba123fe538e6965db6dd50a837dfca86b1b534dcd2c4c0ae8110c2444627dd6",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -10993,6 +11101,10 @@
       {
         "path": "evidence/SEMANTIC_REVIEW_METHODS_PROOFS_COMPLETION.md",
         "sha256": "23a8fcba179ca7aaa97804bdf2e223044c6f506241feca1484d513829d801fe6"
+      },
+      {
+        "path": "evidence/SEMANTIC_REVIEW_METHODS_INDUCTION.md",
+        "sha256": "3eb38aa72ea0fbb87e1206b430bbbc7e8137cd6b9fe8de6b34e63cbed9e73a71"
       }
     ],
     "shared_source_audit": {
@@ -11007,7 +11119,7 @@
       "review_path": "evidence/SOURCE_AUDIT_OLSIZ_REVIEW.md",
       "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
       "reconciliation_path": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
-      "reconciliation_sha256": "bdd4fc73ea63d7bdefaca9d241062760b861ef0d94effdb9a35c38c2069b0b0d",
+      "reconciliation_sha256": "d3139e9854cb57685f7b5b01308d0f75295e4af00ab78997361763542bd0c694",
       "supplement_011_path": "evidence/SOURCE_AUDIT_OLSIZ_SUPPLEMENT_011.json",
       "supplement_011_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
       "supplement_011_disposition_path": "evidence/SOURCE_AUDIT_OLSIZ_011_DISPOSITION.json",
@@ -11025,9 +11137,9 @@
     }
   },
   "source_corrections": {
-    "count": 489,
+    "count": 492,
     "path": "evidence/SOURCE_CORRECTIONS.jsonl",
-    "sha256": "039266f6295396a6fb0790588c81fc388bf73658f7e54be6b134ef31820ef6fd",
+    "sha256": "3a14907fba26b6ccb5a4cc19807dd323f3f65af082ee487897d899d7f50f9e19",
     "finding_ids": [
       "OLFUN-001",
       "OLFUN-002",
@@ -11517,7 +11629,10 @@
       "BN-SRC-479",
       "BN-SRC-480",
       "BN-SRC-481",
-      "BN-SRC-482"
+      "BN-SRC-482",
+      "BN-SRC-483",
+      "BN-SRC-484",
+      "BN-SRC-485"
     ]
   },
   "source_normalizations": {
@@ -11537,15 +11652,15 @@
     "classification": "render-equivalent TikZ endpoint normalizations; no mathematical or rendered-machine correction"
   },
   "translation_decisions": {
-    "count": 423,
-    "provisional_open": 401,
+    "count": 425,
+    "provisional_open": 403,
     "path": "evidence/TRANSLATION_DECISION_LOG.jsonl",
-    "sha256": "3706e9faa3eb4ce8dcdf8df24055fbbadcc83cc26c5659b5fdebad42f6b54d95",
+    "sha256": "53e38a61fffc908d9dd726e9f8999edfb152292d27e4edc53ec26da752e33a5a",
     "summary_path": "evidence/TRANSLATION_DECISION_LOG.md",
     "priority_path": "evidence/TRANSLATION_DECISION_PRIORITY.md",
     "occurrences_csv_path": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
-    "occurrence_count": 37843,
+    "occurrence_count": 38316,
     "occurrence_schema": "openlogic-bn-translation-decision/3",
     "occurrence_join": "Join source_segment_id to evidence/DRAFT_SEGMENT_CANON_USE.jsonl for exact source and target paths, block spans and SHA-256; read the frozen source block and verify its hash for exact wording.",
     "layout_readback": {

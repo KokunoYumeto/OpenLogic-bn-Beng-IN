@@ -1,0 +1,194 @@
+% Part: methods
+% Chapter: induction
+% Section: relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{ind}{rel}
+
+\olsection{সম্বন্ধ ও অপেক্ষক}
+
+কোনো বস্তুসমষ্টি (যেমন স্বাভাবিক সংখ্যা বা সুগঠিত পদ)
+আরোহীভাবে সংজ্ঞায়িত হলে সেই বস্তুগুলির \emph{উপর সম্বন্ধও}
+আরোহীভাবে সংজ্ঞায়িত করা যায়। যেমন, সুগঠিত পদ~$t_1$
+আরেক সুগঠিত পদ~$t_2$-এর অংশ হিসেবে থাকলে প্রথমটিকে
+দ্বিতীয়টির উপপদ বলি। এর প্রতীক নিই: $t_1 \sqsubseteq t_2$।
+প্রত্যেক সুগঠিত পদ নিজেরই উপপদ: $t \sqsubseteq t$।
+সম্বন্ধটির আরোহী সংজ্ঞা দিতে পারি এভাবে:
+
+\begin{defn}
+  সুগঠিত পদ~$t_1$ যে~$t_2$-এর উপপদ, সেই সম্বন্ধ
+  $t_1 \sqsubseteq t_2$-কে~$t_2$-এর উপর আরোহে
+  নিচের মতো সংজ্ঞায়িত করি:
+  \begin{enumerate}
+  \item $t_2$ একটি অক্ষর হলে $t_1 \sqsubseteq t_2$
+    যদি এবং কেবল যদি $t_1 = t_2$।
+  \item $t_2$ যদি $[s_1 \circ s_2]$ হয়, তবে
+    $t_1 \sqsubseteq t_2$ যদি এবং কেবল যদি $t_1 =
+    t_2$, $t_1 \sqsubseteq s_1$, অথবা $t_1 \sqsubseteq s_2$।
+  \end{enumerate}
+\end{defn}
+
+এই সংজ্ঞা থেকে, যেমন, $\mathrm{a}
+\sqsubseteq [\mathrm{b} \circ \mathrm{a}]$ পাই। কারণ
+(2) অনুসারে $\mathrm{a} \sqsubseteq [\mathrm{b} \circ
+\mathrm{a}]$ যদি এবং কেবল যদি $\mathrm{a}
+= [\mathrm{b} \circ \mathrm{a}]$, অথবা $\mathrm{a}
+\sqsubseteq b$, অথবা $\mathrm{a} \sqsubseteq \mathrm{a}$।
+প্রথম দুটি মিথ্যা: $\mathrm{a}$ স্পষ্টতই $[\mathrm{b}
+\circ \mathrm{a}]$-এর সমান নয়, আর (1) অনুসারে
+$\mathrm{a} \sqsubseteq \mathrm{b}$ যদি এবং কেবল যদি
+$\mathrm{a} = \mathrm{b}$—এটিও মিথ্যা। কিন্তু (1) অনুসারেই
+$\mathrm{a} \sqsubseteq \mathrm{a}$ যদি এবং কেবল যদি
+$\mathrm{a} = \mathrm{a}$, যা সত্য।
+
+এই সংজ্ঞার সার্থকতা একটি এখনো অপ্রমাণিত বিষয়ের উপর
+নির্ভর করছে: প্রত্যেক সুগঠিত পদ~$t$ হয় একক অক্ষর,
+নয়তো \emph{এককভাবে নির্ধারিত} সুগঠিত পদ $s_1$ ও $s_2$
+আছে যাতে $t = [s_1 \circ s_2]$। ``এককভাবে নির্ধারিত''
+মানে, $t = [s_1 \circ s_2]$ হলে একই সঙ্গে
+$= [r_1 \circ r_2]$ হতে পারে না, যেখানে $s_1 \neq r_1$
+অথবা $s_2 \neq r_2$। তা সম্ভব হলে (2) নম্বর দফা
+নিজের সঙ্গেই বিরোধে পড়তে পারে: $t_2$-কে
+$[s_1 \circ s_2]$ হিসেবে পড়লে হয়তো $t_1
+\sqsubseteq t_2$ পাব, কিন্তু $t_2$-কে $[r_1 \circ r_2]$
+হিসেবে পড়লে হয়তো $t_1 \sqsubseteq t_2$ নয়।
+এমনটি যে ঘটতে পারে না তা প্রমাণের আগে, যেখানে
+\emph{ঘটতে পারে} এমন একটি উদাহরণ দেখি।
+
+\begin{defn}
+  \emph{বন্ধনীহীন পদ} আরোহীভাবে সংজ্ঞায়িত করি:
+  \begin{enumerate}
+  \item প্রতিটি অক্ষর একটি বন্ধনীহীন পদ।
+    \item $s_1$ ও $s_2$ বন্ধনীহীন পদ হলে $s_1 \circ s_2$-ও
+      বন্ধনীহীন পদ।
+    \item আর কিছু বন্ধনীহীন পদ নয়।
+  \end{enumerate}
+\end{defn}
+
+বন্ধনীহীন পদের উদাহরণ $\mathrm{a}$, $\mathrm{b} \circ
+\mathrm{d}$, $\mathrm{b} \circ \mathrm{a} \circ \mathrm{b}$।
+এগুলির জন্য উপপদকে আগের মতো সংজ্ঞায়িত করলে দ্বিতীয়
+দফাটি হবে:
+\begin{center}
+  $t_2 = s_1 \circ s_2$ হলে $t_1 \sqsubseteq t_2$
+  যদি এবং কেবল যদি $t_1 = t_2$, $t_1
+  \sqsubseteq s_1$, অথবা $t_1 \sqsubseteq s_2$।
+\end{center}
+
+এখন $\mathrm{b} \circ \mathrm{a} \circ \mathrm{b}$-কে
+$s_1 \circ s_2$ আকারে লেখা যায়, যেখানে
+\begin{align*}
+  s_1 & = \mathrm{b} \text{ এবং} & s_2 & = \mathrm{a} \circ \mathrm{b}.
+\intertext{আবার $r_1 \circ r_2$ আকারেও লেখা যায়, যেখানে}
+  r_1 & = \mathrm{b} \circ \mathrm{a} \text{ এবং} & r_2 &= \mathrm{b}.
+\end{align*}
+তাহলে $\mathrm{a} \circ \mathrm{b}$ কি $\mathrm{b} \circ
+\mathrm{a} \circ \mathrm{b}$-এর উপপদ? প্রথম পাঠে হ্যাঁ;
+দ্বিতীয় পাঠে না।
+
+সুগঠিত পদ অন্য সুগঠিত পদগুলি থেকে একটিই গঠনে তৈরি
+হয়—এই ধর্মের নাম \emph{একক পাঠযোগ্যতা}। এ ধরনের
+আরোহীভাবে সংজ্ঞায়িত বস্তুর উপর সম্বন্ধের আরোহী সংজ্ঞা
+গুরুত্বপূর্ণ বলে ধর্মটি প্রমাণ করতে হবে।
+
+\begin{prop}
+  ধরা যাক, $t$ একটি সুগঠিত পদ। তাহলে হয় $t$ একক
+  অক্ষর, নয়তো এককভাবে নির্ধারিত সুগঠিত পদ $s_1$, $s_2$
+  আছে যাতে~$t = [s_1 \circ s_2]$।
+\end{prop}
+
+\begin{proof}
+  $t$ একক অক্ষর হলে শর্তটি পূরণ হয়। তাই ধরি $t$
+  একক অক্ষর নয়। আরোহী সংজ্ঞা বলে, তখন কোনো সুগঠিত
+  পদ $s_1$ ও~$s_2$ দিয়ে $t$ অবশ্যই
+  $[s_1 \circ s_2]$ আকারের। এরা এককভাবে নির্ধারিত
+  কি না, তা দেখানো বাকি: $t = [r_1 \circ r_2]$ হলে
+  $s_1 = r_1$ এবং $s_2 = r_2$ দেখাতে হবে।
+
+  ধরা যাক, সুগঠিত পদ $s_1$, $s_2$, $r_1$, $r_2$-এর
+  জন্য $t = [s_1 \circ s_2]$ এবং $t = [r_1 \circ r_2]$।
+  দেখাতে হবে $s_1 = r_1$ এবং $s_2 = r_2$। প্রথমে,
+  $s_1$ ও $r_1$ অভিন্ন হতেই হবে; নইলে একটির প্রকৃত
+  প্রারম্ভিক খণ্ড হবে অন্যটি। কিন্তু \olref[sti]{prop:initial}
+  অনুসারে $s_1$ ও~$r_1$ উভয়ই সুগঠিত পদ হলে তা
+  অসম্ভব। আর $s_1 = r_1$ হলে স্পষ্টতই $s_2 = r_2$।
+\end{proof}
+
+অপেক্ষকও আরোহীভাবে সংজ্ঞায়িত করা যায়। যেমন, যেকোনো
+সুগঠিত পদে অন্তর্নিহিত $[\dots]$-এর সর্বাধিক গভীরতা
+নির্ণায়ক অপেক্ষক~$f$-কে নিচের মতো সংজ্ঞায়িত করি:
+
+\begin{defn}
+  \ollabel{defn:depth} সুগঠিত পদের \emph{গভীরতা},
+  $f(t)$, আরোহীভাবে সংজ্ঞায়িত:
+  \[
+  f(t) = \begin{cases}
+    0 & \text{ যখন $t$ একটি অক্ষর}\\
+    \max(f(s_1), f(s_2)) + 1 & \text{ যখন $t = [s_1 \circ s_2]$।}
+  \end{cases}
+  \]
+\end{defn}
+
+যেমন,
+\begin{align*}
+  f([\mathrm{a} \circ \mathrm{b}]) & =
+    \max(f(\mathrm{a}),f(\mathrm{b})) + 1 = \\
+  &= \max(0, 0) + 1 = 1, \text{ এবং}\\
+  f([[\mathrm{a} \circ \mathrm{b}] \circ \mathrm{c}]) & =
+    \max(f([\mathrm{a} \circ \mathrm{b}]), f(\mathrm{c})) + 1 = \\
+  & = \max(1,0) + 1 = 2.
+\end{align*}
+
+এখানে অবশ্যই $s_1$ ও $s_2$ সুগঠিত পদ ধরে নিচ্ছি এবং
+প্রত্যেক সুগঠিত পদ হয় একক অক্ষর, নয়তো
+$[s_1 \circ s_2]$ আকারের—এই তথ্য ব্যবহার করছি।
+পদটি যে এই আকারে কেবল একভাবেই লেখা যায়, তাও
+গুরুত্বপূর্ণ। কেন, বুঝতে আগের বন্ধনীহীন পদগুলি আবার
+দেখি। সেগুলির অনুরূপ ``সংজ্ঞা'' হবে:
+\[
+  g(t) =
+  \begin{cases}
+    0 & \text{ যখন $t$ একটি অক্ষর}\\
+   \max(g(s_1), g(s_2)) + 1 & \text{ যখন $t = s_1 \circ s_2$।}
+  \end{cases}
+\]
+এবার বন্ধনীহীন পদ $\mathrm{a} \circ \mathrm{b} \circ
+\mathrm{c} \circ \mathrm{d}$ দেখো। একাধিকভাবে পড়া যায়;
+যেমন $s_1 \circ s_2$ আকারে, যেখানে
+\begin{align*}
+  s_1 & = \mathrm{a} \text{ এবং} &
+  s_2 & = \mathrm{b} \circ \mathrm{c} \circ \mathrm{d},
+\intertext{অথবা $r_1 \circ r_2$ আকারে, যেখানে}
+  r_1 & = \mathrm{a} \circ b \text{ এবং} &
+  r_2 &= \mathrm{c} \circ \mathrm{d}.
+\end{align*}
+প্রথম পাঠে $g$ হিসাব করলে পাই:
+\begin{align*}
+  g(s_1 \circ s_2) & =
+  \max(g(\mathrm{a}), g(\mathrm{b} \circ \mathrm{c} \circ \mathrm{d})) + 1 =\\ & =
+  \max(0,2) + 1 = 3
+  \intertext{অন্য পাঠে পাই}
+  g(r_1 \circ r_2) & =
+  \max(g(\mathrm{a} \circ \mathrm{b}), g(\mathrm{c} \circ \mathrm{d})) + 1=\\ &
+  = \max(1,1) + 1 = 2
+\end{align*}
+কিন্তু একটি অপেক্ষককে সব সময় একটি নির্দিষ্ট মান দিতে
+হয়। তাই~$g$-র এই ``সংজ্ঞা'' আদৌ অপেক্ষক সংজ্ঞায়িত
+করে না।
+
+\begin{prob}
+  অপেক্ষক $l$-এর আরোহী সংজ্ঞা দাও, যেখানে $l(t)$
+  হলো সুগঠিত পদ~$t$-এ প্রতীকের সংখ্যা।
+\end{prob}
+
+\begin{prob}
+  সুগঠিত পদ $t$-এর উপর গঠনগত আরোহে প্রমাণ করো
+  $f(t) < l(t)$ (এখানে $l(t)$ হলো~$t$-এ প্রতীকের সংখ্যা,
+  আর $f(t)$ হলো \olref[mth][ind][rel]{defn:depth}-এ
+  সংজ্ঞায়িত~$t$-এর গভীরতা)।
+\end{prob}
+
+\end{document}

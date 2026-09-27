@@ -5928,6 +5928,18 @@ for row in rows:
             r"A\subseteqA\cap(A\cupB)": 1,
         })
     )
+    methods_induction_step_variable_fix = (
+        row["unit_id"] == "OLP-0615"
+        and set(documented) == {"BN-SRC-483"}
+        and source_math - target_math == collections.Counter({"n": 1})
+        and target_math - source_math == collections.Counter({"k": 1})
+    )
+    methods_strong_induction_vacuity_fix = (
+        row["unit_id"] == "OLP-0616"
+        and set(documented) == {"BN-SRC-484"}
+        and source_math - target_math == collections.Counter({"P(0)": 1})
+        and target_math - source_math == collections.Counter({"P(l)": 1})
+    )
     math_ok = any(
         (
             source_math == target_math,
@@ -6048,6 +6060,8 @@ for row in rows:
             methods_example_two_parenthesis_fix,
             methods_contradiction_wrong_set_fix,
             methods_reading_proofs_two_repairs,
+            methods_induction_step_variable_fix,
+            methods_strong_induction_vacuity_fix,
         )
     )
     minimal_change_fileid_fix = (

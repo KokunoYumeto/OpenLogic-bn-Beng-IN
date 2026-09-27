@@ -1,0 +1,15 @@
+{
+  "schema": "openlogic-bn-source-model-provenance/1",
+  "scope": "OLP-0656–OLP-0718 এবং OLP-0001–0003, OLP-0720, OLP-0722-এর পরবর্তী স্থানীয় অনুবাদ/সংশোধন ও স্বয়ংক্রিয় পর্যালোচনা",
+  "task_id": "01a06ccd-16bd-7573-8c04-f1093c74a168",
+  "evidence_kind": "নিজস্ব কাজের প্রাথমিক turn_context মেটাডেটা; অন্য কোনো কাজের বার্তা বা মডেল-অনুমান নয়",
+  "interval_start": "2026-09-27T08:41:16Z",
+  "first_context": "2026-09-27T08:46:32.852Z",
+  "last_context": "2026-09-27T22:54:02.685Z",
+  "observed_context_count": 24,
+  "observed_model_effort_pairs": [
+    {"model": "gpt-6-sol", "effort": "ultra"}
+  ],
+  "human_readable": "এই পর্বের অনুবাদ, সংশোধন ও স্বয়ংক্রিয় অর্থপর্যালোচনা OpenAI Codex — GPT-6 Sol, Ultra effort-এ করা হয়েছে। আগের প্রকাশিত পর্বে GPT-5.6 Sol ও GPT-6 Sol-এর পৃথক ব্যবহার পূর্বের নথিতে আছে। স্বাধীন মানব-পর্যালোচনা দাবি করা হচ্ছে না।",
+  "privacy": "পূর্ণ কথোপকথন, স্থানীয় ব্যবহারকারী-পথ, ব্যক্তিগত নাম বা প্রমাণীকরণ-তথ্য প্রকাশ করা হয়নি।"
+}

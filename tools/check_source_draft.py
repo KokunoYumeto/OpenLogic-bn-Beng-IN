@@ -6995,6 +6995,20 @@ for row in rows:
             and not normalizations
             and mathparts(audited_mg3i) == target_math
         )
+    legacy_sequent_rules_proofs_repairs = False
+    if row["unit_id"] == "OLP-0711":
+        audited_rules_proofs = source
+        for old, new in (
+            (r"$!E, !D \Sequent !D$", r"$!E, !D \Sequent !E$"),
+            (r"\Proves[4]", r"\Proves[2]"),
+        ):
+            assert audited_rules_proofs.count(old) == 1, old
+            audited_rules_proofs = audited_rules_proofs.replace(old, new, 1)
+        legacy_sequent_rules_proofs_repairs = (
+            set(documented) == {"BN-SRC-667", "BN-SRC-668", "BN-SRC-669"}
+            and not normalizations
+            and mathparts(audited_rules_proofs) == target_math
+        )
     math_ok = any(
         (
             source_math == target_math,
@@ -7163,6 +7177,7 @@ for row in rows:
             legacy_g3i_rule_table_repairs,
             legacy_lk_caption_repairs,
             legacy_mg3i_rule_table_repairs,
+            legacy_sequent_rules_proofs_repairs,
         )
     )
     minimal_change_fileid_fix = (
@@ -7589,6 +7604,16 @@ for row in rows:
         tex_command_check = {
             "documented_source_corrections": ["BN-SRC-664", "BN-SRC-665", "BN-SRC-666"],
             "mg3i_multisuccedent_rules_and_identity": True,
+        }
+    if row["unit_id"] == "OLP-0711":
+        assert legacy_sequent_rules_proofs_repairs
+        assert checked_target.count(r"$!E, !D \Sequent !E$") == 1
+        assert "অনুমানবিধি প্রয়োগের সর্বাধিক সংখ্যা" in checked_target
+        assert checked_target.count(r"\Proves[2]") == 1
+        assert checked_target.count(r"\pheight{\pi_4} = 2") == 1
+        tex_command_check = {
+            "documented_source_corrections": ["BN-SRC-667", "BN-SRC-668", "BN-SRC-669"],
+            "multiset_identity_and_proof_height_example": True,
         }
     checks = {
         "unit_id": row["unit_id"],

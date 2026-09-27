@@ -1,0 +1,235 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: rules-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{rp}
+
+\olsection{বিধি ও \usetoken{P}{proof}}
+
+প্রথমে কয়েকটি সংজ্ঞা দিই এবং কিছু পরিভাষা স্থির করি।
+
+উদাহরণ হিসেবে \Log{G3c}-র এই দুটি বিধি দেখি। এগুলির সাহায্যে
+$!A$ ও $!B$-যুক্ত সিকোয়েন্ট থেকে $!A \land !B$-যুক্ত
+সিকোয়েন্ট !!{proving} করা যায়:
+\[
+\Axiom$ !A, !B, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$ !A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\qquad
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$ \Gamma \fCenter \Delta, !B$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ \Gamma \fCenter \Delta, !A \land !B $
+\DisplayProof
+\]
+রেখার উপরের সিকোয়েন্টগুলিকে \emph{পূর্বধারণা} এবং রেখার
+নিচের সিকোয়েন্টটিকে \emph{সিদ্ধান্ত} বলা হয়। প্রতিটি বিধিতে
+$\Gamma$ ও $\Delta$-তে থাকা !!{formula}s-কে \emph{প্রসঙ্গ}
+বা \emph{পার্শ্ব !!{formula}s} বলা হয়। সিদ্ধান্তের যে
+!!{formula} প্রসঙ্গের অংশ নয়, সেটিই \emph{প্রধান}
+!!{formula}; পূর্বধারণায় প্রসঙ্গের বাইরে থাকা !!{formula}s
+হলো \emph{সক্রিয়} (বা \emph{সহায়ক}) !!{formula}s।
+
+পরিমাণসূচকের বিধিগুলি একটু বেশি জটিল। যেমন,
+\Log{G1c}-তে $\lforall$-এর বিধি দুটি হলো:
+\[\Axiom$ !A(t), \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$ \lforall[x][!A(x)],\Gamma \fCenter \Delta$
+\DisplayProof
+\qquad
+\Axiom$ \Gamma \fCenter \Delta, !A(a) $
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$ \Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+\DisplayProof
+\]
+\LeftR{\lforall} বিধিতে সক্রিয় !!{formula} হলো $!A(t)$;
+এখানে $t$ একটি বদ্ধ পদ, অর্থাৎ চলরাশিহীন পদ। এই অনুমান
+সঠিক, অর্থাৎ \LeftR{\lforall}-এর বিধি-ছকের সঙ্গে মেলে,
+যদি এমন একটি !!{formula}~$!A$, একটি চলরাশি~$x$ এবং
+একটি বদ্ধ পদ~$t$ থাকে যাতে সিদ্ধান্তের প্রধান
+!!{formula} হয় $\lforall[x][!A]$ আর পূর্বধারণার সক্রিয়
+!!{formula} হয় $\Subst{!A}{t}{x}$। \RightR{\lforall}
+বিধিও একইভাবে কাজ করে; তবে সেখানে যেকোনো পদ~$t$-এর
+বদলে পূর্বধারণার সক্রিয় !!{formula} হতে হবে
+$\Subst{!A}{a}{x}$, যেখানে $a$ হলো !!a{constant}।
+এই ধ্রুবককে \RightR{\lforall} অনুমানের \emph{আইগেনচল}
+বলা হয়। নিচের সিকোয়েন্টে $a$ না থাকলেই অনুমানটি
+সঠিক; অর্থাৎ $a$ যেন $\Gamma$, $\Delta$ বা $!A$-তে
+না থাকে। একে \emph{আইগেনচল-শর্ত} বলা হয়।
+
+\Log{G1c} ও \Log{G3c}-র মতো সিকোয়েন্ট-পদ্ধতিতে
+এই রকম ছক-নির্দিষ্ট বিধির সমষ্টি এবং স্বতঃসিদ্ধ হিসেবে
+গণ্য কয়েকটি ছক-নির্দিষ্ট সিকোয়েন্ট থাকে। এমন পদ্ধতির
+!!^{proof}s হলো সিকোয়েন্টের সসীম বৃক্ষ, যা স্বতঃসিদ্ধ
+থেকে অনুমানবিধি প্রয়োগ করে আরোহীভাবে গঠিত হয়।
+প্রতিটি পাতা একটি স্বতঃসিদ্ধ; অন্য প্রতিটি সিকোয়েন্ট
+তার অব্যবহিত উপরের সিকোয়েন্টগুলি থেকে পদ্ধতির
+কোনো অনুমানবিধি অনুযায়ী আসে।
+
+\begin{defn}\ollabel{defn:proof}
+সিকোয়েন্ট-পদ্ধতির \emph{!!^{proof}s} হলো নিচের
+আরোহী সংজ্ঞায় নির্ধারিত সিকোয়েন্টের সসীম বৃক্ষ:
+\begin{enumerate}
+  \item\ollabel{defn:prf:axiom} প্রতিটি স্বতঃসিদ্ধ !!a{proof}।
+  \item\ollabel{defn:prf:one-prem} যদি $\pi_1$ হয়
+  $S_1$ সিকোয়েন্টে শেষ হওয়া !!a{proof}, আর $S$ হয়
+  এক-পূর্বধারণার $R$ বিধিতে $S_1$ থেকে পাওয়া
+  সিকোয়েন্ট, তবে
+  \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \DeduceC{$S_1$}
+    \RightLabel{$R$}
+    \UnaryInfC{$S$}
+    \DisplayProof
+    \]
+  একটি !!a{proof}।
+  \item\ollabel{defn:prf:two-prem} যদি $\pi_1$ ও
+  $\pi_2$ হয় যথাক্রমে $S_1$ ও $S_2$ সিকোয়েন্টে
+  শেষ হওয়া !!{proof}s, আর $S$ হয় দুই-পূর্বধারণার
+  $R$ বিধিতে $S_1$ ও $S_2$ থেকে পাওয়া সিকোয়েন্ট,
+  তবে
+  \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \DeduceC{$S_1$}
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \DeduceC{$S_2$}
+    \RightLabel{$R$}
+    \BinaryInfC{$S$}
+    \DisplayProof
+    \]
+  একটি !!a{proof}।
+\end{enumerate}
+\end{defn}
+
+\Olref{defn:proof}-এ !!{proof}s-কে সিকোয়েন্টের
+বৃক্ষ হিসেবে সংজ্ঞায়িত করা হয়েছে। আমরা বৃক্ষগুলিকে
+“উপরের দিকে” বাড়তে দেখি। সর্বোচ্চ পাতার নোডগুলি
+স্বতঃসিদ্ধ; এদের \emph{প্রারম্ভিক সিকোয়েন্ট} বলা হয়।
+সবচেয়ে নিচের সিকোয়েন্টটি হলো \emph{অন্তিম সিকোয়েন্ট}।
+$\pi$ যদি অন্তিম সিকোয়েন্ট~$S$-বিশিষ্ট !!a{proof} হয়,
+তবে $\pi \Proves S$-ও লিখি। $S$ সিকোয়েন্টের
+!!a{proof} থাকলে $\Proves S$ লিখি; প্রমাণটি যে
+পদ্ধতিতে আছে, প্রয়োজনে তা $\Proves$ চিহ্নের বাঁয়ে
+দেখাই, যেমন $\Log{G1c} \Proves !A, !B \Sequent !A \land
+!B$। প্রারম্ভিক সিকোয়েন্ট ছাড়া !!a{proof}-এর
+প্রতিটি সিকোয়েন্ট কোনো $R$ বিধিতে করা অনুমানের
+\emph{সিদ্ধান্ত}। !!a{proof}-এ কোনো সিকোয়েন্টের অব্যবহিত উপরের
+এক বা দুটি সিকোয়েন্ট, অর্থাৎ ওই নোডের পূর্বসূরি,
+সেই অনুমানের \emph{পূর্বধারণা}।
+
+!!a{proof}-এর আরোহী নির্মাণে ব্যবহৃত
+!!{proof}s-কে তার \emph{উপ-!!{proof}s} বলা হয়।
+কোনো অনুমানের পূর্বধারণায় শেষ হওয়া
+উপ-!!{proof}s হলো সেই অনুমানের
+\emph{অব্যবহিত উপ-!!{proof}s}।
+
+অনেক সময় !!{proof}s-এর জটিলতা স্বাভাবিক
+সংখ্যায় মাপতে হয়। !!a{proof}-এ সিকোয়েন্টের
+সংখ্যা গুনতে পারি; কিন্তু প্রায়ই আরও উপযোগী মাপ
+হলো !!a{proof}-এর !!{height}: অন্তিম সিকোয়েন্ট
+থেকে প্রারম্ভিক সিকোয়েন্ট পর্যন্ত কোনো শাখায়
+অনুমানবিধি প্রয়োগের সর্বাধিক সংখ্যা।
+এটি আরোহীভাবেও সংজ্ঞায়িত করা যায়।
+
+\begin{defn}
+!!a{proof}~$\pi$-এর \emph{!!{height}}~$\pheight{\pi}$
+নিচের মতো আরোহীভাবে সংজ্ঞায়িত:
+\begin{enumerate}
+  \item $\pi$ শুধু একটি স্বতঃসিদ্ধ নিয়ে গঠিত হলে
+  $\pheight{\pi} = 0$।
+  \item $\pi$-র শেষ অনুমানের একটি পূর্বধারণা এবং
+  অব্যবহিত উপ-!!{proof}~$\pi_1$ থাকলে
+  $\pheight{\pi} = \pheight{\pi_1} + 1$।
+  \item $\pi$-র শেষ অনুমানের দুটি পূর্বধারণা এবং
+  অব্যবহিত উপ-!!{proof}s~$\pi_1$ ও~$\pi_2$ থাকলে
+  $\pheight{\pi} =
+  \max(\pheight{\pi_1}, \pheight{\pi_2}) + 1$।
+\end{enumerate}
+যদি $S$ সিকোয়েন্টের এমন !!a{proof} থাকে
+যার উচ্চতা $\le n$, তবে $\Proves[n] S$ লিখি।
+\end{defn}
+
+\begin{ex}
+\Log{G3c}-তে $!C, \Gamma \Sequent \Delta, !C$
+রূপের প্রতিটি সিকোয়েন্ট স্বতঃসিদ্ধ, যেখানে
+$!C$ পরমাণবিক হতে হবে। ধরা যাক $!D$ ও $!E$
+পরমাণবিক বাক্য। তবে $!D, !E \Sequent !D$ এবং
+$!D, !E \Sequent !E$ উভয়ই
+$!C, \Gamma \Sequent \Delta, !C$
+স্বতঃসিদ্ধের দৃষ্টান্ত। যেমন,
+$!C \ident !E$, $\Gamma = \{!D\}$ ও
+$\Delta = \emptyset$-কে
+$!C, \Gamma \Sequent \Delta, !C$ স্বতঃসিদ্ধে
+বসালে ঠিক
+$!D, !E \Sequent !E$ সিকোয়েন্টটি পাই।
+(মনে রাখতে হবে, এখানে বহুসেট নিয়ে কাজ করছি;
+তাই $!D, !E \Sequent !E$ ও
+$!E, !D \Sequent !E$ একই সিকোয়েন্ট।)
+
+$!D, !E \Sequent !D$ হলো \Log{G3c}-র
+একটি স্বতঃসিদ্ধের দৃষ্টান্ত; তাই এটি নিজেই
+\Log{G3c}-তে !!a{proof}। একইভাবে
+$!D, !E \Sequent !E$-ও
+\olref{defn:proof}\olref{defn:prf:axiom}
+অনুযায়ী আরেকটি প্রমাণ। এদের যথাক্রমে
+$\pi_1$ ও $\pi_2$ বলি।
+\olref{defn:prf:two-prem} অনুযায়ী এই দুটি
+!!{proof}s ও দুই-পূর্বধারণার
+$\RightR{\land}$ বিধি থেকে নতুন
+প্রমাণ~$\pi_3$ পাই:
+\[
+\Axiom$!D, !E \fCenter !D$
+\Axiom$!D, !E \fCenter !E$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!D, !E  \fCenter !D \land !E $
+\DisplayProof
+\]
+$\pi_3$ থেকে এক-পূর্বধারণার
+$\LeftR{\land}$ বিধি প্রয়োগ করে
+(\olref{defn:proof}\olref{defn:prf:one-prem})
+!!{proof}~$\pi_4$ পাই:
+\[
+\Axiom$!D, !E \fCenter !D$
+\Axiom$!D, !E \fCenter !E$
+\RightLabel{\RightR{\land}}
+\insertBetweenHyps{\hspace{5ex}}
+\BinaryInf$!D, !E  \fCenter !D \land !E $
+\LeftSubproofLabel{$\pi_3$}
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!D \land !E  \fCenter !D \land !E$
+\RightSubproofLabel{$\pi_4$}
+\DisplayProof
+\]
+$\pi_4$-এর শেষ অনুমানের অব্যবহিত
+উপ-!!{proof} হলো $\pi_3$। $\RightR{\land}$
+অনুমানের অব্যবহিত উপ-!!{proof}s হলো
+$\pi_1$ ও $\pi_2$। $\pi_4$-এর
+উপ-!!{proof}s হলো $\pi_1$, $\pi_2$,
+$\pi_3$ এবং $\pi_4$ নিজেও।
+এখানে $\pheight{\pi_1} =
+\pheight{\pi_2} = 0$,
+$\pheight{\pi_3} = 1$ এবং
+$\pheight{\pi_4} = 2$।
+সুতরাং যেকোনো পরমাণবিক $!D$ ও $!E$-র জন্য
+$\Log{G3c} \Proves[2] !D \land !E  \fCenter !D
+\land !E$।
+\end{ex}
+% BN-SRC-667 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-667):} বহুসেটের একই সিকোয়েন্ট বোঝাতে দ্বিতীয় উদাহরণের উত্তরপক্ষে উৎসের \(!D\)-এর বদলে \(!E\) রাখা হয়েছে; কেবল পূর্বাংশের ক্রম বদলেছে।}
+% BN-SRC-667 TARGET-CORRECTION-END
+% BN-SRC-668 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-668):} প্রমাণের উচ্চতার গদ্যবর্ণনায় সিকোয়েন্টের সংখ্যা নয়, শাখায় অনুমানবিধি প্রয়োগের সংখ্যা বলা হয়েছে; স্বতঃসিদ্ধের উচ্চতা শূন্য-সহ আরোহী সংজ্ঞার সঙ্গে এটি মেলে।}
+% BN-SRC-668 TARGET-CORRECTION-END
+% BN-SRC-669 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-669):} প্রদর্শিত \(\pi_4\)-র উচ্চতা দুই, তাই শেষ সিদ্ধান্তে উৎসের \(\Proves[4]\) বদলে \(\Proves[2]\) করা হয়েছে।}
+% BN-SRC-669 TARGET-CORRECTION-END
+
+\end{document}

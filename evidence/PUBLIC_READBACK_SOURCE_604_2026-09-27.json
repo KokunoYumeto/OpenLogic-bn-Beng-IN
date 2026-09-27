@@ -1,0 +1,180 @@
+{
+  "schema": "openlogic-bn-public-source-readback/1",
+  "verified_utc": "2026-09-27T04:18:38.475860+00:00",
+  "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+  "commit": "3b73732683aa0bb5983f48ef16c3766a1458dc67",
+  "parent": "6c03579ded2ffb4971f34e3f749de14cac67d112",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_verified_source_checkpoint": {
+    "commit": "25355c957cdafb7268060937fa738acd6508cd19",
+    "receipt": "PUBLIC_READBACK_SOURCE_599_2026-09-27.json",
+    "receipt_sha256": "991bc9f4cf32c136b0e0fb89afa011fa01783a778a7c12168644e15b7e908c22"
+  },
+  "access": "নামহীন HTTPS অনুরোধ; কোনো প্রমাণীকরণ শিরোনাম বা পরিচয়পত্র ব্যবহার করা হয়নি।",
+  "archive_request_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/archive/3b73732683aa0bb5983f48ef16c3766a1458dc67.zip",
+  "archive_resolved_url": "https://codeload.github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/zip/3b73732683aa0bb5983f48ef16c3766a1458dc67",
+  "archive_content_type": "application/zip",
+  "archive_bytes": 16069773,
+  "archive_sha256": "eb3e933083ca552a585e6cb56d4613cc81bd6562c0bdf60127e5e65e029312d0",
+  "raw_translation_files": [
+    {
+      "path": "bn-Beng-IN/content/methods/methods.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b73732683aa0bb5983f48ef16c3766a1458dc67/bn-Beng-IN/content/methods/methods.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b73732683aa0bb5983f48ef16c3766a1458dc67/bn-Beng-IN/content/methods/methods.tex",
+      "content_type": "text/plain",
+      "bytes": 1125,
+      "sha256": "e58475fd96a2a909d4d90995dc964bff2b3ab7a2d3a8043ced53ec5a4348283d"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/introduction.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b73732683aa0bb5983f48ef16c3766a1458dc67/bn-Beng-IN/content/methods/proofs/introduction.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b73732683aa0bb5983f48ef16c3766a1458dc67/bn-Beng-IN/content/methods/proofs/introduction.tex",
+      "content_type": "text/plain",
+      "bytes": 7263,
+      "sha256": "63bec30ad35401289dc22e56eaa617e6078a70c58c95ede151b293701aa4a5a0"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/proofs.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b73732683aa0bb5983f48ef16c3766a1458dc67/bn-Beng-IN/content/methods/proofs/proofs.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b73732683aa0bb5983f48ef16c3766a1458dc67/bn-Beng-IN/content/methods/proofs/proofs.tex",
+      "content_type": "text/plain",
+      "bytes": 458,
+      "sha256": "659a0a84ca18e947546db7cbcf4e31c08a34aba92362434de16c28d5e1c3e0ff"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/starting-proofs.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b73732683aa0bb5983f48ef16c3766a1458dc67/bn-Beng-IN/content/methods/proofs/starting-proofs.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b73732683aa0bb5983f48ef16c3766a1458dc67/bn-Beng-IN/content/methods/proofs/starting-proofs.tex",
+      "content_type": "text/plain",
+      "bytes": 2514,
+      "sha256": "c7a2728db3f2346003b1fcc297f4d4a28a739223f5c332806daca4787fb521a2"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/using-definitions.tex",
+      "request_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b73732683aa0bb5983f48ef16c3766a1458dc67/bn-Beng-IN/content/methods/proofs/using-definitions.tex",
+      "resolved_url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/3b73732683aa0bb5983f48ef16c3766a1458dc67/bn-Beng-IN/content/methods/proofs/using-definitions.tex",
+      "content_type": "text/plain",
+      "bytes": 8744,
+      "sha256": "e6a94dad4f82a66e1e241123f66a9eb4a369bc0ed05998509b2904dfaf599cad"
+    }
+  ],
+  "changed_files_verified": 19,
+  "translated_tex_files_in_commit": 5,
+  "draft_translated_total": 604,
+  "draft_untranslated_total": 118,
+  "segments": 6601,
+  "translated_segments": 5662,
+  "new_batch_segments": 43,
+  "new_batch_translated_segments": 29,
+  "new_batch_unchanged_segments": 14,
+  "source_correction_records": 483,
+  "new_source_correction_records": 1,
+  "translation_decisions": 423,
+  "provisional_translation_decisions": 401,
+  "translation_decision_occurrences": 37620,
+  "decisions_with_exact_source_wording": 403,
+  "public_checker": {
+    "path": "tools/check_source_draft.py",
+    "units": 604,
+    "blocks": 6601,
+    "result": "passed_from_anonymous_archive"
+  },
+  "new_reader_release_claimed": false,
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 7922,
+      "sha256": "388bec3d1e5b0415189133809bf263e11ea2b496435894de2b0f272b3a9bb40b"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/methods.tex",
+      "bytes": 1125,
+      "sha256": "e58475fd96a2a909d4d90995dc964bff2b3ab7a2d3a8043ced53ec5a4348283d"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/proofs/introduction.tex",
+      "bytes": 7263,
+      "sha256": "63bec30ad35401289dc22e56eaa617e6078a70c58c95ede151b293701aa4a5a0"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/proofs/proofs.tex",
+      "bytes": 458,
+      "sha256": "659a0a84ca18e947546db7cbcf4e31c08a34aba92362434de16c28d5e1c3e0ff"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/proofs/starting-proofs.tex",
+      "bytes": 2514,
+      "sha256": "c7a2728db3f2346003b1fcc297f4d4a28a739223f5c332806daca4787fb521a2"
+    },
+    {
+      "filename": "bn-Beng-IN/content/methods/proofs/using-definitions.tex",
+      "bytes": 8744,
+      "sha256": "e6a94dad4f82a66e1e241123f66a9eb4a369bc0ed05998509b2904dfaf599cad"
+    },
+    {
+      "filename": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
+      "bytes": 11131011,
+      "sha256": "9b4fbb056296fe75d6255a5f44865ee99083b1fb9246d116d7f8e8974c08f7d0"
+    },
+    {
+      "filename": "evidence/DRAFT_STATUS.json",
+      "bytes": 363534,
+      "sha256": "e2dc7394eddf6c0497222e261d6f22e59b18e5537da0cb447624f0c679350267"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_METHODS_PROOFS_OPENING.md",
+      "bytes": 2570,
+      "sha256": "0b4b04a12cf5798e416aa5eae65a2afc88f4c657511181957096993467cd194d"
+    },
+    {
+      "filename": "evidence/SEMANTIC_REVIEW_SET_THEORY_CARD_ARITHMETIC.md",
+      "bytes": 9648,
+      "sha256": "a1c074b7315f94581935194dbaef3fe582fce0af25f90f8a88af47341d21d10b"
+    },
+    {
+      "filename": "evidence/SOURCE_AUDIT_OLSIZ_RECONCILIATION.json",
+      "bytes": 12328,
+      "sha256": "537257b18f501f5a38b8b72321c4f8f4f6ae3f2f4361366c24798d83fe6124c0"
+    },
+    {
+      "filename": "evidence/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 943313,
+      "sha256": "71064db9be03999a7db4369cf72f40f4ca24db93b9d9b8dfbe64ffc0714b8821"
+    },
+    {
+      "filename": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 398584,
+      "sha256": "a89ae9d5374fa695bfb188593a4bdc44b583a2d8d35562df8608fc278466d45a"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_INDEX.json",
+      "bytes": 22432766,
+      "sha256": "9dcc746ff8886f3527f5fe7d23d8ae70ce8434a75b5253ec0147039b54d2f8e9"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.jsonl",
+      "bytes": 17523606,
+      "sha256": "c28e23ff74578062842ed56204273a62537784e1597dddfd565d1a90bd4b8bc6"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_LOG.md",
+      "bytes": 1641300,
+      "sha256": "52efcfc015a5fecddc428256dc29df9c7e2dea452f43981d52058a2e4a885823"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+      "bytes": 10318531,
+      "sha256": "f217545c8bec76dd62cbb5920db8bdd9483d3d7bf0959ff60f0c415a84ce975b"
+    },
+    {
+      "filename": "evidence/TRANSLATION_DECISION_PRIORITY.md",
+      "bytes": 302264,
+      "sha256": "e20fa0d7433871b8294c787adc99b071e8ca1fa088793e54124dba19b89b076f"
+    },
+    {
+      "filename": "tools/check_source_draft.py",
+      "bytes": 294742,
+      "sha256": "be8844fbbfe7dc9cbcb3e5a5b51a18ef340f6a67b5f84b6aaa85d74159ec230a"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: type-preservation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{tpr}
+
+\olsection{টাইপ সংরক্ষণ}
+
+আলোচিত হ্রাস-রূপান্তর ও বিন্যাস-রূপান্তর
+\Log{tN2i} এবং \Log{tN3i} ব্যবস্থার জন্যও
+সরাসরি সংজ্ঞায়িত করা যায়। \Log{tN3i}-তে
+প্রসঙ্গ~$\Gamma$-র সাপেক্ষে $\lambd$-পদ~$N$-এর
+টাইপ হলো সেই !!{formula}~$!A$, যার জন্য
+$\Gamma \Sequent N : !A$-এর !!a{proof} আছে।
+$\lambd$-পদের $\beta$-হ্রাসবিধিগুলি !!{proof}s-এর
+হ্রাস-রূপান্তর ও বিন্যাস-রূপান্তরের হুবহু
+অনুরূপ হওয়ার একটি গুরুত্বপূর্ণ ফল আছে:
+প্রসঙ্গ~$\Gamma$-র সাপেক্ষে $\lambd$-পদের
+টাইপ $\beta$-রূপান্তরের পরেও একই থাকে।
+এই ধর্মকে \emph{টাইপ সংরক্ষণ} বলে।
+
+\begin{prop}
+$\Gamma$-র সাপেক্ষে $N$-এর টাইপ~$!A$
+এবং $N \redone N'$ হলে, $\Gamma$-র
+সাপেক্ষে $N'$-এর টাইপও~$!A$।
+\end{prop}
+
+\begin{proof}
+  $N$-এর গঠন এবং $\Gamma \Sequent N : !A$-এর
+  !!{proof}s~$\delta$-র উচ্চতার উপর আরোহে
+  নিম্নের কথাটি প্রতিষ্ঠিত হয়: $M$ যদি
+  $N$-এর উপপদ হয়, তাহলে $\delta$-তে
+  $\Gamma' \Sequent M : !B$-তে শেষ হওয়া
+  একটি উপ-!!{proof}~$\delta_1$ আছে। $M$
+  রিডেক্স হলে $\delta_1$-এ একটি রূপান্তর
+  প্রযোজ্য। $\delta_1$-এ হ্রাস প্রয়োগে
+  $\Gamma' \Sequent M' : !B$-এর
+  !!a{proof}~$\delta_1'$ পাই।
+  \Log{tN3i}-এর রূপান্তরগুলি দেখলে বোঝা যায়,
+  $M'$ হলো $M$-এর সংকুচিত রূপ। $\delta$-তে
+  $\delta_1$-এর স্থানে $\delta_1'$ বসালে
+  $\Gamma \Sequent N' : !A$-এর
+  !!a{proof}~$\delta'$ পাওয়া যায়; এখানে
+  $N$-এর উপপদ~$M$-এর স্থানে~$M'$ বসিয়ে
+  $N'$ তৈরি হয়েছে।
+
+  যেমন, \Intro{\land}-এর পর \Elim{\land}
+  প্রয়োগের হ্রাস-রূপান্তর দেখি:
+  \[
+  \bottomAlignProof
+  \AxiomC{}
+  \Deduce$\Gamma \fCenter N_1 : !B_1$
+  \AxiomC{}
+  \Deduce$\Gamma \fCenter N_2 : !B_2$
+  \RightLabel{\Intro{\land}}
+  \BinaryInf$\Gamma \fCenter \pair{N_1}{N_2} : !B_1 \land !B_2$
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInf$\Gamma \fCenter \proj{i}{\pair{N_1}{N_2}} : !B_i$
+  \DisplayProof
+  \quad\redone\quad
+  \bottomAlignProof
+  \AxiomC{}
+  \Deduce$\Gamma \fCenter N_i : !B_i$
+  \DisplayProof
+  \]
+  দেখা যায়, ডান দিকের !!{proof} অর্থাৎ
+  $\delta_1'$-এর প্রমাণপদ $N_i$। বাঁ দিকের
+  !!{proof}~($\delta_1$)-এর প্রমাণপদ
+  $\proj{i}{\pair{N_1}{N_2}}$-তে
+  $\beta$-রূপান্তর প্রয়োগের ফল ঠিক এটিই।
+
+  অথবা \Intro{\lif}-এর পর \Elim{\lif}
+  অনুমান এবং তার হ্রাস-রূপান্তর দেখি:
+  \begin{multline*}
+  \bottomAlignProof
+  \AxiomC{$\delta_2$}
+  \Deduce$x: !B_1, \Gamma \fCenter N : !B_2$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter \lambd[\typeof{x}{!B_1}][N] : !B_1 \lif !B_2$
+  \AxiomC{}
+  \RightLabel{$\delta_3$}
+  \Deduce$\Gamma \fCenter M : !B_1$
+  \RightLabel{\Elim{\lif}}
+  \BinaryInf$\Gamma \fCenter (\lambd[\typeof{x}{!B_1}][N] M) : !B_2$
+  \DisplayProof
+  \quad\redone\\
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_3$}
+  \Deduce$\Gamma \fCenter M : !B_1$
+  \RightLabel{$\Subst{\delta_2}{\delta_3}{x:!B_1}$}
+  \Deduce$\Gamma \fCenter \Subst{N}{M}{x} : !B_2$
+  \DisplayProof
+  \end{multline*}
+  এখানেও ডান দিকের !!{proof}-এর প্রমাণপদ
+  বাঁ দিকের !!{proof}-এর প্রমাণপদ
+  $\beta$-হ্রাস করলে যা হয়, ঠিক সেটিই।
+  অবশ্য $\delta_2$-র উচ্চতার উপর আরোহে
+  সতর্কভাবে যাচাই করতে হবে: $\delta_2$-তে
+  $\Gamma' \Sequent x:!B_1$ রূপের সব
+  স্বতঃসিদ্ধের স্থানে $\Gamma \Sequent
+  M:!B_1$-এর !!{proof}~$\delta_3$ বসালে
+  সত্যিই $\Gamma \Sequent
+  \Subst{N}{M}{x} : !B_2$-এর
+  !!a{proof}~$\Subst{\delta_2}{\delta_3}{x:!B_1}$
+  পাওয়া যায়।
+\end{proof}
+
+!!{proof}s ও $\lambd$-পদের ঘনিষ্ঠ
+সঙ্গতির আরেকটি ফল আছে। প্রসঙ্গ~$\Gamma$-র
+সাপেক্ষে $N$ যদি টাইপ~$!A$-এর একটি
+$\lambd$-পদ হয় এবং তাতে রিডেক্স~$M$
+থাকে (অর্থাৎ সেটি স্বাভাবিক রূপে নেই),
+তাহলে $\Gamma \Sequent N : !A$-এর
+সংশ্লিষ্ট \Log{tN3i} প্রমাণ~$\delta$-তে
+$\Gamma' \Sequent M: !B$-তে শেষ হওয়া
+এমন উপ-!!{proof} আছে যাতে রূপান্তর
+প্রয়োগ করা যায়। $M$-এর স্থানে তার
+সংকুচিত রূপ বসিয়ে $N \redone N'$ হলে,
+$\delta$-তে সংশ্লিষ্ট হ্রাস প্রয়োগের
+ফলে $\Gamma \Sequent N' : !A$-এর
+!!a{proof} পাওয়া যায়। অতএব স্বাভাবিক
+রূপে নেই এমন প্রত্যেক $\lambd$-পদ অন্য
+একটি পদে $\beta$-হ্রাস পায়। এই ধর্মের
+নাম \emph{অগ্রগতি}।
+
+অগ্রগতি ও টাইপ সংরক্ষণ মিলে নিশ্চিত করে
+যে $\lambd$-পদের $\beta$-হ্রাস কখনো
+“আটকে যায়” না: কোনো পদ সঠিকভাবে
+টাইপযুক্ত এবং স্বাভাবিক রূপে না থাকলে,
+সেটি একই টাইপের আরেকটি সঠিকভাবে
+টাইপযুক্ত পদে হ্রাস পায়।
+
+\end{document}

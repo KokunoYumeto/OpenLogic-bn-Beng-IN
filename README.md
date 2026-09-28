@@ -1,16 +1,17 @@
-# ওপেন লজিক — ভারতীয় বাংলা (সম্পূর্ণ উৎস ও HTML পাঠক)
+# ওপেন লজিক — ভারতীয় বাংলা (সম্পূর্ণ উৎস, HTML ও EPUB পাঠক)
 
-[Open Logic Project](https://github.com/OpenLogicProject/OpenLogic)-এর এই ভারতীয় বাংলা সংস্করণে হিমায়িত মূলের **সব ৭২২টি বিষয়বস্তু-ফাইলের উৎস-অনুবাদ পরীক্ষিত**। সব ৭২২টি ইউনিট এখন একই সমষ্টিগত, পুনঃপ্রবাহযোগ্য HTML পাঠকে আছে; সূত্রগুলি নেটিভ MathML, এবং উৎসের প্রমাণবৃক্ষ, ট্যাবলো ও চিত্রের অর্থবহ পাঠ্যরূপ সংযুক্ত। পূর্ণাঙ্গ PDF ও নতুন EPUB নির্মাণ ও পরীক্ষা এখনও চলছে।
+[Open Logic Project](https://github.com/OpenLogicProject/OpenLogic)-এর এই ভারতীয় বাংলা সংস্করণে হিমায়িত মূলের **সব ৭২২টি বিষয়বস্তু-ফাইলের উৎস-অনুবাদ পরীক্ষিত**। সব ৭২২টি ইউনিট একই সমষ্টিগত HTML পাঠক ও পুনঃপ্রবাহযোগ্য EPUB-এ আছে; সূত্রগুলি নেটিভ MathML, এবং উৎসের প্রমাণবৃক্ষ, ট্যাবলো ও চিত্রের অর্থবহ পাঠ্যরূপ সংযুক্ত। পূর্ণাঙ্গ PDF নির্মাণ ও পরীক্ষা এখনও চলছে।
 
 ## পড়া ও সংগ্রহ
 
 - [সম্পূর্ণ ৭২২-ইউনিট বাংলা HTML পাঠক অনলাইনে পড়ুন](https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/)।
-- [সম্পূর্ণ HTML, সম্পাদনযোগ্য সমষ্টিগত LaTeX ও নির্ভুল উৎস-ZIP-এর v0.4.1 সংশোধিত প্রকাশনা](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.4.1-reader-corrections)।
+- [সম্পূর্ণ HTML, EPUB, সম্পাদনযোগ্য সমষ্টিগত LaTeX ও নির্ভুল উৎস-ZIP-এর v0.5.0 প্রকাশনা](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.5.0-complete-epub)।
+- [আগের v0.4.1 HTML সংশোধনী](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.4.1-reader-corrections)।
 - [আগের ২৯৯-ইউনিট HTML/EPUB সংস্করণ](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.3.0-through-representability)।
 - [সংরক্ষণ-নথির সংস্করণসমূহ ও DOI](https://doi.org/10.5281/zenodo.22848704)।
 - [অনুবাদ-প্রকল্পগুলির আন্তর্জাতিক সূচি](https://github.com/KokunoYumeto/OpenLogic-translations)।
 
-প্রকাশিত সম্পূর্ণ HTML সরাসরি অনলাইনে পড়ার উপযোগী। v0.4.1-এ লিন্ডস্ট্রমের প্রমাণে অনুপস্থিত সূত্রবিন্যাস ও ভুল অতিরিক্ত-বিধেয় তালিকা এবং দুটি উৎসসংশোধন-টীকার বিন্যাস সংশোধিত। এই সংস্করণে PDF বা নতুন EPUB নেই; আগের v0.3.0 সংস্করণে কেবল ২৯৯-ইউনিট EPUB আছে। উৎস-ZIP অফলাইনে সম্পাদন ও পুনর্নির্মাণের জন্য, অনলাইনে পড়ার বিকল্প নয়।
+প্রকাশিত সম্পূর্ণ HTML সরাসরি অনলাইনে পড়ার উপযোগী; EPUB অফলাইনে সামঞ্জস্যপূর্ণ পাঠযন্ত্রে পড়া যায়। v0.4.1-এর সূত্র ও টীকা সংশোধন এই সংস্করণেও আছে। তুরিং যন্ত্রের যাচাই অধ্যায়ে দুটি ম্যাক্রো-নামের মুদ্রণ এবং একটি সমীকরণ-বিন্যাস সংশোধিত। সম্পূর্ণ EPUB EPUBCheck 5.3.0-এ ত্রুটিহীন; PDF এই সংস্করণে নেই। উৎস-ZIP অফলাইনে সম্পাদন ও পুনর্নির্মাণের জন্য, অনলাইনে পড়ার বিকল্প নয়।
 
 ## উৎস, অনুবাদ ও পর্যালোচনার অবস্থা
 
@@ -30,6 +31,6 @@
 python tools/check_source_draft.py
 ```
 
-সম্পূর্ণ HTML পুনর্নির্মাণে Python 3, Pandoc 3.9 বা নতুন সংস্করণ এবং `tools/prepare_full_edition.py`, `tools/build_full_semantic_reader.py` ও `tools/build_reader_operator_font.py` লাগে। সম্পাদনযোগ্য সমষ্টিগত LaTeX একই উৎস থেকে তৈরি হয়। HTML/MathML নির্মাণে TeX ইঞ্জিন লাগে না। আগের ২৯৯-ইউনিট EPUB-এর পুনর্নির্মাণ ও পরীক্ষায় Java ও EPUBCheck 5.3.0-ও লাগে; নতুন পূর্ণ EPUB এখনও পরীক্ষিত নয়।
+সম্পূর্ণ HTML পুনর্নির্মাণে Python 3, Pandoc 3.9 বা নতুন সংস্করণ এবং `tools/prepare_full_edition.py`, `tools/build_full_semantic_reader.py` ও `tools/build_reader_operator_font.py` লাগে। সম্পাদনযোগ্য সমষ্টিগত LaTeX একই উৎস থেকে তৈরি হয়। সম্পূর্ণ EPUB-এর জন্য `tools/build_full_epub.py`, Java ও EPUBCheck 5.3.0-ও লাগে। HTML/EPUB নির্মাণে TeX ইঞ্জিন লাগে না।
 
 মূল OpenLogic ও এই অনুবাদ Creative Commons Attribution 4.0 International-এর অধীনে; মূলের উপাদানভিত্তিক ব্যতিক্রম অক্ষত। বিস্তারিত `upstream/LICENSE.md` ও সংশ্লিষ্ট নোটে। সংযুক্ত Noto ফন্ট SIL Open Font License 1.1-এর অধীনে। মূল গাণিতিক রেখার TX Fonts-এর স্বত্ব/শর্ত ও St Mary’s Road ফন্টের LPPL 1.0 বা পরবর্তী শর্ত HTML-এর ফন্ট-লাইসেন্স অংশে এবং উৎস-ZIP-এ দেওয়া আছে।

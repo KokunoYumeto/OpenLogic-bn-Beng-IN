@@ -100,7 +100,7 @@ $\Obj Q_q(\num{m},\num{n})\land\Obj S_\sigma(\num{m},\num{n})
 (\Obj Q_{q'}(\num{m},\num{n})\land
 \Obj S_{\sigma'}(\num{m},\num{n}))$।
 % BN-SRC-182 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-182):} হিমায়িত প্রমাণের শেষ অনুগমনে আগে নির্বাচিত $q,\sigma$-এর জায়গায় অবন্ধ $q',\sigma'$ বসানো হয়েছিল, $S_{\sigma'}$-এর আগে $\Obj$-ও অনুপস্থিত ছিল, এবং তারপর উল্টোভাবে $\tuple{q',\sigma'}\in X$ দাবি করা হয়েছিল। বাংলা পাঠে সাক্ষী $q,\sigma$-কে পূর্বপক্ষে রাখা ও বিসংযোজনের বাঁধা চলককে $q',\sigma'$ করা হয়েছে।} % BN-SRC-182 TARGET-CORRECTION-END
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-182):} হিমায়িত প্রমাণের শেষ অনুগমনে আগে নির্বাচিত $q,\sigma$-এর জায়গায় অবন্ধ $q',\sigma'$ বসানো হয়েছিল, $S_{\sigma'}$-এর আগে \texttt{\textbackslash Obj}-ও অনুপস্থিত ছিল, এবং তারপর উল্টোভাবে $\tuple{q',\sigma'}\in X$ দাবি করা হয়েছিল। বাংলা পাঠে সাক্ষী $q,\sigma$-কে পূর্বপক্ষে রাখা ও বিসংযোজনের বাঁধা চলককে $q',\sigma'$ করা হয়েছে।} % BN-SRC-182 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{explain}
@@ -146,7 +146,7 @@ $!T(M,w)\Entails !C(M,w,n+1)$।
 \begin{enumerate}
 \item ধরা যাক, \olref{right} আকারের একটি নির্দেশ আছে।
   \olref[rep]{defn:tm-descr}\olref[rep]{rep-right} অনুসারে এর অর্থ
-\\begin{align*}
+\begin{align*}
 & \lforall[x][\lforall[y][((\Obj Q_{q}(x,
   y) \land \Obj S_\sigma(x, y)) \lif {}]]\\
 & \qquad (\Obj Q_{q'}(x',
@@ -178,7 +178,7 @@ $!T(M,w)\Entails !C(M,w,n+1)$।
 $\Obj S_{\sigma_m}(\num{m},\num{n}')$ বাদ যায়—$!C(M,w,n)$-এর সংশ্লিষ্ট
 সংযোজক ও $!A(\num{m},\num{n})$ থেকে আসে।
 % BN-SRC-185 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-185):} হিমায়িত ব্যাখ্যায় এই বিধেয়-প্রকরণটির আগে $\Obj$ অনুপস্থিত ছিল। বাংলা পাঠে ভাষা~$\Lang L_M$-এর ঘোষণা ও আশপাশের সব ঘটনের সঙ্গে মিলিয়ে $\Obj S_{\sigma_m}$ রাখা হয়েছে।} % BN-SRC-185 TARGET-CORRECTION-END
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-185):} হিমায়িত ব্যাখ্যায় এই বিধেয়-প্রকরণটির আগে \texttt{\textbackslash Obj} অনুপস্থিত ছিল। বাংলা পাঠে ভাষা~$\Lang L_M$-এর ঘোষণা ও আশপাশের সব ঘটনের সঙ্গে মিলিয়ে $\Obj S_{\sigma_m}$ রাখা হয়েছে।} % BN-SRC-185 TARGET-CORRECTION-END
 
 $m<k$ হলে $!T(M,w)\Proves \num{m}<\num{k}$
 (\olref[rep]{prop:mlessk}); আর $<$-এর সক্রমতা থেকে পাই

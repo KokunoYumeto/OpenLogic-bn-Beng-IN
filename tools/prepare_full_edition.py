@@ -190,6 +190,7 @@ def main():
     known |= set(aliases)
     unresolved = []
     proof_title_reference_adjustments = []
+    caption_reference_adjustments = []
     display_blank_line_adjustments = []
     tabular_spacing_adjustments = []
     documented_missing = []
@@ -284,6 +285,16 @@ def main():
             return "\\" + match.group(1) + "{" + owner.lower() + ":" + canonical + "}"
 
         raw = re.sub(r"\\(hyperlink|ref|eqref|cref|Cref)\{([^{}]+)\}", physical_reference, raw)
+        def stable_caption_reference(match):
+            target = match.group(1)
+            assert ":thm:" in target or ":fig:" in target, (uid, target)
+            short = "সংশ্লিষ্ট উপপাদ্যের মডেল" if ":thm:" in target else "সংশ্লিষ্ট চিত্রের ফিল্ট্রেশন"
+            caption_reference_adjustments.append({"unit_id": uid, "target": target,
+                "action": "চিত্রশিরোনামের লিখিত সংক্ষিপ্ত রূপে ভঙ্গুর hyperlink বাদ; দৃশ্যমান শিরোনামে মূল সংযোগ অক্ষত।"})
+            return (r"\caption[" + short + r"]{\protect\hyperlink{" + target
+                    + r"}{দেখুন}" + match.group(2) + "}")
+        raw = re.sub(r"\\caption\{\\hyperlink\{([^{}]+)\}\{দেখুন\}([^{}]*)\}",
+                     stable_caption_reference, raw)
         def proof_title(match):
             def stable_reference(link):
                 assert link.group(2) == "দেখুন", (uid, link.group(2))
@@ -365,6 +376,14 @@ def main():
 \renewcommand{\proofname}{প্রমাণ}
 \linespread{1.16}
 \begin{document}
+% open-logic.sty selects English at begin-document, restoring Babel's
+% default captions after the preamble assignments above.
+\renewcommand{\contentsname}{সূচিপত্র}
+\renewcommand{\chaptername}{অধ্যায়}
+\renewcommand{\partname}{অংশ}
+\renewcommand{\figurename}{চিত্র}
+\renewcommand{\tablename}{সারণি}
+\renewcommand{\proofname}{প্রমাণ}
 \begin{titlingpage}
 \centering{\Huge ওপেন লজিক\par}\bigskip
 {\LARGE বাংলা (ভারত)\par}\bigskip
@@ -420,6 +439,7 @@ OpenAI Codex: GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort\par
             parts.append(emit(uid))
     assert len(emitted) == len(set(emitted)) == 722
     assert set(emitted) == set(row_by_id)
+    assert len(caption_reference_adjustments) == 3
     parts.append(r"""
 \bibliographystyle{plainnat}
 \bibliography{../../upstream/bib/open-logic}
@@ -446,6 +466,7 @@ OpenAI Codex: GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort\par
         "documented_missing_source_references": documented_missing,
         "reader_adjustments": reader_adjustments,
         "proof_title_reference_adjustments": proof_title_reference_adjustments,
+        "caption_reference_adjustments": caption_reference_adjustments,
         "display_blank_line_adjustments": display_blank_line_adjustments,
         "tabular_spacing_adjustments": tabular_spacing_adjustments,
         "status": "prepared; compilation, semantic HTML and visual QA pending",

@@ -7702,6 +7702,9 @@ for row in rows:
             "documented_source_corrections": ["BN-SRC-670", "BN-SRC-671", "BN-SRC-672", "BN-SRC-673"],
             "bidirectional_G1c_G3c_rule_simulations": True,
         }
+    # A doubled escape still contains the regex substring "\\begin" and can
+    # falsely pass environment parity while TeX sees a line-break command.
+    assert r"\\begin{" not in checked_target and r"\\end{" not in checked_target, row["unit_id"]
     checks = {
         "unit_id": row["unit_id"],
         "source_blocks": len(source_blocks),

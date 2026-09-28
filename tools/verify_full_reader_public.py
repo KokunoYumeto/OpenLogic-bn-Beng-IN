@@ -56,8 +56,18 @@ def main() -> None:
     parser.add_argument("--commit", default=COMMIT)
     parser.add_argument("--receipt", type=Path, default=OUT)
     parser.add_argument("--raw-path", action="append", dest="raw_paths")
+    parser.add_argument("--asset", action="append", metavar="FILENAME=PATH",
+                        help="Add an exact local file to the release asset readback")
     args = parser.parse_args()
     raw_paths = args.raw_paths if args.raw_paths is not None else RAW_PATHS
+    local_assets = dict(LOCAL_ASSETS)
+    for specification in args.asset or []:
+        name, separator, filename = specification.partition("=")
+        assert separator and name and filename, specification
+        assert name not in local_assets, name
+        path = Path(filename)
+        assert path.is_file() and path.name == name, specification
+        local_assets[name] = path
     api_url = f"https://api.github.com/repos/{OWNER_REPO}/releases/tags/{args.tag}"
     request = Request(api_url, headers={"User-Agent": "openlogic-bengali-public-readback/1"})
     with urlopen(request, timeout=30) as response:
@@ -67,9 +77,9 @@ def main() -> None:
     assert release["prerelease"] and not release["draft"]
     assert PAGES_URL in release["body"] and "PDF" in release["body"]
     published_assets = {asset["name"]: asset for asset in release["assets"]}
-    assert set(published_assets) == set(LOCAL_ASSETS)
+    assert set(published_assets) == set(local_assets)
     results = []
-    for name, path in sorted(LOCAL_ASSETS.items()):
+    for name, path in sorted(local_assets.items()):
         asset = published_assets[name]
         expected_size, expected_sha = local_hash(path)
         actual_size, actual_sha = remote_hash(asset["browser_download_url"])

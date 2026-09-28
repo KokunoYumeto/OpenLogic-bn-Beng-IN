@@ -61,15 +61,18 @@ def main() -> None:
         "fonts/Noto-fonts-LICENSE.txt",
         "evidence/FULL_SOURCE_MANIFEST.jsonl", "evidence/DRAFT_STATUS.json",
         "evidence/SOURCE_MODEL_PROVENANCE_722.json", "evidence/SEMANTIC_REVIEW_FINAL_SOURCE_UNITS.md",
+        "evidence/SEMANTIC_REVIEW_LINDSTROM.md",
         "evidence/CANON_SOURCES.jsonl", "evidence/CANON_PASSAGES.jsonl",
         "evidence/SEGMENT_CANON_USE.jsonl", "evidence/TERM_DECISIONS.jsonl",
         "evidence/SOURCE_CORRECTIONS.jsonl", "evidence/RECOVERED_CANON_VERIFICATION.json",
         "tools/prepare_full_edition.py", "tools/build_cumulative_semantic_reader.py",
         "tools/build_full_semantic_reader.py", "tools/build_reader_operator_font.py",
+        "tools/build_full_epub.py",
         "tools/build_full_edition_windows.ps1", "tools/create_reader_visual_probes.py",
         "tools/package_full_edition.py", "tools/check_source_draft.py",
         "build/full-edition/openlogic-bn-Beng-IN-complete.tex",
         "build/full-edition/PREPARATION.json", "build/full-edition/SEMANTIC_READER_QA.json",
+        "build/full-edition/EPUB_QA.json", "build/full-edition/EPUBCHECK.json",
         "build/full-edition/OPERATOR_FONT.json", "build/full-edition/PANDOC_INPUT.json",
         "build/full-edition/SEMANTIC_INPUT.json", "build/full-edition/environment-markers.json",
         "build/full-edition/proof-graphs.json", "build/full-edition/math-link-targets.json",
@@ -107,22 +110,38 @@ def main() -> None:
         target = DIST / ("openlogic-bn-Beng-IN-complete." + suffix)
         target.write_bytes(source.read_bytes())
         outputs.append(target)
+    epub = BUILD / "openlogic-bn-Beng-IN-complete.epub"
+    epub_qa = BUILD / "EPUB_QA.json"
+    epub_included = False
+    if epub_qa.exists():
+        epub_check = json.loads(epub_qa.read_text(encoding="utf-8"))
+        assert epub_check["status"] == "passed" and epub_check["source_units"] == 722
+        assert epub_check["html_sha256"] == digest(HTML)
+        assert epub_check["epub"]["sha256"] == digest(epub)
+        assert epub_check["epubcheck"]["messages"] == 0
+        target = DIST / epub.name
+        target.write_bytes(epub.read_bytes())
+        outputs.append(target)
+        epub_included = True
     pdf = BUILD / "openlogic-bn-Beng-IN-complete.pdf"
     # Include the PDF only after a separate passing final PDF QA receipt exists.
     pdf_qa = BUILD / "PDF_QA.json"
+    pdf_included = False
     if pdf_qa.exists():
         pdf_check = json.loads(pdf_qa.read_text(encoding="utf-8"))
         assert pdf_check["status"] == "passed" and pdf_check["pdf_sha256"] == digest(pdf)
         target = DIST / pdf.name
         target.write_bytes(pdf.read_bytes())
         outputs.append(target)
+        pdf_included = True
     rows = [{"filename": path.name, "bytes": path.stat().st_size, "sha256": digest(path)}
             for path in outputs]
     (DIST / "SHA256SUMS-complete.txt").write_text(
         "".join(row["sha256"] + "  " + row["filename"] + "\n" for row in rows), encoding="ascii")
     (DIST / "FULL_RELEASE_ASSETS.json").write_text(
         json.dumps({"schema": "openlogic-bn-full-release-assets/1", "source_units": 722,
-                    "archive_members": len(files), "pdf_included": len(outputs) == 4,
+                    "archive_members": len(files), "pdf_included": pdf_included,
+                    "epub_included": epub_included,
                     "assets": rows}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"archive_members": len(files), "assets": rows}, ensure_ascii=False))
 

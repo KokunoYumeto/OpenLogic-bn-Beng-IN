@@ -1,0 +1,87 @@
+{
+  "schema": "openlogic-bn-reader-public-readback/1",
+  "status": "passed",
+  "anonymous": true,
+  "credentials_used": false,
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "manifest_sha256": "5a6fef5c16c15a5b2f90f874c268512cfd6ed2e846bdfa850a67304a4c05a155",
+  "reader_units": 722,
+  "git_commit": "f67e4da4d1d903a020ce6a61c689e406bf640bc9",
+  "release_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.4.0-complete-semantic-reader",
+  "release_assets": [
+    {
+      "filename": "FULL_RELEASE_ASSETS.json",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.0-complete-semantic-reader/FULL_RELEASE_ASSETS.json",
+      "bytes": 704,
+      "sha256": "f654995d5401974347c4df3a00e76eb62220de7e3f40a9875ea35c3031ae7c55"
+    },
+    {
+      "filename": "PREPARATION.json",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.0-complete-semantic-reader/PREPARATION.json",
+      "bytes": 311800,
+      "sha256": "443fb8c294dba6be34abe5f97f444eb06c25af69a25e55b601212e977c41b690"
+    },
+    {
+      "filename": "SEMANTIC_READER_QA.json",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.0-complete-semantic-reader/SEMANTIC_READER_QA.json",
+      "bytes": 5007,
+      "sha256": "7f712e6e2bba3c00068b896fa320450acfce2d676c196c61c947532226605428"
+    },
+    {
+      "filename": "SHA256SUMS-complete.txt",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.0-complete-semantic-reader/SHA256SUMS-complete.txt",
+      "bytes": 312,
+      "sha256": "115e07c4ec93473c00b245eeb75dd1d9893f5a5820fa2ef2f6b215ffbdb88398"
+    },
+    {
+      "filename": "VISUAL_QA.json",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.0-complete-semantic-reader/VISUAL_QA.json",
+      "bytes": 2104,
+      "sha256": "eb4da62b98e30dd86a70da2f3819105dfe66c97372721bbcdbca3dc1a0f0f273"
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-complete-sources.zip",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.0-complete-semantic-reader/openlogic-bn-Beng-IN-complete-sources.zip",
+      "bytes": 5087014,
+      "sha256": "9a2a31fbbdc3cd1496d0d70cfb05269d3de5bd67aff6308f9232ab0fa3ea771d"
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-complete.html",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.0-complete-semantic-reader/openlogic-bn-Beng-IN-complete.html",
+      "bytes": 18907579,
+      "sha256": "e24fa88ca44bab1e1935892096695f8d82c52bd03adbe7e9d650217702a98aba"
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-complete.tex",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.0-complete-semantic-reader/openlogic-bn-Beng-IN-complete.tex",
+      "bytes": 5268610,
+      "sha256": "2d75e3f6dc4f1b746e6178df5005026d14d5007aeb3a96d4a6fbd47275793db1"
+    }
+  ],
+  "online_reader": {
+    "url": "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/",
+    "bytes": 18907579,
+    "sha256": "e24fa88ca44bab1e1935892096695f8d82c52bd03adbe7e9d650217702a98aba"
+  },
+  "raw_objects": [
+    {
+      "path": "bn-Beng-IN/content/first-order-logic/syntax-and-semantics/satisfaction.tex",
+      "url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/f67e4da4d1d903a020ce6a61c689e406bf640bc9/bn-Beng-IN/content/first-order-logic/syntax-and-semantics/satisfaction.tex",
+      "bytes": 29686,
+      "sha256": "1d2ab9af5ab5ebf19a25b5d6cc1491ccd10d104a66b0e7d150fa129e47e82bf3"
+    },
+    {
+      "path": "evidence/DRAFT_STATUS.json",
+      "url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/f67e4da4d1d903a020ce6a61c689e406bf640bc9/evidence/DRAFT_STATUS.json",
+      "bytes": 445838,
+      "sha256": "aa655f0bf2c13e12399f17f2d8b081e5293be602a12cb0ce988cc321d49957d7"
+    },
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/f67e4da4d1d903a020ce6a61c689e406bf640bc9/README.md",
+      "bytes": 11111,
+      "sha256": "4b33bc8b9624adfb42ff1386715c3f8f96266d2b2b5649397e8f7a8ffc525384"
+    }
+  ],
+  "pdf_claimed": false
+}

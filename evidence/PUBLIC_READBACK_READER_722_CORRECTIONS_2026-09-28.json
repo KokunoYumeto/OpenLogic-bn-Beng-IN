@@ -1,0 +1,99 @@
+{
+  "schema": "openlogic-bn-reader-public-readback/1",
+  "status": "passed",
+  "anonymous": true,
+  "credentials_used": false,
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "manifest_sha256": "5a6fef5c16c15a5b2f90f874c268512cfd6ed2e846bdfa850a67304a4c05a155",
+  "reader_units": 722,
+  "git_commit": "d082c94b52546bd681076043d889bd46831ea903",
+  "release_url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.4.1-reader-corrections",
+  "release_assets": [
+    {
+      "filename": "FULL_RELEASE_ASSETS.json",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.1-reader-corrections/FULL_RELEASE_ASSETS.json",
+      "bytes": 704,
+      "sha256": "ebaf1ec3ea6185fe769847c520b8b05b5030296fb2f05dcb3968ee4e2728b47e"
+    },
+    {
+      "filename": "PREPARATION.json",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.1-reader-corrections/PREPARATION.json",
+      "bytes": 311800,
+      "sha256": "b7b929a533af20ab35f0bff312a3757af14e85445f7deaebed93893acbe85a0a"
+    },
+    {
+      "filename": "SEMANTIC_READER_QA.json",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.1-reader-corrections/SEMANTIC_READER_QA.json",
+      "bytes": 5007,
+      "sha256": "a89d0a100c3288fe82425c69a30b1fd1c57e40c0a62ce49243ace62e464b0cbd"
+    },
+    {
+      "filename": "SHA256SUMS-complete.txt",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.1-reader-corrections/SHA256SUMS-complete.txt",
+      "bytes": 312,
+      "sha256": "ea0cb609f9f16ff69120bcf739e41ad98d0a4cde0733c4a54a17a140dee5f712"
+    },
+    {
+      "filename": "VISUAL_QA.json",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.1-reader-corrections/VISUAL_QA.json",
+      "bytes": 2952,
+      "sha256": "d04bfaca66ec2abfdb55e99503c74056a2169abc86af67cd2c875a810d16c327"
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-complete-sources.zip",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.1-reader-corrections/openlogic-bn-Beng-IN-complete-sources.zip",
+      "bytes": 5087551,
+      "sha256": "c825d87d2284679cf68d4e057a85b3072b7786921a8dd88143fd3e3cfa246650"
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-complete.html",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.1-reader-corrections/openlogic-bn-Beng-IN-complete.html",
+      "bytes": 18907623,
+      "sha256": "1da50d1d09699ce6be3f65630b8b410ee8eea4f4854ae9a7580fddfaf7e1f7b8"
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-complete.tex",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.4.1-reader-corrections/openlogic-bn-Beng-IN-complete.tex",
+      "bytes": 5268642,
+      "sha256": "58204f63ba62d713c8a154511feb27e8cdcebc3526427d93c2f0f995f1f18017"
+    }
+  ],
+  "online_reader": {
+    "url": "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/",
+    "bytes": 18907623,
+    "sha256": "1da50d1d09699ce6be3f65630b8b410ee8eea4f4854ae9a7580fddfaf7e1f7b8"
+  },
+  "raw_objects": [
+    {
+      "path": "bn-Beng-IN/content/model-theory/lindstrom/lindstrom-proof.tex",
+      "url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d082c94b52546bd681076043d889bd46831ea903/bn-Beng-IN/content/model-theory/lindstrom/lindstrom-proof.tex",
+      "bytes": 9457,
+      "sha256": "f10edae94b1d99adeb2965f2dde8a15374482aca54d1c94be00225bc8072c4f7"
+    },
+    {
+      "path": "bn-Beng-IN/content/proof-theory/cut-elimination/intuitionistic.tex",
+      "url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d082c94b52546bd681076043d889bd46831ea903/bn-Beng-IN/content/proof-theory/cut-elimination/intuitionistic.tex",
+      "bytes": 5157,
+      "sha256": "c01eec3c0127d2c1eacc0f023b0e7d7c24f8a7ba6a8ef1563bd5714285c7c86f"
+    },
+    {
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/proof-examples.tex",
+      "url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d082c94b52546bd681076043d889bd46831ea903/bn-Beng-IN/content/proof-theory/sequent-calculus/proof-examples.tex",
+      "bytes": 21368,
+      "sha256": "2f7e756ad2496350bc643234cbf4008a7098934097f5a8e457cce25028b09ef5"
+    },
+    {
+      "path": "evidence/DRAFT_STATUS.json",
+      "url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d082c94b52546bd681076043d889bd46831ea903/evidence/DRAFT_STATUS.json",
+      "bytes": 445838,
+      "sha256": "4431d72fb5a77d8fdd49e09cffccb311b7f55e24257bf55b24e5e1861b7c2ace"
+    },
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d082c94b52546bd681076043d889bd46831ea903/README.md",
+      "bytes": 11449,
+      "sha256": "758eec18ccc86ede63519c28dd8466fa9960d96c2c144149bfedbb5a7f14fa35"
+    }
+  ],
+  "pdf_claimed": false
+}

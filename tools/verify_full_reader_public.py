@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -13,7 +14,6 @@ TAG = "v0.4.0-complete-semantic-reader"
 OWNER_REPO = "KokunoYumeto/OpenLogic-bn-Beng-IN"
 COMMIT = "f67e4da4d1d903a020ce6a61c689e406bf640bc9"
 PAGES_URL = "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/"
-API_URL = f"https://api.github.com/repos/{OWNER_REPO}/releases/tags/{TAG}"
 OUT = REPO / "evidence/PUBLIC_READBACK_READER_722_2026-09-28.json"
 
 LOCAL_ASSETS = {
@@ -51,11 +51,19 @@ def local_hash(path: Path) -> tuple[int, str]:
 
 
 def main() -> None:
-    request = Request(API_URL, headers={"User-Agent": "openlogic-bengali-public-readback/1"})
+    parser = argparse.ArgumentParser(description="Anonymously verify a full-reader release and Pages bytes")
+    parser.add_argument("--tag", default=TAG)
+    parser.add_argument("--commit", default=COMMIT)
+    parser.add_argument("--receipt", type=Path, default=OUT)
+    parser.add_argument("--raw-path", action="append", dest="raw_paths")
+    args = parser.parse_args()
+    raw_paths = args.raw_paths if args.raw_paths is not None else RAW_PATHS
+    api_url = f"https://api.github.com/repos/{OWNER_REPO}/releases/tags/{args.tag}"
+    request = Request(api_url, headers={"User-Agent": "openlogic-bengali-public-readback/1"})
     with urlopen(request, timeout=30) as response:
         assert response.status == 200
         release = json.load(response)
-    assert release["tag_name"] == TAG and release["target_commitish"] == COMMIT
+    assert release["tag_name"] == args.tag and release["target_commitish"] == args.commit
     assert release["prerelease"] and not release["draft"]
     assert PAGES_URL in release["body"] and "PDF" in release["body"]
     published_assets = {asset["name"]: asset for asset in release["assets"]}
@@ -73,8 +81,8 @@ def main() -> None:
     assert (pages_size, pages_sha) == local_hash(REPO / "docs/index.html")
     assert pages_sha == local_hash(REPO / "dist/openlogic-bn-Beng-IN-complete.html")[1]
     raw = []
-    for relative in RAW_PATHS:
-        url = f"https://raw.githubusercontent.com/{OWNER_REPO}/{COMMIT}/{relative}"
+    for relative in raw_paths:
+        url = f"https://raw.githubusercontent.com/{OWNER_REPO}/{args.commit}/{relative}"
         actual_size, actual_sha = remote_hash(url)
         assert (actual_size, actual_sha) == local_hash(REPO / relative), relative
         raw.append({"path": relative, "url": url, "bytes": actual_size, "sha256": actual_sha})
@@ -86,17 +94,17 @@ def main() -> None:
         "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
         "manifest_sha256": "5a6fef5c16c15a5b2f90f874c268512cfd6ed2e846bdfa850a67304a4c05a155",
         "reader_units": 722,
-        "git_commit": COMMIT,
+        "git_commit": args.commit,
         "release_url": release["html_url"],
         "release_assets": results,
         "online_reader": {"url": PAGES_URL, "bytes": pages_size, "sha256": pages_sha},
         "raw_objects": raw,
         "pdf_claimed": False,
     }
-    OUT.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+    args.receipt.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps({"status": "passed", "assets": len(results), "pages_bytes": pages_size,
                       "pages_sha256": pages_sha, "raw_objects": len(raw),
-                      "receipt_sha256": local_hash(OUT)[1]}))
+                      "receipt_sha256": local_hash(args.receipt)[1]}))
 
 
 if __name__ == "__main__":

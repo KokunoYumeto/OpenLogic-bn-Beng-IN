@@ -862,34 +862,34 @@
     "translated_units": 722,
     "receipt": "PUBLIC_READBACK_SOURCE_722_2026-09-28.json",
     "receipt_sha256": "9bdaca25df5fc2fb3a97529f6341329d008daab4010de78db88fba3b739c77c5",
-    "status": "সব ৭২২টি উৎস-অনুবাদ নামহীন প্রকাশ্য আর্কাইভে যাচাইকৃত; সম্পূর্ণ HTML ও EPUB পাঠক v0.5.0 প্রকাশিত ও যাচাইকৃত। পূর্ণ PDF-এর কাজ চলছে।"
+    "status": "সব ৭২২টি উৎস-অনুবাদ নামহীন প্রকাশ্য আর্কাইভে যাচাইকৃত; সম্পূর্ণ HTML ও EPUB পাঠক v0.5.1 প্রকাশিত ও যাচাইকৃত। পূর্ণ PDF-এর কাজ চলছে।"
   },
   "last_verified_public_reader": {
-    "version": "0.5.0",
-    "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.5.0-complete-epub",
+    "version": "0.5.1",
+    "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.5.1-reader-typography",
     "pages_url": "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/",
-    "commit": "fe281a3af10d2965ecf6e81a94dc6b94a35a15ed",
+    "commit": "49532d8a0052363bcd8d954d9ee1fca05b9e4a26",
     "translated_units": 722,
     "reader_format": "semantic reflowable HTML and complete EPUB3, plus editable cumulative LaTeX; no PDF",
     "html": {
-      "bytes": 18958909,
-      "sha256": "b7d8bc5cceac9d6f8fb7ce241623fa05b1faa16516322432ed8772e76801f155"
+      "bytes": 18960094,
+      "sha256": "37bff820552960437d7af840ed15fbe46c62a123cd3ece3ecee52fa3b3cc0362"
     },
     "epub": {
-      "bytes": 1710834,
-      "sha256": "5cc8b526d633df29776c4c4b1f3382712e100987bd685a76a6a6ad922276a71f",
+      "bytes": 1710875,
+      "sha256": "9f00c0b99317944f67121efb2541cc62daadc4af8c354b02ce45831453622a60",
       "epubcheck": "EPUBCheck 5.3.0: zero messages"
     },
     "source_zip": {
-      "bytes": 5118113,
-      "sha256": "1ed0f57bc3a433687efb4d7f5fc9877e14989ed1ffbcab739cd560f2470d32bc",
-      "members": 1514
+      "bytes": 6211644,
+      "sha256": "e3865b2d496271be25c03f64d1762fad9872910c2d41015a2f99acc2ece9e140",
+      "members": 1515
     },
     "anonymous_public_readback": {
-      "receipt": "PUBLIC_READBACK_READER_722_EPUB_2026-09-28.json",
-      "receipt_sha256": "b2e2d2aa785554bb27a612189567f3926216206ed997f09c8e0461ee18786b25",
+      "receipt": "PUBLIC_READBACK_READER_722_TYPOGRAPHY_2026-09-28.json",
+      "receipt_sha256": "0cec1c45c67e943005c4562a1dc292101875674f177e673f0f220e087c16bac7",
       "release_assets": 11,
-      "raw_objects": 5
+      "raw_objects": 13
     },
     "zenodo_latest_record_scope": "v0.3.0, 299-unit EPUB; no full-edition Zenodo record yet"
   },

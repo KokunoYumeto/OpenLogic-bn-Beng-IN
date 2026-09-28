@@ -1,0 +1,30 @@
+{
+  "schema": "openlogic-bn-zenodo-lineage-audit/1",
+  "method": "Anonymous read-only Zenodo public API record and versions readback; no deposit, authentication or access-state change.",
+  "public_record": "https://zenodo.org/records/22848705",
+  "api_record": "https://zenodo.org/api/records/22848705",
+  "record_id": 22848705,
+  "concept_record_id": 22848704,
+  "doi": "10.5281/zenodo.22848705",
+  "concept_doi": "10.5281/zenodo.22848704",
+  "published_version": "0.3.0",
+  "published_versions_in_lineage": 1,
+  "resource_type": "publication:book",
+  "license": "cc-by-4.0",
+  "file_count": 6,
+  "file_names": [
+    "BUILD_QA.json",
+    "openlogic-bn-Beng-IN-through-representability.tex",
+    "openlogic-bn-Beng-IN-v0.3.0-source.zip",
+    "SHA256SUMS.txt",
+    "openlogic-bn-Beng-IN-through-representability.epub",
+    "openlogic-bn-Beng-IN-through-representability.html"
+  ],
+  "pdf_in_record": false,
+  "description_links_direct_online_reader": true,
+  "description_discloses_model_based_translation_and_review": true,
+  "description_disclaims_independent_human_review": true,
+  "creator_names_copied_into_this_receipt": false,
+  "decision": "Use a new version of this existing concept lineage for the verified full edition; do not create a duplicate record. A pertinent final PDF should be the Zenodo preview, with the direct online HTML reading link also present.",
+  "full_edition_zenodo_update": "pending final PDF and authorized access"
+}

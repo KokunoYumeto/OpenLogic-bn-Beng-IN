@@ -76,6 +76,7 @@ def main() -> None:
         "evidence/PDF_PREPARATION_CHECKPOINT_2026-09-28.json",
         "evidence/PDF_LAYOUT_CHECKPOINT_2026-09-28.json",
         "evidence/READER_VISIBLE_TOKEN_AUDIT_2026-09-28.json",
+        "evidence/ZENODO_LINEAGE_AUDIT_2026-09-28.json",
         "build/full-edition/openlogic-bn-Beng-IN-complete.tex",
         "build/full-edition/PREPARATION.json", "build/full-edition/SEMANTIC_READER_QA.json",
         "build/full-edition/EPUB_QA.json", "build/full-edition/EPUBCHECK.json",

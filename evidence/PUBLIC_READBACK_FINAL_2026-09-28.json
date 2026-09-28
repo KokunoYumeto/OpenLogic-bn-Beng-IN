@@ -1,0 +1,61 @@
+{
+  "schema": "openlogic-bn-public-full-edition-readback/1",
+  "date": "2026-09-28",
+  "status": "verified_anonymously",
+  "release": {
+    "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v1.0.0-complete-edition",
+    "tag": "v1.0.0-complete-edition",
+    "target_commit": "75e8464200ff921a73172dbd984205ca54071c48",
+    "draft": false,
+    "asset_count": 7,
+    "all_assets_downloaded_without_credentials_and_byte_identical": true,
+    "assets": [
+      {"name": "openlogic-bn-Beng-IN-complete.pdf", "bytes": 4550160, "sha256": "97aed99695d29e76b2a3500289f7e1730d8c5bc15c49c7fd0d526478ddce5b0e"},
+      {"name": "openlogic-bn-Beng-IN-complete.html", "bytes": 18961044, "sha256": "750da8e11ab11ac9ae98a4547b0c7e73415a25f7da51652b162e54c8ee4c157b"},
+      {"name": "openlogic-bn-Beng-IN-complete.epub", "bytes": 1711059, "sha256": "c9c6ecd8f05c5377d69d7a4afbed9a231ae5070589d2329a542653785bf2abe3"},
+      {"name": "openlogic-bn-Beng-IN-complete.tex", "bytes": 5270026, "sha256": "6d4ebae899812eda12dee397f96cf12f2cf83acb8536846b32952c782af01ee5"},
+      {"name": "openlogic-bn-Beng-IN-complete-sources.zip", "bytes": 6233121, "sha256": "a9b7c44dad27158ecce47babd691d9e1cc97badf991b889cfa64770ab200db24"},
+      {"name": "SHA256SUMS-complete.txt", "bytes": 515, "sha256": "7759a42f7664795aa57d4a4fd845f83546e4f56110c445769d9eeaa7b53a8c26"},
+      {"name": "FULL_RELEASE_ASSETS.json", "bytes": 1090, "sha256": "96137721e01d81cad3ad94d5b67090494e3c8589b9483994139c35878424e450"}
+    ]
+  },
+  "online_reader": {
+    "url": "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/",
+    "http_status": 200,
+    "bytes": 18961044,
+    "sha256": "750da8e11ab11ac9ae98a4547b0c7e73415a25f7da51652b162e54c8ee4c157b",
+    "matches_release_html": true
+  },
+  "raw_commit_readback": {
+    "commit": "75e8464200ff921a73172dbd984205ca54071c48",
+    "changed_objects_checked": 10,
+    "all_bytes_match": true,
+    "paths": [
+      "README.md",
+      "docs/index.html",
+      "evidence/DRAFT_STATUS.json",
+      "evidence/PDF_BOOKMARK_PREFLIGHT_2026-09-28.json",
+      "evidence/PDF_FINAL_QA_2026-09-28.json",
+      "evidence/PDF_JOINER_PREFLIGHT_2026-09-28.json",
+      "evidence/PDF_LIST_BREAK_CHECKPOINT_2026-09-28.json",
+      "tools/package_full_edition.py",
+      "tools/prepare_full_edition.py",
+      "tools/verify_full_pdf.py"
+    ]
+  },
+  "qa": {
+    "translated_source_units": 722,
+    "aligned_blocks": 7825,
+    "pdf_pages": 869,
+    "pdf_visual_pages_checked": 19,
+    "pdf_qa_receipt_sha256": "d9b70b5f95d8c7a2ee4be50c13c280f60593b5678b1fbfaf83e27005a6a7e80f",
+    "native_mathml": 43521,
+    "broken_html_internal_links": 0,
+    "epubcheck_messages": 0
+  },
+  "zenodo": {
+    "existing_concept_record_id": 22848704,
+    "prior_published_record_id": 22848705,
+    "full_edition_lineage_update": "pending"
+  }
+}

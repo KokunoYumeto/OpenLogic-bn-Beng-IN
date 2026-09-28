@@ -1,6 +1,6 @@
 {
   "schema": "openlogic-bn-draft-status/1",
-  "as_of_date": "2026-09-27",
+  "as_of_date": "2026-09-28",
   "complete": false,
   "ai_assistance": {
     "product": "OpenAI Codex",
@@ -29,7 +29,7 @@
       "effort": "Ultra"
     },
     "independent_human_review_claimed": false,
-    "reader_facing_notice_bn_Beng_IN": "অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনায় OpenAI Codex—GPT-5.6 Sol (Ultra) এবং GPT-6 Sol (Ultra) ব্যবহৃত হয়েছে। বর্তমান OLP-0660 উৎস-পর্ব GPT-6 Sol (Ultra)-এ করা। স্বাধীন মানব-পর্যালোচনা দাবি করা হচ্ছে না।",
+    "reader_facing_notice_bn_Beng_IN": "হিমায়িত উৎসের ৭২২টি এককের অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনায় OpenAI Codex—GPT-5.6 Sol (Ultra) এবং GPT-6 Sol (Ultra) ব্যবহৃত হয়েছে। স্বাধীন মানব-পর্যালোচনা দাবি করা হচ্ছে না।",
     "current_batch_OLP_0633_0639": {
       "model": "GPT-6 Sol",
       "effort": "Ultra"

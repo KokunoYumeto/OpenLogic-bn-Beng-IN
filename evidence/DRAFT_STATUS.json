@@ -862,28 +862,33 @@
     "translated_units": 722,
     "receipt": "PUBLIC_READBACK_SOURCE_722_2026-09-28.json",
     "receipt_sha256": "9bdaca25df5fc2fb3a97529f6341329d008daab4010de78db88fba3b739c77c5",
-    "status": "সব ৭২২টি উৎস-অনুবাদ নামহীন প্রকাশ্য আর্কাইভে যাচাইকৃত; সংশোধিত পূর্ণ HTML পাঠক v0.4.1 প্রকাশিত ও যাচাইকৃত। পূর্ণ PDF-এর কাজ চলছে।"
+    "status": "সব ৭২২টি উৎস-অনুবাদ নামহীন প্রকাশ্য আর্কাইভে যাচাইকৃত; সম্পূর্ণ HTML ও EPUB পাঠক v0.5.0 প্রকাশিত ও যাচাইকৃত। পূর্ণ PDF-এর কাজ চলছে।"
   },
   "last_verified_public_reader": {
-    "version": "0.4.1",
-    "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.4.1-reader-corrections",
+    "version": "0.5.0",
+    "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.5.0-complete-epub",
     "pages_url": "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/",
-    "commit": "d082c94b52546bd681076043d889bd46831ea903",
+    "commit": "fe281a3af10d2965ecf6e81a94dc6b94a35a15ed",
     "translated_units": 722,
-    "reader_format": "semantic reflowable HTML and editable cumulative LaTeX; no PDF or full EPUB",
+    "reader_format": "semantic reflowable HTML and complete EPUB3, plus editable cumulative LaTeX; no PDF",
     "html": {
-      "bytes": 18907623,
-      "sha256": "1da50d1d09699ce6be3f65630b8b410ee8eea4f4854ae9a7580fddfaf7e1f7b8"
+      "bytes": 18958909,
+      "sha256": "b7d8bc5cceac9d6f8fb7ce241623fa05b1faa16516322432ed8772e76801f155"
+    },
+    "epub": {
+      "bytes": 1710834,
+      "sha256": "5cc8b526d633df29776c4c4b1f3382712e100987bd685a76a6a6ad922276a71f",
+      "epubcheck": "EPUBCheck 5.3.0: zero messages"
     },
     "source_zip": {
-      "bytes": 5087551,
-      "sha256": "c825d87d2284679cf68d4e057a85b3072b7786921a8dd88143fd3e3cfa246650",
-      "members": 1510
+      "bytes": 5118113,
+      "sha256": "1ed0f57bc3a433687efb4d7f5fc9877e14989ed1ffbcab739cd560f2470d32bc",
+      "members": 1514
     },
     "anonymous_public_readback": {
-      "receipt": "PUBLIC_READBACK_READER_722_CORRECTIONS_2026-09-28.json",
-      "receipt_sha256": "76ba05611aeb00b0921bd6de695d0ed4082daccb1fc4d3e498ec2597cc9af078",
-      "release_assets": 8,
+      "receipt": "PUBLIC_READBACK_READER_722_EPUB_2026-09-28.json",
+      "receipt_sha256": "b2e2d2aa785554bb27a612189567f3926216206ed997f09c8e0461ee18786b25",
+      "release_assets": 11,
       "raw_objects": 5
     },
     "zenodo_latest_record_scope": "v0.3.0, 299-unit EPUB; no full-edition Zenodo record yet"
@@ -14186,5 +14191,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "Historical Functions-era TeX candidate record: all three bounded mutex acquisitions timed out without launching TeX. The verified public semantic HTML/EPUB reader is recorded above; no TeX-built PDF is claimed."
   },
-  "remaining": "৭২২-ইউনিট বাংলা উৎস ও সম্পূর্ণ HTML পাঠক প্রকাশিত ও নামহীনভাবে যাচাইকৃত। পূর্ণ PDF-এর বহু-পাস নির্মাণ, পৃষ্ঠা/গ্লিফ ও তথ্যসূত্র যাচাই, চূড়ান্ত প্রকাশ এবং Zenodo-তে একই সংস্করণরেখার নতুন সংস্করণ বাকি। আগের EPUB কেবল ২৯৯ ইউনিটের।"
+  "remaining": "৭২২-ইউনিট বাংলা উৎস এবং সম্পূর্ণ HTML ও EPUB পাঠক প্রকাশিত ও নামহীনভাবে যাচাইকৃত। পূর্ণ PDF-এর বহু-পাস নির্মাণ, পৃষ্ঠা/গ্লিফ ও তথ্যসূত্র যাচাই, চূড়ান্ত প্রকাশ এবং Zenodo-তে একই সংস্করণরেখার নতুন সংস্করণ বাকি। সর্বশেষ প্রাকৃতিক চেকপয়েন্টে TeX মিউটেক্স অধিগৃহীত হয়নি; অনুবাদ ও TeX-বহির্ভূত পরীক্ষা সক্রিয়।"
 }

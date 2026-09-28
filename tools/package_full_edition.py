@@ -72,7 +72,9 @@ def main() -> None:
         "tools/build_full_epub.py",
         "tools/build_full_edition_windows.ps1", "tools/create_reader_visual_probes.py",
         "tools/package_full_edition.py", "tools/check_source_draft.py",
-        "tools/verify_segment_canon.py",
+        "tools/verify_segment_canon.py", "tools/verify_full_pdf.py",
+        "evidence/PDF_PREPARATION_CHECKPOINT_2026-09-28.json",
+        "evidence/PDF_LAYOUT_CHECKPOINT_2026-09-28.json",
         "build/full-edition/openlogic-bn-Beng-IN-complete.tex",
         "build/full-edition/PREPARATION.json", "build/full-edition/SEMANTIC_READER_QA.json",
         "build/full-edition/EPUB_QA.json", "build/full-edition/EPUBCHECK.json",
@@ -81,6 +83,14 @@ def main() -> None:
         "build/full-edition/proof-graphs.json", "build/full-edition/math-link-targets.json",
     ):
         add_exact(files, relative)
+    pdf_qa = BUILD / "PDF_QA.json"
+    if pdf_qa.exists():
+        pdf_check = json.loads(pdf_qa.read_text(encoding="utf-8"))
+        assert pdf_check["status"] == "passed"
+        assert pdf_check["pdf_sha256"] == digest(BUILD / "openlogic-bn-Beng-IN-complete.pdf")
+        add_exact(files, "build/full-edition/PDF_QA.json")
+        add_exact(files, pdf_check["visual_qa_path"])
+        add_exact(files, "build/full-edition/latest-attempt.json")
     for directory, patterns in (
         ("upstream/sty", ("*.sty", "*.cls")),
         ("upstream/include", ("*.tex",)),
@@ -128,7 +138,6 @@ def main() -> None:
         epub_included = True
     pdf = BUILD / "openlogic-bn-Beng-IN-complete.pdf"
     # Include the PDF only after a separate passing final PDF QA receipt exists.
-    pdf_qa = BUILD / "PDF_QA.json"
     pdf_included = False
     if pdf_qa.exists():
         pdf_check = json.loads(pdf_qa.read_text(encoding="utf-8"))

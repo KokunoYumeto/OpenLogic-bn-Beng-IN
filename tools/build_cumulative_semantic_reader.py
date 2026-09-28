@@ -49,6 +49,10 @@ EXPECTED_UNTRANSLATED = 423
 EXPECTED_EPUBCHECK_VERSION = "5.3.0"
 EXPECTED_EPUBCHECK_JAR_SHA256 = "f7f96617c929371821609b88c8484d6dc9f24fe916499863c46094c5fb778a65"
 FIXED_ZIP_TIME = (2026, 9, 17, 0, 0, 0)
+PRESERVE_MATH_LINKS = False
+MATH_LINK_TARGETS = {}
+PROOF_GRAPH_RECEIPTS = []
+CURRENT_SOURCE_UNIT = ""
 
 XHTML_NS = "http://www.w3.org/1999/xhtml"
 MATHML_NS = "http://www.w3.org/1998/Math/MathML"
@@ -586,35 +590,73 @@ def ensure_math(value: str) -> str:
 
 def transform_proof_trees(value: str) -> tuple[str, int]:
     command_pattern = re.compile(
-        r"\\(AxiomC|Axiom|UnaryInfC|UnaryInf|BinaryInfC|BinaryInf|TrinaryInfC|TrinaryInf|DeduceC|Deduce|RightLabel|insertBetweenHyps)\b"
+        r"\\(AxiomC|Axiom|UnaryInfC|UnaryInf|BinaryInfC|BinaryInf|TrinaryInfC|TrinaryInf|QuaternaryInfC|QuaternaryInf|QuinaryInfC|QuinaryInf|DeduceC|Deduce|RightLabel|LeftLabel|DischargeRule|insertBetweenHyps|noLine|doubleLine|DisplayProof)\b"
     )
 
     def convert(body: str, index: int) -> str:
         lines: list[tuple[str, str]] = []
         pending_rule = ""
+        stack = []
+        graph = []
+        roots = []
+        pending_line = ""
         cursor = 0
         for match in command_pattern.finditer(body):
             if match.start() < cursor:
                 continue
             name = match.group(1)
+            if name == "DisplayProof":
+                require(len(stack) == 1, f"displayed proof has {len(stack)} roots in {CURRENT_SOURCE_UNIT}")
+                roots.append(stack.pop())
+                cursor = match.end()
+                continue
+            if name in {"noLine", "doubleLine"}:
+                pending_line = name
+                cursor = match.end()
+                continue
             try:
                 argument, end = parse_required(body, match.end())
             except ValueError:
                 continue
             cursor = end
-            if name == "RightLabel":
+            if name in {"RightLabel", "LeftLabel"}:
                 pending_rule = argument.strip().strip("$")
+                continue
+            if name == "DischargeRule":
+                discharge, cursor = parse_required(body, cursor)
+                pending_rule = argument + "^{" + discharge + "}"
                 continue
             if name == "insertBetweenHyps":
                 lines.append(("মধ্যবর্তী টীকা", argument))
                 continue
             kind = "অনুমান" if name.startswith("Axiom") else "সিদ্ধান্ত"
+            arity = 0 if name.startswith("Axiom") else next(
+                (count for prefix, count in (("Binary", 2), ("Trinary", 3), ("Quaternary", 4), ("Quinary", 5)) if name.startswith(prefix)), 1)
+            require(len(stack) >= arity, f"proof-tree branch underflow in {CURRENT_SOURCE_UNIT}: {name}")
+            parents = stack[-arity:] if arity else []
+            if arity:
+                del stack[-arity:]
+                kind += "; পূর্বসূত্র: " + ", ".join("পংক্তি " + str(parent) for parent in parents)
+            if name.startswith("Deduce"):
+                kind += "; সংক্ষিপ্ত নিষ্পাদন"
+            if pending_line:
+                kind += "; " + ("দাগহীন পংক্তি" if pending_line == "noLine" else "দ্বৈত দাগ")
+                pending_line = ""
             if pending_rule:
                 kind += f"; বিধি: ${pending_rule}$"
                 pending_rule = ""
             lines.append((kind, argument))
+            stack.append(len(lines))
+            graph.append({"line": len(lines), "source_command": name, "parents": parents,
+                          "formula": argument, "kind": kind})
         require(lines, f"empty proof tree {index + 1}")
-        items = "\n".join(rf"\item \textbf{{{kind}:}} {ensure_math(formula)}" for kind, formula in lines)
+        require(len(stack) <= 1, f"proof tree has {len(stack)} unjoined roots in {CURRENT_SOURCE_UNIT}")
+        roots.extend(stack)
+        require(roots, "proof tree has no conclusion")
+        PROOF_GRAPH_RECEIPTS.append({"unit_id": CURRENT_SOURCE_UNIT, "tree_index": index + 1, "nodes": graph,
+                                     "roots": roots})
+        items = "\n".join(rf"\item \textbf{{{kind}:}} " + (ensure_math(formula) if formula.strip() else r"\textnormal{ফাঁকা স্থান}")
+                          for kind, formula in lines)
         return (
             "\n\\begin{proof-tree-semantic}\n"
             "\\textbf{প্রমাণ-বৃক্ষের রৈখিক পাঠ}\n"
@@ -719,8 +761,9 @@ def transform_derivations(value: str) -> tuple[str, int]:
 def clean_tikz_text(value: str) -> str:
     value = re.sub(r"\\(?:node|path|draw|coordinate)\b", "", value)
     value = re.sub(r"\\(?:Large|large|small|scriptsize|tiny|normalsize)\b", "", value)
-    value = re.sub(r"\[[^\]]*\]", "", value)
-    value = value.replace(";", " ").replace("--", r" $\to$ ")
+    # Brackets in a label may denote an equivalence class, such as [w].
+    # Retain options too: they encode direction, colour and coordinate shifts.
+    value = value.replace(";", " ").replace("--", r" $-$ ")
     value = re.sub(r"\s+", " ", value).strip()
     return value
 
@@ -739,15 +782,22 @@ def transform_diagrams(value: str) -> tuple[str, int]:
             label = clean_tikz_text(label)
             if label:
                 nodes.append(label)
-        edges = []
-        for match in re.finditer(r"\\(?:path|draw)\b(.*?);", body, re.S):
-            if re.match(r"\s*node\b", match.group(1)):
+        drawing_steps = []
+        for match in re.finditer(r"\\(clip|filldraw|fill|shade|path|draw)\b(.*?);", body, re.S):
+            command, geometry = match.group(1), match.group(2)
+            if command == "path" and re.match(r"\s*node\b", geometry):
                 continue
-            description = clean_tikz_text(match.group(1))
+            description = clean_tikz_text(geometry)
             if description:
-                edges.append(description)
+                before = body[:match.start()]
+                scope_depth = len(re.findall(r"\\begin\{scope\}", before)) - len(re.findall(r"\\end\{scope\}", before))
+                scope = f" (স্থানীয় পরিসর {scope_depth})" if scope_depth else ""
+                label = {"clip": "ছাঁটের সীমানা", "filldraw": "ভরাট ও অঙ্কিত অঞ্চল",
+                         "fill": "ভরাট অঞ্চল", "shade": "ছায়াযুক্ত অঞ্চল",
+                         "path": "পথ বা নির্মাণ", "draw": "সংযোগ বা নির্দেশ"}[command]
+                drawing_steps.append(f"{label}{scope}: {description}")
         entries = [f"শীর্ষ বা লেবেল: {entry}" for entry in nodes]
-        entries.extend(f"সংযোগ বা নির্দেশ: {entry}" for entry in edges)
+        entries.extend(drawing_steps)
         if not entries:
             entries = ["উৎসচিত্রে কোনো পৃথক পাঠ্য-লেবেল নেই; পার্শ্ববর্তী অনুচ্ছেদ চিত্রটির গাণিতিক ভূমিকা ব্যাখ্যা করে।"]
         return (
@@ -798,14 +848,19 @@ def sanitize_display_math(value: str) -> str:
             argument,
             flags=re.S,
         )
+        argument = re.sub(r"\\(?:quad|qquad)(?![A-Za-z@])", " ", argument)
         return r"\text{" + unwrap_text_macros(argument) + "}", position
 
     for name in ("text", "textnormal", "mbox", "emph"):
         value = replace_macro(value, name, text_macro)
 
     def hyperlink(source: str, position: int) -> tuple[str, int]:
-        _, position = parse_required(source, position)
+        target, position = parse_required(source, position)
         label, position = parse_required(source, position)
+        if PRESERVE_MATH_LINKS:
+            marker = f"MATHREF{len(MATH_LINK_TARGETS) + 1:06d}"
+            MATH_LINK_TARGETS[marker] = {"target": target, "text": label}
+            return r"\text{" + marker + "}", position
         return r"\text{" + label + "}", position
 
     value = replace_macro(value, "hyperlink", hyperlink)
@@ -819,13 +874,15 @@ def sanitize_display_math(value: str) -> str:
         value,
     )
     value = re.sub(r"\\centering(?![A-Za-z@])", "", value)
+    value = replace_macro(value, "tag", lambda source, position: (
+        r"\qquad (" + parse_required(source, position)[0] + ")", parse_required(source, position)[1]))
     return value
 
 
 def normalize_display_environments(value: str) -> str:
     def convert(body: str, _index: int, environment: str) -> str:
-        anchors = re.findall(r"\\hypertarget\{([^{}]+)\}\{\}", body)
-        body = re.sub(r"\\hypertarget\{[^{}]+\}\{\}", "", body)
+        anchors = re.findall(r"\\(?:hypertarget|label)\{([^{}]+)\}(?:\{\})?", body)
+        body = re.sub(r"\\(?:hypertarget|label)\{[^{}]+\}(?:\{\})?", "", body)
         output: list[str] = ["\n".join(rf"\hypertarget{{{label}}}{{}}" for label in anchors)]
         cursor = 0
 
@@ -835,13 +892,15 @@ def normalize_display_environments(value: str) -> str:
             fragment = re.sub(r"(?:\\\\\s*)+$", "", fragment)
             if not fragment or re.fullmatch(r"(?:&|\\\\|\s)*", fragment):
                 return
+            if re.fullmatch(r"(?:\\(?:quad|qquad|,|;|!|:)\s*)+", fragment):
+                return
             fragment = sanitize_display_math(fragment)
             display_environment = "multline*" if environment.startswith("multline") else "align*"
             output.append(
                 f"\\begin{{{display_environment}}}\n{fragment}\n\\end{{{display_environment}}}"
             )
 
-        event = re.compile(r"\\intertext(?![A-Za-z@])|\\begin\{diagram-semantic\}")
+        event = re.compile(r"\\intertext(?![A-Za-z@])|\\begin\{(diagram-semantic|proof-tree-semantic|tableau-semantic|derivation-semantic|display-prose)\}")
         while True:
             match = event.search(body, cursor)
             if not match:
@@ -854,17 +913,16 @@ def normalize_display_environments(value: str) -> str:
                     "\\begin{display-prose}\n" + prose.strip() + "\n\\end{display-prose}"
                 )
             else:
-                diagram, cursor = extract_environment(
-                    body, match.end(), "diagram-semantic"
-                )
+                environment_name = match.group(1)
+                diagram, cursor = extract_environment(body, match.end(), environment_name)
                 output.append(
-                    "\\begin{diagram-semantic}"
+                    "\\begin{" + environment_name + "}"
                     + diagram
-                    + "\\end{diagram-semantic}"
+                    + "\\end{" + environment_name + "}"
                 )
         return "\n\n".join(part for part in output if part.strip())
 
-    for environment in ("align", "align*", "multline", "multline*"):
+    for environment in ("align", "align*", "multline", "multline*", "gather", "gather*", "equation", "equation*"):
         value, _ = transform_environments(
             value,
             environment,
@@ -875,14 +933,16 @@ def normalize_display_environments(value: str) -> str:
 
     def display_block(match: re.Match[str]) -> str:
         body = match.group(1).strip()
-        if r"\begin{diagram-semantic}" in body:
+        if any(r"\begin{" + name + "}" in body for name in (
+                "diagram-semantic", "proof-tree-semantic", "tableau-semantic", "derivation-semantic", "display-prose")):
             return re.sub(r"(?:^|\n)\s*\\\\\s*(?=\n|$)", "\n", body)
         if r"\begin{tabular}" in body:
             body = re.sub(r"\\centering(?![A-Za-z@])", "", body)
             return "\\begin{center}\n" + body + "\n\\end{center}"
         return match.group(0)
 
-    value = re.sub(r"\\\[(.*?)\\\]", display_block, value, flags=re.S)
+    # A table row break such as \\[2ex] is not a display-math delimiter.
+    value = re.sub(r"(?<!\\)\\\[(.*?)(?<!\\)\\\]", display_block, value, flags=re.S)
     return value
 
 
@@ -1006,15 +1066,23 @@ def special_math_macros(value: str) -> str:
             return template(argument, optional), position
         return callback
 
-    value = replace_macro(value, "sFmla", lambda source, position: _signed_formula(source, position))
-    value = replace_macro(value, "TRule", lambda source, position: _tableau_rule(source, position))
-    value = replace_macro(value, "Intro", one_required_optional(lambda arg, opt: rf"{arg}\mathrm{{I}}" + (f"_{{{opt}}}" if opt else "")))
-    value = replace_macro(value, "Elim", one_required_optional(lambda arg, opt: rf"{arg}\mathrm{{E}}" + (f"_{{{opt}}}" if opt else "")))
+    value = replace_macro(value, "sFmla", lambda source, position: (
+        r"\ensuremath{" + _signed_formula(source, position)[0] + "}", _signed_formula(source, position)[1]))
+    value = replace_macro(value, "TRule", lambda source, position: (
+        r"\ensuremath{" + _tableau_rule(source, position)[0] + "}", _tableau_rule(source, position)[1]))
+    value = replace_macro(value, "Intro", one_required_optional(lambda arg, opt:
+        r"\ensuremath{{" + arg + r"}\mathrm{Intro}" + (f"_{{{opt}}}" if opt else "") + "}"))
+    value = replace_macro(value, "Elim", one_required_optional(lambda arg, opt:
+        r"\ensuremath{{" + arg + r"}\mathrm{Elim}" + (f"_{{{opt}}}" if opt else "") + "}"))
     value = replace_macro(value, "cfind", one_required_optional(lambda arg, opt: rf"\varphi_{{{arg}}}" + (f"^{{{opt}}}" if opt else "")))
     value = replace_macro(value, "eqc", one_required_optional(lambda arg, opt: f"[{arg}]" + (f"_{{{opt}}}" if opt else "")))
     value = replace_macro(value, "rep", one_required_optional(lambda arg, opt: rf"\underline{{{arg}}}" + (f"_{{{opt}}}" if opt else "")))
     value = replace_macro(value, "tf", one_required_optional(lambda arg, opt: rf"\widetilde{{{arg}}}" + (f"_{{{opt}}}" if opt else "")))
-    value = replace_macro(value, "Log", one_required_optional(lambda arg, opt: rf"\mathbf{{{arg}}}" + (f"_{{{opt}}}" if opt else "")))
+    # The project definition of \Log is text-safe via \ensuremath. Keep that
+    # property after expanding it: unwrapped \mathbf vanishes in Pandoc prose
+    # and headings (for example the S5 equivalence section).
+    value = replace_macro(value, "Log", one_required_optional(
+        lambda arg, opt: r"\ensuremath{\mathbf{" + arg + "}" + (f"_{{{opt}}}" if opt else "") + "}"))
 
     def optional_operator(operator: str, style: str = "mathrm"):
         def callback(source: str, position: int) -> tuple[str, int]:
@@ -1292,7 +1360,7 @@ def normalize_cross_references(value: str, uid: str, known_labels: set[str]) -> 
     return value
 
 
-def normalize_structural_macros(value: str) -> str:
+def normalize_structural_macros(value: str, *, preserve_proof_layout: bool = False) -> str:
     value = replace_macro(value, "texorpdfstring", lambda source, position: _first_of_two(source, position))
     value = replace_macro(value, "usetoken", lambda source, position: _use_token(source, position))
     value = replace_macro(value, "printtoken", lambda source, position: _print_token(source, position))
@@ -1303,10 +1371,11 @@ def normalize_structural_macros(value: str) -> str:
     value = value.replace(r"\ycomma", ", ")
     value = value.replace(r"\textparagraph", "§")
     value = value.replace(r"\gitissue", "উৎসের ত্রুটি-নথি")
-    value = value.replace(r"\noLine", "").replace(r"\doubleLine", "").replace(r"\bottomAlignProof", "")
-    value = re.sub(r"\\small(?![A-Za-z@])", "", value)
-    value = value.replace(r"\notag", "")
-    value = re.sub(r"\\setcounter\{[^{}]+\}\{[^{}]+\}", "", value)
+    if not preserve_proof_layout:
+        value = value.replace(r"\noLine", "").replace(r"\doubleLine", "").replace(r"\bottomAlignProof", "")
+        value = re.sub(r"\\small(?![A-Za-z@])", "", value)
+        value = value.replace(r"\notag", "")
+        value = re.sub(r"\\setcounter\{[^{}]+\}\{[^{}]+\}", "", value)
     return value
 
 
@@ -1399,7 +1468,8 @@ def extract_fixed_macro_preamble(used_names: set[str]) -> str:
             continue
         body = body.replace(r"\mathexclaim", "!").replace(r"\mathsfit", r"\mathsf")
         body = body.replace(r"\varolessthan", "<").replace(r"\oldepsilon", r"\epsilon")
-        body = re.sub(r"\\ensuremath\{((?:[^{}]|\{[^{}]*\})*)\}", r"{\1}", body)
+        # Retain upstream text-safe math semantics. Pandoc converts
+        # \ensuremath both in prose and inside explicit math delimiters.
         declarations.append((match.start(), name, arity, body))
 
     # Preserve the last project definition of a name, but retain source order.
@@ -1611,14 +1681,18 @@ def slugify(value: str) -> str:
     return value or "section"
 
 
-def postprocess_html(pandoc_html: Path, environment_markers: dict[str, dict]) -> tuple[Path, dict]:
+def postprocess_html(pandoc_html: Path, environment_markers: dict[str, dict], *,
+                     edition_title: str = "ওপেন লজিক: বাংলা (ভারত) — OLP-0300 পর্যন্ত",
+                     edition_subtitle: str = "২৯৯টি অনূদিত উৎস এককের পুনঃপ্রবাহযোগ্য পাঠ · OLP-0300 পর্যন্ত",
+                     strict_links: bool = False,
+                     chapter_level: int = 1, section_level: int = 2) -> tuple[Path, dict]:
     soup = BeautifulSoup(pandoc_html.read_text(encoding="utf-8"), "html.parser")
     require(soup.html is not None and soup.head is not None and soup.body is not None, "Pandoc HTML shell missing")
     soup.html["lang"] = LANGUAGE
     soup.html["xml:lang"] = LANGUAGE
     soup.html["dir"] = "ltr"
     if soup.title:
-        soup.title.string = "ওপেন লজিক: বাংলা (ভারত) — OLP-0300 পর্যন্ত"
+        soup.title.string = edition_title
 
     pandoc_title = soup.select_one("header#title-block-header")
     if pandoc_title is not None:
@@ -1636,7 +1710,7 @@ def postprocess_html(pandoc_html: Path, environment_markers: dict[str, dict]) ->
     heading = soup.new_tag("h1", id="book-title")
     heading.string = "ওপেন লজিক: বাংলা (ভারত)"
     subtitle = soup.new_tag("p")
-    subtitle.string = "২৯৯টি অনূদিত উৎস এককের পুনঃপ্রবাহযোগ্য পাঠ · OLP-0300 পর্যন্ত"
+    subtitle.string = edition_subtitle
     header.extend([heading, subtitle])
     soup.body.insert(0, header)
 
@@ -1655,10 +1729,11 @@ def postprocess_html(pandoc_html: Path, environment_markers: dict[str, dict]) ->
     problem = 0
     label_numbers: dict[str, str] = {}
     for element in soup.find_all(["h1", "h2", "h3", "div"]):
-        if element.name == "h1" and element.get("id") != "book-title":
+        unnumbered = "unnumbered" in element.get("class", [])
+        if element.name == f"h{chapter_level}" and element.get("id") != "book-title" and not unnumbered:
             chapter += 1
             section = theorem = problem = 0
-        elif element.name == "h2":
+        elif element.name == f"h{section_level}" and not unnumbered:
             section += 1
             theorem = 0
         if element.name != "div":
@@ -1733,6 +1808,10 @@ def postprocess_html(pandoc_html: Path, environment_markers: dict[str, dict]) ->
             heading["id"] = identifier
             used_ids.add(identifier)
 
+    if strict_links:
+        missing = sorted({link["href"][1:] for link in soup.select('a[href^="#"]')
+                          if link["href"][1:] not in used_ids})
+        require(not missing, f"full-reader internal targets missing: {missing[:25]}")
     for link in soup.select('a[href^="#"]'):
         target = link.get("href", "")[1:]
         if target in label_numbers and link.get_text(" ", strip=True) == "দেখুন":
@@ -1764,8 +1843,10 @@ def postprocess_html(pandoc_html: Path, environment_markers: dict[str, dict]) ->
     require(not soup.find_all("script"), "script found in semantic HTML")
     unit_markers = soup.select(".unit-marker[data-source-unit]")
     require([node["data-source-unit"] for node in unit_markers] == EXPECTED_UNITS, "unit marker sequence drift")
+    visible_prose = "".join(str(node) for node in soup.find_all(string=True)
+                            if node.find_parent(["code", "pre", "annotation", "style"]) is None)
     require(
-        re.search(r"!!(?:\^)?a?\{", soup.get_text()) is None,
+        re.search(r"!!(?:\^)?a?\{", visible_prose) is None,
         "unexpanded OpenLogic text token in HTML",
     )
     ids = [tag["id"] for tag in soup.find_all(id=True)]

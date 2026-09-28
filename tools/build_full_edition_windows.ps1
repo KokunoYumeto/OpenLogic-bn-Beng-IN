@@ -1,0 +1,87 @@
+$Edition='full-edition'
+$ErrorActionPreference = 'Stop'
+$taskRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
+$taskBuild = Join-Path $taskRoot ('build\' + $Edition)
+$taskBase = 'openlogic-bn-Beng-IN-complete'
+$taskResolvedBuild = [IO.Path]::GetFullPath($taskBuild)
+# Build output must stay within the production boundary specified by this task.
+if (-not $taskResolvedBuild.StartsWith(($taskRoot.TrimEnd('\') + '\'), [StringComparison]::OrdinalIgnoreCase)) { throw 'Build directory outside repo boundary' }
+$taskMutex = [Threading.Mutex]::new($false, 'Global\InterlanguageTeXSlotV1')
+$taskAcquired = $false
+$taskAbandoned = $false
+$taskAttemptPath = Join-Path $taskResolvedBuild ('attempt-' + [DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfff') + '.json')
+$taskRecord = @{edition=$Edition;status='starting';mutex='Global\InterlanguageTeXSlotV1';acquisition_timeout_ms=0;input_sha256=(Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $taskResolvedBuild ($taskBase + '.tex'))).Hash.ToLowerInvariant();started_utc=[DateTime]::UtcNow.ToString('o');acquired=$false}
+[IO.File]::WriteAllText($taskAttemptPath,($taskRecord | ConvertTo-Json -Depth 6))
+Add-Type -TypeDefinition @'
+using System;
+using System.Runtime.InteropServices;
+public class BengaliTexJob {
+ [DllImport("kernel32.dll", CharSet=CharSet.Unicode)] public static extern IntPtr CreateJobObject(IntPtr a,string name);
+ [DllImport("kernel32.dll")] public static extern bool AssignProcessToJobObject(IntPtr j,IntPtr p);
+ [DllImport("kernel32.dll", SetLastError=true)] public static extern bool QueryInformationJobObject(IntPtr j,int c,IntPtr p,uint n,IntPtr r);
+ [DllImport("kernel32.dll")] public static extern bool TerminateJobObject(IntPtr j,uint code);
+ [DllImport("kernel32.dll")] public static extern bool CloseHandle(IntPtr h);
+ public static int Active(IntPtr j) { IntPtr p=Marshal.AllocHGlobal(48); try { if(!QueryInformationJobObject(j,1,p,48,IntPtr.Zero)) throw new Exception("Cannot query captured TeX job: " + Marshal.GetLastWin32Error()); return Marshal.ReadInt32(p,40); } finally {Marshal.FreeHGlobal(p);} }
+}
+'@
+try {
+    try { $taskAcquired = $taskMutex.WaitOne(0) }
+    catch [Threading.AbandonedMutexException] { $taskAcquired = $true; $taskAbandoned = $true }
+    if (-not $taskAcquired) { throw 'TeX mutex acquisition timed out after 0 ms; no TeX launched' }
+    $taskRecord.acquired=$true
+    $taskRecord['abandoned_recovery']=$taskAbandoned
+    $taskPassResults = @()
+    Push-Location $taskResolvedBuild
+    try {
+        for ($taskPass = 1; $taskPass -le 1; $taskPass++) {
+            $taskJob = [BengaliTexJob]::CreateJobObject([IntPtr]::Zero,$null)
+            $taskProcess = [Diagnostics.Process]::new()
+            $taskProcess.StartInfo.FileName = (Get-Command xelatex -ErrorAction Stop).Source
+            $taskProcess.StartInfo.Arguments = '--disable-installer -no-shell-escape -interaction=nonstopmode -halt-on-error ' + $taskBase + '.tex'
+            $taskProcess.StartInfo.WorkingDirectory = $taskResolvedBuild
+            $taskProcess.StartInfo.UseShellExecute = $false
+            $taskProcess.StartInfo.CreateNoWindow = $true
+            $taskProcess.StartInfo.RedirectStandardOutput = $true
+            $taskProcess.StartInfo.RedirectStandardError = $true
+            $taskProcess.StartInfo.Environment['SOURCE_DATE_EPOCH'] = '1788520000'
+            $taskProcess.StartInfo.Environment['FORCE_SOURCE_DATE'] = '1'
+            try {
+                $taskDeadline = [DateTime]::UtcNow.AddSeconds(300)
+                [void]$taskProcess.Start()
+                if (-not [BengaliTexJob]::AssignProcessToJobObject($taskJob,$taskProcess.Handle)) { $taskProcess.Kill($true); $taskProcess.WaitForExit(); throw 'Cannot capture TeX process tree in job' }
+                $taskStdout = $taskProcess.StandardOutput.ReadToEndAsync()
+                $taskStderr = $taskProcess.StandardError.ReadToEndAsync()
+                if (-not $taskProcess.WaitForExit(300000)) { [void][BengaliTexJob]::TerminateJobObject($taskJob,124); $taskProcess.WaitForExit(); throw 'Captured TeX tree exceeded 300-second bound' }
+                while ([BengaliTexJob]::Active($taskJob) -gt 0) { if ([DateTime]::UtcNow -gt $taskDeadline) { [void][BengaliTexJob]::TerminateJobObject($taskJob,124); throw 'Captured TeX descendants exceeded 300-second bound' }; [Threading.Thread]::Sleep(100) }
+                $taskCode = $taskProcess.ExitCode
+                $taskOutput = $taskStdout.GetAwaiter().GetResult() + $taskStderr.GetAwaiter().GetResult()
+            } catch { [void][BengaliTexJob]::TerminateJobObject($taskJob,125); if (-not $taskProcess.HasExited) { $taskProcess.WaitForExit() }; throw }
+            finally { [void][BengaliTexJob]::CloseHandle($taskJob); $taskProcess.Dispose() }
+            $taskSanitized = $taskOutput.Replace($env:USERPROFILE,'[PROFILE]')
+            [IO.File]::WriteAllText((Join-Path $taskResolvedBuild "pass-$taskPass.txt"),$taskSanitized)
+            $taskPdfPath = Join-Path $taskResolvedBuild ($taskBase + '.pdf')
+            $taskPdfHash = if (Test-Path -LiteralPath $taskPdfPath) { (Get-FileHash -Algorithm SHA256 -LiteralPath $taskPdfPath).Hash.ToLowerInvariant() } else { $null }
+            $taskPassResults += @{pass=$taskPass;exit_code=$taskCode;pdf_sha256=$taskPdfHash}
+            if ($taskCode -ne 0) { throw "TeX pass $taskPass failed with exit code $taskCode" }
+            if ($taskPass -ge 2 -and $taskPassResults[-1].pdf_sha256 -eq $taskPassResults[-2].pdf_sha256) { break }
+        }
+        $taskLogPath = Join-Path $taskResolvedBuild ($taskBase + '.log')
+        $taskLog = [IO.File]::ReadAllText($taskLogPath).Replace($env:USERPROFILE,'[PROFILE]')
+        [IO.File]::WriteAllText($taskLogPath,$taskLog)
+        $taskFindings = @($taskLog -split "`n" | Where-Object { $_ -match 'Missing character|Overfull|undefined|LaTeX Error' })
+        $taskReceipt = @{mutex='Global\InterlanguageTeXSlotV1';acquisition_timeout_ms=0;acquired=$true;abandoned_recovery=$taskAbandoned;passes=$taskPassResults;stable_pdf_between_passes=$false;log_findings=$taskFindings;tree_policy='Captured Windows job; parent and descendants end before completion. Shell escape and installer disabled; mutex spans this diagnostic pass and immediate log checks.'}
+        $taskReceipt | ConvertTo-Json -Depth 5
+        $taskRecord['build']=$taskReceipt
+        $taskRecord.status='completed'
+    } finally { Pop-Location }
+} catch {
+    $taskRecord.status='failed'
+    $taskRecord['error']=$_.Exception.Message.Replace($env:USERPROFILE,'[PROFILE]')
+    throw
+} finally {
+    if ($taskAcquired) { $taskMutex.ReleaseMutex() }
+    $taskMutex.Dispose()
+    $taskRecord['ended_utc']=[DateTime]::UtcNow.ToString('o')
+    [IO.File]::WriteAllText($taskAttemptPath,($taskRecord | ConvertTo-Json -Depth 6))
+    [IO.File]::WriteAllText((Join-Path $taskResolvedBuild 'latest-attempt.json'),($taskRecord | ConvertTo-Json -Depth 6))
+}

@@ -194,6 +194,7 @@ def main():
     display_blank_line_adjustments = []
     bracket_display_blank_line_adjustments = []
     tabular_spacing_adjustments = []
+    overfull_path_adjustments = []
     documented_missing = []
     label_map = []
     transformed = []
@@ -222,6 +223,15 @@ def main():
             raise RuntimeError(f"{uid}: token expansion failed; examples {fragments[-5:]}") from exc
         raw = reader.literalize_string_commands(raw)
         raw = raw.replace("!!", r"\string!\string!")
+        if uid == "OLP-0365":
+            old_path = r"\texttt{lambda-calculus/syntax/beta.tex}"
+            assert raw.count(old_path) == 1
+            raw = raw.replace(old_path,
+                              r"\texttt{lambda-calculus/\allowbreak syntax/\allowbreak beta.tex}", 1)
+            overfull_path_adjustments.append({
+                "unit_id": uid,
+                "action": "উৎস-সংশোধন টীকার দীর্ঘ কোড-পাথে স্ল্যাশের পর ঐচ্ছিক লাইনবিরতি; দৃশ্যমান পথ অপরিবর্তিত।",
+            })
         if uid == "OLP-0349":
             assert raw.count(r"$\num$") == 1
             raw = raw.replace(r"$\num$", r"\texttt{\textbackslash num}")
@@ -350,6 +360,7 @@ def main():
     assert len(bracket_display_blank_line_adjustments) == 5
     assert sum(item["blank_paragraphs_removed"] for item in bracket_display_blank_line_adjustments) == 9
     assert len(tabular_spacing_adjustments) == 1
+    assert len(overfull_path_adjustments) == 1
 
     token_setup = "\n".join(r"\settexttoken{" + key + "}{" + value + "}{" + value + "}"
                             for key, value in reader.TOKEN_TRANSLATIONS.items())
@@ -487,6 +498,7 @@ OpenAI Codex: GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort\par
         "display_blank_line_adjustments": display_blank_line_adjustments,
         "bracket_display_blank_line_adjustments": bracket_display_blank_line_adjustments,
         "tabular_spacing_adjustments": tabular_spacing_adjustments,
+        "overfull_path_adjustments": overfull_path_adjustments,
         "status": "prepared; compilation, semantic HTML and visual QA pending",
     }
     (BUILD / "PREPARATION.json").write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

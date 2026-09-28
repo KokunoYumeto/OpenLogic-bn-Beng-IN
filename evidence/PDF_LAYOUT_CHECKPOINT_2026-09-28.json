@@ -1,0 +1,29 @@
+{
+  "schema": "openlogic-bn-full-pdf-layout-checkpoint/1",
+  "source_units": 722,
+  "full_pdf_complete": false,
+  "last_partial_build": {
+    "source": "build/full-edition/openlogic-bn-Beng-IN-complete.log",
+    "pages": 649,
+    "overfull_hbox_warnings": 5,
+    "overfull_hbox_warnings_over_10pt": 3,
+    "largest_overflow_pt": 64.91464,
+    "largest_overflow_unit": "OLP-0365",
+    "largest_overflow_cause": "Unbreakable lambda-calculus/syntax/beta.tex path in a source-correction note"
+  },
+  "prepared_pdf_input": {
+    "script": "tools/prepare_full_edition.py",
+    "path_breaks_added": 2,
+    "path_visible_text_changed": false,
+    "previous_display_repair_preserved": true,
+    "tex_sha256": "deafbe0a3c1702b4b5534a39f051b9451405bb93aca6e7798af9b8d80d76cb44",
+    "preparation_receipt_sha256": "10f0b0e8361a52b4b78fa3c409e708c1885a4fce4960036883ef79ab733d3b5e"
+  },
+  "bounded_build_attempt": {
+    "receipt": "build/full-edition/attempt-20260928T033027745.json",
+    "acquired_tex_mutex": false,
+    "tex_launched": false,
+    "acquisition_timeout_ms": 0
+  },
+  "remaining": "Continue non-TeX source and semantic review; make one guarded compilation attempt at a later natural validated checkpoint, then inspect PDF pages, glyphs, references and bibliography before final publication."
+}

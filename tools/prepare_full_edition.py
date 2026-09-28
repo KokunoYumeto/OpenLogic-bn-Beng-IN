@@ -193,6 +193,7 @@ def main():
     caption_reference_adjustments = []
     display_blank_line_adjustments = []
     bracket_display_blank_line_adjustments = []
+    tableau_blank_line_adjustments = []
     tabular_spacing_adjustments = []
     overfull_path_adjustments = []
     documented_missing = []
@@ -347,6 +348,18 @@ def main():
             return r"\[" + content + r"\]"
         raw = re.sub(r"(?<!\\)\\\[(.*?)(?<!\\)\\\]",
                      bracket_display_without_paragraph, raw, flags=re.S)
+        def tableau_without_paragraph(match):
+            content = match.group(1)
+            blanks = re.findall(r"\n[ \t]*\n", content)
+            if blanks:
+                tableau_blank_line_adjustments.append({
+                    "unit_id": uid, "blank_paragraphs_removed": len(blanks),
+                    "action": "ট্যাবলোর forest options-এ মন্তব্য সরানোর ফলে তৈরি অনিচ্ছাকৃত অনুচ্ছেদ-বিরতি বাদ; শাখা ও সূত্র অপরিবর্তিত।",
+                })
+            content = re.sub(r"\n(?:[ \t]*\n)+", "\n", content)
+            return r"\begin{oltableau}" + content + r"\end{oltableau}"
+        raw = re.sub(r"\\begin\{oltableau\}(.*?)\\end\{oltableau\}",
+                     tableau_without_paragraph, raw, flags=re.S)
         def adjacent_table_break(match):
             tabular_spacing_adjustments.append({"unit_id": uid,
                 "action": "দুটি সত্যসারণির মাঝের উৎস-লাইনবিরতির আগে অনিচ্ছাকৃত অনুচ্ছেদ-সমাপ্তি সরানো; বিরতি ও সারণি অপরিবর্তিত।"})
@@ -359,6 +372,10 @@ def main():
     assert sum(item["blank_paragraphs_removed"] for item in display_blank_line_adjustments) == 9
     assert len(bracket_display_blank_line_adjustments) == 5
     assert sum(item["blank_paragraphs_removed"] for item in bracket_display_blank_line_adjustments) == 9
+    assert tableau_blank_line_adjustments == [{
+        "unit_id": "OLP-0514", "blank_paragraphs_removed": 1,
+        "action": "ট্যাবলোর forest options-এ মন্তব্য সরানোর ফলে তৈরি অনিচ্ছাকৃত অনুচ্ছেদ-বিরতি বাদ; শাখা ও সূত্র অপরিবর্তিত।",
+    }]
     assert len(tabular_spacing_adjustments) == 1
     assert len(overfull_path_adjustments) == 1
 
@@ -497,6 +514,7 @@ OpenAI Codex: GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort\par
         "caption_reference_adjustments": caption_reference_adjustments,
         "display_blank_line_adjustments": display_blank_line_adjustments,
         "bracket_display_blank_line_adjustments": bracket_display_blank_line_adjustments,
+        "tableau_blank_line_adjustments": tableau_blank_line_adjustments,
         "tabular_spacing_adjustments": tabular_spacing_adjustments,
         "overfull_path_adjustments": overfull_path_adjustments,
         "status": "prepared; compilation, semantic HTML and visual QA pending",

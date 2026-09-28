@@ -1,0 +1,47 @@
+{
+  "schema": "openlogic-bn-full-pdf-tableau-checkpoint/1",
+  "source_units": 722,
+  "full_pdf_complete": false,
+  "guarded_build_attempt": {
+    "receipt": "build/full-edition/latest-attempt.json",
+    "receipt_sha256": "50136b323932540f2fb03a4e8f85537557e8aa00d097411af81ce9c2f756244a",
+    "acquired_tex_mutex": true,
+    "input_sha256": "deafbe0a3c1702b4b5534a39f051b9451405bb93aca6e7798af9b8d80d76cb44",
+    "pass_1_exit_code": 1,
+    "partial_pdf_pages": 717,
+    "partial_pdf_sha256": "bea9b2408bb29fb988d34d6e71e32a7e26ca6940ea0c193f42177f64b5c6e7d1",
+    "partial_pdf_releasable": false,
+    "log_sha256": "1990808b1387e2077bc91a90591355cbb599ccf7e564e05229606c316ba8bf88",
+    "fatal_message": "Paragraph ended before \\forestset was complete.",
+    "fatal_prepared_tex_line": 62250,
+    "unit_id": "OLP-0514"
+  },
+  "diagnosis": {
+    "target_source": "bn-Beng-IN/content/intuitionistic-logic/tableaux/proofs.tex",
+    "target_source_sha256": "752f66ed3903f91537151a57d2d32b897dbc41d8f00f0cc6e5c141604788fef5",
+    "cause": "A source-correction comment inside an oltableau becomes a blank paragraph when comments are stripped for PDF assembly; forestset cannot accept that paragraph in its options.",
+    "other_oltableau_blank_paragraphs_before_repair": 0,
+    "source_translation_changed": false
+  },
+  "pdf_only_repair": {
+    "assembler": "tools/prepare_full_edition.py",
+    "assembled_tableaux_checked": 56,
+    "oltableau_blank_paragraphs_after_repair": 0,
+    "blank_paragraphs_removed": 1,
+    "previous_prepared_tex_sha256": "deafbe0a3c1702b4b5534a39f051b9451405bb93aca6e7798af9b8d80d76cb44",
+    "current_prepared_tex_sha256": "77f7a6edb1d954bb92ce12567e7b68d7add1c4247a74f40a48cbdf715b1ec3a2",
+    "removed_bytes": 19,
+    "reinsert_removed_whitespace_reproduces_previous_sha256": true,
+    "preparation_receipt_sha256": "0a404d13f2de3c2bb289485e8a36ee33203d4523e88943e58aca10dd517b54c0"
+  },
+  "semantic_reader_rebuild": {
+    "html_sha256": "37bff820552960437d7af840ed15fbe46c62a123cd3ece3ecee52fa3b3cc0362",
+    "byte_identical_to_public_v0_5_1": true,
+    "source_units": 722,
+    "native_mathml": 43521,
+    "broken_internal_links": 0,
+    "existing_epub_qa_html_match": true,
+    "existing_epub_sha256": "9f00c0b99317944f67121efb2541cc62daadc4af8c354b02ce45831453622a60"
+  },
+  "remaining": "Make one guarded TeX/BibTeX attempt on this repaired input at this validated checkpoint, then inspect final-page failures, visual quality and PDF_QA before any release."
+}

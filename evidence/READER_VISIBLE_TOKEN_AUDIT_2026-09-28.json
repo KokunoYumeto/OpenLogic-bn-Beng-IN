@@ -1,0 +1,33 @@
+{
+  "schema": "openlogic-bn-reader-visible-token-audit/1",
+  "html_sha256": "37bff820552960437d7af840ed15fbe46c62a123cd3ece3ecee52fa3b3cc0362",
+  "source_units": 722,
+  "method": "Parse the complete HTML, exclude MathML TeX annotations, CSS and scripts, then inspect visible text for untranslated control tokens and placeholders; inspect each remaining literal against its exact Bengali source location.",
+  "visible_text_characters": 2124282,
+  "visible_bengali_characters": 1298490,
+  "unresolved_mathref_tokens": 0,
+  "raw_latex_environments": 0,
+  "raw_latex_reference_commands": 0,
+  "english_placeholder_phrases": 0,
+  "literal_source_macro_examples": {
+    "count": 6,
+    "classification": "Intentional quoted source-macro spellings in labelled source-correction notes, not untranslated prose or pending translation markers.",
+    "locations": [
+      {
+        "unit_id": "OLP-0308",
+        "correction": "BN-SRC-240",
+        "count": 3,
+        "path": "bn-Beng-IN/content/incompleteness/theories-computability/first-incompleteness.tex",
+        "sha256": "139dcbc1c494a665ea30fc430b355f7311bcd5cb1bec1e414cb7b4e1e06464a4"
+      },
+      {
+        "unit_id": "OLP-0319",
+        "correction": "BN-SRC-247",
+        "count": 3,
+        "path": "bn-Beng-IN/content/incompleteness/incompleteness-provability/second-incompleteness-thm.tex",
+        "sha256": "5f9ea6b03b8667ecda61a38c3c7e0ace28c618b7ae666f6eb24e4f4bbfebfb87"
+      }
+    ]
+  },
+  "result": "passed_with_documented_literal_code_exceptions"
+}

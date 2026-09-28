@@ -1,0 +1,43 @@
+{
+  "schema": "openlogic-bn-public-zenodo-full-edition-readback/1",
+  "date": "2026-09-28",
+  "status": "published_and_verified_anonymously",
+  "record_url": "https://zenodo.org/records/23018795",
+  "record_id": 23018795,
+  "doi": "10.5281/zenodo.23018795",
+  "concept_record_id": 22848704,
+  "concept_doi": "10.5281/zenodo.22848704",
+  "prior_published_record_id": 22848705,
+  "prior_version": "0.3.0",
+  "same_existing_concept_lineage": true,
+  "versions_latest_record_id": 23018795,
+  "publication_state": "done",
+  "version": "1.0.0",
+  "title": "Open Logic — Bengali (India): Complete 722-Unit Edition",
+  "publication_date": "2026-09-28",
+  "primary_readable_preview": "openlogic-bn-Beng-IN-complete.pdf",
+  "pdf_default_preview_selected_and_published_viewer_checked": true,
+  "direct_online_reader": "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/",
+  "github_release": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v1.0.0-complete-edition",
+  "anonymous_file_count": 7,
+  "all_files_downloaded_without_credentials_and_byte_identical_to_local_and_github": true,
+  "files": [
+    {"name": "openlogic-bn-Beng-IN-complete.pdf", "bytes": 4550160, "sha256": "97aed99695d29e76b2a3500289f7e1730d8c5bc15c49c7fd0d526478ddce5b0e", "zenodo_md5": "eb716232d97fafd7ae8a9687f9235498"},
+    {"name": "FULL_RELEASE_ASSETS.json", "bytes": 1090, "sha256": "96137721e01d81cad3ad94d5b67090494e3c8589b9483994139c35878424e450", "zenodo_md5": "da1e6fc58f8e5e9c61e2cd4850a6abd1"},
+    {"name": "openlogic-bn-Beng-IN-complete-sources.zip", "bytes": 6233121, "sha256": "a9b7c44dad27158ecce47babd691d9e1cc97badf991b889cfa64770ab200db24", "zenodo_md5": "60bd75b51bef134e36f22c8e42fe6b49"},
+    {"name": "openlogic-bn-Beng-IN-complete.html", "bytes": 18961044, "sha256": "750da8e11ab11ac9ae98a4547b0c7e73415a25f7da51652b162e54c8ee4c157b", "zenodo_md5": "8622216fa661fbf11fa39548027bbb59"},
+    {"name": "openlogic-bn-Beng-IN-complete.tex", "bytes": 5270026, "sha256": "6d4ebae899812eda12dee397f96cf12f2cf83acb8536846b32952c782af01ee5", "zenodo_md5": "9ef4d1dbcbddd261280b71bf5acda1b0"},
+    {"name": "openlogic-bn-Beng-IN-complete.epub", "bytes": 1711059, "sha256": "c9c6ecd8f05c5377d69d7a4afbed9a231ae5070589d2329a542653785bf2abe3", "zenodo_md5": "7bae7703b4723f6a80db099bc25c4508"},
+    {"name": "SHA256SUMS-complete.txt", "bytes": 515, "sha256": "7759a42f7664795aa57d4a4fd845f83546e4f56110c445769d9eeaa7b53a8c26", "zenodo_md5": "bd0c48270a5e027dfa4380e4aa504bbb"}
+  ],
+  "qa": {
+    "translated_source_units": 722,
+    "aligned_blocks": 7825,
+    "pdf_pages": 869,
+    "pdf_visual_pages_checked": 19,
+    "pdf_qa_receipt_sha256": "d9b70b5f95d8c7a2ee4be50c13c280f60593b5678b1fbfaf83e27005a6a7e80f",
+    "native_html_mathml": 43521,
+    "broken_html_internal_links": 0,
+    "epubcheck_messages": 0
+  }
+}

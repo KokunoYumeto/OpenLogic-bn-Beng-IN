@@ -5,13 +5,14 @@
 ## পড়া ও সংগ্রহ
 
 - [সম্পূর্ণ ৭২২-ইউনিট বাংলা HTML পাঠক অনলাইনে পড়ুন](https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/)।
-- [সম্পূর্ণ HTML, EPUB, সম্পাদনযোগ্য সমষ্টিগত LaTeX ও নির্ভুল উৎস-ZIP-এর v0.5.0 প্রকাশনা](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.5.0-complete-epub)।
+- [সম্পূর্ণ HTML, EPUB, সম্পাদনযোগ্য সমষ্টিগত LaTeX ও নির্ভুল উৎস-ZIP-এর v0.5.1 সংশোধিত প্রকাশনা](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.5.1-reader-typography)।
+- [আগের v0.5.0 সম্পূর্ণ EPUB প্রকাশনা](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.5.0-complete-epub)।
 - [আগের v0.4.1 HTML সংশোধনী](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.4.1-reader-corrections)।
 - [আগের ২৯৯-ইউনিট HTML/EPUB সংস্করণ](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.3.0-through-representability)।
 - [সংরক্ষণ-নথির সংস্করণসমূহ ও DOI](https://doi.org/10.5281/zenodo.22848704)।
 - [অনুবাদ-প্রকল্পগুলির আন্তর্জাতিক সূচি](https://github.com/KokunoYumeto/OpenLogic-translations)।
 
-প্রকাশিত সম্পূর্ণ HTML সরাসরি অনলাইনে পড়ার উপযোগী; EPUB অফলাইনে সামঞ্জস্যপূর্ণ পাঠযন্ত্রে পড়া যায়। v0.4.1-এর সূত্র ও টীকা সংশোধন এই সংস্করণেও আছে। তুরিং যন্ত্রের যাচাই অধ্যায়ে দুটি ম্যাক্রো-নামের মুদ্রণ এবং একটি সমীকরণ-বিন্যাস সংশোধিত। সম্পূর্ণ EPUB EPUBCheck 5.3.0-এ ত্রুটিহীন; PDF এই সংস্করণে নেই। উৎস-ZIP অফলাইনে সম্পাদন ও পুনর্নির্মাণের জন্য, অনলাইনে পড়ার বিকল্প নয়।
+প্রকাশিত সম্পূর্ণ HTML সরাসরি অনলাইনে পড়ার উপযোগী; EPUB অফলাইনে সামঞ্জস্যপূর্ণ পাঠযন্ত্রে পড়া যায়। v0.5.1-এ পাঁচটি প্রমাণ-অংশে গদ্যের গাণিতিক চিহ্ন যথাযথ সূত্ররূপে দেখানো হয়েছে; সম্পূর্ণ ৭,৮২৫-ব্লকের ভারতীয় বাংলা পৃষ্ঠা-পরামর্শ সূচকও উৎস-ZIP-এ আছে। আগের সূত্র, টীকা, ম্যাক্রো-নাম ও সমীকরণ-বিন্যাসের সংশোধনগুলি অক্ষত। সম্পূর্ণ EPUB EPUBCheck 5.3.0-এ ত্রুটিহীন; PDF এই সংস্করণে নেই। উৎস-ZIP অফলাইনে সম্পাদন ও পুনর্নির্মাণের জন্য, অনলাইনে পড়ার বিকল্প নয়।
 
 ## উৎস, অনুবাদ ও পর্যালোচনার অবস্থা
 

@@ -6308,6 +6308,14 @@ for row in rows:
         new_open = "assumption of~$\\delta_1'$; in the second case"
         assert audited_sequents.count(old_open) == 1
         audited_sequents = audited_sequents.replace(old_open, new_open, 1)
+        # The target names the previously unnamed induction proof in math
+        # mode; this also prevents its subscript/prime from falling back to
+        # the Latin text font in the PDF.
+        old_unnamed = "of~$!C$. In the first case"
+        new_named = "of~$!C$. Call it $\\delta_1'$. In the first case"
+        assert audited_sequents.count(old_unnamed) == 1
+        assert "সেটিকে $\\delta_1'$ বলি" in checked_target
+        audited_sequents = audited_sequents.replace(old_unnamed, new_named, 1)
         marker = "  the !!{proof}~$\\delta'$ to be"
         assert audited_sequents.count(marker) == 1
         head, marker, final_trees = audited_sequents.partition(marker)
@@ -7705,6 +7713,9 @@ for row in rows:
     # A doubled escape still contains the regex substring "\\begin" and can
     # falsely pass environment parity while TeX sees a line-break command.
     assert r"\\begin{" not in checked_target and r"\\end{" not in checked_target, row["unit_id"]
+    # These bare proof symbols fell through to Latin text fonts as missing
+    # glyphs in the guarded PDF pass. Use TeX math for them in source prose.
+    assert not set("δ₁′∧⊥∨").intersection(checked_target), row["unit_id"]
     checks = {
         "unit_id": row["unit_id"],
         "source_blocks": len(source_blocks),

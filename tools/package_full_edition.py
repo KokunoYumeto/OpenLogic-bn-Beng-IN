@@ -37,6 +37,8 @@ def main() -> None:
     qa = json.loads((BUILD / "SEMANTIC_READER_QA.json").read_text(encoding="utf-8"))
     status = json.loads((REPO / "evidence/DRAFT_STATUS.json").read_text(encoding="utf-8"))
     checks = {row["unit_id"]: row for row in status["current_checks"]["unit_checks"]}
+    assert status["current_checks"]["segment_index_sha256"] == digest(
+        REPO / "evidence/SEGMENT_CANON_USE.jsonl")
     assert preparation["tex"]["sha256"] == digest(TEX)
     assert qa["source"]["prepared_tex_sha256"] == digest(TEX)
     assert qa["html"]["html_sha256"] == digest(HTML)
@@ -70,6 +72,7 @@ def main() -> None:
         "tools/build_full_epub.py",
         "tools/build_full_edition_windows.ps1", "tools/create_reader_visual_probes.py",
         "tools/package_full_edition.py", "tools/check_source_draft.py",
+        "tools/verify_segment_canon.py",
         "build/full-edition/openlogic-bn-Beng-IN-complete.tex",
         "build/full-edition/PREPARATION.json", "build/full-edition/SEMANTIC_READER_QA.json",
         "build/full-edition/EPUB_QA.json", "build/full-edition/EPUBCHECK.json",

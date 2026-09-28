@@ -11728,7 +11728,7 @@
           "BN-SRC-558"
         ],
         "tex_command_check": null,
-        "target_sha256": "82106d2719c6dda99c0ff3675af61fb2a2f842e281b455056d9f10c01d8e7f6f"
+        "target_sha256": "9fbb3af29a7c96a671ec3395d08d92602d5faa730deef7c15920c29ee89f060c"
       },
       {
         "unit_id": "OLP-0670",
@@ -11751,7 +11751,7 @@
           "BN-SRC-567"
         ],
         "tex_command_check": null,
-        "target_sha256": "55d320a117b7b8b6e119cd4573639dda62c72458ad848af78e8d3d537714697e"
+        "target_sha256": "a2094862cee3f645da9305ffa979e9a383039a0771f7bb27b902d58b8ebb9e55"
       },
       {
         "unit_id": "OLP-0671",
@@ -11859,7 +11859,7 @@
           "documented_language_normalization": "BN-NORM-173",
           "bengali_math_text_labels": 3
         },
-        "target_sha256": "2840325dbd5884b2a8f06f01710ac2658025049e1524b5da0fe6efc842f32ccb",
+        "target_sha256": "09bb441508c1def0dd0ecedcda1048024cff88a42755c9441797366370189a39",
         "documented_source_normalizations": [
           "BN-NORM-173"
         ]
@@ -11959,7 +11959,7 @@
           "finite_failure_branch_condition": true,
           "fair_non_atomic_indexing": true
         },
-        "target_sha256": "c3b9241c544d8522d393cd00c41c7b848887f9bc1f6b542c3ef8e8ab758b1ca9"
+        "target_sha256": "c040ceb55fe573cbf82107dd3d687a14dad091a11704dfb476932686c756014f"
       },
       {
         "unit_id": "OLP-0680",
@@ -12335,7 +12335,7 @@
           "contraction_conclusion_and_biconditional_side": true,
           "end_sequent_named_correctly": true
         },
-        "target_sha256": "506ff389a04c5742883db6ba4685b7c73b96e510509192961076adcb911be6b5"
+        "target_sha256": "2588f26f08e8edd48bb7bd1c30946e0650aeacf9c7e75bebfc5b63347a89ea0b"
       },
       {
         "unit_id": "OLP-0699",
@@ -12832,8 +12832,8 @@
     },
     "segments": 7825,
     "translated_segments": 6673,
-    "segment_index_path": "evidence/DRAFT_SEGMENT_CANON_USE.jsonl",
-    "segment_index_sha256": "b541c307efaecc9de11f7158f7a142700d853fffefb41be9f1c22c421b405742",
+    "segment_index_path": "evidence/SEGMENT_CANON_USE.jsonl",
+    "segment_index_sha256": "7ccf78a23ac1499516f1164a506b67b0181c3bde98180916eafe9964734b9904",
     "semantic_review": [
       {
         "path": "evidence/SEMANTIC_REVIEW_FUNCTIONS.md",
@@ -14166,7 +14166,7 @@
     "machine_index_path": "evidence/TRANSLATION_DECISION_INDEX.json",
     "occurrence_count": 45547,
     "occurrence_schema": "openlogic-bn-translation-decision/3",
-    "occurrence_join": "Join source_segment_id to evidence/DRAFT_SEGMENT_CANON_USE.jsonl for exact source and target paths, block spans and SHA-256; read the frozen source block and verify its hash for exact wording.",
+    "occurrence_join": "Join source_segment_id to evidence/SEGMENT_CANON_USE.jsonl for exact source and target paths, block spans and SHA-256; read the frozen source block and verify its hash for exact wording.",
     "layout_readback": {
       "commit": "9df66389d66ee4c2b15b6725568def2625fd9822",
       "receipt": "evidence/PUBLIC_READBACK_DECISION_LAYOUT_411_2026-09-25.json",

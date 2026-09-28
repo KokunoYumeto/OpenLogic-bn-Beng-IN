@@ -1,0 +1,41 @@
+{
+  "schema": "openlogic-bn-full-pdf-preparation/1",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "source_units": 722,
+  "pdf_complete": false,
+  "last_compilation_attempt": {
+    "receipt": "build/full-edition/attempt-20260928T032131082.json",
+    "acquired_tex_mutex": true,
+    "input_sha256": "cf7d34517bdcd6c21df36a91cfa9af8b4d5f705acb5b7d7e937e3917583772bf",
+    "pass": 1,
+    "result": "failed at line 56387 with Missing $ inserted after an empty paragraph inside displayed math",
+    "partial_pdf_pages": 649
+  },
+  "repair": {
+    "script": "tools/prepare_full_edition.py",
+    "change": "Remove empty paragraphs from five non-TikZ bracketed math displays; formulas and proof trees unchanged",
+    "displays_repaired": 5,
+    "blank_paragraphs_removed": 9,
+    "remaining_non_tikz_display_blank_paragraphs": 0,
+    "prepared_tex_sha256": "75db2df70ffbf6217bcc22274598927c66ddc08006ad2546feab6d103bd5e379",
+    "preparation_receipt_sha256": "19ae2ddae47db09d79cba276331b6326bff8b9b2c528a6e7cf56cd7941365264"
+  },
+  "static_linkage": {
+    "bibliography_entries": 141,
+    "cited_keys": 116,
+    "missing_citation_keys": 0,
+    "labels": 708,
+    "hypertargets": 1732,
+    "reference_keys": 8,
+    "missing_reference_targets": 0,
+    "hyperlink_keys": 810,
+    "missing_hyperlink_targets": 0
+  },
+  "revised_input_tex_attempt": {
+    "receipt": "build/full-edition/attempt-20260928T032524708.json",
+    "acquired_tex_mutex": false,
+    "acquisition_timeout_ms": 0,
+    "tex_launched": false
+  },
+  "remaining": "At a later natural validated checkpoint, make one bounded guarded TeX attempt on the repaired input; then finish BibTeX convergence, glyph/page visual QA, final PDF release and anonymous readback."
+}

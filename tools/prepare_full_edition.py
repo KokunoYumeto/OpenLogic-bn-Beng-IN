@@ -192,6 +192,7 @@ def main():
     proof_title_reference_adjustments = []
     caption_reference_adjustments = []
     display_blank_line_adjustments = []
+    bracket_display_blank_line_adjustments = []
     tabular_spacing_adjustments = []
     documented_missing = []
     label_map = []
@@ -322,6 +323,20 @@ def main():
             return r"\begin{" + match.group(1) + "}" + body + r"\end{" + match.group(1) + "}"
         raw = re.sub(r"\\begin\{(align\*?|gather\*?|multline\*?|equation\*?|array)\}(.*?)\\end\{\1\}",
                      display_without_paragraph, raw, flags=re.S)
+        def bracket_display_without_paragraph(match):
+            content = match.group(1)
+            if r"\begin{tikzpicture}" in content:
+                return match.group(0)
+            blanks = re.findall(r"\n[ \t]*\n", content)
+            if blanks:
+                bracket_display_blank_line_adjustments.append({
+                    "unit_id": uid, "blank_paragraphs_removed": len(blanks),
+                    "action": "গাণিতিক প্রদর্শনের ভিতর অনিচ্ছাকৃত ফাঁকা অনুচ্ছেদ সরানো; সূত্র ও প্রমাণবৃক্ষ অপরিবর্তিত।",
+                })
+            content = re.sub(r"\n(?:[ \t]*\n)+", "\n", content)
+            return r"\[" + content + r"\]"
+        raw = re.sub(r"(?<!\\)\\\[(.*?)(?<!\\)\\\]",
+                     bracket_display_without_paragraph, raw, flags=re.S)
         def adjacent_table_break(match):
             tabular_spacing_adjustments.append({"unit_id": uid,
                 "action": "দুটি সত্যসারণির মাঝের উৎস-লাইনবিরতির আগে অনিচ্ছাকৃত অনুচ্ছেদ-সমাপ্তি সরানো; বিরতি ও সারণি অপরিবর্তিত।"})
@@ -332,6 +347,8 @@ def main():
     assert len(documented_missing) == 4
     assert len(proof_title_reference_adjustments) == 6
     assert sum(item["blank_paragraphs_removed"] for item in display_blank_line_adjustments) == 9
+    assert len(bracket_display_blank_line_adjustments) == 5
+    assert sum(item["blank_paragraphs_removed"] for item in bracket_display_blank_line_adjustments) == 9
     assert len(tabular_spacing_adjustments) == 1
 
     token_setup = "\n".join(r"\settexttoken{" + key + "}{" + value + "}{" + value + "}"
@@ -468,6 +485,7 @@ OpenAI Codex: GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort\par
         "proof_title_reference_adjustments": proof_title_reference_adjustments,
         "caption_reference_adjustments": caption_reference_adjustments,
         "display_blank_line_adjustments": display_blank_line_adjustments,
+        "bracket_display_blank_line_adjustments": bracket_display_blank_line_adjustments,
         "tabular_spacing_adjustments": tabular_spacing_adjustments,
         "status": "prepared; compilation, semantic HTML and visual QA pending",
     }

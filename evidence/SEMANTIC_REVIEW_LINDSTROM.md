@@ -46,3 +46,9 @@ Decisions BN-IN-T139 through BN-IN-T148 record the abstract-logic, normality, co
 ## Remaining release boundary
 
 This is source-complete chapter evidence, not a reader release. No TeX attempt was made because the shared global TeX mutex is reserved by the Persian reader lane. PDF rendering, glyph inspection, semantic HTML checks, printed-page locators and release-level archive readback remain pending under that policy.
+
+## 2026-09-28 integrated-reader correction
+
+The later integrated PDF pass exposed a missing math delimiter in OLP-0207, target line 31: `\Struct{M}` appeared in prose outside math mode. The frozen source has `$\Struct{M}$` in the corresponding sentence. The Bengali target now restores the delimiters; the rebuilt HTML renders the structure as native MathML.
+
+Comparison of the same proof against frozen source lines 57–88 also found that the Bengali description of the expanded language mistakenly listed the structures `$\Struct{M}$` and `$\Struct{N}$` among its extra predicates. The source lists predicates representing their domains instead. The target removes those two entries and states explicitly that `$\Struct{N}$` agrees with the first structure on the abstract sentence under the displayed equivalence hypothesis. No mathematical premise or conclusion was changed. The repaired OLP-0207 file SHA-256 is `f10edae94b1d99adeb2965f2dde8a15374482aca54d1c94be00225bc8072c4f7`; the strict 722-unit source check passes with exact mathematical-fragment parity. The local integrated reader SHA-256 is `1da50d1d09699ce6be3f65630b8b410ee8eea4f4854ae9a7580fddfaf7e1f7b8`, and the changed passage was inspected in the local browser. Full PDF and final release QA remain pending.

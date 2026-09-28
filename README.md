@@ -5,12 +5,12 @@
 ## পড়া ও সংগ্রহ
 
 - [সম্পূর্ণ ৭২২-ইউনিট বাংলা HTML পাঠক অনলাইনে পড়ুন](https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/)।
-- [সম্পূর্ণ HTML, সম্পাদনযোগ্য সমষ্টিগত LaTeX ও নির্ভুল উৎস-ZIP-এর v0.4.0 প্রকাশনা](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.4.0-complete-semantic-reader)।
+- [সম্পূর্ণ HTML, সম্পাদনযোগ্য সমষ্টিগত LaTeX ও নির্ভুল উৎস-ZIP-এর v0.4.1 সংশোধিত প্রকাশনা](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.4.1-reader-corrections)।
 - [আগের ২৯৯-ইউনিট HTML/EPUB সংস্করণ](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.3.0-through-representability)।
 - [সংরক্ষণ-নথির সংস্করণসমূহ ও DOI](https://doi.org/10.5281/zenodo.22848704)।
 - [অনুবাদ-প্রকল্পগুলির আন্তর্জাতিক সূচি](https://github.com/KokunoYumeto/OpenLogic-translations)।
 
-প্রকাশিত সম্পূর্ণ HTML সরাসরি অনলাইনে পড়ার উপযোগী। এই v0.4.0 সংস্করণে PDF বা নতুন EPUB নেই; আগের v0.3.0 সংস্করণে কেবল ২৯৯-ইউনিট EPUB আছে। উৎস-ZIP অফলাইনে সম্পাদন ও পুনর্নির্মাণের জন্য, অনলাইনে পড়ার বিকল্প নয়।
+প্রকাশিত সম্পূর্ণ HTML সরাসরি অনলাইনে পড়ার উপযোগী। v0.4.1-এ লিন্ডস্ট্রমের প্রমাণে অনুপস্থিত সূত্রবিন্যাস ও ভুল অতিরিক্ত-বিধেয় তালিকা এবং দুটি উৎসসংশোধন-টীকার বিন্যাস সংশোধিত। এই সংস্করণে PDF বা নতুন EPUB নেই; আগের v0.3.0 সংস্করণে কেবল ২৯৯-ইউনিট EPUB আছে। উৎস-ZIP অফলাইনে সম্পাদন ও পুনর্নির্মাণের জন্য, অনলাইনে পড়ার বিকল্প নয়।
 
 ## উৎস, অনুবাদ ও পর্যালোচনার অবস্থা
 

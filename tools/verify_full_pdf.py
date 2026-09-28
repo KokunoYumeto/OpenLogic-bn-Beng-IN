@@ -72,6 +72,9 @@ def main() -> None:
     require(not re.search(r"(?:Reference|Citation) `[^'\n]+' on page [^\n]*undefined", log),
             "TeX log contains an undefined reference or citation")
     require("There were undefined references" not in log, "TeX log reports undefined references")
+    require("There were undefined citations" not in log, "TeX log reports undefined citations")
+    require(not re.search(r"Package natbib Warning: Citation `[^'\n]+' on page", log),
+            "TeX log contains an undefined natbib citation")
     require("Rerun to get cross-references right" not in log,
             "cross-references still require another pass")
     info = command_text("pdfinfo", str(PDF))

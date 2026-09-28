@@ -17,6 +17,22 @@ import build_cumulative_semantic_reader as reader
 REPO = pathlib.Path(__file__).resolve().parents[1]
 BUILD = REPO / "build/full-edition"
 MANIFEST = REPO / "evidence/FULL_SOURCE_MANIFEST.jsonl"
+REF_ONLY_HYPERTARGETS = {
+    "olp-0033:sfr:siz:nen:thm:nonenum-pownat",
+    "olp-0039:sfr:siz:nen-alt:thm:nonenum-pownat",
+    "olp-0294:inc:req:bre:prop:rep-id",
+    "olp-0294:inc:req:bre:prop:rep-add",
+    "olp-0320:inc:inp:lob:thm:lob",
+    "olp-0658:pt:cut:itp:thm:interpolation",
+}
+CHAPTER_RANGE_LABELS = {
+    "sth:story::chap": "olp-0530:sth:story:chap",
+    "sth:z::chap": "olp-0537:sth:z:chap",
+    "sth:ordinals::chap": "olp-0547:sth:ordinals:chap",
+    "sth:spine::chap": "olp-0558:sth:spine:chap",
+    "sth:cardinals::chap": "olp-0580:sth:cardinals:chap",
+    "sth:card-arithmetic::chap": "olp-0586:sth:card-arithmetic:chap",
+}
 FULL_TOKEN_TRANSLATIONS = {
     "proof": "প্রমাণ", "prove": "প্রমাণ", "proving": "প্রমাণ",
     "provable": "প্রমাণযোগ্য", "height": "উচ্চতা", "depth": "গভীরতা",
@@ -194,6 +210,10 @@ def main():
     display_blank_line_adjustments = []
     bracket_display_blank_line_adjustments = []
     tableau_blank_line_adjustments = []
+    bookmark_math_adjustments = []
+    list_line_break_adjustments = []
+    ref_only_hypertarget_adjustments = []
+    chapter_range_reference_adjustments = []
     tabular_spacing_adjustments = []
     overfull_path_adjustments = []
     documented_missing = []
@@ -254,6 +274,23 @@ def main():
         raw = reader.normalize_cross_references(raw, uid, known)
         raw = reader.normalize_structural_macros(raw, preserve_proof_layout=True)
         raw = reader.normalize_bengali_token_suffixes(raw)
+        if uid == "OLP-0599":
+            blank_before_break = re.compile(r"\n[ \t]*\n([ \t]*\\\\\\emph\{প্রমাণ\})")
+            raw, replacements = blank_before_break.subn(r"\n\1", raw)
+            assert replacements == 1
+            list_line_break_adjustments.append({
+                "unit_id": uid, "blank_paragraphs_removed": replacements,
+                "action": "তালিকার প্রথম উদাহরণে মন্তব্য সরানোর ফলে \\\\ লাইনের আগে তৈরি অনিচ্ছাকৃত অনুচ্ছেদ-বিরতি বাদ; বক্তব্য অপরিবর্তিত।",
+            })
+        if uid == "OLP-0304":
+            old_heading = r"\section{$\Th{Q}$-এর $\omega$-সঙ্গতিপূর্ণ প্রসারণগুলি অনির্ণেয়}"
+            assert raw.count(old_heading) == 1
+            raw = raw.replace(old_heading,
+                              old_heading.replace(r"$\omega$", r"\texorpdfstring{$\omega$}{ω}"), 1)
+            bookmark_math_adjustments.append({
+                "unit_id": uid,
+                "action": "দৃশ্যমান সূত্র অপরিবর্তিত রেখে PDF bookmark-এ ω অক্ষরটি সংরক্ষণ।",
+            })
         chapter_id = re.search(r"\\olchapter\{([^{}]+)\}\{([^{}]+)\}", selected[uid])
         chapter_key = chapter_id.groups() if chapter_id else (uid,)
         if row["source_role"] == "chapter_driver":
@@ -273,6 +310,13 @@ def main():
             return "\\" + match.group(1) + "{" + new + "}"
 
         raw = re.sub(r"\\(label|hypertarget)\{([^{}]+)\}", physical_label, raw)
+        for target in sorted(REF_ONLY_HYPERTARGETS):
+            if not target.startswith(uid.lower() + ":"):
+                continue
+            anchor = r"\hypertarget{" + target + r"}{}"
+            assert raw.count(anchor) == 1 and (r"\label{" + target + "}") not in raw
+            raw = raw.replace(anchor, anchor + r"\label{" + target + "}", 1)
+            ref_only_hypertarget_adjustments.append({"unit_id": uid, "target": target})
 
         def missing_reference_note(old):
             expected = {f"fol:{method}:prv:prop:provability-lor-{side}"
@@ -297,6 +341,15 @@ def main():
             return "\\" + match.group(1) + "{" + owner.lower() + ":" + canonical + "}"
 
         raw = re.sub(r"\\(hyperlink|ref|eqref|cref|Cref)\{([^{}]+)\}", physical_reference, raw)
+        def chapter_range_reference(match):
+            left, right = match.groups()
+            assert left in CHAPTER_RANGE_LABELS and right in CHAPTER_RANGE_LABELS
+            chapter_range_reference_adjustments.append({"unit_id": uid, "source_left": left,
+                "source_right": right, "target_left": CHAPTER_RANGE_LABELS[left],
+                "target_right": CHAPTER_RANGE_LABELS[right]})
+            return (r"\crefrange{" + CHAPTER_RANGE_LABELS[left] + "}{"
+                    + CHAPTER_RANGE_LABELS[right] + "}")
+        raw = re.sub(r"\\crefrange\{([^{}]+)\}\{([^{}]+)\}", chapter_range_reference, raw)
         def stable_caption_reference(match):
             target = match.group(1)
             assert ":thm:" in target or ":fig:" in target, (uid, target)
@@ -376,6 +429,10 @@ def main():
         "unit_id": "OLP-0514", "blank_paragraphs_removed": 1,
         "action": "ট্যাবলোর forest options-এ মন্তব্য সরানোর ফলে তৈরি অনিচ্ছাকৃত অনুচ্ছেদ-বিরতি বাদ; শাখা ও সূত্র অপরিবর্তিত।",
     }]
+    assert len(bookmark_math_adjustments) == 1
+    assert len(list_line_break_adjustments) == 1
+    assert {row["target"] for row in ref_only_hypertarget_adjustments} == REF_ONLY_HYPERTARGETS
+    assert len(chapter_range_reference_adjustments) == 3
     assert len(tabular_spacing_adjustments) == 1
     assert len(overfull_path_adjustments) == 1
 
@@ -399,6 +456,10 @@ def main():
 \newfontfamily\latinfont{Latin Modern Roman}
 \newfontfamily\bengalifont{NotoSerifBengali-Regular.ttf}[Path=../../fonts/,Script=Bengali,BoldFont=NotoSerifBengali-Bold.ttf,ItalicFont=NotoSerifBengali-Regular.ttf,BoldItalicFont=NotoSerifBengali-Bold.ttf,ItalicFeatures={FakeSlant=0.15}]
 \usepackage[Bengali,DevanagariDanDa,BasicLatin,GeneralPunctuation]{ucharclasses}
+% Keep zero-width joiners inside Bengali shaping runs; otherwise ucharclasses
+% switches to Latin Modern and silently drops U+200C/U+200D glyphs.
+\XeTeXcharclass"200C=\BengaliClass
+\XeTeXcharclass"200D=\BengaliClass
 \setTransitionsFor{Bengali}{\bengalifont}{\latinfont}
 \setTransitionsFor{DevanagariDanDa}{\bengalifont}{\latinfont}
 \newcommand{\olpath}{../../upstream}
@@ -419,6 +480,7 @@ def main():
 \renewcommand{\figurename}{চিত্র}
 \renewcommand{\tablename}{সারণি}
 \renewcommand{\proofname}{প্রমাণ}
+\renewcommand{\bibname}{গ্রন্থপঞ্জি}
 \linespread{1.16}
 \begin{document}
 % open-logic.sty selects English at begin-document, restoring Babel's
@@ -429,6 +491,7 @@ def main():
 \renewcommand{\figurename}{চিত্র}
 \renewcommand{\tablename}{সারণি}
 \renewcommand{\proofname}{প্রমাণ}
+\renewcommand{\bibname}{গ্রন্থপঞ্জি}
 \begin{titlingpage}
 \centering{\Huge ওপেন লজিক\par}\bigskip
 {\LARGE বাংলা (ভারত)\par}\bigskip
@@ -486,6 +549,7 @@ OpenAI Codex: GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort\par
     assert set(emitted) == set(row_by_id)
     assert len(caption_reference_adjustments) == 3
     parts.append(r"""
+\nocite{Frege1953,Peter1967}
 \bibliographystyle{plainnat}
 \bibliography{../../upstream/bib/open-logic}
 \end{document}
@@ -515,6 +579,11 @@ OpenAI Codex: GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort\par
         "display_blank_line_adjustments": display_blank_line_adjustments,
         "bracket_display_blank_line_adjustments": bracket_display_blank_line_adjustments,
         "tableau_blank_line_adjustments": tableau_blank_line_adjustments,
+        "bookmark_math_adjustments": bookmark_math_adjustments,
+        "list_line_break_adjustments": list_line_break_adjustments,
+        "ref_only_hypertarget_adjustments": ref_only_hypertarget_adjustments,
+        "chapter_range_reference_adjustments": chapter_range_reference_adjustments,
+        "bibliography_nested_citation_support": ["Frege1953", "Peter1967"],
         "tabular_spacing_adjustments": tabular_spacing_adjustments,
         "overfull_path_adjustments": overfull_path_adjustments,
         "status": "prepared; compilation, semantic HTML and visual QA pending",

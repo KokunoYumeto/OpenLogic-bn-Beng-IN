@@ -1,0 +1,23 @@
+{
+  "schema": "openlogic-bn-final-pdf-qa-evidence/1",
+  "source_units": 722,
+  "status": "passed",
+  "pdf_sha256": "97aed99695d29e76b2a3500289f7e1730d8c5bc15c49c7fd0d526478ddce5b0e",
+  "pdf_bytes": 4550160,
+  "pages": 869,
+  "page_size": "A4",
+  "prepared_tex_sha256": "6d4ebae899812eda12dee397f96cf12f2cf83acb8536846b32952c782af01ee5",
+  "guarded_tex_passes": 3,
+  "bibtex_exit_code": 0,
+  "pdf_converged": true,
+  "undefined_references": 0,
+  "undefined_citations": 0,
+  "embedded_font_rows": 54,
+  "unembedded_font_rows": 0,
+  "visual_qa_path": "build/full-edition/PDF_VISUAL_QA.json",
+  "visual_qa_sha256": "c58fbce37b50567d23335a893d3206990e2aa9bac3b3d0f46fe97081775a4c98",
+  "pdf_qa_path": "build/full-edition/PDF_QA.json",
+  "visual_pages_checked": [1, 6, 19, 38, 274, 435, 517, 518, 519, 520, 521, 522, 523, 524, 675, 795, 862, 864, 869],
+  "remaining_missing_character_warning": "Eleven ^^V warnings were visually reviewed around pages 517–524; Q in the affected headings and displayed formulas are present. The rendered page-38 joiner matches an independent ZWNJ browser control.",
+  "publication_status": "local QA passed; final public release and Zenodo update pending"
+}

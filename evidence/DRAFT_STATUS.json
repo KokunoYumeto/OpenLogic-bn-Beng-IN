@@ -893,6 +893,15 @@
     },
     "zenodo_latest_record_scope": "v0.3.0, 299-unit EPUB; no full-edition Zenodo record yet"
   },
+  "local_final_pdf_qa": {
+    "status": "passed",
+    "source_units": 722,
+    "pdf_pages": 869,
+    "pdf_sha256": "97aed99695d29e76b2a3500289f7e1730d8c5bc15c49c7fd0d526478ddce5b0e",
+    "pdf_qa_sha256": "d9b70b5f95d8c7a2ee4be50c13c280f60593b5678b1fbfaf83e27005a6a7e80f",
+    "visual_pages_checked": 19,
+    "publication": "pending final GitHub release and anonymous readback; existing Zenodo concept update pending"
+  },
   "current_checks": {
     "unit_checks": [
       {
@@ -14191,5 +14200,5 @@
     "attempt_ledger_sha256": "52253be946ae60a945037b62d7104a730b71821defacb8905f608cd7df6b08cd",
     "status": "Historical Functions-era TeX candidate record: all three bounded mutex acquisitions timed out without launching TeX. The verified public semantic HTML/EPUB reader is recorded above; no TeX-built PDF is claimed."
   },
-  "remaining": "৭২২-ইউনিট বাংলা উৎস এবং সম্পূর্ণ HTML ও EPUB পাঠক প্রকাশিত ও নামহীনভাবে যাচাইকৃত। পূর্ণ PDF-এর বহু-পাস নির্মাণ, পৃষ্ঠা/গ্লিফ ও তথ্যসূত্র যাচাই, চূড়ান্ত প্রকাশ এবং Zenodo-তে একই সংস্করণরেখার নতুন সংস্করণ বাকি। সর্বশেষ প্রাকৃতিক চেকপয়েন্টে TeX মিউটেক্স অধিগৃহীত হয়নি; অনুবাদ ও TeX-বহির্ভূত পরীক্ষা সক্রিয়।"
+  "remaining": "৭২২-ইউনিট বাংলা উৎস এবং সম্পূর্ণ HTML ও EPUB পাঠক প্রকাশিত ও নামহীনভাবে যাচাইকৃত। ৮৬৯-পৃষ্ঠার পূর্ণ PDF-এর বহু-পাস নির্মাণ, তথ্যসূত্র, ফন্ট ও ১৯টি প্রতিনিধি পৃষ্ঠার দৃশ্যগত পরীক্ষা স্থানীয়ভাবে উত্তীর্ণ। চূড়ান্ত GitHub প্রকাশনা ও নামহীন পুনর্পাঠ এবং Zenodo-তে একই সংস্করণরেখার নতুন সংস্করণ বাকি।"
 }

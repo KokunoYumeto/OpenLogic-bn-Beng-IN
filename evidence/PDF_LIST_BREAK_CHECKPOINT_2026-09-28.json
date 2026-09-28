@@ -1,0 +1,52 @@
+{
+  "schema": "openlogic-bn-full-pdf-list-break-checkpoint/1",
+  "source_units": 722,
+  "full_pdf_complete": false,
+  "guarded_build_attempt": {
+    "receipt_sha256": "52e890d108294d78d7cecdf6a99e852b4b6e09f95a89a42189be54de5a769608",
+    "acquired_tex_mutex": true,
+    "input_sha256": "fbe600c08d8926a5a8d8843167284b1876ab51771839a26f2b7f5174600598e4",
+    "pass_1_exit_code": 1,
+    "partial_pdf_pages": 795,
+    "partial_pdf_sha256": "87dcf93cc91e79cc75efd0aec825a5926533d3f6b7970a6e13e55d311916fe36",
+    "partial_pdf_releasable": false,
+    "log_sha256": "59dd48f8af9d4d4d0bc42f6f2c62dffe77e3720d9c6340a094d504bdf06f8677",
+    "fatal_message": "LaTeX Error: There's no line here to end.",
+    "fatal_prepared_tex_line": 70118,
+    "unit_id": "OLP-0599"
+  },
+  "diagnosis": {
+    "target_source": "bn-Beng-IN/content/set-theory/choice/banach.tex",
+    "target_source_sha256": "f305df1df9ab6ccbd3e0ddc982d4e669e78ce8f96f6daece94fd40238dab701",
+    "cause": "A source-correction comment between the first list item and its intended line break becomes a blank paragraph when comments are stripped; LaTeX cannot begin a new paragraph with the line-break command.",
+    "other_blank_paragraphs_immediately_before_double_backslash": 0,
+    "source_translation_changed": false
+  },
+  "pdf_assembly_repair": {
+    "script": "tools/prepare_full_edition.py",
+    "blank_paragraphs_removed": 1,
+    "previous_prepared_tex_sha256": "fbe600c08d8926a5a8d8843167284b1876ab51771839a26f2b7f5174600598e4",
+    "current_prepared_tex_sha256": "ac8044f48abeed47c0d52223ef77c672b43a25446e832fe23bb249f9f9d26b1f",
+    "reinsert_removed_whitespace_reproduces_previous_sha256": true,
+    "blank_paragraphs_before_double_backslash_after_repair": 0,
+    "preparation_receipt_sha256": "d5135e6fa8b784e9656da4ecc1200264c8508014b4ba633d40e0759edb579f63"
+  },
+  "semantic_reader_rebuild": {
+    "html_sha256": "e7e08cda2a2845f47dacfad95ac97deb02f92305ecac026a857fff30f779c326",
+    "public_v0_5_1_html_sha256": "37bff820552960437d7af840ed15fbe46c62a123cd3ece3ecee52fa3b3cc0362",
+    "difference": "Eight paragraph-boundary markup bytes are removed at the list example, leaving the same visible text and a line break within the list item.",
+    "source_units": 722,
+    "native_mathml": 43521,
+    "broken_internal_links": 0,
+    "semantic_qa_sha256": "f167eb938c32d943233e97c98a209f265c847a008b2ce40e86730138f26b7160"
+  },
+  "epub_rebuild": {
+    "epub_bytes": 1710874,
+    "epub_sha256": "5292e455ce96dd04af04e3c435621a1d31e54582bc469e032b65fb6dc3130adc",
+    "epub_qa_sha256": "be86553f80909210c27dc30556b7b1b929d49958587d3b48994f83ee769ecac0",
+    "epubcheck_version": "5.3.0",
+    "epubcheck_messages": 0,
+    "deterministic_cold_build": true
+  },
+  "remaining": "Run one guarded TeX/BibTeX attempt at this new validated checkpoint, then assess the result. The partial PDF is not releasable."
+}

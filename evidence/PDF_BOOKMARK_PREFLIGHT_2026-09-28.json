@@ -1,0 +1,39 @@
+{
+  "schema": "openlogic-bn-pdf-bookmark-preflight/1",
+  "scope": "Read-only audit of the last incomplete 717-page PDF, followed by a PDF-only assembly correction; final PDF verification remains pending.",
+  "old_partial_pdf": {
+    "sha256": "bea9b2408bb29fb988d34d6e71e32a7e26ca6940ea0c193f42177f64b5c6e7d1",
+    "pages": 717,
+    "releasable": false,
+    "bookmarks_checked": 511,
+    "control_character_or_missing_math_candidates": 1,
+    "affected_unit": "OLP-0304",
+    "issue": "The printed heading contains omega in the phrase omega-consistent, but its PDF bookmark reads Q-এর -সঙ্গতিপূর্ণ and drops omega."
+  },
+  "assembly_correction": {
+    "script": "tools/prepare_full_edition.py",
+    "unit_id": "OLP-0304",
+    "method": "Apply texorpdfstring to the heading's omega expression, retaining the typeset formula and supplying literal ω for the PDF bookmark.",
+    "previous_prepared_tex_sha256": "77f7a6edb1d954bb92ce12567e7b68d7add1c4247a74f40a48cbdf715b1ec3a2",
+    "current_prepared_tex_sha256": "fbe600c08d8926a5a8d8843167284b1876ab51771839a26f2b7f5174600598e4",
+    "reversing_only_this_insertion_reproduces_previous_sha256": true,
+    "source_translation_changed": false,
+    "generated_bookmark_out_sha256": "0bbea5a5db29f7a9e88b8a8c6498528a3ba8499048ed2576db3625996013a5cb",
+    "generated_bookmark_out_contains_exact_omega_title": true,
+    "converged_prepublication_pdf_sha256": "24cbf2421827ed1b07c88273e5f21c0b5c524930933b72f8ed3dc7b1709ed442",
+    "converged_prepublication_pdf_outline_entries": 710,
+    "new_pdf_bookmark_verified_in_869_page_prepublication_pdf": true,
+    "final_release_pdf_bookmark_verified": false,
+    "verification_note": "The subsequent pass-one build generated a .out bookmark containing ω. A later converged 869-page PDF showed the exact ω bookmark among 710 outline entries with zero control-character or missing-math candidates. That PDF still has unresolved citations and references and is not the final release PDF."
+  },
+  "semantic_reader_rebuild": {
+    "source_units": 722,
+    "html_sha256": "37bff820552960437d7af840ed15fbe46c62a123cd3ece3ecee52fa3b3cc0362",
+    "byte_identical_to_public_v0_5_1": true,
+    "native_mathml": 43521,
+    "broken_internal_links": 0,
+    "existing_epub_qa_html_match": true
+  },
+  "preparation_receipt_sha256": "d7a1e3616ab37c13789c41c029a561acef415603056bd5f3f7ddaf31b63745b4",
+  "next_action": "At a later natural validated checkpoint, make one zero-wait guarded TeX/BibTeX attempt on the current input, then verify the generated bookmark and final PDF before release."
+}

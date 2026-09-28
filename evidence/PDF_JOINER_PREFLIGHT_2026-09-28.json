@@ -1,0 +1,49 @@
+{
+  "schema": "openlogic-bn-pdf-joiner-preflight/1",
+  "source_units": 722,
+  "full_pdf_qa_passed": false,
+  "converged_prepublication_build": {
+    "guarded_attempt_sha256": "45122a03fabcf73aaef589b2225cb1ac166e7b2cbe1e017d1a8f2ee8c28fc692",
+    "input_sha256": "c27fe4e05750d467a0e8c1b367602ebda5340f0e001261c3f134a2fd3c34d934",
+    "pdf_sha256": "78b85e509f431acf2c2faedd05ce2bb8affe88643e6e54b8f2bc5a4ea5ec0c30",
+    "pdf_pages": 869,
+    "tex_passes": 4,
+    "bibtex_exit_code": 0,
+    "last_two_pdf_passes_match": true,
+    "log_sha256": "4f598742363f34225733771c81579195d1c9e79998d2f970b97712d4b04726c3",
+    "undefined_references": 0,
+    "undefined_citations": 0,
+    "pdf_releasable": false
+  },
+  "cross_reference_repairs_validated_by_converged_build": {
+    "ref_only_hypertargets_given_latex_labels": 6,
+    "chapter_range_calls_retargeted": 3,
+    "chapter_range_endpoints": 6,
+    "nested_bibliography_citations_included": ["Frege1953", "Peter1967"],
+    "bibliography_heading_localized": "গ্রন্থপঞ্জি",
+    "omega_bookmark_present": true
+  },
+  "joiner_warning_under_review": {
+    "prepared_source_joiners": {"U+200C": 50, "U+200D": 2},
+    "log_missing_character_warnings": {"U+200C": 50, "U+200D": 2, "^^V": 11},
+    "observed_page": 38,
+    "observed_word": "প্রাক্‌ক্রম",
+    "initial_visual_interpretation": "The first inspection suspected that the non-joiner was dropped.",
+    "subsequent_control_comparison": "Pixel comparison found the before and after page-38 rasters identical. An independent Chrome/Noto Serif Bengali rendering distinguishes the ZWNJ and no-joiner forms; the PDF matches the ZWNJ form. The initial interpretation was incorrect.",
+    "impact": "The prior PDF still awaited final source, citation, and visual QA; this warning did not establish a visible glyph defect."
+  },
+  "pdf_only_repair_prepared": {
+    "script": "tools/prepare_full_edition.py",
+    "method": "Assign U+200C and U+200D to ucharclasses' Bengali XeTeX character class so they stay inside Bengali shaping runs.",
+    "current_prepared_tex_sha256": "6d4ebae899812eda12dee397f96cf12f2cf83acb8536846b32952c782af01ee5",
+    "current_preparation_receipt_sha256": "859e98216ff76c208044686e83e48635dc32e759b58f683a5f94bb466c9e3c8a",
+    "semantic_html_sha256": "750da8e11ab11ac9ae98a4547b0c7e73415a25f7da51652b162e54c8ee4c157b",
+    "semantic_html_unchanged_from_pre_repair": true,
+    "target_translation_files_changed": false,
+    "new_pdf_joiners_verified": true,
+    "final_pdf_sha256": "97aed99695d29e76b2a3500289f7e1730d8c5bc15c49c7fd0d526478ddce5b0e",
+    "final_pdf_joiner_warnings": 0,
+    "final_pdf_visual_qa_passed": true
+  },
+  "next_action": "Package and release the final PDF with the verified full edition."
+}

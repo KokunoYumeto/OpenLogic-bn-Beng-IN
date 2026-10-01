@@ -1,0 +1,56 @@
+{
+  "schema": "openlogic-bn-corrected-zenodo-readback/1",
+  "status": "passed",
+  "verified_utc": "2026-10-01T14:41:29.892318+00:00",
+  "record_id": 23084857,
+  "concept_record_id": "22848704",
+  "doi": "10.5281/zenodo.23084857",
+  "version": "1.0.1",
+  "title": "ওপেন লজিক — বাংলা (ভারত): সংশোধিত সম্পূর্ণ ৭২২-একক সংস্করণ",
+  "language": "ben",
+  "license": "cc-by-4.0",
+  "pertinent_default_preview": "openlogic-bn-Beng-IN-complete.pdf",
+  "preview_iframes": [
+    "/records/23084857/preview/openlogic-bn-Beng-IN-complete.pdf?include_deleted=0"
+  ],
+  "files": [
+    {
+      "filename": "openlogic-bn-Beng-IN-complete.pdf",
+      "bytes": 4667234,
+      "sha256": "a1b51711257ec6d7a5a910944ece4a7d97901c220a3b7146aa13f8199172b96d"
+    },
+    {
+      "filename": "FULL_RELEASE_ASSETS.json",
+      "bytes": 1515,
+      "sha256": "9a06fcbd866e841bd1eeb96da5e87839f9410f245c29af77672aa08083c4f395"
+    },
+    {
+      "filename": "SHA256SUMS-complete.txt",
+      "bytes": 515,
+      "sha256": "a5ab3fe268ea1f652860922c2dc2fde94dd7bf1bdaf4952df3c47a92a5eb749d"
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-complete-sources.zip",
+      "bytes": 27363152,
+      "sha256": "3a3b52638121047ca51a452e08a08f6fea7e74073c1b9018830e8f0a93e71e2b"
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-complete.epub",
+      "bytes": 1757298,
+      "sha256": "dfa434d3cdbae5511834910150cd4ed3777ec592ee517d5fe1091173709daddd"
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-complete.html",
+      "bytes": 19243253,
+      "sha256": "e4683b284412226f056d711ad2351a7ffb424fadb692bdc98f0a094ec0711606"
+    },
+    {
+      "filename": "openlogic-bn-Beng-IN-complete.tex",
+      "bytes": 5460682,
+      "sha256": "6629d3430ce3fbc649f2e9e7d23f783d6d281b889bc663bb7ee37542b86b1140"
+    }
+  ],
+  "current_alternative_title_verified": true,
+  "current_bengali_technical_information_verified": true,
+  "method": "Anonymous landing-page preview and all seven downloaded byte counts/SHA-256 digests; same concept and reader-facing metadata checked."
+}

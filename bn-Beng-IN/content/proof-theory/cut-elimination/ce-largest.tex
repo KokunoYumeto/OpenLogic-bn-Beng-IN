@@ -114,6 +114,14 @@ $!B, !C, \Gamma$-র দুটি অনুলিপি এবং উত্ত�
 \DisplayProof
 \]
 $!A$-এর রূপ অনুযায়ী ক্ষেত্রগুলি আলাদা করি।
+% BN-SRC-867 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-867):} কর্তনসূত্র যাই হোক, $\Gamma$-তে অসত্যসূচক থাকলে অন্তিম সিকোয়েন্ট
+স্বতঃসিদ্ধ। অবশিষ্ট অসত্যসূচক $!A\ident\lfalse$-এর ক্ষেত্রে বাম
+উপ-প্রমাণের উত্তরপক্ষ থেকে অসত্যসূচক বাদ দেওয়ার যুক্তিটি
+\olref[top]{lem:cut-adm-G3c}-এর প্রমাণের বিকল্প B ক্ষেত্রেই দেওয়া আছে।
+নিচের পরমাণবিক-পরিচয় ক্ষেত্রে সেই পৃথক অসত্যসূচক স্বতঃসিদ্ধটি পুনরায়
+আলোচনা করা হয়নি।}
+% BN-SRC-867 TARGET-CORRECTION-END
 
 $!A$ পরমাণবিক ধরি। $\pi_1$ ও~$\pi_2$-র সমস্ত \CutCS{} অনুমানের
 মাত্রা $<\depth{!A}=0$ হওয়ার শর্ত থেকে বোঝা যায়,
@@ -134,7 +142,7 @@ $\Gamma\Sequent\Delta',!A$-র কর্তনমুক্ত প্রমাণ
 $\pheight{\pi_2}>0$ হলে এর শেষ বিধি~$R$। সেই বিধির একটি
 পূর্বধারণা নিই: তার রূপ $!A,\Gamma',\Pi\Sequent\Delta',\Lambda$,
 যেখানে $\Pi$ ও~$\Lambda$ হলো~$R$-এর সক্রিয় !!{formula}s।
-$\pi_1$ ও~$\pi_2$-তে \olref[seq][adm]{prop:weak-G3c-adm} প্রয়োগে
+$\pi_1$ এবং~$\pi_2$-র ওই অব্যবহিত উপ-প্রমাণে \olref[seq][adm]{prop:weak-G3c-adm} প্রয়োগে
 $\Gamma,\Gamma',\Pi\Sequent\Delta,\Delta',\Lambda,!A$ এবং
 $!A,\Gamma,\Gamma',\Pi\Sequent\Delta,\Delta',\Lambda$-র
 !!{proof}s পাই; এদের উপর আরোহের অনুমান প্রয়োগ করা যায়। ফলে
@@ -144,6 +152,11 @@ $\Gamma,\Gamma',\Pi\Sequent\Delta,\Delta',\Lambda$-র
 $\Gamma,\Gamma\Sequent\Delta,\Delta$ পাই; শেষে
 \olref[seq][inv]{prop:G3c-cont-adm} থেকে
 $\Gamma\Sequent\Delta$-র কর্তনমুক্ত প্রমাণ মেলে।
+% BN-SRC-864 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-864):} মূলপাঠে দ্বিতীয় সমগ্র প্রমাণে দুর্বলীকরণ প্রয়োগের কথা আছে।
+এখানে শেষ বিধির আলোচিত পূর্বধারণার অব্যবহিত উপ-প্রমাণটি নিতে হবে;
+তার উচ্চতা দ্বিতীয় সমগ্র প্রমাণের চেয়ে কম, তাই আরোহের অনুমান প্রযোজ্য।}
+% BN-SRC-864 TARGET-CORRECTION-END
 
 $!A$ পরমাণবিক না হলে এই $!A$-এর !!{main
 operator} অনুযায়ী ক্ষেত্র

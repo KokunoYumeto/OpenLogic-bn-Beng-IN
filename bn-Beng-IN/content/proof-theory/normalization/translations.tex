@@ -222,12 +222,13 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   শেষ-সিকোয়েন্টের প্রসঙ্গে
   $x:!D \land !E$ থাকতে হবে।
   আরও, \Elim{\land}-এ শেষ হওয়া
-  উপ-!!{proof}-এর বদলে
-  $x:!D \Sequent !D$ বসিয়ে
+  উপ-!!{proof}-এর বদলে নতুন চিহ্নযুক্ত
+  $y:!D \Sequent !D$ বসিয়ে
   এবং প্রধান শাখার প্রতিটি
   সিকোয়েন্টের প্রসঙ্গে
   $x:!D \land !E$-র জায়গায়
-  $x:!D$ বসিয়ে !!{proof}~$\delta$-কে
+  $y:!D$ বসিয়ে, অন্য শাখাগুলি অপরিবর্তিত রেখে
+  প্রতিটি বিধিতে প্রসঙ্গ আবার গড়ে নিই। এতে !!{proof}~$\delta$-কে
   !!{proof}~$\delta_1$-এ
   রূপ দিতে পারি; অর্থাৎ
   \[
@@ -239,8 +240,8 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   \DisplayProof
   \quad\text{এর বদলে}\quad
   \bottomAlignProof
-  \Axiom$x:!D \fCenter !D$
-  \Deduce$x:!D, \Gamma_1 \fCenter !A$
+  \Axiom$y:!D \fCenter !D$
+  \Deduce$y:!D, \Gamma_1 \fCenter !A$
   \DisplayProof
   \]
   $\delta_1$-এ আরোহ-অনুমান
@@ -259,6 +260,12 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   % BN-SRC-588 TARGET-CORRECTION-BEGIN
   \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-588):} উৎসগদ্যে $\pi_1$-এর G2i পূর্বধারণায় x-চিহ্ন ও অবদলিত $\Gamma_1$ আছে; প্রদর্শিত G2i বৃক্ষ অনুযায়ী চিহ্নহীন $\Gamma_1'$ নেওয়া হয়েছে।}
   % BN-SRC-588 TARGET-CORRECTION-END
+% BN-SRC-884 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-884):} একই খোলা অনুমান অন্য শাখাতেও থাকতে পারে।
+তাই মূল চিহ্ন রেখে শুধু একটি শাখায় তার সূত্র বদলালে একই চিহ্নে
+দুটি ভিন্ন সূত্র হয়। নতুন চিহ্ন নিয়ে অপরিবর্তিত শাখাগুলির প্রসঙ্গ
+রাখা হয়েছে; চিহ্ন সরানোর পরে পুনরাবৃত্তি এলে বাঁ-সংকোচন করি।}
+% BN-SRC-884 TARGET-CORRECTION-END
   \[
   \AxiomC{}
   \RightLabel{$\pi_1$}
@@ -268,16 +275,13 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   \DisplayProof
   \]
   $!A \ident \lfalse$ হলে
-  একটি \RightR{\Weakening}
-  বসাই, যেমন:
+  ডান অংশ ফাঁকাই রাখি; ডান-দুর্বলীকরণ লাগে না:
   \[
   \AxiomC{}
   \RightLabel{$\pi_1$}
   \Deduce$!D, \Gamma_1' \fCenter $
   \RightLabel{\LeftR{\land}}
   \UnaryInf$!D \land !E, \Gamma_1' \fCenter $
-  \RightLabel{\RightR{\Weakening}}
-  \UnaryInf$!D \land !E, \Gamma_1' \fCenter !A$
   \DisplayProof
   \]
   \item $!C \ident !D \lor !E$ হলে
@@ -323,9 +327,8 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   পূর্বধারণাগুলির প্রসঙ্গে
   না থাকে), অথবা~$!A$
   যদি $\lfalse$ হয়, তবে
-  কয়েকটি \LeftR{\Weakening}
-  ও \RightR{\Weakening}
-  যোগ করতে হয়। যেমন:
+  অনুপস্থিত অনুমান বাঁ-দুর্বলীকরণে আনি এবং
+  সিদ্ধান্তের ডান অংশ ফাঁকাই রাখি। যেমন:
   \[
   \AxiomC{}
   \RightLabel{$\pi_1$}
@@ -339,8 +342,6 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   \UnaryInf$!E, \Gamma_2' \fCenter $
   \RightLabel{\LeftR{\lor}}
   \BinaryInf$!D \lor !E, \Gamma_1', \Gamma_2' \fCenter $
-  \RightLabel{\RightR{\Weakening}}
-  \UnaryInf$!D \lor !E, \Gamma_1', \Gamma_2' \fCenter !A$
   \DisplayProof
   \]
 
@@ -371,12 +372,12 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   $x:!D \lif !E, \Gamma_1$
   থাকতে হবে। আরও,
   \Elim{\lif}-এ শেষ হওয়া
-  উপ-!!{proof}-এর বদলে
-  $x:!E \Sequent !E$ বসিয়ে,
-  এবং প্রধান শাখার প্রতিটি
-  সিকোয়েন্টের প্রসঙ্গে
+  উপ-!!{proof}-এর বদলে নতুন চিহ্নযুক্ত
+  $y:!E \Sequent !E$ বসিয়ে,
+  এবং প্রথম প্রসঙ্গ
   $x:!D \lif !E, \Gamma_1$-র
-  জায়গায় $x:!E$ বসিয়ে
+  জায়গায় $y:!E$ নিয়ে, অন্য শাখাগুলি অপরিবর্তিত
+  রেখে প্রতিটি বিধিতে প্রসঙ্গ আবার গড়ে নিই। তাতে
   !!{proof}-খণ্ড~$\delta_2$-কে
   সঠিক !!{proof}~$\delta_2'$-তে
   রূপ দিতে পারি; অর্থাৎ
@@ -388,9 +389,9 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   \DisplayProof
   \quad\text{এর বদলে}\quad
   \bottomAlignProof
-  \Axiom$x:!E \fCenter !E$
+  \Axiom$y:!E \fCenter !E$
   \RightLabel{$\delta_2'$}
-  \Deduce$x:!E, \Gamma_2 \fCenter !A$
+  \Deduce$y:!E, \Gamma_2 \fCenter !A$
   \DisplayProof
   \]
   $\delta_1$ ও $\delta_2'$-তে
@@ -403,8 +404,13 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   \Elim{\lif} প্রয়োগ।
   (ওই প্রয়োগই $\delta$-র
   শেষ প্রয়োগ~$R$ হলে
-  $\delta_1$-তে $0$টি
+  $\delta_2$-তে $0$টি
   প্রয়োগ থাকে।)
+% BN-SRC-886 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-886):} প্রথম নিষ্কাশনই শেষ বিধি হলে তার নিচের
+অবশিষ্ট প্রমাণখণ্ডে কোনো বিধি নেই। যুক্তির প্রমাণটিতে তখনও
+একাধিক বিধি থাকতে পারে; তাই শূন্যসংখ্যাটি নিচের খণ্ডের।}
+% BN-SRC-886 TARGET-CORRECTION-END
 
   আরোহ-অনুমান থেকে
   $\Gamma_1' \Sequent !D$
@@ -416,6 +422,12 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   % BN-SRC-589 TARGET-CORRECTION-BEGIN
   \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-589):} উৎসগদ্যে G2i পূর্বধারণাদুটির প্রসঙ্গ যথাক্রমে $\Gamma_1$ ও $\Gamma_1'$; প্রদর্শিত বিধিবৃক্ষ এবং চিহ্ন-অপসারণ অনুযায়ী সেগুলি $\Gamma_1'$ ও $\Gamma_2'$।}
   % BN-SRC-589 TARGET-CORRECTION-END
+% BN-SRC-885 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-885):} বাদ দেওয়া উপপ্রমাণের অনুমান অন্য শাখা থেকেও
+আসতে পারে। তাই প্রতিটি নিচের প্রসঙ্গ থেকে প্রথম প্রসঙ্গের সব
+অনুমান মুছে দেওয়া যায় না। অপরিবর্তিত শাখাগুলির অবশিষ্ট প্রসঙ্গ
+বিধি অনুযায়ী রাখা হয়েছে; মিলিত বহুসেটে দরকারে বাঁ-সংকোচন করি।}
+% BN-SRC-885 TARGET-CORRECTION-END
   \[
   \AxiomC{}
   \RightLabel{$\pi_1$}
@@ -427,11 +439,9 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   \BinaryInf$!D \lif !E, \Gamma_1', \Gamma_2' \fCenter !A$
   \DisplayProof
   \]
-  $!D$ এবং/অথবা
-  $!A \ident \lfalse$ হলে
-  একটি বা দুটি
-  \RightR{\Weakening}
-  বসাই, যেমন:
+  $!D$ মিথ্যা-সূত্র হলে যুক্তির পূর্বধারণায়
+  ডান-দুর্বলীকরণ লাগে। $!A \ident \lfalse$ হলে
+  সিদ্ধান্তের ডান অংশ ফাঁকাই রাখি। যেমন:
   \[
   \AxiomC{}
   \RightLabel{$\pi_1$}
@@ -441,10 +451,8 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   \AxiomC{}
   \RightLabel{$\pi_2$}
   \Deduce$!E, \Gamma_2' \fCenter $
-  \RightLabel{\RightR{\Weakening}}
-  \UnaryInf$!E, \Gamma_2' \fCenter !A$
   \RightLabel{\LeftR{\lif}}
-  \BinaryInf$!D \lif !E, \Gamma_1', \Gamma_2' \fCenter !A$
+  \BinaryInf$!D \lif !E, \Gamma_1', \Gamma_2' \fCenter $
   \DisplayProof
   \]
 
@@ -453,20 +461,34 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
 বিচার করতে হয়; সেগুলি
 অনুশীলন হিসেবে রাখা হলো।
 \end{proof}
+% BN-SRC-887 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-887):} প্রস্তাবনায় অন্তিম সূত্র মিথ্যা হলে লক্ষ্য
+সিকোয়েন্টের ডান অংশ ফাঁকা। প্রদর্শিত তিন ক্ষেত্রে তাই শেষে
+মিথ্যা-সূত্র ফিরিয়ে আনার ডান-দুর্বলীকরণ বাদ গেছে। শর্তসূত্রের
+যুক্তি মিথ্যা হলে সেটিকে পূর্বধারণায় আনার ধাপটি অবশ্য রাখা হয়েছে।}
+% BN-SRC-887 TARGET-CORRECTION-END
 
 \begin{cor}
 স্বাভাবিক \Log{N1i} অথবা
 \Log{N2i}-!!{proof}-এ থাকা
-প্রতিটি !!{formula} হলো
+মিথ্যা-সূত্র ছাড়া প্রতিটি !!{formula} হলো
 শেষ-!!{formula} বা
 শেষ-সিকোয়েন্টে থাকা কোনো
 সূত্রের উপ-!!{formula};
 \Log{N1i}-র ক্ষেত্রে
 অবমুক্ত না হওয়া অনুমানের
-সূত্রগুলির উপসূত্রও হতে পারে।
+সূত্রগুলির উপসূত্রও হতে পারে। পরিমাণসূচকের ক্ষেত্রে
+উপসূত্রের উপযুক্ত প্রতিস্থাপিত রূপও অনুমোদিত।
 % BN-SRC-590 TARGET-CORRECTION-BEGIN
 \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-590):} N1i-র খোলা অনুমানের সূত্রও স্বাভাবিক প্রমাণে থাকতে পারে; শুধু শেষসূত্রের উপসূত্র বললে সেই ক্ষেত্র বাদ যায়। আগের উৎস-সংশোধনের একই পূর্বধারণা-সহ উপসূত্র-ধর্ম এখানে স্পষ্ট হয়েছে।}
 % BN-SRC-590 TARGET-CORRECTION-END
+% BN-SRC-883 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-883):} মিথ্যা-সূত্র সিকোয়েন্টে ফাঁকা ডান অংশে
+রূপান্তরিত হয়, তাই সেটি অনূদিত প্রমাণে সূত্র হিসেবে থাকবেই বলা
+যায় না। নঞর্থক নিষ্কাশন থেকে মিথ্যা এসে অন্য সিদ্ধান্ত দেওয়া
+স্বাভাবিক প্রমাণেও ঘটতে পারে। পরিমাণসূচক বিধিতে উপসূত্রের
+প্রতিস্থাপিত রূপও আসে; আক্ষরিক উপসূত্রের দাবি যথেষ্ট নয়।}
+% BN-SRC-883 TARGET-CORRECTION-END
 \end{cor}
 
 \begin{proof}
@@ -477,14 +499,13 @@ $\delta$ কোনো বিধিপ্রয়োগে শেষ হলে
   অনুবাদ করা যায়। প্রমাণটি
   দেখলে বোঝা যায়,
   \Log{N2i}-!!{proof}-এ থাকা
-  প্রতিটি !!{formula}
+  মিথ্যা-সূত্র ছাড়া প্রতিটি !!{formula}
   \Log{G2i}-!!{proof}-এও
   থাকে। \Log{G2i}-তে
   \Cut{} বিধি নেই; তাই
-  তার উপ-!!{formula}-ধর্ম আছে।
+  তার উপ-!!{formula}-ধর্ম আছে, পরিমাণসূচকের
+  ক্ষেত্রে উপসূত্রের প্রতিস্থাপিত রূপসহ।
 \end{proof}
-% BN-NORM-174 TARGET-NORMALIZATION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{ভাষা-স্বাভাবিকীকরণ (BN-NORM-174):} দুটি প্রদর্শিত রূপান্তরের মাঝের ইংরেজি into সংযোগপদ বাংলা এর বদলে হয়েছে; সূত্র, বিধি ও শাখা অপরিবর্তিত।}
-% BN-NORM-174 TARGET-NORMALIZATION-END
+% BN-NORM-174: display words remain localized; extra explanatory reader annotation withdrawn.
 
 \end{document}

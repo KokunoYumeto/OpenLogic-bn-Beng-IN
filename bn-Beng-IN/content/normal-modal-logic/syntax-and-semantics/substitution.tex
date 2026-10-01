@@ -88,16 +88,18 @@
     \intertext{লক্ষ্য করুন, যুগপৎ প্রতিস্থাপন সাধারণত পর্যায়ক্রমিক প্রতিস্থাপনের
       সমান নয়। যেমন, উপরের $\SSubst{!A}{\subst{!D_1}{p_1}, \subst{!D_2}{p_2}}$-এর
       সঙ্গে $\Subst{(\Subst{!A}{!D_1}{p_1})}{!D_2}{p_2}$ তুলনা করুন, যা হলো:}
-    \Diamond(p_2 \lif p_3) & \Subst{\lif \Box(\Diamond(p_2 \lif p_3) \land p_2)}{\lnot\Box p_1}{p_2}, \text{ অর্থাৎ,}\\
+    & \Subst{\Diamond(p_2 \lif p_3) \lif \Box(\Diamond(p_2 \lif p_3) \land p_2)}{\lnot\Box p_1}{p_2}, \text{ অর্থাৎ,}\\
     \Diamond(\lnot\Box p_1 \lif p_3) &
     \lif \Box(\Diamond(\lnot\Box p_1
     \lif p_3) \land \lnot\Box p_1)\\
     \intertext{আর $\Subst{(\Subst{!A}{!D_2}{p_2})}{!D_1}{p_1}$-এর সঙ্গে তুলনা করুন:}
-    p_1 & \lif \Subst{\Box(p_1 \land \lnot\Box p_1)}{\Diamond(p_2 \lif p_3)}{p_1}, \text{ অর্থাৎ,}\\
+    & \Subst{p_1 \lif \Box(p_1 \land \lnot\Box p_1)}{\Diamond(p_2 \lif p_3)}{p_1}, \text{ অর্থাৎ,}\\
     \Diamond(p_2 \lif p_3) &
     \lif \Box(\Diamond(p_2
     \lif p_3) \land \lnot\Box\Diamond(p_2 \lif p_3)).
   \end{align*}
+% BN-SRC-687 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-687):} উৎসের পর্যায়ক্রমিক প্রতিস্থাপনের দুটি মধ্যবর্তী রাশিতে দ্বিতীয় প্রতিস্থাপনটি কেবল উত্তরপদে দেখানো হয়েছে, যদিও পূর্বপদেও সংশ্লিষ্ট চল আছে। এখানে প্রতিস্থাপনের পরিধি সম্পূর্ণ শর্তবাক্য; উৎসের শেষ ফলগুলি ইতিমধ্যেই সেই সম্পূর্ণ প্রতিস্থাপন অনুযায়ী সঠিক।} % BN-SRC-687 TARGET-CORRECTION-END
 \end{ex}
 
 \end{document}

@@ -1,0 +1,86 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_Z_AXIOMS_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/z.tex",
+      "sha256": "3b278dcf8ae904c66d3bcf334ac4ab5b2aef2c1ec8845214fbc040d946f0fd6a"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/story.tex",
+      "sha256": "69d6b9a41be91585044cf6738bf6655d34795eb16de0adecde43999f1d0b8af1"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/separation.tex",
+      "sha256": "63d01fbaffffa447d90da0f5c50723c564d5123aa3893bf741298c1b5cb6001a"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/union.tex",
+      "sha256": "270fae90b72ed2985e1eb4803244bdfea2a427846c2e4140dea2766e2e6d0d89"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/pairs.tex",
+      "sha256": "6f24df109449692ba2d382ec258d2b4d79771a5e403d575f75c78e03666c3e3a"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/powerset.tex",
+      "sha256": "650a0a3311420ac2ef4e8df0f1d3060971a3fb624ba530a8e620667c6cdc59ab"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/infinity-again.tex",
+      "sha256": "0a89d7c72cb1445d318313328d5a72912ed9dc3c4f07c255719f5425cc474240"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/milestone.tex",
+      "sha256": "cba4b6e4bc2c9948579630531c28b1165a9fe350471093db30fdbea399fe02ed"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/nat.tex",
+      "sha256": "ffe7bd11392e2ca63fd4692a0fad2e7a1a8d6bf33fc63770649f96e3e3d10ac5"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/z/arbintersections.tex",
+      "sha256": "366198d08edd037c9b1f92d0842e34f1480b0d2cc8d5dae83cd876fbcbe19886"
+    }
+  ],
+  "primary_sources": [
+    {
+      "path": "upstream/content/sets-functions-relations/infinite/dedekind-algebra.tex",
+      "sha256": "9cee716bb8cb3bfd507ed5c17bbd4477d05995af6f8f8d411087793bdaa86036"
+    }
+  ],
+  "পরীক্ষা": {
+    "পৃথকীকৃত উপসেট": 81,
+    "সংযোগের সদস্যতার ক্ষেত্র": 256,
+    "ছেদের সাক্ষী": 255,
+    "ক্রমযুগলের পরিচয়ের ক্ষেত্র": 4096,
+    "সসীম সংখ্যারূপ": 21,
+    "বিকল্প জার্মেলো সংখ্যারূপ": 21,
+    "বিস্তার সরানো বা বদলানোর ক্ষেত্র": 872,
+    "স্থানীয় চক্রের সদস্যতা": {
+      "x": [
+        "y"
+      ],
+      "y": [
+        "x"
+      ]
+    },
+    "আংশিক অপেক্ষকের সাক্ষীর ব্যর্থতা": {
+      "লেখচিত্র": [
+        [
+          0,
+          1
+        ]
+      ],
+      "চাওয়া বদ্ধ সাক্ষী": [
+        0,
+        1
+      ],
+      "অনির্ধারিত ইনপুট": 1
+    }
+  },
+  "সীমা": "সীমিত যাচাই সাধারণ প্রমাণের পরিপূরক। অসীমতার স্বতঃসিদ্ধ, omega-র অস্তিত্ব বা পুরো ভিত্তিবিহীন তত্ত্বের প্রতিমডেল সসীম fixture দিয়ে প্রমাণিত বলা হয়নি। OLP-0051 সম্পূর্ণ সহায়ক পাঠে পুরোনো BN-SRC-018 সঠিক; BN-SRC-783 আগের সংজ্ঞায় ক্ষেত্র ও সাক্ষী স্পষ্ট করেছে। পৃথক সহায়ক নথি, ৩৩৬-এর গণনায় নয়।"
+}

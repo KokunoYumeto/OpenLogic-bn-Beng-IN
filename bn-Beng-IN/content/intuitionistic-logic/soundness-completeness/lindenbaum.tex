@@ -8,7 +8,7 @@
 
 \olfileid{int}{sc}{lin}
 
-\olsection{লিন্ডেনবাউমের উপপাদ্য}
+\olsection{লিন্ডেনবাউমের সহায়ক উপপাদ্য}
 
 স্বজ্ঞাবাদী যুক্তিবিদ্যার সম্পূর্ণতার উপপাদ্য প্রমাণে $\Gamma \Proves/ !A$
 ধরে এমন একটি মডেল নির্মাণ করি যাতে $\mSat{M}{\Gamma}$ অথচ
@@ -41,7 +41,7 @@ $\Gamma^* \Proves !A \lor \lnot !A$।
   \end{enumerate}
 \end{defn}
 
-\begin{lem}[লিন্ডেনবাউমের উপপাদ্য]
+\begin{lem}[লিন্ডেনবাউমের সহায়ক উপপাদ্য]
   \ollabel{lem:lindenbaum} $\Gamma \Proves/ !A$ হলে এমন একটি
   $\Gamma^* \supseteq \Gamma$ আছে, যাতে $\Gamma^*$ প্রাইম এবং
   $\Gamma^* \Proves/ !A$।
@@ -51,11 +51,11 @@ $\Gamma^* \Proves !A \lor \lnot !A$।
   $!B_1 \lor !C_1$, $!B_2 \lor !C_2$, \dots, দিয়ে
   $!B \lor !C$-রূপের সমস্ত !!{formula}s-এর একটি গণনা ধরি।
   !!{formula}s-এর সেটের একটি বর্ধমান ক্রম~$\Gamma_n$ সংজ্ঞায়িত করব:
-  প্রতিটি $\Gamma_{n+1}$ পাওয়া যাবে $\Gamma_n$-এর সঙ্গে একটি নতুন
-  !!a{formula} যোগ করে। সব~$\Gamma_n$-এর সংযোগই হবে $\Gamma^*$।
+  প্রতিটি $\Gamma_{n+1}$-তে প্রয়োজন হলে $\Gamma_n$-এর সঙ্গে একটি নতুন
+  !!a{formula} যোগ করব; অনিষ্পন্ন কাজ না থাকলে সমষ্টি অপরিবর্তিত রাখব। সব~$\Gamma_n$-এর সংযোগই হবে $\Gamma^*$।
   নতুন !!{formula}s এমনভাবে বাছব যাতে $\Gamma^*$ প্রাইম হয়, অথচ
   $\Gamma^* \Proves/ !A$ বজায় থাকে। প্রতি ধাপে তাই প্রথম এমন
-  বিযুক্তি~$!B_i \lor !C_i$ খুঁজব যার জন্য:
+  বিয়োজন~$!B_i \lor !C_i$ খুঁজব যার জন্য:
   \begin{enumerate}
   \item\ollabel{gamma-1} $\Gamma_n \Proves !B_i \lor !C_i$
   \item\ollabel{gamma-2} $!B_i \notin \Gamma_n$ এবং $!C_i \notin \Gamma_n$
@@ -65,14 +65,14 @@ $\Gamma^* \Proves !A \lor \lnot !A$।
   \olref{gamma-1} ও~\olref{gamma-2} পূরণকারী ক্ষুদ্রতম $i$-কে
   $i(n)$ বলি।
   $i(n)$-এর মান $i$ নির্ধারিত হলে $\Gamma_n$-র প্রথম অনিষ্পন্ন
-  বিযুক্তি $!B_i \lor !C_i$; তার $!B_i$ বা $!C_i$ যোগ হয়।
+  বিয়োজন $!B_i \lor !C_i$; তার $!B_i$ বা $!C_i$ যোগ হয়।
 
   $\Gamma_0 = \Gamma$ ধরি এবং
   \[
   \Gamma_{n+1} = \begin{cases}
     \Gamma_n \cup \{!B_{i(n)}\} &
-    \text{if $\Gamma_n \cup \{!B_{i(n)}\} \Proves/ !A$} \\
-    \Gamma_n \cup \{!C_{i(n)}\} & \text{otherwise}
+    \text{যদি $\Gamma_n \cup \{!B_{i(n)}\} \Proves/ !A$} \\
+    \Gamma_n \cup \{!C_{i(n)}\} & \text{অন্যথায়}
     \end{cases}
   \]
   যদি $i(n)$ অনির্দিষ্ট হয়—অর্থাৎ $\Gamma_n \Proves !B \lor !C$
@@ -102,7 +102,8 @@ $\Gamma^* \Proves !A \lor \lnot !A$।
   $\Gamma^* \Proves !A$ হলে কোনো সসীম উপসেট $\Gamma'
   \subseteq \Gamma^*$ থেকে $\Gamma' \Proves !A$ হতো। প্রতিটি
   $!D \in \Gamma'$ কোনো-না-কোনো~$\Gamma_i$-তে থাকে। সেই সূচকগুলির
-  বৃহত্তমটি $n$ ধরি। $i \le n$ হলে $\Gamma_i \subseteq \Gamma_n$;
+  % BN-SRC-758: সসীম ব্যবহৃত অনুমিতির সমষ্টি শূন্যও হতে পারে; সেই ক্ষেত্রে সূচক শূন্য।
+  বৃহত্তমটি $n$ ধরি, যদি উপসমষ্টি অশূন্য হয়; শূন্য উপসমষ্টির ক্ষেত্রে শূন্য সূচক নিই। $i \le n$ হলে $\Gamma_i \subseteq \Gamma_n$;
   সুতরাং $\Gamma' \subseteq \Gamma_n$। কিন্তু এতে
   $\Gamma_n \Proves !A$ হয়, যা আগের ফল
   $\Gamma_n \Proves/ !A$-এর বিরোধী।
@@ -120,16 +121,16 @@ $\Gamma^* \Proves !A \lor \lnot !A$।
   হলে অবশ্যই $\Gamma^* \Proves !B \lor !C$। তাই ধরি,
   $\Gamma^* \Proves !B \lor !C$, অথচ $!B \notin \Gamma^*$ এবং
   $!C \notin \Gamma^*$। কোনো~$n$-এর জন্য
-  $\Gamma_n \Proves !B \lor !C$। সমস্ত বিযুক্তির গণনায়
+  $\Gamma_n \Proves !B \lor !C$। সমস্ত বিয়োজনর গণনায়
   $!B \lor !C$-টি $!B_j \lor !C_j$ হিসেবে আসে। তাই
   $!B_j \lor !C_j$ সূচক~$i(n)$-এর সংজ্ঞার শর্ত পূরণ করে:
   $\Gamma_n \Proves !B_j \lor !C_j$, কিন্তু
   $!B_j \notin \Gamma_n$ ও $!C_j \notin \Gamma_n$।
-  % BN-SRC-405: only the finitely many eligible indices below fixed j must be exhausted.
+  % BN-SRC-405: নির্দিষ্ট j-র নিচের সসীম সূচকগুলিই নিঃশেষ করতে হয়।
   ওই সূচকের চেয়ে ছোট সূচক সসীমসংখ্যক। এদের কোনোটি একবার বেছে নিয়ে
-  তার একটি বিযোজ্য পদ যোগ করলে সেই সূচক আর কখনো দ্বিতীয় শর্ত
+  তার একটি বিয়োজনাংশ পদ যোগ করলে সেই সূচক আর কখনো দ্বিতীয় শর্ত
   পূরণ করতে পারে না। অথচ নির্দিষ্ট সূচকটির জন্য শর্ত দুটি পূরণ হতে থাকে:
-  সূত্রনিষ্পাদন বর্ধমান থাকে এবং কোনো বিযোজ্য পদই যুক্ত হয় না।
+  সূত্রনিষ্পাদন বর্ধমান থাকে এবং কোনো বিয়োজনাংশ পদই যুক্ত হয় না।
   ফলে কোনো ধাপ~$m$-এ $j = i(m)$ হতেই হবে। তখন হয়
   $!B \in \Gamma_{m+1}$, নয় $!C \in \Gamma_{m+1}$;
   এটি $!B \notin \Gamma^*$ ও $!C \notin \Gamma^*$-এর বিরোধী।

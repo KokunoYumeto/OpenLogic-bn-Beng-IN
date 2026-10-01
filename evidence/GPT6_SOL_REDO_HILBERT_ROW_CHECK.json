@@ -1,0 +1,415 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "numbered_rows_checked": 48,
+  "proof_blocks": 6,
+  "rows": [
+    {
+      "proof_block": 1,
+      "line": 1,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 1,
+      "line": 2,
+      "rule": "\\Nec",
+      "references": [
+        1
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 1,
+      "line": 3,
+      "rule": "\\Ax{K}",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 1,
+      "line": 4,
+      "rule": "\\MP",
+      "references": [
+        2,
+        3
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 1,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 2,
+      "rule": "\\Nec",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 3,
+      "rule": "\\Ax{K}",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 4,
+      "rule": "\\MP",
+      "references": [
+        2,
+        3
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 5,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 6,
+      "rule": "\\Nec",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 7,
+      "rule": "\\Ax{K}",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 8,
+      "rule": "\\MP",
+      "references": [
+        6,
+        7
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 9,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 10,
+      "rule": "\\MP",
+      "references": [
+        4,
+        9
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 11,
+      "rule": "\\MP",
+      "references": [
+        8,
+        10
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 1,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 2,
+      "rule": "\\Nec",
+      "references": [
+        1
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 3,
+      "rule": "\\Ax{K}",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 4,
+      "rule": "\\MP",
+      "references": [
+        2,
+        3
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 5,
+      "rule": "\\Ax{K}",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 6,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 7,
+      "rule": "\\MP",
+      "references": [
+        4,
+        6
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 8,
+      "rule": "\\MP",
+      "references": [
+        5,
+        7
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 9,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 10,
+      "rule": "\\MP",
+      "references": [
+        8,
+        9
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 1,
+      "rule": "\\Dual",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 2,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 3,
+      "rule": "\\MP",
+      "references": [
+        1,
+        2
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 4,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 5,
+      "rule": "\\Nec",
+      "references": [
+        4
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 6,
+      "rule": "\\Ax{K}",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 7,
+      "rule": "\\MP",
+      "references": [
+        5,
+        6
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 8,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 9,
+      "rule": "\\MP",
+      "references": [
+        7,
+        8
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 10,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 11,
+      "rule": "\\MP",
+      "references": [
+        9,
+        10
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 12,
+      "rule": "\\MP",
+      "references": [
+        3,
+        11
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 5,
+      "line": 1,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 5,
+      "line": 2,
+      "rule": "\\Nec",
+      "references": [
+        1
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 5,
+      "line": 3,
+      "rule": "\\Ax{K}",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 5,
+      "line": 4,
+      "rule": "\\MP",
+      "references": [
+        2,
+        3
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 5,
+      "line": 5,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 5,
+      "line": 6,
+      "rule": "\\MP",
+      "references": [
+        4,
+        5
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 6,
+      "line": 1,
+      "rule": "\\Dual",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 6,
+      "line": 2,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 6,
+      "line": 3,
+      "rule": "\\MP",
+      "references": [
+        1,
+        2
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 6,
+      "line": 4,
+      "rule": "\\Taut",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 6,
+      "line": 5,
+      "rule": "\\MP",
+      "references": [
+        3,
+        4
+      ],
+      "status": "passed"
+    }
+  ],
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/proofs-in-K.tex",
+      "sha256": "3b90319151d0e7b5fa0b669585715d85d8af82846d829fed4a3666f556b110c2"
+    }
+  ],
+  "limits": "সংজ্ঞায়িত ডায়মন্ডের শেষ অনামা abbreviation-line ও OLP-0432/0433-এর schematic rewriting পৃথক manual review-তে।"
+}

@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "bounded_law_models": 33032,
+  "actual_exercise_answers": [
+    true,
+    false,
+    true,
+    true,
+    true,
+    true
+  ],
+  "actual_relations": {
+    "a": [
+      3,
+      3,
+      4
+    ],
+    "b": [
+      5,
+      2,
+      5
+    ]
+  },
+  "actual_bisimulation_pairs": [
+    [
+      "w1",
+      "v1"
+    ],
+    [
+      "w2",
+      "v2"
+    ],
+    [
+      "w3",
+      "v2"
+    ]
+  ],
+  "indexed_history_witnesses": "passed",
+  "positive_length_common_knowledge_witnesses": "passed",
+  "chapter_hook_primary_source": {
+    "path": "upstream/sty/open-logic-defer.sty",
+    "sha256": "303d1930a644e77e6a8ba2071e86b4c9ea031ab5927cff4afc21337f427099f3"
+  },
+  "catalog_readback": {
+    "url": "https://search.worldcat.org/de/title/11617532",
+    "date": "2026-09-30",
+    "author": "Jaakko Hintikka",
+    "year": 1962,
+    "publisher": "Cornell University Press"
+  },
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/possible-histories.tex",
+      "sha256": "940568abb6cc27ef7a0bdd0a71f6762ce6d7c9964cb136b834e342b14e6a9439"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/epistemic-logic.tex",
+      "sha256": "14018141674eb2ccd7d2f43e0dece1c316ebefc8fd70e78b4bd28fd2ed18115d"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/introduction.tex",
+      "sha256": "948763985f72a7356632284bebd6cd6eee2f9ca90f427d292fc4ef3b92f64ca6"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex",
+      "sha256": "1cc7864681cb42f35a7681c1e8979d7a436e95ce1c1e6b3c05987e4b860e9504"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/relational-models.tex",
+      "sha256": "7d6f090488d4eb68e33ea996ae793656de54292c40415ca12f9e7717d86345dc"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/truth-at-w.tex",
+      "sha256": "7c7524a735c1eaa8845466703f2e3f52066464c1d24053381c6000745d27d106"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/properties-accessibility.tex",
+      "sha256": "ed8aa72ddee56f0e5bec6e8b45aefa3b5f4cddc757e588015bd07ee42c7d8762"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/bisimulations.tex",
+      "sha256": "80796c4074e9ff86f31769bd589ec66df383a23d6a9443b10a21b6abc7d012a8"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex",
+      "sha256": "877dc428c03b8c7525c7a57ced586552363585789607e0e732e7eece1b33f89b"
+    }
+  ],
+  "limits": "ক্ষুদ্র মডেলের গণনা সাধারণ প্রমাণ নয়। সূত্র-আরোহ ও প্রতিটি সসীম পথের সামনে-পিছনে উত্তোলনে জ্ঞান ও সর্বস্তরে পারস্পরিক জ্ঞানের দ্বি-অনুকৃতি-অপরিবর্তনীয়তার সাধারণ যুক্তি বাংলা review-তে। ইতিহাসের উদাহরণ সূচকের প্রয়োজন প্রমাণ করে; source-এর state-সংক্ষিপ্ত রীতি শুধু নির্দিষ্ট উপস্থিতির জন্য।"
+}

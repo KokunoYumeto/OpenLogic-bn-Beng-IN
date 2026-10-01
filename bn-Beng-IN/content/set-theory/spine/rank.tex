@@ -28,7 +28,7 @@ $A
 	প্রমাণটি অনুশীলন হিসেবে রাখা হলো।
 \end{proof}
 \begin{prob}
-	\olref[sth][spine][rank]{ranksexist} প্রমাণ করো।
+	\olref[sth][spine][rank]{ranksexist} প্রমাণ করুন।
 \end{prob}
 \noindent
 স্তরাঙ্কগুলির সুক্রমের সাহায্যে কয়েকটি
@@ -47,7 +47,7 @@ V_\alpha$। $V_\alpha$ উপসেট-অধোবদ্ধ
 একাধিকবার ব্যবহৃত হয়েছে। বিপরীতে,
 $x \in V_\alpha$ হলে $x \subseteq V_\alpha$,
 তাই $\setrank{x} \leq \alpha$।
-% BN-SRC-441: source concludes the contradictory “x not in V_alpha”; the needed conclusion is rank(x) < alpha.
+% BN-SRC-441: উৎসের উপসংহারে সদস্যতা অস্বীকার করা, অথচ প্রয়োজন সদস্যের স্তরাঙ্কের কঠোর অসমতা।
 কিন্তু এই অসমতাটি আসলে কঠোর।
 ট্রান্সফাইনাইট আবেশে: শূন্য পর্যায়ে
 বিবেচ্য সদস্য নেই; উত্তরসূরি পর্যায়ে
@@ -58,7 +58,7 @@ $x \in V_\alpha$ হলে $x \subseteq V_\alpha$,
 \begin{prob}
 	\olref[sth][spine][rank]{valphalowerrank}-এ
 	উল্লিখিত সরল ট্রান্সফাইনাইট আবেশটি সম্পূর্ণ
-	করো।
+	করুন।
 \end{prob}
 
 \begin{prop}\ollabel{rankmemberslower}
@@ -83,7 +83,7 @@ $A \subseteq V_{\setrank{A}} = \Setabs{x}{\setrank{x} \in
 \end{thm}
 
 \begin{proof}
-বিপরীতকথন প্রমাণ করি। তাই ধরি,
+প্রতিবিপরীত রূপটি প্রমাণ করি। তাই ধরি,
 $\lnot \forall A
 \phi(A)$। ট্রান্সফাইনাইট আবেশে
 (\olref[ordinals][basic]{ordinductionschema})
@@ -135,14 +135,14 @@ $\setrank{\beta} = \beta$। তাহলে
 \olref{ranksupstrict} অনুযায়ী
 $\setrank{\alpha} = \supstrict_{\beta \in
 \alpha}\setrank{\beta} = \supstrict_{\beta \in \alpha}\beta = \alpha$।
-% প্রথমে লক্ষ করো, কোনো $\beta \in
+% প্রথমে লক্ষ করুন, কোনো $\beta \in
 % \alpha$-র জন্য $\setrank{\alpha} \neq \beta$।
 % নতুবা \olref{rankmemberslower} অনুযায়ী
 % $\beta = \setrank{\beta} \in
 % \setrank{\alpha} = \beta$; অর্থাৎ
 % $\beta \in \beta$, যা বিরোধ।
 %
-% এবার লক্ষ করো, $\alpha \subseteq V_\alpha$। কারণ
+% এবার লক্ষ করুন, $\alpha \subseteq V_\alpha$। কারণ
 % \olref[sfr][ordinals][basic]{ordissetofsmallerord}
 % অনুযায়ী $\alpha =
 % \Setabs{\beta}{\beta \in \alpha}$। আর

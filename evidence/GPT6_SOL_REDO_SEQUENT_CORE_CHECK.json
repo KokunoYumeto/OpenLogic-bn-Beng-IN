@@ -1,0 +1,74 @@
+{
+  "units": [
+    "OLP-0698",
+    "OLP-0699",
+    "OLP-0700",
+    "OLP-0701",
+    "OLP-0702",
+    "OLP-0703"
+  ],
+  "targets": [
+    {
+      "unit_id": "OLP-0698",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/admissible-derivable.tex",
+      "sha256": "26dc9bf5eedaf5fceaccdc7a0e6dadbb7d744aeeb574a8208440a79950a85cc4"
+    },
+    {
+      "unit_id": "OLP-0699",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/interpretation-rules.tex",
+      "sha256": "f7529880b43fa00d383a761a826d9d0cee9ff8f305d4c1c5aed530ad2e7feaa7"
+    },
+    {
+      "unit_id": "OLP-0700",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/introduction.tex",
+      "sha256": "248f50477810130e98728e55ca99de60e64533ca458fdff76dcadfe0f39c3897"
+    },
+    {
+      "unit_id": "OLP-0701",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/invertibility.tex",
+      "sha256": "52e7a2d58b0545681efffeee4bedeec7674028766496c50c3c7533ddb9dc3f6c"
+    },
+    {
+      "unit_id": "OLP-0702",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/proof-examples.tex",
+      "sha256": "9c33615c0b07dfb0eb9721ddb6efa4ee413e94a237a60d397cde5d26da3bd479"
+    },
+    {
+      "unit_id": "OLP-0703",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/quantifiers.tex",
+      "sha256": "e3bc2736d32886a309e9c5dcf3728f671cae7b4e702759f3209c128fb7a25288"
+    }
+  ],
+  "full_actual_bilingual_read": true,
+  "review_record": "evidence/REDO_GPT6_SOL_SEQUENT_CORE_2026-10-01.md",
+  "new_findings": [
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    907,
+    908
+  ],
+  "withdrawn": [
+    629,
+    632,
+    643
+  ],
+  "refined": [
+    641
+  ],
+  "semantic_checks": [
+    "16 Boolean valuations per iff/XOR schema including contexts;64 checks total",
+    "original iff rule invalid on unequal truth values",
+    "doubled context survives conjunction-right and final contraction",
+    "freshness collision after replacing outer a by inner eigenconstant c"
+  ],
+  "canon_scope": "actual prior2026-09-30 image consultations reused; no fresh retrieval",
+  "overall_status": "registered_current_hashes; rebuild_and_release_pending",
+  "registration_status": "registered",
+  "registered_unit_count": 312,
+  "registered_canon_ledger_sha256": "c1a661a884222d54a814c1b01b4a5fc9e9a7329708a1bb95ed260e6153ae1b51",
+  "registration_date": "2026-10-01"
+}

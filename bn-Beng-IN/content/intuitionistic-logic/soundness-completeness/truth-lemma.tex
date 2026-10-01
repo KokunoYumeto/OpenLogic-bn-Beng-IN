@@ -8,13 +8,13 @@
 
 \olfileid{int}{sc}{tru}
 
-\olsection{সত্যতার উপপাদ্য}
+\olsection{সত্যতার সহায়ক উপপাদ্য}
 
-নিচের উপপাদ্যটি আদর্শ মডেলে সত্যতা এবং প্রাইম সেট~$\Delta$-র
+নিচের উপপাদ্যটি প্রামাণিক মডেলে সত্যতা এবং প্রাইম সেট~$\Delta$-র
 !!{element}s হিসেবে !!{formula}s-এর উপস্থিতির মধ্যে সম্পর্ক স্থাপন করে।
 
 \begin{lem}\ollabel{lem:truth}
-  $\Delta$ প্রাইম হলে $\mSat{M(\Delta)}{!A}[\sigma]$ তখনই,
+  $\Delta$ প্রাইম হলে $\mSat{M(\Delta)}{!A}[\sigma]$ তখনই এবং কেবল তখনই,
   যখন $\Delta(\sigma) \Proves !A$।
 \end{lem}
 
@@ -25,22 +25,22 @@
       সঙ্গত; তাই $\Delta(\sigma) \Proves/ \indfrm$। সংজ্ঞা
       অনুযায়ী $\mSat/{M(\Delta)}{\indfrm}[\sigma]$।}
     \item \indcase{!A}{p}{$\mSat{{}}{}$-এর সংজ্ঞায়
-      $\mSat{M(\Delta)}{\indfrm}[\sigma]$ তখনই, যখন
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$ তখনই এবং কেবল তখনই, যখন
       $\sigma \in V(p)$; অর্থাৎ $\Delta(\sigma) \Proves \indfrm$।}
     \item \indcase!{!A}{\lnot !B}{}
     \item \indcase{!A}{!B \land
-      !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ তখনই, যখন
+      !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ তখনই এবং কেবল তখনই, যখন
       $\mSat{M(\Delta)}{!B}[\sigma]$ এবং
       $\mSat{M(\Delta)}{!C}[\sigma]$। আরোহ-অনুমানে
-      $\mSat{M(\Delta)}{!B}[\sigma]$ তখনই, যখন
+      $\mSat{M(\Delta)}{!B}[\sigma]$ তখনই এবং কেবল তখনই, যখন
       $\Delta(\sigma) \Proves !B$; $!C$-র ক্ষেত্রেও একই কথা।
       কিন্তু $\Delta(\sigma) \Proves !B$ এবং
-      $\Delta(\sigma) \Proves !C$ তখনই, যখন
+      $\Delta(\sigma) \Proves !C$ তখনই এবং কেবল তখনই, যখন
       $\Delta(\sigma) \Proves \indfrm$।}
     \item \indcase{!A}{!B \lor
-      !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ তখনই, যখন
+      !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ তখনই এবং কেবল তখনই, যখন
       $\mSat{M(\Delta)}{!B}[\sigma]$ অথবা
-      $\mSat{M(\Delta)}{!C}[\sigma]$। আরোহ-অনুমানে এটি তখনই
+      $\mSat{M(\Delta)}{!C}[\sigma]$। আরোহ-অনুমানে এটি তখনই এবং কেবল তখনই
       সত্য, যখন $\Delta(\sigma) \Proves !B$ অথবা
       $\Delta(\sigma) \Proves !C$। এখন দেখাতে হবে, এটিও
       $\Delta(\sigma) \Proves \indfrm$-এর সমতুল্য।

@@ -106,8 +106,8 @@ $!A \Sequent !A$ & $\lfalse \Sequent \quad$
 \end{tabular}
 \caption{স্বজ্ঞাবাদী যুক্তির জন্য
 \Log{G1i}-র বিধি।
-$\RightR{\lforall}$ ও
-$\LeftR{\lexists}$-এ
+$\RightR{\forall}$ ও
+$\LeftR{\exists}$-এ
 !!{constant}~$a$
 সিদ্ধান্ত-সিকোয়েন্টে
 থাকতে পারবে না।
@@ -121,7 +121,7 @@ $\Delta$ ফাঁকা হতে পারে
 \Log{G1m} হলো
 \Log{G1i} থেকে
 \RightR{\Weakening} এবং
-$\lfalse \Sequent \quad$
+$\lfalse, \Gamma \Sequent \Delta$
 স্বতঃসিদ্ধ বাদ দিলে
 যা থাকে।}
 \ollabel{tab:G1i}
@@ -129,11 +129,7 @@ $\lfalse \Sequent \quad$
 % BN-SRC-649 TARGET-CORRECTION-BEGIN
 \par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-649):} G1i ফাইলের পরিচয়-মন্তব্যে ভুল G1c এবং সারণির tab:G1c লেবেলে G1c-র সঙ্গে সংঘর্ষ ছিল; ফাইল ও ক্যাপশনের ব্যবস্থা অনুযায়ী G1i নাম করা হয়েছে।}
 % BN-SRC-649 TARGET-CORRECTION-END
-% BN-SRC-650 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-650):} সতেজতা-শর্তের ক্যাপশনে উৎসের \(\forall,\exists\) কমান্ডকে সারণির \(\lforall,\lexists\) বিধিনামের সঙ্গে মেলানো হয়েছে।}
-% BN-SRC-650 TARGET-CORRECTION-END
-% BN-SRC-651 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-651):} G1m বর্ণনায় উৎসে \(\lfalse,\Gamma\Sequent\Delta\)-র স্বতঃসিদ্ধ বাদ দেওয়ার কথা আছে, অথচ সারণিতে প্রদর্শিত মূল অসংগতি-স্বতঃসিদ্ধ \(\lfalse\Sequent\)। ক্যাপশনে বাদ-পড়া স্বতঃসিদ্ধটি সারণির রূপেই চিহ্নিত হয়েছে; ডান-দুর্বলীকরণ বাদ দেওয়ার দাবিও অক্ষত।}
-% BN-SRC-651 TARGET-CORRECTION-END
+% BN-SRC-650: macro-only erratum retracted; source caption restored.
+% BN-SRC-651: optional axiom-family restatement withdrawn; family includes the actual empty-context axiom.
 
 \end{document}

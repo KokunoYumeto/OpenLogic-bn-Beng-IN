@@ -1,0 +1,94 @@
+{
+  "units": [
+    "OLP-0704",
+    "OLP-0705",
+    "OLP-0706",
+    "OLP-0707",
+    "OLP-0708",
+    "OLP-0709",
+    "OLP-0710",
+    "OLP-0711",
+    "OLP-0712",
+    "OLP-0713"
+  ],
+  "targets": [
+    {
+      "unit_id": "OLP-0704",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/rules-G1c.tex",
+      "sha256": "b89eaf58acdc76a8cc566c2ccfeb74d284155f501b67b8ea45f4561c8ddbba97"
+    },
+    {
+      "unit_id": "OLP-0705",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/rules-G1i.tex",
+      "sha256": "321f0cc524e5b6a72647d7a895c551c4dbc877389e1705ca008857ea978cd653"
+    },
+    {
+      "unit_id": "OLP-0706",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/rules-G2c.tex",
+      "sha256": "c8852694aee701fe9652bf020a26de01f30715d1560b720237892237d65ff267"
+    },
+    {
+      "unit_id": "OLP-0707",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/rules-G3c.tex",
+      "sha256": "0feb7aa8386f37cdf64aa7f1f65c33b835a5eb5cf9b699105ac856d0efded910"
+    },
+    {
+      "unit_id": "OLP-0708",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/rules-G3i.tex",
+      "sha256": "53142a650737808e584de10a263253c4d0406dc63ad4b82ee765668d5e7517bf"
+    },
+    {
+      "unit_id": "OLP-0709",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/rules-LK.tex",
+      "sha256": "b6815688a5bdacafe2b3bb16dcce37010b459b660f834c4bae10979ca0ec6b45"
+    },
+    {
+      "unit_id": "OLP-0710",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/rules-mG3i.tex",
+      "sha256": "2ab22a8cb9eb631142b5848b8aa047a459c8b7ca91bd4027c14a7ec00c4b062b"
+    },
+    {
+      "unit_id": "OLP-0711",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/rules-proofs.tex",
+      "sha256": "d5886556dd50673676bedd425b46aafdfcab2a64bc3eba84e5285f83ccc4c5df"
+    },
+    {
+      "unit_id": "OLP-0712",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/sequent-calculus.tex",
+      "sha256": "bd1837d15b4d5806db29d4ecb3c049700607534ca58719fa3d233b86a67f7100"
+    },
+    {
+      "unit_id": "OLP-0713",
+      "path": "bn-Beng-IN/content/proof-theory/sequent-calculus/translations.tex",
+      "sha256": "89b991df5b801532ff015231852c5e348d692fdd7c79dfe8a2787b6f13f1c2bc"
+    }
+  ],
+  "full_actual_bilingual_read": true,
+  "review_record": "evidence/REDO_GPT6_SOL_SEQUENT_RULES_2026-10-01.md",
+  "new_findings": [
+    909
+  ],
+  "withdrawn": [
+    647,
+    650,
+    651,
+    653,
+    655,
+    659,
+    662,
+    663,
+    666,
+    669
+  ],
+  "refined": [
+    652,
+    660,
+    668
+  ],
+  "semantic_scope": "old forall-right counterexample-class invariant proved in review;12-step illustration only, corrected two-inference proof directly checked; height-at-most4 from height2",
+  "overall_status": "registered_current_hashes; rebuild_and_release_pending",
+  "registration_status": "registered",
+  "registered_unit_count": 322,
+  "registered_canon_ledger_sha256": "077e629d63499e38b2ea7de0a6d56f21a2cd314b31f84e0f9b1fa38df0252da0",
+  "registration_date": "2026-10-01"
+}

@@ -1,0 +1,171 @@
+{
+  "schema": "openlogic-bn-mvl-sequent-fresh-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "status": "passed",
+  "target_sha256": "e436e94d30eb8ab784d47ce17bbb21c557de353130783646afb788952795ff14",
+  "rules": [
+    {
+      "logic": "lukasiewicz",
+      "connective": "lnot",
+      "output_position": "False",
+      "premises": 1,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "lukasiewicz",
+      "connective": "lnot",
+      "output_position": "Undef",
+      "premises": 1,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "lukasiewicz",
+      "connective": "lnot",
+      "output_position": "True",
+      "premises": 1,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "goedel",
+      "connective": "lnot",
+      "output_position": "False",
+      "premises": 1,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "goedel",
+      "connective": "lnot",
+      "output_position": "True",
+      "premises": 1,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "lukasiewicz",
+      "connective": "land",
+      "output_position": "False",
+      "premises": 1,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "lukasiewicz",
+      "connective": "land",
+      "output_position": "Undef",
+      "premises": 3,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "lukasiewicz",
+      "connective": "land",
+      "output_position": "True",
+      "premises": 2,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "lukasiewicz",
+      "connective": "lor",
+      "output_position": "False",
+      "premises": 2,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "lukasiewicz",
+      "connective": "lor",
+      "output_position": "Undef",
+      "premises": 3,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "lukasiewicz",
+      "connective": "lor",
+      "output_position": "True",
+      "premises": 1,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "lukasiewicz",
+      "connective": "lif",
+      "output_position": "False",
+      "premises": 2,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "lukasiewicz",
+      "connective": "lif",
+      "output_position": "Undef",
+      "premises": 2,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "lukasiewicz",
+      "connective": "lif",
+      "output_position": "True",
+      "premises": 2,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "kleene",
+      "connective": "lif",
+      "output_position": "False",
+      "premises": 2,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "kleene",
+      "connective": "lif",
+      "output_position": "Undef",
+      "premises": 3,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "kleene",
+      "connective": "lif",
+      "output_position": "True",
+      "premises": 1,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "goedel",
+      "connective": "lif",
+      "output_position": "False",
+      "premises": 2,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "goedel",
+      "connective": "lif",
+      "output_position": "Undef",
+      "premises": 2,
+      "assignments_checked": 18,
+      "result": "passed"
+    },
+    {
+      "logic": "goedel",
+      "connective": "lif",
+      "output_position": "True",
+      "premises": 2,
+      "assignments_checked": 18,
+      "result": "passed"
+    }
+  ],
+  "scope": "বাস্তব বর্তমান বিধি ও সারণি থেকে প্রতিটি বিধিতে 18টি মূল্যায়ন, shared context সত্য ও মিথ্যা উভয় ক্ষেত্রে; সাধারণ n-মানী পূর্ণতার নতুন প্রমাণ নয়।"
+}

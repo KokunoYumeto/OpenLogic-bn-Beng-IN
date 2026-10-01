@@ -1,0 +1,13 @@
+{
+  "unit_id": "OLP-0206",
+  "review_record": "evidence/REDO_GPT6_SOL_LINDSTROM_SUPPORT_2026-10-01.md",
+  "source_sha256": "ea41d7c2886da3b341c6a216f369f5c55f33978d330a0ddaf305fd6c409511b5",
+  "target_sha256": "2d8da8eb801aa97a550e56f0fecfd08229fd5741271c5e1f4a663aa198ee6c9a",
+  "new_findings": [
+    915,
+    916,
+    917
+  ],
+  "affected_unit_count": 336,
+  "status": "registered_local; rebuild_release_pending"
+}

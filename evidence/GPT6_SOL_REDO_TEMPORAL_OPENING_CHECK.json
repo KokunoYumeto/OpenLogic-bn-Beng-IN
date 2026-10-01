@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "bounded_models": 33032,
+  "actual_table_condition_cases": [
+    11160,
+    14024,
+    21528,
+    22100,
+    22100
+  ],
+  "unary_direction_and_quantifiers": "passed",
+  "strict_endpoint_and_loop_witnesses": "passed",
+  "global_linearity_converse_not_claimed": "two disconnected dead ends witness",
+  "chapter_hook_primary_source": {
+    "path": "upstream/sty/open-logic-defer.sty",
+    "sha256": "303d1930a644e77e6a8ba2071e86b4c9ea031ab5927cff4afc21337f427099f3"
+  },
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/applied-modal-logic.tex",
+      "sha256": "68b3945bbb747bdff0defb49cbe92da009fbf0dd7194a42ca8d888f352e9dae2"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic.tex",
+      "sha256": "18b00f10388e04c90acaf2c8b6ddf2507532f38d3f9dcd08f93bf3566521db7c"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/introduction.tex",
+      "sha256": "5059f6e974648694d366cab94ae21574980605e439e7cc7a223f03682c8dd012"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/temporal-logic-semantics.tex",
+      "sha256": "3de1ffa0c88c63f518e8b3f4c2da5ba3c1fef6ed690339d7f3864e7609a6de10"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/properties-accessibility.tex",
+      "sha256": "f1d106774e477e47cf1af19876cc52b71396f4c5dbd76c45cee9c178e8428c2e"
+    },
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/temporal-logic/extra-temporal-operators.tex",
+      "sha256": "4efe2201da2c4f40a98745fe4f8f80abc7a2c7aaa223380f070138006fec44cf"
+    }
+  ],
+  "limits": "সর্বোচ্চ তিন জগতে গণনা সাধারণ প্রমাণ নয়। পাঁচ sufficient law, irreflexive frame-এর nondefinability এবং Since/Until-এর প্রকৃত endpoint convention বাংলা review-তে সাধারণ যুক্তি ও সাক্ষীতে তুলিত।"
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_METHODS_REMAINDER_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/proof-by-contradiction.tex",
+      "sha256": "b597a21f87ee65584841031f4e885b247cfc50ee6f3c2efb6fa6ec35d51e6371"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/reading-proofs.tex",
+      "sha256": "80013eec1866c0cd6d45a9a9b7b8c441f98efcda1acb42afbaf8751432645055"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/cant-do-it.tex",
+      "sha256": "cc28e7318f3098ddf471e904fe5508d468da44b2741dff099868c7f52bc4f4ea"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/resources.tex",
+      "sha256": "146412ce5fff761bc33ff7f3911bdf70a94119947becbc0ca6a5fa809accbbd1"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/induction.tex",
+      "sha256": "c75f9a5a90fadb2b48d01d09913171818afbdaa00454eebc3863d85bff9522dd"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/introduction.tex",
+      "sha256": "debae0fdb3d3c824bbde7830ddb9a9676648ddb7bbefcd00ed7bc8bd23635900"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/induction-on-N.tex",
+      "sha256": "ecf6b758140242d51fc888256256db5332230d5670d1ddaf70549827ff648bed"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/strong-induction.tex",
+      "sha256": "224cd2f4fc18d08b62223fcb131368d4315c1c91f7dcf148cdd297d00c5773f7"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/inductive-definitions.tex",
+      "sha256": "1e2e664e72176c288dac157af33097562e992d999f3ba3287d1839a3f9806e0b"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/structural-induction.tex",
+      "sha256": "ebc2a5fdcbfa289a0ecf1f71837b7184a5194a9dfa8fba637215ffa35011e3ed"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/induction/relations.tex",
+      "sha256": "6835584849cb0915fb5c6753f24d4e4c011d1d6a4a80889222a02e2d85844eda"
+    }
+  ],
+  "bibliography_sha256": "3b175e9393b3c33e4db531948f7fa469b8b52e31303941f30046f6e85136dee7",
+  "পরীক্ষা": {
+    "শোষণ ও বিরোধের ছোট set-pair": 256,
+    "উপসেটের পরিযায়ী ক্ষেত্র": 256,
+    "DNE-র IPC দুই-জগৎ ব্যতিক্রম": 1,
+    "পাশার সব মোটের case": 26,
+    "যোগফলের case": 101,
+    "finite weak/strong induction predicate": 256,
+    "চার অক্ষরের nice term": 1428,
+    "অশূন্য proper prefix": 16448,
+    "subterm parsing": 7924,
+    "supernice bracket bound": 2321,
+    "দুটি bracketless parse-এ ভিন্ন depth": 1,
+    "শুধু পাঁচ bibliography entry-তে delta": 5
+  },
+  "সীমা": "সসীম predicates ও syntax trees সাধারণ আরোহ/unique readability-র বিকল্প নয়। Source-এর সাধারণ base/constructor proof, nonempty-prefix ও scope পৃথকভাবে পূর্ণ পড়া হয়েছে। Resource যাচাই title/author/date/URL ও edition metadata-এ সীমিত; সম্পূর্ণ বই, motivational video বা নির্দেশিকার নতুন পাঠ দাবি নয়।",
+  "bibliography_historical_sha256": "f763e69dc6e9154aaeee153e9ca10dea055b8b497be0d3ede52fa6fbb316326a",
+  "bibliography_disposition_check": {
+    "date": "2026-10-01",
+    "changed_keys": [
+      "Cheng2004",
+      "Cohen1963",
+      "Godel1938",
+      "Sandstrum2019"
+    ],
+    "BN-BIB-005": "proposal_only; source2013 URL restored",
+    "no_new_full_book_read": true
+  }
+}

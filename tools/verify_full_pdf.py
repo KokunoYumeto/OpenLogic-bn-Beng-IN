@@ -115,6 +115,21 @@ def main() -> None:
             "visual inspection is missing a required content type")
     require(set(visual.get("reviewed_missing_characters", [])) == set(missing_characters),
             "missing-glyph warnings need exact visual review")
+    capture_path = BUILD / "CURRENT_PDF_CAPTURES.json"
+    captures = json.loads(capture_path.read_text(encoding="utf-8"))
+    require(captures.get("pdf_sha256") == pdf_hash
+            and visual.get("pdf_captures_sha256") == sha256(capture_path),
+            "page captures do not bind this PDF")
+    captured = {item["page"]: item for item in captures["captures"]}
+    inspected = visual.get("manually_inspected_pages", [])
+    require(sorted(item["page"] for item in inspected) == checked,
+            "manual capture inventory differs from inspected pages")
+    for item in inspected:
+        capture = captured.get(item["page"])
+        require(capture == item, "manual page inventory differs from capture receipt")
+        image_path = (REPO / item["file"]).resolve(strict=True)
+        require(image_path.is_relative_to(BUILD.resolve())
+                and item["sha256"] == sha256(image_path), "page capture changed after inspection")
 
     receipt = {
         "schema": "openlogic-bn-full-pdf-qa/1",

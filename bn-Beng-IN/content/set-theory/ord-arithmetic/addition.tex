@@ -52,8 +52,9 @@ $\alpha \ordplus \beta = \ordtype{\alpha \disjointsum \beta,
 \end{defn}
 \noindent
 এখানে আমরা সংকেতের সামান্য শিথিল ব্যবহার করেছি;
+% BN-SRC-801: সম্পর্কটি ক্ষেত্রের কার্তেসীয় বর্গে; চিহ্নিত অনুলিপির সদস্যকে সম্পর্কের যুগল ভাবা নয়।
 কঠোরভাবে ``$\rlexless$''-এর বদলে
-``$\Setabs{\tuple{x,y}\in \alpha\disjointsum\beta}{x \rlexless y}$''
+``$\Setabs{\tuple{x,y}\in (\alpha\disjointsum\beta)\times(\alpha\disjointsum\beta)}{x \rlexless y}$''
 লেখা উচিত। সংক্ষিপ্ততার জন্য পরেও এভাবে সংকেত ব্যবহার করব।
 
 নিচের ফলটি ও
@@ -86,7 +87,7 @@ $\alpha \ordplus 1 = \ordsucc{\alpha}$।
 \end{prop}
 
 \begin{proof}
-% BN-SRC-447: the tagged copies are united once, not subjected to another disjoint sum.
+% BN-SRC-447: চিহ্নিত অনুলিপি দুটির সংযোগ; আবার বিযুক্ত যোগ নয়।
 $\ordsucc{\alpha} = \alpha \cup \{\alpha\}$ থেকে
 $\alpha\disjointsum1 = (\alpha \times \{0\})
 \cup (\{0\} \times \{1\})$-তে সমরূপতা $f$ নিই,
@@ -109,7 +110,7 @@ $\alpha\disjointsum1 = (\alpha \times \{0\})
 
 \begin{proof}
 প্রতিটি ক্ষেত্র আলাদা করে যাচাই করি। প্রথমে:
-% BN-SRC-448: 0 x {1} is empty, not the singleton {0}.
+% BN-SRC-448: শূন্য কার্তেসীয় গুণফল খালি; শূন্যকে নিয়ে একপদী সেট নয়।
 \begin{align*}
 	\alpha \ordplus 0
 	&= \ordtype{(\alpha \times \{0\}) \cup (0 \times \{1\}), \rlexless} \\
@@ -149,6 +150,15 @@ $\alpha \ordplus \beta = \supstrict_{\delta < \beta}
 \olref[ordinals][ordtype]{thmOrdinalRepresentation}
 নিশ্চিত করে, এই পুনরাবৃত্তি-সমীকরণগুলি \emph{অনন্য}
 ক্রমসংখ্যা নির্ধারণ করে।
+% BN-SRC-802 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন-নোট।} ক্রমপ্রকারের অনন্যতা এবং
+পুনরাবৃত্তি-সমীকরণের অনন্যতার কারণ পৃথক। পরেরটিতে
+একই $\alpha$ রেখে দুটি মান-পরিবার তুলনা করি। শূন্যে
+সমান, উত্তরসূরিতে আগের সমান মানের একই উত্তরসূরি,
+সীমায় আগের সমান পরিবারের একই ঊর্ধ্বসীমা। তাই
+ট্রান্সফাইনাইট আবেশে প্রত্যেক সূচকে মান সমান।
+সরাসরি ক্রমপ্রকার ওই সমীকরণ পূরণ করে বলেই দুই সংজ্ঞা মেলে।
+% BN-SRC-802 TARGET-CORRECTION-END
 
 অনেক দিক থেকে ক্রমসংখ্যার যোগ স্বাভাবিক সংখ্যার যোগের
 মতোই। যেমন, আমরা প্রমাণ করতে পারি:
@@ -162,7 +172,7 @@ $\alpha, \beta, \gamma$ ক্রমসংখ্যা হলে:
 	\alpha\ordplus \gamma$ হলে $\beta = \gamma$;
 	\item\ollabel{ordaddition3} $\alpha \ordplus (\beta \ordplus
 	\gamma) = (\alpha \ordplus \beta) \ordplus \gamma$;
-	অর্থাৎ যোগ সম্বন্ধীয়;
+	অর্থাৎ যোগ সম্বন্ধীয়: বন্ধনী বদলালেও ফল বদলায় না;
 	\item\ollabel{ordaddition4} $\alpha \leq \beta$ হলে $\alpha
 	\ordplus \gamma \leq \beta \ordplus \gamma$।
 \end{enumerate}
@@ -199,6 +209,18 @@ $\delta \in \gamma$ হলেই $(\alpha \ordplus \beta)
 	&= \alpha \ordplus \supstrict_{\delta < \gamma}(\beta \ordplus \delta)\\
 	&= \alpha \ordplus (\beta \ordplus \gamma)
 \end{align*}
+% BN-SRC-803 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন-নোট।} সীমার তৃতীয় সমতায় অনুক্ত
+সহশেষিতার যুক্তি আছে। $Y=\Setabs{\beta\ordplus\delta}{\delta<\gamma}$
+অশূন্য এবং সর্বাধিক সদস্যহীন: $\delta\ordplus1<\gamma$
+ও যোগের কঠোর বৃদ্ধিতে প্রতিটি সদস্যের পরে আরেকটি আছে।
+তাই $\eta=\supstrict Y=\bigcup Y$ একটি সীমা।
+প্রত্যেক $\xi<\eta$-র পরে বা সমান কোনও $y\in Y$ আছে;
+ডান দিকে যোগের বৃদ্ধির ধর্মে $\alpha\ordplus\xi$
+সেই $\alpha\ordplus y$-র নিচে বা সমান। ফলে সীমা-সমীকরণের
+সব $\xi<\eta$-র ঊর্ধ্বসীমা শুধু সহশেষী $Y$ নিলেও বদলায় না।
+শূন্য পরিবারে এ ধরনের বিনিময় নির্বিশেষে সত্য নয়।
+% BN-SRC-803 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{prob}

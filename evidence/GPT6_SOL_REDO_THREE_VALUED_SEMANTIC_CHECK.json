@@ -1,0 +1,80 @@
+{
+  "schema": "openlogic-bn-three-valued-fresh-check/1",
+  "status": "passed",
+  "review_model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "date": "2026-09-30",
+  "basis": "বর্তমান বাংলা ফাইলের বাস্তব সারণি পড়ে পূর্ণ সসীম মূল্যায়ন; সাধারণ no-tautology দাবি U-সংরক্ষণ থেকে গঠনগত আরোহে প্রতিষ্ঠিত।",
+  "rm3_primary_source": {
+    "doi": "10.1017/S1755020312000196",
+    "pdf_page": 11,
+    "printed_page": "10",
+    "sha256": "c80f1c22b19855d66b7c328cc759db3afacd614293de14362b58be6a4b334ced"
+  },
+  "rm3_changed_cells": [
+    {
+      "arguments": [
+        "True",
+        "Undef"
+      ],
+      "old_lukasiewicz": "Undef",
+      "correct_rm3": "False"
+    },
+    {
+      "arguments": [
+        "Undef",
+        "Undef"
+      ],
+      "old_lukasiewicz": "True",
+      "correct_rm3": "Undef"
+    },
+    {
+      "arguments": [
+        "Undef",
+        "False"
+      ],
+      "old_lukasiewicz": "Undef",
+      "correct_rm3": "False"
+    }
+  ],
+  "old_matrix_mp_countermodels": [
+    [
+      "Undef",
+      "False"
+    ]
+  ],
+  "correct_rm3_mp_countermodels": [],
+  "checked_claims": [
+    "Łukasiewicz সর্বতঃসত্য ও অ-সর্বতঃসত্যের উভয় অনুশীলন",
+    "মোডাল প্রতিমূল্যায়নের শেষ মান False",
+    "দুই ক্লিনি সারণিতে U-সংরক্ষণ",
+    "Gödel সর্বতঃসত্য ও অ-সর্বতঃসত্যের দুই তালিকা",
+    "RM3-এর নয় ঘর ও modus ponens"
+  ],
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/goedel.tex",
+      "sha256": "8b90ff109a58eb96b37b985a23e0b21f344fc03b88082df08a47a300ad61ade7"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/introduction.tex",
+      "sha256": "44c4d3ef9c0cbc5af12aeaa74c7cb670229c817d4008f64089ff554e48c325d8"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/kleene.tex",
+      "sha256": "8c8cb3e80a2440d0aa3d4eda29b674da38d6c6fd37d090a4f69ce597ba631647"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/lukasiewicz.tex",
+      "sha256": "92f2ef5b6deb51bb2a04411d1e640c89a41847d275d98f9ad4bab18857e60bf3"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/multiple-designation.tex",
+      "sha256": "a2dd248cc3417572cf62bf021b2c1a5549d8e7e9a4a97fa5ab16cb97d2b38770"
+    },
+    {
+      "path": "bn-Beng-IN/content/many-valued-logic/three-valued-logics/three-valued-logics.tex",
+      "sha256": "87358bfb72baef7ceb82cbdd85c0f245fdd106f3002666755fe7cbcf0703cb33"
+    }
+  ]
+}

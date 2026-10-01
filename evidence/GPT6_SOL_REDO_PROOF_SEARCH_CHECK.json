@@ -1,0 +1,67 @@
+{
+  "units": [
+    "OLP-0679",
+    "OLP-0680",
+    "OLP-0681",
+    "OLP-0682",
+    "OLP-0683",
+    "OLP-0684"
+  ],
+  "targets": [
+    {
+      "unit_id": "OLP-0679",
+      "path": "bn-Beng-IN/content/proof-theory/proof-search/completeness.tex",
+      "sha256": "b06194aa250b51e55d969458592f804bc94a6ff607e5a500b2e88de47b502379"
+    },
+    {
+      "unit_id": "OLP-0680",
+      "path": "bn-Beng-IN/content/proof-theory/proof-search/introduction.tex",
+      "sha256": "df0f412f734af2125440519e891590fbcf750a083b9f84762d9865a727ea193f"
+    },
+    {
+      "unit_id": "OLP-0681",
+      "path": "bn-Beng-IN/content/proof-theory/proof-search/proof-search.tex",
+      "sha256": "5f37243f8d47c41b173aa01ca32f2be40677acb980c06e07c300e57bd636fc4c"
+    },
+    {
+      "unit_id": "OLP-0682",
+      "path": "bn-Beng-IN/content/proof-theory/proof-search/rules-Tc.tex",
+      "sha256": "3d0bb72d09cf1ddb3ffd3a8688854482afcda1e48778d2c607b01cc9f17e72b8"
+    },
+    {
+      "unit_id": "OLP-0683",
+      "path": "bn-Beng-IN/content/proof-theory/proof-search/search-algorithm.tex",
+      "sha256": "4d101a8c97fbfdac280b41210bb30e90b13f1c3056f98bc94ed7eede2d044564"
+    },
+    {
+      "unit_id": "OLP-0684",
+      "path": "bn-Beng-IN/content/proof-theory/proof-search/tableaux.tex",
+      "sha256": "6681a2525bc0bb619429e278bab84cb0aaf2be06f947f26b89f8a31beaf282e8"
+    }
+  ],
+  "new_findings": [
+    888,
+    889,
+    890,
+    891,
+    892
+  ],
+  "withdrawn": [
+    595,
+    596
+  ],
+  "full_actual_bilingual_read": true,
+  "canon_scope": "previous actual same-day consultations; no new retrieval",
+  "review_record": "evidence/REDO_GPT6_SOL_PROOF_SEARCH_2026-09-30.md",
+  "counterexamples": [
+    "untracked c0 permits eigenconstant collision",
+    "T-bottom cannot be satisfied",
+    "unchecked atomic has no extension rule",
+    "fully instantiated finite persistent quantifier remains unchecked"
+  ],
+  "overall_status": "pending_registration_and_rebuild",
+  "registration_status": "registered_current_hashes; rebuild_and_release_pending",
+  "registered_checkpoint_date": "2026-10-01",
+  "registered_unit_count": 306,
+  "registered_canon_ledger_sha256": "b29c0537166c5645ee0904993c05a4b482bc9c6a420face51e6817fee5be9b35"
+}

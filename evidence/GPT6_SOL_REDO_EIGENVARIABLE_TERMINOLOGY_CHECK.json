@@ -1,0 +1,48 @@
+{
+  "schema": "openlogic-bn-contextual-terminology-redo/1",
+  "review_record": "evidence/REDO_GPT6_SOL_EIGENVARIABLE_TERMINOLOGY_2026-10-01.md",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "changes": [
+    {
+      "unit_id": "OLP-0656",
+      "occurrences": 5,
+      "source_sha256": "930858ac1885a22be7f561047de54c702127d914720572042917ed3c8cef3214",
+      "before_sha256": "980a39e5b0c7a220568878d5132294fa1e5f9b79ecfc015d5bc124f548268918",
+      "target_sha256": "eb83427f131c24711150842c402c79ca8f134c437cbde22972c279fd97244aa8"
+    },
+    {
+      "unit_id": "OLP-0658",
+      "occurrences": 4,
+      "source_sha256": "e2b64e1d701f79c2cb40f57cee8ace532bd2fe6f6f9ec597c0ecbc77fda9104e",
+      "before_sha256": "d7764077e4352e9f90e1c2b3d4349b5d5b3c0d09eededc67b7ada956bfd8d8fe",
+      "target_sha256": "03b25cded14c940ad3f4b10820310d87b8310b4f67375e181c3ce73247768edb"
+    },
+    {
+      "unit_id": "OLP-0661",
+      "occurrences": 5,
+      "source_sha256": "e070f69fe844339b3b9b3a4e53468aaf331a24b2596eb36a28f909fa3387aa99",
+      "before_sha256": "7c688ca5fea66a6828e4ae6f0baf93bcd3dfa6b5bebdca3d332a70ca7c0b402c",
+      "target_sha256": "9b43315b8b99b29c7d177541993f258657501fa9e04d9759e8b7efd752d4f998"
+    },
+    {
+      "unit_id": "OLP-0662",
+      "occurrences": 3,
+      "source_sha256": "a7157a4cffa4a4a862c3ccca068d1b57b190ac830bbc7ce53a2df999663fe519",
+      "before_sha256": "349512a3995bb19acab6b106851257b18ab5007674aecfc13c3d4649eb66ffea",
+      "target_sha256": "2bce6e6452b0d6250da3e400bb2d1f4ac0fd24ca3299da230cc1c124e8524ed3"
+    },
+    {
+      "unit_id": "OLP-0683",
+      "occurrences": 2,
+      "source_sha256": "2ce7994ec2166ec4f50b3c3698d4767f49ff3fd4a39c942f79ba304ca9c1a8a2",
+      "before_sha256": "c5110bb0da444d782075f2d8d42349bd1f8cc7eb3fb6ee6dbacd2e2b16b49297",
+      "target_sha256": "73575e466abb31a77ab0414c1f2994ae396a7db2f57192a85a3e1fc1cbe5b421"
+    }
+  ],
+  "occurrences": 19,
+  "affected_unit_count": 336,
+  "strict_source_checks": 722,
+  "canon_index_sha256": "b5ed49b1ffb0238e72343d55630b8046980d67b2425ac0986d4a3918b7dafc44",
+  "status": "registered_local; rebuilt reader and publication pending"
+}

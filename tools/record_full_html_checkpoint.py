@@ -36,6 +36,7 @@ def append_once(path: Path, line: str) -> None:
 
 
 def main() -> None:
+    raise SystemExit("Historical 2026-09-28 checkpoint is retired: its fixed visual observations and publication state must not be replayed against current artifacts. Use current hash-bound redo and QA receipts.")
     preparation = json.loads((BUILD / "PREPARATION.json").read_text(encoding="utf-8"))
     reader = json.loads((BUILD / "SEMANTIC_READER_QA.json").read_text(encoding="utf-8"))
     probes = json.loads((BUILD / "VISUAL_PROBES.json").read_text(encoding="utf-8"))

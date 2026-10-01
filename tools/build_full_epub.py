@@ -16,6 +16,7 @@ from pathlib import Path
 from lxml import etree
 
 import build_cumulative_semantic_reader as reader
+from edition_metadata import EDITION_DATE, MODIFIED_UTC, FIXED_ZIP_TIME, metadata
 
 
 REPO = Path(__file__).resolve().parents[1]
@@ -61,7 +62,7 @@ def configure_reader(markers: list[str]) -> None:
     reader.UNPACKED = UNPACKED
     reader.EPUB_OUTPUT = EPUB
     reader.EXPECTED_UNITS = markers
-    reader.FIXED_ZIP_TIME = (2026, 9, 28, 0, 0, 0)
+    reader.FIXED_ZIP_TIME = FIXED_ZIP_TIME
 
 
 def prepare_fonts_and_css(source_root: etree._Element, font_info: dict) -> list[dict]:
@@ -108,10 +109,10 @@ def update_package(html_sha: str, fonts: list[dict]) -> dict:
     set_dc("identifier", "urn:sha256:" + html_sha + ":epub3-722")
     set_dc("title", "ওপেন লজিক: সম্পূর্ণ ভারতীয় বাংলা সংস্করণ")
     set_dc("description", "হিমায়িত Open Logic মূলের সব ৭২২টি বিষয়বস্তু-এককের ভারতীয় বাংলা, পুনঃপ্রবাহযোগ্য MathML EPUB3 পাঠ।")
-    set_dc("date", "2026-09-28")
+    set_dc("date", EDITION_DATE)
     set_dc("rights", "CC BY 4.0; Noto fonts OFL 1.1; TX Fonts and St Mary's Road operator-font notices are in the legal page.")
     for prop, value in (
-        ("dcterms:modified", "2026-09-28T00:00:00Z"),
+        ("dcterms:modified", MODIFIED_UTC),
         ("schema:accessibilitySummary", "Complete reflowable Bengali text with native MathML, structural navigation and textual proof-tree, tableau and diagram representations; script-free."),
     ):
         nodes = root.xpath("//opf:meta[@property=$property]", namespaces=ns, property=prop)
@@ -150,6 +151,7 @@ def main() -> None:
     args_parser.add_argument("--epubcheck-jar", type=Path)
     args = args_parser.parse_args()
     qa = json.loads(QA_PATH.read_text(encoding="utf-8"))
+    require(qa["edition_identity"] == metadata(), "full HTML edition identity drift")
     require(qa["source_units"] == qa["html"]["unit_markers"] == 722, "full HTML scope drift")
     require(digest(SOURCE) == qa["html"]["epub_source_sha256"], "EPUB source drift")
     require(qa["html"]["broken_internal_links"] == 0, "broken HTML link")
@@ -190,6 +192,7 @@ def main() -> None:
     if args.epubcheck_jar:
         check = reader.run_epubcheck(EPUB, args.epubcheck_jar.resolve())
     receipt = {"schema": "openlogic-bn-full-epub/1", "status": "passed" if check else "structural_pass_epubcheck_pending",
+               "edition_identity": metadata(),
                "source_units": 722, "source_revision": reader.SOURCE_REVISION,
                "html_sha256": qa["html"]["html_sha256"], "native_mathml": content["mathml"],
                "epub": canonical, "parts": parts, "fonts": fonts, "validation": validation,

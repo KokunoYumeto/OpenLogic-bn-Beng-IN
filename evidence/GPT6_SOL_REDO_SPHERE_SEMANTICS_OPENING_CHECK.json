@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "bounded_centered_sphere_models_including_empty_spheres": 110856,
+  "sphere_truth_clause_cases": 332296,
+  "actual_discrete_figure_worlds": 8,
+  "actual_sphere_masks": [
+    1,
+    15,
+    127
+  ],
+  "actual_p_valuation_mask": 224,
+  "actual_closest_p_worlds": [
+    "w_5",
+    "w_6"
+  ],
+  "actual_figure_point_layer_memberships_checked": 7,
+  "empty_sphere_is_semantically_inert": true,
+  "true_vacuous_mixed_and_opposite_cases": true,
+  "truth_can_vary_between_centers_with_same_full_union": true,
+  "infinite_argument_records": [
+    "কঠোর ধারা থাকতে পারে অথচ তার ছেদে সত্য পূর্বপক্ষসহ ক্ষুদ্রতম গোলকও থাকে।",
+    "সব স্বীকারক গোলকের ছেদে পূর্বপক্ষ না থাকলে ক্ষুদ্রতম স্বীকারক গোলক নেই।",
+    "ন্যূনতমহীন tail-family-তে eventual good সত্য; parity-mixed tail-এ দুই বিপরীত false।",
+    "ভিতর পর্যন্ত না-পৌঁছনো outer ধারায় bad থাকলেও inner good sphere সাধারণ সংজ্ঞায় সত্য দেয়।"
+  ],
+  "primary_figure_macro": {
+    "path": "upstream/sty/ptolemaicastronomy.sty",
+    "sha256": "450f79a006fbf105046f366f31d4243d6b8a4903783d8ae05717c4106c9aad85"
+  },
+  "primary_reading_dependency": {
+    "path": "evidence/GPT6_SOL_REDO_COUNTERFACTUAL_INTRODUCTION_CHECK.json",
+    "sha256": "c880dbf95231e17368b9f1fcb48230ec60f8f4c826d5d0d905ff1b0268388e85"
+  },
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/minimal-change-semantics.tex",
+      "sha256": "1925d8aa3ef93c35817783b71a43609b57243d2a006c70deb5a0e93004bb5733"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/introduction.tex",
+      "sha256": "47b14cc597ef3f8c61985fc0bd55413ae891b20307f93c59cdc2edfbb2f6c2e6"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/sphere-models.tex",
+      "sha256": "fdc3bfb13ebc1767094e66586fbb2a99bd4fdac3261161a858f2e27025678b5a"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/true-false.tex",
+      "sha256": "8e2737ba38c465197a273e718bec14e0be8178562cd0adccc12d9fd8f6f8787f"
+    }
+  ],
+  "limits": "Finite tail গণনা infinite counterexample-এর proof নয়; পূর্ণ set-family ও arbitrary union/intersection বাংলা review-তে। সাত point-এর radius/layer source-macro থেকে গণিতেই তুলিত; এই batch-এ ছয় TikZ schematic নতুন করে render/চোখে inspect করা হয়নি, পূর্ণ reader-এর visual QA বাকি।"
+}

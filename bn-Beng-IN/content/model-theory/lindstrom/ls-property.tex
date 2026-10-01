@@ -31,16 +31,16 @@ $\tuple{L, \models_L}$-এর \emph{নিম্নমুখী লোয়ে�
 শুধু !!{language}~$\Lang{L}$-এর !!{structure}s-এ দেওয়া ধ্রুবকগুলির
 সাপেক্ষে সংজ্ঞায়িত), তাই এটি বিমূর্ত যুক্তিবিদ্যার ক্ষেত্রেও প্রযোজ্য।
 প্রথম-ক্রমের যুক্তিবিদ্যার ক্ষেত্রে আমরা
-\olref[bas][pis]{thm:p-isom2} থেকে জানি যে দুটি !!{structure} (দুটি !!{structure}s) আংশিকভাবে
+\olref[bas][pis]{thm:p-isom2} থেকে জানি যে দুটি !!{structure} আংশিকভাবে
 সমরূপ হলে তারা মৌলিকভাবে সমতুল্য। এই প্রমাণটি বিমূর্ত যুক্তিবিদ্যায়
 চলে না, কারণ যেকোনো $!E \in L(\Lang{L})$-এর জন্য !!{formula}s-এর ওপর
-আবেশ প্রযোজ্য নাও হতে পারে; তবু লোয়েনহাইম--স্কোলেম ধর্ম সত্য হলে
+আরোহ প্রযোজ্য নাও হতে পারে; তবু লোয়েনহাইম--স্কোলেম ধর্ম সত্য হলে
 উপপাদ্যটি সত্য।
 
 \begin{thm}
 \ollabel{thm:abstract-p-isom}
 ধরা যাক $\tuple{L, \models_L}$ একটি স্বাভাবিক যুক্তিবিদ্যা যার
-লোয়েনহাইম--স্কোলেম ধর্ম আছে। তাহলে যেকোনো দুটি !!{structure} যারা
+লোয়েনহাইম--স্কোলেম ধর্ম আছে। তাহলে যেকোনো দুটি !!{structure}s যারা
 আংশিকভাবে সমরূপ, তারা $\tuple{L,\models_L}$-এ মৌলিকভাবে সমতুল্য।
 \end{thm}
 
@@ -48,7 +48,10 @@ $\tuple{L, \models_L}$-এর \emph{নিম্নমুখী লোয়ে�
 ধরি $\Struct{M} \simeq_p \Struct{N}$, কিন্তু কোনো একটি $!E$-এর জন্য
 $\Struct{M} \models_L !E$ এবং $\Struct{N} \not\models_L !E$।
 সমরূপতা ধর্ম অনুসারে ধরে নিতে পারি যে $\Domain{M}$ ও $\Domain{N}$
-পরস্পর বিচ্ছিন্ন, এবং প্রসারণ ধর্ম অনুসারে ধরে নিতে পারি যে সসীম
+পরস্পর বিচ্ছিন্ন। একত্রে গঠনের সময় নামান্তর ধর্ম অনুসারে চিহ্নগুলির,
+বিশেষত ধ্রুবকগুলির, দুটি পৃথক নামান্তরিত অনুলিপি ব্যবহার করি;
+নিচের দুটি উপকাঠামো বলতে তাদের নিজ নিজ ভাষায় নেওয়া রিডাক্ট বোঝায়।
+প্রসারণ ধর্ম অনুসারে ধরে নিতে পারি যে সসীম
 !!{language}~$\Lang{L}$-এর জন্য $!E \in L(\Lang{L})$।
 $\Struct{M}$ ও $\Struct{N}$-এর মধ্যকার আংশিক সমরূপগুলির একটি সেট
 $\mathcal{I}$ নিই; সাধারণতা না হারিয়ে আরও ধরে নিই, $p \in \mathcal{I}$
@@ -63,8 +66,8 @@ $\mathbf{b}$-এর সংযোজন; এবং $T$-কে এমন ত্র
 $b \in M$ এবং $\mathbf{a}, \mathbf{c} \in \Domain{M}^{<\omega}$-এর
 জন্য $T(\mathbf{a}, b, \mathbf{c})$ সত্য ঠিক তখনই যখন
 $\mathbf{a} = a_1, \dots a_n$ এবং $\mathbf{c} = a_1, \dots a_n, b$।
-নতুন 3-place !!{predicate}s $P$ ও $Q$ নিই এবং
-$\Struct{M}^*$ কাঠামো গঠন করি, যার universe
+নতুন ত্রিস্থানীয় !!{predicate}s $P$ ও $Q$ নিই এবং
+!!{structure}~$\Struct{M}^*$ গঠন করি, যার অধিক্ষেত্র
 $\Domain{M} \cup \Domain{M}^{<\omega}$, যাতে $\Struct{M}$ একটি
 উপকাঠামো এবং $P$, $Q$-এর ব্যাখ্যা যথাক্রমে $S$, $T$ সংযোজন-সম্পর্ক
 (তাই $\Struct{M}^*$ হলো !!{language}
@@ -104,9 +107,9 @@ $\mathbf{b}$ সমরূপ এবং \olref[bas][pis]{defn:partialisom}-এর
 \end{figure}
 
 গুরুত্বপূর্ণ পর্যবেক্ষণটি হলো, !!{structure}~$\Struct{M}$-এর
-!!{language}-এ একটি \emph{প্রথম-ক্রমের} !!{sentence} $!D_1$ আছে, যা
+!!{language}-এ স্বাভাবিক যুক্তিতন্ত্রের একটি !!{sentence} $!D_1$ আছে, যা
 $\Struct{M}$-এ সত্য এবং বলে যে $\Struct{M} \models_L !E$ ও
-$\Struct{N} \not\models_L !E$ (এর জন্য Relativization Property দরকার),
+$\Struct{N} \not\models_L !E$ (এর জন্য আপেক্ষিকীকরণ ধর্ম দরকার),
 এবং এমন আরেকটি \emph{প্রথম-ক্রমের} !!{sentence} $!D_2$ আছে, যা
 $\Struct{M}$-এ সত্য এবং বলে যে আংশিক সমরূপতা~$I$-এর মাধ্যমে
 $\Struct{M} \simeq_p \Struct{N}$। লোয়েনহাইম--স্কোলেম ধর্ম অনুসারে,
@@ -118,5 +121,14 @@ $\Struct{M}_0 \models_L !E$, কিন্তু $\Struct{N}_0
 আসলে সমরূপ, \olref[bas][pis]{thm:p-isom1} অনুসারে; এটি স্বাভাবিক
 বিমূর্ত যুক্তিবিদ্যার সমরূপতা ধর্মের বিরোধী।
 \end{proof}
+% BN-SRC-915 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-915):} বিমূর্ত বাক্যের আপেক্ষিকীকরণে স্বাভাবিক যুক্তিতন্ত্রের বাক্য পাওয়া যায়; তা প্রথম-ক্রমের হবেই এমন দাবি করা যায় না। লোয়েনহাইম--স্কোলেম ধর্ম প্রয়োগের জন্য বিমূর্ত বাক্যই যথেষ্ট।}
+% BN-SRC-915 TARGET-CORRECTION-END
+% BN-SRC-916 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-916):} বিচ্ছিন্ন অধিক্ষেত্রের দুটি গঠনে একই ধ্রুবকচিহ্ন থাকলে তাদের একই ভাষায় এক গঠনের উপকাঠামো করা যায় না। স্বাভাবিক যুক্তিতন্ত্রের নামান্তর ধর্ম ব্যবহার করে দুটি পৃথক ভাষার অনুলিপি নেওয়া হয়েছে।}
+% BN-SRC-916 TARGET-CORRECTION-END
+% BN-SRC-917 TARGET-CORRECTION-BEGIN
+% Bengali duplicate structure phrase and untranslated arity/universe/property words repaired; induction uses aroh.
+% BN-SRC-917 TARGET-CORRECTION-END
 
 \end{document}

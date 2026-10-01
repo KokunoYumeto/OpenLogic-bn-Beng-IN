@@ -300,16 +300,13 @@ $\Gamma \Proves \lforall[x][\Subst{!A}{x}{c}]$।
 
 \begin{thm}
 \ollabel{thm:provability-quantifiers}
-নিচের প্রতিটি বক্তব্যে দেখানো পদটি বদ্ধ:
 \begin{tagenumerate}{prvEx,prvAll}
 \tagitem{prvEx}{$\Gamma \Proves !A(t)$ হলে $\Gamma \Proves
   \lexists[x][!A(x)]$।}{}
 \tagitem{prvAll}{$\Gamma \Proves \lforall[x][!A(x)]$ হলে $\Gamma
   \Proves !A(t)$।}{}
 \end{tagenumerate}
-% BN-SRC-500 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-500):} মূল বক্তব্যে $t$-এর কোনো পরিসর দেওয়া নেই; এই অধ্যায়ের পরিমাণসূচক-স্বতঃসিদ্ধ \olref[qua]{ax:q1} ও~\olref[qua]{ax:q2} বদ্ধ পদের জন্য ঘোষিত। বাংলা বক্তব্যে সেই সীমা স্পষ্ট করা হয়েছে।}
-% BN-SRC-500 TARGET-CORRECTION-END
+% BN-SRC-500: closed-term restriction withdrawn; modern q1/q2 do not govern this legacy Ax1 proof. Scope unresolved.
 \end{thm}
 
 \begin{proof}

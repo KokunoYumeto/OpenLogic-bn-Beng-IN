@@ -279,10 +279,11 @@ $\RightR{\lor}$ প্রয়োগে পাই
     \Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap \Lang L(\Gamma_2, \Delta_2) &\text{এবং}\\
     \Lang L(!C_2) & \subseteq
     \Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap \Lang L(\Gamma_2, \Delta_2)
-    \intertext{ফলে $\Lang L (!C_1 \lor !C_2) = {}$ হওয়ায়}
+    \intertext{ফলে $\Lang L (!C_1 \lor !C_2) = {}$}
     \Lang L(!C_1) \cup \Lang L(!C_2) & \subseteq
     \Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap \Lang L(\Gamma_2, \Delta_2),
     \end{align*}
+% BN-SRC-868: Bengali equation transition repaired; the displayed equality continues on the next line.
     এটাই প্রয়োজনীয় শর্ত।
 
     $!A \lif !B$ দ্বিতীয় ভাগে থাকলে পরিস্থিতি আলাদা,
@@ -351,7 +352,7 @@ $\RightR{\lor}$ প্রয়োগে পাই
     $!C_1, \Gamma_2 \Sequent \Delta_2$-র !!{proof}s পাই।
     প্রথমটিতে $\RightR{\lforall}$ প্রয়োগ করে
     $\Gamma_1 \Sequent \Delta_1, \lforall[x][!A(x)], !C_1$ পাই।
-    (ঈজেনচলকের শর্ত পূরণ হয়; $\pi$-এর শেষের
+    (আইগেনচলের শর্ত পূরণ হয়; $\pi$-এর শেষের
     \RightR{\lforall} বিধিতেও তা পূরণ হয়েছিল।) তাই
     $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1,
     \lforall[x][!A(x)]) \cap \Lang L(\Gamma_2, \Delta_2)$
@@ -364,7 +365,7 @@ $\RightR{\lor}$ প্রয়োগে পাই
     !A(c))$ (এটি সত্য), অন্যদিকে $c \in \Lang L(\Gamma_2,
     \Delta_2)$ হতো। কিন্তু তাহলে $\pi$-তে
     $\RightR{\lforall}$-এর সিদ্ধান্তে $c$ থাকত, যা
-    ঈজেনচলকের শর্ত ভঙ্গ করে।
+    আইগেনচলের শর্ত ভঙ্গ করে।
 
     অন্য ক্ষেত্রটি একই রকম।
 
@@ -396,12 +397,9 @@ $\RightR{\lor}$ প্রয়োগে পাই
     শুধু $\Lang L(!C_1)
     \subseteq \Lang L(\Gamma_1, \Delta_1, \lexists[x][!A(x)], !A(t))
     \cap \Lang L(\Gamma_2, \Delta_2)$ দেয়। ধরা হয়েছে,
-    কোনো !!{function}s নেই। পদটি চলক হলে ভাষায় নতুন
-    সংকেত যোগ করে না; এই ক্ষেত্রেই ইন্টারপোল্যান্ট পাওয়া যায়।
-    % BN-SRC-524 TARGET-CORRECTION-BEGIN
-    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-524):} অপেক্ষকচিহ্ন না থাকলেও পদটি চলক হতে পারে। এই শাখায় চলক নতুন ভাষাচিহ্ন যোগ করে না; ধ্রুবকের ক্ষেত্রটি আলাদা করা হয়েছে।}
-    % BN-SRC-524 TARGET-CORRECTION-END
-    $t$ বদ্ধ পদ হলে তা !!a{constant}; ধরি $t \ident b$।
+    কোনো !!{function}s নেই।
+% BN-SRC-524: source-error claim retracted; schematic t is already closed in the governing sequent rules-proofs convention.
+    তাই পদ~$t$ একটি !!a{constant}; অর্থাৎ $t \ident b$।
     যদি $b \notin \Lang L(!C_1)$ হয়, অথবা
     $b \in \Lang L(\Gamma_1, \Delta_1, \lexists[x][!A(x)]) \cap
     \Lang L(\Gamma_2, \Delta_2)$ হয়, তবে সমস্যা নেই:
@@ -439,7 +437,7 @@ $\RightR{\lor}$ প্রয়োগে পাই
     উপরের সিকোয়েন্টগুলির !!{proof}s আরোহের অনুমান থেকে আসে
     (দ্বিতীয়টিতে পূর্বপক্ষে $\lforall[y][!C_1'(y)]$ যোগ করতে
     দুর্বলীকরণের গ্রহণযোগ্যতা প্রয়োগ করি)। প্রথম !!{proof}-এ
-    \RightR{\lforall}-এর ঈজেনচলক-শর্ত পূরণ হয়, কারণ
+    \RightR{\lforall}-এর আইগেনচল-শর্ত পূরণ হয়, কারণ
     $b \notin \Lang L(\Gamma_1, \Delta_1,
     \lexists[x][!A(x)])$ এবং সংজ্ঞামতে $!C_1'$-এ~$b$ নেই।
 
@@ -467,7 +465,7 @@ $\RightR{\lor}$ প্রয়োগে পাই
     \DisplayProof
     \]
     দ্বিতীয় !!{proof}-এ \LeftR{\lexists}-এর
-    ঈজেনচলক-শর্ত পূরণ হয়, কারণ
+    আইগেনচল-শর্ত পূরণ হয়, কারণ
     $b \notin \Lang L(\Gamma_2, \Delta_2)$ এবং সংজ্ঞামতে
     $!C_1'$-এ~$b$ নেই।
   \end{enumerate}
@@ -559,14 +557,11 @@ R'(x_1, \dots, x_n))]],
   % BN-SRC-526 TARGET-CORRECTION-BEGIN
   \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-526):} মায়েহারার লেমা ভাষার সমতা নয়, অন্তর্ভুক্তি দেয়; নতুন ধ্রুবকগুলি চলকে বদলানোর পরে তবেই সূত্রের ভাষা থেকে সেগুলি বাদ যায়।}
   % BN-SRC-526 TARGET-CORRECTION-END
-  দুই অভিমুখের জন্য \RightR{\lif} ও সংশ্লিষ্ট সংযোজক-বিধি,
-  পরে \RightR{\lforall} প্রয়োগ করে এর !!a{proof} পাই:
+  \RightR{\lif} ও \RightR{\lforall} প্রয়োগ করে এর !!a{proof} পাই:
   \[
     \Gamma \Sequent \lforall[x_1][\dots\lforall[x_n][(R(x_1,\dots,x_n) \liff !A(x_1, \dots, x_n))]].
   \]
-  % BN-SRC-527 TARGET-CORRECTION-BEGIN
-  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-527):} দ্বিশর্তীয় সিদ্ধান্তের জন্য দুই অভিমুখ ও সংযোজক-বিধি দরকার; উৎসের শুধু অন্তর্নিহিত-বিধি ও সার্বিকীকরণের উল্লেখ যথেষ্ট ধাপের নাম দেয় না।}
-  % BN-SRC-527 TARGET-CORRECTION-END
+% BN-SRC-527: routine conjunction/iff proof detail is an unimplemented improvement, not a broken-proof finding.
   তাই $!A(x_1, \dots, x_n)$ তত্ত্ব~$\Gamma$-তে $!R$-কে
   প্রকাশ্যভাবে সংজ্ঞায়িত করে।
 \end{proof}

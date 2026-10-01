@@ -1,0 +1,41 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_ORDINAL_REMAINDER_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/basic.tex",
+      "sha256": "fbcf778a44d1359e4cfd2f0723f08a54de59dca8aa01396268ca5d78b7f130e8"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/replacement.tex",
+      "sha256": "33d80652d428e44c4e9516100f0b2ab9d3c2fe821c318a77e001b8cda724242c"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/milestone.tex",
+      "sha256": "ebe15773e5ad9fc29c41fb01ed84ab264e1e48441ef6d3e979c84b32de9d7ca2"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/ordtype.tex",
+      "sha256": "9a1bc8615885a41ed915990a846ccb478ff97b61207d768faa30138f825fde94"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ordinals/opps.tex",
+      "sha256": "eec57105ca5321744b41c8ef4047906d4e9723bac0e482b1d65486aad418285b"
+    }
+  ],
+  "পরীক্ষা": {
+    "ত্রিবিভাজন ও অন্তর্ভুক্তি": 441,
+    "পরিযায়িতা": 1000,
+    "ন্যূনতম সূত্র/আবেশ": 1024,
+    "transitive-set equivalence": 16,
+    "সংযোগ ও কঠোর ঊর্ধ্বসীমা": 1024,
+    "সসীম ordinal-প্রতিনিধিত্ব": 154,
+    "দুই-দিকের সংজ্ঞাক্ষেত্র-সচেতন corollary": 100,
+    "পুরোনো chain-এর অনির্ধারিত f(alpha)": 55,
+    "লেখচিত্র-ভিত্তিক bounded image": 2000
+  },
+  "সীমা": "সসীম পরীক্ষা অসীম ordinal class, Burali-Forti বা Replacement-এর strength প্রমাণ নয়। সংশ্লিষ্ট সাধারণ প্রমাণ পাঠ-নথিতে; Zminus-এ representability-এর অনিষ্পন্নতা পরের strength অংশে পুনঃপরীক্ষা বাকি।"
+}

@@ -20,7 +20,7 @@ $\gamma = \card{\gamma}$।
 এইমাত্র ``$A$-কে সুক্রমবিন্যস্ত করা গেলে'' বললাম। গণিতে
 প্রায় সব ক্ষেত্রেই এমন সম্ভাবনাসূচক কথা আসলে একটি অস্তিত্বের
 দাবির সংক্ষিপ্ত রূপ: এর মানে, ``$A$-কে সুক্রমবিন্যস্ত করে
-এমন একটি সম্বন্ধ আছে''।
+এমন একটি সম্পর্ক আছে''।
 
 তবে \olref{defcardinalasordinal}-এ একটি সমস্যা আছে। আমরা চাই
 \emph{প্রত্যেক} সেটের আকার থাকুক, অর্থাৎ প্রত্যেক $A$-র জন্য
@@ -56,15 +56,15 @@ $A$ স্থির করি। সুক্রমবিন্যাসের �
 একটি সুক্রমবিন্যাস আছে। \olref[ordinals][ordtype]{thmOrdinalRepresentation}
 অনুযায়ী $\tuple{A,R}$ একটি অদ্বিতীয় ক্রমসংখ্যা $\beta$-র
 সমরূপ। তাই $\cardeq{A}{\beta}$। সেই ক্রমসংখ্যা পর্যন্ত
-% BN-SRC-452: use the least element of a nonempty bounded ordinal set.
+% BN-SRC-452: একটি অশূন্য সীমাবদ্ধ ক্রমসংখ্যা-সেটের ক্ষুদ্রতম সদস্য নিই।
 যে ক্রমসংখ্যাগুলি $A$-র সমসংখ্যক, তাদের সেটটি অশূন্য;
 ক্রমসংখ্যার সুক্রমবিন্যাসে তার একটি অদ্বিতীয় ক্ষুদ্রতম
 সদস্য $\gamma$ আছে, যার জন্য $\cardeq{A}{\gamma}$।
 তাই $\card{A}=\gamma$; এতে
 \olref{cardaexists} এবং \olref{cardaapprox} প্রতিষ্ঠিত হয়।
-\olref{cardaidem}-এর জন্য লক্ষ করো, $\delta\in\gamma$ হলে
+\olref{cardaidem}-এর জন্য লক্ষ করুন, $\delta\in\gamma$ হলে
 $\gamma$-র নির্বাচন অনুযায়ী $\cardless{\delta}{A}$;
-আর সমসংখ্যক হওয়া একটি সমতুল্যতা সম্বন্ধ বলে
+আর সমসংখ্যক হওয়া একটি তুল্যতা সম্পর্ক বলে
 (\olref[sfr][siz][equ]{equinumerosityisequi})
 $\cardless{\delta}{\gamma}$-ও হয়। অতএব
 $\gamma=\card{\gamma}$।
@@ -72,7 +72,7 @@ $\gamma=\card{\gamma}$।
 \end{proof}
 
 পরের ফলটি কান্টরের নীতি এবং তার চেয়েও বেশি কিছু নিশ্চিত করে।
-(মনে রেখো, অঙ্কবাচক সংখ্যার ক্রমটি তারা ক্রমসংখ্যা হিসেবে
+(মনে রাখুন, অঙ্কবাচক সংখ্যার ক্রমটি তারা ক্রমসংখ্যা হিসেবে
 যে ক্রমে আছে, সেই ক্রমই: $\cardfont{a}<\cardfont{b}$
 তখনই, যখন $\cardfont{a}\in\cardfont{b}$। নিচের ফলে
 যে বস্তুগুলিকে অঙ্কবাচক সংখ্যা বলে জানি, তাদের জন্য
@@ -91,7 +91,7 @@ $\gamma=\card{\gamma}$।
 \begin{proof}
 দ্বিতীয় দাবির বাম থেকে ডান দিকটি প্রমাণ করব;
 অন্য ক্ষেত্রগুলি একই রকম, অনুশীলন হিসেবে রইল।
-নিচের চিত্রটি দেখো:
+নিচের চিত্রটি দেখুন:
 \begin{center}
 	\begin{tikzpicture}
 	\node (nodea) {$A$};
@@ -110,12 +110,26 @@ $\gamma=\card{\gamma}$।
 $\card{A}$ থেকে $A$, তারপর $B$, তারপর $\card{B}$-তে
 গেলে একটি !!a{injection} $\card{A}\to\card{B}$ পাই
 (ভাঙা রেখার তিরটি)।
+% BN-SRC-806 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন-নোট।} তিরগুলি থেকে একৈক চিত্রণ
+পাওয়ার পরে আরও একটি ধাপ চাই; নির্বিশেষ ক্রমসংখ্যায়
+এমন চিত্রণ থেকে ক্রমসংখ্যার সাধারণ অসমতা আসে না।
+$\kappa=\card A$, $\lambda=\card B$ ও $j:\kappa\to\lambda$
+একৈক হলে $E=\ran j\subseteq\lambda$-র সদস্যতা-ক্রমের
+ক্রমপ্রকার $\rho\leq\lambda$। কারণ ক্রম-সমরূপতা
+$e:\rho\to E$-তে আবেশে $\xi\leq e(\xi)$; তাই
+$\rho>\lambda$ হলে $e(\lambda)\in\lambda$ অসম্ভব।
+এদিকে $\kappa$ ও $\rho$ সমসংখ্যক, তাই $\kappa$-র
+ক্ষুদ্রতমতার সংজ্ঞায় $\kappa\leq\rho\leq\lambda$।
+এই যুক্তিতে শ্র্যোডার--বার্নস্টাইন আগে ব্যবহার হয়নি,
+ফলে পরের পুনঃপ্রমাণে বৃত্ত নেই।
+% BN-SRC-806 TARGET-CORRECTION-END
 \end{proof}\noindent \olref{lem:CardinalsBehaveRight} ব্যবহার করে
 শ্র্যোডার--বার্নস্টাইন উপপাদ্য আবারও প্রমাণ করা যায়।
 দাবিটি হলো, $\cardle{A}{B}$ এবং $\cardle{B}{A}$ হলে
 $\cardeq{A}{B}$। \olref[sfr][siz][sb]{thm:schroder-bernstein}-এ
 দাবিটি দিয়েছিলাম, তবে প্রথম প্রমাণটি কিছু পরিশ্রমে
-\olref[sfr][infinite][card-sb]{sec}-এ করেছি। এবার দেখো:
+\olref[sfr][infinite][card-sb]{sec}-এ করেছি। এবার দেখুন:
 
 \begin{proof}[শ্র্যোডার--বার্নস্টাইনের পুনঃপ্রমাণ]
 $\cardle{A}{B}$ এবং $\cardle{B}{A}$ হলে

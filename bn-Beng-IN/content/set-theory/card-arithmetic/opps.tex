@@ -19,17 +19,34 @@ $\cardfont{a}$ ও $\cardfont{b}$ অঙ্কবাচক সংখ্যা �
 	\cardexpo{\cardfont{a}}{\cardfont{b}} &\defis
 	\card{\funfromto{\cardfont{b}}{\cardfont{a}}}
 \end{align*}
-এখানে $\funfromto{X}{Y} = \Setabs{f}{f \text{ is a function } X \to Y}$।
+এখানে $\funfromto{X}{Y} = \Setabs{f}{f \text{ অপেক্ষক } X \to Y}$।
 (যেকোনো সেট $X$ ও $Y$-এর জন্য $\funfromto{X}{Y}$ আছে,
 এটি সহজেই দেখানো যায়; অনুশীলন হিসেবে রইল।)
 \end{defn}
 
 \begin{prob}
 যেকোনো সেট $X$ ও $Y$-এর জন্য $\funfromto{X}{Y}$ আছে,
-এটি $\Zminus$-এ প্রমাণ করো। $\ZF$-এ কাজ করে
+এটি $\Zminus$-এ প্রমাণ করুন। $\ZF$-এ কাজ করে
 $\setrank{X}$ ও $\setrank{Y}$ থেকে
-$\setrank{\funfromto{X}{Y}}$ নির্ণয় করো,
+$\setrank{\funfromto{X}{Y}}$-র সম্ভাব্য সীমা নির্ণয় করুন,
 \olref[sth][ord-arithmetic][using-addition]{rankcomputation}-এর মতো।
+% BN-SRC-808 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন-নোট।} শুধু দেওয়া দুই সেটের স্তরাঙ্ক থেকে
+অপেক্ষক-সেটের একটিমাত্র স্তরাঙ্ক নির্ধারিত হয় না।
+$X_0=\{\omega\}$ ও $X_1=\omega+1$-এর স্তরাঙ্ক একই
+$\omega+1$; $Y=\omega\ordtimes2$ স্থির রাখি।
+$X_0$-তে প্রত্যেক অপেক্ষকের একটিমাত্র মান, তাই তার
+লেখচিত্রের স্তরাঙ্ক $Y$-র নিচে; এই মানগুলি $Y$-তে
+সহশেষী, ফলে অপেক্ষক-সেটের স্তরাঙ্ক $\omega\ordtimes2$।
+কিন্তু $X_1$-তে $f(n)=\omega+n$ এবং $f(\omega)=0$
+একটি অপেক্ষকের লেখচিত্রের স্তরাঙ্ক ওই সীমাতেই পৌঁছয়।
+সব লেখচিত্রের স্তরাঙ্ক এর বেশি নয়, তাই অপেক্ষক-সেটের
+স্তরাঙ্ক এবার $(\omega\ordtimes2)\ordplus1$।
+শূন্য ক্ষেত্রের অপেক্ষক-সেট একপদী, স্তরাঙ্ক $1$;
+অশূন্য ক্ষেত্র ও শূন্য লক্ষ্য হলে সেটটি শূন্য, স্তরাঙ্ক $0$।
+তাই অনুশীলনটিকে একক উত্তর ধরে নয়, সীমা ও সম্ভাব্য
+দৃষ্টান্তের তদন্ত হিসেবে সংশোধন করা হয়েছে।
+% BN-SRC-808 TARGET-CORRECTION-END
 \end{prob}
 
 সংজ্ঞাটি একটু ব্যাখ্যা করা যাক। যোগের ক্ষেত্রে এখানে
@@ -37,8 +54,8 @@ $\setrank{\funfromto{X}{Y}}$ নির্ণয় করো,
 বিযুক্ত যোগফল $\disjointsum$ ব্যবহার করেছি; সসীম
 ক্ষেত্রে এর ফল যে ঠিক, তা সহজেই দেখা যায়। গুণের
 ক্ষেত্রে \olref[sfr][set][pai]{cardnmprod} বলে,
-$A$-র $n$ জন এবং $B$-র $m$ জন সদস্য থাকলে
-$A\times B$-র $n\cdot m$ জন সদস্য। আমাদের
+$A$-র $n$টি এবং $B$-র $m$টি সদস্য থাকলে
+$A\times B$-র $n\cdot m$টি সদস্য। আমাদের
 সংজ্ঞা এই ধারণাকেই ট্রান্সফাইনাইট গুণে প্রসারিত করে।
 ঘাতও একইভাবে সসীম ধারণাটিকে ট্রান্সফাইনাইট ক্ষেত্রে
 প্রসারিত করে। আসলে ট্রান্সফাইনাইট অঙ্কবাচক সংখ্যার
@@ -46,7 +63,7 @@ $A\times B$-র $n\cdot m$ জন সদস্য। আমাদের
 পাটিগণিতের চেয়ে ``সাধারণ'' পাটিগণিতের বেশি কাছাকাছি:
 
 \begin{prop}\ollabel{cardplustimescommute}
-$\cardplus$ ও $\cardtimes$ বিনিময়ী এবং সম্বন্ধীয়।
+$\cardplus$ ও $\cardtimes$ বিনিময়ী, এবং বন্ধনী বদলালেও ফল একই।
 \end{prop}
 
 \begin{proof}
@@ -55,11 +72,11 @@ $\cardplus$ ও $\cardtimes$ বিনিময়ী এবং সম্বন�
 অনুযায়ী $\cardeq{(\cardfont{a} \disjointsum
 \cardfont{b})}{(\cardfont{b} \disjointsum \cardfont{a})}$
 এবং $\cardeq{(\cardfont{a} \times \cardfont{b})}{(\cardfont{b} \times
-\cardfont{a})}$ লক্ষ করলেই চলে। সম্বন্ধীয়তা অনুশীলন হিসেবে রইল।
+\cardfont{a})}$ লক্ষ করলেই চলে। বন্ধনী বদলে একই ফল পাওয়ার প্রমাণ অনুশীলন হিসেবে রইল।
 \end{proof}
 
 \begin{prob}
-$\cardplus$ ও $\cardtimes$ সম্বন্ধীয়—প্রমাণ করো।
+$\cardplus$ ও $\cardtimes$ বন্ধনী বদলেও একই ফল দেয়—প্রমাণ করুন।
 \end{prob}
 
 \begin{prop}
@@ -75,7 +92,7 @@ $A$ অসীম তখনই, যখন $\card{A} \cardplus 1 = 1 \cardplus \ca
 এতে বোঝা যায়, ক্রমসংখ্যা ও অঙ্কবাচক সংখ্যার যোগ ও
 গুণের জন্য আলাদা চিহ্ন কেন দরকার: এগুলি সত্যিই
 \emph{ভিন্ন} ক্রিয়া। পরের দুটি ফল দেখাবে, তাদের
-ঘাতও ভিন্ন ক্রিয়া। (মনে করো,
+ঘাতও ভিন্ন ক্রিয়া। (মনে করুন,
 \olref[z][infinity-again]{defnomega} থেকে $2=\{0,1\}$):
 
 \begin{lem}\ollabel{lem:SizePowerset2Exp}
@@ -88,8 +105,8 @@ $\chi_B\in\funfromto{A}{2}$ এভাবে নিই:
 \begin{align*}
 	\chi_{B}(x) &\defis
 	\begin{cases}
-		1 & \text{if }x\in B\\
-		0 & \text{otherwise.}
+		1 & \text{যদি }x\in B\\
+		0 & \text{অন্যথায়।}
 	\end{cases}
 \end{align*}
 এখন $f(B)=\chi_B$ নিলে একটি !!a{bijection}
@@ -108,7 +125,7 @@ $\Bin^\omega$-র অগণনীয়তার প্রশ্নে নাম
 কার্যত $\Bin^{\omega}$ হলো $\funfromto{\omega}{2}$;
 উপরের প্রমাণ দেখায়, \olref[sfr][siz][red-alt]{sec}-এর
 যুক্তি $\omega$-র বদলে যেকোনো সেট $A$-র জন্যই চলে।
-এই ফল থেকে অঙ্কবাচক ঘাত সম্বন্ধেও একটি সহজ কথা পাই:
+এই ফল থেকে অঙ্কবাচক ঘাত সম্পর্কেও একটি সহজ কথা পাই:
 
 \begin{cor}\ollabel{cantorcor}
 যেকোনো অঙ্কবাচক সংখ্যা $\cardfont{a}$-র জন্য
@@ -122,9 +139,9 @@ $\cardfont{a} < \cardexpo{2}{\cardfont{a}}$।
 \noindent
 তাই $\omega<\cardexpo{2}{\omega}$। তবে এটি
 \emph{অঙ্কবাচক সংখ্যার} ঘাতের ফল। \emph{ক্রমসংখ্যার}
-ঘাতের সঙ্গে তুলনা করো: সেখানে
+ঘাতের সঙ্গে তুলনা করুন: সেখানে
 $\omega=\ordexpo{2}{\omega}$
-(দেখো \olref[ord-arithmetic][expo]{sec})।
+(দেখুন \olref[ord-arithmetic][expo]{sec})।
 
 অঙ্কবাচক সংখ্যার ঘাতের প্রসঙ্গেই $\Real$ যে
 !!{nonenumerable}, তা আরেকটু নির্দিষ্টভাবে বলা যায়।

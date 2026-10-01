@@ -1,0 +1,42 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_FIXEDPOINTS_CHOICE_OPENING_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/ch.tex",
+      "sha256": "3a76e6b973d2155a1809a5b561b6d57a658dce046bf40c8b80c2d16488cc2a60"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/fix.tex",
+      "sha256": "f59adab89402d8c65c24a97d4c2690e02ffa003b3002bcb11640d67cde6e6ee1"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/choice.tex",
+      "sha256": "fcf7f8d396ec117ebc9e8ef63715b1fa70d69d753ab90402a55270f0dba67a8f"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/introduction.tex",
+      "sha256": "47d92b546e99441b4a0b70c22404e261abca20ab09f2d79f8deff8ffda2389a5"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/tarskiscott.tex",
+      "sha256": "854e7e550e5c657785b0c91c69f94fb74b9824278a4f9b5d4f02d557fd1feb6e"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/hartogs.tex",
+      "sha256": "2a339ce3c73879e72d84838208f9594e168a4349293a90d286c2a29e53dd361f"
+    }
+  ],
+  "পরীক্ষা": {
+    "সসীম সূত্র-সন্তুষ্টকারীদের ক্ষুদ্রতম স্তরাঙ্ক": 65536,
+    "হার্টগসের ক্রমযুগল/rank সীমা": 168,
+    "ক্ষুদ্র carrier-এ সুক্রম ও সব ক্রমপ্রকার": 16072,
+    "normal উদাহরণের কঠোর বৃদ্ধি": 5778,
+    "দুটি সংশোধিত গ্রন্থপঞ্জি-entry": 2,
+    "syntax-parsed production scripts": 4
+  },
+  "সীমা": "HF ও সসীম carrier-এর পরীক্ষা ZF/ZFC-র অসীম মডেল বা সাধারণ Hartogs lemma-র প্রমাণ নয়। Normal অপেক্ষকের উদাহরণটি ordinal addition, বেথের সসীম মডেল নয়; এটি আগের শুরুতে স্থিরবিন্দু আটকে যাওয়ার mechanism দেখায়। প্রকৃত বেথ-নির্মাণ, সীমার সহশেষিতা, stage-cardinality ও Scott proper-class যুক্তির সাধারণ প্রমাণ review ও পাঠ-নোটে। চার script-এর syntax ও নতুন bibliography binding পরীক্ষা পূর্ণ 15-script audit/reader build নয়।"
+}

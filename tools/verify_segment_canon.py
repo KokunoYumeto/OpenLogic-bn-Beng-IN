@@ -1,4 +1,4 @@
-"""Verify every published consultation row against the current source bytes."""
+"""Verify every current consultation row against the source and target bytes."""
 
 from __future__ import annotations
 

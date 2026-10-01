@@ -11,11 +11,14 @@ import pathlib
 import re
 import subprocess
 import base64
+import os
+from datetime import datetime, timezone
 
 import prepare_full_edition as full
 import build_cumulative_semantic_reader as reader
 import build_reader_operator_font as operators
 from bs4 import BeautifulSoup
+from edition_metadata import metadata
 
 BUILD = full.BUILD
 HTML = BUILD / "openlogic-bn-Beng-IN-complete.html"
@@ -145,8 +148,50 @@ def require(condition, message):
         raise RuntimeError(message)
 
 
+def source_fragments(raw, order):
+    """Restore the containing source scope after an embedded subfile ends."""
+    pattern = re.compile(r"^% (?:(SOURCE-UNIT) (OLP-\d{4}) ([^\n]+)|(END-SOURCE-UNIT) (OLP-\d{4}))\n", re.M)
+    events = list(pattern.finditer(raw))
+    require([event[2] for event in events if event[1]] == order, "source fragment start order drift")
+    stack = []
+    fragments = []
+    ended = []
+    cutoff = raw.index(r"\bibliographystyle", events[-1].end())
+    for index, event in enumerate(events):
+        first = bool(event[1])
+        if first:
+            stack.append((event[2], event[3]))
+        else:
+            require(stack and stack[-1][0] == event[5], "nested source end mismatch")
+            ended.append(stack.pop()[0])
+        end = events[index+1].start() if index+1 < len(events) else cutoff
+        value = raw[event.end():end]
+        if stack and (first or value.strip()):
+            uid, path = stack[-1]
+            fragments.append({"unit_id":uid,"source_path":path,"first_fragment":first,
+                              "prepared_character_start":event.end(),"prepared_character_end":end,
+                              "prepared_fragment_sha256":reader.sha256(value.encode("utf-8")),
+                              "text":value})
+        elif not stack:
+            if value.strip():
+                require(index == len(events)-1 and value.strip()==r"\nocite{Frege1953,Peter1967}",
+                        "unexpected edition material outside source scope")
+                fragments.append({"unit_id":None,"source_path":None,"first_fragment":False,
+                                  "edition_bibliography_controls":True,
+                                  "prepared_character_start":event.end(),"prepared_character_end":end,
+                                  "prepared_fragment_sha256":reader.sha256(value.encode("utf-8")),
+                                  "text":value})
+    require(not stack and sorted(ended)==sorted(order), "source end coverage drift")
+    require(len([x for x in fragments if x["first_fragment"]])==722, "source fragment unit coverage drift")
+    expected = pattern.sub("", raw[events[0].start():cutoff])
+    require(re.sub(r"\s+","",expected)==re.sub(r"\s+","","".join(row["text"] for row in fragments)),
+            "source fragment partition lost or duplicated content")
+    return fragments
+
+
 def create_semantic_input():
     receipt = json.loads((BUILD / "PREPARATION.json").read_text(encoding="utf-8"))
+    require(receipt["edition_identity"] == metadata(), "prepared edition identity changed")
     tex_path = full.REPO / receipt["tex"]["path"]
     require(full.digest(tex_path) == receipt["tex"]["sha256"], "prepared LaTeX bytes changed")
     raw = tex_path.read_text(encoding="utf-8")
@@ -161,14 +206,27 @@ def create_semantic_input():
     reader.PRESERVE_MATH_LINKS = True
     reader.MATH_LINK_TARGETS.clear()
     reader.PROOF_GRAPH_RECEIPTS.clear()
+    reader.TABLEAU_GRAPH_RECEIPTS.clear()
+    reader.DIAGRAM_GRAPH_RECEIPTS.clear()
     counter = 1
     markers = {}
     results = []
-    for index, piece in enumerate(pieces):
-        uid, path = piece[1], piece[2]
+    fragments = source_fragments(raw, order)
+    reader.write_json(BUILD / "SOURCE_FRAGMENT_SCOPES.json", [
+        {k:v for k,v in row.items() if k!="text"} for row in fragments])
+    for fragment in fragments:
+        uid, path = fragment["unit_id"], fragment["source_path"]
         reader.CURRENT_SOURCE_UNIT = uid
-        end = pieces[index + 1].start() if index + 1 < len(pieces) else raw.index(r"\bibliographystyle", piece.end())
-        value = reader.strip_comments(raw[piece.end():end])
+        value = reader.strip_comments(fragment["text"])
+        # PDF counter labels share their source anchor. Native HTML needs
+        # one physical target, then resolves references to its visible title.
+        value = re.sub(r"(\\hypertarget\{([^{}]+)\}\{\})\s*\\label\{\2\}", r"\1", value)
+        def reader_reference(source, position):
+            targets, position = reader.parse_required(source, position)
+            return ", ".join(r"\hyperlink{" + target.strip() + "}{দেখুন}"
+                             for target in targets.split(",")), position
+        value = reader.replace_macro(value, "cref", reader_reference)
+        value = reader.replace_macro(value, "Cref", reader_reference)
         try:
             value = reader.replace_macro(value, "eqref", lambda source, position: (
                 r"\hyperlink{" + reader.parse_required(source, position)[0] + "}{দেখুন}",
@@ -178,9 +236,9 @@ def create_semantic_input():
                 formula, position = reader.parse_required(source, position)
                 prefix, position = reader.parse_required(source, position)
                 return r"\sFmla{" + sign + "}{" + formula + "}[" + prefix + "]", position
-            value = reader.replace_macro(value, "pFmla", prefixed_formula)
             value, proofs = reader.transform_proof_trees(value)
             value, tableaux = reader.transform_tableaux(value)
+            value = reader.replace_macro(value, "pFmla", prefixed_formula)
             value, derivations = reader.transform_derivations(value)
             value = reader.normalize_structural_macros(value)
             value = expand_finite_tikz_loops(value)
@@ -204,7 +262,9 @@ def create_semantic_input():
             value, found, counter = reader.mark_environment_titles(value, counter)
             require(not (markers.keys() & found.keys()), "duplicate environment marker")
             markers.update(found)
-            value = rf"\texttt{{UNITMARKER-{uid}}}\par" + "\n" + value
+            if uid is not None:
+                marker_kind = "UNITMARKER" if fragment["first_fragment"] else "UNITRESUME"
+                value = rf"\texttt{{{marker_kind}-{uid}}}\par" + "\n" + value
             results.append(reader.UnitResult(uid, path, value, proofs, tableaux, diagrams, derivations, found))
         except Exception as exc:
             raise RuntimeError(f"{uid} ({path}): {exc}") from exc
@@ -226,7 +286,7 @@ def create_semantic_input():
 সূত্রগুলি নেটিভ MathML; প্রমাণ-বৃক্ষ, ট্যাবলো, নিষ্পাদন ও চিত্রের সংযোগগুলি
 পুনঃপ্রবাহযোগ্য পাঠ্যরূপে আছে। মূল চিত্রের জন্য সংশ্লিষ্ট PDF ও সম্পাদনাযোগ্য LaTeX দেখুন।
 এআই-সহায়ক অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনা:
-OpenAI Codex — GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort।
+OpenAI Codex — GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-এর পুনঃপর্যালোচনা; Ultra effort।
 স্বাধীন মানব-পর্যালোচনা বা সম্পূর্ণ আনুষ্ঠানিক প্রমাণ-যাচাইয়ের দাবি করা হচ্ছে না।
 \end{scope-note}
 """
@@ -239,14 +299,24 @@ OpenAI Codex — GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort।
                       + r"\end{document}" + "\n", encoding="utf-8", newline="\n")
     stats = {name: sum(getattr(result, name) for result in results)
              for name in ("proof_trees", "tableaux", "derivations", "diagrams")}
-    stats.update(source_units=722, numbered_environments=len(markers),
+    stats.update(source_units=722, source_fragments=len(fragments), numbered_environments=len(markers),
                  prepared_tex_sha256=receipt["tex"]["sha256"],
                  semantic_input_sha256=full.digest(source), semantic_input_bytes=source.stat().st_size,
                  documented_missing_source_references=receipt["documented_missing_source_references"],
                  reader_adjustments=receipt["reader_adjustments"])
     reader.write_json(BUILD / "SEMANTIC_INPUT.json", stats)
+    # Graph indices remain unique when a unit resumes after an imported table.
+    for graphs, key in ((reader.PROOF_GRAPH_RECEIPTS,"tree_index"),
+                        (reader.TABLEAU_GRAPH_RECEIPTS,"tree_index"),
+                        (reader.DIAGRAM_GRAPH_RECEIPTS,"diagram_index")):
+        counts = collections.Counter()
+        for graph in graphs:
+            counts[graph["unit_id"]] += 1
+            graph[key] = counts[graph["unit_id"]]
     reader.write_json(BUILD / "environment-markers.json", markers)
     reader.write_json(BUILD / "proof-graphs.json", reader.PROOF_GRAPH_RECEIPTS)
+    reader.write_json(BUILD / "tableau-graphs.json", reader.TABLEAU_GRAPH_RECEIPTS)
+    reader.write_json(BUILD / "diagram-graphs.json", reader.DIAGRAM_GRAPH_RECEIPTS)
     reader.write_json(BUILD / "math-link-targets.json", reader.MATH_LINK_TARGETS)
     print(json.dumps({"prepared_semantic_units": 722, "semantic_input_bytes": source.stat().st_size,
                       "proof_trees": stats["proof_trees"], "tableaux": stats["tableaux"], "diagrams": stats["diagrams"]}), flush=True)
@@ -346,6 +416,7 @@ def main():
                                  ("numbered_environments", "numbered_environments")):
         require(html_receipt[html_key] == source_stats[source_key], f"{source_key} semantic coverage changed")
     audit = {"schema": "openlogic-bn-full-semantic-reader/1", "source_units": 722,
+             "edition_identity": metadata(),
              "status": "structural checks passed; visual QA pending", "source": source_stats,
              "html": html_receipt,
              "pandoc_warnings": [line for line in warnings.splitlines() if line.strip()],
@@ -357,4 +428,17 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    attempt_path = BUILD / "READER_BUILD_ATTEMPT.json"
+    attempt = {"pid":os.getpid(),"started_utc":datetime.now(timezone.utc).isoformat(),
+               "status":"running","script_sha256":full.digest(pathlib.Path(__file__))}
+    reader.write_json(attempt_path, attempt)
+    try:
+        main()
+    except BaseException as error:
+        attempt.update(status="failed",error=str(error),finished_utc=datetime.now(timezone.utc).isoformat())
+        reader.write_json(attempt_path, attempt)
+        raise
+    else:
+        attempt.update(status="completed",html_sha256=full.digest(HTML),
+                       finished_utc=datetime.now(timezone.utc).isoformat())
+        reader.write_json(attempt_path, attempt)

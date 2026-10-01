@@ -1,0 +1,45 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_SPINE_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/spine.tex",
+      "sha256": "f232da6eb1386f5d7a87b1daab44663e84cb40ad81660cee6aa6f4fe33f50e21"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/idea.tex",
+      "sha256": "4e19445ae5af73bba0bd36d1a2ebcbdf8e5df057deb70ab0813025fdbf596e9a"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/recursion.tex",
+      "sha256": "ad3ebfeb8144300223aed783194ed11d137dd9d0fb9b7297dbbbe934b7a28e43"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/stagesbasics.tex",
+      "sha256": "920edeb86f37a31c476bf08ba912e0d74149e60c200a9cced9c3bced0a82176c"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/foundation.tex",
+      "sha256": "ce99410f82775914f4122954852c3b4adebcac6a5ee6906f0cdc7adc4baebfb9"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/zf.tex",
+      "sha256": "0c7636fe947b77951ac05a05a917b6d3b5605f5e6f17f909dfea915e5b62d357"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/spine/rank.tex",
+      "sha256": "429f2318719a718d896ec6adedb8c6fa8d9c1a6076c8960c058a8e38f485c376"
+    }
+  ],
+  "পরীক্ষা": {
+    "সমস্ত চার-ধাপের দ্বিমানী ইতিহাস-বিধি": 32768,
+    "শূন্য-উত্তরসূরি-সীমা-শাখার নিয়ম": 128,
+    "সসীম পর্যায়ের উপসেট-অধোবদ্ধতা": 94,
+    "বংশগত সসীম সেটে স্তরাঙ্ক-আবরণ-ভিত্তি": 65536,
+    "ভালো সদস্যের সীমিত stage-image": 1
+  },
+  "সীমা": "সসীম recursion-এর পূর্ণ ছোট operator পরীক্ষা এবং HF পরিচয়; অসীম limit, সাধারণ transfinite recursion, Foundation-এর সমতুল্যতা বা Z-অনিষ্পন্নতার প্রমাণ নয়। সাধারণ প্রমাণ এবং primary-source-এর প্রকৃত পড়ার পরিধি review-তে। চক্রের local উদাহরণ পূর্ণ set-theory model নয়।"
+}

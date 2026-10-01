@@ -67,7 +67,7 @@ $\tuple{\gamma_1,\gamma_2}\mapsto
 \tuple{f(\gamma_1),f(\gamma_2)}$ চিত্রণটি পাওয়া যায়।
 \end{proof}
 \noindent
-এগুলি কাজে লাগিয়ে একটি গুরুত্বপূর্ণ লেমা প্রমাণ করব:
+এগুলি কাজে লাগিয়ে একটি গুরুত্বপূর্ণ সহায়ক উপপাদ্য প্রমাণ করব:
 \begin{lem}\ollabel{alphatimesalpha}
 যেকোনো অসীম ক্রমসংখ্যা $\alpha$-র জন্য
 $\cardeq{\alpha}{\alpha\times\alpha}$।
@@ -89,7 +89,7 @@ $\cardeq{\alpha}{\alpha\times\alpha}$,
 
 এবার প্রত্যেক
 $\tuple{\gamma_1,\gamma_2}\in\alpha\times\alpha$-র
-জন্য নিচের প্রারম্ভিক খণ্ডটি ভাবো:
+জন্য নিচের প্রারম্ভিক খণ্ডটি ভাবুন:
 \begin{align*}
 	\text{Seg}(\gamma_1, \gamma_2) &= \Setabs{\tuple{\delta_1, \delta_2} \in \alpha \times \alpha}{\tuple{\delta_1, \delta_2} \canonord \tuple{\gamma_1, \gamma_2}}
 \end{align*}
@@ -101,18 +101,28 @@ $\tuple{\gamma_1,\gamma_2}\canonord
 	\text{Seg}(\gamma_1, \gamma_2) &
 	\precsim ((\gamma \ordplus 1)\ordtimes (\gamma \ordplus 1))\\
 	&\approx (\gamma \ordtimes \gamma)
-	\text{, by \olref[ord-arithmetic][using-addition]{ordinfinitycharacter} and
+	\text{, অনুযায়ী \olref[ord-arithmetic][using-addition]{ordinfinitycharacter} এবং
 	\olref{simplecardproduct}}\\
-	&\approx \gamma \text{, by the induction hypothesis}\\
-	& \prec \alpha\text{, since $\alpha$ is a cardinal}
+	&\approx \gamma \text{, আবেশ-অনুমানে}\\
+	& \prec \alpha\text{, কারণ $\alpha$ অঙ্কবাচক সংখ্যা}
 \end{align*}
-% BN-SRC-455: finite gamma is a separate omitted case in the source proof.
+% BN-SRC-455: সসীম সর্বোচ্চ স্থানাঙ্কের বাদ পড়া দফা আলাদা।
 সর্বোচ্চ স্থানাঙ্কটি সসীম হলে খণ্ডটিও সসীম,
 তাই সেক্ষেত্রেও মূল অসীম ক্রমসংখ্যার চেয়ে ছোট। অতএব
 $\ordtype{\alpha\times\alpha,\canonord}\leq\alpha$,
 ফলে $\cardle{\alpha\times\alpha}{\alpha}$। অবশ্যই
 $\cardle{\alpha}{\alpha\times\alpha}$;
 শ্র্যোডার--বার্নস্টাইন থেকে ফলটি মেলে।
+% BN-SRC-809 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন-নোট।} সব যথার্থ খণ্ডের সদস্যসংখ্যা
+ছোট থেকে ক্রমপ্রকারের সীমায় আরেকটি ধাপ চাই। যদি পুরো
+ক্রমপ্রকার $\rho>\alpha$ হত, তবে তার ঠিক $\alpha$
+স্থানটির পূর্বখণ্ডের ক্রমপ্রকার $\alpha$, তাই সদস্যসংখ্যাও
+$\alpha$। কিন্তু সেই যথার্থ খণ্ডের সদস্যসংখ্যা কম বলে
+ইতিমধ্যে প্রমাণিত; বিরোধ। তাই $\rho\leq\alpha$।
+এখানে $\alpha$ প্রাথমিক ক্রমসংখ্যা হওয়া অপরিহার্য;
+নির্বিশেষ ordinal-এ ছোট সদস্যসংখ্যা মানেই ছোট ক্রমপ্রকার নয়।
+% BN-SRC-809 TARGET-CORRECTION-END
 \end{proof}
 
 শেষ পর্যন্ত সরলীকরণের ফলটি পাই:
@@ -134,6 +144,16 @@ $\cardfont{a}\cardtimes\cardfont{a}=\cardfont{a}\leq
 \cardfont{a}\cardplus\cardfont{b}\leq
 \cardfont{a}\cardplus\cardfont{a}\leq
 \cardfont{a}\cardtimes\cardfont{a}$।
+% BN-SRC-811 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন-নোট।} প্রদর্শিত চেইনে যোগের
+সমতাই সরাসরি প্রতিষ্ঠিত। গুণের অংশের জন্য
+$1\leq\cardfont{b}\leq\cardfont{a}$ ব্যবহার করি:
+দ্বিতীয় factor-এর একটি নির্দিষ্ট সদস্যে প্রথম factor-টি
+বসিয়ে এবং বড় বর্গে অন্তর্ভুক্ত করে
+$\cardfont{a}\leq\cardfont{a}\cardtimes\cardfont{b}
+\leq\cardfont{a}\cardtimes\cardfont{a}=\cardfont{a}$।
+অতএব গুণফলও একই বৃহত্তম cardinal।
+% BN-SRC-811 TARGET-CORRECTION-END
 \end{proof}\noindent একইভাবে $\cardfont{a}$ অসীম হলে,
 প্রতিটি সেটের আকার $\leq\cardfont{a}$ এমন
 $\cardfont{a}$-সংখ্যক সেটের সংযোগের আকারও
@@ -152,7 +172,7 @@ $\card{\bigcup_{\beta\in\cardfont{a}}X_\beta}
 প্রত্যেক $\beta\in\cardfont{a}$-র জন্য একটি
 !!a{injection} $f_\beta\colon X_\beta\to\cardfont{a}$
 স্থির করি।\footnote{এগুলি কীভাবে ``স্থির'' করা যায়?
-দেখো \olref[sth][choice][countablechoice]{sec}।}
+দেখুন \olref[sth][choice][countablechoice]{sec}।}
 $g\colon\bigcup_{\beta\in\cardfont{a}}X_\beta\to
 \cardfont{a}\times\cardfont{a}$ এভাবে সংজ্ঞায়িত
 করি: $v\in X_\beta$ এবং সব

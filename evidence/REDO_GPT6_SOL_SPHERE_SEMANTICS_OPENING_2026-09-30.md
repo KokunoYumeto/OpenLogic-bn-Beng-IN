@@ -1,0 +1,29 @@
+# গোলক-অর্থতত্ত্বের প্রথম অংশের নতুন তুলনা: OLP-0522–0525
+
+২০২৬-০৯-৩০, একই চ্যাটে GPT-6.1 Sol, Ultra। চারটি স্থিরীকৃত ইংরেজি ও বর্তমান বাংলা ফাইল সম্পূর্ণ তুলিত। নতুন reader নির্মাণ/পরিদর্শন ও প্রকাশনা বাকি; এখানে স্বাধীন মানব-পর্যালোচনার দাবি নেই।
+
+OLP-0522-এর ছয় import ও chapter hook যথার্থ। OLP-0523-এর বচনমূলক ভাষায় দ্বিপদী প্রতিবাস্তব সংযোজক, অন্য জগতে সত্যতা এবং জগৎভেদে নৈকট্যের তথ্য যথার্থ। নতুন BN-SRC-767: ন্যূনতম পরিবর্তনে আক্ষরিকভাবে আর কিছু না-বদলানোর দাবি দেশলাই ঘষার ফলে আগুন ধরার সঙ্গেই অসঙ্গত। বাংলা এখন প্রাসঙ্গিক কাজ ও তার ফল রাখে, অপ্রাসঙ্গিক অতিরিক্ত বদল বাদ দেয়। এটি মূল জগৎ থেকে সম্পূর্ণ এক তথ্যের পরিবর্তন দাবি নয়।
+
+নতুন BN-SRC-768: নিকটতম পূর্বপক্ষ-জগতের কথা এখানে ক্ষুদ্রতম পূর্বপক্ষ-স্বীকারক গোলক থাকা ছবির ক্ষেত্রে। source-এর নিছক সবচেয়ে ছোট গোলক বললে কেন্দ্রের নিজস্ব জগৎ পাওয়া যায়; সেখানে পূর্বপক্ষ অসত্যও হতে পারে। সবচেয়ে ছোট *পূর্বপক্ষ-স্বীকারক* গোলক বলা হয়েছে; এমন গোলক না-থাকলে সাধারণ সংজ্ঞা চলে। মূল figure-এর geometry অক্ষত।
+
+OLP-0524-এর W অশূন্য, V মোট বচনচল-মানায়ন এবং O প্রতিটি জগতে সেটের পরিবার দেয়। প্রত্যেক পরিবারে singleton center, subset-ক্রমে nesting এবং যেকোনো অশূন্য উপপরিবারের union/intersection আছে। নতুন BN-SRC-766: এই আনুষ্ঠানিক সংজ্ঞায় empty sphere অনুমোদিত। তা কোনো antecedent-admitting sphere নয় এবং union-এ কোনো জগৎ যোগ করে না, তাই সত্যতার দুই clause-এ প্রভাব নেই। singleton center-ই ক্ষুদ্রতম *অশূন্য* গোলক; অন্য গোলকের বাকি জগৎগুলির সঙ্গে নিজের জগতের নৈকট্যের তুলনা করতে হয়। খালি গোলক নিষিদ্ধ করে মডেল-শ্রেণি অকারণে বদলানো হয়নি।
+
+নতুন BN-SRC-771: ভাষায় classical propositional connective এবং প্রতিবাস্তব সংযোজক যোগ করা হয়েছে; triple-এ আলাদা modal R নেই। copied “modal formulas” বদলে “বচনমূলক সূত্র” করা হয়েছে। নির্দিষ্ট না-করা Box/Diamond truth-clause গোপনে যোগ করা হয়নি। সাধারণ গঠন-আরোহে atom-এর V, Boolean truth-clause এবং sphere-clause থেকে প্রত্যেক বর্তমান ভাষার সূত্রের truth-set সংজ্ঞায়িত।
+
+পুরোনো BN-SRC-422 সঠিক: একটি সফল nonvacuous sphere-এর সব ছোট sphere সফল নয়; ছোটটিকেও antecedent-admitting হতে হবে। nesting-এ সফল S-এর ভিতরের admitting T-তে A→B সর্বত্র থাকে এবং A-সাক্ষী থাকে। BN-SRC-423–424-এর con→cnt file-id দুটি সঠিক। তিন sphere S₁={w}, S₂={w,w₁,w₂,w₃}, S₃={w,…,w₆}, V(p)={w₅,w₆,w₇}: p-স্বীকারক ক্ষুদ্রতম S₃, closest p-world w₅,w₆; w₇ union-এর বাইরে।
+
+মূল `ptolemaicastronomy.sty` বাস্তবে পড়ে sphere-radius ও point-position সূত্র তুলিত। layerwidth ১.৫ ও innerfactor ০.৪-এ তিন radius ০.৯, ২.৪, ৩.৯। w₁,w₂,w₃ দ্বিতীয় ও তৃতীয় sphere-এ; w₄,w₅,w₆ শুধু তৃতীয়তে, দুই দশমিক shift-সহ; w₇ কোনোটিতে নয়। গণনা source-এর সাত point-এর layer-membership যাচাই করে। এই batch-এ shape-curve-সহ ছয় TikZ schematic নতুন করে render/চোখে inspect করা হয়নি; পূর্ণ reader-এর visual QA-তে সেই কাজ বাকি।
+
+নতুন BN-SRC-769: strict infinite descending chain একাই minimum নেই প্রমাণ করে না। W={w,g}∪{bₖ:k≥1}, A={g}, Sₙ={w,g}∪{bₖ:k≥n}; সব Sₙ কঠোরভাবে ছোট হয়, কিন্তু T={w,g} যোগ করলে T-ই ক্ষুদ্রতম A-admitting sphere। এই family সব nonempty union/intersection-এ বদ্ধ: union-এর সর্বনিম্ন index, bounded intersection-এর সর্বোচ্চ index, unbounded intersection-এ T।
+
+সাধারণ যথার্থ criterion: সব A-admitting sphere-এর family nonempty হলে তার intersection I আবার sphere। I-তে A-সাক্ষী থাকলে সেটিই minimum; না-থাকলে minimum থাকতে পারে না, কারণ minimum থাকলে intersection সেটিই হতো। তাই model-সংজ্ঞার arbitrary intersection closure limit assumption নিশ্চিত করে না। এটি minimum sphere থাকা ও A-স্বীকারক minimum থাকার পার্থক্য।
+
+Minimum-হীন প্রকৃত উদাহরণ: W={w}∪{aₖ:k≥1}, sphere {w} এবং Sₙ={w}∪{aₖ:k≥n}, A={aₖ:k≥1}। union/intersection একই index-যুক্ত যুক্তিতে বদ্ধ; unbounded intersection {w}, সেখানে A নেই। B={aₖ:k≥3} হলে S₃ সফল, তাই A⇒B সত্য; B-তে শুধু জোড় সূচক নিলে প্রত্যেক admitting sphere-এ B এবং ¬B উভয় A-world আছে, তাই A⇒B ও A⇒¬B উভয় false। সর্বত্র closest-world universal বলে শূন্যতাবশে দুটিকেই true বলা ভুল। finite tail গণনা এই infinite proof-এর বিকল্প নয়।
+
+ধারার “কোনো i থেকে সব ছোট sphere-এ A→B” criterion-এ ভিতর পর্যন্ত পৌঁছনোর শর্ত দরকার: প্রত্যেক admitting T-র মধ্যে ধারার কোনো Sᵢ থাকলে সফল T থেকে সফল Sᵢ, এবং বিপরীতে সফল Sᵢ সাধারণ সংজ্ঞা পূরণ করে। এর শর্ত ছাড়া counterexample: W={w}∪{gₖ,bₖ:k≥1}; outer Sₙ={w}∪{সব gₖ}∪{bₖ:k≥n}, inner Tₙ={w}∪{gₖ:k≥n}, এবং {w}; A সব gₖ,bₖ, B শুধু gₖ। প্রত্যেক outer Sₙ-এ bad bₖ আছে, কিন্তু প্রত্যেক inner Tₙ সফল। family nested, সব nonempty union/intersection-এ বদ্ধ, minimum admitting sphere নেই। সুতরাং নির্বাচিত outer ধারায় কোনো i নেই অথচ counterfactual সত্য। বাংলা এখন ধারার অতিরিক্ত শর্ত স্পষ্ট করে।
+
+OLP-0525-এর নতুন BN-SRC-770: দুই false-case-এর closest-world classification এই আঁকা minimum-admitting-sphere থাকা ক্ষেত্রে; সাধারণ infinite model-এ তা exhaustive বলে দাবি করা যায় না। এই finite ক্ষেত্রে সব closest A-world B হলে nonvacuous true, admitting sphere না থাকলে vacuous true, closest A-world-এ B/¬B মিশ্র হলে দুই বিপরীত false, সব ¬B হলে প্রথম false ও বিপরীত true। একই পূর্ণ union থাকা চার জগতে center u-এর closest A-world ভালো এবং center v-এর closest A-world খারাপ রেখে truth ভিন্ন হয়; তাই আগের S5 strict conditional-এর necessity-ধর্ম এই connective-এ বাধ্যতামূলক নয়। “কঠোর শর্তবচন” তুলনায় আগের S5-সীমা স্পষ্ট।
+
+`recheck_sphere_semantics_opening.py`-তে empty sphere-সহ ১১০,৮৫৬ সম্পূর্ণ ক্ষুদ্র centered model, ৩৩২,২৯৬ truth-clause case, চার pictured case-এর discrete সাক্ষী, singleton-center-এ A সত্য হলে A⇒B iff B এবং সব সাত point-layer গণনা পাস। general set-family যুক্তি উপরে; enumeration সাধারণ অসীম theorem নয়। সত্য iff-এ দুই দিক স্পষ্ট, formula/control structure অক্ষত।
+
+প্রাসঙ্গিক মূল পাঠের locator আগের counterfactual review-তে: লুইসের [১৯৭৩ প্রবন্ধ](https://paperzz.com/doc/7162530/counterfactuals-and-comparative-possibility), analysis ১–৩ ও sphere-এর ২.৩ অংশ। Canon-এর বাস্তবে পড়া P008/P009 বচন/সংযোজক, P013/P014 সম্পর্ক, P017 proof prose এবং P018 অপেক্ষক/ক্ষেত্র ব্যবহৃত। বিশেষ closest/sphere/vacuous নাম সরাসরি সাক্ষ্যপ্রাপ্ত নয়; T378–380 definition-governed provisional। আগে না-পড়া P007/P012-তে নতুন consultation আরোপ করা হয়নি; P017-এর ভুল প্রদর্শিত সূত্র গণিতের ভিত্তি নয়।

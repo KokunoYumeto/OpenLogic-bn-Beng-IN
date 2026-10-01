@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "restriction_formula_cases": 14850,
+  "finite_topologies_including_empty_space": 35,
+  "actual_open_implication_adjunction_cases": 3439,
+  "local_global_and_universal_quantifier_witnesses": "passed",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/semantics/semantic-notions.tex",
+      "sha256": "530e15813cdb40295194fc590e565e0496616391819f7b1d609d34573ac688b7"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/semantics/topological-semantics.tex",
+      "sha256": "68e171ead6f759efb2b24623f067bb0085cdfb63a99bc62c2a584ba9467b266f"
+    }
+  ],
+  "limits": "সর্বোচ্চ তিন বিন্দুর গণনা সাধারণ উপপাদ্যের প্রমাণ নয়। Generated submodel-এর সব উত্তরসূরি, persistence এবং arbitrary open union দিয়ে বৃহত্তম উন্মুক্ত implication-এর সাধারণ প্রমাণ বাংলা review-তে। পরবর্তী পূর্ণতার প্রমাণ এই batch-এ যাচাই দাবি নেই।"
+}

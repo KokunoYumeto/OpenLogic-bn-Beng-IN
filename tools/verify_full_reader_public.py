@@ -1,33 +1,28 @@
-"""Anonymous byte-level readback of the 722-unit interim HTML release."""
+"""Anonymous byte readback of an explicitly selected complete-edition release."""
 
 from __future__ import annotations
 
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 from urllib.request import Request, urlopen
 
 
 REPO = Path(__file__).resolve().parents[1]
-TAG = "v0.4.0-complete-semantic-reader"
 OWNER_REPO = "KokunoYumeto/OpenLogic-bn-Beng-IN"
-COMMIT = "f67e4da4d1d903a020ce6a61c689e406bf640bc9"
 PAGES_URL = "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/"
-OUT = REPO / "evidence/PUBLIC_READBACK_READER_722_2026-09-28.json"
-
-LOCAL_ASSETS = {
-    "openlogic-bn-Beng-IN-complete.html": REPO / "dist/openlogic-bn-Beng-IN-complete.html",
-    "openlogic-bn-Beng-IN-complete.tex": REPO / "dist/openlogic-bn-Beng-IN-complete.tex",
-    "openlogic-bn-Beng-IN-complete-sources.zip": REPO / "dist/openlogic-bn-Beng-IN-complete-sources.zip",
-    "SHA256SUMS-complete.txt": REPO / "dist/SHA256SUMS-complete.txt",
-    "FULL_RELEASE_ASSETS.json": REPO / "dist/FULL_RELEASE_ASSETS.json",
-    "PREPARATION.json": REPO / "build/full-edition/PREPARATION.json",
-    "SEMANTIC_READER_QA.json": REPO / "build/full-edition/SEMANTIC_READER_QA.json",
-    "VISUAL_QA.json": REPO / "build/full-edition/VISUAL_QA.json",
-}
 RAW_PATHS = (
     "bn-Beng-IN/content/first-order-logic/syntax-and-semantics/satisfaction.tex",
+    "bn-Beng-IN/content/model-theory/lindstrom/ls-property.tex",
+    "bn-Beng-IN/content/model-theory/lindstrom/lindstrom-proof.tex",
+    "bn-Beng-IN/content/proof-theory/sequent-calculus/rules-mG3i.tex",
+    "bn-Beng-IN/content/lambda-calculus/syntax/terms.tex",
+    "bn-Beng-IN/content/proof-theory/proof-search/search-algorithm.tex",
+    "evidence/GPT6_SOL_REDO_UNIT_REVIEWS.jsonl",
+    "evidence/GPT6_SOL_REDO_PRODUCTION_SCRIPT_CHECK.json",
+    "evidence/SOURCE_MODEL_PROVENANCE_722.json",
     "evidence/DRAFT_STATUS.json",
     "README.md",
 )
@@ -52,15 +47,35 @@ def local_hash(path: Path) -> tuple[int, str]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Anonymously verify a full-reader release and Pages bytes")
-    parser.add_argument("--tag", default=TAG)
-    parser.add_argument("--commit", default=COMMIT)
-    parser.add_argument("--receipt", type=Path, default=OUT)
+    parser.add_argument("--tag", required=True)
+    parser.add_argument("--commit", required=True)
+    parser.add_argument("--receipt", type=Path, required=True)
+    parser.add_argument("--expect-prerelease", action="store_true")
     parser.add_argument("--raw-path", action="append", dest="raw_paths")
     parser.add_argument("--asset", action="append", metavar="FILENAME=PATH",
                         help="Add an exact local file to the release asset readback")
     args = parser.parse_args()
+    assert re.fullmatch(r"[0-9a-f]{40}", args.commit), "An exact release commit is required"
+    assert args.receipt.resolve().is_relative_to(REPO.resolve()), "Receipt must stay in this repository"
     raw_paths = args.raw_paths if args.raw_paths is not None else RAW_PATHS
-    local_assets = dict(LOCAL_ASSETS)
+    asset_manifest = json.loads((REPO / "dist/FULL_RELEASE_ASSETS.json").read_text(encoding="utf-8"))
+    assert asset_manifest["source_units"] == 722
+    assert asset_manifest["pdf_included"] and asset_manifest["epub_included"], "Complete edition requires both PDF and EPUB"
+    local_assets = {row["filename"]: REPO / "dist" / row["filename"] for row in asset_manifest["assets"]}
+    assert len(local_assets) == len(asset_manifest["assets"])
+    for name,path in local_assets.items():
+        assert Path(name).name == name and path.resolve().is_relative_to((REPO / "dist").resolve())
+    assert set(local_assets) == {
+        "openlogic-bn-Beng-IN-complete." + suffix
+        for suffix in ("pdf", "html", "epub", "tex")
+    } | {"openlogic-bn-Beng-IN-complete-sources.zip"}, "Complete edition asset scope differs"
+    for row in asset_manifest["assets"]:
+        assert local_hash(local_assets[row["filename"]]) == (row["bytes"], row["sha256"]), row["filename"]
+    expected_sums = "".join(row["sha256"] + "  " + row["filename"] + "\n"
+                            for row in asset_manifest["assets"])
+    assert (REPO / "dist/SHA256SUMS-complete.txt").read_text(encoding="ascii") == expected_sums
+    for name in ("SHA256SUMS-complete.txt", "FULL_RELEASE_ASSETS.json"):
+        local_assets[name] = REPO / "dist" / name
     for specification in args.asset or []:
         name, separator, filename = specification.partition("=")
         assert separator and name and filename, specification
@@ -74,7 +89,7 @@ def main() -> None:
         assert response.status == 200
         release = json.load(response)
     assert release["tag_name"] == args.tag and release["target_commitish"] == args.commit
-    assert release["prerelease"] and not release["draft"]
+    assert release["prerelease"] == args.expect_prerelease and not release["draft"]
     assert PAGES_URL in release["body"] and "PDF" in release["body"]
     published_assets = {asset["name"]: asset for asset in release["assets"]}
     assert set(published_assets) == set(local_assets)
@@ -84,7 +99,9 @@ def main() -> None:
         expected_size, expected_sha = local_hash(path)
         actual_size, actual_sha = remote_hash(asset["browser_download_url"])
         assert (actual_size, actual_sha) == (expected_size, expected_sha), name
-        assert (asset["size"], asset.get("digest")) == (expected_size, "sha256:" + expected_sha), name
+        assert asset["size"] == expected_size, name
+        if asset.get("digest") is not None:
+            assert asset["digest"] == "sha256:" + expected_sha, name
         results.append({"filename": name, "url": asset["browser_download_url"],
                         "bytes": actual_size, "sha256": actual_sha})
     pages_size, pages_sha = remote_hash(PAGES_URL)
@@ -102,14 +119,15 @@ def main() -> None:
         "anonymous": True,
         "credentials_used": False,
         "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
-        "manifest_sha256": "5a6fef5c16c15a5b2f90f874c268512cfd6ed2e846bdfa850a67304a4c05a155",
+        "manifest_sha256": local_hash(REPO / "evidence/FULL_SOURCE_MANIFEST.jsonl")[1],
         "reader_units": 722,
         "git_commit": args.commit,
         "release_url": release["html_url"],
         "release_assets": results,
         "online_reader": {"url": PAGES_URL, "bytes": pages_size, "sha256": pages_sha},
         "raw_objects": raw,
-        "pdf_claimed": False,
+        "pdf_claimed": True,
+        "edition_identity": asset_manifest["edition_identity"],
     }
     args.receipt.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps({"status": "passed", "assets": len(results), "pages_bytes": pages_size,

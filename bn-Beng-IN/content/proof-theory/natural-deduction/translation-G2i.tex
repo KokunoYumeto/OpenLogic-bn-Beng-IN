@@ -25,12 +25,17 @@
 যদি $\Log{G2i} + \Cut \Proves \Gamma \Sequent \Delta$,
 তাহলে $\Log{N2i} \Proves \Gamma' \Sequent !C$,
 যেখানে $\Delta$ ফাঁকা হলে $!C \ident \lfalse$,
-অন্যথায় $\Delta = \{!A\}$; এবং $\Gamma'$
+অন্যথায় $\Delta = \{!C\}$; এবং $\Gamma'$
 হলো~$\Gamma$-র সঙ্গত।
+% BN-SRC-876 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-876):} অফাঁকা ডান অংশের একমাত্র সূত্রই সিদ্ধান্তের সূত্র।
+মূলপাঠে অন্য একটি নাম থাকায় সিদ্ধান্তের সূত্রটি অনির্ধারিত ছিল;
+দুই স্থানে একই নাম রাখা হয়েছে।}
+% BN-SRC-876 TARGET-CORRECTION-END
 \end{prop}
 
 \begin{proof}
-  দেখাই, $\pi$ যদি \Log{G2i}-তে
+  দেখাই, $\pi$ যদি \Log{G2i}+\Cut-এ
   $\Gamma \Sequent \Delta$-র !!a{proof} হয়,
   তাহলে $\Gamma$-র সঙ্গত কোনো~$\Gamma'$ এবং
   \Log{N2i}-তে $\Gamma' \Sequent !C$-এর
@@ -39,6 +44,7 @@
   % BN-SRC-559 TARGET-CORRECTION-BEGIN
   \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-559):} প্রমাণের শুরুতে উৎসে অনির্দিষ্ট G2ci লেখা; প্রস্তাবনা ও সারা অধ্যায় অনুযায়ী G2i নেওয়া হয়েছে।}
   % BN-SRC-559 TARGET-CORRECTION-END
+% BN-SRC-877: redo restores G2i+Cut scope of the proposition and displayed Cut case.
 
   $n = 0$ হলে $\pi$ একটি স্বতঃসিদ্ধ। সেটি
   $\lfalse \Sequent \quad$ স্বতঃসিদ্ধ হলে
@@ -187,7 +193,8 @@
     \DisplayProof
     \]
     আর $\delta_2$-তে $x:!B$-এর প্রতিটি
-    সংঘটন $x:!A \lif !B$ দিয়ে বদলাই।
+    সংঘটন $x:!A \lif !B$ দিয়ে বদলাই এবং প্রতিস্থাপিত
+    স্বতঃসিদ্ধের নিচের প্রসঙ্গগুলিতে $\Gamma_1'$ যোগ করি।
     ফল $\Subst{\delta_2}{\delta_3}{x:!B}$
     হলো $x:!A \lif !B, \Gamma_1',
     \Gamma_2' \Sequent !C$-এর !!a{proof}।
@@ -197,6 +204,11 @@
     % BN-SRC-565 TARGET-CORRECTION-BEGIN
     \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-565):} উৎসের $\delta_3$ বৃক্ষের সিদ্ধান্তে $\Gamma_1'$ বাদ পড়ে, যদিও দ্বিতীয় শাখা $\Gamma_1' \Sequent !A$-এর উপর নির্ভর করে; N2 →-নিষ্কাশনে ওই প্রসঙ্গও সিদ্ধান্তে রাখা হয়েছে।}
     % BN-SRC-565 TARGET-CORRECTION-END
+% BN-SRC-878 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-878):} কলম-স্থাপিত প্রমাণের দ্বিতীয় শাখার খোলা অনুমানও
+প্রতিস্থাপিত স্বতঃসিদ্ধের নিচে রাখতে হবে। কেবল পুরোনো চিহ্নযুক্ত
+সূত্রের নাম বদলালে ওই শাখার প্রসঙ্গ হারিয়ে যায়।}
+% BN-SRC-878 TARGET-CORRECTION-END
     \item $R$ যদি \RightR{\land} হয়,
     $\pi$-র শেষাংশ
     \[

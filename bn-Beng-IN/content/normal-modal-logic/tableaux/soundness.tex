@@ -28,7 +28,7 @@
   -এর একটি বদ্ধ !!{tableau} থাকে, তবে $!B_1, \dots, !B_n \Entails !A$।
   এর বিপরীত-প্রতিজ্ঞা প্রমাণ করা সহজ: কোনো $\mModel{M}$ ও জগৎ~$w$-এর জন্য
   সব $i=1$, \dots,~$n$-এ $\mSat{M}{!B_i}[w]$ কিন্তু
-  % BN-SRC-366: The countermodel falsifies A at w.
+  % BN-SRC-366: প্রতিমডেলে A ওই জগতে মিথ্যা।
   $\mSat/{M}{!A}[w]$ হলে, কোনো !!{tableau} বদ্ধ হতে পারে না।
   এমন প্রতিমডেল দেখায় যে !!{tableau}-র প্রাথমিক !!{signed formula}s
   পরিতৃপ্তিযোগ্য। প্রমাণের কৌশল হলো দেখানো যে !!a{tableau}-র কোনো শাখার
@@ -45,7 +45,7 @@
 \begin{defn}
   ধরা যাক $P$ পূর্বসূচির একটি সমষ্টি, অর্থাৎ $P \subseteq (\PosInt)^*
   \setminus \{\emptyseq\}$, এবং $\mModel{M}$ একটি মডেল।
-  ফাংশন~$f\colon P \to W$-কে $\mModel{M}$-এ~$P$-এর একটি
+  অপেক্ষক~$f\colon P \to W$-কে $\mModel{M}$-এ~$P$-এর একটি
   \emph{ব্যাখ্যা} বলি, যদি $\sigma$ ও $\sigma.n$ উভয়ই~$P$-তে
   থাকলেই $Rf(\sigma)f(\sigma.n)$ হয়।
 
@@ -89,6 +89,9 @@
   \ollabel{thm:tableau-soundness}
   $\Gamma$-র একটি বদ্ধ !!{tableau} থাকলে $\Gamma$ অপরিতৃপ্তিযোগ্য।
 \end{thm}
+% BN-SRC-730 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন:} এখানে এই অধ্যায়ের অনুমোদিত ট্যাবলো বোঝানো হয়েছে: প্রাথমিক অনুমিতির পূর্বসূচি একই মূল নাম এবং K-বিধি কেবল উপস্থিত নামের তাৎক্ষণিক উত্তরসূরি তৈরি করে। তাই প্রতিটি শাখায় মূল নাম থেকে কোনো ব্যবহৃত নাম পর্যন্ত সব মধ্যবর্তী নামও উপস্থিত। নতুন উত্তরসূরি-নাম যোগ করলে তার কোনো আরও দীর্ঘ প্রসারণ আগে উপস্থিত থাকতে পারে না। নিচের ব্যাখ্যার প্রসারণে এই বৈশিষ্ট্য দরকার; নির্বিচার বিচ্ছিন্ন পূর্বসূচিসমষ্টিতে শুধু নতুন নাম দিলেই পুরোনো সব অভিগম্যতা-শর্ত বজায় থাকে না।
+% BN-SRC-730 TARGET-CORRECTION-END
 
 \begin{proof}
 !!a{tableau}-র কোনো শাখায় থাকা !!{signed formula}s-এর সমষ্টি
@@ -117,8 +120,13 @@
 !!{signed formula}s
 যোগ করেও $\Gamma$ পরিতৃপ্তিযোগ্য থাকে। শাখা বিভক্ত হলে দেখাতে
 হবে, ফলের দুটি শাখার অন্তত একটি পরিতৃপ্তিযোগ্য।
-\tagfalse{prvDiamond}
-প্রথমে এক-অনুমিতিবিশিষ্ট অনুমানগুলি বিবেচনা করি।
+% BN-SRC-729 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন:} উৎসে এখানে Diamond-শাখা বন্ধ করার tag আছে, ফলে ওই অপারেটরের বিশুদ্ধতার প্রমাণ ছাপা হয় না। tag-টি সরানো হয়েছে; ব্যবস্থায় অপারেটরটি মৌলিক হলে তার দুই বিধির প্রমাণও দেখা যাবে।
+% BN-SRC-729 TARGET-CORRECTION-END
+প্রথমে শাখা বিভক্ত না হওয়া অনুমানগুলি বিবেচনা করি।
+% BN-SRC-731 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন:} উৎসে এক ও দুই পূর্বপক্ষের অনুমান বলা হলেও এখানে পার্থক্যটি শাখা বিভক্ত হয় কি না। উভয় ধরনের বচনমূলক বিধিই একটি চিহ্নিত মূল সূত্রে প্রয়োগ করা হয়; সিদ্ধান্তের এক বা দুই বিকল্প শাখাকে পূর্বপক্ষের সংখ্যা বলা হয়নি।
+% BN-SRC-731 TARGET-CORRECTION-END
 \begin{enumerate}
 \item $\sFmla{\True}{\lnot !B}[\sigma] \in \Gamma$-তে
   $\TRule{\True}{\lnot}$ প্রয়োগ করে শাখাটি প্রসারিত করা হলো।
@@ -141,7 +149,7 @@
   $\mSat{M}{!C}[f(\sigma)]$। অর্থাৎ $\mModel{M}$,
   $f$ সাপেক্ষে $\sFmla{\True}{!B}[\sigma]$ ও
   $\sFmla{\True}{!C}[\sigma]$ উভয়ই পরিতৃপ্ত করে।
-% BN-SRC-372: The branch premise carries the same prefix.
+% BN-SRC-372: শাখার পূর্বপক্ষেও একই পূর্বসূচি থাকে।
 \item $\sFmla{\False}{!B \lor !C}[\sigma] \in \Gamma$-তে
   $\TRule{\False}{\lor}$ প্রয়োগে শাখাটি প্রসারিত হয়:
   অনুশীলন।
@@ -174,8 +182,8 @@
 
 \item $\sFmla{\False}{\Box !B}[\sigma] \in \Gamma$-তে
   $\TRule{\False}{\Box}$ প্রয়োগ করে শাখাটি প্রসারিত হয়:
-  % BN-SRC-367: The conclusion concerns B, the operand of the false box.
-  % BN-SRC-368: Use modal-model and modal-satisfaction notation consistently.
+  % BN-SRC-367: সিদ্ধান্তে False Box-এর অধীন সূত্র B থাকে।
+  % BN-SRC-368: মোডাল মডেল ও পরিতৃপ্তির চিহ্ন একই রীতিতে আছে।
   \iftag{probBox}{অনুশীলন।}{এতে নতুন
     !!{signed
       formula}~$\sFmla{\False}{!B}[\sigma.n]$ পাওয়া যায়;
@@ -204,8 +212,8 @@
 \iftag{prvDiamond}{%
 \item $\sFmla{\True}{\Diamond !B}[\sigma] \in \Gamma$-তে
   $\TRule{\True}{\Diamond}$ প্রয়োগ করে শাখাটি প্রসারিত হয়:
-  % BN-SRC-369: The conclusion concerns B, the operand of the true diamond.
-  % BN-SRC-368: The same modal-notation repair applies here.
+  % BN-SRC-369: সিদ্ধান্তে True Diamond-এর অধীন সূত্র B থাকে।
+  % BN-SRC-368: এখানেও একই মোডাল চিহ্নের মেরামত।
   \iftag{probDiamond}{অনুশীলন।}{এতে নতুন
     !!{signed
       formula}~$\sFmla{\True}{!B}[\sigma.n]$ পাওয়া যায়;
@@ -268,7 +276,7 @@
 \end{proof}
 
 \begin{prob}
-\olref[nml][tab][sou]{thm:tableau-soundness}-এর প্রমাণ সম্পূর্ণ করো।
+\olref[nml][tab][sou]{thm:tableau-soundness}-এর প্রমাণ সম্পূর্ণ করুন।
 \end{prob}
 
 \begin{cor}
@@ -289,7 +297,7 @@ $\Gamma \Proves !A$ হলে $\Gamma \Entails !A$।
   $f$ সাপেক্ষে~$\Delta$ পরিতৃপ্ত করে। কিন্তু
   \olref{thm:tableau-soundness} অনুসারে বদ্ধ !!{tableau}
   থাকায় $\Delta$ অপরিতৃপ্তিযোগ্য—স্ববিরোধ। অতএব
-  % BN-SRC-370: The proof concludes entailment, not derivability.
+  % BN-SRC-370: প্রমাণের শেষ সিদ্ধান্ত অনুসিদ্ধান্ত-সম্পর্ক।
   $\Gamma \Entails !A$।
 \end{proof}
 

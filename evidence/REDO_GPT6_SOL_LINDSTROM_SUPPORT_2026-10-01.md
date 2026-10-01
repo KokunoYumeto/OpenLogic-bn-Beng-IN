@@ -1,0 +1,9 @@
+Supporting repair206, outside the336 affected source count. Full English and Bengali ls-property file actually read; exact controlling normal-logic Relativization/Renaming/Quantifier properties read.
+
+915 D1 expressing satisfaction of arbitrary abstract E on two relativized domains belongs to L; it need not be first-order. Calling it first-order would assume the main Lindstrom expressibility conclusion already. Downward LS is defined for L-sentence sets and works with D1 together with the genuinely first-order D2. Minimal word correction, no new theorem/proof or false first-order definability claim.
+
+916 disjoint-domain encoding must use separate renamed vocabularies for two original structures. With language{c}, disjoint one-element structures interpret c by distinct objects. They cannot both be same-language substructures of a single structure because the latter has one value for c. Normal Renaming supplies separate copies, and Relativization constructs the corresponding E statements. Own-language reduct interpretation of the substructure phrases explicitly stated. Fresh code predicates and tuple sorts remain the source construction.
+
+917 translation-only repairs: remove duplicated parenthetical structure phrase and place the source structure token at its omitted constructor occurrence, retain exact token counts; induction aroh, three-place Bengali, universe/domain Bengali and Relativization Bengali. Existing diagram geometry, exact coordinates and mathematical formulas unchanged; rendered diagram QA pending main edition rebuild. No additional illustration assignment.
+
+Strict722 passed after changes. Canon spans and corrections bound below to current bytes. This supporting repair does not increase336/336 affected-source progress. Goal active; natural-deduction case-coverage, scripts/exports/notes/terms/build/QA/publication still unfinished. No TeX/build or remote mutation.

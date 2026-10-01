@@ -1,0 +1,58 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_REPLACEMENT_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/replacement.tex",
+      "sha256": "8ecf8aeb46c1fa690154e7830433988915e0773b13aa28103f661ba9c88898d5"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/introduction.tex",
+      "sha256": "bc46d9953af5f71642923796eca3c2df024d860812dc6d3ec1e0a24f1cf60da9"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/strength.tex",
+      "sha256": "65386ca2354aa67c8bc1a61ddc2cbba995adf7f0a37aa2cdf881deb9424f01cf"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/extrinsic.tex",
+      "sha256": "f827792f13bbd23e041a592a2f5b83541d633d91e6f918f45a1525a654f7eb2e"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/limofsize.tex",
+      "sha256": "996753d7ef69295e6f33011af429ff70fa04819e9828dd209bd064faa33dbc78"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/absinf.tex",
+      "sha256": "c53f0bb3f9a8fe4f0985cf6deb9acbfa73bc208ed1b27899fd0af4066ed54aa8"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/ref.tex",
+      "sha256": "1eb2144f280e4b1a4d8cc285818ff09be33a70d403a14f444ccb8da0817a584f"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/refproofs.tex",
+      "sha256": "53451386e326cab2f2ce8a646305dcef7ed50f33ca4f6c09113f82ddd65f1489"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/replacement/finiteaxiomatizability.tex",
+      "sha256": "525e38889c6fd49ddb1445e97e390b6bb95c705a626cabc4ed73cc0f6b6b61f6"
+    }
+  ],
+  "পরীক্ষা": {
+    "অশূন্যতা ন্যূনতমতার ভিতরেও দরকার": 1,
+    "আগের মিথ্যা Separation-এর নির্দিষ্ট সাক্ষী": 1,
+    "নিজের N বনাম বাইরের M-এর relativization": 1,
+    "M-potency ছাড়া lift-এর ব্যর্থতা": 1,
+    "অশূন্য পরিযায়ী উপসেট-অধোবদ্ধ ছোট carrier": 91,
+    "সংশোধিত carrier-এ সমস্ত সসীম Separation": 2721,
+    "ভিতর থেকে বাইরের ধর্ম-লিফট": 847,
+    "tag-চল সংঘর্ষের সত্যিকার ব্যর্থতা": 1,
+    "নতুন tag-এ দ্বিবিভাগ": 16,
+    "সুক্রমিত সসীম input-এ image-এর inverse": 3906
+  },
+  "সীমা": "এগুলি স্বাধীন ছোট witness ও exhaustive HF-carrier পরীক্ষা; ZF বা Z-র model নয়, Infinity নেই। সাধারণ metatheorem, reflection, relative consistency ও Choice-সংক্রান্ত অসীম সীমা human-readable review-তে পৃথক। ছোট fiber-এর least element-পরীক্ষা নির্বিশেষ choice-free injection প্রমাণ নয়।"
+}

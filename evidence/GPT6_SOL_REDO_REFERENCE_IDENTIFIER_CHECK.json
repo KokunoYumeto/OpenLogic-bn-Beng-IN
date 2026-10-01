@@ -1,0 +1,10 @@
+{
+  "unit_id": "OLP-0566",
+  "finding": "BN-SRC-918",
+  "source_sha256": "e623e78d259b8d80570492733074213737414fe7fbbc8d7dc641d77760783ad6",
+  "previous_target_sha256": "bc46d9953af5f71642923796eca3c2df024d860812dc6d3ec1e0a24f1cf60da9",
+  "target_sha256": "be7298a212a44f00fde9014e2683c8de6345fd93a264c5194a47c07523ed0978",
+  "affected_review_count": 336,
+  "status": "registered_local; rebuild_release_pending",
+  "review_record": "evidence/REDO_GPT6_SOL_REFERENCE_IDENTIFIER_2026-10-01.md"
+}

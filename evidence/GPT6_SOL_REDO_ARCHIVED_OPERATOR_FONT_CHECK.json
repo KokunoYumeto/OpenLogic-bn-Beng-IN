@@ -1,0 +1,22 @@
+{
+  "schema": "openlogic-bn-archived-operator-font-check/1",
+  "status": "passed",
+  "script_sha256": "1a8d19481d3974b2214e0c2d393d3c0dac379a7641e35cfe06d030c1406d0fb6",
+  "retained_source_hashes": {
+    "txsyc.pfb": "daba10834af8bf5dcb3c6b03e919daf61e6ba74c3ef71aa3c74f80dc3945ec5e",
+    "stmary10.pfb": "eff077f7d9ca7c2f02695e1c51bb97327f097dbdf6b2677579772bcd4f6a6844",
+    "ntxsyc.vf": "449dc24da3c0178168ce444d1a0fe47a17e7b55e9c787b23bc477f0b46e8e7e4",
+    "ntxsyc.tfm": "29f01929af4a75a146bee9243b61b58e42e8829af9fa06a558e4c572d2467e39",
+    "txsyc.tfm": "ec685ceaf907aaf2f8bf955969de391cd8e91a9d6a63a8a06c006313f5c54a1d",
+    "stmary10.tfm": "9c41cd0d9cfb12c5f7ed6dccfe0367be6378e5b755a5b22424c47b975b57af8f",
+    "TXFONTS-COPYRIGHT.txt": "339ed0e30e6fe614a7a677f1c77e6d0736a7822b23c2a43cc046fac43bb80d63",
+    "stmaryrd.pdf": "7db46cdb142097ab0151aaa976db1a3b3761b498bd80ba26e4ecb90ceaff7826"
+  },
+  "output_hashes_unchanged": {
+    "OpenLogicReaderTXOperators.ttf": "71058c253ee49ab061522380f49772506688542a21309887cddf35c00e0030a4",
+    "OpenLogicReaderStMaryOperators.ttf": "71a98834b91f6b96cafa544748318fd716245919bd6971602969ea2b595d7fe3",
+    "OPERATOR_FONT.json": "4f6a5dc05f7e69fecde9aaae8ed94301726bc4fd27ef4a82cc363d4f1bcc926a"
+  },
+  "method": "Actual font rebuild with installed-source subprocess lookup forbidden; both generated TTFs and provenance receipt identical to approved rendering inputs.",
+  "limits": "When retained sources are absent, exact pinned installed sources remain required for first bootstrap."
+}

@@ -12,7 +12,7 @@
 
 \begin{lem}
 \ollabel{lem:lindstrom}
-ধরা যাক $!E \in L(\Lang{L})$, যেখানে $\Lang{L}$ সসীম, এবং আরও
+এখানে যুক্তিতন্ত্রটি স্বাভাবিক বলে ধরা হচ্ছে। ধরা যাক $!E \in L(\Lang{L})$, যেখানে $\Lang{L}$ সসীম, এবং আরও
 ধরা যাক এমন একটি $n \in \Nat$ আছে যাতে যেকোনো দুটি !!{structure}s
 $\Struct{M}$ ও~$\Struct{N}$-এর জন্য, $\Struct{M} \equiv_n
 \Struct{N}$ এবং $\Struct{M} \models_L !E$ হলে
@@ -24,8 +24,8 @@ $\Mod(L){!E} = \Mod(L){!D}$।
 \begin{proof} 
 যে $n$-এর জন্য যেকোনো দুটি $n$-সমতুল্য !!{structure}s
 $\Struct{M}$ ও $\Struct{N}$-এ $!E$-র সত্য-মিথ্যার মান এক হয়, এমন
-$n$ নিই। \olref[bas][pis]{prop:qr-finite} মনে করো: সসীম
-!!{language}-এ পরিমাণসূচক-ক্রমাঙ্কের বেশি নয় এমন প্রথম-ক্রমের
+সেই ক্রমাঙ্কটি নিই। \olref[bas][pis]{prop:qr-finite} মনে করো: সসীম
+!!{language}-এ পরিমাণসূচক-ক্রমাঙ্ক $n$-এর বেশি নয় এমন প্রথম-ক্রমের
 !!{sentence}s, যৌক্তিক সমতুল্যতা পর্যন্ত, সসীম সংখ্যক। অতএব প্রতিটি
 স্থির !!{structure}~$\Struct{M}$-এর জন্য $!D_{\Struct{M}}$-কে
 $\Struct{M}$-এ সত্য এমন প্রথম-ক্রমের !!{sentence}s~$!E$-এর মধ্যে
@@ -46,7 +46,7 @@ $\Struct{N} \models_L !D$।
 \end{proof}
 
 \begin{thm}[লিন্ডস্ট্রমের উপপাদ্য]
-  \ollabel{thm:lindstrom} ধরা যাক $\tuple{L, \models_L}$-এর
+  \ollabel{thm:lindstrom} ধরা যাক স্বাভাবিক যুক্তিতন্ত্র $\tuple{L, \models_L}$-এর
   কম্প্যাক্টনেস ও লোয়েনহাইম--স্কোলেম ধর্ম আছে। তাহলে
   $\tuple{L, \models_L} \le \tuple{F, \models}$ (অতএব
   $\tuple{L, \models_L}$ প্রথম-ক্রমের যুক্তিবিদ্যার সমতুল্য)।
@@ -75,7 +75,7 @@ $\Struct{M}_n \models_L !E$, আর $\Struct{N}_n \not\models_L !E$।
 $\Struct{M}_n$-এর সংযুক্তি $\Struct{M}$ ধরি, অর্থাৎ প্রতিটি
 $\Struct{M}_n$-কে উপকাঠামো হিসেবে ধারণ করে এমন একমাত্র ক্ষুদ্রতম
 !!{structure}~$\Struct{M}$। \olref[lsp]{thm:abstract-p-isom}-এর প্রমাণের মতোই,
-!!{domain}~$\Struct{M}$-কে $\Domain{M} \cup \Domain{M}^{<\omega}$-এ প্রসারিত
+$\Struct{M}$-এর !!{domain}-কে $\Domain{M} \cup \Domain{M}^{<\omega}$-এ প্রসারিত
 করে $\Struct{M}^*$ নিই, যেখানে প্রসারিত !!{language}-এ সংযোজনের
 predicate $P$ ও~$Q$ আছে।
 
@@ -119,5 +119,11 @@ $\mathcal{I}$ সাক্ষ্য দেয় যে $\Struct{M_{n^*}} \simeq
 $\Struct{M_{n^*}}$, $\Struct{N_{n^*}}$-এর সঙ্গে $L$-সমতুল্য; এটি
 বিরোধাভাস।
 \end{proof}
+% BN-SRC-913 TARGET-CORRECTION-BEGIN
+% Missing Bengali rank bound n restored; structure-domain prose repaired; formulas and token inventory preserved.
+% BN-SRC-913 TARGET-CORRECTION-END
+% BN-SRC-914 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-914):} প্রমাণে সমরূপতা, সীমিত শব্দভাণ্ডার, পরিমাণক ও আপেক্ষিকীকরণের ধর্ম এবং স্বাভাবিক যুক্তিতন্ত্রের পূর্ববর্তী উপপাদ্য ব্যবহৃত হয়েছে। স্বাভাবিকতার প্রয়োজনীয় শর্তটি বিবৃতিতে অনুক্ত ছিল; এখানে তা রাখা হয়েছে।}
+% BN-SRC-914 TARGET-CORRECTION-END
 
 \end{document}

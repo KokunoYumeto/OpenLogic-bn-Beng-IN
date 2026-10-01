@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "frames_checked": 530,
+  "valuations_checked": 33032,
+  "actual_table_formulas": [
+    "\\Box p \\lif \\Diamond p",
+    "\\Box p \\lif p",
+    "p \\lif \\Box\\Diamond p",
+    "\\Box p \\lif \\Box \\Box p",
+    "\\Diamond p \\lif \\Box\\Diamond p",
+    "\\Diamond p \\lif \\Box p",
+    "\\Diamond p \\liff \\Box p",
+    "\\Box \\Box p \\lif\n        \\Box p",
+    "\n          \\Box ((p \\land \\Box p) \\lif q) \\lor {} \n           \\Box ((q \\land \\Box q) \\lif p)\n        ",
+    "\\Diamond\\Box p \\lif \\Box\\Diamond p"
+  ],
+  "nonproperty_frame_counts": [
+    177,
+    461,
+    456,
+    344,
+    482,
+    455,
+    498,
+    182,
+    96,
+    244
+  ],
+  "capture_witness": {
+    "successor_masks": [
+      2,
+      4,
+      0
+    ],
+    "p_mask": 0,
+    "world": 0,
+    "correct_nested_box": false,
+    "captured_translation": true
+  },
+  "limits": "তিন জগতের frame গণনা সাধারণ correspondence বা অপ্রথমক্রমিকতার প্রমাণ নয়; সাধারণ যুক্তি পৃথক বাংলা review-তে।",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/definability.tex",
+      "sha256": "1f6b7f5da98e84e471cbc368ba34f0a36c0f805db9e34ab140cbc3df5bdbaa21"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/equivalence-S5.tex",
+      "sha256": "e157b1fb75eae4cdb86650fd262e7822153ab8b06a358541b946a24511165d16"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/first-order-definability.tex",
+      "sha256": "63bca8e7c2748549c59d67e3c95426b6f55817bb677d5751f0a99af695f58714"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/frame-definability.tex",
+      "sha256": "f3a83eadfb4b3b11bd7322d4a03d723658eb9f6f76c94f103cb3da74b1a2fc0a"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/frames.tex",
+      "sha256": "88b762190928b623c7134038e4829c805abe8284ae3245cb3b55232cad0ed8a5"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/introduction.tex",
+      "sha256": "e6486c6ff5bf5def17db13c6b850abbd070cb3283d17bcbd92d7f4d4f9bfe6ce"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/properties-accessibility.tex",
+      "sha256": "bd8e515ce0dcc4f0ef90c6b632781aba3c63ad25d84c35361bdfeb4f1047df14"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/frame-definability/second-order-definability.tex",
+      "sha256": "cf56e3e0955d66cfa845b1e8274f74ff6c63152b7e295be86016a13ca8eb74c5"
+    }
+  ]
+}

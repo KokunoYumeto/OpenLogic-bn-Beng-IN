@@ -12,7 +12,7 @@ $taskAbandoned = $false
 $taskAttemptPath = Join-Path $taskResolvedBuild ('attempt-' + [DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfff') + '.json')
 $taskRecord = @{edition=$Edition;status='starting';mutex='Global\InterlanguageTeXSlotV1';acquisition_timeout_ms=0;input_sha256=(Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $taskResolvedBuild ($taskBase + '.tex'))).Hash.ToLowerInvariant();started_utc=[DateTime]::UtcNow.ToString('o');acquired=$false}
 [IO.File]::WriteAllText($taskAttemptPath,($taskRecord | ConvertTo-Json -Depth 6))
-Add-Type -TypeDefinition @'
+if (-not ('BengaliTexJob' -as [type])) { Add-Type -TypeDefinition @'
 using System;
 using System.Runtime.InteropServices;
 public class BengaliTexJob {
@@ -24,15 +24,25 @@ public class BengaliTexJob {
  public static int Active(IntPtr j) { IntPtr p=Marshal.AllocHGlobal(48); try { if(!QueryInformationJobObject(j,1,p,48,IntPtr.Zero)) throw new Exception("Cannot query captured TeX job: " + Marshal.GetLastWin32Error()); return Marshal.ReadInt32(p,40); } finally {Marshal.FreeHGlobal(p);} }
 }
 '@
+}
 try {
     try { $taskAcquired = $taskMutex.WaitOne(0) }
     catch [Threading.AbandonedMutexException] { $taskAcquired = $true; $taskAbandoned = $true }
-    if (-not $taskAcquired) { throw 'TeX mutex acquisition timed out after 0 ms; no TeX launched' }
+    if (-not $taskAcquired) {
+        $taskRecord.status='deferred_tex_slot'
+        $taskRecord['reason']='TeX slot occupied; retain pending build and continue substantive work. No TeX launched.'
+        $taskRecord | ConvertTo-Json -Depth 6
+        return
+    }
     $taskRecord.acquired=$true
     $taskRecord['abandoned_recovery']=$taskAbandoned
     $taskPassResults = @()
     $taskBibtexResult = $null
     $taskStable = $false
+    $taskMetadataOutput = & python -X utf8 (Join-Path $PSScriptRoot 'edition_metadata.py')
+    if ($LASTEXITCODE -ne 0) { throw 'Cannot read current edition metadata' }
+    $taskMetadata = $taskMetadataOutput | ConvertFrom-Json
+    $taskRecord['edition_identity']=$taskMetadata
     Push-Location $taskResolvedBuild
     try {
         for ($taskPass = 1; $taskPass -le 5; $taskPass++) {
@@ -45,7 +55,7 @@ try {
             $taskProcess.StartInfo.CreateNoWindow = $true
             $taskProcess.StartInfo.RedirectStandardOutput = $true
             $taskProcess.StartInfo.RedirectStandardError = $true
-            $taskProcess.StartInfo.Environment['SOURCE_DATE_EPOCH'] = '1788520000'
+            $taskProcess.StartInfo.Environment['SOURCE_DATE_EPOCH'] = $taskMetadata.source_date_epoch
             $taskProcess.StartInfo.Environment['FORCE_SOURCE_DATE'] = '1'
             try {
                 $taskDeadline = [DateTime]::UtcNow.AddSeconds(300)

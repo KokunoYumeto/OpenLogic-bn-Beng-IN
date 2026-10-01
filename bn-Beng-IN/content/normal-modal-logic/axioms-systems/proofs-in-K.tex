@@ -68,14 +68,16 @@
     5. & $\Box(!B \lif (!A \land !B)) \lif (\Box!B \lif \Box(!A \land !B))$ & \Ax{K} \\
     6. & $(\Box!A \lif \Box(!B \lif (!A \land !B))) \lif {}$ \\
     & \qquad $(\Box(!B \lif (!A \land !B)) \lif (\Box!B \lif \Box(!A \land !B))) \lif {}$\\
-    & \qquad $(\Box!A \lif (\Box !B \lif \Box(!A \land !B))))$ & \Taut\\
+    & \qquad $(\Box!A \lif (\Box !B \lif \Box(!A \land !B)))$ & \Taut\\
     7. & $(\Box(!B \lif (!A \land !B)) \lif (\Box!B \lif \Box(!A \land !B))) \lif {}$\\
     & \qquad $(\Box!A \lif (\Box !B \lif \Box(!A \land !B)))$ & \MP, 4, 6\\
-    8. & $\Box!A \lif (\Box !B \lif \Box(!A \land !B)))$ & \MP, 5, 7\\
-    9. & $(\Box!A \lif (\Box !B \lif \Box(!A \land !B)))) \lif {}$\\
+    8. & $\Box!A \lif (\Box !B \lif \Box(!A \land !B))$ & \MP, 5, 7\\
+    9. & $(\Box!A \lif (\Box !B \lif \Box(!A \land !B))) \lif {}$\\
     & \qquad $((\Box!A \land \Box!B) \lif \Box(!A \land !B))$ & \Taut\\
     10. & $(\Box!A \land \Box!B) \lif \Box(!A \land !B)$ & \MP, 8, 9
   \end{derivation}
+% BN-SRC-695 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-695):} সংযোগের দিকে বক্স চালানোর প্রমাণে 6, 8 ও 9 নম্বর পংক্তিতে একটি করে অতিরিক্ত বন্ধনী আছে। এখানে তিনটিই সরানো হয়েছে; মোডাস পোনেন্সের মধ্যবর্তী সূত্র ও শেষ ফল অপরিবর্তিত অর্থে সুষম।} % BN-SRC-695 TARGET-CORRECTION-END
   $6$ ও $9$ নম্বর পংক্তির !!{formula}s যথাক্রমে নিচের সর্বতঃসত্য সূত্রগুলির উদাহরণ:
   \begin{align*}
     (p \lif q) & \lif ((q \lif r) \lif (p \lif r)) \\

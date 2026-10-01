@@ -1,0 +1,145 @@
+{
+  "scope": "15 affected production scripts plus relevant supporting scripts",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "goal": "active",
+  "scripts": {
+    "verify_segment_canon.py": {
+      "actual_full_read": true,
+      "sha256": "9d81c5c293a7914112096e5b35a29d9939f7707e5f774692b92f6fc76950d152",
+      "review_date": "2026-10-01",
+      "disposition": "722 unit files,7825 unique ordered spans and6673 translated rows hash checks; fixed published→current docstring. Canon semantics not claimed from this gate alone.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113145+00:00"
+    },
+    "create_reader_visual_probes.py": {
+      "actual_full_read": true,
+      "sha256": "8b84396f7f1c52cad0c530b2ae62ea89febdc7cd9b10760d5768f84d0218954b",
+      "review_date": "2026-10-01",
+      "disposition": "Exact DOM/head copied, byte hash bound, parent/unit boundary caveat and special669 proof-name reviewed; include newly repaired206/687/701/710/718. Rendering pending.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113218+00:00"
+    },
+    "build_reader_operator_font.py": {
+      "actual_full_read": true,
+      "sha256": "1a8d19481d3974b2214e0c2d393d3c0dac379a7641e35cfe06d030c1406d0fb6",
+      "review_date": "2026-10-01",
+      "disposition": "All127 lines read: kpsewhich Type1/virtual/metrics and preserved license copies; exact selected glyph names; bounded quadratic conversion, fixed timestamp, distinct font names and sources. No new font build or license-document reading claimed; installed-path/source checks remain build gate.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113283+00:00"
+    },
+    "build_full_epub.py": {
+      "actual_full_read": true,
+      "sha256": "4047324c4b48741b3395b08f64f6b31bbdbccba9d4b4fe44a5e2c005d7fafc14",
+      "review_date": "2026-10-01",
+      "disposition": "All206 lines read; verified source722 markers, font hashes, namespace repair, deterministic ZIP, offline/native MathML checks; shared current edition date replaces historical Sep28. Parent reader safe_clear/package/epubcheck functions still require full audit before running.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113351+00:00"
+    },
+    "build_full_edition_windows.ps1": {
+      "actual_full_read": true,
+      "sha256": "6ee060ebae0325863de734466340cd6a855acb6563d8b8306e26f02cb15f8263",
+      "review_date": "2026-10-01",
+      "disposition": "All118 original lines read; contained output path, zero-time mutex, captured job accounting and pass bounds, no installer/shell escape, deterministic convergence and hashed attempt record. Busy slot now deferred status, not failed/blocked; current shared reproducible epoch, safe type reuse. No build launched; guarded-job/process-race and actual toolchain behavior remain natural build gate.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113408+00:00"
+    },
+    "verify_full_pdf.py": {
+      "actual_full_read": true,
+      "sha256": "8e945fcbcc8b3d7564131732fd3c6329e348d5e153887ec09b633d78a5012123",
+      "review_date": "2026-10-01",
+      "disposition": "All143 lines read: exact prepared/attempt/last stable PDF hashes, passes/bibtex, undefined refs/citations, page count/log, A4/no encryption, embedded fonts, exact manual visual record with first/middle/last and>=10 pages/content classes, exact reviewed missing-character set. No QA receipt generated; must verify new repaired proofs in actual page-inspection scope.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113462+00:00"
+    },
+    "verify_full_reader_public.py": {
+      "actual_full_read": true,
+      "sha256": "c9e07bbabd67f16ff63e746fb9947c96ee44fb852e792ec4f3a90289be2ac4d8",
+      "review_date": "2026-10-01",
+      "disposition": "All121 original lines read. Stale interim tag/commit/default receipt removed; explicit exact commit/tag/receipt, current7-asset manifest, complete PDF+EPUB and dynamic manifest hash, expected prerelease flag, anonymous Pages/raw/release byte verification. Optional API digest checked where present. No remote readback executed. Verify raw-path spelling and full-asset integrity gate before eventual use. Fixed case-sensitive rules-mG3i path; exact five core artifacts and locally verified manifest byte/sha rows/checksum text required before remote readback.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113518+00:00"
+    },
+    "package_full_edition.py": {
+      "actual_full_read": true,
+      "sha256": "d218c97489c46aa1196bce9fef486a501708029b8054d391d8a6db4459d88894",
+      "review_date": "2026-10-01",
+      "disposition": "All170 original lines read: contained exact source/target/assets inputs and deterministic validated archive. Added current336 redo/support/decision/normalization evidence and required shared metadata module, current fixedZIP date and stable edition identity; dated historical checkpoints remain historical. Updated canonical status digest after supporting206 correction. No archive/build invoked; full PDF/EPUB gate will be mandatory for requested final edition. Current final gate requires passing722 PDF+EPUB, exact current TeX/HTML/PDF/EPUB and visual/EPUBcheck report hashes, shared edition identity, tableau parser/graph archive inputs.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113577+00:00"
+    },
+    "prepare_full_edition.py": {
+      "actual_full_read": true,
+      "sha256": "a637556605b1fcecb2d3b1cee68876f0e8807097eed7036b9201a7cc8adebf13",
+      "review_date": "2026-10-01",
+      "disposition": "All599 original lines read. Exact722 source order and import/label namespace controls, selectors and build-only layout adjustments reviewed. Shared edition identity/current model credit added; obsolete702 display injection removed because target903 now supplies it. First preparation rejected corrupt566 identifier; translation918 restored literal source name; current722 preparation passed with1718 labels/four documented frozen gaps. No TeX compiled.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113649+00:00"
+    },
+    "build_full_semantic_reader.py": {
+      "actual_full_read": true,
+      "sha256": "ea3dd7c942a55b532492fd5d1dfb8736d36fa791e716d40d37fc94d35d3156ad",
+      "review_date": "2026-10-01",
+      "disposition": "All360 original lines read. Exact prepared source markers, normalized native MathML, proof graphs, font/licensing provenance and byte-based Pandoc cache reviewed. Added shared current identity/model attribution and actual tableau graphs. Current conversion still pending; corrected arrow, modal satisfaction, ellipsis and branch rendering must receive actual visual QA.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113713+00:00"
+    },
+    "build_cumulative_semantic_reader.py": {
+      "actual_full_read": true,
+      "sha256": "866056243dd190c6a2686e1eb2e0543ccc4e0963d2efc376c82cf392e196e5d6",
+      "review_date": "2026-10-01",
+      "disposition": "All2296 original lines read in bounded ranges, recovered output truncation. Current full-edition caller overrides historical299 scope/date metadata. Contained safe_clear/ZIP, source parsers/selectors, math mappings, proof/tableau/diagram linearization, internal links, XHTML/native MathML/font validation and pinned EPUBcheck reviewed. Corrected reduction vs parallel arrows, ascending ellipsis, modal satisfaction symbol and propositional logic-subscript; preserve both proof labels and fail on missing argument or duplicate physical source ID. New tableau parser records ancestry/sibling branches/ellipsis/empty nodes instead of bracket-count depth. Corpus scan parsed69 unselected tableaux443 nodes39 forks; current selected reader62 tableaux. Shared historical299 entry point remains historical and is not run.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113844+00:00"
+    },
+    "record_full_html_checkpoint.py": {
+      "actual_full_read": true,
+      "sha256": "c83aa97adf5262403accf1876b637ab33c398be6ae8de595cd9e71f32559a665",
+      "review_date": "2026-10-01",
+      "disposition": "Full original file read. One-time September28 replay could overwrite current state and fabricate fresh visual/publication evidence from fixed historical observations. Historical main now refuses replay; original dated receipts retained, current actual redo/QA receipts govern. No historical checkpoint replayed.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113907+00:00"
+    },
+    "record_full_reader_checkpoint.py": {
+      "actual_full_read": true,
+      "sha256": "782cbadb5478ecbdd8c999e8a10469ddd4a6adcbec7b70e04b8646ff40895791",
+      "review_date": "2026-10-01",
+      "disposition": "Full original file read. One-time September28 replay could overwrite current state and fabricate fresh visual/publication evidence from fixed historical observations. Historical main now refuses replay; original dated receipts retained, current actual redo/QA receipts govern. No historical checkpoint replayed.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.113959+00:00"
+    },
+    "record_public_full_reader_checkpoint.py": {
+      "actual_full_read": true,
+      "sha256": "64da0bccb436362a5d5deea46ece7a036674e617958e161a12847b90452d9ec1",
+      "review_date": "2026-10-01",
+      "disposition": "Full original file read. One-time September28 replay could overwrite current state and fabricate fresh visual/publication evidence from fixed historical observations. Historical main now refuses replay; original dated receipts retained, current actual redo/QA receipts govern. No historical checkpoint replayed.",
+      "current_hash_checked_utc": "2026-10-01T14:34:39.114018+00:00"
+    },
+    "check_source_draft.py": {
+      "actual_full_read": false,
+      "audit_complete_for_current_structural_gate": true,
+      "sha256": "9c597fce212ed7a68b437126bccd8bbaaeb24a0148a35a8546f08c516365696f",
+      "review_date": "2026-10-01",
+      "method": "Core and relevant repairs read; all477 main-loop AST statements indexed; all722 inputs reject four independent unexpected math/reference/environment/token deltas in memory; original files untouched.",
+      "receipt": "evidence/GPT6_SOL_REDO_SOURCE_CHECKER_GATES_CHECK.json",
+      "limits": "Whole-unit math multiset parity does not certify position, prose or proof correctness. No new literal read of every historical line is claimed. Historical findings require separate semantic disposition."
+    }
+  },
+  "supporting_scripts": {
+    "build_translation_decision_log.py": {
+      "actual_current_full_read": true,
+      "historical_script_snapshot": "redo-evidence/build_translation_decision_log-before.py",
+      "sha256": "968564cd39233c53579a64aa342cfd4dd8bf02e1cec7e5dc19d735d18da6e146",
+      "retired_static_data": "Unsupported alternatives not exported as historical decisions; original retained.",
+      "verification": "447 choices and46144 literal occurrences independently verified against current722 byte spans and canon ledger; no fresh authority or page retrieval claimed."
+    },
+    "edition_metadata.py": {
+      "actual_full_read": true,
+      "sha256": "a86a661dd19f7c8f2109e919a02a1d4fe19767bfa35310f110c732f738bc8fc6",
+      "disposition": "Current fixed2026-10-01 date, epoch, frozen source and review provenance; remaining production consumers must be updated after actual audit."
+    },
+    "reader_tableau.py": {
+      "actual_full_read": true,
+      "sha256": "a24d98e670de88f703472f577b6e93e7a0614a46352b4cf429b48bb21b684e20",
+      "disposition": "Authored/reviewed entire parser; corpus topology validation and actual visual QA remain distinct."
+    },
+    "reader_diagrams.py": {
+      "actual_current_full_read": true,
+      "sha256": "87e292e3a0d79b39898b74c82a182268ee2516e8c297fd8fa59df9f873b041ae",
+      "disposition": "Entire current source authored and reviewed; actual renderer/graph receipts and manual visual approval remain separate."
+    },
+    "render_reader_visual_probes.cjs": {
+      "actual_current_full_read": true,
+      "sha256": "6a3a5ebf4db8ad059656bb464cf4b6ff8e29643f21fe0a3bff6666098ccf9ad5",
+      "disposition": "Entire current source authored and reviewed; actual renderer/graph receipts and manual visual approval remain separate."
+    }
+  },
+  "production_script_count": 15
+}

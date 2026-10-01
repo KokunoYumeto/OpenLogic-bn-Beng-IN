@@ -13,6 +13,7 @@ import pathlib
 import re
 
 import build_cumulative_semantic_reader as reader
+from edition_metadata import EDITION_DATE, metadata
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
 BUILD = REPO / "build/full-edition"
@@ -145,6 +146,7 @@ def main():
     status = json.loads((REPO / "evidence/DRAFT_STATUS.json").read_text(encoding="utf-8"))
     assert len(rows) == status["draft_scope"]["translated_count"] == 722
     assert digest(MANIFEST) == reader.MANIFEST_SHA256
+    assert status["current_checks"]["segment_index_sha256"] == digest(REPO / "evidence/SEGMENT_CANON_USE.jsonl")
     checks = {r["unit_id"]: r for r in status["current_checks"]["unit_checks"]}
     order = edition_order(rows)
     units = {}
@@ -244,6 +246,18 @@ def main():
             raise RuntimeError(f"{uid}: token expansion failed; examples {fragments[-5:]}") from exc
         raw = reader.literalize_string_commands(raw)
         raw = raw.replace("!!", r"\string!\string!")
+        # fontspec's bold text math alphabet has no legacy accent slot ^^V.
+        # Put the bar outside that alphabet so distinct Q/bar-Q and T/bar-T
+        # sets retain their visible accent in the XeLaTeX edition.
+        raw, theory_accent_count = re.subn(
+            r"\\Th\{\\bar\s*(?:([A-Za-z])|\{([A-Za-z])\})\}",
+            lambda m: r"\overline{\Th{" + (m[1] or m[2]) + "}}", raw,
+        )
+        if theory_accent_count:
+            reader_adjustments.append({
+                "unit_id": uid, "kind": "bold_theory_accent", "occurrences": theory_accent_count,
+                "action": "বোল্ড অক্ষরের বাইরে সমার্থক উপরিরেখা; Q ও bar-Q এবং T ও bar-T-এর পার্থক্য রক্ষা, মূল বাংলা ও ইংরেজি অপরিবর্তিত।",
+            })
         if uid == "OLP-0365":
             old_path = r"\texttt{lambda-calculus/syntax/beta.tex}"
             assert raw.count(old_path) == 1
@@ -260,13 +274,9 @@ def main():
                                        "action": "সংশোধন-টীকায় উদ্ধৃত আর্গুমেন্টহীন ম্যাক্রো-নামটি গণিত হিসেবে সক্রিয় না করে কোডরূপে দেখানো হয়েছে।"})
         if uid == "OLP-0702":
             old = r"\UnaryInf$!D, !C \fCenter !E, !C$" + "\n" + r"\]"
-            assert raw.count(old) == 1
-            note = (r"\par\noindent\textnormal{\small পাঠক-টীকা: হিমায়িত উৎসে এই "
-                    r"সংক্ষিপ্ত প্রমাণটির শেষে \texttt{\textbackslash DisplayProof} অনুপস্থিত। "
-                    r"উৎসে দেওয়া অনুমান ও সিদ্ধান্তগুলি দৃশ্যমান করতে প্রদর্শন-নির্দেশটি যোগ করা হয়েছে।}\par")
-            raw = raw.replace(old, old[:-2] + r"\DisplayProof" + "\n" + r"\]" + "\n" + note)
-            reader_adjustments.append({"unit_id": uid, "source_path": row["source_path"],
-                                       "action": "একটি সংক্ষিপ্ত প্রমাণে উৎসের অনুপস্থিত DisplayProof নির্দেশ যোগ করা হয়েছে; কোনো অনুমান, সিদ্ধান্ত বা বিধি বদলানো হয়নি।"})
+            # BN-SRC-903 now repairs this in the target source itself.
+            corrected = old[:-2] + r"\DisplayProof" + "\n" + r"\]"
+            assert raw.count(old) == 0 and raw.count(corrected) == 1
         if uid == "OLP-0660":
             # This source fragment inherits its part from the cut-elimination
             # chapter instead of declaring an olfileid of its own.
@@ -318,6 +328,22 @@ def main():
             raw = raw.replace(anchor, anchor + r"\label{" + target + "}", 1)
             ref_only_hypertarget_adjustments.append({"unit_id": uid, "target": target})
 
+        # HTML anchors alone have no printable counter. Restore the real
+        # label belonging to each source ollabel before producing PDF refs.
+        reference_label_count = 0
+        def numbered_anchor(match):
+            nonlocal reference_label_count
+            target = match[1]
+            if (r"\label{" + target + "}") in raw:
+                return match[0]
+            reference_label_count += 1
+            return match[0] + r"\label{" + target + "}"
+        raw = re.sub(r"\\hypertarget\{(olp-\d{4}:[^{}]+)\}\{\}", numbered_anchor, raw)
+        if reference_label_count:
+            reader_adjustments.append({"unit_id": uid, "kind": "numbered_reference_labels",
+                                       "occurrences": reference_label_count,
+                                       "action": "উৎসের সংখ্যাযুক্ত লেবেল ফিরে এসেছে; PDF-এ নাম ও নম্বরসহ সূত্রনির্দেশ।"})
+
         def missing_reference_note(old):
             expected = {f"fol:{method}:prv:prop:provability-lor-{side}"
                         for method in ("seq", "ntd") for side in ("left", "right")}
@@ -368,6 +394,14 @@ def main():
                 return r"\ref{" + link.group(1) + "}"
             return re.sub(r"\\hyperlink\{([^{}]+)\}\{([^{}]+)\}", stable_reference, match.group(0))
         raw = re.sub(r"(?m)^\\begin\{proof\}\[[^\n]*\]", proof_title, raw)
+        raw, numbered_reference_count = re.subn(
+            r"\\hyperlink\{(olp-\d{4}:[^{}]+)\}\{দেখুন\}",
+            lambda m: r"\cref{" + m[1] + "}", raw,
+        )
+        if numbered_reference_count:
+            reader_adjustments.append({"unit_id": uid, "kind": "numbered_reference_text",
+                                       "occurrences": numbered_reference_count,
+                                       "action": "সাধারণ দেখুন-এর বদলে একই লক্ষ্যযুক্ত স্বয়ংক্রিয় সংখ্যাযুক্ত সূত্রনির্দেশ।"})
         for heading in (h for h in heading_options if h["unit_id"] == uid):
             command = {"olsection": "section", "olchapter": "chapter", "olpart": "part"}[heading["macro"]]
             long = reader.replace_tokens(heading["long_title"])
@@ -483,6 +517,22 @@ def main():
 \renewcommand{\bibname}{গ্রন্থপঞ্জি}
 \linespread{1.16}
 \begin{document}
+\RenewDocumentCommand\TAss{}{\text{অনুমান}}
+\crefname{thm}{উপপাদ্য}{উপপাদ্যগুলি}\Crefname{thm}{উপপাদ্য}{উপপাদ্যগুলি}
+\crefname{ex}{উদাহরণ}{উদাহরণগুলি}\Crefname{ex}{উদাহরণ}{উদাহরণগুলি}
+\crefname{defn}{সংজ্ঞা}{সংজ্ঞাগুলি}\Crefname{defn}{সংজ্ঞা}{সংজ্ঞাগুলি}
+\crefname{lem}{সহায়ক উপপাদ্য}{সহায়ক উপপাদ্যগুলি}\Crefname{lem}{সহায়ক উপপাদ্য}{সহায়ক উপপাদ্যগুলি}
+\crefname{prop}{প্রস্তাব}{প্রস্তাবগুলি}\Crefname{prop}{প্রস্তাব}{প্রস্তাবগুলি}
+\crefname{prob}{অনুশীলন}{অনুশীলনগুলি}\Crefname{prob}{অনুশীলন}{অনুশীলনগুলি}
+\crefname{rem}{মন্তব্য}{মন্তব্যগুলি}\Crefname{rem}{মন্তব্য}{মন্তব্যগুলি}
+\crefname{cor}{অনুসিদ্ধান্ত}{অনুসিদ্ধান্তগুলি}\Crefname{cor}{অনুসিদ্ধান্ত}{অনুসিদ্ধান্তগুলি}
+\crefname{enumi}{দফা}{দফাগুলি}\Crefname{enumi}{দফা}{দফাগুলি}
+\crefname{enumii}{দফা}{দফাগুলি}\Crefname{enumii}{দফা}{দফাগুলি}
+\crefname{chapter}{অধ্যায়}{অধ্যায়গুলি}\Crefname{chapter}{অধ্যায়}{অধ্যায়গুলি}
+\crefname{section}{অনুচ্ছেদ}{অনুচ্ছেদগুলি}\Crefname{section}{অনুচ্ছেদ}{অনুচ্ছেদগুলি}
+\crefname{figure}{চিত্র}{চিত্রগুলি}\Crefname{figure}{চিত্র}{চিত্রগুলি}
+\crefname{table}{সারণি}{সারণিগুলি}\Crefname{table}{সারণি}{সারণিগুলি}
+\crefname{equation}{সমীকরণ}{সমীকরণগুলি}\Crefname{equation}{সমীকরণ}{সমীকরণগুলি}
 % open-logic.sty selects English at begin-document, restoring Babel's
 % default captions after the preamble assignments above.
 \renewcommand{\contentsname}{সূচিপত্র}
@@ -498,11 +548,12 @@ def main():
 সম্পূর্ণ ৭২২-ইউনিট উৎসসংস্করণ\par
 \vfill
 এআই-সহায়ক অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনা\par
-OpenAI Codex: GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort\par
+OpenAI Codex: GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-এর পুনঃপর্যালোচনা; Ultra effort\par
 স্বাধীন মানব-পর্যালোচনা দাবি করা হচ্ছে না।\par
 \end{titlingpage}
 \tableofcontents
 """
+    preamble = preamble.replace(r"\end{titlingpage}", EDITION_DATE + r"\par" + "\n" + r"\end{titlingpage}", 1)
     row_by_id = {row["unit_id"]: row for row, _ in transformed}
     text_by_id = {row["unit_id"]: text for row, text in transformed}
     id_by_path = {row["source_path"]: row["unit_id"] for row in order}
@@ -551,13 +602,14 @@ OpenAI Codex: GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort\par
     parts.append(r"""
 \nocite{Frege1953,Peter1967}
 \bibliographystyle{plainnat}
-\bibliography{../../upstream/bib/open-logic}
+\bibliography{../../bn-Beng-IN/bib/open-logic}
 \end{document}
 """)
     tex = BUILD / "openlogic-bn-Beng-IN-complete.tex"
     tex.write_text("\n".join(parts), encoding="utf-8", newline="\n")
     receipt = {
         "schema": "openlogic-bn-full-edition-preparation/1",
+        "edition_identity": metadata(),
         "source_revision": reader.SOURCE_REVISION,
         "source_manifest_sha256": digest(MANIFEST),
         "draft_status_sha256": digest(REPO / "evidence/DRAFT_STATUS.json"),
@@ -584,6 +636,8 @@ OpenAI Codex: GPT-5.6 Sol এবং GPT-6 Sol; Ultra effort\par
         "ref_only_hypertarget_adjustments": ref_only_hypertarget_adjustments,
         "chapter_range_reference_adjustments": chapter_range_reference_adjustments,
         "bibliography_nested_citation_support": ["Frege1953", "Peter1967"],
+        "bibliography": {"path": reader.BIB_PATH.relative_to(REPO).as_posix(),
+                         "sha256": digest(reader.BIB_PATH)},
         "tabular_spacing_adjustments": tabular_spacing_adjustments,
         "overfull_path_adjustments": overfull_path_adjustments,
         "status": "prepared; compilation, semantic HTML and visual QA pending",

@@ -1,0 +1,28 @@
+{
+  "unit_id": "OLP-0678",
+  "targets": [
+    {
+      "unit_id": "OLP-0678",
+      "path": "bn-Beng-IN/content/proof-theory/normalization/translations.tex",
+      "sha256": "0b27ed5c64b4c4f92eb7a3e46fab2c96e067334ad63a6a5e8278322574120953"
+    }
+  ],
+  "target_sha256": "0b27ed5c64b4c4f92eb7a3e46fab2c96e067334ad63a6a5e8278322574120953",
+  "findings": [
+    883,
+    884,
+    885,
+    886,
+    887
+  ],
+  "full_bilingual_actual_read": true,
+  "review_record": "evidence/REDO_GPT6_SOL_NORMAL_TRANSLATIONS_2026-09-30.md",
+  "counterexamples": [
+    "shared x conjunction projection/implication normal derivation",
+    "shared z implication continuation",
+    "nonempty delta1 with empty delta2 continuation",
+    "normal negation-elimination/FalseInt subformula exception"
+  ],
+  "source_unchanged": true,
+  "overall_status": "pending_registration_and_rebuild"
+}

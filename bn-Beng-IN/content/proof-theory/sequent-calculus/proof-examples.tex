@@ -106,7 +106,11 @@ $!C \land !D$ !!{formula}টিকে
 \UnaryInf$!D, !C \fCenter !C$
 \RightLabel{\RightR{\Weakening}}
 \UnaryInf$!D, !C \fCenter !E, !C$
+\DisplayProof
 \]
+% BN-SRC-903 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-903):} এই ছোট প্রমাণবৃক্ষটি দেখানোর নির্দেশ উৎসে বাদ পড়েছে; বৃক্ষের শেষে প্রদর্শন-নির্দেশ যোগ করা হয়েছে।}
+% BN-SRC-903 TARGET-CORRECTION-END
 সব মিলিয়ে \Log{G1c}-তে
 নিচের !!a{proof} পাই:
 \[
@@ -160,7 +164,7 @@ $\Delta = \{!E\}$), $!C$
 আণবিক হলেই কেবল এটি
 \emph{সত্যিই} স্বতঃসিদ্ধ।
 আমাদের প্রমাণখণ্ডটি \Log{G3c}-তে
-পূর্ণ প্রমাণ হবে কেবল যদি
+অবশ্যই পূর্ণ প্রমাণ হবে যদি
 $!C$, $!D$ ও $!E$
 আণবিক !!{formula}s হয়।
 
@@ -198,10 +202,10 @@ $!A$-র গভীরতা~$\depth{!A}$-র
 যেকোনো পদ~$t$-এর জন্য
 $\depth{A(x)} = \depth{A(t)}$
 প্রমাণ করা কঠিন নয়। আমাদের
-জন্য গুরুত্বপূর্ণ হলো, প্রতিটি
-বিধিতে মুখ্য !!{formula}-র
-গভীরতা সক্রিয় !!{formula}s-এর
-গভীরতার চেয়ে বেশি। যেমন:
+জন্য গুরুত্বপূর্ণ হলো, যৌক্তিক বিধিতে মুখ্য !!{formula} থেকে
+উন্মোচিত উপসূত্র বা পরিমাণসূচক-দৃষ্টান্ত হিসেবে আসা !!{formula}s-এর
+গভীরতা কম; প্রসঙ্গে থেকে যাওয়া সূত্রগুলির গভীরতা
+এভাবে কমতে হয় না। যেমন:
 \begin{align*}
 \depth{P(x)} = \depth{P(a)} & = 0,\\
 \depth{\lforall[x][P(x)]} & = 1,\\
@@ -211,6 +215,9 @@ $\depth{A(x)} = \depth{A(t)}$
 $\depth{!A}$-র ওপর
 আরোহে নানা ফল প্রমাণ
 করতে পারি; যেমন:
+% BN-SRC-902 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-902):} গভীরতা কমার দাবিটি যৌক্তিক বিধিতে উন্মোচিত উপসূত্র ও পরিমাণসূচকের দৃষ্টান্তের জন্য। সংকোচনে সক্রিয় ও মুখ্য সূত্র একই; G3c-র কিছু পরিমাণসূচক-বিধিতেও মুখ্য সূত্রের একটি অনুলিপি থাকে। তাই সব বিধির সব সক্রিয় সূত্রের জন্য উৎসের সর্বজনীন দাবি প্রযোজ্য নয়।}
+% BN-SRC-902 TARGET-CORRECTION-END
 
 \begin{prop}\ollabel{prop:G1c-axioms}
 যেকোনো~$!A$-র জন্য
@@ -272,19 +279,29 @@ $\Log{G1c}$-তে এমন !!a{proof}
   \AxiomC{}
   \RightLabel{$\pi_1$}
   \Deduce$!B \fCenter !B$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!B, !C \fCenter !B$
   \RightLabel{\LeftR{\land}}
-  \UnaryInf$!B \land !C \fCenter !B$
+  \UnaryInf$!B \land !C, !C\fCenter !B$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C, !B \land !C \fCenter !B$
   \AxiomC{}
   \RightLabel{$\pi_2$}
   \Deduce$!C \fCenter !C$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!B, !C \fCenter !C$
   \RightLabel{\LeftR{\land}}
-  \UnaryInf$!B \land !C \fCenter !C$
+  \UnaryInf$!B \land !C, !C \fCenter !C$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C, !B \land !C \fCenter !C$
   \RightLabel{\RightR{\land}}
-  \BinaryInf$!B \land !C \fCenter !B \land !C$
+  \BinaryInf$!B \land !C, !B \land !C \fCenter !B \land !C$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$!B \land !C \fCenter !B \land !C$
   \DisplayProof
   \]
 % BN-SRC-641 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-641):} G1c-র \(\land\)-পরিচয় প্রমাণের উৎসবৃক্ষে প্রথম \(\pi_1\) সিদ্ধান্তে বাড়তি কমা, বাঁ-প্রসঙ্গে অযৌক্তিক পুনরাবৃত্তি এবং শেষে ভুল \(B\land C\Sequent B\) ছিল। G1c-র দুটি বিকল্প \(\LeftR{\land}\) ও একটি \(\RightR{\land}\) দিয়ে একই দুই আরোহী প্রমাণ থেকে বৈধ \(B\land C\Sequent B\land C\) বৃক্ষ দেওয়া হয়েছে।}
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-641):} উৎসের দুই শাখায় দ্বিগুণ বাঁ-প্রসঙ্গ বৈধ। যৌগ-ডান বিধির সিদ্ধান্তেও সেই দ্বিগুণ প্রসঙ্গ রাখতে হয়েছে; শেষ সংকোচনের ডান পাশে ভুল একক যৌগাংশের বদলে পুরো যৌগ রাখা হয়েছে। বাড়তি কমা বাদ গেছে। বৈধ মধ্যবর্তী ধাপগুলি অক্ষত আছে।}
 % BN-SRC-641 TARGET-CORRECTION-END
 
   এবার ধরি $!A \ident \lforall[x][!B(x)]$।

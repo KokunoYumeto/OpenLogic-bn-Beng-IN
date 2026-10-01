@@ -1,0 +1,91 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_BIOGRAPHIES_OPENING_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/history/history.tex",
+      "sha256": "2088e58c3eb6d22ef97ca7d46be0053063fc1b94a06a6e42c78be69bad49493b"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/biographies/biographies.tex",
+      "sha256": "27f578425d89fd52dfba616b96379911c799408b4b8274c9496ed6b43d2115e4"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/biographies/georg-cantor.tex",
+      "sha256": "f79a7b644726e22198c081426fb839395395f3a7198ffa88930f959928ad7b28"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/biographies/alonzo-church.tex",
+      "sha256": "c390707208438ead45c76661bc982e3baaea17a25c13029c5003a831107c97a1"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/biographies/gerhard-gentzen.tex",
+      "sha256": "0c00a3ab6e91888d6a044d9f49e71820f9eec8966f45c4eceeff24d4e0c30808"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/biographies/kurt-goedel.tex",
+      "sha256": "3acd83a91455dd4a4ef8d12327ea6f93f08877b3b4c912fd349eeefaa26316e2"
+    },
+    {
+      "path": "bn-Beng-IN/content/history/biographies/emmy-noether.tex",
+      "sha256": "cb0d9dad0d3f6c9e4c1f35d5c9754eeebbf6b68446488b37adf3f1ee6a645664"
+    }
+  ],
+  "external_reading": [
+    {
+      "title": "Dauben, Georg Cantor and the battle for transfinite set theory",
+      "url": "https://www.ikhebeenvraag.be/mediastorage/FSDocument/84/Dauben-Cantor.pdf",
+      "read_scope": "PDF পৃ.1–3 ও7–9-এর প্রাসঙ্গিক অংশ; পুরো17 নয়; doctorate1868 typo নয়"
+    },
+    {
+      "title": "Enderton, In memoriam: Alonzo Church 1903–1995",
+      "doi": "10.1017/S1079898600008040",
+      "read_scope": "মুদ্রিত486–488 সম্পূর্ণ তিন পৃষ্ঠা"
+    },
+    {
+      "title": "Szabó, The Collected Papers of Gerhard Gentzen",
+      "url": "https://api.pageplace.de/preview/DT0400.9780080957746_A24386617/preview-9780080957746_A24386617.pdf",
+      "local_pdf": "redo-evidence/gentzen-szabo-preview-1969.pdf",
+      "sha256": "e6d538e2325c1c015045a48e3027298090a9a0df825cd43b1cbae93ada72842e",
+      "read_scope": "PDF পৃ.7–9, মুদ্রিতvi–viii সম্পূর্ণ; পুরো18 বা সম্পূর্ণ বই নয়"
+    },
+    {
+      "title": "Gentzen I–II journal records",
+      "urls": [
+        "https://link.springer.com/article/10.1007/BF01201353",
+        "https://link.springer.com/article/10.1007/BF01201363"
+      ],
+      "read_scope": "publisher author/year/volume/pages; paywalled পুরো প্রবন্ধ নয়"
+    },
+    {
+      "title": "IAS Gödel records",
+      "urls": [
+        "https://www.ias.edu/scholars/godel",
+        "https://www.ias.edu/kurt-g%C3%B6del-and-institute"
+      ],
+      "read_scope": "degree ও স্থায়ী membership/history metadata; simplified mathematical claim নয়"
+    },
+    {
+      "title": "Collected Works IV preface",
+      "url": "https://academic.oup.com/book/54958/chapter-abstract/422765176",
+      "read_scope": "সম্পাদকদের দৃশ্যমান excerpt; পূর্ণ paywalled preface নয়"
+    },
+    {
+      "title": "Weyl, Memorial address: Emmy Noether",
+      "url": "https://celebratio.org/Noether_E/article/111/",
+      "read_scope": "উপলব্ধ সম্পাদিত পাঠ পূর্ণ পড়া; ellipses-এ বাদ দেওয়া মূল অংশ পড়া নয়"
+    }
+  ],
+  "source_fidelity": "840/846/848 প্রস্তাব বা unresolved, reader-এ extra exposition সরানো।843 PA exposition,847 III–V exposition ও849 infection/date replacement সরানো। বর্তমান minimal fixes ও historical variant পৃথক review-তে।",
+  "পরীক্ষা": {
+    "চার উপাদানের strict partial order": 219,
+    "অশূন্য উপসেটের minimal element": 3285,
+    "progressive predicate": 3504,
+    "minimal-but-not-least example": 1,
+    "Z ideal-এ descending-chain inclusion": 24
+  },
+  "সীমা": "সসীম order-check অসীম ক্রমে DC-র বিকল্প নয়। সাধারণ minimal-counterexample proof ও DC construction পৃথক পর্যালোচিত। Biography ঘটনা primary memoir ও publisher/institution metadata-এ যতটুকু পড়া হয়েছে ততটুকুই বাঁধা; পূর্ণ সব archive বা বই পড়ার দাবি নয়।"
+}

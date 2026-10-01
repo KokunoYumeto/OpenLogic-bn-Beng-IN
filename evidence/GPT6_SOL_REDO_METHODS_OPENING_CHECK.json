@@ -1,0 +1,50 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_METHODS_OPENING_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/methods/methods.tex",
+      "sha256": "e58475fd96a2a909d4d90995dc964bff2b3ab7a2d3a8043ced53ec5a4348283d"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/proofs.tex",
+      "sha256": "659a0a84ca18e947546db7cbcf4e31c08a34aba92362434de16c28d5e1c3e0ff"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/introduction.tex",
+      "sha256": "eda73efb32afbb130fb8de1a19254d6b314232165ad09f2e506d81da23dc07d4"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/starting-proofs.tex",
+      "sha256": "c7a2728db3f2346003b1fcc297f4d4a28a739223f5c332806daca4787fb521a2"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/using-definitions.tex",
+      "sha256": "e6a94dad4f82a66e1e241123f66a9eb4a369bc0ed05998509b2904dfaf599cad"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/inference-patterns.tex",
+      "sha256": "d7932c42639848a6b8dc43187e710a7b31ff5e478149544fd890d46a9f0996fb"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/example-1.tex",
+      "sha256": "80569ffd995ffeb4c1a5c42b05ce6e2179ca7d6986a7c7c0478e44d03d73b8ed"
+    },
+    {
+      "path": "bn-Beng-IN/content/methods/proofs/example-2.tex",
+      "sha256": "ecadc3ae4adaea1b7fb0204b7799673b531468d85c508e0a84994d7c36e6d4c3"
+    }
+  ],
+  "পরীক্ষা": {
+    "দুই দিকের বণ্টন-সমতা": 4096,
+    "উপসেট-পূর্বধারণায় অন্তর-সংযোগ": 81,
+    "দুটি উপসেট থেকে সংযোগের উপসেট": 729,
+    "এক সদস্যের অশূন্য উপসেট-সাক্ষী": 512,
+    "সংযোজন/বিযোজন/ক্ষেত্রবিচারের সত্যমান": 8,
+    "ভিন্ন অস্তিত্ব-সাক্ষীর ব্যতিক্রম": 1
+  },
+  "সীমা": "সসীম পরীক্ষা সাধারণ সেট-পরিচয় বা eigenvariable শর্তের প্রমাণ নয়। সাধারণ সদস্যভিত্তিক দুই দিক, পূর্বধারণার পরিধি, সাক্ষীর নতুন নাম এবং ইচ্ছাকৃত ভুল প্রমাণের ভূমিকা পূর্ণ উৎস-তুলনায় পৃথকভাবে যাচাই করা হয়েছে।"
+}

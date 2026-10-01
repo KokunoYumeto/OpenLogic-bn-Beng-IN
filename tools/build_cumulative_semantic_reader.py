@@ -34,7 +34,7 @@ EPUB_OUTPUT = BUILD / "openlogic-bn-Beng-IN-through-representability.epub"
 STATUS_PATH = REPO / "evidence" / "DRAFT_STATUS.json"
 MANIFEST_PATH = REPO / "evidence" / "FULL_SOURCE_MANIFEST.jsonl"
 CONFIG_PATH = REPO / "upstream" / "open-logic-config.sty"
-BIB_PATH = REPO / "upstream" / "bib" / "open-logic.bib"
+BIB_PATH = REPO / "bn-Beng-IN" / "bib" / "open-logic.bib"
 FONT_REGULAR = REPO / "fonts" / "NotoSerifBengali-Regular.ttf"
 FONT_BOLD = REPO / "fonts" / "NotoSerifBengali-Bold.ttf"
 FONT_LICENSE = REPO / "fonts" / "Noto-fonts-LICENSE.txt"
@@ -52,6 +52,8 @@ FIXED_ZIP_TIME = (2026, 9, 17, 0, 0, 0)
 PRESERVE_MATH_LINKS = False
 MATH_LINK_TARGETS = {}
 PROOF_GRAPH_RECEIPTS = []
+TABLEAU_GRAPH_RECEIPTS = []
+DIAGRAM_GRAPH_RECEIPTS = []
 CURRENT_SOURCE_UNIT = ""
 
 XHTML_NS = "http://www.w3.org/1999/xhtml"
@@ -174,7 +176,7 @@ table{border-collapse:collapse;display:block;max-width:100%;overflow-x:auto} th,
 nav#TOC{border:1px solid #c8cdd0;background:#fafafa;padding:1rem 1.3rem;margin:1.5rem 0 2rem}
 .scope-note,.translationnote,.editorial,.display-prose,.diagram-semantic,.proof-tree-semantic,.tableau-semantic,.derivation-semantic{background:#eef4f6;border-left:4px solid #78909c;padding:.7rem 1rem;margin:1.2rem 0}
 .defn,.defish,.ex,.prop,.thm,.lem,.cor,.prob,.rem{border-left:3px solid #78909c;padding:.35rem 1rem;margin:1.25rem 0}
-.proof{padding:.2rem 1rem;margin:1rem 0}.environment-title{margin:.1rem 0 .5rem}.unit-marker{color:#53636d;font-family:ui-monospace,Consolas,monospace;font-size:.76em;letter-spacing:.04em;margin:1.4rem 0 .2rem}
+.proof{padding:.2rem 1rem;margin:1rem 0}.environment-title{margin:.1rem 0 .5rem}.unit-marker,.unit-resume{color:#53636d;font-family:ui-monospace,Consolas,monospace;font-size:.76em;letter-spacing:.04em;margin:1.4rem 0 .2rem}
 .proof-tree-semantic li,.tableau-semantic li,.derivation-semantic li{margin:.35rem 0}.outside-ref{color:#5a6268}.license-text{white-space:pre-wrap;font-size:.72em;line-height:1.45}
 .diagram-semantic ul{margin-bottom:.2rem}.source-correction{border-left-color:#b06b36}
 @media(max-width:680px){body{margin:0;padding:1rem;font-size:17px}h1{font-size:1.72em}h2{font-size:1.38em}}
@@ -595,7 +597,7 @@ def transform_proof_trees(value: str) -> tuple[str, int]:
 
     def convert(body: str, index: int) -> str:
         lines: list[tuple[str, str]] = []
-        pending_rule = ""
+        pending_labels = []
         stack = []
         graph = []
         roots = []
@@ -616,15 +618,15 @@ def transform_proof_trees(value: str) -> tuple[str, int]:
                 continue
             try:
                 argument, end = parse_required(body, match.end())
-            except ValueError:
-                continue
+            except ValueError as exc:
+                raise ValueError(f"missing {name} argument in {CURRENT_SOURCE_UNIT}") from exc
             cursor = end
             if name in {"RightLabel", "LeftLabel"}:
-                pending_rule = argument.strip().strip("$")
+                pending_labels.append((name, argument.strip().strip("$")))
                 continue
             if name == "DischargeRule":
                 discharge, cursor = parse_required(body, cursor)
-                pending_rule = argument + "^{" + discharge + "}"
+                pending_labels.append((name, argument + "^{" + discharge + "}"))
                 continue
             if name == "insertBetweenHyps":
                 lines.append(("মধ্যবর্তী টীকা", argument))
@@ -642,13 +644,14 @@ def transform_proof_trees(value: str) -> tuple[str, int]:
             if pending_line:
                 kind += "; " + ("দাগহীন পংক্তি" if pending_line == "noLine" else "দ্বৈত দাগ")
                 pending_line = ""
-            if pending_rule:
-                kind += f"; বিধি: ${pending_rule}$"
-                pending_rule = ""
+            labels = list(pending_labels)
+            for side, label in labels:
+                kind += "; " + ("বাঁ-লেবেল" if side == "LeftLabel" else "বিধি") + ": $" + label + "$"
+            pending_labels.clear()
             lines.append((kind, argument))
             stack.append(len(lines))
             graph.append({"line": len(lines), "source_command": name, "parents": parents,
-                          "formula": argument, "kind": kind})
+                          "formula": argument, "kind": kind, "labels": labels})
         require(lines, f"empty proof tree {index + 1}")
         require(len(stack) <= 1, f"proof tree has {len(stack)} unjoined roots in {CURRENT_SOURCE_UNIT}")
         roots.extend(stack)
@@ -687,51 +690,8 @@ def transform_proof_trees(value: str) -> tuple[str, int]:
 
 
 def transform_tableaux(value: str) -> tuple[str, int]:
-    total = 0
-    for environment in ("oltableau", "tableau"):
-        def convert(body: str, index: int, environment: str = environment) -> str:
-            entries: list[str] = []
-            position = 0
-            while True:
-                match = re.search(r"\\sFmla(?![A-Za-z@])", body[position:])
-                if not match:
-                    break
-                start = position + match.start()
-                cursor = position + match.end()
-                sign, cursor = parse_required(body, cursor)
-                formula, cursor = parse_required(body, cursor)
-                optional, cursor = parse_optional(body, cursor)
-                next_match = re.search(r"\\sFmla(?![A-Za-z@])", body[cursor:])
-                end = cursor + next_match.start() if next_match else len(body)
-                suffix = body[cursor:end]
-                prefix = body[:start]
-                depth = max(1, prefix.count("[") - prefix.count("]"))
-                justification = ""
-                just_match = re.search(r"just\s*=\s*(\{(?:[^{}]|\{[^{}]*\})*\}|\\[A-Za-z@]+)", suffix, re.S)
-                if just_match:
-                    justification = just_match.group(1).strip().strip("{}")
-                closed = bool(re.search(r"\bclose\b", suffix))
-                detail = rf"শাখা-স্তর {depth}: ${sign}\;{formula}$"
-                if optional:
-                    detail += rf" (পংক্তি ${optional}$)"
-                if justification:
-                    detail += rf"; কারণ ${justification}$"
-                if closed:
-                    detail += "; শাখা বন্ধ"
-                entries.append(detail)
-                position = cursor
-            require(entries, f"empty {environment} environment {index + 1}")
-            items = "\n".join(rf"\item {entry}" for entry in entries)
-            return (
-                "\n\\begin{tableau-semantic}\n"
-                "\\textbf{ট্যাবলোর পুনঃপ্রবাহযোগ্য শাখা-পাঠ}\n"
-                "\\begin{enumerate}\n" + items + "\n\\end{enumerate}\n"
-                "\\end{tableau-semantic}\n"
-            )
-
-        value, count = transform_environments(value, environment, convert)
-        total += count
-    return value, total
+    from reader_tableau import transform
+    return transform(value)
 
 
 def split_tex_rows(body: str) -> list[str]:
@@ -769,44 +729,7 @@ def clean_tikz_text(value: str) -> str:
 
 
 def transform_diagrams(value: str) -> tuple[str, int]:
-    def convert(body: str, index: int) -> str:
-        nodes: list[str] = []
-        for match in re.finditer(
-            r"\\(?:node|path\s+node)(?:\[[^\]]*\])?(?:\s+at)?\s*(?:\([^)]*\))?\s*\{",
-            body,
-        ):
-            try:
-                label, _ = parse_delimited(body, match.end() - 1, "{", "}")
-            except ValueError:
-                continue
-            label = clean_tikz_text(label)
-            if label:
-                nodes.append(label)
-        drawing_steps = []
-        for match in re.finditer(r"\\(clip|filldraw|fill|shade|path|draw)\b(.*?);", body, re.S):
-            command, geometry = match.group(1), match.group(2)
-            if command == "path" and re.match(r"\s*node\b", geometry):
-                continue
-            description = clean_tikz_text(geometry)
-            if description:
-                before = body[:match.start()]
-                scope_depth = len(re.findall(r"\\begin\{scope\}", before)) - len(re.findall(r"\\end\{scope\}", before))
-                scope = f" (স্থানীয় পরিসর {scope_depth})" if scope_depth else ""
-                label = {"clip": "ছাঁটের সীমানা", "filldraw": "ভরাট ও অঙ্কিত অঞ্চল",
-                         "fill": "ভরাট অঞ্চল", "shade": "ছায়াযুক্ত অঞ্চল",
-                         "path": "পথ বা নির্মাণ", "draw": "সংযোগ বা নির্দেশ"}[command]
-                drawing_steps.append(f"{label}{scope}: {description}")
-        entries = [f"শীর্ষ বা লেবেল: {entry}" for entry in nodes]
-        entries.extend(drawing_steps)
-        if not entries:
-            entries = ["উৎসচিত্রে কোনো পৃথক পাঠ্য-লেবেল নেই; পার্শ্ববর্তী অনুচ্ছেদ চিত্রটির গাণিতিক ভূমিকা ব্যাখ্যা করে।"]
-        return (
-            "\n\\begin{diagram-semantic}\n\\textbf{চিত্রের পুনঃপ্রবাহযোগ্য পাঠ্যরূপ}\n"
-            "\\begin{itemize}\n"
-            + "\n".join(rf"\item {entry}" for entry in entries)
-            + "\n\\end{itemize}\n\\end{diagram-semantic}\n"
-        )
-
+    from reader_diagrams import convert
     value, count = transform_environments(value, "tikzpicture", convert)
 
     def asset(source: str, position: int) -> tuple[str, int]:
@@ -947,7 +870,7 @@ def normalize_display_environments(value: str) -> str:
 
 
 def special_math_macros(value: str) -> str:
-    def quantifier(symbol: str, unique: bool = False):
+    def quantifier(symbol: str, unique: bool = False, separator: str = r"\,"):
         def callback(source: str, position: int) -> tuple[str, int]:
             if unique:
                 cursor = skip_space(source, position)
@@ -961,13 +884,13 @@ def special_math_macros(value: str) -> str:
             if first is not None:
                 result += " " + first
             if second is not None:
-                result += r"\," + second
+                result += separator + second
             return result, position
         return callback
 
     value = replace_macro(value, "lexists", quantifier(r"\exists", True))
     value = replace_macro(value, "lforall", quantifier(r"\forall"))
-    value = replace_macro(value, "lambd", quantifier(r"\lambda"))
+    value = replace_macro(value, "lambd", quantifier(r"\lambda", separator=r".\,"))
 
     def equality(source: str, position: int) -> tuple[str, int]:
         cursor = skip_space(source, position)
@@ -1001,7 +924,7 @@ def special_math_macros(value: str) -> str:
     value = replace_macro(value, "elemequiv", relation_macro(r"\equiv", r"\not\equiv"))
     value = replace_macro(value, "iso", relation_macro(r"\simeq", r"\not\simeq"))
 
-    def satisfaction(structure_style: str):
+    def satisfaction(structure_style: str, positive=r"\vDash", negative=r"\nvDash"):
         def callback(source: str, position: int) -> tuple[str, int]:
             cursor = skip_space(source, position)
             negated = cursor < len(source) and source[cursor] == "/"
@@ -1016,12 +939,25 @@ def special_math_macros(value: str) -> str:
             left = structure_style.format(structure)
             if assignment is not None:
                 left += ", " + assignment
-            return f"{left} {'\\\\nvDash' if negated else '\\\\vDash'} {formula}".replace("\\\\", "\\"), position
+            return left + " " + (negative if negated else positive) + " " + formula, position
         return callback
 
     value = replace_macro(value, "Sat", satisfaction(r"\mathfrak{{{}}}"))
-    value = replace_macro(value, "mSat", satisfaction(r"\mathfrak{{{}}}"))
-    value = replace_macro(value, "pSat", satisfaction(r"\mathfrak{{{}}}"))
+    value = replace_macro(value, "mSat", satisfaction(r"\mathfrak{{{}}}", r"\Vdash", r"\nVdash"))
+    def propositional_satisfaction(source: str, position: int) -> tuple[str, int]:
+        cursor = skip_space(source, position)
+        negated = cursor < len(source) and source[cursor] == "/"
+        if negated:
+            position = cursor + 1
+        assignment, position = parse_required(source, position)
+        formula, position = parse_required(source, position)
+        logic, position = parse_optional(source, position)
+        relation = r"\nvDash" if negated else r"\vDash"
+        if logic is not None:
+            relation += "_{" + logic + "}"
+        return r"\mathfrak{" + assignment + "} " + relation + " " + formula, position
+
+    value = replace_macro(value, "pSat", propositional_satisfaction)
 
     def value_macro(source: str, position: int) -> tuple[str, int]:
         term, position = parse_required(source, position)
@@ -1101,14 +1037,13 @@ def special_math_macros(value: str) -> str:
     ):
         value = replace_macro(value, name, optional_operator(operator, style))
 
-    def optional_arrow(source: str, position: int, double: bool = False) -> tuple[str, int]:
+    def optional_arrow(source: str, position: int, symbol: str) -> tuple[str, int]:
         optional, position = parse_optional(source, position)
-        label = f"^{{{optional}}}" if optional else ""
-        return (r"\Longrightarrow" if double else r"\longrightarrow") + label, position
+        return (r"\overset{" + optional + "}{" + symbol + "}" if optional else symbol), position
 
-    value = replace_macro(value, "redone", lambda source, pos: optional_arrow(source, pos))
-    value = replace_macro(value, "red", lambda source, pos: optional_arrow(source, pos, True))
-    value = replace_macro(value, "redpar", lambda source, pos: optional_arrow(source, pos, True))
+    value = replace_macro(value, "redone", lambda source, pos: optional_arrow(source, pos, r"\longrightarrow"))
+    value = replace_macro(value, "red", lambda source, pos: optional_arrow(source, pos, r"\twoheadrightarrow"))
+    value = replace_macro(value, "redpar", lambda source, pos: optional_arrow(source, pos, r"\Longrightarrow"))
 
     def complete_development(source: str, position: int) -> tuple[str, int]:
         optional, position = parse_optional(source, position)
@@ -1156,11 +1091,10 @@ def special_math_macros(value: str) -> str:
         return rf"\mathord{{{predicate}}}({arguments})", position
 
     def object_style(source: str, position: int) -> tuple[str, int]:
-        cursor = skip_space(source, position)
-        if cursor >= len(source) or source[cursor] != "{":
-            return r"\mathsf{Obj}", position
+        # Upstream declares one mandatory TeX argument. A bare character or
+        # control sequence is an argument too; it must not become literal Obj.
         argument, position = parse_required(source, position)
-        return rf"\mathsf{{{argument}}}", position
+        return rf"\mathsfit{{{argument}}}", position
 
     def apply_to_first(source: str, position: int) -> tuple[str, int]:
         style, position = parse_required(source, position)
@@ -1200,7 +1134,7 @@ def special_math_macros(value: str) -> str:
     )
     value = value.replace(r"\pto", r"\rightharpoonup")
     value = value.replace(r"\nicefrac", r"\frac")
-    value = value.replace(r"\iddots", r"\ddots")
+    value = value.replace(r"\iddots", "⋰")
     value = value.replace(r"\TAss", r"\text{অনুমান}")
     value = value.replace(r"\mathexclaim", "!")
     return value
@@ -1489,13 +1423,13 @@ def extract_fixed_macro_preamble(used_names: set[str]) -> str:
     manual = {
         "Struct": r"\newcommand{\Struct}[1]{\mathfrak{#1}}",
         "Lang": r"\newcommand{\Lang}[1]{\mathcal{#1}}",
-        "Obj": r"\newcommand{\Obj}[1]{\mathsf{#1}}",
+        "Obj": r"\newcommand{\Obj}[1]{\mathsfit{#1}}",
         "pAssign": r"\newcommand{\pAssign}[1]{\mathfrak{#1}}",
         "Gn": r"\newcommand{\Gn}[1]{\ulcorner #1\urcorner}",
         "gn": r"\newcommand{\gn}[1]{\ulcorner #1\urcorner}",
         "pto": r"\newcommand{\pto}{\rightharpoonup}",
         "lcm": r"\newcommand{\lcm}{\operatorname{lcm}}",
-        "iddots": r"\newcommand{\iddots}{\ddots}",
+        "iddots": r"\newcommand{\iddots}{⋰}",
         "TAss": r"\newcommand{\TAss}{\text{অনুমান}}",
         "formula": r"\newcommand{\formula}[1]{#1}",
         "DischargeRule": r"\newcommand{\DischargeRule}[2]{{#1}^{#2}}",
@@ -1685,7 +1619,8 @@ def postprocess_html(pandoc_html: Path, environment_markers: dict[str, dict], *,
                      edition_title: str = "ওপেন লজিক: বাংলা (ভারত) — OLP-0300 পর্যন্ত",
                      edition_subtitle: str = "২৯৯টি অনূদিত উৎস এককের পুনঃপ্রবাহযোগ্য পাঠ · OLP-0300 পর্যন্ত",
                      strict_links: bool = False,
-                     chapter_level: int = 1, section_level: int = 2) -> tuple[Path, dict]:
+                     chapter_level: int = 1, section_level: int = 2,
+                     paired_reference_targets=()) -> tuple[Path, dict]:
     soup = BeautifulSoup(pandoc_html.read_text(encoding="utf-8"), "html.parser")
     require(soup.html is not None and soup.head is not None and soup.body is not None, "Pandoc HTML shell missing")
     soup.html["lang"] = LANGUAGE
@@ -1722,6 +1657,15 @@ def postprocess_html(pandoc_html: Path, environment_markers: dict[str, dict], *,
         parent.string = uid
         parent["class"] = list(dict.fromkeys(parent.get("class", []) + ["unit-marker"]))
         parent["data-source-unit"] = uid
+
+    for text_node in list(soup.find_all(string=re.compile(r"UNITRESUME-OLP-\d{4}"))):
+        match = re.search(r"UNITRESUME-(OLP-\d{4})", str(text_node))
+        require(match is not None, "malformed resumed source marker")
+        uid = match[1]
+        parent = text_node.parent
+        parent.string = uid + ": উৎসপাঠের পরের অংশ"
+        parent["class"] = list(dict.fromkeys(parent.get("class", []) + ["unit-resume"]))
+        parent["data-source-resume"] = uid
 
     chapter = 0
     section = 0
@@ -1761,6 +1705,15 @@ def postprocess_html(pandoc_html: Path, environment_markers: dict[str, dict], *,
             paragraph["class"] = list(dict.fromkeys(paragraph.get("class", []) + ["environment-title"]))
         for anchor in element.find_all(id=True):
             label_numbers[anchor["id"]] = f"{ENV_NAMES[environment]} {number}"
+            # These source labels identify individual term-formation clauses,
+            # not the definition containing them. Preserve their distinct
+            # visible clause numbers in the reflowable reader.
+            if re.search(r"^olp-0357:.*:defn:term-(?:var|abs|app)$", anchor["id"]):
+                item = anchor.find_parent("li")
+                require(item is not None and item.parent.name == "ol",
+                        "term-formation clause is outside its source list")
+                ordinal = item.parent.find_all("li", recursive=False).index(item) + 1
+                label_numbers[anchor["id"]] = f"দফা ({ordinal})"
 
     for div in soup.find_all("div"):
         classes = set(div.get("class", []))
@@ -1787,10 +1740,29 @@ def postprocess_html(pandoc_html: Path, environment_markers: dict[str, dict], *,
         mtext.attrs.pop("mathvariant", None)
         bengali_math_text_nodes += 1
 
+    # The PDF needs six adjacent hypertarget/label pairs for automatic refs.
+    # Pandoc emits an empty anchor and empty data-label span for each pair.
+    # Coalesce only those explicitly supplied, same-container pairs.
+    coalesced = []
+    for identifier in sorted(paired_reference_targets):
+        pair = soup.find_all(id=identifier)
+        require(len(pair) == 2, "expected reference anchor pair: " + identifier)
+        label = next((node for node in pair if node.name == "span"
+                      and node.get("data-label") == identifier), None)
+        require(label is not None and not label.get_text(strip=True) and not label.find_all(True),
+                "reference label span contains content: " + identifier)
+        anchor = next(node for node in pair if node is not label)
+        require(not anchor.get_text(strip=True) and not anchor.find_all(True)
+                and anchor.find_parent("div") is label.find_parent("div"),
+                "reference anchor pair differs: " + identifier)
+        label.decompose()
+        coalesced.append(identifier)
     used_ids: set[str] = set()
     for element in soup.find_all(id=True):
         identifier = element["id"]
         if identifier in used_ids:
+            require(not re.match(r"(?:unit-)?olp-\d{4}(?::|$)", identifier),
+                    "duplicate physical source target: " + identifier)
             base = identifier
             counter = 2
             while f"{base}-{counter}" in used_ids:
@@ -1895,6 +1867,7 @@ def postprocess_html(pandoc_html: Path, environment_markers: dict[str, dict], *,
         "broken_internal_links": 0,
         "scripts": 0,
         "offline_fonts_embedded": True,
+        "coalesced_reference_targets": coalesced,
     }
     return epub_source, receipt
 

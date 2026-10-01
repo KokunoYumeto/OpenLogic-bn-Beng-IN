@@ -28,12 +28,18 @@
 ভিত্তিতে সংজ্ঞায়িত করি।
 
 এখানে পরিমাণসূচকের ক্ষেত্রটি একটু কঠিন, কারণ পরিমাণিত কোনো
-!!{formula}-এর অব্যবহিত !!{subformula}-তে মুক্ত !!{variable} থাকে,
+!!{formula}-এর অব্যবহিত !!{subformula}-তে মুক্ত !!{variable} থাকতে পারে,
 কিন্তু !!{structure}s, !!{variable}s-এর !!{value}s নির্দিষ্ট করে না।
 এই অসুবিধা সামলাতে আমরা \emph{চলরাশি-আরোপ} প্রবর্তন করি এবং পরিতৃপ্তিকে
 শুধু কোনো !!a{structure}-এর সাপেক্ষে নয়, বরং কোনো !!a{structure} এবং
 !!a{variable} আরোপ উভয়ের সাপেক্ষে সংজ্ঞায়িত করি।
 \end{explain}
+% BN-SRC-911 TARGET-CORRECTION-BEGIN
+% Bengali x-variant wording repaired in definition and reminder; all other variables agree, x may also agree.
+% BN-SRC-911 TARGET-CORRECTION-END
+% BN-SRC-912 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-912):} পরিমাণিত সূত্রে পরিমাণকের চলরাশিটি অব্যবহিত উপসূত্রে অনুপস্থিতও হতে পারে। তাই মুক্ত চল থাকা আবশ্যক বলা হয়নি।}
+% BN-SRC-912 TARGET-CORRECTION-END
 
 \begin{defn}[চলরাশি-আরোপ]
 !!a{structure}~$\Struct{M}$-এর জন্য \emph{চলরাশি-আরোপ}~$s$ হলো এমন
@@ -69,8 +75,8 @@ $t$ যদি $\Lang L$ ভাষার একটি পদ, $\Struct M$ যদ�
 \begin{defn}[$x$-বিকল্প]
 $s$ যদি !!a{structure}~$\Struct M$-এর জন্য !!a{variable} আরোপ হয়,
 তাহলে $\Struct M$-এর জন্য এমন যেকোনো !!{variable} আরোপ~$s'$-কে
-$s$-এর \emph{$x$-বিকল্প} বলে, যা $x$-কে করা আরোপে সর্বাধিক $s$-এর
-থেকে আলাদা। $s'$ যদি $s$-এর একটি $x$-বিকল্প হয়, লিখি
+$s$-এর \emph{$x$-বিকল্প} বলে, যা $x$ ছাড়া অন্য কোনো চলরাশির আরোপে $s$-এর
+থেকে আলাদা নয়। $s'$ যদি $s$-এর একটি $x$-বিকল্প হয়, লিখি
 $\varAssign{s'}{s}{x}$।
 \end{defn}
 
@@ -230,7 +236,7 @@ $R(a, a) \lif (R(b,x) \lor R(x,b))$-এর প্রধান সংযোজক
 \end{align*}
 
 মনে করুন, $s$-এর $x$-বিকল্প হলো এমন চলরাশি-আরোপ, যা $s$-এর থেকে
-সর্বাধিক $x$-এর আরোপে আলাদা। $\Domain{M}$-এর প্রত্যেক !!{element}-এর
+কেবল $x$-এ করা আরোপে আলাদা হতে পারে। $\Domain{M}$-এর প্রত্যেক !!{element}-এর
 জন্য $s$-এর একটি $x$-বিকল্প আছে:
 \begin{align*}
   s_1 & = \Subst{s}{1}{x}, &

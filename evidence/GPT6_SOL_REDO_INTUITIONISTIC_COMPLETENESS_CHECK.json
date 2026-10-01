@@ -1,0 +1,98 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "bounded_monotone_models": 3068,
+  "actual_nonderivable_exercise_countermodels": {
+    "1": {
+      "worlds": 3,
+      "successor_masks": [
+        7,
+        2,
+        4
+      ],
+      "valuation": {
+        "A": 2,
+        "B": 0,
+        "C": 0
+      },
+      "truth_mask": 6
+    },
+    "0": {
+      "worlds": 3,
+      "successor_masks": [
+        7,
+        2,
+        4
+      ],
+      "valuation": {
+        "A": 2,
+        "B": 4,
+        "C": 0
+      },
+      "truth_mask": 6
+    },
+    "2": {
+      "worlds": 3,
+      "successor_masks": [
+        7,
+        2,
+        4
+      ],
+      "valuation": {
+        "A": 6,
+        "B": 2,
+        "C": 4
+      },
+      "truth_mask": 6
+    }
+  },
+  "subformula_filtration_truth_cases": 335590,
+  "old_atomic_filtration_loses_double_negation_countermodel": true,
+  "zero_index_prefix_fragment_worlds": 15,
+  "axiom_bounded_evidence_dependency": {
+    "path": "evidence/GPT6_SOL_REDO_PAL_INTUITIONISTIC_OPENING_CHECK.json",
+    "sha256": "0e5d1fd582aaa7866dac0c19bda6dd8a29e7a577d8083a7a89989e5e94d03e96",
+    "models": 3068
+  },
+  "primary_exercise_macro": {
+    "path": "upstream/open-logic-config.sty",
+    "sha256": "76af3674c68139572b71de9908d690700cd7e324d221d649930ecda020935724"
+  },
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-completeness.tex",
+      "sha256": "6e8cba3cc399f3ec7a5332a3df4ac967d4f9e5136c931da3a3e4fea63edc9acb"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-axd.tex",
+      "sha256": "5c575928b363e956d01c8453a619fdb7c318665b032fe48f532082bbb40adc5d"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/soundness-nd.tex",
+      "sha256": "72e4c7f11fb6493b423f348b46dc4701896ec23be3a9f5f28dffca39f77a312d"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/lindenbaum.tex",
+      "sha256": "de01812d1817651ab5dc77747e8bfc9b0c879c7b771c340fd66969abdc04f714"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/canonical-model.tex",
+      "sha256": "ab86832eb463ba9ecf7c21c94111ec80d9b198693bb7949576922fa55da094fb"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/truth-lemma.tex",
+      "sha256": "8dbda3775be2f378bcbb2ab1aae3be5635d9b03267fb1adb470544e449a8e3b5"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/completeness-thm.tex",
+      "sha256": "2dc7284e923dbe96687cf9d79e5f662020d6f06c8137b1c8e3a7dbd8adbed8a2"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/soundness-completeness/decidability.tex",
+      "sha256": "8c83c4b088e49c030269572d59f773fbdc6f1df1dbbfac89d1a92fefcb72a6ed"
+    }
+  ],
+  "limits": "ক্ষুদ্র prefix fragment পূর্ণ প্রামাণিক মডেল নয়। গণনা infinite prime-extension বা সাধারণ truth lemma প্রমাণ করে না। সাধারণ axiom ও ND বিশুদ্ধতা, ন্যূনতম সূচকের fair extension, deduction theorem, prime closure, implication সাক্ষী ও subformula filtration-এর সম্পূর্ণ যুক্তি বাংলা review-তে।"
+}

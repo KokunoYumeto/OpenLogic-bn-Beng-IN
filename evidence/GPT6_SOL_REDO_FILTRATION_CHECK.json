@@ -1,0 +1,145 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "bounded_model_gamma_checks": 8592,
+  "conditions_parsed_from_actual_table": 8,
+  "missing_hypothesis_witness": {
+    "worlds": 2,
+    "successor_masks": [
+      2,
+      0
+    ],
+    "p_mask": 0,
+    "failed_combinations": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ]
+    ]
+  },
+  "chain_filtration_successor_masks": [
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "binary_tree_quotient_successor_masks": [
+    3,
+    3
+  ],
+  "actual_euclidean_diagrams": [
+    {
+      "figure": 1,
+      "node_ids": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "successor_masks": [
+        2,
+        2,
+        8,
+        24,
+        24
+      ],
+      "p_mask": 10,
+      "properties": {
+        "serial": true,
+        "reflexive": false,
+        "symmetric": false,
+        "transitive": false,
+        "euclidean": true
+      },
+      "satisfaction_labels_checked": 5,
+      "status": "passed"
+    },
+    {
+      "figure": 2,
+      "node_ids": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "successor_masks": [
+        6,
+        2,
+        12,
+        12
+      ],
+      "p_mask": 6,
+      "properties": {
+        "serial": true,
+        "reflexive": false,
+        "symmetric": false,
+        "transitive": false,
+        "euclidean": false
+      },
+      "satisfaction_labels_checked": 4,
+      "status": "passed"
+    }
+  ],
+  "euclidean_extensions_of_displayed_quotient": 0,
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/filtrations/euclidean-filtrations.tex",
+      "sha256": "b0c22a7bb22b52410763c19989282f9dbd473f20a9269a8705a9f0048075cfbf"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/filtrations/examples-of-filtrations.tex",
+      "sha256": "99665cd7dffa8d7344e80c1dd9979f027de44fd0f19b40af49de869e9993ec0e"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/filtrations/filtrations-def.tex",
+      "sha256": "865b275ccf10aa70539f78d901f701fd581d77d85cb61454305557261d1148e4"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/filtrations/filtrations.tex",
+      "sha256": "88f9b991a50ca6f523712d23ea05b0a962abb13a5807a515b597b6014001f93f"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/filtrations/finite.tex",
+      "sha256": "c5b9c10cfc73c9205e5e4b325c515487788f697d163a2e30f9ca9f8a8c2e5e3e"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/filtrations/introduction.tex",
+      "sha256": "356454b3bd3aa18ea29d0311f3b164c5503633114bc33640385fafb82193466a"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/filtrations/more-filtrations.tex",
+      "sha256": "c229122fe5f7575a16ae36f513732828902aecd72e0621c9df320cf90013dac5"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/filtrations/preliminaries.tex",
+      "sha256": "462524d7f9c50342856dfcd427a015a24aa4ab3583f380f95d4335e97c88d51b"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/filtrations/S5-decidable.tex",
+      "sha256": "b50954f7c3dd8fdff356fb8e9f476ebbe33f7bf6aedd363319f7714651a1e9da"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/filtrations/S5-fmp.tex",
+      "sha256": "f9784c365b9e3b8c20872dab05fb0cc431bfd5586a45503d93688d97c197ed37"
+    }
+  ],
+  "limits": "সর্বোচ্চ তিন জগতের সসীম পরীক্ষা সাধারণ প্রমাণ নয়। অসীম শৃঙ্খল ও বৃক্ষের পর্যায়ক্রমিক/শেষ-অক্ষর যুক্তি এবং মোডালভাবে বদ্ধ সমষ্টির সাধারণ প্রমাণ বাংলা review-তে পৃথক।"
+}

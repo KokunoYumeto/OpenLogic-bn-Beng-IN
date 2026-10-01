@@ -1,0 +1,131 @@
+{
+  "status": "passed",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "date": "2026-09-30",
+  "bounded_models_examined": 33032,
+  "valid_table_formulas": 6,
+  "invalid_table_witnesses": {
+    "7": {
+      "worlds": 1,
+      "successor_masks": [
+        0
+      ],
+      "A_mask": 0,
+      "B_mask": 0,
+      "truth_mask": 0
+    },
+    "11": {
+      "worlds": 1,
+      "successor_masks": [
+        0
+      ],
+      "A_mask": 0,
+      "B_mask": 0,
+      "truth_mask": 0
+    },
+    "9": {
+      "worlds": 2,
+      "successor_masks": [
+        2,
+        0
+      ],
+      "A_mask": 0,
+      "B_mask": 0,
+      "truth_mask": 2
+    },
+    "5": {
+      "worlds": 2,
+      "successor_masks": [
+        2,
+        0
+      ],
+      "A_mask": 1,
+      "B_mask": 0,
+      "truth_mask": 2
+    },
+    "1": {
+      "worlds": 2,
+      "successor_masks": [
+        3,
+        0
+      ],
+      "A_mask": 1,
+      "B_mask": 2,
+      "truth_mask": 2
+    },
+    "3": {
+      "worlds": 2,
+      "successor_masks": [
+        3,
+        0
+      ],
+      "A_mask": 1,
+      "B_mask": 2,
+      "truth_mask": 2
+    }
+  },
+  "world_truth_exercise_answers": [
+    false,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    false,
+    false
+  ],
+  "simultaneous_and_sequential_substitution": "passed",
+  "limits": "সর্বোচ্চ তিন-জগৎ মডেলের গণনা সাধারণ বৈধতার প্রমাণ নয়; সাধারণ প্রমাণের manual পাঠ পৃথক বাংলা review-তে।",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/entailment.tex",
+      "sha256": "99fbb8ac42e7cd0412dd202b9fbd3cc4f897aa02a0aee7baf249c97cdadec00f"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/introduction.tex",
+      "sha256": "7a89de62b5ee688aa6abeddc78901543516ab0cfadbe7c2fb373f5a22a21fad1"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/language-modal-logic.tex",
+      "sha256": "1790c6cca44dc13b3e4f9ab0a59e2bb04aecf668f0077a0bacc4be8c3a033523"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/modal-validity.tex",
+      "sha256": "42df1eb7c54a9ba037ecbc55395fe8cf2a0b385037cd726dd625a71c9624abf1"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/normal-modal-logics.tex",
+      "sha256": "e50860052373a495e23981506d5a033a271cf7033393b1f696c0830a5273c729"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/relational-models.tex",
+      "sha256": "d4ca40617ee8a89689ed2b0872f3b0a13630bcf205198e5eab64996dfd34dde7"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/schemas.tex",
+      "sha256": "6307812150737f83010720d99f96d3fe6aba9141c1d9b769894489797f76e883"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/substitution.tex",
+      "sha256": "b452686942c5afb5e41d2d93a9be6354a1c635b5f6527cf42531cf05602b0c4c"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/syntax-and-semantics.tex",
+      "sha256": "ceab817d8b381b74fc7c7c99a10be1f5c5cdc701cae7d40149a035fedba67f6d"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/tautological-instances.tex",
+      "sha256": "1309a4f09c6bb4e695b2750bd94bc9e64de79023c69591339758efc3b2118868"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/truth-at-w.tex",
+      "sha256": "93199501ca7a504fb66a0a73041637ba2d28392de535ab3f36ad36de0cf229dc"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/truth-in-model.tex",
+      "sha256": "fb9b74e797a0d6e54ce8ff1d3a98c03c656b29bdc174e14d01fd4799f4acc50d"
+    }
+  ]
+}

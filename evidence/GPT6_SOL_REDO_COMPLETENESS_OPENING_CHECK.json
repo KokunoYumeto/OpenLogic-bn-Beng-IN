@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "actual_boolean_tautologies_checked": 10,
+  "formulas": [
+    "(!A \\land !B) \\lif !A",
+    "!A \\lif (!B \\lif (!A \\land !B))",
+    "\\lnot !A \\lif (\\lnot !B \\lif \\lnot (!A \\lor !B))",
+    "!A \\lif (!A \\lor !B)",
+    "!B \\lif (!A \\lor !B)",
+    "\\lnot(!A \\lif !B) \\lif !A",
+    "\\lnot(!A \\lif !B) \\lif \\lnot !B",
+    "(!A \\liff !B) \\lif (!A \\lif !B)",
+    "\\lnot(!A \\liff !B) \\lif (!A \\lif \\lnot !B)",
+    "\\lnot(!A \\liff !B) \\lif (!A \\lor !B)"
+  ],
+  "atomic_enumeration_counterexamples_and_repair": [
+    {
+      "variable_index": 2,
+      "length": 1,
+      "corrected_first_stage": 2
+    },
+    {
+      "variable_index": 3,
+      "length": 1,
+      "corrected_first_stage": 3
+    },
+    {
+      "variable_index": 4,
+      "length": 1,
+      "corrected_first_stage": 4
+    },
+    {
+      "variable_index": 5,
+      "length": 1,
+      "corrected_first_stage": 5
+    },
+    {
+      "variable_index": 6,
+      "length": 1,
+      "corrected_first_stage": 6
+    },
+    {
+      "variable_index": 7,
+      "length": 1,
+      "corrected_first_stage": 7
+    },
+    {
+      "variable_index": 8,
+      "length": 1,
+      "corrected_first_stage": 8
+    },
+    {
+      "variable_index": 9,
+      "length": 1,
+      "corrected_first_stage": 9
+    },
+    {
+      "variable_index": 10,
+      "length": 1,
+      "corrected_first_stage": 10
+    },
+    {
+      "variable_index": 11,
+      "length": 1,
+      "corrected_first_stage": 11
+    },
+    {
+      "variable_index": 12,
+      "length": 1,
+      "corrected_first_stage": 12
+    }
+  ],
+  "truth_lemma_exercise_branch_tags": "passed",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/canonical-models.tex",
+      "sha256": "f6b274c2915abebc8dc14912d64d428437411d32c96bf0a8c22476f6ea655842"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/complete-consistent-sets.tex",
+      "sha256": "cb967f37eed40cb9e22387cd9f60ca098a82a444b570b3760e85c06f433fcd47"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/completeness.tex",
+      "sha256": "5ac910682f9cea30e60e920f4a91bd7edced491a5ad138944c74f319aeb3b8f4"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/introduction.tex",
+      "sha256": "c7376b1c2da7aae11a34810531a22251b90f46d434bb296b1ea41167da3a693f"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/lindenbaums-lemma.tex",
+      "sha256": "ec2a57e2f5b4eab0641b7b4e63e2d5f31bcb4ca4ccd75cf588c7af6817152332"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/modalities-ccs.tex",
+      "sha256": "2161a0e8231f416a7359f885e43f6d0143acdae753ea027c074e1b4fb7bddeb9"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/completeness/truth-lemma.tex",
+      "sha256": "80ac394dcdd5e24f9b1815385a551113b5e3b011574cf729402063e126701b14"
+    }
+  ],
+  "limits": "পূর্ণ ভাষার সসীম-দৈর্ঘ্য তালিকার সাধারণ exhaustiveness, লিন্ডেনবাউম, মোডাল অস্তিত্ব ও সত্যতার আবেশ পৃথক বাংলা প্রমাণ-পাঠে; বর্তমান দুই অবশিষ্ট অধ্যায়-একক এই ফলের অন্তর্ভুক্ত নয়।"
+}

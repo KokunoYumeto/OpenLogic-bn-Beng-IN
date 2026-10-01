@@ -1,0 +1,125 @@
+{
+  "units": [
+    "OLP-0685",
+    "OLP-0686",
+    "OLP-0687",
+    "OLP-0688",
+    "OLP-0689",
+    "OLP-0690",
+    "OLP-0691",
+    "OLP-0692",
+    "OLP-0693",
+    "OLP-0694",
+    "OLP-0695",
+    "OLP-0696",
+    "OLP-0697"
+  ],
+  "targets": [
+    {
+      "unit_id": "OLP-0685",
+      "path": "bn-Beng-IN/content/proof-theory/proof-theory.tex",
+      "sha256": "aa68cc69e78aa0f496a4be0e811a4455dd9d6203ca90078faadf3664cc3a9e75"
+    },
+    {
+      "unit_id": "OLP-0686",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/introduction.tex",
+      "sha256": "ae3056927b2cb681aa38cf75e8b90c20982f5a1ec46c3b5d244285d2483f749d"
+    },
+    {
+      "unit_id": "OLP-0687",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/normalization.tex",
+      "sha256": "a1c1dc8d6206b7d3c6adbdd916e17bc5351a9974ae1519c2b6b15e2fd380d9f9"
+    },
+    {
+      "unit_id": "OLP-0688",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/proof-terms.tex",
+      "sha256": "24c6b5f84c57423f2955e7a53794a8bc55df00139d42f47cad8f48f38b8f53c0"
+    },
+    {
+      "unit_id": "OLP-0689",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/proofs-to-terms.tex",
+      "sha256": "d15fbbff10adef0670b912ce6a2f67433b4eba29b06d5ca0dc473b2da315c50f"
+    },
+    {
+      "unit_id": "OLP-0690",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/propositions-as-types.tex",
+      "sha256": "585b1a4106a70c74cf3482542da93fc93c3f536fa1381d13c2190ed084e09b5e"
+    },
+    {
+      "unit_id": "OLP-0691",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/reduction.tex",
+      "sha256": "ae91a757f24545c062a97e124dc9a6b4156c66af0cdb19ee47b43a58d1fbb83b"
+    },
+    {
+      "unit_id": "OLP-0692",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/rules-tN2.tex",
+      "sha256": "3204f4080daa5bc580e8ee25a6e851363b8191e47560eeba8e68ac1e781e80e2"
+    },
+    {
+      "unit_id": "OLP-0693",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/rules-tN3.tex",
+      "sha256": "a5dfd02b4cae66407931559748f8c7bb5b4b54bf83b58a884500be2b0f7c4fb1"
+    },
+    {
+      "unit_id": "OLP-0694",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/sequent-natural-deduction.tex",
+      "sha256": "15a39f17bea56c421099b28bc269000a514c382b4552b225c4f7770799d0b01c"
+    },
+    {
+      "unit_id": "OLP-0695",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/terms-to-proofs.tex",
+      "sha256": "ff0966c9a9a611834bc24278f54b77a8757606dcb1d010b718ea7588064166d6"
+    },
+    {
+      "unit_id": "OLP-0696",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/type-preservation.tex",
+      "sha256": "9f38b089c4e6593bad94e7a616e4cc4386452351de0cbe1b0f68d2ad3d8450d6"
+    },
+    {
+      "unit_id": "OLP-0697",
+      "path": "bn-Beng-IN/content/proof-theory/propositions-as-types/types.tex",
+      "sha256": "5063eefd138802a867868d56655dfd7ebff0d4e7bb1d399eff984124a4f25724"
+    }
+  ],
+  "new_findings": [
+    893,
+    894,
+    895,
+    896,
+    897,
+    898,
+    899,
+    900
+  ],
+  "withdrawn": [
+    611,
+    619
+  ],
+  "fixtures": {
+    "OLP-0687": {
+      "path": "evidence/REDO_GPT6_SOL_OLP-0687_AUDITED_ENGLISH.tex",
+      "sha256": "d5845a70919ad19f825743ccd1ae43b9e45a42b53dee27d2607dc7a40331f215"
+    },
+    "OLP-0691": {
+      "path": "evidence/REDO_GPT6_SOL_OLP-0691_AUDITED_ENGLISH.tex",
+      "sha256": "cff3f4027728f516689bfca4e957ef0991d0d751d06e0adb873bd099794c9ef7"
+    },
+    "OLP-0694": {
+      "path": "evidence/REDO_GPT6_SOL_OLP-0694_AUDITED_ENGLISH.tex",
+      "sha256": "8d332c81e4df19e55cb97ccfa7ceb0cdc749a6e2c4a790ecbe118db9d3b0f703"
+    }
+  },
+  "full_actual_bilingual_read": true,
+  "review_record": "evidence/REDO_GPT6_SOL_PROPOSITIONS_TYPES_2026-09-30.md",
+  "primary_reference": {
+    "url": "https://www.nii.ac.jp/pi/n2/2_41.pdf",
+    "doi": "10.2201/NiiPi.2005.2.4",
+    "read_scope": "definitions2.3/2.4, remark excluding bottom reductions,2.5/4.15; not full paper proof"
+  },
+  "counterexample_receipt": "redo-evidence/proof-term-rank-counterexample.json",
+  "overall_status": "pending_registration_and_rebuild",
+  "registration_status": "registered_current_hashes; rebuild_and_release_pending",
+  "registered_checkpoint_date": "2026-10-01",
+  "registered_unit_count": 306,
+  "registered_canon_ledger_sha256": "b29c0537166c5645ee0904993c05a4b482bc9c6a420face51e6817fee5be9b35"
+}

@@ -17,6 +17,16 @@ GLYPHS = {
     "fishhookright": (0xE001, "txsyc.pfb", 74, "strict"),
     "leftrightarroweq": (0xE002, "stmary10.pfb", 45, "leftrightarroweq"),
 }
+SOURCE_HASHES = {
+    "txsyc.pfb": "daba10834af8bf5dcb3c6b03e919daf61e6ba74c3ef71aa3c74f80dc3945ec5e",
+    "stmary10.pfb": "eff077f7d9ca7c2f02695e1c51bb97327f097dbdf6b2677579772bcd4f6a6844",
+    "ntxsyc.vf": "449dc24da3c0178168ce444d1a0fe47a17e7b55e9c787b23bc477f0b46e8e7e4",
+    "ntxsyc.tfm": "29f01929af4a75a146bee9243b61b58e42e8829af9fa06a558e4c572d2467e39",
+    "txsyc.tfm": "ec685ceaf907aaf2f8bf955969de391cd8e91a9d6a63a8a06c006313f5c54a1d",
+    "stmary10.tfm": "9c41cd0d9cfb12c5f7ed6dccfe0367be6378e5b755a5b22424c47b975b57af8f",
+    "TXFONTS-COPYRIGHT.txt": "339ed0e30e6fe614a7a677f1c77e6d0736a7822b23c2a43cc046fac43bb80d63",
+    "stmaryrd.pdf": "7db46cdb142097ab0151aaa976db1a3b3761b498bd80ba26e4ecb90ceaff7826",
+}
 
 
 def build():
@@ -25,14 +35,23 @@ def build():
     fonts = {}
     provenance = []
     originals = {}
-    for filename in sorted({v[1] for v in GLYPHS.values()}):
+    def retained_source(filename, locate):
         target = sources / filename
-        original = pathlib.Path(subprocess.check_output(["kpsewhich", filename], text=True).strip())
-        assert original.is_file()
         if not target.exists():
-            target.write_bytes(original.read_bytes())
-        assert target.read_bytes() == original.read_bytes(), "installed font source changed"
+            original = locate()
+            assert original.is_file(), filename
+            data = original.read_bytes()
+            assert hashlib.sha256(data).hexdigest() == SOURCE_HASHES[filename], "installed source differs: " + filename
+            target.write_bytes(data)
+        assert hashlib.sha256(target.read_bytes()).hexdigest() == SOURCE_HASHES[filename], "retained source differs: " + filename
+        return target
+    def installed(filename):
+        original = pathlib.Path(subprocess.check_output(["kpsewhich", filename], text=True).strip())
+        assert original.is_file(), filename
         originals[filename] = original
+        return original
+    for filename in sorted({v[1] for v in GLYPHS.values()}):
+        target = retained_source(filename, lambda filename=filename: installed(filename))
         font = T1Font(str(target))
         font.parse()
         fonts[filename] = font
@@ -40,28 +59,12 @@ def build():
                            "font_name": font["FontName"], "font_info": font["FontInfo"]})
     dependencies = []
     for filename in ("ntxsyc.vf", "ntxsyc.tfm", "txsyc.tfm", "stmary10.tfm"):
-        original = pathlib.Path(subprocess.check_output(["kpsewhich", filename], text=True).strip())
-        assert original.is_file()
-        target = sources / filename
-        if not target.exists():
-            target.write_bytes(original.read_bytes())
-        assert target.read_bytes() == original.read_bytes()
+        target = retained_source(filename, lambda filename=filename: installed(filename))
         dependencies.append({"file": filename, "sha256": hashlib.sha256(target.read_bytes()).hexdigest()})
-    tex_root = originals["txsyc.pfb"].parents[4]
-    tx_notice = tex_root / "doc/fonts/txfonts/COPYRIGHT"
-    assert tx_notice.is_file()
-    tx_target = sources / "TXFONTS-COPYRIGHT.txt"
-    if not tx_target.exists():
-        tx_target.write_bytes(tx_notice.read_bytes())
-    assert tx_target.read_bytes() == tx_notice.read_bytes()
+    tx_target = retained_source("TXFONTS-COPYRIGHT.txt", lambda: installed("txsyc.pfb").parents[4] / "doc/fonts/txfonts/COPYRIGHT")
     # The St Mary package documentation names its authors and LPPL 1.0-or-later
     # terms. Keep that primary document with the exact font source archive.
-    stmary_doc = originals["stmary10.pfb"].parents[4] / "doc/fonts/stmaryrd/stmaryrd.pdf"
-    assert stmary_doc.is_file()
-    stmary_target = sources / "stmaryrd.pdf"
-    if not stmary_target.exists():
-        stmary_target.write_bytes(stmary_doc.read_bytes())
-    assert stmary_target.read_bytes() == stmary_doc.read_bytes()
+    stmary_target = retained_source("stmaryrd.pdf", lambda: installed("stmary10.pfb").parents[4] / "doc/fonts/stmaryrd/stmaryrd.pdf")
     licenses = [
         {"file": tx_target.name, "sha256": hashlib.sha256(tx_target.read_bytes()).hexdigest(),
          "terms": "TX fonts GPL with June 2002 document-embedding exception; original notice retained"},

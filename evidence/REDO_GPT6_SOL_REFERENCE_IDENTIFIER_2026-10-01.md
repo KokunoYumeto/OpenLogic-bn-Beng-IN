@@ -1,0 +1,5 @@
+The complete frozen English and current Bengali introduction of OLP-0566 were read again. The prose accurately distinguishes Replacement in ZF versus Z and extrinsic versus intrinsic justification; citations and specialist terminology remain unchanged.
+
+The earlier fresh review missed an internal-code corruption: sth:ordinals::chap had been partly translated to sth:ক্রমসংখ্যাs::chap. This cannot name the source chapter. Restore the exact English identifier; classify BN-SRC-918 as translation-local and keep its annotation hidden. This is an amendment to an affected unit already among the 336, not a new unit or an English erratum.
+
+A bounded corpus scan of direct reference/label/file-id arguments found this as the only Bengali-containing internal identifier. That scan is not complete semantic certification of every reference. Reader preparation exposed the error and was rejected before writing a new TeX artifact. Strict 722 passes after the source repair. Existing canon consultations remain their actual September 30 reads; no new image retrieval is claimed.

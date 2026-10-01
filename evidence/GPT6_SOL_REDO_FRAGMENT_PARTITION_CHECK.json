@@ -1,0 +1,18 @@
+{
+  "schema": "openlogic-bn-fragment-partition-check/1",
+  "status": "passed",
+  "prepared_tex_sha256": "6629d3430ce3fbc649f2e9e7d23f783d6d281b889bc663bb7ee37542b86b1140",
+  "scope_receipt_sha256": "62f44535645f20cfaa12659521436499f6427a7f5ed3df9660ce88751f42d7b3",
+  "source_units": 722,
+  "fragments": 728,
+  "resumed_units": [
+    "OLP-0668",
+    "OLP-0669",
+    "OLP-0684",
+    "OLP-0697",
+    "OLP-0700"
+  ],
+  "book_bibliography_control_fragments": 1,
+  "method": "Exact nested start/end coverage, source start order, per-fragment character slice SHA256, and equality of all non-whitespace prepared-body characters before/after partition.",
+  "limits": "Reader conversion/visual layout are separate; this check does not certify every mathematical proof."
+}

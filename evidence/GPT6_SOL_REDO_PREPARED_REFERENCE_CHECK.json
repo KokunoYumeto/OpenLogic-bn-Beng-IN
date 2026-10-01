@@ -1,0 +1,47 @@
+{
+  "schema": "openlogic-bn-prepared-reference-fidelity-check/1",
+  "status": "passed",
+  "prepared_tex_sha256": "6629d3430ce3fbc649f2e9e7d23f783d6d281b889bc663bb7ee37542b86b1140",
+  "pdf_sha256": "a1b51711257ec6d7a5a910944ece4a7d97901c220a3b7146aa13f8199172b96d",
+  "physical_labels": 1718,
+  "numbered_reference_targets": 1546,
+  "source_anchors_with_counter_labels": 1010,
+  "documented_frozen_reference_gaps": 4,
+  "bold_theory_overbars": 11,
+  "accent_scope": [
+    {
+      "unit_id": "OLP-0307",
+      "kind": "bold_theory_accent",
+      "occurrences": 2,
+      "action": "বোল্ড অক্ষরের বাইরে সমার্থক উপরিরেখা; Q ও bar-Q এবং T ও bar-T-এর পার্থক্য রক্ষা, মূল বাংলা ও ইংরেজি অপরিবর্তিত।"
+    },
+    {
+      "unit_id": "OLP-0309",
+      "kind": "bold_theory_accent",
+      "occurrences": 5,
+      "action": "বোল্ড অক্ষরের বাইরে সমার্থক উপরিরেখা; Q ও bar-Q এবং T ও bar-T-এর পার্থক্য রক্ষা, মূল বাংলা ও ইংরেজি অপরিবর্তিত।"
+    },
+    {
+      "unit_id": "OLP-0310",
+      "kind": "bold_theory_accent",
+      "occurrences": 3,
+      "action": "বোল্ড অক্ষরের বাইরে সমার্থক উপরিরেখা; Q ও bar-Q এবং T ও bar-T-এর পার্থক্য রক্ষা, মূল বাংলা ও ইংরেজি অপরিবর্তিত।"
+    },
+    {
+      "unit_id": "OLP-0311",
+      "kind": "bold_theory_accent",
+      "occurrences": 1,
+      "action": "বোল্ড অক্ষরের বাইরে সমার্থক উপরিরেখা; Q ও bar-Q এবং T ও bar-T-এর পার্থক্য রক্ষা, মূল বাংলা ও ইংরেজি অপরিবর্তিত।"
+    }
+  ],
+  "lambda_definition_reference_type": "defn",
+  "lambda_clauses": {
+    "abstraction": 2,
+    "application": 3
+  },
+  "missing_character_warnings": [],
+  "undefined_reference_warnings": [],
+  "preparation_script_sha256": "a637556605b1fcecb2d3b1cee68876f0e8807097eed7036b9201a7cc8adebf13",
+  "method": "All current prepared counter-label and reference targets checked; eleven equivalent accent repairs counted; actual converged auxiliary types/numbers and log inspected.",
+  "limits": "Counter association follows the original source label placement. Actual typography and hyperlink appearance need separate current page inspection."
+}

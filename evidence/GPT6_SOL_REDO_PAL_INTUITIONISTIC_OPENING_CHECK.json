@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "announcement_successor_masks": {
+    "a": [
+      5,
+      2,
+      5
+    ],
+    "b": [
+      3,
+      3,
+      4
+    ]
+  },
+  "announcement_p_world_mask": 5,
+  "announcement_ignorance_world_mask": 1,
+  "actual_closed_proof_trees": 4,
+  "actual_inference_and_discharge_steps": 18,
+  "actual_axioms": 9,
+  "actual_exercises": 6,
+  "bounded_partial_orders": 23,
+  "bounded_monotone_models": 3068,
+  "two_world_excluded_middle_countermodel": "passed",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex",
+      "sha256": "020fef3502db9a598b28cfe2648897bc0b5a01c67a46c4d3232373865d400726"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/intuitionistic-logic.tex",
+      "sha256": "c89dfc4223e0f7797bb19cbfed96525ecd616e6f070fa1bd66fd8e089c8f5766"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/introduction.tex",
+      "sha256": "f6014072e1f58e3d809395731a2866dd503bafbfe8d2ca53189bb9a3f3031293"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/constructive-reasoning.tex",
+      "sha256": "b6af4e86f4551f942ff9af38059e1c6c12de5a0889dd46b9135716877df1dca6"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/syntax.tex",
+      "sha256": "8d915e9dd73aa6afc8c0eec98740123fb40d2b99862b4b0de7ab4e75d28ce8b7"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/bhk-interpretation.tex",
+      "sha256": "8d4b06db04cbc47cf0b25103e969a6108b4c6d79f2f029c2f578b78a6002d3bd"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/natural-deduction.tex",
+      "sha256": "c26db57ce419ba49ec76e9035399df7e998bb688e8974e4d2269e90bd9659469"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/introduction/axiomatic-derivations.tex",
+      "sha256": "2c00df1d71a017f875f9125673fd1f3058f39bc348aac2e90eb31b6cd6503299"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/semantics/semantics.tex",
+      "sha256": "76d70f0d8236c71ae3b10de95d8bd214aa0e45a15873ef9356fc64220565e1c9"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/semantics/introduction.tex",
+      "sha256": "4861b44417263c91a8424556f9cef8b1f4d681560d20afd1b3130d698c5bed7d"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/semantics/relational-models.tex",
+      "sha256": "98317df77e2167e29e3ccf5d71009f5b14699d7229fb0a1397042df763ff30ab"
+    }
+  ],
+  "limits": "সসীম গণনা সাধারণ বিশুদ্ধতা বা পূর্ণতার প্রমাণ নয়। BHK নির্মাণের type, মূল composition-এর দিক, সংখ্যাগত দুই সাক্ষীর অমূলদতা ও প্রতিটি সূত্রের সাধারণ persistence যুক্তি বাংলা review-তে। এখানে পরবর্তী semantic notions/topology পরীক্ষা দাবি নেই।",
+  "primary_sources": [
+    {
+      "path": "upstream/content/sets-functions-relations/functions/composition.tex",
+      "sha256": "1733e9f6b7f1009f7d36cb47b3f11ec8cccc28ef173a379e4d69c3de352fcf28"
+    },
+    {
+      "path": "upstream/content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex",
+      "sha256": "c6332d0af2635bb1c79d1f0e418f26472cdf1022ed23818ca51e9e1226889810"
+    }
+  ]
+}

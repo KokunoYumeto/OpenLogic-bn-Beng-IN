@@ -1,0 +1,133 @@
+{
+  "schema": "openlogic-bn-redo-historical-review/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_BIOGRAPHIES_REMAINDER_2026-09-30.md",
+  "targets": [
+    {
+      "unit_id": "OLP-0627",
+      "source_sha256": "cd1559c7f682712f7257c16abe9afa075178ba9aa6a587b035d7e466d3bf668f",
+      "path": "bn-Beng-IN/content/history/biographies/rozsa-peter.tex",
+      "sha256": "41e4cb27427bdab5869506dafcd80b09713e76ef61a01eb6628fa4bbe40cf6aa"
+    },
+    {
+      "unit_id": "OLP-0628",
+      "source_sha256": "bdc5d38306c267699a1e3bfa1fc136f93e0b83ebe03de1ac81987ae35f7b599d",
+      "path": "bn-Beng-IN/content/history/biographies/julia-robinson.tex",
+      "sha256": "071be83d131f185ad0d496ee0e23c150512c691648691fe91e93e71455de0532"
+    },
+    {
+      "unit_id": "OLP-0629",
+      "source_sha256": "4b13fffaac861f87a7e36182296f5896a8be923bf21d19dfbcf1b0a7bb253bbd",
+      "path": "bn-Beng-IN/content/history/biographies/bertrand-russell.tex",
+      "sha256": "45381b3273e5f3d8412e65027b6f815f04f68e6806cece3ca2094cce0db2b507"
+    },
+    {
+      "unit_id": "OLP-0630",
+      "source_sha256": "216dca1713254d519d4f75b7f2f80cdf13dd614341b45631f6addefc26850688",
+      "path": "bn-Beng-IN/content/history/biographies/alfred-tarski.tex",
+      "sha256": "95c70f1972c4cd5833b5066e1585785e12e730fb4c92c1bc0c8931149001534c"
+    },
+    {
+      "unit_id": "OLP-0631",
+      "source_sha256": "105de99d822a0dbb375d0d4bd8e3ed3847b7f77d1f1c4760f62cbcd0b7f2671b",
+      "path": "bn-Beng-IN/content/history/biographies/alan-turing.tex",
+      "sha256": "4e2300b48c2e504cd3a0c6e04106d5ed89a73521b3e1bd4b761f1f45b4f80173"
+    },
+    {
+      "unit_id": "OLP-0632",
+      "source_sha256": "2bf8bef1ebdfcadf3ae701be0416db71d1a24786269cec3b8e41a767f8499a41",
+      "path": "bn-Beng-IN/content/history/biographies/ernst-zermelo.tex",
+      "sha256": "7b16dd733ac07cab7fb5b8e0ad8ed964185d05d3ad52534dfaccf33d1a5b60c9"
+    }
+  ],
+  "correction_ids": [
+    "BN-SRC-850",
+    "BN-SRC-851",
+    "BN-SRC-852",
+    "BN-SRC-853",
+    "BN-SRC-854",
+    "BN-SRC-855",
+    "BN-SRC-856"
+  ],
+  "historical_tests": "প্রাসঙ্গিক primary records ও actual source/target prose; fake finite historical tests নয়।",
+  "before_snapshot": "redo-evidence/biographies-remainder-before.json",
+  "before_snapshot_sha256": "e632df495b2f7abeb39b64a1ecff4b994dc7d90c67da40d260bef2f43a594412",
+  "minimal_english_patch_proposals": [
+    {
+      "finding_id": "BN-SRC-850",
+      "path": "upstream/content/history/biographies/rozsa-peter.tex",
+      "sha256": "cd1559c7f682712f7257c16abe9afa075178ba9aa6a587b035d7e466d3bf668f",
+      "line_start": 60,
+      "line_end": 61,
+      "old": "and the first woman to be\nelected to the Hungarian Academy of Sciences.",
+      "new": "and was\nelected to the Hungarian Academy of Sciences.",
+      "applied_to_frozen_source": false
+    },
+    {
+      "finding_id": "BN-SRC-851",
+      "path": "upstream/content/history/biographies/julia-robinson.tex",
+      "sha256": "bdc5d38306c267699a1e3bfa1fc136f93e0b83ebe03de1ac81987ae35f7b599d",
+      "line_start": 75,
+      "line_end": 76,
+      "old": "the first woman to be elected to the National\nAcademy of Science.",
+      "new": "the first woman elected to the mathematics section of the National\nAcademy of Sciences.",
+      "applied_to_frozen_source": false
+    },
+    {
+      "finding_id": "BN-SRC-852",
+      "path": "upstream/content/history/biographies/bertrand-russell.tex",
+      "sha256": "4b13fffaac861f87a7e36182296f5896a8be923bf21d19dfbcf1b0a7bb253bbd",
+      "line_start": 43,
+      "line_end": 44,
+      "old": "He remained a pacifist throughout his life, and\nwas again incarcerated",
+      "new": "He was again incarcerated",
+      "applied_to_frozen_source": false
+    },
+    {
+      "finding_id": "BN-SRC-853",
+      "path": "upstream/content/history/biographies/alan-turing.tex",
+      "sha256": "105de99d822a0dbb375d0d4bd8e3ed3847b7f77d1f1c4760f62cbcd0b7f2671b",
+      "line_start": 38,
+      "line_end": 38,
+      "old": "introduction of electronic machinery",
+      "new": "introduction of electromechanical machinery",
+      "applied_to_frozen_source": false
+    },
+    {
+      "finding_id": "BN-SRC-854",
+      "path": "upstream/content/history/biographies/alan-turing.tex",
+      "sha256": "105de99d822a0dbb375d0d4bd8e3ed3847b7f77d1f1c4760f62cbcd0b7f2671b",
+      "line_start": 44,
+      "line_end": 46,
+      "old": "in 1942 he proposed to Joan Clarke, one\nof his teammates at Bletchley Park, but later broke off the engagement\nand confessed to her that he was homosexual.",
+      "new": "in 1941 he proposed to Joan Clarke, one\nof his teammates at Bletchley Park, immediately telling her that he was homosexual;\nhe later broke off the engagement.",
+      "applied_to_frozen_source": false
+    },
+    {
+      "finding_id": "BN-SRC-855",
+      "path": "upstream/content/history/biographies/ernst-zermelo.tex",
+      "sha256": "2bf8bef1ebdfcadf3ae701be0416db71d1a24786269cec3b8e41a767f8499a41",
+      "line_start": 37,
+      "line_end": 37,
+      "old": "professorship at the University of Freiburg in 1921.",
+      "new": "professorship at the University of Freiburg in 1926.",
+      "applied_to_frozen_source": false
+    },
+    {
+      "finding_id": "BN-SRC-856",
+      "path": "upstream/content/history/biographies/ernst-zermelo.tex",
+      "sha256": "2bf8bef1ebdfcadf3ae701be0416db71d1a24786269cec3b8e41a767f8499a41",
+      "line_start": 40,
+      "line_end": 42,
+      "old": "He was dismissed from his position at\nFreiburg in 1935, due to his unpopularity and his opposition to\nHitler's rise to power in Germany.",
+      "new": "In 1935, after being denounced for refusing the Nazi salute,\nhe withdrew from teaching before his teaching permission was revoked.",
+      "applied_to_frozen_source": false,
+      "dependent_reference_patch": {
+        "old": "After his\ndismissal in 1935, he abandoned mathematics.",
+        "new": "After his\nwithdrawal from teaching in 1935, he abandoned mathematics."
+      }
+    }
+  ]
+}

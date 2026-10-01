@@ -1,0 +1,26 @@
+{
+  "schema": "openlogic-bn-object-symbol-conversion-check/1",
+  "status": "passed",
+  "prepared_tex_sha256": "6629d3430ce3fbc649f2e9e7d23f783d6d281b889bc663bb7ee37542b86b1140",
+  "html_sha256": "e4683b284412226f056d711ad2351a7ffb424fadb692bdc98f0a094ec0711606",
+  "reader_script_sha256": "866056243dd190c6a2686e1eb2e0543ccc4e0963d2efc376c82cf392e196e5d6",
+  "frozen_macro_configuration_sha256": "76af3674c68139572b71de9908d690700cd7e324d221d649930ecda020935724",
+  "object_macro_calls": 1037,
+  "argument_forms": {
+    "bare_character": 877,
+    "braced": 147,
+    "control_sequence": 13
+  },
+  "source_units_with_object_macros": 73,
+  "cases": {
+    "\\Obj c_0": "\\mathsfit{c}_0",
+    "\\Obj{c}_0": "\\mathsfit{c}_0",
+    "\\Obj \\varphi_1": "\\mathsfit{\\varphi}_1",
+    "\\Obj{AB}": "\\mathsfit{AB}"
+  },
+  "pandoc_native_variant": "sans-serif-italic",
+  "pandoc_probe_warnings": [],
+  "missing_argument_rejected": true,
+  "method": "All current prepared-source object macro arguments parsed; bare/braced/control fixtures compared; independent Pandoc MathML style/subscript probe and rebuilt semantic-input check.",
+  "limits": "No new English error or Bengali translation change; browser appearance is separately reviewed."
+}

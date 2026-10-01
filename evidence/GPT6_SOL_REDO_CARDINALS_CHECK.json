@@ -1,0 +1,42 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_CARDINALS_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/cardinals.tex",
+      "sha256": "b1d47bff9b57726cb2d787b4b263e0fd0975f434db8cf3951da835aed48addb2"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/cp.tex",
+      "sha256": "10ac688b50331f66cc926131c50161ee22771e582bec6159ca91d9cade88dbbd"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/cardsasords.tex",
+      "sha256": "789af653842e5009ad1a8ac8cc3f54ca640c1410d79f9c00031a37695ed5d6ce"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/milestone.tex",
+      "sha256": "975ff36476b9977d7c27baadfbc0e0754d44217c83007a0102326b6941b647c9"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/classing.tex",
+      "sha256": "a5ff25be43c46e4162b2cc71a7beb76b03d17efc00f294ee613ea1a9d0e6fcf0"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/cardinals/hp.tex",
+      "sha256": "b3ef1e4c0884817ee3aefa85ac6482e916bcae8126a9d5c28bc1b3499d8e0d4e"
+    }
+  ],
+  "পরীক্ষা": {
+    "তিন তিরের একৈক composition": 18305,
+    "ordinal-subset-এর increasing enumeration": 4096,
+    "Hume-এর প্রদর্শিত relation-শর্ত": 32768,
+    "দুই concept-এ সমসংখ্যক iff": 64,
+    "omega+1 থেকে omega-র map-এর ছোট prefix": 21,
+    "পূর্ণ concept-এ finite-domain বাধা": 9
+  },
+  "সীমা": "সীমিত map ও তিন বস্তুতে relation-সূত্র পরীক্ষা; অসীম cardinal তুলনা, Choice, শ্রেণির properness বা পূর্ণ Hume-মডেলের বিকল্প নয়। omega+1-এর পূর্ণ মডেল ও subset-order lemma মানবপাঠ্য review-তে সাধারণ প্রমাণ; finite concept পরীক্ষাকে কোনও finite HP-model বলা হয়নি। চিত্রের TeX render এখনও বাকি।"
+}

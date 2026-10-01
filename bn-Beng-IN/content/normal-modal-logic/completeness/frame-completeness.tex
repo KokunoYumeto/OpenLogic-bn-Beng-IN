@@ -13,7 +13,10 @@
 কোনো যুক্তির প্রামাণিক মডেলের সংশ্লিষ্ট কাঠামোগত ধর্ম আছে—এটি দেখাতে পারলে \Log{K}-এর পূর্ণতা উপপাদ্য অন্য মোডাল পদ্ধতিতেও প্রসারিত করা যায়।
 
 \begin{thm}\ollabel{thm:completeframeprops}
-  স্বাভাবিক মোডাল যুক্তি $\Sigma$-তে \olref{tab:correspondencetable}-এর বাম দিকের !!{formula}s-এর কোনো একটি থাকলে, $\Sigma$-র প্রামাণিক মডেলের ডান দিকের সংশ্লিষ্ট ধর্মটি আছে।
+  সঙ্গত স্বাভাবিক মোডাল যুক্তি $\Sigma$-তে \olref{tab:correspondencetable}-এর বাম দিকের !!{formula}s-এর কোনো একটি থাকলে, $\Sigma$-র প্রামাণিক মডেলের ডান দিকের সংশ্লিষ্ট ধর্মটি আছে।
+  % BN-SRC-712 TARGET-CORRECTION-BEGIN
+  \emph{উৎস-সংশোধন:} প্রামাণিক মডেলের সংজ্ঞা অনুযায়ী পদ্ধতির সঙ্গতি প্রয়োজন; এই উপপাদ্য এবং নিচের অতিরিক্ত কাঠামোগত ধর্মের প্রস্তাবে সেই শর্ত স্পষ্ট করা হয়েছে।
+  % BN-SRC-712 TARGET-CORRECTION-END
 \end{thm}
 
 \begin{table}[htp]
@@ -81,7 +84,7 @@
 \end{thm}
 
 \begin{prop}
-  ধরা যাক $\Sigma$ একটি স্বাভাবিক মোডাল যুক্তি। তাহলে:
+  ধরা যাক $\Sigma$ একটি সঙ্গত স্বাভাবিক মোডাল যুক্তি। তাহলে:
   \begin{enumerate}
   \item\ollabel{prop:anotherfive-a}%
     $\Sigma$-তে স্কিমা $\Diamond!A \lif \Box
@@ -91,7 +94,7 @@
   \item $\Sigma$-তে স্কিমা $\Box\Box!A \lif \Box
     !A$ থাকলে $\Sigma$-র প্রামাণিক মডেল দুর্বলভাবে ঘন।
   \end{enumerate}
-(এই কাঠামোগত ধর্মগুলির সংজ্ঞার জন্য \olref[frd][acc]{tab:anotherfive} দেখো)।
+(এই কাঠামোগত ধর্মগুলির সংজ্ঞার জন্য \olref[frd][acc]{tab:anotherfive} দেখুন)।
 \end{prop}
 
 \begin{proof}
@@ -116,7 +119,10 @@
     \subseteq \Delta_3$ এবং $\Diamond\Delta_2 \subseteq \Delta_3$; অর্থাৎ $R^\Sigma \Delta_1\Delta_3$\iftag{prvBox}{}{ (\olref[mod]{lem:box-iff-diamond} থেকে)} এবং $R^\Sigma
     \Delta_3\Delta_2$\iftag{prvBox}{ (\olref[mod]{lem:box-iff-diamond} থেকে)}{}।
 
-    স্ববিরোধের জন্য ধরা যাক $\Gamma$ সঙ্গত নয়। তাহলে এমন !!{formula}s $\Box!A_1$, \dots, $\Box!A_n \in \Delta_1$
+    স্ববিরোধের জন্য ধরা যাক $\Gamma$ সঙ্গত নয়। % BN-SRC-711 TARGET-CORRECTION-BEGIN
+    \emph{উৎস-সংশোধন:} সসীম সাক্ষীর সম্ভাব্য শূন্য দ্বিতীয় তালিকার ক্ষেত্র আগে বাদ দিই। শুধু প্রথম অংশের পূর্বপক্ষ থেকে স্ববিরোধ এলে $\Box^{-1}\Delta_1 \Proves[\Sigma] \lfalse$। দ্বিতীয় Box-সহায়ক উপপাদ্যে $\Delta_1 \Proves[\Sigma] \Box\lfalse$; বদ্ধতা ও $R^\Sigma\Delta_1\Delta_2$ থেকে $\lfalse \in \Delta_2$, যা সঙ্গতির বিরুদ্ধে। তাই নিচের তালিকায় $m\ge1$ ধরা যায়; প্রথম তালিকা শূন্য হলেও আগের শূন্য-পূর্বপক্ষের মোডাল সহায়ক উপপাদ্য প্রযোজ্য।
+    % BN-SRC-711 TARGET-CORRECTION-END
+    তাহলে এমন !!{formula}s $\Box!A_1$, \dots, $\Box!A_n \in \Delta_1$
     এবং $!B_1$, \dots,~$!B_m \in \Delta_2$ আছে যাতে \[!A_1, \dots,
     !A_n, \Diamond!B_1, \dots, \Diamond!B_m \Proves[\Sigma]
     \lfalse.\] যেহেতু $\Diamond (!B_1 \land \dots \land !B_m) \to

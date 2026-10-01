@@ -1,4 +1,8 @@
-"""Replay source/translation structural and mathematical checks for the public draft."""
+"""Check current source/translation structure and documented math-fragment deltas.
+
+Math parity is a whole-unit multiset check. It does not certify formula position,
+proof correctness, or translated prose; those require the separate review record.
+"""
 
 import collections
 import hashlib
@@ -36,13 +40,31 @@ def sideways_derivation_before_caption(text):
 
 
 def without_documented_corrections(text):
-    return re.sub(
-        r"% (?:OLFUN-\d+|BN-SRC-\d+|BN-NORM-\d+|OLSIZ-\d+) TARGET-(?:CORRECTION|NORMALIZATION)-BEGIN.*?"
-        r"% (?:OLFUN-\d+|BN-SRC-\d+|BN-NORM-\d+|OLSIZ-\d+) TARGET-(?:CORRECTION|NORMALIZATION)-END",
-        "",
-        text,
-        flags=re.S,
+    for line in text.splitlines():
+        end = re.search(r"TARGET-(?:CORRECTION|NORMALIZATION)-END(.*)$", line)
+        if end:
+            trailing = end[1].strip()
+            assert not trailing or trailing.startswith("%"), (
+                "TeX comment hides prose after correction END", line
+            )
+    paired = re.compile(
+        r"% (?P<identifier>OLFUN-\d+|BN-SRC-\d+|BN-NORM-\d+|OLSIZ-\d+) "
+        r"TARGET-(?P<kind>CORRECTION|NORMALIZATION)-BEGIN"
+        r"(?P<content>.*?)% (?P=identifier) TARGET-(?P=kind)-END",
+        re.S,
     )
+    marker = re.compile(
+        r"% (?:OLFUN-\d+|BN-SRC-\d+|BN-NORM-\d+|OLSIZ-\d+) "
+        r"TARGET-(?:CORRECTION|NORMALIZATION)-(?:BEGIN|END)"
+    )
+    def remove_note(match):
+        assert not marker.search(match["content"]), (
+            "Nested correction markers", match["identifier"]
+        )
+        return ""
+    checked = paired.sub(remove_note, text)
+    assert not marker.search(checked), "Unpaired or mismatched correction markers"
+    return checked
 
 
 def body(text):
@@ -141,11 +163,12 @@ def mathparts_with_choice_least_caption(text, source=False):
 
 def controls(text):
     commands = re.findall(
-        r"\\(?:ollabel|olref|oliflabeldef|olasset|olimport|cite|citep|citet|citeyear|"
+        r"\\(?:ollabel|olref|oliflabeldef|olasset|olimport|cite|citep|citet|citeyear|citeauthor|citeyearpar|"
         r"label|ref|cref|Cref|url)(?:\[[^\]]*\])*(?:\{[^{}]*\})",
         text,
     )
     commands += re.findall(r"\\olfileid(?:\{[^{}]*\}){3}", text)
+    commands += re.findall(r"\\crefrange(?:\{[^{}]*\}){2}", text)
     commands += re.findall(r"\\(?:use|print)token(?:\{[^{}]*\}){2}", text)
     commands += re.findall(r"\\olchapter(?:\[[^\]]*\])?(?:\{[^{}]*\}){2}", text)
     return collections.Counter(commands)
@@ -1968,6 +1991,7 @@ for row in rows:
         )
     lambda_syntax_foundations_math_fix = False
     lambda_syntax_foundations_expected = {
+        "OLP-0357": {"BN-SRC-919"},
         "OLP-0360": {"BN-SRC-275"},
         "OLP-0361": {"BN-SRC-276", "BN-SRC-277", "BN-SRC-282", "BN-SRC-283"},
         "OLP-0362": {"BN-SRC-278", "BN-SRC-279", "BN-SRC-280", "BN-SRC-281", "BN-SRC-284"},
@@ -1977,6 +2001,11 @@ for row in rows:
     }
     lambda_syntax_control_fix = False
     audited_lambda_syntax_foundations = source
+    if row["unit_id"] == "OLP-0357":
+        old = r"$(\lambd[g][(\lambd[x][(g (x x))])" + "\n" + r"  (\lambd[x][(g (x x))])])$"
+        new = r"$(\lambd[g][((\lambd[x][(g (x x))])" + "\n" + r"  (\lambd[x][(g (x x))]))])$"
+        assert audited_lambda_syntax_foundations.count(old)==1
+        audited_lambda_syntax_foundations=audited_lambda_syntax_foundations.replace(old,new,1)
     if row["unit_id"] == "OLP-0360":
         old = (
             "then the corresponding\noccurrence of~$N$ is the "
@@ -2381,7 +2410,16 @@ for row in rows:
             ),
             (
                 r"Truth functions are the same as \L ukasiewicz logic~$\LogLuk[3]$.",
-                r"The falsum truth function is $\tf{\lfalse}=\False$; truth functions for the remaining connectives are the same as \L ukasiewicz logic~$\LogLuk[3]$.",
+                r"""The falsum truth function is $\tf{\lfalse}=\False$; negation, conjunction and disjunction are as in \L ukasiewicz logic~$\LogLuk[3]$. The RM3 conditional is
+    \[
+    \begin{array}{c|ccc}
+      \tf{\lif}[\LogRM[3]] & \True & \Undef & \False \\
+      \hline
+      \True & \True & \False & \False \\
+      \Undef & \True & \Undef & \False \\
+      \False & \True & \True & \True
+    \end{array}
+    \]""",
             ),
         ]
         for old, new in repairs:
@@ -2392,7 +2430,7 @@ for row in rows:
     if 392 <= unit_number <= 397:
         expected_three_valued = {
             "OLP-0394": {"BN-SRC-318", "BN-SRC-319", "BN-SRC-323"},
-            "OLP-0397": {"BN-SRC-320", "BN-SRC-321", "BN-SRC-322"},
+            "OLP-0397": {"BN-SRC-320", "BN-SRC-321", "BN-SRC-322", "BN-SRC-683"},
         }
         assert set(documented) == expected_three_valued.get(row["unit_id"], set())
         three_valued_logics_math_fix = (
@@ -2408,7 +2446,8 @@ for row in rows:
             ),
             (
                 r"n \in \Nat \text{ and } n\le m}",
-                r"n \in \Nat \text{ and } n\le m-1}",
+                r"n \in \Nat \text{ and } n\le m-1}," "\n"
+                r"\qquad m\in\Nat,\ m\ge2",
             ),
         ]
         for old, new in repairs:
@@ -2430,7 +2469,7 @@ for row in rows:
             audited_infinite_valued_logics = audited_infinite_valued_logics.replace(old, new, 1)
     if 398 <= unit_number <= 401:
         expected_infinite_valued = {
-            "OLP-0399": {"BN-SRC-324", "BN-SRC-325"},
+            "OLP-0399": {"BN-SRC-324", "BN-SRC-325", "BN-SRC-684"},
             "OLP-0400": {"BN-SRC-327"},
             "OLP-0401": {"BN-SRC-326", "BN-SRC-328"},
         }
@@ -2456,10 +2495,14 @@ for row in rows:
         new = "where each $\\Gamma_i$"
         assert audited_many_valued_sequent_calculus.count(old) == 1
         audited_many_valued_sequent_calculus = audited_many_valued_sequent_calculus.replace(old, new, 1)
+        old_example = r"For instance, $3$-valued \L ukasiewicz logic"
+        new_example = r"Here take $\Gamma$ to be a finite sequence. $3$-valued \L ukasiewicz logic"
+        assert audited_many_valued_sequent_calculus.count(old_example) == 1
+        audited_many_valued_sequent_calculus = audited_many_valued_sequent_calculus.replace(old_example, new_example, 1)
     if 402 <= unit_number <= 406:
         expected_many_valued_sequent = {
             "OLP-0403": {"BN-SRC-329", "BN-SRC-330"},
-            "OLP-0404": {"BN-SRC-331"},
+            "OLP-0404": {"BN-SRC-331", "BN-SRC-685"},
         }
         assert set(documented) == expected_many_valued_sequent.get(row["unit_id"], set())
         many_valued_sequent_calculus_math_fix = (
@@ -2472,8 +2515,9 @@ for row in rows:
     normal_modal_opening_math_fix = False
     if 407 <= unit_number <= 412:
         expected_modal_opening = {
+            "OLP-0409": {"BN-SRC-686"},
             "OLP-0410": {"BN-SRC-332"},
-            "OLP-0411": {"BN-SRC-333", "BN-SRC-334"},
+            "OLP-0411": {"BN-SRC-333", "BN-SRC-334", "BN-SRC-687"},
         }
         assert set(documented) == expected_modal_opening.get(row["unit_id"], set())
         audited_modal_opening = source
@@ -2487,13 +2531,22 @@ for row in rows:
             assert checked_target.count(r"\tagitem{prvIff}{\indcase{!A}{(!B \liff") == 1
             assert source.count(r"\item \indcase{!A}{\Box !B}") == 1
             assert checked_target.count(r"\tagitem{prvBox}{\indcase{!A}{\Box !B}") == 1
+            for old, new in (
+                (r"\Diamond(p_2 \lif p_3) & \Subst{\lif \Box(\Diamond(p_2 \lif p_3) \land p_2)}{\lnot\Box p_1}{p_2}",
+                 r"& \Subst{\Diamond(p_2 \lif p_3) \lif \Box(\Diamond(p_2 \lif p_3) \land p_2)}{\lnot\Box p_1}{p_2}"),
+                (r"p_1 & \lif \Subst{\Box(p_1 \land \lnot\Box p_1)}{\Diamond(p_2 \lif p_3)}{p_1}",
+                 r"& \Subst{p_1 \lif \Box(p_1 \land \lnot\Box p_1)}{\Diamond(p_2 \lif p_3)}{p_1}"),
+            ):
+                assert audited_modal_opening.count(old) == 1
+                assert checked_target.count(new) == 1
+                audited_modal_opening = audited_modal_opening.replace(old, new, 1)
         normal_modal_opening_math_fix = mathparts(audited_modal_opening) == target_math
     normal_modal_completion_math_fix = False
     if 413 <= unit_number <= 418:
         expected_modal_completion = {
             "OLP-0413": {"BN-SRC-335", "BN-SRC-342"},
             "OLP-0416": {"BN-SRC-336", "BN-SRC-337", "BN-SRC-338"},
-            "OLP-0417": {"BN-SRC-339"},
+            "OLP-0417": {"BN-SRC-339", "BN-SRC-688"},
             "OLP-0418": {"BN-SRC-340", "BN-SRC-341"},
         }
         assert set(documented) == expected_modal_completion.get(row["unit_id"], set())
@@ -2534,12 +2587,22 @@ for row in rows:
     frame_definability_math_fix = False
     if 419 <= unit_number <= 426:
         expected_frame_corrections = {
+            "OLP-0420": {"BN-SRC-689"},
+            "OLP-0421": {"BN-SRC-690"},
             "OLP-0423": {"BN-SRC-343", "BN-SRC-344"},
             "OLP-0424": {"BN-SRC-345"},
-            "OLP-0426": {"BN-SRC-346", "BN-SRC-347", "BN-SRC-348"},
+            "OLP-0426": {"BN-SRC-346", "BN-SRC-347", "BN-SRC-348", "BN-SRC-691", "BN-SRC-692"},
         }
         assert set(documented) == expected_frame_corrections.get(row["unit_id"], set())
         expected_math_delta = {
+            "OLP-0420": (
+                collections.Counter({r"\Box!A\lif!A": 1}),
+                collections.Counter({r"\Boxp\lifp": 1}),
+            ),
+            "OLP-0421": (
+                collections.Counter(),
+                collections.Counter({r"R=\emptyset": 1, r"R=\{\tuple{u,v},\tuple{v,u}\}": 1}),
+            ),
             "OLP-0423": (
                 collections.Counter({r"\mSat{M}{\Box!A}": 1, r"V(q)=\emptyset)": 1}),
                 collections.Counter({r"\mSat{M}{\Box!A}[w]": 1, r"V(q)=\emptyset": 1}),
@@ -2579,15 +2642,34 @@ for row in rows:
     axioms_systems_math_fix = False
     if 427 <= unit_number <= 440:
         expected_axioms_corrections = {
+            "OLP-0428": {"BN-SRC-694"},
+            "OLP-0429": {"BN-SRC-693"},
             "OLP-0430": {"BN-SRC-349"},
+            "OLP-0431": {"BN-SRC-695"},
             "OLP-0432": {"BN-SRC-350", "BN-SRC-351"},
+            "OLP-0433": {"BN-SRC-696"},
+            "OLP-0436": {"BN-SRC-697", "BN-SRC-698"},
             "OLP-0437": {"BN-SRC-352", "BN-SRC-353"},
+            "OLP-0438": {"BN-SRC-699"},
+            "OLP-0440": {"BN-SRC-700", "BN-SRC-701"},
         }
         assert set(documented) == expected_axioms_corrections.get(row["unit_id"], set())
         expected_axioms_delta = {
             "OLP-0430": (
                 collections.Counter({r"K\in\Sigma": 1}),
                 collections.Counter({r"\Ax{K}\in\Sigma": 1}),
+            ),
+            "OLP-0431": (
+                collections.Counter({
+                    r"(\Box!A\lif(\Box!B\lif\Box(!A\land!B))))": 1,
+                    r"\Box!A\lif(\Box!B\lif\Box(!A\land!B)))": 1,
+                    r"(\Box!A\lif(\Box!B\lif\Box(!A\land!B))))\lif{}": 1,
+                }),
+                collections.Counter({
+                    r"(\Box!A\lif(\Box!B\lif\Box(!A\land!B)))": 1,
+                    r"\Box!A\lif(\Box!B\lif\Box(!A\land!B))": 1,
+                    r"(\Box!A\lif(\Box!B\lif\Box(!A\land!B)))\lif{}": 1,
+                }),
             ),
             "OLP-0432": (
                 collections.Counter({
@@ -2598,6 +2680,10 @@ for row in rows:
                     r"\Log{K}\Proves\Box!A\lif(\Box!B\lif\Box(!A\land!B))": 1,
                     r"\Log{K}\Proves\Subst{!C}{!B}{q}": 1,
                 }),
+            ),
+            "OLP-0433": (
+                collections.Counter(),
+                collections.Counter({r"\Log{K}\Proves\Diamond(!A\lor!B)\lif(\Diamond!A\lor\Diamond!B)": 1}),
             ),
             "OLP-0437": (
                 collections.Counter({
@@ -2622,9 +2708,14 @@ for row in rows:
     modal_completeness_math_fix = False
     if 441 <= unit_number <= 449:
         expected_modal_completeness_corrections = {
-            "OLP-0443": {"BN-SRC-354", "BN-SRC-355"},
-            "OLP-0445": {"BN-SRC-356", "BN-SRC-357", "BN-SRC-358"},
-            "OLP-0447": {"BN-SRC-359"},
+            "OLP-0442": {"BN-SRC-702"},
+            "OLP-0443": {"BN-SRC-354", "BN-SRC-355", "BN-SRC-703", "BN-SRC-704"},
+            "OLP-0444": {"BN-SRC-705"},
+            "OLP-0445": {"BN-SRC-356", "BN-SRC-357", "BN-SRC-358", "BN-SRC-706", "BN-SRC-707"},
+            "OLP-0446": {"BN-SRC-708"},
+            "OLP-0447": {"BN-SRC-359", "BN-SRC-709"},
+            "OLP-0448": {"BN-SRC-710"},
+            "OLP-0449": {"BN-SRC-711", "BN-SRC-712"},
         }
         assert set(documented) == expected_modal_completeness_corrections.get(
             row["unit_id"], set()
@@ -2662,6 +2753,13 @@ for row in rows:
             source_math - target_math == expected_removed
             and target_math - source_math == expected_added
         )
+        if row["unit_id"] == "OLP-0444":
+            assert "দৈর্ঘ্য সর্বাধিক~$n$" in checked_target
+        if row["unit_id"] == "OLP-0446":
+            assert "একটি সঙ্গত স্বাভাবিক মোডাল যুক্তি" in checked_target
+        if row["unit_id"] == "OLP-0447":
+            assert source.count("probNot,proband,probOr") == 1
+            assert checked_target.count("probNot,probAnd,probOr") == 1
     modal_completeness_control_fix = (
         row["unit_id"] == "OLP-0447"
         and "BN-SRC-359" in documented
@@ -2673,10 +2771,13 @@ for row in rows:
     filtrations_math_fix = False
     if 450 <= unit_number <= 459:
         expected_filtration_corrections = {
-            "OLP-0451": {"BN-SRC-360", "BN-SRC-361"},
-            "OLP-0456": {"BN-SRC-362"},
-            "OLP-0457": {"BN-SRC-365"},
-            "OLP-0459": {"BN-SRC-363", "BN-SRC-364"},
+            "OLP-0451": {"BN-SRC-360", "BN-SRC-361", "BN-SRC-713", "BN-SRC-714", "BN-SRC-715", "BN-SRC-716", "BN-SRC-717"},
+            "OLP-0452": {"BN-SRC-718"},
+            "OLP-0454": {"BN-SRC-719", "BN-SRC-720", "BN-SRC-721"},
+            "OLP-0456": {"BN-SRC-362", "BN-SRC-726"},
+            "OLP-0457": {"BN-SRC-365", "BN-SRC-722"},
+            "OLP-0458": {"BN-SRC-723"},
+            "OLP-0459": {"BN-SRC-363", "BN-SRC-364", "BN-SRC-724", "BN-SRC-725"},
         }
         assert set(documented) == expected_filtration_corrections.get(
             row["unit_id"], set()
@@ -2696,6 +2797,18 @@ for row in rows:
                 collections.Counter({r"\mSat{M^*}{!A}[w]": 1}),
                 collections.Counter({r"\mSat{M^*}{!A}[{[w]}]": 1}),
             ),
+            "OLP-0454": (
+                collections.Counter({
+                    r"V(p)=\Setabs{2n}{n\in\Nat}": 1,
+                    r"V(p)=\Setabs{\sigma0}{\sigma\in\Bin^*}": 1,
+                    r"V(q)=\Setabs{\sigma1}{\sigma\in\Bin^*\setminus\{1\}}": 1,
+                }),
+                collections.Counter({
+                    r"V(p)=\Setabs{2n}{n\in\PosInt}": 1,
+                    r"V(p)=W\cap\Setabs{\sigma0}{\sigma\in\Bin^*}": 1,
+                    r"V(q)=W\cap\Setabs{\sigma1}{\sigma\in\Bin^*\setminus\{1\}}": 1,
+                }),
+            ),
             "OLP-0459": (
                 collections.Counter({r"w_2": 1, r"w_5": 1}),
                 collections.Counter({r"[w_2]": 1, r"[w_5]": 1}),
@@ -2708,23 +2821,45 @@ for row in rows:
             source_math - target_math == expected_removed
             and target_math - source_math == expected_added
         )
+        if row["unit_id"] == "OLP-0459":
+            loop = r"\draw[reflexive above] (w2) to (w2);"
+            assert loop not in source and checked_target.count(loop) == 2
+            assert checked_target.replace(loop, "").count(r"\draw[") == source.count(r"\draw[")
+    modal_sequent_math_fix = (
+        row["unit_id"] == "OLP-0474"
+        and set(documented) == {"BN-SRC-739", "BN-SRC-740"}
+        and not (source_math - target_math)
+        and target_math - source_math == collections.Counter({r"\Diamond": 6})
+    )
     modal_tableaux_math_fix = False
     temporal_math_fix = False
+    intuitionistic_zero_index_math_fix = (
+        row["unit_id"] == "OLP-0507"
+        and set(documented) == {"BN-SRC-759", "BN-SRC-760"}
+        and source_math - target_math == collections.Counter({r"\tuple{!B_2,!C_2}": 1})
+        and target_math - source_math == collections.Counter({r"\tuple{!B_0,!C_0}": 1})
+    )
+    epistemic_agent_math_fix = (
+        row["unit_id"] == "OLP-0488"
+        and set(documented) == {"BN-SRC-750", "BN-SRC-751"}
+        and source_math - target_math == collections.Counter({r"a\inA": 2})
+        and target_math - source_math == collections.Counter({r"a\inG": 2})
+    )
     if 460 <= unit_number <= 469:
         expected_modal_tableaux_corrections = {
-            "OLP-0462": {"BN-SRC-371"},
+            "OLP-0462": {"BN-SRC-371", "BN-SRC-727", "BN-SRC-728"},
             "OLP-0464": {
                 "BN-SRC-366", "BN-SRC-367", "BN-SRC-368",
-                "BN-SRC-369", "BN-SRC-370", "BN-SRC-372",
+                "BN-SRC-369", "BN-SRC-370", "BN-SRC-372", "BN-SRC-729", "BN-SRC-730", "BN-SRC-731",
             },
-            "OLP-0465": {"BN-SRC-373"},
+            "OLP-0465": {"BN-SRC-373", "BN-SRC-732", "BN-SRC-733"},
             "OLP-0466": {"BN-SRC-374", "BN-SRC-375", "BN-SRC-376"},
             "OLP-0468": {
                 "BN-SRC-377", "BN-SRC-378", "BN-SRC-379",
                 "BN-SRC-380", "BN-SRC-381", "BN-SRC-382",
-                "BN-SRC-383", "BN-SRC-384",
+                "BN-SRC-383", "BN-SRC-384", "BN-SRC-734", "BN-SRC-735",
             },
-            "OLP-0469": {"BN-SRC-385", "BN-SRC-386", "BN-SRC-387", "BN-SRC-388"},
+            "OLP-0469": {"BN-SRC-385", "BN-SRC-386", "BN-SRC-387", "BN-SRC-388", "BN-SRC-736"},
         }
         assert set(documented) == expected_modal_tableaux_corrections.get(
             row["unit_id"], set()
@@ -2752,7 +2887,7 @@ for row in rows:
             ),
             "OLP-0465": (
                 collections.Counter({r"\Log{S5}\Proves\Ax{5}": 1}),
-                collections.Counter({r"\Log{S5}\Proves\Box!A\lif\Box\Diamond!A": 1}),
+                collections.Counter({r"\Log{S5}\Proves\Box!A\lif\Box\Diamond!A": 1, r"\sigma": 6}),
             ),
             "OLP-0466": (
                 collections.Counter({
@@ -2858,7 +2993,7 @@ for row in rows:
                 "BN-SRC-096",
                 "BN-SRC-097",
                 "BN-SRC-098",
-                "BN-SRC-099",
+                "BN-SRC-099", "BN-SRC-911", "BN-SRC-912",
             },
             "OLP-0164": {"BN-SRC-100", "BN-SRC-101"},
             "OLP-0165": {"BN-SRC-102"},
@@ -5046,7 +5181,7 @@ for row in rows:
         }
     elif row["unit_id"] == "OLP-0397":
         assert three_valued_logics_math_fix
-        assert set(documented) == {"BN-SRC-320", "BN-SRC-321", "BN-SRC-322"}
+        assert set(documented) == {"BN-SRC-320", "BN-SRC-321", "BN-SRC-322", "BN-SRC-683"}
         assert all(
             phrase in checked_target
             for phrase in (
@@ -5063,6 +5198,7 @@ for row in rows:
             "lp_induction_basis_repaired": True,
             "lp_conjunction_induction_variables_restored": True,
             "rm3_falsum_interpretation_restored": True,
+            "rm3_conditional_corrected_from_primary_research": True,
         }
     elif row["unit_id"] == "OLP-0398":
         assert infinite_valued_logics_math_fix and not documented
@@ -5071,14 +5207,15 @@ for row in rows:
         tex_command_check = {"infinite_valued_logics_chapter_driver_reviewed": True}
     elif row["unit_id"] == "OLP-0399":
         assert infinite_valued_logics_math_fix
-        assert set(documented) == {"BN-SRC-324", "BN-SRC-325"}
+        assert set(documented) == {"BN-SRC-324", "BN-SRC-325", "BN-SRC-684"}
         assert all(phrase in checked_target for phrase in (
-            r"0<m \text{ and } n\le m", r"n\le m-1", "সমান ব্যবধানে", "ফাজি",
+            r"0<m \text{ এবং } n\le m", r"n\le m-1", "সমান ব্যবধানে", "ফাজি",
         ))
         tex_command_check = {
             "rational_unit_interval_and_designation_reviewed": True,
             "nonzero_denominator_restored": True,
             "m_value_cardinality_restored": True,
+            "finite_grid_index_domain_restored": True,
         }
     elif row["unit_id"] == "OLP-0400":
         assert infinite_valued_logics_math_fix
@@ -5127,7 +5264,7 @@ for row in rows:
         }
     elif row["unit_id"] == "OLP-0404":
         assert many_valued_sequent_calculus_math_fix
-        assert set(documented) == {"BN-SRC-331"}
+        assert set(documented) == {"BN-SRC-331", "BN-SRC-685"}
         assert all(phrase in checked_target for phrase in (
             "প্রারম্ভিক সিকোয়েন্ট", "মনোনীত সত্যমান", r"\Gamma_i",
             r"\Gamma_0 \subseteq \Gamma", "অনুমান-বিধি",
@@ -5189,7 +5326,7 @@ for row in rows:
         tex_command_check = {"modal_language_formation_and_connective_definitions_reviewed": True}
     elif row["unit_id"] == "OLP-0411":
         assert normal_modal_opening_math_fix
-        assert set(documented) == {"BN-SRC-333", "BN-SRC-334"}
+        assert set(documented) == {"BN-SRC-333", "BN-SRC-334", "BN-SRC-687"}
         assert all(phrase in checked_target for phrase in (
             "যুগপৎ প্রতিস্থাপন", r"\tagitem{prvIff}{\indcase{!A}{(!B \liff",
             r"\tagitem{prvBox}{\indcase{!A}{\Box !B}",
@@ -5259,13 +5396,13 @@ for row in rows:
         ))
         tex_command_check = {"frame_definability_title_and_seven_imports_reviewed": True}
     elif row["unit_id"] == "OLP-0420":
-        assert frame_definability_math_fix and not documented
+        assert frame_definability_math_fix
         assert all(phrase in checked_target for phrase in (
             r"\mModel{F} \Entails !A", r"V(p) =", r"\Box p \lif p",
         ))
         tex_command_check = {"fixed_model_vs_all_valuations_and_frame_intro_reviewed": True}
     elif row["unit_id"] == "OLP-0421":
-        assert frame_definability_math_fix and not documented
+        assert frame_definability_math_fix
         assert all(phrase in checked_target for phrase in (
             r"\ollabel{tab:five}", r"\ollabel{tab:anotherfive}",
             r"\ollabel{prop:reflexive}", r"\ollabel{fig:Bsymm}",
@@ -5385,6 +5522,13 @@ for row in rows:
             wrong = r"[\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[2]}"
             right = r"[\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\False}{\Box}[2]}"
             assert wrong in source and wrong not in checked_target and right in checked_target
+            assert checked_target.count(r"\TRule{\True}{\lnot}[5]") == source.count(r"\TRule{\True}{\lnot}[5]")-1
+            assert checked_target.count(r"\TRule{\False}{\lnot}[5]") == source.count(r"\TRule{\False}{\lnot}[5]")+1
+            assert source.count(r"\Ax{K}") == 2 and checked_target.count(r"\Ax{K}") == 0
+            assert checked_target.count(r"\Log{K}") == 2
+        if row["unit_id"] == "OLP-0464":
+            assert source.count(r"\tagfalse{prvDiamond}") == 1
+            assert r"\tagfalse{prvDiamond}" not in checked_target
         if row["unit_id"] == "OLP-0469":
             wrong = r"[\pFmla{\False}{\Diamond(p \land q) \lif (\Diamond p \land \Diamond q)}{1}"
             right = r"[\pFmla{\False}{(\Diamond p \land \Diamond q) \lif \Diamond(p \land q)}{1}"
@@ -5392,9 +5536,11 @@ for row in rows:
             assert checked_target.count(right) == source.count(right) + 1
         tex_command_check = {"modal_tableaux_rules_proofs_and_anchors_reviewed": True}
     elif 470 <= unit_number <= 474:
-        assert set(documented) == (
-            {"BN-SRC-389"} if row["unit_id"] == "OLP-0473" else set()
-        )
+        assert set(documented) == {
+            "OLP-0471": {"BN-SRC-737"},
+            "OLP-0473": {"BN-SRC-389", "BN-SRC-738", "BN-SRC-741"},
+            "OLP-0474": {"BN-SRC-739", "BN-SRC-740"},
+        }.get(row["unit_id"], set())
         modal_sequent_review_anchors = {
             "OLP-0470": (r"\olchapter{nml}{seq}", r"\begin{editorial}", r"\olimport{more-rules}"),
             "OLP-0471": (r"\olfileid{nml}{seq}{int}", r"\DisplayProof", r"\Cut"),
@@ -5407,11 +5553,25 @@ for row in rows:
             wrong = "\\Axiom$!A \\fCenter !A$\n    \\RightLabel{\\RightR{\\lnot}}\n    \\UnaryInf$\\lnot !A, !A \\fCenter $"
             assert wrong in source and wrong not in checked_target
             assert r"\RightLabel{\LeftR{\lnot}}" in checked_target
+            assert re.search(
+                r"\\UnaryInf\$\\fCenter \\Box !A, \\Diamond\\lnot !A\$\s*"
+                r"(?:%[^\n]*\n\s*)*\\RightLabel\{\\LeftR\{\\lnot\}\}",
+                checked_target,
+            )
+        if row["unit_id"] == "OLP-0474":
+            assert modal_sequent_math_fix
+            assert re.search(
+                r"\\UnaryInf\$\\Diamond\\lnot\\Diamond!A , \\Diamond!A\\fCenter\$\s*"
+                r"(?:%[^\n]*\n\s*)*\\RightLabel\{\\LeftR\{\\Exchange\}\}",
+                checked_target,
+            )
         tex_command_check = {"modal_sequent_rules_proofs_and_anchors_reviewed": True}
     elif 475 <= unit_number <= 480:
-        assert set(documented) == (
-            {"BN-SRC-390"} if row["unit_id"] == "OLP-0478" else set()
-        )
+        assert set(documented) == {
+            "OLP-0476": {"BN-SRC-743"},
+            "OLP-0478": {"BN-SRC-390"},
+            "OLP-0480": {"BN-SRC-742"},
+        }.get(row["unit_id"], set())
         temporal_review_anchors = {
             "OLP-0475": (r"\olpart{aml}", r"\begin{editorial}", r"\olimport[epistemic-logic]{epistemic-logic}"),
             "OLP-0476": (r"\olchapter{aml}{tl}", r"\olimport{possible-histories}"),
@@ -5421,6 +5581,10 @@ for row in rows:
             "OLP-0480": (r"\ollabel{defn:since-until}", r"\ollabel{defn:sub:mmodels-until}"),
         }
         assert all(anchor in checked_target for anchor in temporal_review_anchors[row["unit_id"]])
+        if row["unit_id"] == "OLP-0476":
+            assert r"\OLEndPartHook" in source
+            assert r"\OLEndPartHook" not in checked_target
+            assert checked_target.count(r"\OLEndChapterHook")==1
         if row["unit_id"] == "OLP-0478":
             assert "$F !A$" in source and "$F !A$" not in checked_target
             assert "$\\Ftemp !A$" in checked_target
@@ -5430,9 +5594,12 @@ for row in rows:
             )
         tex_command_check = {"temporal_semantics_frames_and_operators_reviewed": True}
     elif 481 <= unit_number <= 485:
-        assert set(documented) == (
-            {"BN-SRC-391"} if row["unit_id"] == "OLP-0483" else set()
-        )
+        assert set(documented) == {
+            "OLP-0481": {"BN-SRC-744", "BN-SRC-745"},
+            "OLP-0482": {"BN-SRC-746"},
+            "OLP-0483": {"BN-SRC-391"},
+            "OLP-0484": {"BN-SRC-747"},
+        }.get(row["unit_id"], set())
         epistemic_opening_anchors = {
             "OLP-0481": (r"\olfileid{aml}{tl}{poss}", r"\ollabel{defn:phmodels}", r"\Diamond \Ftemp p"),
             "OLP-0482": (r"\olchapter{aml}{el}", r"\olimport{bisimulations}", r"\olimport{public-announcement-logic-semantics}"),
@@ -5441,15 +5608,23 @@ for row in rows:
             "OLP-0485": (r"\olfileid{aml}{el}{rel}", r"\tuple{W, R, V}", r"R_a ww'"),
         }
         assert all(anchor in checked_target for anchor in epistemic_opening_anchors[row["unit_id"]])
+        if row["unit_id"] == "OLP-0482":
+            assert r"\OLEndPartHook" in source
+            assert r"\OLEndPartHook" not in checked_target
+            assert checked_target.count(r"\OLEndChapterHook") == 1
         if row["unit_id"] == "OLP-0483":
             assert source.count("Jaako Hintikka") == 1
             assert "Jaako Hintikka" not in checked_target
             assert checked_target.count("Jaakko Hintikka") == 1
         tex_command_check = {"temporal_histories_and_epistemic_opening_reviewed": True}
     elif 486 <= unit_number <= 490:
-        assert set(documented) == (
-            {"BN-SRC-392"} if row["unit_id"] == "OLP-0489" else set()
-        )
+        assert set(documented) == {
+            "OLP-0486": {"BN-SRC-749"},
+            "OLP-0487": {"BN-SRC-748"},
+            "OLP-0488": {"BN-SRC-750", "BN-SRC-751"},
+            "OLP-0489": {"BN-SRC-392"},
+            "OLP-0490": {"BN-SRC-752", "BN-SRC-753"},
+        }.get(row["unit_id"], set())
         epistemic_completion_anchors = {
             "OLP-0486": (r"\olfileid{aml}{el}{trw}", r"\ollabel{defn:sub:mmodels-box}", r"\CKnows_{G'} !A"),
             "OLP-0487": (r"\olfileid{aml}{el}{acc}", r"\ollabel{tab:four}", r"\Knows \neg \Knows p"),
@@ -5466,7 +5641,8 @@ for row in rows:
         tex_command_check = {"epistemic_truth_frames_bisimulation_and_announcements_reviewed": True}
     elif 491 <= unit_number <= 497:
         expected_fixes = {
-            "OLP-0495": {"BN-SRC-393", "BN-SRC-394"},
+            "OLP-0493": {"BN-SRC-754"},
+            "OLP-0495": {"BN-SRC-393", "BN-SRC-394", "BN-SRC-755"},
             "OLP-0496": {"BN-SRC-395", "BN-SRC-396"},
         }
         assert set(documented) == expected_fixes.get(row["unit_id"], set())
@@ -5484,7 +5660,7 @@ for row in rows:
     elif 498 <= unit_number <= 502:
         expected_fixes = {
             "OLP-0501": {"BN-SRC-397"},
-            "OLP-0502": {"BN-SRC-398", "BN-SRC-399"},
+            "OLP-0502": {"BN-SRC-398", "BN-SRC-399", "BN-SRC-756"},
         }
         assert set(documented) == expected_fixes.get(row["unit_id"], set())
         intuitionistic_semantics_anchors = {
@@ -5498,9 +5674,11 @@ for row in rows:
         tex_command_check = {"intuitionistic_semantics_hierarchy_truth_and_topology_reviewed": True}
     elif 503 <= unit_number <= 510:
         expected_fixes = {
-            "OLP-0504": {"BN-SRC-400"},
+            "OLP-0503": {"BN-SRC-761"},
+            "OLP-0504": {"BN-SRC-400", "BN-SRC-757"},
             "OLP-0505": {"BN-SRC-401", "BN-SRC-402", "BN-SRC-403", "BN-SRC-404"},
-            "OLP-0506": {"BN-SRC-405"},
+            "OLP-0506": {"BN-SRC-405", "BN-SRC-758"},
+            "OLP-0507": {"BN-SRC-759", "BN-SRC-760"},
             "OLP-0510": {"BN-SRC-406", "BN-SRC-407", "BN-SRC-408"},
         }
         assert set(documented) == expected_fixes.get(row["unit_id"], set())
@@ -5519,9 +5697,9 @@ for row in rows:
     elif 511 <= unit_number <= 515:
         expected_fixes = {
             "OLP-0512": {"BN-SRC-409"},
-            "OLP-0513": {"BN-SRC-410", "BN-SRC-411", "BN-SRC-412"},
+            "OLP-0513": {"BN-SRC-410", "BN-SRC-411", "BN-SRC-412", "BN-SRC-763"},
             "OLP-0514": {"BN-SRC-419"},
-            "OLP-0515": {"BN-SRC-413", "BN-SRC-414", "BN-SRC-415", "BN-SRC-416", "BN-SRC-417", "BN-SRC-418"},
+            "OLP-0515": {"BN-SRC-413", "BN-SRC-414", "BN-SRC-415", "BN-SRC-416", "BN-SRC-417", "BN-SRC-418", "BN-SRC-762"},
         }
         assert set(documented) == expected_fixes.get(row["unit_id"], set())
         intuitionistic_tableaux_anchors = {
@@ -5537,7 +5715,8 @@ for row in rows:
             assert target.count(r"just= {\TRule{\False}{\land}[7]}") == 2
         tex_command_check = {"intuitionistic_tableaux_hierarchy_rules_and_soundness_reviewed": True}
     elif 516 <= unit_number <= 521:
-        assert set(documented) == ({"BN-SRC-420", "BN-SRC-421"} if row["unit_id"] == "OLP-0520" else set())
+        counterfactual_intro_fixes = {"OLP-0520": {"BN-SRC-420", "BN-SRC-421"}, "OLP-0521": {"BN-SRC-764", "BN-SRC-765"}}
+        assert set(documented) == counterfactual_intro_fixes.get(row["unit_id"], set())
         counterfactual_introduction_anchors = {
             "OLP-0516": (r"\olpart{cnt}{", r"\olimport[introduction]{introduction}", r"\olimport[minimal-change-semantics]{minimal-change-semantics}"),
             "OLP-0517": (r"\olchapter{cnt}{int}{", r"\olimport{material-conditional}", r"\olimport{counterfactuals}"),
@@ -5549,7 +5728,7 @@ for row in rows:
         assert all(anchor in target for anchor in counterfactual_introduction_anchors[row["unit_id"]])
         tex_command_check = {"counterfactual_introduction_scope_and_strict_conditional_reviewed": True}
     if row["unit_id"] == "OLP-0635":
-        assert set(documented) == {"BN-SRC-486", "BN-SRC-487", "BN-SRC-488"}
+        assert set(documented) == {"BN-SRC-486", "BN-SRC-487", "BN-SRC-488", "BN-SRC-857"}
         assert r"\foreach \x/\xtext in {-2/-2, -1,1, 1/1, 2/2}" in source
         assert r"\foreach \x/\xtext in {-2/-2, -1/-1, 1/1, 2/2}" in target
         tex_command_check = {"punctured_limit_and_absolute_value_tick_labels_reviewed": True}
@@ -5561,7 +5740,7 @@ for row in rows:
         assert r"$0.1000\ldots$" in target
         tex_command_check = {"canonical_binary_endpoint_and_non_surjectivity_witness_reviewed": True}
     if row["unit_id"] == "OLP-0639":
-        assert set(documented) == {"BN-SRC-491", "BN-SRC-492", "BN-SRC-493"}
+        assert set(documented) == {"BN-SRC-491", "BN-SRC-492", "BN-SRC-493", "BN-SRC-859"}
         assert r"$x \in \unitsquare$" in source
         assert r"$x \in \unitline$" in target
         assert "maximum distance of any" in source and "অভিন্ন অভিসৃতি" in target
@@ -5598,7 +5777,7 @@ for row in rows:
     shared_audit_fix = shared_description is not None and mathparts(audited_source) == target_math
     intuitionistic_bhk_math_fix = (
         row["unit_id"] == "OLP-0495"
-        and set(documented) == {"BN-SRC-393", "BN-SRC-394"}
+        and set(documented) == {"BN-SRC-393", "BN-SRC-394", "BN-SRC-755"}
         and source_math - target_math
         == collections.Counter({"C": 1, r"\tuple{1,M_2}": 1})
         and target_math - source_math
@@ -5622,7 +5801,7 @@ for row in rows:
     )
     intuitionistic_topological_inclusion_math_fix = (
         row["unit_id"] == "OLP-0502"
-        and set(documented) == {"BN-SRC-398", "BN-SRC-399"}
+        and set(documented) == {"BN-SRC-398", "BN-SRC-399", "BN-SRC-756"}
         and source_math - target_math
         == collections.Counter({
             r"\Prop{X}{!A}\subset\Prop{X}{!B}": 1,
@@ -5636,7 +5815,7 @@ for row in rows:
     )
     intuitionistic_soundness_axiom_math_fix = (
         row["unit_id"] == "OLP-0504"
-        and set(documented) == {"BN-SRC-400"}
+        and set(documented) == {"BN-SRC-400", "BN-SRC-757"}
         and source_math - target_math == collections.Counter({r"\mSat{M}{\Gamma}{!A_n}[w]": 1})
         and target_math - source_math == collections.Counter({r"\mSat{M}{!A_n}[w]": 1})
     )
@@ -5669,7 +5848,7 @@ for row in rows:
     )
     intuitionistic_tableaux_implication_rule_fix = (
         row["unit_id"] == "OLP-0513"
-        and set(documented) == {"BN-SRC-410", "BN-SRC-411", "BN-SRC-412"}
+        and set(documented) == {"BN-SRC-410", "BN-SRC-411", "BN-SRC-412", "BN-SRC-763"}
         and source_math - target_math == collections.Counter({
             r"\TRule{\lif}{\True}": 1,
             r"\sFmla{\True}{!A}[\sigma.{*}]": 1,
@@ -5689,7 +5868,7 @@ for row in rows:
     )
     intuitionistic_tableaux_soundness_proof_fix = (
         row["unit_id"] == "OLP-0515"
-        and set(documented) == {f"BN-SRC-{n}" for n in range(413, 419)}
+        and set(documented) == {f"BN-SRC-{n}" for n in range(413, 419)} | {"BN-SRC-762"}
         and source_math - target_math == collections.Counter({
             r"\mSat{M}{!A}[w]": 1,
             r"\mSat{M}{!A}[f(\sigma)]": 1,
@@ -5724,9 +5903,9 @@ for row in rows:
             )
     minimal_change_transitivity_fix = (
         row["unit_id"] == "OLP-0527"
-        and set(documented) == {"BN-SRC-426", "BN-SRC-429"}
+        and set(documented) == {"BN-SRC-426", "BN-SRC-429", "BN-SRC-772", "BN-SRC-774", "BN-SRC-775"}
         and source_math - target_math == collections.Counter({r"\mSat/{M}{q\lifr}": 1})
-        and target_math - source_math == collections.Counter({r"\mSat{M}{q\lifr}": 1})
+        and target_math - source_math == collections.Counter({r"q\lifr": 1})
     )
     minimal_change_contraposition_fix = (
         row["unit_id"] == "OLP-0528"
@@ -5742,7 +5921,7 @@ for row in rows:
     )
     spine_foundation_bound_variable_fix = (
         row["unit_id"] == "OLP-0562"
-        and set(documented) == {"BN-SRC-440"}
+        and set(documented) == {"BN-SRC-440", "BN-SRC-789"}
         and source_math - target_math == collections.Counter({
             r"\beta=\supstrict\Setabs{\delta}{(\existsx\inb)(x\subseteqV_\delta\land(\forall\gamma<\delta)x\nsubseteqV_\gamma)}.": 1,
         })
@@ -5758,7 +5937,8 @@ for row in rows:
     )
     replacement_reflection_proofs_math_fix = False
     if row["unit_id"] == "OLP-0572" and set(documented) == {
-        "BN-SRC-442", "BN-SRC-443", "BN-SRC-444", "BN-SRC-445"
+        "BN-SRC-442", "BN-SRC-443", "BN-SRC-444", "BN-SRC-445",
+        "BN-SRC-796", "BN-SRC-797"
     }:
         old_conditional = r"\existsx\phi_i(\overline{a}_i,x)\rightarrow(\existsx\inV)\phi_i(\overline{a}_i,x))"
         new_conditional = old_conditional[:-1]
@@ -5778,17 +5958,36 @@ for row in rows:
                 new_conditional: 1, new_recurrence: 1, new_image: 1,
             })
         )
+    replacement_finite_model_relativization_fix = False
+    if row["unit_id"] == "OLP-0573" and set(documented) == {
+        "BN-SRC-446", "BN-SRC-798", "BN-SRC-799", "BN-SRC-800"
+    }:
+        old_fragment = next((fragment for fragment in source_math - target_math
+                             if fragment.count(r"((N)^N\land(\theta^N)^M)") == 1), None)
+        replacement_finite_model_relativization_fix = (
+            old_fragment is not None
+            and source_math - target_math == collections.Counter({old_fragment: 1})
+            and target_math - source_math == collections.Counter({
+                old_fragment.replace(r"((N)^N\land(\theta^N)^M)",
+                                     r"((N)^M\land(\theta^N)^M)", 1): 1,
+            })
+        )
     ordinal_addition_math_fixes = False
-    if row["unit_id"] == "OLP-0576" and set(documented) == {"BN-SRC-447", "BN-SRC-448"}:
+    if row["unit_id"] == "OLP-0576" and set(documented) == {
+        "BN-SRC-447", "BN-SRC-448", "BN-SRC-801", "BN-SRC-802", "BN-SRC-803"
+    }:
         old_pair = r"\alpha\disjointsum1=(\alpha\times\{0\})\disjointsum(\{0\}\times\{1\})"
         new_pair = r"\alpha\disjointsum1=(\alpha\times\{0\})\cup(\{0\}\times\{1\})"
+        old_relation = r"\Setabs{\tuple{x,y}\in\alpha\disjointsum\beta}{x\rlexlessy}"
+        new_relation = r"\Setabs{\tuple{x,y}\in(\alpha\disjointsum\beta)\times(\alpha\disjointsum\beta)}{x\rlexlessy}"
         old_align = next((fragment for fragment in source_math - target_math
                           if fragment.startswith(r"\alpha\ordplus0&=")), None)
         ordinal_addition_math_fixes = (
             old_align is not None and old_align.count(r"\cup\{0\}") == 1
-            and source_math - target_math == collections.Counter({old_pair: 1, old_align: 1})
+            and source_math - target_math == collections.Counter({old_pair: 1, old_align: 1, old_relation: 1})
             and target_math - source_math == collections.Counter({
                 new_pair: 1, old_align.replace(r"\cup\{0\}", r"\cup\emptyset", 1): 1,
+                new_relation: 1,
             })
         )
     ordinal_rank_exercise_math_fix = (
@@ -5801,8 +6000,24 @@ for row in rows:
             r"\setrank{A\timesB}=\max(\setrank{A},\setrank{B})\ordplus2": 1,
         })
     )
+    ordinal_multiplication_limit_fix = False
+    if row["unit_id"] == "OLP-0578" and set(documented) == {"BN-SRC-804"}:
+        old_mult_align = next((fragment for fragment in source_math - target_math
+                               if fragment.startswith(r"\alpha\ordtimes0&=0")), None)
+        ordinal_multiplication_limit_fix = (
+            old_mult_align is not None
+            and old_mult_align.count(r"\supstrict_{\delta<\beta}(\alpha\ordtimes\delta)") == 1
+            and source_math - target_math == collections.Counter({old_mult_align: 1})
+            and target_math - source_math == collections.Counter({
+                old_mult_align.replace(r"\supstrict_{\delta<\beta}(\alpha\ordtimes\delta)",
+                                       r"\bigcup_{\delta<\beta}(\alpha\ordtimes\delta)", 1): 1,
+            })
+        )
+    old_expo_align = next((fragment for fragment in source_math - target_math
+                          if fragment.startswith(r"\ordexpo{\alpha}{0}&=1")), "")
     ordinal_exponentiation_math_fix = (
-        row["unit_id"] == "OLP-0579" and set(documented) == {"BN-SRC-451"}
+        row["unit_id"] == "OLP-0579" and set(documented) == {"BN-SRC-451", "BN-SRC-805"}
+        and old_expo_align.count(r"\bigcup_{\delta<\beta}\ordexpo{\alpha}{\delta}") == 1
         and source_math - target_math == collections.Counter({
             r"(\alpha,\beta)": 2,
             r"f\colon\alpha\to\beta": 1,
@@ -5810,6 +6025,7 @@ for row in rows:
             r"\gamma_0=\Setabs{\gamma\in\alpha}{f(\gamma)\neqg(\gamma)}": 1,
             r"\ordtype{(\alpha,\beta),\sqsubset}": 1,
             r"\ordexpo{\alpha}{\beta}=\ordtype{(\alpha,\beta),\sqsubset}": 1,
+            old_expo_align: 1,
         })
         and target_math - source_math == collections.Counter({
             r"\alpha\neq0": 2,
@@ -5819,11 +6035,13 @@ for row in rows:
             r"\gamma_0=\Setabs{\gamma\in\beta}{f(\gamma)\neqg(\gamma)}": 1,
             r"\ordtype{(\beta,\alpha),\sqsubset}": 1,
             r"\ordexpo{\alpha}{\beta}=\ordtype{(\beta,\alpha),\sqsubset}": 1,
+            old_expo_align.replace(r"\bigcup_{\delta<\beta}\ordexpo{\alpha}{\delta}",
+                                   r"\bigcup_{0<\delta<\beta}\ordexpo{\alpha}{\delta}", 1): 1,
         })
     )
     cardinal_exponentiation_function_type_fix = (
         row["unit_id"] == "OLP-0589"
-        and set(documented) == {"BN-SRC-456", "BN-SRC-457", "BN-SRC-458"}
+        and set(documented) == {"BN-SRC-456", "BN-SRC-457", "BN-SRC-458", "BN-SRC-810"}
         and source_math - target_math == collections.Counter({
             r"f\mapsto(f_{\cardfont{b}}\timesf_\cardfont{c})": 1,
             r"\funfromto{\cardfont{c}}{(\funfromto{\cardfont{b}}{\cardfont{a}})}\to\funfromto{\cardfont{b}\cardtimes\cardfont{c}}{\cardfont{a}}": 1,
@@ -5835,7 +6053,7 @@ for row in rows:
     )
     cardinal_aleph_predecessor_domain_fix = (
         row["unit_id"] == "OLP-0590"
-        and set(documented) == {"BN-SRC-459", "BN-SRC-460", "BN-SRC-461"}
+        and set(documented) == {"BN-SRC-459", "BN-SRC-460", "BN-SRC-461", "BN-SRC-819", "BN-SRC-820", "BN-SRC-821"}
         and source_math - target_math == collections.Counter({
             r"\cardfont{a}": 2,
             r"\cardfont{a}=\bigcup_{\cardfont{b}<\cardfont{a}}\cardfont{b}=\bigcup_{\cardfont{b}<\cardfont{a}}{\aleph_{\gamma_\cardfont{b}}}": 1,
@@ -5844,6 +6062,18 @@ for row in rows:
         and target_math - source_math == collections.Counter({
             r"\cardfont{a}=\bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}\cardfont{b}=\bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}{\aleph_{\gamma_\cardfont{b}}}": 1,
             r"\gamma=\bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}\gamma_\cardfont{b}": 1,
+        })
+    )
+    fixedpoint_align = next((fragment for fragment in source_math - target_math
+                            if fragment.startswith(r"\tau_0(A)&\defis\card{A}")), "")
+    cardinal_fixedpoint_successor_start_fix = (
+        row["unit_id"] == "OLP-0591"
+        and set(documented) == {"BN-SRC-462", "BN-SRC-812", "BN-SRC-813", "BN-SRC-814", "BN-SRC-815"}
+        and fixedpoint_align.count(r"\tau_0(A)&\defis\card{A}") == 1
+        and source_math - target_math == collections.Counter({fixedpoint_align: 1})
+        and target_math - source_math == collections.Counter({
+            fixedpoint_align.replace(r"\tau_0(A)&\defis\card{A}",
+                                     r"\tau_0(A)&\defis\cardsucc{\card{A}}", 1): 1,
         })
     )
     hartogs_carrier_and_size_formula_fixes = (
@@ -5869,13 +6099,15 @@ for row in rows:
     )
     choice_wellordering_stopping_fixes = (
         row["unit_id"] == "OLP-0596"
-        and set(documented) == {"BN-SRC-467", "BN-SRC-468", "BN-SRC-469"}
+        and set(documented) == {"BN-SRC-467", "BN-SRC-468", "BN-SRC-469", "BN-SRC-822"}
         and source_math - target_math == collections.Counter({
+            r"g(0)&=f(A)\\g(\alpha)&=\begin{cases}&A=\funimage{g}{\alpha}\\f(A\setminus\funimage{g}{\alpha})&\\\end{cases}": 1,
             r"\delta\leq\alpha": 1,
             r"\cardless{\alpha}{\Pow{A}\setminus\{\emptyset\}}": 1,
             r"\ran{g}=A": 1,
         })
         and target_math - source_math == collections.Counter({
+            r"g(0)&=f(A)\\g(\alpha)&=\begin{cases}&A\subseteq\funimage{g}{\alpha}\\f(A\setminus\funimage{g}{\alpha})&\\\end{cases}": 1,
             r"A": 3,
             r"A=\emptyset": 1,
             r"\delta\geq\alpha": 1,
@@ -5884,24 +6116,26 @@ for row in rows:
     )
     countable_choice_union_index_fix = (
         row["unit_id"] == "OLP-0597"
-        and set(documented) == {"BN-SRC-470"}
+        and set(documented) == {"BN-SRC-470", "BN-SRC-823", "BN-SRC-824", "BN-SRC-825", "BN-SRC-826"}
         and source_math - target_math == collections.Counter({
+            r"\beth_1": 1,
             r"\card{\bigcup_{i<n}A_n}&\leq\card{A_0}+\card{A_1}+\ldots+\card{A_{n-1}}\\&=1+2+\ldots+2^{n-1}\\&=2^n-1\\&<2^n=\card{A_n}": 1,
         })
         and target_math - source_math == collections.Counter({
+            r"\Real": 1,
             r"A": 1,
             r"\card{\bigcup_{i<n}A_i}&\leq\card{A_0}+\card{A_1}+\ldots+\card{A_{n-1}}\\&=1+2+\ldots+2^{n-1}\\&=2^n-1\\&<2^n=\card{A_n}": 1,
         })
     )
     banach_tangent_parenthesis_fix = (
         row["unit_id"] == "OLP-0599"
-        and set(documented) == {"BN-SRC-471"}
+        and set(documented) == {"BN-SRC-471", "BN-SRC-827"}
         and source_math - target_math == collections.Counter({r"\tan(\pi(r-\nicefrac{1}{2})))": 1})
         and target_math - source_math == collections.Counter({r"\tan(\pi(r-\nicefrac{1}{2}))": 1})
     )
     vitali_rotation_domain_fixes = (
         row["unit_id"] == "OLP-0600"
-        and set(documented) == {"BN-SRC-472", "BN-SRC-473", "BN-SRC-474", "BN-SRC-475"}
+        and set(documented) == {"BN-SRC-472", "BN-SRC-473", "BN-SRC-474", "BN-SRC-475", "BN-SRC-830", "BN-SRC-831"}
         and source_math - target_math == collections.Counter({
             r"\rho\inR_1": 1,
             r"\rho\inC": 2,
@@ -5913,7 +6147,7 @@ for row in rows:
     )
     methods_inference_subject_and_nonempty_fixes = (
         row["unit_id"] == "OLP-0606"
-        and set(documented) == {"BN-SRC-477", "BN-SRC-478"}
+        and set(documented) == {"BN-SRC-477", "BN-SRC-478", "BN-SRC-833", "BN-SRC-834"}
         and source_math - target_math == collections.Counter({
             r"\inD": 1, r"\inE": 1, r"\inA": 1,
             r"\in\emptyset": 2, r"\notin\emptyset": 1,
@@ -5937,13 +6171,13 @@ for row in rows:
     )
     methods_contradiction_wrong_set_fix = (
         row["unit_id"] == "OLP-0609"
-        and set(documented) == {"BN-SRC-480"}
+        and set(documented) == {"BN-SRC-480", "BN-SRC-835"}
         and source_math - target_math == collections.Counter({r"\notinC": 1})
         and target_math - source_math == collections.Counter({r"x\notinA\cupB": 1})
     )
     methods_reading_proofs_two_repairs = (
         row["unit_id"] == "OLP-0610"
-        and set(documented) == {"BN-SRC-481", "BN-SRC-482"}
+        and set(documented) == {"BN-SRC-481", "BN-SRC-482", "BN-SRC-836"}
         and source_math - target_math == collections.Counter({
             r"A\cap(A\cupB)\subseteqA": 1,
             r"z\inA\cupB)": 1,
@@ -5954,25 +6188,28 @@ for row in rows:
     )
     methods_induction_step_variable_fix = (
         row["unit_id"] == "OLP-0615"
-        and set(documented) == {"BN-SRC-483"}
+        and set(documented) == {"BN-SRC-483", "BN-SRC-838"}
         and source_math - target_math == collections.Counter({"n": 1})
         and target_math - source_math == collections.Counter({"k": 1})
     )
     methods_strong_induction_vacuity_fix = (
         row["unit_id"] == "OLP-0616"
-        and set(documented) == {"BN-SRC-484"}
+        and set(documented) == {"BN-SRC-484", "BN-SRC-839"}
         and source_math - target_math == collections.Counter({"P(0)": 1})
         and target_math - source_math == collections.Counter({"P(l)": 1})
     )
     history_limit_definition_and_quotient_fixes = (
         row["unit_id"] == "OLP-0635"
-        and set(documented) == {"BN-SRC-486", "BN-SRC-487", "BN-SRC-488"}
+        and set(documented) == {"BN-SRC-486", "BN-SRC-487", "BN-SRC-488", "BN-SRC-857"}
         and source_math - target_math == collections.Counter({
             "f'(c)": 2,
+            r"|x-c|<\delta": 1,
             r"(\forall\epsilon>0)(\exists\delta>0)\forallx\left(|x-c|<\delta\lif|g(x)-\ell|<\epsilon\right).": 1,
         })
         and target_math - source_math == collections.Counter({
             r"\frac{f(c+\beta)-f(c)}{\beta}": 2,
+            "0": 1,
+            r"0<|x-c|<\delta": 1,
             r"(\forall\epsilon>0)(\exists\delta>0)\forallx\left(0<|x-c|<\delta\lif|g(x)-\ell|<\epsilon\right).": 1,
         })
     )
@@ -6002,7 +6239,7 @@ for row in rows:
     )
     history_hilbert_limit_and_continuity_fixes = (
         row["unit_id"] == "OLP-0639"
-        and set(documented) == {"BN-SRC-491", "BN-SRC-492", "BN-SRC-493"}
+        and set(documented) == {"BN-SRC-491", "BN-SRC-492", "BN-SRC-493", "BN-SRC-859"}
         and source_math - target_math == collections.Counter({
             r"\unitsquare": 6,
             "p": 5,
@@ -6056,7 +6293,7 @@ for row in rows:
     )
     legacy_c_representability_composition_fix = (
         row["unit_id"] == "OLP-0647"
-        and set(documented) == {"BN-SRC-503", "BN-SRC-504"}
+        and set(documented) == {"BN-SRC-503", "BN-SRC-504", "BN-SRC-862"}
         and source_math - target_math == collections.Counter({
             r"\lexists[z_0\dots][\lexists[z_{k-1}][(!A_{g_0}(x_0,\dots,x_{l-1},z_0)\land\dots\land!A_{g_{k-1}}(x_0,\dots,x_{l-1},z_{k-1})\land]]\\!A_f(z_0,\dots,z_{k-1},y)).": 1,
         })
@@ -6094,7 +6331,7 @@ for row in rows:
     )
     legacy_cut_largest_formula_repair = (
         row["unit_id"] == "OLP-0655"
-        and set(documented) == {f"BN-SRC-{n}" for n in range(513, 517)}
+        and set(documented) == {f"BN-SRC-{n}" for n in range(513, 517)} | {"BN-SRC-864", "BN-SRC-867"}
         and source_math - target_math == collections.Counter({
             r"\Delta=\Delta,!A": 1,
         })
@@ -6104,7 +6341,7 @@ for row in rows:
     )
     legacy_cut_topmost_formula_repairs = False
     if row["unit_id"] == "OLP-0656":
-        assert set(documented) == {f"BN-SRC-{n}" for n in range(517, 524)}
+        assert set(documented) == {f"BN-SRC-{n}" for n in range(517, 524)} | {"BN-SRC-865", "BN-SRC-866"}
         audited_topmost = source
 
         def replace_topmost_once(old, new):
@@ -6139,10 +6376,17 @@ for row in rows:
             "\\RightSubproofLabel{$\\pi_1''$}\n\\RightLabel{\\CutCS}\n"
             "\\BinaryInf$\\Gamma \\fCenter \\Delta$",
         )
+        context_cut_old = r"\RightLabel{$\pi_2''$}"+"\n"+r"\Deduce$!C, \Gamma \fCenter \Delta$"
+        context_cut_new = r"\RightLabel{$\pi_2''[!B \Sequent {}]$}"+"\n"+r"\Deduce$!C, !B, \Gamma \fCenter \Delta$"
+        implication_start = audited_topmost.index(r"If $!A \ident (!B \lif !C)$ then")
+        implication_start = audited_topmost.index(r"The !!{proof} ending in \CutCS,", implication_start)
+        earlier, implication_tail = audited_topmost[:implication_start], audited_topmost[implication_start:]
+        assert implication_tail.count(context_cut_old)==2
+        audited_topmost=earlier+implication_tail.replace(context_cut_old,context_cut_new)
         legacy_cut_topmost_formula_repairs = mathparts(audited_topmost) == target_math
     legacy_interpolation_language_repairs = (
         row["unit_id"] == "OLP-0658"
-        and set(documented) == {f"BN-SRC-{n}" for n in range(524, 529)}
+        and set(documented) == {f"BN-SRC-{n}" for n in range(524, 529)} | {"BN-SRC-868"}
         and source_math - target_math == collections.Counter({
             r"\LangL'=\LangL(\Gamma')=\LangL\setminus\{R\}\cup\{R'\}": 1,
             r"\LangL(!A)=\LangL_1\cap\LangL_2=\LangL(\Gamma)\setminus\{R\}": 1,
@@ -6205,7 +6449,7 @@ for row in rows:
             old, r"\UnaryInf$\Gamma' \fCenter", 1
         )
         legacy_midsequent_repairs = (
-            set(documented) == {"BN-SRC-536", "BN-SRC-537", "BN-SRC-538"}
+            set(documented) == {"BN-SRC-536", "BN-SRC-537", "BN-SRC-538", "BN-SRC-870", "BN-SRC-871"}
             and mathparts(audited_midsequent) == target_math
         )
     legacy_grafting_repairs = False
@@ -6217,8 +6461,11 @@ for row in rows:
         old = r"\pheight{\delta}"
         assert audited_grafting.count(old) == 1
         audited_grafting = audited_grafting.replace(old, r"\pheight{\delta_1}", 1)
+        context_phrase = r"and adding"+"\n"+r"$\Gamma_2$ to the context"
+        assert audited_grafting.count(context_phrase)==1
+        audited_grafting=audited_grafting.replace(context_phrase,r"and removing $x:!B$ and adding $\Gamma_2$ to the context",1)
         legacy_grafting_repairs = (
-            set(documented) == {"BN-SRC-539", "BN-SRC-540", "BN-SRC-541"}
+            set(documented) == {"BN-SRC-539", "BN-SRC-540", "BN-SRC-541", "BN-SRC-869", "BN-SRC-872", "BN-SRC-873"}
             and mathparts(audited_grafting) == target_math
         )
     legacy_natural_deduction_intro_repairs = False
@@ -6252,7 +6499,7 @@ for row in rows:
             \DisplayProof
         """)
         legacy_quantifier_substitution_repairs = (
-            set(documented) == {"BN-SRC-544", "BN-SRC-545", "BN-SRC-546", "BN-SRC-648"}
+            set(documented) == {"BN-SRC-544", "BN-SRC-545", "BN-SRC-546", "BN-SRC-648", "BN-SRC-874"}
             and "অপরিচ্ছন্ন বিধি সর্বাধিক $n-1$টি" in checked_target
             and source_math - target_math == collections.Counter({
                 "!C": 2,
@@ -6326,7 +6573,7 @@ for row in rows:
             old_label, new_label, 2
         )
         legacy_nd_sequents_math_repairs = (
-            set(documented) == {f"BN-SRC-{n}" for n in range(555, 559)}
+            set(documented) == {f"BN-SRC-{n}" for n in range(555, 559)} | {"BN-SRC-875"}
             and mathparts(audited_sequents) == target_math
         )
     legacy_g2i_translation_math_repairs = False
@@ -6334,6 +6581,12 @@ for row in rows:
         assert source.count(r"\Log{G2ci}") == 1
         assert source.count(r"\Log{N2c}") == 1
         audited_g2i = source
+        conclusion_phrase = r"$\Delta = \{!A\}$ otherwise"
+        assert audited_g2i.count(conclusion_phrase)==1
+        audited_g2i=audited_g2i.replace(conclusion_phrase,r"$\Delta = \{!C\}$ otherwise",1)
+        graft_context_phrase = "and every occurrence of $x:!B$ in~$\\delta_2$ by $x:!A \\lif !B$."
+        assert audited_g2i.count(graft_context_phrase)==1
+        audited_g2i=audited_g2i.replace(graft_context_phrase,graft_context_phrase+" Add $\\Gamma_1'$ to contexts below the substituted axioms.",1)
         fixes = (
             (
                 r"\RightLabel{\RightR{\Weakening}}" + "\n    "
@@ -6360,7 +6613,7 @@ for row in rows:
             assert audited_g2i.count(old) == 1, old
             audited_g2i = audited_g2i.replace(old, new, 1)
         legacy_g2i_translation_math_repairs = (
-            set(documented) == {f"BN-SRC-{n}" for n in range(559, 568)}
+            set(documented) == {f"BN-SRC-{n}" for n in range(559, 568)} | {"BN-SRC-876", "BN-SRC-877", "BN-SRC-878"}
             and mathparts(audited_g2i) == target_math
         )
     legacy_n2_to_g2_math_repairs = False
@@ -6430,7 +6683,7 @@ for row in rows:
         )
         assert old_intro_tree != new_intro_tree
         legacy_normalization_intro_math_repair = (
-            set(documented) == {"BN-SRC-574", "BN-SRC-575"}
+            set(documented) == {"BN-SRC-574", "BN-SRC-575", "BN-SRC-879"}
             and source_math - target_math == collections.Counter({
                 r"\delta_1": 1,
                 old_intro_tree: 1,
@@ -6456,14 +6709,6 @@ for row in rows:
                 "$\\delta_3$, or entirely outside",
             ),
             (r"$B^x$", r"$!B^x$"),
-            (
-                "\\DeduceC{$\\lfalse$}\n\\UnaryInfC{$!B \\lif !C$}",
-                "\\DeduceC{$\\lfalse$}\n\\RightLabel{\\FalseInt}\n\\UnaryInfC{$!B \\lif !C$}",
-            ),
-            (
-                "\\DeduceC{$\\lfalse$}\n\\UnaryInfC{$!C$}",
-                "\\DeduceC{$\\lfalse$}\n\\RightLabel{\\FalseInt}\n\\UnaryInfC{$!C$}",
-            ),
             (r"\AxiomC{$\Discharge{!C}{x}$}", r"\AxiomC{$\Discharge{!C}{y}$}"),
             (
                 "\\RightLabel{\\Elim{\\lor}}\n\\TrinaryInfC{$!D$}",
@@ -6474,7 +6719,7 @@ for row in rows:
             assert audited_reductions.count(old) == 1, old
             audited_reductions = audited_reductions.replace(old, new, 1)
         legacy_reduction_tree_repairs = (
-            set(documented) == {f"BN-SRC-{n}" for n in range(578, 582)}
+            set(documented) == {f"BN-SRC-{n}" for n in range(578, 582)} | {"BN-SRC-880", "BN-SRC-881", "BN-SRC-882"}
             and set(normalizations) == {"BN-NORM-173"}
             and mathparts(audited_reductions) == target_math
         )
@@ -6484,28 +6729,37 @@ for row in rows:
         and source_math - target_math == collections.Counter({"A_{i+1}": 1})
         and target_math - source_math == collections.Counter({"!A_{i+1}": 1})
     )
-    legacy_normal_translation_repairs = (
-        row["unit_id"] == "OLP-0678"
-        and set(documented) == {f"BN-SRC-{n}" for n in range(584, 591)}
-        and set(normalizations) == {"BN-NORM-174"}
-        and source_math - target_math
-        == collections.Counter({
-            r"\delta'": 1,
-            r"x:!D,\Gamma_1\Sequent!A": 1,
-            r"\Gamma_1\Sequent!D": 1,
-            r"!E,\Gamma_1'\Sequent!A": 1,
-        })
-        and target_math - source_math
-        == collections.Counter({
-            r"\Delta": 1,
-            r"!C\ident\lfalse": 1,
-            r"\Delta=\{!C\}": 1,
-            r"\delta_1": 1,
-            r"!D,\Gamma_1'\Sequent!A": 1,
-            r"\Gamma_1'\Sequent!D": 1,
-            r"!E,\Gamma_2'\Sequent!A": 1,
-        })
-    )
+    legacy_normal_translation_repairs = False
+    if row["unit_id"] == "OLP-0678":
+        audited_normal = source
+        fixes = (
+            (r"in $\delta'$ plus",r"in $\delta_1$ plus"),
+            (r"$x:!D, \Gamma_1 \Sequent !A$",r"$!D, \Gamma_1' \Sequent !A$"),
+            (r"$\Gamma_1 \Sequent !D$",r"$\Gamma_1' \Sequent !D$"),
+            (r"$!E, \Gamma_1' \Sequent !A$",r"$!E, \Gamma_2' \Sequent !A$"),
+            (r"by $x:!D$",r"by $y:!D$"),
+            (r"$x:!D \Sequent !D$",r"$y:!D \Sequent !D$"),
+            (r"\Axiom$x:!D \fCenter !D$",r"\Axiom$y:!D \fCenter !D$"),
+            (r"\Deduce$x:!D, \Gamma_1 \fCenter !A$",r"\Deduce$y:!D, \Gamma_1 \fCenter !A$"),
+            (r"$x:!E \Sequent !E$",r"$y:!E \Sequent !E$"),
+            (r"$x:!E$",r"$y:!E$"),
+            (r"\Axiom$x:!E \fCenter !E$",r"\Axiom$y:!E \fCenter !E$"),
+            (r"\Deduce$x:!E, \Gamma_2 \fCenter !A$",r"\Deduce$y:!E, \Gamma_2 \fCenter !A$"),
+            ("then $\\delta_1$\n  contains $0$ inferences.","then $\\delta_2$\n  contains $0$ inferences."),
+            ("\\UnaryInf$!D \\land !E, \\Gamma_1' \\fCenter $\n  \\RightLabel{\\RightR{\\Weakening}}\n  \\UnaryInf$!D \\land !E, \\Gamma_1' \\fCenter !A$","\\UnaryInf$!D \\land !E, \\Gamma_1' \\fCenter $"),
+            ("\\BinaryInf$!D \\lor !E, \\Gamma_1', \\Gamma_2' \\fCenter $\n  \\RightLabel{\\RightR{\\Weakening}}\n  \\UnaryInf$!D \\lor !E, \\Gamma_1', \\Gamma_2' \\fCenter !A$","\\BinaryInf$!D \\lor !E, \\Gamma_1', \\Gamma_2' \\fCenter $"),
+            ("\\Deduce$!E, \\Gamma_2' \\fCenter $\n  \\RightLabel{\\RightR{\\Weakening}}\n  \\UnaryInf$!E, \\Gamma_2' \\fCenter !A$\n  \\RightLabel{\\LeftR{\\lif}}\n  \\BinaryInf$!D \\lif !E, \\Gamma_1', \\Gamma_2' \\fCenter !A$","\\Deduce$!E, \\Gamma_2' \\fCenter $\n  \\RightLabel{\\LeftR{\\lif}}\n  \\BinaryInf$!D \\lif !E, \\Gamma_1', \\Gamma_2' \\fCenter $"),
+        )
+        for old,new in fixes:
+            assert audited_normal.count(old)==1,old
+            audited_normal=audited_normal.replace(old,new,1)
+        # The first corollary now identifies the target C with Delta exactly.
+        audited_normal += r"$\Delta$ $!C\ident\lfalse$ $\Delta=\{!C\}$"
+        legacy_normal_translation_repairs = (
+            set(documented)=={f"BN-SRC-{n}" for n in range(584,591)} | {f"BN-SRC-{n}" for n in range(883,888)}
+            and set(normalizations)=={"BN-NORM-174"}
+            and mathparts(audited_normal)==target_math
+        )
     legacy_search_completeness_repairs = (
         row["unit_id"] == "OLP-0679"
         and set(documented) == {f"BN-SRC-{n}" for n in range(591, 600)}
@@ -6513,7 +6767,6 @@ for row in rows:
         == collections.Counter({
             r"!\in\Delta": 1,
             r"\Pi_n\Sequent\Delta_n": 1,
-            r"c\in\Domain{M}": 1,
             r"\Assign{f}{M}(t_1,\dots,t_m)=f(t_1,\dots,t_n)": 1,
             r"\Assign{R}{M}=\Setabs{\tuple{t_1,\dots,t_m}\in\Domain{M}^n}{R(t_1,\dots,t_n)\in\Theta}": 1,
             r"\Sat{M}{R(t_1,\dots,t_n)}": 1,
@@ -6528,7 +6781,6 @@ for row in rows:
         and target_math - source_math
         == collections.Counter({
             r"!A\in\Delta": 1,
-            r"c\inC": 1,
             r"\Assign{f}{M}(t_1,\dots,t_m)=f(t_1,\dots,t_m)": 1,
             r"\Assign{R}{M}=\Setabs{\tuple{t_1,\dots,t_m}\in\Domain{M}^m}{R(t_1,\dots,t_m)\in\Theta}": 1,
             r"\Sat{M}{R(t_1,\dots,t_m)}": 1,
@@ -6558,16 +6810,17 @@ for row in rows:
              r"\Axiom$\Pi \fCenter \Lambda, \lexists[x][!B(x)]^{k+1}, !B(t)^{k+2}$"
              "\n" r"  \RightLabel{\RightR{\lexists}}"),
         )
+        audited_algorithm = audited_algorithm.replace(r"$\Obj c_0$ if all such terms have been used", "the first constant in the recorded set if all such terms have been used",1)
         for old, new in fixes:
             assert audited_algorithm.count(old) == 1, old
             audited_algorithm = audited_algorithm.replace(old, new, 1)
         legacy_search_algorithm_repairs = (
-            set(documented) == {"BN-SRC-600", "BN-SRC-601"}
+            set(documented) == {"BN-SRC-600", "BN-SRC-601", "BN-SRC-888", "BN-SRC-920"}
             and mathparts(audited_algorithm) == target_math
         )
     legacy_search_tableaux_repairs = (
         row["unit_id"] == "OLP-0684"
-        and set(documented) == {"BN-SRC-602", "BN-SRC-603"}
+        and set(documented) == {"BN-SRC-602", "BN-SRC-603", "BN-SRC-889", "BN-SRC-890", "BN-SRC-892"}
         and set(normalizations) == {"BN-NORM-175"}
         and source_math - target_math
         == collections.Counter({
@@ -6576,56 +6829,22 @@ for row in rows:
         and target_math - source_math
         == collections.Counter({
             r"\sFmla{\True}{!A},\sFmla{\True}{!B},\sFmla{\False}{!C},\sFmla{\False}{!D}": 1,
+            r"\sFmla{\True}{\lfalse}": 1,
         })
     )
-    legacy_propositions_normalization_repairs = False
-    if row["unit_id"] == "OLP-0687":
-        old_rank = next(
-            fragment for fragment in source_math
-            if fragment.startswith(r"\cutrank{(\lambd[")
-        )
-        old_rank_tail = r"\len{!A}+\len{!B}+1"
-        assert old_rank.endswith(old_rank_tail)
-        new_rank = old_rank[:-len(old_rank_tail)] + r"\len{!A_1}+\len{!A_2}+1"
-        # Only the last (disjunction) rank is changed.
-        assert new_rank.count(r"\len{!A_1}+\len{!A_2}+1") == 1
-        old_math = collections.Counter({
-            old_rank: 1,
-            r"\cutrank{\Subst{M}{N}{x}}=\len{!A})": 1,
-            r"\cutrank{x}": 1,
-            r"\red": 2,
-            "O_2": 1,
-            "N_1'=N_1''": 1,
-            r"N_1'\neqN_1''": 1,
-            r"N_1'\redN'''": 1,
-            r"N_1''\redN'''": 1,
-            r"N'''\neqN'": 1,
-            r"N'''\neqN''": 1,
-            "N_1'": 1,
-            "N_1''": 1,
-        })
-        new_math = collections.Counter({
-            new_rank: 1,
-            r"\cutrank{\Subst{M}{N}{x}}=\len{!A}": 1,
-            r"\redone": 3,
-            "O_1'": 1,
-            "N_2'=N_2''": 1,
-            r"N_2'\neqN_2''": 1,
-            "N'''": 1,
-            r"N_2'\redN'''": 1,
-            r"N_2''\redN'''": 1,
-            "Q": 1,
-            r"Q\neqN'": 1,
-            r"Q\neqN''": 1,
-            "N_2'": 1,
-            "N_2''": 1,
-        })
-        legacy_propositions_normalization_repairs = (
-            set(documented) == {f"BN-SRC-{n}" for n in range(604, 612)}
-            and set(normalizations) == {"BN-NORM-177"}
-            and source_math - target_math == old_math
-            and target_math - source_math == new_math
-        )
+    typed_fixture_ok = False
+    audited_typed = None
+    typed_fixtures = {'OLP-0687': {'path': 'evidence/REDO_GPT6_SOL_OLP-0687_AUDITED_ENGLISH.tex', 'sha256': 'd5845a70919ad19f825743ccd1ae43b9e45a42b53dee27d2607dc7a40331f215'}, 'OLP-0691': {'path': 'evidence/REDO_GPT6_SOL_OLP-0691_AUDITED_ENGLISH.tex', 'sha256': 'cff3f4027728f516689bfca4e957ef0991d0d751d06e0adb873bd099794c9ef7'}, 'OLP-0694': {'path': 'evidence/REDO_GPT6_SOL_OLP-0694_AUDITED_ENGLISH.tex', 'sha256': '8d332c81e4df19e55cb97ccfa7ceb0cdc749a6e2c4a790ecbe118db9d3b0f703'}}
+    if row["unit_id"] in typed_fixtures:
+        entry=typed_fixtures[row["unit_id"]]
+        fixture_path=repo/entry["path"]
+        assert hashlib.sha256(fixture_path.read_bytes()).hexdigest()==entry["sha256"]
+        audited_typed=fixture_path.read_text(encoding="utf-8")
+        typed_fixture_ok=(mathparts(audited_typed)==target_math
+                          and environments(audited_typed)==environments(checked_target)
+                          and semantic_tokens(audited_typed)==semantic_tokens(checked_target)
+                          and controls(audited_typed)==controls(checked_target))
+    legacy_propositions_normalization_repairs = row["unit_id"]=="OLP-0687" and typed_fixture_ok
     legacy_proof_term_constructor_repairs = False
     if row["unit_id"] == "OLP-0688":
         audited_terms = source
@@ -6642,49 +6861,8 @@ for row in rows:
             and not normalizations
             and mathparts(audited_terms) == target_math
         )
-    legacy_proof_term_reduction_repairs = False
-    if row["unit_id"] == "OLP-0691":
-        audited_reduction = source
-        fixes = (
-            (r"\pair{N_1, N_2}", r"\pair{N_1}{N_2}"),
-            (r"\inj{i}{!A}{N}", r"\inj[!A]{i}{N}"),
-            (r"\redone M_2 \redone M_2", r"\redone M_2 \redone M_3"),
-        )
-        for old, new in fixes:
-            assert audited_reduction.count(old) == 1, old
-            audited_reduction = audited_reduction.replace(old, new, 1)
-        legacy_proof_term_reduction_repairs = (
-            set(documented) == {"BN-SRC-615", "BN-SRC-616", "BN-SRC-617"}
-            and not normalizations
-            and mathparts(audited_reduction) == target_math
-        )
-    legacy_sequent_nd_example_repairs = (
-        row["unit_id"] == "OLP-0694"
-        and set(documented) == {"BN-SRC-619", "BN-SRC-620"}
-        and not normalizations
-        and source_math - target_math == collections.Counter({
-            r"\Gamma\Sequent!A\land!A": 1,
-            r"!A\land!A": 1,
-            r"!A,!B\lif\fCenter\lfalse": 1,
-            r"(!B\fCenter!A\lif\lfalse": 1,
-            r"(!B\fCenter!A\lor(!A\lif\lfalse)": 1,
-            r"(!B\fCenter!B": 1,
-            r"(!B\fCenter\lfalse": 1,
-        })
-        and target_math - source_math == collections.Counter({
-            r"\Gamma\Sequent!A\land!B": 1,
-            r"!A\land!B": 1,
-            r"\Intro{\lif}": 2,
-            r"\Intro{\lor}_1": 1,
-            r"\Intro{\lor}_2": 1,
-            r"\Elim{\lif}": 2,
-            r"!B\fCenter!B": 1,
-            r"!A,!B\fCenter\lfalse": 1,
-            r"!B\fCenter!A\lif\lfalse": 1,
-            r"!B\fCenter!A\lor(!A\lif\lfalse)": 1,
-            r"!B\fCenter\lfalse": 1,
-        })
-    )
+    legacy_proof_term_reduction_repairs = row["unit_id"]=="OLP-0691" and typed_fixture_ok
+    legacy_sequent_nd_example_repairs = row["unit_id"]=="OLP-0694" and typed_fixture_ok
     legacy_types_constructor_repairs = False
     if row["unit_id"] == "OLP-0697":
         audited_types = source
@@ -6697,7 +6875,7 @@ for row in rows:
             assert audited_types.count(old) == 1, old
             audited_types = audited_types.replace(old, new, 1)
         legacy_types_constructor_repairs = (
-            set(documented) == {"BN-SRC-621", "BN-SRC-622", "BN-SRC-623"}
+            set(documented) == {"BN-SRC-621", "BN-SRC-622", "BN-SRC-623", "BN-SRC-894"}
             and set(normalizations) == {"BN-NORM-180"}
             and mathparts(audited_types) == target_math
         )
@@ -6715,7 +6893,7 @@ for row in rows:
             assert audited_rules.count(old) == expected_count, old
             audited_rules = audited_rules.replace(old, new, 1)
         legacy_admissible_derivable_repairs = (
-            set(documented) == {"BN-SRC-624", "BN-SRC-625", "BN-SRC-626"}
+            set(documented) == {"BN-SRC-624", "BN-SRC-625", "BN-SRC-626", "BN-SRC-901", "BN-SRC-906"}
             and not normalizations
             and mathparts(audited_rules) == target_math
         )
@@ -6735,7 +6913,7 @@ for row in rows:
         before, _, after = source.rpartition(old_label)
         audited_rules = before + new_label + after
         legacy_interpretation_xor_label_fix = (
-            set(documented) == {"BN-SRC-627", "BN-SRC-628"}
+            set(documented) == {"BN-SRC-627", "BN-SRC-628", "BN-SRC-905"}
             and not normalizations
             and mathparts(audited_rules) == target_math
         )
@@ -6744,8 +6922,6 @@ for row in rows:
     if row["unit_id"] == "OLP-0701":
         audited_inversion = source
         fixes = (
-            (r"\Proves[h_i] S_i", r"\Proves S_i", 1),
-            (r"\Proves_n S", r"\Proves[n] S", 1),
             (r"!A \land !B, \Gamma' \Sequent \Delta, !C",
              r"!A, !B, \Gamma' \Sequent \Delta, !C", 1),
             (r"!A \land !B, \Gamma',\n!D \Sequent \Delta",
@@ -6765,7 +6941,7 @@ for row in rows:
         legacy_invertibility_repairs = (
             set(documented) == {
                 "BN-SRC-629", "BN-SRC-630", "BN-SRC-631", "BN-SRC-632",
-                "BN-SRC-633", "BN-SRC-634", "BN-SRC-635",
+                "BN-SRC-633", "BN-SRC-634", "BN-SRC-635", "BN-SRC-907", "BN-SRC-908",
             }
             and set(normalizations) == {"BN-NORM-181"}
             and mathparts(audited_inversion) == target_math
@@ -6828,25 +7004,12 @@ for row in rows:
   \UnaryInf$!B \land !C \fCenter !B$
   \DisplayProof
   \]"""
-        new_tree = r"""  \[
-  \AxiomC{}
-  \RightLabel{$\pi_1$}
-  \Deduce$!B \fCenter !B$
-  \RightLabel{\LeftR{\land}}
-  \UnaryInf$!B \land !C \fCenter !B$
-  \AxiomC{}
-  \RightLabel{$\pi_2$}
-  \Deduce$!C \fCenter !C$
-  \RightLabel{\LeftR{\land}}
-  \UnaryInf$!B \land !C \fCenter !C$
-  \RightLabel{\RightR{\land}}
-  \BinaryInf$!B \land !C \fCenter !B \land !C$
-  \DisplayProof
-  \]"""
+        new_tree = '  \\[\n  \\AxiomC{}\n  \\RightLabel{$\\pi_1$}\n  \\Deduce$!B \\fCenter !B$\n  \\RightLabel{\\LeftR{\\Weakening}}\n  \\UnaryInf$!B, !C \\fCenter !B$\n  \\RightLabel{\\LeftR{\\land}}\n  \\UnaryInf$!B \\land !C, !C\\fCenter !B$\n  \\RightLabel{\\LeftR{\\land}}\n  \\UnaryInf$!B \\land !C, !B \\land !C \\fCenter !B$\n  \\AxiomC{}\n  \\RightLabel{$\\pi_2$}\n  \\Deduce$!C \\fCenter !C$\n  \\RightLabel{\\LeftR{\\Weakening}}\n  \\UnaryInf$!B, !C \\fCenter !C$\n  \\RightLabel{\\LeftR{\\land}}\n  \\UnaryInf$!B \\land !C, !C \\fCenter !C$\n  \\RightLabel{\\LeftR{\\land}}\n  \\UnaryInf$!B \\land !C, !B \\land !C \\fCenter !C$\n  \\RightLabel{\\RightR{\\land}}\n  \\BinaryInf$!B \\land !C, !B \\land !C \\fCenter !B \\land !C$\n  \\RightLabel{\\LeftR{\\Contraction}}\n  \\UnaryInf$!B \\land !C \\fCenter !B \\land !C$\n  \\DisplayProof\n  \\]'
         assert audited_examples.count(old_tree) == 1
         audited_examples = audited_examples.replace(old_tree, new_tree, 1)
+        audited_examples = audited_examples.replace('\\UnaryInf$!D, !C \\fCenter !E, !C$\n\\]','\\UnaryInf$!D, !C \\fCenter !E, !C$\n\\DisplayProof\n\\]',1)
         legacy_proof_examples_repairs = (
-            set(documented) == {f"BN-SRC-{n}" for n in range(636, 643)}
+            set(documented) == {f"BN-SRC-{n}" for n in range(636, 643)} | {"BN-SRC-902", "BN-SRC-903"}
             and not normalizations
             and mathparts(audited_examples) == target_math
         )
@@ -6854,9 +7017,6 @@ for row in rows:
     if row["unit_id"] == "OLP-0703":
         audited_quantifiers = source
         fixes = (
-            (r"\Subst{\Gamma}{t}{c} =" + "\n"
-             + r"\Setabs{!A(t)}{!A(c) \in \Gamma}",
-             r"\Subst{\Gamma}{t}{c}", 1),
             (r"\Deduce$!A(s(c),c), \lforall[x][!A(x,c)], \Gamma(c) \fCenter \Delta'(c)$"
              + "\n    " + r"\RightLabel{\RightR{\lforall}}",
              r"\Deduce$!A(s(c),c), \lforall[x][!A(x,c)], \Gamma(c) \fCenter \Delta'(c)$"
@@ -6878,8 +7038,6 @@ for row in rows:
     if row["unit_id"] == "OLP-0704":
         audited_g1c = source
         for old, new in (
-            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
-            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
         ):
             assert audited_g1c.count(old) == 1, old
             audited_g1c = audited_g1c.replace(old, new, 1)
@@ -6892,10 +7050,6 @@ for row in rows:
     if row["unit_id"] == "OLP-0705":
         audited_g1i = source
         fixes = (
-            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
-            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
-            (r"$\lfalse," + "\n" + r"\Gamma \Sequent \Delta$",
-             r"$\lfalse \Sequent \quad$"),
         )
         for old, new in fixes:
             assert audited_g1i.count(old) == 1, old
@@ -6909,8 +7063,6 @@ for row in rows:
     if row["unit_id"] == "OLP-0706":
         audited_g2c = source
         for old, new in (
-            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
-            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
         ):
             assert audited_g2c.count(old) == 1, old
             audited_g2c = audited_g2c.replace(old, new, 1)
@@ -6924,8 +7076,6 @@ for row in rows:
         audited_g3c = source
         for old, new in (
             (r"\lforall[x][!A(x)]\Gamma", r"\lforall[x][!A(x)], \Gamma"),
-            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
-            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
         ):
             assert audited_g3c.count(old) == 1, old
             audited_g3c = audited_g3c.replace(old, new, 1)
@@ -6959,10 +7109,6 @@ for row in rows:
         fixes = (
             (old_disjunction, new_disjunction),
             (r"\lforall[x][!A(x)]\Gamma", r"\lforall[x][!A(x)], \Gamma"),
-            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
-            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
-            (r"$\lfalse, \Gamma \Sequent" + "\n" + r"\Delta$",
-             r"$\lfalse \Sequent \quad$"),
         )
         for old, new in fixes:
             assert audited_g3i.count(old) == 1, old
@@ -6977,9 +7123,6 @@ for row in rows:
     if row["unit_id"] == "OLP-0709":
         audited_lk = source
         for old, new in (
-            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
-            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
-            (r"and~$\Pi$ are", r"and~$\Pi$ and $\Lambda$ are"),
         ):
             assert audited_lk.count(old) == 1, old
             audited_lk = audited_lk.replace(old, new, 1)
@@ -6993,13 +7136,13 @@ for row in rows:
         audited_mg3i = source
         for old, new in (
             (r"\lforall[x][!A(x)]\Gamma", r"\lforall[x][!A(x)], \Gamma"),
-            (r"$\RightR{\forall}$", r"$\RightR{\lforall}$"),
-            (r"$\LeftR{\exists}$", r"$\LeftR{\lexists}$"),
+            (r"\UnaryInf$ \Gamma \fCenter \lforall[x][!A(x)]$",
+             r"\UnaryInf$ \Gamma \fCenter \Delta, \lforall[x][!A(x)]$"),
         ):
             assert audited_mg3i.count(old) == 1, old
             audited_mg3i = audited_mg3i.replace(old, new, 1)
         legacy_mg3i_rule_table_repairs = (
-            set(documented) == {"BN-SRC-664", "BN-SRC-665", "BN-SRC-666"}
+            set(documented) == {"BN-SRC-664", "BN-SRC-665", "BN-SRC-666", "BN-SRC-909"}
             and not normalizations
             and mathparts(audited_mg3i) == target_math
         )
@@ -7008,7 +7151,6 @@ for row in rows:
         audited_rules_proofs = source
         for old, new in (
             (r"$!E, !D \Sequent !D$", r"$!E, !D \Sequent !E$"),
-            (r"\Proves[4]", r"\Proves[2]"),
         ):
             assert audited_rules_proofs.count(old) == 1, old
             audited_rules_proofs = audited_rules_proofs.replace(old, new, 1)
@@ -7046,13 +7188,14 @@ for row in rows:
             and set(normalizations) == {"BN-NORM-182"}
             and mathparts(audited_induction) == target_math
             and r"\documentclass[../../../include/open-logic-section]{subfiles}" in checked_target
-            and "সব আর্গুমেন্টের" in checked_target
+            and "তার প্রয়োজনীয় সংখ্যক সূত্র-আর্গুমেন্ট" in checked_target
             and "শূন্য থেকে" in checked_target
             and "!!^a" not in checked_target
         )
     math_ok = any(
         (
             source_math == target_math,
+            typed_fixture_ok,
             alpha_fix,
             proof_id_fix,
             cantor_scope_fix,
@@ -7139,7 +7282,10 @@ for row in rows:
             modal_completeness_math_fix,
             filtrations_math_fix,
             modal_tableaux_math_fix,
+            modal_sequent_math_fix,
             temporal_math_fix,
+            epistemic_agent_math_fix,
+            intuitionistic_zero_index_math_fix,
             shared_audit_fix,
             intuitionistic_bhk_math_fix,
             intuitionistic_natural_deduction_math_fix,
@@ -7156,11 +7302,14 @@ for row in rows:
             spine_foundation_bound_variable_fix,
             spine_rank_proof_conclusion_fix,
             replacement_reflection_proofs_math_fix,
+            replacement_finite_model_relativization_fix,
             ordinal_addition_math_fixes,
             ordinal_rank_exercise_math_fix,
+            ordinal_multiplication_limit_fix,
             ordinal_exponentiation_math_fix,
             cardinal_exponentiation_function_type_fix,
             cardinal_aleph_predecessor_domain_fix,
+            cardinal_fixedpoint_successor_start_fix,
             hartogs_carrier_and_size_formula_fixes,
             choice_wellordering_stopping_fixes,
             countable_choice_union_index_fix,
@@ -7225,8 +7374,8 @@ for row in rows:
     )
     minimal_change_fileid_fix = (
         row["unit_id"] in {"OLP-0524", "OLP-0525"}
-        and ((row["unit_id"] == "OLP-0524" and set(documented) == {"BN-SRC-422", "BN-SRC-423"})
-             or (row["unit_id"] == "OLP-0525" and set(documented) == {"BN-SRC-424"}))
+        and ((row["unit_id"] == "OLP-0524" and set(documented) == {"BN-SRC-422", "BN-SRC-423", "BN-SRC-766", "BN-SRC-769", "BN-SRC-771"})
+             or (row["unit_id"] == "OLP-0525" and set(documented) == {"BN-SRC-424", "BN-SRC-770"}))
         and controls(source) - controls(checked_target)
         == collections.Counter({r"\olfileid{con}{min}{sph}" if row["unit_id"] == "OLP-0524"
                                 else r"\olfileid{con}{min}{tf}": 1})
@@ -7245,9 +7394,15 @@ for row in rows:
     replacement_reflection_citation_localization = (
         row["unit_id"] == "OLP-0572"
         and controls(source) - controls(checked_target)
-        == collections.Counter({"\\citet[first\npart of Theorem 2]{Levy1960}": 1})
+        == collections.Counter({
+            "\\citet[first\npart of Theorem 2]{Levy1960}": 1,
+            r"\citet[Theorem 6]{Levy1960}": 1,
+        })
         and controls(checked_target) - controls(source)
-        == collections.Counter({r"\citet[উপপাদ্য ২-এর প্রথম অংশ]{Levy1960}": 1})
+        == collections.Counter({
+            r"\citet[উপপাদ্য ২-এর প্রথম অংশ]{Levy1960}": 1,
+            r"\citet[উপপাদ্য ৬]{Levy1960}": 1,
+        })
     )
     ordinal_rank_reference_fix = (
         row["unit_id"] == "OLP-0577"
@@ -7267,15 +7422,23 @@ for row in rows:
     )
     ordinal_exponentiation_citation_localization = (
         row["unit_id"] == "OLP-0579"
-        and set(documented) == {"BN-SRC-451"}
+        and set(documented) == {"BN-SRC-451", "BN-SRC-805"}
         and controls(source) - controls(checked_target)
         == collections.Counter({r"\citep[p.~199]{Potter2004}": 1})
         and controls(checked_target) - controls(source)
         == collections.Counter({r"\citep[পৃ.~১৯৯]{Potter2004}": 1})
     )
+    humes_principle_citation_localization = (
+        row["unit_id"] == "OLP-0585"
+        and set(documented) == {"BN-SRC-807"}
+        and controls(source) - controls(checked_target)
+        == collections.Counter({r"\citep[Pt.III Bk.1 \S1]{Hume1740}": 1})
+        and controls(checked_target) - controls(source)
+        == collections.Counter({r"\citep[প্রথম পুস্তক, তৃতীয় ভাগ, \S1]{Hume1740}": 1})
+    )
     legacy_cut_largest_reference_repairs = (
         row["unit_id"] == "OLP-0655"
-        and set(documented) == {f"BN-SRC-{n}" for n in range(513, 517)}
+        and set(documented) == {f"BN-SRC-{n}" for n in range(513, 517)} | {"BN-SRC-864", "BN-SRC-867"}
         and controls(source) - controls(checked_target)
         == collections.Counter({
             r"\olref{lem:inv-G3c-cut}": 2,
@@ -7335,7 +7498,7 @@ for row in rows:
     )
     legacy_tn3_table_reference_fix = (
         row["unit_id"] == "OLP-0697"
-        and set(documented) == {"BN-SRC-621", "BN-SRC-622", "BN-SRC-623"}
+        and set(documented) == {"BN-SRC-621", "BN-SRC-622", "BN-SRC-623", "BN-SRC-894"}
         and set(normalizations) == {"BN-NORM-180"}
         and controls(source) - controls(checked_target)
         == collections.Counter({r"\olref{tab:tN2ip}": 1})
@@ -7373,8 +7536,24 @@ for row in rows:
             and "দ্বিতীয় দফা" in checked_target
             and "প্রমাণের গঠনের উপর আরোহ" in checked_target
         )
+    redo_axioms_reference_fix = False
+    if row["unit_id"] == "OLP-0438":
+        assert source.count(r"\olref[prf][prs]{sec}") == 1
+        redo_axioms_reference_fix = (
+            set(documented) == {"BN-SRC-699"}
+            and controls(source.replace(r"\olref[prf][prs]{sec}", r"\olref[prf][prf]{sec}"))
+            == controls(checked_target)
+        )
+    elif row["unit_id"] == "OLP-0440":
+        assert source.count(r"\olref{prop:consistencyfacts-b}") == 1
+        redo_axioms_reference_fix = (
+            set(documented) == {"BN-SRC-700", "BN-SRC-701"}
+            and controls(source.replace(r"\olref{prop:consistencyfacts-b}", ""))
+            == controls(checked_target)
+        )
     controls_ok = (
         controls(source) == controls(checked_target)
+        or typed_fixture_ok
         or axd_control_fix
         or completeness_control_fix
         or representability_q_control_fix
@@ -7385,6 +7564,7 @@ for row in rows:
         or methods_definition_fileid_fix
         or replacement_reflection_citation_localization
         or ordinal_rank_reference_fix
+        or humes_principle_citation_localization
         or cardinal_predecessor_reference_fix
         or ordinal_exponentiation_citation_localization
         or legacy_cut_largest_reference_repairs
@@ -7396,6 +7576,7 @@ for row in rows:
         or legacy_sequent_translation_reference_fix
         or legacy_tn3_table_reference_fix
         or final_propositional_reference_repairs
+        or redo_axioms_reference_fix
     )
     legacy_cut_intro_split_token_fix = (
         row["unit_id"] == "OLP-0659"
@@ -7459,11 +7640,13 @@ for row in rows:
         assert checked_target.count("$!A \\in \\Delta$") >= 1
         assert source.count(r"\Domain{M}^n") == 1
         assert checked_target.count(r"\Domain{M}^n") == 0
-        assert "প্রতিটি চলমান~$n$-এ" in checked_target
+        assert "প্রতিটি~$n$-এ" in checked_target
+        assert r"$c \in \Domain{M}$" in checked_target
         tex_command_check = {
             "documented_source_corrections": [f"BN-SRC-{n}" for n in range(591, 600)],
             "term_model_arity_repairs": True,
-            "finite_failure_branch_condition": True,
+            "finite_failure_branch_source_convention_restored": True,
+            "constant_metavariable_source_condition_restored": True,
             "fair_non_atomic_indexing": True,
         }
     if row["unit_id"] == "OLP-0683":
@@ -7487,7 +7670,7 @@ for row in rows:
             "signed_succedent_false": True,
         }
     if row["unit_id"] == "OLP-0686":
-        assert documented == []
+        assert documented == ["BN-SRC-893"]
         assert normalizations == ["BN-NORM-176"]
         assert source.count(r"\text{corresponds to}") == 2
         assert checked_target.count(r"\text{অনুরূপ}") == 2
@@ -7501,20 +7684,12 @@ for row in rows:
             "localized_correspondence_table": True,
         }
     if row["unit_id"] == "OLP-0687":
-        assert legacy_propositions_normalization_repairs, (
-            documented, normalizations, source_math - target_math,
-            target_math - source_math, old_math, new_math,
-        )
-        assert source.count(r"\text{ is a sub term of }") == 1
-        assert checked_target.count(r"\text{ হলো }") == 1
-        assert checked_target.count(r"\text{-এর উপপদ ও রিডেক্স}") == 1
-        assert source.count("every\ncomputation in the typed") == 1
-        assert checked_target.count("প্রত্যেক পদের জন্য অন্তত একটি গণনাপথ") == 1
-        tex_command_check = {
-            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(604, 612)],
-            "documented_language_normalization": "BN-NORM-177",
-            "disjunction_rank_and_newman_argument": True,
-        }
+        assert legacy_propositions_normalization_repairs
+        assert set(documented)=={f"BN-SRC-{n}" for n in range(604,612)} | {f"BN-SRC-{n}" for n in range(896,900)}
+        assert set(normalizations)=={"BN-NORM-177"}
+        assert r"\len{\lfalse}" in checked_target
+        assert "10.2201/NiiPi.2005.2.4" in checked_target
+        tex_command_check={"audited_english_fixture":typed_fixtures[row["unit_id"]],"source_rank_induction_replaced_with_applicable_external_theorem":True,"old611_optional_note_withdrawn":True}
     if row["unit_id"] == "OLP-0688":
         assert legacy_proof_term_constructor_repairs
         assert source.count(r"\subfile{rules-tN2}") == checked_target.count(r"\subfile{rules-tN2}") == 1
@@ -7569,7 +7744,7 @@ for row in rows:
         assert checked_target.count(r"\UnaryInf$!A \land !B \Gamma \fCenter \Delta$") == 0
         assert checked_target.count(r"\BinaryInf$\Gamma, !A \liff !B \fCenter \Delta$") == 1
         tex_command_check = {
-            "documented_source_corrections": ["BN-SRC-624", "BN-SRC-625", "BN-SRC-626"],
+            "documented_source_corrections": ["BN-SRC-624", "BN-SRC-625", "BN-SRC-626", "BN-SRC-901", "BN-SRC-906"],
             "contraction_conclusion_and_biconditional_side": True,
             "end_sequent_named_correctly": True,
         }
@@ -7585,7 +7760,7 @@ for row in rows:
         assert "ডান দিকে সত্য !!{formula}" in checked_target
         assert checked_target.count(r"\subfile{rules-G2c}") == 1
         tex_command_check = {
-            "documented_source_corrections": ["BN-SRC-627", "BN-SRC-628"],
+            "documented_source_corrections": ["BN-SRC-627", "BN-SRC-628", "BN-SRC-905"],
             "xor_left_rule_label_and_sequent_truth_witness": True,
         }
     if row["unit_id"] == "OLP-0701":
@@ -7597,7 +7772,9 @@ for row in rows:
         assert checked_target.count(r"\intertext{সংজ্ঞা অনুসারে, আর}") == 1
         assert checked_target.count(r"\intertext{আরোহের অনুমান অনুসারে। অতএব,}") == 1
         tex_command_check = {
-            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(629, 636)],
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(630, 636) if n != 632]+["BN-SRC-908"],
+            "retracted_or_withdrawn": ["BN-SRC-629", "BN-SRC-632"],
+            "translation_scope_clarification": "BN-SRC-907",
             "documented_language_normalization": "BN-NORM-181",
             "invertibility_notation_axioms_context_freshness_quantifier_rules": True,
         }
@@ -7607,7 +7784,7 @@ for row in rows:
         assert checked_target.count(r"\UnaryInf$!C, !E \fCenter !E$") == 1
         assert checked_target.count(r"\Log{G3c} \Proves (!C \land !D)") == 1
         tex_command_check = {
-            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(636, 643)],
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(636, 643)]+["BN-SRC-902", "BN-SRC-903"],
             "G1c_G3c_backward_search_and_identity_tree_repairs": True,
         }
     if row["unit_id"] == "OLP-0703":
@@ -7615,10 +7792,11 @@ for row in rows:
         assert checked_target.count(r"\RightLabel{\LeftR{\lforall}}") == 2
         assert "সর্বোচ্চে থাকা কোনো\n\\emph{অপরিচ্ছন্ন}" in checked_target
         assert "অনুমান সর্বাধিক\n$n-1$টি" in checked_target
-        assert "পুনরাবৃত্তি-সংখ্যা\nঅক্ষত থাকে" in checked_target
+        assert r"\Setabs{!A(t)}{!A(c) \in \Gamma}" in checked_target
         tex_command_check = {
-            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(643, 647)],
-            "multiset_substitution_universal_left_and_regularization_induction": True,
+            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(644, 647)],
+            "withdrawn_optional_multiset_explanation": "BN-SRC-643",
+            "original_multiset_notation_universal_left_and_regularization_induction": True,
         }
     if row["unit_id"] == "OLP-0704":
         assert legacy_g1c_caption_quantifier_fix
@@ -7626,7 +7804,7 @@ for row in rows:
         assert checked_target.count(r"\multicolumn{2}{@{}c@{}}{গঠনগত বিধি}") == 1
         assert checked_target.count(r"\multicolumn{2}{@{}c@{}}{যৌক্তিক বিধি}") == 1
         tex_command_check = {
-            "documented_source_corrections": ["BN-SRC-647"],
+            "documented_source_corrections": [],
             "g1c_quantifier_caption_matches_rule_table": True,
         }
     if row["unit_id"] == "OLP-0705":
@@ -7635,7 +7813,7 @@ for row in rows:
         assert checked_target.count(r"\ollabel{tab:G1i}") == 1
         assert checked_target.count(r"\RightR{\Contraction}") == 1
         tex_command_check = {
-            "documented_source_corrections": ["BN-SRC-649", "BN-SRC-650", "BN-SRC-651"],
+            "documented_source_corrections": ["BN-SRC-649"],
             "g1i_label_freshness_and_minimal_axiom": True,
         }
     if row["unit_id"] == "OLP-0706":
@@ -7643,7 +7821,7 @@ for row in rows:
         assert "% Section: rules-G2c" in checked_target
         assert checked_target.count(r"\ollabel{tab:G2c}") == 1
         tex_command_check = {
-            "documented_source_corrections": ["BN-SRC-652", "BN-SRC-653"],
+            "documented_source_corrections": ["BN-SRC-652"],
             "g2c_metadata_and_quantifier_caption": True,
         }
     if row["unit_id"] == "OLP-0707":
@@ -7651,7 +7829,7 @@ for row in rows:
         assert checked_target.count(r"\Axiom$ !A(t), \lforall[x][!A(x)], \Gamma \fCenter \Delta$") == 1
         assert checked_target.count(r"\ollabel{tab:G3c}") == 1
         tex_command_check = {
-            "documented_source_corrections": ["BN-SRC-654", "BN-SRC-655"],
+            "documented_source_corrections": ["BN-SRC-654"],
             "g3c_universal_left_multiset_and_caption": True,
         }
     if row["unit_id"] == "OLP-0708":
@@ -7665,17 +7843,17 @@ for row in rows:
         assert checked_target.count(r"\Log{G3i}") == 1
         assert checked_target.count(r"\RightR{\Weakening}") == 1
         tex_command_check = {
-            "documented_source_corrections": [f"BN-SRC-{n}" for n in range(656, 661)],
+            "documented_source_corrections": ["BN-SRC-656", "BN-SRC-657", "BN-SRC-658", "BN-SRC-660"],
             "g3i_single_succedent_disjunction_and_minimal_system": True,
         }
     if row["unit_id"] == "OLP-0709":
         assert legacy_lk_caption_repairs and legacy_lk_table_label_fix
         assert checked_target.count(r"\ollabel{tab:LK}") == 1
-        assert checked_target.count(r"$\Lambda$") == 1
+        assert checked_target.count(r"$\Lambda$") == 0
         assert checked_target.count(r"\RightLabel{\LeftR{\Exchange}}") == 1
         assert checked_target.count(r"\RightLabel{\RightR{\Exchange}}") == 1
         tex_command_check = {
-            "documented_source_corrections": ["BN-SRC-661", "BN-SRC-662", "BN-SRC-663"],
+            "documented_source_corrections": ["BN-SRC-661"],
             "lk_unique_label_eigenconstant_and_sequence_contexts": True,
         }
     if row["unit_id"] == "OLP-0710":
@@ -7686,17 +7864,17 @@ for row in rows:
         assert checked_target.count(r"\Log{mG1m}") == 1
         assert checked_target.count(r"\Log{mG1i}") == 1
         tex_command_check = {
-            "documented_source_corrections": ["BN-SRC-664", "BN-SRC-665", "BN-SRC-666"],
+            "documented_source_corrections": ["BN-SRC-664", "BN-SRC-665", "BN-SRC-909"],
             "mg3i_multisuccedent_rules_and_identity": True,
         }
     if row["unit_id"] == "OLP-0711":
         assert legacy_sequent_rules_proofs_repairs
         assert checked_target.count(r"$!E, !D \Sequent !E$") == 1
         assert "অনুমানবিধি প্রয়োগের সর্বাধিক সংখ্যা" in checked_target
-        assert checked_target.count(r"\Proves[2]") == 1
+        assert checked_target.count(r"\Proves[4]") == 1
         assert checked_target.count(r"\pheight{\pi_4} = 2") == 1
         tex_command_check = {
-            "documented_source_corrections": ["BN-SRC-667", "BN-SRC-668", "BN-SRC-669"],
+            "documented_source_corrections": ["BN-SRC-667"],
             "multiset_identity_and_proof_height_example": True,
         }
     if row["unit_id"] == "OLP-0713":
@@ -7723,7 +7901,11 @@ for row in rows:
         "math_parity": math_ok,
         "controls_parity": controls_ok,
         "env_parity": (environments(source) == environments(checked_target)
-                       or legacy_g3i_rule_table_repairs),
+                        or legacy_g3i_rule_table_repairs
+                        or (row["unit_id"] == "OLP-0397"
+                            and three_valued_logics_math_fix
+                            and environments(audited_three_valued_logics)
+                                == environments(checked_target))),
         "token_parity": (
             semantic_tokens(source) == semantic_tokens(checked_target)
             or introduction_token_fix
@@ -7735,6 +7917,7 @@ for row in rows:
             or legacy_cut_intro_split_token_fix
             or legacy_admissible_end_sequent_token_fix
             or legacy_invertibility_singular_proof_token_fix
+            or typed_fixture_ok
         ),
         "unicode_nfc": unicodedata.is_normalized("NFC", target),
         "documented_source_corrections": documented,

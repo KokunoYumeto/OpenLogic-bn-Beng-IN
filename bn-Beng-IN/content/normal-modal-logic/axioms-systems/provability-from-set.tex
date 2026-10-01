@@ -10,11 +10,14 @@
 
 \olsection{\usetoken{P}{formula}-সমষ্টি থেকে \usetoken{S}{derivability}}
 
-\olref[prf][prs]{sec}-এ পদ্ধতি~$\Sigma$-তে !!a{formula}-এর প্রমাণযোগ্যতার ধারণা সংজ্ঞায়িত করেছি। এখন সেটিকে প্রসারিত করে, সমষ্টি~$\Gamma$-র !!{formula}s থেকে $\Sigma$-তে প্রমাণযোগ্যতা সংজ্ঞায়িত করি।
+\olref[prf][prf]{sec}-এ পদ্ধতি~$\Sigma$-তে !!a{formula}-এর প্রমাণযোগ্যতার ধারণা সংজ্ঞায়িত করেছি। এখন সেটিকে প্রসারিত করে, সমষ্টি~$\Gamma$-র !!{formula}s থেকে $\Sigma$-তে প্রমাণযোগ্যতা সংজ্ঞায়িত করি।
 
 \begin{defn}\ollabel{defn:Gammaproves}
   পদ্ধতি~$\Sigma$-তে !!{formula}s-এর সমষ্টি $\Gamma$ থেকে !!^a{formula}~$!A$ \emph{!!{derivable}}—সংকেতে $\Gamma \Proves[\Sigma] !A$—তখনই এবং কেবল তখনই, যখন এমন $!B_1$, \dots, $!B_n \in \Gamma$ আছে যে $\Sigma \Proves !B_1 \lif (!B_2 \lif \cdots (!B_n \lif !A)
   \cdots)$।
+  % BN-SRC-699 TARGET-CORRECTION-BEGIN
+  এখানে সসীম পূর্বপক্ষের ক্রমটি শূন্যও হতে পারে: $n=0$ হলে শর্তটি শুধু $\Sigma \Proves !A$। \emph{উৎস-সংশোধন:} উৎসে শূন্য ক্রমের অর্থ অনুক্ত; খালি সমষ্টি থেকে প্রমাণযোগ্যতার ক্ষেত্রটি স্পষ্ট করা হয়েছে। সূচনার নির্দেশটিও প্রমাণযোগ্যতার সংজ্ঞার সঠিক বিভাগে সংশোধিত।
+  % BN-SRC-699 TARGET-CORRECTION-END
 \end{defn}
 
 \end{document}

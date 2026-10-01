@@ -1,0 +1,81 @@
+{
+  "schema": "openlogic-bn-proof-context-redo/1",
+  "review_record": "evidence/REDO_GPT6_SOL_PROOF_CONTEXT_2026-10-01.md",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "scope": [
+    "OLP-0670",
+    "OLP-0671",
+    "OLP-0678",
+    "first-order sentence convention"
+  ],
+  "bound_files": [
+    {
+      "path": "upstream/content/proof-theory/natural-deduction/translation-G2i.tex",
+      "sha256": "c47d1aa05da27e96ff4459611148ca86943441176ce46a67427c3aa59bf38276"
+    },
+    {
+      "path": "upstream/content/proof-theory/natural-deduction/translation-N2i.tex",
+      "sha256": "bcdc9e912c815aca8702cfe0346eba3a308dd2569e4dcca2950cfa0c590a0be4"
+    },
+    {
+      "path": "upstream/content/proof-theory/natural-deduction/sequents.tex",
+      "sha256": "838a883ad78be2c58a1c21cd84ac9dca8469872ad5ec0ed8ad01e3e8e82b2d54"
+    },
+    {
+      "path": "upstream/content/proof-theory/natural-deduction/rules-N2.tex",
+      "sha256": "5ab9f486ec46f049b02af8cd9da4c08ce15664b45f1fe54fdf3d0a4d7600f1fa"
+    },
+    {
+      "path": "upstream/content/proof-theory/sequent-calculus/rules-G2c.tex",
+      "sha256": "893ca1fbed732661a22f9c3f1bb68c3d39e38174af37fb1a316fc20a62facb75"
+    },
+    {
+      "path": "upstream/content/proof-theory/sequent-calculus/interpretation-rules.tex",
+      "sha256": "5563118c0574c226f19802adfbafc206db1df4d36ced8f3c841814a2f42f3d3a"
+    },
+    {
+      "path": "upstream/content/proof-theory/sequent-calculus/translations.tex",
+      "sha256": "9ae0e40622effab9a067226754c58eeac00c1e21b1ac899c9e2acdebbd12d92c"
+    },
+    {
+      "path": "upstream/content/proof-theory/cut-elimination/ce-topmost.tex",
+      "sha256": "930858ac1885a22be7f561047de54c702127d914720572042917ed3c8cef3214"
+    },
+    {
+      "path": "upstream/content/proof-theory/normalization/segments.tex",
+      "sha256": "083d9544d8870daa58030ddf36209e1447fa7bcbbb2a1cc08f3d1eaf8c3cc9db"
+    },
+    {
+      "path": "upstream/content/proof-theory/normalization/normalization-thm.tex",
+      "sha256": "ec1fd2839474750e88e272f8e90be4d8001f328b03f666b39e7a36518d2d12e6"
+    },
+    {
+      "path": "upstream/content/proof-theory/normalization/translations.tex",
+      "sha256": "070919f142090f49cb60e3e8456cca3b2b34c369c2f22796767795a1bb6bbc67"
+    },
+    {
+      "path": "upstream/content/first-order-logic/syntax-and-semantics/semantic-notions.tex",
+      "sha256": "ac61c5166fa97ab754993ebbf8a126c389f530944132e0b633a75e34c9e08b2e"
+    },
+    {
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/translation-G2i.tex",
+      "sha256": "334fa776fafe855c75849f00661df00e03f0c4f62f226796839a39e130411ff2"
+    },
+    {
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/translation-N2i.tex",
+      "sha256": "65f3b96a5ed6ce9e40a2c32a847f32fc2873f20c7182f7bd203c5e6f2b63d37c"
+    },
+    {
+      "path": "bn-Beng-IN/content/proof-theory/normalization/translations.tex",
+      "sha256": "0b27ed5c64b4c4f92eb7a3e46fab2c96e067334ad63a6a5e8278322574120953"
+    }
+  ],
+  "source_or_target_edits": false,
+  "checker_duplicate_removed": true,
+  "checker_before_sha256": "1ceaa9adf7c61215ffe43612ce82f226494c0856bab96cad059b5bef1b8a8f23",
+  "checker_sha256": "a13c541d5009822c10001edeb893bb88238c18f74447298536ee7cbc8f4a14eb",
+  "strict_source_checks": 722,
+  "proof_review_method": "schematic inference construction and actual controlling source context; not a proof-assistant certificate",
+  "status": "local context dependency resolved; wider audit/build/publication pending"
+}

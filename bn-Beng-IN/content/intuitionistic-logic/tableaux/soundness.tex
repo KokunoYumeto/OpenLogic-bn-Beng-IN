@@ -19,7 +19,7 @@
   এর বিপরীতার্থক রূপ প্রমাণ করা সহজ: কোনো মডেল~$\mModel{M}$
   ও জগৎ~$w$-তে সব $i=1$, \dots,~$n$-এর জন্য
   $\mSat{M}{!B_i}[w]$ হলে কিন্তু
-  % BN-SRC-413: a countermodel must falsify the conclusion.
+  % BN-SRC-413: প্রতিবাদী মডেলে সিদ্ধান্ত অসত্য হওয়া চাই।
   $\mSat/{M}{!A}[w]$ হলে, কোনো !!{tableau} বন্ধ হতে পারে না।
   এমন প্রতিবাদী মডেল দেখায় যে !!{tableau}-র প্রাথমিক
   অনুমানগুলি সন্তোষযোগ্য। প্রমাণের কৌশল: !!a{tableau}-র
@@ -29,14 +29,16 @@
   !!{formula}s-এর সেট দিয়ে শুরু করা যেকোনো !!{tableau}-তে
   অন্তত একটি খোলা শাখা থাকবে।
 
-  % BN-SRC-414: the present soundness argument is intuitionistic, not modal.
+  % BN-SRC-414: এই বিশুদ্ধতার যুক্তি স্বজ্ঞাবাদী ক্ষেত্রের।
   স্বজ্ঞাবাদী ক্ষেত্রে এই কৌশল প্রয়োগ করতে
   ``সন্তোষযোগ্য''-র সংজ্ঞা সম্পর্ক ও উপসর্গের জন্য প্রসারিত
   করতে হবে। তা করলে বাকি প্রমাণ সরল।
 \end{explain}
 
 \begin{defn}
-  ধরি, $P$ কোনো উপসর্গের সেট; অর্থাৎ
+  % BN-SRC-762: মধ্যবর্তী উপসর্গ বাদ থাকলে শুধু এক-ধাপের শর্ত থেকে সব প্রসারণের সম্পর্ক অনুসৃত হয় না।
+  ধরি, $P$ এমন উপসর্গের সেট, যার প্রত্যেক সদস্যের সমস্ত
+  অশূন্য প্রারম্ভিক খণ্ডও সেটটির সদস্য; অর্থাৎ
   $P \subseteq (\PosInt)^* \setminus \{\emptyseq\}$;
   আর $\mModel{M}$ একটি মডেল। অপেক্ষক~$f\colon P \to W$-কে
   $\mModel{M}$-এ~$P$-র \emph{ব্যাখ্যা} বলি, যদি
@@ -46,9 +48,9 @@
   উপসর্গ~$P$-র একটি ব্যাখ্যার সাপেক্ষে সংজ্ঞায়িত করি:
   \begin{enumerate}
   \item $\mModel{M}$, $\sFmla{\True}{!A}[\sigma]$
-    সন্তুষ্ট করে তখনই, যখন $\mSat{M}{!A}[f(\sigma)]$।
+    সন্তুষ্ট করে তখন এবং কেবল তখনই, যখন $\mSat{M}{!A}[f(\sigma)]$।
   \item $\mModel{M}$, $\sFmla{\False}{!A}[\sigma]$
-    সন্তুষ্ট করে তখনই, যখন $\mSat/{M}{!A}[f(\sigma)]$।
+    সন্তুষ্ট করে তখন এবং কেবল তখনই, যখন $\mSat/{M}{!A}[f(\sigma)]$।
   \end{enumerate}
 \end{defn}
 
@@ -58,13 +60,14 @@
 
 \begin{defn}
   $\Gamma$ উপসর্গযুক্ত !!{formula}s-এর সেট এবং
-  $P(\Gamma)$ এতে উপস্থিত উপসর্গগুলির সেট ধরি। $f$ যদি
+  $P(\Gamma)$ এতে উপস্থিত উপসর্গগুলি এবং তাদের সমস্ত
+  অশূন্য প্রারম্ভিক খণ্ডের সেট ধরি। $f$ যদি
   $\mModel{M}$-এ~$P(\Gamma)$-র ব্যাখ্যা হয়, তবে
   $\mModel{M}$, $\Gamma$-র প্রতিটি উপসর্গযুক্ত !!{formula}
   $f$-এর সাপেক্ষে সন্তুষ্ট করলে বলি $\mModel{M}$,
   $\Gamma$-কে $f$-এর সাপেক্ষে সন্তুষ্ট করে;
   লিখি $\mSat{M}{\Gamma}[f]$। $\Gamma$ \emph{সন্তোষযোগ্য}
-  তখনই, যখন এমন মডেল~$\mModel{M}$ ও $P(\Gamma)$-র
+  তখন এবং কেবল তখনই, যখন এমন মডেল~$\mModel{M}$ ও $P(\Gamma)$-র
   ব্যাখ্যা~$f$ আছে, যাতে $\mSat{M}{\Gamma}[f]$।
 \end{defn}
 
@@ -78,7 +81,7 @@
 
 \begin{proof}
   সব সময় $\mSat/{M}{\lfalse}[f(\sigma)]$; তাই
-  % BN-SRC-415: restore the prefix and propagate truth to the accessible world.
+  % BN-SRC-415: অসত্যতার উপসর্গ ফিরিয়ে অভিগম্য জগতে সত্যতার সংরক্ষণ ব্যবহার।
   $\sFmla{\True}{\lfalse}[\sigma]$-যুক্ত $\Gamma$
   অসন্তোষযোগ্য।
 
@@ -154,7 +157,7 @@ $\sFmla{S}{!A}[\sigma] \in \Gamma$ বলি। বিধিতে শাখা
   $\sFmla{\True}{!C}[\sigma]$ উভয়কে $f$-এর সাপেক্ষে
   সন্তুষ্ট করে।
 \item $\sFmla{\False}{!B \lor !C}[\sigma] \in \Gamma$-তে
-  % BN-SRC-417: the rule premise needs its world prefix.
+  % BN-SRC-417: বিধির পূর্বপক্ষে জগতের উপসর্গ ফিরিয়ে দেওয়া।
   $\TRule{\False}{\lor}$ প্রয়োগে শাখা প্রসারিত হলে:
   অনুশীলন।
 \item $\sFmla{\False}{!B \lif !C}[\sigma] \in \Gamma$-তে
@@ -163,12 +166,14 @@ $\sFmla{S}{!A}[\sigma] \in \Gamma$ বলি। বিধিতে শাখা
   $\sFmla{\True}{!B}[\sigma.n]$ এবং
   $\sFmla{\False}{!C}[\sigma.n]$। এখানে $\sigma.n$
   শাখায় নতুন উপসর্গ, অর্থাৎ $\sigma.n \notin P(\Gamma)$।
+  এখানে প্রারম্ভিক খণ্ডগুলিও ব্যবহৃত ধরে নেওয়ায় নতুন উপসর্গের
+  কোনো প্রসারণ আগের শাখায় নেই।
 
   $\Gamma$ সন্তোষযোগ্য বলে এমন মডেল~$\mModel{M}$ ও
   $P(\Gamma)$-র ব্যাখ্যা~$f$ আছে, যাতে
   $\mSat{M}{\Gamma}[f]$; বিশেষত
   $\mSat/{M}{!B \lif !C}[f(\sigma)]$। দেখাতে হবে,
-  % BN-SRC-416: add the rule's two conclusions at the fresh prefix.
+  % BN-SRC-416: নতুন উপসর্গে বিধির প্রকৃত দুই সিদ্ধান্ত যোগ।
   $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n],
   \sFmla{\False}{!C}[\sigma.n]\}$ সন্তোষযোগ্য। এজন্য
   $P(\Gamma) \cup \{\sigma.n\}$-র একটি ব্যাখ্যা সংজ্ঞায়িত করি।
@@ -180,7 +185,9 @@ $\sFmla{S}{!A}[\sigma] \in \Gamma$ বলি। বিধিতে শাখা
   $f'(\sigma.n) = w$। যেহেতু
   $f'(\sigma) = f(\sigma)$ এবং $Rf(\sigma)w$, তাই
   $Rf'(\sigma)f'(\sigma.n)$; সুতরাং $f'$ হলো
-  $P(\Gamma) \cup \{\sigma.n\}$-র একটি ব্যাখ্যা। স্পষ্টতই
+  $P(\Gamma) \cup \{\sigma.n\}$-র একটি ব্যাখ্যা। নতুন উপসর্গের
+  কোনো পূর্বস্থিত সন্তান নেই বলে পুরোনো অন্য সম্পর্ক-শর্তও
+  অক্ষত; নতুন সেটটিও প্রারম্ভিক খণ্ড নেওয়ার অধীনে বদ্ধ। স্পষ্টতই
   $\mSat{M}{!B}[f'(\sigma.n)]$ ও
   $\mSat/{M}{!C}[f'(\sigma.n)]$। সব
   $\sigma' \in P(\Gamma)$-র জন্য
@@ -237,7 +244,7 @@ $\Gamma \Proves !A$ হলে $\Gamma \Entails !A$।
   $\mModel{M}$, $\Delta$-কে $f$-এর সাপেক্ষে সন্তুষ্ট করে।
   কিন্তু \olref{thm:tableau-soundness} অনুযায়ী
   বন্ধ !!{tableau} থাকায় $\Delta$ অসন্তোষযোগ্য—বিরোধ।
-  % BN-SRC-418: the corollary concludes semantic entailment, not derivability.
+  % BN-SRC-418: অনুসিদ্ধান্তের সিদ্ধান্ত অর্থগত ফলন; নিষ্পাদনযোগ্যতা নয়।
   তাই $\Gamma \Entails !A$।
 \end{proof}
 

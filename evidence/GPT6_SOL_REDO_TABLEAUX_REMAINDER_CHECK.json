@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "additional_rules": 10,
+  "bounded_rule_cases": 76308,
+  "six_exercise_model_cases": 968,
+  "axiom_5_consequence_cases": 344,
+  "reverse_parent_missing_witnesses": "passed",
+  "additional_rule_proof": {
+    "node_count": 7,
+    "closed_leaves": 1,
+    "open_leaves": 0
+  },
+  "simple_S5_proof": {
+    "node_count": 6,
+    "closed_leaves": 1,
+    "open_leaves": 0
+  },
+  "simple_S5_rule_cases": 136,
+  "countermodel_trees": [
+    {
+      "node_count": 7,
+      "closed_leaves": 0,
+      "open_leaves": 1
+    },
+    {
+      "node_count": 9,
+      "closed_leaves": 0,
+      "open_leaves": 1
+    },
+    {
+      "node_count": 13,
+      "closed_leaves": 2,
+      "open_leaves": 1
+    },
+    {
+      "node_count": 7,
+      "closed_leaves": 0,
+      "open_leaves": 1
+    },
+    {
+      "node_count": 9,
+      "closed_leaves": 0,
+      "open_leaves": 1
+    },
+    {
+      "node_count": 13,
+      "closed_leaves": 2,
+      "open_leaves": 1
+    }
+  ],
+  "actual_TikZ_countermodels": [
+    {
+      "successor_masks": [
+        6,
+        0,
+        0
+      ],
+      "valuation": {
+        "p": 4,
+        "q": 2
+      },
+      "satisfied_signed_formulas": 11
+    },
+    {
+      "successor_masks": [
+        6,
+        0,
+        0
+      ],
+      "valuation": {
+        "p": 2,
+        "q": 4
+      },
+      "satisfied_signed_formulas": 11
+    }
+  ],
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/more-rules.tex",
+      "sha256": "8666bf2f01f6e6db8960de38511413d03466356bbaa43b8f3b0973ee0adaaffd"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/more-soundness.tex",
+      "sha256": "b8266d6c41d0178860878af38c22e4597376cbfde55f6a7ccff1964e3d593304"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/simple-S5.tex",
+      "sha256": "f224ec8904bdb96d77acb889e2b580e7b31521e58f2a378a27ba9c7c9dcd546a"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/completeness.tex",
+      "sha256": "b17d3df83491cefcac99956710bb31a08b306e9dd5ed095c4406194f5d965db5"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/countermodels.tex",
+      "sha256": "88877b2598df030dde7627f4b4e1a323e2f4d640aa7d2cec9fafa8d37a8838a3"
+    }
+  ],
+  "limits": "ক্ষুদ্র মডেল পরীক্ষা সাধারণ প্রমাণ নয়। দশ বিধির সাধারণ বিশুদ্ধতা, ছয় অনুশীলনের ধর্ম-প্রমাণ, নিরপেক্ষ অসীম নির্মাণ, শূন্য অনুমানসমষ্টি ও মোডাল-গভীরতার সমাপ্তি-প্রমাণ বাংলা review-তে পৃথকভাবে তুলিত। প্রতিমডেলের খোলা পূর্ণ শাখা ও ছবি প্রকৃত bytes থেকে নেওয়া।"
+}

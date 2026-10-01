@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "selected_proofs": [
+    {
+      "file": "proofs-in-K.tex",
+      "Box_primitive": true,
+      "Diamond_primitive": true,
+      "proof_count": 3,
+      "inference_steps": 29
+    },
+    {
+      "file": "more-rules.tex",
+      "Box_primitive": true,
+      "Diamond_primitive": true,
+      "proof_count": 3,
+      "inference_steps": 8
+    },
+    {
+      "file": "proofs-in-K.tex",
+      "Box_primitive": true,
+      "Diamond_primitive": false,
+      "proof_count": 1,
+      "inference_steps": 9
+    },
+    {
+      "file": "more-rules.tex",
+      "Box_primitive": true,
+      "Diamond_primitive": false,
+      "proof_count": 3,
+      "inference_steps": 13
+    },
+    {
+      "file": "proofs-in-K.tex",
+      "Box_primitive": false,
+      "Diamond_primitive": true,
+      "proof_count": 1,
+      "inference_steps": 9
+    },
+    {
+      "file": "more-rules.tex",
+      "Box_primitive": false,
+      "Diamond_primitive": true,
+      "proof_count": 3,
+      "inference_steps": 13
+    }
+  ],
+  "selected_modal_rule_instances": 23,
+  "bounded_rule_cases": 1353024,
+  "invalid_unrestricted_conclusions": 4,
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/sequent-calculus/introduction.tex",
+      "sha256": "c2e4541e419e148bdbcbad2f569620bb72cfdf40df01c9dacf8a036abc67b728"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/sequent-calculus/more-rules.tex",
+      "sha256": "3f0fd6a794fce9d43b96e4d17e0ad534abd2fe0eb6002936c31c15cc67e9632d"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/sequent-calculus/proofs-in-K.tex",
+      "sha256": "4807267badbdb11c52e29ae5ed5be57d5b71a26309a065bc63ea338d5330f683"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/sequent-calculus/rules-for-K.tex",
+      "sha256": "3349a903a3ca468a13406cb90ded33661434db1f15283a57cce94043c58a418e"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/sequent-calculus/sequent-calculus.tex",
+      "sha256": "15fcad392cea78a5abedf758c0cc9035f6a05d6da5804811aeac5f2a067c575e"
+    }
+  ],
+  "limits": "প্রকৃত প্রতিটি প্রদর্শিত প্রমাণধাপ premise stack ও বিধি-চিহ্নে তুলিত। ক্ষুদ্র model গণনা সাধারণ বিশুদ্ধতার প্রমাণ নয়; context সর্বোচ্চ একটি সূত্র বা শূন্য। সাধারণ countermodel-স্থানান্তর ও কর্তন-বিহীন ব্যর্থতার যুক্তি বাংলা review-তে। 5-বিধির context-preservation পরিযায়ী ও ইউক্লিডীয় শ্রেণিতে; কেবল ইউক্লিডীয়তা দাবি নয়।"
+}

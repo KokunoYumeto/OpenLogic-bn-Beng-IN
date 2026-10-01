@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "used_successor_checks": 10466,
+  "fresh_witness_checks": 14322,
+  "missing_intermediate_prefix_witness": {
+    "successor_masks": [
+      2,
+      0,
+      0
+    ],
+    "p_mask": 0,
+    "old_interpretation": {
+      "1": 0,
+      "1.1.1": 2
+    },
+    "failed_extension": {
+      "1.1": 1
+    }
+  },
+  "diamond_proof_visibility": "passed",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/soundness.tex",
+      "sha256": "491ab915134c65544b0e157dff73012cccaf571d635d68acabcd68cf156fa165"
+    }
+  ],
+  "limits": "সাধারণ finite-tableau আবেশ এবং সব বচনমূলক exercise-শাখার প্রমাণ বাংলা review-তে। এই গণনা সর্বোচ্চ তিন জগতের সাক্ষী ও বিধি পরীক্ষা; TeX দৃশ্যগত পরিদর্শন এখনও হয়নি।"
+}

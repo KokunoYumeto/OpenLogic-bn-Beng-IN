@@ -173,21 +173,21 @@
       \hline
       যুক্তি & $R$-এর ধর্ম \dots & বিধি\\
       \hline
-      $\Log{T} = \Log{KT}$ & প্রতিবিম্বী & $\Box$,
+      $\Log{T} = \Log{KT}$ & প্রতিবিম্বী & \iftag{prvBox}{$\Box$}{}\iftag{notprvBox,notprvDiamond}{}{, }\iftag{prvDiamond}{$\Diamond$}{},
       \iftag{prvBox}{T$\Box$}{}%
       \iftag{notprvBox,notprvDiamond}{}{, }%
       \iftag{prvDiamond}{T$\Diamond$}{}
       \\ \hline
-      $\Log{D} = \Log{KD}$ & সিরিয়াল & $\Box$,
+      $\Log{D} = \Log{KD}$ & সিরিয়াল & \iftag{prvBox}{$\Box$}{}\iftag{notprvBox,notprvDiamond}{}{, }\iftag{prvDiamond}{$\Diamond$}{},
       \iftag{prvBox}{%
         \iftag{prvDiamond}{D}{D$\Box$}}{D$\Diamond$}
       \\ \hline
-      $\Log{K4}$ & পরিযায়ী & $\Box$,
+      $\Log{K4}$ & পরিযায়ী & \iftag{prvBox}{$\Box$}{}\iftag{notprvBox,notprvDiamond}{}{, }\iftag{prvDiamond}{$\Diamond$}{},
       \iftag{prvBox}{4$\Box$}{}%
       \iftag{notprvBox,notprvDiamond}{}{, }%
       \iftag{prvDiamond}{4$\Diamond$}{}
       \\ \hline
-      $\Log{B} = \Log{KTB}$ & প্রতিবিম্বী, & $\Box$,
+      $\Log{B} = \Log{KTB}$ & প্রতিবিম্বী, & \iftag{prvBox}{$\Box$}{}\iftag{notprvBox,notprvDiamond}{}{, }\iftag{prvDiamond}{$\Diamond$}{},
       \iftag{prvBox}{T$\Box$}{}%
       \iftag{notprvBox,notprvDiamond}{}{, }%
       \iftag{prvDiamond}{T$\Diamond$}{}\\
@@ -196,7 +196,7 @@
       \iftag{notprvBox,notprvDiamond}{}{, }%
       \iftag{prvDiamond}{B$\Diamond$}{}
       \\ \hline
-      $\Log{S4} = \Log{KT4}$ & প্রতিবিম্বী, & $\Box$,
+      $\Log{S4} = \Log{KT4}$ & প্রতিবিম্বী, & \iftag{prvBox}{$\Box$}{}\iftag{notprvBox,notprvDiamond}{}{, }\iftag{prvDiamond}{$\Diamond$}{},
       \iftag{prvBox}{T$\Box$}{}%
       \iftag{notprvBox,notprvDiamond}{}{, }%
       \iftag{prvDiamond}{T$\Diamond$}{}\\
@@ -205,7 +205,7 @@
       \iftag{notprvBox,notprvDiamond}{}{, }%
       \iftag{prvDiamond}{4$\Diamond$}{}
       \\ \hline
-      $\Log{S5} = \Log{KT5}$ & প্রতিবিম্বী, & $\Box$,
+      $\Log{S5} = \Log{KT5}$ & প্রতিবিম্বী, & \iftag{prvBox}{$\Box$}{}\iftag{notprvBox,notprvDiamond}{}{, }\iftag{prvDiamond}{$\Diamond$}{},
       \iftag{prvBox}{T$\Box$}{}%
       \iftag{notprvBox,notprvDiamond}{}{, }%
       \iftag{prvDiamond}{T$\Diamond$}{}\\
@@ -220,6 +220,9 @@
   \caption{বিভিন্ন মোডাল যুক্তির সিকোয়েন্ট-বিধি।}
   \ollabel{tab:logics-rules}
 \end{table}
+% BN-SRC-740 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন:} সারণির প্রতিটি পদ্ধতিতে নির্বাচিত ভাষার সব মৌলিক মোডাল বিধিও থাকবে। Box ও Diamond উভয়ই মূল অপারেটর হলে উভয়ের মৌলিক বিধি প্রয়োজন; শুধু Diamond মূল হলে Box-বিধি লেখা যথার্থ নয়। অতিরিক্ত বিধির আগে মূল বিধিগুলি সেই নির্বাচন অনুযায়ী দেখানো হয়েছে।
+% BN-SRC-740 TARGET-CORRECTION-END
 
 \iftag{prvBox}{
 \begin{ex}
@@ -345,7 +348,8 @@
 \UnaryInf$\lnot\Diamond!A , \Diamond!A \fCenter$
 \RightLabel{5$\Diamond$}
 \UnaryInf$\Diamond\lnot\Diamond!A , \Diamond!A\fCenter$
-\RightLabel{\RightR{\Exchange}}
+% BN-SRC-739: দুটি বাম সূত্র বিনিময় হয়; ডান সূত্র নয়।
+\RightLabel{\LeftR{\Exchange}}
 \UnaryInf$\Diamond!A, \Diamond\lnot\Diamond!A\fCenter $
 
 \RightLabel{\Cut}
@@ -359,7 +363,7 @@
 \end{ex}
 
 \begin{prob}
-নিচের দাবিগুলি দেখায় এমন সিকোয়েন্ট !!{derivation}s দাও:
+নিচের দাবিগুলি দেখায় এমন সিকোয়েন্ট !!{derivation}s দিন:
   \begin{enumerate}
   \item $\Log{KT5} \Proves \Ax{B}$;
   \item $\Log{KT5} \Proves \Ax{4}$;

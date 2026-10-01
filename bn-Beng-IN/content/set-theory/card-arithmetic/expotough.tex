@@ -30,7 +30,7 @@ $f_\cardfont{b}(\beta)=f(\beta,0)$, এবং প্রত্যেক
 $\gamma\in\cardfont{c}$-র জন্য
 $f_\cardfont{c}(\gamma)=f(\gamma,1)$
 সংজ্ঞায়িত করি।
-% BN-SRC-456: an element of the product of function spaces is a pair of functions.
+% BN-SRC-456: অপেক্ষক-সেটের গুণফলের সদস্য অপেক্ষকের ক্রমযুগল।
 $f\mapsto\tuple{f_\cardfont{b},f_\cardfont{c}}$
 চিত্রণটি একটি !!a{bijection}
 $\funfromto{\cardfont{b}\disjointsum\cardfont{c}}{\cardfont{a}}
@@ -46,14 +46,13 @@ $f(\gamma)\colon\cardfont{b}\to\cardfont{a}$
 $\tuple{\beta,\gamma}\in\cardfont{b}\times\cardfont{c}$-র
 জন্য $f^*(\beta,\gamma)=(f(\gamma))(\beta)$
 সংজ্ঞায়িত করি।
-% BN-SRC-457: f* is literally a function on the Cartesian product;
-% transport across its cardinal-equivalence supplies the claimed exponent law.
+% BN-SRC-457: f-star-এর ক্ষেত্র কার্তেসীয় গুণফল; cardinal-সমসংখ্যক চিত্রণে ক্ষেত্র পরিবহন।
 $f\mapsto f^*$ চিত্রণটি একটি !!a{bijection}
 $\funfromto{\cardfont{c}}{(\funfromto{\cardfont{b}}{\cardfont{a}})}
 \to\funfromto{\cardfont{b}\times\cardfont{c}}{\cardfont{a}}$।
 আর কার্তেসীয় গুণফলটি তার অঙ্কবাচক গুণফলের
 সমসংখ্যক;
-একটি দ্বিপারস্পরিক চিত্রণ দিয়ে অপেক্ষকের
+একটি একৈক ও সমাপতিত চিত্রণ দিয়ে অপেক্ষকের
 সংজ্ঞাক্ষেত্র পরিবহন করলেই দাবিকৃত ঘাত-সমতা মেলে।
 \end{proof}
 
@@ -72,14 +71,26 @@ $\cardexpo{\cardfont{a}}{\cardfont{b}}=
 \begin{proof}
 \begin{align*}
 	\cardexpo{2}{\cardfont{b}} &\leq
-	\cardexpo{\cardfont{a}}{\cardfont{b}}\text{, as $2 \leq \cardfont{a}$}\\
+	\cardexpo{\cardfont{a}}{\cardfont{b}}\text{, কারণ $2 \leq \cardfont{a}$}\\
 	&\leq \cardexpo{(2^\cardfont{a})}{\cardfont{b}}
-	\text{, by \olref[opps]{lem:SizePowerset2Exp}}\\
+	\text{, অনুযায়ী \olref[opps]{lem:SizePowerset2Exp}}\\
 	&= \cardexpo{2}{\cardfont{a} \cardtimes \cardfont{b}}
-	\text{, by \olref{simplecardexpo}} \\
+	\text{, অনুযায়ী \olref{simplecardexpo}} \\
 	&= \cardexpo{2}{\cardfont{b}}
-	\text{, by \olref[simp]{cardplustimesmax}}
+	\text{, অনুযায়ী \olref[simp]{cardplustimesmax}}
 \end{align*}
+% BN-SRC-810 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন-নোট।} শেষ ধাপে উদ্ধৃত ফলটির
+কথনে দুই factor অসীম, অথচ এখানে $\cardfont{a}$
+সসীমও হতে পারে। প্রয়োজনীয় বিস্তৃত ফলটি এভাবে পাই:
+$1\leq\cardfont{a}\leq\cardfont{b}$ ও $\cardfont{b}$
+অসীম হলে একটি নির্দিষ্ট প্রথম স্থানাঙ্কে
+$\cardfont{b}\to\cardfont{a}\times\cardfont{b}$ একৈক,
+আর এই product বড় $\cardfont{b}$-বর্গের উপসেট।
+বর্গের সদস্যসংখ্যা $\cardfont{b}$, তাই দুই inequality-তে
+$\cardfont{a}\cardtimes\cardfont{b}=\cardfont{b}$।
+এতে সসীম ধনাত্মক ভিত্তির দফাও ঢাকা পড়ে।
+% BN-SRC-810 TARGET-CORRECTION-END
 \end{proof}
 
 আর বেশি সরলীকরণ আশা করা ঠিক হবে না, কারণ
@@ -91,7 +102,7 @@ $\cardexpo{\cardfont{a}}{\cardfont{b}}$ নিয়ে
 $\cardfont{b}$ \emph{সসীম} হলে পথ জানা আছে।
 
 \begin{prop}
-% BN-SRC-458: zero exponent gives one, so the source proposition needs n nonzero.
+% BN-SRC-458: শূন্য ঘাত এক; তাই n অশূন্য চাই।
 $\cardfont{a}$ অসীম এবং $n\in\omega$ অশূন্য হলে
 $\cardexpo{\cardfont{a}}{n}=\cardfont{a}$।
 \end{prop}

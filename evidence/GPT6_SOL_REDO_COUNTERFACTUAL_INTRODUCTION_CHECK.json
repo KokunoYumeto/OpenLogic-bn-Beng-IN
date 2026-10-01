@@ -1,0 +1,180 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "actual_material_entailments": 12,
+  "actual_strict_displayed_and_exercise_claims": 31,
+  "actual_strict_exercises": 15,
+  "bounded_S5_models": 2696,
+  "strict_nonentailment_countermodels": {
+    "1": {
+      "worlds": 2,
+      "successor_masks": [
+        3,
+        3
+      ],
+      "valuation": {
+        "A": 1,
+        "B": 0,
+        "C": 0
+      },
+      "counterexample_world": 1
+    },
+    "3": {
+      "worlds": 2,
+      "successor_masks": [
+        3,
+        3
+      ],
+      "valuation": {
+        "A": 1,
+        "B": 0,
+        "C": 0
+      },
+      "counterexample_world": 1
+    },
+    "4": {
+      "worlds": 2,
+      "successor_masks": [
+        3,
+        3
+      ],
+      "valuation": {
+        "A": 1,
+        "B": 0,
+        "C": 0
+      },
+      "counterexample_world": 1
+    },
+    "16": {
+      "worlds": 2,
+      "successor_masks": [
+        3,
+        3
+      ],
+      "valuation": {
+        "A": 1,
+        "B": 0,
+        "C": 0
+      },
+      "counterexample_world": 1
+    },
+    "18": {
+      "worlds": 2,
+      "successor_masks": [
+        3,
+        3
+      ],
+      "valuation": {
+        "A": 1,
+        "B": 0,
+        "C": 0
+      },
+      "counterexample_world": 1
+    },
+    "2": {
+      "worlds": 2,
+      "successor_masks": [
+        3,
+        3
+      ],
+      "valuation": {
+        "A": 1,
+        "B": 2,
+        "C": 0
+      },
+      "counterexample_world": 1
+    },
+    "17": {
+      "worlds": 2,
+      "successor_masks": [
+        3,
+        3
+      ],
+      "valuation": {
+        "A": 1,
+        "B": 2,
+        "C": 0
+      },
+      "counterexample_world": 1
+    },
+    "19": {
+      "worlds": 2,
+      "successor_masks": [
+        3,
+        3
+      ],
+      "valuation": {
+        "A": 1,
+        "B": 2,
+        "C": 0
+      },
+      "counterexample_world": 0
+    }
+  },
+  "same_local_values_different_strict_truth": true,
+  "positive_necessity_outside_transitive_frames_fails": true,
+  "negative_necessity_outside_S5_fails": true,
+  "no_conspiracy_does_not_alone_determine_alternative_history": {
+    "worlds": [
+      0,
+      1,
+      2
+    ],
+    "no_oswald_killing_worlds": [
+      1,
+      2
+    ],
+    "other_successful_killer_worlds": [
+      1
+    ],
+    "conspiracy_worlds": [],
+    "true_selection_order": [
+      0,
+      1,
+      2
+    ],
+    "false_selection_order": [
+      0,
+      2,
+      1
+    ]
+  },
+  "primary_reading": {
+    "author": "David Lewis",
+    "title": "Counterfactuals and Comparative Possibility",
+    "year": 1973,
+    "journal_pages": "418–446",
+    "actually_consulted_pages": "420–425; গোলক-অর্থতত্ত্বের ২.৩ অংশ",
+    "url": "https://paperzz.com/doc/7162530/counterfactuals-and-comparative-possibility",
+    "scope": "মুদ্রিত প্রবন্ধের ওয়েব-পাঠ; সম্পূর্ণ প্রবন্ধ নতুন করে পড়া বা লেখকের বইয়ের PDF দৃশ্যত পড়ার দাবি নেই।"
+  },
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/counterfactuals.tex",
+      "sha256": "dd8e88b0259540f9117d7b1294d61e7bc41e9670bd8a5298cc5324883f766ced"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/introduction/introduction.tex",
+      "sha256": "7dc4dc518f1c17186a7e762c7b353c59c62b54a4d4f24c6b367b3e60c0594b9e"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/introduction/material-conditional.tex",
+      "sha256": "07c76adfdd96d6804382b2b61420201593ee3d4443ee379ec9b7b0c98ca722da"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/introduction/paradoxes-material.tex",
+      "sha256": "a5eecd6fc8439c29df6bca7f8a64fe9061500f4bd95af2fc76718501c0549432"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/introduction/strict-conditional.tex",
+      "sha256": "5837b4d375c808138bef699bc1e367a83625c43bb5b37d582bda5b391b1e787d"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/introduction/counterfactuals.tex",
+      "sha256": "8ea3eaae12e7adc18d4cbc97dafd4bbc5f6f830a7b391f5b02f3b0174d5148e7"
+    }
+  ],
+  "limits": "ক্ষুদ্র S5 গণনা সাধারণ proof নয়; সাধারণ truth-functional, Box এবং সমতুল্য কাঠামোর proof বাংলা review-তে। ইতিহাসের selection-example কেবল যৌক্তিক অনুক্ত অনুমান দেখায়; বাস্তব হত্যাকাণ্ডের ঘটনার নতুন প্রমাণ নয়।"
+}

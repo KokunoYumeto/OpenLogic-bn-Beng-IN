@@ -41,6 +41,7 @@ def append_once(path: Path, line: str) -> None:
 
 
 def main() -> None:
+    raise SystemExit("Historical 2026-09-28 checkpoint is retired: its fixed visual observations and publication state must not be replayed against current artifacts. Use current hash-bound redo and QA receipts.")
     public = read(RECEIPT)
     qa = read(BUILD / "SEMANTIC_READER_QA.json")
     visual = read(BUILD / "VISUAL_QA.json")

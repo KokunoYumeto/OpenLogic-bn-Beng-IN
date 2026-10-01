@@ -1,0 +1,21 @@
+{
+  "schema": "openlogic-bn-current-decision-export-check/1",
+  "date": "2026-10-01",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "decisions": 447,
+  "provisional": 431,
+  "literal_occurrences": 46144,
+  "exact_current_byte_and_ledger_joins": true,
+  "recorded_alternatives_only": true,
+  "canon_ledger_sha256": "b5ed49b1ffb0238e72343d55630b8046980d67b2425ac0986d4a3918b7dafc44",
+  "files": {
+    "TRANSLATION_DECISION_LOG.jsonl": "fd4492e7eb526b9c5b92a6943fd7560edcff9b579a83509c012c9159c7196343",
+    "TRANSLATION_DECISION_INDEX.json": "ddc7e9c084230ba62b40b6586f8e2a6ba6417dcc3062753cb8fdaa0fe948bd3b",
+    "TRANSLATION_DECISION_OCCURRENCES.csv": "d3b632b8b5efb75f50d870684cf8c210c9bb4fee1ac8f8abf59e147d704606a7",
+    "TRANSLATION_DECISION_LOG.md": "704c72210de5488b86acdd766e15748e7a9b9ffcd87a2f85bef33ea0a9d63b06",
+    "TRANSLATION_DECISION_PRIORITY.md": "5306900c31aee9bf5639f4b91b31511d56e2075886f3a9b97ce5bc6282b271cb"
+  },
+  "limitations": "Literal TeX occurrence index; runtime token expansion and final PDF pages not claimed. Existing term rationale/authority evidence retained, not all term choices newly settled.",
+  "publication": "pending_rebuild_release"
+}

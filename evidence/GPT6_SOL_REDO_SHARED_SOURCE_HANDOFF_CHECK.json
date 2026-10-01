@@ -1,0 +1,30 @@
+{
+  "schema": "openlogic-bn-shared-source-redo/1",
+  "review_record": "evidence/REDO_GPT6_SOL_SHARED_SOURCE_HANDOFF_2026-10-01.md",
+  "affected_unit_count": 336,
+  "new_findings": [
+    919,
+    920
+  ],
+  "already_resolved": {
+    "OLI-PT-SEARCH-FALLBACK-CONSTANT": "BN-SRC-888 retained"
+  },
+  "sources": [
+    {
+      "unit_id": "OLP-0357",
+      "source_sha256": "145fce509501861988851ee8a42591b3ec7e2acd4f570f34004c5c459b491ecb",
+      "target_before_sha256": "61c0c8bbc6169cd5511487d650dad151c2afa65cd238f27065b7655568ac2dbc",
+      "target_sha256": "82cde53748459c9cfd77779cb492de4d7f8860c18bb3fbe1d4f6bc662c4d67a1"
+    },
+    {
+      "unit_id": "OLP-0683",
+      "source_sha256": "2ce7994ec2166ec4f50b3c3698d4767f49ff3fd4a39c942f79ba304ca9c1a8a2",
+      "target_before_sha256": "4d101a8c97fbfdac280b41210bb30e90b13f1c3056f98bc94ed7eede2d044564",
+      "target_sha256": "c5110bb0da444d782075f2d8d42349bd1f8cc7eb3fb6ee6dbacd2e2b16b49297"
+    }
+  ],
+  "strict_source_checks": 722,
+  "checker_sha256": "9c597fce212ed7a68b437126bccd8bbaaeb24a0148a35a8546f08c516365696f",
+  "canon_index_sha256": "32ec21bf5f15cdfd812ff9f1f1e36c0127c7ee49c89af8a18b4cb56b31a5cc81",
+  "status": "registered_local; builds and release pending"
+}

@@ -1,0 +1,19 @@
+# প্রমাণ-পদ্ধতির সূচনা: নতুন পূর্ণ উৎস-তুলনা
+
+২০২৬-০৯-৩০; GPT-6.1 Sol, Ultra; একই চ্যাট। OLP-0601–0608-এর আটটি ইংরেজি ও বাংলা ফাইল সম্পূর্ণ পড়ে তুলনা করা হয়েছে। এগুলি নতুন স্থানীয় পুনঃপরীক্ষা; reader পুনর্নির্মাণ ও প্রকাশনা এখনও বাকি।
+
+601–602 অংশ/অধ্যায়ের সম্পাদকীয় পরিচয়, দশটি import ও chapter hook ঠিক। মূলপাঠে অতিরিক্ত method-chapter-এর পরিকল্পনা আছে; এটিকে সম্পন্ন বিষয়বস্তু বলা হয়নি। 603-তে আনুষ্ঠানিক নিষ্পাদন ও সাধারণ ভাষার proof, প্রতিটি ধাপের যথার্থ সমর্থন, প্রস্তাব/উপপাদ্য/লেমা/অনুসিদ্ধান্ত এবং hypothetical দাবির ক্ষেত্র ঠিক। BN-SRC-832-তে correct inference-এর ভূমিকা অনুমিতি দিয়ে স্পষ্ট হয়েছে, যাতে একই বাক্যের assumed hypothesis থেকে আলাদা বোঝা যায়। পূর্ণতা শব্দটি পুরোনো T033/T069-এর রূপ; অন্য অধ্যায়ের সম্পূর্ণতা রূপের সমন্বয় বৃহত্তর terminology audit-এ বাকি, এটিকে এখানে নতুন গাণিতিক ভুল বলা হয়নি।
+
+604-তে conclusion আগেই ধরে নেওয়া যাবে না, permitted hypothesis ও goal দিয়ে খসড়া সাজানোর নির্দেশ যথার্থ। 605-তে সংজ্ঞেয় পদ ও সংজ্ঞাদায়ী অংশ, union/intersection/difference-এর স্থানধারক এবং bound variable ঠিক। পুরোনো BN-SRC-476-এর mth file-id ঠিক। সেট-সমতার সদস্যভিত্তিক মানদণ্ড informal proof-পরিচয়; আনুষ্ঠানিক ZF-এ এটি Extensionality-এর criterion, primitive equality-এর নতুন স্বতঃসিদ্ধবিহীন derivation নয়।
+
+606-তে conjunction-এর দুটি দিক, disjunction introduction, conditional ও only-if-এর দিক, biconditional-এর দুটি conditional, universal instantiation/generalization, proof by cases ও existential introduction/elimination সম্পূর্ণ তুলনা করা হয়েছে। সার্বিক proof-এ arbitrary সদস্য নেওয়া conditional-এর ভিতরে; empty antecedent-domain-এ অস্তিত্ব দাবি নয়। existential witness-এর নাম পূর্বধারণায় নতুন এবং চূড়ান্ত সিদ্ধান্তে অনুপস্থিত হতে হয়। শেষের nonempty দুই সেটের intersection nonempty বলার প্রমাণটি ইচ্ছাকৃত ভুল; তা অক্ষত। A={0}, B={1} সরাসরি ব্যতিক্রম। একই bound-variable বানান দুটি অস্তিত্বের সাক্ষীকে অভিন্ন করে না।
+
+পুরোনো 477-এর omitted membership subjects এবং 478-এর A-কে nonempty বলা ঠিক। নতুন 833-তে inference patterns/steps-কে অনুমিতির রীতি/ধাপ বলা হয়েছে; সত্যিকার ধরে নেওয়া assumptions বদলায়নি। আরোহ শব্দটি আগের T042/T065/T102/T424-এর ঘোষিত রীতিতে মিলেছে, নতুন সরাসরি canon-attestation দাবি নয়। 834-তে plural member collection-এর একটির নাম চালু করা হয়েছে এবং bare membership fragment-কে ধর্ম হিসেবে লেখা হয়েছে। এই নতুন পরিবর্তনগুলিতে formula বা token গণনা বদলায়নি।
+
+607-এর বণ্টন-সমতার দুই দিক পূর্ণ সদস্যভিত্তিক proof: প্রথমে A অথবা B∩C, পরে (A অথবা B) এবং (A অথবা C)-র nested case distinction। বিপরীত দিকের z নতুন conditional-পরিধিতে; আগের branch-এর assumptions আর কার্যকর নয়। সব তিন সেটের যেকোনো overlap ও empty case-এ যুক্তি ঠিক।
+
+608-তে A⊆C পূর্বধারণা forward inclusion-এর A-branch-এ লাগে; reverse inclusion-এ z∈A অথবা z∉A-এর বর্জিত-মধ্যম নীতি ব্যবহৃত। এখানে classical proof-এর নীতি স্পষ্ট, intuitionistic দাবির নীরব প্রতিস্থাপন নয়। পুরোনো BN-SRC-479-এর closing parenthesis repair যথার্থ।
+
+এই চ্যাটে আগে বাস্তবে পড়া P007/P012 সেট-রীতি, P008/P009 বচন/পরিমাণায়ন, P017 প্রমাণ, P018 ক্ষেত্র, P023 চিত্রণ ও P005 সংখ্যা প্রাসঙ্গিক। এবার NSOU PDF পৃষ্ঠা 373, মুদ্রিত 368, P025-এর সম্পূর্ণ inverse-mapping এবং uniqueness proof দৃশ্যত পড়া হয়েছে। একৈক, সমাপতিত, অনন্য, ধরা যাক, প্রমাণ ও অতএব-এর ব্যবহার আছে। Subjective ইংরেজি ছাপার ভুল এবং শেষ ∀y∈y-এর বদলে Y হওয়ার ভুল নেওয়া হয়নি। Latin definiendum/definiens, পূর্ণ inference-pattern ও induction compounds সেখানে সরাসরি নেই; বিশেষ রূপগুলি provisional থাকে।
+
+স্বাধীন সসীম যাচাইয়ের counts ও বর্তমান আটটি target hash সংশ্লিষ্ট GPT6_SOL_REDO_METHODS_OPENING_CHECK.json-এ আছে। সত্যমান-রীতি, সব ছোট set identities, subset premises, singleton witness এবং ভুল existential intersection-এর ব্যতিক্রম পরীক্ষা করা হয়েছে। এগুলি সাধারণ প্রমাণের বিকল্প নয়; সাধারণ scope ও সদস্যভিত্তিক যুক্তি উপরে পৃথকভাবে পড়া হয়েছে। নতুন hash ও প্রকৃত comment-locator নিবন্ধনের পরে মোট নতুন পর্যালোচিত affected unit হবে 217/336; OLP-0051-এর support-review এই সংখ্যার বাইরে।

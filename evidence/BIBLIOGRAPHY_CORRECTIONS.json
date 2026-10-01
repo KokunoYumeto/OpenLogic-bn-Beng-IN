@@ -1,0 +1,120 @@
+{
+  "schema": "openlogic-bn-bibliography-corrections/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "frozen_source": {
+    "path": "upstream/bib/open-logic.bib",
+    "sha256": "5375d3ec87b5d38f57e95ba10b833fe3d7d68c12c7f7c550b5081d93c755d023"
+  },
+  "edition_bibliography": {
+    "path": "bn-Beng-IN/bib/open-logic.bib",
+    "sha256": "3b175e9393b3c33e4db531948f7fa469b8b52e31303941f30046f6e85136dee7"
+  },
+  "corrections": [
+    {
+      "finding_id": "BN-BIB-001",
+      "key": "Cohen1963",
+      "পরিবর্তন": "গ্যোডেল ও কোহেনের মূল গ্রন্থপঞ্জিতে অদলবদল হওয়া খণ্ড ও পৃষ্ঠা সংশোধিত; সংখ্যা ও DOI যোগ।",
+      "old": {
+        "volume": "24",
+        "pages": "556--557"
+      },
+      "corrected": {
+        "volume": "50",
+        "number": "6",
+        "pages": "1143--1148",
+        "doi": "10.1073/pnas.50.6.1143"
+      },
+      "source_record": "https://pubmed.ncbi.nlm.nih.gov/16578557/",
+      "consultation_date": "2026-09-30",
+      "read_scope": "জার্নালের PubMed গ্রন্থপঞ্জির record; মূল পূর্ণ প্রবন্ধ নতুন করে পড়ার দাবি নয়।"
+    },
+    {
+      "finding_id": "BN-BIB-002",
+      "key": "Godel1938",
+      "পরিবর্তন": "গ্যোডেল ও কোহেনের মূল গ্রন্থপঞ্জিতে অদলবদল হওয়া খণ্ড ও পৃষ্ঠা সংশোধিত; সংখ্যা ও DOI যোগ।",
+      "old": {
+        "volume": "50",
+        "pages": "1143--8"
+      },
+      "corrected": {
+        "volume": "24",
+        "number": "12",
+        "pages": "556--557",
+        "doi": "10.1073/pnas.24.12.556"
+      },
+      "source_record": "https://pubmed.ncbi.nlm.nih.gov/16577857/",
+      "consultation_date": "2026-09-30",
+      "read_scope": "জার্নালের PubMed গ্রন্থপঞ্জির record; মূল পূর্ণ প্রবন্ধ নতুন করে পড়ার দাবি নয়।"
+    },
+    {
+      "finding_id": "BN-BIB-003",
+      "key": "Sandstrum2019",
+      "old": {
+        "author": "Ted Sandstrum",
+        "year": "2019"
+      },
+      "corrected": {
+        "author": "Ted Sundstrom",
+        "year": "2013"
+      },
+      "পরিবর্তন": "গ্রন্থপঞ্জির নাম মেরামত এবং ঠিক এখানে সংযুক্ত ২০১৩ সংস্করণের প্রকাশকাল মিলিয়ে নেওয়া; stable citation key অক্ষত।",
+      "source_record": "https://scholarworks.gvsu.edu/books/7/",
+      "consultation_date": "2026-09-30",
+      "read_scope": "বিশ্ববিদ্যালয়ের title/author/publication metadata, Cheng PDF-এর শিরোনাম ও তারিখ এবং Hammack-এর author book-page; বইগুলির পূর্ণ নতুন পাঠের দাবি নয়।"
+    },
+    {
+      "finding_id": "BN-BIB-004",
+      "key": "Cheng2004",
+      "old": {
+        "title": "How to Write Proofs: A Quick Quide"
+      },
+      "corrected": {
+        "title": "How to Write Proofs: A Quick Guide"
+      },
+      "পরিবর্তন": "লেখকের PDF শিরোনামের Guide ছাপার ভুল মেরামত; ২০০৪ সাল অক্ষত।",
+      "source_record": "https://eugeniacheng.com/wp-content/uploads/2017/02/cheng-proofguide.pdf",
+      "consultation_date": "2026-09-30",
+      "read_scope": "বিশ্ববিদ্যালয়ের title/author/publication metadata, Cheng PDF-এর শিরোনাম ও তারিখ এবং Hammack-এর author book-page; বইগুলির পূর্ণ নতুন পাঠের দাবি নয়।"
+    },
+    {
+      "finding_id": "BN-BIB-005",
+      "key": "Hammack2013",
+      "old": {
+        "url": "http://www.people.vcu.edu/~rhammack/BookOfProof/BookOfProof.pdf"
+      },
+      "corrected": {
+        "url": "https://richardhammack.github.io/BookOfProof/"
+      },
+      "পরিবর্তন": "মূল ২০১৩ উদ্ধৃত সংস্করণের PDF ঠিকানা ফিরেছে। লেখকের বর্তমান বই-পৃষ্ঠার বিকল্প ঠিকানা শুধু প্রস্তাব; পাঠে প্রয়োগ করা হয়নি।",
+      "source_record": "https://richardhammack.github.io/BookOfProof/",
+      "consultation_date": "2026-09-30",
+      "read_scope": "বিশ্ববিদ্যালয়ের title/author/publication metadata, Cheng PDF-এর শিরোনাম ও তারিখ এবং Hammack-এর author book-page; বইগুলির পূর্ণ নতুন পাঠের দাবি নয়।",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "action": "withdraw_optional_alternate_url_restore_cited_edition_access",
+      "date": "2026-10-01",
+      "historical_target_sha256": "f763e69dc6e9154aaeee153e9ca10dea055b8b497be0d3ede52fa6fbb316326a",
+      "proposal": {
+        "url": "https://richardhammack.github.io/BookOfProof/"
+      },
+      "reason": "Timeout is not evidence that the cited2013 PDF permanently failed; current landing page serves another edition. Preserve original edition-specific access; alternate remains proposal."
+    }
+  ],
+  "status": "সম্পূর্ণ reader পুনর্নির্মাণ ও প্রকাশনা বাকি।",
+  "latest_disposition": {
+    "date": "2026-10-01",
+    "applied": [
+      "BN-BIB-001",
+      "BN-BIB-002",
+      "BN-BIB-003",
+      "BN-BIB-004"
+    ],
+    "proposal_only": [
+      "BN-BIB-005"
+    ],
+    "prior_target_sha256": "f763e69dc6e9154aaeee153e9ca10dea055b8b497be0d3ede52fa6fbb316326a",
+    "current_target_sha256": "3b175e9393b3c33e4db531948f7fa469b8b52e31303941f30046f6e85136dee7"
+  }
+}

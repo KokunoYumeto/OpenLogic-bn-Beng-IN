@@ -91,7 +91,7 @@ variable}s-এর ক্ষেত্রে $V^\Sigma$-র সংজ্ঞা থ
           $\mSat{M^\Sigma}{\Diamond !B}[\Delta]$।
           \olref[syn][trw]{defn:mmodels} অনুযায়ী, $R^\Sigma \Delta\Delta'$ এমন কোনো $\Delta'$-তে $\mSat{M^\Sigma}{!B}[\Delta']$। আবেশের পূর্বধারণা থেকে $R^\Sigma \Delta\Delta'$ এমন কোনো $\Delta'$-তে $!B \in \Delta'$। $R^\Sigma$-র সংজ্ঞা অনুযায়ী,\iftag{prvBox}{ $\Box^{-1} \Delta \subseteq \Delta'$ এমন কোনো $\Delta'$-তে $!B \in \Delta'$। \olref[mod]{lem:box-iff-diamond} থেকে,}{} $\Diamond \Delta' \subseteq \Delta$ এমন কোনো $\Delta'$-তে $!B \in
           \Delta'$। যেহেতু $!B \in \Delta'$, সেহেতু $\Diamond !B \in \Diamond
-          \Delta'$; তাই $\Diamond !B \in \Delta$। % BN-SRC-359: the equivalence lemma, not prop:diamond, converts Box-inverse inclusion to Diamond inclusion.
+          \Delta'$; তাই $\Diamond !B \in \Delta$। % BN-SRC-359: Box-বিপরীতের অন্তর্ভুক্তি থেকে Diamond-এর অন্তর্ভুক্তিতে যায় সমতুল্যতার সহায়ক উপপাদ্য; prop:diamond নয়।
 
           এবার $\Diamond !B \in \Delta$ ধরি।
           \olref[mod]{prop:diamond} অনুযায়ী, এমন একটি পূর্ণ $\Sigma$-সঙ্গত $\Delta' \in W^\Sigma$ আছে যাতে $\Diamond \Delta' \subseteq \Delta$ এবং $!B \in
@@ -102,8 +102,11 @@ variable}s-এর ক্ষেত্রে $V^\Sigma$-র সংজ্ঞা থ
   \end{enumerate}
 \end{proof}
 
-\begin{probtag}{probFalse,probTrue,probNot,proband,probOr,probIf,probIff,probBox,probDiamond}
-  \olref[nml][com][tru]{prop:truthlemma}-এর প্রমাণ সম্পূর্ণ করো।
+% BN-SRC-709 TARGET-CORRECTION-BEGIN
+% সংযোগের অনুশীলনের tag আগের probAnd-এর সঙ্গে একই বড়/ছোট অক্ষরে হতে হবে।
+% BN-SRC-709 TARGET-CORRECTION-END
+\begin{probtag}{probFalse,probTrue,probNot,probAnd,probOr,probIf,probIff,probBox,probDiamond}
+  \olref[nml][com][tru]{prop:truthlemma}-এর প্রমাণ সম্পূর্ণ করুন।
 \end{probtag}
 
 \end{document}

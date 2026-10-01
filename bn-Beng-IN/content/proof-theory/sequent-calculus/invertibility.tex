@@ -21,18 +21,16 @@
 \DisplayProof
 \]
 কোনো ব্যবস্থায় \emph{উল্টানোযোগ্য}, যদি
-$\Proves S$ হলেই $\Proves S_i$ হয়,
+$\Proves S$ হলেই $\Proves[h_i] S_i$ হয়,
 $i = 1$, \dots,~$n$-এর প্রত্যেকটির
 জন্য। বিধিটি \emph{!!{height}-সংরক্ষণকারী
 উল্টানোযোগ্য} (বা \emph{!!{hp}-উল্টানোযোগ্য}),
-যদি $\Proves[n] S$ হলেই
+যদি $\Proves_n S$ হলেই
 $\Proves[n] S_i$ হয়,
 $i = 1$, \dots,~$n$-এর প্রত্যেকটির
 জন্য।
 \end{defn}
-% BN-SRC-629 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-629):} সাধারণ উল্টানোযোগ্যতার সংজ্ঞায় উৎসের অনির্ধারিত \(h_i\) উচ্চতা বাদ দিয়ে পূর্বধারণার সাধারণ প্রমাণযোগ্যতা রাখা হয়েছে। উচ্চতা-সংরক্ষণকারী সংজ্ঞার উপপক্ষে উৎসের \(\Proves_n S\) বদলে পাশের বিধিবদ্ধ লিখন \(\Proves[n] S\) করা হয়েছে।}
-% BN-SRC-629 TARGET-CORRECTION-END
+% BN-SRC-629: earlier erratum/optional clarification withdrawn after context review.
 
 \begin{lem}\ollabel{lem:G3c-invert}
 \Log{G3c}-তে $\lnot$, $\land$, $\lor$
@@ -70,7 +68,8 @@ $i = 1$, \dots,~$n$-এর প্রত্যেকটির
 \end{lem}
 
 \begin{proof}
-\Log{G3c}-র যেকোনো বিধি~$R$-এর
+\Log{G3c}-র উপরে তালিকাভুক্ত বচনীয় বিধি~$R$-এর
+% BN-SRC-907: proof opening interpreted under the preceding propositional lemma.
 জন্য দেখাতে হবে: $R$-এর সিদ্ধান্ত~$S$-এর
 !!a{proof}~$\pi$ থাকলে বিধি~$R$-এর পূর্বধারণা
 $S_i$-গুলিরও !!{proof}s~$\pi_i$
@@ -217,9 +216,7 @@ $\pi_2'$ পাওয়া যায়।
 % BN-SRC-631 TARGET-CORRECTION-BEGIN
 \par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-631):} \(\LeftR{\lif}\) উদাহরণে আরোহের অনুমান থেকে পাওয়া \(\pi'_1,\pi'_2\)-র অন্তিম সিকোয়েন্টে \(A\land B\)-এর বদলে \(A,B\) থাকা চাই। উৎসের গদ্যে পুরোনো প্রসঙ্গই পুনরাবৃত্ত, অথচ পরের প্রদর্শিত বৃক্ষে সঠিক \(A,B\) আছে; গদ্যটি বৃক্ষের সঙ্গে মেলানো হয়েছে।}
 % BN-SRC-631 TARGET-CORRECTION-END
-% BN-NORM-181 TARGET-NORMALIZATION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{ভাষাগত স্বাভাবিকীকরণ (BN-NORM-181):} উচ্চতা-সমীকরণের মধ্যবর্তী দুটি ইংরেজি বাক্য বাংলা করা হয়েছে; সব সমীকরণ ও তুলনাচিহ্ন অপরিবর্তিত।}
-% BN-NORM-181 TARGET-NORMALIZATION-END
+% BN-NORM-181: localized display prose retained; optional reader annotation withdrawn.
 
 \begin{prob}
 \RightR{\lif}-এর ক্ষেত্রে
@@ -249,7 +246,10 @@ $\lforall[x][!A(x)]$
 
 \begin{proof}
   (১) প্রমাণ করি; (২)
-  অনুশীলন হিসেবে থাক।
+  অনুশীলন হিসেবে থাক। শুরুতেই মূল প্রমাণের
+  সব আইগেনচলকে উক্ত নতুন ধ্রুবক থেকে আলাদা নামে
+  লিখি; উচ্চতা বদলায় না। এই নামগুলিই আরোহী
+  পুনর্নির্মাণে রাখি।
   যুক্তিটি \olref{lem:G3c-invert}-এর
   প্রমাণের মতো। আরোহী ধাপে
   আবার দুটি ক্ষেত্র আছে।
@@ -266,7 +266,8 @@ $\lforall[x][!A(x)]$
   $\Gamma$, $\Delta$ কিংবা
   $\lforall[x][!A(x)]$-এ
   উপস্থিত নয়। $\pi_1$
-  নিয়মিত ধরা যায়; তাই
+  নিয়মিত করে তার সব আইগেনচলও নির্ধারিত প্রতিস্থাপক
+  ধ্রুবক থেকে আলাদা নামে নিই; উচ্চতা অপরিবর্তিত। তাই
   \olref[qua]{lem:subst-regular}
   অনুসারে $\Subst{\pi_1}{c}{a}$
   একই !!{height}-এর
@@ -296,9 +297,7 @@ $\lforall[x][!A(x)]$
 \DisplayProof
 \]
 এখানে $\Delta = \Delta',
-!B \land !C$। উপপাদ্যের
-সম্পূর্ণ সতেজতা-শর্ত
-মেনে $c$ এমন
+!B \land !C$। $c$ এমন
 !!a{constant}, যা
 $\Delta$-তে নেই।
 বিশেষত এটি
@@ -329,9 +328,10 @@ $\Gamma \Sequent
 \]
 এখানে $\pheight{\pi'} = \max(\pheight{\pi_1'}, \pheight{\pi_2'})+1 \le \pheight{\pi}$।
 \end{proof}
-% BN-SRC-632 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-632):} অমুখ্য \(\RightR{\land}\) ক্ষেত্রে উৎস কেবল \(\Delta\)-তে \(c\) অনুপস্থিত বলে; পরিমাণসূচক-বিধির দাবির জন্য \(c\) অবশ্যই \(\Gamma\), \(\Delta\) ও \(\lforall[x][!A(x)]\) থেকে নতুন হতে হবে। উদাহরণেও পূর্ণ সতেজতা-শর্ত স্পষ্ট করা হয়েছে।}
-% BN-SRC-632 TARGET-CORRECTION-END
+% BN-SRC-908 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-908):} ধ্রুবক প্রতিস্থাপনের সহায়ক উপপাদ্য ব্যবহারে প্রতিস্থাপক ধ্রুবকও উপপ্রমাণের আইগেনচল হতে পারে না। শুধু নিয়মিত হওয়া এই শর্ত দেয় না; প্রয়োজনীয় নতুন নাম নিয়ে নেওয়া হয়েছে।}
+% BN-SRC-908 TARGET-CORRECTION-END
+% BN-SRC-632: earlier erratum/optional clarification withdrawn after context review.
 
 \Olref{lem:G3c-invert}
 কর্তন-বর্জন উপপাদ্যের
@@ -572,7 +572,8 @@ $\pi$-র শেষ অংশ:
 \fCenter \Delta,
 \lforall[x][!B(x)], !B(a)$-তে
 উপস্থিত নয়। $\pi_1'$
-নিয়মিত ধরা যায়;
+নিয়মিত করে তার আইগেনচলগুলিকে প্রতিস্থাপক ধ্রুবক
+থেকে আলাদা নামে নিই; উচ্চতা অপরিবর্তিত।
 তাই \olref[qua]{lem:subst-regular}
 অনুসারে !!{proof}
 $\Subst{\pi_1'}{a}{c}$

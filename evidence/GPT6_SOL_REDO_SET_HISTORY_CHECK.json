@@ -1,0 +1,70 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_SET_HISTORY_2026-09-30.md",
+  "targets": [
+    {
+      "unit_id": "OLP-0633",
+      "path": "bn-Beng-IN/content/history/set-theory/set-theory.tex",
+      "sha256": "29f1077e22fdd48cc828d75cd18e49b860a2292c127df58116685024fbebee4e"
+    },
+    {
+      "unit_id": "OLP-0634",
+      "path": "bn-Beng-IN/content/history/set-theory/infinitesimals.tex",
+      "sha256": "d813764a481c4c572886cca1964dd7d51afe8565ede9a9f2e8248b646bb2c6d2"
+    },
+    {
+      "unit_id": "OLP-0635",
+      "path": "bn-Beng-IN/content/history/set-theory/limits.tex",
+      "sha256": "b2a2c969003e5626cd133960776e33fe14a0640769c53bd431507fff75db490d"
+    },
+    {
+      "unit_id": "OLP-0636",
+      "path": "bn-Beng-IN/content/history/set-theory/pathologies.tex",
+      "sha256": "cf4e8a48779d20b7b1a84a386bb97c19015d4cdb7d3c6d203d5836aa273cd479"
+    },
+    {
+      "unit_id": "OLP-0637",
+      "path": "bn-Beng-IN/content/history/set-theory/mythology.tex",
+      "sha256": "17411e924e5a2b6d95b063cc43e6bc4dd89018a706df4f03a55d7b345f66fdd1"
+    },
+    {
+      "unit_id": "OLP-0638",
+      "path": "bn-Beng-IN/content/history/set-theory/cantor-plane.tex",
+      "sha256": "44b434b99ae95a4c78ff527e01922a5295fc99deff23628963e32e4342ed7cfd"
+    },
+    {
+      "unit_id": "OLP-0639",
+      "path": "bn-Beng-IN/content/history/set-theory/hilbert-curve.tex",
+      "sha256": "9bd62f34463d351a2227437acacf5a17b0362a247fb11d1b084727456c2bfd1b"
+    }
+  ],
+  "finite_checks": {
+    "secant_triangle_slopes": 3,
+    "small_positive_quotients": 29,
+    "binary_witness": "001010... =1/6; required odd subsequence0111... =1/2 forbidden by canonical convention; 1010... = f(1,0)",
+    "hilbert_levels": 6,
+    "cell_adjacencies": 5454,
+    "parent_cell_nesting": 5456
+  },
+  "general_proof_review": "489 output eventually-all-one iff both inputs1; otherwise canonical uniqueness gives injection. Non-surjection witness uses non-dyadic unique output.492 compatible cell/time assignment and summable2^-n diameter bounds give uniform convergence; compact image closedness completes surjection.493 fixed domain point/epsilon, uniform tail and finite-stage continuity give three epsilon/3 bounds. These general arguments reviewed separately from finite grid checks.",
+  "external_reading": [
+    {
+      "url": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/peano.pdf",
+      "sha256": "8b6a6d6da4c21ef7d7c7a31ee3709a9dd7e1508949537436a92b47723d977eae",
+      "scope": "PDF2/5, printed157/160 complete images actually viewed; middle158/159 not read"
+    },
+    {
+      "url": "https://paperzz.com/doc/8478375/hilbert-type-space-filling-curves--pdf-file-",
+      "scope": "Rose original paper mirrored extracted text: sections2/3 relevant theorems and section5 polygon parametrization/uniform bound; not all latervariants or original PDF figures"
+    },
+    {
+      "url": "https://link.springer.com/article/10.1007/s44007-025-00193-7",
+      "scope": "Fuentes Guillén research intro67 Bolzano estate chronology; not full article or earliest-Weierstrass priority resolution"
+    }
+  ],
+  "limit_counterexample": "g(x)=0 for x!=0 and g(0)=1: punctured limit0 true, unpunctured formula false for epsilon<1. Source general limit definition486 is genuinely wrong, not an optional convention.",
+  "limits": "Finite grid checks are not infinite-limit proof or render QA. No new illustration assignment, TeX or publication. Historical1872 first-encounter priority not freshly resolved; original qualifier retained."
+}

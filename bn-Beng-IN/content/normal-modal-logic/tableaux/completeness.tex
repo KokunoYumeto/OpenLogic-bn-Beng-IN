@@ -48,18 +48,18 @@
 যেমন, সম্পূর্ণ শাখায় $\sFmla{\True}{!B \land !C}[\sigma]$
 থাকলে $\sFmla{\True}{!B}[\sigma]$ ও
 $\sFmla{\True}{!C}[\sigma]$-ও থাকে।
-% BN-SRC-377: source omits the prefix in the true-conjunction premise.
+% BN-SRC-377: উৎসের True-সংযোগ পূর্বপক্ষে পূর্বসূচি অনুপস্থিত।
 $\sFmla{\True}{!B \lor !C}[\sigma]$ থাকলে
 $\sFmla{\True}{!B}[\sigma]$ অথবা
 $\sFmla{\True}{!C}[\sigma]$ অন্তত একটি থাকে।
-% BN-SRC-378: source incorrectly gives a false left disjunct.
+% BN-SRC-378: True-বিয়োগের বাম উপসূত্রে উৎসের False চিহ্ন ভুল।
 আর \iftag{prvBox}
 {$\sFmla{\False}{\Box !B}[\sigma]$}
 {$\sFmla{\True}{\Diamond !B}[\sigma]$}
 থাকলে অন্তত একটি~$n$-এর জন্য \iftag{prvBox}
 {$\sFmla{\False}{!B}[\sigma.n]$}
 {$\sFmla{\True}{!B}[\sigma.n]$}-ও থাকে।
-% BN-SRC-379: source omits modal operands and propagates the modal formula itself.
+% BN-SRC-379: উৎসে মোডাল অন্তর্বর্তী সূত্র অনুপস্থিত; উত্তরসূরিতে অন্তর্বর্তী সূত্রই যায়।
 অন্যদিকে \iftag{prvBox}
 {$\sFmla{\True}{\Box !B}[\sigma]$}
 {$\sFmla{\False}{\Diamond !B}[\sigma]$}
@@ -67,12 +67,13 @@ $\sFmla{\True}{!C}[\sigma]$ অন্তত একটি থাকে।
 অর্থাৎ প্রাসঙ্গিক প্রত্যেক~$n$-এর জন্য,
 \iftag{prvBox}{$\sFmla{\True}{!B}[\sigma.n]$}
 {$\sFmla{\False}{!B}[\sigma.n]$}-ও থাকে।
-% BN-SRC-380: used-prefix conclusions must be the operand at the successor.
+% BN-SRC-380: ব্যবহৃত উত্তরসূরিতে একই চিহ্নের অন্তর্বর্তী সূত্র যায়।
 \end{explain}
 
 \begin{prop}\ollabel{prop:complete-tableau}
   প্রত্যেক সসীম $\Gamma$-র এমন একটি !!a{tableau} আছে যার
-  প্রত্যেক শাখা সম্পূর্ণ।
+  প্রত্যেক খোলা শাখা সম্পূর্ণ।
+  % BN-SRC-734: বদ্ধ শাখায় আর বিধি প্রয়োগের দাবি নেই।
 \end{prop}
 
 \begin{proof}
@@ -86,8 +87,12 @@ $\sFmla{\True}{!C}[\sigma]$ অন্তত একটি থাকে।
   উভয়ের সংখ্যাই সসীম, তাই এই পর্যায়ের কাজ শেষ হয়।
   তারপর উৎপন্ন শাখাগুলিতে একই প্রক্রিয়া পুনরাবৃত্তি করি,
   যাতে প্রত্যেক প্রযোজ্য বিধি শেষ পর্যন্ত বিবেচিত হয়।
-  এভাবে নির্মিত !!{tableau}-র প্রত্যেক শাখা সম্পূর্ণ।
-  % BN-SRC-381: source says "closed", contradicting the proposition.
+  এভাবে নির্মিত !!{tableau}-র প্রত্যেক খোলা শাখা সম্পূর্ণ।
+  % BN-SRC-381: উৎসে ‘বদ্ধ’ বলা; এখানে সম্পূর্ণ খোলা শাখার দাবি।
+% BN-SRC-734 TARGET-CORRECTION-BEGIN
+  \emph{উৎস-সংশোধন:} বদ্ধ শাখায় কাজ থামে; সেই শাখার সব সূত্র বিশ্লেষণের দাবি নেই। খোলা শাখার সম্পূর্ণতা সীমায় নেওয়া নির্মাণের ধর্ম, প্রতিটি সসীম পর্যায়ের ধর্ম নয়। প্রত্যেক পর্যায়ের শুরুতে থাকা সসীম সূত্র ও সূত্র--ব্যবহৃত-উত্তরসূরি জোড়ার সব অপূর্ণ কাজ একটি স্থির ক্রমে করি। নতুন সাক্ষী লাগে এমন প্রতিটি চিহ্নিত সূত্রের জন্য শাখায় একবার সাক্ষী নিই। নতুন সূত্র ও নাম পরের পর্যায়ের তালিকায় যায়। ফলে কোনো সূত্র বা প্রাসঙ্গিক উত্তরসূরি স্থায়ীভাবে বাদ পড়ে না।
+  পরের উপপাদ্যের সম্ভবত অসীম $\Gamma$-র জন্যও সূত্রগুলি তালিকাবদ্ধ করা যায়: ভাষার সূত্রসমষ্টি গণনাযোগ্য। প্রতিটি পর্যায়ে পরের অনুমানটি সাধারণ মূল নাম $1$-এ প্রত্যেক খোলা শাখায় যোগ করি, তারপর ওই সসীম পর্যায়ের কাজ করি। কোনো পর্যায়ে সব শাখা বন্ধ হলে ইতিমধ্যে যোগ করা সসীমসংখ্যক অনুমান থেকেই একটি সসীম বদ্ধ ট্যাবলো পাওয়া যায়। এমন বদ্ধ ট্যাবলো না থাকলে প্রত্যেক পর্যায়ে খোলা শাখা থাকে। পর্যায়গুলি নিয়ে গড়া সসীম-শাখনবিশিষ্ট বৃক্ষে কনিগের সহায়ক উপপাদ্য প্রয়োগে একটি অবিরত খোলা পথ পাওয়া যায়; নির্মাণ শেষ হয়ে খোলা শাখা থেকে গেলে সেটিই নিই। নিরপেক্ষ ক্রমের জন্য ওই শাখায় সব অনুমান ও প্রতিটি প্রযোজ্য বিধির প্রয়োজনীয় উপসংহার থাকে। অতএব সেটি খোলা ও সম্পূর্ণ। অসীম নির্মাণটি মডেল পাওয়ার প্রমাণ; কোনো অসীম বদ্ধ বৃক্ষকে সসীম প্রমাণ বলা হচ্ছে না।
+% BN-SRC-734 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{thm}[সম্পূর্ণতা]
@@ -97,8 +102,11 @@ $\sFmla{\True}{!C}[\sigma]$ অন্তত একটি থাকে।
 \end{thm}
 
 \begin{proof}
+% BN-SRC-735 TARGET-CORRECTION-BEGIN
+শূন্য অনুমানসমষ্টি হলে একটি জগৎবিশিষ্ট যেকোনো মডেলই তাকে পরিতৃপ্ত করে। তাই এখন $\Gamma$ অশূন্য ধরি; নির্বাচিত শাখায় একটি অনুমান আছে, ফলে $P(\Delta)$-ও অশূন্য এবং নিচের নির্মাণ সত্যিই একটি মডেল।
+% BN-SRC-735 TARGET-CORRECTION-END
 প্রস্তাবনা অনুযায়ী, $\Gamma$-র এমন একটি !!a{tableau} আছে যার
-প্রত্যেক শাখা সম্পূর্ণ। এর কোনো বন্ধ !!a{tableau}
+প্রত্যেক খোলা শাখা সম্পূর্ণ। এর কোনো বন্ধ !!a{tableau}
 নেই বলে এতে অন্তত একটি শাখা খোলা ও সম্পূর্ণ।
 সেই শাখার পূর্বসূচিযুক্ত !!{formula}s-এর সেট $\Delta$,
 আর তাতে উপস্থিত পূর্বসূচিগুলির সেট $P(\Delta)$ ধরি।
@@ -153,7 +161,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$।
       $\sFmla{\False}{!B}[\sigma] \in \Delta$ অথবা
       $\sFmla{\False}{!C}[\sigma] \in \Delta$। আরোহ অনুমানে
       $\mSat/{M(\Delta)}{!B}[\sigma]$ অথবা
-      % BN-SRC-382: second false conjunct must be !C.
+      % BN-SRC-382: দ্বিতীয় মিথ্যা সংযুক্ত উপসূত্রটি !C।
       $\mSat/{M(\Delta)}{!C}[\sigma]$। তাই
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
   \item \indcase{!A}{!B \lor !C}{\iftag{probOr}{অনুশীলন।}{
@@ -169,7 +177,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$।
       এবং $\sFmla{\False}{!C}[\sigma] \in \Delta$।
       আরোহ অনুমানে $\mSat/{M(\Delta)}{!B}[\sigma]$
       এবং
-      % BN-SRC-383: second false disjunct must be !C.
+      % BN-SRC-383: দ্বিতীয় মিথ্যা বিকল্প উপসূত্রটি !C।
       $\mSat/{M(\Delta)}{!C}[\sigma]$। তাই
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
   \item \indcase{!A}{!B \lif !C}{\iftag{probIf}{অনুশীলন।}{
@@ -185,7 +193,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$।
       এবং $\sFmla{\False}{!C}[\sigma] \in \Delta$।
       আরোহ অনুমানে $\mSat{M(\Delta)}{!B}[\sigma]$
       এবং
-      % BN-SRC-384: false implication consequent must be !C.
+      % BN-SRC-384: মিথ্যা শর্তবাক্যের উত্তরপক্ষটি !C।
       $\mSat/{M(\Delta)}{!C}[\sigma]$। তাই
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
   \item \indcase{!A}{\Box !B}{\iftag{probBox}{অনুশীলন।}{
@@ -231,7 +239,7 @@ $\mSat{M(\Delta)}{\Gamma}$।
 
 \begin{prob}
 \olref[nml][tab][cpl]{thm:tableau-completeness}-এর
-প্রমাণ সম্পূর্ণ করো।
+প্রমাণ সম্পূর্ণ করুন।
 \end{prob}
 
 \begin{cor}

@@ -17,7 +17,7 @@ $\land$ ও $\lor$-এর বিধিগুলি সাধারণ বচন�
 উপসর্গও~$\sigma$। এটি স্বজ্ঞাগতভাবেই স্পষ্ট: যেমন,
 $!A \land !B$ যদি~$\sigma$-নামক জগতে সত্য হয়, তবে
 $!A$ ও $!B$-ও~$\sigma$-তে সত্য।
-% BN-SRC-410: persistence does not rule out their truth at later worlds.
+% BN-SRC-410: সত্যতার সংরক্ষণে পরবর্তী জগতেও এই সূত্রগুলি সত্য হতে পারে।
 এই বিধিতে একই জগৎ সম্পর্কে সিদ্ধান্ত টানা হয়; পরবর্তী জগতেও
 সত্যতা থাকতে পারে। $\land$ ও $\lor$-এর বিধিগুলি
 \olref{tab:prop-rules}-এ দেওয়া হয়েছে।
@@ -66,13 +66,13 @@ $\sigma$-তে সত্য, অথচ প্রবেশযোগ্য উপ
 মিথ্যা হওয়া অসম্ভব। সুতরাং কোনো~$\sigma$ ও
 !!{formula}~$!A$-র জন্য একটি শাখায় উভয়ই থাকলে শাখাটি বন্ধ:
 \[
-\sFmla{\True}{!A}[\sigma] \quad\text{and}\quad \sFmla{\False}{!A}[\sigma.{*}]
+\sFmla{\True}{!A}[\sigma] \quad\text{এবং}\quad \sFmla{\False}{!A}[\sigma.{*}]
 \]
 লক্ষ করুন, চিহ্নগুলি উল্টো হলে—অর্থাৎ শাখায়
 \[
-\sFmla{\False}{!A}[\sigma] \quad\text{and}\quad \sFmla{\True}{!A}[\sigma.{*}]
+\sFmla{\False}{!A}[\sigma] \quad\text{এবং}\quad \sFmla{\True}{!A}[\sigma.{*}]
 \]
-থাকলে—শাখাটি কেবল $*$ শূন্য ক্রম হলে বন্ধ।
+থাকলে—শুধু এই জোড়ার কারণে শাখাটি কেবল $*$ শূন্য ক্রম হলে বন্ধ।
 
 এ ছাড়া, শাখায়~$\sFmla{\True}{\bot}[\sigma]$ থাকলেও সেটি বন্ধ।
 
@@ -83,32 +83,36 @@ $\sigma$-তে সত্য, অথচ প্রবেশযোগ্য উপ
 \[
 !B_1, \dots, !B_n \Proves !A
 \]
-তখনই বলি, যখন নিচের অনুমানগুলি দিয়ে একটি বন্ধ ট্যাবলো হয়:
+তখন এবং কেবল তখনই বলি, যখন নিচের অনুমানগুলি দিয়ে একটি বন্ধ ট্যাবলো হয়:
 \[
 \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1],
 \sFmla{\False}{!A}[1].
 \]
 
 শর্তসূচক~$\lif$-এর বিধি ধ্রুপদি ও মোডাল ক্ষেত্র থেকে আলাদা।
-% BN-SRC-411: true implication branches on false antecedent or true consequent; sign precedes connective in TRule.
+% BN-SRC-411: সত্য শর্তমূলকে মিথ্যা পূর্বপক্ষ অথবা সত্য সিদ্ধান্তের শাখা; TRule-এ আগে চিহ্ন।
 $\TRule{\True}{\lif}$ বিধি, $\sFmla{\True}{!A \lif !B}[\sigma]$
 থাকা শাখা থেকে দুটি পৃথক শাখা তৈরি করে: একটিতে
 $\sFmla{\False}{!A}[\sigma.{*}]$, অন্যটিতে
 $\sFmla{\True}{!B}[\sigma.{*}]$। বিধিটি কেবল সেই
 উপসর্গ~$\sigma.{*}$-র জন্য প্রয়োগ করা যায়, যা প্রয়োগের
-শাখায় \emph{আগেই} আছে। এমন উপসর্গকে ওই শাখায়
-``ব্যবহৃত'' বলব। ($\sigma.{*}$-র মধ্যে $\sigma$ নিজেও
+শাখায় \emph{আগেই} আছে, অথবা উপস্থিত কোনো উপসর্গের
+অশূন্য প্রারম্ভিক খণ্ড।
+% BN-SRC-763: ব্যবহৃত উপসর্গে সমস্ত অশূন্য প্রারম্ভিক খণ্ড অন্তর্ভুক্ত; নতুন হলে তার কোনো প্রসারণও ব্যবহৃত নয়।
+এমন উপসর্গকে ওই শাখায় ``ব্যবহৃত'' বলব। ($\sigma.{*}$-র মধ্যে $\sigma$ নিজেও
 আছে; তাই পৃথক শাখায় উপসর্গযুক্ত চিহ্নিত সূত্র
 $\sFmla{\False}{!A}[\sigma]$ ও
 $\sFmla{\True}{!B}[\sigma]$ যোগ করে বিধিটি সব সময়
 প্রয়োগ করা যায়।)
 
-% BN-SRC-412: TRule takes the sign before the connective here as in the displayed rules.
+% BN-SRC-412: প্রদর্শিত বিধির মতো এখানেও TRule-এর প্রথম যুক্তি সত্যতার চিহ্ন।
 $\TRule{\False}{\lif}$ বিধি,
 $\sFmla{\False}{!A \lif !B}[\sigma]$ থাকা শাখায় একই সঙ্গে
 $\sFmla{\True}{!A}[\sigma.n]$ ও
 $\sFmla{\False}{!B}[\sigma.n]$ যোগ করে। এখানে
-$\sigma.n$ শাখাটিতে নতুন উপসর্গ।
+$\sigma.n$ শাখাটিতে নতুন, অর্থাৎ অব্যবহৃত উপসর্গ। তাই তার
+কোনো প্রসারণও আগে শাখায় নেই। নঞর্থকরণের মিথ্যা-চিহ্নের
+বিধিতেও একই নতুনত্বের শর্ত প্রযোজ্য।
 
 $\lnot$-এর বিধিগুলি একইভাবে সংজ্ঞায়িত হয়
 ($\lnot !A$-কে $!A \lif \lfalse$ দিয়ে সংজ্ঞায়িত ধরে)।
@@ -128,7 +132,7 @@ $\lnot$-এর বিধিগুলি একইভাবে সংজ্ঞা
     \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
     \DisplayProof
     \\[1ex]
-    \text{$\sigma.{*}$ is used} & \text{$\sigma.n$ is new}\\
+    \text{$\sigma.{*}$ ব্যবহৃত} & \text{$\sigma.n$ নতুন}\\
     \hline
     \AxiomC{\sFmla{\True}{!A \lif !B}[\sigma]}
     \RightLabel{\TRule{\True}{\lif}}
@@ -143,7 +147,7 @@ $\lnot$-এর বিধিগুলি একইভাবে সংজ্ঞা
     \UnaryInfC{\sFmla{\False}{!B}[\sigma.n]}
     \DisplayProof
     \\[1ex]
-    \text{$\sigma.{*}$ is used} & \text{$\sigma.n$ is new}\\
+    \text{$\sigma.{*}$ ব্যবহৃত} & \text{$\sigma.n$ নতুন}\\
     \hline
   \end{array}\]
   \caption{উপসর্গযুক্ত !!{tableau}-তে $\lnot$ ও $\lif$-এর বিধি}

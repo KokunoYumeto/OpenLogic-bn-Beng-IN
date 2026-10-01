@@ -1,0 +1,65 @@
+{
+  "units": [
+    "OLP-0714",
+    "OLP-0715",
+    "OLP-0716",
+    "OLP-0717",
+    "OLP-0718",
+    "OLP-0720",
+    "OLP-0722"
+  ],
+  "targets": [
+    {
+      "unit_id": "OLP-0714",
+      "path": "bn-Beng-IN/content/propositional-logic/syntax-and-semantics/completeness.tex",
+      "sha256": "f7e85dd56e10169a97bac9ff928ecdbdf6826823033ae8384c4005ce5cf77d9b"
+    },
+    {
+      "unit_id": "OLP-0715",
+      "path": "bn-Beng-IN/content/propositional-logic/syntax-and-semantics/soundness.tex",
+      "sha256": "512656a1fb4e030b82f662a6fc0a112f5f5f21f97931096bfa948b33b40f38d7"
+    },
+    {
+      "unit_id": "OLP-0716",
+      "path": "bn-Beng-IN/content/second-order-logic/syntax-and-semantics/language-of-sol.tex",
+      "sha256": "45479b361bb0dc9cb6e2c0773eabd29aa793a74b3acb91934cc0cd64739a35ce"
+    },
+    {
+      "unit_id": "OLP-0717",
+      "path": "bn-Beng-IN/content/sets-functions-relations/functions/isomorphic-functions.tex",
+      "sha256": "78c6e39bc2c009d80364289ef9262ceeddc6f0150b37976703fa3ba00c8981c2"
+    },
+    {
+      "unit_id": "OLP-0718",
+      "path": "bn-Beng-IN/content/sets-functions-relations/inductive-defs-proofs/introduction.tex",
+      "sha256": "7c63985b021896258ec39dae020c8a2f8aa14810d7a8a2b69d306f636a6a5b21"
+    },
+    {
+      "unit_id": "OLP-0720",
+      "path": "bn-Beng-IN/content/sets-functions-relations/sets-functions-relations.tex",
+      "sha256": "08e7e89137cc29797bbd5122d2ad645ebda0099c5a4b27840105cb520e924a32"
+    },
+    {
+      "unit_id": "OLP-0722",
+      "path": "bn-Beng-IN/content/sets-functions-relations/size-of-sets/size-of-sets.tex",
+      "sha256": "806922e00fa0dbe4a1687ef9ba847511677b44ee04000f5ba87baedcbe1b4f34"
+    }
+  ],
+  "full_actual_bilingual_read": true,
+  "review_record": "evidence/REDO_GPT6_SOL_MISC_REMAINDER_2026-10-01.md",
+  "new_findings": [
+    910
+  ],
+  "refined": [
+    676,
+    678,
+    680,
+    682
+  ],
+  "optional_added_prose_withdrawn": "multiargument preservation definition; visible implementation/normalization annotations",
+  "overall_status": "registered_current_hashes; rebuild_and_release_pending",
+  "registration_status": "registered",
+  "registered_unit_count": 329,
+  "registered_canon_ledger_sha256": "4e6b6fd62f31e70990c24fd3e26d99f6da95ec98655f6f9f9f1246985c04fe6a",
+  "registration_date": "2026-10-01"
+}

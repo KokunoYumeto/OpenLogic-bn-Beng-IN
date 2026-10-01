@@ -58,6 +58,11 @@
       \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
       \DisplayProof}{}
     \\[1ex]
+    % BN-SRC-732: পিছনের B-বিধিতে মূল পূর্বসূচি আগে ব্যবহৃত হতে হবে।
+    \iftag{notprvBox,notprvDiamond}
+         {$\sigma$ ব্যবহৃত}
+         {$\sigma$ ব্যবহৃত & $\sigma$ ব্যবহৃত}
+    \\[1ex]
     \hline
     \iftag{prvBox}{
       \AxiomC{\sFmla{\True}{\Box !A}[\sigma]}
@@ -88,12 +93,23 @@
       \UnaryInfC{\sFmla{\False}{\Diamond!A}[\sigma]}
       \DisplayProof}{}
     \\[1ex]
+    % BN-SRC-733: পিছনের 4r-বিধিতে মূল পূর্বসূচি আগে ব্যবহৃত হতে হবে।
+    \iftag{notprvBox,notprvDiamond}
+         {$\sigma$ ব্যবহৃত}
+         {$\sigma$ ব্যবহৃত & $\sigma$ ব্যবহৃত}
+    \\[1ex]
     \hline
     \end{tabular}
   \end{center}
   \caption{আরও মোডাল বিধি।}
   \ollabel{tab:more-rules}
 \end{table}
+% BN-SRC-732 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন:} B-বিধির মূল পূর্বসূচিটি আগে ব্যবহৃত থাকতে হবে। তাহলে ব্যাখ্যায় ওই নাম ও তার উত্তরসূরির মধ্যে অভিগম্যতা আছে, যা প্রতিসাম্যে বিপরীত অভিগম্যতা দেয়। মূল নাম অনুপস্থিত থাকলে শুধু নতুন মূল নাম তৈরি করায় এই শর্ত পাওয়া যায় না।
+% BN-SRC-732 TARGET-CORRECTION-END
+% BN-SRC-733 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন:} 4r-বিধিতেও মূল পূর্বসূচিটি আগে ব্যবহৃত থাকবে। ওই অভিগম্য তির ছাড়া ইউক্লিডীয়তা থেকে দুই গন্তব্যের তির নেওয়ার প্রমাণ চলে না। সাধারণ মূল নাম থেকে গড়া শাখায় এই শর্ত স্বাভাবিকভাবেই পূর্ণ; সারণিতে তা স্পষ্ট করা হয়েছে।
+% BN-SRC-733 TARGET-CORRECTION-END
 
 এই বিধিগুলি যোগ করলে \olref{tab:logics-rules}-এ দেওয়া যুক্তিগুলির
 জন্য বিশুদ্ধ ও পূর্ণ পদ্ধতি পাওয়া যায়।
@@ -158,7 +174,7 @@
 
 
 \begin{ex}
-  % BN-SRC-373: The tree proves a consequence of axiom 5, not axiom 5 itself.
+  % BN-SRC-373: বৃক্ষটি স্বতঃসিদ্ধ 5-এর একটি অনুসিদ্ধান্ত প্রমাণ করে।
   $\Log{S5} \Proves \Box!A \lif \Box\Diamond!A$ দেখায় এমন একটি
   বদ্ধ ট্যাবলো দিচ্ছি। $\Box!A \lif \Box\Diamond!A$
   স্বতঃসিদ্ধ~\Ax{5}-এর একটি অনুগামী, স্বতঃসিদ্ধটি নিজে নয়।
@@ -186,7 +202,7 @@
 \end{ex}
 
 \begin{prob}
-নিচের দাবিগুলি দেখায় এমন বদ্ধ !!{tableau}s নির্মাণ করো:
+নিচের দাবিগুলি দেখায় এমন বদ্ধ !!{tableau}s নির্মাণ করুন:
   \begin{enumerate}
   \item $\Log{KT5} \Proves \Ax{B}$;
   \item $\Log{KT5} \Proves \Ax{4}$;

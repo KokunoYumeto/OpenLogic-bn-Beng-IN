@@ -21,7 +21,7 @@
 করতে পারি। কিন্তু সেটের \emph{ধারণাটি} আমরা
 সমর্থন করেছি এই ভেবে যে প্রত্যেক সেট কোনো
 পর্যায়ে গঠিত হয় (\olref[z][story]{sec}-এর
-\stageshier{} দেখো)। তাই স্তরক্রমের বাইরে সেট
+\stageshier{} দেখুন)। তাই স্তরক্রমের বাইরে সেট
 থাকার সম্ভাবনা বাদ দিতে চাই। সে জন্য এমন একটি
 নতুন স্বতঃসিদ্ধ যোগ করতে হবে, যা প্রত্যেক সেটের
 স্তরক্রমে কোথাও অবস্থান নিশ্চিত করে।
@@ -84,6 +84,21 @@ $A$ পরিযায়ী সেট হলে এমন একটি $\alpha$
 	\alpha &= \supstrict\Setabs{\delta}{(\exists x \in A)
 	(x \subseteq V_\delta \land (\forall \gamma \in \delta)x \nsubseteq V_\gamma)}
 \end{align*}
+% BN-SRC-789 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন-নোট।} এখানে পর্যায়ের সূচক হিসেবে ব্যবহৃত
+গ্রিক চলগুলি ক্রমসংখ্যায় বিস্তৃত; নিয়মিততার $\alpha$-ও তাই।
+$D$-র জন্য পৃথকীকরণ যথেষ্ট। কিন্তু $\alpha$-র সংজ্ঞায়
+প্রতিস্থাপন আগে $A\setminus D$-তে প্রয়োগ করি: ঠিক সেই সদস্যগুলির
+কোনো পর্যায়ে উপসেট হিসেবে অবস্থান আছে। সূত্রভিত্তিক সর্বনিম্নতার
+নীতিতে প্রত্যেকটির একমাত্র ক্ষুদ্রতম $\delta$ আছে, তাই তাদের
+image একটি সেট। $D$ শূন্য হওয়ার আগেই এই bounded domain
+সংজ্ঞাটি বৈধ; ভালো সদস্য না-থাকলে image শূন্য।
+আর $x\subseteq V_\delta$ ও $\delta\in\alpha$ থেকে
+$x\in V_{\delta+1}\subseteq V_\alpha$: ঘাত সেটের সংজ্ঞা
+এবং $\delta+1\leq\alpha$ ব্যবহার করা হয়েছে। পরের $\beta$-র
+image-এ একই যুক্তি গোটা $B$-তে চলে, কারণ সেখানে প্রত্যেক
+সদস্যই $D$-র বাইরে।
+% BN-SRC-789 TARGET-CORRECTION-END
 ধরি, $D = \emptyset$। তাহলে $x \in A$ হলে
 এমন একটি $\delta$ আছে যে $x \subseteq V_\delta$;
 ক্রমসংখ্যাগুলির সুক্রমের কারণে সেই ক্রমসংখ্যাটি
@@ -103,7 +118,7 @@ $D \cap B
 $x \in A$; আর $x \notin D$ বলে
 $\exists \delta\ x \subseteq
 V_\delta$। তাই এবার ধরি
-% BN-SRC-440: the source has unbound lower-case b; Foundation selected B.
+% BN-SRC-440: উৎসে মুক্ত ছোটহাতের b ছিল; ভিত্তি-স্বতঃসিদ্ধে বেছে নেওয়া সেটটি B।
 \[
 	\beta = \supstrict\Setabs{\delta}{(\exists x \in B)(x \subseteq V_\delta \land (\forall \gamma < \delta)x \nsubseteq V_\gamma)}.
 \]
@@ -132,7 +147,7 @@ $\emph{ভিত্তি}\Rightarrow\emph{নিয়মিততা}$
 দেখাব, $\ZFminus$-এ
 $\emph{নিয়মিততা}\Rightarrow\emph{ভিত্তি}$-ও
 প্রমাণ করা যায়। তাই $\ZFminus$-এর সাপেক্ষে
-ভিত্তি ও নিয়মিততা \emph{সমতুল্য}। অর্থাৎ
+ভিত্তি ও নিয়মিততা \emph{তুল্য}। অর্থাৎ
 $\ZFminus$ ধরে নিয়মিততার সঙ্গে সমতুল্য বলেই
 ভিত্তির ন্যায্যতা দিতে পারি; আর
 \stageshier{} থেকে নিয়মিততাকে সরাসরি

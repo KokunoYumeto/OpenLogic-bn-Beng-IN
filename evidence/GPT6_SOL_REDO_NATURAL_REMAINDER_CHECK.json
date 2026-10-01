@@ -1,0 +1,80 @@
+{
+  "units": [
+    "OLP-0665",
+    "OLP-0666",
+    "OLP-0667",
+    "OLP-0668",
+    "OLP-0669",
+    "OLP-0670",
+    "OLP-0671",
+    "OLP-0672"
+  ],
+  "source_unchanged": true,
+  "full_bilingual_read": true,
+  "targets": [
+    {
+      "unit_id": "OLP-0665",
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/quantifiers.tex",
+      "sha256": "ec0f8d284d64f45f34b1cd9106b4c905fc92fc5db0b0b7b41040018bd6d64856"
+    },
+    {
+      "unit_id": "OLP-0666",
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/rules-N1.tex",
+      "sha256": "640a063e240f5b96171fd5dd5db4a97cd9299ab5ccd92e3d3cfb807b00ed8061"
+    },
+    {
+      "unit_id": "OLP-0667",
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/rules-N2.tex",
+      "sha256": "11ec713229a10d40933f49a8a6c2583b28c9180920d9471bfbfb72e4d99b344e"
+    },
+    {
+      "unit_id": "OLP-0668",
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/rules-proofs.tex",
+      "sha256": "d67afd3c3aa307f9f21f09728fad4004b4ff34b67990c44b66b05f9411d36510"
+    },
+    {
+      "unit_id": "OLP-0669",
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/sequents.tex",
+      "sha256": "7f8751fbea1e5a2db7aacb67692e468014dff555a22758dc8f16b6cecd655178"
+    },
+    {
+      "unit_id": "OLP-0670",
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/translation-G2i.tex",
+      "sha256": "334fa776fafe855c75849f00661df00e03f0c4f62f226796839a39e130411ff2"
+    },
+    {
+      "unit_id": "OLP-0671",
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/translation-N2i.tex",
+      "sha256": "65f3b96a5ed6ce9e40a2c32a847f32fc2873f20c7182f7bd203c5e6f2b63d37c"
+    },
+    {
+      "unit_id": "OLP-0672",
+      "path": "bn-Beng-IN/content/proof-theory/normalization/introduction.tex",
+      "sha256": "7967402a1b45c006db8123baa232f377123a8da55091d4ea723b8814f8dbee01"
+    }
+  ],
+  "findings": [
+    874,
+    875,
+    876,
+    877,
+    878,
+    879
+  ],
+  "retracted": [
+    547
+  ],
+  "reader_extra_trimmed": [
+    550
+  ],
+  "review_record": "evidence/REDO_GPT6_SOL_NATURAL_REMAINDER_2026-09-30.md",
+  "bounded_counterexamples": [
+    "closed-term existential introduction under c-to-x substitution",
+    "normal ex-falso contains false beyond literal subformulas"
+  ],
+  "proof_coverage_dependency": [
+    "OLP-0670 unlisted rule cases",
+    "OLP-0671 unlisted rule cases"
+  ],
+  "overall_status": "pending_registration_and_rebuild"
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "openlogic-bn-redo-reference-review/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_REFERENCE_2026-09-30.md",
+  "targets": [
+    {
+      "unit_id": "OLP-0640",
+      "path": "bn-Beng-IN/content/reference/reference.tex",
+      "sha256": "1354fd250b2e50ffd50fb168e4dabbe662114bf05bdb2a775fb6bd88615629df"
+    },
+    {
+      "unit_id": "OLP-0641",
+      "path": "bn-Beng-IN/content/reference/greek-alphabet/greek-alphabet.tex",
+      "sha256": "332d516cef65082c18e67a1e9eb4a850a914b0cf4fe245f375b7fc48be5c0c66"
+    },
+    {
+      "unit_id": "OLP-0642",
+      "path": "bn-Beng-IN/content/reference/fraktur-alphabet/fraktur-alphabet.tex",
+      "sha256": "98f688f72cfba2aed9bc05aed03d1762262e9a4a4fefcf97be1603f135bcf4e4"
+    }
+  ],
+  "review": "640 imports/editorial;641 all24 name/glyph correspondences;642 all26 upper/lower52 Fraktur correspondences. Actual full reads; no new correction.",
+  "limits": "Glyph rendering unverified pending build, no pronunciation-source claims or direct canon attestation for all Greek labels."
+}

@@ -1,0 +1,5 @@
+# সহায়িকা: সম্পূর্ণ নতুন তুলনা
+
+২০২৬-০৯-৩০; একই চ্যাট, GPT-6.1 Sol/Ultra।640–642 English/Bengali ছয় file পূর্ণ পড়া; মোট251/336 affected unit,85 বাকি। Source frozen, target edit দরকার হয়নি।640 editorial scope, Greek/Fraktur imports ও end-part hook ঠিক।641-এর24 Greek names ও lower/upper glyphs সঠিক সারিতে; mathematical glyph convention-এ Latin-shaped uppercase A/B/E/P ইত্যাদি preserved। Xi/Chi/Psi নামের বাংলা প্রচলিত variants-কে primary attestation ছাড়া false spelling বলা হয়নি।642 সব26 Latin upper/lower এবং52 corresponding mathfrak glyphs ঠিক; table format/control অক্ষত।
+
+P008/P009/P018 এই চ্যাটে প্রকৃত পূর্বপাঠ সাধারণ Indian Bengali mathematical prose; Greek/Fraktur নামের direct canon attestation বা rendered-font inspection নয়। Source table names/glyphs প্রত্যক্ষ compare। Strict722 check বর্তমান complete table tokens/controls/structure নিশ্চিত করবে; render/font/reader QA full build-এর gate-এ বাকি। নতুন correction বা optional note নয়।251 source comparison পুরো workflow/script/export/publication completion নয়।

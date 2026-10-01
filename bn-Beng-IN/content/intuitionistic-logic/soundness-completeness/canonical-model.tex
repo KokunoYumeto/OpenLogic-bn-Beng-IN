@@ -8,7 +8,7 @@
 
 \olfileid{int}{sc}{mod}
 
-\olsection{আদর্শ মডেল}
+\olsection{প্রামাণিক মডেল}
 
 আমাদের মডেলের জগৎগুলি হবে স্বাভাবিক সংখ্যার সসীম ক্রম~$\sigma$;
 অর্থাৎ $\sigma \in \Nat^*$। লক্ষ করুন, $\Nat^*$-র আরোহী সংজ্ঞা:
@@ -22,7 +22,8 @@
 তাই $\Nat^*$-র ওপর আরোহী সংজ্ঞা দেওয়া যায়।
 
 সমস্ত !!{formula}s-এর জোড়ার একটি গণনা
-$\tuple{!B_1, !C_1}$, $\tuple{!B_2, !C_2}$, \dots, ধরি।
+% BN-SRC-759: স্বাভাবিক সংখ্যার ক্রমে শূন্যও আছে; জোড়ার তালিকা শূন্য থেকে শুরু।
+$\tuple{!B_0, !C_0}$, $\tuple{!B_1, !C_1}$, \dots, ধরি।
 !!{formula}s-এর সেট~$\Delta$ দেওয়া থাকলে, $\Delta(\sigma)$
 আরোহের সাহায্যে এভাবে সংজ্ঞায়িত করি:
 \begin{enumerate}
@@ -31,8 +32,8 @@ $\tuple{!B_1, !C_1}$, $\tuple{!B_2, !C_2}$, \dots, ধরি।
   \[
   \begin{cases}
     (\Delta(\sigma) \cup \{!B_n\})^* &
-    \text{if $\Delta(\sigma) \cup \{!B_n\} \Proves/ !C_n$} \\
-    \Delta(\sigma) & \text{otherwise}
+    \text{যদি $\Delta(\sigma) \cup \{!B_n\} \Proves/ !C_n$} \\
+    \Delta(\sigma) & \text{অন্যথায়}
   \end{cases}
   \]
 \end{enumerate}
@@ -49,7 +50,7 @@ $\Delta(\sigma) \subseteq \Delta(\sigma.n)$। $\Delta$
 প্রাইম হলে প্রত্যেক~$\sigma$-র জন্য $\Delta(\sigma)$ প্রাইম।
 
 \begin{defn}\ollabel{defn:canonical-model}
-  ধরি, $\Delta$ প্রাইম। $\Delta$-র জন্য \emph{আদর্শ মডেল}
+  ধরি, $\Delta$ প্রাইম। $\Delta$-র জন্য \emph{প্রামাণিক মডেল}
   $\mModel{M(\Delta)}$ এভাবে সংজ্ঞায়িত:
   \begin{enumerate}
   \item $W = \Nat^*$, স্বাভাবিক সংখ্যার সসীম ক্রমগুলির সেট।
@@ -61,10 +62,11 @@ $\Delta(\sigma) \subseteq \Delta(\sigma.n)$। $\Delta$
   \end{enumerate}
 \end{defn}
 
-$R$ যে সত্যিই আংশিক ক্রম, তা সহজে যাচাই করা যায়। $V$-র
-একদিকতার শর্তও পূরণ হয়। যেহেতু
+$R$ যে সত্যিই আংশিক ক্রম, তা সহজে যাচাই করা যায়। $V$-নির্ধারিত সত্যতা
+অভিগম্য জগতে সংরক্ষণের শর্তও পূরণ হয়। যেহেতু
 $\Delta(\sigma) \subseteq \Delta(\sigma.n)$, তাই
-$\sigma$-র দৈর্ঘ্যের ওপর আরোহে, $R\sigma\sigma'$ হলেই
+% BN-SRC-760: সংরক্ষণের আরোহ প্রসারণের দৈর্ঘ্যে; মূল ক্রমের দৈর্ঘ্য স্থির থাকতে পারে।
+$\sigma$-র প্রসারণের দৈর্ঘ্যের ওপর আরোহে, $R\sigma\sigma'$ হলেই
 $\Delta(\sigma) \subseteq \Delta(\sigma')$ পাওয়া যায়।
 
 \end{document}

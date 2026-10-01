@@ -1,0 +1,59 @@
+{
+  "schema": "openlogic-bn-redo-proof-opening/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_PROOF_OPENING_2026-09-30.md",
+  "targets": [
+    {
+      "unit_id": "OLP-0653",
+      "path": "bn-Beng-IN/content/model-theory/basics/nonstandard-arithmetic.tex",
+      "sha256": "c1d5d6b2a4c7cc09cc4bef804f10adedaf520d8fed620a5cf15c3ed6b6364d50"
+    },
+    {
+      "unit_id": "OLP-0654",
+      "path": "bn-Beng-IN/content/normal-modal-logic/syntax-and-semantics/normal-modal-logics.tex",
+      "sha256": "e50860052373a495e23981506d5a033a271cf7033393b1f696c0830a5273c729"
+    },
+    {
+      "unit_id": "OLP-0655",
+      "path": "bn-Beng-IN/content/proof-theory/cut-elimination/ce-largest.tex",
+      "sha256": "fe39d8dc52f64bfc53d17e569ad966cb16f3ff1cb0ba5cde62f0201553382ab1"
+    },
+    {
+      "unit_id": "OLP-0656",
+      "path": "bn-Beng-IN/content/proof-theory/cut-elimination/ce-topmost.tex",
+      "sha256": "980a39e5b0c7a220568878d5132294fa1e5f9b79ecfc015d5bc124f548268918"
+    },
+    {
+      "unit_id": "OLP-0657",
+      "path": "bn-Beng-IN/content/proof-theory/cut-elimination/cut-elimination.tex",
+      "sha256": "20df78e46a969e610886e747368c964628e3ffa2d35071184e00c7ea7b185f32"
+    }
+  ],
+  "semantic_review": "Nonstandard quotient ω+Z·Q, ∀∃ halving, strict height decrease, context-sharing cut and rank-first IH, eigenconstant regularity. General arguments, not finite-test-only claims.",
+  "primary_context": [
+    {
+      "path": "upstream/content/first-order-logic/syntax-and-semantics/structures.tex",
+      "scope": "actual bounded English49–65 nonlogical constants and arithmetic symbols",
+      "sha256": "7e144a9715ae1bfff09927c72b15f902f831042a7808541d595820981b722ebf"
+    },
+    {
+      "path": "upstream/content/proof-theory/sequent-calculus/invertibility.tex",
+      "scope": "actual bounded English217–384 contraction proof",
+      "sha256": "08233bea6d0d9dedcf1d7ed436524c5d36d87a89ba9ea28226f2caefe8c08023"
+    },
+    {
+      "path": "upstream/content/proof-theory/sequent-calculus/rules-G3c.tex",
+      "scope": "actual axiom/eigenvariable excerpt lines10–14,78–80",
+      "sha256": "0beb76005abcb4f20109400d18ae1d632e7126bd6dea43c20c9f42d114c9664d"
+    },
+    {
+      "path": "upstream/content/proof-theory/sequent-calculus/proof-examples.tex",
+      "scope": "actual depth definition131–154; Bengali corresponding definition/bounded excerpts, not full unit",
+      "sha256": "c19f22b1b416d0cfbc56182056961ac353bee13b6f662e915c3b2699edc36ce8"
+    }
+  ],
+  "linked_later_review": "False constant missing from source depth definition; its complete bilingual future unit still pending.",
+  "limits": "All intended exercises preserved; ∃ dual remains intended exercise. No TeX, rendered QA or publication; optional extra exposition not implemented."
+}

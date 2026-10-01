@@ -1,0 +1,33 @@
+{
+  "schema": "openlogic-bn-lambda-separator-check/1",
+  "status": "passed",
+  "html_sha256": "e4683b284412226f056d711ad2351a7ffb424fadb692bdc98f0a094ec0711606",
+  "prepared_tex_sha256": "6629d3430ce3fbc649f2e9e7d23f783d6d281b889bc663bb7ee37542b86b1140",
+  "reader_script_sha256": "866056243dd190c6a2686e1eb2e0543ccc4e0963d2efc376c82cf392e196e5d6",
+  "frozen_configuration_sha256": "76af3674c68139572b71de9908d690700cd7e324d221d649930ecda020935724",
+  "cases": {
+    "\\lambd": "\\lambda",
+    "\\lambd[x]": "\\lambda x",
+    "\\lambd[x][M]": "\\lambda x.\\,M",
+    "\\lambd[x][\\lambd[y][N]]": "\\lambda x.\\,\\lambda y.\\,N"
+  },
+  "formation_clause_links": {
+    "var": {
+      "target": "olp-0357:lam:syn:trm:defn:term-var",
+      "links": 4,
+      "visible": "দফা (1)"
+    },
+    "abs": {
+      "target": "olp-0357:lam:syn:trm:defn:term-abs",
+      "links": 2,
+      "visible": "দফা (2)"
+    },
+    "app": {
+      "target": "olp-0357:lam:syn:trm:defn:term-app",
+      "links": 2,
+      "visible": "দফা (3)"
+    }
+  },
+  "annotations_with_x_abstraction_separator": 218,
+  "limits": "Assembly/rendering repairs only; no frozen or translated source change. Manual current-browser checks are separately recorded."
+}

@@ -290,8 +290,8 @@ $\Gamma \fCenter \Delta', !B \lif !C$-র
 \UnaryInf$\lexists[x][!B(x)], \lexists[x][!B(x)], \Gamma' \fCenter \Delta$
 \DisplayProof
 \]
-লক্ষ করুন, ঈজেনচলকের শর্ত পূরণ হয়। কারণ $\pi_2$-তে
-\LeftR{\lexists}-এর ঈজেনচলক-শর্ত অনুযায়ী
+লক্ষ করুন, আইগেনচলের শর্ত পূরণ হয়। কারণ $\pi_2$-তে
+\LeftR{\lexists}-এর আইগেনচল-শর্ত অনুযায়ী
 $\lexists[x][!B(x)]$, $\Gamma'$ বা~$\Delta$-তে $c$ নেই।
 শেষে \olref[seq][inv]{prop:G3c-cont-adm} প্রয়োগ করি।
 
@@ -509,14 +509,19 @@ $\Gamma \fCenter \Delta$-র !!a{proof}~$\pi'$ পাই।
 \RightLabel{$\pi_1'$}
 \Deduce$!B, \Gamma \fCenter \Delta, !C$
 \AxiomC{}
-\RightLabel{$\pi_2''$}
-\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{$\pi_2''[!B \Sequent {}]$}
+\Deduce$!C, !B, \Gamma \fCenter \Delta$
 \RightLabel{\CutCS}
 \BinaryInf$!B, \Gamma \fCenter \Delta$
 \DisplayProof
 \]
 এর কর্তনমাত্রা $\pi$-এর চেয়ে কম। আরোহের অনুমানে
 $!B, \Gamma \fCenter \Delta$-র !!a{proof}~$\pi_1''$ পাই।
+% BN-SRC-865 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-865):} অভিন্ন-প্রসঙ্গ কর্তনের দুই পূর্বধারণাতেই একই প্রসঙ্গ চাই।
+তাই দ্বিতীয় উপ-প্রমাণে বাম দিকে $!B$ দুর্বলীকরণে যোগ করা হয়েছে;
+পরে একই দুই-কর্তনের পুনরুল্লেখেও এই দুর্বলীকরণ দেখানো হয়েছে।}
+% BN-SRC-865 TARGET-CORRECTION-END
 এবার \CutCS{} দিয়ে শেষ হওয়া !!{proof}টি দেখি:
 \[
 \AxiomC{}
@@ -569,11 +574,11 @@ $!B(t), \Gamma \fCenter \Delta$-র !!a{proof}~$\pi_2''$ পাই।
 
 !!{proof}~$\pi_1'$-এর অন্তিম সিকোয়েন্ট
 $\Gamma \Sequent \Delta, !B(c)$, যেখানে $c$ হলো
-$\RightR{\lforall}$ অনুমানের ঈজেনচলক। তাই $!B(x)$,
+$\RightR{\lforall}$ অনুমানের আইগেনচল। তাই $!B(x)$,
 $\Gamma$ বা~$\Delta$-তে $c$ নেই। ধরি, !!{proof}~$\pi$
 নিয়মিত; ফলে $c$ শুধু পরবর্তী~$\RightR{\lforall}$ অনুমানেরই
-ঈজেনচলক এবং শুধু তার উপরে, অর্থাৎ $\pi_1'$-এ আছে;
-$\pi_1'$-এর কোনো অনুমানের ঈজেনচলক নয়। $\pi_2$-তে
+আইগেনচল এবং শুধু তার উপরে, অর্থাৎ $\pi_1'$-এ আছে;
+$\pi_1'$-এর কোনো অনুমানের আইগেনচল নয়। $\pi_2$-তে
 $c$ নেই বলে $t$-তেও নেই।
 \olref[seq][qua]{lem:subst-regular} অনুযায়ী
 !!{proof}~$\Subst{\pi_1'}{t}{c}$ হলো
@@ -605,9 +610,10 @@ $\pi$-এর রূপ কী, তা স্পষ্ট করে বলা।)
 \end{prob}
 
 \begin{prob}
-\olref{lem:cut-adm-G3c}-এর প্রমাণের D ক্ষেত্রের সেই উপক্ষেত্রটি
+\olref{lem:cut-adm-G3c}-এর প্রমাণের C ক্ষেত্রের সেই উপক্ষেত্রটি
 যাচাই করুন, যেখানে $\pi_1$-এর শেষ অনুমানে $!A$ প্রধান নয়
 এবং অনুমানটি~$\LeftR{\lforall}$।
+% BN-SRC-866: one-premise universal-left permutation belongs to Case C; exercise left unsolved.
 \end{prob}
 
 \begin{prob}
@@ -635,8 +641,8 @@ $!A \ident (!B \lif !C)$ হলে $\pi$-কে দুটি \CutCS{}
 \RightLabel{$\pi_1'$}
 \Deduce$!B, \Gamma \fCenter \Delta, !C$
 \AxiomC{}
-\RightLabel{$\pi_2''$}
-\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{$\pi_2''[!B \Sequent {}]$}
+\Deduce$!C, !B, \Gamma \fCenter \Delta$
 \RightLabel{\CutCS}
 \BinaryInf$!B, \Gamma \fCenter \Delta$
 \RightSubproofLabel{$\pi_1''$}

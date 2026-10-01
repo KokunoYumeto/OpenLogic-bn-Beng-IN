@@ -1,0 +1,116 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "actual_propositional_rule_boolean_cases": 32,
+  "invalid_examples": [
+    {
+      "node_count": 6,
+      "leaf_count": 1,
+      "forbidden_prefix_steps": [
+        {
+          "depth": 3,
+          "prefix": "1.1",
+          "rule": "\\TRule{\\True}{\\Box}<1>"
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "node_count": 6,
+      "leaf_count": 1,
+      "forbidden_prefix_steps": [
+        {
+          "depth": 3,
+          "prefix": "1.1",
+          "rule": "\\TRule{\\False}{\\Diamond}<2>"
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "node_count": 4,
+      "leaf_count": 1,
+      "forbidden_prefix_steps": [
+        {
+          "depth": 3,
+          "prefix": "1.1",
+          "rule": "\\TRule{\\True}{\\Box}<1>"
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "node_count": 6,
+      "leaf_count": 1,
+      "forbidden_prefix_steps": [
+        {
+          "depth": 5,
+          "prefix": "1.1",
+          "rule": "\\TRule{\\False}{\\Box}<4>"
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "node_count": 6,
+      "leaf_count": 1,
+      "forbidden_prefix_steps": [
+        {
+          "depth": 5,
+          "prefix": "1.1",
+          "rule": "\\TRule{\\True}{\\Diamond}<4>"
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "node_count": 4,
+      "leaf_count": 1,
+      "forbidden_prefix_steps": [
+        {
+          "depth": 4,
+          "prefix": "1.1",
+          "rule": "\\TRule{\\False}{\\Box}<2>"
+        }
+      ],
+      "status": "passed"
+    }
+  ],
+  "valid_proofs": [
+    {
+      "node_count": 10,
+      "leaf_count": 2,
+      "forbidden_prefix_steps": [],
+      "status": "passed"
+    },
+    {
+      "node_count": 10,
+      "leaf_count": 2,
+      "forbidden_prefix_steps": [],
+      "status": "passed"
+    }
+  ],
+  "exercise_formulas": 4,
+  "dead_end_and_mixed_successor_counterexamples": "passed",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/tableaux.tex",
+      "sha256": "2e54338635a7b153c45494a12aeaf9b401aa9dc3bde7cdc2f8cd7203c04c4944"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/introduction.tex",
+      "sha256": "86eeefb66ac7f177adf1ea84ab181af671dc94ae87c58be1939588a6cb804689"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/rules-for-K.tex",
+      "sha256": "3b60e334faf11a9e55e2ec2ddb0a910de2091c3e7c701261aadfe0686a754f32"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/tableaux/proofs-in-K.tex",
+      "sha256": "e705da41656a30cd5e2650adc88bf974e2040d5011c373fded48d0c0bc0b7182"
+    }
+  ],
+  "limits": "প্রকৃত proof-node, বিধি, পূর্বসূচি ও বদ্ধতা তুলিত। চার অনুশীলনের সাধারণ প্রমাণ বাংলা review-তে; ক্ষুদ্র মডেল পরীক্ষা পূর্ণ বৈধতার প্রমাণ নয়। OLP-0464–0469 এখনও এই ফলের অন্তর্ভুক্ত নয়।"
+}

@@ -1,0 +1,17 @@
+# স্বজ্ঞাবাদী অর্থতত্ত্বের বাকি দুই একক
+
+২০২৬-০৯-৩০; GPT-6.1 Sol, Ultra; স্বাধীন মানব-পর্যালোচনা নয়। OLP-0501–0502-এর frozen ইংরেজি ও বাংলা সম্পূর্ণ তুলিত। আজ আগে সত্যিই পড়া P008/P009 বচন/সংযোজক, P013/P014 সম্পর্ক, P017 প্রমাণের গদ্য এবং P018 অপেক্ষকের রীতি ব্যবহৃত; পূর্ণ topology/interior/generated-model পদের প্রত্যক্ষ সাক্ষ্য নেই। P017-এর ভুল প্রদর্শিত সূত্র ব্যবহার হয়নি। সাধারণ প্রমাণের সঙ্গে ক্ষুদ্র সাক্ষী আলাদা রাখা হয়েছে।
+
+OLP-0501-এ স্থানীয় w-তে সত্যতা, মডেলের সব জগতে সত্যতা, সব মডেলে বৈধতা এবং প্রত্যেক pointed model-এ consequence-র পরিমাণক ঠিক। পুরোনো BN-SRC-397 প্রথম প্রমাণের অতিরিক্ত global premise সরিয়ে স্থানীয় premise দিয়েছে; দ্বিতীয়টিতে প্রত্যেক u-তে প্রথম ফল প্রয়োগ করে global conclusion। ওই সংশোধন যথার্থ; comment বাংলায় হয়েছে। উদাহরণে দুই জগতে A শুধু পরের জগতে সত্য হলে শেষ জগতের A-সত্যতা global A-সত্যতা নয়।
+
+W_w={u:Rwu}, R_w=R∩W_w² ও V_w=V∩W_w যথার্থ generated restriction। প্রতিবিম্বিতায় w∈W_w, তাই মডেল অশূন্য। কোনো v∈W_w ও vRu হলে পরিযায়িতায় wRu, তাই v-র সব পুরোনো উত্তরসূরি W_w-তেই থাকে। সুতরাং atom/⊥/And/Or-এর পর গঠনে আরোহ করে implication ও negation-এও restricted এবং পুরোনো সত্যতা মেলে। w-তে A সত্য হলে persistence-এ W_w-র সব জগতে A সত্য; বিপরীতে restricted মডেলে সর্বত্র সত্য হলে w-তেও সত্য, এবং invariance-এ পুরোনো w-তে সত্য। এটাই source-এর local iff global-restriction উপপাদ্য।
+
+শেষ proposition-এ Γ-এর প্রতিটি সূত্র w-তে সত্য হলে restricted মডেলে global Γ; অনুমানে global A, পরে restriction lemma-তে মূল w-তে A। এখানে Γ অসীম হলেও প্রতিটি সূত্রে আলাদাভাবে একই ফল প্রয়োগ হয়; নতুন সসীমতার শর্ত লাগে না। ১৪,৮৫০ নির্বাচিত formula/model/মূল-জগতের ক্ষেত্রে restriction ও প্রতিটি অবশিষ্ট জগতের invariance পরীক্ষিত। গণনা সাধারণ প্রমাণের বদলে নয়।
+
+OLP-0502-এ ∅ ও X উন্মুক্ত; binary intersection ও arbitrary union-এ বদ্ধতা সসীম intersection দেয়। X খালি হওয়ার নিষেধ নেই; খালি স্থানেও topology সংজ্ঞা যথার্থ। Open collection নির্দিষ্ট হলে (X,O) টপোলজিক্যাল স্থান; X নিজে topology নয়—পুরোনো BN-SRC-398 সঠিক। V(p) উন্মুক্ত; ⊥ খালি, And ছেদ, Or সংযুক্তি, implication Int((X\A)∪B)। Int(S) সব contained open-এর union, তাই উন্মুক্ত, S-এর অন্তর্ভুক্ত এবং বৃহত্তম contained open। গঠনে আরোহে প্রতিটি সূত্রের মান উন্মুক্ত।
+
+সাধারণ implication-প্রমাণ: উন্মুক্ত C-এর জন্য C∩A⊆B তখনই যখন C⊆(X\A)∪B। C নিজে উন্মুক্ত বলে এটি তখনই যখন C⊆Int((X\A)∪B)। তাই প্রদর্শিত implication বৃহত্তম উন্মুক্ত সেট, যা A-র সঙ্গে মিলে B-র অন্তর্ভুক্ত হয়। বৃহত্তর সত্যসেট দুর্বলতর বচন বোঝায়; ‘দুর্বলতম’ ও ‘বৃহত্তম’ বিপরীত নয়। And ও Or-র যথাক্রমে বৃহত্তম common lower set ও ক্ষুদ্রতম common upper set সাধারণ set argument-এ সঠিক। পুরোনো BN-SRC-399-তে strict subset বদলে subseteq সঠিক, কারণ A নিজেকে নিহিত করে।
+
+নতুন BN-SRC-756-তে A proves B iff অন্তর্ভুক্তির বাক্যে প্রত্যেক টপোলজিক্যাল মডেলের পরিমাণন স্পষ্ট। একটি নির্দিষ্ট মডেল/মানায়নে inclusion যথেষ্ট নয়: এক-জগতের A=B=true-তে inclusion মেলে, কিন্তু A=true,B=false-তে মেলে না; A থেকে arbitrary B প্রামাণ্য নয়। পরিমাণন শুধু স্থান নয়, মডেলের V-কেও অন্তর্ভুক্ত করে। এই equivalence-এর সাধারণ formal completeness পরের অধ্যায়ের প্রমাণের সঙ্গে সম্পর্কিত; এই দুই-এককের গণনায় তার যাচাই দাবি নেই।
+
+সর্বোচ্চ তিন বিন্দুর ৩৫ topology-তে খালি স্থানসহ Int-এর openness/containment এবং ৩,৪৩৯ open A,B,C-ত্রয়ে উপরের adjunction পরীক্ষিত। Finite topology-তে arbitrary union binary union-এ বদ্ধতা থেকে আসে, কিন্তু সাধারণ প্রমাণে সত্যিকার arbitrary union ব্যবহার হয়েছে। মূল ইংরেজি অক্ষত; কেবল বাংলা ও explicit correction comment পালটেছে। ফল GPT6_SOL_REDO_INTUITIONISTIC_SEMANTICS_REMAINDER_CHECK.json-এ বর্তমান দুই hash-এ বাঁধা হবে। পূর্ণ reader, সব affected script ও প্রকাশনার পরীক্ষা বাকি।

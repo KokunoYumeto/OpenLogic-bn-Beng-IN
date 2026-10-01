@@ -1,0 +1,33 @@
+{
+  "source_measure": "length of eliminated implication/product/sum type",
+  "original_type": [
+    "arrow",
+    [
+      "atom",
+      "P"
+    ],
+    [
+      "atom",
+      "P"
+    ]
+  ],
+  "reduct_type": [
+    "arrow",
+    [
+      "atom",
+      "P"
+    ],
+    [
+      "atom",
+      "P"
+    ]
+  ],
+  "original_beta_redex_ranks": [
+    1
+  ],
+  "reduct_beta_redex_ranks": [
+    3
+  ],
+  "selected_redex_has_no_proper_beta_redex": true,
+  "scope": "one typed case/application witness; not a normalization prover"
+}

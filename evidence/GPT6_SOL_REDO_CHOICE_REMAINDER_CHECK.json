@@ -1,0 +1,39 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_CHOICE_REMAINDER_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/wellorderingproblem.tex",
+      "sha256": "14cb12d623adebe5fa59b86eb0e519c13eea26329f72afd0bfb506664061eda7"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/countablechoice.tex",
+      "sha256": "445c503c9b8989a4c0a78187a910f3f03beb922c0c7cf88e1cb809b8267713fb"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/justifications.tex",
+      "sha256": "e8f43bee14295a9c45204251649342dd1f417ca295db9da12e44b2353e47d16a"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/banach.tex",
+      "sha256": "4cd85ff511eb2f0d95bb2add0537c32d3ea9dfab48fc4f0a561839c18f87bdbd"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/choice/vitali.tex",
+      "sha256": "969337fa83977c69f1141786ef9f5907c7ddc0a2e6d289ff9f9c71899d90fd2d"
+    }
+  ],
+  "পরীক্ষা": {
+    "সব ছোট choice-map-এ stopping ও sentinel": 20764,
+    "finite-size subset-অনুক্রম ও বিচ্ছিন্ন নির্বাচন": 15680,
+    "শূন্য/মিশ্র union ও least preimage": 512,
+    "tagged selector ও বাইরের সদস্যের ব্যতিক্রম": 864,
+    "rational-turn জোড়া ও মুক্ত circle action": 32400,
+    "sphere-axis ব্যতিক্রম": 1,
+    "absorption orbit-এর prefix": 303
+  },
+  "সীমা": "সসীম পরীক্ষা Choice-এর স্বাধীনতা, Feferman–Levy model, অসীম Hartogs bound, rational-turn group-এর সব সদস্য বা Banach–Tarski নির্মাণ প্রমাণ করে না। quarter-turn কোনও F2 মডেল নয়; nonidentity rotation-এর axis-fixed point দেখায়। shift-prefix অসীম equidecomposition-এর প্রমাণ নয়। source-এর সাধারণ bounded-set, group/action ও absorption প্রমাণ review/reader নোটে পৃথক।"
+}

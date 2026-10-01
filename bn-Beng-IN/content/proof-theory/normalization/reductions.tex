@@ -65,18 +65,19 @@ $\Subst{\delta_2}{\delta_3}{!B^x}$
 বলতে সেই !!{proof} বোঝাই,
 যা~$\delta_2$-তে
 $x$-চিহ্নযুক্ত প্রতিটি
-অনুমান~$!B$-র জায়গায়
+খোলা অনুমান~$!B$-র জায়গায়
 পুরো !!{proof}~$\delta_3$
-বসিয়ে পাওয়া যায়।
-এই !!{proof}-এ আর
-$x$-চিহ্নযুক্ত $!B$-রূপের
-খোলা অনুমান থাকে না।
-অন্য কোনো অনুমানও~$x$-চিহ্নযুক্ত
-নয়, কারণ যথারীতি একই চিহ্নে
+বসিয়ে পাওয়া যায়; কলম-স্থাপনের আগের
+অব্যাহতি-চিহ্ন পরিবর্তনের রীতিও মেনে নিই।
+এই !!{proof}-এ মূল প্রমাণের প্রতিস্থাপিত
+$x$-চিহ্নযুক্ত $!B$-রূপের অনুমানগুলি আর থাকে না;
+তবে বসানো প্রমাণের নিজস্ব খোলা অনুমান থাকতে পারে।
+সেই অনুমানও~$x$-চিহ্নযুক্ত হতে পারে, কারণ একই চিহ্নে
 দুটি ভিন্ন !!{formula}s
 অনুমান হিসেবে আসে না।
 তাই নতুন !!{proof}-এর খোলা
-অনুমানগুলি~$\delta_1$-র মতোই;
+অনুমানগুলি~$\delta_1$-র খোলা অনুমানগুলির উপসেট;
+প্রতিস্থাপনযোগ্য খোলা অনুমান না থাকলে অপ্রয়োজনীয় শাখা বাদ যায়;
 $\delta_2$-র যে বিধিগুলি
 অনুমান অবমুক্ত করে, তারা
 $\Subst{\delta_2}{\delta_3}{!B^x}$-এও
@@ -86,6 +87,17 @@ $\Subst{\delta_2}{\delta_3}{!B^x}$-এও
 হতে পারে, যেগুলি
 $\Subst{\delta_2}{\delta_3}{!B^x}$-এ
 সংশ্লিষ্ট অনুমান অবমুক্ত করে।
+% BN-SRC-880 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-880–882):}
+কলম-স্থাপন মূল উপপ্রমাণের খোলা অনুমানগুলিতেই হয়। বসানো
+প্রমাণের নিজস্ব খোলা অনুমান থাকতে পারে; তাই একই চিহ্নের কোনো
+খোলা অনুমানই আর নেই বলা যায় না। শূন্য অব্যাহতির ক্ষেত্রে
+অপ্রয়োজনীয় শাখা বাদ যায়, ফলে খোলা অনুমানের সমতা নয়,
+উপসেট হওয়াই সাধারণভাবে নিশ্চিত।}
+% BN-SRC-880 TARGET-CORRECTION-END
+% BN-SRC-881: inserted proof may still have its own open assumption with the substituted label.
+% BN-SRC-882: vacuous discharge can discard the entire unused premise; open assumptions form a subset.
+
 
 $\delta_2$ বা $\delta_3$-র সম্পূর্ণ
 ভিতরে, অথবা $\delta$-তে
@@ -354,7 +366,6 @@ $!A$ যখন !!a{introduction}
 \AxiomC{}
 \RightLabel{$\delta_2$}
 \DeduceC{$\lfalse$}
-\RightLabel{\FalseInt}
 \UnaryInfC{$!B \lif !C$}
 \AxiomC{}
 \RightLabel{$\delta_3$}
@@ -367,13 +378,10 @@ $!A$ যখন !!a{introduction}
 \AxiomC{}
 \RightLabel{$\delta_2$}
 \DeduceC{$\lfalse$}
-\RightLabel{\FalseInt}
 \UnaryInfC{$!C$}
 \DisplayProof
 \]
-% BN-SRC-580 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-580):} প্রথম মিথ্যা-ভূমিকা উদাহরণের দুটি $\bot$ থেকে সূত্রে ওঠা ধাপে উৎসবৃক্ষ বিধিলেবেল বাদ দিয়েছে; উভয় ধাপে \FalseInt স্পষ্ট করা হয়েছে।}
-% BN-SRC-580 TARGET-CORRECTION-END
+% BN-SRC-580: optional explicit FalseInt labels withdrawn; unlabelled displayed steps already determine the rule.
 $!A \ident (!B \lor !C)$
 অথবা $!A \ident \lexists[x][!B(x)]$
 হলে একটু সতর্ক থাকতে হয়।
@@ -404,7 +412,7 @@ $!A \ident (!B \lor !C)$
 \DisplayProof
 \]
 % BN-SRC-581 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-581):} $\lor$-নিষ্কাশনের দুই ভিন্ন অনুমান উৎসে একই $x$ চিহ্ন পেয়েছে; N1i-র পৃথক-চিহ্ন শর্ত অনুযায়ী $!C$-শাখায় $y$ এবং নিষ্কাশনবিধিতে $x,y$ অবমুক্তি স্পষ্ট করা হয়েছে।}
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-581):} $\lor$-নিষ্কাশনের দুই ভিন্ন অনুমান উৎসে একই $x$ চিহ্ন পেয়েছে; N1i-তে ভিন্ন সূত্রে একই অনুমান-চিহ্ন না-থাকার শর্ত অনুযায়ী $!C$-শাখায় $y$ এবং নিষ্কাশনবিধিতে $x,y$ অবমুক্তি স্পষ্ট করা হয়েছে।}
 % BN-SRC-581 TARGET-CORRECTION-END
 তাহলে কর্তন-!!{formula}~$!D$-যুক্ত
 নতুন কর্তন তৈরি হতে পারে;
@@ -434,8 +442,6 @@ $!A \ident (!B \lor !C)$
 \DeduceC{$!D$}
 \DisplayProof
 \]
-% BN-NORM-173 TARGET-NORMALIZATION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{ভাষা-স্বাভাবিকীকরণ (BN-NORM-173):} প্রমাণবৃক্ষের ভিতরের ইংরেজি by ও or সংযোগপদ কেবল বাংলা পাঠ্যলেবেল করা হয়েছে; সূত্র, বিধি ও প্রমাণের শাখা অপরিবর্তিত।}
-% BN-NORM-173 TARGET-NORMALIZATION-END
+% BN-NORM-173: display connectors remain localized; explanatory reader annotation withdrawn.
 
 \end{document}

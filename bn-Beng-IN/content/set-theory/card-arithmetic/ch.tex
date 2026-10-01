@@ -25,7 +25,7 @@ $\cardsucc{\cardfont{a}}$ হলো $\cardfont{a}$-র চেয়ে
 	\aleph_{\alpha \ordplus 1} &\defis \cardsucc{(\aleph_{\alpha})} &
 	\beth_{\alpha+1} &\defis \cardexpo{2}{\beth_{\alpha}}\\
 	\aleph_{\alpha} &\defis \bigcup_{\beta< \alpha} \aleph_{\beta} &
-	\beth_{\alpha} &\defis \bigcup_{\beta < \alpha}\beth_{\beta} & \text{when $\alpha$ is a limit ordinal}.
+	\beth_{\alpha} &\defis \bigcup_{\beta < \alpha}\beth_{\beta} & \text{$\alpha$ সীমা ক্রমসংখ্যা হলে}.
 	\end{align*}
 \end{defn}
 
@@ -92,6 +92,18 @@ $\cardfont{a}=\bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}\cardfont{b}=
 তাই $\gamma=
 \bigcup_{\omega\leq\cardfont{b}<\cardfont{a}}\gamma_\cardfont{b}$
 নিলে $\cardfont{a}=\aleph_\gamma$।
+% BN-SRC-819 TARGET-CORRECTION-BEGIN
+\par\noindent\textbf{পাঠ-সংশোধন।} অদ্বিতীয়তার জন্য সূচকে আলেফের কঠোর বৃদ্ধি ব্যবহার করতে হয়।
+উত্তরসূরিতে এটি সংজ্ঞা থেকেই আসে; অশূন্য সীমায় প্রতিটি আগের
+সূচকের উত্তরসূরির মানও সংযোগে আছে, তাই সংযোগ সব আগের মানের
+চেয়ে বড়। সীমা-ক্ষেত্রে আগের অসীম অঙ্কবাচক সংখ্যার কোনও
+বৃহত্তম সদস্য নেই। তাদের সূচকগুলিও পরবর্তী সূচকের কাছে বদ্ধ এবং
+অধোবদ্ধ: $\xi<\gamma_{\cardfont{b}}$ হলে
+$\aleph_\xi<\cardfont{b}<\cardfont{a}$। প্রতিস্থাপনে পাওয়া
+এই সূচক-সেট তাই একটি অশূন্য সীমা ক্রমসংখ্যা, এবং তার সংযোগ
+একই ক্রমসংখ্যা $\gamma$। আলেফের সীমা-সংজ্ঞা এখন সত্যিই
+$\cardfont{a}=\aleph_\gamma$ দেয়।
+% BN-SRC-819 TARGET-CORRECTION-END
 \end{proof}
 
 প্রত্যেক অসীম অঙ্কবাচক সংখ্যা কোনো $\aleph$ বলে
@@ -117,12 +129,28 @@ $\cardfont{a}\leq\cardexpo{\cardfont{a}}{\cardfont{b}}
 নাকি $\cardexpo{\cardfont{a}}{\cardfont{b}}=
 \cardsucc{\cardfont{a}}$, তাও নির্দিষ্টভাবে বলা যেত।
 \footnote{শর্তটি \emph{সহশেষতা} দিয়ে নির্ধারিত হয়।}
+% BN-SRC-820 TARGET-CORRECTION-BEGIN
+\par\noindent\textbf{পাঠ-সংশোধন।} সংশোধিত অশূন্য ঘাতের শর্তে স্থির একটি স্থানাঙ্কে মান বদলে
+$\cardfont{a}$ থেকে অপেক্ষক-সেটে একৈক চিত্রণ পাওয়া যায়;
+এটিই নিচের সীমা। উপরের সীমার জন্য
+$\cardfont{a}\leq\cardexpo{2}{\cardfont{a}}$ এবং
+$\cardfont{a}\cardtimes\cardfont{b}=\cardfont{a}$ ব্যবহার করি।
+তাই
+$\cardexpo{\cardfont{a}}{\cardfont{b}}
+\leq\cardexpo{(\cardexpo{2}{\cardfont{a}})}{\cardfont{b}}
+=\cardexpo{2}{(\cardfont{a}\cardtimes\cardfont{b})}
+=\cardexpo{2}{\cardfont{a}}=\cardsucc{\cardfont{a}}$,
+শেষ সমতা GCH-তে। গুণফলের ধাপটি সসীম ধনাত্মক
+$\cardfont{b}$-র জন্যও বৈধ, কারণ
+$\cardfont{a}\preceq\cardfont{a}\times\cardfont{b}
+\preceq\cardfont{a}\times\cardfont{a}$।
+% BN-SRC-820 TARGET-CORRECTION-END
 
 কিন্তু GCH একটি \emph{অনুমান}, \emph{উপপাদ্য} নয়।
 \citet{Godel1938} প্রমাণ করেন, $\ZFC$ সংগতি-সম্মত
 হলে $\ZFC+\text{GCH}$-ও সংগতি-সম্মত। পরে জানা যায়,
 $\ZFC$-র সঙ্গে $\lnot$GCH-ও যোগ করা যায়।
-GCH-এর সবচেয়ে সরল অ-তুচ্ছ \emph{দৃষ্টান্তটি} ধরো:
+GCH-এর সবচেয়ে সরল অ-তুচ্ছ \emph{দৃষ্টান্তটি} নেওয়া যাক:
 
 \begin{defish}
 \emph{কন্টিনিউয়াম অনুমান} (CH)। $\aleph_1=\beth_1$।
@@ -131,6 +159,13 @@ GCH-এর সবচেয়ে সরল অ-তুচ্ছ \emph{দৃষ�
 \citet{Cohen1963} প্রমাণ করেন, $\ZFC$ সংগতি-সম্মত
 হলে $\ZFC+\lnot\text{CH}$-ও সংগতি-সম্মত।
 অতএব কন্টিনিউয়াম অনুমান $\ZFC$ থেকে স্বতন্ত্র।
+% BN-SRC-821 TARGET-CORRECTION-BEGIN
+\par\noindent\textbf{পাঠ-সংশোধন।} এই সিদ্ধান্তটি $\ZFC$-র সঙ্গতি ধরে বলা হচ্ছে। উপরের দুই
+আপেক্ষিক সঙ্গতির ফল তখন CH ও তার অস্বীকৃতি—দুটির সঙ্গেই
+সঙ্গত বিস্তার দেয়। ফলে কোনওটিই $\ZFC$-তে প্রমাণিত হয় না।
+মূল বাক্যে নিহিত এই শর্তটি বাদ দিলে, অসঙ্গত তত্ত্বে সব বাক্যই
+প্রমাণযোগ্য হওয়ার কারণে সিদ্ধান্তটি সঠিক থাকে না।
+% BN-SRC-821 TARGET-CORRECTION-END
 
 ``কন্টিনিউয়াম'' বাস্তব সংখ্যারেখা $\Real$-এর
 আরেক নাম বলেই অনুমানটির এই নাম।
@@ -142,8 +177,8 @@ $\beth_1$-এর মাঝখানে আর কোনো অঙ্কবাচ
 
 $\ZFC$ থেকে (G)CH-এর \emph{স্বতন্ত্রতা} জানা গেলে
 তাদের \emph{সত্যতা} সম্পর্কে কী বলব? এ নিয়ে
-অনেক কথাই বলা যায়; সেটতত্ত্বে সাম্প্রতিক বহু
-ফলপ্রসূ গবেষণা এই প্রশ্নগুলির দিকে গেছে। তবে
+অনেক কথাই বলা যায়; মূল পাঠের সময়কার বহু
+ফলপ্রসূ সেটতাত্ত্বিক গবেষণা এই প্রশ্নগুলির দিকে গেছে। তবে
 দুটি সংক্ষিপ্ত কথা বিশেষভাবে মনে রাখা দরকার।
 
 প্রথমত, আনুষ্ঠানিক স্বতন্ত্রতার ফল থেকে (G)CH বা
@@ -167,6 +202,6 @@ CH-এর সত্যমান \emph{অনির্ধারিত}, এমন
 এই দুটি পর্যবেক্ষণের পরে আরও জানতে চাইলে,
 এই বিতর্কে অংশ নেওয়া দার্শনিক ও গণিতবিদদের
 লেখার দিকেই যেতে হবে।\footnote{শুরুতে
-\citet[\S15.6]{Potter2004} পড়তে পারো।}
+\citet[\S15.6]{Potter2004} পড়া যেতে পারে।}
 
 \end{document}

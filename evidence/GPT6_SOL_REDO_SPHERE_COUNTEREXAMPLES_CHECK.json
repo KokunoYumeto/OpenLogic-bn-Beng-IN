@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "actual_countermodels": [
+    {
+      "unit_file": "antecedent-strengthening.tex",
+      "valuation": {
+        "p": 6,
+        "q": 4,
+        "r": 2
+      },
+      "root_spheres": [
+        1,
+        3,
+        7
+      ],
+      "other_world_spheres": [
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "root_nonderivability": true,
+      "actual_point_layer_checks": 2
+    },
+    {
+      "unit_file": "transitivity.tex",
+      "valuation": {
+        "p": 4,
+        "q": 6,
+        "r": 2
+      },
+      "root_spheres": [
+        1,
+        3,
+        7
+      ],
+      "other_world_spheres": [
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "root_nonderivability": true,
+      "actual_point_layer_checks": 0
+    },
+    {
+      "unit_file": "contraposition.tex",
+      "valuation": {
+        "p": 6,
+        "q": 3
+      },
+      "root_spheres": [
+        1,
+        3,
+        7
+      ],
+      "other_world_spheres": [
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "root_nonderivability": true,
+      "actual_point_layer_checks": 2
+    }
+  ],
+  "bounded_root_sphere_models_with_complete_singleton_other_centers": 6416,
+  "actual_transitivity_failure_cases": 112,
+  "all_failure_cases_have_strictly_closer_q_minimum_without_p_worlds": true,
+  "last_exercise_does_not_require_an_existing_positive_example": true,
+  "core_semantic_dependency": {
+    "path": "evidence/GPT6_SOL_REDO_SPHERE_SEMANTICS_OPENING_CHECK.json",
+    "sha256": "3cb4221c66d39b260c686b1b7c05492da485620518256a0c43837e16ba78d1c4"
+  },
+  "historical_primary_readings": [
+    {
+      "url": "https://www.fbi.gov/history/directors/j-edgar-hoover",
+      "claim": "হুভারের জন্ম ১৮৯৫-০১-০১; বাস্তবে official biography পড়া।"
+    },
+    {
+      "url": "https://www.marxists.org/reference/archive/stalin/works/1922/12/30.htm",
+      "claim": "১৯২২-১২-৩০ প্রতিষ্ঠা-কংগ্রেসের মূল ভাষণ; প্রকাশনা Pravda ১৯২২-১২-৩১। ওয়েবের primary document পাঠ ব্যবহৃত।"
+    }
+  ],
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/antecedent-strengthening.tex",
+      "sha256": "8728cacf73b5e681d432a3e15fce1ca174fc6cfcde6f99a1df09b73f892f282e"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/transitivity.tex",
+      "sha256": "bc8d4647aedf49e2cbf8c8c780b605a7e58f05a893bdb2c67c9fdfa3506e9a56"
+    },
+    {
+      "path": "bn-Beng-IN/content/counterfactuals/minimal-change-semantics/contraposition.tex",
+      "sha256": "646f7fff678e255413be7d39660a4cec7f05c146e581e63c13e579094676261d"
+    }
+  ],
+  "limits": "Root-sphere enumeration সব অসীম model নয়। সাধারণ nested-sphere proof-তে সফল q-sphere-এ কোনো p-world থাকতে পারে না—বাংলা review-তে। দুই TikZ schematic-এ source-radius দিয়ে চার point-এর layer গণিত তুলিত; নতুন render/visual QA এখনও পূর্ণ reader checkpoint-এর কাজ।"
+}

@@ -20,7 +20,7 @@ $n,m\in\omega$ হোক। তবে $n=m$ তখনই, যখন $\cardeq{n}{
 \begin{proof}
 \emph{বাম থেকে ডান} দিকটি সরল। \emph{ডান থেকে বাম}
 প্রমাণ করতে ধরি, $n\neq m$ হলেও $\cardeq{n}{m}$।
-ত্রিবিভাজনে $n\in m$ অথবা $m\in n$; সাধারণত্ব না হারিয়ে
+ত্রিবিকল্প নীতিতে $n\in m$ অথবা $m\in n$; সাধারণত্ব না হারিয়ে
 $n\in m$ ধরি। তাহলে $n\subsetneq m$ এবং
 একটি !!a{bijection} $f\colon m\to n$ আছে। এতে $m$
 দেদেকিন্ড-অসীম হয়, যা
@@ -38,9 +38,9 @@ $n\in\omega$ হলে $n$ একটি অঙ্কবাচক সংখ্য
 \noindent
 এ থেকে অঙ্কবাচক সংখ্যাকে ``সসীম'' বা ``অসীম''
 বলার কয়েকটি স্বাভাবিক অর্থ যে একই, তাও পাওয়া যায়:
-\begin{thm}\ollabel{generalinfinitycharacter}যেকোনো সেট $A$-র জন্য নিচের দাবিগুলি সমতুল্য:
+\begin{thm}\ollabel{generalinfinitycharacter}যেকোনো সেট $A$-র জন্য নিচের দাবিগুলি তুল্য:
 \begin{enumerate}
-	% BN-SRC-453: the cardinality, not A itself, is outside omega.
+	% BN-SRC-453: স্বাভাবিক সংখ্যা নয় অঙ্কবাচকতা; A নিজে নয়।
 	\item\ollabel{card:notinomega} $\card{A}\notin\omega$,
 	অর্থাৎ $A$-র অঙ্কবাচকতা স্বাভাবিক সংখ্যা নয়;
 	\item\ollabel{card:omegaplus} $\omega\leq\card{A}$;
@@ -64,7 +64,7 @@ $\card{A}$ স্বাভাবিক সংখ্যা, অর্থাৎ $\
 \emph{অসীম} বলব।
 \end{defn}
 \noindent
-তবে মনে রেখো, সংজ্ঞাটি $\ZFC$-র প্রেক্ষাপটে দেওয়া।
+তবে মনে রাখুন, সংজ্ঞাটি $\ZFC$-র প্রেক্ষাপটে দেওয়া।
 প্রত্যেক সেটের অঙ্কবাচকতা আছে, এটি নিশ্চিত করতে
 আমাদের সুক্রমবিন্যাস লেগেছে। সুক্রমবিন্যাস ছাড়া এমন
 সেট থাকতে পারে, যা সসীমও নয়, দেদেকিন্ড-অসীমও নয়।
@@ -94,8 +94,7 @@ $\cardeq{\omega}{n}$ হলে $n$-ও দেদেকিন্ড-অসীম 
 \begin{proof}
 $\alpha$ একটি অসীম উত্তরসূরি ক্রমসংখ্যা হোক, অর্থাৎ
 কোনো $\beta$-র জন্য $\alpha=\beta\ordplus 1$।
-% BN-SRC-454: a finite predecessor would have a finite successor;
-% finitecardisoequal does not establish the cited implication.
+% BN-SRC-454: সসীম পূর্বসূরির উত্তরসূরি সসীম; পুরোনো reference এই implication দেয় না।
 এই পূর্বসূরি সসীম হলে তার উত্তরসূরিও সসীম হতো;
 অতএব $\beta$ অসীম। তাই
 \olref[ord-arithmetic][using-addition]{ordinfinitycharacter}
@@ -115,7 +114,7 @@ $A$ !!{enumerable} তখনই, যখন $\card{A}\leq\omega$;
 \end{prop}
 
 \begin{proof}
-ত্রিবিভাজনে দুটি দাবি সমতুল্য, তাই $A$ !!{enumerable}
+ত্রিবিকল্প নীতিতে দুটি দাবি তুল্য, তাই $A$ !!{enumerable}
 তখনই, যখন $\card{A}\leq\omega$, শুধু এটিই দেখালেই চলে।
 \emph{ডান থেকে বাম}: $\card{A}\leq\omega$ হলে
 \olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}
@@ -150,7 +149,7 @@ $\cardfont{a}$ একটি !!a{enumerable} অসীম অঙ্কবাচ�
 সংখ্যা হোক। $\cardfont{a}$ অসীম বলে $\omega\leq\cardfont{a}$।
 আবার $\cardfont{a}$ !!a{enumerable} অঙ্কবাচক সংখ্যা বলে
 $\cardfont{a}=\card{\cardfont{a}}\leq\omega$।
-তাই ত্রিবিভাজনে $\cardfont{a}=\omega$।
+তাই ত্রিবিকল্প নীতিতে $\cardfont{a}=\omega$।
 \end{proof}
 
 অঙ্কবাচক সংখ্যা অবশ্যই অসীমসংখ্যক। তাই প্রশ্ন হতে পারে:
@@ -191,7 +190,7 @@ $\cardfont{a}<\card{\Pow{\cardfont{a}}}$।
 
 \begin{proof}
 বিরোধ প্রতিষ্ঠার জন্য ধরি,
-$C=\Setabs{\cardfont{a}}{\cardfont{a}\text{ is a cardinal}}$।
+$C=\Setabs{\cardfont{a}}{\cardfont{a}\text{ অঙ্কবাচক সংখ্যা}}$।
 \olref{unioncardinalscardinal} অনুযায়ী $\bigcup C$
 একটি অঙ্কবাচক সংখ্যা। তাই
 \olref{lem:NoLargestCardinal} থেকে
@@ -202,6 +201,6 @@ $\cardfont{b}\leq\bigcup C$। এটি বিরোধ।
 \end{proof}
 
 রাসেলের কূটাভাস এবং বুরালি--ফোর্তির কূটাভাস,
-দুটির সঙ্গেই এই ফলটির তুলনা করো।
+দুটির সঙ্গেই এই ফলটির তুলনা করুন।
 
 \end{document}

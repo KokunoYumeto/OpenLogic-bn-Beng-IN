@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "actual_displayed_rule_schemas": 8,
+  "actual_example_nodes": 10,
+  "actual_example_closed_leaves": 3,
+  "actual_valid_exercises": 4,
+  "bounded_monotone_models": 3068,
+  "satisfiability_preserving_rule_cases": 39892,
+  "old_missing_intermediate_prefix_counterexample": {
+    "successor_masks": [
+      1,
+      2
+    ],
+    "A_mask": 1,
+    "interpretation": {
+      "1": 0,
+      "1.1.1": 1
+    },
+    "missing_prefix": "1.1"
+  },
+  "old_fresh_child_with_existing_descendant_counterexample": {
+    "successor_masks": [
+      7,
+      2,
+      4
+    ],
+    "A_mask": 2,
+    "satisfiable_initial_formulas": [
+      "১ উপসর্গে নঞর্থক A-র মিথ্যা চিহ্ন",
+      "১.১.১ উপসর্গে A-র মিথ্যা চিহ্ন"
+    ],
+    "old_mapping": {
+      "1": 0,
+      "1.1.1": 2
+    },
+    "forbidden_new_prefix": "1.1",
+    "witness_world": 1
+  },
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/tableaux/tableaux.tex",
+      "sha256": "316e2c3cddd10f08b141fc5e59aa70ea3f996a1a5fafbc2473b23176705312ae"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/tableaux/introduction.tex",
+      "sha256": "5017c64541dc143bcfe4cd9919ccaf0de66316938fadd45f01c29330b30781f4"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/tableaux/rules.tex",
+      "sha256": "c9bb6e39a2d89b4f6d7fe1d9813c01284fad49527a576741e1c8c349ec125ab0"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/tableaux/proofs.tex",
+      "sha256": "ecf6be0a3723858373ad0989ce91d680fa3482b102d31de0cfc033b2b1a7809c"
+    },
+    {
+      "path": "bn-Beng-IN/content/intuitionistic-logic/tableaux/soundness.tex",
+      "sha256": "21c47bb0d526b7e9b31c3ade8f731bb20e1c7664c3cb45061457bea9f6823eca"
+    }
+  ],
+  "limits": "ক্ষুদ্র গণনা সাধারণ বিশুদ্ধতার প্রমাণ নয়। সমস্ত প্রারম্ভিক খণ্ডসহ ব্যাখ্যা, আট বিধির সাধারণ সন্তোষযোগ্যতা-সংরক্ষণ ও closure-এর persistence-যুক্তি বাংলা review-তে। খসড়া অধ্যায়ের পূর্ণতা এখানে দাবি করা হয়নি।"
+}

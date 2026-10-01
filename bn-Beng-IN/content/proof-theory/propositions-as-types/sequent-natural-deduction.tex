@@ -19,9 +19,9 @@ $\Gamma \cup \{!A_1, \dots, !A_n\}$-কে
 $\Gamma, !A_1, \dots, !A_n$ লিখি; আর
 $\Gamma \cup \Delta$-কে লিখি $\Gamma, \Delta$।
 
-ধরি, $\Gamma \Sequent !A \land !B$ আছে, অর্থাৎ
+ধরি, $\Gamma \Sequent !A \land !A$ আছে, অর্থাৎ
 $\Gamma$-কে !!{undischarged} অনুমানের সমষ্টি এবং
-$!A \land !B$-কে অন্তিম-!!{formula} রেখে
+$!A \land !A$-কে অন্তিম-!!{formula} রেখে
 !!a{derivation} আছে। তার শেষে $\Elim{\land}$
 প্রয়োগ করলে একই !!{undischarged} অনুমান থেকে
 $!A$ সিদ্ধান্তযুক্ত !!a{derivation} পাই। অন্য
@@ -36,9 +36,7 @@ $\Gamma \Sequent !A$ পাওয়া যায়।
   \RightLabel{$\Elim{\land}$}
   \UnaryInf$\Gamma \fCenter !B$
 \end{prooftree}
-% BN-SRC-619 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-619):} এই অনুচ্ছেদের প্রথম যৌগে উৎসে \( !A\land !A \) লেখা, অথচ পরের সিকোয়েন্ট ও দুই নিষ্কাশন-বৃক্ষে \( !A\land !B \) আছে; সেটিই রাখা হয়েছে।}
-% BN-SRC-619 TARGET-CORRECTION-END
+% BN-SRC-619: optional earlier alteration withdrawn; source restored.
 $\Elim{\land}$ লেবেলটি স্বাভাবিক নিষ্পাদনের
 একই নামের বিধির সঙ্গে এই বিধির সম্পর্ক দেখায়।
 
@@ -125,23 +123,17 @@ $\Elim{\land}$ লেবেলটি স্বাভাবিক নিষ্প
 
 \begin{prooftree}
   \Axiom$!A \fCenter !A$
-  \RightLabel{$\Intro{\lor}_1$}
   \UnaryInf $!A \fCenter !A \lor (!A \lif \lfalse)$
   \Axiom $!B \fCenter !B$
-  \RightLabel{$\Elim{\lif}$}
   \BinaryInf$!A, !B \fCenter \lfalse$
-  \RightLabel{$\Intro{\lif}$}
   \UnaryInf$!B \fCenter !A \lif \lfalse$
-  \RightLabel{$\Intro{\lor}_2$}
   \UnaryInf$!B \fCenter !A \lor (!A \lif \lfalse)$
   \Axiom$!B \fCenter !B$
-  \RightLabel{$\Elim{\lif}$}
   \BinaryInf$!B \fCenter \lfalse$
-  \RightLabel{$\Intro{\lif}$}
   \UnaryInf$\fCenter !B \lif \lfalse$
 \end{prooftree}
 % BN-SRC-620 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-620):} শেষ প্রমাণবৃক্ষে উৎসের অসম্পূর্ণ বন্ধনী, ভুল প্রসঙ্গ \( !B\lif \), এবং অনুপস্থিত বিধি-ধাপগুলি সংশোধন করা হয়েছে। \( !B=( !A\lor(!A\lif\lfalse))\lif\lfalse \) ধরে প্রথমে \( !A,!B\Sequent\lfalse \), তারপর \( !B\Sequent !A\lif\lfalse \), পরে \( !B\Sequent !A\lor(!A\lif\lfalse) \), শেষে \( \Sequent !B\lif\lfalse \) পাওয়া যায়।}
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-620):} শেষ প্রমাণবৃক্ষে উৎসের অসম্পূর্ণ বন্ধনী, ভুল প্রসঙ্গ \( !B\lif \), চিহ্নগুলি সংশোধন করা হয়েছে। \( !B=( !A\lor(!A\lif\lfalse))\lif\lfalse \) ধরে প্রথমে \( !A,!B\Sequent\lfalse \), তারপর \( !B\Sequent !A\lif\lfalse \), পরে \( !B\Sequent !A\lor(!A\lif\lfalse) \), শেষে \( \Sequent !B\lif\lfalse \) পাওয়া যায়।}
 % BN-SRC-620 TARGET-CORRECTION-END
 এখানে $!B$ হলো $(!A \lor (!A \lif \lfalse))\lif \lfalse$-এর সংক্ষিপ্ত রূপ।
 

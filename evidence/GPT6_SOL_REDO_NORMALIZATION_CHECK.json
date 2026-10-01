@@ -1,0 +1,61 @@
+{
+  "units": [
+    "OLP-0673",
+    "OLP-0674",
+    "OLP-0675",
+    "OLP-0676",
+    "OLP-0677"
+  ],
+  "targets": [
+    {
+      "unit_id": "OLP-0673",
+      "path": "bn-Beng-IN/content/proof-theory/normalization/normalization-thm.tex",
+      "sha256": "781fbc5ad2e5b7874565ce0a34795eff55dac6f9c374e33c49802c5587d70915"
+    },
+    {
+      "unit_id": "OLP-0674",
+      "path": "bn-Beng-IN/content/proof-theory/normalization/normalization.tex",
+      "sha256": "5353139ce704ac2b576d9778150c88ec7c5e077b9e666fa975d1b9c0109d29ea"
+    },
+    {
+      "unit_id": "OLP-0675",
+      "path": "bn-Beng-IN/content/proof-theory/normalization/permutations.tex",
+      "sha256": "87aa2d93e4ea630179630ae68781b6b87342685dc8c64569c2980d98868e0928"
+    },
+    {
+      "unit_id": "OLP-0676",
+      "path": "bn-Beng-IN/content/proof-theory/normalization/reductions.tex",
+      "sha256": "a2c18dea60bbb5ed5bd126247283f6d7f5f1bc9f395891850822d6f7e6e3343b"
+    },
+    {
+      "unit_id": "OLP-0677",
+      "path": "bn-Beng-IN/content/proof-theory/normalization/segments.tex",
+      "sha256": "cc660729c1b7bff506ef50f46e19cd6b691e9dcc5431cf3e671739cf127e00a4"
+    }
+  ],
+  "source_unchanged": true,
+  "full_bilingual_read": true,
+  "findings": [
+    880,
+    881,
+    882
+  ],
+  "unimplemented_improvement": [
+    580
+  ],
+  "withdrawn_reader_annotation": [
+    "BN-NORM-173"
+  ],
+  "counterexample": {
+    "original_open_labels": [
+      "y",
+      "z"
+    ],
+    "vacuous_discharge_reduced_open_labels": [
+      "y"
+    ],
+    "rules": "Q^y; vacuous P→Q introduction; elimination with P^z; reduction Q^y"
+  },
+  "review_record": "evidence/REDO_GPT6_SOL_NORMALIZATION_2026-09-30.md",
+  "overall_status": "pending_registration_and_rebuild"
+}

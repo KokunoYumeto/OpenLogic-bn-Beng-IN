@@ -15,7 +15,7 @@
 অনুরূপ। সত্যতা-সংক্রান্ত মোডাল যুক্তিবিদ্যায়
 $!A \strictif !B$-কে $\Box(!A \lif !B)$ হিসেবে
 সংজ্ঞায়িত করা যায়। অতএব কোনো জগতে কঠোর শর্তবচনটি
-সত্য তখনই, যখন সংশ্লিষ্ট বস্তুগত শর্তবচনটি আবশ্যিকভাবে
+সত্য তখন এবং কেবল তখনই, যখন সংশ্লিষ্ট বস্তুগত শর্তবচনটি আবশ্যিকভাবে
 সত্য।
 
 বস্তুগত শর্তবচনের আপাত-বৈপরীত্যের নিরিখে কঠোর শর্তবচন
@@ -25,8 +25,8 @@ $(!A \strictif !B) \lor (!B \strictif !A)$ বৈধ নয়।
 $!A \strictif !B$, $\lnot !A \lor !B$-এর সমতুল্যও
 নয়; তাই এটি সত্যমান-অপেক্ষকধর্মী নয়।
 
-% BN-SRC-420: the non-entailment requires negating the strict conditional.
-% BN-SRC-421: the displayed entailments and later necessity claims require S5.
+% BN-SRC-420: অননুগমনে নঞর্থকৃত কঠোর শর্তবচন চাই; বস্তুগত শর্তবচন নয়।
+% BN-SRC-421: প্রদর্শিত অনুগমন ও পরের আবশ্যিকতার দাবিগুলি S5 ব্যবস্থায়।
 S5 মোডাল ব্যবস্থায় আমরা পাই:
 \begin{align}
   !A \strictif !B & \Entails \lnot !A \lor !B
@@ -43,7 +43,7 @@ S5 মোডাল ব্যবস্থায় আমরা পাই:
   !A \strictif !B,  !A \strictif !C & \Entails !A \strictif (!B \land !C)
   \intertext{কঠোর শর্তবচনের পূর্বপক্ষকে শক্তিশালী করা যায়:}
   !A \strictif !B & \Entails (!A \land !C) \strictif !B
-  \intertext{কঠোর শর্তবচন সংক্রমণশীলও:}
+  \intertext{কঠোর শর্তবচন পরিযায়ীও:}
   !A \strictif !B, !B \strictif !C & \Entails !A \strictif !C
   \intertext{শেষত, কঠোর শর্তবচন তার প্রতিবিপরীত রূপের সমতুল্য:}
   !A \strictif !B & \Entails \lnot !B \strictif \lnot !A\\

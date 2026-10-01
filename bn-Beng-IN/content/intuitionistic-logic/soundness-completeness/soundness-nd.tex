@@ -8,9 +8,9 @@
 
 \olfileid{int}{sc}{snd}
 
-\olsection{স্বাভাবিক অবরোহণের বিশুদ্ধতা}
+\olsection{স্বাভাবিক নিষ্পাদনের বিশুদ্ধতা}
 
-এবার সম্পর্কভিত্তিক অর্থবিজ্ঞানের সাপেক্ষে স্বাভাবিক অবরোহণের
+এবার সম্পর্কভিত্তিক অর্থবিজ্ঞানের সাপেক্ষে স্বাভাবিক নিষ্পাদনের
 বিশুদ্ধতা প্রমাণ করব: অনুমানগুলির একটি সেট থেকে !!a{formula}
 !!{derivable} হলে সেই অনুমান-সেট থেকে !!{formula}টি নিহিত হয়।
 
@@ -25,20 +25,20 @@
   !!{derivation}-এর ওপর আরোহের সাহায্যে প্রমাণ হবে।
 
   \begin{enumerate}
-  \item !!{derivation}-এ কেবল অনুমান~$!A$ থাকলে
+  \item !!{derivation}-এ কেবল অনুমিতি~$!A$ থাকলে
     $!A \Proves !A$; দেখাতে হবে $!A \Entails !A$। ধরি
     $\mSat{M}{!A}[w]$। তবে তুচ্ছভাবেই $\mSat{M}{!A}[w]$।
 
   \item !!{derivation}-এর শেষ নিয়ম $\Intro{\land}$:
     \iftag{probAnd}{অনুশীলন।}{!!{undischarged}
-      অনুমান~$\Gamma$ থেকে পূর্বপক্ষ~$!B$-এর এবং
-      !!{undischarged} অনুমান~$\Delta$ থেকে~$!C$-এর
+      অনুমিতি~$\Gamma$ থেকে পূর্বপক্ষ~$!B$-এর এবং
+      !!{undischarged} অনুমিতি~$\Delta$ থেকে~$!C$-এর
       !!{derivation}s দেখায় যে $\Gamma \Proves !B$ এবং
       $\Delta \Proves !C$। আরোহ-অনুমানে তাই
       $\Gamma \Entails !B$ এবং $\Delta \Entails !C$।
-      % BN-SRC-401: the two premises yield B and C, hence B conjunction C.
+      % BN-SRC-401: দুই পূর্বপক্ষ B ও C; সংযোজনের সিদ্ধান্তে সেই দুই অংশই থাকবে।
       দেখাতে হবে $\Gamma \cup \Delta \Entails !B \land !C$,
-      কারণ সম্পূর্ণ !!{derivation}-এর !!{undischarged} অনুমানগুলি
+      কারণ সম্পূর্ণ !!{derivation}-এর !!{undischarged} অনুমিতিগুলি
       $\Gamma$ ও $\Delta$ একত্রে। ধরি
       $\mSat{M}{\Gamma \cup \Delta}[w]$। তবে
       $\mSat{M}{\Gamma}[w]$-ও। $\Gamma \Entails !B$ বলে
@@ -47,7 +47,7 @@
 
   \item !!{derivation}-এর শেষ নিয়ম $\Elim{\land}$:
     \iftag{probAnd}{অনুশীলন।}{!!{undischarged}
-      অনুমান~$\Gamma$ থেকে পূর্বপক্ষ $!B \land !C$-এর
+      অনুমিতি~$\Gamma$ থেকে পূর্বপক্ষ $!B \land !C$-এর
       !!{derivation} দেখায় যে $\Gamma \Proves !B \land !C$।
       আরোহ-অনুমানে $\Gamma \Entails !B \land !C$। দেখাতে হবে
       $\Gamma \Entails !B$। ধরি $\mSat{M}{\Gamma}[w]$। যেহেতু
@@ -58,20 +58,20 @@
 
   \item !!{derivation}-এর শেষ নিয়ম $\Intro{\lor}$:
     \iftag{probOr}{অনুশীলন।}{ধরি পূর্বপক্ষ $!B$ এবং $!B$-তে শেষ
-      হওয়া !!{derivation}-এর !!{undischarged} অনুমানগুলি
+      হওয়া !!{derivation}-এর !!{undischarged} অনুমিতিগুলি
       $\Gamma$। তবে $\Gamma \Proves !B$; আরোহ-অনুমানে
       $\Gamma \Entails !B$। দেখাতে হবে
       $\Gamma \Entails !B \lor !C$। ধরি
       $\mSat{M}{\Gamma}[w]$। $\Gamma \Entails !B$ বলে
       $\mSat{M}{!B}[w]$। তাই $\mSat{M}{!B \lor !C}[w]$-ও।
-      একইভাবে পূর্বপক্ষ~$!C$ হলে $\Gamma \Entails !C$।}
+      একইভাবে পূর্বপক্ষ~$!C$ হলে $\Gamma \Entails !C$; সেখান থেকেও একই বিয়োজন-সিদ্ধান্ত পাই।}
 
   \item !!{derivation}-এর শেষ নিয়ম~$\Elim{\lor}$:
     \iftag{probOr}{অনুশীলন।}{তিনটি পূর্বপক্ষে শেষ হওয়া
-      !!{derivation}s যথাক্রমে !!{undischarged} অনুমান~$\Gamma$
-      থেকে $!B \lor !C$, !!{undischarged} অনুমান
+      !!{derivation}s যথাক্রমে !!{undischarged} অনুমিতি~$\Gamma$
+      থেকে $!B \lor !C$, !!{undischarged} অনুমিতি
       $\Delta_1 \cup \{!B\}$ থেকে $!D$, এবং !!{undischarged}
-      অনুমান~$\Delta_2 \cup \{!C\}$ থেকে $!D$ প্রতিষ্ঠা করে।
+      অনুমিতি~$\Delta_2 \cup \{!C\}$ থেকে $!D$ প্রতিষ্ঠা করে।
       তাই $\Gamma \Proves !B \lor !C$,
       $\Delta_1 \cup \{!B\} \Proves !D$ এবং
       $\Delta_2 \cup \{!C\} \Proves !D$। আরোহ-অনুমানে
@@ -84,21 +84,21 @@
     তবে $\mSat{M}{\Gamma}[w]$; $\Gamma \Entails !B \lor !C$
     বলে $\mSat{M}{!B \lor !C}[w]$। $\mSat{M}{}$-এর সংজ্ঞায়
     $\mSat{M}{!B}[w]$ অথবা $\mSat{M}{!C}[w]$। তাই দুই ক্ষেত্র:
-    % BN-SRC-402: the world index belongs inside the satisfaction formula.
+    % BN-SRC-402: সত্যতা-প্রতীকের সঙ্গে একই গণিত-অংশে জগতের সূচক থাকে।
     (a)~$\mSat{M}{!B}[w]$। তবে
     $\mSat{M}{\Delta_1 \cup \{!B\}}[w]$।
-    % BN-SRC-403: the added assumption is the singleton set {B}.
+    % BN-SRC-403: অনুমিতি B-র এক-সদস্য সমষ্টি যোগ হয়।
     $\Delta_1 \cup \{!B\} \Entails !D$ বলে
     $\mSat{M}{!D}[w]$। (b)~$\mSat{M}{!C}[w]$। তবে
     $\mSat{M}{\Delta_2 \cup \{!C\}}[w]$।
-    % BN-SRC-404: likewise the second added assumption is {C}.
+    % BN-SRC-404: দ্বিতীয় ক্ষেত্রেও অনুমিতি C-র এক-সদস্য সমষ্টি যোগ হয়।
     $\Delta_2 \cup \{!C\} \Entails !D$ বলে
     $\mSat{M}{!D}[w]$। উভয় ক্ষেত্রেই
     $\mSat{M}{!D}[w]$, যা দেখাতে চেয়েছিলাম।}
 
   \item !!{derivation}-এর শেষে $\Intro{\lif}$ দিয়ে সিদ্ধান্ত
     $!B\lif !C$। পূর্বপক্ষ~$!C$; সেই পূর্বপক্ষে শেষ হওয়া
-    !!{derivation}-এর !!{undischarged} অনুমানগুলি
+    !!{derivation}-এর !!{undischarged} অনুমিতিগুলি
     $\Gamma \cup \{!B\}$। তাই
     $\Gamma \cup \{!B\} \Proves !C$; আরোহ-অনুমানে
     $\Gamma \cup \{!B\} \Entails !C$। দেখাতে হবে
@@ -114,7 +114,7 @@
 
   \item !!{derivation}-এর শেষ নিয়ম $\Elim{\lif}$ এবং সিদ্ধান্ত
     $!C$। পূর্বপক্ষ দুটি $!B \lif !C$ ও $!B$; এগুলির
-    !!{derivation}s-এর !!{undischarged} অনুমান যথাক্রমে
+    !!{derivation}s-এর !!{undischarged} অনুমিতি যথাক্রমে
     $\Gamma$ ও $\Delta$। তাই $\Gamma \Proves !B \lif !C$
     এবং $\Delta \Proves !B$। আরোহ-অনুমানে
     $\Gamma \Entails !B \lif !C$ ও $\Delta \Entails !B$।
@@ -133,7 +133,7 @@
 
   \item !!{derivation}-এর শেষে $\FalseInt$, সিদ্ধান্ত~$!A$।
     পূর্বপক্ষ $\lfalse$; সেই পূর্বপক্ষের !!{derivation}-এর
-    !!{undischarged} অনুমান~$\Gamma$। তাই
+    !!{undischarged} অনুমিতি~$\Gamma$। তাই
     $\Gamma \Proves \lfalse$। আরোহ-অনুমানে
     $\Gamma \Entails \lfalse$। দেখাতে হবে
     $\Gamma \Entails !A$।

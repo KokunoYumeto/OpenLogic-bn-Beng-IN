@@ -61,7 +61,7 @@ $!C, \Gamma \Sequent \Delta, !C$ & $\lfalse, \Gamma \Sequent \Delta$
 &
 \Axiom$ \Gamma \fCenter !A(a) $
 \RightLabel{\RightR{\lforall}}
-\UnaryInf$ \Gamma \fCenter \lforall[x][!A(x)]$
+\UnaryInf$ \Gamma \fCenter \Delta, \lforall[x][!A(x)]$
 \DisplayProof
 \\[4ex]
 \Axiom$ !A(a), \Gamma \fCenter \Delta $
@@ -76,7 +76,7 @@ $!C, \Gamma \Sequent \Delta, !C$ & $\lfalse, \Gamma \Sequent \Delta$
 \end{tabular}
 \caption{স্বজ্ঞাবাদী যুক্তির বহু-উত্তরপক্ষবিশিষ্ট
 \Log{mG3i}-র বিধি।
-$\RightR{\lforall}$ ও $\LeftR{\lexists}$-এ
+$\RightR{\forall}$ ও $\LeftR{\exists}$-এ
 !!{constant}~$a$
 সিদ্ধান্ত-সিকোয়েন্টে থাকতে পারবে না।
 $\Gamma$ ও $\Delta$
@@ -89,14 +89,15 @@ $\lfalse, \Gamma \Sequent \Delta$
 \Log{mG1i}।}
 \ollabel{tab:mG3i}
 \end{table}
+% BN-SRC-909 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-909):} বহু-উত্তরপক্ষের সার্বিক-ডান বিধির সিদ্ধান্তে অবশিষ্ট ডান প্রসঙ্গটি বাদ পড়েছে। পূর্বধারণার একক উত্তরপক্ষ অক্ষত রেখে সিদ্ধান্তে সেই প্রসঙ্গ ফিরেছে; আইগেনচলের শর্ত সম্পূর্ণ সিদ্ধান্তের জন্য।}
+% BN-SRC-909 TARGET-CORRECTION-END
 % BN-SRC-664 TARGET-CORRECTION-BEGIN
 \par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-664):} mG3i ফাইলের পরিচয়-মন্তব্য ও সারণি-লেবেলে উৎসে G3c লেখা; নিজস্ব mG3i ক্যাপশনের সঙ্গে মেলানো হয়েছে।}
 % BN-SRC-664 TARGET-CORRECTION-END
 % BN-SRC-665 TARGET-CORRECTION-BEGIN
 \par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-665):} সর্বসূচক-বাঁ বিধির পূর্বধারণায় সর্বসূচক সূত্র ও \(\Gamma\)-র মাঝখানে বাদ-পড়া কমা ফিরিয়ে বহুসেটের সদস্য পৃথক করা হয়েছে।}
 % BN-SRC-665 TARGET-CORRECTION-END
-% BN-SRC-666 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-666):} ক্যাপশনের \(\forall,\exists\) কমান্ড সারণির \(\lforall,\lexists\) বিধিনামের সঙ্গে মেলানো হয়েছে; সতেজতা-শর্ত একই।}
-% BN-SRC-666 TARGET-CORRECTION-END
+% BN-SRC-666: macro-only erratum retracted; source caption restored.
 
 \end{document}

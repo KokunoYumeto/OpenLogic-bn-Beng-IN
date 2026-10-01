@@ -1,0 +1,65 @@
+{
+  "units": [
+    "OLP-0001",
+    "OLP-0002",
+    "OLP-0003",
+    "OLP-0160",
+    "OLP-0163",
+    "OLP-0207",
+    "OLP-0271"
+  ],
+  "targets": [
+    {
+      "unit_id": "OLP-0001",
+      "path": "bn-Beng-IN/content/open-logic-about.tex",
+      "sha256": "f8004ba656dafb4c1d72279cc2564496ed76183f92e40fd8d139f061f110564a"
+    },
+    {
+      "unit_id": "OLP-0002",
+      "path": "bn-Beng-IN/content/content.tex",
+      "sha256": "e783b65fd719aaa63a0889c07fe87925b8deb0d9360c7c690d8a548708f5bf68"
+    },
+    {
+      "unit_id": "OLP-0003",
+      "path": "bn-Beng-IN/content/sets-functions-relations/sets-functions-relations-complete.tex",
+      "sha256": "ab4598163254bfedb489f350e665a25bfd482c06513344134c767f28ece27659"
+    },
+    {
+      "unit_id": "OLP-0160",
+      "path": "bn-Beng-IN/content/first-order-logic/syntax-and-semantics/intro-semantics.tex",
+      "sha256": "52076469a9f05581ff4e142cea60e690e6d70d8551feb2626d9af095348711b4"
+    },
+    {
+      "unit_id": "OLP-0163",
+      "path": "bn-Beng-IN/content/first-order-logic/syntax-and-semantics/satisfaction.tex",
+      "sha256": "e93b170de6b04f2a3d180573256b1bccb3f7aac936632822ea809dbd723762f6"
+    },
+    {
+      "unit_id": "OLP-0207",
+      "path": "bn-Beng-IN/content/model-theory/lindstrom/lindstrom-proof.tex",
+      "sha256": "b2492662dde71ec6b7bc23fc66ccc12b08d6d297cebd16f10d223a5dc585ffb0"
+    },
+    {
+      "unit_id": "OLP-0271",
+      "path": "bn-Beng-IN/content/turing-machines/undecidability/verification.tex",
+      "sha256": "f18858970d02e27bac38c9ca6a3c311f41fd76c4fb73323b497b1431846afb04"
+    }
+  ],
+  "full_actual_bilingual_read": true,
+  "review_record": "evidence/REDO_GPT6_SOL_EARLY_REMAINDER_2026-10-01.md",
+  "new_findings": [
+    911,
+    912,
+    913,
+    914
+  ],
+  "refined": [
+    502
+  ],
+  "pending_supporting_correction": "OLP-0206 relativized abstract sentence D1 is an L-sentence, not necessarily first-order",
+  "overall_status": "registered_current_hashes; rebuild_and_release_pending",
+  "registration_status": "registered",
+  "registered_unit_count": 336,
+  "registered_canon_ledger_sha256": "4b7c0a5e9eb40d3db7263f4084c77ff7da31a030056b5ad1712fb3efd09b2211",
+  "registration_date": "2026-10-01"
+}

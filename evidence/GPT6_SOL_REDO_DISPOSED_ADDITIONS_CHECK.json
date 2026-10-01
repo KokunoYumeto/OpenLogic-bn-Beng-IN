@@ -1,0 +1,181 @@
+{
+  "schema": "openlogic-bn-disposed-addition-check/1",
+  "status": "passed",
+  "affected_full_source_reviews": 336,
+  "affected_finding_rows": 613,
+  "lanes": {
+    "unresolved": 2,
+    "suggested_improvement": 13
+  },
+  "review_ledger_sha256": "d855536fa6d9d427ee97b83c0b01cb7ea4af316323a5c9ab2b9f6ecc14aac252",
+  "source_corrections_sha256": "e0c4468a12e7ada5df7783b06ca40b631c1dc7c719195456b5b9577efb856a1d",
+  "dispositions": [
+    {
+      "finding_id": "BN-SRC-500",
+      "unit_id": "OLP-0643",
+      "reporting_lane": "unresolved",
+      "applied_to_current_reader": false,
+      "target_sha256": "b4f50fe0156413639c5e89f2dbcf9fa5ebb267f781c0523dd4ae4f8ec9f4dbff",
+      "review_record": "evidence/REDO_GPT6_SOL_LEGACY_OPENING_2026-09-30.md",
+      "review_record_sha256": "9704954b5e1f7bd800d4a449df7a91f6383ca60b9f3a388d2562e402aa99bd08",
+      "disposition": "Modern q1/q2 do not govern legacy Ax1; closed-term addition/note withdrawn. Original theorem retained pending actual legacy free-for/term convention.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-527",
+      "unit_id": "OLP-0658",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "03b25cded14c940ad3f4b10820310d87b8310b4f67375e181c3ce73247768edb",
+      "review_record": "evidence/REDO_GPT6_SOL_PROOF_MIDDLE_2026-09-30.md",
+      "review_record_sha256": "641fd81bfd184b6e19c7ef41c3f3ad68116bcb07991993502bff367010fef27d",
+      "disposition": "Routine two-direction iff/conjunction proof detail, not broken proof; reader extra withdrawn.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-532",
+      "unit_id": "OLP-0660",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "dcafa678f3751d06986674b59e8f50dc3e6a60975826cae2f37448bd6ce8814e",
+      "review_record": "evidence/REDO_GPT6_SOL_PROOF_MIDDLE_2026-09-30.md",
+      "review_record_sha256": "641fd81bfd184b6e19c7ef41c3f3ad68116bcb07991993502bff367010fef27d",
+      "disposition": "Admissible weakening of duplicated contexts implicit; optional detail withdrawn.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-549",
+      "unit_id": "OLP-0667",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "11ec713229a10d40933f49a8a6c2583b28c9180920d9471bfbfb72e4d99b344e",
+      "review_record": "evidence/REDO_GPT6_SOL_NATURAL_REMAINDER_2026-09-30.md",
+      "review_record_sha256": "f77e90b9e78c784cbc06a028621f98d3a412fc3d9c02eee4089798eb139f0cde",
+      "disposition": "Governing sequents text transfers exact N1 rules and their eigenconstant matrix exclusion; isolated-caption counterexample does not establish source defect.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-580",
+      "unit_id": "OLP-0676",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "a2c18dea60bbb5ed5bd126247283f6d7f5f1bc9f395891850822d6f7e6e3343b",
+      "review_record": "evidence/REDO_GPT6_SOL_NORMALIZATION_2026-09-30.md",
+      "review_record_sha256": "6c0427722aa635c6c8c4b220c8dff188a284d8afe012af8353cfbbcab8fcf394",
+      "disposition": "Unlabelled FalseInt steps are correct; explicit labels are optional diagram improvement.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-596",
+      "unit_id": "OLP-0679",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "b06194aa250b51e55d969458592f804bc94a6ff607e5a500b2e88de47b502379",
+      "review_record": "evidence/REDO_GPT6_SOL_PROOF_SEARCH_2026-09-30.md",
+      "review_record_sha256": "716391bc2f22b8ce35ec3fe0a03d5d7814c8d9017cd1d25ae9166a329f05d987",
+      "disposition": "Finite successor equations implicitly range over existing successor indices; optional clarification withdrawn.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-611",
+      "unit_id": "OLP-0687",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "a1c1dc8d6206b7d3c6adbdd916e17bc5351a9974ae1519c2b6b15e2fd380d9f9",
+      "review_record": "evidence/REDO_GPT6_SOL_PROPOSITIONS_TYPES_2026-09-30.md",
+      "review_record_sha256": "2d47d48fa9c3a58b629c8e6741466cfff9feba25f614b9bc75265acac6ba5027",
+      "disposition": "Later strong normalization theorem supports all-computations statement; optional weak-only clarification withdrawn.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-619",
+      "unit_id": "OLP-0694",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "15a39f17bea56c421099b28bc269000a514c382b4552b225c4f7770799d0b01c",
+      "review_record": "evidence/REDO_GPT6_SOL_PROPOSITIONS_TYPES_2026-09-30.md",
+      "review_record_sha256": "2d47d48fa9c3a58b629c8e6741466cfff9feba25f614b9bc75265acac6ba5027",
+      "disposition": "A∧A is valid special example preceding general schema; not a false source formula.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-632",
+      "unit_id": "OLP-0701",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "52e7a2d58b0545681efffeee4bedeec7674028766496c50c3c7533ddb9dc3f6c",
+      "review_record": "evidence/REDO_GPT6_SOL_SEQUENT_CORE_2026-10-01.md",
+      "review_record_sha256": "63a6daf63d950a66a5da7d41f313907ed2350b717ff558c20b31486c080f64a3",
+      "disposition": "Fresh-c condition is inherited from preceding lemma; repeating it is optional, not a missing hypothesis.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-643",
+      "unit_id": "OLP-0703",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "e3bc2736d32886a309e9c5dcf3728f671cae7b4e702759f3209c128fb7a25288",
+      "review_record": "evidence/REDO_GPT6_SOL_SEQUENT_CORE_2026-10-01.md",
+      "review_record_sha256": "63a6daf63d950a66a5da7d41f313907ed2350b717ff558c20b31486c080f64a3",
+      "disposition": "Chapter braces already denote multisets; occurrence-preserving comprehension is conventional. Optional added multiplicity lesson withdrawn.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-651",
+      "unit_id": "OLP-0705",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "321f0cc524e5b6a72647d7a895c551c4dbc877389e1705ca008857ea978cd653",
+      "review_record": "evidence/REDO_GPT6_SOL_SEQUENT_RULES_2026-10-01.md",
+      "review_record_sha256": "ab5a0ce6377628c034ea842b19959045d257c542c7846c2daf1c0ec80fba2bc9",
+      "disposition": "General false-axiom family includes actual empty-context initial axiom.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-663",
+      "unit_id": "OLP-0709",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "b6815688a5bdacafe2b3bb16dcce37010b459b660f834c4bae10979ca0ec6b45",
+      "review_record": "evidence/REDO_GPT6_SOL_SEQUENT_RULES_2026-10-01.md",
+      "review_record_sha256": "ab5a0ce6377628c034ea842b19959045d257c542c7846c2daf1c0ec80fba2bc9",
+      "disposition": "Lambda role already fixed by exchange schema; caption enumeration optional.",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-840",
+      "unit_id": "OLP-0622",
+      "reporting_lane": "unresolved",
+      "applied_to_current_reader": false,
+      "target_sha256": "f79a7b644726e22198c081426fb839395395f3a7198ffa88930f959928ad7b28",
+      "review_record": "evidence/REDO_GPT6_SOL_BIOGRAPHIES_OPENING_2026-09-30.md",
+      "review_record_sha256": "ebd20ba137bceee3aaadcc8bc58bb275ed67f755575b8d4c69eddbdbfa34b6da",
+      "disposition": "প্রথম-hospital1894 বা criticism-trigger মিথ্যা প্রমাণিত নয়; original prose ফিরেছে।",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-846",
+      "unit_id": "OLP-0625",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "3acd83a91455dd4a4ef8d12327ea6f93f08877b3b4c912fd349eeefaa26316e2",
+      "review_record": "evidence/REDO_GPT6_SOL_BIOGRAPHIES_OPENING_2026-09-30.md",
+      "review_record_sha256": "ebd20ba137bceee3aaadcc8bc58bb275ed67f755575b8d4c69eddbdbfa34b6da",
+      "disposition": "After1938 সত্য;1940 permanent-date addition proposal, reader-এ নেই।",
+      "all_retained_markers_are_comments": true
+    },
+    {
+      "finding_id": "BN-SRC-848",
+      "unit_id": "OLP-0626",
+      "reporting_lane": "suggested_improvement",
+      "applied_to_current_reader": false,
+      "target_sha256": "cb0d9dad0d3f6c9e4c1f35d5c9754eeebbf6b68446488b37adf3f1ee6a645664",
+      "review_record": "evidence/REDO_GPT6_SOL_BIOGRAPHIES_OPENING_2026-09-30.md",
+      "review_record_sha256": "ebd20ba137bceee3aaadcc8bc58bb275ed67f755575b8d4c69eddbdbfa34b6da",
+      "disposition": "Standard choice context-এ proof defect প্রতিষ্ঠিত নয়; extra DC/order exposition reader থেকে সরেছে।",
+      "all_retained_markers_are_comments": true
+    }
+  ],
+  "method": "Current hash reconciliation with the existing full bilingual reviews; fifteen unresolved/optional lanes are already unapplied, and their retained target identifiers are comments only.",
+  "limits": "This is a disposition audit, not a second full reading or a proof of the two unresolved historical claims. Unclassified reporting rows are not automatically confirmed English errata."
+}

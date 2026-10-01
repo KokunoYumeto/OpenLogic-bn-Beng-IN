@@ -16,7 +16,7 @@ $(MN)$-এর মতো প্রমাণপদ একাই তার
 স্বতঃসিদ্ধের প্রমাণপদগুলি, সংশ্লিষ্ট
 স্বতঃসিদ্ধের !!{formula}s নির্দিষ্ট করে
 না। কিন্তু প্রসঙ্গ~$\Gamma$-তে সেগুলি
-নির্দিষ্ট করলে প্রমাণটি \emph{অনন্যভাবে
+নির্দিষ্ট করলে এবং পদটি সঠিকভাবে টাইপযুক্ত হলে প্রমাণটি \emph{অনন্যভাবে
 নির্ধারিত হয়}।
 
 \begin{defn}
@@ -71,7 +71,8 @@ $\Gamma = \{x:!A, y:!B, z:!C\}$
 
 \begin{prop}
 প্রমাণপদ~$N$-এর যেকোনো প্রসঙ্গ~$\Gamma$-র
-সাপেক্ষে $N$-এর ঠিক একটি টাইপ আছে।
+সাপেক্ষে $N$-এর সর্বাধিক একটি টাইপ আছে;
+ঠিক একটি থাকে যখন পদটি সঠিকভাবে টাইপযুক্ত।
 \end{prop}
 
 \begin{proof}
@@ -89,6 +90,9 @@ $\Gamma$-র সাপেক্ষে $N$-এর টাইপ~$!A$
 % BN-SRC-623 TARGET-CORRECTION-BEGIN
 \par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-623):} এখানে আমদানিকৃত সারণি tN3i-র; উৎসের \texttt{tab:tN2ip} উল্লেখটি আগের tN2i সারণিতে যায়। পূর্বে স্থির স্বতন্ত্র \texttt{tab:tN3ip} লেবেলের সঙ্গে মিলিয়ে উল্লেখ সংশোধিত।}
 % BN-SRC-623 TARGET-CORRECTION-END
+% BN-SRC-894 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-894):} সাধারণ প্রমাণপদে টাইপ নাও থাকতে পারে; এই অংশের নিজের উদাহরণেই এমন পদ আছে। বিধিগুলি টাইপের অনন্যতা দেয়, নির্বিশেষ অস্তিত্ব নয়।}
+% BN-SRC-894 TARGET-CORRECTION-END
 
 \subfile{rules-tN3}
 
@@ -145,9 +149,7 @@ $!A$ ও $!B$ সমষ্টির বিযুক্ত যোগফলের
 ছাড়া $\lfalse$-এর কোনো !!{proof}
 নেই। তাই মুক্ত চলরাশিহীন কোনো
 বদ্ধ প্রমাণপদের টাইপ~$\lfalse$ নয়।
-% BN-NORM-180 TARGET-NORMALIZATION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{ভাষাগত স্বাভাবিকীকরণ (BN-NORM-180):} বিযুক্ত যোগফলের সমষ্টি-সংজ্ঞায় উৎসের ইংরেজি \texttt{or/if/if} যথাক্রমে \texttt{বা/যদি/যদি} করা হয়েছে; সূচক, সদস্যতা, টাইপ ও শর্তের সত্যার্থ অপরিবর্তিত।}
-% BN-NORM-180 TARGET-NORMALIZATION-END
+% BN-NORM-180: translated display/caption text retained; optional annotation withdrawn.
 
 টাইপযুক্ত $\lambd$-ক্যালকুলাসের
 ক্রিয়কগুলি যে পদে প্রয়োগ করা হয়

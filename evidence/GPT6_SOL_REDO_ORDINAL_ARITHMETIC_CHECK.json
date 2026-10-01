@@ -1,0 +1,42 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_ORDINAL_ARITHMETIC_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/ord-arithmetic.tex",
+      "sha256": "ce9018ec62136785718ceb823fa6650db1d8f73cf12994af4560defb4c8ba92d"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/introduction.tex",
+      "sha256": "7e77ba8f5492691cc7c6aefdb4404c8c5b77f7e44a444b509cef189263ca6b6d"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/addition.tex",
+      "sha256": "0379aeef6c8b1ea9d3a98311ba17da0666e9ccaf490b8fb44dd5320377e3d3ca"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/using-addition.tex",
+      "sha256": "6c5201b43c63b73825e3c7dc423d6a0c34c48473f72026d33257c1b15b5f3b48"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/multiplication.tex",
+      "sha256": "67ad807fe538cec4861f99d10c5d261734a2039ba3d60fb29b0f0b7ff5785b3e"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/ord-arithmetic/exponentiation.tex",
+      "sha256": "d6e655d6184e6b42feeeb1ac50b7affd16eaa00028d9cc2ff092cb9549375dea"
+    }
+  ],
+  "পরীক্ষা": {
+    "HF-এ সাত স্তরাঙ্ক-সূত্র": 256,
+    "চিহ্নিত অনুলিপির সম্পর্ক ও ক্ষেত্র": 81,
+    "সসীম ঘাতের স্বাধীন সংখ্যা-ক্রম": 1310,
+    "সীমিত Cantor-রূপে পাঁচ ধর্ম": 19683,
+    "শূন্য গুণনীয়ক ও ঘাতের ভুল সীমা": 2,
+    "যোগ/গুণের অবিনিময় ও বিপরীত বণ্টনের ব্যর্থতা": 3
+  },
+  "সীমা": "HF পরীক্ষা সসীম সেটে, Cantor-রূপের কোডে সীমিত সসীম সূচক/সহগ। অসীম limit, সাধারণ well-order, finite-support set-এর well-foundedness ও পুনরাবৃত্তি-অনন্যতা মানবপাঠ্য review-তে পৃথক সাধারণ proof; পরীক্ষার সংখ্যা তার বিকল্প নয়। শূন্যের পূর্বঘাতসহ ভুল limit-এর ১ বনাম ০ সাক্ষী algebraic হিসাব, অসীম ordinal-প্রমাণ নয়।"
+}

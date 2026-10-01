@@ -151,7 +151,8 @@ Halld\'en-এর \emph{অর্থহীনতার যুক্তিবি�
 প্রমাণ করো যে প্রতিটি ধ্রুপদি সর্বতঃসত্য~$\LogHal$-এ সর্বতঃসত্য।
 \end{prob}
 
-ধ্রুপদি যুক্তিবিদ্যার সঙ্গে তাদের সর্বতঃসত্যগুলি অভিন্ন হলেও তাদের
+সাধারণ সংযোজকগুলির ভাষায় ধ্রুপদি যুক্তিবিদ্যার সঙ্গে তাদের সর্বতঃসত্যগুলি
+অভিন্ন হলেও তাদের
 অনুসিদ্ধান্ত সম্পর্ক আলাদা। যেমন, $\LogLP$ \emph{পরাসঙ্গত}: এতে
 $\lnot p, p \Entails/ q$; তাই বিস্ফোরণ নীতি
 $\lnot !A, !A \Entails !B$ সাধারণভাবে সিদ্ধ নয়। ($!A$ ও~$!B$-এর কোনো
@@ -170,7 +171,9 @@ $\lnot !A, !A \Entails !B$ সাধারণভাবে সিদ্ধ নয
   \end{enumerate}
 \end{prob}
 
-$\LogLuk[3]$-এ $\Undef$-কেও মনোনীত করলে কী হয়?
+$\LogLuk[3]$-এ $\Undef$-কেও মনোনীত করা যায়। তবে শুধু এই পরিবর্তনটি
+R-Mingle দেয় না। নিচের R-Mingle ম্যাট্রিক্সেও দুটি মান মনোনীত, কিন্তু
+শর্তবচনের সত্যসারণি আলাদা।
 
 \begin{defn}
   \emph{3-মানী R-Mingle যুক্তিবিদ্যা}~$\LogRM[3]$ নিচের ম্যাট্রিক্স
@@ -181,10 +184,22 @@ $\LogLuk[3]$-এ $\Undef$-কেও মনোনীত করলে কী হ�
     \item সত্যমানের সেট $V = \{\True, \Undef, \False\}$।
     \item $\True$ ও~$\Undef$ মনোনীত; অর্থাৎ
     $V^+ = \{\True, \Undef\}$।
-    \item $\tf{\lfalse}=\False$; অবশিষ্ট সত্যমান-অপেক্ষকগুলি
-    \L ukasiewicz যুক্তিবিদ্যা~$\LogLuk[3]$-এর মতোই।
+    \item $\tf{\lfalse}=\False$; নঞর্থকরণ, সংযোজন ও বিযোজনের
+    সত্যমান-অপেক্ষকগুলি \L ukasiewicz যুক্তিবিদ্যা~$\LogLuk[3]$-এর মতোই।
+    শর্তবচনের সত্যসারণি হলো
+    \[
+    \begin{array}{c|ccc}
+      \tf{\lif}[\LogRM[3]] & \True & \Undef & \False \\
+      \hline
+      \True & \True & \False & \False \\
+      \Undef & \True & \Undef & \False \\
+      \False & \True & \True & \True
+    \end{array}
+    \]
   \end{enumerate}
 \end{defn}
+% BN-SRC-683 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন ও পূর্বপর্যালোচনার মেরামত (BN-SRC-683):} হিমায়িত উৎস ও আগের বাংলা পর্যালোচনা শুধু দুটি মান মনোনীত করা \L ukasiewicz ম্যাট্রিক্সকে R-Mingle বলে চিহ্নিত করেছিল। কিন্তু সেই ম্যাট্রিক্সে $\pAssign v(p)=\Undef$ ও~$\pAssign v(q)=\False$ হলে $p$ এবং $p\lif q$ উভয়ই মনোনীত, অথচ $q$ অমনোনীত; তাই modus ponens ব্যর্থ হয়। Kooi ও Tamminga-র গবেষণায় প্রদত্ত প্রকৃত RM3 সারণি অনুযায়ী বাংলা সংজ্ঞায় শর্তবচনের তিনটি ঘর সংশোধিত: $\tf{\lif}[\LogRM[3]](\True,\Undef)=\False$, $\tf{\lif}[\LogRM[3]](\Undef,\Undef)=\Undef$, $\tf{\lif}[\LogRM[3]](\Undef,\False)=\False$। অবশিষ্ট ছয় ঘর এবং নঞর্থকরণ, সংযোজন ও বিযোজন অপরিবর্তিত। নিচের অনুশীলনগুলি এই সংশোধিত RM3 ম্যাট্রিক্স সম্পর্কে। গবেষণার নির্দিষ্ট স্থান: \emph{Completeness via Correspondence for Extensions of the Logic of Paradox}, শেষ আলোচনায় মুদ্রিত পৃষ্ঠা~10, DOI \url{https://doi.org/10.1017/S1755020312000196}।} % BN-SRC-683 TARGET-CORRECTION-END
 
 \begin{prob}
   নিচের কোন সম্পর্কগুলি $\LogRM[3]$-এ সিদ্ধ?

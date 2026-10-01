@@ -1,0 +1,34 @@
+{
+  "schema": "openlogic-bn-redo-semantic-check/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_CARDINAL_ARITHMETIC_2026-09-30.md",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/card-arithmetic.tex",
+      "sha256": "37e120055465570445c0d79dfae508fad8adb52daaa60783c2a0f9cacce5fba4"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/opps.tex",
+      "sha256": "0851c313c92b706190d8b179fc6eaaabebeecf78833ed02c5e9cf6d7c42fa7c0"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/simp.tex",
+      "sha256": "c3f26213bba36e4f00a1c778240cd2d1b417ab0b1b01c49a0c4651ec2b79d2fd"
+    },
+    {
+      "path": "bn-Beng-IN/content/set-theory/card-arithmetic/expotough.tex",
+      "sha256": "3aa8ec6f20f505a0d540beb5a4543efc2bf9f1650daa2872ca0b657919876c4f"
+    }
+  ],
+  "পরীক্ষা": {
+    "সসীম HF function-space-র rank": 64,
+    "split-এর inverse সহ map": 1906,
+    "curry-এর inverse সহ map": 22080,
+    "characteristic map": 1023,
+    "canonical square-এর exact inverse": 10000,
+    "সর্বপ্রথম family-index-এর injection": 4096
+  },
+  "সীমা": "সসীম rank ও function-map, canonical Nat-square এবং সীমিত overlapping family-এর পরীক্ষা। একই দুই input-rank-এ ভিন্ন অসীম function-space-rank, সব cardinal-এর square identity, continuum সমতা, Choice ও cofinality review-তে সাধারণ proof; সসীম পরিমাণ তার বিকল্প নয়।"
+}

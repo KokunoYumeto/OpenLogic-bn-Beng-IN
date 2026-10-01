@@ -177,13 +177,18 @@ $(!A \lif !B) \land (!B \lif !A)$-এর
 \Log{G3c}-তে পূর্বধারণা
 $\Gamma \Sequent \Delta$-র
 !!a{proof}~$\pi$ আছে।
-$\pi$-র প্রত্যেক সিকোয়েন্টের
+প্রথমে প্রমাণের আইগেনচলগুলি এমন নতুন নামে লিখি,
+যা যোগ করতে চাওয়া সূত্রে নেই; প্রমাণের উচ্চতা বদলায় না।
+তারপর $\pi$-র প্রত্যেক সিকোয়েন্টের
 ডান দিকে !!{formula}~$!A$ যোগ করি।
 স্বতঃসিদ্ধগুলি স্বতঃসিদ্ধই থাকে,
 সঠিক অনুমানগুলিও সঠিক থাকে।
 নতুন !!{proof}-এর অন্তিম
 সিকোয়েন্ট হলো $\Gamma \Sequent
 \Delta, !A$।
+% BN-SRC-901 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-901):} যোগ করা সূত্রে কোনো পুরোনো আইগেনচল থাকলে পরিমাণসূচক-বিধির সতেজতা-শর্ত নষ্ট হতে পারে। যোগ করার আগে সেই নামগুলি বদলে নেওয়া হয়েছে।}
+% BN-SRC-901 TARGET-CORRECTION-END
 % BN-SRC-626 TARGET-CORRECTION-BEGIN
 \par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-626):} উৎসে নতুন প্রমাণের অন্তিম বস্তুটিকে end-formula বলা হয়েছে, কিন্তু প্রদর্শিত \(\Gamma\Sequent\Delta,!A\) একটি সিকোয়েন্ট; অন্তিম সিকোয়েন্ট বলা হয়েছে।}
 % BN-SRC-626 TARGET-CORRECTION-END
@@ -300,8 +305,9 @@ $\pheight{\pi} \le \pheight{\pi_1}$
   $\Gamma \Sequent \Delta$
   স্বতঃসিদ্ধ—অর্থাৎ কোনো
   আণবিক $!C$ একই সঙ্গে
-  $\Gamma$ ও~$\Delta$-তে আছে।
-  তাই $\Gamma \Sequent \Delta, !A$-ও
+   $\Gamma$ ও~$\Delta$-তে আছে,
+  নয়তো বাঁ দিকে অসংগতি-সূত্র আছে।
+  দুই ক্ষেত্রেই $\Gamma \Sequent \Delta, !A$-ও
   স্বতঃসিদ্ধ। $n = \pheight{\pi} >0$
   হলে !!{proof}~$\pi$-র
   একটি শেষ অনুমান আছে। শেষ
@@ -354,6 +360,9 @@ $\pheight{\pi} \le \pheight{\pi_1}$
   \max(\pheight{\pi_1'}, \pheight{\pi_2'}) + 1 = \max(\pheight{\pi_1},
   \pheight{\pi_2}) + 1 = \pheight{\pi}$।
 \end{proof}
+% BN-SRC-906 TARGET-CORRECTION-BEGIN
+\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-906):} শূন্য উচ্চতার ক্ষেত্রে আণবিক পরিচয়-স্বতঃসিদ্ধের পাশাপাশি বাঁ দিকে অসংগতি-সূত্র থাকার স্বতঃসিদ্ধও আছে। ডান দিকে সূত্র যোগে উভয়ই স্বতঃসিদ্ধ থাকে।}
+% BN-SRC-906 TARGET-CORRECTION-END
 
 \olref{prop:weak-G3c-adm} খুব
 কাজে লাগে। তার পুনঃপ্রয়োগের

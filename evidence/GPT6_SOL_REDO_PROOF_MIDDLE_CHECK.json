@@ -1,0 +1,92 @@
+{
+  "schema": "openlogic-bn-redo-proof-middle/1",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "review_record": "evidence/REDO_GPT6_SOL_PROOF_MIDDLE_2026-09-30.md",
+  "targets": [
+    {
+      "unit_id": "OLP-0658",
+      "path": "bn-Beng-IN/content/proof-theory/cut-elimination/interpolation.tex",
+      "sha256": "d7764077e4352e9f90e1c2b3d4349b5d5b3c0d09eededc67b7ada956bfd8d8fe"
+    },
+    {
+      "unit_id": "OLP-0659",
+      "path": "bn-Beng-IN/content/proof-theory/cut-elimination/introduction.tex",
+      "sha256": "96a5305ecdeabd203bea2c7aec44fd7ab7a9f6b8eb7c5215ec37e20d8d9f4a03"
+    },
+    {
+      "unit_id": "OLP-0660",
+      "path": "bn-Beng-IN/content/proof-theory/cut-elimination/intuitionistic.tex",
+      "sha256": "dcafa678f3751d06986674b59e8f50dc3e6a60975826cae2f37448bd6ce8814e"
+    },
+    {
+      "unit_id": "OLP-0661",
+      "path": "bn-Beng-IN/content/proof-theory/cut-elimination/midsequent.tex",
+      "sha256": "7c688ca5fea66a6828e4ae6f0baf93bcd3dfa6b5bebdca3d332a70ca7c0b402c"
+    },
+    {
+      "unit_id": "OLP-0662",
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/grafting.tex",
+      "sha256": "349512a3995bb19acab6b106851257b18ab5007674aecfc13c3d4649eb66ffea"
+    },
+    {
+      "unit_id": "OLP-0663",
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/introduction.tex",
+      "sha256": "61d90d87e94ec4f92d60baf7fa7072c2273269ff5c52c7486a30b022b5f6497d"
+    },
+    {
+      "unit_id": "OLP-0664",
+      "path": "bn-Beng-IN/content/proof-theory/natural-deduction/natural-deduction.tex",
+      "sha256": "d7169a239bce526446ce9c98744001154581b11677827a4a74f023631fb48f5b"
+    }
+  ],
+  "counterexample": {
+    "all_assumption_formulas": "P",
+    "original_d1_open": [
+      "x"
+    ],
+    "replacement_open": [
+      "y"
+    ],
+    "captured_graft_open": [],
+    "fresh_bound_label_graft_open": [
+      "y"
+    ],
+    "scope": "specific valid N1 rule trees, demonstrates missing capture side condition; not generic proof-search test"
+  },
+  "primary_context": [
+    {
+      "path": "upstream/content/proof-theory/natural-deduction/rules-proofs.tex",
+      "scope": "actual full English read, N1 label/discharge definition; bilingual future-unit review pending",
+      "sha256": "0bcf0b2ee130188295f81cabb47e058a856ed3e6eeec2e5df8e552e3e4e8df56"
+    },
+    {
+      "path": "upstream/content/proof-theory/natural-deduction/sequents.tex",
+      "scope": "actual full English read, exact labelled contexts; bilingual future-unit review pending",
+      "sha256": "838a883ad78be2c58a1c21cd84ac9dca8469872ad5ec0ed8ad01e3e8e82b2d54"
+    },
+    {
+      "path": "upstream/content/proof-theory/sequent-calculus/rules-G3c.tex",
+      "scope": "actual full English table read; bilingual future-unit review pending",
+      "sha256": "0beb76005abcb4f20109400d18ae1d632e7126bd6dea43c20c9f42d114c9664d"
+    },
+    {
+      "path": "upstream/content/proof-theory/sequent-calculus/quantifiers.tex",
+      "scope": "actual full English regularity/substitution read; bilingual future-unit review pending",
+      "sha256": "a27d60734d10b75dad7ff081448ddad7036694cdb489b2a0cfa8c97d002bc480"
+    },
+    {
+      "path": "upstream/content/proof-theory/sequent-calculus/rules-proofs.tex",
+      "scope": "actual bounded English first78 lines, closed t convention; not full future-unit review",
+      "sha256": "ef1231f53bdbfff4b0cab8f4a96223632447f783e6cb85ac9e774dceba28b699"
+    }
+  ],
+  "dispositions": {
+    "BN-SRC-524": "retracted/applied_false",
+    "BN-SRC-527": "suggested_improvement/applied_false",
+    "BN-SRC-532": "suggested_improvement/applied_false",
+    "BN-SRC-542": "retracted/applied_false"
+  },
+  "limits": "No exercise answers, new chapter, publication or rendered QA. Full bilingual future dependencies not counted as completed units. Original broader strong source claims not blanket-confirmed."
+}

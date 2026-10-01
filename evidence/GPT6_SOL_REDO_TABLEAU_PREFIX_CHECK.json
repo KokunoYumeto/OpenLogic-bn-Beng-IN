@@ -1,0 +1,462 @@
+{
+  "schema": "openlogic-bn-current-tableau-prefix-check/1",
+  "status": "passed",
+  "prepared_tex_sha256": "6629d3430ce3fbc649f2e9e7d23f783d6d281b889bc663bb7ee37542b86b1140",
+  "html_sha256": "e4683b284412226f056d711ad2351a7ffb424fadb692bdc98f0a094ec0711606",
+  "tableau_graphs_sha256": "155c235d699b0a53fd38beaef3fb71f831f53a01f21e1fbd0273a87b22aa44e5",
+  "tableau_parser_sha256": "a24d98e670de88f703472f577b6e93e7a0614a46352b4cf429b48bb21b684e20",
+  "macro_definition_source_sha256": "76af3674c68139572b71de9908d690700cd7e324d221d649930ecda020935724",
+  "tableaux": 62,
+  "nodes": 390,
+  "modal_examples": {
+    "unit_id": "OLP-0463",
+    "trees": 2,
+    "nodes_per_tree": 10,
+    "world_prefixes": [
+      "1",
+      "1.1"
+    ],
+    "fork_children_per_tree": [
+      7,
+      9
+    ]
+  },
+  "checks": [
+    {
+      "unit_id": "OLP-0067",
+      "tree_index": 1,
+      "nodes": 5,
+      "signed_formulas": 5,
+      "source_body_sha256": "6c2ff769d5a1bdc229578114c95278a2846452fee146842d2faf79a7203dc99e"
+    },
+    {
+      "unit_id": "OLP-0101",
+      "tree_index": 1,
+      "nodes": 5,
+      "signed_formulas": 5,
+      "source_body_sha256": "8b0bae77059e261c459e31094b78653eff95043aa66bb9e7f524170366ce41c2"
+    },
+    {
+      "unit_id": "OLP-0102",
+      "tree_index": 1,
+      "nodes": 1,
+      "signed_formulas": 1,
+      "source_body_sha256": "670afba1d06fe7aa0b54a30d71c1e34f84709f415f256763753818b832bf3da3"
+    },
+    {
+      "unit_id": "OLP-0102",
+      "tree_index": 2,
+      "nodes": 3,
+      "signed_formulas": 3,
+      "source_body_sha256": "398b0a68ee86184257a6c264c690377eb6463a05f84b22bdbc8af3a507b6001b"
+    },
+    {
+      "unit_id": "OLP-0102",
+      "tree_index": 3,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "266870d43e8d0f04e96a1525f06366efe6941c648ad913fc11d1cc554d211bc9"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 1,
+      "nodes": 1,
+      "signed_formulas": 1,
+      "source_body_sha256": "c4ee14fb6c5a988269d85d25aa355fa55693a74f5c2f575ff2616593fda2697d"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 2,
+      "nodes": 3,
+      "signed_formulas": 3,
+      "source_body_sha256": "b509c21c68a6a66431ae7b9f989b4dd12392c161bd850def8371c3d86e2ba36f"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 3,
+      "nodes": 5,
+      "signed_formulas": 5,
+      "source_body_sha256": "a4a6ac7f0e6c2e2e61e17d6e770f04e9334d8ac326ae664882e57d633fcab95a"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 4,
+      "nodes": 1,
+      "signed_formulas": 1,
+      "source_body_sha256": "59b3d4908a4ec7d2a04446449d835776b92dd6a3ff5080afa24cc0a798904b6e"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 5,
+      "nodes": 3,
+      "signed_formulas": 3,
+      "source_body_sha256": "adaece8dcd2ddc7753b4ae275b7b3be86ddebbe59f3d0a51e8797f5a335c672f"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 6,
+      "nodes": 5,
+      "signed_formulas": 5,
+      "source_body_sha256": "6c68bd6d981e0065fd6f90850364e7b86a3ce12471262aab6291518bba630b4c"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 7,
+      "nodes": 9,
+      "signed_formulas": 9,
+      "source_body_sha256": "712f81597b5c9d19fb67003985d9991e9dfeae18b8c6bab085199f70abd4cac5"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 8,
+      "nodes": 10,
+      "signed_formulas": 10,
+      "source_body_sha256": "c6ee9bcb46db10fe2a0804f6a83c0baf2eb59bb59b920e374c69e66793605e43"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 9,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "22784cec47e1474665156a8e6f34b1f711937f45dd7cc3a99a0cc6d64b1f93af"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 10,
+      "nodes": 8,
+      "signed_formulas": 8,
+      "source_body_sha256": "93cb3d86d1b7133a378dd03ba9cc079ebbfbdf58d6f342bc0ec5a1bf3e33ba5a"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 11,
+      "nodes": 12,
+      "signed_formulas": 12,
+      "source_body_sha256": "955234fc0298026cb7f1a2823b8714aa1bb6d30ea4d41a8566abcde843b0f113"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 12,
+      "nodes": 16,
+      "signed_formulas": 16,
+      "source_body_sha256": "6e38c3e0c220c4577accbef985adac2617796adce12802911d8d8f2932187e8d"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 13,
+      "nodes": 20,
+      "signed_formulas": 20,
+      "source_body_sha256": "aab1d342a895a6eeee40d1a498a9dc064502d65287189b7ed5b175e75669f8b5"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "tree_index": 14,
+      "nodes": 16,
+      "signed_formulas": 16,
+      "source_body_sha256": "8fd822efd331ae4e72d823151be2b4b471916831216c629535edd8c01b88b67b"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 1,
+      "nodes": 1,
+      "signed_formulas": 1,
+      "source_body_sha256": "a61cb35f2b803e20c6bc377b4eb9b890a9efc431681e4240f5846e4743adc853"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 2,
+      "nodes": 3,
+      "signed_formulas": 3,
+      "source_body_sha256": "04d68908477dc42ccc687d66b55934f952ee1cf5e29acb20809dc3eda6583058"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 3,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "150591430d91a3b529cc4926f694083a211693502d09b0e07fb33f6a1e64ec14"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 4,
+      "nodes": 5,
+      "signed_formulas": 5,
+      "source_body_sha256": "c6f6cae7ebfc512b7dec64568df756e75a80ee941a9da1faeae1f6033cfa3590"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 5,
+      "nodes": 7,
+      "signed_formulas": 7,
+      "source_body_sha256": "6b5986af52f2306cc97dd0718a60dc750fa1397b9626729dc2b2254b365a323c"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 6,
+      "nodes": 3,
+      "signed_formulas": 3,
+      "source_body_sha256": "5989fc6f762f89df6bd2c486f881befef429d5929fc50606a7f9ed928a8ba9b4"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 7,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "87d13a91b07a78ce18a2fce22375d026724d11523655a6267d0df9b5a734291e"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 8,
+      "nodes": 6,
+      "signed_formulas": 6,
+      "source_body_sha256": "c8504eb8c4d93f54f4699b4630b0f725e7926b80de00f4bf6d4c6232ce80a4d1"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 9,
+      "nodes": 8,
+      "signed_formulas": 8,
+      "source_body_sha256": "5e9176f0546c452bf09d390e961645809dad315c7de7f279022c34915b515333"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 10,
+      "nodes": 10,
+      "signed_formulas": 10,
+      "source_body_sha256": "7f3bdea0a4cb9c162250dc0c65d5e377521899c009edba5d001da1ce10718612"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 11,
+      "nodes": 3,
+      "signed_formulas": 3,
+      "source_body_sha256": "fe316b348e43e905a56408baa7a2ab5eb9904f6e85c2ca8f1bfe1a16afe7fd62"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 12,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "b1ce9b494858169f5c1d75c20b5ddb6b2d682b1d2457b55fdb4015b68f6da6ab"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 13,
+      "nodes": 6,
+      "signed_formulas": 6,
+      "source_body_sha256": "c10e74254545959608e9242e24b82fe6194b4f9f51857482eebdaeb46d996c14"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 14,
+      "nodes": 8,
+      "signed_formulas": 8,
+      "source_body_sha256": "ac9c5d4a7798ae7622d72214856cb343b5ef630d7ccf419de0b3b737cb484a2c"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "tree_index": 15,
+      "nodes": 10,
+      "signed_formulas": 10,
+      "source_body_sha256": "5b596cef0e4ca244b853a5bd218354b25d7d1cc540243c23eaa8effa81725634"
+    },
+    {
+      "unit_id": "OLP-0105",
+      "tree_index": 1,
+      "nodes": 2,
+      "signed_formulas": 2,
+      "source_body_sha256": "98115e5558acae501f48f316ff220804d7d783b487143bb8210c1c01a5f70c5f"
+    },
+    {
+      "unit_id": "OLP-0107",
+      "tree_index": 1,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "f674933a31aea360a32dd32e71a676aec6b2484d0abb8eeb04f8007d64f71946"
+    },
+    {
+      "unit_id": "OLP-0107",
+      "tree_index": 2,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "325a657a7fac976b38ab8497902306e05254d9d714cbb00b868475703176ea59"
+    },
+    {
+      "unit_id": "OLP-0107",
+      "tree_index": 3,
+      "nodes": 5,
+      "signed_formulas": 5,
+      "source_body_sha256": "b275deb9951f0745aa0382cfdad5417027d1b639953153475c7b923a444b3863"
+    },
+    {
+      "unit_id": "OLP-0107",
+      "tree_index": 4,
+      "nodes": 7,
+      "signed_formulas": 7,
+      "source_body_sha256": "7e9da0e4f5f51fb8272a78847816e29d93581acf0c4c2f76bc6f9d92676670e3"
+    },
+    {
+      "unit_id": "OLP-0107",
+      "tree_index": 5,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "910c555c306a6d256fa4c275176c3f006b007b3af4112d04789dfe75f27831db"
+    },
+    {
+      "unit_id": "OLP-0107",
+      "tree_index": 6,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "7b6467548d676f071f72a41dbab1b9e918eec1248380bb3482442f27eb527417"
+    },
+    {
+      "unit_id": "OLP-0107",
+      "tree_index": 7,
+      "nodes": 5,
+      "signed_formulas": 5,
+      "source_body_sha256": "5aec48562583d3188200ad9e2f501c5053259b24b914b738e75302a238eedd78"
+    },
+    {
+      "unit_id": "OLP-0107",
+      "tree_index": 8,
+      "nodes": 5,
+      "signed_formulas": 5,
+      "source_body_sha256": "2c214016326922150fcd9fb23e7a52bcdd01b4ecf6b44ac3d60c03d6cc240341"
+    },
+    {
+      "unit_id": "OLP-0107",
+      "tree_index": 9,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "2ff6e379d6083717ad6e11afc4dec5fc94f5b9fde49ac14465c8336342fc6f0c"
+    },
+    {
+      "unit_id": "OLP-0108",
+      "tree_index": 1,
+      "nodes": 3,
+      "signed_formulas": 3,
+      "source_body_sha256": "b124b9c5402605fc0a1fe45c5c183c2d5b4db039cbbb18643d03c892d6f53d1c"
+    },
+    {
+      "unit_id": "OLP-0108",
+      "tree_index": 2,
+      "nodes": 3,
+      "signed_formulas": 3,
+      "source_body_sha256": "bd8eb723b28390d696f9b8c6408835152a666f77d2bbbe61288b0d011f1b333a"
+    },
+    {
+      "unit_id": "OLP-0108",
+      "tree_index": 3,
+      "nodes": 7,
+      "signed_formulas": 3,
+      "source_body_sha256": "6846e6c2d9c570d5dd4a0dbeb174811930e7be7a03c7041109b23325fadcac0b"
+    },
+    {
+      "unit_id": "OLP-0108",
+      "tree_index": 4,
+      "nodes": 8,
+      "signed_formulas": 4,
+      "source_body_sha256": "85093e136f5b2ad9145e1733d805c44e54d7cbf6cdcaf1dd0f5b6e5810f7237d"
+    },
+    {
+      "unit_id": "OLP-0110",
+      "tree_index": 1,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "c70b4f24072f934782dd0453dd3a4a95a9e2b85c6d26aef39a78f7e0aaa428bf"
+    },
+    {
+      "unit_id": "OLP-0110",
+      "tree_index": 2,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "a3e2e7e735192881804f8eea6fe7219a59e38378c143df107e70bc4aa6b6c078"
+    },
+    {
+      "unit_id": "OLP-0110",
+      "tree_index": 3,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "9fba441b313d760cf263ba249a809a57af2787af5e921043e5faabf4794d6247"
+    },
+    {
+      "unit_id": "OLP-0684",
+      "tree_index": 1,
+      "nodes": 20,
+      "signed_formulas": 20,
+      "source_body_sha256": "2464896cbad2c4e3d94d628e2661007227f2d193413b232f9da8fc64025432c4"
+    },
+    {
+      "unit_id": "OLP-0462",
+      "tree_index": 1,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "1c2c6040dac711f6084603c567d4e4d43e61d70a1538fe6f0f4b21b11c43d058"
+    },
+    {
+      "unit_id": "OLP-0462",
+      "tree_index": 2,
+      "nodes": 4,
+      "signed_formulas": 4,
+      "source_body_sha256": "f42bea2d03a682c9ec57d2f281a674b6d40e7bd89f2414c8c97f2af85b40bced"
+    },
+    {
+      "unit_id": "OLP-0463",
+      "tree_index": 1,
+      "nodes": 10,
+      "signed_formulas": 10,
+      "source_body_sha256": "e20bf7f83bd8268245590a83268a3e083ec558f367bbdf8b00f604c6ce9838ef"
+    },
+    {
+      "unit_id": "OLP-0463",
+      "tree_index": 2,
+      "nodes": 10,
+      "signed_formulas": 10,
+      "source_body_sha256": "5192a0083a2a1b0f50051a70551f1bbe1d49204a9d1263b8f25aadce8c0d77ed"
+    },
+    {
+      "unit_id": "OLP-0465",
+      "tree_index": 1,
+      "nodes": 7,
+      "signed_formulas": 7,
+      "source_body_sha256": "3304cb1691c104d8d7646406c7bbf701fee832f905af875564fc7c06188629bc"
+    },
+    {
+      "unit_id": "OLP-0467",
+      "tree_index": 1,
+      "nodes": 6,
+      "signed_formulas": 6,
+      "source_body_sha256": "164044b62fb6a0207c0dbf89bff2ab31936c8ede8283c1d6da19d6e45f2a036f"
+    },
+    {
+      "unit_id": "OLP-0469",
+      "tree_index": 1,
+      "nodes": 7,
+      "signed_formulas": 7,
+      "source_body_sha256": "7a7a2937e92236fcec9c26901fd92da4ef0a45d8d718c8fc18087880efe1c866"
+    },
+    {
+      "unit_id": "OLP-0469",
+      "tree_index": 2,
+      "nodes": 9,
+      "signed_formulas": 9,
+      "source_body_sha256": "f22575661d79d1f7edb2d4a020ad0e3ee953a9df2b4ab4b632099f8d9da8f532"
+    },
+    {
+      "unit_id": "OLP-0469",
+      "tree_index": 3,
+      "nodes": 13,
+      "signed_formulas": 13,
+      "source_body_sha256": "1a36003b37f90c34c38ecb13759cecacc0478eb6b1ea39f021b11c5ca53216c4"
+    },
+    {
+      "unit_id": "OLP-0514",
+      "tree_index": 1,
+      "nodes": 10,
+      "signed_formulas": 10,
+      "source_body_sha256": "a619796d1add53f2574426c4a0f9d2997508f2f4766f462076201f8608e88153"
+    }
+  ],
+  "method": "Exact prepared-body hashes; independent signed-macro inventory, prefix/formula multiplicities, bracket intervals, parent/child containment and the two explicit modal examples.",
+  "limits": "This checks retained Forest structure and macro arguments; proof validity and browser appearance require separate review."
+}

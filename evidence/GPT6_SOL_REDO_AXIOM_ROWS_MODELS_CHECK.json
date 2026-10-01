@@ -1,0 +1,349 @@
+{
+  "status": "passed",
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "effort": "ultra",
+  "numbered_rows_checked": 25,
+  "rows": [
+    {
+      "proof_block": 1,
+      "line": 1,
+      "system": "KT5",
+      "rule": "Ax 5",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 1,
+      "line": 2,
+      "system": "KT5",
+      "rule": "Ax T_\\Diamond",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 1,
+      "line": 3,
+      "system": "KT5",
+      "rule": "PL",
+      "references": [
+        2,
+        1
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 1,
+      "system": "KT5",
+      "rule": "Ax 5",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 2,
+      "system": "KT5",
+      "rule": "Ax T_\\Diamond",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 3,
+      "system": "KT5",
+      "rule": "PL",
+      "references": [
+        2,
+        1
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 4,
+      "system": "KT5",
+      "rule": "Ax 5_\\Diamond",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 5,
+      "system": "KT5",
+      "rule": "RK",
+      "references": [
+        4
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 2,
+      "line": 6,
+      "system": "KT5",
+      "rule": "PL",
+      "references": [
+        3,
+        5
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 1,
+      "system": "KDB4",
+      "rule": "Ax B_\\Diamond",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 2,
+      "system": "KDB4",
+      "rule": "Ax D",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 3,
+      "system": "KDB4",
+      "rule": "PL",
+      "references": [
+        1,
+        2
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 4,
+      "system": "KDB4",
+      "rule": "Ax 4",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 3,
+      "line": 5,
+      "system": "KDB4",
+      "rule": "PL",
+      "references": [
+        4,
+        3
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 1,
+      "system": "KB4",
+      "rule": "Ax B",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 2,
+      "system": "KB4",
+      "rule": "Ax 4_\\Diamond",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 3,
+      "system": "KB4",
+      "rule": "RK",
+      "references": [
+        2
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 4,
+      "line": 4,
+      "system": "KB4",
+      "rule": "PL",
+      "references": [
+        1,
+        3
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 5,
+      "line": 1,
+      "system": "KB5",
+      "rule": "Ax B",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 5,
+      "line": 2,
+      "system": "KB5",
+      "rule": "Ax 5_\\Diamond",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 5,
+      "line": 3,
+      "system": "KB5",
+      "rule": "RK",
+      "references": [
+        2
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 5,
+      "line": 4,
+      "system": "KB5",
+      "rule": "PL",
+      "references": [
+        1,
+        3
+      ],
+      "status": "passed"
+    },
+    {
+      "proof_block": 6,
+      "line": 1,
+      "system": "KT",
+      "rule": "Ax T",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 6,
+      "line": 2,
+      "system": "KT",
+      "rule": "Ax T_\\Diamond",
+      "references": [],
+      "status": "passed"
+    },
+    {
+      "proof_block": 6,
+      "line": 3,
+      "system": "KT",
+      "rule": "PL",
+      "references": [
+        1,
+        2
+      ],
+      "status": "passed"
+    }
+  ],
+  "actual_countermodel_figures": [
+    {
+      "figure": 1,
+      "worlds": 2,
+      "successor_masks": [
+        2,
+        1
+      ],
+      "p_mask": 2,
+      "reflexive": false,
+      "symmetric": true,
+      "serial": true,
+      "euclidean": false,
+      "satisfaction_labels_checked": 3,
+      "status": "passed"
+    },
+    {
+      "figure": 2,
+      "worlds": 3,
+      "successor_masks": [
+        3,
+        7,
+        6
+      ],
+      "p_mask": 3,
+      "reflexive": true,
+      "symmetric": true,
+      "serial": true,
+      "euclidean": false,
+      "satisfaction_labels_checked": 5,
+      "status": "passed"
+    },
+    {
+      "figure": 3,
+      "worlds": 4,
+      "successor_masks": [
+        6,
+        14,
+        14,
+        14
+      ],
+      "p_mask": 6,
+      "reflexive": false,
+      "symmetric": false,
+      "serial": true,
+      "euclidean": true,
+      "satisfaction_labels_checked": 2,
+      "status": "passed"
+    }
+  ],
+  "representative_axiom_and_system_relative_counterexamples": "passed",
+  "targets": [
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/axioms-systems.tex",
+      "sha256": "7af47948ff760ba4aad5ba5ee995b5f014ce6d1cf1898d60b49e2345261eea7a"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/consistency.tex",
+      "sha256": "cfe89e52c0c0971b962f979f402e5637dd2518ceb2ca141d6325fc135827a55b"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/derived-rules.tex",
+      "sha256": "d959fd29efb198404385525a36c4f56b7e582ac0025124166901b095ffbc6c37"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/duals.tex",
+      "sha256": "3b9b76043ae6b19b89da83fd11cf635b1a1aa14f24cdbeffbaee0bd997fb4001"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/introduction.tex",
+      "sha256": "6d3e6f36159baefbed60a28ac2185a7d3b62bbfb65d498534066595e8c807457"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/logics-proofs.tex",
+      "sha256": "8da4b14fb283a797860bf0f2536a952e795a20eb5355a59b606879a2074dc813"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/more-proofs-in-K.tex",
+      "sha256": "2d408f96b84ae4fe736fe8aeb250ca04136ceeb3f83250b8dee50c253567d7a4"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/normal-logics.tex",
+      "sha256": "5bc4101d777b532e7e883ac5f302f852fd9ec6248556971a0042248f5da725c3"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/proofs-in-K.tex",
+      "sha256": "3b90319151d0e7b5fa0b669585715d85d8af82846d829fed4a3666f556b110c2"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/proofs-modal-systems.tex",
+      "sha256": "c696ddc7e763e887d958ac69be66b740116a93d9fddb44dd216533af253c121e"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/provability-from-set.tex",
+      "sha256": "1becfa6ac316e3853f263835d66d8832b0ae245a660fbae618ac1c3a2596989c"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/provability-properties.tex",
+      "sha256": "9ee0b8266021aa36761ef67b455d96cb5cdfc2e69b3a1a1a5877e2be10152e62"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/soundness.tex",
+      "sha256": "f3f7856ee0ce668380fe491e56af58570ea300447bb5bb9c6b33ed18bf89b695"
+    },
+    {
+      "path": "bn-Beng-IN/content/normal-modal-logic/axioms-systems/systems-distinct.tex",
+      "sha256": "f27ca2765ec715f8b1d26acc4346dc655b96c0907850bc8256e5eae77d577fc4"
+    }
+  ],
+  "limits": "প্রকৃত পংক্তি ও তিনটি চিত্রের পরীক্ষা; দ্বৈততার সাধারণ প্রমাণ, সঙ্গতি ও সসীম পূর্বপক্ষের পাঁচ ধর্ম পৃথক বাংলা নথিতে।"
+}

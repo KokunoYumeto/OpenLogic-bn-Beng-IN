@@ -46,9 +46,18 @@ $\tuple{\alpha \times \beta, \rlexless}$
 	\alpha \ordtimes (\beta \ordplus 1) &=
 		(\alpha \ordtimes \beta) \ordplus \alpha\\
 	\alpha \ordtimes \beta &=
-		\supstrict_{\delta < \beta}(\alpha \ordtimes \delta) &&
+		\bigcup_{\delta < \beta}(\alpha \ordtimes \delta) &&
 		\text{যখন $\beta$ সীমা ক্রমসংখ্যা}.
 \end{align*}
+% BN-SRC-804 TARGET-CORRECTION-BEGIN
+\emph{উৎস-সংশোধন-নোট।} সীমার দফায় সাধারণ ঊর্ধ্বসীমা,
+অর্থাৎ পর্যায়ক্রমিক মানগুলির সংযোগ চাই। মূলের কঠোর
+ক্ষুদ্রতম ঊর্ধ্বসীমা শূন্য গুণনীয়কে ভুল: সব আগের মান
+শূন্য হলে তার strict ঊর্ধ্বসীমা $1$, অথচ শূন্য ক্ষেত্রের
+ক্রমপ্রকার $0$। সংশোধিত সংযোগ $0$-ই দেয়।
+$\alpha\neq0$ হলে মানগুলি সহশেষী এবং সর্বাধিক সদস্যহীন,
+তখন কঠোর ও সাধারণ ঊর্ধ্বসীমা এখানে মেলে।
+% BN-SRC-804 TARGET-CORRECTION-END
 \end{lem}
 
 \begin{proof}

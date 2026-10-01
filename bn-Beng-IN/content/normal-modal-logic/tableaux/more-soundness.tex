@@ -12,7 +12,7 @@
 
 কোনো মডেল-শ্রেণির জন্য একটি বিধিকে বিশুদ্ধ বলি, যদি !!a{tableau}-র
 কোনো শাখা ওই শ্রেণির একটি মডেলে পরিতৃপ্তিযোগ্য হলে, বিধি প্রয়োগে
-পাওয়া শাখাটিও ওই শ্রেণির একটি মডেলে পরিতৃপ্তিযোগ্য হয়।
+পাওয়া শাখাটিও ওই শ্রেণির একটি মডেলে পরিতৃপ্তিযোগ্য হয়। পিছনের B ও 4r-বিধিতে মূল পূর্বসূচি আগে ব্যবহৃত, আর সামনের 4-বিধিতে উত্তরসূরি আগে ব্যবহৃত; তাই ব্যাখ্যার সংজ্ঞায় প্রয়োজনীয় তিরগুলি পাওয়া যায়।
 
 \begin{prop}
   \ollabel{prop:soundness-T}
@@ -50,7 +50,7 @@
 
 \tagprob{probBox,probDiamond}
 \begin{prob}
-  \olref[nml][tab][msn]{prop:soundness-T}-এর প্রমাণ সম্পূর্ণ করো।
+  \olref[nml][tab][msn]{prop:soundness-T}-এর প্রমাণ সম্পূর্ণ করুন।
 \end{prob}
 \tagendprob
 
@@ -92,7 +92,7 @@
 
 \tagprob{probBox,probDiamond}
 \begin{prob}
-  \olref[nml][tab][msn]{prop:soundness-D}-এর প্রমাণ সম্পূর্ণ করো।
+  \olref[nml][tab][msn]{prop:soundness-D}-এর প্রমাণ সম্পূর্ণ করুন।
 \end{prob}
 \tagendprob
 
@@ -138,7 +138,7 @@
 
 \tagprob{probBox,probDiamond}
 \begin{prob}
-  \olref[nml][tab][msn]{prop:soundness-B}-এর প্রমাণ সম্পূর্ণ করো।
+  \olref[nml][tab][msn]{prop:soundness-B}-এর প্রমাণ সম্পূর্ণ করুন।
 \end{prob}
 \tagendprob
 
@@ -188,7 +188,7 @@
 
 \tagprob{probBox,probDiamond}
 \begin{prob}
-  \olref[nml][tab][msn]{prop:soundness-4}-এর প্রমাণ সম্পূর্ণ করো।
+  \olref[nml][tab][msn]{prop:soundness-4}-এর প্রমাণ সম্পূর্ণ করুন।
 \end{prob}
 \tagendprob
 
@@ -213,7 +213,7 @@
     $Rf(\sigma)f(\sigma.n)$। এখন এমন যেকোনো
     জগৎ $w$ নিই যার জন্য $Rf(\sigma)w$।
     $R$ ইউক্লিডীয় হওয়ায় $Rf(\sigma.n)w$।
-    % BN-SRC-374: the source indexes f(\sigma).n instead of f(\sigma.n).
+    % BN-SRC-374: নামের প্রসারণের ব্যাখ্যা f(\sigma.n)।
     $\mSat{M}{\Box !B}[f(\sigma.n)]$ থেকে
     $\mSat{M}{!B}[w]$। সুতরাং
     $\mSat{M}{\Box !B}[f(\sigma)]$; অর্থাৎ
@@ -221,7 +221,7 @@
     পরিতৃপ্ত করে।}}{}
 \tagitem{prvDiamond}{$\sFmla{\False}{\Diamond !B}[\sigma.n] \in \Gamma$-তে
   4r$\Diamond$ প্রয়োগে শাখাটি প্রসারিত হয়:
-  % BN-SRC-375: a false diamond premise propagates a false diamond conclusion.
+  % BN-SRC-375: False Diamond থেকে একই চিহ্নের Diamond-সিদ্ধান্ত।
   \iftag{probDiamond}{অনুশীলন।}{শাখায় নতুন !!{signed
       formula}~$\sFmla{\False}{\Diamond!B}[\sigma]$ পাওয়া যায়।
     ধরি $\mSat{M}{\Gamma}[f]$, বিশেষত
@@ -230,7 +230,7 @@
     $Rf(\sigma)f(\sigma.n)$। এখন এমন যেকোনো
     জগৎ $w$ নিই যার জন্য $Rf(\sigma)w$।
     $R$ ইউক্লিডীয় হওয়ায় $Rf(\sigma.n)w$।
-    % BN-SRC-376: the source indexes f(\sigma).n instead of f(\sigma.n).
+    % BN-SRC-376: এখানেও নামের প্রসারণের ব্যাখ্যা f(\sigma.n)।
     $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$ থেকে
     $\mSat/{M}{!B}[w]$। সুতরাং
     $\mSat/{M}{\Diamond !B}[f(\sigma)]$; অর্থাৎ
@@ -241,7 +241,7 @@
 
 \tagprob{probBox,probDiamond}
 \begin{prob}
-  \olref[nml][tab][msn]{prop:soundness-4r}-এর প্রমাণ সম্পূর্ণ করো।
+  \olref[nml][tab][msn]{prop:soundness-4r}-এর প্রমাণ সম্পূর্ণ করুন।
 \end{prob}
 \tagendprob
 

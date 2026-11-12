@@ -1,0 +1,500 @@
+\newglossaryentry{dtheorem}{sort={bn034},
+  name={নিঃসরণ উপপাদ্য},
+  description={কোনো অনুমিতি থেকে একটি বাক্য অনুসৃত হওয়া ও
+    প্রমাণযোগ্য হওয়ার সঙ্গে যথাক্রমে সংশ্লিষ্ট শর্তবচনটি অনুসৃত হওয়া
+    ও প্রমাণযোগ্য হওয়ার সম্পর্ক স্থাপন করে। অর্থগত রূপে
+    (\olref[fol][syn][sem]{thm:sem-deduction}) এর বক্তব্য হলো,
+    $\Gamma \cup \{!A\} \Entails !B$ যদি এবং কেবল যদি
+    $\Gamma \Entails !A \lif !B$। প্রমাণতাত্ত্বিক রূপে এর বক্তব্য
+    হলো, $\Gamma \cup \{!A\} \Proves !B$ যদি এবং কেবল যদি
+    $\Gamma \Proves !A \lif !B$।}}
+
+\newglossaryentry{set-extensionality}{sort={bn079},
+  name={সেটের সদস্যভিত্তিক সমতার নীতি},
+  description={সেট দুটি $A$ ও~$B$ অভিন্ন, অর্থাৎ $A = B$, যদি
+    এবং কেবল যদি~$A$-এর প্রতিটি উপাদান~$B$-এরও উপাদান হয় এবং
+    বিপরীতটিও সত্য হয় (দেখো \olref[sfr][set][bas]{sec})।}}
+
+\newglossaryentry{sat-extensionality}{sort={bn038},
+  name={পরিতৃপ্তির ব্যাপ্তিগততা},
+  description={সংজ্ঞাক্ষেত্র স্থির রাখলে সূত্র~$!A$ পরিতৃপ্ত হয়
+    কি না, তা কেবল~$!A$-তে যে অ-যৌক্তিক সংকেত ও মুক্ত চলরাশিগুলি
+    আছে, তাদের জন্য কী আরোপ করা হয়েছে, তার উপর নির্ভর করে।}}
+
+\newglossaryentry{set}{sort={bn078},
+  name={সেট},
+  description={বস্তুর একটি সংগ্রহ। কীভাবে সংগ্রহটি নির্দিষ্ট করা হয়েছে,
+    বস্তুগুলি কোন ক্রমে আছে বা কোন বস্তু কত বার এসেছে, তা নির্বিশেষে
+    সেটটি বিবেচনা করা হয় (দেখো \olref[sfr][set][bas]{sec})।}}
+
+\newglossaryentry{symmetric}{sort={bn046},
+  name={প্রতিসম},
+  description={$R$ প্রতিসম যদি এবং কেবল যদি যখনই $Rxy$, তখনই
+    $Ryx$-ও হয় (দেখো \olref[sfr][rel][prp]{sec})।}}
+
+\newglossaryentry{cp}{sort={bn022},
+  name={কার্তেসীয় গুণফল},
+  symbol={\ensuremath{A \times B}},
+  description={$A$ ও $B$-এর উপাদান নিয়ে গঠিত সব ক্রমযুগলের সেট,
+    $A \times B = \Setabs{\tuple{x, y}}{x \in A \text{ এবং } y \in B}$
+    (দেখো \olref[sfr][set][pai]{sec})।}}
+
+\newglossaryentry{subset}{sort={bn016},
+  name={উপসেট},
+  plural={উপসেটগুলি},
+  symbol={\ensuremath{A \subseteq B}},
+  description={এমন একটি সেট যার প্রতিটি উপাদান প্রদত্ত সেট~$B$-এর
+    উপাদানও (দেখো \olref[sfr][set][sub]{sec})।}}
+
+\newglossaryentry{finsequence}{sort={bn073},
+  name={সসীম অনুক্রম},
+  symbol={\ensuremath{A^*}},
+  description={$A$-এর উপাদান নিয়ে গঠিত একটি সসীম প্রতীকক্রম,
+    অর্থাৎ কোনো $n$-এর জন্য $A^n$-এর একটি উপাদান
+    (দেখো \olref[sfr][set][imp]{sec})।}}
+
+\newglossaryentry{infsequence}{sort={bn008},
+  name={অসীম অনুক্রম},
+  symbol={\ensuremath{A^\omega}},
+  description={$A$-এর উপাদান নিয়ে গঠিত এমন একটি অনুক্রম যাতে কোনো
+    স্থান ফাঁকা থাকে না এবং যার শেষ নেই। আনুষ্ঠানিকভাবে এটি একটি
+    অপেক্ষক $s\colon \PosInt \to A$ (দেখো \olref[sfr][set][imp]{sec})।}}
+
+\newglossaryentry{ps}{sort={bn025},
+  name={ঘাত সেট},
+  symbol={\ensuremath{\Pow{A}}},
+  description={সেট~$A$-এর সমস্ত \glspl{subset} নিয়ে গঠিত সেট,
+    $\Pow{A} = \Setabs{x}{x \subseteq A}$
+    (দেখো \olref[sfr][set][sub]{sec})।}}
+
+\newglossaryentry{union}{sort={bn068},
+  name={সংযোগ},
+  symbol={\ensuremath{A \cup B}},
+  description={$A$ ও $B$-এর সব উপাদান একত্র করে যে সেট পাওয়া যায়,
+    $A \cup B = \Setabs{x}{x \in A \lor x\in B}$
+    (দেখো \olref[sfr][set][uni]{sec})।}}
+
+\newglossaryentry{intersection}{sort={bn029},
+  name={ছেদ},
+  symbol={\ensuremath{A \cap B}},
+  description={$A$ ও~$B$ উভয়েরই উপাদান এমন সব বস্তুর সেট,
+    $A \cap B = \Setabs{x}{x \in A \land x\in B}$
+    (দেখো \olref[sfr][set][uni]{sec})।}}
+
+\newglossaryentry{difference}{sort={bn003},
+  name={অন্তর},
+  symbol={\ensuremath{A \setminus B}},
+  description={$A$-এর যে উপাদানগুলি~$B$-এর উপাদান নয়, সেগুলির সেট,
+    $A \setminus B = \Setabs{x}{x \in A \text{ এবং } x \notin B}$
+    (দেখো \olref[sfr][set][uni]{sec})।}}
+
+\newglossaryentry{disjoint}{sort={bn052},
+  name={বিচ্ছিন্ন},
+  description={দুটি সেটের কোনো সাধারণ উপাদান না থাকলে তারা
+    বিচ্ছিন্ন (দেখো \olref[sfr][set][uni]{sec})।}}
+
+\newglossaryentry{composition}{sort={bn060},
+  name={মিশ্রণ},
+  symbol={\ensuremath{g \circ f}},
+  description={$f$ ও $g$-কে পরপর প্রয়োগ করে যে অপেক্ষক পাওয়া যায়,
+    $(g \circ f)(x) = g(f(x))$ (দেখো \olref[sfr][fun][cmp]{sec})।}}
+
+\newglossaryentry{function}{sort={bn004},
+  name={অপেক্ষক},
+  symbol={\ensuremath{f \colon A \to B}},
+  description={এমন একটি চিত্রণ যা \gls{fdomain}~$A$-এর প্রতিটি
+    উপাদানকে সহসংজ্ঞাক্ষেত্র~$B$-এর একটি উপাদানে পাঠায়
+    (দেখো \olref[sfr][fun][bas]{sec})।}}
+
+\newglossaryentry{fdomain}{sort={bn065},
+  name={সংজ্ঞাক্ষেত্র (অপেক্ষকের)},
+  text={সংজ্ঞাক্ষেত্র},
+  symbol={\ensuremath{\dom{f}}},
+  description={যে বস্তুগুলির জন্য একটি (আংশিক) অপেক্ষক সংজ্ঞায়িত,
+    সেগুলির সেট (দেখো \olref[sfr][fun][bas]{sec})।}}
+
+\newglossaryentry{range}{sort={bn057},
+  name={বিস্তৃতি},
+  symbol={\ensuremath{\ran{f}}},
+  description={সহসংজ্ঞাক্ষেত্রের যে উপসেটটি $f$-এর প্রকৃত
+    আউটপুটগুলি নিয়ে গঠিত,
+    $\ran{f} = \Setabs{y \in B}{f(x) = y \text{ কোনো $x \in A$-এর জন্য}}$
+    (দেখো \olref[sfr][fun][bas]{sec})।}}
+
+\newglossaryentry{graph}{sort={bn024},
+  name={গ্রাফ (অপেক্ষকের)},
+  description={$R_f \subseteq A \times B$ সম্পর্কটি, যা
+    $R_f = \Setabs{\tuple{x,y}}{f(x) = y}$ দিয়ে সংজ্ঞায়িত হয়,
+    যেখানে $f\colon A \pto B$ (দেখো \olref[sfr][fun][rel]{sec})।}}
+
+\newglossaryentry{inverse}{sort={bn053},
+  name={বিপরীত অপেক্ষক},
+  description={$f\colon A \to B$ যদি একটি \gls{bijection} হয়,
+    তবে $f^{-1} \colon B \to A$ হলো সেই অপেক্ষক যার জন্য
+    $f^{-1}(y) =$ সেই অনন্য $x \in A$ যাতে $f(x) = y$
+    (দেখো \olref[sfr][fun][inv]{sec})।}}
+
+\newglossaryentry{pf}{sort={bn009},
+  name={আংশিক অপেক্ষক},
+  symbol={\ensuremath{f \colon A \pto B}},
+  description={আংশিক অপেক্ষক এমন একটি চিত্রণ যা~$A$-এর প্রতিটি
+    উপাদানের জন্য~$B$-এর বড়জোর একটি উপাদান নির্দিষ্ট করে।
+    $f$ যদি $x \in A$-এর জন্য~$B$-এর একটি উপাদান নির্দিষ্ট করে,
+    তবে $f(x)$ সংজ্ঞায়িত, অন্যথায় অসংজ্ঞায়িত
+    (দেখো \olref[sfr][fun][par]{sec})।}}
+
+\newglossaryentry{tc}{sort={bn040},
+  name={পরিযায়ী আবরণ},
+  symbol={\ensuremath{R^+}},
+  description={$R$-কে ধারণ করে এমন ক্ষুদ্রতম \gls{transitive}
+    সম্পর্ক (দেখো \olref[sfr][rel][ops]{sec})।}}
+
+\newglossaryentry{ir}{sort={bn054},
+  name={বিপরীত সম্পর্ক},
+  symbol={\ensuremath{R^{-1}}},
+  description={$R$ সম্পর্কের ক্রমযুগলগুলি “উল্টে” পাওয়া সম্পর্ক,
+    $R^{-1} = \Setabs{\tuple{y, x}}{\tuple{x, y} \in R}$
+    (দেখো \olref[sfr][rel][ops]{sec})।}}
+
+\newglossaryentry{preorder}{sort={bn047},
+  name={প্রাক্‌ক্রম},
+  description={একটি \gls{reflexive} ও \gls{transitive} সম্পর্ক
+    (দেখো \olref[sfr][rel][ord]{sec})।}}
+
+\newglossaryentry{po}{sort={bn010},
+  name={আংশিক ক্রম},
+  description={একটি \gls{reflexive}, \gls{anti-symmetric} ও
+    \gls{transitive} সম্পর্ক (দেখো \olref[sfr][rel][ord]{sec})।}}
+
+\newglossaryentry{to}{sort={bn041},
+  name={পূর্ণ ক্রম},
+  description={দেখো \gls{lo}।}}
+
+\newglossaryentry{irreflexive}{sort={bn013},
+  name={আত্মসম্পর্কহীন},
+  description={কোনো $x \in A$-এর জন্যই যদি $Rxx$ না হয়, তবে
+    $R$ আত্মসম্পর্কহীন (দেখো \olref[sfr][rel][ord]{sec})।}}
+
+\newglossaryentry{asymmetric}{sort={bn017},
+  name={একমুখী},
+  description={$R$ একমুখী যদি এমন কোনো যুগল $x,y\in A$ না থাকে
+    যাতে $Rxy$ ও $Ryx$ দুটিই হয় (দেখো \olref[sfr][rel][ord]{sec})।}}
+
+\newglossaryentry{so}{sort={bn020},
+  name={কঠোর ক্রম},
+  description={একটি \gls{irreflexive}, \gls{asymmetric} ও
+    \gls{transitive} সম্পর্ক (দেখো \olref[sfr][rel][ord]{sec})।}}
+
+\newglossaryentry{slo}{sort={bn021},
+  name={কঠোর রৈখিক ক্রম},
+  description={একটি সংযুক্ত \gls{so} (দেখো \olref[sfr][rel][ord]{sec})।}}
+
+\newglossaryentry{lo}{sort={bn063},
+  name={রৈখিক ক্রম},
+  description={একটি সংযুক্ত \gls{po} (দেখো \olref[sfr][rel][ord]{sec})।}}
+
+\newglossaryentry{br}{sort={bn033},
+  name={দ্বিপদ সম্পর্ক},
+  description={$A^{2}$-এর একটি উপসেট। $Rxy$ (বা $xRy$) লিখে
+    $\tuple{x, y} \in R$ বোঝাই (দেখো \olref[sfr][rel][set]{sec})।}}
+
+\newglossaryentry{reflexive}{sort={bn045},
+  name={প্রতিবিম্ব ধর্মবিশিষ্ট},
+  description={$R$ প্রতিবিম্ব ধর্মবিশিষ্ট যদি এবং কেবল যদি
+    প্রতিটি $x \in A$-এর জন্য $Rxx$ হয়
+    (দেখো \olref[sfr][rel][prp]{sec})।}}
+
+\newglossaryentry{transitive}{sort={bn039},
+  name={পরিযায়ী},
+  description={$R$ পরিযায়ী যদি এবং কেবল যদি যখনই $Rxy$ ও $Ryz$,
+    তখনই $Rxz$-ও হয় (দেখো \olref[sfr][rel][prp]{sec})।}}
+
+\newglossaryentry{anti-symmetric}{sort={bn055},
+  name={বিপ্রতিসম},
+  description={$R$ বিপ্রতিসম যদি এবং কেবল যদি যখনই $Rxy$ ও $Ryx$
+    উভয়ই হয়, তখন $x=y$। অন্য কথায়, $x\neq y$ হলে $Rxy$ হয় না
+    অথবা $Ryx$ হয় না (দেখো \olref[sfr][rel][prp]{sec})।}}
+
+\newglossaryentry{connected}{sort={bn067},
+  name={সংযুক্ত},
+  description={$R$ সংযুক্ত যদি $x \neq y$ এমন প্রতিটি $x, y\in A$-এর
+    জন্য $Rxy$ অথবা~$Ryx$ হয় (দেখো \olref[sfr][rel][prp]{sec})।}}
+
+\newglossaryentry{er}{sort={bn031},
+  name={তুল্যতা সম্পর্ক},
+  description={প্রতিবিম্ব ধর্মবিশিষ্ট, প্রতিসম ও পরিযায়ী সম্পর্ক
+    (দেখো \olref[sfr][rel][prp]{sec})।}}
+
+\newglossaryentry{sf}{sort={bn072},
+  name={সমাপতিত},
+  description={$f \colon A \to B$ সমাপতিত যদি এবং কেবল যদি~$f$-এর
+    বিস্তৃতি সমগ্র~$B$, অর্থাৎ প্রতিটি $y \in B$-এর জন্য অন্তত একটি
+    $x \in A$ আছে যাতে~$f(x) = y$ (দেখো \olref[sfr][fun][kin]{sec})।}}
+
+\newglossaryentry{if}{sort={bn018},
+  name={একৈক},
+  description={$f \colon A \to B$ একৈক যদি এবং কেবল যদি
+    প্রতিটি $y \in B$-এর জন্য বড়জোর একটি $x \in A$ থাকে যাতে~$f(x) = y$।
+    সমতুল্যভাবে, যখনই $x \neq x'$, তখনই $f(x) \neq f(x')$
+    (দেখো \olref[sfr][fun][kin]{sec})।}}
+
+\newglossaryentry{bijection}{sort={bn019},
+  name={একৈক সমাপতিত অপেক্ষক},
+  description={যে অপেক্ষক একৈক ও সমাপতিত উভয়ই
+    (দেখো \olref[sfr][fun][kin]{sec})।}}
+
+\newglossaryentry{enumeration}{sort={bn030},
+  name={তালিকায়ন},
+  description={সেট~$A$-এর সব উপাদানের একটি তালিকা, যা অসীমও হতে
+    পারে। সেটটি অশূন্য হলে আনুষ্ঠানিকভাবে এটি একটি সমাপতিত অপেক্ষক
+    $f\colon \Nat \to A$। শূন্য সেটের তালিকায়ন হলো শূন্য তালিকা
+    (দেখো \olref[sfr][siz][enm]{sec})।}}
+
+\newglossaryentry{equinumerous}{sort={bn071},
+  name={সমসংখ্যক},
+  description={$A$ ও $B$ সমসংখ্যক যদি এবং কেবল যদি $A$ থেকে $B$-তে
+    একটি সর্বত্র সংজ্ঞায়িত একৈক সমাপতিত অপেক্ষক থাকে
+    (দেখো \olref[sfr][siz][equ]{sec})।}}
+
+\newglossaryentry{finitely satisfiable}{sort={bn074},
+  name={সসীমভাবে পরিতৃপ্তিযোগ্য},
+  description={$\Gamma$ সসীমভাবে পরিতৃপ্তিযোগ্য যদি এবং কেবল যদি
+    প্রতিটি সসীম $\Gamma_0 \subseteq \Gamma$ পরিতৃপ্তিযোগ্য হয়
+    (দেখো \olref[fol][com][com]{sec})।}}
+
+\newglossaryentry{mcs}{sort={bn042},
+  name={পূর্ণ সঙ্গত সেট},
+  description={বাক্যের একটি সেট পূর্ণ ও সঙ্গত যদি এবং কেবল যদি
+    সেটটি সঙ্গত হয় এবং প্রতিটি বাক্য~$!A$-এর জন্য $!A$ অথবা
+    $\lnot !A$ সেটটিতে থাকে (দেখো \olref[fol][com][ccs]{sec})।}}
+
+\newglossaryentry{mos}{sort={bn059},
+  name={মডেল},
+  description={যে গঠনে~$\Gamma$-র প্রতিটি বাক্য সত্য, সেটি~$\Gamma$-র
+    একটি মডেল (দেখো \olref[fol][mat][exs]{sec})।}}
+
+\newglossaryentry{closed}{sort={bn049},
+  name={বদ্ধ},
+  description={বাক্যের সেট~$\Gamma$ বদ্ধ যদি এবং কেবল যদি যখনই
+    $\Gamma \Entails !A$, তখনই $!A \in \Gamma$। সেট
+    $\Setabs{!A}{\Gamma \Entails !A}$ হলো~$\Gamma$-র আবরণ
+    (দেখো \olref[fol][mat][int]{sec})।}}
+
+\newglossaryentry{derivability}{sort={bn036},
+  name={নিষ্পাদনযোগ্যতা},
+  symbol={\ensuremath{\Gamma \Proves !A}},
+  description={সিকোয়েন্ট কলনে $!A$, $\Gamma$ থেকে নিষ্পাদনযোগ্য যদি
+    $\Gamma_0 \Sequent !A$ \gls{sequent}-এর একটি \gls{derivation} থাকে,
+    যেখানে $\Gamma_0 \subseteq \Gamma$ হলো~$\Gamma$-র বাক্যগুলির একটি
+    সসীম অনুক্রম (দেখো \olref[fol][seq][ptn]{sec})। স্বাভাবিক নিষ্পাদনে
+    $!A$, $\Gamma$ থেকে নিষ্পাদনযোগ্য যদি এমন একটি নিষ্পাদন থাকে যার
+    অন্তিম সূত্র~$!A$ এবং যার প্রতিটি অনুমিতি হয় অবমুক্ত, নয়তো~$\Gamma$-তে
+    আছে (দেখো \olref[fol][ntd][ptn]{sec})।}}
+
+\newglossaryentry{theorem}{sort={bn014},
+  name={উপপাদ্য},
+  symbol={\ensuremath{\Proves !A}},
+  description={সিকোয়েন্ট কলনে সূত্র~$!A$ একটি (যৌক্তিক) উপপাদ্য
+    যদি $\Sequent !A$ সিকোয়েন্টটির একটি নিষ্পাদন থাকে
+    (দেখো \olref[fol][seq][ptn]{sec})। স্বাভাবিক নিষ্পাদনে সূত্র~$!A$
+    একটি উপপাদ্য যদি $!A$-এর এমন একটি নিষ্পাদন থাকে যার সব অনুমিতি
+    \gls{discharged} (দেখো \olref[fol][ntd][ptn]{sec})। আবার,
+    $\Gamma \Proves !A$ হলে বলি যে $!A$ তত্ত্ব~$\Gamma$-র উপপাদ্য।}}
+
+\newglossaryentry{consistent}{sort={bn070},
+  name={সঙ্গত},
+  description={সিকোয়েন্ট কলনে বাক্যের সেট~$\Gamma$ সঙ্গত যদি এবং
+    কেবল যদি $\Gamma_0 \Sequent \quad$ \gls{sequent}-এর কোনো
+    \gls{derivation} না থাকে যেখানে $\Gamma_0 \subseteq \Gamma$
+    (দেখো \olref[fol][seq][ptn]{sec})। স্বাভাবিক নিষ্পাদনে~$\Gamma$
+    সঙ্গত যদি এবং কেবল যদি $\Gamma \Proves/ \lfalse$
+    (দেখো \olref[fol][ntd][ptn]{sec})। $\Gamma$ সঙ্গত না হলে তা
+    অসঙ্গত।}}
+
+\newglossaryentry{inconsistent}{sort={bn007},
+  name={অসঙ্গত},
+  description={দেখো \gls{consistent}।}}
+
+\newglossaryentry{derivation}{sort={bn035},
+  name={নিষ্পাদন},
+  description={সিকোয়েন্ট কলনে সিকোয়েন্টগুলির এমন একটি বৃক্ষ
+    যার প্রতিটি সিকোয়েন্ট হয় প্রারম্ভিক সিকোয়েন্ট, নয়তো তার
+    ঠিক উপরে থাকা সিকোয়েন্টগুলি থেকে একটি অনুমান-বিধি প্রয়োগে
+    পাওয়া যায় (দেখো \olref[fol][seq][rul]{sec})। স্বাভাবিক
+    নিষ্পাদনে সূত্রগুলির এমন একটি বৃক্ষ যার প্রতিটি সূত্র হয়
+    অনুমিতি, নয়তো তার ঠিক উপরে থাকা সূত্রগুলি থেকে একটি
+    অনুমান-বিধি প্রয়োগে পাওয়া যায় (দেখো \olref[fol][ntd][rul]{sec})।}}
+
+\newglossaryentry{eigenvariable}{sort={bn011},
+  name={আইগেনচল},
+  description={সিকোয়েন্ট কলনে $\LeftR{\lexists}$ বা $\RightR{\lforall}$
+    অনুমানের কোনো পূর্বধারণায় ব্যবহৃত একটি বিশেষ ধ্রুবক প্রতীক, যা
+    সিদ্ধান্তে থাকতে পারে না (দেখো \olref[fol][seq][rul]{sec})।
+    স্বাভাবিক নিষ্পাদনে $\Elim{\lexists}$ বা $\Intro{\lforall}$
+    অনুমানের কোনো পূর্বধারণায় ব্যবহৃত একটি বিশেষ ধ্রুবক প্রতীক, যা
+    সিদ্ধান্তে বা কোনো \gls{undischarged} অনুমিতিতে থাকতে পারে না।
+    অস্তিত্বসূচক অপসারণে তা প্রধান অস্তিত্বসূচক পূর্বধারণাতেও থাকতে
+    পারে না (দেখো \olref[fol][ntd][rul]{sec})।}}
+
+\newglossaryentry{discharged}{sort={bn005},
+  name={অবমুক্ত},
+  description={!!a{derivation}-এ কোনো \gls{assumption}-কে তার
+    নিচে প্রয়োগ করা একটি অনুমান-বিধি দিয়ে অবমুক্ত করা যেতে পারে।
+    তখন বিধি ও অনুমিতিটিকে একই চিহ্ন দেওয়া হয়, যেমন
+    $[!A]^2$। অনুমিতিটি অবমুক্ত করা না হলে তাকে অনবমুক্ত বলা হয়
+    (দেখো \olref[fol][ntd][rul]{sec})।}}
+
+\newglossaryentry{undischarged}{sort={bn001},
+  name={অনবমুক্ত},
+  description={দেখো \gls{discharged}।}}
+
+\newglossaryentry{assumption}{sort={bn002},
+  name={অনুমিতি},
+  description={!!a{derivation}-এর কোনো শাখার শীর্ষে থাকা সূত্র,
+    যাকে প্রারম্ভিক সূত্রও বলা হয়। এটি \gls{discharged} বা অনবমুক্ত
+    হতে পারে (দেখো \olref[fol][ntd][rul]{sec})।}}
+
+\newglossaryentry{soundness}{sort={bn056},
+  name={বিশুদ্ধতা},
+  description={!!a{derivation} পদ্ধতির একটি ধর্ম। পদ্ধতিটি বিশুদ্ধ
+    যদি যখনই $\Gamma \Proves !A$, তখনই $\Gamma \Entails !A$ হয়
+    (দেখো \olref[fol][seq][sou]{sec} ও \olref[fol][ntd][sou]{sec})।}}
+
+\newglossaryentry{sequent}{sort={bn075},
+  name={সিকোয়েন্ট},
+  description={$\Gamma \Sequent \Delta$ রূপের একটি অভিব্যক্তি,
+    যেখানে $\Gamma$ ও $\Delta$ বাক্যের সসীম অনুক্রম
+    (দেখো \olref[fol][seq][rul]{sec})।}}
+
+\newglossaryentry{sentence}{sort={bn050},
+  name={বাক্য},
+  description={এমন একটি সূত্র যাতে কোনো \gls{free} চলরাশি নেই
+    (দেখো \olref[fol][syn][fvs]{sec})।}}
+
+\newglossaryentry{variable assignment}{sort={bn026},
+  name={চলরাশি-আরোপ},
+  plural={চলরাশি-আরোপ},
+  description={একটি \gls{function}, যা প্রতিটি চলরাশিকে~$\Domain M$-এর
+    একটি উপাদানে পাঠায় (দেখো \olref[fol][syn][sat]{sec})।}}
+
+\newglossaryentry{$x$-variant}{sort={bn051},
+  name={$x$-বিকল্প},
+  description={দুটি \glspl{variable assignment} পরস্পরের $x$-বিকল্প,
+    $s \sim_x s'$, যদি তাদের আরোপিত মান বড়জোর~$x$-এর ক্ষেত্রে
+    আলাদা হয় (দেখো \olref[fol][syn][sat]{sec})।}}
+
+\newglossaryentry{valid}{sort={bn058},
+  name={বৈধ},
+  symbol={\ensuremath{\Entails !A}},
+  description={বাক্য $!A$ \emph{বৈধ} যদি এবং কেবল যদি প্রতিটি
+    \gls{structure}~$\Struct M$-এর জন্য $\Sat{M}{!A}$ হয়
+    (দেখো \olref[fol][syn][sem]{sec})।}}
+
+\newglossaryentry{entailment}{sort={bn006},
+  name={অর্থগত অনুসিদ্ধান্ত},
+  symbol={\ensuremath{\Gamma \Entails !A}},
+  description={বাক্যের সেট~$\Gamma$ থেকে বাক্য~$!A$ অর্থগতভাবে
+    অনুসৃত হয় যদি এবং কেবল যদি $\Sat{M}{\Gamma}$ হয় এমন প্রতিটি
+    \gls{structure}~$\Struct M$-এর জন্য $\Sat{M}{!A}$ হয়
+    (দেখো \olref[fol][syn][sem]{sec})।}}
+
+\newglossaryentry{satisfiable}{sort={bn037},
+  name={পরিতৃপ্তিযোগ্য},
+  description={বাক্যের সেট~$\Gamma$ পরিতৃপ্তিযোগ্য যদি কোনো
+    \gls{structure}~$\Struct M$-এর জন্য $\Sat{M}{\Gamma}$ হয়।
+    অন্যথায় সেটটি অপরিতৃপ্তিযোগ্য (দেখো \olref[fol][syn][sem]{sec})।}}
+
+\newglossaryentry{cs}{sort={bn012},
+  name={আচ্ছাদিত},
+  description={যে \gls{structure}-এর সংজ্ঞাক্ষেত্রের প্রতিটি
+    উপাদান কোনো একটি বদ্ধ পদের মান, সেই গঠন আচ্ছাদিত
+    (দেখো \olref[fol][syn][str]{sec})।}}
+
+\newglossaryentry{subformula}{sort={bn015},
+  name={উপসূত্র},
+  description={সূত্রের এমন অংশ যা নিজেই একটি সূত্র
+    (দেখো \olref[fol][syn][sbf]{sec})।}}
+
+\newglossaryentry{free for}{sort={bn062},
+  name={মুক্তভাবে প্রতিস্থাপনযোগ্য},
+  description={পদ~$t$, $!A$-তে $x$-এর জায়গায় মুক্তভাবে প্রতিস্থাপনযোগ্য
+    যদি $!A$-তে~$x$-এর কোনো \gls{free} সংঘটন এমন কোনো
+    পরিমাণসূচকের পরিসরে না থাকে যা~$t$-এর কোনো চলরাশিকে বদ্ধ করে
+    (দেখো \olref[fol][syn][sub]{sec})।}}
+
+\newglossaryentry{church-turing thesis}{sort={bn028},
+  name={চার্চ--টুরিং থিসিস},
+  description={এর বক্তব্য হলো, কার্যকর পদ্ধতিতে গণনসাধ্য সবকিছুই
+    টুরিং-গণনসাধ্য (দেখো \olref[tur][mac][ctt]{sec})।}}
+
+\newglossaryentry{completeness}{sort={bn043},
+  name={পূর্ণতা},
+  description={!!a{derivation} পদ্ধতির একটি ধর্ম। পদ্ধতিটি পূর্ণ যদি
+    যখনই $\Gamma$ থেকে $!A$ অর্থগতভাবে অনুসৃত হয়, তখনই এমন একটি
+    নিষ্পাদনও থাকে যা $\Gamma \Proves !A$ প্রতিষ্ঠা করে।
+    সমতুল্যভাবে, যদি এবং কেবল যদি বাক্যের প্রতিটি \gls{consistent}
+    সেট \gls{satisfiable} হয় (দেখো \olref[fol][com][int]{sec})।}}
+
+\newglossaryentry{formula}{sort={bn077},
+  name={সূত্র},
+  description={প্রথম-ক্রমের ভাষা~$\Lang L$-এর এমন অভিব্যক্তি যা
+    সম্পর্ক বা ধর্ম প্রকাশ করে, অথবা সত্য বা মিথ্যা হয়
+    (দেখো \olref[fol][syn][frm]{sec})।}}
+
+\newglossaryentry{structure}{sort={bn023},
+  name={গঠন},
+  symbol={\ensuremath{\Struct{M}}},
+  description={প্রথম-ক্রমের ভাষার একটি ব্যাখ্যা, যা একটি
+    \gls{sdomain} এবং ভাষাটির ধ্রুবক, বিধেয় ও অপেক্ষক সংকেতগুলির
+    ব্যাখ্যা নিয়ে গঠিত (দেখো \olref[fol][syn][str]{sec})।}}
+
+\newglossaryentry{sdomain}{sort={bn066},
+  name={সংজ্ঞাক্ষেত্র (গঠনের)},
+  text={সংজ্ঞাক্ষেত্র},
+  symbol={\ensuremath{\Domain{M}}},
+  description={যে অশূন্য সেটের উপর একটি \gls{structure}-এ সংকেতগুলির
+    ব্যাখ্যা নির্ধারিত হয় এবং যে সেট থেকে চলরাশির মান নেওয়া হয়
+    (দেখো \olref[fol][syn][str]{sec})।}}
+
+\newglossaryentry{halting problem}{sort={bn032},
+  name={থামার সমস্যা},
+  description={যেকোনো $e$, $n$-এর জন্য টুরিং যন্ত্র~$M_e$,
+    ~$n$টি দাগের নিবেশে থামে কি না তা নির্ধারণ করার সমস্যা
+    (দেখো \olref[tur][und][hal]{sec})।}}
+
+\newglossaryentry{bound}{sort={bn048},
+  name={বদ্ধ},
+  description={যে পরিমাণসূচকটি একই চলরাশি ব্যবহার করে তার পরিসরের
+    মধ্যে সেই চলরাশির একটি সংঘটন (দেখো \olref[fol][syn][fvs]{sec})।}}
+
+\newglossaryentry{free}{sort={bn061},
+  name={মুক্ত},
+  description={চলরাশির এমন একটি সংঘটন যা \gls{bound} নয়
+    (দেখো \olref[fol][syn][fvs]{sec})।}}
+
+\newglossaryentry{compactness theorem}{sort={bn069},
+  name={সংহতি উপপাদ্য},
+  description={এর বক্তব্য হলো, বাক্যের প্রতিটি \gls{finitely satisfiable}
+    সেট পরিতৃপ্তিযোগ্য (দেখো \olref[fol][com][com]{sec})।}}
+
+\newglossaryentry{ls}{sort={bn064},
+  name={লোয়েনহাইম--স্কোলেম উপপাদ্য},
+  description={এর বক্তব্য হলো, বাক্যের প্রতিটি পরিতৃপ্তিযোগ্য সেটের
+    একটি গণনীয় মডেল আছে (দেখো \olref[fol][com][dls]{sec})।}}
+
+\newglossaryentry{Church-Turing Theorem}{sort={bn027},
+  name={চার্চ--টুরিং উপপাদ্য},
+  description={এর বক্তব্য হলো, প্রথম-ক্রমের যুক্তিবিদ্যার প্রদত্ত
+    একটি বাক্য \gls{valid} কি না, তা নির্ণয় করতে পারে এমন
+    কোনো টুরিং যন্ত্র নেই (দেখো \olref[tur][und][uns]{sec})।}}
+
+\newglossaryentry{decision problem}{sort={bn076},
+  name={সিদ্ধান্ত সমস্যা},
+  description={প্রথম-ক্রমের যুক্তিবিদ্যার প্রদত্ত একটি বাক্য
+    \gls{valid} কি না, তা নির্ণয়ের সমস্যা
+    (দেখো \gls{Church-Turing Theorem})।}}
+
+\newglossaryentry{completeness-theorem}{sort={bn044},
+  name={পূর্ণতা উপপাদ্য},
+  description={এর বক্তব্য হলো, প্রথম-ক্রমের যুক্তিবিদ্যা পূর্ণ।
+    অর্থাৎ বাক্যের প্রতিটি \gls{consistent} সেট \gls{satisfiable}।}}

@@ -1,0 +1,1234 @@
+[
+  {
+    "path": "content/first-order-logic/beyond/beyond.tex",
+    "unit": "OLP-0174",
+    "upstream_sha256": "59901c1d2af5fb520f86537ed3bfe163adc9ce43cad347b1ce2808f3c79f9d15",
+    "accepted_bn_sha256": "eb7551568f8934ac853146739b4e5f11ab3a67c205b8fa8882ac08e34b704b26",
+    "textbook_sha256": "d4be62a6836ab64e98e99ba17ca0b9931bd9a49ff4f3140fdf05d593aae9f950"
+  },
+  {
+    "path": "content/first-order-logic/beyond/higher-order-logic.tex",
+    "unit": "OLP-0178",
+    "upstream_sha256": "38ced5d3bad860479a37abcc7745229561d26bbfdbe77a5b2a1c6dece2a455b1",
+    "accepted_bn_sha256": "e33fef1cc965c54a655500cceb067047fd81af6018ec15d1d73c18699b89baa0",
+    "textbook_sha256": "8b82e4612c918ffd20b8fa074b6c87b4ccc49b3bf9c610cdeccb75ba7be49ebd"
+  },
+  {
+    "path": "content/first-order-logic/beyond/introduction.tex",
+    "unit": "OLP-0175",
+    "upstream_sha256": "859471ff2e16efdd444f4d4158f8a6c1600aae949d4d5b8f2362bac945bbf769",
+    "accepted_bn_sha256": "338ccfe5525e544afa37814fc8fde3800d4451379d7e0b4457a3019389dac324",
+    "textbook_sha256": "27201e65fa4be425bd683be2000c13f535247c914341561a6192175a18c4d363"
+  },
+  {
+    "path": "content/first-order-logic/beyond/intuitionistic-logic.tex",
+    "unit": "OLP-0179",
+    "upstream_sha256": "063ba3b9be092a262c09554ac0377b8f2a74d4042736588b30435c95a4740e98",
+    "accepted_bn_sha256": "477a8925add06c1d8b147573ee7db85a3a324b15b24e98c4adae6acec48a9691",
+    "textbook_sha256": "8321f32600580aa1dad514325faed85e93bd2ffe34e6238e29e162cd3871cf1b"
+  },
+  {
+    "path": "content/first-order-logic/beyond/many-sorted-logic.tex",
+    "unit": "OLP-0176",
+    "upstream_sha256": "5a6abcd66e91868de97e0c1ec44cdf848396655cc6995adc05d6771844ecfac7",
+    "accepted_bn_sha256": "d86d30a73da55b70ec68ec28df40503f18979b61608778010c518c8ef8385154",
+    "textbook_sha256": "e8aa2ea4325f1ab7e06268e76aeac1d65f0992d067b01d2bee907b81b60391ff"
+  },
+  {
+    "path": "content/first-order-logic/beyond/modal-logics.tex",
+    "unit": "OLP-0180",
+    "upstream_sha256": "8dff5692c79c06aa452bc0e20871109f3334a9232bd18997062196e872539881",
+    "accepted_bn_sha256": "ec77ef3b75067c3eb1b3eb84d0cc2b9431c5558d46c1d1b2966dad991785bdbd",
+    "textbook_sha256": "0602eb271ca329d4d7f2879a5cdd52683228d8cf788f3788786097ef313fe763"
+  },
+  {
+    "path": "content/first-order-logic/beyond/other-logics.tex",
+    "unit": "OLP-0181",
+    "upstream_sha256": "025f94f3d087242ea1cf63543ab32c653ca6960c89ea7c321f9805a3b14f3350",
+    "accepted_bn_sha256": "08a5b4016a5af81cfa672f6d98097b816647d53ea45a11a83be342ebbec58551",
+    "textbook_sha256": "26f8f3200e0ad7b386de81d0a7d3c68be05a61d6c20f4e82aae605824d3cfdba"
+  },
+  {
+    "path": "content/first-order-logic/beyond/second-order-logic.tex",
+    "unit": "OLP-0177",
+    "upstream_sha256": "944e224c99309c16e3303d6688fe0bf070e9ad8a68a1207ef6b8d6add08fe16d",
+    "accepted_bn_sha256": "97d11e0d7bfff3bbb94f73263155ce148c17f327673f74e9932f5cee8a634847",
+    "textbook_sha256": "4fe0c400536cee60362696b0c18df596c1c82a63af986937210761b0f3754d95"
+  },
+  {
+    "path": "content/first-order-logic/completeness/compactness-direct.tex",
+    "unit": "OLP-0136",
+    "upstream_sha256": "7334d3683b1ca6356dea7526b1a53448c6d768353e720c31d766a07c67017122",
+    "accepted_bn_sha256": "d63a82402c4c8994c3cf93fd6e979c9f93bf8849bc282bd017cead0aaae39cf4",
+    "textbook_sha256": "06120e98a6eef9a698521783179c2fe360ba7a7016c27d9a283c4c6790050183"
+  },
+  {
+    "path": "content/first-order-logic/completeness/compactness.tex",
+    "unit": "OLP-0135",
+    "upstream_sha256": "427e195e6bab0024f56954406ec4d9303573e4c2c796e8bf7446c45fcf253407",
+    "accepted_bn_sha256": "7509cff6ca88c618ff37490afee66e9c1a65b10b054d3adafa899676075b1419",
+    "textbook_sha256": "53abb62e014afc07f4f87a6e7fb5d1c240bc4d4630c70b73184116dd18e750e4"
+  },
+  {
+    "path": "content/first-order-logic/completeness/complete-consistent-sets.tex",
+    "unit": "OLP-0129",
+    "upstream_sha256": "6473c646a48e854478ef1388de877eb61bcd8b912179347703f86b655de0ae4f",
+    "accepted_bn_sha256": "3fb877dadfd3a3e7edc201ff8ff5fa28541defd0dcc71a1ccceae7085fae190b",
+    "textbook_sha256": "599a0b3f0a478b0a229c524622538ed0dd69d3b2938d74fb1b59fca174e02c62"
+  },
+  {
+    "path": "content/first-order-logic/completeness/completeness-thm.tex",
+    "unit": "OLP-0134",
+    "upstream_sha256": "2e28c82c4787c75fc159295bf38adfb4aa5e1dff0025c237cd750bfc33964ecb",
+    "accepted_bn_sha256": "81b2b223cd7f4d52ba7f4b6a638b5bc1c4cb1d2a09e9a84a20ebe0dbdb2764b3",
+    "textbook_sha256": "f8413b8afd717c87e449fc3407b0ef6ca22d24b6ab79005b1df363541d2bfc5a"
+  },
+  {
+    "path": "content/first-order-logic/completeness/completeness.tex",
+    "unit": "OLP-0126",
+    "upstream_sha256": "4d9dd7fc873888fde7d70bf45fa122465858092c4f7a979741067b3bda88eb18",
+    "accepted_bn_sha256": "e84a554ede086bf560eda8ede7ecc178f8080a0ebafa6c72e6bdfe07a88d480d",
+    "textbook_sha256": "e84a554ede086bf560eda8ede7ecc178f8080a0ebafa6c72e6bdfe07a88d480d"
+  },
+  {
+    "path": "content/first-order-logic/completeness/construction-of-model.tex",
+    "unit": "OLP-0132",
+    "upstream_sha256": "4eefa87745fd3f79045f8f49b82dcd2c0a9c3268148150863870c82401c60702",
+    "accepted_bn_sha256": "cc0932ee4171dae2945788cc1cc19f9d26cc465bea7ddd7b38ae5b9ecf0abaeb",
+    "textbook_sha256": "0fc7c0b88909e275089cb0c649b82a64f9c4a798dbef231c74801ae4f356bdf8"
+  },
+  {
+    "path": "content/first-order-logic/completeness/downward-ls.tex",
+    "unit": "OLP-0137",
+    "upstream_sha256": "31e60aefb151429d7af1e982f1d44a05c4a4b37b8ea03d8163016fdf6d6058d3",
+    "accepted_bn_sha256": "f2a4cfd977a06c27c476756ec21ce4263bc7701592c5c7e3913bd6b63473311a",
+    "textbook_sha256": "d0969b8c99716f06d74bf97e4495515a8e42c408d98a784bb8d47a81869b0ca9"
+  },
+  {
+    "path": "content/first-order-logic/completeness/henkin-expansions.tex",
+    "unit": "OLP-0130",
+    "upstream_sha256": "353b1ea300b6d916be92a5100dfa2e2f4cf9ad9f44e9506c96f028acea3b1ec8",
+    "accepted_bn_sha256": "518c75f8671dd668951cd434cfbd1643377aed3e3ce533d694b7bbebe58f7faf",
+    "textbook_sha256": "581e9eec707e90ee84da75d238e61781fa64b32d72e6b86fe1d9dca63f5d68bd"
+  },
+  {
+    "path": "content/first-order-logic/completeness/identity.tex",
+    "unit": "OLP-0133",
+    "upstream_sha256": "bc3391e4db38b0552ee8429b14f32124cdb7ee71e766ce17a5eaa2422126aa71",
+    "accepted_bn_sha256": "07ca2129825280896ca151cf5090804edba14130746c61c50f598c88a04d6d5c",
+    "textbook_sha256": "df0826632ecb090a366248d94abc4325878cefbc2a4704beb4e83e9e8439574f"
+  },
+  {
+    "path": "content/first-order-logic/completeness/introduction.tex",
+    "unit": "OLP-0127",
+    "upstream_sha256": "e263d8a466c6fa7457f247217e75e7d571fe5af13faf97e24472e2273a089498",
+    "accepted_bn_sha256": "d6d900219aafa439c74090d78b34428adf944b155ae469a16625947cc462f2f7",
+    "textbook_sha256": "b68cc5a37e41977624c68f1e492e42f3c0dac08207ffa34e1eda3d704bf44bd1"
+  },
+  {
+    "path": "content/first-order-logic/completeness/lindenbaums-lemma.tex",
+    "unit": "OLP-0131",
+    "upstream_sha256": "096a854cefe8f47251e7ad20747bda7e3832a0272a8e38ba71d732d913a9be47",
+    "accepted_bn_sha256": "b9b1582590010f904822ac20383eb44b80d62694cf196ca4af72c2d927902c59",
+    "textbook_sha256": "ad653e6365222fc5e9835d20f51f627815e27be3ea638f7daeeefa372c62606b"
+  },
+  {
+    "path": "content/first-order-logic/completeness/outline.tex",
+    "unit": "OLP-0128",
+    "upstream_sha256": "b3cbb5543255b168edbed2239981fa772d3a954bd5ce3dbf5bb8073e9b0525b1",
+    "accepted_bn_sha256": "64416e8a38b8b01b0b3cfa7bd5042317a1df1316d6786196c3c1edaca4842c85",
+    "textbook_sha256": "02b6e1c5412f3bb40f78faa4827b26ceb24cf655a0ddb863cc561008c6fe03b3"
+  },
+  {
+    "path": "content/first-order-logic/first-order-logic.tex",
+    "unit": "OLP-0138",
+    "upstream_sha256": "d3db70ccef0969cf026f4f67149b0cb6cde3a398935b6582f01e056b1904a41f",
+    "accepted_bn_sha256": "9e83cd636268f23a1c4d05e16458376025531e5363924264b1d7138b70af1b26",
+    "textbook_sha256": "57ffed4ba6f4cffea58e7fcc5b174a713b31135e7e853033a0af83a1127a54d7"
+  },
+  {
+    "path": "content/first-order-logic/introduction/first-order-logic.tex",
+    "unit": "OLP-0140",
+    "upstream_sha256": "04bfc243ce8ec9263cc7f805971d4193f93c9667a595a8bdae8a1cd1931ca4b2",
+    "accepted_bn_sha256": "b6c00c5795132671f5398d2a446b9a18204b6265947907cf5aa431df672daa7b",
+    "textbook_sha256": "3ff41ca449220b7b5872f91b4a2953ee9bc590bc0d26ad79a1f6e95470bcbf1f"
+  },
+  {
+    "path": "content/first-order-logic/introduction/formulas.tex",
+    "unit": "OLP-0142",
+    "upstream_sha256": "359d5608df5b55db1a6ec96c390c2baeecc87cd9fa20d026a827afbfe3cb1ff4",
+    "accepted_bn_sha256": "e3b108a42dd1c13bc3f0f7c40337874208fdf6531732b9d36d6501e1dba18cbb",
+    "textbook_sha256": "d158491263edf47cc5a463577a8538a3f3daca65657792bebd96d5ea0487bce0"
+  },
+  {
+    "path": "content/first-order-logic/introduction/introduction.tex",
+    "unit": "OLP-0139",
+    "upstream_sha256": "05b3d4c1cfef57b0df901d96638381e3ac936560b37dfcbc10404f152a19d7d5",
+    "accepted_bn_sha256": "caad0076eeb26da6227b70bdb3b2105cd026cac30133eeddf8263da65b1134b7",
+    "textbook_sha256": "caad0076eeb26da6227b70bdb3b2105cd026cac30133eeddf8263da65b1134b7"
+  },
+  {
+    "path": "content/first-order-logic/introduction/models-theories.tex",
+    "unit": "OLP-0147",
+    "upstream_sha256": "36ee284caf12899709c6527a5e97cc191bb07fa6701d9b457a7191a1e803c59f",
+    "accepted_bn_sha256": "d53eb3f76ffe2f568880c71d00f3e3616990ae043aad97502ad8294d2ee2aaf7",
+    "textbook_sha256": "ca2d2fbabe97f50d920dd8519ded2d80a00ef7eabc90bc71e0452b867103b257"
+  },
+  {
+    "path": "content/first-order-logic/introduction/satisfaction.tex",
+    "unit": "OLP-0143",
+    "upstream_sha256": "01faa20f2f8d843d47cb7ca05e57a665ad3cd43f288b9504910a8e43bbad0c18",
+    "accepted_bn_sha256": "579856f7de0c5a25f950c171fd71b4784f4f45a96b63605d7dd097f973766488",
+    "textbook_sha256": "3ff310d5d883076cf15860470d18e1a5134279745d3eb7cfe54ea7067bde8ed0"
+  },
+  {
+    "path": "content/first-order-logic/introduction/semantic-notions.tex",
+    "unit": "OLP-0145",
+    "upstream_sha256": "9d04bf200004bd09dead1b4fcd8a97eca4c9e2d7886c07cb99122d0426d60aae",
+    "accepted_bn_sha256": "c490d5f30d90ae29b12fd65e0c22db7ec4a123ea555cbf17953a0d62a7c533c1",
+    "textbook_sha256": "12294ca2b7d791433901a4e685764a00c60f03f3240b66f72f30b27cfdf61fcb"
+  },
+  {
+    "path": "content/first-order-logic/introduction/sentences.tex",
+    "unit": "OLP-0144",
+    "upstream_sha256": "748e7d15fb2dbed01613a86005d52fdb1f3fe78bb8e3749b61e48cbd2a04a8d0",
+    "accepted_bn_sha256": "5124f02941aee23670d830c19eee8eb53eb5490c35335edb54720efa5cacf184",
+    "textbook_sha256": "ef368d51e4345a69787ae7bb1c87f76a7e1b2f9de51fe51cab2ff4f1302bbbed"
+  },
+  {
+    "path": "content/first-order-logic/introduction/soundness-completeness.tex",
+    "unit": "OLP-0148",
+    "upstream_sha256": "05f6726f7479e800c0bba936fc241ba48814425b161a53c67b4cc5bf43aed773",
+    "accepted_bn_sha256": "68e3359723d13255c1a68c867c962dab1ab580debf7ec65c96c54d6b96638df2",
+    "textbook_sha256": "d590f31bf21e5e69e6cffb4880075cdf2d1fae03aa979d10a643239097190fed"
+  },
+  {
+    "path": "content/first-order-logic/introduction/substitution.tex",
+    "unit": "OLP-0146",
+    "upstream_sha256": "a874a9c9150455531a7d563ddf3e6bf35c86fc2134c324f9bf78135213d912f1",
+    "accepted_bn_sha256": "38ead77ec8b2f60f4c9ae5ba4e1ea53d9ba302b3ffe04e36ef4c112f52737bc0",
+    "textbook_sha256": "ba0e29c7d4ce188cb478f42b1f5b4f11d62009addaebac85479fa3efe8301845"
+  },
+  {
+    "path": "content/first-order-logic/introduction/syntax.tex",
+    "unit": "OLP-0141",
+    "upstream_sha256": "13404c0d5539db8f9ec7ac2205560b802e61e18623610a74d945c21f64e71884",
+    "accepted_bn_sha256": "8e91740d5bdd2b01d3dea67faaaf5c79ecc6ceee26e2ae9b30a31bcef4fb7cc6",
+    "textbook_sha256": "0f876155de24d275f4c163f87df64b0fac34e5f57720074eba7bec8f327734b2"
+  },
+  {
+    "path": "content/first-order-logic/models-theories/expressing-props-of-structures.tex",
+    "unit": "OLP-0169",
+    "upstream_sha256": "feb12b7951795d4ad220ee97941e52fef3469bcfe363ec6a3660992225154f9e",
+    "accepted_bn_sha256": "a586e335bd5a10912830ccc172f7d6ecf123863098e0d6fc9089394cf061e932",
+    "textbook_sha256": "468eecf8ac388940b560047bedcc1f7b67e8d155530fc54448e67ec9fc525a11"
+  },
+  {
+    "path": "content/first-order-logic/models-theories/expressing-relations.tex",
+    "unit": "OLP-0171",
+    "upstream_sha256": "37f0dcfda647cea12a9e3182a4e868092993f1d928faca29225f8e6efb82f87b",
+    "accepted_bn_sha256": "319c4b4026365294515f9e09ad697ac7726422c30d0f9a85300d1ceb87d1cf67",
+    "textbook_sha256": "6d2ac44063b14a352c1683f2f92cc32751e56ee7ae481010aa9a6ef9a536de45"
+  },
+  {
+    "path": "content/first-order-logic/models-theories/introduction.tex",
+    "unit": "OLP-0168",
+    "upstream_sha256": "af9e91c4a4e19debfa137b696a280723e3de5779d7b65cc32ff0d0bcbac377a1",
+    "accepted_bn_sha256": "7d7ed72c4c1953abdd57d7a51cc3bc4d1c0dfddf26bb39eb71152069e6ba1046",
+    "textbook_sha256": "2eeac1c30bc5dc08c7c9a7d0b08173acf70d3d3a5971972afa94b96c3e27048e"
+  },
+  {
+    "path": "content/first-order-logic/models-theories/models-theories.tex",
+    "unit": "OLP-0167",
+    "upstream_sha256": "be635957198b3c2fcfee43dff67ce462f827c6cb051af468fd45feb3858ea9a7",
+    "accepted_bn_sha256": "206a836cce2e3e5ca5e2aea68750f36706b008d414917d2228ae544731ba0a1a",
+    "textbook_sha256": "206a836cce2e3e5ca5e2aea68750f36706b008d414917d2228ae544731ba0a1a"
+  },
+  {
+    "path": "content/first-order-logic/models-theories/set-theory.tex",
+    "unit": "OLP-0172",
+    "upstream_sha256": "e85d5beac63c3e6a5c44bec12aabbfe05e0b2af8f2604d6d79bb5220587eaeaf",
+    "accepted_bn_sha256": "5b0bb9e700e57730e8ceeab95d3f59dede4c095ac9bb369a55c147c48628eaa6",
+    "textbook_sha256": "51910106a5a1d03b4f1843f0b3719af2d4f879b8ecaf7b4855dcd6a168c07e0d"
+  },
+  {
+    "path": "content/first-order-logic/models-theories/size-of-structures.tex",
+    "unit": "OLP-0173",
+    "upstream_sha256": "8b7238c293db0a3717f1fcf3ad2420e093cd65593237c26faaaf36d7b131e934",
+    "accepted_bn_sha256": "612c39b5915f7fcf16370912862c1846e8b6beb31cbb33ec6bc987fe7404012b",
+    "textbook_sha256": "e2e662013ae8ffac4ae34817c6e5efe274e37c5e4302f37aaf09161cec48d6e7"
+  },
+  {
+    "path": "content/first-order-logic/models-theories/theories.tex",
+    "unit": "OLP-0170",
+    "upstream_sha256": "5ce32448dbe95d0b37477a6c343ae3a976bb299c955f50ae206b0f150f09ccd5",
+    "accepted_bn_sha256": "e7b2de159b9a515687318f9c89c8bdcc4b55810e4ecf0283eaf5657e03650061",
+    "textbook_sha256": "93663cff3183231e9c5d6771ef4fd1d2143adcd4c4f5709d26bb0902f85728f3"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/derivations.tex",
+    "unit": "OLP-0088",
+    "upstream_sha256": "f238e4c13bb97940ff82f8016aed565b9388d475721f9b6ff132166bf628aa5e",
+    "accepted_bn_sha256": "37bfd87a30599e831293a9f82e6228a8eb7edc89195dc3369591e1c48ab02c45",
+    "textbook_sha256": "21983d50c149397442b9cc6014f579b47072f3b86fe169528efadc9f751b572b"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/identity.tex",
+    "unit": "OLP-0096",
+    "upstream_sha256": "2f301d8fc8aa78831e17b9d14042c97218795d400a350b0726be3776eed17575",
+    "accepted_bn_sha256": "b17bbab1be9837639974fe36ac4aa53e43714d433c49451ba8cd5626e96922ee",
+    "textbook_sha256": "ef723d13ce3e45971513f0158da7402de86a890ef2dc7585448633e31cde0125"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/natural-deduction.tex",
+    "unit": "OLP-0084",
+    "upstream_sha256": "c53bed3aa593285a104c9e4c1c40a08efadb3b58094119043baa7a27b8a652e7",
+    "accepted_bn_sha256": "215722555bcec357d3da9a27b57c458cfa475a2c439596b3144e2ab5863cb37e",
+    "textbook_sha256": "e25f1ad56326a33a8ce5ee4f68f266ef240860a31817bf31ac403c024003a184"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/proof-theoretic-notions.tex",
+    "unit": "OLP-0091",
+    "upstream_sha256": "12ae1ea4a864b9a42e5fb6addcfc552bb4b74c1ba2cadced427593e4ca52f8e3",
+    "accepted_bn_sha256": "176e5a46b37940e10d2d955ea76ccfc232decc082324dafe8ad8becd8dc9a538",
+    "textbook_sha256": "5275f2743dde7d5fcfdd4a88d8dcfd858b4a78505656863c5d98ed45d9f60d87"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/propositional-rules.tex",
+    "unit": "OLP-0086",
+    "upstream_sha256": "5a85acea130c096719ef92c9513ab18a27380a22972eb859d55db92600932846",
+    "accepted_bn_sha256": "bf356f05a1385b8ae6706a658b42f69a85e03c0f158e01cc0ddb142ca7575e11",
+    "textbook_sha256": "4bdcac42611b2c02371c84e40e16550fb677b311227249062249a37179e65372"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/provability-consistency.tex",
+    "unit": "OLP-0092",
+    "upstream_sha256": "90f40aecedac9a8f2760b9976de0c6eac71c1b1e90911c4a30ce029a2d9e13c6",
+    "accepted_bn_sha256": "31cda4cc9266e5332f16f72e3b3c65967efbe7f76dc6c551d70606478ea4e88d",
+    "textbook_sha256": "df327ba5d90effe2c6719ec48d6c79cef2528cd886d8c6d4f1d015a0d82abcf9"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/provability-propositional.tex",
+    "unit": "OLP-0093",
+    "upstream_sha256": "afb2c635bfea260b7ab2bc413c04f13ac8be807849baf90716dd54f89b29558a",
+    "accepted_bn_sha256": "53934b16740e6994b3a4e6c62eab528553a5ded297dcbf64b0c48ffecf5ced23",
+    "textbook_sha256": "4be4b7c08970c29e030d40ef3425855089e7ef02d538e819502eec601a2539d5"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/provability-quantifiers.tex",
+    "unit": "OLP-0094",
+    "upstream_sha256": "589113c86043ad1152eb1f67bef6340f846cb51929e2d3f26294450516da247c",
+    "accepted_bn_sha256": "55e8fc4d3ab4816d5aa31a20203cfe150b111973c174d63e53dfbbecc30a98ff",
+    "textbook_sha256": "d2334d585d3c7b512655f4788493591613ce63978cfab2563981cd2bcf888f53"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/proving-things-quant.tex",
+    "unit": "OLP-0090",
+    "upstream_sha256": "962c30713b222744c165ce87f7cb8ab11d18d0e805d8d386900bfe8e8104f63f",
+    "accepted_bn_sha256": "f778d7620090e90cf91b5207c10cf4febf712c07cd384a7cc5ad3317e039b406",
+    "textbook_sha256": "57c1a4fa902d8c9353b1fb4a1bc40d19bb628d8d2f8e1c7ba79f72d47ace6547"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/proving-things.tex",
+    "unit": "OLP-0089",
+    "upstream_sha256": "d39069643439c576cb5813ef635725ac09ef83257571e380b92dfa223a801ecc",
+    "accepted_bn_sha256": "c17834cdb705077bc7b0e111db797ad9801d12ab90da8e35de2e59de57cf387a",
+    "textbook_sha256": "ad4a03f8c089c174e91afc12717a0749143da5c072dad49d90eb74d749d2699c"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/quantifier-rules.tex",
+    "unit": "OLP-0087",
+    "upstream_sha256": "eb6d95a24fce278404457d9169c033645853aab7e1c22dd4ca1fec9595068313",
+    "accepted_bn_sha256": "d1b966be048e06677f8cdb67f832e826ddd4bdc6ad79e1b48850d7baa80ec862",
+    "textbook_sha256": "73c4bcdf1585240bbd630e1d06a0e56d09fd8dc45b1e6cbadd41ebadd9ecee6a"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/rules-and-proofs.tex",
+    "unit": "OLP-0085",
+    "upstream_sha256": "e6e8bed6816bd64ac24342fd4d591ca0e7c1ddf82fc056b452aa87c45d810506",
+    "accepted_bn_sha256": "1efa9311ce0b55315b0049cc849573c2b136e2a29ef68e33e590d4c9a2009875",
+    "textbook_sha256": "e9aad459a04d3596b9992b747d5a5d78c098826607872b4ff915959dd0a1a59b"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/soundness-identity.tex",
+    "unit": "OLP-0097",
+    "upstream_sha256": "426ee50b639d92c730c70912bfda4fdf34c99e0e33097dc253cb196a01af7e7d",
+    "accepted_bn_sha256": "aa33d4a8f52d8b64025d3cb90459c1a7e8bf5eea75ff369a68845a44ed60310a",
+    "textbook_sha256": "cc1244ea6bf74e02de7a29bed7f3d7e097619333fdc236fd57d51f2e51e5dd66"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/soundness.tex",
+    "unit": "OLP-0095",
+    "upstream_sha256": "8b90318e1a2ed38568fb61cd5529d496cdfd17f322fd9c731a194e2d08e0a4b9",
+    "accepted_bn_sha256": "6daa8537d2af13d0fd77ebc1d8063d03e1cd0cb0a39d335af0066021a1ccfaad",
+    "textbook_sha256": "2d73daa249f54297ea5e6e857ef8f451f57e8ebea42f51d76347fea48f806020"
+  },
+  {
+    "path": "content/first-order-logic/proof-systems/axiomatic-deduction.tex",
+    "unit": "OLP-0068",
+    "upstream_sha256": "b9637a6a1cee29ebba2f8d2cdf238d4567d8ec4b7995607abcb0ee1aef0570b9",
+    "accepted_bn_sha256": "506aa7349f35bab07ed098547ac847a34d9792af0e9d1c998433267fdf2e0191",
+    "textbook_sha256": "19f624a383212209c66dacd8007c06027ee3e8ab819b34f7116c3794135b7cca"
+  },
+  {
+    "path": "content/first-order-logic/proof-systems/introduction.tex",
+    "unit": "OLP-0064",
+    "upstream_sha256": "148266281cc87fcd3e454249b9f6c42a117a9aed0733cc5a5f2e954ffd60bb58",
+    "accepted_bn_sha256": "0da76d94cea4ffda0abcf27a6e23e3d1f9b1df286f96cf2bbdada89ac9246302",
+    "textbook_sha256": "9497c357542d373851319f829ec6bcc8fb0a14ea1076ac6dab98dc1144b43ed6"
+  },
+  {
+    "path": "content/first-order-logic/proof-systems/natural-deduction.tex",
+    "unit": "OLP-0066",
+    "upstream_sha256": "77b5d31c7b63f657e0d5492d83810bfdc21af0169a9b38ccd5302e0e4cdefdfe",
+    "accepted_bn_sha256": "c573a88104669d1c1cd1502d8c9f193192744963932fdf694ed401afda1ac578",
+    "textbook_sha256": "12b966d2c350b5d046825c00ffccb62745a457fd61a2a09639c2a7ded5b31b67"
+  },
+  {
+    "path": "content/first-order-logic/proof-systems/proof-systems.tex",
+    "unit": "OLP-0063",
+    "upstream_sha256": "09977f6410bc57fcedf4428c2212ccf67b2bf0bf574413c4e2fdcf4de6cccab7",
+    "accepted_bn_sha256": "b19c0b0d8a7da88113304ae9b08ea5fb4f1a5511f448dd94c19a83a36d542c78",
+    "textbook_sha256": "be7e927fd1c64c8f39fd5bc1b2a607e85c79374bd81402577fc31307217d7e85"
+  },
+  {
+    "path": "content/first-order-logic/proof-systems/sequent-calculus.tex",
+    "unit": "OLP-0065",
+    "upstream_sha256": "5448a91da184ef1d41e40ec2d56b74db63d49412d8b96b3f2a39a101b0191bad",
+    "accepted_bn_sha256": "ab0343682ff65060ffb41197e33fcc902ead311b61836b2c4ca4b84e30fc5189",
+    "textbook_sha256": "ecdcf2f7af07fcf0534ca1917e8d1a0f4ecca9554ab4e7f601cf9d7116543c6c"
+  },
+  {
+    "path": "content/first-order-logic/proof-systems/tableaux.tex",
+    "unit": "OLP-0067",
+    "upstream_sha256": "8c9db50bcbc7a4aa757b8d57796b2e51df04b1cabb61f46756a79f72a1780b8f",
+    "accepted_bn_sha256": "51c26de7abf4a853596b6cbb048322c309514b2b0bf8ebd75d411853dd46793d",
+    "textbook_sha256": "ed1f1397b961a9d53d838c96a42a0d5b635b124b75c5f5875bf93356c9182998"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/derivations.tex",
+    "unit": "OLP-0074",
+    "upstream_sha256": "25897d850b211443621f31a1166f443c1e00c6bcbf13002bc1b9281ca4300371",
+    "accepted_bn_sha256": "e21e156ff6fdf66701b5ca6f4e487385d50c9e1c2cf255988980f33c1799ea78",
+    "textbook_sha256": "deef890f9d88f4bf77d0c6a9a468b3a3143a6f4d52c6c778d0d82928f56f390e"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/identity.tex",
+    "unit": "OLP-0082",
+    "upstream_sha256": "0f9d6d0731f2a74f568d49545bfeeff9373aea71d188973549054823f240f23d",
+    "accepted_bn_sha256": "d29ec4e0de6b90d7c9f4e83ec601ac83c4dbde64063e846263fb45e8d74465fe",
+    "textbook_sha256": "f7d45aaf634d01a3c6eeebfb5b9e56c3bf20835d2602972c2c6049a2da15b514"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/proof-theoretic-notions.tex",
+    "unit": "OLP-0077",
+    "upstream_sha256": "91c07ed071c2f9c18d3f10665b163b35dcc8636e7e0f27b4586aa9df63177a53",
+    "accepted_bn_sha256": "2cdbe32d046b0b395ffe216a21d8884704b5315b0b5345569a096f5f8f34b6c8",
+    "textbook_sha256": "3c68f63b0f73567fcf2b06544cdc045e5ae0f604ae7b8f7b7c509acb55f7b650"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/propositional-rules.tex",
+    "unit": "OLP-0071",
+    "upstream_sha256": "0bf253cf8afedca1478fb820770b04ab708dbe8cfd3344377a0d14ae91889276",
+    "accepted_bn_sha256": "734afed7336b2657095449fe9a50088dc0b8bfd3f4198c4e9352bb8109020bea",
+    "textbook_sha256": "66f26b2650ab2eea64dc525df5d93765bab5b7a9912ac82622ca7324ed009a98"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/provability-consistency.tex",
+    "unit": "OLP-0078",
+    "upstream_sha256": "a44d3cb4dadd224e943e0ea4d3d81529c6e108e7eecbcf9b1cb7d3632e4a150a",
+    "accepted_bn_sha256": "5dee073fb4f30fe7ef80a7807caf4fdd537dd5366ce9069e1e63be4a6b9f4ec3",
+    "textbook_sha256": "ef110464700973463484c2b186e8e273a6d173af08b57cf7bc750eceb81243fa"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/provability-propositional.tex",
+    "unit": "OLP-0079",
+    "upstream_sha256": "b9a23c15949d620b4783f3d1629b9e41315defac417dea12dd75118342b9d36c",
+    "accepted_bn_sha256": "a6a32d886b3265e9914976909c4b64ac1cbbf642a5c0a3507410e22cc5d74588",
+    "textbook_sha256": "b5efc6d872e9e9ac19300a980386e9c28e320ddd3f1685b796ec9d1c83506448"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/provability-quantifiers.tex",
+    "unit": "OLP-0080",
+    "upstream_sha256": "30d343a6b09d234683fff540afec999650f2cf4afd9ce751138b8f3b93f2fe6a",
+    "accepted_bn_sha256": "e509e4735e4bb9693e5dc426bca8c641c463de8146e969c19ab77e17bffbd080",
+    "textbook_sha256": "7010eff41af3c7d0294a27aff7edf72bb2465f5d08bfd58cce8c76d5b10d2a40"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/proving-things-quant.tex",
+    "unit": "OLP-0076",
+    "upstream_sha256": "d2e7eba11801753dfd9c57c6be6d45df5c11de57843c3f689dbee7636419aa99",
+    "accepted_bn_sha256": "a443fb815ef15efa9f198cb2bf7ff442edf390af26221c23009f82814cb382cf",
+    "textbook_sha256": "6b9100e73e28a1b19e80b249664399fba36983070f956ecc868290c946b2c78b"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/proving-things.tex",
+    "unit": "OLP-0075",
+    "upstream_sha256": "8c94fddc6d2f4c5faee64e84c1216e1c1ca096719b5528ea4faff753b906d303",
+    "accepted_bn_sha256": "005b5926b075dec69818ffab27b0bc0e19c71bb7c93057e9cbfc9e3ef3a02784",
+    "textbook_sha256": "5e924b9cf58fb1f22effcba4c6646af005d237d5adc241c5cde329ccaec2c45c"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/quantifier-rules.tex",
+    "unit": "OLP-0072",
+    "upstream_sha256": "e0047087b88b91ba65c23a76f7c8f230c4161785f4d83f07d14461341b66d90e",
+    "accepted_bn_sha256": "288fc61a1925bc2c496fb823a402b0f0614b590fdc8467ee82914dac741c5691",
+    "textbook_sha256": "32ca24a01da8ad399368e043a571d9749d7d9fbeca1d5b0c1a472a223364578b"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/rules-and-proofs.tex",
+    "unit": "OLP-0070",
+    "upstream_sha256": "73a554964d7a3fc35a116f63e658340a8c89f9915c3f27e23f7ebd762df35859",
+    "accepted_bn_sha256": "4ffbfc47add2380dabbd4a4643c28d6726e2d6a271e93ef5b51ac39e4bb5dc2e",
+    "textbook_sha256": "c525dd64482100ab187e8e3e64edc9426aafad9925ddbd4bbed489dded36f1c3"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/sequent-calculus.tex",
+    "unit": "OLP-0069",
+    "upstream_sha256": "f7e79d7b3f181c61d3defb24c630db20ceaf12a3ec237c9b0a2ab1f7855494fb",
+    "accepted_bn_sha256": "3ceb786550962a10a01b42cb2f32b90ff3b374e83d55008c0b6bef0a1eaa595e",
+    "textbook_sha256": "42f5a1e815fb77c321a3fe5959c36e83973ccb6ed02f7bc4abb2fdbb0eebe4b9"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/soundness-identity.tex",
+    "unit": "OLP-0083",
+    "upstream_sha256": "0cc6d3e92d57d3070076ce2daa13aa85c6da6ac3cfb2b5d56df87bb7fef4fac3",
+    "accepted_bn_sha256": "ee02587244ff6df1706a63425eea3d818a14e8856dd6bf5cb7b7d4f9aee87026",
+    "textbook_sha256": "17f7ebdbac0c8161b7f788269e9f019728835fc793c8d94e4704210a2279858b"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/soundness.tex",
+    "unit": "OLP-0081",
+    "upstream_sha256": "4de487cafc9d685844abb2c0b29c7b51debeb30a9b1129c7a2fa8c13ae48b151",
+    "accepted_bn_sha256": "2c3166b371fe8ddf7fc104b385c4020a095a0f91c613868be0febe986c4dd19b",
+    "textbook_sha256": "a4c506d453b88a2c95f797dd2302ee1a8704f81970129a7d19b30543a296cbc5"
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/structural-rules.tex",
+    "unit": "OLP-0073",
+    "upstream_sha256": "5c13d5312a8b2287b54d67d2fadc6247ba499bd9b6a71255ea04891307689b06",
+    "accepted_bn_sha256": "7d2f569a19e5d5c1e823fd6595058c5f0fe737c918c660d5e9ca11209c5f0a97",
+    "textbook_sha256": "f5552ce39870cdf900419f14fef82493630164a7d734d8ef9836ba435b5652d9"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/assignments.tex",
+    "unit": "OLP-0164",
+    "upstream_sha256": "761e28eb126777a36e0be833eff8e34c09452a07991be2427ded51d765d919e1",
+    "accepted_bn_sha256": "00e30880fba06dc45cfc1566ff4d4baed9eca8f8e61f2646a9b43c4a77a60d2a",
+    "textbook_sha256": "f2af2770824ccc54d707e95d1f7d380cd4e4561beb4cc43ea087d06409f7c5f6"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/covered-structures.tex",
+    "unit": "OLP-0162",
+    "upstream_sha256": "50975f7de07ff4167fcf30249770ab3a4eaac7df0ae1f38d0c8f15ca7f87d530",
+    "accepted_bn_sha256": "707ee76eee6bfa8cfd2b35a8c3271aa6de294d5f85b012780ffd1114aff6f3fd",
+    "textbook_sha256": "073f23338a5c72b608af3e9a86618694f69ad4c2af81cd0533abbc3d07e3e41a"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/extensionality.tex",
+    "unit": "OLP-0165",
+    "upstream_sha256": "50a329405f437b78605cafd811dbf3837efa0fde17069d1dee208bff49a20fda",
+    "accepted_bn_sha256": "b1c7b40597000b2484586909e307de454f8d3af085b8832cea288800009f4fef",
+    "textbook_sha256": "d951a80c4112e0e1bdd6a179c185a5a29f0f6c84d85e18de0cbb9361d1fa5ce7"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/first-order-languages.tex",
+    "unit": "OLP-0151",
+    "upstream_sha256": "12389cc260a1209a3b4db95aa795df350026c94576bb0e62653229438ada136d",
+    "accepted_bn_sha256": "94077a8c40ec56e875e5597cd615e25d009b6b97553c7c9fe6cbdc1310dad258",
+    "textbook_sha256": "8a3312911259669a85d9db94a304f41d44a12ba449f2ec8c4da4c1791e0eaecc"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/formation-sequences.tex",
+    "unit": "OLP-0156",
+    "upstream_sha256": "b691c379c8dbebebf080199aa11279ab2666880334bf6b7818f385c4855eea01",
+    "accepted_bn_sha256": "176151834b749b6e1edb636f1624f69725ed8629a4316a72dabbe212f5402b56",
+    "textbook_sha256": "8b1763e91d5f968b7939cb2679a07d7f99ad486a359c3fdcb592f15b5954d26e"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/free-vars-sentences.tex",
+    "unit": "OLP-0157",
+    "upstream_sha256": "b04a358a03907e8e42caa4b1cee49c217db77e1ca2c742da21c6eb6d7051edde",
+    "accepted_bn_sha256": "5ce8c2ef443f17021b2950dc22dcacb0b8e463d2c9e15de7013cf31120d04944",
+    "textbook_sha256": "d88ca2b3a1218d9f9e99d689ef1c0b0d9b3baf4be8f5ad644438fa3e83ef68d0"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/intro-semantics.tex",
+    "unit": "OLP-0160",
+    "upstream_sha256": "0c17fd8bd7b0a2218229c8f217581bf09cde11ec08a602019f46b20f174a4722",
+    "accepted_bn_sha256": "52076469a9f05581ff4e142cea60e690e6d70d8551feb2626d9af095348711b4",
+    "textbook_sha256": "67e50b5271df505f8c4a1dfba25057ebe54a4e4d50fd7a80ad91bf8561c4e06e"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/intro-syntax.tex",
+    "unit": "OLP-0150",
+    "upstream_sha256": "471a1c986e2c701856bc6bec91cfe741242434d9a933420e279002792e2da1ec",
+    "accepted_bn_sha256": "9134adec67c15e1402b87594712c1ffac4014296d75c65b38091383251193560",
+    "textbook_sha256": "b8c0cfe534318f45c2e1f32537fdb552cd191968fdc8af67dd1b1c46f8fe32eb"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/main-operator.tex",
+    "unit": "OLP-0154",
+    "upstream_sha256": "788d271215826c823cfcc63c0b54ab7ef65a42a50cde27b27542f2072de2d786",
+    "accepted_bn_sha256": "0460c8e516f6daebde384c7fa8f60bfbb62ecdb5f7897fa1db4c9818e79f6c04",
+    "textbook_sha256": "27e444ad56f840d2c5af78a8ff73e34a2b35bd7bfd7427ab219495dcba5f88d0"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/satisfaction.tex",
+    "unit": "OLP-0163",
+    "upstream_sha256": "1345318ddf4f4df715f3cb3403b5a457eaf5d2941b0c745593d4a0001ade7ace",
+    "accepted_bn_sha256": "e93b170de6b04f2a3d180573256b1bccb3f7aac936632822ea809dbd723762f6",
+    "textbook_sha256": "3b8c87faebbbcd73da1e84263715c5ed25005a60bb7d8cd215fdd5467fee0653"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/semantic-notions.tex",
+    "unit": "OLP-0166",
+    "upstream_sha256": "ac61c5166fa97ab754993ebbf8a126c389f530944132e0b633a75e34c9e08b2e",
+    "accepted_bn_sha256": "c069e8736b5396a0886164794df20c54c33a5b02e28213981eebc40d9836ad3f",
+    "textbook_sha256": "58d9f33aa891b6f64b51a89f748d34bc88bb71e68ec19ac74fe4289d52f82aaa"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/semantics.tex",
+    "unit": "OLP-0159",
+    "upstream_sha256": "9ece0259134346fe5dad884d12bfe4aaa88dab579e7d821a156115ee904e8f3b",
+    "accepted_bn_sha256": "f306466bdc1d6306d0784a69b0d66e49e61d7c6aa8438b1a9702431aa938f343",
+    "textbook_sha256": "f306466bdc1d6306d0784a69b0d66e49e61d7c6aa8438b1a9702431aa938f343"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/structures.tex",
+    "unit": "OLP-0161",
+    "upstream_sha256": "7e144a9715ae1bfff09927c72b15f902f831042a7808541d595820981b722ebf",
+    "accepted_bn_sha256": "fef248d37b6c52b75f7e161e8265e23dc9715c5db4fc950d1237d53bc41aa32a",
+    "textbook_sha256": "cc96ec23443b1f63699e1409fa47c543ebb42df664400e977f200caa6a73ff36"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/subformulas.tex",
+    "unit": "OLP-0155",
+    "upstream_sha256": "6e287a941dee45c936517925a0db269918b5020ac24892a03342dc7678f6c938",
+    "accepted_bn_sha256": "b03c02c24d6892e4ad2a29692eefa2039684f5f8d346143708d718a5380a3baa",
+    "textbook_sha256": "f8a83c69ba366e61bfd340f833738a0e1e59de5f4ddf0eb2437302b3a437b0e0"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/substitution.tex",
+    "unit": "OLP-0158",
+    "upstream_sha256": "3db5cd0e374edb0ba4cff9f6f849272190d5fc5420e5132e1237adcd64619fae",
+    "accepted_bn_sha256": "e0fb00fcb4de0702581b83360109dc5506617721c10ca5f72d135bf69b9c8f2a",
+    "textbook_sha256": "6166841db542fb1eedaab5dc02c942f6da3946c87ef091c1ff7e587c0987a7c9"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/syntax.tex",
+    "unit": "OLP-0149",
+    "upstream_sha256": "473e66c94338b8f5f597ded8a099bc240a6a5e7e2c47ff05faf7235b0055cbdb",
+    "accepted_bn_sha256": "04023c87f25235c812b15c8c82f2f595ff3eeaf2f024ff0f9efa94e570a51888",
+    "textbook_sha256": "04023c87f25235c812b15c8c82f2f595ff3eeaf2f024ff0f9efa94e570a51888"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/terms-formulas.tex",
+    "unit": "OLP-0152",
+    "upstream_sha256": "8a31bcb40fff1de629e4bb540c781a6b49d32c412cb87cb2bc5a29efd32461e3",
+    "accepted_bn_sha256": "ea76d62747b4fca4b72a47a19d19cde489212b03f15a3f6a4db2e0bec56175d3",
+    "textbook_sha256": "baa4bf6a87814f2f3019508df6b4dba17017f1447c91a7bde6298cc2fe24e7ab"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/unique-readability.tex",
+    "unit": "OLP-0153",
+    "upstream_sha256": "6965d26327ea625a4697236ead340f76d3d83acdd087dc6cbe2bde3eebe33833",
+    "accepted_bn_sha256": "ffd7d55f27deeb461348ebd5b8ce1523b772a88381f8aa8f1b6cffee9b54e124",
+    "textbook_sha256": "0984d54dbb31afc0a46f7d88017fa86cfecd3e3b750565b037006b6de6d5cda3"
+  },
+  {
+    "path": "content/history/biographies/alan-turing.tex",
+    "unit": "OLP-0631",
+    "upstream_sha256": "105de99d822a0dbb375d0d4bd8e3ed3847b7f77d1f1c4760f62cbcd0b7f2671b",
+    "accepted_bn_sha256": "4e2300b48c2e504cd3a0c6e04106d5ed89a73521b3e1bd4b761f1f45b4f80173",
+    "textbook_sha256": "954227f0190c064fd259ba3c3e2f8b87653acdf5b45fff6e70499f813b11bf7b"
+  },
+  {
+    "path": "content/history/biographies/alfred-tarski.tex",
+    "unit": "OLP-0630",
+    "upstream_sha256": "216dca1713254d519d4f75b7f2f80cdf13dd614341b45631f6addefc26850688",
+    "accepted_bn_sha256": "95c70f1972c4cd5833b5066e1585785e12e730fb4c92c1bc0c8931149001534c",
+    "textbook_sha256": "c49961fe11b01d709ef2cfc454c72ac6f19ca1a157f9adecf8171ac9bec44fa4"
+  },
+  {
+    "path": "content/history/biographies/alonzo-church.tex",
+    "unit": "OLP-0623",
+    "upstream_sha256": "4ddf4dbe8cb1049a23e149abf11a8d1ab46dacfbc3a8351b90bb954c8133119e",
+    "accepted_bn_sha256": "c390707208438ead45c76661bc982e3baaea17a25c13029c5003a831107c97a1",
+    "textbook_sha256": "866142cfad943995eaad514a568f99555fecb24d996cb580e2fbf7cc377e27aa"
+  },
+  {
+    "path": "content/history/biographies/bertrand-russell.tex",
+    "unit": "OLP-0629",
+    "upstream_sha256": "4b13fffaac861f87a7e36182296f5896a8be923bf21d19dfbcf1b0a7bb253bbd",
+    "accepted_bn_sha256": "45381b3273e5f3d8412e65027b6f815f04f68e6806cece3ca2094cce0db2b507",
+    "textbook_sha256": "511abffbfe9248cd943c597cdb0aa20186a89644f63791aa7012e65716fd4119"
+  },
+  {
+    "path": "content/history/biographies/emmy-noether.tex",
+    "unit": "OLP-0626",
+    "upstream_sha256": "db6fbf6574c82c930646e6faaa5e486fb360c04aee3da1419e418a4a0616162d",
+    "accepted_bn_sha256": "cb0d9dad0d3f6c9e4c1f35d5c9754eeebbf6b68446488b37adf3f1ee6a645664",
+    "textbook_sha256": "e004fcf1f7a1fa1b4034e6c04fa01da72c1a056f3a8f0507c04fd59bc6ac8e46"
+  },
+  {
+    "path": "content/history/biographies/ernst-zermelo.tex",
+    "unit": "OLP-0632",
+    "upstream_sha256": "2bf8bef1ebdfcadf3ae701be0416db71d1a24786269cec3b8e41a767f8499a41",
+    "accepted_bn_sha256": "7b16dd733ac07cab7fb5b8e0ad8ed964185d05d3ad52534dfaccf33d1a5b60c9",
+    "textbook_sha256": "8f0671c59d644b65cf73342a487265e88cc6dcae6e011a40fcc6c47590dd3ec2"
+  },
+  {
+    "path": "content/history/biographies/georg-cantor.tex",
+    "unit": "OLP-0622",
+    "upstream_sha256": "aadadf813251dfc5337fde2b1a4da6dff17e1de0c4b9629e5f541edb030fe9fe",
+    "accepted_bn_sha256": "f79a7b644726e22198c081426fb839395395f3a7198ffa88930f959928ad7b28",
+    "textbook_sha256": "a9509feafd05d6c781fdc935eaa34264bc761266248ec61fbb583c3a156546ac"
+  },
+  {
+    "path": "content/history/biographies/gerhard-gentzen.tex",
+    "unit": "OLP-0624",
+    "upstream_sha256": "408dd58408ae82521025e8fcaa688d6025ed3bd84752721b826906bfcde5e6a0",
+    "accepted_bn_sha256": "0c00a3ab6e91888d6a044d9f49e71820f9eec8966f45c4eceeff24d4e0c30808",
+    "textbook_sha256": "46195a16ac73647d7af556cdb2eef9c8ab2abe31c409e4266348c52928b58ddb"
+  },
+  {
+    "path": "content/history/biographies/kurt-goedel.tex",
+    "unit": "OLP-0625",
+    "upstream_sha256": "b1096c00b2909587e2ac9bae78c9fb1484e4b056e4ebc13c08316cb85afc2664",
+    "accepted_bn_sha256": "3acd83a91455dd4a4ef8d12327ea6f93f08877b3b4c912fd349eeefaa26316e2",
+    "textbook_sha256": "22278e54c3a449f837fcf2c42b4882e12f5e5eeea8cc93c9967eca67a397a9fe"
+  },
+  {
+    "path": "content/methods/induction/induction-on-N.tex",
+    "unit": "OLP-0615",
+    "upstream_sha256": "30a7fe3bf67517b5744d826eeb819782d399cf28a018313f5a7eff12843fe222",
+    "accepted_bn_sha256": "ecf6b758140242d51fc888256256db5332230d5670d1ddaf70549827ff648bed",
+    "textbook_sha256": "0c4bce5645c5b4d454195a5052fe4a44ce451fe09f332fa25b582e6976850164"
+  },
+  {
+    "path": "content/methods/induction/induction.tex",
+    "unit": "OLP-0613",
+    "upstream_sha256": "a473475ad8fdd83af7da9474e389385d9b3fc9b0fe3673fbb7dc9c6a413df5af",
+    "accepted_bn_sha256": "c75f9a5a90fadb2b48d01d09913171818afbdaa00454eebc3863d85bff9522dd",
+    "textbook_sha256": "c75f9a5a90fadb2b48d01d09913171818afbdaa00454eebc3863d85bff9522dd"
+  },
+  {
+    "path": "content/methods/induction/inductive-definitions.tex",
+    "unit": "OLP-0617",
+    "upstream_sha256": "d26441b4fbfb76bcee62babdfcee3470e1879624623b8ccf76f85512086054e9",
+    "accepted_bn_sha256": "1e2e664e72176c288dac157af33097562e992d999f3ba3287d1839a3f9806e0b",
+    "textbook_sha256": "179e6f3b2971f3ca17cc885afa329c5197bb85d2a7551be20c71b8884350478f"
+  },
+  {
+    "path": "content/methods/induction/introduction.tex",
+    "unit": "OLP-0614",
+    "upstream_sha256": "45629bfdf1f5502361156b1f4e061afe2a2820a7983eb612c18473dfc12cfa51",
+    "accepted_bn_sha256": "debae0fdb3d3c824bbde7830ddb9a9676648ddb7bbefcd00ed7bc8bd23635900",
+    "textbook_sha256": "db0a7b248a0b493b10801a831f8504ab34aed9f0aec99a244beb55c59fa10a03"
+  },
+  {
+    "path": "content/methods/induction/relations.tex",
+    "unit": "OLP-0619",
+    "upstream_sha256": "66fc09c76443827350bdabf32900631432ebb9f043e51fe33b447fe64f3c0ba4",
+    "accepted_bn_sha256": "6835584849cb0915fb5c6753f24d4e4c011d1d6a4a80889222a02e2d85844eda",
+    "textbook_sha256": "3024a39e4c125847dec4ed4bdd2745adfce7083c0cb407840a4a0d7dd273a467"
+  },
+  {
+    "path": "content/methods/induction/strong-induction.tex",
+    "unit": "OLP-0616",
+    "upstream_sha256": "0cec55c0265daa331a4b473daad197d39ef0aaddaa518ae051d3230c1df2560f",
+    "accepted_bn_sha256": "224cd2f4fc18d08b62223fcb131368d4315c1c91f7dcf148cdd297d00c5773f7",
+    "textbook_sha256": "025844df9a06d4abfa6ed5669e053695b789449293156919ab3354b06d6d5ddc"
+  },
+  {
+    "path": "content/methods/induction/structural-induction.tex",
+    "unit": "OLP-0618",
+    "upstream_sha256": "f57f94a62ed4aab37f569b5d56430b3756ee6e3a5281a0488cae5c233f2a62d8",
+    "accepted_bn_sha256": "ebc2a5fdcbfa289a0ecf1f71837b7184a5194a9dfa8fba637215ffa35011e3ed",
+    "textbook_sha256": "7cbd86cf01f047e956d56ab1dda237fb1e112ab9876d0467dfee4818e3e3b4b4"
+  },
+  {
+    "path": "content/methods/proofs/cant-do-it.tex",
+    "unit": "OLP-0611",
+    "upstream_sha256": "47c3b4332e0c28351984e78cba0008e54deb442704710bf7d4f2ffa34e4e6c5e",
+    "accepted_bn_sha256": "cc28e7318f3098ddf471e904fe5508d468da44b2741dff099868c7f52bc4f4ea",
+    "textbook_sha256": "d34907560775761c4563daafd1c23f7ec4af2e00dda33c967f85a2174f1cb17a"
+  },
+  {
+    "path": "content/methods/proofs/example-1.tex",
+    "unit": "OLP-0607",
+    "upstream_sha256": "d9536cc5ffc9bcaa7dee417fe8bbfb1c7f7dc99a5abec3fdf5fd58ea4593922a",
+    "accepted_bn_sha256": "80569ffd995ffeb4c1a5c42b05ce6e2179ca7d6986a7c7c0478e44d03d73b8ed",
+    "textbook_sha256": "bf318316a9311e256ee5e39cb62a5ca3a923ced0a4ac78db39586592c118aae3"
+  },
+  {
+    "path": "content/methods/proofs/example-2.tex",
+    "unit": "OLP-0608",
+    "upstream_sha256": "cbef120cea559b153f4e6b828d2fe7942050d3534e3bb61e642fd467f897aa80",
+    "accepted_bn_sha256": "ecadc3ae4adaea1b7fb0204b7799673b531468d85c508e0a84994d7c36e6d4c3",
+    "textbook_sha256": "89c84a88feee1f51c3bb7e081046b8a3d770565786e865ac246a726f5ab8a5f3"
+  },
+  {
+    "path": "content/methods/proofs/inference-patterns.tex",
+    "unit": "OLP-0606",
+    "upstream_sha256": "dec51f23018334023107ecfaa7a2f31fdf964b2b0cb7aebaeeb4e1688ed6dd31",
+    "accepted_bn_sha256": "d7932c42639848a6b8dc43187e710a7b31ff5e478149544fd890d46a9f0996fb",
+    "textbook_sha256": "40eac61effc9d20a2ea20502167e254eecf414157e5014762262e3f4c8f3c3d3"
+  },
+  {
+    "path": "content/methods/proofs/introduction.tex",
+    "unit": "OLP-0603",
+    "upstream_sha256": "ae06d0471d8f4c8565a11f9dbd7bb77513f837bb495032b6356cafbaa319ad83",
+    "accepted_bn_sha256": "eda73efb32afbb130fb8de1a19254d6b314232165ad09f2e506d81da23dc07d4",
+    "textbook_sha256": "c06501d9cf19f6d61bc867c57af09aaa7e02d26e5c763220b8c4589bd0b77b35"
+  },
+  {
+    "path": "content/methods/proofs/proof-by-contradiction.tex",
+    "unit": "OLP-0609",
+    "upstream_sha256": "3eda384520d99069031c01f168564f639980118e7fd145ca105e8092fbe438dd",
+    "accepted_bn_sha256": "b597a21f87ee65584841031f4e885b247cfc50ee6f3c2efb6fa6ec35d51e6371",
+    "textbook_sha256": "a3ab717a44fc1407c3c72d027a144a2de95b3e381d7276be268fb2444557ed9e"
+  },
+  {
+    "path": "content/methods/proofs/proofs.tex",
+    "unit": "OLP-0602",
+    "upstream_sha256": "174ff1e6150d27c58b80541f4891c2c679b359a0d2b6a8b35b5dae2ab16761b5",
+    "accepted_bn_sha256": "659a0a84ca18e947546db7cbcf4e31c08a34aba92362434de16c28d5e1c3e0ff",
+    "textbook_sha256": "659a0a84ca18e947546db7cbcf4e31c08a34aba92362434de16c28d5e1c3e0ff"
+  },
+  {
+    "path": "content/methods/proofs/reading-proofs.tex",
+    "unit": "OLP-0610",
+    "upstream_sha256": "e5146120b8fd42d544e1e6e51fdcad7fd3a0c721a54ae320692c4fd4277fec33",
+    "accepted_bn_sha256": "80013eec1866c0cd6d45a9a9b7b8c441f98efcda1acb42afbaf8751432645055",
+    "textbook_sha256": "bed7e8388397066691943805be073b67de38584306adc7a4841ea72bc3e9df23"
+  },
+  {
+    "path": "content/methods/proofs/resources.tex",
+    "unit": "OLP-0612",
+    "upstream_sha256": "69bf95954428e38a55dfca85aa13d62ba2b9992afa406364da4a0b251d86fa44",
+    "accepted_bn_sha256": "146412ce5fff761bc33ff7f3911bdf70a94119947becbc0ca6a5fa809accbbd1",
+    "textbook_sha256": "e034913b4e05e469a6a1aa3da2da8e64a82f764baae3e3e3f85c01ec71ef0075"
+  },
+  {
+    "path": "content/methods/proofs/starting-proofs.tex",
+    "unit": "OLP-0604",
+    "upstream_sha256": "84908cb7ef78b1ec62e2ccc41376d5bc039c6e44e1855c386d7b112c69d5ce64",
+    "accepted_bn_sha256": "c7a2728db3f2346003b1fcc297f4d4a28a739223f5c332806daca4787fb521a2",
+    "textbook_sha256": "f582bdcf5a1dd051c0e473e1c9dcfdb91d2c3f572e26298453052e2a9bb1b854"
+  },
+  {
+    "path": "content/methods/proofs/using-definitions.tex",
+    "unit": "OLP-0605",
+    "upstream_sha256": "0496b9489f10eb402e2eb91b503c7b522c2e73349e1481ceb9781f2e191a3bce",
+    "accepted_bn_sha256": "e6a94dad4f82a66e1e241123f66a9eb4a369bc0ed05998509b2904dfaf599cad",
+    "textbook_sha256": "3d4ea145a2e9f367ff60f474f5d398af25ccd8e7da203ce7a84510065f4ad659"
+  },
+  {
+    "path": "content/open-logic-about.tex",
+    "unit": "OLP-0001",
+    "upstream_sha256": "f1212d77679b9080a2cbf1ba03f9b71f0993db10b1b28464c423652f95b5fd33",
+    "accepted_bn_sha256": "f8004ba656dafb4c1d72279cc2564496ed76183f92e40fd8d139f061f110564a",
+    "textbook_sha256": "f8004ba656dafb4c1d72279cc2564496ed76183f92e40fd8d139f061f110564a"
+  },
+  {
+    "path": "content/reference/greek-alphabet/greek-alphabet.tex",
+    "unit": "OLP-0641",
+    "upstream_sha256": "67556451d23cb84d04fa7cb22c5728e508e170cd6fc0ca3ded3e2fb018986822",
+    "accepted_bn_sha256": "332d516cef65082c18e67a1e9eb4a850a914b0cf4fe245f375b7fc48be5c0c66",
+    "textbook_sha256": "332d516cef65082c18e67a1e9eb4a850a914b0cf4fe245f375b7fc48be5c0c66"
+  },
+  {
+    "path": "content/sets-functions-relations/functions/composition.tex",
+    "unit": "OLP-0025",
+    "upstream_sha256": "1733e9f6b7f1009f7d36cb47b3f11ec8cccc28ef173a379e4d69c3de352fcf28",
+    "accepted_bn_sha256": "626b3288b34741a275176c6c4be5582c86e472f855da16f99fa6cbd68decf83d",
+    "textbook_sha256": "36a95e40bda7caa9764feaba70207853ce2065b787ba23aa0069d514317df278"
+  },
+  {
+    "path": "content/sets-functions-relations/functions/function-basics.tex",
+    "unit": "OLP-0021",
+    "upstream_sha256": "d1fa0923e303fc49a88d4e476c319d6e91a8088de44c232dcfba5878325faea3",
+    "accepted_bn_sha256": "1c87cb6ae90af3e7f8c2e50943002a463225f0c594e7ff791dd97788dd53ebe4",
+    "textbook_sha256": "7abfaae34097dcc8547a83c0a234466c81c984e12a20aaa4dd7090d478101581"
+  },
+  {
+    "path": "content/sets-functions-relations/functions/function-kinds.tex",
+    "unit": "OLP-0022",
+    "upstream_sha256": "4d30902b7c66720afabb8b079294106a685aefba0dc02ca10d9921bb554db0ac",
+    "accepted_bn_sha256": "b36bc53773888b20840b07d943758a8156f1727d8fb7a5d4a132c74b44149a65",
+    "textbook_sha256": "30fcd92ebf406271fbfbd2206b875bc16a624557b199ebda8128d3d75e07d128"
+  },
+  {
+    "path": "content/sets-functions-relations/functions/functions-relations.tex",
+    "unit": "OLP-0023",
+    "upstream_sha256": "e2e46c0270c44b6f54861a4565f3829b1b5f91a7f72dca84046361e5abf622c3",
+    "accepted_bn_sha256": "89bf10c8e66fdcfc1fdfa79cf224de1c8aa0ad2536475c982e3dca7f83d5d529",
+    "textbook_sha256": "491033a743de91fba0c51d06b4d2d1f2c8ebe721a7d4720a631369c2fcf86a84"
+  },
+  {
+    "path": "content/sets-functions-relations/functions/functions.tex",
+    "unit": "OLP-0020",
+    "upstream_sha256": "d68bba27e593df2c17e2dc93b34256d829361b04134b4a962b997d5f4a230a59",
+    "accepted_bn_sha256": "25505e304c4f96ffb7d6bb28d91313b99f01e403a4a1847a5a6bb65970038d7f",
+    "textbook_sha256": "25505e304c4f96ffb7d6bb28d91313b99f01e403a4a1847a5a6bb65970038d7f"
+  },
+  {
+    "path": "content/sets-functions-relations/functions/inverses.tex",
+    "unit": "OLP-0024",
+    "upstream_sha256": "96e36d8cd8dc4ec0e73e9507147ecfe33d7e4f368ecf46de92efb423a7d409c1",
+    "accepted_bn_sha256": "d16c00f47bef365fada486d73d1543a5b839f4593536e3a43a8e715a30353070",
+    "textbook_sha256": "ed0a2bb52d8f8fe0d9638b541b636ae6182e30f3f3807a67dc54d0c7c7e65027"
+  },
+  {
+    "path": "content/sets-functions-relations/functions/partial-functions.tex",
+    "unit": "OLP-0026",
+    "upstream_sha256": "0f638e25ad1f565b9256846fb8b293c03663072b69a2adc5f2cfea1e94d00933",
+    "accepted_bn_sha256": "b26475143919867ecf2b2f94ab66902c1b495d3aa65c1fd888e0c8bb8a8c194b",
+    "textbook_sha256": "46bfe63352d4f8ee61d60868b050719a8cdb85e66b62b12541f7cd2ad300b88f"
+  },
+  {
+    "path": "content/sets-functions-relations/relations/equivalence-relations.tex",
+    "unit": "OLP-0015",
+    "upstream_sha256": "d9531aa5cd774c12090fbd5c9fb289181e93cf7e9a96ecf7d4fd3fcdf5d250c7",
+    "accepted_bn_sha256": "8b7b60420602e20ad14477d0f67a11d32ac1485220998f18242ac101aad8d951",
+    "textbook_sha256": "a30ab934f0f23e87c586a0451d87af08e616f268304c1e690420c9fd10b97fcd"
+  },
+  {
+    "path": "content/sets-functions-relations/relations/graphs.tex",
+    "unit": "OLP-0017",
+    "upstream_sha256": "dec624ef4e71903b72a9f0b5fcc6a15a2e0f897f9ebe881dd9c9e21333aeee75",
+    "accepted_bn_sha256": "682e0553d71624d65b6450a5e739e48d76687eff0aa1c3d5c6934c73755925cc",
+    "textbook_sha256": "a549ada247e2e340529a1f0fdee6c18dcdd5f15e28908eb7119d0309a23d03a8"
+  },
+  {
+    "path": "content/sets-functions-relations/relations/operations.tex",
+    "unit": "OLP-0019",
+    "upstream_sha256": "73c8bdb301aca93f687a06a045533d75d30088ae711f5e1dfd577b7864f8d3d5",
+    "accepted_bn_sha256": "8202aa90b9025257c4834092267c33dc084f886013e93783cef7ff3cff3f6c79",
+    "textbook_sha256": "c9fddb2d136499f6d2e8b38551cddf3cbfd82fbaeebf01a766cda2ea7c7565f4"
+  },
+  {
+    "path": "content/sets-functions-relations/relations/orders.tex",
+    "unit": "OLP-0016",
+    "upstream_sha256": "79593789022fef31c0609b9c94856e2aef5cd5e88e92864e782bb6e6e5f4bce4",
+    "accepted_bn_sha256": "ec5f30506cd5616349ac741230555dd4ceba141d59abfe16df7b2ad4c2a033f1",
+    "textbook_sha256": "1551f64b0018b41c8b038bac25603e4128c50c3d7b8da895d437bae07cd258ec"
+  },
+  {
+    "path": "content/sets-functions-relations/relations/relations-as-sets.tex",
+    "unit": "OLP-0012",
+    "upstream_sha256": "2a67c6fb4846155e8e7cd8172fd1fb8214db96d508ceae5d70dec95d5dfcc1ff",
+    "accepted_bn_sha256": "c5455ea8ec63b0964d63f432f2759fab1dc74b6ab9d272b690bbc52840982086",
+    "textbook_sha256": "9a1902b815da05290d4031959d8d1a6f0cdc9e3f2eed99fe736c71f3b6481cac"
+  },
+  {
+    "path": "content/sets-functions-relations/relations/relations.tex",
+    "unit": "OLP-0719",
+    "upstream_sha256": "1c11d0ef727a94d20108024eb994e3707e39198c656882a2120457fa29f7f3b8",
+    "accepted_bn_sha256": "f1886f524d68816dd759fc926cc9254f112645ff8446a1073407dff0db84a027",
+    "textbook_sha256": "f1886f524d68816dd759fc926cc9254f112645ff8446a1073407dff0db84a027"
+  },
+  {
+    "path": "content/sets-functions-relations/relations/special-properties.tex",
+    "unit": "OLP-0014",
+    "upstream_sha256": "006f2ea0d65e5069ef1509de94dd35a477ea835c19962da22f4bef48caffbee7",
+    "accepted_bn_sha256": "11d236ee9666f5304b4906a8ccda377dcd1b2ee65a1d089ac6c4537012708aca",
+    "textbook_sha256": "eb468f8872c7140472fe6fd14a2cfd9d9c7670b3ff22aa71e8e92755a9883c4f"
+  },
+  {
+    "path": "content/sets-functions-relations/relations/trees.tex",
+    "unit": "OLP-0018",
+    "upstream_sha256": "a158f1ce5b84c8c3f681dd6347b22491d1b67a91e110138b9cb6833e3d9dc23c",
+    "accepted_bn_sha256": "5799aa61e770bc4bcf65ed7f57207ccf1b60f77d751c86a664387a52b044f702",
+    "textbook_sha256": "eeb7833068f9c0d3244b5340a322c06fca946c5fbbd34ca363e0e7f31481d4fc"
+  },
+  {
+    "path": "content/sets-functions-relations/sets-functions-relations.tex",
+    "unit": "OLP-0720",
+    "upstream_sha256": "8a374d68ba657b45cce83c420e6d6863cdf452d54bbb6d7c10f068f669bbc3cb",
+    "accepted_bn_sha256": "08e7e89137cc29797bbd5122d2ad645ebda0099c5a4b27840105cb520e924a32",
+    "textbook_sha256": "b7852e8b195823e9b8ce9e4bfe6c2c50e7f9555ade8eb8dc91e9f07c432f1a75"
+  },
+  {
+    "path": "content/sets-functions-relations/sets/basics.tex",
+    "unit": "OLP-0005",
+    "upstream_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+    "accepted_bn_sha256": "2d17c4c30e2096680a9cd65df16d558fafb1464f372ee0d0210b8d17e21937c9",
+    "textbook_sha256": "aba4e829f6a113bdb8a23560b7a0e8307209d4bfd0b1fb15d6af33b293402555"
+  },
+  {
+    "path": "content/sets-functions-relations/sets/important-sets.tex",
+    "unit": "OLP-0007",
+    "upstream_sha256": "ec2115fa48ea6c6684a65bdf2f504102ca0a74b40cf88293dfc12f4ab97ada02",
+    "accepted_bn_sha256": "e03b7a46e32cb2aaf96ec0c9dca899885ef84e0523b087a2625612322cdb6e15",
+    "textbook_sha256": "6982a3d9dbf94ef1852d481a067796d781b08df02b1ac27a216d5d7b6d309ded"
+  },
+  {
+    "path": "content/sets-functions-relations/sets/pairs-and-products.tex",
+    "unit": "OLP-0009",
+    "upstream_sha256": "935f1e0e90dc783a1d5cb3298a38aa8df49af8b424e7282b27dc2ab4e9d85610",
+    "accepted_bn_sha256": "72f0f8a6df6e7361bd4d89e3ddadfbdc272b8963a8fbf34f770a27afef854cb4",
+    "textbook_sha256": "15f5d5f4b638eb2d4ea8b80c1cf939a170fc328a31ded26cc4481b709b58abf4"
+  },
+  {
+    "path": "content/sets-functions-relations/sets/russells-paradox.tex",
+    "unit": "OLP-0010",
+    "upstream_sha256": "aa8e94675f56112d8952b81d17968545b54c33393bfc466745edcaca30f4453a",
+    "accepted_bn_sha256": "8e18c047e8481a3a1c8e41fddc0f7d96bdb8127a26bdcec5f473fd97ab147ccc",
+    "textbook_sha256": "0cec4fb0de615a7ba35acf1af1edd11302f74df3a2612df4f4a26b69f276b307"
+  },
+  {
+    "path": "content/sets-functions-relations/sets/sets.tex",
+    "unit": "OLP-0004",
+    "upstream_sha256": "98a8964a95d72ab3004decdef3ee74f1dd1f221dd06dfc0e6d44eff52104f277",
+    "accepted_bn_sha256": "2281c8f7e0e251170c68a4f361b6e1c55b94da5aa5df3228555c5ab8c930344f",
+    "textbook_sha256": "2281c8f7e0e251170c68a4f361b6e1c55b94da5aa5df3228555c5ab8c930344f"
+  },
+  {
+    "path": "content/sets-functions-relations/sets/subsets.tex",
+    "unit": "OLP-0006",
+    "upstream_sha256": "63d819c246577b3bfd8ba2a933f114b58c6549bdc4fa6ea8ffa8ab07c7fed4b7",
+    "accepted_bn_sha256": "3b2b44311912aa77fdc72b56d9b50806f1ad8b36f3d1e2ab4e422c00a1ea336d",
+    "textbook_sha256": "f5a482a6b47188f7b4e01a783acfa3148068b969b272728bbdb17c79769ad054"
+  },
+  {
+    "path": "content/sets-functions-relations/sets/unions-and-intersections.tex",
+    "unit": "OLP-0008",
+    "upstream_sha256": "e556ac6add69b1e6d41123eb05be4adb15f2dc120a3782a721caeab42dbc4529",
+    "accepted_bn_sha256": "e45eaf12e58c0e9bb135dd4f043f413e2c94295288f07fa1fb27286c4d3ec23e",
+    "textbook_sha256": "a34c8adc69d32708d4335ffed857de34fd4df0f56be4ea52440852f8cefc7b11"
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/comparing-size.tex",
+    "unit": "OLP-0036",
+    "upstream_sha256": "075810b1cf1c8b54266518523d4665d3deae4a4937f4e19a66a09cc0e1aaebf7",
+    "accepted_bn_sha256": "03e208111dee022598a18f3094e0dd8dd173f1e559b6ad26a8cae291c2eeba5d",
+    "textbook_sha256": "9d08af07a50663db1bd86bff53c47b78ec7ee305a4f33724d83fd2f8585c985e"
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/enumerability.tex",
+    "unit": "OLP-0029",
+    "upstream_sha256": "bf6be35c0e393cb6e1d227f8e9024df4216792e663f23beb7277045487acfa67",
+    "accepted_bn_sha256": "2eb6439c3fd1411cdeb8b3c7536e410b23264266f5d4aa31dd1178c8d9cf7797",
+    "textbook_sha256": "139f1d2f546775ed20fdbe690a38fc97ee819a431d6b71f68eac262ae694de9a"
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/equinumerous-sets.tex",
+    "unit": "OLP-0035",
+    "upstream_sha256": "025a3fc368d6873825effcb07631913762edbf2d3f9a0711d57dcd9575361251",
+    "accepted_bn_sha256": "3dd614755c5dac7837cb429fa17f78fabae82e55af73484b16d474c5c043762c",
+    "textbook_sha256": "cfaa6623007477c1c67b4bd2909729992f96dc92121efa5079270826fd74a084"
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/introduction.tex",
+    "unit": "OLP-0028",
+    "upstream_sha256": "bb5010906c4b4b95ef652f372efc49c44ca9feebbca1e50fecbb29b3ff6ce8aa",
+    "accepted_bn_sha256": "6032ad1f7724e6f31468f788d67a6df9833840f2e5e515ac24b1a0ca93ef0f19",
+    "textbook_sha256": "53f17e041540abec48729357a27e8cf9921386d8ccf5ca13b364945f2b96c294"
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/non-enumerability.tex",
+    "unit": "OLP-0033",
+    "upstream_sha256": "4471def29c2da48dcb01635adf692cd0bc89cb6885636db149f4b2d86ff4e9fa",
+    "accepted_bn_sha256": "eea04f1e76abda2493fb8498fc3d94ca855a1b7f21ae86c457226435625de4ce",
+    "textbook_sha256": "bdf67e19843c2babfee89ed076305b3dc7474044d7ee2fe01ebbd3369e655c5b"
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/pairing-alt.tex",
+    "unit": "OLP-0032",
+    "upstream_sha256": "c26b4e0da9e2e0b0ec839470ddd1d0d5eb1b3d3922d3b6986c9a795f34328797",
+    "accepted_bn_sha256": "a13e03a6bd61c7d9640855a90bd61609f60cc926989eef29fd4007eef338eea8",
+    "textbook_sha256": "a4e3da02db26cd12468faaf1112894aaff1421c3ed8d2951e8481c17bb36de4b"
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/pairing.tex",
+    "unit": "OLP-0031",
+    "upstream_sha256": "fb6cc1176e91e56cea5f5b9708723c59191813f8fe256aac8ed0457a0119a9bf",
+    "accepted_bn_sha256": "e8a94bbe28092fb26a7c2741c04b61b9bda2ae721a0f46e9085a0bc5b7738ff7",
+    "textbook_sha256": "a0d3c67bfb70e66f6674848145f53fb7db8cc3bf567a2dc04cbf0d0439f84f63"
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/reduction.tex",
+    "unit": "OLP-0034",
+    "upstream_sha256": "0d6d2e3280698668b837cef6dcf3134b86d2a4b48831ae516e6e33e42898c79a",
+    "accepted_bn_sha256": "206db8672ed2b765e5b473078ac5dca5094050a083f47fa9d4a8fc76d00bdd65",
+    "textbook_sha256": "80e8627131e0d0853c380904ed5336932f38a9c0e3895e3f14b0844118d8fa89"
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/schroder-bernstein.tex",
+    "unit": "OLP-0037",
+    "upstream_sha256": "7b99b3e032e24e425383734ce80ad9a5cc37d018c09205e02f37b927d50bb56a",
+    "accepted_bn_sha256": "f69e05305adf5989883adc72c42c377f70d4424742bffcc0162b9ce36878a4e5",
+    "textbook_sha256": "1c215e2490f1ce681e6f602e43c2038f700be3c69bd5e341aad759550931fb00"
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/size-of-sets.tex",
+    "unit": "OLP-0722",
+    "upstream_sha256": "1b755d63c0edd2bf25f5f07187bf39da92895ff846a16a59d579227124ef116b",
+    "accepted_bn_sha256": "806922e00fa0dbe4a1687ef9ba847511677b44ee04000f5ba87baedcbe1b4f34",
+    "textbook_sha256": "e87f7cba61d5df380eea7b9afa1640bb5cc615f4254e6a6b3a1163625f4b101f"
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/zig-zag.tex",
+    "unit": "OLP-0030",
+    "upstream_sha256": "514c709d325dd5496ee321828b0c4a0e7eea089a58d3f2ecde05128b9e7daf26",
+    "accepted_bn_sha256": "f3e1934b4af3742cc945ec47aedc5cfefc5326eb60628cf14d6f0bb555bdf7e0",
+    "textbook_sha256": "2a58d184639fd594f842685082f8bfa730f255cff030f1e1c19305a8a341735a"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/church-turing-thesis.tex",
+    "unit": "OLP-0263",
+    "upstream_sha256": "a9073c7499f26e2ae151d434d24aa8e4a9789f84f65a43568a75aab78d49a421",
+    "accepted_bn_sha256": "646b3c0ec5e3cc4338f8e25d4a4084676b6e8e9f345ba5dbc501ca0cb3bca484",
+    "textbook_sha256": "281d00a0ac758b92f4f7178408d377ee44159a4a3e23ee747bdc392354bf6a45"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/combining-machines.tex",
+    "unit": "OLP-0261",
+    "upstream_sha256": "02dfa5443489d4035dc4e83de121becb3ebcd8a13564f9531ffb21b8ff5fef48",
+    "accepted_bn_sha256": "b693ba75df8f0aae7abff3dc1b8da1cf7a6e2eea2114477cf30529ca7177dac3",
+    "textbook_sha256": "4100391e2beb808c426badca7661c930ec7fdc841ba8a898a7d02a6c8e058e4c"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/configuration.tex",
+    "unit": "OLP-0257",
+    "upstream_sha256": "8596ba7be3af54cf8eff3993ca931ba11f3664431eb2378f7fda47a2cf446b0b",
+    "accepted_bn_sha256": "da56c9f000817ae93d41f060d8b81054e1f15932f5fcd31c951b3cad184ab948",
+    "textbook_sha256": "fa9e51d61c475d300a475425b7e41994183144081dbee130f389fb50c71e2b0a"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/disciplined-machines.tex",
+    "unit": "OLP-0260",
+    "upstream_sha256": "b90ae0706db20b57872c40cdbd28e8ecb3d9aa98bbab8f18974ca235e4607aaa",
+    "accepted_bn_sha256": "5727c95038f1d56e37d493418ef17e2cdf6a3afce9894bb923cab5aec9c0fa86",
+    "textbook_sha256": "bdb39d0bb06fecee95779cb8848a71c6c4220501e17eb0436bc95b313925362a"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/halting-states.tex",
+    "unit": "OLP-0259",
+    "upstream_sha256": "bc10eb130811dbd6f527c85e683a03b97f771c7f5ff0f64d5a39f040144799bf",
+    "accepted_bn_sha256": "5d18342be46567323d5f9939970ce3be82d047470f2ba6eaa371ef4613379d1d",
+    "textbook_sha256": "036256930431c9da832b6d729bbd4439bd19270bff3d0a116ca4d1932f6d62a5"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/introduction.tex",
+    "unit": "OLP-0254",
+    "upstream_sha256": "659e790a468190fba86918ca1d865510a30e7ab97b629aed7e5491b8cfac75b3",
+    "accepted_bn_sha256": "c83b810a216c04687b5e58d7f8ae681e77b71cccccc02eb2d3dc45efcaafea13",
+    "textbook_sha256": "529db555456ae82a5048b61b19de22d49e5338aff220c02d61f3ffd5331d7631"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/machines-computations.tex",
+    "unit": "OLP-0253",
+    "upstream_sha256": "332d13fb67f673b5deab98c30a94f50bfb7152187a2e9ab6b6e8d438174415c1",
+    "accepted_bn_sha256": "336523a28fac894a54c2b4b60977ad4b0059cfa72763f74cf17b4501e15cc9c8",
+    "textbook_sha256": "336523a28fac894a54c2b4b60977ad4b0059cfa72763f74cf17b4501e15cc9c8"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/representing-tms.tex",
+    "unit": "OLP-0255",
+    "upstream_sha256": "099ee6e5370880ce3164bdeeb6fe36a06d2387228fa2ce4df943cb88ed6f3afd",
+    "accepted_bn_sha256": "91f4583a03a715a39aa8e4d760e98bc26a3f9e03dd590b9e70a188f63ccd4cbd",
+    "textbook_sha256": "65565ba41c04ae48880f8ec2e09a73f0d4ae6f3bf55318cad7aa7ee5ebdfb318"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/turing-machines.tex",
+    "unit": "OLP-0256",
+    "upstream_sha256": "20d13655358fa780af8f9a2e4994c101c1495ecce098512c28a60293ee239a65",
+    "accepted_bn_sha256": "b4986bfd4221a066a8b24e4dfb87b6235aa94de9c6de3c579ab4df0630a82668",
+    "textbook_sha256": "9f588f0dbe83f59996f223d61c1bbb10953ce0e1f9d14172586c2379870d928e"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/unary-numbers.tex",
+    "unit": "OLP-0258",
+    "upstream_sha256": "c1e405708a0c2a3ff77377f136b2d94703174a4a23eefa25a9f6555a13cfcba3",
+    "accepted_bn_sha256": "5cfc58296ca9d7f95d33712b0ea294013fe34b1c2b3444b8f3c0b9f084053b84",
+    "textbook_sha256": "bece59506b410bc1e9291234a06fec7f691c4a542de59fa122a2cf112464386f"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/variants.tex",
+    "unit": "OLP-0262",
+    "upstream_sha256": "d751ce8370fa72e3d98762ecf2f928e19b9bf1c94cc17505221da0eec922d35e",
+    "accepted_bn_sha256": "9fb41978a1cf9fdd39fa56eadc433591776f5cefaec8598129e21a213d79c84b",
+    "textbook_sha256": "a6166be76d4054b8e91b506c0b021349394bdd7edf836e9e8eb46b8a42dc8852"
+  },
+  {
+    "path": "content/turing-machines/turing-machines.tex",
+    "unit": "OLP-0252",
+    "upstream_sha256": "6180cf9de2eefc91d202d374a0f24e3003f5df485a8a7567e48cf50b45c0d8fd",
+    "accepted_bn_sha256": "12fa2f606318ec83e7353ff4f47259cadf5aea53cab9fabc692d43d31429617e",
+    "textbook_sha256": "12fa2f606318ec83e7353ff4f47259cadf5aea53cab9fabc692d43d31429617e"
+  },
+  {
+    "path": "content/turing-machines/undecidability/decision-problem.tex",
+    "unit": "OLP-0269",
+    "upstream_sha256": "e55cc5610483e274125f4d5caa00965ecee3b77e819218f7cb6f59e879e9bdd3",
+    "accepted_bn_sha256": "e445c7fa13d622914d80a57ca982d3dc724b30e992887d42c0b481f860d755d5",
+    "textbook_sha256": "26de78e756eac8d0f27ec5fafc9d6f6dc2dce2650cbf471adcbcf173248c9925"
+  },
+  {
+    "path": "content/turing-machines/undecidability/enumerating-tms.tex",
+    "unit": "OLP-0266",
+    "upstream_sha256": "4c8ce821f6a0585dcd5a20f4d7d1082b439c2a21b1450cc967155a5a548f62c1",
+    "accepted_bn_sha256": "6fb21eef83ef85e16e14d27112a2733186be389a7e17bec36d48a5d52bbde019",
+    "textbook_sha256": "df941ea507d11068303cffb61dea64a4bada7b6451927bd97b94678d6fa0ad1d"
+  },
+  {
+    "path": "content/turing-machines/undecidability/halting-problem.tex",
+    "unit": "OLP-0268",
+    "upstream_sha256": "0ddd299c7af03bdd5bb5b0e8d723caa0d1347ba41977e52429f5d43d7850be71",
+    "accepted_bn_sha256": "e05fb51d84be2b24926627bcd0df56734ac94454cfc5491d9872c1a2acc1a949",
+    "textbook_sha256": "f38d9872a26bf43a0ec1fc3799b5eba7defdb6e1c85d2c25003ef10606760678"
+  },
+  {
+    "path": "content/turing-machines/undecidability/introduction.tex",
+    "unit": "OLP-0265",
+    "upstream_sha256": "93d2253ac6e586e10383a07e5851584833964c1fbcffaedef10a806a09023334",
+    "accepted_bn_sha256": "23bd4b181518c73df07f3816d4b1ceb7ed2d021099321face5f05f2b55082ac2",
+    "textbook_sha256": "9ce504a8b53c51a4c61e7e53a618f746b870b669ba8ce7f694c05fcd1ccb47c7"
+  },
+  {
+    "path": "content/turing-machines/undecidability/representing-tms.tex",
+    "unit": "OLP-0270",
+    "upstream_sha256": "9b07ae3b7dc8802daae69390c7c6ca17b1550a0c99b8d38a16732406b28a58c5",
+    "accepted_bn_sha256": "2a0628046104eb4e21c083d9b4d11e446825080652524fe1f55d3a8d8e13fa1f",
+    "textbook_sha256": "eb71bc6279701b8f8115f264b5731731cc02bbe65d5aee7e8e1f299083c2dd58"
+  },
+  {
+    "path": "content/turing-machines/undecidability/trakhtenbrot.tex",
+    "unit": "OLP-0273",
+    "upstream_sha256": "bd1a1c362c23d954d78610dbb7dcde85e7a3aff378b80eb51607c26cd718e802",
+    "accepted_bn_sha256": "569cdfd8ec43a51c67bc82c437ca684921c08d4a642a811556dc50d1e4e6b3fb",
+    "textbook_sha256": "8e27da74d91629b4bacb3a73f8389ab086ff899501621fcc2c5917ae21c940ca"
+  },
+  {
+    "path": "content/turing-machines/undecidability/undecidability.tex",
+    "unit": "OLP-0264",
+    "upstream_sha256": "99eca564cdccc46d4c9bf724df75ab3f206d7c9dccc66c7df7eb1fc4d20120ae",
+    "accepted_bn_sha256": "01f879c750eb0d98e4bd2c617c09df6a562239511acb924ec690f3cfbf643d06",
+    "textbook_sha256": "01f879c750eb0d98e4bd2c617c09df6a562239511acb924ec690f3cfbf643d06"
+  },
+  {
+    "path": "content/turing-machines/undecidability/universal-tm.tex",
+    "unit": "OLP-0267",
+    "upstream_sha256": "aa4bdd1cf46621152e74cecfe49f34398c6e9f29ac92473bc2835c7acfcf9ed6",
+    "accepted_bn_sha256": "ee5b8baa2433cb3bc6249eff21fc69a18b0a13cfd5ed1ae9c708672135be4522",
+    "textbook_sha256": "f70d2b70ea2f108425e959e4a819e1a802dd5c3845e1ff025ffdc952af1dba09"
+  },
+  {
+    "path": "content/turing-machines/undecidability/unsolvability-decision-problem.tex",
+    "unit": "OLP-0272",
+    "upstream_sha256": "c609e9a9a9dce039d6ef7063d2e604269790462b6c226eec82329128873eab6e",
+    "accepted_bn_sha256": "31607ca235333619f357d00dd8068bc044e2f388c8af26ee6be7a1c8ccd1f3b4",
+    "textbook_sha256": "0b672f51d00f801fe18585fbe621a2ec91dcbcc508abd996a4421cb676bd2dd5"
+  },
+  {
+    "path": "content/turing-machines/undecidability/verification.tex",
+    "unit": "OLP-0271",
+    "upstream_sha256": "4d63cccc4113d567d9f0c874bc0690fa99330705b9a840a344a20ebdcd8a2660",
+    "accepted_bn_sha256": "f18858970d02e27bac38c9ca6a3c311f41fd76c4fb73323b497b1431846afb04",
+    "textbook_sha256": "e7134935d349404de05c7ff785a87978fe1a1513c4951fc322e21d5b45512312"
+  }
+]

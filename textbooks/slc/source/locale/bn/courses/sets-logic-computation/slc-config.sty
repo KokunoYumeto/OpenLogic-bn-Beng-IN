@@ -1,0 +1,22 @@
+% Bengali (India) configuration for Sets, Logic, Computation.
+
+\ollatinformulas
+
+\DeclareMathAlphabet{\mathbi}{OT1}{pplx}{b}{it}
+\DeclareDocumentCommand \Struct { m }{\applytofirst{\mathbi}{#1}}
+
+\DeclareDocumentMacro \TMblank {\sqcup}
+\DeclareDocumentMacro \TMstroke {I}
+
+% SLC uses “countable” for finite or countably infinite sets.
+\settexttoken{enumerable}{গণনীয়}{গণনীয়}[গণনীয়][গণনীয়]
+\settexttoken{nonenumerable}{অগণনীয়}{অগণনীয়}[অগণনীয়][অগণনীয়]
+\settexttoken{denumerable}{অসীম গণনীয়}{অসীম গণনীয়}[অসীম গণনীয়][অসীম গণনীয়]
+
+\tagtrue{defIff,defTrue}
+\tagfalse{prvIff,prvTrue}
+
+\tagtrue{probAnd,probIf,probAll}
+
+\tagtrue{prfND,prfSC}
+\tagfalse{prfAX,prfTab}

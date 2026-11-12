@@ -1,0 +1,135 @@
+[
+  {
+    "path": "content/sets-functions-relations/sets/sets.tex",
+    "olchapter_id": "sfr:set",
+    "id": "1",
+    "english_title": "Sets",
+    "english_pdf_page": 23
+  },
+  {
+    "path": "content/sets-functions-relations/relations/relations.tex",
+    "olchapter_id": "sfr:rel",
+    "id": "2",
+    "english_title": "Relations",
+    "english_pdf_page": 37
+  },
+  {
+    "path": "content/sets-functions-relations/functions/functions.tex",
+    "olchapter_id": "sfr:fun",
+    "id": "3",
+    "english_title": "Functions",
+    "english_pdf_page": 53
+  },
+  {
+    "path": "content/sets-functions-relations/size-of-sets/size-of-sets.tex",
+    "olchapter_id": "sfr:siz",
+    "id": "4",
+    "english_title": "The Size of Sets",
+    "english_pdf_page": 67
+  },
+  {
+    "path": "content/first-order-logic/introduction/introduction.tex",
+    "olchapter_id": "fol:int",
+    "id": "5",
+    "english_title": "Introduction to First-Order Logic",
+    "english_pdf_page": 95
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/syntax.tex",
+    "olchapter_id": "fol:syn",
+    "id": "6",
+    "english_title": "Syntax of First-Order Logic",
+    "english_pdf_page": 109
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/semantics.tex",
+    "olchapter_id": "fol:sem",
+    "id": "7",
+    "english_title": "Semantics of First-Order Logic",
+    "english_pdf_page": 134
+  },
+  {
+    "path": "content/first-order-logic/models-theories/models-theories.tex",
+    "olchapter_id": "fol:mat",
+    "id": "8",
+    "english_title": "Theories and Their Models",
+    "english_pdf_page": 157
+  },
+  {
+    "path": "content/first-order-logic/proof-systems/proof-systems.tex",
+    "olchapter_id": "fol:prf",
+    "id": "9",
+    "english_title": "Derivation Systems",
+    "english_pdf_page": 173
+  },
+  {
+    "path": "content/first-order-logic/sequent-calculus/sequent-calculus.tex",
+    "olchapter_id": "fol:seq",
+    "id": "10",
+    "english_title": "The Sequent Calculus",
+    "english_pdf_page": 183
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/natural-deduction.tex",
+    "olchapter_id": "fol:ntd",
+    "id": "11",
+    "english_title": "Natural Deduction",
+    "english_pdf_page": 215
+  },
+  {
+    "path": "content/first-order-logic/completeness/completeness.tex",
+    "olchapter_id": "fol:com",
+    "id": "12",
+    "english_title": "The Completeness Theorem",
+    "english_pdf_page": 249
+  },
+  {
+    "path": "content/first-order-logic/beyond/beyond.tex",
+    "olchapter_id": "fol:byd",
+    "id": "13",
+    "english_title": "Beyond First-order Logic",
+    "english_pdf_page": 276
+  },
+  {
+    "path": "content/turing-machines/machines-computations/machines-computations.tex",
+    "olchapter_id": "tur:mac",
+    "id": "14",
+    "english_title": "Turing Machine Computations",
+    "english_pdf_page": 299
+  },
+  {
+    "path": "content/turing-machines/undecidability/undecidability.tex",
+    "olchapter_id": "tur:und",
+    "id": "15",
+    "english_title": "Undecidability",
+    "english_pdf_page": 327
+  },
+  {
+    "path": "content/methods/proofs/proofs.tex",
+    "olchapter_id": "mth:prf",
+    "id": "A",
+    "english_title": "Proofs",
+    "english_pdf_page": 360
+  },
+  {
+    "path": "content/methods/induction/induction.tex",
+    "olchapter_id": "mth:ind",
+    "id": "B",
+    "english_title": "Induction",
+    "english_pdf_page": 390
+  },
+  {
+    "path": "slc.tex",
+    "olchapter_id": null,
+    "id": "C",
+    "english_title": "Biographies",
+    "english_pdf_page": 405
+  },
+  {
+    "path": "content/reference/greek-alphabet/greek-alphabet.tex",
+    "olchapter_id": "ref:grk",
+    "id": "D",
+    "english_title": "The Greek Alphabet",
+    "english_pdf_page": 420
+  }
+]

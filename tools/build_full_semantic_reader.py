@@ -236,6 +236,14 @@ def create_semantic_input():
                 formula, position = reader.parse_required(source, position)
                 prefix, position = reader.parse_required(source, position)
                 return r"\sFmla{" + sign + "}{" + formula + "}[" + prefix + "]", position
+            # The source width wrapper is typographic. Recover a display around
+            # an enclosed proof so its outer math delimiters disappear with it.
+            def width_body(body, _index):
+                body = body.strip()
+                if body.startswith("$") and body.endswith(r"\DisplayProof$"):
+                    return r"\[" + body[1:-1].strip() + r"\]"
+                return body
+            value, _ = reader.transform_environments(value, "maxwidth", width_body)
             value, proofs = reader.transform_proof_trees(value)
             value, tableaux = reader.transform_tableaux(value)
             value = reader.replace_macro(value, "pFmla", prefixed_formula)
@@ -305,7 +313,7 @@ OpenAI Codex — GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 So
                       + declarations + "\n" + macros + "\n" + r"\begin{document}" + "\n" + note + "\n" + body
                       + "\n" + r"\chapter*{সংস্করণ ও লাইসেন্স}" + "\n"
                       + "মূল রচনা Open Logic Project। উৎস ও বাংলা অনুবাদ Creative Commons Attribution 4.0 International লাইসেন্সে প্রকাশিত।\n"
-                      + r"উৎস সংস্করণ: \texttt{" + reader.SOURCE_REVISION + "}.\n"
+                      + r"উৎস সংস্করণ: \texttt{" + receipt["source_revision"] + "}.\n"
                       + r"\end{document}" + "\n", encoding="utf-8", newline="\n")
     stats = {name: sum(getattr(result, name) for result in results)
              for name in ("proof_trees", "tableaux", "derivations", "diagrams")}

@@ -34,7 +34,7 @@
 শ্র্যোডার--বার্নস্টাইনে পৌঁছতে আমাদের শেষ আরেকটি তথ্য দরকার:
 
 \begin{prop}\ollabel{sbhelper}
-$A \subseteq B \subseteq C$ এবং $A \approx C$ হলে $\cardeq{\cardeq{A}{B}}{C}$।
+$A \subseteq B \subseteq C$ এবং $\cardeq{A}{C}$ হলে $\cardeq{A}{B}$ ও $\cardeq{B}{C}$।
 \end{prop}
 
 \begin{proof}
@@ -47,7 +47,7 @@ $A \subseteq B \subseteq C$ এবং $A \approx C$ হলে $\cardeq{\cardeq{A
 			x & \text{অন্যথায়}
 	\end{cases}
 \]
-আমরা দেখাব যে $g$ হলো $C \to B$ একটি !!a{bijection}; তা থেকে $\comp{f^{-1}}{g} \colon A \to B$ যে একটি !!a{bijection}, তা অনুসৃত হবে এবং প্রমাণ সম্পূর্ণ হবে।
+আমরা দেখাব যে $g\colon C \to B$ একটি !!a{bijection}, অর্থাৎ $\cardeq{B}{C}$। তা থেকে অনুসৃত হবে যে $\comp{f^{-1}}{g}\colon A \to B$-ও একটি !!a{bijection}; সুতরাং $\cardeq{A}{B}$।
 
 প্রথমে দাবি করি, $x \in F$ কিন্তু $y\notin F$ হলে $g(x) \neq
 g(y)$। স্ববিরোধে উপনীত হওয়ার জন্য উল্টোটি ধরি; তাহলে $y = g(y) = g(x) =

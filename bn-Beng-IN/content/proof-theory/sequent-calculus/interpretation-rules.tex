@@ -66,23 +66,24 @@ $\oplus$-এর সিকোয়েন্ট-কলনের
 বিধি দেওয়া যায় এভাবে:
 \begin{align*}
 &
+\Axiom$!A, \Gamma \fCenter \Delta, !B$
+\Axiom$!B, \Gamma \fCenter \Delta, !A$
+\RightLabel{\LeftR{\oplus}}
+\BinaryInf$!A \oplus !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\\
+&
 \Axiom$\Gamma \fCenter \Delta, !A, !B$
 \Axiom$!A, !B, \Gamma \fCenter \Delta$
 \RightLabel{\RightR{\oplus}}
 \BinaryInf$\Gamma \fCenter \Delta, !A \oplus !B$
-\DisplayProof
-\\
-& \Axiom$!A, \Gamma \fCenter \Delta, !B$
-\Axiom$!B, \Gamma \fCenter \Delta, !A$
-\RightLabel{\LeftR{\oplus}}
-\BinaryInf$!A \oplus !B, \Gamma \fCenter \Delta$
 \DisplayProof
 \end{align*}
 এই বিধিগুলিও বিশুদ্ধ ও পূর্ণ
 হবে। প্রতিটির সিদ্ধান্ত তখনই
 সত্য, যখন তার সব পূর্বধারণা সত্য।
 % BN-SRC-627 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-627):} XOR-এর দ্বিতীয় বিধির সিদ্ধান্তে \( !A\oplus !B \) বাম দিকে, কিন্তু উৎসে লেবেল \(\RightR{\oplus}\) পুনরাবৃত্ত। বিধিটির লেবেল \(\LeftR{\oplus}\) করা হয়েছে; দুই পূর্বধারণা ও সিদ্ধান্ত অপরিবর্তিত।}
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-627):} XOR-এর বাঁ বিধির সিদ্ধান্তে \( !A\oplus !B \) বাম দিকে, কিন্তু উৎসে লেবেল \(\RightR{\oplus}\) পুনরাবৃত্ত। বিধিটির লেবেল \(\LeftR{\oplus}\) করা হয়েছে; দুই পূর্বধারণা ও সিদ্ধান্ত অপরিবর্তিত।}
 % BN-SRC-627 TARGET-CORRECTION-END
 
 \begin{prob}

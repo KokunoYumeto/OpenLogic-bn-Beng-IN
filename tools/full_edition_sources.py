@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import tomllib
 from pathlib import Path
 
 
@@ -28,21 +29,20 @@ def load_target_hashes(repo: Path, manifest: list[dict]) -> tuple[dict[str, str]
     if ledger.exists():
         data = ledger.read_bytes()
         hashes = {}
-        for line in data.decode("utf-8").splitlines():
+        source_changed = False
+        for line in data.splitlines():
             row = json.loads(line)
             uid = row["id"]
             source = sources.get(uid)
             if source is None or uid in hashes:
                 raise ValueError(f"{uid}: unexpected or duplicate unit in {UNIT_LEDGER}")
-            if (row["src"], row["path"], row["src_sha256"], row["state"]) != (
-                "olp", source["source_path"], source["source_sha256"], "current",
-            ):
+            if (row["src"], row["path"], row["state"]) != ("olp", source["source_path"], "current"):
                 raise ValueError(f"{uid}: source identity or state differs from the full source manifest")
+            source_changed |= row["src_sha256"] != source["source_sha256"]
             original = (repo / "upstream" / source["source_path"]).read_bytes()
             header = f"blob {len(original)}\0".encode("ascii")
             if (
-                len(original) != source["source_bytes"]
-                or hashlib.sha256(original).hexdigest() != row["src_sha256"]
+                hashlib.sha256(original).hexdigest() != row["src_sha256"]
                 or hashlib.sha1(header + original).hexdigest() != row["src_blob"]
             ):
                 raise ValueError(f"{uid}: English source bytes differ from {UNIT_LEDGER}")
@@ -52,7 +52,17 @@ def load_target_hashes(repo: Path, manifest: list[dict]) -> tuple[dict[str, str]
             hashes[uid] = target_hash
         if hashes.keys() != sources.keys():
             raise ValueError(f"{UNIT_LEDGER} is missing units from the full source manifest")
-        return hashes, {"unit_ledger_sha256": hashlib.sha256(data).hexdigest()}
+        receipt = {"unit_ledger_sha256": hashlib.sha256(data).hexdigest()}
+        contract = repo / "olp-edition.toml"
+        if contract.is_file():
+            edition = tomllib.loads(contract.read_text(encoding="utf-8"))
+            revision = edition["pins"]["olp"]["commit"]
+            if not re.fullmatch(r"[a-f0-9]{40}", revision):
+                raise ValueError("invalid OpenLogic revision in edition contract")
+            receipt["source_revision"] = revision
+        elif source_changed:
+            raise ValueError("synced sources require the edition contract")
+        return hashes, receipt
 
     status = (repo / "evidence/DRAFT_STATUS.json").read_bytes()
     record = json.loads(status)

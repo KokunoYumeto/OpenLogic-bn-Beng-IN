@@ -37,6 +37,8 @@ def main() -> None:
     ledger_hash = input_receipt.get("unit_ledger_sha256")
     if preparation.get("unit_ledger_sha256") != ledger_hash:
         raise ValueError("prepared unit ledger differs")
+    if input_receipt.get("source_revision", preparation["source_revision"]) != preparation["source_revision"]:
+        raise ValueError("prepared source revision differs from the edition pin")
     assert preparation["source_manifest_sha256"] == digest(MANIFEST)
     assert preparation["tex"]["sha256"] == digest(TEX)
     assert qa["source"]["prepared_tex_sha256"] == digest(TEX)
@@ -85,7 +87,8 @@ def main() -> None:
         assert source_path.startswith("content/") and ".." not in Path(source_path).parts
         original = REPO / "upstream" / source_path
         target = REPO / "bn-Beng-IN" / source_path
-        assert original.stat().st_size == row["source_bytes"] and digest(original) == row["source_sha256"]
+        if ledger_hash is None:
+            assert original.stat().st_size == row["source_bytes"] and digest(original) == row["source_sha256"]
         if digest(target) != target_hashes[row["unit_id"]]:
             raise ValueError(f"{row['unit_id']}: translation SHA-256 differs: {target}")
         add_exact(files, original.relative_to(REPO).as_posix())
@@ -144,6 +147,8 @@ def main() -> None:
         add_exact(files, relative)
     if ledger_hash is not None:
         add_exact(files, UNIT_LEDGER)
+        if "source_revision" in input_receipt:
+            add_exact(files, "olp-edition.toml")
     # Current redo records are separate from explicitly dated historical checkpoints.
     for pattern in ("REDO_GPT6_SOL_*.md", "GPT6_SOL_REDO_*_CHECK.json", "REDO_GPT6_SOL_*_AUDITED_ENGLISH.tex"):
         for path in (REPO / "evidence").glob(pattern):

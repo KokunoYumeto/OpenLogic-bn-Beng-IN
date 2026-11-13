@@ -7,7 +7,7 @@
   "sources": {
     "olp": {
       "repository": "https://github.com/OpenLogicProject/OpenLogic",
-      "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "commit": "1e960beff9ed7835bf3e3f1335e21af3439cd107",
       "license": "CC BY 4.0"
     },
     "slc": {
@@ -61,7 +61,8 @@
     "reader": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/blob/5ce49d98d5a06a94e68b6d838dd6df60442f6220/textbooks/slc/slc-screen-bn.pdf",
     "retained_source": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/tree/5ce49d98d5a06a94e68b6d838dd6df60442f6220/textbooks/slc/source",
     "engine": "xelatex",
-    "font_licence": "fonts/Noto-fonts-LICENSE.txt"
+    "font_licence": "fonts/Noto-fonts-LICENSE.txt",
+    "retained_reader_olp_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0"
   },
   "translation": {
     "authorship": "AI-translated and typeset by OpenAI Codex",

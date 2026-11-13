@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{tur}{und}{ver}
+\olfileid[bn]{tur}{und}{ver}
 \olsection{উপস্থাপনের যাচাই}
 
 \begin{explain}
@@ -38,8 +38,7 @@ $!C(M,w,n)$ একটি থামার কনফিগারেশন বর�
 $!C(M,w,n)\Entails !E(M,w)$ বলে আমরা পাই
 $!T(M,w)\Entails !E(M,w)$, অর্থাৎ
 $\Entails !T(M,w)\lif !E(M,w)$।
-% BN-SRC-180 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-180):} এই সিদ্ধান্তে হিমায়িত ইংরেজি পাঠ প্রথম অনুগমনটির পূর্বপক্ষে $!T(M,w)$-এর বদলে $T(M,w)$ লিখেছে। বাংলা পাঠে সর্বত্র ব্যবহৃত অতিভাষিক বাক্যনাম $!T(M,w)$ পুনঃস্থাপন করা হয়েছে।} % BN-SRC-180 TARGET-CORRECTION-END
+
 
 বিপরীত দিকটির কৌশল খুব আলাদা। এখানে আমরা ধরি
 $\Entails !T(M,w)\lif !E(M,w)$ এবং প্রমাণ করতে হবে যে $M$ নিবেশ~$w$-তে
@@ -51,8 +50,7 @@ $\Entails !T(M,w)\lif !E(M,w)$ এবং প্রমাণ করতে হব�
 হবে। যেমন,
 $\Sat{M}{\Obj Q_q(\num{m},\num{n})}$ যদি এবং কেবল যদি $M$-কে
 নিবেশ~$w$-তে $n$ ধাপ চালানোর পর সেটি দশা~$q$-তে থাকে এবং ঘর~$m$ পড়ে।
-% BN-SRC-181 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-181):} হিমায়িত ইংরেজি উদাহরণটি এই বাক্যে চলমান যন্ত্র~$M$-এর বদলে অসংজ্ঞায়িত $T$-কে নিবেশে চালিয়েছে। বাংলা পাঠে নির্মাণটির একমাত্র যন্ত্র~$M$ রাখা হয়েছে।} % BN-SRC-181 TARGET-CORRECTION-END
+
 এখন প্রকল্প অনুসারে $!T(M,w)\Entails !E(M,w)$ এবং নির্মাণ অনুসারে
 $\Sat{M}{!T(M,w)}$; অতএব $\Sat{M}{!E(M,w)}$। কিন্তু
 $\Sat{M}{!E(M,w)}$ যদি এবং কেবল যদি এমন কোনো
@@ -99,8 +97,7 @@ $\Obj Q_q(\num{m},\num{n})\land\Obj S_\sigma(\num{m},\num{n})
 \Entails \bigvee_{\tuple{q',\sigma'}\in X}
 (\Obj Q_{q'}(\num{m},\num{n})\land
 \Obj S_{\sigma'}(\num{m},\num{n}))$।
-% BN-SRC-182 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-182):} হিমায়িত প্রমাণের শেষ অনুগমনে আগে নির্বাচিত $q,\sigma$-এর জায়গায় অবন্ধ $q',\sigma'$ বসানো হয়েছিল, $S_{\sigma'}$-এর আগে \texttt{\textbackslash Obj}-ও অনুপস্থিত ছিল, এবং তারপর উল্টোভাবে $\tuple{q',\sigma'}\in X$ দাবি করা হয়েছিল। বাংলা পাঠে সাক্ষী $q,\sigma$-কে পূর্বপক্ষে রাখা ও বিসংযোজনের বাঁধা চলককে $q',\sigma'$ করা হয়েছে।} % BN-SRC-182 TARGET-CORRECTION-END
+
 \end{proof}
 
 \begin{explain}
@@ -115,8 +112,7 @@ $!T(M,w)\Entails !C(M,w,n)$।
 প্রতিটি~$n$-এর জন্য, $M$ যদি $n$-তম ধাপের আগে না থেমে থাকে, তবে
 $!T(M,w)\Entails !C(M,w,n)$।
 \end{lem}
-% BN-SRC-183 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-183):} হিমায়িত লেমার প্রকল্পে “after $n$ steps” ছিল, যা $n$-তম কনফিগারেশনটি থামার কনফিগারেশন হলে সেটিকেই বাদ দেয়; অথচ পরের লেমা প্রথম থামার সময়~$k$-তে এই ফল প্রয়োগ করে। বাংলা বিবৃতি ও দুই সারাংশে সঠিক পরিসর—$n$-তম ধাপের \emph{আগে} না-থামা, অর্থাৎ প্রথম থামার কনফিগারেশন পর্যন্ত—রাখা হয়েছে।} % BN-SRC-183 TARGET-CORRECTION-END
+
 
 \begin{proof}
 আরোহের ভিত্তি: $n=0$ হলে $!C(M,w,0)$-এর সংযোজকগুলি
@@ -130,8 +126,7 @@ $!T(M,w)\Entails !C(M,w,n+1)$।
 ধরা যাক $n\ge 0$, এবং $w$-তে শুরু করা $M$ যন্ত্রটি $n$ ধাপ পরে
 দশা~$q$-তে থেকে ঘর~$m$ পড়ছে। $M$ যদি $n$ ধাপ পরেই না থামে, তবে তার
 প্রোগ্রামে নিচের তিন আকারের কোনো একটি নির্দেশ অবশ্যই আছে:
-% BN-SRC-184 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-184):} হিমায়িত আরোহী ধাপটি $n>0$ ধরে নেওয়ায় ভিত্তি $C(0)$ থেকে $C(1)$-এ যাওয়ার ঘটনাটি বাদ পড়েছিল। বাংলা পাঠে $n\ge 0$ রাখা হয়েছে; থামার কনফিগারেশন না-হওয়ার পৃথক শর্তই অবস্থান্তরের অস্তিত্ব নিশ্চিত করে।} % BN-SRC-184 TARGET-CORRECTION-END
+
 
 \begin{enumerate}
 \item \ollabel{right} $\delta(q,\sigma)=\tuple{q',\sigma',\TMright}$
@@ -177,8 +172,7 @@ $!T(M,w)\Entails !C(M,w,n+1)$।
 মোডাস পোনেন্সে আসে। মাঝের পঙ্‌ক্তির প্রতিটি সংযোজক—যেখানে
 $\Obj S_{\sigma_m}(\num{m},\num{n}')$ বাদ যায়—$!C(M,w,n)$-এর সংশ্লিষ্ট
 সংযোজক ও $!A(\num{m},\num{n})$ থেকে আসে।
-% BN-SRC-185 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-185):} হিমায়িত ব্যাখ্যায় এই বিধেয়-প্রকরণটির আগে \texttt{\textbackslash Obj} অনুপস্থিত ছিল। বাংলা পাঠে ভাষা~$\Lang L_M$-এর ঘোষণা ও আশপাশের সব ঘটনের সঙ্গে মিলিয়ে $\Obj S_{\sigma_m}$ রাখা হয়েছে।} % BN-SRC-185 TARGET-CORRECTION-END
+
 
 $m<k$ হলে $!T(M,w)\Proves \num{m}<\num{k}$
 (\olref[rep]{prop:mlessk}); আর $<$-এর সক্রমতা থেকে পাই
@@ -240,8 +234,7 @@ $\lforall[x][(\num{k}'<x\lif\Obj S_\TMblank(x,\num{n}'))]$। (এটির
 আগের মতোই। (লক্ষ করো, প্রথম ঘটনায়
 $\num{l}'\ident\num{l+1}\ident\num{m}$ এবং দ্বিতীয় ঘটনায়
 $\num{l}\ident\num{0}$।) কিন্তু এটিই $!C(M,w,n+1)$।
-% BN-SRC-186 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-186):} হিমায়িত বাঁ-চলন প্রমাণটি উৎসের ভুল ফ্রেম-শর্ত পুনরাবৃত্তি করে $!A(x,y)$ এবং দৃষ্টান্তায়নের পরে $!A(\num{l},\num{n})$ ব্যবহার করেছে। লেখা হয় ঘর~$x'$, অর্থাৎ $\num{l}'=\num{m}$-এ; বাংলা সূত্রে তাই যথাক্রমে $!A(x',y)$ ও $!A(\num{l}',\num{n})$ রাখা হয়েছে।} % BN-SRC-186 TARGET-CORRECTION-END
+
 
 \item \olref{stay} ঘটনাটি অনুশীলনী হিসেবে রাখা হলো।
 \end{enumerate}
@@ -259,8 +252,7 @@ $\Obj S_{\sigma_i}(\num{i},\num{n})$ এবং
 $!A(\num{m},\num{n})$ থেকে
 $\Obj S_{\sigma_i}(\num{i},\num{n}')$-এর একটি !!a{derivation} দাও
 (ধরে নাও $i\neq m$, অর্থাৎ $i<m$ অথবা $m<i$)।
-% BN-SRC-187 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-187):} হিমায়িত অনুশীলনীতে প্রথম ও শেষ প্রকরণে সংখ্যাপদ থাকলেও মাঝের ফ্রেম-সূত্রটি $!A(m,n)$ লেখা হয়েছিল। একই নির্দিষ্ট ঘর ও সময়ে দৃষ্টান্তায়িত পূর্বধারণা পাওয়ার জন্য বাংলা পাঠে $!A(\num{m},\num{n})$ রাখা হয়েছে।} % BN-SRC-187 TARGET-CORRECTION-END
+
 \end{prob}
 
 \begin{prob}
@@ -270,8 +262,7 @@ $\lforall[x][\lforall[y][\lforall[z][((x<y\land y<z)\lif x<z)]]]$
 থেকে
 $\lforall[x][(\num{k}'<x\lif\Obj S_\TMblank(x,\num{n}'))]$-এর একটি
 !!a{derivation} দাও।
-% BN-SRC-197 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-197):} হিমায়িত অনুশীলনীর শেষ পূর্ণচ্ছেদের পরে একটি অনাবদ্ধ বন্ধনী ছিল। বাংলা পাঠে সেই অতিরিক্ত মুদ্রণচিহ্নটি বাদ দেওয়া হয়েছে।} % BN-SRC-197 TARGET-CORRECTION-END
+
 \end{prob}
 
 \begin{lem}

@@ -1,0 +1,22 @@
+{
+  "locale": "bn",
+  "rules": [
+    {
+      "id": "unicode-nfc",
+      "kind": "nfc",
+      "reason": "Encode Bengali TeX in NFC. Preserve Bengali joiners, contextual numeral forms, danda and mathematical punctuation. The Bengali pilot provides the UTF-8 witness and the Bengali canon page provides a visual witness for the dotted letter.",
+      "evidence": [
+        {
+          "source": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/blob/5ce49d98d5a06a94e68b6d838dd6df60442f6220/textbooks/slc/source/locale/bn/courses/sets-logic-computation/slc-config.sty",
+          "sha256": "130e582c7385f36cc9fa568487086313eace75453f9fdc7f5f3c710483efa7e5",
+          "locator": "Lines 12–14; UTF-8 bytes [339,724), countability terms."
+        },
+        {
+          "source": "https://banglarshiksha.wb.gov.in/",
+          "sha256": "acc0b3f3308faca853d1515c8b6eaa10dace97501dfd3f41b5c331e5e0baeef2",
+          "locator": "West Bengal Class VII Mathematics Learning Bridge, PDF p. 227, printed p. 48, equation solution below 6x = 24, visual witness for the dotted letter in উভয় পক্ষ."
+        }
+      ]
+    }
+  ]
+}

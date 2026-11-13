@@ -7,8 +7,8 @@
 \begin{document}
 
 \iftag{FOL}
-      {\olfileid{fol}{com}{mod}}
-      {\olfileid{pl}{com}{mod}}
+      {\olfileid[bn]{fol}{com}{mod}}
+      {\olfileid[bn]{pl}{com}{mod}}
 
 \olsection{একটি মডেলের নির্মাণ}
 
@@ -76,8 +76,7 @@ M(\Gamma^*)$ নিচের মতো সংজ্ঞায়িত !!{structu
 \begin{lem}
 \ollabel{lem:val-in-termmodel} $\Struct M(\Gamma^*)$-কে
 \olref{defn:termmodel}-এর পদ-মডেল ধরি। তাহলে প্রতিটি বদ্ধ পদের জন্য
-$\Value{t}{M(\Gamma^*)} = t$।% BN-SRC-076 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-স্পষ্টীকরণ (BN-SRC-076):} হিমায়িত ইংরেজি সহায়ক উপপাদ্যের সিদ্ধান্তে $t$-কে অবাধ রাখা হয়েছে, যদিও পদ-মডেলের এই মানায়নটি চল-মূল্যায়ন ছাড়া কেবল বদ্ধ পদের জন্য সংজ্ঞায়িত এবং প্রমাণের ভিত্তি ও আরোহী ধাপ উভয়েই বদ্ধ পদ বলা হয়েছে। বাংলা লক্ষ্যে সিদ্ধান্তেও বদ্ধ-পদ পরিসরটি স্পষ্ট করা হয়েছে।} % BN-SRC-076 TARGET-CORRECTION-END
+$\Value{t}{M(\Gamma^*)} = t$।
 \end{lem}
 \begin{proof}
  $t$-এর ওপর আরোহের সাহায্যে প্রমাণ করি। $t$ একটি !!a{constant} হলে
@@ -259,9 +258,8 @@ $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ যদি এবং ক
       পূর্বধারণা অনুসারে এটি সত্য যদি এবং কেবল যদি অন্তত একটি বদ্ধ
       পদ~$t$-এর জন্য $!B(t) \in \Gamma^*$।
       \olref[hen]{prop:saturated-instances} অনুসারে এটি সত্য যদি এবং কেবল
-      যদি $\lexists[x][!B(x)] \in \Gamma^*$।}}}{}% BN-SRC-077 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-স্পষ্টীকরণ (BN-SRC-077):} হিমায়িত ইংরেজি সত্যতা-সহায়ক উপপাদ্যের পরিমাণসূচক-ক্ষেত্রগুলি “সব পদ” ও “কোনো পদ” বলে, কিন্তু যে \olref{prop:quant-termmodel} এবং \olref[hen]{prop:saturated-instances} ব্যবহার করা হয়েছে উভয়ই বদ্ধ পদের ওপর পরিমাণায়িত। বাংলা পাঠে দুই ক্ষেত্রেই সেই বদ্ধ-পদ পরিসর রাখা হয়েছে।} % BN-SRC-077 TARGET-CORRECTION-END% BN-SRC-078 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-078):} হিমায়িত ইংরেজি সার্বিক-পরিমাণসূচক ক্ষেত্রে আরোহী সূত্রকে $\lforall[x][!B(x)]$ ধরেও শেষ সদস্যতা-দাবিতে ভুল করে $\lforall[x][!A(x)]$ লেখে। বাংলা লক্ষ্যে সর্বত্র সংশ্লিষ্ট উপসূত্র~$!B(x)$ রাখা হয়েছে।} % BN-SRC-078 TARGET-CORRECTION-END
+      যদি $\lexists[x][!B(x)] \in \Gamma^*$।}}}{}
+
 }{}
 \end{enumerate}
 \end{proof}

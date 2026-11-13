@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{fol}{mat}{set}
+\olfileid[bn]{fol}{mat}{set}
 
 \olsection{সেটের তত্ত্ব}
 
@@ -121,13 +121,12 @@ $\tuple{x,y},\tuple{x,y'} \in f$, তখন $y=y'$ (কারণ অপেক্
       \lexists[x][\lexists[y][(x \in X \land y \in
       Y \land \tuple{x, y} = u)]])] \land {}\\
  & \lforall[x][(x \in X \lif
-      (\lexists[y][(y \in Y \land \mathrm{maps}(f, x, y))] \land
-      \lforall[y][\lforall[y'][((\mathrm{maps}(f, x, y) \land
-      \mathrm{maps}(f, x, y')) \lif y = y')]]))]
+      (\lexists[y][(y \in Y \land \mathrm{\text{পাঠায়}}(f, x, y))] \land
+      \lforall[y][\lforall[y'][((\mathrm{\text{পাঠায়}}(f, x, y) \land {}\\
+ &\qquad \mathrm{\text{পাঠায়}}(f, x, y')) \lif y = y')]]))]
 \end{align*}
-% BN-SRC-105 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-105):} হিমায়িত ইংরেজি প্রদর্শনে উভয় সার্বিক পরিমাণসূচকের সূত্র-আর্গুমেন্টই পূর্বপক্ষের পরে অকালে বন্ধ হয়েছে; ফলে অস্তিত্বমূলক শর্তগুলি শর্তবাচকের পরপক্ষের বাইরে পড়ে এবং দ্বিতীয় সারির বন্ধনীগুলিও অসম্পূর্ণ থাকে। বাংলা পাঠে ঘোষিত তিনটি শর্ত মেনে প্রথম পরপক্ষে যুগল-সদস্যতার অস্তিত্ব এবং দ্বিতীয় পরপক্ষে অস্তিত্ব ও মানের অনন্যতা রাখা হয়েছে, সঙ্গে সব পরিমাণসূচক ও বন্ধনী সামঞ্জস্য করা হয়েছে।} % BN-SRC-105 TARGET-CORRECTION-END
-যেখানে $\mathrm{maps}(f,x,y)$ হলো
+
+যেখানে $\mathrm{\text{পাঠায়}}(f,x,y)$ হলো
 $\lexists[v][(v \in f \land \tuple{x,y}=v)]$-এর সংক্ষিপ্ত রূপ
 (এই !!{formula} “$f(x)=y$” প্রকাশ করে)।
 
@@ -135,19 +134,18 @@ $\lexists[v][(v \in f \land \tuple{x,y}=v)]$-এর সংক্ষিপ্ত 
 \begin{multline*}
  f \colon X \to Y \land \lforall[x][\lforall[x'][((x \in X \land x' \in
      X \land {} \\
- \lexists[y][(\mathrm{maps}(f, x, y) \land \mathrm{maps}(f,
+ \lexists[y][(\mathrm{\text{পাঠায়}}(f, x, y) \land \mathrm{\text{পাঠায়}}(f,
         x', y))]) \lif x = x')]]
 \end{multline*}
-% BN-SRC-106 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-106):} হিমায়িত ইংরেজি injectivity-সূত্রে প্রথম সারির শেষে দুটি অকাল সমাপ্তি-বর্গবন্ধনী আছে, অথচ দ্বিতীয় সারির শেষে দুই সার্বিক পরিমাণসূচকের সমাপ্তি-বর্গবন্ধনী অনুপস্থিত। বাংলা পাঠে যৌথ পূর্বপক্ষের ভিতরে একই মানে পাঠানোর অস্তিত্বমূলক সূত্রটি রেখে, তারপর শর্তবাচক ও দুই সার্বিক পরিমাণসূচক যথাস্থানে বন্ধ করা হয়েছে।} % BN-SRC-106 TARGET-CORRECTION-END
+
 কোনো অপেক্ষক~$f\colon X\to Y$ !!{injective} যদি এবং কেবল যদি
 $f$,~$x,x'\in X$-কে একই~$y$-তে পাঠালেই $x=x'$ হয়। এই সূত্রটিকে
-$\mathrm{inj}(f,X,Y)$ দিয়ে সংক্ষেপ করলে সেটতত্ত্বের ভাষায় কান্টরের
+$\mathrm{\text{একৈক}}(f,X,Y)$ দিয়ে সংক্ষেপ করলে সেটতত্ত্বের ভাষায় কান্টরের
 উপপাদ্যের মতো অ-তুচ্ছ কথাও ইতিমধ্যে বলা যায়:~$\Pow{X}$ থেকে~$X$-এ
 কোনো !!{injective} অপেক্ষক নেই:
 \[
 \lforall[X][\lforall[Y][(\Pow{X} = Y \lif
-    \lnot\lexists[f][\mathrm{inj}(f, Y, X)])]]
+    \lnot\lexists[f][\mathrm{\text{একৈক}}(f, Y, X)])]]
 \]
 
 মনে হতে পারে, প্রত্যেক সংজ্ঞায়ক ধর্মের জন্য একটি সেটের অস্তিত্ব নিশ্চিত
@@ -171,8 +169,7 @@ $\mathrm{inj}(f,X,Y)$ দিয়ে সংক্ষেপ করলে সে�
 \lforall[z][\lexists[y][\lforall[x][(x \in y \liff (x \in z \land
       !A(x)))]]].
 \]
-% BN-SRC-107 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-107):} হিমায়িত ইংরেজি পৃথকীকরণ-নীতির সূত্রে অন্তঃস্থ সংযোজনী বন্ধ করার পরে biconditional-এর উদ্বোধনী গোলবন্ধনীটি বন্ধ করা হয়নি। বাংলা পাঠে তিনটি সমাপ্তি-বর্গবন্ধনীর আগে সেই সমাপ্তি-গোলবন্ধনী পুনরুদ্ধার করা হয়েছে।} % BN-SRC-107 TARGET-CORRECTION-END
+
 
 \begin{prob}
 !!a{derivation} দিয়ে

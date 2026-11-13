@@ -11,6 +11,14 @@ engine_reason = "Retain the published pilot engine until a different engine pass
 [paths]
 content = "bn-Beng-IN/content"
 source_content = "upstream/content"
+locale = "bn-Beng-IN/open-logic-locale.sty"
+config = "bn-Beng-IN/open-logic-config.sty"
+photocredits = "bn-Beng-IN/photocredits"
+courses = "courses"
+fonts = "fonts"
+strings = "lang/strings.toml"
+termbase = "lang/termbase.tsv"
+orthography = "lang/orthography.json"
 
 [conversion]
 source_manifest = "evidence/FULL_SOURCE_MANIFEST.jsonl"

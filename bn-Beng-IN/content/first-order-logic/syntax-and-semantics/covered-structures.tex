@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{fol}{syn}{cov}
+\olfileid[bn]{fol}{syn}{cov}
 
 \olsection{প্রথম-ক্রমের ভাষার আচ্ছাদিত \printtoken{P}{structure}}
 
@@ -34,12 +34,12 @@ $t$ যদি $\Lang L$ ভাষার একটি বদ্ধ পদ এব�
 \end{defn}
 
 \begin{ex}
-ধরি~$\Lang L$ এমন ভাষা যাতে !!{constant}s $\Obj{zero}$,
-$\Obj{one}$, $\Obj{two}$, \dots, দ্বি-স্থানীয় !!{predicate}~$<$ এবং
+ধরি~$\Lang L$ এমন ভাষা যাতে !!{constant}s $\Obj{\text{শূন্য}}$,
+$\Obj{\text{এক}}$, $\Obj{\text{দুই}}$, \dots, দ্বি-স্থানীয় !!{predicate}~$<$ এবং
 দ্বি-স্থানীয় !!{function}s $+$ ও $\times$ আছে। তাহলে $\Lang L$-এর
 !!a{structure}~$\Struct M$-এর সংজ্ঞাক্ষেত্র $\Domain M = \{0, 1, 2,
-\ldots\}$ এবং আরোপগুলি $\Assign{\Obj{zero}}{M} = 0$,
-$\Assign{\Obj{one}}{M} = 1$, $\Assign{\Obj{two}}{M} = 2$, ইত্যাদি।
+\ldots\}$ এবং আরোপগুলি $\Assign{\Obj{\text{শূন্য}}}{M} = 0$,
+$\Assign{\Obj{\text{এক}}}{M} = 1$, $\Assign{\Obj{\text{দুই}}}{M} = 2$, ইত্যাদি।
 দ্বি-স্থানীয় সম্বন্ধসংকেত $<$-এর জন্য $\Assign{<}{M}$ হলো এমন সব
 জোড়া $\tuple{c_1, c_2} \in \Domain{M}^2$-এর সেট, যাদের ক্ষেত্রে
 $c_1$,~$c_2$-এর চেয়ে ছোট: যেমন, $\tuple{1, 3} \in
@@ -47,18 +47,18 @@ $c_1$,~$c_2$-এর চেয়ে ছোট: যেমন, $\tuple{1, 3} \in
 দ্বি-স্থানীয় !!{function} $+$-এর জন্য $\Assign{+}{M}$-কে প্রচলিত
 উপায়ে সংজ্ঞায়িত করি—যেমন, $\Assign{+}{M}(2,3)$-এর প্রতিচিত্র~$5$;
 দ্বি-স্থানীয় !!{function}~$\times$-এর ক্ষেত্রেও একইভাবে। তাই
-$\Obj{four}$-এর !!{value} শুধু~$4$, আর
-$\times(\Obj{two}, +(\Obj{three},\Obj{zero}))$-এর !!{value}
-(অথবা মধ্যলিখিত সংকেতরীতিতে $\Obj{two} \times
-(\Obj{three} + \Obj{zero})$) হলো
+$\Obj{\text{চার}}$-এর !!{value} শুধু~$4$, আর
+$\times(\Obj{\text{দুই}}, +(\Obj{\text{তিন}},\Obj{\text{শূন্য}}))$-এর !!{value}
+(অথবা মধ্যলিখিত সংকেতরীতিতে $\Obj{\text{দুই}} \times
+(\Obj{\text{তিন}} + \Obj{\text{শূন্য}})$) হলো
 \begin{multline*}
-\Value{\times(\Obj{two}, +(\Obj{three},\Obj{zero}))}{M} =\\
+\Value{\times(\Obj{\text{দুই}}, +(\Obj{\text{তিন}},\Obj{\text{শূন্য}}))}{M}\\
 \begin{aligned}
-& =\Assign{\times}{M}(\Value{\Obj{two}}{M}, \Value{+(\Obj{three}, \Obj{zero})}{M})\\
-& = \Assign{\times}{M}(\Value{\Obj{two}}{M}, \Assign{+}{M}(\Value{\Obj{three}}{M},
-\Value{\Obj{zero}}{M})) \\
-& = \Assign{\times}{M}(\Assign{\Obj{two}}{M}, \Assign{+}{M}(\Assign{\Obj{three}}{M},
-\Assign{\Obj{zero}}{M})) \\
+& =\Assign{\times}{M}(\Value{\Obj{\text{দুই}}}{M}, \Value{+(\Obj{\text{তিন}}, \Obj{\text{শূন্য}})}{M})\\
+& = \Assign{\times}{M}(\Value{\Obj{\text{দুই}}}{M}, \Assign{+}{M}(\Value{\Obj{\text{তিন}}}{M},
+\Value{\Obj{\text{শূন্য}}}{M})) \\
+& = \Assign{\times}{M}(\Assign{\Obj{\text{দুই}}}{M}, \Assign{+}{M}(\Assign{\Obj{\text{তিন}}}{M},
+\Assign{\Obj{\text{শূন্য}}}{M})) \\
 & = \Assign{\times}{M}(2, \Assign{+}{M}(3, 0)) \\
 & = \Assign{\times}{M}(2, 3) \\
 & = 6

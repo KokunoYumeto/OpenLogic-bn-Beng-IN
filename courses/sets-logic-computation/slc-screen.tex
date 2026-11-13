@@ -1,0 +1,58 @@
+% Generated from upstream slc-screen.tex at 6178f32f61645f3b62ef621b4c5a88f8e67778ad.
+% Localized settings are loaded from the accompanying preamble files.
+% slc-screen.tex
+
+% driver file slc-screen.tex to produce the Sets, Logic, Computation
+% textbook on with same type block as in printed version, but but with
+% on-screen features (color, links, etc).
+
+\input{olpkit-before-class}
+\documentclass[screen]{../../../../sty/open-logic-book}
+
+\usepackage[all]{nowidow}
+
+\def\oljobname{slc}
+
+% \olpath has to point to the location of the OLP main
+% directory/folder. We're compiling from subdirectory
+% locale/bn/courses/sets-logic-computation/, four levels below the source root.
+
+\newcommand{\olpath}{../../../..}
+
+% load all the Open Logic definitions. This will also load the
+% local definitions in open-logic-sample-config.sty
+
+\input{olpkit-before-olp}
+\input{\olpath/sty/open-logic.sty}
+
+\input{slc-metadata}
+
+% we want all the problems deferred to the very end
+
+\input{\olpath/sty/open-logic-defer.sty}
+
+% load glossary entries
+
+\input{olpkit-after-olp}
+\input{include/glossary-adapter}
+\loadglsentries{include/glossary}
+
+% end preamble
+
+\begin{document}
+\raggedbottom
+
+\OLPscreencover{%
+  \centering
+  \includegraphics[width=\olpCoverPortraitWidth\textwidth]{\olpath/assets/portraits/cantor-circle.pdf}\quad
+  \includegraphics[width=\olpCoverPortraitWidth\textwidth]{\olpath/assets/portraits/goedel-circle.pdf}\quad
+  \includegraphics[width=\olpCoverPortraitWidth\textwidth]{\olpath/assets/portraits/turing-circle.pdf}\par\medskip
+  \includegraphics[width=\olpCoverPortraitWidth\textwidth]{\olpath/assets/portraits/skolem-circle.pdf}\quad
+  \includegraphics[width=\olpCoverPortraitWidth\textwidth]{\olpath/assets/portraits/noether-circle.pdf}\par
+}
+
+% Now load the actual text
+
+\input{slc}
+
+\end{document}

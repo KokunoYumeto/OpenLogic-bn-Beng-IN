@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{cmp}{tur}{con}
+\olfileid[bn]{cmp}{tur}{con}
 \olsection{কনফিগারেশন ও গণনা}
 
 \begin{explain}
@@ -55,15 +55,13 @@
 \[
 \tuple{\TMendtape \frown \TMblank, 1, q_0}.
 \]
-% BN-SRC-166 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-166):} হিমায়িত ইংরেজি সংজ্ঞা সব $I\in\Sigma^*$-এর জন্য $\tuple{\TMendtape\frown I,1,q_0}$ দেয়। কিন্তু $I$ শূন্য প্রতীকক্রম হলে $C$-এর দৈর্ঘ্য~$1$, ফলে কনফিগারেশনের আগের শর্ত $m<\len{C}$ লঙ্ঘিত হয়। বাংলা পাঠে সেই ক্ষেত্রে প্রথম নিবেশ-ঘর হিসেবে একটি~$\TMblank$ যুক্ত করা হয়েছে।} % BN-SRC-166 TARGET-CORRECTION-END
+
 \end{defn}
 
 \begin{explain}
 $\frown$ চিহ্নটি \emph{সংযুক্তি} বোঝায়—নিবেশ-প্রতীকক্রমটি বাঁ প্রান্তের
 চিহ্নটির ঠিক ডান পাশে শুরু হয়।
-% BN-SRC-165 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-165):} হিমায়িত ইংরেজি ব্যাখ্যায় নিবেশটি বাঁ প্রান্তের চিহ্নটির ঠিক “বাঁ দিকে” শুরু হয় বলা হয়েছে। একমুখী ফিতা, আগের বর্ণনা এবং আরম্ভিক কনফিগারেশন—সব অনুযায়ী সেটি চিহ্নটির ঠিক ডান দিকে শুরু হয়; বাংলা পাঠে সেই দিকটি রাখা হয়েছে।} % BN-SRC-165 TARGET-CORRECTION-END
+
 \end{explain}
 
 \begin{defn}
@@ -91,8 +89,7 @@ $\frown$ চিহ্নটি \emph{সংযুক্তি} বোঝায�
 বা অসীম অনুক্রম~$C_i$, যেখানে $C_0$ হলো নিবেশ~$I$-এর জন্য $M$-এর
 আরম্ভিক কনফিগারেশন, এবং অনুক্রমে থাকা প্রতিটি $C_{i+1}$-কে তার আগের
 $C_i$ এক ধাপে দেয়।
-% BN-SRC-167 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-167):} হিমায়িত ইংরেজি সংজ্ঞা চালনকে শুধু “একটি অনুক্রম~$C_i$” বলে এবং প্রতিটি $C_i$-র পরে $C_{i+1}$ আছে ধরে নেয়। তাতে থামা চালনের কোনো শেষ কনফিগারেশন থাকতে পারে না। বাংলা পাঠে সসীম বা অসীম অনুক্রম এবং উপস্থিত পরপর দুই পদের শর্ত স্পষ্ট করা হয়েছে।} % BN-SRC-167 TARGET-CORRECTION-END
+
 
 আমরা বলি, $M$ \emph{নিবেশ $I$-এ $k$ ধাপ পরে থামে}, যদি চালনটি
 $C_k = \tuple{C, m, q}$-তে শেষ হয়, $C$-এর $m$-তম প্রতীকটি~$\sigma$
@@ -104,8 +101,7 @@ $M$-এর \emph{নির্গম} হলো~$O$। ($\TMblank^j$ হলো $j
 $\TMblank$-এর একটি অনুক্রম।) এমন প্রতীকক্রম না থাকলে—যেমন শেষ-চিহ্নটি মুছে
 ফেলা হয়ে থাকলে—এই নিয়মে থেমে যাওয়া চালনটির কোনো নির্গম নির্ধারিত হয়
 না।
-% BN-SRC-168 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-168):} আগের অংশে হিমায়িত ইংরেজি পাঠ স্পষ্টভাবে $\TMendtape$-এর উপর অন্য প্রতীক লেখার অনুমতি দেয়, কিন্তু এখানে প্রতিটি থামা কনফিগারেশনকে নিঃশর্তভাবে $\TMendtape\concat O\concat\TMblank^j$ আকারের বলে ধরে নির্গমের অস্তিত্ব দাবি করে। বাংলা পাঠে ওই আকারটি থাকলেই নির্গম সংজ্ঞায়িত বলা হয়েছে এবং আকারটি না থাকলে পরিণতি স্পষ্ট করা হয়েছে।} % BN-SRC-168 TARGET-CORRECTION-END
+
 \end{defn}
 
 \begin{explain}

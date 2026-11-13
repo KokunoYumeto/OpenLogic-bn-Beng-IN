@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{tur}{und}{rep}
+\olfileid[bn]{tur}{und}{rep}
 \olsection{টুরিং যন্ত্রের উপস্থাপন}
 
 \begin{explain}
@@ -107,8 +107,7 @@ $w=\sigma_{i_1}\dots\sigma_{i_k}$ নিবেশে টুরিং যন্�
 
 নিচের আলোচনায় $!A(x,y)$ বলতে $\sigma\in\Sigma$-এর প্রত্যেকটির জন্য
 নিচের আকারের সব !!{formula}-র সংযোজন বোঝানো হবে:
-% BN-SRC-178 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-178):} হিমায়িত ইংরেজি পাঠ এখানে $x$ ও~$y$ মুক্ত থাকা রাশিগুলিকে “sentences” বলেছে। বাংলা পাঠে সঠিক ব্যাকরণগত শ্রেণি !!{formula} রাখা হয়েছে; $x,y$-এর জায়গায় বদ্ধ পদ বসালে সংশ্লিষ্ট বাক্যগুলি পাওয়া যায়।} % BN-SRC-178 TARGET-CORRECTION-END
+
 \[
 \lforall[z][
   (((z < x \lor x < z) \land \Obj S_\sigma(z, y))
@@ -142,8 +141,7 @@ $\delta(q_i,\sigma)=\tuple{q_j,\sigma',\TMleft}$-এর জন্য !!{sentence
 & \qquad (\Obj Q_{q_j}(\num{0}, y') \land \Obj S_{\sigma'}(\num{0},
   y') \land !A(\num{0}, y)))
 \end{align*}
-% BN-SRC-179 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-179):} বাঁ-চলনের প্রথম শাখায় হিমায়িত সূত্রটি $!A(x,y)$ দিয়ে নতুন হেড-অবস্থান~$x$ বাদ দিয়েছিল, অথচ লেখা হয় আগের হেড-অবস্থান~$x'$-এ। বাংলা সূত্রে তাই $!A(x',y)$ রাখা হয়েছে; এতে ঠিক লেখা ঘরটিই অপরিবর্তনশীলতার শর্ত থেকে বাদ পড়ে।} % BN-SRC-179 TARGET-CORRECTION-END
+
 এটি কীভাবে কাজ করে, একটু ভেবে দেখো। এবার আমরা “ঘর~$x$ পড়লে \dots” দিয়ে
 শুরু করিনি; শুরু করেছি “ঘর~$x+1$ পড়লে \dots” দিয়ে। বাঁ দিকে চললে পরের
 ধাপে যন্ত্রটি ঘর~$x$ পড়ে। কিন্তু যে ঘরটিতে লেখা হয় সেটি~$x+1$। বিয়োগ বা

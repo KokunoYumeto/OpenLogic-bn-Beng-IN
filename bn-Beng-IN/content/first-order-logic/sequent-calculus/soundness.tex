@@ -7,8 +7,8 @@
 \begin{document}
 
 \iftag{FOL}
-      {\olfileid{fol}{seq}{sou}}
-      {\olfileid{pl}{seq}{sou}}
+      {\olfileid[bn]{fol}{seq}{sou}}
+      {\olfileid[bn]{pl}{seq}{sou}}
 
 \olsection{বিশুদ্ধতা}
 
@@ -99,8 +99,7 @@ $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$।
   $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ হলে $!C \in \Xi$ বলে কোনো
   $!C \in \Xi$-র জন্য $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$। অতএব
   $\Theta \Sequent \Xi$ বৈধ।
-  % BN-SRC-031 TARGET-CORRECTION-BEGIN
-  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-031):} হিমায়িত ইংরেজি উৎস দুর্বলীকরণের দুই রূপ একসঙ্গে বিবেচনা করেও $\Theta = !A,\Gamma$ বলেছে। এই সমতা শুধু বাঁ দুর্বলীকরণে সত্য; ডান দুর্বলীকরণে $\Theta$ হলো অপরিবর্তিত পূর্বাংশ। বাংলা প্রমাণে সমতাটির প্রয়োগ তাই সঠিক শাখায় সীমিত করা হয়েছে; উভয় শাখায় $\Gamma$-র সূত্রগুলি $\Theta$-তে থাকে বলে যুক্তিটি অক্ষুণ্ণ।} % BN-SRC-031 TARGET-CORRECTION-END
+  
 \item শেষ অনুমানটি \LeftR{\lnot}। তখন শেষ অনুমানের পূর্বধারণা হলো
   $\Gamma \Sequent \Delta, !A$ এবং সিদ্ধান্ত হলো
   $\lnot !A, \Gamma \Sequent \Delta$; অর্থাৎ !!{derivation}-টি শেষ হয়
@@ -158,8 +157,7 @@ $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$।
   $!A \land !B, \Gamma \Sequent \Delta$ পরিতৃপ্ত করে। যেহেতু
   \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} যথেচ্ছ ছিল,
   $!A \land !B, \Gamma \Sequent \Delta$ বৈধ।
-  % BN-SRC-029 TARGET-CORRECTION-BEGIN
-  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-029):} এই ক্ষেত্রের শেষ লাইনে হিমায়িত ইংরেজি উৎস পূর্বধারণার অবশিষ্ট সিকোয়েন্ট $\Gamma \Sequent \Delta$-কে বৈধ বলেছে। প্রমাণটি সদ্য দেখিয়েছে যে যথেচ্ছ গঠন বা সত্যমান-আরোপ $!A \land !B,\Gamma \Sequent \Delta$ পরিতৃপ্ত করে; বাংলা লাইনে তাই এই সিদ্ধান্ত-সিকোয়েন্টটিই পুনরুদ্ধার করা হয়েছে।} % BN-SRC-029 TARGET-CORRECTION-END
+  
   $!B$ থেকে $!A \land !B$ অনুমান করার ক্ষেত্রটিও একইভাবে হয়; শুধু
   $!A$-এর বদলে $!B$ বসাতে হবে।
 \item শেষ অনুমানটি \RightR{\lor}। এর দুটি রূপ আছে: পূর্বধারণার ডানদিকে
@@ -293,8 +291,7 @@ $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$।
   হলে \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}-কে
   $\Pi \Sequent \Lambda$ পরিতৃপ্ত করতে হবে। আবারও
   \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} সিদ্ধান্তটি পরিতৃপ্ত করে।
-  % BN-SRC-030 TARGET-CORRECTION-BEGIN
-  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-030):} কর্তনের (b) ক্ষেত্রে হিমায়িত ইংরেজি উৎসে ডান পূর্বধারণা থেকে অবশিষ্ট সিকোয়েন্টকে ভুল করে $\Pi \setminus \Lambda$ লেখা হয়েছে। এটি সেট-বিয়োগ এবং এখানে কোনো সিকোয়েন্ট নয়; প্রদর্শিত কর্তন-বিধি ও পরিতৃপ্তির যুক্তি অনুসারে বাংলা প্রমাণে $\Pi \Sequent \Lambda$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-030 TARGET-CORRECTION-END
+  
 \item শেষ অনুমানটি \RightR{\land}। তখন~$\pi$ শেষ হয়
   \begin{prooftree}
     \AxiomC{}

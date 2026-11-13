@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{fol}{ntd}{prq}
+\olfileid[bn]{fol}{ntd}{prq}
 
 \olsection{পরিমাণসূচকসহ \usetoken{P}{derivation}}
 
@@ -37,8 +37,7 @@ $\lnot \lforall[x][!A(x)]$-এ প্রয়োগ করার মতো ক�
 হবে যা $\lexists[x][\lnot !A(x)]$-এ বা সেটি যে অনুমিতিগুলির ওপর নির্ভর করে
 তার কোনোটিতে আসে না। (তবে কোনো !!{constant}s নেই বলে যেকোনো পছন্দই
 চলবে।)
-% BN-SRC-036 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-036):} হিমায়িত ইংরেজি আইগেনচল-পরীক্ষায় মুখ্য অনুমিতিটিকে $\lexists[x][!A(x)]$ লেখা হয়েছে, কিন্তু উদাহরণ ও প্রতিটি প্রমাণ-বৃক্ষে সেটি $\lexists[x][\lnot !A(x)]$। বাংলা গদ্যে অনুপস্থিত নঞর্থক চিহ্নটি পুনরুদ্ধার করা হয়েছে।} % BN-SRC-036 TARGET-CORRECTION-END
+
 \begin{prooftree}
 \AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
 \AxiomC{$\Discharge{\lnot !A(a)}{2}$}
@@ -88,8 +87,7 @@ $\lforall[x][!A(x)]$-কে অতিরিক্ত অনুমিতি হ�
 কি না আর একবার পরীক্ষা করা জরুরি। আমাদের প্রয়োগ করা বিধিগুলির মধ্যে
 শুধু \Elim{\lexists} আইগেনচল-শর্তাধীন, আর আইগেনচল~$a$ তার নির্ভর করা
 কোনো অনুমিতিতে আসে না। তাই এটি একটি সঠিক !!{derivation}।
-% BN-SRC-037 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-037):} হিমায়িত ইংরেজি অনুচ্ছেদের শেষ উল্লেখে অধ্যায়ের কনফিগারযোগ্য অস্তিত্বসূচক $\lexists$-এর বদলে কাঁচা TeX চিহ্ন $\exists$ দেওয়া হয়েছে। বাংলা পাঠে প্রদর্শিত বিধিগুলির মতোই $\Elim{\lexists}$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-037 TARGET-CORRECTION-END
+
 \end{ex}
 
 \begin{ex}

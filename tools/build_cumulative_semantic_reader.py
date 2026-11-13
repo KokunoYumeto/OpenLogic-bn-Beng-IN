@@ -1194,7 +1194,7 @@ def collect_known_labels(units: list[tuple[str, str]]) -> set[str]:
     for uid, raw in units:
         part = chapter = section = ""
         event = re.compile(
-            r"\\olfileid\{([^{}]+)\}\{([^{}]+)\}\{([^{}]+)\}|"
+            r"\\olfileid(?:\s*\[[^\[\]]*\])?\s*\{([^{}]+)\}\s*\{([^{}]+)\}\s*\{([^{}]+)\}|"
             r"\\ollabel\{([^{}]+)\}|\\olsection\{"
         )
         for match in event.finditer(raw):
@@ -1229,6 +1229,7 @@ def normalize_cross_references(value: str, uid: str, known_labels: set[str]) -> 
         name = match.group(1)
         position = match.end()
         if name == "olfileid":
+            _, position = parse_optional(value, position)
             context[0], position = parse_required(value, position)
             context[1], position = parse_required(value, position)
             context[2], position = parse_required(value, position)

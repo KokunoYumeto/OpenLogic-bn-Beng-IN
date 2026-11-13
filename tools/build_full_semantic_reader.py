@@ -290,6 +290,16 @@ OpenAI Codex — GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 So
 স্বাধীন মানব-পর্যালোচনা বা সম্পূর্ণ আনুষ্ঠানিক প্রমাণ-যাচাইয়ের দাবি করা হচ্ছে না।
 \end{scope-note}
 """
+    if "unit_ledger_sha256" in receipt:
+        note = note.replace(
+            "তৃপ্তির দুটি উৎস-প্রস্তাব সংশ্লিষ্ট অনুশীলনীর বক্তব্য স্পষ্ট করতে দেখানো হয়েছে।\n", "",
+        ).replace(
+            "এআই-সহায়ক অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনা:",
+            full.AI_TRANSLATION_CREDIT + "।",
+        ).replace(
+            "OpenAI Codex — GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-এর পুনঃপর্যালোচনা; Ultra effort।",
+            full.HISTORICAL_TRANSLATION_CREDIT,
+        )
     source = BUILD / "semantic-input.tex"
     source.write_text(r"\documentclass{book}" + "\n" + r"\usepackage{amsmath,amssymb}" + "\n"
                       + declarations + "\n" + macros + "\n" + r"\begin{document}" + "\n" + note + "\n" + body

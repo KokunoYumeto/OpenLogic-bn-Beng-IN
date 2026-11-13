@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 from edition_metadata import FIXED_ZIP_TIME, metadata
+from full_edition_sources import UNIT_LEDGER, digest, load_rows, load_target_hashes
 
 
 REPO = Path(__file__).resolve().parents[1]
@@ -19,10 +20,6 @@ HTML = BUILD / "openlogic-bn-Beng-IN-complete.html"
 PREFIX = "OpenLogic-bn-Beng-IN/"
 
 
-def digest(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
-
 def add_exact(files: set[Path], relative: str) -> None:
     path = (REPO / relative).resolve(strict=True)
     assert path.is_relative_to(REPO.resolve()), relative
@@ -32,14 +29,15 @@ def add_exact(files: set[Path], relative: str) -> None:
 
 def main() -> None:
     DIST.mkdir(exist_ok=True)
-    manifest = [json.loads(line) for line in MANIFEST.read_text(encoding="utf-8").splitlines()]
-    assert len(manifest) == len({row["unit_id"] for row in manifest}) == 722
+    manifest = load_rows(MANIFEST)
+    assert len(manifest) == 722
     preparation = json.loads((BUILD / "PREPARATION.json").read_text(encoding="utf-8"))
     qa = json.loads((BUILD / "SEMANTIC_READER_QA.json").read_text(encoding="utf-8"))
-    status = json.loads((REPO / "evidence/DRAFT_STATUS.json").read_text(encoding="utf-8"))
-    checks = {row["unit_id"]: row for row in status["current_checks"]["unit_checks"]}
-    assert status["current_checks"]["segment_index_sha256"] == digest(
-        REPO / "evidence/SEGMENT_CANON_USE.jsonl")
+    target_hashes, input_receipt = load_target_hashes(REPO, manifest)
+    ledger_hash = input_receipt.get("unit_ledger_sha256")
+    if preparation.get("unit_ledger_sha256") != ledger_hash:
+        raise ValueError("prepared unit ledger differs")
+    assert preparation["source_manifest_sha256"] == digest(MANIFEST)
     assert preparation["tex"]["sha256"] == digest(TEX)
     assert qa["source"]["prepared_tex_sha256"] == digest(TEX)
     assert qa["html"]["html_sha256"] == digest(HTML)
@@ -88,7 +86,8 @@ def main() -> None:
         original = REPO / "upstream" / source_path
         target = REPO / "bn-Beng-IN" / source_path
         assert original.stat().st_size == row["source_bytes"] and digest(original) == row["source_sha256"]
-        assert digest(target) == checks[row["unit_id"]]["target_sha256"]
+        if digest(target) != target_hashes[row["unit_id"]]:
+            raise ValueError(f"{row['unit_id']}: translation SHA-256 differs: {target}")
         add_exact(files, original.relative_to(REPO).as_posix())
         add_exact(files, target.relative_to(REPO).as_posix())
     for relative in (
@@ -120,7 +119,7 @@ def main() -> None:
         "tools/build_full_epub.py", "tools/edition_metadata.py", "tools/reader_tableau.py", "tools/reader_diagrams.py",
         "tools/build_full_edition_windows.ps1", "tools/create_reader_visual_probes.py",
         "tools/render_reader_visual_probes.cjs",
-        "tools/package_full_edition.py", "tools/check_source_draft.py",
+        "tools/package_full_edition.py", "tools/full_edition_sources.py", "tools/check_source_draft.py",
         "tools/verify_segment_canon.py", "tools/verify_full_pdf.py",
         "evidence/PDF_PREPARATION_CHECKPOINT_2026-09-28.json",
         "evidence/PDF_LAYOUT_CHECKPOINT_2026-09-28.json",
@@ -143,6 +142,8 @@ def main() -> None:
         "build/full-edition/math-link-targets.json",
     ):
         add_exact(files, relative)
+    if ledger_hash is not None:
+        add_exact(files, UNIT_LEDGER)
     # Current redo records are separate from explicitly dated historical checkpoints.
     for pattern in ("REDO_GPT6_SOL_*.md", "GPT6_SOL_REDO_*_CHECK.json", "REDO_GPT6_SOL_*_AUDITED_ENGLISH.tex"):
         for path in (REPO / "evidence").glob(pattern):

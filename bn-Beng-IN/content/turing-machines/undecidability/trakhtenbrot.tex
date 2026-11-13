@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{tur}{und}{tra}
+\olfileid[bn]{tur}{und}{tra}
 \olsection{ট্রাখতেনব্রোটের উপপাদ্য}
 
 \begin{explain}
@@ -48,8 +48,7 @@
   $\Sat{M'}{!E(M,w)}$। তাই $\Struct{M'}$ হলো
   $!T(M,w)\land !E(M,w)$-এর একটি সসীম মডেল (লক্ষ করো, $\lif$-এর জায়গায়
   $\land$ বসেছে)।
-% BN-SRC-190 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-190):} হিমায়িত নির্মাণে $n=\max(k,\len{w})$ নেওয়া হয়েছিল। কিন্তু হেড ঘর~$1$ থেকে শুরু করে $k$টি ডান-চলনের পরে ঘর~$k+1$-এ থামতে পারে; তদুপরি $n=k$ হলে শেষ অবস্থান্তরের $!B(\num{k})$ শর্তটি $\Assign{<}{M'}$-এর $n<n$-এর সঙ্গে সংঘর্ষ করে। বাংলা পাঠ ও নিচের আনুষ্ঠানিক প্রমাণে $n=\max(k+1,\len{w})$ রাখা হয়েছে।} % BN-SRC-190 TARGET-CORRECTION-END
+
 
   প্রমাণের অর্ধেক হলো: আমরা দেখিয়েছি, $M$ নিবেশ~$w$-তে থামলে
   $!T(M,w)\land !E(M,w)$-এর একটি সসীম মডেল আছে। দুর্ভাগ্যক্রমে এর
@@ -84,8 +83,7 @@
     & \lexists[y][(\Obj Q_{q_0}(\num{0}, y) \land \Obj S_{\TMendtape}(\num{0}, y))]
     \end{align*}
     দুটিই $\Struct{M''}$-এ সত্য।
-% BN-SRC-191 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-191):} হিমায়িত অনুশীলনীতে একমাত্র দশা $q_0$ ঘোষণা করেও নির্দেশটির লক্ষ্য $q$ লেখা হয়েছিল, এবং $\Struct{M''}$-এর উত্তরসূরি ব্যাখ্যার মাঝের ঘটনে ভুল করে $M'$ ছিল। বাংলা পাঠে যথাক্রমে $q_0$ ও $M''$ রাখা হয়েছে।} % BN-SRC-191 TARGET-CORRECTION-END
+
   \end{prob}
 \end{explain}
 
@@ -123,8 +121,7 @@ $\delta(q_i,\sigma)=\tuple{q_j,\sigma',\TMleft}$-এর জন্য !!{sentence
 & \qquad (\Obj Q_{q_j}(\num{0}, y') \land \Obj S_{\sigma'}(\num{0},
   y') \land !A(\num{0}, y) \land !B(y')))
 \end{align*}
-% BN-SRC-192 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-192):} হিমায়িত বাঁ-চলনের প্রথম শাখা লেখা ঘর~$x'$-এর বদলে নতুন হেড-অবস্থান~$x$-কে $!A$ থেকে বাদ দিয়েছিল এবং, পরের বাক্যে ঘোষিত নিয়মের বিরুদ্ধেও, এই শাখায় $!B(y')$ অনুপস্থিত ছিল। বাংলা সূত্রে $!A(x',y)\land !B(y')$ রাখা হয়েছে।} % BN-SRC-192 TARGET-CORRECTION-END
+
 \item \ollabel{rep-stay} প্রতিটি নির্দেশ
 $\delta(q_i,\sigma)=\tuple{q_j,\sigma',\TMstay}$-এর জন্য !!{sentence}:
 \begin{align*}
@@ -183,15 +180,13 @@ $!T'(M,w)$ বলা হবে।
   যেখানে $n=\max(k+1,\len{w})$ এবং $k$ হলো এমন ক্ষুদ্রতম সংখ্যা যাতে
   নিবেশ~$w$-তে শুরু করা $M$ $k$ ধাপ পরে থামে।
   $\Sat{M'}{!T'(M,w)\land !E(M,w)}$—এর যাচাই অনুশীলনী হিসেবে রাখা হলো।
-% BN-SRC-193 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-193):} হিমায়িত যাচাই-দাবিতে $E(M,w)$-এর আগে অতিভাষিক চিহ্ন~$!$ অনুপস্থিত ছিল। বাংলা পাঠে লেমারই সংযোজন $!T'(M,w)\land !E(M,w)$ রাখা হয়েছে।} % BN-SRC-193 TARGET-CORRECTION-END
+
 \end{proof}
 
 \begin{prob}
   $\Sat{M'}{!T'(M,w)\land !E(M,w)}$ প্রমাণ করে
   \olref[tur][und][tra]{lem:halts-sat}-এর প্রমাণ সম্পূর্ণ করো।
-% BN-SRC-194 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-194):} হিমায়িত অনুশীলনীতে লেমার $!T'$-এর বদলে পুরোনো $!T$ এবং $!E$-এর বদলে $E$ ছিল। বাংলা পাঠে ঠিক যে বাক্যটির সসীম মডেল লেমায় দাবি করা হয়েছে সেটিই পুনঃস্থাপন করা হয়েছে।} % BN-SRC-194 TARGET-CORRECTION-END
+
 \end{prob}
 
 \begin{lem}\ollabel{lem:sat-halts}
@@ -204,8 +199,7 @@ $!T'(M,w)$ বলা হবে।
   না। $!T'(M,w)\land !E(M,w)$-এর কোনো মডেলই না থাকলে কাজ শেষ। অতএব
   ধরি $\Struct{M}$ হলো $!T'(M,w)\land !E(M,w)$-এর একটি মডেল। দেখাতে
   হবে এটি সসীম হতে পারে না।
-% BN-SRC-195 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-195):} হিমায়িত বিপরীত-প্রতিজ্ঞার প্রকল্পে $!T'(M,w)$-এর বদলে $!T(M,w)$ লেখা হয়েছিল, যদিও অসীমতার জন্য প্রয়োজনীয় $!B$ শর্তগুলি কেবল $!T'$-তেই আছে। বাংলা পাঠে লেমার প্রকল্প $!T'(M,w)\land !E(M,w)$ রাখা হয়েছে।} % BN-SRC-195 TARGET-CORRECTION-END
+
 
   \olref[ver]{lem:config}-এর মতোই প্রমাণ করা যায়: নিবেশ~$w$-তে শুরু
   করা $M$ যদি কোনো ধনাত্মক সময়~$n$-এর আগে না থামে, তবে
@@ -220,8 +214,7 @@ $!T'(M,w)$ বলা হবে।
   $\num{k}$-কে $\Struct{M}$-এ সব ভিন্ন মান নিতে হবে। এর জন্য
   $\Domain{M}$ অসীম হওয়া দরকার। তাই $\Struct{M}$,
   $!T'(M,w)\land !E(M,w)$-এর কোনো সসীম মডেল হতে পারে না।
-% BN-SRC-196 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-196):} হিমায়িত প্রমাণ ও অনুশীলনী $n=0$-সহ সব সময়ে $!B(\num{n})$ অনুগত বলে, কিন্তু $!B$ কেবল অবস্থান্তরের অনুবর্তীতে যোগ হয়েছে; তাই প্রথম অবস্থান্তর থেকে $!B(\num{1})$ পাওয়া গেলেও $!B(\num{0})$-এর কোনো স্বতঃসিদ্ধ নেই। বাংলা পাঠে দাবিটি ধনাত্মক সময়ে সীমিত এবং সংশ্লিষ্ট কনফিগারেশনের যথার্থ শর্ত—$n$-তম ধাপের আগে না-থামা—দেওয়া হয়েছে; অসীমসংখ্যক সংখ্যাপদ পৃথক করার যুক্তিতে এটিই যথেষ্ট।} % BN-SRC-196 TARGET-CORRECTION-END
+
 \end{proof}
 
 \begin{prob}

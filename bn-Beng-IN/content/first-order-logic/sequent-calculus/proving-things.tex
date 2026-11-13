@@ -7,8 +7,8 @@
 \begin{document}
 
 \iftag{FOL}
-      {\olfileid{fol}{seq}{pro}}
-      {\olfileid{pl}{seq}{pro}}
+      {\olfileid[bn]{fol}{seq}{pro}}
+      {\olfileid[bn]{pl}{seq}{pro}}
 
 \olsection{\usetoken{P}{derivation}-এর উদাহরণ}
 
@@ -142,8 +142,7 @@ $\lnot !A \lor !B$-কে পূর্বাংশের একেবারে �
 \RightLabel{\RightR{\lif}}
 \UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
 \end{prooftree}
-% BN-SRC-025 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-025):} হিমায়িত ইংরেজি উৎসে উপরের পুনরাবৃত্ত প্রমাণ-বৃক্ষগুলিতে পূর্বাংশের $\lnot !A \lor !B$ ও~$!A$-এর স্থান অদলবদল করা চারটি ধাপকে $\RightR{\Exchange}$ বলা হয়েছে। বদলটি সিকোয়েন্টের বাঁদিকে ঘটেছে; তাই বাংলা বৃক্ষগুলিতে প্রযোজ্য $\LeftR{\Exchange}$ লেবেল ব্যবহার করা হয়েছে।} % BN-SRC-025 TARGET-CORRECTION-END
+
 \end{ex}
 
 \begin{ex}
@@ -170,8 +169,7 @@ $\lnot !A \lor \lnot !B \Sequent \lnot (!A \land !B)$ সিকোয়েন�
 $!A, \lnot !A \lor \lnot !B \Sequent \quad$, নয়তো
 $!B, \lnot !A \lor \lnot !B \Sequent \quad$ নেওয়া যায়।
 !!{derivation}-টি $!A$ ও~$!B$-এর বিনিময়ে প্রতিসম, তাই প্রথমটি নিই:
-% BN-SRC-026 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-026):} এই দুটি সম্ভাব্য উপরের সিকোয়েন্ট লিখতে গিয়ে হিমায়িত ইংরেজি গদ্যে দ্বিতীয় বিযোজ্যে $\lnot$ বাদ গেছে। উদাহরণের নিয়ামক অন্তিম সিকোয়েন্ট, প্রতিসাম্যের মন্তব্য এবং পরের সব প্রমাণ-বৃক্ষে $\lnot !A \lor \lnot !B$ আছে; বাংলা গদ্যে সেই রূপই পুনরুদ্ধার করা হয়েছে।} % BN-SRC-026 TARGET-CORRECTION-END
+
 \begin{prooftree}
 \AxiomC{}
 \UnaryInf$!A, \lnot !A \lor \lnot !B \fCenter $

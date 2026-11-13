@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{sfr}{siz}{enm}
+\olfileid[bn]{sfr}{siz}{enm}
 
 \olsection{তালিকায়ন ও \usetoken{S}{enumerable} সেট}
 
@@ -32,7 +32,7 @@
 \item তালিকায়নের একটি শুরু থাকতে হবে: \dots, $3$, $2$, $1$ ধনাত্মক পূর্ণসংখ্যাগুলির তালিকায়ন নয়, কারণ এর কোনো প্রথম !!{element} নেই। অনানুষ্ঠানিক সংজ্ঞা থেকে এটি কীভাবে আসে বুঝতে নিজেকে জিজ্ঞাসা করো, ``এই তালিকায় 76 সংখ্যাটি কোন ক্রমস্থানে আছে?''
 \item নিচের তালিকাটি ধনাত্মক পূর্ণসংখ্যাগুলির তালিকায়ন নয়: $1$, $3$, $5$, \dots, $2$, $4$, $6$, \dots\@ সমস্যাটি হলো, জোড় সংখ্যাগুলি সসীম ক্রমস্থানে না এসে $\infty + 1$, $\infty + 2$, $\infty +
   3$ ক্রমস্থানে আসে।
-\item শূন্য সেট তালিকায়নযোগ্য: শূন্য তালিকাই তার তালিকায়ন!{}
+\item শূন্য সেট !!{enumerable}: শূন্য তালিকাই তার তালিকায়ন!{}
 \end{enumerate}
 \end{explain}
 
@@ -88,8 +88,7 @@ f(1) & f(2) & f(3) & f(4) & f(5) & f(6) & f(7) & \dots \\ \\
 \rceil & - \lceil \tfrac{6}{2} \rceil & \dots \\ \\
 0 & 1 & -1 & 2 & -2 & 3 & -3 & \dots
 \end{array}
-\] % OLSIZ-001 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (OLSIZ-001):} হিমায়িত ইংরেজি উৎসের সারণিতে $f(7)$ ও তার নিয়ামক রাশি $-\lceil 6/2\rceil$ আছে, কিন্তু মানের সারিতে সংশ্লিষ্ট $-3$ বাদ পড়েছে। বাংলা সারণিতে সেই নির্ধারিত মানটি যোগ করা হয়েছে।} % OLSIZ-001 TARGET-CORRECTION-END
+\] 
 $f$-কে নিচের মতো ক্ষেত্রভেদে সংজ্ঞায়িত বলেও ভাবতে পারো:
 \[
 f(n) = \begin{cases}
@@ -158,8 +157,8 @@ $A$ !!{enumerable} হয় যদি এবং কেবল যদি $A$ শ�
 \end{proof}
 
 \begin{prob}
-  \olref[sfr][siz][enm]{defn:enumerable} অনুসারে, একটি সেট $A$ তালিকায়নযোগ্য হয় যদি এবং কেবল যদি $A = \emptyset$ হয় অথবা !!a{surjective} $f\colon
-  \PosInt \to A$ থাকে। ``!!{enumerable} সেট'' কথাটি নিচের নির্দিষ্ট সংজ্ঞা দিয়েও প্রকাশ করা যায়: একটি সেট তালিকায়নযোগ্য হয় যদি এবং কেবল যদি !!a{injective} অপেক্ষক $g\colon A \to \PosInt$ থাকে। সংজ্ঞা দুটি সমতুল্য দেখাও, অর্থাৎ দেখাও যে !!a{injective} অপেক্ষক $g\colon A \to \PosInt$ থাকে যদি এবং কেবল যদি হয় $A = \emptyset$, নয়তো !!a{surjective} $f\colon \PosInt \to A$ থাকে।
+  \olref[sfr][siz][enm]{defn:enumerable} অনুসারে, একটি সেট $A$ !!{enumerable} হয় যদি এবং কেবল যদি $A = \emptyset$ হয় অথবা !!a{surjective} $f\colon
+  \PosInt \to A$ থাকে। ``!!{enumerable} সেট'' কথাটি নিচের নির্দিষ্ট সংজ্ঞা দিয়েও প্রকাশ করা যায়: একটি সেট !!{enumerable} হয় যদি এবং কেবল যদি !!a{injective} অপেক্ষক $g\colon A \to \PosInt$ থাকে। সংজ্ঞা দুটি সমতুল্য দেখাও, অর্থাৎ দেখাও যে !!a{injective} অপেক্ষক $g\colon A \to \PosInt$ থাকে যদি এবং কেবল যদি হয় $A = \emptyset$, নয়তো !!a{surjective} $f\colon \PosInt \to A$ থাকে।
 \end{prob}
 
 \end{document}

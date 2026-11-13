@@ -7,8 +7,8 @@
 \begin{document}
 
 \iftag{FOL}
-      {\olfileid{fol}{ntd}{pro}}
-      {\olfileid{pl}{ntd}{pro}}
+      {\olfileid[bn]{fol}{ntd}{pro}}
+      {\olfileid[bn]{pl}{ntd}{pro}}
 
 \olsection{\usetoken{P}{derivation}-এর উদাহরণ}
 
@@ -63,8 +63,7 @@
 দ্বিতীয় আবির্ভাব অন্য সংযোজকের পরিধির মধ্যে আছে, তাই সেগুলি পরে
 সামলাব। অতএব \Intro{\lif} বিধি দিয়ে শুরু করি। সঠিক প্রয়োগটি এমন
 হতে হবে:
-% BN-SRC-035 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-035):} হিমায়িত ইংরেজি গদ্যে অন্তিম বাক্যটিকে “sentence in the end-sequent” বলা হয়েছে। স্বাভাবিক নিষ্পাদনের এই বৃক্ষে কোনো অন্তিম সিকোয়েন্ট নেই; নিচের নোডটি সিদ্ধান্ত। বাংলা গদ্যে তাই “অন্তিম সিদ্ধান্তের বাক্য” বলা হয়েছে।} % BN-SRC-035 TARGET-CORRECTION-END
+
 \begin{prooftree}
 \AxiomC{$\Discharge{\lnot !A \lor !B}{1}$}
 \DeduceC{$!A \lif !B$}
@@ -142,8 +141,7 @@ $!B$-এর এবং বাঁয়ের~$!A$ ও~$!B$ থেকে সেই
 \DischargeRule{\Intro{\lif}}{1}
 \UnaryInfC{$(\lnot !A \lor !B) \lif (!A \lif !B)$}
 \end{prooftree}
-% BN-SRC-042 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-042):} হিমায়িত ইংরেজি পূর্ণ বৃক্ষটিতে নঞর্থক বাক্য ও তার সদর্থক জোড়া থেকে মিথ্যা নিষ্পন্ন করার ধাপটিকে ভুল করে মিথ্যা-প্রবর্তন হিসেবে চিহ্নিত করা হয়েছে। ঠিক আগের গদ্য ও আংশিক বৃক্ষ এবং বিধির সংজ্ঞা অনুযায়ী বাংলা বৃক্ষে নঞর্থক অপসারণের লেবেল পুনরুদ্ধার করা হয়েছে।} % BN-SRC-042 TARGET-CORRECTION-END
+
 
 এবার সবচেয়ে ডানের শাখাটি দেখি। এখানে বুঝতে হবে,
 !!{derivation}-এর সংজ্ঞা অনুমিতি \emph{অবমুক্ত করার অনুমতি দেয়}, কিন্তু

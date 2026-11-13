@@ -1,0 +1,6 @@
+english	edition	slc	sense	source
+enumerable	তালিকায়নযোগ্য	গণনীয়	Finite or countably infinite, including the empty set.	OLP content/sets-functions-relations/size-of-sets/enumerability.tex; SLC slc-config.sty; NSOU EMT-03 §§9.3.2–9.3.3, pp. 319–320 (finite sets and cardinality)
+nonenumerable	অতালিকায়নযোগ্য	অগণনীয়	Negation of the finite-inclusive definition.	OLP content/sets-functions-relations/size-of-sets/non-enumerability.tex; SLC slc-config.sty
+denumerable	অসীম গণনীয়	অসীম গণনীয়	Countably infinite. “At most denumerable” includes finite sets.	OLP content/first-order-logic/completeness/downward-ls.tex; SLC slc-config.sty
+enumeration	তালিকায়ন	তালিকায়ন	Listing in the set-theoretic sense.	OLP content/sets-functions-relations/size-of-sets/enumerability.tex
+computably enumerable	গণনসাধ্যভাবে তালিকায়নযোগ্য	গণনসাধ্যভাবে তালিকায়নযোগ্য	Effective enumerability.	OLP content/turing-machines/undecidability/enumerating-tms.tex; Bengali OLP token configuration

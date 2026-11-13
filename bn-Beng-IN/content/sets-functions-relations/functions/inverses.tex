@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{sfr}{fun}{inv}
+\olfileid[bn]{sfr}{fun}{inv}
 \olsection{অপেক্ষকের বিপরীত}
 
 \begin{explain}
@@ -40,9 +40,12 @@ A$ থাকে, যাতে $x_1 \neq x_2$ অথচ $f(x_1) = f(x_2)$, তব
 \begin{prop}
 সংজ্ঞাক্ষেত্রটি অশূন্য এবং $f\colon A \to B$ যদি !!{injective} হয়, তবে~$f$-এর এমন একটি \emph{বাম বিপরীত}~$g\colon B \to A$ আছে, যাতে সকল $x
 \in A$-এর জন্য $g(f(x)) = x$ হয়।
-% OLFUN-001 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (OLFUN-001):} হিমায়িত ইংরেজি প্রতিজ্ঞায় $A$ অশূন্য হওয়ার শর্তটি নেই, যদিও প্রমাণে $A$ থেকে একটি $a$ বেছে নেওয়া হয়েছে। $A=\emptyset$ ও $B=\{0\}$ হলে শূন্য অপেক্ষকটি একৈক, কিন্তু $B\to A$ অপেক্ষক নেই। সঠিক সাধারণ শর্ত: একৈক $f\colon A\to B$-এর বাম বিপরীত থাকে যদি এবং কেবল যদি $A$ অশূন্য অথবা $B$ শূন্য।} % OLFUN-001 TARGET-CORRECTION-END
+
 \end{prop}
+\begin{editorial}
+একৈক $f\colon A\to B$-এর বাম বিপরীত থাকে যদি এবং কেবল যদি $A$ অশূন্য অথবা $B$ শূন্য। $A=\emptyset$ ও $B=\{0\}$ হলে শূন্য অপেক্ষকটি একৈক, কিন্তু $B\to A$ অপেক্ষক নেই। $A=B=\emptyset$ হলে একমাত্র শূন্য অপেক্ষকটিই বিপরীত।
+\end{editorial}
+
 
 \begin{proof}
 ধরি, সংজ্ঞাক্ষেত্রটি অশূন্য এবং $f\colon A \to B$ !!{injective}। একটি $y \in B$ বিবেচনা করো। যদি $y \in \ran{f}$ হয়, তবে এমন একটি $x \in A$ আছে, যাতে $f(x) = y$ হয়। যেহেতু $f$ !!{injective}, তাই এমন~$x \in A$ একটিই আছে। তখন আমরা $g(y) = x$ সংজ্ঞায়িত করতে পারি, অর্থাৎ $g(y)$ হলো ``সেই'' $x \in A$, যার জন্য $f(x)

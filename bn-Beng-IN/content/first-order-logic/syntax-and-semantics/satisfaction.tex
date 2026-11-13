@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{fol}{syn}{sat}
+\olfileid[bn]{fol}{syn}{sat}
 
 \olsection{\article{structure} \printtoken{S}{structure}-এ
   \article{formula} \printtoken{S}{formula}-এর পরিতৃপ্তি}
@@ -34,12 +34,9 @@
 শুধু কোনো !!a{structure}-এর সাপেক্ষে নয়, বরং কোনো !!a{structure} এবং
 !!a{variable} আরোপ উভয়ের সাপেক্ষে সংজ্ঞায়িত করি।
 \end{explain}
-% BN-SRC-911 TARGET-CORRECTION-BEGIN
-% Bengali x-variant wording repaired in definition and reminder; all other variables agree, x may also agree.
-% BN-SRC-911 TARGET-CORRECTION-END
-% BN-SRC-912 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-912):} পরিমাণিত সূত্রে পরিমাণকের চলরাশিটি অব্যবহিত উপসূত্রে অনুপস্থিতও হতে পারে। তাই মুক্ত চল থাকা আবশ্যক বলা হয়নি।}
-% BN-SRC-912 TARGET-CORRECTION-END
+
+
+\par\smallskip\noindent পরিমাণিত সূত্রের অব্যবহিত উপসূত্রে পরিমাণকের চলরাশিটি মুক্তভাবে ঘটতেই হবে, এমন নয়; চলরাশিটি উপসূত্রে অনুপস্থিতও হতে পারে।
 
 \begin{defn}[চলরাশি-আরোপ]
 !!a{structure}~$\Struct{M}$-এর জন্য \emph{চলরাশি-আরোপ}~$s$ হলো এমন
@@ -216,8 +213,7 @@ $m \in \Domain M$-এর জন্য~$\Subst{s}{m}{x}$-এর সাপেক�
 $\Sat{M}{R(b,f(a,b))}[s]$, কারণ $\tuple{\Value{b}{M},
   \Value{f(a,b)}{M}} = \tuple{2, 3} \in \Assign{R}{M}$; কিন্তু
 $\Sat/{M}{R(x, f(a,b))}[s]$, কারণ $\tuple{1, 3} \notin \Assign{R}{M}$।
-% BN-SRC-093 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-093):} হিমায়িত ইংরেজি উৎসে শেষ অ-সদস্যতার বিবৃতিতে সম্বন্ধের ব্যাখ্যা $\Assign{R}{M}$-এর পরে চলরাশি-আরোপ $[s]$ যুক্ত হয়েছে। আরোপটি পরমাণু সূত্রের পরিতৃপ্তি ও পদের মানে প্রযোজ্য, সম্বন্ধের স্থির ব্যাখ্যায় নয়; বাংলা পাঠে তাই $\Assign{R}{M}$ রাখা হয়েছে।} % BN-SRC-093 TARGET-CORRECTION-END
+
 
 অপরমাণু সূত্র~$!A$ পরিতৃপ্ত কি না নির্ধারণ করতে প্রধান সংযোজকের জন্য
 প্রযোজ্য আরোহী সংজ্ঞার অনুচ্ছেদটি ব্যবহার করতে হয়। যেমন,
@@ -304,10 +300,8 @@ $s_1 = s$ ($s$ সব সময় নিজের একটি $x$-বিকল
   থেকে অনুমান করা যায়, $\Sat{M}{\lexists[x][!A(x)]}[s]$ তখনই, যখন
   অন্তত একটি $m \in \Domain M$-এর জন্য
   $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$।}{}
-% BN-SRC-094 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-094):} হিমায়িত ইংরেজি উৎসের সংজ্ঞায়িত অস্তিত্বসূচকের উদাহরণে $\lnot$-এর পরে দুটি খোলা বন্ধনী কিন্তু একটি বন্ধ বন্ধনী ছিল—একবার সার্বিক সূত্রে এবং একবার তার নঞর্থকরণে। বাংলা পাঠে উভয় স্থানে সুগঠিত $\lnot(R(b,x) \lor R(x,b))$ রাখা হয়েছে।} % BN-SRC-094 TARGET-CORRECTION-END
-% BN-SRC-095 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-095):} হিমায়িত ইংরেজি উৎসে অপরিতৃপ্ত অস্তিত্বসূচক সূত্রটির \texttt{\textbackslash Sat/}-যুক্তির ভিতরে সূত্রের পরে একটি অতিরিক্ত কমা রয়েছে। বাংলা পাঠে কমাটি বাদ দিয়ে $\lexists[x][(R(b,x) \land R(x,b))]$ রাখা হয়েছে।} % BN-SRC-095 TARGET-CORRECTION-END
+
+
 
 \iftag{defAll}{সার্বিকভাবে পরিমাণিত
   !!{formula}~$\lforall[x][!A(x)]$ পরিতৃপ্ত কি না নির্ধারণ করতে দেখতে
@@ -331,8 +325,7 @@ $s_1 = s$ ($s$ সব সময় নিজের একটি $x$-বিকল
   উদাহরণগুলি থেকে অনুমান করা যায়, $\Sat{M}{\lforall[x][!A(x)]}[s]$
   তখনই, যখন প্রত্যেক $m \in \Domain M$-এর জন্য
   $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$।}{}
-% BN-SRC-096 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-096):} হিমায়িত ইংরেজি উৎসের সংজ্ঞায়িত সার্বিক পরিমাণসূচকের ব্যাখ্যায় $m=2,3,4$ ক্ষেত্রে অনুবর্তী $R(a,x)$-কে অপরিতৃপ্ত বলা হয়েছে; কিন্তু $R(a,2)$ সত্য এবং যুক্তিটি আসলে পূর্ববর্তী $R(x,a)$-এর অপরিতৃপ্তি ব্যবহার করে। বাংলা পাঠে তাই $R(x,a)$ রাখা হয়েছে।} % BN-SRC-096 TARGET-CORRECTION-END
+
 
 আরও জটিল একটি ক্ষেত্র হিসেবে বিবেচনা করুন
 \[
@@ -347,8 +340,7 @@ $\Sat{M}{R(x,y)}[\Subst{\Subst{s}{1}{x}}{n}{y}]$ হলে তা সত্য�
 $n = 1$ নিলে পাই $\Subst{\Subst{s}{1}{x}}{n}{y} =
 \Subst{s}{1}{y} = s$। যেহেতু $s(x) = 1$, $s(y) = 1$ এবং
 $\tuple{1,1} \in \Assign{R}{M}$, উত্তরটি হ্যাঁ।
-% BN-SRC-097 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-097):} হিমায়িত ইংরেজি উৎসে আকর্ষণীয় দ্বিতীয় ক্ষেত্রটি “$=2$” লেখা, ফলে চলরাশির নাম অনুপস্থিত। আগের ও পরের বাক্যে পরিমাণিত মান~$m$ নিয়ন্ত্রণ করে; বাংলা পাঠে $m=2$ রাখা হয়েছে।} % BN-SRC-097 TARGET-CORRECTION-END
+
 
 $\Sat{M}{\lexists[y][R(x,y)]}[\Subst{s}{2}{x}]$ কি না নির্ধারণ করতে
 !!{variable} আরোপগুলি $\Subst{\Subst{s}{2}{x}}{n}{y}$ দেখতে হবে।
@@ -377,9 +369,8 @@ $\Sat{M}{R(a,x)}[\Subst{s}{m}{x}]$। কিন্তু এই দুই মা
 $\Sat/{M}{R(x,y)}[\Subst{\Subst{s}{m}{x}}{n}{y}]$; তাই $m = 1$ ও
 $m = 2$-এর জন্য $\Sat/{M}{\lforall[y][R(x,y)]}[\Subst{s}{m}{x}]$।
 সব মিলিয়ে এমন কোনো $m \in \Domain M$ নেই যাতে
-$\Sat{M}{R(a,x) \land \lforall[y][R(x,y)]}[\Subst{s}{m}{x}]$।% BN-SRC-098 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-098):} হিমায়িত ইংরেজি উৎসে পরিমাণের শেষ সারাংশ “সব $n$”-এর জন্য বলা হলেও ব্যবহৃত চলরাশি ও ক্ষেত্রগুলি $m=1,2,3,4$; বাংলা পাঠে “প্রত্যেক $m$” রাখা হয়েছে।} % BN-SRC-098 TARGET-CORRECTION-END % BN-SRC-099 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-099):} হিমায়িত ইংরেজি উৎসে $m=1$ ও $m=2$ উভয়ের জন্য $n=4$-কে $R(m,n)$-এর বিপরীত-উদাহরণ বলা হয়েছে। কিন্তু ঘোষিত সম্বন্ধে $\tuple{2,4}\in\Assign{R}{M}$। বাংলা পাঠে $m=1$-এর জন্য $n=4$ এবং $m=2$-এর জন্য $n=1$ নেওয়া হয়েছে; উভয় সংশ্লিষ্ট জোড়াই ঘোষিত সম্বন্ধের বাইরে।} % BN-SRC-099 TARGET-CORRECTION-END
+$\Sat{M}{R(a,x) \land \lforall[y][R(x,y)]}[\Subst{s}{m}{x}]$।
+
 \end{ex}
 
 \iftag{defEx}{%

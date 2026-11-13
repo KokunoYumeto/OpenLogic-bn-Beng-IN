@@ -7,17 +7,22 @@ namespace so alternate historical versions cannot overwrite one another.
 from __future__ import annotations
 
 import collections
-import hashlib
 import json
 import pathlib
 import re
 
 import build_cumulative_semantic_reader as reader
 from edition_metadata import EDITION_DATE, metadata
+from full_edition_sources import digest, load_rows, load_target_hashes
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
 BUILD = REPO / "build/full-edition"
 MANIFEST = REPO / "evidence/FULL_SOURCE_MANIFEST.jsonl"
+AI_TRANSLATION_CREDIT = "এআই-অনূদিত বাংলা পাঠ"
+HISTORICAL_TRANSLATION_CREDIT = (
+    "পূর্ববর্তী বাংলা সংস্করণের অনুবাদে OpenAI Codex-এর GPT-5.6 Sol ও GPT-6 Sol, "
+    "এবং পুনঃপর্যালোচনায় GPT-6.1 Sol (Ultra) ব্যবহৃত হয়েছে।"
+)
 REF_ONLY_HYPERTARGETS = {
     "olp-0033:sfr:siz:nen:thm:nonenum-pownat",
     "olp-0039:sfr:siz:nen-alt:thm:nonenum-pownat",
@@ -59,14 +64,6 @@ def full_token_inflection(term, plural, suffix, key=""):
 reader.inflect_token = full_token_inflection
 
 
-def digest(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
-
-def load_rows(path):
-    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
-
-
 def body(raw):
     if r"\begin{document}" not in raw:
         return raw
@@ -89,7 +86,7 @@ def normalize_heading_options(raw, uid, notes):
     return raw
 
 
-def restore_exercise_statements(raw, notes):
+def restore_exercise_statements(raw, notes, *, legacy_reader_note):
     """Retain source propositions that the selected exercises explicitly cite."""
     wanted = {"defEx": "prop:sat-ex", "defAll": "prop:sat-all"}
 
@@ -101,6 +98,8 @@ def restore_exercise_statements(raw, notes):
             notes.append({"unit_id": "OLP-0163", "source_label": "fol:syn:sat:" + wanted[tag],
                           "source_condition": tag,
                           "action": "উৎসের মূল প্রস্তাবটি অপরিবর্তিত রেখে সংশ্লিষ্ট অনুশীলনীর আগে দেখানো হয়েছে; অন্য সংজ্ঞা/নির্বাচন-বিধি বদলানো হয়নি।"})
+            if not legacy_reader_note:
+                return yes, position
             note = (r"\par\noindent\textnormal{\small পাঠক-টীকা: হিমায়িত উৎসের এই প্রস্তাবটি "
                     r"শর্তসাপেক্ষে আড়াল হয়, যদিও পরের অনুশীলনী সেটির প্রমাণ চায়। "
                     r"অনুশীলনীর বক্তব্য স্পষ্ট রাখতে এখানে উৎসের প্রস্তাবটি দেখানো হয়েছে।}\par")
@@ -143,22 +142,26 @@ def edition_order(rows):
 def main():
     BUILD.mkdir(parents=True, exist_ok=True)
     rows = load_rows(MANIFEST)
-    status = json.loads((REPO / "evidence/DRAFT_STATUS.json").read_text(encoding="utf-8"))
-    assert len(rows) == status["draft_scope"]["translated_count"] == 722
+    assert len(rows) == 722
     assert digest(MANIFEST) == reader.MANIFEST_SHA256
-    assert status["current_checks"]["segment_index_sha256"] == digest(REPO / "evidence/SEGMENT_CANON_USE.jsonl")
-    checks = {r["unit_id"]: r for r in status["current_checks"]["unit_checks"]}
+    target_hashes, input_receipt = load_target_hashes(REPO, rows)
+    legacy_inputs = "draft_status_sha256" in input_receipt
     order = edition_order(rows)
     units = {}
     for row in order:
+        uid = row["unit_id"]
         path = REPO / "bn-Beng-IN" / row["source_path"]
-        assert digest(path) == checks[row["unit_id"]]["target_sha256"]
-        units[row["unit_id"]] = path.read_text(encoding="utf-8")
+        data = path.read_bytes()
+        if reader.sha256(data) != target_hashes[uid]:
+            raise ValueError(f"{uid}: translation SHA-256 differs: {path}")
+        units[uid] = data.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
     heading_options = []
     render_inputs = {uid: normalize_heading_options(reader.strip_comments(body(raw)), uid, heading_options)
                      for uid, raw in units.items()}
     reader_adjustments = []
-    render_inputs["OLP-0163"] = restore_exercise_statements(render_inputs["OLP-0163"], reader_adjustments)
+    render_inputs["OLP-0163"] = restore_exercise_statements(
+        render_inputs["OLP-0163"], reader_adjustments, legacy_reader_note=legacy_inputs,
+    )
     assert len(reader_adjustments) == 2
     known = reader.collect_known_labels(list(render_inputs.items()))
     selected = {uid: reader.evaluate_selectors(raw, known) for uid, raw in render_inputs.items()}
@@ -553,7 +556,16 @@ OpenAI Codex: GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-�
 \end{titlingpage}
 \tableofcontents
 """
-    preamble = preamble.replace(r"\end{titlingpage}", EDITION_DATE + r"\par" + "\n" + r"\end{titlingpage}", 1)
+    if not legacy_inputs:
+        preamble = preamble.replace(
+            "এআই-সহায়ক অনুবাদ, সংশোধন ও স্বয়ংক্রিয় পর্যালোচনা",
+            AI_TRANSLATION_CREDIT,
+        ).replace(
+            "OpenAI Codex: GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-এর পুনঃপর্যালোচনা; Ultra effort",
+            HISTORICAL_TRANSLATION_CREDIT,
+        )
+    title_date = EDITION_DATE if legacy_inputs else "পূর্ববর্তী সংস্করণ: " + EDITION_DATE
+    preamble = preamble.replace(r"\end{titlingpage}", title_date + r"\par" + "\n" + r"\end{titlingpage}", 1)
     row_by_id = {row["unit_id"]: row for row, _ in transformed}
     text_by_id = {row["unit_id"]: text for row, text in transformed}
     id_by_path = {row["source_path"]: row["unit_id"] for row in order}
@@ -612,7 +624,7 @@ OpenAI Codex: GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-�
         "edition_identity": metadata(),
         "source_revision": reader.SOURCE_REVISION,
         "source_manifest_sha256": digest(MANIFEST),
-        "draft_status_sha256": digest(REPO / "evidence/DRAFT_STATUS.json"),
+        **input_receipt,
         "source_units": 722,
         "reader_order": emitted,
         "integrated_source_imports": imports,

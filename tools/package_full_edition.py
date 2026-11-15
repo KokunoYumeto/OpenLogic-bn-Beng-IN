@@ -64,6 +64,9 @@ def main() -> None:
     pdf_check = json.loads((BUILD / "PDF_QA.json").read_text(encoding="utf-8"))
     epub_check = json.loads((BUILD / "EPUB_QA.json").read_text(encoding="utf-8"))
     assert pdf_check["status"] == "passed" and pdf_check["source_units"] == 722
+    if PROFILE:
+        assert pdf_check["overflows_above_2pt"] == 0
+        assert pdf_check["tex_log_sha256"] == digest(BUILD / "openlogic-bn-Beng-IN-complete.log")
     assert pdf_check["tex_input_sha256"] == digest(TEX) and pdf_check["pdf_sha256"] == digest(pdf)
     visual_path = (REPO / pdf_check["visual_qa_path"]).resolve(strict=True)
     assert visual_path.is_relative_to(REPO.resolve())

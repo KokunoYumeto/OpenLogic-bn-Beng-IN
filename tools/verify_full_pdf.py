@@ -68,6 +68,12 @@ def main() -> None:
     require(passes[-1]["pdf_sha256"] == pdf_hash, "PDF changed after the guarded build")
 
     log = LOG.read_text(encoding="utf-8", errors="replace")
+    overflows = [
+        float(match.group(1))
+        for match in re.finditer(r"Overfull \\[hv]box \(([\d.]+)pt too (?:wide|high)\)", log)
+    ]
+    excess = [points for points in overflows if points > 2]
+    require(not excess, f"{len(excess)} overfull boxes exceed 2pt (maximum {max(excess, default=0):g}pt)")
     require(not re.search(r"(?m)^! ", log), "TeX log contains an error")
     require(not re.search(r"(?:Reference|Citation) `[^'\n]+' on page [^\n]*undefined", log),
             "TeX log contains an undefined reference or citation")
@@ -143,6 +149,10 @@ def main() -> None:
         "unembedded_fonts": 0,
         "tex_input_sha256": tex_hash,
         "tex_passes": len(passes),
+        "tex_log_sha256": sha256(LOG),
+        "overfull_boxes": len(overflows),
+        "maximum_overflow_pt": max(overflows, default=0),
+        "overflows_above_2pt": len(excess),
         "bibtex_exit_code": 0,
         "missing_character_warnings_reviewed": missing_characters,
         "visual_qa_path": visual_path.relative_to(REPO).as_posix(),

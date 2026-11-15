@@ -465,6 +465,14 @@ def inflect_token(term: str, plural: bool, suffix: str, key: str = "") -> str:
 
 
 def replace_tokens(value: str) -> str:
+    # Bengali prose can already supply the classifier requested by the English
+    # article flag. Keep the authored word and expand just the following noun.
+    value = re.sub(
+        r"(?<![\w\u0980-\u09ff])(একটি\s+!!\^?)a(?=\{)", r"\1", value
+    )
+    value = re.sub(
+        r"(?<![\w\u0980-\u09ff])(একটি\s+)\\Article\{[^{}]+\}[ \t]*", r"\1", value
+    )
     suffix_pattern = "|".join(re.escape(item) for item in TOKEN_SUFFIXES)
     pattern = re.compile(r"!!(\^)?(a)?\{([^{}]+)\}(s)?(" + suffix_pattern + r")?")
 

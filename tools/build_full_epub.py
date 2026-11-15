@@ -16,7 +16,7 @@ from pathlib import Path
 from lxml import etree
 
 import build_cumulative_semantic_reader as reader
-from edition_metadata import EDITION_DATE, MODIFIED_UTC, FIXED_ZIP_TIME, metadata
+from edition_metadata import EDITION_DATE, MODIFIED_UTC, FIXED_ZIP_TIME, PROFILE, SOURCE_REVISION, metadata
 
 
 REPO = Path(__file__).resolve().parents[1]
@@ -110,10 +110,13 @@ def update_package(html_sha: str, fonts: list[dict]) -> dict:
     set_dc("title", "ওপেন লজিক: সম্পূর্ণ ভারতীয় বাংলা সংস্করণ")
     set_dc("description", "হিমায়িত Open Logic মূলের সব ৭২২টি বিষয়বস্তু-এককের ভারতীয় বাংলা, পুনঃপ্রবাহযোগ্য MathML EPUB3 পাঠ।")
     set_dc("date", EDITION_DATE)
-    set_dc("rights", "CC BY 4.0; Noto fonts OFL 1.1; TX Fonts and St Mary's Road operator-font notices are in the legal page.")
+    if PROFILE:
+        set_dc("contributor", PROFILE["attribution_bn"])
+    set_dc("rights", "মূল রচনা ও বাংলা অনুবাদ CC BY 4.0 লাইসেন্সে প্রকাশিত। Noto ফন্টের লাইসেন্স SIL OFL 1.1। TX Fonts ও St Mary's Road-এর গাণিতিক চিহ্নের স্বত্ব ও ব্যবহারের শর্ত লাইসেন্স পাতায় দেওয়া আছে।")
     for prop, value in (
         ("dcterms:modified", MODIFIED_UTC),
-        ("schema:accessibilitySummary", "Complete reflowable Bengali text with native MathML, structural navigation and textual proof-tree, tableau and diagram representations; script-free."),
+        ("dcterms:provenance", "OpenLogicProject/OpenLogic " + SOURCE_REVISION + "; HTML SHA-256 " + html_sha),
+        ("schema:accessibilitySummary", "পর্দার মাপ অনুযায়ী বাংলা পাঠের বিন্যাস বদলায়। সূত্রগুলি MathML-এ দেওয়া আছে। সূচি থেকে বিভাগে যাওয়া যায়। প্রমাণবৃক্ষ, ট্যাবলো ও চিত্রের পাঠ্যরূপও আছে।"),
     ):
         nodes = root.xpath("//opf:meta[@property=$property]", namespaces=ns, property=prop)
         require(len(nodes) == 1, "unexpected EPUB meta: " + prop)
@@ -170,7 +173,7 @@ def main() -> None:
     about = page("এই সংস্করণ সম্পর্কে", [
         "এটি হিমায়িত Open Logic মূলের সব ৭২২টি বিষয়বস্তু-এককের ভারতীয় বাংলা EPUB3 পাঠ।",
         "গাণিতিক সূত্রগুলি নেটিভ MathML; প্রমাণবৃক্ষ, ট্যাবলো ও চিত্রগুলির অর্থবহ পুনঃপ্রবাহযোগ্য পাঠ্যরূপ আছে। প্যাকেজে কোনো স্ক্রিপ্ট, অডিও বা স্থির-পৃষ্ঠার বিন্যাস নেই।",
-        "মূল OpenLogicProject/OpenLogic revision: " + reader.SOURCE_REVISION + ".",
+        "মূল ইংরেজি উৎসের সংস্করণ: " + SOURCE_REVISION + ".",
     ])
     tx_notice = (BUILD / "font-sources/TXFONTS-COPYRIGHT.txt").read_text(encoding="ascii")
     legal = page("লাইসেন্স", [
@@ -193,7 +196,7 @@ def main() -> None:
         check = reader.run_epubcheck(EPUB, args.epubcheck_jar.resolve())
     receipt = {"schema": "openlogic-bn-full-epub/1", "status": "passed" if check else "structural_pass_epubcheck_pending",
                "edition_identity": metadata(),
-               "source_units": 722, "source_revision": reader.SOURCE_REVISION,
+               "source_units": 722, "source_revision": SOURCE_REVISION,
                "html_sha256": qa["html"]["html_sha256"], "native_mathml": content["mathml"],
                "epub": canonical, "parts": parts, "fonts": fonts, "validation": validation,
                "math_text_links_in_xhtml_namespace": repaired_math_links,

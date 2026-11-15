@@ -4,9 +4,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
-from edition_metadata import FIXED_ZIP_TIME, metadata
+from edition_metadata import FIXED_ZIP_TIME, PROFILE, PROFILE_PATH, metadata
 from full_edition_sources import UNIT_LEDGER, digest, load_rows, load_target_hashes
 
 
@@ -82,6 +83,8 @@ def main() -> None:
     assert epub_check["epubcheck"]["messages"] == 0
     assert epub_check["epubcheck"]["report_sha256"] == digest(BUILD / "EPUBCHECK.json")
     files: set[Path] = set()
+    for name in set(re.findall(r"assets/diagrams/[A-Za-z0-9_-]+\.tikz\b", TEX.read_text(encoding="utf-8"))):
+        add_exact(files, "upstream/" + name)
     for row in manifest:
         source_path = row["source_path"]
         assert source_path.startswith("content/") and ".." not in Path(source_path).parts
@@ -93,74 +96,98 @@ def main() -> None:
             raise ValueError(f"{row['unit_id']}: translation SHA-256 differs: {target}")
         add_exact(files, original.relative_to(REPO).as_posix())
         add_exact(files, target.relative_to(REPO).as_posix())
-    for relative in (
-        "README.md", "RELEASE_NOTES_1_0_1.md", ".gitattributes", "upstream/LICENSE.md", "upstream/README.md",
-        "upstream/open-logic-config.sty", "upstream/open-logic-complete-config.sty",
-        "upstream/open-logic-locale.sty", "upstream/open-logic-envs.sty",
-        "upstream/open-logic-complete.tex", "upstream/bib/open-logic.bib",
-        "upstream/bib/natbib-oup.bst", "bn-Beng-IN/bib/open-logic.bib",
-        "evidence/BIBLIOGRAPHY_CORRECTIONS.json",
-        "evidence/BIBLIOGRAPHY_OPTIONAL_URL_DISPOSITION_2026-10-01.md",
-        "evidence/SOURCE_NORMALIZATIONS.jsonl",
-        "evidence/GPT6_SOL_REDO_UNIT_REVIEWS.jsonl",
-        "evidence/GPT6_SOL_REDO_SUPPORT_REVIEWS.jsonl",
-        "evidence/GPT6_SOL_REDO_LINDSTROM_SUPPORT_CHECK.json",
-        "evidence/GPT6_SOL_REDO_TRANSLATION_DECISION_EXPORT_CHECK.json",
-        "evidence/TRANSLATION_DECISION_LOG.jsonl", "evidence/TRANSLATION_DECISION_LOG.md",
-        "evidence/TRANSLATION_DECISION_INDEX.json", "evidence/TRANSLATION_DECISION_PRIORITY.md",
-        "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
-        "fonts/NotoSerifBengali-Regular.ttf", "fonts/NotoSerifBengali-Bold.ttf",
-        "fonts/Noto-fonts-LICENSE.txt",
-        "evidence/FULL_SOURCE_MANIFEST.jsonl", "evidence/DRAFT_STATUS.json",
-        "evidence/SOURCE_MODEL_PROVENANCE_722.json", "evidence/SEMANTIC_REVIEW_FINAL_SOURCE_UNITS.md",
-        "evidence/SEMANTIC_REVIEW_LINDSTROM.md",
-        "evidence/CANON_SOURCES.jsonl", "evidence/CANON_PASSAGES.jsonl",
-        "evidence/SEGMENT_CANON_USE.jsonl", "evidence/TERM_DECISIONS.jsonl",
-        "evidence/SOURCE_CORRECTIONS.jsonl", "evidence/RECOVERED_CANON_VERIFICATION.json",
-        "tools/prepare_full_edition.py", "tools/build_cumulative_semantic_reader.py",
-        "tools/build_full_semantic_reader.py", "tools/build_reader_operator_font.py",
-        "tools/build_full_epub.py", "tools/edition_metadata.py", "tools/reader_tableau.py", "tools/reader_diagrams.py",
-        "tools/build_full_edition_windows.ps1", "tools/create_reader_visual_probes.py",
-        "tools/render_reader_visual_probes.cjs",
-        "tools/package_full_edition.py", "tools/full_edition_sources.py", "tools/check_source_draft.py",
-        "tools/verify_segment_canon.py", "tools/verify_full_pdf.py",
-        "evidence/PDF_PREPARATION_CHECKPOINT_2026-09-28.json",
-        "evidence/PDF_LAYOUT_CHECKPOINT_2026-09-28.json",
-        "evidence/PDF_TABLEAU_CHECKPOINT_2026-09-28.json",
-        "evidence/PDF_BOOKMARK_PREFLIGHT_2026-09-28.json",
-        "evidence/PDF_LIST_BREAK_CHECKPOINT_2026-09-28.json",
-        "evidence/PDF_JOINER_PREFLIGHT_2026-09-28.json",
-        "evidence/PDF_FINAL_QA_2026-09-28.json",
-        "evidence/READER_VISIBLE_TOKEN_AUDIT_2026-09-28.json",
-        "evidence/ZENODO_LINEAGE_AUDIT_2026-09-28.json",
-        "build/full-edition/openlogic-bn-Beng-IN-complete.tex",
-        "build/full-edition/PREPARATION.json", "build/full-edition/SEMANTIC_READER_QA.json",
-        "build/full-edition/EPUB_QA.json", "build/full-edition/EPUBCHECK.json",
-        "build/full-edition/OPERATOR_FONT.json", "build/full-edition/PANDOC_INPUT.json",
-        "build/full-edition/SEMANTIC_INPUT.json", "build/full-edition/environment-markers.json",
-        "build/full-edition/proof-graphs.json", "build/full-edition/tableau-graphs.json", "build/full-edition/diagram-graphs.json",
-        "build/full-edition/HTML_VISUAL_QA.json", "build/full-edition/BROWSER_CAPTURES.json",
-        "build/full-edition/VISUAL_PROBES.json",
-        "build/full-edition/SOURCE_FRAGMENT_SCOPES.json", "build/full-edition/READER_BUILD_ATTEMPT.json",
-        "build/full-edition/math-link-targets.json",
-    ):
-        add_exact(files, relative)
-    if ledger_hash is not None:
-        add_exact(files, UNIT_LEDGER)
-        if "source_revision" in input_receipt:
-            add_exact(files, "olp-edition.toml")
-    # Current redo records are separate from explicitly dated historical checkpoints.
-    for pattern in ("REDO_GPT6_SOL_*.md", "GPT6_SOL_REDO_*_CHECK.json", "REDO_GPT6_SOL_*_AUDITED_ENGLISH.tex"):
-        for path in (REPO / "evidence").glob(pattern):
-            add_exact(files, path.relative_to(REPO).as_posix())
-    for relative in inspected:
-        add_exact(files, (BUILD / relative).relative_to(REPO).as_posix())
-    add_exact(files, "build/full-edition/PDF_QA.json")
-    add_exact(files, "build/full-edition/CURRENT_PDF_CAPTURES.json")
-    for item in pdf_visual["manually_inspected_pages"]:
-        add_exact(files, item["file"])
-    add_exact(files, pdf_check["visual_qa_path"])
-    add_exact(files, "build/full-edition/latest-attempt.json")
+    if PROFILE:
+        # Ship reconstructible sources and scholarly notices. Verification images
+        # and private editorial records are still checked above, outside the ZIP.
+        for relative in (
+            "publication/SOURCES.bn.md", "publication/full-edition.json",
+            "publication/classifier.bn.md", "olp-edition.toml", UNIT_LEDGER,
+            "evidence/FULL_SOURCE_MANIFEST.jsonl", "upstream/LICENSE.md",
+            "upstream/README.md", "upstream/open-logic-config.sty",
+            "upstream/open-logic-complete-config.sty", "upstream/open-logic-locale.sty",
+            "upstream/open-logic-envs.sty", "upstream/open-logic-complete.tex",
+            "upstream/bib/open-logic.bib", "upstream/bib/natbib-oup.bst",
+            "bn-Beng-IN/bib/open-logic.bib", "fonts/NotoSerifBengali-Regular.ttf",
+            "fonts/NotoSerifBengali-Bold.ttf", "fonts/Noto-fonts-LICENSE.txt",
+            "tools/full_edition_sources.py", "tools/edition_metadata.py",
+            "tools/prepare_full_edition.py", "tools/build_full_edition_windows.ps1",
+            "tools/build_reader_operator_font.py", "tools/reader_tableau.py",
+            "tools/reader_diagrams.py", "tools/build_cumulative_semantic_reader.py",
+            "tools/build_full_semantic_reader.py", "tools/build_full_epub.py",
+            "build/full-edition/openlogic-bn-Beng-IN-complete.tex",
+        ):
+            add_exact(files, relative)
+    else:
+        for relative in (
+            "README.md", "RELEASE_NOTES_1_0_1.md", ".gitattributes", "upstream/LICENSE.md", "upstream/README.md",
+            "upstream/open-logic-config.sty", "upstream/open-logic-complete-config.sty",
+            "upstream/open-logic-locale.sty", "upstream/open-logic-envs.sty",
+            "upstream/open-logic-complete.tex", "upstream/bib/open-logic.bib",
+            "upstream/bib/natbib-oup.bst", "bn-Beng-IN/bib/open-logic.bib",
+            "evidence/BIBLIOGRAPHY_CORRECTIONS.json",
+            "evidence/BIBLIOGRAPHY_OPTIONAL_URL_DISPOSITION_2026-10-01.md",
+            "evidence/SOURCE_NORMALIZATIONS.jsonl",
+            "evidence/GPT6_SOL_REDO_UNIT_REVIEWS.jsonl",
+            "evidence/GPT6_SOL_REDO_SUPPORT_REVIEWS.jsonl",
+            "evidence/GPT6_SOL_REDO_LINDSTROM_SUPPORT_CHECK.json",
+            "evidence/GPT6_SOL_REDO_TRANSLATION_DECISION_EXPORT_CHECK.json",
+            "evidence/TRANSLATION_DECISION_LOG.jsonl", "evidence/TRANSLATION_DECISION_LOG.md",
+            "evidence/TRANSLATION_DECISION_INDEX.json", "evidence/TRANSLATION_DECISION_PRIORITY.md",
+            "evidence/TRANSLATION_DECISION_OCCURRENCES.csv",
+            "fonts/NotoSerifBengali-Regular.ttf", "fonts/NotoSerifBengali-Bold.ttf",
+            "fonts/Noto-fonts-LICENSE.txt",
+            "evidence/FULL_SOURCE_MANIFEST.jsonl", "evidence/DRAFT_STATUS.json",
+            "evidence/SOURCE_MODEL_PROVENANCE_722.json", "evidence/SEMANTIC_REVIEW_FINAL_SOURCE_UNITS.md",
+            "evidence/SEMANTIC_REVIEW_LINDSTROM.md",
+            "evidence/CANON_SOURCES.jsonl", "evidence/CANON_PASSAGES.jsonl",
+            "evidence/SEGMENT_CANON_USE.jsonl", "evidence/TERM_DECISIONS.jsonl",
+            "evidence/SOURCE_CORRECTIONS.jsonl", "evidence/RECOVERED_CANON_VERIFICATION.json",
+            "tools/prepare_full_edition.py", "tools/build_cumulative_semantic_reader.py",
+            "tools/build_full_semantic_reader.py", "tools/build_reader_operator_font.py",
+            "tools/build_full_epub.py", "tools/edition_metadata.py", "tools/reader_tableau.py", "tools/reader_diagrams.py",
+            "tools/build_full_edition_windows.ps1", "tools/create_reader_visual_probes.py",
+            "tools/render_reader_visual_probes.cjs",
+            "tools/package_full_edition.py", "tools/full_edition_sources.py", "tools/check_source_draft.py",
+            "tools/verify_segment_canon.py", "tools/verify_full_pdf.py",
+            "evidence/PDF_PREPARATION_CHECKPOINT_2026-09-28.json",
+            "evidence/PDF_LAYOUT_CHECKPOINT_2026-09-28.json",
+            "evidence/PDF_TABLEAU_CHECKPOINT_2026-09-28.json",
+            "evidence/PDF_BOOKMARK_PREFLIGHT_2026-09-28.json",
+            "evidence/PDF_LIST_BREAK_CHECKPOINT_2026-09-28.json",
+            "evidence/PDF_JOINER_PREFLIGHT_2026-09-28.json",
+            "evidence/PDF_FINAL_QA_2026-09-28.json",
+            "evidence/READER_VISIBLE_TOKEN_AUDIT_2026-09-28.json",
+            "evidence/ZENODO_LINEAGE_AUDIT_2026-09-28.json",
+            "build/full-edition/openlogic-bn-Beng-IN-complete.tex",
+            "build/full-edition/PREPARATION.json", "build/full-edition/SEMANTIC_READER_QA.json",
+            "build/full-edition/EPUB_QA.json", "build/full-edition/EPUBCHECK.json",
+            "build/full-edition/OPERATOR_FONT.json", "build/full-edition/PANDOC_INPUT.json",
+            "build/full-edition/SEMANTIC_INPUT.json", "build/full-edition/environment-markers.json",
+            "build/full-edition/proof-graphs.json", "build/full-edition/tableau-graphs.json", "build/full-edition/diagram-graphs.json",
+            "build/full-edition/HTML_VISUAL_QA.json", "build/full-edition/BROWSER_CAPTURES.json",
+            "build/full-edition/VISUAL_PROBES.json",
+            "build/full-edition/SOURCE_FRAGMENT_SCOPES.json", "build/full-edition/READER_BUILD_ATTEMPT.json",
+            "build/full-edition/math-link-targets.json",
+        ):
+            add_exact(files, relative)
+        if ledger_hash is not None:
+            add_exact(files, UNIT_LEDGER)
+            if PROFILE:
+                add_exact(files, PROFILE_PATH.relative_to(REPO).as_posix())
+            if "source_revision" in input_receipt:
+                add_exact(files, "olp-edition.toml")
+        # Current redo records are separate from explicitly dated historical checkpoints.
+        for pattern in ("REDO_GPT6_SOL_*.md", "GPT6_SOL_REDO_*_CHECK.json", "REDO_GPT6_SOL_*_AUDITED_ENGLISH.tex"):
+            for path in (REPO / "evidence").glob(pattern):
+                add_exact(files, path.relative_to(REPO).as_posix())
+        for relative in inspected:
+            add_exact(files, (BUILD / relative).relative_to(REPO).as_posix())
+        add_exact(files, "build/full-edition/PDF_QA.json")
+        add_exact(files, "build/full-edition/CURRENT_PDF_CAPTURES.json")
+        for item in pdf_visual["manually_inspected_pages"]:
+            add_exact(files, item["file"])
+        add_exact(files, pdf_check["visual_qa_path"])
+        add_exact(files, "build/full-edition/latest-attempt.json")
     for directory, patterns in (
         ("upstream/sty", ("*.sty", "*.cls")),
         ("upstream/include", ("*.tex",)),

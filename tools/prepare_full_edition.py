@@ -12,7 +12,7 @@ import pathlib
 import re
 
 import build_cumulative_semantic_reader as reader
-from edition_metadata import EDITION_DATE, metadata
+from edition_metadata import EDITION_DATE, PROFILE, SOURCE_REVISION, metadata
 from full_edition_sources import digest, load_rows, load_target_hashes
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
@@ -145,6 +145,8 @@ def main():
     assert len(rows) == 722
     assert digest(MANIFEST) == reader.MANIFEST_SHA256
     target_hashes, input_receipt = load_target_hashes(REPO, rows)
+    if input_receipt.get("source_revision", SOURCE_REVISION) != SOURCE_REVISION:
+        raise ValueError("Full-reader metadata does not describe the current translated inputs")
     legacy_inputs = "draft_status_sha256" in input_receipt
     order = edition_order(rows)
     units = {}
@@ -456,6 +458,13 @@ def main():
             return match.group(1) + "\n" + match.group(2)
         raw = re.sub(r"(\\end\{tabular\})\n(?:[ \t]*\n)+(\\\\\[[0-9.]+(?:em|ex|pt)\])",
                      adjacent_table_break, raw)
+        if PROFILE and uid == "OLP-0421":
+            # A newline after the fixed-width box adds an interword space to
+            # the multirow's natural width, wider than its own table column.
+            raw, trimmed = re.subn(r"(\\hfill\s*\(\\Ax\{L\}\)\})\s+(\}\s*\\\\)",
+                                   r"\1\2", raw)
+            if trimmed > 1:
+                raise ValueError("ambiguous width adjustment in the frame-properties table")
         transformed.append((row, raw))
     assert len(documented_missing) == 4
     assert len(proof_title_reference_adjustments) == 6
@@ -562,9 +571,14 @@ OpenAI Codex: GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-�
             AI_TRANSLATION_CREDIT,
         ).replace(
             "OpenAI Codex: GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-এর পুনঃপর্যালোচনা; Ultra effort",
-            HISTORICAL_TRANSLATION_CREDIT,
+            PROFILE.get("attribution_bn", HISTORICAL_TRANSLATION_CREDIT),
         )
-    title_date = EDITION_DATE if legacy_inputs else "পূর্ববর্তী সংস্করণ: " + EDITION_DATE
+    if PROFILE:
+        preamble = preamble.replace(r"\setlength{\emergencystretch}{3em}", r"""\setlength{\emergencystretch}{\linewidth}
+\setlength{\cftpartnumwidth}{3.6em}
+\AtBeginEnvironment{table}{\setlength{\tabcolsep}{3pt}\small}
+\RenewDocumentCommand\sFmla{m m o}{\ensuremath{\IfValueT{#3}{#3\,}\mathord{#1}\, #2}}""")
+    title_date = EDITION_DATE if legacy_inputs or PROFILE else "পূর্ববর্তী সংস্করণ: " + EDITION_DATE
     preamble = preamble.replace(r"\end{titlingpage}", title_date + r"\par" + "\n" + r"\end{titlingpage}", 1)
     row_by_id = {row["unit_id"]: row for row, _ in transformed}
     text_by_id = {row["unit_id"]: text for row, text in transformed}
@@ -622,7 +636,7 @@ OpenAI Codex: GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-�
     receipt = {
         "schema": "openlogic-bn-full-edition-preparation/1",
         "edition_identity": metadata(),
-        "source_revision": reader.SOURCE_REVISION,
+        "source_revision": SOURCE_REVISION,
         "source_manifest_sha256": digest(MANIFEST),
         **input_receipt,
         "source_units": 722,

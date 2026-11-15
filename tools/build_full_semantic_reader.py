@@ -306,7 +306,7 @@ OpenAI Codex — GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 So
             full.AI_TRANSLATION_CREDIT + "।",
         ).replace(
             "OpenAI Codex — GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-এর পুনঃপর্যালোচনা; Ultra effort।",
-            full.HISTORICAL_TRANSLATION_CREDIT,
+            full.PROFILE.get("attribution_bn", full.HISTORICAL_TRANSLATION_CREDIT),
         )
     source = BUILD / "semantic-input.tex"
     source.write_text(r"\documentclass{book}" + "\n" + r"\usepackage{amsmath,amssymb}" + "\n"

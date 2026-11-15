@@ -1,0 +1,741 @@
+{
+  "schema": "openlogic.edition-catalogue.v1",
+  "edition": {
+    "id": "openlogic-bn-beng-in",
+    "public_source_checkpoint": {
+      "commit": "b0b7de3cae0105c065d21e22f142e66bb084dcf9",
+      "source_units": 722,
+      "reader_units": 299,
+      "checked": "2026-09-28",
+      "evidence": "evidence/BN722_PUBLIC_SOURCE_20260928.json",
+      "scope": "ঐতিহাসিক উৎস-পরীক্ষা: সব ৭২২টি ইংরেজি ও বাংলা ফাইলের পরিচয় মেলানো হয়েছিল, যখন পাঠকটি ২৯৯-ইউনিটের ছিল। বর্তমান সম্পূর্ণ পাঠকের পরীক্ষা আলাদাভাবে সংযুক্ত।"
+    },
+    "name": "বাংলা (ভারত)",
+    "language_tag": "bn-Beng-IN",
+    "semantic_layer": "ভারতীয় বাংলা অনুবাদ; সম্পূর্ণ PDF, HTML ও EPUB পাঠক প্রকাশিত",
+    "scripts": [
+      "Beng"
+    ],
+    "profiles": [
+      "ওপেন লজিক প্রকল্পের স্থির মূলের ৭২২টি বিষয়বস্তু-এককের ভারতীয় বাংলা সংস্করণ। ৮৯১-পৃষ্ঠার PDF, নেটিভ MathML-সহ HTML, পুনঃপ্রবাহযোগ্য EPUB, সম্মিলিত সম্পাদনযোগ্য LaTeX ও পূর্ণ উৎস ZIP পাওয়া যায়।",
+      "মূল রচনা ওপেন লজিক প্রকল্পের লেখক ও অবদানকারীদের। ভারতীয় বাংলা পাঠ OpenAI Codex-এর এআই অনুবাদ। পূর্ববর্তী অনুবাদ ও পর্যালোচনায় GPT-5.6 Sol ও GPT-6 Sol ব্যবহৃত হয়েছে। প্রকাশিত সংশোধন ও পুনঃপর্যালোচনায় GPT-6.1 Sol ব্যবহৃত হয়েছে। নথিভুক্ত প্রচেষ্টা-স্তর Ultra।"
+    ],
+    "repository": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN",
+    "release": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v1.0.1-corrected-edition",
+    "release_tag": "v1.0.1-corrected-edition",
+    "concept_doi": "10.5281/zenodo.22848704",
+    "version_doi": "10.5281/zenodo.23018795",
+    "license": "CC-BY-4.0; inherited component and font exceptions retained",
+    "source_units_translated": 722,
+    "release_source_units_translated": 722,
+    "public_source_checkpoint_units": 722,
+    "public_source_checkpoint_commit": "b0b7de3cae0105c065d21e22f142e66bb084dcf9",
+    "standalone_reader_units": 722,
+    "coverage_basis": "স্থির ইংরেজি উৎসের ৭২২টি বিষয়বস্তু-একক বাংলা PDF, HTML, EPUB ও সম্মিলিত LaTeX-এ আছে। সম্পাদনযোগ্য উৎস ZIP-এ ৭২২টি বাংলা বিষয়বস্তু ফাইল আছে।",
+    "status": [
+      "verified-standalone-722",
+      "published",
+      "audit-needed"
+    ],
+    "readers": [
+      {
+        "name": "openlogic-bn-Beng-IN-complete.pdf",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.pdf",
+        "bytes": 4667234,
+        "sha256": "a1b51711257ec6d7a5a910944ece4a7d97901c220a3b7146aa13f8199172b96d",
+        "format": "PDF",
+        "source_units": 722,
+        "scope_kind": "standalone",
+        "download_label": "সম্পূর্ণ PDF — ৮৯১ পৃষ্ঠা",
+        "profile": "সম্পূর্ণ PDF — ৮৯১ পৃষ্ঠা",
+        "pages": 891
+      },
+      {
+        "name": "openlogic-bn-Beng-IN-complete.html",
+        "url": "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/",
+        "bytes": 19243253,
+        "sha256": "e4683b284412226f056d711ad2351a7ffb424fadb692bdc98f0a094ec0711606",
+        "format": "HTML",
+        "source_units": 722,
+        "scope_kind": "standalone",
+        "download_label": "অনলাইনে সম্পূর্ণ বাংলা পাঠ পড়ুন",
+        "profile": "অনলাইনে সম্পূর্ণ বাংলা পাঠ পড়ুন"
+      },
+      {
+        "name": "openlogic-bn-Beng-IN-complete.epub",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.epub",
+        "bytes": 1757298,
+        "sha256": "dfa434d3cdbae5511834910150cd4ed3777ec592ee517d5fe1091173709daddd",
+        "format": "EPUB",
+        "source_units": 722,
+        "scope_kind": "standalone",
+        "download_label": "সম্পূর্ণ EPUB — ৭২২টি ইউনিট",
+        "profile": "সম্পূর্ণ EPUB — ৭২২টি ইউনিট"
+      }
+    ],
+    "epub_delivery_evidence": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/312089afdf73374d678f1d95f65bf1dbe9b5ba4a/evidence/PUBLIC_READBACK_CORRECTED_GITHUB_2026-10-01.json",
+    "evidence": {
+      "public_readback": "evidence/PASHTO_BENGALI_PUBLIC_DELIVERY_20260919.json",
+      "manager_full_semantic_rereview": false,
+      "scope": "সংশোধিত GitHub প্রকাশনার সাতটি ফাইল, ৭২২টি উৎস-এককের পরিসর এবং অনলাইন HTML-এর বাইট যাচাই করা হয়েছে। ভাষাগত পর্যালোচনার পরিসর পৃথকভাবে উল্লেখ করা হয়েছে।",
+      "source_repair_readback": "evidence/BENGALI_SOURCE_REPAIR_20260919.json",
+      "direct_tex_unit_markers": 722,
+      "direct_tex_external_body_imports": 0,
+      "source_archive_units": 722,
+      "source_checkpoint_readback": "evidence/BN722_PUBLIC_SOURCE_20260928.json",
+      "bounded_canon_replay": "evidence/BN599_MR270_SOURCE_CHECK_20260927.json",
+      "previous_source_checkpoint_readback": "evidence/BN599_MR270_SOURCE_CHECK_20260927.json",
+      "previous_bounded_canon_replay": "evidence/BN_TE_CHANGED_SEGMENTS_20260926.json",
+      "public_reader_delivery": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/312089afdf73374d678f1d95f65bf1dbe9b5ba4a/evidence/PUBLIC_READBACK_CORRECTED_GITHUB_2026-10-01.json",
+      "public_reader_byte_receipt": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/312089afdf73374d678f1d95f65bf1dbe9b5ba4a/evidence/PUBLIC_READBACK_CORRECTED_GITHUB_2026-10-01.json",
+      "metadata_choices": "evidence/BN722_COMPLETE_METADATA_CHOICES_20260928.json",
+      "previous_html_reader_delivery": "evidence/BN722_HTML_READER_PUBLIC_20260928.json",
+      "previous_epub_reader_delivery": "evidence/BN722_EPUB_HUB_CHECK_20260928.md",
+      "metadata_repair_readback": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-bn-Beng-IN/d157ee93b950a84f92901795a5c81c796c126fe4/evidence/PUBLIC_READBACK_ZENODO_BENGALI_METADATA_2026-09-28.json"
+    },
+    "limitations": [
+      "পরিসর ৭২২টি বিষয়বস্তু-একক। স্বাধীন মানব-পর্যালোচনা বা সম্পূর্ণ প্রমাণ-সহায়ক যাচাই নথিভুক্ত নেই।",
+      "GPT-6.1 Sol-এর প্রকাশিত সংশোধনে ৩৩৬টি প্রভাবিত একক মূলের সঙ্গে সম্পূর্ণ তুলনা করা হয়েছে। PDF-এর ২৭টি ও HTML-এর ২৩টি নির্বাচিত দৃশ্য পরীক্ষা করা হয়েছে।",
+      "স্বজ্ঞাবাদী ট্যাবলোর স্থির উৎস নিজেই খসড়া। পূর্ণতা ও প্রতিমডেল নিষ্কাশনের অংশগুলি সেই উৎসে নেই।",
+      "ক্যাননের উদ্ধৃতি মেলা ও পরিভাষার সমর্থন পৃথক। উদ্ধৃত NSOU পাঠ সসীম সেটের অঙ্কবাচক সংখ্যা সমর্থন করে। ট্রান্সফাইনাইট পরিভাষার সাক্ষ্য সীমিত।"
+    ],
+    "previous_public_release": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.1.0-sets",
+    "alternate_configuration_drivers": 1,
+    "previous_publication_snapshot": {
+      "release": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.2.0-sets-relations",
+      "release_tag": "v0.2.0-sets-relations",
+      "version_doi": null,
+      "source_units": 147,
+      "reader_units": null,
+      "readers": [
+        {
+          "profile": "Sets and Relations:18 translated source files, including one alternative driver supplied as configuration; no count of18 distinct reader inclusions inferred",
+          "pages": 21,
+          "name": "openlogic-bn-Beng-IN-sets-relations.pdf",
+          "bytes": 199216,
+          "sha256": "1cd8db9100bbd4d00c662e0d137393239a05cf368eb43646f219f7af33cdb3e6",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.2.0-sets-relations/openlogic-bn-Beng-IN-sets-relations.pdf"
+        },
+        {
+          "profile": "Sets and Relations — partial EPUB",
+          "format": "EPUB",
+          "scope_kind": "chapter",
+          "source_units": 18,
+          "source_unit_ids": [
+            "OLP-0004",
+            "OLP-0005",
+            "OLP-0006",
+            "OLP-0007",
+            "OLP-0008",
+            "OLP-0009",
+            "OLP-0010",
+            "OLP-0011",
+            "OLP-0012",
+            "OLP-0013",
+            "OLP-0014",
+            "OLP-0015",
+            "OLP-0016",
+            "OLP-0017",
+            "OLP-0018",
+            "OLP-0019",
+            "OLP-0719",
+            "OLP-0721"
+          ],
+          "download_label": "Sets & Relations EPUB (18 source files)",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.2.0-sets-relations/openlogic-bn-Beng-IN-sets-relations.epub",
+          "bytes": 839571,
+          "sha256": "7b5791205c0a1e6df769fc4deda1a4ca5f924e034586c8ab2b95e6feab00222a"
+        }
+      ],
+      "evidence": {
+        "public_readback": "evidence/CUMULATIVE_PUBLIC_READBACK_20260904.json",
+        "source_checkpoint_readback": "evidence/BENGALI_SOURCE147_MANAGER_AUDIT_20260905.json",
+        "manager_anonymous_release_assets_verified": 4,
+        "manager_anonymous_source_checkpoint_files_verified": 966,
+        "manager_replayed_source_checkpoint_units": 147,
+        "manager_replayed_aligned_segments": 1789,
+        "manager_replayed_translated_segments": 1494,
+        "manager_rehashed_canon_passages_actually_used": 28,
+        "manager_rehashed_canon_originals": 5,
+        "manager_rehashed_canon_passage_images": 29,
+        "manager_replayed_translation_decisions": 100,
+        "manager_replayed_decision_occurrences": 7271,
+        "manager_privacy_scan": "PASS: 932 UTF-8 text files; zero local-username, user-home-path or credential-value findings",
+        "tagged_readme_hub_backlink_verified": true,
+        "coverage_from_tagged_edition_records": true,
+        "manager_full_semantic_rereview": false,
+        "canon_use_and_qa": "See the edition's published provenance/evidence directory; same-agent review, not independent native-scholar certification."
+      },
+      "limitations": [
+        "Full 722-unit edition unfinished.",
+        "The 147-file exact public source checkpoint has no newer built reader or release asset.",
+        "Byte verification is not independent semantic or linguistic certification.",
+        "Scholarly canon originals are private research copies where redistribution rights are unestablished.",
+        "Standalone scalar unit count left unasserted: one of18 source files is alternate configuration, not duplicated chapter content.",
+        "Offline HTML structural checks pass; browser visual inspection is explicitly pending in the published evidence."
+      ]
+    },
+    "source_archive": {
+      "name": "openlogic-bn-Beng-IN-complete-sources.zip",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete-sources.zip",
+      "bytes": 27363152,
+      "sha256": "3a3b52638121047ca51a452e08a08f6fea7e74073c1b9018830e8f0a93e71e2b",
+      "format": "ZIP",
+      "source_units": 722,
+      "scope_kind": "standalone",
+      "download_label": "সম্পূর্ণ উৎস ZIP",
+      "profile": "সম্পূর্ণ উৎস ZIP"
+    },
+    "ordered_downloads": [
+      {
+        "name": "openlogic-bn-Beng-IN-complete.pdf",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.pdf",
+        "bytes": 4667234,
+        "sha256": "a1b51711257ec6d7a5a910944ece4a7d97901c220a3b7146aa13f8199172b96d",
+        "format": "PDF",
+        "source_units": 722,
+        "scope_kind": "standalone",
+        "download_label": "সম্পূর্ণ PDF — ৮৯১ পৃষ্ঠা",
+        "profile": "সম্পূর্ণ PDF — ৮৯১ পৃষ্ঠা",
+        "pages": 891
+      },
+      {
+        "name": "openlogic-bn-Beng-IN-complete.tex",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.tex",
+        "bytes": 5460682,
+        "sha256": "6629d3430ce3fbc649f2e9e7d23f783d6d281b889bc663bb7ee37542b86b1140",
+        "format": "TEX",
+        "source_units": 722,
+        "scope_kind": "standalone",
+        "download_label": "সম্মিলিত সম্পাদনযোগ্য LaTeX",
+        "profile": "সম্মিলিত সম্পাদনযোগ্য LaTeX"
+      },
+      {
+        "name": "openlogic-bn-Beng-IN-complete-sources.zip",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete-sources.zip",
+        "bytes": 27363152,
+        "sha256": "3a3b52638121047ca51a452e08a08f6fea7e74073c1b9018830e8f0a93e71e2b",
+        "format": "ZIP",
+        "source_units": 722,
+        "scope_kind": "standalone",
+        "download_label": "সম্পূর্ণ উৎস ZIP",
+        "profile": "সম্পূর্ণ উৎস ZIP"
+      },
+      {
+        "name": "openlogic-bn-Beng-IN-complete.epub",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.epub",
+        "bytes": 1757298,
+        "sha256": "dfa434d3cdbae5511834910150cd4ed3777ec592ee517d5fe1091173709daddd",
+        "format": "EPUB",
+        "source_units": 722,
+        "scope_kind": "standalone",
+        "download_label": "সম্পূর্ণ EPUB — ৭২২টি ইউনিট",
+        "profile": "সম্পূর্ণ EPUB — ৭২২টি ইউনিট"
+      },
+      {
+        "name": "openlogic-bn-Beng-IN-complete.html",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.html",
+        "bytes": 19243253,
+        "sha256": "e4683b284412226f056d711ad2351a7ffb424fadb692bdc98f0a094ec0711606",
+        "format": "HTML",
+        "source_units": 722,
+        "scope_kind": "standalone",
+        "download_label": "সম্পূর্ণ HTML ডাউনলোড",
+        "profile": "সম্পূর্ণ HTML ডাউনলোড"
+      }
+    ],
+    "source_packaging_status": "direct-cumulative-LaTeX-and-full-source-ZIP-verified",
+    "pertinent_pdf_exists": true,
+    "online_reading_preview": "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/",
+    "direct_cumulative_source": {
+      "name": "openlogic-bn-Beng-IN-complete.tex",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.tex",
+      "bytes": 5460682,
+      "sha256": "6629d3430ce3fbc649f2e9e7d23f783d6d281b889bc663bb7ee37542b86b1140",
+      "format": "TEX",
+      "source_units": 722,
+      "scope_kind": "standalone",
+      "download_label": "সম্মিলিত সম্পাদনযোগ্য LaTeX",
+      "profile": "সম্মিলিত সম্পাদনযোগ্য LaTeX"
+    },
+    "status_label": "সম্পূর্ণ PDF, HTML ও EPUB · ৭২২/৭২২",
+    "source_coverage_label": "প্রকাশিত অনূদিত উৎস ফাইল",
+    "ui_labels": {
+      "standalone_reader": "সম্পূর্ণ PDF, HTML ও EPUB পাঠক",
+      "repository": "প্রকল্প",
+      "evidence": "পরীক্ষার প্রমাণ",
+      "details": "পরিসর ও সীমাবদ্ধতা",
+      "doi": "ঐতিহাসিক Zenodo DOI · v1.0.0 · অনুপলব্ধ"
+    },
+    "epub_coverage_note": "সংশোধিত PDF, HTML ও EPUB-এ ৭২২টি করে উৎস-একক আছে।",
+    "related_editions": [
+      {
+        "label": "অনলাইনে সম্পূর্ণ বাংলা পাঠ পড়ুন",
+        "url": "https://kokunoyumeto.github.io/OpenLogic-bn-Beng-IN/"
+      },
+      {
+        "label": "উৎস ও ক্যানন পরীক্ষার নোট",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-translations/blob/main/evidence/BN599_REVIEW_20260927.md"
+      }
+    ],
+    "previous_public_reader_299_snapshot": {
+      "release": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.3.0-through-representability",
+      "version_doi": "10.5281/zenodo.22848705",
+      "standalone_reader_units": 299,
+      "readers": [
+        {
+          "format": "HTML",
+          "profile": "HTML ডাউনলোড — ২৯৯টি ইউনিট",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.3.0-through-representability/openlogic-bn-Beng-IN-through-representability.html",
+          "bytes": 8687678,
+          "sha256": "30c0e6ce7fbaddede636d0231e1c3773cde97ae57ec8fbb96ec24c20d0f4c846",
+          "source_units": 299,
+          "download_label": "HTML ডাউনলোড — ২৯৯টি ইউনিট",
+          "name": "openlogic-bn-Beng-IN-through-representability.html"
+        },
+        {
+          "format": "EPUB",
+          "name": "openlogic-bn-Beng-IN-through-representability.epub",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.3.0-through-representability/openlogic-bn-Beng-IN-through-representability.epub",
+          "bytes": 907103,
+          "sha256": "443354592762bca73a4f351b0b77e0f17a7e03ee0187f06e261ce7c59967a887",
+          "download_label": "EPUB ডাউনলোড — ২৯৯টি ইউনিট",
+          "profile": "EPUB ডাউনলোড — ২৯৯টি ইউনিট",
+          "source_units": 299,
+          "scope_kind": "partial-reader"
+        }
+      ],
+      "ordered_downloads": [
+        {
+          "format": "TEX",
+          "name": "openlogic-bn-Beng-IN-through-representability.tex",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.3.0-through-representability/openlogic-bn-Beng-IN-through-representability.tex",
+          "bytes": 2546007,
+          "sha256": "0558483a3fe1d3e2c6656ae4cdedccb283846a838c31661e4ac0fba2f71468e2",
+          "download_label": "সমষ্টিগত LaTeX — ২৯৯টি ইউনিট"
+        },
+        {
+          "format": "ZIP",
+          "name": "openlogic-bn-Beng-IN-v0.3.0-source.zip",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.3.0-through-representability/openlogic-bn-Beng-IN-v0.3.0-source.zip",
+          "bytes": 24821521,
+          "sha256": "6ff61670fc510728f001391a952ef51a096ce82a41d06ce20c8f9c4ec6472209",
+          "download_label": "সম্পূর্ণ সম্পাদনযোগ্য উৎস ZIP"
+        },
+        {
+          "format": "HTML",
+          "profile": "HTML ডাউনলোড — ২৯৯টি ইউনিট",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.3.0-through-representability/openlogic-bn-Beng-IN-through-representability.html",
+          "bytes": 8687678,
+          "sha256": "30c0e6ce7fbaddede636d0231e1c3773cde97ae57ec8fbb96ec24c20d0f4c846",
+          "source_units": 299,
+          "download_label": "HTML ডাউনলোড — ২৯৯টি ইউনিট",
+          "name": "openlogic-bn-Beng-IN-through-representability.html"
+        },
+        {
+          "format": "EPUB",
+          "name": "openlogic-bn-Beng-IN-through-representability.epub",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.3.0-through-representability/openlogic-bn-Beng-IN-through-representability.epub",
+          "bytes": 907103,
+          "sha256": "443354592762bca73a4f351b0b77e0f17a7e03ee0187f06e261ce7c59967a887",
+          "download_label": "EPUB ডাউনলোড — ২৯৯টি ইউনিট",
+          "profile": "EPUB ডাউনলোড — ২৯৯টি ইউনিট",
+          "source_units": 299,
+          "scope_kind": "partial-reader"
+        }
+      ],
+      "source_archive": {
+        "format": "ZIP",
+        "name": "openlogic-bn-Beng-IN-v0.3.0-source.zip",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.3.0-through-representability/openlogic-bn-Beng-IN-v0.3.0-source.zip",
+        "bytes": 24821521,
+        "sha256": "6ff61670fc510728f001391a952ef51a096ce82a41d06ce20c8f9c4ec6472209",
+        "download_label": "সম্পূর্ণ সম্পাদনযোগ্য উৎস ZIP"
+      },
+      "direct_cumulative_source": {
+        "format": "TEX",
+        "name": "openlogic-bn-Beng-IN-through-representability.tex",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v0.3.0-through-representability/openlogic-bn-Beng-IN-through-representability.tex",
+        "bytes": 2546007,
+        "sha256": "0558483a3fe1d3e2c6656ae4cdedccb283846a838c31661e4ac0fba2f71468e2",
+        "download_label": "সমষ্টিগত LaTeX — ২৯৯টি ইউনিট"
+      },
+      "reader_nonduplicated_prose_sections": 15,
+      "reader_chapter_drivers": 2,
+      "epub_coverage_note": "উৎস ফাইল ৭২২/৭২২; HTML ও EPUB পাঠকসংস্করণ ২৯৯/৭২২।",
+      "doi_status": "historical-unavailable"
+    },
+    "latest_public_github_release": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v1.0.1-corrected-edition",
+    "latest_public_github_tag": "v1.0.1-corrected-edition",
+    "html_reader_units": 722,
+    "epub_reader_units": 722,
+    "full_pdf_published": true,
+    "full_epub_published": true,
+    "zenodo_reader_units": 0,
+    "zenodo_current_scope": "ঐতিহাসিক Zenodo নথিগুলি এখন অনুপলব্ধ। প্রকাশিত পাঠ ও উৎস GitHub-এ পাওয়া যায়।",
+    "public_reader_verification": {
+      "github_verified": true,
+      "zenodo_full_reader_verified": false,
+      "anonymous_files_matched": 7,
+      "source_units": 722,
+      "pdf_units": 722,
+      "html_units": 722,
+      "epub_units": 722,
+      "direct_tex_units": 722,
+      "source_archive_members": 1736,
+      "full_linguistic_certification": false,
+      "online_html_verified": true
+    },
+    "search_aliases": [
+      "Bengali",
+      "Bangla",
+      "India",
+      "bn-Beng-IN"
+    ],
+    "previous_html722_release_snapshot": {
+      "release": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.4.0-complete-semantic-reader",
+      "evidence": "evidence/BN722_HTML_READER_PUBLIC_20260928.json",
+      "html_sha256": "e24fa88ca44bab1e1935892096695f8d82c52bd03adbe7e9d650217702a98aba",
+      "source_archive_sha256": "9a2a31fbbdc3cd1496d0d70cfb05269d3de5bd67aff6308f9232ab0fa3ea771d"
+    },
+    "previous_epub722_release_snapshot": {
+      "release": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v0.5.0-complete-epub",
+      "evidence": "evidence/BN722_EPUB_READER_PUBLIC_20260928.json",
+      "epub_sha256": "5cc8b526d633df29776c4c4b1f3382712e100987bd685a76a6a6ad922276a71f",
+      "source_archive_sha256": "1ed0f57bc3a433687efb4d7f5fc9877e14989ed1ffbcab739cd560f2470d32bc"
+    },
+    "pdf_reader_units": 722,
+    "release_date": "2026-10-01T14:37:51Z",
+    "release_facts": {
+      "tag": "v1.0.1-corrected-edition",
+      "date": "2026-10-01T14:37:51Z",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v1.0.1-corrected-edition",
+      "assets": [
+        {
+          "name": "FULL_RELEASE_ASSETS.json",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/FULL_RELEASE_ASSETS.json",
+          "bytes": 1515,
+          "sha256": "9a06fcbd866e841bd1eeb96da5e87839f9410f245c29af77672aa08083c4f395"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete-sources.zip",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete-sources.zip",
+          "bytes": 27363152,
+          "sha256": "3a3b52638121047ca51a452e08a08f6fea7e74073c1b9018830e8f0a93e71e2b"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.epub",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.epub",
+          "bytes": 1757298,
+          "sha256": "dfa434d3cdbae5511834910150cd4ed3777ec592ee517d5fe1091173709daddd"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.html",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.html",
+          "bytes": 19243253,
+          "sha256": "e4683b284412226f056d711ad2351a7ffb424fadb692bdc98f0a094ec0711606"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.pdf",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.pdf",
+          "bytes": 4667234,
+          "sha256": "a1b51711257ec6d7a5a910944ece4a7d97901c220a3b7146aa13f8199172b96d"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.tex",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.tex",
+          "bytes": 5460682,
+          "sha256": "6629d3430ce3fbc649f2e9e7d23f783d6d281b889bc663bb7ee37542b86b1140"
+        },
+        {
+          "name": "SHA256SUMS-complete.txt",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/SHA256SUMS-complete.txt",
+          "bytes": 515,
+          "sha256": "a5ab3fe268ea1f652860922c2dc2fde94dd7bf1bdaf4952df3c47a92a5eb749d"
+        }
+      ]
+    },
+    "available_release": {
+      "tag": "v1.0.1-corrected-edition",
+      "date": "2026-10-01T14:37:51Z",
+      "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v1.0.1-corrected-edition",
+      "assets": [
+        {
+          "name": "FULL_RELEASE_ASSETS.json",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/FULL_RELEASE_ASSETS.json",
+          "bytes": 1515,
+          "sha256": "9a06fcbd866e841bd1eeb96da5e87839f9410f245c29af77672aa08083c4f395"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete-sources.zip",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete-sources.zip",
+          "bytes": 27363152,
+          "sha256": "3a3b52638121047ca51a452e08a08f6fea7e74073c1b9018830e8f0a93e71e2b"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.epub",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.epub",
+          "bytes": 1757298,
+          "sha256": "dfa434d3cdbae5511834910150cd4ed3777ec592ee517d5fe1091173709daddd"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.html",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.html",
+          "bytes": 19243253,
+          "sha256": "e4683b284412226f056d711ad2351a7ffb424fadb692bdc98f0a094ec0711606"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.pdf",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.pdf",
+          "bytes": 4667234,
+          "sha256": "a1b51711257ec6d7a5a910944ece4a7d97901c220a3b7146aa13f8199172b96d"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.tex",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/openlogic-bn-Beng-IN-complete.tex",
+          "bytes": 5460682,
+          "sha256": "6629d3430ce3fbc649f2e9e7d23f783d6d281b889bc663bb7ee37542b86b1140"
+        },
+        {
+          "name": "SHA256SUMS-complete.txt",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.1-corrected-edition/SHA256SUMS-complete.txt",
+          "bytes": 515,
+          "sha256": "a5ab3fe268ea1f652860922c2dc2fde94dd7bf1bdaf4952df3c47a92a5eb749d"
+        }
+      ]
+    },
+    "previous_complete_release_snapshot": {
+      "release": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v1.0.0-complete-edition",
+      "release_tag": "v1.0.0-complete-edition",
+      "release_date": "2026-09-28T14:56:19Z",
+      "version_doi": "10.5281/zenodo.23018795",
+      "release_facts": {
+        "tag": "v1.0.0-complete-edition",
+        "date": "2026-09-28T14:56:19Z",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/tag/v1.0.0-complete-edition",
+        "assets": [
+          {
+            "name": "FULL_RELEASE_ASSETS.json",
+            "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/FULL_RELEASE_ASSETS.json",
+            "bytes": 1090,
+            "sha256": "96137721e01d81cad3ad94d5b67090494e3c8589b9483994139c35878424e450"
+          },
+          {
+            "name": "openlogic-bn-Beng-IN-complete-sources.zip",
+            "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete-sources.zip",
+            "bytes": 6233121,
+            "sha256": "a9b7c44dad27158ecce47babd691d9e1cc97badf991b889cfa64770ab200db24"
+          },
+          {
+            "name": "openlogic-bn-Beng-IN-complete.epub",
+            "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.epub",
+            "bytes": 1711059,
+            "sha256": "c9c6ecd8f05c5377d69d7a4afbed9a231ae5070589d2329a542653785bf2abe3"
+          },
+          {
+            "name": "openlogic-bn-Beng-IN-complete.html",
+            "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.html",
+            "bytes": 18961044,
+            "sha256": "750da8e11ab11ac9ae98a4547b0c7e73415a25f7da51652b162e54c8ee4c157b"
+          },
+          {
+            "name": "openlogic-bn-Beng-IN-complete.pdf",
+            "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.pdf",
+            "bytes": 4550160,
+            "sha256": "97aed99695d29e76b2a3500289f7e1730d8c5bc15c49c7fd0d526478ddce5b0e"
+          },
+          {
+            "name": "openlogic-bn-Beng-IN-complete.tex",
+            "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.tex",
+            "bytes": 5270026,
+            "sha256": "6d4ebae899812eda12dee397f96cf12f2cf83acb8536846b32952c782af01ee5"
+          },
+          {
+            "name": "SHA256SUMS-complete.txt",
+            "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/SHA256SUMS-complete.txt",
+            "bytes": 515,
+            "sha256": "7759a42f7664795aa57d4a4fd845f83546e4f56110c445769d9eeaa7b53a8c26"
+          }
+        ]
+      },
+      "readers": [
+        {
+          "name": "openlogic-bn-Beng-IN-complete.pdf",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.pdf",
+          "bytes": 4550160,
+          "sha256": "97aed99695d29e76b2a3500289f7e1730d8c5bc15c49c7fd0d526478ddce5b0e",
+          "format": "PDF",
+          "source_units": 722,
+          "scope_kind": "standalone",
+          "download_label": "সম্পূর্ণ PDF — ৮৬৯ পৃষ্ঠা",
+          "profile": "সম্পূর্ণ PDF — ৮৬৯ পৃষ্ঠা",
+          "pages": 869
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.html",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.html",
+          "bytes": 18961044,
+          "sha256": "750da8e11ab11ac9ae98a4547b0c7e73415a25f7da51652b162e54c8ee4c157b",
+          "format": "HTML",
+          "source_units": 722,
+          "scope_kind": "standalone",
+          "download_label": "v1.0.0-এর সম্পূর্ণ HTML ডাউনলোড",
+          "profile": "v1.0.0-এর সম্পূর্ণ HTML ডাউনলোড"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.epub",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.epub",
+          "bytes": 1711059,
+          "sha256": "c9c6ecd8f05c5377d69d7a4afbed9a231ae5070589d2329a542653785bf2abe3",
+          "format": "EPUB",
+          "source_units": 722,
+          "scope_kind": "standalone",
+          "download_label": "সম্পূর্ণ EPUB — ৭২২টি ইউনিট",
+          "profile": "সম্পূর্ণ EPUB — ৭২২টি ইউনিট"
+        }
+      ],
+      "ordered_downloads": [
+        {
+          "name": "openlogic-bn-Beng-IN-complete.pdf",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.pdf",
+          "bytes": 4550160,
+          "sha256": "97aed99695d29e76b2a3500289f7e1730d8c5bc15c49c7fd0d526478ddce5b0e",
+          "format": "PDF",
+          "source_units": 722,
+          "scope_kind": "standalone",
+          "download_label": "সম্পূর্ণ PDF — ৮৬৯ পৃষ্ঠা",
+          "profile": "সম্পূর্ণ PDF — ৮৬৯ পৃষ্ঠা",
+          "pages": 869
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.tex",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.tex",
+          "bytes": 5270026,
+          "sha256": "6d4ebae899812eda12dee397f96cf12f2cf83acb8536846b32952c782af01ee5",
+          "format": "TEX",
+          "source_units": 722,
+          "scope_kind": "standalone",
+          "download_label": "সম্মিলিত সম্পাদনযোগ্য LaTeX",
+          "profile": "সম্মিলিত সম্পাদনযোগ্য LaTeX"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete-sources.zip",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete-sources.zip",
+          "bytes": 6233121,
+          "sha256": "a9b7c44dad27158ecce47babd691d9e1cc97badf991b889cfa64770ab200db24",
+          "format": "ZIP",
+          "source_units": 722,
+          "scope_kind": "standalone",
+          "download_label": "সম্পূর্ণ উৎস ZIP",
+          "profile": "সম্পূর্ণ উৎস ZIP"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.epub",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.epub",
+          "bytes": 1711059,
+          "sha256": "c9c6ecd8f05c5377d69d7a4afbed9a231ae5070589d2329a542653785bf2abe3",
+          "format": "EPUB",
+          "source_units": 722,
+          "scope_kind": "standalone",
+          "download_label": "সম্পূর্ণ EPUB — ৭২২টি ইউনিট",
+          "profile": "সম্পূর্ণ EPUB — ৭২২টি ইউনিট"
+        },
+        {
+          "name": "openlogic-bn-Beng-IN-complete.html",
+          "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.html",
+          "bytes": 18961044,
+          "sha256": "750da8e11ab11ac9ae98a4547b0c7e73415a25f7da51652b162e54c8ee4c157b",
+          "format": "HTML",
+          "source_units": 722,
+          "scope_kind": "standalone",
+          "download_label": "সম্পূর্ণ HTML ডাউনলোড",
+          "profile": "সম্পূর্ণ HTML ডাউনলোড"
+        }
+      ],
+      "source_archive": {
+        "name": "openlogic-bn-Beng-IN-complete-sources.zip",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete-sources.zip",
+        "bytes": 6233121,
+        "sha256": "a9b7c44dad27158ecce47babd691d9e1cc97badf991b889cfa64770ab200db24",
+        "format": "ZIP",
+        "source_units": 722,
+        "scope_kind": "standalone",
+        "download_label": "সম্পূর্ণ উৎস ZIP",
+        "profile": "সম্পূর্ণ উৎস ZIP"
+      },
+      "direct_cumulative_source": {
+        "name": "openlogic-bn-Beng-IN-complete.tex",
+        "url": "https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/v1.0.0-complete-edition/openlogic-bn-Beng-IN-complete.tex",
+        "bytes": 5270026,
+        "sha256": "6d4ebae899812eda12dee397f96cf12f2cf83acb8536846b32952c782af01ee5",
+        "format": "TEX",
+        "source_units": 722,
+        "scope_kind": "standalone",
+        "download_label": "সম্মিলিত সম্পাদনযোগ্য LaTeX",
+        "profile": "সম্মিলিত সম্পাদনযোগ্য LaTeX"
+      },
+      "standalone_reader_units": 722,
+      "release_source_units_translated": 722,
+      "epub_delivery_evidence": "evidence/BN722_COMPLETE_MANAGER_20260928.json",
+      "public_reader_verification": {
+        "github_verified": true,
+        "zenodo_full_reader_verified": true,
+        "anonymous_files_matched": 14,
+        "source_units": 722,
+        "pdf_units": 722,
+        "html_units": 722,
+        "epub_units": 722,
+        "direct_tex_units": 722,
+        "source_archive_members": 1528,
+        "full_linguistic_certification": false
+      },
+      "limitations": [
+        "সব ৭২২টি উৎস একক সম্পূর্ণ PDF, HTML, EPUB ও LaTeX-এ আছে। উৎস ZIP-এ ১,৫২৮টি ফাইল আছে। GitHub ও Zenodo-র সাতটি করে প্রকাশিত ফাইলের বাইট মেলানো হয়েছে।",
+        "এই হালনাগাদ প্রকাশিত ফাইলের পরিচয়, উৎস-প্যাকেজ ও সংযোগের পরীক্ষা; নতুন পূর্ণ ভাষাগত প্রত্যয়ন নয়। অনুবাদের ৭,৮২৫টি ব্লক ও ক্যানন-পরামর্শের নথি উৎস ZIP-এ আছে।",
+        "৮৬৯-পৃষ্ঠার PDF প্রকাশিত। সংস্করণের নির্মাতার নথিতে ১৯টি প্রতিনিধি পৃষ্ঠার দৃশ্যগত পরীক্ষা আছে; এখানে প্রতিটি পৃষ্ঠার নতুন পরীক্ষা দাবি করা হয়নি। EPUBCheck-এর প্রকাশিত নথিতে ত্রুটি বা সতর্কতা নেই।",
+        "Zenodo-র প্রধান শিরোনাম ও বিবরণ বাংলায়; পুরোনো ইংরেজি শিরোনামটি বিকল্প পরিচয় হিসেবে রক্ষিত। ডাউনলোড ক্রম: PDF, সম্মিলিত LaTeX, পূর্ণ উৎস ZIP।",
+        "সূত্রগুলি নেটিভ MathML। প্রমাণ-বৃক্ষ, ট্যাবলো ও চিত্রের সম্পর্ক পুনঃপ্রবাহযোগ্য পাঠ্যরূপে দেওয়া হয়েছে; এখানে প্রতিটি চিত্রের নতুন অর্থগত পরীক্ষা দাবি করা হয়নি।",
+        "স্বজ্ঞাবাদী ট্যাবলোর স্থির উৎস নিজেই খসড়া: পূর্ণতা ও প্রতিমডেল নিষ্কাশনের অংশগুলি নেই। ওই ফলাফলগুলি সম্পূর্ণ বলে দাবি করা হয়নি।",
+        "উৎসের হ্যাশ ও নির্বাচিত খণ্ড পরীক্ষা সমগ্র অনুবাদের নতুন ভাষাগত প্রত্যয়ন নয়।",
+        "ক্যাননের উদ্ধৃতি-সংযোগ মেলা আর সম্পূর্ণ পরিভাষাগত সমর্থন এক নয়: পরীক্ষিত NSOU পৃষ্ঠাটি সসীম সেটের অঙ্কবাচক সংখ্যা সমর্থন করে, ট্রান্সফাইনাইট যৌগিক পরিভাষা নয়। বিস্তারিত সীমিত পরীক্ষার নোট দেখুন।",
+        "অনুবাদের প্রকাশিত মডেল-পরিচয়: আগের কাজ OpenAI Codex — GPT-5.6 Sol, Ultra effort; পরের অনুবাদ ও সংশোধন GPT-6 Sol, Ultra effort। এই তালিকার হালনাগাদ নতুন পূর্ণ ভাষাগত পরীক্ষা বা মানব-পর্যালোচনা নয়।"
+      ],
+      "historical_mirror_note": "২০২৬-০৯-২৮-এর পরীক্ষায় GitHub ও Zenodo-র ফাইল মিলেছিল। ঐতিহাসিক Zenodo নথিটি এখন অনুপলব্ধ।",
+      "doi_status": "historical-unavailable",
+      "evidence": "evidence/BN722_COMPLETE_MANAGER_20260928.json"
+    },
+    "doi_history": [
+      {
+        "doi": "10.5281/zenodo.22848704",
+        "scope": "Zenodo-তে বাংলা ওপেন লজিক সংস্করণগুলির সমষ্টিগত পরিচয়",
+        "status": "historical-unavailable"
+      },
+      {
+        "doi": "10.5281/zenodo.22848705",
+        "scope": "২৯৯-এককের পাঠক, v0.3.0",
+        "status": "historical-unavailable"
+      },
+      {
+        "doi": "10.5281/zenodo.23018795",
+        "scope": "৭২২-এককের সম্পূর্ণ সংস্করণ, v1.0.0",
+        "status": "historical-unavailable"
+      },
+      {
+        "doi": "10.5281/zenodo.23084857",
+        "scope": "৭২২-এককের সংশোধিত সংস্করণের ঐতিহাসিক মিরর, v1.0.1",
+        "status": "historical-unavailable"
+      }
+    ],
+    "doi_availability_checked": "2026-11-14"
+  },
+  "release_discovery": "latest",
+  "release_selection": null,
+  "textbook": {
+    "id": "bn",
+    "name": "বাংলা",
+    "language_tag": "bn-Beng-IN",
+    "order": 0,
+    "selection": null
+  },
+  "link_base": "https://kokunoyumeto.github.io/OpenLogic-translations/"
+}

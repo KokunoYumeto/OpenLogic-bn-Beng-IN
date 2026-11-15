@@ -51,7 +51,7 @@ def editable_source_files(manifest, target_hashes, input_receipt, *,
         # and private editorial records are still checked above, outside the ZIP.
         for relative in (
             "publication/SOURCES.bn.md", "publication/full-edition.json",
-            "publication/classifier.bn.md", "olp-edition.toml", UNIT_LEDGER,
+            "publication/classifier.bn.md", "publication/source-readings.bn.md", "olp-edition.toml", UNIT_LEDGER,
             "evidence/FULL_SOURCE_MANIFEST.jsonl", "upstream/LICENSE.md",
             "upstream/README.md", "upstream/open-logic-config.sty",
             "upstream/open-logic-complete-config.sty", "upstream/open-logic-locale.sty",

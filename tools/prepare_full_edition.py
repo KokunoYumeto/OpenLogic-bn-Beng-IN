@@ -582,6 +582,8 @@ OpenAI Codex: GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-�
 \setlength{\cftpartnumwidth}{3.6em}
 \AtBeginEnvironment{table}{\setlength{\tabcolsep}{3pt}\small}
 \RenewDocumentCommand\sFmla{m m o}{\ensuremath{\IfValueT{#3}{#3\,}\mathord{#1}\, #2}}""")
+    if PROFILE.get("witness_bn"):
+        preamble = preamble.replace(r"\end{titlingpage}", PROFILE["witness_bn"] + r"\par" + "\n" + r"\end{titlingpage}", 1)
     title_date = EDITION_DATE if legacy_inputs or PROFILE else "পূর্ববর্তী সংস্করণ: " + EDITION_DATE
     preamble = preamble.replace(r"\end{titlingpage}", title_date + r"\par" + "\n" + r"\end{titlingpage}", 1)
     row_by_id = {row["unit_id"]: row for row, _ in transformed}

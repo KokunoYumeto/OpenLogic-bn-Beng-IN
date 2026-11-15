@@ -308,6 +308,8 @@ OpenAI Codex — GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 So
             "OpenAI Codex — GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-এর পুনঃপর্যালোচনা; Ultra effort।",
             full.PROFILE.get("attribution_bn", full.HISTORICAL_TRANSLATION_CREDIT),
         )
+    if full.PROFILE.get("witness_bn"):
+        note = note.replace(r"\end{scope-note}", full.PROFILE["witness_bn"] + "\n" + r"\end{scope-note}", 1)
     source = BUILD / "semantic-input.tex"
     source.write_text(r"\documentclass{book}" + "\n" + r"\usepackage{amsmath,amssymb}" + "\n"
                       + declarations + "\n" + macros + "\n" + r"\begin{document}" + "\n" + note + "\n" + body

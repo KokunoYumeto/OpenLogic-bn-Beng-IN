@@ -54,10 +54,10 @@ $\Gamma = \{x:!A, y:!B, z:!C\}$
     $!A \lor !B$, আর $i=2$-এ
     $!B \lor !A$।
   \item $M$-এর টাইপ $!A \lor !B$ হলে,
-  $x:!A, \Gamma$-র সাপেক্ষে $N_1$-এর
-  টাইপ $!C$ এবং $y:!B,\Gamma$-র
+  $x_1:!A, \Gamma$-র সাপেক্ষে $N_1$-এর
+  টাইপ $!C$ এবং $x_2:!B,\Gamma$-র
   সাপেক্ষে $N_2$-এর টাইপ~$!C$ হলে,
-  $\dcase{M}{x}{N_1}{y}{N_2}$-এর টাইপ~$!C$।
+  $\dcase{M}{x_1}{N_1}{x_2}{N_2}$-এর টাইপ~$!C$।
   \item $N$-এর টাইপ~$\lfalse$ হলে
     $\abort{!A}{N}$-এর টাইপ~$!A$।
   \end{enumerate}
@@ -66,7 +66,7 @@ $\Gamma = \{x:!A, y:!B, z:!C\}$
 \par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-621):} যোগ-অন্তর্ভুক্তি ধারায় উৎসের \(\inj[!B]{i}{!M}\)-এ অনির্ধারিত \(M\) এবং অপ্রয়োজনীয় বিস্ময়চিহ্ন ছিল; এই ধারায় বাঁধা প্রমাণপদ \(N\), তাই \(\inj[!B]{i}{N}\) করা হয়েছে।}
 % BN-SRC-621 TARGET-CORRECTION-END
 % BN-SRC-622 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-622):} যোগ-নিষ্কাশনে পূর্বে বাঁধা শাখাচলরাশি \(x,y\), অথচ উৎসের \(\dcase\)-এ \(x_1,x_2\) ছিল; সমান্তরাল tN3i বিধির মতো \(\dcase{M}{x}{N_1}{y}{N_2}\) করা হয়েছে।}
+\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-622):} জুলাইয়ের ইংরেজি পাঠে শাখার অনুমানে \(x,y\) লেখা ছিল, অথচ প্রমাণপদে ছিল \(x_1,x_2\)। প্রথম শাখায় \(x_1\) এবং দ্বিতীয় শাখায় \(x_2\) বাঁধা চলরাশি। প্রতিটি শাখার অনুমানে এবং \(\dcase{M}{x_1}{N_1}{x_2}{N_2}\) পদে একই নাম রাখা হয়েছে।}
 % BN-SRC-622 TARGET-CORRECTION-END
 
 \begin{prop}

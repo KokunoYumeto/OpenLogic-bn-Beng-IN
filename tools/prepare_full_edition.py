@@ -574,7 +574,11 @@ OpenAI Codex: GPT-5.6 Sol ও GPT-6 Sol-এর অনুবাদ; GPT-6.1 Sol-�
             PROFILE.get("attribution_bn", HISTORICAL_TRANSLATION_CREDIT),
         )
     if PROFILE:
-        preamble = preamble.replace(r"\setlength{\emergencystretch}{3em}", r"""\setlength{\emergencystretch}{\linewidth}
+        preamble = preamble.replace(r"\setlength{\emergencystretch}{3em}", r"""\input{../../bn-Beng-IN/open-logic-config.sty}
+\usepackage{ragged2e}
+\AtBeginEnvironment{cor}{\RaggedRight}
+\hypersetup{colorlinks=true,allcolors=blue!50!black}
+\setlength{\emergencystretch}{\linewidth}
 \setlength{\cftpartnumwidth}{3.6em}
 \AtBeginEnvironment{table}{\setlength{\tabcolsep}{3pt}\small}
 \RenewDocumentCommand\sFmla{m m o}{\ensuremath{\IfValueT{#3}{#3\,}\mathord{#1}\, #2}}""")

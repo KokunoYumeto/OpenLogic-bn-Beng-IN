@@ -28,63 +28,10 @@ def add_exact(files: set[Path], relative: str) -> None:
     files.add(path)
 
 
-def main() -> None:
-    DIST.mkdir(exist_ok=True)
-    manifest = load_rows(MANIFEST)
-    assert len(manifest) == 722
-    preparation = json.loads((BUILD / "PREPARATION.json").read_text(encoding="utf-8"))
-    qa = json.loads((BUILD / "SEMANTIC_READER_QA.json").read_text(encoding="utf-8"))
-    target_hashes, input_receipt = load_target_hashes(REPO, manifest)
+def editable_source_files(manifest, target_hashes, input_receipt, *,
+                          inspected=(), pdf_visual=None, pdf_check=None) -> set[Path]:
+    """Resolve inputs from the exact source and translation ledger."""
     ledger_hash = input_receipt.get("unit_ledger_sha256")
-    if preparation.get("unit_ledger_sha256") != ledger_hash:
-        raise ValueError("prepared unit ledger differs")
-    if input_receipt.get("source_revision", preparation["source_revision"]) != preparation["source_revision"]:
-        raise ValueError("prepared source revision differs from the edition pin")
-    assert preparation["source_manifest_sha256"] == digest(MANIFEST)
-    assert preparation["tex"]["sha256"] == digest(TEX)
-    assert qa["source"]["prepared_tex_sha256"] == digest(TEX)
-    assert qa["html"]["html_sha256"] == digest(HTML)
-    assert qa["html"]["unit_markers"] == 722
-    assert preparation["edition_identity"] == qa["edition_identity"] == metadata()
-    html_visual = json.loads((BUILD / "HTML_VISUAL_QA.json").read_text(encoding="utf-8"))
-    assert html_visual["status"] == "passed" and html_visual["html_sha256"] == digest(HTML)
-    assert html_visual["source_units"] == 722 and html_visual["manually_inspected_screenshots"]
-    capture_path = BUILD / "BROWSER_CAPTURES.json"
-    assert html_visual["browser_captures_sha256"] == digest(capture_path)
-    capture_record = json.loads(capture_path.read_text(encoding="utf-8"))
-    assert capture_record["reader_sha256"] == digest(HTML)
-    inspected = {item["file"]: item for item in html_visual["manually_inspected_screenshots"]}
-    captured = {item["file"]: item for row in capture_record["captures"] for item in row["screenshots"]}
-    for relative, item in inspected.items():
-        visual_file = (BUILD / relative).resolve(strict=True)
-        assert visual_file.is_relative_to(BUILD.resolve())
-        assert item["sha256"] == captured[relative]["sha256"] == digest(visual_file)
-    pdf = BUILD / "openlogic-bn-Beng-IN-complete.pdf"
-    epub = BUILD / "openlogic-bn-Beng-IN-complete.epub"
-    pdf_check = json.loads((BUILD / "PDF_QA.json").read_text(encoding="utf-8"))
-    epub_check = json.loads((BUILD / "EPUB_QA.json").read_text(encoding="utf-8"))
-    assert pdf_check["status"] == "passed" and pdf_check["source_units"] == 722
-    if PROFILE:
-        assert pdf_check["overflows_above_2pt"] == 0
-        assert pdf_check["tex_log_sha256"] == digest(BUILD / "openlogic-bn-Beng-IN-complete.log")
-    assert pdf_check["tex_input_sha256"] == digest(TEX) and pdf_check["pdf_sha256"] == digest(pdf)
-    visual_path = (REPO / pdf_check["visual_qa_path"]).resolve(strict=True)
-    assert visual_path.is_relative_to(REPO.resolve())
-    assert pdf_check["visual_qa_sha256"] == digest(visual_path)
-    pdf_visual = json.loads(visual_path.read_text(encoding="utf-8"))
-    pdf_captures_path = BUILD / "CURRENT_PDF_CAPTURES.json"
-    assert pdf_visual["pdf_captures_sha256"] == digest(pdf_captures_path)
-    pdf_captures = json.loads(pdf_captures_path.read_text(encoding="utf-8"))
-    assert pdf_captures["pdf_sha256"] == digest(pdf)
-    for item in pdf_visual["manually_inspected_pages"]:
-        assert item in pdf_captures["captures"]
-        image_path = (REPO / item["file"]).resolve(strict=True)
-        assert image_path.is_relative_to(BUILD.resolve()) and digest(image_path) == item["sha256"]
-    assert epub_check["status"] == "passed" and epub_check["source_units"] == 722
-    assert epub_check["edition_identity"] == metadata()
-    assert epub_check["html_sha256"] == digest(HTML) and epub_check["epub"]["sha256"] == digest(epub)
-    assert epub_check["epubcheck"]["messages"] == 0
-    assert epub_check["epubcheck"]["report_sha256"] == digest(BUILD / "EPUBCHECK.json")
     files: set[Path] = set()
     for name in set(re.findall(r"assets/diagrams/[A-Za-z0-9_-]+\.tikz\b", TEX.read_text(encoding="utf-8"))):
         add_exact(files, "upstream/" + name)
@@ -110,7 +57,8 @@ def main() -> None:
             "upstream/open-logic-complete-config.sty", "upstream/open-logic-locale.sty",
             "upstream/open-logic-envs.sty", "upstream/open-logic-complete.tex",
             "upstream/bib/open-logic.bib", "upstream/bib/natbib-oup.bst",
-            "bn-Beng-IN/bib/open-logic.bib", "fonts/NotoSerifBengali-Regular.ttf",
+            "bn-Beng-IN/bib/open-logic.bib", "bn-Beng-IN/open-logic-config.sty",
+            "fonts/NotoSerifBengali-Regular.ttf",
             "fonts/NotoSerifBengali-Bold.ttf", "fonts/Noto-fonts-LICENSE.txt",
             "tools/full_edition_sources.py", "tools/edition_metadata.py",
             "tools/prepare_full_edition.py", "tools/build_full_edition_windows.ps1",
@@ -203,6 +151,12 @@ def main() -> None:
             for path in root.glob(pattern):
                 add_exact(files, path.relative_to(REPO).as_posix())
     assert len(files) >= 1444
+    return files
+
+
+def write_source_archive(files: set[Path]) -> None:
+    """Create the deterministic ZIP and compare every member to its input."""
+    DIST.mkdir(exist_ok=True)
     names = [path.relative_to(REPO).as_posix() for path in files]
     assert len(names) == len(set(names))
     with ZipFile(ARCHIVE, "w", compression=ZIP_DEFLATED, compresslevel=9) as output:
@@ -218,6 +172,69 @@ def main() -> None:
         for path in files:
             relative = path.relative_to(REPO).as_posix()
             assert hashlib.sha256(inp.read(PREFIX + relative)).hexdigest() == digest(path), relative
+
+
+
+def main() -> None:
+    DIST.mkdir(exist_ok=True)
+    manifest = load_rows(MANIFEST)
+    assert len(manifest) == 722
+    preparation = json.loads((BUILD / "PREPARATION.json").read_text(encoding="utf-8"))
+    qa = json.loads((BUILD / "SEMANTIC_READER_QA.json").read_text(encoding="utf-8"))
+    target_hashes, input_receipt = load_target_hashes(REPO, manifest)
+    ledger_hash = input_receipt.get("unit_ledger_sha256")
+    if preparation.get("unit_ledger_sha256") != ledger_hash:
+        raise ValueError("prepared unit ledger differs")
+    if input_receipt.get("source_revision", preparation["source_revision"]) != preparation["source_revision"]:
+        raise ValueError("prepared source revision differs from the edition pin")
+    assert preparation["source_manifest_sha256"] == digest(MANIFEST)
+    assert preparation["tex"]["sha256"] == digest(TEX)
+    assert qa["source"]["prepared_tex_sha256"] == digest(TEX)
+    assert qa["html"]["html_sha256"] == digest(HTML)
+    assert qa["html"]["unit_markers"] == 722
+    assert preparation["edition_identity"] == qa["edition_identity"] == metadata()
+    html_visual = json.loads((BUILD / "HTML_VISUAL_QA.json").read_text(encoding="utf-8"))
+    assert html_visual["status"] == "passed" and html_visual["html_sha256"] == digest(HTML)
+    assert html_visual["source_units"] == 722 and html_visual["manually_inspected_screenshots"]
+    capture_path = BUILD / "BROWSER_CAPTURES.json"
+    assert html_visual["browser_captures_sha256"] == digest(capture_path)
+    capture_record = json.loads(capture_path.read_text(encoding="utf-8"))
+    assert capture_record["reader_sha256"] == digest(HTML)
+    inspected = {item["file"]: item for item in html_visual["manually_inspected_screenshots"]}
+    captured = {item["file"]: item for row in capture_record["captures"] for item in row["screenshots"]}
+    for relative, item in inspected.items():
+        visual_file = (BUILD / relative).resolve(strict=True)
+        assert visual_file.is_relative_to(BUILD.resolve())
+        assert item["sha256"] == captured[relative]["sha256"] == digest(visual_file)
+    pdf = BUILD / "openlogic-bn-Beng-IN-complete.pdf"
+    epub = BUILD / "openlogic-bn-Beng-IN-complete.epub"
+    pdf_check = json.loads((BUILD / "PDF_QA.json").read_text(encoding="utf-8"))
+    epub_check = json.loads((BUILD / "EPUB_QA.json").read_text(encoding="utf-8"))
+    assert pdf_check["status"] == "passed" and pdf_check["source_units"] == 722
+    if PROFILE:
+        assert pdf_check["overflows_above_2pt"] == 0
+        assert pdf_check["tex_log_sha256"] == digest(BUILD / "openlogic-bn-Beng-IN-complete.log")
+    assert pdf_check["tex_input_sha256"] == digest(TEX) and pdf_check["pdf_sha256"] == digest(pdf)
+    visual_path = (REPO / pdf_check["visual_qa_path"]).resolve(strict=True)
+    assert visual_path.is_relative_to(REPO.resolve())
+    assert pdf_check["visual_qa_sha256"] == digest(visual_path)
+    pdf_visual = json.loads(visual_path.read_text(encoding="utf-8"))
+    pdf_captures_path = BUILD / "CURRENT_PDF_CAPTURES.json"
+    assert pdf_visual["pdf_captures_sha256"] == digest(pdf_captures_path)
+    pdf_captures = json.loads(pdf_captures_path.read_text(encoding="utf-8"))
+    assert pdf_captures["pdf_sha256"] == digest(pdf)
+    for item in pdf_visual["manually_inspected_pages"]:
+        assert item in pdf_captures["captures"]
+        image_path = (REPO / item["file"]).resolve(strict=True)
+        assert image_path.is_relative_to(BUILD.resolve()) and digest(image_path) == item["sha256"]
+    assert epub_check["status"] == "passed" and epub_check["source_units"] == 722
+    assert epub_check["edition_identity"] == metadata()
+    assert epub_check["html_sha256"] == digest(HTML) and epub_check["epub"]["sha256"] == digest(epub)
+    assert epub_check["epubcheck"]["messages"] == 0
+    assert epub_check["epubcheck"]["report_sha256"] == digest(BUILD / "EPUBCHECK.json")
+    files = editable_source_files(manifest, target_hashes, input_receipt,
+                                  inspected=inspected, pdf_visual=pdf_visual, pdf_check=pdf_check)
+    write_source_archive(files)
     outputs = [ARCHIVE]
     for source, suffix in ((TEX, "tex"), (HTML, "html")):
         target = DIST / ("openlogic-bn-Beng-IN-complete." + suffix)

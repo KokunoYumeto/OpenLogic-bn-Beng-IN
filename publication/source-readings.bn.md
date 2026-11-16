@@ -9,3 +9,13 @@
 **তিনটি সেটের সমসংখ্যকতা।** $A\subseteq B\subseteq C$ এবং $A$ ও $C$ সমসংখ্যক হলে $A$ ও $B$ সমসংখ্যক, আবার $B$ ও $C$-ও সমসংখ্যক। ইংরেজি প্রতিজ্ঞার দ্বিতীয় সমতার বাঁ দিকে সেটের নাম বাদ পড়েছে। পরের অনুচ্ছেদে $g:C\to B$ একৈক ও সমাপতিত দেখানো হয়েছে। তাই বাংলা পাঠে বাঁ দিকে $B$ আছে। একই প্রমাণে $f:C\to A$ একৈক ও সমাপতিত। সুতরাং $g\circ f^{-1}:A\to B$ থেকে প্রথম সমতাটিও পাওয়া যায়। [ইংরেজি প্রতিজ্ঞা ও প্রমাণ](https://github.com/OpenLogicProject/OpenLogic/blob/1e960beff9ed7835bf3e3f1335e21af3439cd107/content/sets-functions-relations/infinite/card-sb.tex#L51-L67)
 
 **দুটি সংক্ষিপ্ত নাম।** *iff* দিয়ে ইংরেজিতে *if and only if* বোঝানো হয়। শর্তটি দুই দিকেই প্রযোজ্য। *3-Halt* হলো *Three Halting* সমস্যার নাম। এখানে তিন সংখ্যাটি ফিতায় প্রথমে লেখা দাগের সংখ্যা বোঝায়। বাংলা গণিতের পাঠ্যেও বাংলা পরিভাষার পাশে ইংরেজি নাম দেওয়ার নজির আছে। ইংরেজি নাম দুটি মূলের অনুশীলনী ও সংজ্ঞা থেকে নেওয়া। [মূলের সংজ্ঞা](https://github.com/OpenLogicProject/OpenLogic/blob/1e960beff9ed7835bf3e3f1335e21af3439cd107/content/methods/proofs/using-definitions.tex) · [মূলের অনুশীলনী](https://github.com/OpenLogicProject/OpenLogic/blob/1e960beff9ed7835bf3e3f1335e21af3439cd107/content/turing-machines/undecidability/halting-problem.tex) · [বাংলা গণিত পাঠ্য, পৃ. ১৫৩](https://www.scerttripura.org/pdf/class11/ClassXI_Mathematics_Bengali.pdf)
+
+## জীবনপঞ্জি, সীমা ও বক্ররেখা
+
+**রোজা পেতের।** হাঙ্গেরীয় বিজ্ঞান অ্যাকাডেমির নথিতে এর্জেবেত আন্দিচের সদস্যপদের সাল ১৯৪৯ (*levelező tag*) ও ১৯৫০ (*rendes tag*)। পেতের ১৯৭৩ সালে সদস্য নির্বাচিত হন (*levelező tag*)। অ্যাকাডেমির সদস্যপদ এবং গণিতে অ্যাকাডেমিক ডক্টর পদমর্যাদা পৃথক সম্মান। [আন্দিচের নথি](https://akademikus.mtak.hu/adatlap/andics-erzsebet/) · [পেতেরের নথি](https://akademikus.mtak.hu/adatlap/peter-rozsa/)
+
+**জুলিয়া রবিনসন।** ফেফারমানের স্মৃতিলেখ অনুসারে ১৯৭৫ সালে যুক্তরাষ্ট্রের ন্যাশনাল অ্যাকাডেমি অব সায়েন্সেসের গণিত বিভাগে সদস্য নির্বাচিত প্রথম নারী ছিলেন রবিনসন। প্রথম হওয়ার কথাটি গণিত বিভাগের ক্ষেত্রে প্রযোজ্য। [সলোমন ফেফারমানের স্মৃতিলেখ, পৃ. ৩ ও ২২](https://www.nasonline.org/wp-content/uploads/2024/06/robinson-julia.pdf)
+
+**সীমার সংজ্ঞা।** কোনো বিন্দুতে অপেক্ষকের সীমা নির্ণয়ের সময় ওই বিন্দুটি বাদ দিয়ে তার আশপাশের মানগুলি দেখা হয়। বিন্দুটিতে অপেক্ষকের মান নির্দিষ্ট থাকলেও সেই মান সীমার সমান হতেই হবে এমন কোনো শর্ত নেই। [মূল অনুচ্ছেদ](https://github.com/OpenLogicProject/OpenLogic/blob/1e960beff9ed7835bf3e3f1335e21af3439cd107/content/history/set-theory/limits.tex)
+
+**পেয়ানোর বক্ররেখা।** পেয়ানোর নির্মাণে দুটি স্থানাঙ্ক পরামিতির অবিচ্ছিন্ন অপেক্ষক। এই দুটি স্থানাঙ্ক মিলে বর্গক্ষেত্রের প্রতিটি বিন্দুতে পৌঁছায়। মূল প্রবন্ধের শেষে তিনি বলেন যে অপেক্ষক দুটি কোথাও অবকলনযোগ্য নয়। [পেয়ানোর মূল প্রবন্ধ, পৃ. ১৫৭ ও ১৬০](https://webhomes.maths.ed.ac.uk/~v1ranick/papers/peano.pdf)

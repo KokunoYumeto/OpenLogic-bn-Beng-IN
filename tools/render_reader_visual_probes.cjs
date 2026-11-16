@@ -8,6 +8,12 @@ const {chromium} = require(process.env.CODEX_READER_PLAYWRIGHT_MODULE);
 const root = path.resolve(__dirname, '..');
 const build = path.join(root, 'build', 'full-edition');
 const sha = data => crypto.createHash('sha256').update(data).digest('hex');
+const phoneSamples = new Map([
+  ['OLP-0268', 'em:text-is("3-Halt")'],
+  ['OLP-0605', 'em:text-is("if and only if")'],
+  ['OLP-0684', '.tableau-semantic'],
+  ['OLP-0708', '.proof-tree-semantic'],
+]);
 async function main() {
   const probesPath = path.join(build, 'VISUAL_PROBES.json');
   const probes = JSON.parse(fs.readFileSync(probesPath, 'utf8'));
@@ -80,13 +86,27 @@ async function main() {
       const platformFonts = selected.nodeId ? (await cdp.send('CSS.getPlatformFontsForNode', {nodeId: selected.nodeId})).fonts : [];
       await page.evaluate(() => {document.querySelector('[data-qa-font-probe]')?.removeAttribute('data-qa-font-probe');});
       await cdp.detach();
+      let phone = null;
+      if (phoneSamples.has(probe.unit_id)) {
+        await page.setViewportSize({width: 390, height: 844});
+        const focus = page.locator(phoneSamples.get(probe.unit_id)).first();
+        await focus.waitFor({state: 'visible'});
+        await focus.evaluate(element => element.scrollIntoView({block: 'center', inline: 'nearest'}));
+        phone = await page.evaluate(() => ({
+          viewport: innerWidth,
+          width: document.documentElement.scrollWidth,
+          bengaliFontLoaded: document.fonts.check('18px BN', 'সিদ্ধান্ত'),
+        }));
+        await screenshot('phone', file => page.screenshot({path: file}));
+        await page.setViewportSize({width: 1400, height: 1100});
+      }
       page.off('pageerror', handler);
-      captures.push({unit_id: probe.unit_id, focus: probe.focus || null, probe_sha256: probe.sha256, metrics, platformFonts, errors, screenshots: shots});
+      captures.push({unit_id: probe.unit_id, focus: probe.focus || null, probe_sha256: probe.sha256, metrics, phone, platformFonts, errors, screenshots: shots});
     }
   } finally {await browser.close();}
   const result = {schema: 'openlogic-bn-reader-browser-captures/1', reader_sha256: probes.reader_sha256,
     probes_sha256: sha(fs.readFileSync(probesPath)), captured_at_utc: new Date().toISOString(),
-    method: 'Headless Chrome screenshots of unchanged source-bound probes at 1400x1100, embedded font loading and native MathML.',
+    method: 'Source-bound probes at 1400x1100 with embedded fonts and native MathML. Four passages are also captured at 390x844.',
     status: 'captured; manual visual review pending', captures};
   fs.writeFileSync(path.join(build, 'BROWSER_CAPTURES.json'), JSON.stringify(result, null, 2) + '\n');
   console.log(JSON.stringify({captures: captures.length, screenshots: captures.reduce((n, r) => n + r.screenshots.length, 0), reader_sha256: result.reader_sha256}));

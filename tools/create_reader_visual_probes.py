@@ -12,7 +12,8 @@ BUILD = ROOT / "build/full-edition"
 SOURCE = BUILD / "openlogic-bn-Beng-IN-complete.html"
 UNITS = ["OLP-0008", "OLP-0066", "OLP-0108", "OLP-0163", "OLP-0206", "OLP-0207", "OLP-0216", "OLP-0271", "OLP-0349", "OLP-0365", "OLP-0409", "OLP-0425", "OLP-0462", "OLP-0463",
          "OLP-0488", "OLP-0517", "OLP-0523", "OLP-0634", "OLP-0660", "OLP-0669", "OLP-0670",
-         "OLP-0676", "OLP-0679", "OLP-0683", "OLP-0684", "OLP-0687", "OLP-0698", "OLP-0701", "OLP-0702", "OLP-0710", "OLP-0718", "OLP-0357"]
+         "OLP-0676", "OLP-0679", "OLP-0683", "OLP-0684", "OLP-0687", "OLP-0698", "OLP-0701", "OLP-0702", "OLP-0710", "OLP-0718", "OLP-0357",
+         "OLP-0268", "OLP-0605", "OLP-0708"]
 
 
 def digest(data):

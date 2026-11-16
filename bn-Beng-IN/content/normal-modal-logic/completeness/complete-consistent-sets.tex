@@ -63,10 +63,8 @@
 
   \tagitem{prvOr}{\iftag{probOr}{অনুশীলনী।}{ধরা যাক $!A \lor !B \in
       \Gamma$, অথচ $!A \notin \Gamma$ এবং $!B \notin \Gamma$। $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হওয়ায় $\lnot!A \in \Gamma$ এবং $\lnot !B \in \Gamma$। তাহলে $\lnot(!A \lor !B) \in \Gamma$; কারণ $\lnot !A \lif (\lnot !B \lif \lnot (!A \lor !B))$ একটি সর্বতঃসত্য সূত্রের উদাহরণ। এতে $\Gamma$ $\Sigma$-অসঙ্গত হবে—স্ববিরোধ।
-      % BN-SRC-703 TARGET-CORRECTION-BEGIN
       \emph{উৎস-সংশোধন:} উৎসে অনুক্ত বিপরীত দিকটিও দেখাই। $!A \in \Gamma$ হলে সর্বতঃসত্য উদাহরণ $!A \lif (!A \lor !B)$ ও বদ্ধতা থেকে $!A \lor !B \in \Gamma$। একইভাবে $!B \in \Gamma$ হলে $!B \lif (!A \lor !B)$ ব্যবহার করি।
-      % BN-SRC-703 TARGET-CORRECTION-END
-      }}{}
+            }}{}
 
   \tagitem{prvIf}{\iftag{probIf}{অনুশীলনী।}{ধরা যাক $!A \lif !B \in
       \Gamma$ এবং $!A \in \Gamma$; তাহলে $\Gamma \Proves[\Sigma] !B$, ফলে নিষ্পাদনের অধীনে বদ্ধতা থেকে $!B \in \Gamma$। বিপরীতক্রমে, $!A \lif !B \notin \Gamma$ হলে $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হওয়ায় $\lnot (!A \lif !B) \in \Gamma$। যেহেতু $\lnot(!A \lif !B) \lif !A$ একটি সর্বতঃসত্য সূত্রের উদাহরণ, নিষ্পাদনের অধীনে বদ্ধতা থেকে $!A \in \Gamma$। একইভাবে $\lnot(!A \lif !B) \lif \lnot !B$ একটি সর্বতঃসত্য সূত্রের উদাহরণ হওয়ায় $\lnot !B \in \Gamma$। তখন $\Gamma$ $\Sigma$-সঙ্গত হওয়ার কারণে $!B \notin \Gamma$।}}{}
@@ -77,10 +75,9 @@
       বিপরীতক্রমে, $!A \liff !B \notin \Gamma$ ধরি। % BN-SRC-355: উৎসে এখানে lif আছে; পরের নঞর্থক liff ও বিপরীতক্রমের যুক্তি অনুযায়ী liff হবে।
       $\Gamma$ পূর্ণ $\Sigma$-সঙ্গত হওয়ায় $\lnot (!A \liff !B) \in
       \Gamma$। যেহেতু $\lnot(!A \liff !B) \lif (!A \lif \lnot !B)$ একটি সর্বতঃসত্য সূত্রের উদাহরণ, $!A \in \Gamma$ হলে $\lnot !B \in \Gamma$; আর $\Gamma$ $\Sigma$-সঙ্গত হওয়ায় $!B \notin
-      \Gamma$। একইভাবে $!B \in \Gamma$ হলে $!A \notin \Gamma$।       % BN-SRC-704 TARGET-CORRECTION-BEGIN
+      \Gamma$। একইভাবে $!B \in \Gamma$ হলে $!A \notin \Gamma$।       
       \emph{উৎস-সংশোধন:} উভয় সূত্রই অনুপস্থিত—এই সম্ভাবনা বাদ দিতে আরও একটি ধাপ দরকার: $\lnot(!A \liff !B) \lif (!A \lor !B)$ সর্বতঃসত্য উদাহরণ বলে বদ্ধতা থেকে $!A \lor !B \in \Gamma$। বিযোজনের পূর্বপ্রমাণিত ধর্মে অন্তত একটি সূত্র উপস্থিত।
-      % BN-SRC-704 TARGET-CORRECTION-END
-      অতএব $!A \in \Gamma$ ও $!B \in \Gamma$ উভয়ই নয়, আবার $!A \notin \Gamma$ ও $!B \notin \Gamma$ উভয়ও নয়।}}{}
+            অতএব $!A \in \Gamma$ ও $!B \in \Gamma$ উভয়ই নয়, আবার $!A \notin \Gamma$ ও $!B \notin \Gamma$ উভয়ও নয়।}}{}
   \end{enumerate}
 \end{proof}
 

@@ -27,11 +27,6 @@
 যেখানে $\Delta$ ফাঁকা হলে $!C \ident \lfalse$,
 অন্যথায় $\Delta = \{!C\}$; এবং $\Gamma'$
 হলো~$\Gamma$-র সঙ্গত।
-% BN-SRC-876 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-876):} অফাঁকা ডান অংশের একমাত্র সূত্রই সিদ্ধান্তের সূত্র।
-মূলপাঠে অন্য একটি নাম থাকায় সিদ্ধান্তের সূত্রটি অনির্ধারিত ছিল;
-দুই স্থানে একই নাম রাখা হয়েছে।}
-% BN-SRC-876 TARGET-CORRECTION-END
 \end{prop}
 
 \begin{proof}
@@ -41,9 +36,6 @@
   \Log{N2i}-তে $\Gamma' \Sequent !C$-এর
   !!a{proof}~$\delta$ আছে। $n = \pheight{\pi}$-র
   উপর আরোহ করি।
-  % BN-SRC-559 TARGET-CORRECTION-BEGIN
-  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-559):} প্রমাণের শুরুতে উৎসে অনির্দিষ্ট G2ci লেখা; প্রস্তাবনা ও সারা অধ্যায় অনুযায়ী G2i নেওয়া হয়েছে।}
-  % BN-SRC-559 TARGET-CORRECTION-END
 % BN-SRC-877: redo restores G2i+Cut scope of the proposition and displayed Cut case.
 
   $n = 0$ হলে $\pi$ একটি স্বতঃসিদ্ধ। সেটি
@@ -64,9 +56,6 @@
   অংশেই সেটি ঘটে। এবার দেখাই, ওই !!{proof}s
   মিলিয়ে উপযুক্ত $\Gamma' \Sequent !C$-এর
   প্রমাণ পাওয়া যায়। $R$ অনুযায়ী ক্ষেত্রগুলি:
-  % BN-SRC-560 TARGET-CORRECTION-BEGIN
-  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-560):} এই আরোহবাক্যে উৎসে N2c লেখা, যদিও প্রস্তাবনা ও সব ক্ষেত্র N2i-র; এখানে N2i করা হয়েছে।}
-  % BN-SRC-560 TARGET-CORRECTION-END
 
   \begin{enumerate}
     \item $R$ যদি \RightR{\Weakening} হয়, $\pi$-র শেষাংশ
@@ -101,9 +90,6 @@
     অনুলিপির সংখ্যার বেশি নয়, তাই
     $\Gamma \cup \{!A\}$-তে~$!A$-এর
     অনুলিপির সংখ্যারও বেশি নয়।
-    % BN-SRC-561 TARGET-CORRECTION-BEGIN
-    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-561):} উৎসচিত্রে বাঁ-দুর্বলীকরণের বিধি ডান-দুর্বলীকরণ নামে চিহ্নিত; প্রদর্শিত বাম অংশে !A যোগের সঙ্গে মিলিয়ে \LeftR{\Weakening} করা হয়েছে।}
-    % BN-SRC-561 TARGET-CORRECTION-END
     \item $R$ যদি \LeftR{\Contraction} হয়,
     $\pi$-র শেষাংশ
     \[
@@ -130,9 +116,6 @@
     কোনো সিকোয়েন্টের বাঁ দিকে $x:!B$
     সক্রিয় নয়। অতএব ফলটিও \Log{N2i}-তে
     !!a{proof}।
-    % BN-SRC-562 TARGET-CORRECTION-BEGIN
-    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-562):} সংকোচনের চিহ্ন-বদল ও অবমুক্তি-পরীক্ষা উৎসে G2 উপপ্রমাণ $\pi_1$-তে করা হয়েছে; চিহ্নযুক্ত সিকোয়েন্টগুলি আসলে আরোহফলে পাওয়া N2 উপপ্রমাণ $\delta_1$-তে, তাই তিন স্থানে সেটিই নেওয়া।}
-    % BN-SRC-562 TARGET-CORRECTION-END
     \item $R$ যদি $\RightR{\lif}$ হয়,
     $\pi$-র শেষাংশ
     \[
@@ -149,9 +132,6 @@
     !!a{proof}~$\delta_1$ আছে। $\delta_1$-এর
     পরে \Intro{\lif} প্রয়োগ করে
     $\delta$ পাই।
-    % BN-SRC-563 TARGET-CORRECTION-BEGIN
-    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-563):} উৎসের শেষ বাক্যে নির্মাণের দিক উল্টো: $\delta_1$-কে $\delta$ থেকে নয়, $\delta_1$-এর পরে →-ভূমিকা দিয়ে $\delta$ গড়া হয়।}
-    % BN-SRC-563 TARGET-CORRECTION-END
     \item $R$ যদি \LeftR{\lif} হয়,
     $\pi$-র শেষাংশ
     \[
@@ -198,17 +178,6 @@
     ফল $\Subst{\delta_2}{\delta_3}{x:!B}$
     হলো $x:!A \lif !B, \Gamma_1',
     \Gamma_2' \Sequent !C$-এর !!a{proof}।
-    % BN-SRC-564 TARGET-CORRECTION-BEGIN
-    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-564):} বাঁ → ক্ষেত্রের চিহ্ন-বদল উৎসে G2 উপপ্রমাণ $\pi_1$-তে নির্দেশিত; N2 চিহ্নযুক্ত উপপ্রমাণ $\delta_1$-তেই তা প্রযোজ্য।}
-    % BN-SRC-564 TARGET-CORRECTION-END
-    % BN-SRC-565 TARGET-CORRECTION-BEGIN
-    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-565):} উৎসের $\delta_3$ বৃক্ষের সিদ্ধান্তে $\Gamma_1'$ বাদ পড়ে, যদিও দ্বিতীয় শাখা $\Gamma_1' \Sequent !A$-এর উপর নির্ভর করে; N2 →-নিষ্কাশনে ওই প্রসঙ্গও সিদ্ধান্তে রাখা হয়েছে।}
-    % BN-SRC-565 TARGET-CORRECTION-END
-% BN-SRC-878 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-878):} কলম-স্থাপিত প্রমাণের দ্বিতীয় শাখার খোলা অনুমানও
-প্রতিস্থাপিত স্বতঃসিদ্ধের নিচে রাখতে হবে। কেবল পুরোনো চিহ্নযুক্ত
-সূত্রের নাম বদলালে ওই শাখার প্রসঙ্গ হারিয়ে যায়।}
-% BN-SRC-878 TARGET-CORRECTION-END
     \item $R$ যদি \RightR{\land} হয়,
     $\pi$-র শেষাংশ
     \[
@@ -234,9 +203,6 @@
     $\delta_1$ ও~$\delta_2$-র অন্তিম
     সিকোয়েন্টে $\Intro{\land}$ প্রয়োগে
     !!a{proof}~$\delta$ পাই।
-    % BN-SRC-566 TARGET-CORRECTION-BEGIN
-    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-566):} ডান $\land$ ক্ষেত্রের দ্বিতীয় আরোহফল উৎসে ভুলে $\Gamma_2' \Sequent !A$; প্রদর্শিত দ্বিতীয় পূর্বধারণা অনুযায়ী $!B$। চিহ্ন-বদলও G2 উপপ্রমাণ $\pi_2$ নয়, N2 উপপ্রমাণ $\delta_2$-তে করা হয়েছে।}
-    % BN-SRC-566 TARGET-CORRECTION-END
     \item $R$ যদি $\LeftR{\land}$ হয়,
     যেমন, $\pi$-র শেষাংশ
     \[
@@ -269,9 +235,6 @@
     $\Subst{\delta_1}{\delta_2}{x:!A}$ নিই।
     এটি $x:!A \land !B, \Gamma'
     \Sequent !C$-এর !!a{proof}।
-    % BN-SRC-567 TARGET-CORRECTION-BEGIN
-    \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-567):} দ্বিতীয় রূপে উৎসে $\delta_1$-কে $\delta$ থেকে পাওয়া বলা হয়েছে; এখানে ইতিমধ্যে পাওয়া $\delta_1$-কেই চাওয়া $\delta$ নেওয়া হয়েছে।}
-    % BN-SRC-567 TARGET-CORRECTION-END
     \item $R$ যদি \Cut হয়, $\pi$-র শেষাংশ
     \[
     \AxiomC{}

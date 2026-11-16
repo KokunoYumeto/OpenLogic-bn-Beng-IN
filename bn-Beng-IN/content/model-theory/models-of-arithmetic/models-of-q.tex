@@ -57,8 +57,6 @@ $\Struct{K}$-এ $x$ ও~$y$-এর ``যোগফল'') বদলে $x \nsplus
 $\Assign{\times}{K}(x,y)$-এর (অর্থাৎ $\Struct{K}$-এ $x$ ও~$y$-এর
 ``গুণফল'') বদলে $x \nstimes y$, এবং
 $\tuple{x,y}\in\Assign{<}{K}$-এর বদলে $x \nsless y$ লিখি।
-% BN-SRC-124 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-124):} হিমায়িত ইংরেজি উৎসে $x\nsplus y$-এর ``sum'' ব্যাখ্যার প্রারম্ভিক গোলবন্ধনীটি বন্ধ না করেই $x\nstimes y$-এর ব্যাখ্যা শুরু হয়েছে। বাংলা পাঠে $\Struct{K}$-এর পরে অনুপস্থিত সমাপ্তি-গোলবন্ধনীটি পুনরুদ্ধার করা হয়েছে।} % BN-SRC-124 TARGET-CORRECTION-END
 এই সংক্ষেপগুলির সাহায্যে $\Struct{K}$-এর ক্রিয়াগুলি আরও স্বচ্ছভাবে
 লেখা যায়:
 \[
@@ -107,8 +105,6 @@ $\Sat{K}{\lforall[x][\lforall[y][\eq[(x + y')][(x + y)']]]}$ একটু
 (x \nsplus a^\nssucc) & = (x \nsplus a) = a = a^\nssucc = (x \nsplus a)^\nssucc
 \intertext{পূর্ণতার জন্য এবার $y \in \Domain{K}$ কিন্তু $x=a$ ধরি।
   $y=n$ মানক, না $y=a$---এই দুই ক্ষেত্র আলাদা করতে হবে:}
-% BN-SRC-125 TARGET-CORRECTION-BEGIN
-\intertext{\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-125):} হিমায়িত ইংরেজি উৎসে দ্বিতীয় ক্ষেত্রটি $y=b$ বলা হয়েছে, যদিও $b\notin\Domain{K}$ এবং এই গঠনের একমাত্র অমানক উপাদান~$a$। বাংলা পাঠে ক্ষেত্রটি $y=a$ করা হয়েছে।}} % BN-SRC-125 TARGET-CORRECTION-END
 (a \nsplus n^\nssucc) & = (a \nsplus (n+1)) = a = a^\nssucc = (a \nsplus n)^\nssucc\\
 (a \nsplus a^\nssucc) & = (a \nsplus a) = a = a^\nssucc = (a \nsplus a)^\nssucc
 \end{align*}
@@ -170,8 +166,6 @@ $x \nsplus y^\nssucc=x=x^\nssucc=(x \nsplus y)^\nssucc$। $x$ ও~$y$
 &  a \nsplus a^\nssucc  = b = b^\nssucc = (a \nsplus a)^\nssucc\\
 &  b \nsplus b^\nssucc  = a = a^\nssucc = (b \nsplus b)^\nssucc\\
 &  b \nsplus a^\nssucc  = b = b^\nssucc = (b \nsplus a)^\nssucc\\
-% BN-SRC-126 TARGET-CORRECTION-BEGIN
-\intertext{\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-126):} হিমায়িত উৎসে তৃতীয় সারির ডান দিকে $(b\nsplus y)^\nssucc$ লেখা হয়েছে, যদিও সারিটি নির্দিষ্টভাবে $y=a$ ক্ষেত্র গণনা করছে। বাংলা সূত্রে একই সারির বাঁ দিক ও ক্রিয়া-সারণির সঙ্গে মিলিয়ে $(b\nsplus a)^\nssucc$ করা হয়েছে।}} % BN-SRC-126 TARGET-CORRECTION-END
 &  a \nsplus b^\nssucc  = a = a^\nssucc = (a \nsplus b)^\nssucc\\
 \intertext{$x$ মানক কিন্তু $y$ অমানক হলে পাই}
 &  n \nsplus a^\nssucc  = n \nsplus a = b = b^\nssucc = (n \nsplus a)^\nssucc\\
@@ -208,8 +202,6 @@ $\Th{Q} \Proves \lforall[x][(x < \num{n}' \lif
 (\eq[x][\num{0}] \lor \eq[x][\num{1}] \lor \dots \lor
 \eq[x][\num{n}]))]$ (\olref[inc][req][min]{lem:less-nsucc}); তাই
 কোনো~$n>0$-এর জন্য $x \nsless n$ হতে পারে না।
-% BN-SRC-127 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-127):} এই সাধারণ যুক্তিটি অমানক উপাদান~$x$ দিয়ে শুরু হলেও হিমায়িত উৎসের শেষ সিদ্ধান্তে উদাহরণ-নির্দিষ্ট~$a\nsless n$ লেখা হয়েছে। বাংলা সূত্রে একই নির্বিচার উপাদান ধরে $x\nsless n$ করা হয়েছে।} % BN-SRC-127 TARGET-CORRECTION-END
 \end{explain}
 
 \end{document}

@@ -87,8 +87,6 @@ $\pi$ যদি $\Log{LK}$-এর একটি !!a{derivation} হয়, তব
   \tuple{1, \tuple{1, \tuple{0, \Gn{!A \Sequent !A}}, \Gn{!A \land !B \Sequent !A}, 9},
     \Gn{\Sequent (!A \land !B) \lif !A}, 14}.
   \]
-% BN-SRC-208 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-208):} হিমায়িত বিস্তৃত টিউপলে $\Gn{!A \Sequent !A)}$-এর শেষে একটি অতিরিক্ত ডান বন্ধনী ছিল, যদিও ঠিক আগের সংজ্ঞা ও সংক্ষিপ্ত $p_0$-তে $\Gn{!A \Sequent !A}$ আছে। বাংলা পাঠে অতিরিক্ত বন্ধনীটি বাদ দেওয়া হয়েছে।} % BN-SRC-208 TARGET-CORRECTION-END
 \end{ex}
 
 \begin{explain}
@@ -106,8 +104,6 @@ $s$ তখনই এই ধর্ম পূরণ করে যখন $s$ হল
 সিকোয়েন্টের গ্যোডেল সংখ্যা। কিছু কাজ অনেক কঠিন; এখানে অন্তত তার রূপরেখা দেব। লক্ষ্য হলো,
 ``$\pi$ হলো~$\Gamma$ থেকে~$!A$-এর একটি !!a{derivation}'' সম্বন্ধটি $\pi$ ও
 $!A$-এর গ্যোডেল সংখ্যার একটি আদিম পুনরাবৃত্ত সম্বন্ধ দেখানো।
-% BN-SRC-209 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-209):} হিমায়িত অনুচ্ছেদটি অন্তিম সিকোয়েন্টের অপেক্ষককে একবার $\fn{EndSeq}$ বলে সংজ্ঞায়িত করে, কিন্তু পরের সব সূত্রে $\fn{EndSequent}$ ব্যবহার করে। বাংলা পাঠে সংজ্ঞাটিকেও $\fn{EndSequent}$ করা হয়েছে।} % BN-SRC-209 TARGET-CORRECTION-END
 \end{explain}
 
 \begin{prop}\ollabel{prop:followsby}
@@ -207,8 +203,6 @@ $\pi$-র শেষ অনুমিতি $\RightR\lexists$-এর সঠিক 
 প্রথম পংক্তি নিশ্চিত করে, $p$-এর অন্তিম সিকোয়েন্টটি বাস্তবেই
 !!{sentence}s দিয়ে গঠিত একটি সিকোয়েন্ট। শেষ পংক্তি সেই ঘটনাটি ধরে যেখানে
 $p$ শুধু একটি প্রারম্ভিক সিকোয়েন্ট।
-% BN-SRC-210 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-210):} হিমায়িত প্রমাণে সম্বন্ধটি $\fn{InitSeq}$ নামে সংজ্ঞায়িত হলেও শেষ বিকল্পে অনির্ধারিত $\fn{InitialSeq}$ লেখা হয়েছে। বাংলা পাঠে সংজ্ঞায়িত $\fn{InitSeq}$ রাখা হয়েছে। একই অনুচ্ছেদের ``$d$-এর অন্তিম সিকোয়েন্ট''-কেও চলমান গ্যোডেল সংখ্যা~$p$-এর অন্তিম সিকোয়েন্ট বলা হয়েছে।} % BN-SRC-210 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{prob}
@@ -238,8 +232,6 @@ $p$ শুধু একটি প্রারম্ভিক সিকোয়�
   \[
   \bforall{i<\len{\fn{SubtreeSeq}(p)}}{\fn{Correct}((\fn{SubtreeSeq}(p))_i)}.
   \]
-% BN-SRC-211 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-211):} হিমায়িত প্রমাণটি প্রস্তাবের $p$ থেকে হঠাৎ অনাবদ্ধ $d$-তে বদলে যায় এবং শেষ $\fn{Correct}$-এর ডান বন্ধনী বাদ দেয়। বাংলা পাঠে সর্বত্র $p$ রাখা ও বন্ধনী পূর্ণ করা হয়েছে।} % BN-SRC-211 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{prop}
@@ -274,8 +266,6 @@ $\Prf[\Gamma](x, y)$-কে এভাবে সংজ্ঞায়িত ক�
   \len{(\fn{EndSequent}(x))_0}}{R_\Gamma(((\fn{EndSequent}(x))_0)_i)} \land {}\\
 & \len{(\fn{EndSequent}(x))_1} = 1 \land ((\fn{EndSequent}(x))_1)_0 = y.
 \end{align*}
-% BN-SRC-212 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-212):} হিমায়িত ব্যাখ্যায় অন্তিম সিকোয়েন্টের ডান পাশের একমাত্র উপাদানকে $x$ বলা হয়েছে, যদিও $x$ নিষ্পাদনের কোড এবং প্রস্তাব ও চূড়ান্ত সংজ্ঞায় বাক্যটির গ্যোডেল সংখ্যা~$y$। বাংলা পাঠে ওই ব্যাখ্যাতেও $y$ রাখা হয়েছে।} % BN-SRC-212 TARGET-CORRECTION-END
 \end{proof}
 
 \end{document}

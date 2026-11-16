@@ -54,8 +54,6 @@ $\Th{PA}$ নিচেরগুলি প্রমাণ করে:
 \item $\lforall[x][\lforall[y][\lforall[z][((x < y \land y < z) \lif x < z)]]]$
 \item $\lforall[x][\lforall[y][((x < y \lor y < x) \lor \eq[x][y])]]$
 \end{enumerate}
-% BN-SRC-128 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-128):} হিমায়িত ইংরেজি উৎসে তৃতীয় সর্বব্যাপী সূত্রটির শেষে খোলা গোলবন্ধনীর তুলনায় একটি অতিরিক্ত সমাপ্তি-গোলবন্ধনী আছে। বাংলা সূত্রে ওই অতিরিক্ত চিহ্নটি বাদ দিয়ে ত্রিবিভাগের সূত্রটি ভারসাম্যপূর্ণ করা হয়েছে।} % BN-SRC-128 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{prop}
@@ -67,8 +65,6 @@ $x \nsless x^\nssucc$, এবং এই ধর্মসম্পন্ন $\nsle
 যাতে $y^\nssucc=x$। (আমরা $y$-কে $\Struct{M}$-এ $x$-এর
 ``পূর্বসূরি'' বলি এবং $^\nssucc x$ দিয়ে চিহ্নিত করি।)
 \end{prop}
-% BN-SRC-129 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-129):} হিমায়িত প্রতিজ্ঞাটি প্রত্যেক~$x$-এর একটি পূর্বসূরি দাবি করে, অথচ একই প্রতিজ্ঞায় $\nszero$-কে ক্ষুদ্রতম উপাদান বলা হয়েছে এবং $\Th{PA}$-তে শূন্য কোনো উত্তরসূরি নয়। বাংলা বিবৃতি ও পরের খণ্ড-প্রমাণে পূর্বসূরির দাবিটি শূন্য নয় এমন উপাদানে সীমিত করা হয়েছে; অমানক খণ্ডের সব উপাদান এই শর্ত পূরণ করে।} % BN-SRC-129 TARGET-CORRECTION-END
 
 \begin{proof}
 অনুশীলনী।
@@ -229,8 +225,6 @@ $x=y \nsplus y$, নয় $x=(y \nsplus y)^\nssucc$; তাই $y \nsless x$
 $x \nsplus y = z \nsplus z$, নয়
 $x \nsplus y = (z \nsplus z)^\nssucc$। উপাদান~$z$, $x$ ও~$y$-এর
 ``গড়'', এবং $x \nsless z$ ও~$z \nsless y$।
-% BN-SRC-130 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-130):} এই অংশে গঠনের যোগের জন্য সর্বত্র $\nsplus$ স্থির করা হলেও হিমায়িত উৎসের গড়-সমীকরণে চারবার অনির্ধারিত $\oplus$ ব্যবহৃত। বাংলা সূত্রে ওই চারটি চিহ্নকে $\nsplus$ করা হয়েছে; সমীকরণের অন্য সব অংশ অপরিবর্তিত।} % BN-SRC-130 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{prob}
@@ -243,8 +237,6 @@ $[x] \neq [z]$ ও~$[z] \neq [y]$?
 \begin{explain}
 অতএব কোনো গণনীয় অমানক মডেলের অমানক খণ্ডগুলি মূলদ সংখ্যার মতো
 ক্রমিত: তারা অন্তবিন্দুহীন একটি !!a{denumerable} ঘন রৈখিক ক্রম গঠন করে।
-% BN-SRC-131 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-131):} হিমায়িত উৎসটি কোনো গণনীয়তার অনুমান ছাড়াই সব অমানক খণ্ডকে $\Rat$-এর মতো এবং !!{denumerable} বলে, যদিও অগণনীয় মডেলের খণ্ডসমষ্টিও অগণনীয় হতে পারে। বাংলা পাঠে এই সিদ্ধান্তকে গণনীয় অমানক মডেলে সীমিত করা হয়েছে; ঘনতা ও অন্তবিন্দুহীনতার আগের দাবিগুলি অপরিবর্তিত।} % BN-SRC-131 TARGET-CORRECTION-END
 দেখানো যায়, এমন যেকোনো দুটি !!{denumerable} ক্রম পরস্পর সমরূপ। এর
 ফলে সত্য পাটিগণিতের যেকোনো দুটি !!{enumerable} অমানক মডেল
 $\Struct{M}_1$ ও~$\Struct{M_2}$-এর কেবল $<$ ও~$=$-যুক্ত ভাষায়

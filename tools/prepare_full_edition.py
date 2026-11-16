@@ -160,6 +160,9 @@ def main():
     heading_options = []
     render_inputs = {uid: normalize_heading_options(reader.strip_comments(body(raw)), uid, heading_options)
                      for uid, raw in units.items()}
+    inline_notes = PROFILE.get("editorial_notes") != "separate"
+    if not inline_notes and any("BN-SRC-" in text for text in render_inputs.values()):
+        raise ValueError("An editorial identifier remains in the reader")
     reader_adjustments = []
     render_inputs["OLP-0163"] = restore_exercise_statements(
         render_inputs["OLP-0163"], reader_adjustments, legacy_reader_note=legacy_inputs,
@@ -238,7 +241,7 @@ def main():
         # Source-correction notes quote literal macro spellings with escaped
         # braces. These are code examples, not active OpenLogic text tokens.
         render_source = render_source.replace(r"!!\{", r"\string!\string!\{")
-        if uid == "OLP-0718":
+        if uid == "OLP-0718" and inline_notes:
             literal = "অসম্পূর্ণ ভাষাগত !! চিহ্ন"
             assert render_source.count(literal) == 1
             render_source = render_source.replace(
@@ -263,7 +266,7 @@ def main():
                 "unit_id": uid, "kind": "bold_theory_accent", "occurrences": theory_accent_count,
                 "action": "বোল্ড অক্ষরের বাইরে সমার্থক উপরিরেখা; Q ও bar-Q এবং T ও bar-T-এর পার্থক্য রক্ষা, মূল বাংলা ও ইংরেজি অপরিবর্তিত।",
             })
-        if uid == "OLP-0365":
+        if uid == "OLP-0365" and inline_notes:
             old_path = r"\texttt{lambda-calculus/syntax/beta.tex}"
             assert raw.count(old_path) == 1
             raw = raw.replace(old_path,
@@ -272,7 +275,7 @@ def main():
                 "unit_id": uid,
                 "action": "উৎস-সংশোধন টীকার দীর্ঘ কোড-পাথে স্ল্যাশের পর ঐচ্ছিক লাইনবিরতি; দৃশ্যমান পথ অপরিবর্তিত।",
             })
-        if uid == "OLP-0349":
+        if uid == "OLP-0349" and inline_notes:
             assert raw.count(r"$\num$") == 1
             raw = raw.replace(r"$\num$", r"\texttt{\textbackslash num}")
             reader_adjustments.append({"unit_id": uid, "source_correction": "BN-SRC-270",
@@ -468,7 +471,8 @@ def main():
         transformed.append((row, raw))
     assert len(documented_missing) == 4
     assert len(proof_title_reference_adjustments) == 6
-    assert sum(item["blank_paragraphs_removed"] for item in display_blank_line_adjustments) == 9
+    # The annotated source has two extra paragraph breaks in the OLP-0195 intertext notes.
+    assert sum(item["blank_paragraphs_removed"] for item in display_blank_line_adjustments) == (9 if inline_notes else 7)
     assert len(bracket_display_blank_line_adjustments) == 5
     assert sum(item["blank_paragraphs_removed"] for item in bracket_display_blank_line_adjustments) == 9
     assert tableau_blank_line_adjustments == [{
@@ -480,7 +484,7 @@ def main():
     assert {row["target"] for row in ref_only_hypertarget_adjustments} == REF_ONLY_HYPERTARGETS
     assert len(chapter_range_reference_adjustments) == 3
     assert len(tabular_spacing_adjustments) == 1
-    assert len(overfull_path_adjustments) == 1
+    assert len(overfull_path_adjustments) == int(inline_notes)
 
     token_setup = "\n".join(r"\settexttoken{" + key + "}{" + value + "}{" + value + "}"
                             for key, value in reader.TOKEN_TRANSLATIONS.items())

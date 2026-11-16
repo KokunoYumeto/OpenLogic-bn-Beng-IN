@@ -29,9 +29,6 @@ $\sFmla{\True}{!A}, \sFmla{\True}{!B},
 $!A$ ও $!B$ সত্য, $!C$ ও $!D$ মিথ্যা করে এমন
 !!^a{structure} হলো $!A, !B \Sequent !C, !D$ অবৈধ
 দেখানো !!a{structure}।
-% BN-SRC-602 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-602):} ডান পাশের $!D$-কে মিথ্যা দেখানোর জন্য শুরুর চিহ্ন $\False$; উৎসে ভুল করে $\True$ ছিল।}
-% BN-SRC-602 TARGET-CORRECTION-END
 
 ট্যাবলোর পাতার (সবচেয়ে নিচের) গিঁট শাখা-প্রসারণ বিধি
 দিয়ে বাড়ানো যায়। বিধি একই শাখায় আরও গিঁট যোগ করতে
@@ -56,12 +53,6 @@ $!A \lor (!B \land !C) \Sequent (!A \lor !B) \land
 (!A \lor !C)$-র একটি বদ্ধ ট্যাবলো নিচে আছে।
 এর শুরুতে $\sFmla{\True}{!A \lor (!B \land
 !C)}$ ও $\sFmla{\False}{(!A \lor !B) \land (!A \lor !C)}$:
-% BN-SRC-603 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-603):} উদাহরণটির সব শাখা বদ্ধ এবং ঠিক আগেই বদ্ধ ট্যাবলো সংজ্ঞায়িত; উৎসের “clause tableau” এখানে “closed tableau” অর্থে পড়া হয়েছে।}
-% BN-SRC-603 TARGET-CORRECTION-END
-% BN-SRC-889 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-889):} মিথ্যা-সূত্রকে সত্য দাবি করা শাখাও বদ্ধ; সিকোয়েন্ট কলনে এটি মিথ্যা-সূত্রের বাঁ স্বতঃসিদ্ধের ক্ষেত্র। উৎসের শুধু বিপরীত-চিহ্নের জোড়ার শর্তে এই ক্ষেত্র বাদ ছিল।}
-% BN-SRC-889 TARGET-CORRECTION-END
 \begin{maxwidth}
 \begin{tableau}{}
   [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
@@ -140,9 +131,6 @@ $!A \lor (!B \land !C) \Sequent (!A \lor !B) \land
 সেটিতে শাখা-প্রসারণ বিধি প্রয়োগ করি। আলোচ্য চিহ্নিত সূত্রটি থাকা প্রতিটি
 শাখায় বিধি প্রয়োগ হয়ে গেলে তাতে টিকচিহ্ন দিই।
 (উপরের উদাহরণটি এই অ্যালগরিদমে তৈরি।)
-% BN-SRC-892 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-892):} পারমাণবিক সূত্রের শাখা-প্রসারণ বিধি নেই। তাই চিহ্ন না-পড়া প্রথম সূত্রের বদলে প্রথম প্রয়োগযোগ্য সূত্র বাছতে হয়; এমন সূত্র না থাকলে সাধারণ প্রসারণের ধাপ বাদ যায়।}
-% BN-SRC-892 TARGET-CORRECTION-END
 
 $\sFmla{\True}{\lforall}$ ও
 $\sFmla{\False}{\lexists}$ আকারের চিহ্নিত
@@ -162,9 +150,6 @@ $\TRule{\False}{\lexists}$ বিধি একসময় প্রয়োগ
 !!{formula} $\sFmla{\True}{!B(t)}$
 বা~$\sFmla{\False}{!B(t)}$ ওই শাখায়
 এখনও নেই। এমন পদ থাকলেই এই বিধি প্রয়োগ করি।
-% BN-SRC-890 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-890):} নতুন উদাহরণ-সূত্র আর না থাকলে ওই ধাপে পরিমাণায়ক বিধি প্রয়োগ হয় না। পুনরাবৃত্ত পরিমাণায়ক সূত্রে কখনো টিকচিহ্ন পড়ে না বলে সসীম খোলা শাখার শেষ অবস্থা সব সূত্রে টিকচিহ্ন দিয়ে সংজ্ঞায়িত করা যায় না; সব প্রযোজ্য প্রসারণ সম্পন্ন থাকা প্রয়োজন।}
-% BN-SRC-890 TARGET-CORRECTION-END
 
 এই প্রমাণ-অন্বেষণে বদ্ধ ট্যাবলো না মিললে,
 হয় !!{formula}s থেকে কোনো বিধিতে আর নতুন গিঁট যোগ করা যায় না

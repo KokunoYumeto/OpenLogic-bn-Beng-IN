@@ -8,8 +8,6 @@
 
 \olfileid[bn]{inc}{req}{s1c}
 \olsection{\texorpdfstring{$\Sigma_1$}{সিগমা-১} সম্পূর্ণতা}
-% BN-SRC-226 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-226):} হিমায়িত ফাইলটির অধ্যায়-পরিচায়ক ভুল করে \texttt{inp} দিয়েছিল, যদিও অধ্যায়ের চালক ও অন্য দশটি অংশে পরিচায়ক \texttt{req} এবং এই অংশটিও সেই অধ্যায়েই আমদানি করা। বাংলা পাঠে সামঞ্জস্যপূর্ণ \texttt{\string\olfileid\{inc\}\{req\}\{s1c\}} রাখা হয়েছে।} % BN-SRC-226 TARGET-CORRECTION-END
 
 $\Th{Q}$ এবং তার সঙ্গতিপূর্ণ, স্বতঃসিদ্ধায়িত প্রসারণগুলি অসম্পূর্ণ হলেও আমরা
 দেখেছি, সংখ্যাপদ সম্বন্ধে অনেক মৌলিক তথ্য $\Th{Q}$ প্রমাণ করে। বস্তুত এই
@@ -111,8 +109,6 @@ $m = \Value{t_2}{N}$ স্থির করি।
 ধরি $!A \ident t_1 = t_2$। \olref{lem:q-proves-clterm-id} অনুসারে
 $\Th{Q} \Proves \eq[t_1][\num n]$ এবং
 $\Th{Q} \Proves \eq[t_2][\num m]$।
-% BN-SRC-227 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-227):} হিমায়িত প্রমাণে $m=\Value{t_2}{N}$ স্থির করার পরেও দ্বিতীয় পদটির মান ভুল করে $\num n$ লেখা হয়েছিল। বাংলা পাঠে $t_2$-এর জন্য $\num m$ রাখা হয়েছে।} % BN-SRC-227 TARGET-CORRECTION-END
 $n = m$ হলে $\Th{Q} \Proves \eq[\num n][\num m]$, এবং তাই পরিচয়ের
 সঞ্চারিতা থেকে $\Th{Q} \Proves \eq[t_1][t_2]$। $n \neq m$ হলে
 $\Th{Q} \Proves \eq/[\num n][\num m]$, এবং আবার পরিচয়ের সঞ্চারিতা থেকে
@@ -127,8 +123,6 @@ $n + k + 1 = m$। \olref{lem:q-proves-clterm-id} অনুসারে
 $\Th{Q} \Proves \eq[t_1][\num n]$ এবং
 $\Th{Q} \Proves \eq[t_2][\num m]$; আর এই সহায়ক উপপাদ্যের প্রথম অংশ থেকে
 $\Th{Q} \Proves \eq[{\num k}' + \num n][\num m]$।
-% BN-SRC-228 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-228):} হিমায়িত ধাপে যোগের দুই পদকে $\num n+{\num k}'$ ক্রমে লেখা হলেও পরের পংক্তি ও $!Q_8$-এর সাক্ষীর জন্য দরকার ${\num k}'+t_1$; আর $\Th{Q}$-তে সাধারণ যোগের বিনিময়যোগ্যতা প্রমাণযোগ্য নয়। বাংলা পাঠে আণবিক সম্পূর্ণতা সরাসরি সত্য বদ্ধ সমতা ${\num k}'+\num n=\num m$-এ প্রয়োগ করা হয়েছে।} % BN-SRC-228 TARGET-CORRECTION-END
 পরিচয়ের সঞ্চারিতা থেকে
 $\Th{Q} \Proves \eq[{\num k}' + t_1][t_2]$, তাই
 $\Th{Q} \Proves \lexists[z][\eq[z' + t_1][t_2]]$। $!Q_8$-এর ডান থেকে বাম
@@ -147,8 +141,6 @@ $\eq[z' + \num{n - m}][\Obj 0]$। $m = n$ হলে
 $\eq/[z'][\Obj 0]$, যা $!Q_2$-এর মাধ্যমে বিরোধ দেয়। $m < n$ হলে $!Q_5$
 আবার ব্যবহার করে $\eq[(z' + \num{n - m - 1})'][\Obj 0]$, যা
 $!Q_2$-এর মাধ্যমে বিরোধ দেয়।
-% BN-SRC-229 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-229):} হিমায়িত প্রমাণে উত্তরসূরি $0$-র সমান হওয়ার উভয় বিরোধের জন্য $!Q_3$ উদ্ধৃত হয়েছিল। প্রাসঙ্গিক স্বতঃসিদ্ধটি $!Q_2$, যা বলে $0$ কোনো উত্তরসূরির সমান নয়; বাংলা পাঠে দুটি উদ্ধৃতিই $!Q_2$ করা হয়েছে।} % BN-SRC-229 TARGET-CORRECTION-END
 তাই $\Th{Q} \Proves \lnot(t_1 < t_2)$।
 \end{proof}
 
@@ -169,8 +161,6 @@ $!Q_2$-এর মাধ্যমে বিরোধ দেয়।
     কারণ \olref[inc][req][min]{lem:less-zero} অনুসারে কোনো
     $x<\num 0$ নেই। একইভাবে, শূন্যপদী সংযোজনকে শুধু $\ltrue$ ধরা যায়,
     যা $\Th{Q}$-তেও প্রমাণযোগ্য।
-% BN-SRC-230 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-230):} হিমায়িত ভিত্তি ক্ষেত্রে সর্বজনীন পরিমাণসূচকের ডান দিককে ভুল করে ``শূন্যপদী বিয়োজন'' বলা হয়েছিল; কিন্তু সহায়ক উপপাদ্যের প্রথম অনুচ্ছেদে ডান দিকটি একটি সংযোজন। বাংলা পাঠে $\ltrue$-সমতুল্য শূন্যপদী সংযোজন রাখা হয়েছে।} % BN-SRC-230 TARGET-CORRECTION-END
     %
     তাই ধরি কোনো স্বাভাবিক সংখ্যা~$k$-এর জন্য $\Value{t}{N} = k+1$।
     \olref{lem:q-proves-clterm-id} অনুসারে ধরে নিতে পারি, আমরা
@@ -256,8 +246,6 @@ $\bexists{x<t}{\lnot !A(x)}$-এর সমতুল্য, এবং সেই �
 যেখানে $t$ একটি বদ্ধ পদ। এই !!{sentence} $\Th{Q}$-তে
 $\bforall{x<t}{\lnot!A(x)}$-এর সমতুল্য, তাই সীমাবদ্ধ সর্বজনীন
 পরিমাণসূচকের যুক্তি প্রয়োগ করা যায়।
-% BN-SRC-231 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-231):} হিমায়িত অষ্টম ক্ষেত্রে $\bexists$-এর সূত্র-আর্গুমেন্টের আবশ্যক বন্ধনী অনুপস্থিত ছিল, ফলে নির্দেশটি কেবল পরের প্রতীকটিকে নিতে পারত। বাংলা পাঠে পূর্ণ পরিসর $\bexists{x<t}{!A(x)}$ বন্ধনীর মধ্যে রাখা হয়েছে।} % BN-SRC-231 TARGET-CORRECTION-END
 %
 \item সবশেষে ধরি $\lnot !A$ সূত্রটি $\Struct{N}$-এ সত্য। কেবল দুটি ক্ষেত্র
 বাকি: $!A$ আণবিক, অথবা কোনো $\Delta_0$ !!{sentence} $!B$-এর জন্য
@@ -284,8 +272,6 @@ $\Th{Q} \Proves !A$।
 $\lexists[x][!A(x)]$ যদি $\Struct{N}$-এ সত্য কোনো $\Sigma_1$ !!{sentence}
 হয়, তবে এমন একটি স্বাভাবিক সংখ্যা~$n$ ও চলরাশি-আরোপ~$s$ আছে যাতে
 $s(x) = n$ এবং $\Sat{N}{!A(x)}[s]$।
-% BN-SRC-232 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-232):} হিমায়িত প্রমাণের প্রথম অস্তিত্বমূলক সূত্রে সংস্করণটির দুই-আর্গুমেন্টের $\lexists$ নির্দেশের বদলে অসামঞ্জস্যপূর্ণ $\string\lexists\{x\}!A(x)$ লেখা হয়েছিল। বাংলা পাঠে অধ্যায়জুড়ে ব্যবহৃত সুগঠিত রূপ $\lexists[x][!A(x)]$ রাখা হয়েছে।} % BN-SRC-232 TARGET-CORRECTION-END
 পরিতৃপ্তি-সম্পর্কের প্রমিত তথ্য থেকে $\Sat{N}{!A(\num n)}$। কিন্তু
 $!A(\num n)$ একটি $\Delta_0$ !!{formula}; তাই
 \olref{lem:delta0-completeness} অনুসারে $\Th{Q} \Proves !A(\num n)$, এবং

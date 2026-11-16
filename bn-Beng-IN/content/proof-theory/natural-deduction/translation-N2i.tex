@@ -20,9 +20,6 @@ $\Gamma$ থেকে চিহ্নগুলি সরিয়ে পাও�
 $!A$ যদি~$\lfalse$ না হয় তবে
 $\Delta = \{!A\}$, আর তা হলে
 $\Delta = \emptyset$।
-% BN-SRC-568 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-568):} প্রস্তাবনার ফলপদ্ধতিতে উৎসে ভুলে N2i আছে; N2i প্রমাণের অনুবাদের লক্ষ্য G2i, তাই G2c/G2i জোড়া করা হয়েছে।}
-% BN-SRC-568 TARGET-CORRECTION-END
 \end{prop}
 
 \begin{proof}
@@ -75,9 +72,6 @@ $\delta$-র শেষে অনুমানবিধি থাকলে
   নিই। তারপর $!B$-সহ \LeftR{\Weakening}
   এবং শেষে \RightR{\lif} প্রয়োগ করে
   $\pi$ পাই।
-  % BN-SRC-569 TARGET-CORRECTION-BEGIN
-  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-569):} অবমুক্তিযোগ্য $x:!B$ অনুপস্থিত ক্ষেত্রেও $!C=\lfalse$ হতে পারে; উৎসে ফাঁকা ডান অংশ থেকে →-ভূমিকার আগে \RightR{\Weakening} ধাপটি বাদ।}
-  % BN-SRC-569 TARGET-CORRECTION-END
   \item $R$ যদি \Elim{\lif} হয়,
   $\delta$-র শেষাংশ
   \[
@@ -122,9 +116,6 @@ $\delta$-র শেষে অনুমানবিধি থাকলে
   $(\Gamma_1 \cup \Gamma_2)'$-তে থাকে
   মাত্র একটি। উপযুক্ত \LeftR{\Contraction}
   প্রয়োগে এটি সংশোধন করা যায়।
-  % BN-SRC-570 TARGET-CORRECTION-BEGIN
-  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-570):} দ্বিতীয় উপপ্রমাণের অন্তিম সূত্র $!B$ নিজেই $\lfalse$ হতে পারে; তখন আরোহফলের ফাঁকা ডান অংশে আগে ডান-দুর্বলীকরণ দরকার। উৎসের সাধারণ বাক্যটি এই ক্ষেত্র বাদ দিয়েছে।}
-  % BN-SRC-570 TARGET-CORRECTION-END
 
   $!A \ident \lfalse$ হলে উপরের
   !!{proof}-এ প্রথমে
@@ -135,9 +126,6 @@ $\delta$-র শেষে অনুমানবিধি থাকলে
   $\Gamma_1', \Gamma_2' \Sequent \ $
   পাই, তারপর দরকারে বাঁ-সংকোচন করে
   লক্ষ্য !!a{proof}~$\pi$ নিই।
-  % BN-SRC-571 TARGET-CORRECTION-BEGIN
-  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-571):} উৎসে $!A=\lfalse$ হলে ভুল করে $\delta_2$ থেকে ফাঁকা ডান অংশ দাবি করা হয়েছে; $\delta_2$-র অন্তিম সূত্র $!B$, যা মিথ্যা হওয়া বাধ্যতামূলক নয়। উপরের →-নিষ্কাশন বৃক্ষ থেকে $\lfalse$ পেয়ে মিথ্যা-স্বতঃসিদ্ধের সঙ্গে কর্তনে ফাঁকা ডান অংশ গঠিত।}
-  % BN-SRC-571 TARGET-CORRECTION-END
 \item $R$ যদি \FalseCl হয়,
   $\delta$-র শেষাংশ
   \[
@@ -167,18 +155,12 @@ $\delta$-র শেষে অনুমানবিধি থাকলে
   $\lfalse \Sequent \ $ স্বতঃসিদ্ধের
   সঙ্গে শেষ~$\lfalse$-এ \Cut প্রয়োগে
   প্রয়োজনীয় ফাঁকা ডান অংশ পাই।
-  % BN-SRC-572 TARGET-CORRECTION-BEGIN
-  \par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-572):} G2 প্রমাণবৃক্ষের দ্বিতীয় পূর্বধারণায় উৎসের N2 চিহ্ন $x:$ সরানো হয়েছে; G2 বহুসেটে চিহ্ন নেই। $!A=\lfalse$ হলে প্রস্তাবনার ফাঁকা ডান অংশ পেতে মিথ্যা-স্বতঃসিদ্ধের সঙ্গে একটি অতিরিক্ত কর্তনও স্পষ্ট করা হয়েছে।}
-  % BN-SRC-572 TARGET-CORRECTION-END
 \end{enumerate}
 শুধু \FalseCl{}-এর অনুবাদেই
 !!a{proof}~$\pi$-র কোনো সিকোয়েন্টের
 ডান দিকে একাধিক !!{formula} আসে।
 অর্থাৎ \Log{N2i}-এর !!{proof}-এর
 অনুবাদ \Log{G2i}+\Cut-!!{proof}।
-% BN-SRC-573 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-573):} উৎসের শেষ বাক্যে কর্তনহীন G2i-প্রমাণ বলা হলেও →-নিষ্কাশনের প্রদর্শিত অনুবাদেই \Cut আছে; প্রস্তাবনা অনুযায়ী G2i+\Cut বলা হয়েছে।}
-% BN-SRC-573 TARGET-CORRECTION-END
 \end{proof}
 
 \end{document}

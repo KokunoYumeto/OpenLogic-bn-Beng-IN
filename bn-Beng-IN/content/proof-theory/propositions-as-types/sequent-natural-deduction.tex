@@ -132,9 +132,6 @@ $\Elim{\land}$ লেবেলটি স্বাভাবিক নিষ্প
   \BinaryInf$!B \fCenter \lfalse$
   \UnaryInf$\fCenter !B \lif \lfalse$
 \end{prooftree}
-% BN-SRC-620 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-620):} শেষ প্রমাণবৃক্ষে উৎসের অসম্পূর্ণ বন্ধনী, ভুল প্রসঙ্গ \( !B\lif \), চিহ্নগুলি সংশোধন করা হয়েছে। \( !B=( !A\lor(!A\lif\lfalse))\lif\lfalse \) ধরে প্রথমে \( !A,!B\Sequent\lfalse \), তারপর \( !B\Sequent !A\lif\lfalse \), পরে \( !B\Sequent !A\lor(!A\lif\lfalse) \), শেষে \( \Sequent !B\lif\lfalse \) পাওয়া যায়।}
-% BN-SRC-620 TARGET-CORRECTION-END
 এখানে $!B$ হলো $(!A \lor (!A \lif \lfalse))\lif \lfalse$-এর সংক্ষিপ্ত রূপ।
 
 \end{document}

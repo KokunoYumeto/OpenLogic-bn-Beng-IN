@@ -35,8 +35,6 @@ $x$ কোনো পারমাণবিক !!{formula}-র গ্যোডে�
   \tagitem{prvFalse}{$x = \Gn{\lfalse}$.}{}
   \tagitem{prvTrue}{$x = \Gn{\ltrue}$.}{}
 \end{enumerate}
-% BN-SRC-205 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-205):} হিমায়িত প্রথম শর্তটি $z$-এর প্রথম $n$টি উপাদান পদ কি না পরীক্ষা করে, কিন্তু $z$-এর দৈর্ঘ্য $n$ কি না বলে না। অতিরিক্ত উপাদান থাকলে $n$-স্থানীয় বিধেয়ের পরে ভুলসংখ্যক পদও ওই শর্তে গৃহীত হতো। বাংলা পাঠে $\len{z}=n$ যোগ করে বিধেয়টির স্থানসংখ্যা ও আর্গুমেন্টের সংখ্যা সমান রাখা হয়েছে।} % BN-SRC-205 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{prop}
@@ -51,8 +49,6 @@ $s_{k-1} = s$ !!{formula}-র এমন একটি গঠন-অনুক্�
 পারমাণবিক !!{formula}s থেকে~$s$ কীভাবে গঠিত হয়েছে তা নথিভুক্ত করে। প্রতিটি
 $s_i$-র কোড (এবং প্রকৃতপক্ষে $\tuple{s_0, \dots, s_{k-1}}$ অনুক্রমের কোডও)
 $s$-এর কোড~$x$ থেকে পাওয়া একটি আদিম পুনরাবৃত্ত সীমার মধ্যে থাকে।
-% BN-SRC-206 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-206):} হিমায়িত প্রমাণে গঠন-অনুক্রম $\tuple{s_0, \dots, s_{k-1}}$-এর গোটা কোডকেই $s$-এর কোড~$x$-এর চেয়ে ছোট বলা হয়েছে; মৌলিক সংখ্যার ঘাতভিত্তিক সংকেতায়নে তা সাধারণত সত্য নয়। পদের আগের প্রমাণের মতো, প্রতিটি উপসূত্রের কোড $x$ দ্বারা সীমাবদ্ধ এবং সেখান থেকে গোটা গঠন-অনুক্রমের কোডের একটি আদিম পুনরাবৃত্ত সীমা পাওয়া যায়—বাংলা পাঠে এই সঠিক সীমা-দাবিটিই রাখা হয়েছে।} % BN-SRC-206 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{prob}
@@ -89,8 +85,6 @@ $\fn{Sent}(x)$ আদিম পুনরাবৃত্ত।
 \bforall{i<\len{x}}{\bforall{z<x}{(\bexists{j<z}{z=\Gn{\Obj v_j}} \\
 \lif \lnot\fn{FreeOcc}(x,z,i))}}.
 \end{multline*}
-% BN-SRC-207 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-207):} হিমায়িত প্রদর্শনে ভিতরের $\bforall{z<x}{}$-এর পরিমাণায়িত অংশটি খালি রেখে পরের পংক্তির শর্তটি উভয় পরিমাণসূচকের বাইরে পড়েছে। বাংলা পাঠে শর্তটিকে $i$ ও $z$—উভয়ের আবদ্ধ পরিসরে রাখা হয়েছে।} % BN-SRC-207 TARGET-CORRECTION-END
 \end{proof}
 
 \end{document}

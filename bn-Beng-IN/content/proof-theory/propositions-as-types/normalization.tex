@@ -39,12 +39,6 @@
     {\typeof{x_2}{!A_2}}{\typeof{N_2}{!C}}} &=
   \len{!A_1} + \len{!A_2} + 1
 \end{align*}
-% BN-SRC-604 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-604):} শেষ সারির সমষ্টি-টাইপের দুই শাখা \(!A_1\) ও \(!A_2\); উৎসে অনির্ধারিত \(!A\) ও \(!B\) ছিল।}
-% BN-SRC-604 TARGET-CORRECTION-END
-% BN-SRC-897 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-897):} মিথ্যা-টাইপও এই ভাষার মৌলিক টাইপ। তার দৈর্ঘ্য শূন্য না দিলে মিথ্যা-টাইপের যুক্তিসহ কর্তনমাত্রা অনির্ধারিত থাকে।}
-% BN-SRC-897 TARGET-CORRECTION-END
 প্রমাণপদের জটিলতা তার মধ্যে সবচেয়ে জটিল
 বিটা-রিডেক্স দিয়ে মাপি; বিটা-রিডেক্স না থাকলে মান~$0$:
 \[
@@ -67,12 +61,6 @@
   \end{enumerate}
   প্রথম অবস্থায় $\cutrank{\Subst{M}{N}{x}} = \cutrank{M}$;
   অন্য অবস্থাগুলিতে $\cutrank{\Subst{M}{N}{x}} = \len{!A}$।
-% BN-SRC-605 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-605):} শেষ সমীকরণে উৎসের অতিরিক্ত বন্ধনী বাদ দেওয়া হয়েছে।}
-% BN-SRC-605 TARGET-CORRECTION-END
-% BN-SRC-896 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-896):} প্রতিস্থাপনে নতুন বিযোজন-রিডেক্স তৈরি হলে প্রধান পদটি প্রতিস্থাপ্য চলরাশি; উৎসের সূচক-চিহ্নের বদলে সেই চলরাশি বসেছে।}
-% BN-SRC-896 TARGET-CORRECTION-END
 \end{lem}
 \begin{proof}
   $M$-এর গঠন অনুযায়ী আরোহের সাহায্যে প্রমাণ।
@@ -100,9 +88,6 @@
         \]
         সেটি $\ande{i}{\andi{P_1}{P_2}}$। এর কর্তনমাত্রা
         $\len{!A}$।
-% BN-SRC-606 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-606):} চলরাশি \(x\) রিডেক্স নয়; তার অনির্ধারিত কর্তনমাত্রার উল্লেখ সরিয়ে \(x\)-এর টাইপের দৈর্ঘ্য রাখা হয়েছে।}
-% BN-SRC-606 TARGET-CORRECTION-END
     \end{enumerate}
   \end{enumerate}
   $\ore{N}{x_1}{N_1}{x_2}{N_2}$ ও $P Q$-এর
@@ -154,9 +139,6 @@
   প্রত্যেক !!{derivation}s স্বাভাবিক !!{derivation}sতে
   হ্রাস পায়।
 \end{thm}
-% BN-SRC-898 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-898):} প্রতিস্থাপিত যুক্তির ভিতরে আগে থেকেই রিডেক্স থাকতে পারে। স্থানীয় সংকোচনের পরে তার অনুলিপিও থাকতে পারে; সেটির মাত্রা কম হওয়া সহায়ক উপপাদ্যের অনুমান থেকেই মেলে।}
-% BN-SRC-898 TARGET-CORRECTION-END
 
 \begin{proof}
   সঠিকভাবে টাইপযুক্ত পদগুলির জন্য একটি প্রতিষ্ঠিত ফল ব্যবহার করি:
@@ -188,9 +170,6 @@
   \end{enumerate}
   \end{enumerate}
 \end{proof}
-% BN-SRC-899 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{পাঠ-সংশোধন (BN-SRC-899):} উৎসের উপপদের সর্বাধিক মাত্রা কমা থেকে পুরো পদের মাত্রা কমার সিদ্ধান্ত বৈধ নয়। বিযোজনের ঘুরপথ সরালে চারপাশে আরও বড় বিটা-রিডেক্স তৈরি হতে পারে। তাই ভুল মাত্রা-আরোহের বদলে প্রযোজ্য প্রতিষ্ঠিত উপপাদ্য, তার পদ্ধতিতে বিধির অনুরূপতা এবং স্বাভাবিক রূপে পৌঁছানোর যুক্তি ব্যবহার করা হয়েছে।}
-% BN-SRC-899 TARGET-CORRECTION-END
 
 টাইপযুক্ত $\lambd$-পদের স্বাভাবিকীকরণের অর্থ:
 এমন প্রত্যেক পদের \emph{একটি স্বাভাবিক রূপ আছে}।
@@ -240,9 +219,6 @@ $\redone$-এর শক্তিশালী স্বাভাবিকীক�
 টাইপযুক্ত $\lambd$-ক্যালকুলাসে গণনা সব
 পথেই থামে এবং তার মান (স্বাভাবিক রূপ)
 গণনার পথের উপর নির্ভর করে না।
-% BN-SRC-607 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-607):} শূন্য-ধাপ অনুমোদনকারী প্রতিফলিত-সঞ্চারী সম্পর্ক \(\red\)-এর বদলে শক্তিশালী স্বাভাবিকীকরণ এক-ধাপ সম্পর্ক \(\redone\)-এর ধর্ম হিসেবে নির্দিষ্ট করা হয়েছে।}
-% BN-SRC-607 TARGET-CORRECTION-END
 
 কোনো সম্পর্ক সমাভিগম্য প্রমাণ করা সাধারণত
 কঠিন। তবে নিচের দুর্বলতর শর্তটি সহজেই
@@ -280,18 +256,12 @@ $N \redone N_1$ এবং $N \redone N_2$
   সংকুচিত করলে
   $\proj{1}{\pair{O_1'}{O_2}}$
   পাওয়া যায়; এটিও $O_1'$-এ হ্রাস পায়।
-% BN-SRC-608 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-608):} প্রথম প্রক্ষেপণের শেষ ফল উৎসে ভুল করে \(O_2\) ছিল; প্রদর্শিত পদটি \(O_1'\)-এ হ্রাস পায়।}
-% BN-SRC-608 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{lem}[নিউম্যানের সহায়ক উপপাদ্য]
 $\redone$ শক্তিশালীভাবে স্বাভাবিকীকরণশীল হলে
 এবং দুর্বল চার্চ--রসার ধর্ম থাকলে $\red$
 সমাভিগম্য।
-% BN-SRC-609 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-609):} শূন্য-ধাপসহ \(\red\) নয়, এক-ধাপ \(\redone\)-এর শক্তিশালী স্বাভাবিকীকরণ এখানে প্রয়োজন; সমাভিগম্যতা \(\red\)-এর। পরের প্রমাণে স্বাভাবিক রূপে পৌঁছানোর দাবি সর্বোচ্চ হ্রাস-অনুক্রমের জন্য।}
-% BN-SRC-609 TARGET-CORRECTION-END
 \end{lem}
 
 \begin{proof}
@@ -328,9 +298,6 @@ $\redone$ শক্তিশালীভাবে স্বাভাবিকী
   অসীম অনুক্রম পাওয়া যায়; কিন্তু
   $\redone$ শক্তিশালীভাবে স্বাভাবিকীকরণশীল
   বলে তা অসম্ভব।
-% BN-SRC-610 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎসসংশোধন (BN-SRC-610):} দুই অনুক্রমের শুরু \(N_1'=N_1''=N\), তাই উৎসের সেই তুলনা ও তাদের দুর্বল-চার্চ--রসার প্রয়োগ অনর্থক। প্রথম হ্রাসফল \(N_2',N_2''\) তুলনা করা হয়েছে; তাদের সাধারণ পরবর্তী পদ \(N'''\)-এর একটি স্বাভাবিক রূপ \(Q\) নিয়ে ভিন্ন স্বাভাবিক রূপের বিরোধ সম্পন্ন করা হয়েছে।}
-% BN-SRC-610 TARGET-CORRECTION-END
 \end{proof}
 
 

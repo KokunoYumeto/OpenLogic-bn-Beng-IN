@@ -198,8 +198,6 @@ R-Mingle দেয় না। নিচের R-Mingle ম্যাট্র�
     \]
   \end{enumerate}
 \end{defn}
-% BN-SRC-683 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন ও পূর্বপর্যালোচনার মেরামত (BN-SRC-683):} হিমায়িত উৎস ও আগের বাংলা পর্যালোচনা শুধু দুটি মান মনোনীত করা \L ukasiewicz ম্যাট্রিক্সকে R-Mingle বলে চিহ্নিত করেছিল। কিন্তু সেই ম্যাট্রিক্সে $\pAssign v(p)=\Undef$ ও~$\pAssign v(q)=\False$ হলে $p$ এবং $p\lif q$ উভয়ই মনোনীত, অথচ $q$ অমনোনীত; তাই modus ponens ব্যর্থ হয়। Kooi ও Tamminga-র গবেষণায় প্রদত্ত প্রকৃত RM3 সারণি অনুযায়ী বাংলা সংজ্ঞায় শর্তবচনের তিনটি ঘর সংশোধিত: $\tf{\lif}[\LogRM[3]](\True,\Undef)=\False$, $\tf{\lif}[\LogRM[3]](\Undef,\Undef)=\Undef$, $\tf{\lif}[\LogRM[3]](\Undef,\False)=\False$। অবশিষ্ট ছয় ঘর এবং নঞর্থকরণ, সংযোজন ও বিযোজন অপরিবর্তিত। নিচের অনুশীলনগুলি এই সংশোধিত RM3 ম্যাট্রিক্স সম্পর্কে। গবেষণার নির্দিষ্ট স্থান: \emph{Completeness via Correspondence for Extensions of the Logic of Paradox}, উপসংহারে (পর্ব~4), মুদ্রিত পৃষ্ঠা~729, DOI \url{https://doi.org/10.1017/S1755020312000196}।} % BN-SRC-683 TARGET-CORRECTION-END
 
 \begin{prob}
   নিচের কোন সম্পর্কগুলি $\LogRM[3]$-এ সিদ্ধ?
@@ -239,11 +237,5 @@ $V^+ = \{\True, \Undef\}$-কে~$\{\True\}$-এর বদলে নিলে �
   $\pValue {v'}(!A)[\LogCL] = \True$)। এটি কেন প্রস্তাবটি প্রতিষ্ঠা
   করে তা ব্যাখ্যা করো।
 \end{prob}
-% BN-SRC-320 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-320):} হিমায়িত LP প্রমাণের আরোহ-ভিত্তিতে $\pValue v(p)[\LogKs]=\pAssign v(p)=\pValue{v'}(p)[\LogCL]$ নিঃশর্তভাবে দাবি করা হয়েছে; কিন্তু $\pAssign v(p)=\Undef$ হলে সংজ্ঞা অনুযায়ী $\pAssign{v'}(p)=\True$, তাই সমতাটি মিথ্যা। বাংলা প্রমাণে দাবির জন্য প্রয়োজনীয় $\False$ ও~$\True$ ক্ষেত্র দুটি আলাদাভাবে দেখানো হয়েছে।} % BN-SRC-320 TARGET-CORRECTION-END
-% BN-SRC-321 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-321):} হিমায়িত LP প্রমাণের সংযোজন-ক্ষেত্রে $\pValue v(!B)$-কে “অথবা” ও “এবং” উভয় শাখায় ভুল করে দুবার লেখা হয়েছে। $!B\land !C$-এর শক্তিশালী ক্লিনি সত্যসারণি ও পরের ধ্রুপদি সিদ্ধান্ত অনুযায়ী দ্বিতীয় ঘটনাগুলিতে $\pValue v(!C)$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-321 TARGET-CORRECTION-END
-% BN-SRC-322 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-322):} হিমায়িত R-Mingle সংজ্ঞা ভাষায় শূন্য-স্থানীয় সংযোজক~$\lfalse$ রাখলেও তার সত্যমান-অপেক্ষক নির্ধারণ করেনি; “$\LogLuk[3]$-এর মতো” কথাটি এটি পূরণ করে না, কারণ পূর্ববর্তী $\LogLuk[3]$ ভাষায়~$\lfalse$ নেই। ঘোষিত ম্যাট্রিক্স সম্পূর্ণ করতে বাংলা লক্ষ্যে $\tf{\lfalse}=\False$ স্পষ্ট করা হয়েছে।} % BN-SRC-322 TARGET-CORRECTION-END
 
 \end{document}

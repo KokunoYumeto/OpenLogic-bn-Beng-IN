@@ -80,9 +80,6 @@ $\Gamma \Proves !B$।}{}
 3. & $\Gamma_0 \Proves (!A \lif \lfalse) \lif \lnot !A$ & Ax0 \\
 4. & $\Gamma_0 \Proves \lnot !A$ & MP 2, 3 \\
 \end{derivation}
-% BN-SRC-494 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-494):} মূল দ্বিতীয় প্রমাণে অনুমানটি ভুল করে $\lnot !A$ থেকে অসঙ্গতি ধরে, তারপর $!A$ সিদ্ধান্ত করে; সেটি এখানে উল্লিখিত $\lnot !A$-প্রমাণ নয়। বাংলা সারণিতে বক্তব্যের সঙ্গে মেলে এমন $!A$-অনুমান ও নিঃসরণ-ধাপ পুনরুদ্ধার করা হয়েছে।}
-% BN-SRC-494 TARGET-CORRECTION-END
 
 \item ধরি, $\Gamma \cup \{ !A \} \Proves \lfalse$ এবং
 $\Gamma_1 \cup \{\lnot !A \} \Proves \lfalse$।
@@ -125,9 +122,6 @@ $\Gamma_1 \cup \{\lnot !A \} \Proves \lfalse$।
 2. & $\Gamma_0 \Proves (!A\land !B) \lif !A $ & Ax0 \\
 3. & $\Gamma_0 \Proves !A$ & MP 1, 2 \\
 \end{derivation}
-% BN-SRC-495 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-495):} মূল সারণির তৃতীয় পংক্তিতে $!A \lor !B$ লেখা, অথচ প্রথম দুই পংক্তি থেকে মোডাস পোনেন্সে $!A$ মেলে। বাংলা পংক্তিতে সেই সিদ্ধান্ত লেখা হয়েছে।}
-% BN-SRC-495 TARGET-CORRECTION-END
 
 অতএব $\Gamma \Proves !A$। অনুরূপ !!{derivation} থেকে
 $\Gamma \Proves !B$ পাওয়া যায়।}}
@@ -147,9 +141,6 @@ $\Gamma_0 \Proves !A$ এবং $\Gamma_0 \Proves !A \lif !B $—উভয়ই
 
 যেহেতু $\Gamma_0 \subseteq \Gamma$, তাই $\Gamma
 \Proves !B$।}}
-% BN-SRC-496 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-496):} মূল মোডাস-পোনেন্স প্রমাণের শেষে অনির্ধারিত $\Gamma_1$-সহ অন্তর্ভুক্তি লেখা হয়। একই সসীম $\Gamma_0$-এ উভয় পূর্বধারণা নেওয়ার পরে প্রয়োজন কেবল $\Gamma_0\subseteq\Gamma$।}
-% BN-SRC-496 TARGET-CORRECTION-END
 
 % prop:provability-lif
 \tagitem{defIf}{}{\iftag{probIf}{অনুশীলনী।}{প্রথমে
@@ -218,9 +209,6 @@ $\Gamma' \Proves \Subst{!A}{x}{c}$। সাধারণীকরণ
 (\olref{thm:Generalization}) থেকে $\Gamma'
 \Proves \lforall[x][\Subst{!A}{x}{c}]$; একঘেয়েতা থেকে অতএব কাঙ্ক্ষিত
 $\Gamma \Proves \lforall[x][\Subst{!A}{x}{c}]$।
-% BN-SRC-497 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-497):} মূল প্রমাণে প্রতিটি $i$-এর ক্ষেত্রে প্রথম শর্তে শেষ সূত্র $!A$ স্বতঃসিদ্ধ কিনা দেখা হয়; দরকার সংশ্লিষ্ট $!A_i$ স্বতঃসিদ্ধ কিনা। বাংলা তালিকায় স্থানীয় সূচকটি পুনরুদ্ধার করা হয়েছে।}
-% BN-SRC-497 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{explain}
@@ -242,9 +230,6 @@ $!A$-তে $c$-র জন্য $x$ মুক্তভাবে প্রতি
 $y$ মুক্ত নয়; তাই এমন সব আবির্ভাব এসেছে $\Subst{}{y}{c}$ প্রতিস্থাপন
 থেকে। অর্থাৎ $c$-র কোনো আবির্ভাব $\lforall[x]$-এর আওতায় পড়ে,
 তাই $!A$-তে $c$-র জন্য $x$ !!{free for} নয়।
-% BN-SRC-498 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-498):} মূল প্রমাণের প্রথম বাক্যে পরীক্ষাধীন সূত্র $\Subst{!A}{y}{x}$ লেখা, কিন্তু উপপাদ্যের বক্তব্য ও পরের বাক্যে সেটি $\Subst{!A}{y}{c}$। বাংলা প্রমাণে একই সূত্র রাখা হয়েছে।}
-% BN-SRC-498 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{lem}[আবদ্ধ চলক পরিবর্তন]
@@ -260,9 +245,6 @@ $!A$-তে $x$ মুক্ত নয়। তাই আগের \olref{lem:f
 $\Subst{!A}{x}{c}$-এ $x$-এর জন্য $y$ !!{free for}।
 ফলে নিচেরটি স্বতঃসিদ্ধের একটি দৃষ্টান্ত (\textbf{Ax1}):
 $\lforall[x][\Subst{!A}{x}{c}] \lif \Subst{!A}{x}{c} \Subst{}{y}{x}$।
-% BN-SRC-499 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-499):} মূল পাঠে সার্বিক পরিমাণসূচকটি সম্পূর্ণ অনুসিদ্ধান্তের ওপর বসানো হয়েছে; তা সার্বিক-বিশেষায়ন স্বতঃসিদ্ধ নয় এবং পরের প্রদর্শিত সূত্রটিও দেয় না। এখানে শুধু পূর্বপক্ষকে পরিমাণায়িত করে স্বতঃসিদ্ধের উদ্দিষ্ট রূপ রাখা হয়েছে।}
-% BN-SRC-499 TARGET-CORRECTION-END
 $!A$-তে $x$ মুক্ত নয় বলে
 $\Subst{!A}{x}{c} \Subst{}{y}{x} = \Subst{!A}{y}{c}$; অতএব
 \[

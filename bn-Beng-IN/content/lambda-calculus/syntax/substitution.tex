@@ -32,8 +32,6 @@ $\lambd[x][(\lambd[y][y]) x]$ পাওয়া যায়। মুক্ত
       $x \neq y$ কিন্তু $y \in \FV{N}$ হলে এটি অসংজ্ঞায়িত।
       \ollabel{defn:substitution-4}
   \end{enumerate}
-% BN-SRC-282 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-282):} হিমায়িত বিমূর্তন-ধারাটি $x=y$ হলে প্রতিস্থাপনকে অসংজ্ঞায়িত করে, অথচ পরের ব্যাখ্যাই বলে যে আবদ্ধ~$x$-এর সংঘটনগুলি বদলাবে না এবং $\Subst{\lambd[x][x]}{y}{x}$-এর ফল $\lambd[x][x]$ হওয়া উচিত। বাংলা সংজ্ঞায় ছায়াবৃত চলরাশির মানক ধারাটি $\Subst{\lambd[x][P]}{N}{x}=\lambd[x][P]$ পুনরুদ্ধার করা হয়েছে; স্বতন্ত্র আবদ্ধ চলরাশির ক্ষেত্রে মুক্ত চলরাশি অধিগ্রহণের ঝুঁকি থাকলেই প্রতিস্থাপন অসংজ্ঞায়িত থাকে।} % BN-SRC-282 TARGET-CORRECTION-END
 \end{defn}
 
 \begin{explain}
@@ -89,8 +87,6 @@ $y$ বসানো যায় না, অর্থাৎ $\Subst{\lambd[y][x]
     \end{aligned}
     \end{multline*}
   \end{enumerate}
-% BN-SRC-276 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-276):} হিমায়িত প্রমাণের বিমূর্তন-ক্ষেত্রে $x\notin\FV{Q}$ লেখা হয়েছে, যদিও ওই ক্ষেত্রে কোনো~$Q$ নেই এবং আরোহ-অনুমান প্রয়োগ করতে $x\notin\FV{P}$ দরকার। বাংলা প্রমাণে বিমূর্তনের দেহ~$P$ পুনরুদ্ধার করা হয়েছে।} % BN-SRC-276 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{prob}
@@ -130,8 +126,6 @@ $y$ বসানো যায় না, অর্থাৎ $\Subst{\lambd[y][x]
       \end{aligned}
       \end{multline*}
   \end{enumerate}
-% BN-SRC-277 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-277):} হিমায়িত দ্বিতীয় উপপাদ্য ও প্রমাণে পরস্পর-সংযুক্ত কয়েকটি চলরাশি ও সেট-অভিব্যক্তি অসঙ্গত: অনুমানের পরে একটি অতিরিক্ত বন্ধনী আছে; প্রয়োগ-ক্ষেত্রে $x$-এর বদলে~$y$ প্রতিস্থাপিত; বিমূর্তন-ক্ষেত্রে অনুমানটি $x\in\FV{\lambd[y][P]}$ হওয়ার বদলে $y\in\FV{\lambd[x][P]}$; এবং আরোহ-ধাপে $\FV{P}\setminus\{x\}$ ও $\FV{N}$-এর সংযোজন থেকে~$y$ বাদ দেওয়ার বদলে ভুল চলরাশিগুলি বাদ দেওয়া হয়েছে। বাংলা পাঠে উপপাদ্যের ঘোষিত $x$-প্রতিস্থাপন এবং $y\notin\FV{N}$ শর্তের সঙ্গে মিলিয়ে চারটিই পুনরুদ্ধার করা হয়েছে।} % BN-SRC-277 TARGET-CORRECTION-END
 \end{proof}
 
 \begin{prob}
@@ -141,8 +135,6 @@ $y$ বসানো যায় না, অর্থাৎ $\Subst{\lambd[y][x]
 \begin{thm}\ollabel{thm:clr}
   $\Subst{M}{N}{x}$ সংজ্ঞায়িত এবং $x \notin \FV{N}$ হলে
   $x \notin \FV{\Subst{M}{N}{x}}$।
-% BN-SRC-283 TARGET-CORRECTION-BEGIN
-\par\smallskip\noindent\textnormal{\small\textbf{উৎস-সংশোধন (BN-SRC-283):} হিমায়িত উপপাদ্যটি ``ডান দিক'' সংজ্ঞায়িত হওয়ার শর্ত দেয়, যদিও ঘোষণাটি কোনো সমতা বা দুই-পক্ষবিশিষ্ট সম্বন্ধ নয়। বাংলা পাঠে শর্তটির প্রকৃত বস্তু, $\Subst{M}{N}{x}$, স্পষ্ট করা হয়েছে।} % BN-SRC-283 TARGET-CORRECTION-END
 \end{thm}
 
 \begin{proof}

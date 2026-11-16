@@ -1,5 +1,9 @@
 # ওপেন লজিক — বাংলা (ভারত): সংশোধিত সম্পূর্ণ সংস্করণ
 
+**সেট, যুক্তি, গণনা** — Richard Zach-এর পাঠ্যবইয়ের ভারতীয় বাংলা এআই অনুবাদ। বইটিতে ১৭৬টি উৎসবিভাগ ও ৩৪৪টি মুদ্রিত পৃষ্ঠা রয়েছে। [PDF পড়ুন](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/slc-2026-11-16/slc-screen-bn.pdf) · [EPUB](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/slc-2026-11-16/slc-screen-bn.epub) · [অফলাইন HTML](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/slc-2026-11-16/slc-screen-bn-html.zip) · [সম্পূর্ণ LaTeX](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/slc-2026-11-16/slc-screen-bn.tex) · [উৎস ও নির্মাণের নির্দেশিকা](https://github.com/KokunoYumeto/OpenLogic-bn-Beng-IN/releases/download/slc-2026-11-16/slc-screen-bn-source.zip)
+
+মূল বই Sets, Logic, Computation-এর লেখক Richard Zach। মূল বিভাগের রচয়িতা Open Logic Project-এর অবদানকারীরা। প্রথম-ক্রমের যুক্তিবিদ্যার পরবর্তী বিষয়গুলি নিয়ে আলোচনায় Jeremy Avigad-এর পাঠের অবদান রয়েছে। প্রচ্ছদের প্রতিকৃতি এঁকেছেন Matthew Leadbeater। মূল বিভাগগুলির ভারতীয় বাংলা এআই অনুবাদ করেছে OpenAI Codex-এর GPT-5.6 Sol ও GPT-6 Sol (উভয়ই Ultra)। পাঠ্যবইয়ের অনুবাদ, সম্পাদনা ও অক্ষরবিন্যাসে ব্যবহৃত হয়েছে GPT-6.1 Sol (Ultra)। বাংলা বিভক্তির বানান সম্পাদনা, ফন্ট ও পৃষ্ঠাবিন্যাসের সংশোধন এবং বৈদ্যুতিন সংস্করণ তৈরি করেছে GPT-6 Astra (Ultra)।
+
 [Open Logic Project](https://github.com/OpenLogicProject/OpenLogic)-এর হিমায়িত মূলের সব **৭২২টি বিষয়বস্তু-একক** এই ভারতীয় বাংলা সংস্করণে আছে। একই সংস্করণের HTML-এ নেটিভ MathML, EPUB-এ পুনঃপ্রবাহযোগ্য পাঠ, এবং A4 PDF-এ ৮৯১ পৃষ্ঠা আছে। সম্পাদনযোগ্য সমষ্টিগত LaTeX ও মূল ইংরেজি–বাংলা উৎসসহ সংরক্ষণ-সংগ্রহও দেওয়া হয়েছে।
 
 ## উৎস ও যাচাইয়ের পরিসর
